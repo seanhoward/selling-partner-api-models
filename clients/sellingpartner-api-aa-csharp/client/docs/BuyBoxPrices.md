@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.BuyBoxPrices
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.BuyBoxPrices
 ## Properties
 
 Name | Type | Description | Notes

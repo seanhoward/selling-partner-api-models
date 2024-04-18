@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ProductTypeDefinition
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes.ProductTypeDefinition
 ## Properties
 
 Name | Type | Description | Notes
@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Locale** | **string** | Locale of the display elements contained in the product type definition. | 
 **MarketplaceIds** | **List&lt;string&gt;** | Amazon marketplace identifiers for which the product type definition is applicable. | 
 **ProductType** | **string** | The name of the Amazon product type that this product type definition applies to. | 
+**DisplayName** | **string** | Human-readable and localized description of the Amazon product type. | 
 **ProductTypeVersion** | [**ProductTypeVersion**](ProductTypeVersion.md) | The version details for the Amazon product type. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

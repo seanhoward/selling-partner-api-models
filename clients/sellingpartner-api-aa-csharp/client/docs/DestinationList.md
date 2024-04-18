@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.DestinationList
+# Amazon.SellingPartnerAPIAA.Clients.Models.Notifications.DestinationList
 ## Properties
 
 Name | Type | Description | Notes

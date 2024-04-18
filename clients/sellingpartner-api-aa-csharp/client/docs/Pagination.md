@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.Pagination
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.Pagination
 ## Properties
 
 Name | Type | Description | Notes

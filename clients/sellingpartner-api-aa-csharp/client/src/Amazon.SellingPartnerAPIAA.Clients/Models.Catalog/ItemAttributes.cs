@@ -28,13 +28,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
     /// A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
     /// </summary>
     [DataContract]
-    public partial class ItemAttributes : Dictionary<string, object>, IEquatable<ItemAttributes>, IValidatableObject
+    public partial class ItemAttributes :  IEquatable<ItemAttributes>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemAttributes" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        public ItemAttributes() : base()
+        public ItemAttributes()
         {
         }
         

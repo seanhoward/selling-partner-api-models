@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide).
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * OpenAPI spec version: v1
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
     /// <summary>
-    /// Error response returned when the request is unsuccessful.
+    /// An error response returned when the request is unsuccessful.
     /// </summary>
     [DataContract]
     public partial class Error :  IEquatable<Error>, IValidatableObject
@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
         /// <param name="code">An error code that identifies the type of error that occurred. (required).</param>
-        /// <param name="message">A message that describes the error condition in a human-readable form. (required).</param>
+        /// <param name="message">A message that describes the error condition. (required).</param>
         /// <param name="details">Additional details that can help the caller understand or fix the issue..</param>
         public Error(string code = default(string), string message = default(string), string details = default(string))
         {
@@ -72,9 +72,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         public string Code { get; set; }
 
         /// <summary>
-        /// A message that describes the error condition in a human-readable form.
+        /// A message that describes the error condition.
         /// </summary>
-        /// <value>A message that describes the error condition in a human-readable form.</value>
+        /// <value>A message that describes the error condition.</value>
         [DataMember(Name="message", EmitDefaultValue=false)]
         public string Message { get; set; }
 

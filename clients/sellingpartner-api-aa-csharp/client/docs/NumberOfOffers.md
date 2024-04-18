@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.NumberOfOffers
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.NumberOfOffers
 ## Properties
 
 Name | Type | Description | Notes

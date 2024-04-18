@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.Refinements
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.Refinements
 ## Properties
 
 Name | Type | Description | Notes

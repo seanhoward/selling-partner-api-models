@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ListingOffersResponse
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.ListingOffersResponse
 ## Properties
 
 Name | Type | Description | Notes

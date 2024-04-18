@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -68,6 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="aSIN">The Amazon Standard Identification Number (ASIN) of the item. (required).</param>
         /// <param name="sellerSKU">The seller stock keeping unit (SKU) of the item..</param>
         /// <param name="orderItemId">An Amazon-defined order item identifier. (required).</param>
+        /// <param name="associatedItems">A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires..</param>
         /// <param name="title">The name of the item..</param>
         /// <param name="quantityOrdered">The number of items in the order.  (required).</param>
         /// <param name="quantityShipped">The number of items shipped..</param>
@@ -88,20 +89,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="conditionNote">The condition of the item as described by the seller..</param>
         /// <param name="conditionId">The condition of the item.  Possible values: New, Used, Collectible, Refurbished, Preorder, Club..</param>
         /// <param name="conditionSubtypeId">The subcondition of the item.  Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other..</param>
-        /// <param name="scheduledDeliveryStartDate">The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format..</param>
-        /// <param name="scheduledDeliveryEndDate">The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format..</param>
+        /// <param name="scheduledDeliveryStartDate">The start date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
+        /// <param name="scheduledDeliveryEndDate">The end date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
         /// <param name="priceDesignation">Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders..</param>
         /// <param name="taxCollection">Information about withheld taxes..</param>
         /// <param name="serialNumberRequired">When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders..</param>
-        /// <param name="isTransparency">When true, transparency codes are required..</param>
+        /// <param name="isTransparency">When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates..</param>
         /// <param name="iossNumber">The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale..</param>
         /// <param name="storeChainStoreId">The store chain store identifier. Linked to a specific store in a store chain..</param>
         /// <param name="deemedResellerCategory">The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK..</param>
         /// <param name="buyerInfo">buyerInfo.</param>
         /// <param name="buyerRequestedCancel">Information about whether or not a buyer requested cancellation..</param>
-        /// <param name="itemApprovalContext">Item approval context containing the information regarding the status and progress of the item approval..</param>
         /// <param name="serialNumbers">A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only..</param>
-        public OrderItem(string aSIN = default(string), string sellerSKU = default(string), string orderItemId = default(string), string title = default(string), int? quantityOrdered = default(int?), int? quantityShipped = default(int?), ProductInfoDetail productInfo = default(ProductInfoDetail), PointsGrantedDetail pointsGranted = default(PointsGrantedDetail), Money itemPrice = default(Money), Money shippingPrice = default(Money), Money itemTax = default(Money), Money shippingTax = default(Money), Money shippingDiscount = default(Money), Money shippingDiscountTax = default(Money), Money promotionDiscount = default(Money), Money promotionDiscountTax = default(Money), PromotionIdList promotionIds = default(PromotionIdList), Money cODFee = default(Money), Money cODFeeDiscount = default(Money), bool? isGift = default(bool?), string conditionNote = default(string), string conditionId = default(string), string conditionSubtypeId = default(string), string scheduledDeliveryStartDate = default(string), string scheduledDeliveryEndDate = default(string), string priceDesignation = default(string), TaxCollection taxCollection = default(TaxCollection), bool? serialNumberRequired = default(bool?), bool? isTransparency = default(bool?), string iossNumber = default(string), string storeChainStoreId = default(string), DeemedResellerCategoryEnum? deemedResellerCategory = default(DeemedResellerCategoryEnum?), ItemBuyerInfo buyerInfo = default(ItemBuyerInfo), BuyerRequestedCancel buyerRequestedCancel = default(BuyerRequestedCancel), ItemApprovalContext itemApprovalContext = default(ItemApprovalContext), List<string> serialNumbers = default(List<string>))
+        /// <param name="substitutionPreferences">Substitution preferences for the order item. This is an optional field and will only be present if seller supports substitutions like in case of some grocery sellers..</param>
+        /// <param name="measurement">Measurement information for the order item..</param>
+        public OrderItem(string aSIN = default(string), string sellerSKU = default(string), string orderItemId = default(string), List<AssociatedItem> associatedItems = default(List<AssociatedItem>), string title = default(string), int? quantityOrdered = default(int?), int? quantityShipped = default(int?), ProductInfoDetail productInfo = default(ProductInfoDetail), PointsGrantedDetail pointsGranted = default(PointsGrantedDetail), Money itemPrice = default(Money), Money shippingPrice = default(Money), Money itemTax = default(Money), Money shippingTax = default(Money), Money shippingDiscount = default(Money), Money shippingDiscountTax = default(Money), Money promotionDiscount = default(Money), Money promotionDiscountTax = default(Money), PromotionIdList promotionIds = default(PromotionIdList), Money cODFee = default(Money), Money cODFeeDiscount = default(Money), bool? isGift = default(bool?), string conditionNote = default(string), string conditionId = default(string), string conditionSubtypeId = default(string), string scheduledDeliveryStartDate = default(string), string scheduledDeliveryEndDate = default(string), string priceDesignation = default(string), TaxCollection taxCollection = default(TaxCollection), bool? serialNumberRequired = default(bool?), bool? isTransparency = default(bool?), string iossNumber = default(string), string storeChainStoreId = default(string), DeemedResellerCategoryEnum? deemedResellerCategory = default(DeemedResellerCategoryEnum?), ItemBuyerInfo buyerInfo = default(ItemBuyerInfo), BuyerRequestedCancel buyerRequestedCancel = default(BuyerRequestedCancel), List<string> serialNumbers = default(List<string>), SubstitutionPreferences substitutionPreferences = default(SubstitutionPreferences), Measurement measurement = default(Measurement))
         {
             // to ensure "aSIN" is required (not null)
             if (aSIN == null)
@@ -131,6 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                 this.QuantityOrdered = quantityOrdered;
             }
             this.SellerSKU = sellerSKU;
+            this.AssociatedItems = associatedItems;
             this.Title = title;
             this.QuantityShipped = quantityShipped;
             this.ProductInfo = productInfo;
@@ -161,8 +164,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.DeemedResellerCategory = deemedResellerCategory;
             this.BuyerInfo = buyerInfo;
             this.BuyerRequestedCancel = buyerRequestedCancel;
-            this.ItemApprovalContext = itemApprovalContext;
             this.SerialNumbers = serialNumbers;
+            this.SubstitutionPreferences = substitutionPreferences;
+            this.Measurement = measurement;
         }
         
         /// <summary>
@@ -185,6 +189,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <value>An Amazon-defined order item identifier.</value>
         [DataMember(Name="OrderItemId", EmitDefaultValue=false)]
         public string OrderItemId { get; set; }
+
+        /// <summary>
+        /// A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
+        /// </summary>
+        /// <value>A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.</value>
+        [DataMember(Name="AssociatedItems", EmitDefaultValue=false)]
+        public List<AssociatedItem> AssociatedItems { get; set; }
 
         /// <summary>
         /// The name of the item.
@@ -326,16 +337,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string ConditionSubtypeId { get; set; }
 
         /// <summary>
-        /// The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
+        /// The start date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
         /// </summary>
-        /// <value>The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.</value>
+        /// <value>The start date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
         [DataMember(Name="ScheduledDeliveryStartDate", EmitDefaultValue=false)]
         public string ScheduledDeliveryStartDate { get; set; }
 
         /// <summary>
-        /// The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
+        /// The end date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
         /// </summary>
-        /// <value>The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.</value>
+        /// <value>The end date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
         [DataMember(Name="ScheduledDeliveryEndDate", EmitDefaultValue=false)]
         public string ScheduledDeliveryEndDate { get; set; }
 
@@ -361,9 +372,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public bool? SerialNumberRequired { get; set; }
 
         /// <summary>
-        /// When true, transparency codes are required.
+        /// When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.
         /// </summary>
-        /// <value>When true, transparency codes are required.</value>
+        /// <value>When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.</value>
         [DataMember(Name="IsTransparency", EmitDefaultValue=false)]
         public bool? IsTransparency { get; set; }
 
@@ -396,18 +407,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public BuyerRequestedCancel BuyerRequestedCancel { get; set; }
 
         /// <summary>
-        /// Item approval context containing the information regarding the status and progress of the item approval.
-        /// </summary>
-        /// <value>Item approval context containing the information regarding the status and progress of the item approval.</value>
-        [DataMember(Name="ItemApprovalContext", EmitDefaultValue=false)]
-        public ItemApprovalContext ItemApprovalContext { get; set; }
-
-        /// <summary>
         /// A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.
         /// </summary>
         /// <value>A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.</value>
         [DataMember(Name="SerialNumbers", EmitDefaultValue=false)]
         public List<string> SerialNumbers { get; set; }
+
+        /// <summary>
+        /// Substitution preferences for the order item. This is an optional field and will only be present if seller supports substitutions like in case of some grocery sellers.
+        /// </summary>
+        /// <value>Substitution preferences for the order item. This is an optional field and will only be present if seller supports substitutions like in case of some grocery sellers.</value>
+        [DataMember(Name="SubstitutionPreferences", EmitDefaultValue=false)]
+        public SubstitutionPreferences SubstitutionPreferences { get; set; }
+
+        /// <summary>
+        /// Measurement information for the order item.
+        /// </summary>
+        /// <value>Measurement information for the order item.</value>
+        [DataMember(Name="Measurement", EmitDefaultValue=false)]
+        public Measurement Measurement { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -420,6 +438,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("  ASIN: ").Append(ASIN).Append("\n");
             sb.Append("  SellerSKU: ").Append(SellerSKU).Append("\n");
             sb.Append("  OrderItemId: ").Append(OrderItemId).Append("\n");
+            sb.Append("  AssociatedItems: ").Append(AssociatedItems).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  QuantityOrdered: ").Append(QuantityOrdered).Append("\n");
             sb.Append("  QuantityShipped: ").Append(QuantityShipped).Append("\n");
@@ -451,8 +470,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("  DeemedResellerCategory: ").Append(DeemedResellerCategory).Append("\n");
             sb.Append("  BuyerInfo: ").Append(BuyerInfo).Append("\n");
             sb.Append("  BuyerRequestedCancel: ").Append(BuyerRequestedCancel).Append("\n");
-            sb.Append("  ItemApprovalContext: ").Append(ItemApprovalContext).Append("\n");
             sb.Append("  SerialNumbers: ").Append(SerialNumbers).Append("\n");
+            sb.Append("  SubstitutionPreferences: ").Append(SubstitutionPreferences).Append("\n");
+            sb.Append("  Measurement: ").Append(Measurement).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -501,6 +521,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     this.OrderItemId == input.OrderItemId ||
                     (this.OrderItemId != null &&
                     this.OrderItemId.Equals(input.OrderItemId))
+                ) && 
+                (
+                    this.AssociatedItems == input.AssociatedItems ||
+                    this.AssociatedItems != null &&
+                    this.AssociatedItems.SequenceEqual(input.AssociatedItems)
                 ) && 
                 (
                     this.Title == input.Title ||
@@ -658,14 +683,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     this.BuyerRequestedCancel.Equals(input.BuyerRequestedCancel))
                 ) && 
                 (
-                    this.ItemApprovalContext == input.ItemApprovalContext ||
-                    (this.ItemApprovalContext != null &&
-                    this.ItemApprovalContext.Equals(input.ItemApprovalContext))
-                ) && 
-                (
                     this.SerialNumbers == input.SerialNumbers ||
                     this.SerialNumbers != null &&
                     this.SerialNumbers.SequenceEqual(input.SerialNumbers)
+                ) && 
+                (
+                    this.SubstitutionPreferences == input.SubstitutionPreferences ||
+                    (this.SubstitutionPreferences != null &&
+                    this.SubstitutionPreferences.Equals(input.SubstitutionPreferences))
+                ) && 
+                (
+                    this.Measurement == input.Measurement ||
+                    (this.Measurement != null &&
+                    this.Measurement.Equals(input.Measurement))
                 );
         }
 
@@ -684,6 +714,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     hashCode = hashCode * 59 + this.SellerSKU.GetHashCode();
                 if (this.OrderItemId != null)
                     hashCode = hashCode * 59 + this.OrderItemId.GetHashCode();
+                if (this.AssociatedItems != null)
+                    hashCode = hashCode * 59 + this.AssociatedItems.GetHashCode();
                 if (this.Title != null)
                     hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.QuantityOrdered != null)
@@ -746,10 +778,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     hashCode = hashCode * 59 + this.BuyerInfo.GetHashCode();
                 if (this.BuyerRequestedCancel != null)
                     hashCode = hashCode * 59 + this.BuyerRequestedCancel.GetHashCode();
-                if (this.ItemApprovalContext != null)
-                    hashCode = hashCode * 59 + this.ItemApprovalContext.GetHashCode();
                 if (this.SerialNumbers != null)
                     hashCode = hashCode * 59 + this.SerialNumbers.GetHashCode();
+                if (this.SubstitutionPreferences != null)
+                    hashCode = hashCode * 59 + this.SubstitutionPreferences.GetHashCode();
+                if (this.Measurement != null)
+                    hashCode = hashCode * 59 + this.Measurement.GetHashCode();
                 return hashCode;
             }
         }

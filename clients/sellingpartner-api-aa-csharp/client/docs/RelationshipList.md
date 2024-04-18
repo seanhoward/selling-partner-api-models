@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.RelationshipList
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.RelationshipList
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.OfferListingCountType
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.OfferListingCountType
 ## Properties
 
 Name | Type | Description | Notes

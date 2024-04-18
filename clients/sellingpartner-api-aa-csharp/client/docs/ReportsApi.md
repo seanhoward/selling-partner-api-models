@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Api.ReportsApi
+# Amazon.SellingPartnerAPIAA.Clients.API.ReportsApi
 
 All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
@@ -21,15 +21,15 @@ Method | HTTP request | Description
 
 
 
-Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Reports;
 
 namespace Example
 {
@@ -80,15 +80,15 @@ No authorization required
 
 
 
-Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Reports;
 
 namespace Example
 {
@@ -139,15 +139,15 @@ No authorization required
 
 
 
-Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Reports;
 
 namespace Example
 {
@@ -199,15 +199,15 @@ No authorization required
 
 
 
-Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Reports;
 
 namespace Example
 {
@@ -259,15 +259,15 @@ No authorization required
 
 
 
-Returns report details (including the reportDocumentId, if available) for the report that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2.0 | 15 |  For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+Returns report details (including the reportDocumentId, if available) for the report that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Reports;
 
 namespace Example
 {
@@ -319,15 +319,15 @@ No authorization required
 
 
 
-Returns the information required for retrieving a report document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 15 |  For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api)in the Selling Partner API documentation.
+Returns the information required for retrieving a report document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Reports;
 
 namespace Example
 {
@@ -379,15 +379,15 @@ No authorization required
 
 
 
-Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Reports;
 
 namespace Example
 {
@@ -439,15 +439,15 @@ No authorization required
 
 
 
-Returns report schedule details that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+Returns report schedule details that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Reports;
 
 namespace Example
 {
@@ -456,7 +456,7 @@ namespace Example
         public void main()
         {
             var apiInstance = new ReportsApi();
-            var reportTypes = new List<string>(); // List<string> | A list of report types used to filter report schedules.
+            var reportTypes = new List<string>(); // List<string> | A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
 
             try
             {
@@ -476,7 +476,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reportTypes** | [**List&lt;string&gt;**](string.md)| A list of report types used to filter report schedules. | 
+ **reportTypes** | [**List&lt;string&gt;**](string.md)| A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. | 
 
 ### Return type
 
@@ -499,15 +499,15 @@ No authorization required
 
 
 
-Returns report details for the reports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns report details for the reports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Reports;
 
 namespace Example
 {
@@ -516,7 +516,7 @@ namespace Example
         public void main()
         {
             var apiInstance = new ReportsApi();
-            var reportTypes = new List<string>(); // List<string> | A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional) 
+            var reportTypes = new List<string>(); // List<string> | A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional) 
             var processingStatuses = processingStatuses_example;  // List<string> | A list of processing statuses used to filter reports. (optional) 
             var marketplaceIds = new List<string>(); // List<string> | A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional) 
             var pageSize = 56;  // int? | The maximum number of reports to return in a single call. (optional)  (default to 10)
@@ -542,7 +542,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reportTypes** | [**List&lt;string&gt;**](string.md)| A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. | [optional] 
+ **reportTypes** | [**List&lt;string&gt;**](string.md)| A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. | [optional] 
  **processingStatuses** | **List&lt;string&gt;**| A list of processing statuses used to filter reports. | [optional] 
  **marketplaceIds** | [**List&lt;string&gt;**](string.md)| A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. | [optional] 
  **pageSize** | **int?**| The maximum number of reports to return in a single call. | [optional] [default to 10]

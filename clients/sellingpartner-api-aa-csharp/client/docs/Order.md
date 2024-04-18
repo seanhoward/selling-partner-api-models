@@ -19,14 +19,14 @@ Name | Type | Description | Notes
 **PaymentMethod** | **string** | The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information. | [optional] 
 **PaymentMethodDetails** | [**PaymentMethodDetailItemList**](PaymentMethodDetailItemList.md) | A list of payment methods for the order. | [optional] 
 **MarketplaceId** | **string** | The identifier for the marketplace where the order was placed. | [optional] 
-**ShipmentServiceLevelCategory** | **string** | The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard. | [optional] 
+**ShipmentServiceLevelCategory** | **string** | The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard. | [optional] 
 **EasyShipShipmentStatus** | **EasyShipShipmentStatus** | The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders. | [optional] 
 **CbaDisplayableShippingLabel** | **string** | Custom ship label for Checkout by Amazon (CBA). | [optional] 
 **OrderType** | **string** | The type of the order. | [optional] 
-**EarliestShipDate** | **string** | The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013. | [optional] 
-**LatestShipDate** | **string** | The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013. | [optional] 
-**EarliestDeliveryDate** | **string** | The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. | [optional] 
-**LatestDeliveryDate** | **string** | The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status. | [optional] 
+**EarliestShipDate** | **string** | The start of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013. | [optional] 
+**LatestShipDate** | **string** | The end of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013. | [optional] 
+**EarliestDeliveryDate** | **string** | The start of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders. | [optional] 
+**LatestDeliveryDate** | **string** | The end of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status. | [optional] 
 **IsBusinessOrder** | **bool?** | When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer. | [optional] 
 **IsPrime** | **bool?** | When true, the order is a seller-fulfilled Amazon Prime order. | [optional] 
 **IsPremiumOrder** | **bool?** | When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \&quot;Premium Shipping Options\&quot; in the Seller Central Help for your marketplace. | [optional] 
@@ -50,8 +50,6 @@ Name | Type | Description | Notes
 **AutomatedShippingSettings** | [**AutomatedShippingSettings**](AutomatedShippingSettings.md) | Contains information regarding the Shipping Settings Automaton program, such as whether the order&#39;s shipping settings were generated automatically, and what those settings are. | [optional] 
 **HasRegulatedItems** | **bool?** | Whether the order contains regulated items which may require additional approval steps before being fulfilled. | [optional] 
 **ElectronicInvoiceStatus** | **ElectronicInvoiceStatus** | The status of the electronic invoice. | [optional] 
-**ItemApprovalTypes** | [**List&lt;ItemApprovalType&gt;**](ItemApprovalType.md) | Set of approval types which applies to at least one order item in the order. | [optional] 
-**ItemApprovalStatus** | [**List&lt;ItemApprovalStatus&gt;**](ItemApprovalStatus.md) | Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

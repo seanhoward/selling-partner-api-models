@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.FulfillmentChannelType
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.FulfillmentChannelType
 ## Properties
 
 Name | Type | Description | Notes

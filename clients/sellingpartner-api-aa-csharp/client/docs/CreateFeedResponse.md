@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.CreateFeedResponse
+# Amazon.SellingPartnerAPIAA.Clients.Models.Feeds.CreateFeedResponse
 ## Properties
 
 Name | Type | Description | Notes

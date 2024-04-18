@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Initializes a new instance of the <see cref="OrderAddress" /> class.
         /// </summary>
         /// <param name="amazonOrderId">An Amazon-defined order identifier, in 3-7-7 format. (required).</param>
-        /// <param name="buyerCompanyName">Company name of the destination address..</param>
+        /// <param name="buyerCompanyName">Company Name of the Buyer..</param>
         /// <param name="shippingAddress">shippingAddress.</param>
         /// <param name="deliveryPreferences">deliveryPreferences.</param>
         public OrderAddress(string amazonOrderId = default(string), string buyerCompanyName = default(string), Address shippingAddress = default(Address), DeliveryPreferences deliveryPreferences = default(DeliveryPreferences))
@@ -66,9 +66,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string AmazonOrderId { get; set; }
 
         /// <summary>
-        /// Company name of the destination address.
+        /// Company Name of the Buyer.
         /// </summary>
-        /// <value>Company name of the destination address.</value>
+        /// <value>Company Name of the Buyer.</value>
         [DataMember(Name="BuyerCompanyName", EmitDefaultValue=false)]
         public string BuyerCompanyName { get; set; }
 

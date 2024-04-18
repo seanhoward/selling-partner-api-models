@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **PostalCode** | **string** | The postal code. | [optional] 
 **CountryCode** | **string** | The country code. A two-character country code, in ISO 3166-1 alpha-2 format. | [optional] 
 **Phone** | **string** | The phone number. Not returned for Fulfillment by Amazon (FBA) orders. | [optional] 
+**ExtendedFields** | [**AddressExtendedFields**](AddressExtendedFields.md) |  | [optional] 
 **AddressType** | **string** | The address type of the shipping address. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

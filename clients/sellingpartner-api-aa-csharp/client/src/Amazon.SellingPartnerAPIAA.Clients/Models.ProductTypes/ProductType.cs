@@ -39,8 +39,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
         /// Initializes a new instance of the <see cref="ProductType" /> class.
         /// </summary>
         /// <param name="name">The name of the Amazon product type. (required).</param>
+        /// <param name="displayName">The human-readable and localized description of the Amazon product type. (required).</param>
         /// <param name="marketplaceIds">The Amazon marketplace identifiers for which the product type definition is available. (required).</param>
-        public ProductType(string name = default(string), List<string> marketplaceIds = default(List<string>))
+        public ProductType(string name = default(string), string displayName = default(string), List<string> marketplaceIds = default(List<string>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -50,6 +51,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
             else
             {
                 this.Name = name;
+            }
+            // to ensure "displayName" is required (not null)
+            if (displayName == null)
+            {
+                throw new InvalidDataException("displayName is a required property for ProductType and cannot be null");
+            }
+            else
+            {
+                this.DisplayName = displayName;
             }
             // to ensure "marketplaceIds" is required (not null)
             if (marketplaceIds == null)
@@ -70,6 +80,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
         public string Name { get; set; }
 
         /// <summary>
+        /// The human-readable and localized description of the Amazon product type.
+        /// </summary>
+        /// <value>The human-readable and localized description of the Amazon product type.</value>
+        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        public string DisplayName { get; set; }
+
+        /// <summary>
         /// The Amazon marketplace identifiers for which the product type definition is available.
         /// </summary>
         /// <value>The Amazon marketplace identifiers for which the product type definition is available.</value>
@@ -85,6 +102,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
             var sb = new StringBuilder();
             sb.Append("class ProductType {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  MarketplaceIds: ").Append(MarketplaceIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -126,6 +144,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
                     this.MarketplaceIds == input.MarketplaceIds ||
                     this.MarketplaceIds != null &&
                     this.MarketplaceIds.SequenceEqual(input.MarketplaceIds)
@@ -143,6 +166,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
                 int hashCode = 41;
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.DisplayName != null)
+                    hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
                 if (this.MarketplaceIds != null)
                     hashCode = hashCode * 59 + this.MarketplaceIds.GetHashCode();
                 return hashCode;

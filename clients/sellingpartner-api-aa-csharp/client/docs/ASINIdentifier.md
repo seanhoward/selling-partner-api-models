@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ASINIdentifier
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.ASINIdentifier
 ## Properties
 
 Name | Type | Description | Notes

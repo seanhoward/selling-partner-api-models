@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.CreateReportResponse
+# Amazon.SellingPartnerAPIAA.Clients.Models.Reports.CreateReportResponse
 ## Properties
 
 Name | Type | Description | Notes

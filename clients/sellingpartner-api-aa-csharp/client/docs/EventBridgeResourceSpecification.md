@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.EventBridgeResourceSpecification
+# Amazon.SellingPartnerAPIAA.Clients.Models.Notifications.EventBridgeResourceSpecification
 ## Properties
 
 Name | Type | Description | Notes

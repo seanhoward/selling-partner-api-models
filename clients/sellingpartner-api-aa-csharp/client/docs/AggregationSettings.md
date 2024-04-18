@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.AggregationSettings
+# Amazon.SellingPartnerAPIAA.Clients.Models.Notifications.AggregationSettings
 ## Properties
 
 Name | Type | Description | Notes

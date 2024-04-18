@@ -60,8 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
             /// Enum DELETE for value: DELETE
             /// </summary>
             [EnumMember(Value = "DELETE")]
-            DELETE = 4,
-            PATCH = 5
+            DELETE = 4
         }
 
         /// <summary>

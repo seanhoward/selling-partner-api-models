@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.SellerFeedbackType
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.SellerFeedbackType
 ## Properties
 
 Name | Type | Description | Notes

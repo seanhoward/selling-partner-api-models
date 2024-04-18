@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.Subscription
+# Amazon.SellingPartnerAPIAA.Clients.Models.Notifications.Subscription
 ## Properties
 
 Name | Type | Description | Notes

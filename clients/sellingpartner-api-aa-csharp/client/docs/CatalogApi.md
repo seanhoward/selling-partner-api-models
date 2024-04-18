@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Api.CatalogApi
+# Amazon.SellingPartnerAPIAA.Clients.API.CatalogApi
 
 All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
@@ -14,15 +14,15 @@ Method | HTTP request | Description
 
 
 
-Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Catalog;
 
 namespace Example
 {
@@ -80,15 +80,15 @@ No authorization required
 
 
 
-Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.  **Usage Plans:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.  **Usage Plans:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Client.Api;
-using Amazon.SellingPartnerAPIAA.Client.Client;
-using Amazon.SellingPartnerAPIAA.Client.Model;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Catalog;
 
 namespace Example
 {

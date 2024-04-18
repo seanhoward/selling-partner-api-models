@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.CreateFeedDocumentSpecification
+# Amazon.SellingPartnerAPIAA.Clients.Models.Feeds.CreateFeedDocumentSpecification
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.GetFeedsResponse
+# Amazon.SellingPartnerAPIAA.Clients.Models.Feeds.GetFeedsResponse
 ## Properties
 
 Name | Type | Description | Notes

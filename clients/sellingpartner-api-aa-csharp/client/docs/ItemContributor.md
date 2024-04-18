@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ItemContributor
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.ItemContributor
 ## Properties
 
 Name | Type | Description | Notes

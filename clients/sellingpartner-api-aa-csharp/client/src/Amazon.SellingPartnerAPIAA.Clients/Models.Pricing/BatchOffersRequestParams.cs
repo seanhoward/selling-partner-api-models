@@ -31,13 +31,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Pricing
     public partial class BatchOffersRequestParams :  IEquatable<BatchOffersRequestParams>, IValidatableObject
     {
         /// <summary>
-        /// Gets or Sets ItemCondition
+        /// Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
         /// </summary>
+        /// <value>Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.</value>
         [DataMember(Name="ItemCondition", EmitDefaultValue=false)]
         public ItemCondition ItemCondition { get; set; }
         /// <summary>
-        /// Gets or Sets CustomerType
+        /// Indicates whether to request Consumer or Business offers. Default is Consumer.
         /// </summary>
+        /// <value>Indicates whether to request Consumer or Business offers. Default is Consumer.</value>
         [DataMember(Name="CustomerType", EmitDefaultValue=false)]
         public CustomerType? CustomerType { get; set; }
         /// <summary>
@@ -49,8 +51,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Pricing
         /// Initializes a new instance of the <see cref="BatchOffersRequestParams" /> class.
         /// </summary>
         /// <param name="marketplaceId">marketplaceId (required).</param>
-        /// <param name="itemCondition">itemCondition (required).</param>
-        /// <param name="customerType">customerType.</param>
+        /// <param name="itemCondition">Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required).</param>
+        /// <param name="customerType">Indicates whether to request Consumer or Business offers. Default is Consumer..</param>
         public BatchOffersRequestParams(string marketplaceId = default(string), ItemCondition itemCondition = default(ItemCondition), CustomerType? customerType = default(CustomerType?))
         {
             // to ensure "marketplaceId" is required (not null)

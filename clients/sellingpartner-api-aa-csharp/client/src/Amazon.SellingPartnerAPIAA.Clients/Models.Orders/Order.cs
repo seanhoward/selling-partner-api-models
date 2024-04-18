@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -261,14 +261,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="paymentMethod">The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information..</param>
         /// <param name="paymentMethodDetails">A list of payment methods for the order..</param>
         /// <param name="marketplaceId">The identifier for the marketplace where the order was placed..</param>
-        /// <param name="shipmentServiceLevelCategory">The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard..</param>
+        /// <param name="shipmentServiceLevelCategory">The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard..</param>
         /// <param name="easyShipShipmentStatus">The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders..</param>
         /// <param name="cbaDisplayableShippingLabel">Custom ship label for Checkout by Amazon (CBA)..</param>
         /// <param name="orderType">The type of the order..</param>
-        /// <param name="earliestShipDate">The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013..</param>
-        /// <param name="latestShipDate">The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013..</param>
-        /// <param name="earliestDeliveryDate">The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders..</param>
-        /// <param name="latestDeliveryDate">The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status..</param>
+        /// <param name="earliestShipDate">The start of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013..</param>
+        /// <param name="latestShipDate">The end of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013..</param>
+        /// <param name="earliestDeliveryDate">The start of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders..</param>
+        /// <param name="latestDeliveryDate">The end of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status..</param>
         /// <param name="isBusinessOrder">When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer..</param>
         /// <param name="isPrime">When true, the order is a seller-fulfilled Amazon Prime order..</param>
         /// <param name="isPremiumOrder">When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \&quot;Premium Shipping Options\&quot; in the Seller Central Help for your marketplace..</param>
@@ -292,9 +292,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="automatedShippingSettings">Contains information regarding the Shipping Settings Automaton program, such as whether the order&#39;s shipping settings were generated automatically, and what those settings are..</param>
         /// <param name="hasRegulatedItems">Whether the order contains regulated items which may require additional approval steps before being fulfilled..</param>
         /// <param name="electronicInvoiceStatus">The status of the electronic invoice..</param>
-        /// <param name="itemApprovalTypes">Set of approval types which applies to at least one order item in the order..</param>
-        /// <param name="itemApprovalStatus">Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals..</param>
-        public Order(string amazonOrderId = default(string), string sellerOrderId = default(string), string purchaseDate = default(string), string lastUpdateDate = default(string), OrderStatusEnum orderStatus = default(OrderStatusEnum), FulfillmentChannelEnum? fulfillmentChannel = default(FulfillmentChannelEnum?), string salesChannel = default(string), string orderChannel = default(string), string shipServiceLevel = default(string), Money orderTotal = default(Money), int? numberOfItemsShipped = default(int?), int? numberOfItemsUnshipped = default(int?), PaymentExecutionDetailItemList paymentExecutionDetail = default(PaymentExecutionDetailItemList), PaymentMethodEnum? paymentMethod = default(PaymentMethodEnum?), PaymentMethodDetailItemList paymentMethodDetails = default(PaymentMethodDetailItemList), string marketplaceId = default(string), string shipmentServiceLevelCategory = default(string), EasyShipShipmentStatus? easyShipShipmentStatus = default(EasyShipShipmentStatus?), string cbaDisplayableShippingLabel = default(string), OrderTypeEnum? orderType = default(OrderTypeEnum?), string earliestShipDate = default(string), string latestShipDate = default(string), string earliestDeliveryDate = default(string), string latestDeliveryDate = default(string), bool? isBusinessOrder = default(bool?), bool? isPrime = default(bool?), bool? isPremiumOrder = default(bool?), bool? isGlobalExpressEnabled = default(bool?), string replacedOrderId = default(string), bool? isReplacementOrder = default(bool?), string promiseResponseDueDate = default(string), bool? isEstimatedShipDateSet = default(bool?), bool? isSoldByAB = default(bool?), bool? isIBA = default(bool?), Address defaultShipFromLocationAddress = default(Address), BuyerInvoicePreferenceEnum? buyerInvoicePreference = default(BuyerInvoicePreferenceEnum?), BuyerTaxInformation buyerTaxInformation = default(BuyerTaxInformation), FulfillmentInstruction fulfillmentInstruction = default(FulfillmentInstruction), bool? isISPU = default(bool?), bool? isAccessPointOrder = default(bool?), MarketplaceTaxInfo marketplaceTaxInfo = default(MarketplaceTaxInfo), string sellerDisplayName = default(string), Address shippingAddress = default(Address), BuyerInfo buyerInfo = default(BuyerInfo), AutomatedShippingSettings automatedShippingSettings = default(AutomatedShippingSettings), bool? hasRegulatedItems = default(bool?), ElectronicInvoiceStatus? electronicInvoiceStatus = default(ElectronicInvoiceStatus?), List<ItemApprovalType> itemApprovalTypes = default(List<ItemApprovalType>), List<ItemApprovalStatus> itemApprovalStatus = default(List<ItemApprovalStatus>))
+        public Order(string amazonOrderId = default(string), string sellerOrderId = default(string), string purchaseDate = default(string), string lastUpdateDate = default(string), OrderStatusEnum orderStatus = default(OrderStatusEnum), FulfillmentChannelEnum? fulfillmentChannel = default(FulfillmentChannelEnum?), string salesChannel = default(string), string orderChannel = default(string), string shipServiceLevel = default(string), Money orderTotal = default(Money), int? numberOfItemsShipped = default(int?), int? numberOfItemsUnshipped = default(int?), PaymentExecutionDetailItemList paymentExecutionDetail = default(PaymentExecutionDetailItemList), PaymentMethodEnum? paymentMethod = default(PaymentMethodEnum?), PaymentMethodDetailItemList paymentMethodDetails = default(PaymentMethodDetailItemList), string marketplaceId = default(string), string shipmentServiceLevelCategory = default(string), EasyShipShipmentStatus? easyShipShipmentStatus = default(EasyShipShipmentStatus?), string cbaDisplayableShippingLabel = default(string), OrderTypeEnum? orderType = default(OrderTypeEnum?), string earliestShipDate = default(string), string latestShipDate = default(string), string earliestDeliveryDate = default(string), string latestDeliveryDate = default(string), bool? isBusinessOrder = default(bool?), bool? isPrime = default(bool?), bool? isPremiumOrder = default(bool?), bool? isGlobalExpressEnabled = default(bool?), string replacedOrderId = default(string), bool? isReplacementOrder = default(bool?), string promiseResponseDueDate = default(string), bool? isEstimatedShipDateSet = default(bool?), bool? isSoldByAB = default(bool?), bool? isIBA = default(bool?), Address defaultShipFromLocationAddress = default(Address), BuyerInvoicePreferenceEnum? buyerInvoicePreference = default(BuyerInvoicePreferenceEnum?), BuyerTaxInformation buyerTaxInformation = default(BuyerTaxInformation), FulfillmentInstruction fulfillmentInstruction = default(FulfillmentInstruction), bool? isISPU = default(bool?), bool? isAccessPointOrder = default(bool?), MarketplaceTaxInfo marketplaceTaxInfo = default(MarketplaceTaxInfo), string sellerDisplayName = default(string), Address shippingAddress = default(Address), BuyerInfo buyerInfo = default(BuyerInfo), AutomatedShippingSettings automatedShippingSettings = default(AutomatedShippingSettings), bool? hasRegulatedItems = default(bool?), ElectronicInvoiceStatus? electronicInvoiceStatus = default(ElectronicInvoiceStatus?))
         {
             // to ensure "amazonOrderId" is required (not null)
             if (amazonOrderId == null)
@@ -375,8 +373,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.AutomatedShippingSettings = automatedShippingSettings;
             this.HasRegulatedItems = hasRegulatedItems;
             this.ElectronicInvoiceStatus = electronicInvoiceStatus;
-            this.ItemApprovalTypes = itemApprovalTypes;
-            this.ItemApprovalStatus = itemApprovalStatus;
         }
         
         /// <summary>
@@ -474,9 +470,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string MarketplaceId { get; set; }
 
         /// <summary>
-        /// The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
+        /// The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.
         /// </summary>
-        /// <value>The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.</value>
+        /// <value>The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.</value>
         [DataMember(Name="ShipmentServiceLevelCategory", EmitDefaultValue=false)]
         public string ShipmentServiceLevelCategory { get; set; }
 
@@ -490,30 +486,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 
 
         /// <summary>
-        /// The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+        /// The start of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
         /// </summary>
-        /// <value>The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.</value>
+        /// <value>The start of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.</value>
         [DataMember(Name="EarliestShipDate", EmitDefaultValue=false)]
         public string EarliestShipDate { get; set; }
 
         /// <summary>
-        /// The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
+        /// The end of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
         /// </summary>
-        /// <value>The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.</value>
+        /// <value>The end of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.</value>
         [DataMember(Name="LatestShipDate", EmitDefaultValue=false)]
         public string LatestShipDate { get; set; }
 
         /// <summary>
-        /// The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
+        /// The start of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.
         /// </summary>
-        /// <value>The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.</value>
+        /// <value>The start of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.</value>
         [DataMember(Name="EarliestDeliveryDate", EmitDefaultValue=false)]
         public string EarliestDeliveryDate { get; set; }
 
         /// <summary>
-        /// The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
+        /// The end of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
         /// </summary>
-        /// <value>The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.</value>
+        /// <value>The end of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.</value>
         [DataMember(Name="LatestDeliveryDate", EmitDefaultValue=false)]
         public string LatestDeliveryDate { get; set; }
 
@@ -665,20 +661,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 
 
         /// <summary>
-        /// Set of approval types which applies to at least one order item in the order.
-        /// </summary>
-        /// <value>Set of approval types which applies to at least one order item in the order.</value>
-        [DataMember(Name="ItemApprovalTypes", EmitDefaultValue=false)]
-        public List<ItemApprovalType> ItemApprovalTypes { get; set; }
-
-        /// <summary>
-        /// Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals.
-        /// </summary>
-        /// <value>Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals.</value>
-        [DataMember(Name="ItemApprovalStatus", EmitDefaultValue=false)]
-        public List<ItemApprovalStatus> ItemApprovalStatus { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -733,8 +715,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("  AutomatedShippingSettings: ").Append(AutomatedShippingSettings).Append("\n");
             sb.Append("  HasRegulatedItems: ").Append(HasRegulatedItems).Append("\n");
             sb.Append("  ElectronicInvoiceStatus: ").Append(ElectronicInvoiceStatus).Append("\n");
-            sb.Append("  ItemApprovalTypes: ").Append(ItemApprovalTypes).Append("\n");
-            sb.Append("  ItemApprovalStatus: ").Append(ItemApprovalStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1003,16 +983,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     this.ElectronicInvoiceStatus == input.ElectronicInvoiceStatus ||
                     (this.ElectronicInvoiceStatus != null &&
                     this.ElectronicInvoiceStatus.Equals(input.ElectronicInvoiceStatus))
-                ) && 
-                (
-                    this.ItemApprovalTypes == input.ItemApprovalTypes ||
-                    this.ItemApprovalTypes != null &&
-                    this.ItemApprovalTypes.SequenceEqual(input.ItemApprovalTypes)
-                ) && 
-                (
-                    this.ItemApprovalStatus == input.ItemApprovalStatus ||
-                    this.ItemApprovalStatus != null &&
-                    this.ItemApprovalStatus.SequenceEqual(input.ItemApprovalStatus)
                 );
         }
 
@@ -1119,10 +1089,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     hashCode = hashCode * 59 + this.HasRegulatedItems.GetHashCode();
                 if (this.ElectronicInvoiceStatus != null)
                     hashCode = hashCode * 59 + this.ElectronicInvoiceStatus.GetHashCode();
-                if (this.ItemApprovalTypes != null)
-                    hashCode = hashCode * 59 + this.ItemApprovalTypes.GetHashCode();
-                if (this.ItemApprovalStatus != null)
-                    hashCode = hashCode * 59 + this.ItemApprovalStatus.GetHashCode();
                 return hashCode;
             }
         }

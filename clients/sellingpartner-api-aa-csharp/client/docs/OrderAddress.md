@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AmazonOrderId** | **string** | An Amazon-defined order identifier, in 3-7-7 format. | 
-**BuyerCompanyName** | **string** | Company name of the destination address. | [optional] 
+**BuyerCompanyName** | **string** | Company Name of the Buyer. | [optional] 
 **ShippingAddress** | [**Address**](Address.md) |  | [optional] 
 **DeliveryPreferences** | [**DeliveryPreferences**](DeliveryPreferences.md) |  | [optional] 
 

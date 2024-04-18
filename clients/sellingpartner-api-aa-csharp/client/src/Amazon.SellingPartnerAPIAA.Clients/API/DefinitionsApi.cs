@@ -66,9 +66,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="keywords">A comma-delimited list of keywords to search product types by. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)</param>
+        /// <param name="itemName">The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
+        /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>ProductTypeList</returns>
-        ProductTypeList SearchDefinitionsProductTypes (List<string> marketplaceIds, List<string> keywords = null);
+        ProductTypeList SearchDefinitionsProductTypes (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
 
         /// <summary>
         /// 
@@ -78,9 +81,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="keywords">A comma-delimited list of keywords to search product types by. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)</param>
+        /// <param name="itemName">The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
+        /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>ApiResponse of ProductTypeList</returns>
-        ApiResponse<ProductTypeList> SearchDefinitionsProductTypesWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null);
+        ApiResponse<ProductTypeList> SearchDefinitionsProductTypesWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -124,9 +130,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="keywords">A comma-delimited list of keywords to search product types by. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)</param>
+        /// <param name="itemName">The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
+        /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of ProductTypeList</returns>
-        System.Threading.Tasks.Task<ProductTypeList> SearchDefinitionsProductTypesAsync (List<string> marketplaceIds, List<string> keywords = null);
+        System.Threading.Tasks.Task<ProductTypeList> SearchDefinitionsProductTypesAsync (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
 
         /// <summary>
         /// 
@@ -136,9 +145,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="keywords">A comma-delimited list of keywords to search product types by. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)</param>
+        /// <param name="itemName">The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
+        /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of ApiResponse (ProductTypeList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProductTypeList>> SearchDefinitionsProductTypesAsyncWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null);
+        System.Threading.Tasks.Task<ApiResponse<ProductTypeList>> SearchDefinitionsProductTypesAsyncWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
         #endregion Asynchronous Operations
     }
 
@@ -406,11 +418,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="keywords">A comma-delimited list of keywords to search product types by. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)</param>
+        /// <param name="itemName">The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
+        /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>ProductTypeList</returns>
-        public ProductTypeList SearchDefinitionsProductTypes (List<string> marketplaceIds, List<string> keywords = null)
+        public ProductTypeList SearchDefinitionsProductTypes (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
         {
-             ApiResponse<ProductTypeList> localVarResponse = SearchDefinitionsProductTypesWithHttpInfo(marketplaceIds, keywords);
+             ApiResponse<ProductTypeList> localVarResponse = SearchDefinitionsProductTypesWithHttpInfo(marketplaceIds, keywords, itemName, locale, searchLocale);
              return localVarResponse.Data;
         }
 
@@ -419,9 +434,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="keywords">A comma-delimited list of keywords to search product types by. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)</param>
+        /// <param name="itemName">The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
+        /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>ApiResponse of ProductTypeList</returns>
-        public ApiResponse< ProductTypeList > SearchDefinitionsProductTypesWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null)
+        public ApiResponse< ProductTypeList > SearchDefinitionsProductTypesWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -451,6 +469,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             if (keywords != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "keywords", keywords)); // query parameter
             if (marketplaceIds != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "marketplaceIds", marketplaceIds)); // query parameter
+            if (itemName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "itemName", itemName)); // query parameter
+            if (locale != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "locale", locale)); // query parameter
+            if (searchLocale != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "searchLocale", searchLocale)); // query parameter
 
 
             // make the HTTP request
@@ -476,11 +497,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="keywords">A comma-delimited list of keywords to search product types by. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)</param>
+        /// <param name="itemName">The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
+        /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of ProductTypeList</returns>
-        public async System.Threading.Tasks.Task<ProductTypeList> SearchDefinitionsProductTypesAsync (List<string> marketplaceIds, List<string> keywords = null)
+        public async System.Threading.Tasks.Task<ProductTypeList> SearchDefinitionsProductTypesAsync (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
         {
-             ApiResponse<ProductTypeList> localVarResponse = await SearchDefinitionsProductTypesAsyncWithHttpInfo(marketplaceIds, keywords);
+             ApiResponse<ProductTypeList> localVarResponse = await SearchDefinitionsProductTypesAsyncWithHttpInfo(marketplaceIds, keywords, itemName, locale, searchLocale);
              return localVarResponse.Data;
 
         }
@@ -490,9 +514,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="keywords">A comma-delimited list of keywords to search product types by. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)</param>
+        /// <param name="itemName">The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
+        /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of ApiResponse (ProductTypeList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ProductTypeList>> SearchDefinitionsProductTypesAsyncWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ProductTypeList>> SearchDefinitionsProductTypesAsyncWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -522,6 +549,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             if (keywords != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "keywords", keywords)); // query parameter
             if (marketplaceIds != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "marketplaceIds", marketplaceIds)); // query parameter
+            if (itemName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "itemName", itemName)); // query parameter
+            if (locale != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "locale", locale)); // query parameter
+            if (searchLocale != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "searchLocale", searchLocale)); // query parameter
 
 
             // make the HTTP request
@@ -546,18 +576,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public class Builder
         {
             private LWAAuthorizationCredentials lwaAuthorizationCredentials;
-            private AWSAuthenticationCredentials awsAuthenticationCredentials;
             private RateLimitConfiguration rateLimitConfiguration;
 
             public Builder SetLWAAuthorizationCredentials(LWAAuthorizationCredentials lwaAuthorizationCredentials)
             {
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
-                return this;
-            }
-
-            public Builder SetAWSAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials)
-            {
-                this.awsAuthenticationCredentials = awsAuthenticationCredentials;
                 return this;
             }
             
@@ -575,15 +598,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }
 
-                if (awsAuthenticationCredentials == null)
-                {
-                    throw new NullReferenceException("AWSAuthenticationCredentials not set");
-                }
                 
                 Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration = new Amazon.SellingPartnerAPIAA.Clients.Client.Configuration()
                 {
                     AuthorizationCredentials = lwaAuthorizationCredentials,
-                    AuthenticationCredentials = awsAuthenticationCredentials,
                     RateLimitConfig = rateLimitConfiguration
                 };
 

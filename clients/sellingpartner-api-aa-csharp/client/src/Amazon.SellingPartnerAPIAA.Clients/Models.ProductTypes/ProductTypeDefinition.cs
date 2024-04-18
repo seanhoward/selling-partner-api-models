@@ -106,8 +106,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
         /// <param name="locale">Locale of the display elements contained in the product type definition. (required).</param>
         /// <param name="marketplaceIds">Amazon marketplace identifiers for which the product type definition is applicable. (required).</param>
         /// <param name="productType">The name of the Amazon product type that this product type definition applies to. (required).</param>
+        /// <param name="displayName">Human-readable and localized description of the Amazon product type. (required).</param>
         /// <param name="productTypeVersion">The version details for the Amazon product type. (required).</param>
-        public ProductTypeDefinition(SchemaLink metaSchema = default(SchemaLink), SchemaLink schema = default(SchemaLink), RequirementsEnum requirements = default(RequirementsEnum), RequirementsEnforcedEnum requirementsEnforced = default(RequirementsEnforcedEnum), Dictionary<string, PropertyGroup> propertyGroups = default(Dictionary<string, PropertyGroup>), string locale = default(string), List<string> marketplaceIds = default(List<string>), string productType = default(string), ProductTypeVersion productTypeVersion = default(ProductTypeVersion))
+        public ProductTypeDefinition(SchemaLink metaSchema = default(SchemaLink), SchemaLink schema = default(SchemaLink), RequirementsEnum requirements = default(RequirementsEnum), RequirementsEnforcedEnum requirementsEnforced = default(RequirementsEnforcedEnum), Dictionary<string, PropertyGroup> propertyGroups = default(Dictionary<string, PropertyGroup>), string locale = default(string), List<string> marketplaceIds = default(List<string>), string productType = default(string), string displayName = default(string), ProductTypeVersion productTypeVersion = default(ProductTypeVersion))
         {
             // to ensure "schema" is required (not null)
             if (schema == null)
@@ -172,6 +173,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
             {
                 this.ProductType = productType;
             }
+            // to ensure "displayName" is required (not null)
+            if (displayName == null)
+            {
+                throw new InvalidDataException("displayName is a required property for ProductTypeDefinition and cannot be null");
+            }
+            else
+            {
+                this.DisplayName = displayName;
+            }
             // to ensure "productTypeVersion" is required (not null)
             if (productTypeVersion == null)
             {
@@ -229,6 +239,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
         public string ProductType { get; set; }
 
         /// <summary>
+        /// Human-readable and localized description of the Amazon product type.
+        /// </summary>
+        /// <value>Human-readable and localized description of the Amazon product type.</value>
+        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        public string DisplayName { get; set; }
+
+        /// <summary>
         /// The version details for the Amazon product type.
         /// </summary>
         /// <value>The version details for the Amazon product type.</value>
@@ -251,6 +268,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
             sb.Append("  Locale: ").Append(Locale).Append("\n");
             sb.Append("  MarketplaceIds: ").Append(MarketplaceIds).Append("\n");
             sb.Append("  ProductType: ").Append(ProductType).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  ProductTypeVersion: ").Append(ProductTypeVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -327,6 +345,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
                     this.ProductType.Equals(input.ProductType))
                 ) && 
                 (
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
                     this.ProductTypeVersion == input.ProductTypeVersion ||
                     (this.ProductTypeVersion != null &&
                     this.ProductTypeVersion.Equals(input.ProductTypeVersion))
@@ -358,6 +381,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
                     hashCode = hashCode * 59 + this.MarketplaceIds.GetHashCode();
                 if (this.ProductType != null)
                     hashCode = hashCode * 59 + this.ProductType.GetHashCode();
+                if (this.DisplayName != null)
+                    hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
                 if (this.ProductTypeVersion != null)
                     hashCode = hashCode * 59 + this.ProductTypeVersion.GetHashCode();
                 return hashCode;

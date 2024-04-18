@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="carrierName">Carrier Name that will deliver the package. Required when carrierCode is \&quot;Others\&quot; .</param>
         /// <param name="shippingMethod">Ship method to be used for shipping the order..</param>
         /// <param name="trackingNumber">The tracking number used to obtain tracking and delivery information. (required).</param>
-        /// <param name="shipDate">The shipping date for the package. Must be in ISO-8601 date/time format. (required).</param>
+        /// <param name="shipDate">The shipping date for the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required).</param>
         /// <param name="shipFromSupplySourceId">The unique identifier of the supply source..</param>
         /// <param name="orderItems">The list of order items and quantities to be updated. (required).</param>
         public PackageDetail(string packageReferenceId = default(string), string carrierCode = default(string), string carrierName = default(string), string shippingMethod = default(string), string trackingNumber = default(string), DateTime? shipDate = default(DateTime?), string shipFromSupplySourceId = default(string), ConfirmShipmentOrderItemsList orderItems = default(ConfirmShipmentOrderItemsList))
@@ -133,9 +133,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string TrackingNumber { get; set; }
 
         /// <summary>
-        /// The shipping date for the package. Must be in ISO-8601 date/time format.
+        /// The shipping date for the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format.
         /// </summary>
-        /// <value>The shipping date for the package. Must be in ISO-8601 date/time format.</value>
+        /// <value>The shipping date for the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format.</value>
         [DataMember(Name="shipDate", EmitDefaultValue=false)]
         public DateTime? ShipDate { get; set; }
 

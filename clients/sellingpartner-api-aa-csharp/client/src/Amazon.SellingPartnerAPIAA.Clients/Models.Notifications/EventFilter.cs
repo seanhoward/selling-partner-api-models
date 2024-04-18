@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide).
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * OpenAPI spec version: v1
  * 
@@ -25,11 +25,38 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
     /// <summary>
-    /// A notificationType specific filter. This object contains all of the currently available filters and properties that you can use to define a notificationType specific filter.
+    /// A &#x60;notificationType&#x60; specific filter. This object contains all of the currently available filters and properties that you can use to define a &#x60;notificationType&#x60; specific filter.
     /// </summary>
     [DataContract]
     public partial class EventFilter : AggregationFilter,  IEquatable<EventFilter>, IValidatableObject
     {
+        /// <summary>
+        /// An &#x60;eventFilterType&#x60; value that is supported by the specific &#x60;notificationType&#x60;. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an &#x60;eventFilterType&#x60; is supported.
+        /// </summary>
+        /// <value>An &#x60;eventFilterType&#x60; value that is supported by the specific &#x60;notificationType&#x60;. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an &#x60;eventFilterType&#x60; is supported.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum EventFilterTypeEnum
+        {
+            
+            /// <summary>
+            /// Enum ANYOFFERCHANGED for value: ANY_OFFER_CHANGED
+            /// </summary>
+            [EnumMember(Value = "ANY_OFFER_CHANGED")]
+            ANYOFFERCHANGED = 1,
+            
+            /// <summary>
+            /// Enum ORDERCHANGE for value: ORDER_CHANGE
+            /// </summary>
+            [EnumMember(Value = "ORDER_CHANGE")]
+            ORDERCHANGE = 2
+        }
+
+        /// <summary>
+        /// An &#x60;eventFilterType&#x60; value that is supported by the specific &#x60;notificationType&#x60;. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an &#x60;eventFilterType&#x60; is supported.
+        /// </summary>
+        /// <value>An &#x60;eventFilterType&#x60; value that is supported by the specific &#x60;notificationType&#x60;. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an &#x60;eventFilterType&#x60; is supported.</value>
+        [DataMember(Name="eventFilterType", EmitDefaultValue=false)]
+        public EventFilterTypeEnum EventFilterType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EventFilter" /> class.
         /// </summary>
@@ -39,8 +66,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// Initializes a new instance of the <see cref="EventFilter" /> class.
         /// </summary>
         /// <param name="marketplaceIds">marketplaceIds.</param>
-        /// <param name="eventFilterType">An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported. (required).</param>
-        public EventFilter(MarketplaceIds marketplaceIds = default(MarketplaceIds), string eventFilterType = default(string), AggregationSettings aggregationSettings = default(AggregationSettings)) : base(aggregationSettings)
+        /// <param name="orderChangeTypes">orderChangeTypes.</param>
+        /// <param name="eventFilterType">An &#x60;eventFilterType&#x60; value that is supported by the specific &#x60;notificationType&#x60;. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an &#x60;eventFilterType&#x60; is supported. (required).</param>
+        public EventFilter(MarketplaceIds marketplaceIds = default(MarketplaceIds), OrderChangeTypes orderChangeTypes = default(OrderChangeTypes), EventFilterTypeEnum eventFilterType = default(EventFilterTypeEnum), AggregationSettings aggregationSettings = default(AggregationSettings)) : base(aggregationSettings)
         {
             // to ensure "eventFilterType" is required (not null)
             if (eventFilterType == null)
@@ -52,6 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
                 this.EventFilterType = eventFilterType;
             }
             this.MarketplaceIds = marketplaceIds;
+            this.OrderChangeTypes = orderChangeTypes;
         }
         
         /// <summary>
@@ -61,11 +90,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         public MarketplaceIds MarketplaceIds { get; set; }
 
         /// <summary>
-        /// An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.
+        /// Gets or Sets OrderChangeTypes
         /// </summary>
-        /// <value>An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.</value>
-        [DataMember(Name="eventFilterType", EmitDefaultValue=false)]
-        public string EventFilterType { get; set; }
+        [DataMember(Name="orderChangeTypes", EmitDefaultValue=false)]
+        public OrderChangeTypes OrderChangeTypes { get; set; }
+
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -77,6 +106,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("class EventFilter {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  MarketplaceIds: ").Append(MarketplaceIds).Append("\n");
+            sb.Append("  OrderChangeTypes: ").Append(OrderChangeTypes).Append("\n");
             sb.Append("  EventFilterType: ").Append(EventFilterType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -118,6 +148,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
                     this.MarketplaceIds.Equals(input.MarketplaceIds))
                 ) && base.Equals(input) && 
                 (
+                    this.OrderChangeTypes == input.OrderChangeTypes ||
+                    (this.OrderChangeTypes != null &&
+                    this.OrderChangeTypes.Equals(input.OrderChangeTypes))
+                ) && base.Equals(input) && 
+                (
                     this.EventFilterType == input.EventFilterType ||
                     (this.EventFilterType != null &&
                     this.EventFilterType.Equals(input.EventFilterType))
@@ -135,6 +170,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
                 int hashCode = base.GetHashCode();
                 if (this.MarketplaceIds != null)
                     hashCode = hashCode * 59 + this.MarketplaceIds.GetHashCode();
+                if (this.OrderChangeTypes != null)
+                    hashCode = hashCode * 59 + this.OrderChangeTypes.GetHashCode();
                 if (this.EventFilterType != null)
                     hashCode = hashCode * 59 + this.EventFilterType.GetHashCode();
                 return hashCode;
@@ -148,6 +185,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

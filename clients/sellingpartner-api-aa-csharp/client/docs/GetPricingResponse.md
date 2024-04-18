@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.GetPricingResponse
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.GetPricingResponse
 ## Properties
 
 Name | Type | Description | Notes

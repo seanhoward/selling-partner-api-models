@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.RestrictedResource
+# Amazon.SellingPartnerAPIAA.Clients.Models.Tokens.RestrictedResource
 ## Properties
 
 Name | Type | Description | Notes

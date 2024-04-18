@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.FeedOptions
+# Amazon.SellingPartnerAPIAA.Clients.Models.Feeds.FeedOptions
 ## Properties
 
 Name | Type | Description | Notes

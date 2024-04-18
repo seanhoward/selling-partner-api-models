@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ItemAttributes
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.ItemAttributes
 ## Properties
 
 Name | Type | Description | Notes

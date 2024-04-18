@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.IdentifierType
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.IdentifierType
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.AttributeSetList
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.AttributeSetList
 ## Properties
 
 Name | Type | Description | Notes

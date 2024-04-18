@@ -1,11 +1,11 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.Report
+# Amazon.SellingPartnerAPIAA.Clients.Models.Reports.Report
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MarketplaceIds** | **List&lt;string&gt;** | A list of marketplace identifiers for the report. | [optional] 
 **ReportId** | **string** | The identifier for the report. This identifier is unique only in combination with a seller ID. | 
-**ReportType** | **string** | The report type. | 
+**ReportType** | **string** | The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. | 
 **DataStartTime** | **DateTime?** | The start of a date and time range used for selecting the data to report. | [optional] 
 **DataEndTime** | **DateTime?** | The end of a date and time range used for selecting the data to report. | [optional] 
 **ReportScheduleId** | **string** | The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID. | [optional] 

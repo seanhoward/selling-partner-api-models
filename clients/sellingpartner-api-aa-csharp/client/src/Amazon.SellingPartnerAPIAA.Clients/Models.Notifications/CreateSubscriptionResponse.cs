@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide).
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * OpenAPI spec version: v1
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
     /// <summary>
-    /// The response schema for the createSubscription operation.
+    /// The response schema for the &#x60;createSubscription&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class CreateSubscriptionResponse :  IEquatable<CreateSubscriptionResponse>, IValidatableObject
@@ -33,8 +33,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSubscriptionResponse" /> class.
         /// </summary>
-        /// <param name="payload">The payload for the createSubscription operation..</param>
-        /// <param name="errors">One or more unexpected errors occurred during the createSubscription operation..</param>
+        /// <param name="payload">The payload for the &#x60;createSubscription&#x60; operation..</param>
+        /// <param name="errors">One or more unexpected errors occurred during the &#x60;createSubscription&#x60; operation..</param>
         public CreateSubscriptionResponse(Subscription payload = default(Subscription), ErrorList errors = default(ErrorList))
         {
             this.Payload = payload;
@@ -42,16 +42,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         }
         
         /// <summary>
-        /// The payload for the createSubscription operation.
+        /// The payload for the &#x60;createSubscription&#x60; operation.
         /// </summary>
-        /// <value>The payload for the createSubscription operation.</value>
+        /// <value>The payload for the &#x60;createSubscription&#x60; operation.</value>
         [DataMember(Name="payload", EmitDefaultValue=false)]
         public Subscription Payload { get; set; }
 
         /// <summary>
-        /// One or more unexpected errors occurred during the createSubscription operation.
+        /// One or more unexpected errors occurred during the &#x60;createSubscription&#x60; operation.
         /// </summary>
-        /// <value>One or more unexpected errors occurred during the createSubscription operation.</value>
+        /// <value>One or more unexpected errors occurred during the &#x60;createSubscription&#x60; operation.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public ErrorList Errors { get; set; }
 

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.MarketplaceIds
+# Amazon.SellingPartnerAPIAA.Clients.Models.Notifications.MarketplaceIds
 ## Properties
 
 Name | Type | Description | Notes

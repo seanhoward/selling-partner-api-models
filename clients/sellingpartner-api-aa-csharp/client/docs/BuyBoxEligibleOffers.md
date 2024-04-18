@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.BuyBoxEligibleOffers
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.BuyBoxEligibleOffers
 ## Properties
 
 Name | Type | Description | Notes

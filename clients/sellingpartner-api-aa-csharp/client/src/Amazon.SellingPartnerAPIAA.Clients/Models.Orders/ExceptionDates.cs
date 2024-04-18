@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="ExceptionDates" /> class.
         /// </summary>
-        /// <param name="exceptionDate">Date when the business is closed, in ISO-8601 date format..</param>
+        /// <param name="exceptionDate">Date when the business is closed, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date format..</param>
         /// <param name="isOpen">Boolean indicating if the business is closed or open on that date..</param>
         /// <param name="openIntervals">Time window during the day when the business is open..</param>
         public ExceptionDates(string exceptionDate = default(string), bool? isOpen = default(bool?), List<OpenInterval> openIntervals = default(List<OpenInterval>))
@@ -44,9 +44,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         }
         
         /// <summary>
-        /// Date when the business is closed, in ISO-8601 date format.
+        /// Date when the business is closed, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date format.
         /// </summary>
-        /// <value>Date when the business is closed, in ISO-8601 date format.</value>
+        /// <value>Date when the business is closed, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date format.</value>
         [DataMember(Name="ExceptionDate", EmitDefaultValue=false)]
         public string ExceptionDate { get; set; }
 

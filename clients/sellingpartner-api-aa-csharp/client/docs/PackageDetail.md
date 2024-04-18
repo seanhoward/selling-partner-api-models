@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CarrierName** | **string** | Carrier Name that will deliver the package. Required when carrierCode is \&quot;Others\&quot;  | [optional] 
 **ShippingMethod** | **string** | Ship method to be used for shipping the order. | [optional] 
 **TrackingNumber** | **string** | The tracking number used to obtain tracking and delivery information. | 
-**ShipDate** | **DateTime?** | The shipping date for the package. Must be in ISO-8601 date/time format. | 
+**ShipDate** | **DateTime?** | The shipping date for the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. | 
 **ShipFromSupplySourceId** | **string** | The unique identifier of the supply source. | [optional] 
 **OrderItems** | [**ConfirmShipmentOrderItemsList**](ConfirmShipmentOrderItemsList.md) | The list of order items and quantities to be updated. | 
 

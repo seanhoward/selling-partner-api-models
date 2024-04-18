@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.OffersList
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.OffersList
 ## Properties
 
 Name | Type | Description | Notes

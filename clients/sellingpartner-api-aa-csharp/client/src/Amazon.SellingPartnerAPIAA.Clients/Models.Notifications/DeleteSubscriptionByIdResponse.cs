@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide).
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * OpenAPI spec version: v1
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
     /// <summary>
-    /// The response schema for the deleteSubscriptionById operation.
+    /// The response schema for the &#x60;deleteSubscriptionById&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class DeleteSubscriptionByIdResponse :  IEquatable<DeleteSubscriptionByIdResponse>, IValidatableObject
@@ -33,16 +33,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteSubscriptionByIdResponse" /> class.
         /// </summary>
-        /// <param name="errors">An unexpected condition occurred during the deleteSubscriptionById operation..</param>
+        /// <param name="errors">An unexpected condition occurred during the &#x60;deleteSubscriptionById&#x60; operation..</param>
         public DeleteSubscriptionByIdResponse(ErrorList errors = default(ErrorList))
         {
             this.Errors = errors;
         }
         
         /// <summary>
-        /// An unexpected condition occurred during the deleteSubscriptionById operation.
+        /// An unexpected condition occurred during the &#x60;deleteSubscriptionById&#x60; operation.
         /// </summary>
-        /// <value>An unexpected condition occurred during the deleteSubscriptionById operation.</value>
+        /// <value>An unexpected condition occurred during the &#x60;deleteSubscriptionById&#x60; operation.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public ErrorList Errors { get; set; }
 

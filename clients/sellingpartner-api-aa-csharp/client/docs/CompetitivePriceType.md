@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.CompetitivePriceType
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.CompetitivePriceType
 ## Properties
 
 Name | Type | Description | Notes

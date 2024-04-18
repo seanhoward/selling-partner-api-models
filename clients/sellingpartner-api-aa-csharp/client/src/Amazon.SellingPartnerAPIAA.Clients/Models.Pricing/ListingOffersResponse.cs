@@ -123,6 +123,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Pricing
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

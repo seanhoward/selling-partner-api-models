@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// Initializes a new instance of the <see cref="ReportSchedule" /> class.
         /// </summary>
         /// <param name="reportScheduleId">The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required).</param>
-        /// <param name="reportType">The report type. (required).</param>
+        /// <param name="reportType">The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required).</param>
         /// <param name="marketplaceIds">A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise..</param>
         /// <param name="reportOptions">reportOptions.</param>
         /// <param name="period">An ISO 8601 period value that indicates how often a report should be created. (required).</param>
@@ -86,9 +86,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         public string ReportScheduleId { get; set; }
 
         /// <summary>
-        /// The report type.
+        /// The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
         /// </summary>
-        /// <value>The report type.</value>
+        /// <value>The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.</value>
         [DataMember(Name="reportType", EmitDefaultValue=false)]
         public string ReportType { get; set; }
 

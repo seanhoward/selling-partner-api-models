@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -77,8 +77,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="postalCode">The postal code..</param>
         /// <param name="countryCode">The country code. A two-character country code, in ISO 3166-1 alpha-2 format..</param>
         /// <param name="phone">The phone number. Not returned for Fulfillment by Amazon (FBA) orders..</param>
+        /// <param name="extendedFields">extendedFields.</param>
         /// <param name="addressType">The address type of the shipping address..</param>
-        public Address(string name = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string city = default(string), string county = default(string), string district = default(string), string stateOrRegion = default(string), string municipality = default(string), string postalCode = default(string), string countryCode = default(string), string phone = default(string), AddressTypeEnum? addressType = default(AddressTypeEnum?))
+        public Address(string name = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string city = default(string), string county = default(string), string district = default(string), string stateOrRegion = default(string), string municipality = default(string), string postalCode = default(string), string countryCode = default(string), string phone = default(string), AddressExtendedFields extendedFields = default(AddressExtendedFields), AddressTypeEnum? addressType = default(AddressTypeEnum?))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -100,6 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.PostalCode = postalCode;
             this.CountryCode = countryCode;
             this.Phone = phone;
+            this.ExtendedFields = extendedFields;
             this.AddressType = addressType;
         }
         
@@ -187,6 +189,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         [DataMember(Name="Phone", EmitDefaultValue=false)]
         public string Phone { get; set; }
 
+        /// <summary>
+        /// Gets or Sets ExtendedFields
+        /// </summary>
+        [DataMember(Name="ExtendedFields", EmitDefaultValue=false)]
+        public AddressExtendedFields ExtendedFields { get; set; }
+
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -208,6 +216,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("  PostalCode: ").Append(PostalCode).Append("\n");
             sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
+            sb.Append("  ExtendedFields: ").Append(ExtendedFields).Append("\n");
             sb.Append("  AddressType: ").Append(AddressType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -304,6 +313,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     this.Phone.Equals(input.Phone))
                 ) && 
                 (
+                    this.ExtendedFields == input.ExtendedFields ||
+                    (this.ExtendedFields != null &&
+                    this.ExtendedFields.Equals(input.ExtendedFields))
+                ) && 
+                (
                     this.AddressType == input.AddressType ||
                     (this.AddressType != null &&
                     this.AddressType.Equals(input.AddressType))
@@ -343,6 +357,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     hashCode = hashCode * 59 + this.CountryCode.GetHashCode();
                 if (this.Phone != null)
                     hashCode = hashCode * 59 + this.Phone.GetHashCode();
+                if (this.ExtendedFields != null)
+                    hashCode = hashCode * 59 + this.ExtendedFields.GetHashCode();
                 if (this.AddressType != null)
                     hashCode = hashCode * 59 + this.AddressType.GetHashCode();
                 return hashCode;

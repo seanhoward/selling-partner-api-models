@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * OpenAPI spec version: v0
  * 
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="requiresMerchantAction">When true, the regulated information provided in the order requires a review by the merchant. (required).</param>
         /// <param name="validRejectionReasons">A list of valid rejection reasons that may be used to reject the order&#39;s regulated information. (required).</param>
         /// <param name="rejectionReason">The reason for rejecting the order&#39;s regulated information. Not present if the order isn&#39;t rejected..</param>
-        /// <param name="reviewDate">The date the order was reviewed. In ISO 8601 date time format..</param>
+        /// <param name="reviewDate">The date the order was reviewed. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
         /// <param name="externalReviewerId">The identifier for the order&#39;s regulated information reviewer..</param>
         public RegulatedOrderVerificationStatus(VerificationStatus status = default(VerificationStatus), bool? requiresMerchantAction = default(bool?), List<RejectionReason> validRejectionReasons = default(List<RejectionReason>), RejectionReason rejectionReason = default(RejectionReason), string reviewDate = default(string), string externalReviewerId = default(string))
         {
@@ -107,9 +107,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public RejectionReason RejectionReason { get; set; }
 
         /// <summary>
-        /// The date the order was reviewed. In ISO 8601 date time format.
+        /// The date the order was reviewed. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
         /// </summary>
-        /// <value>The date the order was reviewed. In ISO 8601 date time format.</value>
+        /// <value>The date the order was reviewed. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
         [DataMember(Name="ReviewDate", EmitDefaultValue=false)]
         public string ReviewDate { get; set; }
 

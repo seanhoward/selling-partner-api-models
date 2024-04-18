@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.QuantityDiscountPriceType
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.QuantityDiscountPriceType
 ## Properties
 
 Name | Type | Description | Notes

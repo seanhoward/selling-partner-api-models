@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// Initializes a new instance of the <see cref="CreateReportSpecification" /> class.
         /// </summary>
         /// <param name="reportOptions">reportOptions.</param>
-        /// <param name="reportType">The report type. (required).</param>
+        /// <param name="reportType">The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required).</param>
         /// <param name="dataStartTime">The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this..</param>
         /// <param name="dataEndTime">The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this..</param>
         /// <param name="marketplaceIds">A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise. (required).</param>
@@ -75,9 +75,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         public ReportOptions ReportOptions { get; set; }
 
         /// <summary>
-        /// The report type.
+        /// The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
         /// </summary>
-        /// <value>The report type.</value>
+        /// <value>The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.</value>
         [DataMember(Name="reportType", EmitDefaultValue=false)]
         public string ReportType { get; set; }
 

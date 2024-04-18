@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.CreateDestinationRequest
+# Amazon.SellingPartnerAPIAA.Clients.Models.Notifications.CreateDestinationRequest
 ## Properties
 
 Name | Type | Description | Notes

@@ -55,9 +55,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Pricing
         /// <param name="offerType">Indicates the type of customer that the offer is valid for..</param>
         /// <param name="quantityTier">Indicates at what quantity this price becomes active..</param>
         /// <param name="quantityDiscountType">Indicates the type of quantity discount this price applies to..</param>
-        /// <param name="landedPrice">The value calculated by adding ListingPrice + Shipping - Points. (required).</param>
+        /// <param name="landedPrice">The value calculated by adding ListingPrice + Shipping - Points..</param>
         /// <param name="listingPrice">The price of the item. (required).</param>
-        /// <param name="shipping">The shipping cost. (required).</param>
+        /// <param name="shipping">The shipping cost..</param>
         /// <param name="points">The number of Amazon Points offered with the purchase of an item..</param>
         public LowestPriceType(string condition = default(string), string fulfillmentChannel = default(string), OfferCustomerType? offerType = default(OfferCustomerType?), int? quantityTier = default(int?), QuantityDiscountType? quantityDiscountType = default(QuantityDiscountType?), MoneyType landedPrice = default(MoneyType), MoneyType listingPrice = default(MoneyType), MoneyType shipping = default(MoneyType), Points points = default(Points))
         {
@@ -79,15 +79,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Pricing
             {
                 this.FulfillmentChannel = fulfillmentChannel;
             }
-            // to ensure "landedPrice" is required (not null)
-            if (landedPrice == null)
-            {
-                throw new InvalidDataException("landedPrice is a required property for LowestPriceType and cannot be null");
-            }
-            else
-            {
-                this.LandedPrice = landedPrice;
-            }
             // to ensure "listingPrice" is required (not null)
             if (listingPrice == null)
             {
@@ -97,18 +88,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Pricing
             {
                 this.ListingPrice = listingPrice;
             }
-            // to ensure "shipping" is required (not null)
-            if (shipping == null)
-            {
-                throw new InvalidDataException("shipping is a required property for LowestPriceType and cannot be null");
-            }
-            else
-            {
-                this.Shipping = shipping;
-            }
             this.OfferType = offerType;
             this.QuantityTier = quantityTier;
             this.QuantityDiscountType = quantityDiscountType;
+            this.LandedPrice = landedPrice;
+            this.Shipping = shipping;
             this.Points = points;
         }
         

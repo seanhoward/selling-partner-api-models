@@ -39,7 +39,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
         /// Initializes a new instance of the <see cref="ProductTypeList" /> class.
         /// </summary>
         /// <param name="productTypes">productTypes (required).</param>
-        public ProductTypeList(List<ProductType> productTypes = default(List<ProductType>))
+        /// <param name="productTypeVersion">Amazon product type version identifier. (required).</param>
+        public ProductTypeList(List<ProductType> productTypes = default(List<ProductType>), string productTypeVersion = default(string))
         {
             // to ensure "productTypes" is required (not null)
             if (productTypes == null)
@@ -50,6 +51,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
             {
                 this.ProductTypes = productTypes;
             }
+            // to ensure "productTypeVersion" is required (not null)
+            if (productTypeVersion == null)
+            {
+                throw new InvalidDataException("productTypeVersion is a required property for ProductTypeList and cannot be null");
+            }
+            else
+            {
+                this.ProductTypeVersion = productTypeVersion;
+            }
         }
         
         /// <summary>
@@ -57,6 +67,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
         /// </summary>
         [DataMember(Name="productTypes", EmitDefaultValue=false)]
         public List<ProductType> ProductTypes { get; set; }
+
+        /// <summary>
+        /// Amazon product type version identifier.
+        /// </summary>
+        /// <value>Amazon product type version identifier.</value>
+        [DataMember(Name="productTypeVersion", EmitDefaultValue=false)]
+        public string ProductTypeVersion { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -67,6 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
             var sb = new StringBuilder();
             sb.Append("class ProductTypeList {\n");
             sb.Append("  ProductTypes: ").Append(ProductTypes).Append("\n");
+            sb.Append("  ProductTypeVersion: ").Append(ProductTypeVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +123,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
                     this.ProductTypes == input.ProductTypes ||
                     this.ProductTypes != null &&
                     this.ProductTypes.SequenceEqual(input.ProductTypes)
+                ) && 
+                (
+                    this.ProductTypeVersion == input.ProductTypeVersion ||
+                    (this.ProductTypeVersion != null &&
+                    this.ProductTypeVersion.Equals(input.ProductTypeVersion))
                 );
         }
 
@@ -119,6 +142,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes
                 int hashCode = 41;
                 if (this.ProductTypes != null)
                     hashCode = hashCode * 59 + this.ProductTypes.GetHashCode();
+                if (this.ProductTypeVersion != null)
+                    hashCode = hashCode * 59 + this.ProductTypeVersion.GetHashCode();
                 return hashCode;
             }
         }

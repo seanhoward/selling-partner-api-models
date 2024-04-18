@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.SqsResource
+# Amazon.SellingPartnerAPIAA.Clients.Models.Notifications.SqsResource
 ## Properties
 
 Name | Type | Description | Notes

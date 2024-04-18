@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.MarketplaceFilter
+# Amazon.SellingPartnerAPIAA.Clients.Models.Notifications.MarketplaceFilter
 ## Properties
 
 Name | Type | Description | Notes

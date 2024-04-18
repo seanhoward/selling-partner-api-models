@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.HttpRequestHeaders
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.HttpRequestHeaders
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.LowestPriceType
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.LowestPriceType
 ## Properties
 
 Name | Type | Description | Notes
@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **OfferType** | **OfferCustomerType** | Indicates the type of customer that the offer is valid for. | [optional] 
 **QuantityTier** | **int?** | Indicates at what quantity this price becomes active. | [optional] 
 **QuantityDiscountType** | **QuantityDiscountType** | Indicates the type of quantity discount this price applies to. | [optional] 
-**LandedPrice** | [**MoneyType**](MoneyType.md) | The value calculated by adding ListingPrice + Shipping - Points. | 
+**LandedPrice** | [**MoneyType**](MoneyType.md) | The value calculated by adding ListingPrice + Shipping - Points. | [optional] 
 **ListingPrice** | [**MoneyType**](MoneyType.md) | The price of the item. | 
-**Shipping** | [**MoneyType**](MoneyType.md) | The shipping cost. | 
+**Shipping** | [**MoneyType**](MoneyType.md) | The shipping cost. | [optional] 
 **Points** | [**Points**](Points.md) | The number of Amazon Points offered with the purchase of an item. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

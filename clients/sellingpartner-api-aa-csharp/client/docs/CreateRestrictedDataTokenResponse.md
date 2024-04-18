@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.CreateRestrictedDataTokenResponse
+# Amazon.SellingPartnerAPIAA.Clients.Models.Tokens.CreateRestrictedDataTokenResponse
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.CreateRestrictedDataTokenRequest
+# Amazon.SellingPartnerAPIAA.Clients.Models.Tokens.CreateRestrictedDataTokenRequest
 ## Properties
 
 Name | Type | Description | Notes

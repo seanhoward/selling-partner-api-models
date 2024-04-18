@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.FeedList
+# Amazon.SellingPartnerAPIAA.Clients.Models.Feeds.FeedList
 ## Properties
 
 Name | Type | Description | Notes

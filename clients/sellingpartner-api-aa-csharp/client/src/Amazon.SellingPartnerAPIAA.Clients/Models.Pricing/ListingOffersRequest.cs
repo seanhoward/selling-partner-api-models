@@ -39,8 +39,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Pricing
         /// Initializes a new instance of the <see cref="ListingOffersRequest" /> class.
         /// </summary>
         /// <param name="marketplaceId">marketplaceId (required).</param>
-        /// <param name="itemCondition">itemCondition (required).</param>
-        /// <param name="customerType">customerType.</param>
+        /// <param name="itemCondition">Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required).</param>
+        /// <param name="customerType">Indicates whether to request Consumer or Business offers. Default is Consumer..</param>
         public ListingOffersRequest(string marketplaceId = default(string), ItemCondition itemCondition = default(ItemCondition), CustomerType customerType = default(CustomerType), string uri = default(string), HttpMethod method = default(HttpMethod), HttpRequestHeaders headers = default(HttpRequestHeaders)) : base(uri, method, headers)
         {
             // to ensure "marketplaceId" is required (not null)
@@ -71,14 +71,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Pricing
         public string MarketplaceId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ItemCondition
+        /// Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
         /// </summary>
+        /// <value>Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.</value>
         [DataMember(Name="ItemCondition", EmitDefaultValue=false)]
         public ItemCondition ItemCondition { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomerType
+        /// Indicates whether to request Consumer or Business offers. Default is Consumer.
         /// </summary>
+        /// <value>Indicates whether to request Consumer or Business offers. Default is Consumer.</value>
         [DataMember(Name="CustomerType", EmitDefaultValue=false)]
         public CustomerType CustomerType { get; set; }
 
@@ -171,6 +173,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Pricing
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

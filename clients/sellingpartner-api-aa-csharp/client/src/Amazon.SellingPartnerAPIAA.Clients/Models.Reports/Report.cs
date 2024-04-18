@@ -85,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// </summary>
         /// <param name="marketplaceIds">A list of marketplace identifiers for the report..</param>
         /// <param name="reportId">The identifier for the report. This identifier is unique only in combination with a seller ID. (required).</param>
-        /// <param name="reportType">The report type. (required).</param>
+        /// <param name="reportType">The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required).</param>
         /// <param name="dataStartTime">The start of a date and time range used for selecting the data to report..</param>
         /// <param name="dataEndTime">The end of a date and time range used for selecting the data to report..</param>
         /// <param name="reportScheduleId">The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID..</param>
@@ -156,9 +156,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         public string ReportId { get; set; }
 
         /// <summary>
-        /// The report type.
+        /// The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
         /// </summary>
-        /// <value>The report type.</value>
+        /// <value>The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.</value>
         [DataMember(Name="reportType", EmitDefaultValue=false)]
         public string ReportType { get; set; }
 

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.BrandRefinement
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.BrandRefinement
 ## Properties
 
 Name | Type | Description | Notes

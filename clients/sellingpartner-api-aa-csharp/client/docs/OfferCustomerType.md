@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.OfferCustomerType
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.OfferCustomerType
 ## Properties
 
 Name | Type | Description | Notes

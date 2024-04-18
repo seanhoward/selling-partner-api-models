@@ -1,10 +1,10 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ReportSchedule
+# Amazon.SellingPartnerAPIAA.Clients.Models.Reports.ReportSchedule
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ReportScheduleId** | **string** | The identifier for the report schedule. This identifier is unique only in combination with a seller ID. | 
-**ReportType** | **string** | The report type. | 
+**ReportType** | **string** | The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. | 
 **MarketplaceIds** | **List&lt;string&gt;** | A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise. | [optional] 
 **ReportOptions** | [**ReportOptions**](ReportOptions.md) |  | [optional] 
 **Period** | **string** | An ISO 8601 period value that indicates how often a report should be created. | 

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.DetailedShippingTimeType
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.DetailedShippingTimeType
 ## Properties
 
 Name | Type | Description | Notes

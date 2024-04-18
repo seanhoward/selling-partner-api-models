@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ItemSearchResults
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.ItemSearchResults
 ## Properties
 
 Name | Type | Description | Notes

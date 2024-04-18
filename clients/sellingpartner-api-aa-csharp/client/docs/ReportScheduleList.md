@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ReportScheduleList
+# Amazon.SellingPartnerAPIAA.Clients.Models.Reports.ReportScheduleList
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ItemBrowseClassification
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.ItemBrowseClassification
 ## Properties
 
 Name | Type | Description | Notes

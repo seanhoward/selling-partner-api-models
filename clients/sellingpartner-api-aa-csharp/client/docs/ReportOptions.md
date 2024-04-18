@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ReportOptions
+# Amazon.SellingPartnerAPIAA.Clients.Models.Reports.ReportOptions
 ## Properties
 
 Name | Type | Description | Notes

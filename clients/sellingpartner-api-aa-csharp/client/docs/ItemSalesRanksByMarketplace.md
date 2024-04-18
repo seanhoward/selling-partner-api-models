@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ItemSalesRanksByMarketplace
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.ItemSalesRanksByMarketplace
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ItemSummaryByMarketplace
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.ItemSummaryByMarketplace
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide).
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * OpenAPI spec version: v1
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
     /// <summary>
-    /// Represents an Amazon EventBridge destination.
+    /// The Amazon EventBridge destination.
     /// </summary>
     [DataContract]
     public partial class EventBridgeResource :  IEquatable<EventBridgeResource>, IValidatableObject
@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// Initializes a new instance of the <see cref="EventBridgeResource" /> class.
         /// </summary>
         /// <param name="name">The name of the partner event source associated with the destination. (required).</param>
-        /// <param name="region">The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, see https://docs.aws.amazon.com/general/latest/gr/ev.html. (required).</param>
+        /// <param name="region">The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html). (required).</param>
         /// <param name="accountId">The identifier for the AWS account that is responsible for charges related to receiving notifications. (required).</param>
         public EventBridgeResource(string name = default(string), string region = default(string), string accountId = default(string))
         {
@@ -80,9 +80,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         public string Name { get; set; }
 
         /// <summary>
-        /// The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, see https://docs.aws.amazon.com/general/latest/gr/ev.html.
+        /// The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html).
         /// </summary>
-        /// <value>The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, see https://docs.aws.amazon.com/general/latest/gr/ev.html.</value>
+        /// <value>The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html).</value>
         [DataMember(Name="region", EmitDefaultValue=false)]
         public string Region { get; set; }
 

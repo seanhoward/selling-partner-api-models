@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ItemVariationTheme
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.ItemVariationTheme
 ## Properties
 
 Name | Type | Description | Notes

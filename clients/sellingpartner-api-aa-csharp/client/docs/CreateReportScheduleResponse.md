@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.CreateReportScheduleResponse
+# Amazon.SellingPartnerAPIAA.Clients.Models.Reports.CreateReportScheduleResponse
 ## Properties
 
 Name | Type | Description | Notes

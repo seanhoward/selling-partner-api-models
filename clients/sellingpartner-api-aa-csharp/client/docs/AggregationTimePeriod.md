@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.AggregationTimePeriod
+# Amazon.SellingPartnerAPIAA.Clients.Models.Notifications.AggregationTimePeriod
 ## Properties
 
 Name | Type | Description | Notes

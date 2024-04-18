@@ -161,7 +161,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReportScheduleSpecification" /> class.
         /// </summary>
-        /// <param name="reportType">The report type. (required).</param>
+        /// <param name="reportType">The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required).</param>
         /// <param name="marketplaceIds">A list of marketplace identifiers for the report schedule. (required).</param>
         /// <param name="reportOptions">reportOptions.</param>
         /// <param name="period">One of a set of predefined ISO 8601 periods that specifies how often a report should be created. (required).</param>
@@ -200,9 +200,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         }
         
         /// <summary>
-        /// The report type.
+        /// The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
         /// </summary>
-        /// <value>The report type.</value>
+        /// <value>The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.</value>
         [DataMember(Name="reportType", EmitDefaultValue=false)]
         public string ReportType { get; set; }
 

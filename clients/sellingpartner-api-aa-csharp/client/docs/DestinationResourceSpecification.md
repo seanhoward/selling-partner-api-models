@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.DestinationResourceSpecification
+# Amazon.SellingPartnerAPIAA.Clients.Models.Notifications.DestinationResourceSpecification
 ## Properties
 
 Name | Type | Description | Notes

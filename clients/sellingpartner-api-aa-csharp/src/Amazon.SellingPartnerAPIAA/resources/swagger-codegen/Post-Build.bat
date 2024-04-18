@@ -6,7 +6,6 @@ java ^
 -o ..\..\..\..\clients\sellingpartner-api-aa-csharp\client ^
 -c ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\config.json ^
 --ignore-file-override ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\.swagger-codegen-ignore ^
--s ^
 --api-package API ^
 --model-package Models.Orders ^
 --additional-properties testPackage=Orders
@@ -19,7 +18,6 @@ java ^
 -o ..\..\..\..\clients\sellingpartner-api-aa-csharp\client ^
 -c ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\config.json ^
 --ignore-file-override ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\.swagger-codegen-ignore ^
--s ^
 --api-package API ^
 --model-package Models.Feeds ^
 --additional-properties testPackage=Feeds
@@ -32,7 +30,6 @@ java ^
 -o ..\..\..\..\clients\sellingpartner-api-aa-csharp\client ^
 -c ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\config.json ^
 --ignore-file-override ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\.swagger-codegen-ignore ^
--s ^
 --api-package API ^
 --model-package Models.Pricing ^
 --additional-properties testPackage=Pricing
@@ -45,7 +42,6 @@ java ^
 -o ..\..\..\..\clients\sellingpartner-api-aa-csharp\client ^
 -c ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\config.json ^
 --ignore-file-override ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\.swagger-codegen-ignore ^
--s ^
 --api-package API ^
 --model-package Models.Tokens ^
 --additional-properties testPackage=Tokens
@@ -58,7 +54,6 @@ java ^
 -o ..\..\..\..\clients\sellingpartner-api-aa-csharp\client ^
 -c ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\config.json ^
 --ignore-file-override ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\.swagger-codegen-ignore ^
--s ^
 --api-package API ^
 --model-package Models.Notifications ^
 --additional-properties testPackage=Notifications
@@ -71,7 +66,6 @@ java ^
 -o ..\..\..\..\clients\sellingpartner-api-aa-csharp\client ^
 -c ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\config.json ^
 --ignore-file-override ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\.swagger-codegen-ignore ^
--s ^
 --api-package API ^
 --model-package Models.Reports ^
 --additional-properties testPackage=Reports
@@ -84,7 +78,6 @@ java ^
 -o ..\..\..\..\clients\sellingpartner-api-aa-csharp\client ^
 -c ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\config.json ^
 --ignore-file-override ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\.swagger-codegen-ignore ^
--s ^
 --api-package API ^
 --model-package Models.Catalog ^
 --additional-properties testPackage=Catalog
@@ -97,7 +90,6 @@ java ^
 -o ..\..\..\..\clients\sellingpartner-api-aa-csharp\client ^
 -c ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\config.json ^
 --ignore-file-override ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\.swagger-codegen-ignore ^
--s  ^
 --api-package API ^
 --model-package Models.ProductTypes ^
 --additional-properties testPackage=ProductTypes

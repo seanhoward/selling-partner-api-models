@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ShipsFromType
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.ShipsFromType
 ## Properties
 
 Name | Type | Description | Notes

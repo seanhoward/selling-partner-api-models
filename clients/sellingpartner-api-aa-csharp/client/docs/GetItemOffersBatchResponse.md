@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.GetItemOffersBatchResponse
+# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.GetItemOffersBatchResponse
 ## Properties
 
 Name | Type | Description | Notes

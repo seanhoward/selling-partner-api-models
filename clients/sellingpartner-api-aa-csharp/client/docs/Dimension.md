@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.Dimension
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.Dimension
 ## Properties
 
 Name | Type | Description | Notes

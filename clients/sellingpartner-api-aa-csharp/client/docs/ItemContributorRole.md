@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Client.Model.ItemContributorRole
+# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.ItemContributorRole
 ## Properties
 
 Name | Type | Description | Notes
