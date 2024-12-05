@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -16,18 +16,18 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '6.0.x'
+        dotnet-version: '4.8.x'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: nuget restore
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: msbuild /p:Configuration=Release
 
     - name: Pack
-      run: dotnet pack --configuration Release --no-build --output ./nupkg
+      run: nuget pack YourProject.csproj -Prop Configuration=Release -OutputDirectory ./nupkg
 
     - name: Push NuGet package
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-      run: dotnet nuget push ./nupkg/*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
+      run: nuget push ./nupkg/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey $NUGET_API_KEY
