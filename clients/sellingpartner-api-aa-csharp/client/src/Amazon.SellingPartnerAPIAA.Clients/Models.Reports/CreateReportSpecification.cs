@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Reports
+ * Report v2021-06-30
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -40,8 +40,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// </summary>
         /// <param name="reportOptions">reportOptions.</param>
         /// <param name="reportType">The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required).</param>
-        /// <param name="dataStartTime">The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this..</param>
-        /// <param name="dataEndTime">The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this..</param>
+        /// <param name="dataStartTime">The start of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this..</param>
+        /// <param name="dataEndTime">The end of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this..</param>
         /// <param name="marketplaceIds">A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise. (required).</param>
         public CreateReportSpecification(ReportOptions reportOptions = default(ReportOptions), string reportType = default(string), DateTime? dataStartTime = default(DateTime?), DateTime? dataEndTime = default(DateTime?), List<string> marketplaceIds = default(List<string>))
         {
@@ -82,16 +82,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         public string ReportType { get; set; }
 
         /// <summary>
-        /// The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+        /// The start of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
         /// </summary>
-        /// <value>The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.</value>
+        /// <value>The start of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.</value>
         [DataMember(Name="dataStartTime", EmitDefaultValue=false)]
         public DateTime? DataStartTime { get; set; }
 
         /// <summary>
-        /// The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+        /// The end of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
         /// </summary>
-        /// <value>The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.</value>
+        /// <value>The end of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.</value>
         [DataMember(Name="dataEndTime", EmitDefaultValue=false)]
         public DateTime? DataEndTime { get; set; }
 

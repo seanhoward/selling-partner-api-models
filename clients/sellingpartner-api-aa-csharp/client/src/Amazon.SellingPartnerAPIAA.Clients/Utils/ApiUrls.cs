@@ -180,18 +180,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Utils
         }
         public class ProductPricingApiUrls
         {
-            private readonly static string _resourceBaseUrl = "/products/pricing/v0";
-            public static string GetPricing => $"{_resourceBaseUrl}/price";
-            public static string GetCompetitivePricing => $"{_resourceBaseUrl}/competitivePrice";
-
-            public static string GetListingOffersBySellerSku(string SellerSKU) => $"{_resourceBaseUrl}/listings/{Uri.EscapeDataString(SellerSKU)}/offers";
-            public static string GetItemOffers(string Asin) => $"{_resourceBaseUrl}/items/{Asin}/offers";
-            public static string GetListingOffers(string sellerSKU) => $"{_resourceBaseUrl}/listings/{Uri.EscapeDataString(sellerSKU)}/offers";
-
-            public static string GetBatchItemOffers => $"/batches{_resourceBaseUrl}/itemOffers";
-
-            public static string GetBatchListingOffers => $"/batches{_resourceBaseUrl}/listingOffers";
-
+            private readonly static string _resourceBaseUrl = "/products/pricing/2022-05-01";
+            public static string GetCompetitiveSummary => $"{_resourceBaseUrl}/items/competitiveSummary";
+            public static string GetFeaturedOfferExpectedPrice => $"{_resourceBaseUrl}/offer/featuredOfferExpectedPrice";
         }
         public class ProductTypeApiUrls
         {

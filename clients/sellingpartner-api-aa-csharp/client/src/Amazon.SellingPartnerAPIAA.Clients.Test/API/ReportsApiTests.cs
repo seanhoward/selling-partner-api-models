@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Reports
+ * Report v2021-06-30
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -21,7 +21,7 @@ using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.API;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Reports;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.Reports.Test
 {
     /// <summary>
     ///  Class for testing ReportsApi

@@ -3,10 +3,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Status** | **string** | The status of the operation. | 
-**SellerSKU** | **string** | The seller stock keeping unit (SKU) of the item. | [optional] 
-**ASIN** | **string** | The Amazon Standard Identification Number (ASIN) of the item. | [optional] 
-**Product** | [**Product**](Product.md) |  | [optional] 
+**ListingPrice** | [**MoneyType**](MoneyType.md) | The listing price for the item, excluding any promotions. | 
+**ShippingPrice** | [**MoneyType**](MoneyType.md) | The shipping cost of the product. Note that the shipping cost is not always available. | [optional] 
+**Points** | [**Points**](Points.md) | The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

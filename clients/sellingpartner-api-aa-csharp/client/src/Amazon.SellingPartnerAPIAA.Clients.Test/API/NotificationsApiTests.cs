@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide).
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * OpenAPI spec version: v1
  * 
@@ -21,7 +21,7 @@ using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.API;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Notifications;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.Notifications.Test
 {
     /// <summary>
     ///  Class for testing NotificationsApi
@@ -146,7 +146,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string notificationType = null;
-            //var response = instance.GetSubscription(notificationType);
+            //string payloadVersion = null;
+            //var response = instance.GetSubscription(notificationType, payloadVersion);
             //Assert.IsInstanceOf<GetSubscriptionResponse> (response, "response is GetSubscriptionResponse");
         }
         

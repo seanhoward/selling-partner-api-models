@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **ReportType** | **string** | The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. | 
 **MarketplaceIds** | **List&lt;string&gt;** | A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise. | [optional] 
 **ReportOptions** | [**ReportOptions**](ReportOptions.md) |  | [optional] 
-**Period** | **string** | An ISO 8601 period value that indicates how often a report should be created. | 
-**NextReportCreationTime** | **DateTime?** | The date and time when the schedule will create its next report, in ISO 8601 date time format. | [optional] 
+**Period** | **string** | An &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; period value that indicates how often a report should be created. | 
+**NextReportCreationTime** | **DateTime?** | The date and time when the schedule will create its next report, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

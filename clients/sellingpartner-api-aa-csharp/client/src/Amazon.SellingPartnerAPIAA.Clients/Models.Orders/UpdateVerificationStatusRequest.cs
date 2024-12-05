@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
     /// <summary>
-    /// The request body for the updateVerificationStatus operation.
+    /// The request body for the &#x60;updateVerificationStatus&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class UpdateVerificationStatusRequest :  IEquatable<UpdateVerificationStatusRequest>, IValidatableObject
@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateVerificationStatusRequest" /> class.
         /// </summary>
-        /// <param name="regulatedOrderVerificationStatus">The updated values of the VerificationStatus field. (required).</param>
+        /// <param name="regulatedOrderVerificationStatus">The updated values of the &#x60;VerificationStatus&#x60; field. (required).</param>
         public UpdateVerificationStatusRequest(UpdateVerificationStatusRequestBody regulatedOrderVerificationStatus = default(UpdateVerificationStatusRequestBody))
         {
             // to ensure "regulatedOrderVerificationStatus" is required (not null)
@@ -53,9 +53,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         }
         
         /// <summary>
-        /// The updated values of the VerificationStatus field.
+        /// The updated values of the &#x60;VerificationStatus&#x60; field.
         /// </summary>
-        /// <value>The updated values of the VerificationStatus field.</value>
+        /// <value>The updated values of the &#x60;VerificationStatus&#x60; field.</value>
         [DataMember(Name="regulatedOrderVerificationStatus", EmitDefaultValue=false)]
         public UpdateVerificationStatusRequestBody RegulatedOrderVerificationStatus { get; set; }
 

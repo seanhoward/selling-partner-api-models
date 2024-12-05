@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Reports
+ * Report v2021-06-30
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
         /// <param name="code">An error code that identifies the type of error that occurred. (required).</param>
-        /// <param name="message">A message that describes the error condition in a human-readable form. (required).</param>
+        /// <param name="message">A message that describes the error condition. (required).</param>
         /// <param name="details">Additional details that can help the caller understand or fix the issue..</param>
         public Error(string code = default(string), string message = default(string), string details = default(string))
         {
@@ -72,9 +72,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         public string Code { get; set; }
 
         /// <summary>
-        /// A message that describes the error condition in a human-readable form.
+        /// A message that describes the error condition.
         /// </summary>
-        /// <value>A message that describes the error condition in a human-readable form.</value>
+        /// <value>A message that describes the error condition.</value>
         [DataMember(Name="message", EmitDefaultValue=false)]
         public string Message { get; set; }
 

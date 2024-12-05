@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Catalog Items
+ * Catalog Items v2022-04-01
  *
  * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
  *
@@ -28,13 +28,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
     /// A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
     /// </summary>
     [DataContract]
-    public partial class ItemAttributes :  IEquatable<ItemAttributes>, IValidatableObject
+    public partial class ItemAttributes : Dictionary<String, object>,  IEquatable<ItemAttributes>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemAttributes" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        public ItemAttributes()
+        public ItemAttributes() : base()
         {
         }
         
@@ -46,6 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
         {
             var sb = new StringBuilder();
             sb.Append("class ItemAttributes {\n");
+            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
             if (input == null)
                 return false;
 
-            return false;
+            return base.Equals(input);
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hashCode = base.GetHashCode();
                 return hashCode;
             }
         }
@@ -102,6 +103,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

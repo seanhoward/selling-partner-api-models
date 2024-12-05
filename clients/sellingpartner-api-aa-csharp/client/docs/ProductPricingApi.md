@@ -4,21 +4,17 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCompetitivePricing**](ProductPricingApi.md#getcompetitivepricing) | **GET** /products/pricing/v0/competitivePrice | 
-[**GetItemOffers**](ProductPricingApi.md#getitemoffers) | **GET** /products/pricing/v0/items/{Asin}/offers | 
-[**GetItemOffersBatch**](ProductPricingApi.md#getitemoffersbatch) | **POST** /batches/products/pricing/v0/itemOffers | 
-[**GetListingOffers**](ProductPricingApi.md#getlistingoffers) | **GET** /products/pricing/v0/listings/{SellerSKU}/offers | 
-[**GetListingOffersBatch**](ProductPricingApi.md#getlistingoffersbatch) | **POST** /batches/products/pricing/v0/listingOffers | 
-[**GetPricing**](ProductPricingApi.md#getpricing) | **GET** /products/pricing/v0/price | 
+[**GetCompetitiveSummary**](ProductPricingApi.md#getcompetitivesummary) | **POST** /batches/products/pricing/2022-05-01/items/competitiveSummary | 
+[**GetFeaturedOfferExpectedPriceBatch**](ProductPricingApi.md#getfeaturedofferexpectedpricebatch) | **POST** /batches/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice | 
 
 
-<a name="getcompetitivepricing"></a>
-# **GetCompetitivePricing**
-> GetPricingResponse GetCompetitivePricing (string marketplaceId, string itemType, List<string> asins = null, List<string> skus = null, string customerType = null)
+<a name="getcompetitivesummary"></a>
+# **GetCompetitiveSummary**
+> CompetitiveSummaryBatchResponse GetCompetitiveSummary (CompetitiveSummaryBatchRequest requests)
 
 
 
-Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.  **Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+Returns the competitive summary response, including featured buying options for the ASIN and `marketplaceId` combination.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.033 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API.
 
 ### Example
 ```csharp
@@ -30,25 +26,21 @@ using Amazon.SellingPartnerAPIAA.Clients.Models.Pricing;
 
 namespace Example
 {
-    public class GetCompetitivePricingExample
+    public class GetCompetitiveSummaryExample
     {
         public void main()
         {
             var apiInstance = new ProductPricingApi();
-            var marketplaceId = marketplaceId_example;  // string | A marketplace identifier. Specifies the marketplace for which prices are returned.
-            var itemType = itemType_example;  // string | Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
-            var asins = new List<string>(); // List<string> | A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional) 
-            var skus = new List<string>(); // List<string> | A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional) 
-            var customerType = customerType_example;  // string | Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional) 
+            var requests = new CompetitiveSummaryBatchRequest(); // CompetitiveSummaryBatchRequest | The batch of `getCompetitiveSummary` requests.
 
             try
             {
-                GetPricingResponse result = apiInstance.GetCompetitivePricing(marketplaceId, itemType, asins, skus, customerType);
+                CompetitiveSummaryBatchResponse result = apiInstance.GetCompetitiveSummary(requests);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ProductPricingApi.GetCompetitivePricing: " + e.Message );
+                Debug.Print("Exception when calling ProductPricingApi.GetCompetitiveSummary: " + e.Message );
             }
         }
     }
@@ -59,15 +51,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplaceId** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. | 
- **itemType** | **string**| Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. | 
- **asins** | [**List&lt;string&gt;**](string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional] 
- **skus** | [**List&lt;string&gt;**](string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional] 
- **customerType** | **string**| Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. | [optional] 
+ **requests** | [**CompetitiveSummaryBatchRequest**](CompetitiveSummaryBatchRequest.md)| The batch of &#x60;getCompetitiveSummary&#x60; requests. | 
 
 ### Return type
 
-[**GetPricingResponse**](GetPricingResponse.md)
+[**CompetitiveSummaryBatchResponse**](CompetitiveSummaryBatchResponse.md)
 
 ### Authorization
 
@@ -80,79 +68,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getitemoffers"></a>
-# **GetItemOffers**
-> GetOffersResponse GetItemOffers (string marketplaceId, string itemCondition, string asin, string customerType = null)
+<a name="getfeaturedofferexpectedpricebatch"></a>
+# **GetFeaturedOfferExpectedPriceBatch**
+> GetFeaturedOfferExpectedPriceBatchResponse GetFeaturedOfferExpectedPriceBatch (GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody)
 
 
 
-Returns the lowest priced offers for a single item based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Clients.API;
-using Amazon.SellingPartnerAPIAA.Clients.Client;
-using Amazon.SellingPartnerAPIAA.Clients.Models.Pricing;
-
-namespace Example
-{
-    public class GetItemOffersExample
-    {
-        public void main()
-        {
-            var apiInstance = new ProductPricingApi();
-            var marketplaceId = marketplaceId_example;  // string | A marketplace identifier. Specifies the marketplace for which prices are returned.
-            var itemCondition = itemCondition_example;  // string | Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-            var asin = asin_example;  // string | The Amazon Standard Identification Number (ASIN) of the item.
-            var customerType = customerType_example;  // string | Indicates whether to request Consumer or Business offers. Default is Consumer. (optional) 
-
-            try
-            {
-                GetOffersResponse result = apiInstance.GetItemOffers(marketplaceId, itemCondition, asin, customerType);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ProductPricingApi.GetItemOffers: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **marketplaceId** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. | 
- **itemCondition** | **string**| Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. | 
- **asin** | **string**| The Amazon Standard Identification Number (ASIN) of the item. | 
- **customerType** | **string**| Indicates whether to request Consumer or Business offers. Default is Consumer. | [optional] 
-
-### Return type
-
-[**GetOffersResponse**](GetOffersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getitemoffersbatch"></a>
-# **GetItemOffersBatch**
-> GetItemOffersBatchResponse GetItemOffersBatch (GetItemOffersBatchRequest getItemOffersBatchRequestBody)
-
-
-
-Returns the lowest priced offers for a batch of items based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+Returns the set of responses that correspond to the batched list of up to 40 requests defined in the request body. The response for each successful (HTTP status code 200) request in the set includes the computed listing price at or below which a seller can expect to become the featured offer (before applicable promotions). This is called the featured offer expected price (FOEP). Featured offer is not guaranteed because competing offers might change. Other offers might be featured based on factors such as fulfillment capabilities to a specific customer. The response to an unsuccessful request includes the available error text.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.033 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API.
 
 ### Example
 ```csharp
@@ -164,21 +86,21 @@ using Amazon.SellingPartnerAPIAA.Clients.Models.Pricing;
 
 namespace Example
 {
-    public class GetItemOffersBatchExample
+    public class GetFeaturedOfferExpectedPriceBatchExample
     {
         public void main()
         {
             var apiInstance = new ProductPricingApi();
-            var getItemOffersBatchRequestBody = new GetItemOffersBatchRequest(); // GetItemOffersBatchRequest | 
+            var getFeaturedOfferExpectedPriceBatchRequestBody = new GetFeaturedOfferExpectedPriceBatchRequest(); // GetFeaturedOfferExpectedPriceBatchRequest | The batch of `getFeaturedOfferExpectedPrice` requests.
 
             try
             {
-                GetItemOffersBatchResponse result = apiInstance.GetItemOffersBatch(getItemOffersBatchRequestBody);
+                GetFeaturedOfferExpectedPriceBatchResponse result = apiInstance.GetFeaturedOfferExpectedPriceBatch(getFeaturedOfferExpectedPriceBatchRequestBody);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ProductPricingApi.GetItemOffersBatch: " + e.Message );
+                Debug.Print("Exception when calling ProductPricingApi.GetFeaturedOfferExpectedPriceBatch: " + e.Message );
             }
         }
     }
@@ -189,207 +111,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **getItemOffersBatchRequestBody** | [**GetItemOffersBatchRequest**](GetItemOffersBatchRequest.md)|  | 
+ **getFeaturedOfferExpectedPriceBatchRequestBody** | [**GetFeaturedOfferExpectedPriceBatchRequest**](GetFeaturedOfferExpectedPriceBatchRequest.md)| The batch of &#x60;getFeaturedOfferExpectedPrice&#x60; requests. | 
 
 ### Return type
 
-[**GetItemOffersBatchResponse**](GetItemOffersBatchResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getlistingoffers"></a>
-# **GetListingOffers**
-> GetOffersResponse GetListingOffers (string marketplaceId, string itemCondition, string sellerSKU, string customerType = null)
-
-
-
-Returns the lowest priced offers for a single SKU listing.  **Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Clients.API;
-using Amazon.SellingPartnerAPIAA.Clients.Client;
-using Amazon.SellingPartnerAPIAA.Clients.Models.Pricing;
-
-namespace Example
-{
-    public class GetListingOffersExample
-    {
-        public void main()
-        {
-            var apiInstance = new ProductPricingApi();
-            var marketplaceId = marketplaceId_example;  // string | A marketplace identifier. Specifies the marketplace for which prices are returned.
-            var itemCondition = itemCondition_example;  // string | Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-            var sellerSKU = sellerSKU_example;  // string | Identifies an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
-            var customerType = customerType_example;  // string | Indicates whether to request Consumer or Business offers. Default is Consumer. (optional) 
-
-            try
-            {
-                GetOffersResponse result = apiInstance.GetListingOffers(marketplaceId, itemCondition, sellerSKU, customerType);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ProductPricingApi.GetListingOffers: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **marketplaceId** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. | 
- **itemCondition** | **string**| Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. | 
- **sellerSKU** | **string**| Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. | 
- **customerType** | **string**| Indicates whether to request Consumer or Business offers. Default is Consumer. | [optional] 
-
-### Return type
-
-[**GetOffersResponse**](GetOffersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getlistingoffersbatch"></a>
-# **GetListingOffersBatch**
-> GetListingOffersBatchResponse GetListingOffersBatch (GetListingOffersBatchRequest getListingOffersBatchRequestBody)
-
-
-
-Returns the lowest priced offers for a batch of listings by SKU.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Clients.API;
-using Amazon.SellingPartnerAPIAA.Clients.Client;
-using Amazon.SellingPartnerAPIAA.Clients.Models.Pricing;
-
-namespace Example
-{
-    public class GetListingOffersBatchExample
-    {
-        public void main()
-        {
-            var apiInstance = new ProductPricingApi();
-            var getListingOffersBatchRequestBody = new GetListingOffersBatchRequest(); // GetListingOffersBatchRequest | 
-
-            try
-            {
-                GetListingOffersBatchResponse result = apiInstance.GetListingOffersBatch(getListingOffersBatchRequestBody);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ProductPricingApi.GetListingOffersBatch: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **getListingOffersBatchRequestBody** | [**GetListingOffersBatchRequest**](GetListingOffersBatchRequest.md)|  | 
-
-### Return type
-
-[**GetListingOffersBatchResponse**](GetListingOffersBatchResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getpricing"></a>
-# **GetPricing**
-> GetPricingResponse GetPricing (string marketplaceId, string itemType, List<string> asins = null, List<string> skus = null, string itemCondition = null, string offerType = null)
-
-
-
-Returns pricing information for a seller's offer listings based on seller SKU or ASIN.  **Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Amazon.SellingPartnerAPIAA.Clients.API;
-using Amazon.SellingPartnerAPIAA.Clients.Client;
-using Amazon.SellingPartnerAPIAA.Clients.Models.Pricing;
-
-namespace Example
-{
-    public class GetPricingExample
-    {
-        public void main()
-        {
-            var apiInstance = new ProductPricingApi();
-            var marketplaceId = marketplaceId_example;  // string | A marketplace identifier. Specifies the marketplace for which prices are returned.
-            var itemType = itemType_example;  // string | Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
-            var asins = new List<string>(); // List<string> | A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional) 
-            var skus = new List<string>(); // List<string> | A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional) 
-            var itemCondition = itemCondition_example;  // string | Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional) 
-            var offerType = offerType_example;  // string | Indicates whether to request pricing information for the seller's B2C or B2B offers. Default is B2C. (optional) 
-
-            try
-            {
-                GetPricingResponse result = apiInstance.GetPricing(marketplaceId, itemType, asins, skus, itemCondition, offerType);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ProductPricingApi.GetPricing: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **marketplaceId** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. | 
- **itemType** | **string**| Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. | 
- **asins** | [**List&lt;string&gt;**](string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional] 
- **skus** | [**List&lt;string&gt;**](string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional] 
- **itemCondition** | **string**| Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. | [optional] 
- **offerType** | **string**| Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. | [optional] 
-
-### Return type
-
-[**GetPricingResponse**](GetPricingResponse.md)
+[**GetFeaturedOfferExpectedPriceBatchResponse**](GetFeaturedOfferExpectedPriceBatchResponse.md)
 
 ### Authorization
 

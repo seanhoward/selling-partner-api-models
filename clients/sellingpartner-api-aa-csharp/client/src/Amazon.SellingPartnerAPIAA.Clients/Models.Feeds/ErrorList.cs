@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Feeds
+ * Feeds v2021-06-30
  *
  * The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.
  *
@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorList" /> class.
         /// </summary>
-        /// <param name="errors">errors (required).</param>
+        /// <param name="errors">An error response returned when the request is unsuccessful. (required).</param>
         public ErrorList(List<Error> errors = default(List<Error>))
         {
             // to ensure "errors" is required (not null)
@@ -53,8 +53,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         }
         
         /// <summary>
-        /// Gets or Sets Errors
+        /// An error response returned when the request is unsuccessful.
         /// </summary>
+        /// <value>An error response returned when the request is unsuccessful.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
 

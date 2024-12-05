@@ -6,7 +6,7 @@
     <title>$title$</title>
 
     <!-- The package version number that is used when resolving dependencies -->
-    <version>$version$.6</version>
+    <version>$version$</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>$author$</authors>
@@ -24,10 +24,10 @@
 
     <!-- Dependencies are automatically installed when the package is installed -->
     <dependencies>
-      <dependency id="Hannibalystic.Amazon.Base" version="1.0.0.2" />
+      <dependency id="Hannibalystic.Amazon.Base" version="1.0.0.5" />
       <dependency id="JsonSubTypes" version="1.2.0" />
-      <dependency id="NewtonSoft.Json" version="10.0.3" />
-      <dependency id="RestSharp" version="105.1.0" />
+      <dependency id="NewtonSoft.Json" version="13.0.3" />
+      <dependency id="RestSharp" version="106.12.0" />
       <dependency id="System.Threading.RateLimiting" version="7.0.0" />
     </dependencies>
   </metadata>

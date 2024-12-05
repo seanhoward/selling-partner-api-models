@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Reports
+ * Report v2021-06-30
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
 {
     /// <summary>
-    /// The response for the getReports operation.
+    /// The response for the &#x60;getReports&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class GetReportsResponse :  IEquatable<GetReportsResponse>, IValidatableObject
@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// Initializes a new instance of the <see cref="GetReportsResponse" /> class.
         /// </summary>
         /// <param name="reports">The reports. (required).</param>
-        /// <param name="nextToken">Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter..</param>
+        /// <param name="nextToken">Returned when the number of results exceeds &#x60;pageSize&#x60;. To get the next page of results, call &#x60;getReports&#x60; with this token as the only parameter..</param>
         public GetReportsResponse(ReportList reports = default(ReportList), string nextToken = default(string))
         {
             // to ensure "reports" is required (not null)
@@ -62,9 +62,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         public ReportList Reports { get; set; }
 
         /// <summary>
-        /// Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter.
+        /// Returned when the number of results exceeds &#x60;pageSize&#x60;. To get the next page of results, call &#x60;getReports&#x60; with this token as the only parameter.
         /// </summary>
-        /// <value>Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter.</value>
+        /// <value>Returned when the number of results exceeds &#x60;pageSize&#x60;. To get the next page of results, call &#x60;getReports&#x60; with this token as the only parameter.</value>
         [DataMember(Name="nextToken", EmitDefaultValue=false)]
         public string NextToken { get; set; }
 

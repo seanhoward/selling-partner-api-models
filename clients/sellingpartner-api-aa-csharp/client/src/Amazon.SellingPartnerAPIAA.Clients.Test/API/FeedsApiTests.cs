@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Feeds
+ * Feeds v2021-06-30
  *
  * The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.
  *
@@ -21,7 +21,7 @@ using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.API;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Feeds;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.Feeds.Test
 {
     /// <summary>
     ///  Class for testing FeedsApi

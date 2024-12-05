@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
     /// <summary>
-    /// SubstitutionOption
+    /// Substitution options for an order item.
     /// </summary>
     [DataContract]
     public partial class SubstitutionOption :  IEquatable<SubstitutionOption>, IValidatableObject
@@ -33,10 +33,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="SubstitutionOption" /> class.
         /// </summary>
-        /// <param name="aSIN">The Amazon Standard Identification Number (ASIN) of the item..</param>
+        /// <param name="aSIN">The item&#39;s Amazon Standard Identification Number (ASIN)..</param>
         /// <param name="quantityOrdered">The number of items to be picked for this substitution option. .</param>
-        /// <param name="sellerSKU">The seller stock keeping unit (SKU) of the item..</param>
-        /// <param name="title">The title of the item..</param>
+        /// <param name="sellerSKU">The item&#39;s seller stock keeping unit (SKU)..</param>
+        /// <param name="title">The item&#39;s title..</param>
         /// <param name="measurement">Measurement information for the substitution option..</param>
         public SubstitutionOption(string aSIN = default(string), int? quantityOrdered = default(int?), string sellerSKU = default(string), string title = default(string), Measurement measurement = default(Measurement))
         {
@@ -48,9 +48,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         }
         
         /// <summary>
-        /// The Amazon Standard Identification Number (ASIN) of the item.
+        /// The item&#39;s Amazon Standard Identification Number (ASIN).
         /// </summary>
-        /// <value>The Amazon Standard Identification Number (ASIN) of the item.</value>
+        /// <value>The item&#39;s Amazon Standard Identification Number (ASIN).</value>
         [DataMember(Name="ASIN", EmitDefaultValue=false)]
         public string ASIN { get; set; }
 
@@ -62,16 +62,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public int? QuantityOrdered { get; set; }
 
         /// <summary>
-        /// The seller stock keeping unit (SKU) of the item.
+        /// The item&#39;s seller stock keeping unit (SKU).
         /// </summary>
-        /// <value>The seller stock keeping unit (SKU) of the item.</value>
+        /// <value>The item&#39;s seller stock keeping unit (SKU).</value>
         [DataMember(Name="SellerSKU", EmitDefaultValue=false)]
         public string SellerSKU { get; set; }
 
         /// <summary>
-        /// The title of the item.
+        /// The item&#39;s title.
         /// </summary>
-        /// <value>The title of the item.</value>
+        /// <value>The item&#39;s title.</value>
         [DataMember(Name="Title", EmitDefaultValue=false)]
         public string Title { get; set; }
 

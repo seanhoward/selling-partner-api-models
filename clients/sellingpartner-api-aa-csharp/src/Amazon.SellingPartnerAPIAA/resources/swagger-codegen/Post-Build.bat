@@ -25,7 +25,7 @@ java ^
 java ^
 -jar C:\swagger-codegen\swagger-codegen-cli.jar generate ^
 -l csharp ^
--i ..\..\..\..\models\product-pricing-api-model\productPricingV0.json ^
+-i ..\..\..\..\models\product-pricing-api-model\productPricing_2022-05-01.json ^
 -t ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\templates ^
 -o ..\..\..\..\clients\sellingpartner-api-aa-csharp\client ^
 -c ..\..\..\..\clients\sellingpartner-api-aa-csharp\src\Amazon.SellingPartnerAPIAA\resources\swagger-codegen\config.json ^

@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Reports
+ * Report v2021-06-30
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportScheduleList" /> class.
         /// </summary>
-        /// <param name="reportSchedules">reportSchedules (required).</param>
+        /// <param name="reportSchedules">Detailed information about a report schedule. (required).</param>
         public ReportScheduleList(List<ReportSchedule> reportSchedules = default(List<ReportSchedule>))
         {
             // to ensure "reportSchedules" is required (not null)
@@ -53,8 +53,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         }
         
         /// <summary>
-        /// Gets or Sets ReportSchedules
+        /// Detailed information about a report schedule.
         /// </summary>
+        /// <value>Detailed information about a report schedule.</value>
         [DataMember(Name="reportSchedules", EmitDefaultValue=false)]
         public List<ReportSchedule> ReportSchedules { get; set; }
 

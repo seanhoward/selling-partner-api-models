@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
     /// <summary>
-    /// The updated values of the VerificationStatus field.
+    /// The updated values of the &#x60;VerificationStatus&#x60; field.
     /// </summary>
     [DataContract]
     public partial class UpdateVerificationStatusRequestBody :  IEquatable<UpdateVerificationStatusRequestBody>, IValidatableObject
@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <value>The new verification status of the order.</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
-        public VerificationStatus Status { get; set; }
+        public VerificationStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateVerificationStatusRequestBody" /> class.
         /// </summary>
@@ -44,20 +44,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateVerificationStatusRequestBody" /> class.
         /// </summary>
-        /// <param name="status">The new verification status of the order. (required).</param>
-        /// <param name="externalReviewerId">The identifier for the order&#39;s regulated information reviewer. (required).</param>
-        /// <param name="rejectionReasonId">The unique identifier for the rejection reason used for rejecting the order&#39;s regulated information. Only required if the new status is rejected..</param>
-        public UpdateVerificationStatusRequestBody(VerificationStatus status = default(VerificationStatus), string externalReviewerId = default(string), string rejectionReasonId = default(string))
+        /// <param name="status">The new verification status of the order..</param>
+        /// <param name="externalReviewerId">The identifier of the order&#39;s regulated information reviewer. (required).</param>
+        /// <param name="rejectionReasonId">The unique identifier of the rejection reason used for rejecting the order&#39;s regulated information. Only required if the new status is rejected..</param>
+        /// <param name="verificationDetails">Additional information regarding the verification of the order..</param>
+        public UpdateVerificationStatusRequestBody(VerificationStatus? status = default(VerificationStatus?), string externalReviewerId = default(string), string rejectionReasonId = default(string), VerificationDetails verificationDetails = default(VerificationDetails))
         {
-            // to ensure "status" is required (not null)
-            if (status == null)
-            {
-                throw new InvalidDataException("status is a required property for UpdateVerificationStatusRequestBody and cannot be null");
-            }
-            else
-            {
-                this.Status = status;
-            }
             // to ensure "externalReviewerId" is required (not null)
             if (externalReviewerId == null)
             {
@@ -67,23 +59,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             {
                 this.ExternalReviewerId = externalReviewerId;
             }
+            this.Status = status;
             this.RejectionReasonId = rejectionReasonId;
+            this.VerificationDetails = verificationDetails;
         }
         
 
         /// <summary>
-        /// The identifier for the order&#39;s regulated information reviewer.
+        /// The identifier of the order&#39;s regulated information reviewer.
         /// </summary>
-        /// <value>The identifier for the order&#39;s regulated information reviewer.</value>
+        /// <value>The identifier of the order&#39;s regulated information reviewer.</value>
         [DataMember(Name="externalReviewerId", EmitDefaultValue=false)]
         public string ExternalReviewerId { get; set; }
 
         /// <summary>
-        /// The unique identifier for the rejection reason used for rejecting the order&#39;s regulated information. Only required if the new status is rejected.
+        /// The unique identifier of the rejection reason used for rejecting the order&#39;s regulated information. Only required if the new status is rejected.
         /// </summary>
-        /// <value>The unique identifier for the rejection reason used for rejecting the order&#39;s regulated information. Only required if the new status is rejected.</value>
+        /// <value>The unique identifier of the rejection reason used for rejecting the order&#39;s regulated information. Only required if the new status is rejected.</value>
         [DataMember(Name="rejectionReasonId", EmitDefaultValue=false)]
         public string RejectionReasonId { get; set; }
+
+        /// <summary>
+        /// Additional information regarding the verification of the order.
+        /// </summary>
+        /// <value>Additional information regarding the verification of the order.</value>
+        [DataMember(Name="verificationDetails", EmitDefaultValue=false)]
+        public VerificationDetails VerificationDetails { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -96,6 +97,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  ExternalReviewerId: ").Append(ExternalReviewerId).Append("\n");
             sb.Append("  RejectionReasonId: ").Append(RejectionReasonId).Append("\n");
+            sb.Append("  VerificationDetails: ").Append(VerificationDetails).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -144,6 +146,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     this.RejectionReasonId == input.RejectionReasonId ||
                     (this.RejectionReasonId != null &&
                     this.RejectionReasonId.Equals(input.RejectionReasonId))
+                ) && 
+                (
+                    this.VerificationDetails == input.VerificationDetails ||
+                    (this.VerificationDetails != null &&
+                    this.VerificationDetails.Equals(input.VerificationDetails))
                 );
         }
 
@@ -162,6 +169,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     hashCode = hashCode * 59 + this.ExternalReviewerId.GetHashCode();
                 if (this.RejectionReasonId != null)
                     hashCode = hashCode * 59 + this.RejectionReasonId.GetHashCode();
+                if (this.VerificationDetails != null)
+                    hashCode = hashCode * 59 + this.VerificationDetails.GetHashCode();
                 return hashCode;
             }
         }

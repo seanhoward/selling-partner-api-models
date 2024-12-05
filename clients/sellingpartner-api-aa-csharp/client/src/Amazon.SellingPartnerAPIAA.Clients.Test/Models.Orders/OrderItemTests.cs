@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -89,6 +89,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Orders.Test
         public void OrderItemIdTest()
         {
             // TODO unit test for the property 'OrderItemId'
+        }
+        /// <summary>
+        /// Test the property 'AssociatedItems'
+        /// </summary>
+        [Test]
+        public void AssociatedItemsTest()
+        {
+            // TODO unit test for the property 'AssociatedItems'
         }
         /// <summary>
         /// Test the property 'Title'
@@ -339,20 +347,44 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Orders.Test
             // TODO unit test for the property 'BuyerRequestedCancel'
         }
         /// <summary>
-        /// Test the property 'ItemApprovalContext'
-        /// </summary>
-        [Test]
-        public void ItemApprovalContextTest()
-        {
-            // TODO unit test for the property 'ItemApprovalContext'
-        }
-        /// <summary>
         /// Test the property 'SerialNumbers'
         /// </summary>
         [Test]
         public void SerialNumbersTest()
         {
             // TODO unit test for the property 'SerialNumbers'
+        }
+        /// <summary>
+        /// Test the property 'SubstitutionPreferences'
+        /// </summary>
+        [Test]
+        public void SubstitutionPreferencesTest()
+        {
+            // TODO unit test for the property 'SubstitutionPreferences'
+        }
+        /// <summary>
+        /// Test the property 'Measurement'
+        /// </summary>
+        [Test]
+        public void MeasurementTest()
+        {
+            // TODO unit test for the property 'Measurement'
+        }
+        /// <summary>
+        /// Test the property 'ShippingConstraints'
+        /// </summary>
+        [Test]
+        public void ShippingConstraintsTest()
+        {
+            // TODO unit test for the property 'ShippingConstraints'
+        }
+        /// <summary>
+        /// Test the property 'AmazonPrograms'
+        /// </summary>
+        [Test]
+        public void AmazonProgramsTest()
+        {
+            // TODO unit test for the property 'AmazonPrograms'
         }
 
     }

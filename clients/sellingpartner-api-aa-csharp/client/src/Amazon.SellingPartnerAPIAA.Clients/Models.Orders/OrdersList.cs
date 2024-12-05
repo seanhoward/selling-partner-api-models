@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -40,8 +40,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="orders">orders (required).</param>
         /// <param name="nextToken">When present and not empty, pass this string token in the next request to return the next response page..</param>
-        /// <param name="lastUpdatedBefore">A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format..</param>
-        /// <param name="createdBefore">A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format..</param>
+        /// <param name="lastUpdatedBefore">Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format..</param>
+        /// <param name="createdBefore">Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format..</param>
         public OrdersList(OrderList orders = default(OrderList), string nextToken = default(string), string lastUpdatedBefore = default(string), string createdBefore = default(string))
         {
             // to ensure "orders" is required (not null)
@@ -72,16 +72,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string NextToken { get; set; }
 
         /// <summary>
-        /// A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
+        /// Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
         /// </summary>
-        /// <value>A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
+        /// <value>Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.</value>
         [DataMember(Name="LastUpdatedBefore", EmitDefaultValue=false)]
         public string LastUpdatedBefore { get; set; }
 
         /// <summary>
-        /// A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
+        /// Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
         /// </summary>
-        /// <value>A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
+        /// <value>Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.</value>
         [DataMember(Name="CreatedBefore", EmitDefaultValue=false)]
         public string CreatedBefore { get; set; }
 

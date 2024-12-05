@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -65,17 +65,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItem" /> class.
         /// </summary>
-        /// <param name="aSIN">The Amazon Standard Identification Number (ASIN) of the item. (required).</param>
-        /// <param name="sellerSKU">The seller stock keeping unit (SKU) of the item..</param>
+        /// <param name="aSIN">The item&#39;s Amazon Standard Identification Number (ASIN). (required).</param>
+        /// <param name="sellerSKU">The item&#39;s seller stock keeping unit (SKU)..</param>
         /// <param name="orderItemId">An Amazon-defined order item identifier. (required).</param>
         /// <param name="associatedItems">A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires..</param>
-        /// <param name="title">The name of the item..</param>
+        /// <param name="title">The item&#39;s name..</param>
         /// <param name="quantityOrdered">The number of items in the order.  (required).</param>
         /// <param name="quantityShipped">The number of items shipped..</param>
-        /// <param name="productInfo">Product information for the item..</param>
+        /// <param name="productInfo">The item&#39;s product information..</param>
         /// <param name="pointsGranted">The number and value of Amazon Points granted with the purchase of an item..</param>
-        /// <param name="itemPrice">The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of ItemPrice is equal to the selling price of the item multiplied by the quantity ordered. Note that ItemPrice excludes ShippingPrice and GiftWrapPrice..</param>
-        /// <param name="shippingPrice">The shipping price of the item..</param>
+        /// <param name="itemPrice">The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of &#x60;ItemPrice&#x60; is equal to the selling price of the item multiplied by the quantity ordered. &#x60;ItemPrice&#x60; excludes &#x60;ShippingPrice&#x60; and GiftWrapPrice..</param>
+        /// <param name="shippingPrice">The item&#39;s shipping price..</param>
         /// <param name="itemTax">The tax on the item price..</param>
         /// <param name="shippingTax">The tax on the shipping price..</param>
         /// <param name="shippingDiscount">The discount on the shipping price..</param>
@@ -85,25 +85,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="promotionIds">promotionIds.</param>
         /// <param name="cODFee">The fee charged for COD service..</param>
         /// <param name="cODFeeDiscount">The discount on the COD fee..</param>
-        /// <param name="isGift">When true, the item is a gift..</param>
-        /// <param name="conditionNote">The condition of the item as described by the seller..</param>
-        /// <param name="conditionId">The condition of the item.  Possible values: New, Used, Collectible, Refurbished, Preorder, Club..</param>
-        /// <param name="conditionSubtypeId">The subcondition of the item.  Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other..</param>
-        /// <param name="scheduledDeliveryStartDate">The start date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
-        /// <param name="scheduledDeliveryEndDate">The end date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
-        /// <param name="priceDesignation">Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders..</param>
+        /// <param name="isGift">Indicates whether the item is a gift.  **Possible values**: &#x60;true&#x60; and &#x60;false&#x60;..</param>
+        /// <param name="conditionNote">The condition of the item, as described by the seller..</param>
+        /// <param name="conditionId">The condition of the item.  **Possible values**: &#x60;New&#x60;, &#x60;Used&#x60;, &#x60;Collectible&#x60;, &#x60;Refurbished&#x60;, &#x60;Preorder&#x60;, and &#x60;Club&#x60;..</param>
+        /// <param name="conditionSubtypeId">The subcondition of the item.  **Possible values**: &#x60;New&#x60;, &#x60;Mint&#x60;, &#x60;Very Good&#x60;, &#x60;Good&#x60;, &#x60;Acceptable&#x60;, &#x60;Poor&#x60;, &#x60;Club&#x60;, &#x60;OEM&#x60;, &#x60;Warranty&#x60;, &#x60;Refurbished Warranty&#x60;, &#x60;Refurbished&#x60;, &#x60;Open Box&#x60;, &#x60;Any&#x60;, and &#x60;Other&#x60;..</param>
+        /// <param name="scheduledDeliveryStartDate">The start date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format..</param>
+        /// <param name="scheduledDeliveryEndDate">The end date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format..</param>
+        /// <param name="priceDesignation">Indicates that the selling price is a special price that is only available for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   **Possible values**: &#x60;BusinessPrice&#x60;.</param>
         /// <param name="taxCollection">Information about withheld taxes..</param>
-        /// <param name="serialNumberRequired">When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders..</param>
-        /// <param name="isTransparency">When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates..</param>
-        /// <param name="iossNumber">The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale..</param>
+        /// <param name="serialNumberRequired">When true, the product type for this item has a serial number.   Only returned for Amazon Easy Ship orders..</param>
+        /// <param name="isTransparency">When true, the ASIN is enrolled in Transparency. The Transparency serial number that you must submit is determined by:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number is applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates..</param>
+        /// <param name="iossNumber">The IOSS number of the marketplace. Sellers shipping to the EU from outside the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale..</param>
         /// <param name="storeChainStoreId">The store chain store identifier. Linked to a specific store in a store chain..</param>
         /// <param name="deemedResellerCategory">The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK..</param>
-        /// <param name="buyerInfo">buyerInfo.</param>
+        /// <param name="buyerInfo">A single item&#39;s buyer information.  **Note**: The &#x60;BuyerInfo&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;BuyerInfo&#x60;. For example, &#x60;BuyerCustomizedInfo&#x60; and &#x60;GiftMessageText&#x60;..</param>
         /// <param name="buyerRequestedCancel">Information about whether or not a buyer requested cancellation..</param>
         /// <param name="serialNumbers">A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only..</param>
-        /// <param name="substitutionPreferences">Substitution preferences for the order item. This is an optional field and will only be present if seller supports substitutions like in case of some grocery sellers..</param>
+        /// <param name="substitutionPreferences">Substitution preferences for the order item. This is an optional field that is only present if a seller supports substitutions, as is the case with some grocery sellers..</param>
         /// <param name="measurement">Measurement information for the order item..</param>
-        public OrderItem(string aSIN = default(string), string sellerSKU = default(string), string orderItemId = default(string), List<AssociatedItem> associatedItems = default(List<AssociatedItem>), string title = default(string), int? quantityOrdered = default(int?), int? quantityShipped = default(int?), ProductInfoDetail productInfo = default(ProductInfoDetail), PointsGrantedDetail pointsGranted = default(PointsGrantedDetail), Money itemPrice = default(Money), Money shippingPrice = default(Money), Money itemTax = default(Money), Money shippingTax = default(Money), Money shippingDiscount = default(Money), Money shippingDiscountTax = default(Money), Money promotionDiscount = default(Money), Money promotionDiscountTax = default(Money), PromotionIdList promotionIds = default(PromotionIdList), Money cODFee = default(Money), Money cODFeeDiscount = default(Money), bool? isGift = default(bool?), string conditionNote = default(string), string conditionId = default(string), string conditionSubtypeId = default(string), string scheduledDeliveryStartDate = default(string), string scheduledDeliveryEndDate = default(string), string priceDesignation = default(string), TaxCollection taxCollection = default(TaxCollection), bool? serialNumberRequired = default(bool?), bool? isTransparency = default(bool?), string iossNumber = default(string), string storeChainStoreId = default(string), DeemedResellerCategoryEnum? deemedResellerCategory = default(DeemedResellerCategoryEnum?), ItemBuyerInfo buyerInfo = default(ItemBuyerInfo), BuyerRequestedCancel buyerRequestedCancel = default(BuyerRequestedCancel), List<string> serialNumbers = default(List<string>), SubstitutionPreferences substitutionPreferences = default(SubstitutionPreferences), Measurement measurement = default(Measurement))
+        /// <param name="shippingConstraints">Shipping constraints applicable to this order..</param>
+        /// <param name="amazonPrograms">Contains the list of programs that are associated with an item..</param>
+        public OrderItem(string aSIN = default(string), string sellerSKU = default(string), string orderItemId = default(string), List<AssociatedItem> associatedItems = default(List<AssociatedItem>), string title = default(string), int? quantityOrdered = default(int?), int? quantityShipped = default(int?), ProductInfoDetail productInfo = default(ProductInfoDetail), PointsGrantedDetail pointsGranted = default(PointsGrantedDetail), Money itemPrice = default(Money), Money shippingPrice = default(Money), Money itemTax = default(Money), Money shippingTax = default(Money), Money shippingDiscount = default(Money), Money shippingDiscountTax = default(Money), Money promotionDiscount = default(Money), Money promotionDiscountTax = default(Money), PromotionIdList promotionIds = default(PromotionIdList), Money cODFee = default(Money), Money cODFeeDiscount = default(Money), string isGift = default(string), string conditionNote = default(string), string conditionId = default(string), string conditionSubtypeId = default(string), string scheduledDeliveryStartDate = default(string), string scheduledDeliveryEndDate = default(string), string priceDesignation = default(string), TaxCollection taxCollection = default(TaxCollection), bool? serialNumberRequired = default(bool?), bool? isTransparency = default(bool?), string iossNumber = default(string), string storeChainStoreId = default(string), DeemedResellerCategoryEnum? deemedResellerCategory = default(DeemedResellerCategoryEnum?), ItemBuyerInfo buyerInfo = default(ItemBuyerInfo), BuyerRequestedCancel buyerRequestedCancel = default(BuyerRequestedCancel), List<string> serialNumbers = default(List<string>), SubstitutionPreferences substitutionPreferences = default(SubstitutionPreferences), Measurement measurement = default(Measurement), ShippingConstraints shippingConstraints = default(ShippingConstraints), AmazonPrograms amazonPrograms = default(AmazonPrograms))
         {
             // to ensure "aSIN" is required (not null)
             if (aSIN == null)
@@ -167,19 +169,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.SerialNumbers = serialNumbers;
             this.SubstitutionPreferences = substitutionPreferences;
             this.Measurement = measurement;
+            this.ShippingConstraints = shippingConstraints;
+            this.AmazonPrograms = amazonPrograms;
         }
         
         /// <summary>
-        /// The Amazon Standard Identification Number (ASIN) of the item.
+        /// The item&#39;s Amazon Standard Identification Number (ASIN).
         /// </summary>
-        /// <value>The Amazon Standard Identification Number (ASIN) of the item.</value>
+        /// <value>The item&#39;s Amazon Standard Identification Number (ASIN).</value>
         [DataMember(Name="ASIN", EmitDefaultValue=false)]
         public string ASIN { get; set; }
 
         /// <summary>
-        /// The seller stock keeping unit (SKU) of the item.
+        /// The item&#39;s seller stock keeping unit (SKU).
         /// </summary>
-        /// <value>The seller stock keeping unit (SKU) of the item.</value>
+        /// <value>The item&#39;s seller stock keeping unit (SKU).</value>
         [DataMember(Name="SellerSKU", EmitDefaultValue=false)]
         public string SellerSKU { get; set; }
 
@@ -198,9 +202,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public List<AssociatedItem> AssociatedItems { get; set; }
 
         /// <summary>
-        /// The name of the item.
+        /// The item&#39;s name.
         /// </summary>
-        /// <value>The name of the item.</value>
+        /// <value>The item&#39;s name.</value>
         [DataMember(Name="Title", EmitDefaultValue=false)]
         public string Title { get; set; }
 
@@ -219,9 +223,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public int? QuantityShipped { get; set; }
 
         /// <summary>
-        /// Product information for the item.
+        /// The item&#39;s product information.
         /// </summary>
-        /// <value>Product information for the item.</value>
+        /// <value>The item&#39;s product information.</value>
         [DataMember(Name="ProductInfo", EmitDefaultValue=false)]
         public ProductInfoDetail ProductInfo { get; set; }
 
@@ -233,16 +237,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public PointsGrantedDetail PointsGranted { get; set; }
 
         /// <summary>
-        /// The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of ItemPrice is equal to the selling price of the item multiplied by the quantity ordered. Note that ItemPrice excludes ShippingPrice and GiftWrapPrice.
+        /// The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of &#x60;ItemPrice&#x60; is equal to the selling price of the item multiplied by the quantity ordered. &#x60;ItemPrice&#x60; excludes &#x60;ShippingPrice&#x60; and GiftWrapPrice.
         /// </summary>
-        /// <value>The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of ItemPrice is equal to the selling price of the item multiplied by the quantity ordered. Note that ItemPrice excludes ShippingPrice and GiftWrapPrice.</value>
+        /// <value>The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of &#x60;ItemPrice&#x60; is equal to the selling price of the item multiplied by the quantity ordered. &#x60;ItemPrice&#x60; excludes &#x60;ShippingPrice&#x60; and GiftWrapPrice.</value>
         [DataMember(Name="ItemPrice", EmitDefaultValue=false)]
         public Money ItemPrice { get; set; }
 
         /// <summary>
-        /// The shipping price of the item.
+        /// The item&#39;s shipping price.
         /// </summary>
-        /// <value>The shipping price of the item.</value>
+        /// <value>The item&#39;s shipping price.</value>
         [DataMember(Name="ShippingPrice", EmitDefaultValue=false)]
         public Money ShippingPrice { get; set; }
 
@@ -309,51 +313,51 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public Money CODFeeDiscount { get; set; }
 
         /// <summary>
-        /// When true, the item is a gift.
+        /// Indicates whether the item is a gift.  **Possible values**: &#x60;true&#x60; and &#x60;false&#x60;.
         /// </summary>
-        /// <value>When true, the item is a gift.</value>
+        /// <value>Indicates whether the item is a gift.  **Possible values**: &#x60;true&#x60; and &#x60;false&#x60;.</value>
         [DataMember(Name="IsGift", EmitDefaultValue=false)]
-        public bool? IsGift { get; set; }
+        public string IsGift { get; set; }
 
         /// <summary>
-        /// The condition of the item as described by the seller.
+        /// The condition of the item, as described by the seller.
         /// </summary>
-        /// <value>The condition of the item as described by the seller.</value>
+        /// <value>The condition of the item, as described by the seller.</value>
         [DataMember(Name="ConditionNote", EmitDefaultValue=false)]
         public string ConditionNote { get; set; }
 
         /// <summary>
-        /// The condition of the item.  Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
+        /// The condition of the item.  **Possible values**: &#x60;New&#x60;, &#x60;Used&#x60;, &#x60;Collectible&#x60;, &#x60;Refurbished&#x60;, &#x60;Preorder&#x60;, and &#x60;Club&#x60;.
         /// </summary>
-        /// <value>The condition of the item.  Possible values: New, Used, Collectible, Refurbished, Preorder, Club.</value>
+        /// <value>The condition of the item.  **Possible values**: &#x60;New&#x60;, &#x60;Used&#x60;, &#x60;Collectible&#x60;, &#x60;Refurbished&#x60;, &#x60;Preorder&#x60;, and &#x60;Club&#x60;.</value>
         [DataMember(Name="ConditionId", EmitDefaultValue=false)]
         public string ConditionId { get; set; }
 
         /// <summary>
-        /// The subcondition of the item.  Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
+        /// The subcondition of the item.  **Possible values**: &#x60;New&#x60;, &#x60;Mint&#x60;, &#x60;Very Good&#x60;, &#x60;Good&#x60;, &#x60;Acceptable&#x60;, &#x60;Poor&#x60;, &#x60;Club&#x60;, &#x60;OEM&#x60;, &#x60;Warranty&#x60;, &#x60;Refurbished Warranty&#x60;, &#x60;Refurbished&#x60;, &#x60;Open Box&#x60;, &#x60;Any&#x60;, and &#x60;Other&#x60;.
         /// </summary>
-        /// <value>The subcondition of the item.  Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.</value>
+        /// <value>The subcondition of the item.  **Possible values**: &#x60;New&#x60;, &#x60;Mint&#x60;, &#x60;Very Good&#x60;, &#x60;Good&#x60;, &#x60;Acceptable&#x60;, &#x60;Poor&#x60;, &#x60;Club&#x60;, &#x60;OEM&#x60;, &#x60;Warranty&#x60;, &#x60;Refurbished Warranty&#x60;, &#x60;Refurbished&#x60;, &#x60;Open Box&#x60;, &#x60;Any&#x60;, and &#x60;Other&#x60;.</value>
         [DataMember(Name="ConditionSubtypeId", EmitDefaultValue=false)]
         public string ConditionSubtypeId { get; set; }
 
         /// <summary>
-        /// The start date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
+        /// The start date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
         /// </summary>
-        /// <value>The start date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
+        /// <value>The start date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.</value>
         [DataMember(Name="ScheduledDeliveryStartDate", EmitDefaultValue=false)]
         public string ScheduledDeliveryStartDate { get; set; }
 
         /// <summary>
-        /// The end date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
+        /// The end date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
         /// </summary>
-        /// <value>The end date of the scheduled delivery window in the time zone of the order destination. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
+        /// <value>The end date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.</value>
         [DataMember(Name="ScheduledDeliveryEndDate", EmitDefaultValue=false)]
         public string ScheduledDeliveryEndDate { get; set; }
 
         /// <summary>
-        /// Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
+        /// Indicates that the selling price is a special price that is only available for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   **Possible values**: &#x60;BusinessPrice&#x60;
         /// </summary>
-        /// <value>Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.</value>
+        /// <value>Indicates that the selling price is a special price that is only available for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   **Possible values**: &#x60;BusinessPrice&#x60;</value>
         [DataMember(Name="PriceDesignation", EmitDefaultValue=false)]
         public string PriceDesignation { get; set; }
 
@@ -365,23 +369,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public TaxCollection TaxCollection { get; set; }
 
         /// <summary>
-        /// When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders.
+        /// When true, the product type for this item has a serial number.   Only returned for Amazon Easy Ship orders.
         /// </summary>
-        /// <value>When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders.</value>
+        /// <value>When true, the product type for this item has a serial number.   Only returned for Amazon Easy Ship orders.</value>
         [DataMember(Name="SerialNumberRequired", EmitDefaultValue=false)]
         public bool? SerialNumberRequired { get; set; }
 
         /// <summary>
-        /// When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.
+        /// When true, the ASIN is enrolled in Transparency. The Transparency serial number that you must submit is determined by:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number is applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.
         /// </summary>
-        /// <value>When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.</value>
+        /// <value>When true, the ASIN is enrolled in Transparency. The Transparency serial number that you must submit is determined by:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number is applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.</value>
         [DataMember(Name="IsTransparency", EmitDefaultValue=false)]
         public bool? IsTransparency { get; set; }
 
         /// <summary>
-        /// The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
+        /// The IOSS number of the marketplace. Sellers shipping to the EU from outside the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
         /// </summary>
-        /// <value>The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.</value>
+        /// <value>The IOSS number of the marketplace. Sellers shipping to the EU from outside the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.</value>
         [DataMember(Name="IossNumber", EmitDefaultValue=false)]
         public string IossNumber { get; set; }
 
@@ -394,8 +398,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 
 
         /// <summary>
-        /// Gets or Sets BuyerInfo
+        /// A single item&#39;s buyer information.  **Note**: The &#x60;BuyerInfo&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;BuyerInfo&#x60;. For example, &#x60;BuyerCustomizedInfo&#x60; and &#x60;GiftMessageText&#x60;.
         /// </summary>
+        /// <value>A single item&#39;s buyer information.  **Note**: The &#x60;BuyerInfo&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;BuyerInfo&#x60;. For example, &#x60;BuyerCustomizedInfo&#x60; and &#x60;GiftMessageText&#x60;.</value>
         [DataMember(Name="BuyerInfo", EmitDefaultValue=false)]
         public ItemBuyerInfo BuyerInfo { get; set; }
 
@@ -414,9 +419,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public List<string> SerialNumbers { get; set; }
 
         /// <summary>
-        /// Substitution preferences for the order item. This is an optional field and will only be present if seller supports substitutions like in case of some grocery sellers.
+        /// Substitution preferences for the order item. This is an optional field that is only present if a seller supports substitutions, as is the case with some grocery sellers.
         /// </summary>
-        /// <value>Substitution preferences for the order item. This is an optional field and will only be present if seller supports substitutions like in case of some grocery sellers.</value>
+        /// <value>Substitution preferences for the order item. This is an optional field that is only present if a seller supports substitutions, as is the case with some grocery sellers.</value>
         [DataMember(Name="SubstitutionPreferences", EmitDefaultValue=false)]
         public SubstitutionPreferences SubstitutionPreferences { get; set; }
 
@@ -426,6 +431,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <value>Measurement information for the order item.</value>
         [DataMember(Name="Measurement", EmitDefaultValue=false)]
         public Measurement Measurement { get; set; }
+
+        /// <summary>
+        /// Shipping constraints applicable to this order.
+        /// </summary>
+        /// <value>Shipping constraints applicable to this order.</value>
+        [DataMember(Name="ShippingConstraints", EmitDefaultValue=false)]
+        public ShippingConstraints ShippingConstraints { get; set; }
+
+        /// <summary>
+        /// Contains the list of programs that are associated with an item.
+        /// </summary>
+        /// <value>Contains the list of programs that are associated with an item.</value>
+        [DataMember(Name="AmazonPrograms", EmitDefaultValue=false)]
+        public AmazonPrograms AmazonPrograms { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -473,6 +492,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("  SerialNumbers: ").Append(SerialNumbers).Append("\n");
             sb.Append("  SubstitutionPreferences: ").Append(SubstitutionPreferences).Append("\n");
             sb.Append("  Measurement: ").Append(Measurement).Append("\n");
+            sb.Append("  ShippingConstraints: ").Append(ShippingConstraints).Append("\n");
+            sb.Append("  AmazonPrograms: ").Append(AmazonPrograms).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -696,6 +717,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     this.Measurement == input.Measurement ||
                     (this.Measurement != null &&
                     this.Measurement.Equals(input.Measurement))
+                ) && 
+                (
+                    this.ShippingConstraints == input.ShippingConstraints ||
+                    (this.ShippingConstraints != null &&
+                    this.ShippingConstraints.Equals(input.ShippingConstraints))
+                ) && 
+                (
+                    this.AmazonPrograms == input.AmazonPrograms ||
+                    (this.AmazonPrograms != null &&
+                    this.AmazonPrograms.Equals(input.AmazonPrograms))
                 );
         }
 
@@ -784,6 +815,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     hashCode = hashCode * 59 + this.SubstitutionPreferences.GetHashCode();
                 if (this.Measurement != null)
                     hashCode = hashCode * 59 + this.Measurement.GetHashCode();
+                if (this.ShippingConstraints != null)
+                    hashCode = hashCode * 59 + this.ShippingConstraints.GetHashCode();
+                if (this.AmazonPrograms != null)
+                    hashCode = hashCode * 59 + this.AmazonPrograms.GetHashCode();
                 return hashCode;
             }
         }

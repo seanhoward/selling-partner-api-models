@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Reports
+ * Report v2021-06-30
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -25,15 +25,15 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
 {
     /// <summary>
-    /// CreateReportScheduleSpecification
+    /// Information required to create the report schedule.
     /// </summary>
     [DataContract]
     public partial class CreateReportScheduleSpecification :  IEquatable<CreateReportScheduleSpecification>, IValidatableObject
     {
         /// <summary>
-        /// One of a set of predefined ISO 8601 periods that specifies how often a report should be created.
+        /// One of a set of predefined &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; periods that specifies how often a report should be created.
         /// </summary>
-        /// <value>One of a set of predefined ISO 8601 periods that specifies how often a report should be created.</value>
+        /// <value>One of a set of predefined &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; periods that specifies how often a report should be created.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PeriodEnum
         {
@@ -148,9 +148,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         }
 
         /// <summary>
-        /// One of a set of predefined ISO 8601 periods that specifies how often a report should be created.
+        /// One of a set of predefined &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; periods that specifies how often a report should be created.
         /// </summary>
-        /// <value>One of a set of predefined ISO 8601 periods that specifies how often a report should be created.</value>
+        /// <value>One of a set of predefined &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; periods that specifies how often a report should be created.</value>
         [DataMember(Name="period", EmitDefaultValue=false)]
         public PeriodEnum Period { get; set; }
         /// <summary>
@@ -164,8 +164,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <param name="reportType">The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required).</param>
         /// <param name="marketplaceIds">A list of marketplace identifiers for the report schedule. (required).</param>
         /// <param name="reportOptions">reportOptions.</param>
-        /// <param name="period">One of a set of predefined ISO 8601 periods that specifies how often a report should be created. (required).</param>
-        /// <param name="nextReportCreationTime">The date and time when the schedule will create its next report, in ISO 8601 date time format..</param>
+        /// <param name="period">One of a set of predefined &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; periods that specifies how often a report should be created. (required).</param>
+        /// <param name="nextReportCreationTime">The date and time when the schedule will create its next report, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
         public CreateReportScheduleSpecification(string reportType = default(string), List<string> marketplaceIds = default(List<string>), ReportOptions reportOptions = default(ReportOptions), PeriodEnum period = default(PeriodEnum), DateTime? nextReportCreationTime = default(DateTime?))
         {
             // to ensure "reportType" is required (not null)
@@ -221,9 +221,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
 
 
         /// <summary>
-        /// The date and time when the schedule will create its next report, in ISO 8601 date time format.
+        /// The date and time when the schedule will create its next report, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
         /// </summary>
-        /// <value>The date and time when the schedule will create its next report, in ISO 8601 date time format.</value>
+        /// <value>The date and time when the schedule will create its next report, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
         [DataMember(Name="nextReportCreationTime", EmitDefaultValue=false)]
         public DateTime? NextReportCreationTime { get; set; }
 

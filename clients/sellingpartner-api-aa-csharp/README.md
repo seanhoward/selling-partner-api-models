@@ -78,7 +78,7 @@ This package is built as a .NET Standard Library via a Visual Studio Solution wi
 ## Dependencies
 All dependencies can be installed via NuGet
 - RestSharp - 106.12.0 
-- Newtonsoft.Json 12.0.3
+- Newtonsoft.Json 13.0.3
 - NETStandard.Library 2.0.3 (platform-specific implementation requirements are documented on the [Microsoft .NET Guide](https://docs.microsoft.com/en-us/dotnet/standard/net-standard))
 
 ## License

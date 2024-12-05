@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
     /// <summary>
-    /// The response schema for the getOrderItems operation.
+    /// The response schema for the &#x60;getOrderItems&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class GetOrderItemsResponse :  IEquatable<GetOrderItemsResponse>, IValidatableObject
@@ -33,8 +33,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="GetOrderItemsResponse" /> class.
         /// </summary>
-        /// <param name="payload">The payload for the getOrderItems operation..</param>
-        /// <param name="errors">One or more unexpected errors occurred during the getOrderItems operation..</param>
+        /// <param name="payload">The payload for the &#x60;getOrderItems&#x60; operation..</param>
+        /// <param name="errors">One or more unexpected errors occurred during the &#x60;getOrderItems&#x60; operation..</param>
         public GetOrderItemsResponse(OrderItemsList payload = default(OrderItemsList), ErrorList errors = default(ErrorList))
         {
             this.Payload = payload;
@@ -42,16 +42,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         }
         
         /// <summary>
-        /// The payload for the getOrderItems operation.
+        /// The payload for the &#x60;getOrderItems&#x60; operation.
         /// </summary>
-        /// <value>The payload for the getOrderItems operation.</value>
+        /// <value>The payload for the &#x60;getOrderItems&#x60; operation.</value>
         [DataMember(Name="payload", EmitDefaultValue=false)]
         public OrderItemsList Payload { get; set; }
 
         /// <summary>
-        /// One or more unexpected errors occurred during the getOrderItems operation.
+        /// One or more unexpected errors occurred during the &#x60;getOrderItems&#x60; operation.
         /// </summary>
-        /// <value>One or more unexpected errors occurred during the getOrderItems operation.</value>
+        /// <value>One or more unexpected errors occurred during the &#x60;getOrderItems&#x60; operation.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public ErrorList Errors { get; set; }
 

@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -75,12 +75,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Orders.Test
             // TODO unit test for the property 'AmazonOrderId'
         }
         /// <summary>
+        /// Test the property 'BuyerCompanyName'
+        /// </summary>
+        [Test]
+        public void BuyerCompanyNameTest()
+        {
+            // TODO unit test for the property 'BuyerCompanyName'
+        }
+        /// <summary>
         /// Test the property 'ShippingAddress'
         /// </summary>
         [Test]
         public void ShippingAddressTest()
         {
             // TODO unit test for the property 'ShippingAddress'
+        }
+        /// <summary>
+        /// Test the property 'DeliveryPreferences'
+        /// </summary>
+        [Test]
+        public void DeliveryPreferencesTest()
+        {
+            // TODO unit test for the property 'DeliveryPreferences'
         }
 
     }

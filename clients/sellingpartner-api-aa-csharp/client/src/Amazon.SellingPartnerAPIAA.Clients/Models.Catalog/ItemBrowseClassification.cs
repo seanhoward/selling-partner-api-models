@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Catalog Items
+ * Catalog Items v2022-04-01
  *
  * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
  *
@@ -38,9 +38,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemBrowseClassification" /> class.
         /// </summary>
-        /// <param name="displayName">Display name for the classification. (required).</param>
+        /// <param name="displayName">Display name for the classification (browse node). (required).</param>
         /// <param name="classificationId">Identifier of the classification (browse node identifier). (required).</param>
-        public ItemBrowseClassification(string displayName = default(string), string classificationId = default(string))
+        /// <param name="parent">Parent classification (browse node) of the current classification..</param>
+        public ItemBrowseClassification(string displayName = default(string), string classificationId = default(string), ItemBrowseClassification parent = default(ItemBrowseClassification))
         {
             // to ensure "displayName" is required (not null)
             if (displayName == null)
@@ -60,12 +61,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
             {
                 this.ClassificationId = classificationId;
             }
+            this.Parent = parent;
         }
         
         /// <summary>
-        /// Display name for the classification.
+        /// Display name for the classification (browse node).
         /// </summary>
-        /// <value>Display name for the classification.</value>
+        /// <value>Display name for the classification (browse node).</value>
         [DataMember(Name="displayName", EmitDefaultValue=false)]
         public string DisplayName { get; set; }
 
@@ -77,6 +79,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
         public string ClassificationId { get; set; }
 
         /// <summary>
+        /// Parent classification (browse node) of the current classification.
+        /// </summary>
+        /// <value>Parent classification (browse node) of the current classification.</value>
+        [DataMember(Name="parent", EmitDefaultValue=false)]
+        public ItemBrowseClassification Parent { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -86,6 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
             sb.Append("class ItemBrowseClassification {\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  ClassificationId: ").Append(ClassificationId).Append("\n");
+            sb.Append("  Parent: ").Append(Parent).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +139,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
                     this.ClassificationId == input.ClassificationId ||
                     (this.ClassificationId != null &&
                     this.ClassificationId.Equals(input.ClassificationId))
+                ) && 
+                (
+                    this.Parent == input.Parent ||
+                    (this.Parent != null &&
+                    this.Parent.Equals(input.Parent))
                 );
         }
 
@@ -145,6 +160,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
                     hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
                 if (this.ClassificationId != null)
                     hashCode = hashCode * 59 + this.ClassificationId.GetHashCode();
+                if (this.Parent != null)
+                    hashCode = hashCode * 59 + this.Parent.GetHashCode();
                 return hashCode;
             }
         }

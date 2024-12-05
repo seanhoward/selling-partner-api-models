@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Reports
+ * Report v2021-06-30
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -42,8 +42,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <param name="reportType">The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required).</param>
         /// <param name="marketplaceIds">A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise..</param>
         /// <param name="reportOptions">reportOptions.</param>
-        /// <param name="period">An ISO 8601 period value that indicates how often a report should be created. (required).</param>
-        /// <param name="nextReportCreationTime">The date and time when the schedule will create its next report, in ISO 8601 date time format..</param>
+        /// <param name="period">An &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; period value that indicates how often a report should be created. (required).</param>
+        /// <param name="nextReportCreationTime">The date and time when the schedule will create its next report, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
         public ReportSchedule(string reportScheduleId = default(string), string reportType = default(string), List<string> marketplaceIds = default(List<string>), ReportOptions reportOptions = default(ReportOptions), string period = default(string), DateTime? nextReportCreationTime = default(DateTime?))
         {
             // to ensure "reportScheduleId" is required (not null)
@@ -106,16 +106,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         public ReportOptions ReportOptions { get; set; }
 
         /// <summary>
-        /// An ISO 8601 period value that indicates how often a report should be created.
+        /// An &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; period value that indicates how often a report should be created.
         /// </summary>
-        /// <value>An ISO 8601 period value that indicates how often a report should be created.</value>
+        /// <value>An &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; period value that indicates how often a report should be created.</value>
         [DataMember(Name="period", EmitDefaultValue=false)]
         public string Period { get; set; }
 
         /// <summary>
-        /// The date and time when the schedule will create its next report, in ISO 8601 date time format.
+        /// The date and time when the schedule will create its next report, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
         /// </summary>
-        /// <value>The date and time when the schedule will create its next report, in ISO 8601 date time format.</value>
+        /// <value>The date and time when the schedule will create its next report, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
         [DataMember(Name="nextReportCreationTime", EmitDefaultValue=false)]
         public DateTime? NextReportCreationTime { get; set; }
 

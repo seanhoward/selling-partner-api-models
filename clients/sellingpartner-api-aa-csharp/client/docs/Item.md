@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Asin** | **string** |  | 
 **Attributes** | [**ItemAttributes**](ItemAttributes.md) |  | [optional] 
+**Classifications** | [**ItemBrowseClassifications**](ItemBrowseClassifications.md) |  | [optional] 
 **Dimensions** | [**ItemDimensions**](ItemDimensions.md) |  | [optional] 
 **Identifiers** | [**ItemIdentifiers**](ItemIdentifiers.md) |  | [optional] 
 **Images** | [**ItemImages**](ItemImages.md) |  | [optional] 

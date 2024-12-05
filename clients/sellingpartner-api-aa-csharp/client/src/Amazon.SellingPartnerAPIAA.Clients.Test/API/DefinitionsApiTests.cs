@@ -21,7 +21,7 @@ using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.API;
 using Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.ProductTypes.Test
 {
     /// <summary>
     ///  Class for testing DefinitionsApi
@@ -92,7 +92,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Test
             // TODO uncomment below to test the method and replace null with proper value
             //List<string> marketplaceIds = null;
             //List<string> keywords = null;
-            //var response = instance.SearchDefinitionsProductTypes(marketplaceIds, keywords);
+            //string itemName = null;
+            //string locale = null;
+            //string searchLocale = null;
+            //var response = instance.SearchDefinitionsProductTypes(marketplaceIds, keywords, itemName, locale, searchLocale);
             //Assert.IsInstanceOf<ProductTypeList> (response, "response is ProductTypeList");
         }
         

@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -66,20 +66,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Initializes a new instance of the <see cref="Address" /> class.
         /// </summary>
         /// <param name="name">The name. (required).</param>
+        /// <param name="companyName">The company name of the recipient.  **Note**: This attribute is only available for shipping address..</param>
         /// <param name="addressLine1">The street address..</param>
         /// <param name="addressLine2">Additional street address information, if required..</param>
         /// <param name="addressLine3">Additional street address information, if required..</param>
-        /// <param name="city">The city .</param>
+        /// <param name="city">The city..</param>
         /// <param name="county">The county..</param>
         /// <param name="district">The district..</param>
         /// <param name="stateOrRegion">The state or region..</param>
         /// <param name="municipality">The municipality..</param>
         /// <param name="postalCode">The postal code..</param>
         /// <param name="countryCode">The country code. A two-character country code, in ISO 3166-1 alpha-2 format..</param>
-        /// <param name="phone">The phone number. Not returned for Fulfillment by Amazon (FBA) orders..</param>
-        /// <param name="extendedFields">extendedFields.</param>
+        /// <param name="phone">The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. In some cases, the buyer phone number is suppressed:  a. Phone is suppressed for all &#x60;AFN&#x60; (fulfilled by Amazon) orders. b. Phone is suppressed for the shipped &#x60;MFN&#x60; (fulfilled by seller) order when the current date is past the Latest Delivery Date..</param>
+        /// <param name="extendedFields">The container for address extended fields. For example, street name or street number.   **Note**: This attribute is currently only available with Brazil shipping addresses..</param>
         /// <param name="addressType">The address type of the shipping address..</param>
-        public Address(string name = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string city = default(string), string county = default(string), string district = default(string), string stateOrRegion = default(string), string municipality = default(string), string postalCode = default(string), string countryCode = default(string), string phone = default(string), AddressExtendedFields extendedFields = default(AddressExtendedFields), AddressTypeEnum? addressType = default(AddressTypeEnum?))
+        public Address(string name = default(string), string companyName = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string city = default(string), string county = default(string), string district = default(string), string stateOrRegion = default(string), string municipality = default(string), string postalCode = default(string), string countryCode = default(string), string phone = default(string), AddressExtendedFields extendedFields = default(AddressExtendedFields), AddressTypeEnum? addressType = default(AddressTypeEnum?))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -90,6 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             {
                 this.Name = name;
             }
+            this.CompanyName = companyName;
             this.AddressLine1 = addressLine1;
             this.AddressLine2 = addressLine2;
             this.AddressLine3 = addressLine3;
@@ -113,6 +115,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string Name { get; set; }
 
         /// <summary>
+        /// The company name of the recipient.  **Note**: This attribute is only available for shipping address.
+        /// </summary>
+        /// <value>The company name of the recipient.  **Note**: This attribute is only available for shipping address.</value>
+        [DataMember(Name="CompanyName", EmitDefaultValue=false)]
+        public string CompanyName { get; set; }
+
+        /// <summary>
         /// The street address.
         /// </summary>
         /// <value>The street address.</value>
@@ -134,9 +143,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string AddressLine3 { get; set; }
 
         /// <summary>
-        /// The city 
+        /// The city.
         /// </summary>
-        /// <value>The city </value>
+        /// <value>The city.</value>
         [DataMember(Name="City", EmitDefaultValue=false)]
         public string City { get; set; }
 
@@ -183,15 +192,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string CountryCode { get; set; }
 
         /// <summary>
-        /// The phone number. Not returned for Fulfillment by Amazon (FBA) orders.
+        /// The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. In some cases, the buyer phone number is suppressed:  a. Phone is suppressed for all &#x60;AFN&#x60; (fulfilled by Amazon) orders. b. Phone is suppressed for the shipped &#x60;MFN&#x60; (fulfilled by seller) order when the current date is past the Latest Delivery Date.
         /// </summary>
-        /// <value>The phone number. Not returned for Fulfillment by Amazon (FBA) orders.</value>
+        /// <value>The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. In some cases, the buyer phone number is suppressed:  a. Phone is suppressed for all &#x60;AFN&#x60; (fulfilled by Amazon) orders. b. Phone is suppressed for the shipped &#x60;MFN&#x60; (fulfilled by seller) order when the current date is past the Latest Delivery Date.</value>
         [DataMember(Name="Phone", EmitDefaultValue=false)]
         public string Phone { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExtendedFields
+        /// The container for address extended fields. For example, street name or street number.   **Note**: This attribute is currently only available with Brazil shipping addresses.
         /// </summary>
+        /// <value>The container for address extended fields. For example, street name or street number.   **Note**: This attribute is currently only available with Brazil shipping addresses.</value>
         [DataMember(Name="ExtendedFields", EmitDefaultValue=false)]
         public AddressExtendedFields ExtendedFields { get; set; }
 
@@ -205,6 +215,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             var sb = new StringBuilder();
             sb.Append("class Address {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  AddressLine1: ").Append(AddressLine1).Append("\n");
             sb.Append("  AddressLine2: ").Append(AddressLine2).Append("\n");
             sb.Append("  AddressLine3: ").Append(AddressLine3).Append("\n");
@@ -256,6 +267,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.CompanyName == input.CompanyName ||
+                    (this.CompanyName != null &&
+                    this.CompanyName.Equals(input.CompanyName))
                 ) && 
                 (
                     this.AddressLine1 == input.AddressLine1 ||
@@ -335,6 +351,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                 int hashCode = 41;
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.CompanyName != null)
+                    hashCode = hashCode * 59 + this.CompanyName.GetHashCode();
                 if (this.AddressLine1 != null)
                     hashCode = hashCode * 59 + this.AddressLine1.GetHashCode();
                 if (this.AddressLine2 != null)

@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -39,12 +39,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Initializes a new instance of the <see cref="PackageDetail" /> class.
         /// </summary>
         /// <param name="packageReferenceId">packageReferenceId (required).</param>
-        /// <param name="carrierCode">Identifies the carrier that will deliver the package. This field is required for all marketplaces, see [reference](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces). (required).</param>
-        /// <param name="carrierName">Carrier Name that will deliver the package. Required when carrierCode is \&quot;Others\&quot; .</param>
+        /// <param name="carrierCode">Identifies the carrier that will deliver the package. This field is required for all marketplaces. For more information, refer to the [&#x60;CarrierCode&#x60; announcement](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces). (required).</param>
+        /// <param name="carrierName">Carrier Name that will deliver the package. Required when &#x60;carrierCode&#x60; is \&quot;Others\&quot; .</param>
         /// <param name="shippingMethod">Ship method to be used for shipping the order..</param>
         /// <param name="trackingNumber">The tracking number used to obtain tracking and delivery information. (required).</param>
         /// <param name="shipDate">The shipping date for the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required).</param>
-        /// <param name="shipFromSupplySourceId">The unique identifier of the supply source..</param>
+        /// <param name="shipFromSupplySourceId">The unique identifier for the supply source..</param>
         /// <param name="orderItems">The list of order items and quantities to be updated. (required).</param>
         public PackageDetail(string packageReferenceId = default(string), string carrierCode = default(string), string carrierName = default(string), string shippingMethod = default(string), string trackingNumber = default(string), DateTime? shipDate = default(DateTime?), string shipFromSupplySourceId = default(string), ConfirmShipmentOrderItemsList orderItems = default(ConfirmShipmentOrderItemsList))
         {
@@ -105,16 +105,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string PackageReferenceId { get; set; }
 
         /// <summary>
-        /// Identifies the carrier that will deliver the package. This field is required for all marketplaces, see [reference](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces).
+        /// Identifies the carrier that will deliver the package. This field is required for all marketplaces. For more information, refer to the [&#x60;CarrierCode&#x60; announcement](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces).
         /// </summary>
-        /// <value>Identifies the carrier that will deliver the package. This field is required for all marketplaces, see [reference](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces).</value>
+        /// <value>Identifies the carrier that will deliver the package. This field is required for all marketplaces. For more information, refer to the [&#x60;CarrierCode&#x60; announcement](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces).</value>
         [DataMember(Name="carrierCode", EmitDefaultValue=false)]
         public string CarrierCode { get; set; }
 
         /// <summary>
-        /// Carrier Name that will deliver the package. Required when carrierCode is \&quot;Others\&quot; 
+        /// Carrier Name that will deliver the package. Required when &#x60;carrierCode&#x60; is \&quot;Others\&quot; 
         /// </summary>
-        /// <value>Carrier Name that will deliver the package. Required when carrierCode is \&quot;Others\&quot; </value>
+        /// <value>Carrier Name that will deliver the package. Required when &#x60;carrierCode&#x60; is \&quot;Others\&quot; </value>
         [DataMember(Name="carrierName", EmitDefaultValue=false)]
         public string CarrierName { get; set; }
 
@@ -140,9 +140,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public DateTime? ShipDate { get; set; }
 
         /// <summary>
-        /// The unique identifier of the supply source.
+        /// The unique identifier for the supply source.
         /// </summary>
-        /// <value>The unique identifier of the supply source.</value>
+        /// <value>The unique identifier for the supply source.</value>
         [DataMember(Name="shipFromSupplySourceId", EmitDefaultValue=false)]
         public string ShipFromSupplySourceId { get; set; }
 

@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
     /// <summary>
-    /// The verification status of the order along with associated approval or rejection metadata.
+    /// The verification status of the order, along with associated approval or rejection metadata.
     /// </summary>
     [DataContract]
     public partial class RegulatedOrderVerificationStatus :  IEquatable<RegulatedOrderVerificationStatus>, IValidatableObject
@@ -48,9 +48,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="requiresMerchantAction">When true, the regulated information provided in the order requires a review by the merchant. (required).</param>
         /// <param name="validRejectionReasons">A list of valid rejection reasons that may be used to reject the order&#39;s regulated information. (required).</param>
         /// <param name="rejectionReason">The reason for rejecting the order&#39;s regulated information. Not present if the order isn&#39;t rejected..</param>
-        /// <param name="reviewDate">The date the order was reviewed. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
+        /// <param name="reviewDate">The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format..</param>
         /// <param name="externalReviewerId">The identifier for the order&#39;s regulated information reviewer..</param>
-        public RegulatedOrderVerificationStatus(VerificationStatus status = default(VerificationStatus), bool? requiresMerchantAction = default(bool?), List<RejectionReason> validRejectionReasons = default(List<RejectionReason>), RejectionReason rejectionReason = default(RejectionReason), string reviewDate = default(string), string externalReviewerId = default(string))
+        /// <param name="validVerificationDetails">A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided..</param>
+        public RegulatedOrderVerificationStatus(VerificationStatus status = default(VerificationStatus), bool? requiresMerchantAction = default(bool?), List<RejectionReason> validRejectionReasons = default(List<RejectionReason>), RejectionReason rejectionReason = default(RejectionReason), string reviewDate = default(string), string externalReviewerId = default(string), List<ValidVerificationDetail> validVerificationDetails = default(List<ValidVerificationDetail>))
         {
             // to ensure "status" is required (not null)
             if (status == null)
@@ -82,6 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.RejectionReason = rejectionReason;
             this.ReviewDate = reviewDate;
             this.ExternalReviewerId = externalReviewerId;
+            this.ValidVerificationDetails = validVerificationDetails;
         }
         
 
@@ -107,9 +109,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public RejectionReason RejectionReason { get; set; }
 
         /// <summary>
-        /// The date the order was reviewed. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
+        /// The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
         /// </summary>
-        /// <value>The date the order was reviewed. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
+        /// <value>The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.</value>
         [DataMember(Name="ReviewDate", EmitDefaultValue=false)]
         public string ReviewDate { get; set; }
 
@@ -119,6 +121,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <value>The identifier for the order&#39;s regulated information reviewer.</value>
         [DataMember(Name="ExternalReviewerId", EmitDefaultValue=false)]
         public string ExternalReviewerId { get; set; }
+
+        /// <summary>
+        /// A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.
+        /// </summary>
+        /// <value>A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.</value>
+        [DataMember(Name="ValidVerificationDetails", EmitDefaultValue=false)]
+        public List<ValidVerificationDetail> ValidVerificationDetails { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -134,6 +143,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("  RejectionReason: ").Append(RejectionReason).Append("\n");
             sb.Append("  ReviewDate: ").Append(ReviewDate).Append("\n");
             sb.Append("  ExternalReviewerId: ").Append(ExternalReviewerId).Append("\n");
+            sb.Append("  ValidVerificationDetails: ").Append(ValidVerificationDetails).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -197,6 +207,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     this.ExternalReviewerId == input.ExternalReviewerId ||
                     (this.ExternalReviewerId != null &&
                     this.ExternalReviewerId.Equals(input.ExternalReviewerId))
+                ) && 
+                (
+                    this.ValidVerificationDetails == input.ValidVerificationDetails ||
+                    this.ValidVerificationDetails != null &&
+                    this.ValidVerificationDetails.SequenceEqual(input.ValidVerificationDetails)
                 );
         }
 
@@ -221,6 +236,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                     hashCode = hashCode * 59 + this.ReviewDate.GetHashCode();
                 if (this.ExternalReviewerId != null)
                     hashCode = hashCode * 59 + this.ExternalReviewerId.GetHashCode();
+                if (this.ValidVerificationDetails != null)
+                    hashCode = hashCode * 59 + this.ValidVerificationDetails.GetHashCode();
                 return hashCode;
             }
         }

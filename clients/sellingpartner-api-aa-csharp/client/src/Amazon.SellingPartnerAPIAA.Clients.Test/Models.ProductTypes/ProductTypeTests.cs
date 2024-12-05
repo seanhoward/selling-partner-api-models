@@ -75,6 +75,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.ProductTypes.Test
             // TODO unit test for the property 'Name'
         }
         /// <summary>
+        /// Test the property 'DisplayName'
+        /// </summary>
+        [Test]
+        public void DisplayNameTest()
+        {
+            // TODO unit test for the property 'DisplayName'
+        }
+        /// <summary>
         /// Test the property 'MarketplaceIds'
         /// </summary>
         [Test]

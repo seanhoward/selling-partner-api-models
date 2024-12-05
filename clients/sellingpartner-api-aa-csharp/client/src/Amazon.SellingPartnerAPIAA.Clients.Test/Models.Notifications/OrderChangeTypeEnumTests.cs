@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide).
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * OpenAPI spec version: v1
  * 
@@ -21,7 +21,7 @@ using Amazon.SellingPartnerAPIAA.Clients.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.Notifications.Test
 {
     /// <summary>
     ///  Class for testing OrderChangeTypeEnum

@@ -45,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Client
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
         /// <exception cref="Amazon.SellingPartnerAPIAA.LWAException">Thrown when there is an error during LWA Authorization</exception>
-        private void InterceptRequest(IRestRequest request)
+        private void InterceptRequest(RestRequest request)
         {
             lwaAuthorizationSigner.Sign(request);
         }

@@ -21,7 +21,7 @@ using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.API;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Tokens;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.Tokens.Test
 {
     /// <summary>
     ///  Class for testing TokensApi

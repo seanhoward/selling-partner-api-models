@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Catalog Items
+ * Catalog Items v2022-04-01
  *
  * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
  *
@@ -40,6 +40,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
         /// </summary>
         /// <param name="asin">asin (required).</param>
         /// <param name="attributes">attributes.</param>
+        /// <param name="classifications">classifications.</param>
         /// <param name="dimensions">dimensions.</param>
         /// <param name="identifiers">identifiers.</param>
         /// <param name="images">images.</param>
@@ -48,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
         /// <param name="salesRanks">salesRanks.</param>
         /// <param name="summaries">summaries.</param>
         /// <param name="vendorDetails">vendorDetails.</param>
-        public Item(string asin = default(string), ItemAttributes attributes = default(ItemAttributes), ItemDimensions dimensions = default(ItemDimensions), ItemIdentifiers identifiers = default(ItemIdentifiers), ItemImages images = default(ItemImages), ItemProductTypes productTypes = default(ItemProductTypes), ItemRelationships relationships = default(ItemRelationships), ItemSalesRanks salesRanks = default(ItemSalesRanks), ItemSummaries summaries = default(ItemSummaries), ItemVendorDetails vendorDetails = default(ItemVendorDetails))
+        public Item(string asin = default(string), ItemAttributes attributes = default(ItemAttributes), ItemBrowseClassifications classifications = default(ItemBrowseClassifications), ItemDimensions dimensions = default(ItemDimensions), ItemIdentifiers identifiers = default(ItemIdentifiers), ItemImages images = default(ItemImages), ItemProductTypes productTypes = default(ItemProductTypes), ItemRelationships relationships = default(ItemRelationships), ItemSalesRanks salesRanks = default(ItemSalesRanks), ItemSummaries summaries = default(ItemSummaries), ItemVendorDetails vendorDetails = default(ItemVendorDetails))
         {
             // to ensure "asin" is required (not null)
             if (asin == null)
@@ -60,6 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
                 this.Asin = asin;
             }
             this.Attributes = attributes;
+            this.Classifications = classifications;
             this.Dimensions = dimensions;
             this.Identifiers = identifiers;
             this.Images = images;
@@ -81,6 +83,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
         /// </summary>
         [DataMember(Name="attributes", EmitDefaultValue=false)]
         public ItemAttributes Attributes { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Classifications
+        /// </summary>
+        [DataMember(Name="classifications", EmitDefaultValue=false)]
+        public ItemBrowseClassifications Classifications { get; set; }
 
         /// <summary>
         /// Gets or Sets Dimensions
@@ -140,6 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
             sb.Append("class Item {\n");
             sb.Append("  Asin: ").Append(Asin).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
+            sb.Append("  Classifications: ").Append(Classifications).Append("\n");
             sb.Append("  Dimensions: ").Append(Dimensions).Append("\n");
             sb.Append("  Identifiers: ").Append(Identifiers).Append("\n");
             sb.Append("  Images: ").Append(Images).Append("\n");
@@ -191,6 +200,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
                     this.Attributes == input.Attributes ||
                     (this.Attributes != null &&
                     this.Attributes.Equals(input.Attributes))
+                ) && 
+                (
+                    this.Classifications == input.Classifications ||
+                    (this.Classifications != null &&
+                    this.Classifications.Equals(input.Classifications))
                 ) && 
                 (
                     this.Dimensions == input.Dimensions ||
@@ -247,6 +261,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Catalog
                     hashCode = hashCode * 59 + this.Asin.GetHashCode();
                 if (this.Attributes != null)
                     hashCode = hashCode * 59 + this.Attributes.GetHashCode();
+                if (this.Classifications != null)
+                    hashCode = hashCode * 59 + this.Classifications.GetHashCode();
                 if (this.Dimensions != null)
                     hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
                 if (this.Identifiers != null)

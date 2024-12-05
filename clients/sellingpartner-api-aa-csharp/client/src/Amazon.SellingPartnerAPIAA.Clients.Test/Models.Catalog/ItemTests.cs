@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Catalog Items
+ * Catalog Items v2022-04-01
  *
  * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
  *
@@ -81,6 +81,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Catalog.Test
         public void AttributesTest()
         {
             // TODO unit test for the property 'Attributes'
+        }
+        /// <summary>
+        /// Test the property 'Classifications'
+        /// </summary>
+        [Test]
+        public void ClassificationsTest()
+        {
+            // TODO unit test for the property 'Classifications'
         }
         /// <summary>
         /// Test the property 'Dimensions'

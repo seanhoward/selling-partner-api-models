@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -35,9 +35,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="buyerEmail">The anonymized email address of the buyer..</param>
         /// <param name="buyerName">The buyer name or the recipient name..</param>
-        /// <param name="buyerCounty">The county of the buyer..</param>
-        /// <param name="buyerTaxInfo">Tax information about the buyer..</param>
-        /// <param name="purchaseOrderNumber">The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout..</param>
+        /// <param name="buyerCounty">The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace..</param>
+        /// <param name="buyerTaxInfo">Tax information about the buyer. Sellers can use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces..</param>
+        /// <param name="purchaseOrderNumber">The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout..</param>
         public BuyerInfo(string buyerEmail = default(string), string buyerName = default(string), string buyerCounty = default(string), BuyerTaxInfo buyerTaxInfo = default(BuyerTaxInfo), string purchaseOrderNumber = default(string))
         {
             this.BuyerEmail = buyerEmail;
@@ -62,23 +62,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string BuyerName { get; set; }
 
         /// <summary>
-        /// The county of the buyer.
+        /// The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace.
         /// </summary>
-        /// <value>The county of the buyer.</value>
+        /// <value>The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace.</value>
         [DataMember(Name="BuyerCounty", EmitDefaultValue=false)]
         public string BuyerCounty { get; set; }
 
         /// <summary>
-        /// Tax information about the buyer.
+        /// Tax information about the buyer. Sellers can use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces.
         /// </summary>
-        /// <value>Tax information about the buyer.</value>
+        /// <value>Tax information about the buyer. Sellers can use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces.</value>
         [DataMember(Name="BuyerTaxInfo", EmitDefaultValue=false)]
         public BuyerTaxInfo BuyerTaxInfo { get; set; }
 
         /// <summary>
-        /// The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
+        /// The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
         /// </summary>
-        /// <value>The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.</value>
+        /// <value>The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.</value>
         [DataMember(Name="PurchaseOrderNumber", EmitDefaultValue=false)]
         public string PurchaseOrderNumber { get; set; }
 

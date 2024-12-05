@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -33,16 +33,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="BuyerCustomizedInfoDetail" /> class.
         /// </summary>
-        /// <param name="customizedURL">The location of a zip file containing Amazon Custom data..</param>
+        /// <param name="customizedURL">The location of a ZIP file containing Amazon Custom data..</param>
         public BuyerCustomizedInfoDetail(string customizedURL = default(string))
         {
             this.CustomizedURL = customizedURL;
         }
         
         /// <summary>
-        /// The location of a zip file containing Amazon Custom data.
+        /// The location of a ZIP file containing Amazon Custom data.
         /// </summary>
-        /// <value>The location of a zip file containing Amazon Custom data.</value>
+        /// <value>The location of a ZIP file containing Amazon Custom data.</value>
         [DataMember(Name="CustomizedURL", EmitDefaultValue=false)]
         public string CustomizedURL { get; set; }
 

@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -94,9 +94,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         [DataMember(Name="OrderStatus", EmitDefaultValue=false)]
         public OrderStatusEnum OrderStatus { get; set; }
         /// <summary>
-        /// Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).
+        /// Whether the order was fulfilled by Amazon (&#x60;AFN&#x60;) or by the seller (&#x60;MFN&#x60;).
         /// </summary>
-        /// <value>Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).</value>
+        /// <value>Whether the order was fulfilled by Amazon (&#x60;AFN&#x60;) or by the seller (&#x60;MFN&#x60;).</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FulfillmentChannelEnum
         {
@@ -115,15 +115,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         }
 
         /// <summary>
-        /// Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).
+        /// Whether the order was fulfilled by Amazon (&#x60;AFN&#x60;) or by the seller (&#x60;MFN&#x60;).
         /// </summary>
-        /// <value>Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).</value>
+        /// <value>Whether the order was fulfilled by Amazon (&#x60;AFN&#x60;) or by the seller (&#x60;MFN&#x60;).</value>
         [DataMember(Name="FulfillmentChannel", EmitDefaultValue=false)]
         public FulfillmentChannelEnum? FulfillmentChannel { get; set; }
         /// <summary>
-        /// The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.
+        /// The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the &#x60;PaymentExecutionDetailItem&#x60; object, we recommend using the &#x60;PaymentMethodDetails&#x60; property to get payment method information.
         /// </summary>
-        /// <value>The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.</value>
+        /// <value>The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the &#x60;PaymentExecutionDetailItem&#x60; object, we recommend using the &#x60;PaymentMethodDetails&#x60; property to get payment method information.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PaymentMethodEnum
         {
@@ -148,21 +148,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         }
 
         /// <summary>
-        /// The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.
+        /// The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the &#x60;PaymentExecutionDetailItem&#x60; object, we recommend using the &#x60;PaymentMethodDetails&#x60; property to get payment method information.
         /// </summary>
-        /// <value>The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.</value>
+        /// <value>The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the &#x60;PaymentExecutionDetailItem&#x60; object, we recommend using the &#x60;PaymentMethodDetails&#x60; property to get payment method information.</value>
         [DataMember(Name="PaymentMethod", EmitDefaultValue=false)]
         public PaymentMethodEnum? PaymentMethod { get; set; }
         /// <summary>
-        /// The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
+        /// The status of the Amazon Easy Ship order. This property is only included for Amazon Easy Ship orders.
         /// </summary>
-        /// <value>The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.</value>
+        /// <value>The status of the Amazon Easy Ship order. This property is only included for Amazon Easy Ship orders.</value>
         [DataMember(Name="EasyShipShipmentStatus", EmitDefaultValue=false)]
         public EasyShipShipmentStatus? EasyShipShipmentStatus { get; set; }
         /// <summary>
-        /// The type of the order.
+        /// The order&#39;s type.
         /// </summary>
-        /// <value>The type of the order.</value>
+        /// <value>The order&#39;s type.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrderTypeEnum
         {
@@ -199,15 +199,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         }
 
         /// <summary>
-        /// The type of the order.
+        /// The order&#39;s type.
         /// </summary>
-        /// <value>The type of the order.</value>
+        /// <value>The order&#39;s type.</value>
         [DataMember(Name="OrderType", EmitDefaultValue=false)]
         public OrderTypeEnum? OrderType { get; set; }
         /// <summary>
-        /// The buyer&#39;s invoicing preference. Available only in the TR marketplace.
+        /// The buyer&#39;s invoicing preference. Sellers can use this data to issue electronic invoices for orders in Turkey.  **Note**: This attribute is only available in the Turkey marketplace.
         /// </summary>
-        /// <value>The buyer&#39;s invoicing preference. Available only in the TR marketplace.</value>
+        /// <value>The buyer&#39;s invoicing preference. Sellers can use this data to issue electronic invoices for orders in Turkey.  **Note**: This attribute is only available in the Turkey marketplace.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BuyerInvoicePreferenceEnum
         {
@@ -226,9 +226,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         }
 
         /// <summary>
-        /// The buyer&#39;s invoicing preference. Available only in the TR marketplace.
+        /// The buyer&#39;s invoicing preference. Sellers can use this data to issue electronic invoices for orders in Turkey.  **Note**: This attribute is only available in the Turkey marketplace.
         /// </summary>
-        /// <value>The buyer&#39;s invoicing preference. Available only in the TR marketplace.</value>
+        /// <value>The buyer&#39;s invoicing preference. Sellers can use this data to issue electronic invoices for orders in Turkey.  **Note**: This attribute is only available in the Turkey marketplace.</value>
         [DataMember(Name="BuyerInvoicePreference", EmitDefaultValue=false)]
         public BuyerInvoicePreferenceEnum? BuyerInvoicePreference { get; set; }
         /// <summary>
@@ -248,47 +248,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="amazonOrderId">An Amazon-defined order identifier, in 3-7-7 format. (required).</param>
         /// <param name="sellerOrderId">A seller-defined order identifier..</param>
         /// <param name="purchaseDate">The date when the order was created. (required).</param>
-        /// <param name="lastUpdateDate">The date when the order was last updated.  __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01. (required).</param>
+        /// <param name="lastUpdateDate">The date when the order was last updated.  __Note__: &#x60;LastUpdateDate&#x60; is returned with an incorrect date for orders that were last updated before 2009-04-01. (required).</param>
         /// <param name="orderStatus">The current order status. (required).</param>
-        /// <param name="fulfillmentChannel">Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN)..</param>
-        /// <param name="salesChannel">The sales channel of the first item in the order..</param>
-        /// <param name="orderChannel">The order channel of the first item in the order..</param>
-        /// <param name="shipServiceLevel">The shipment service level of the order..</param>
+        /// <param name="fulfillmentChannel">Whether the order was fulfilled by Amazon (&#x60;AFN&#x60;) or by the seller (&#x60;MFN&#x60;)..</param>
+        /// <param name="salesChannel">The sales channel for the first item in the order..</param>
+        /// <param name="orderChannel">The order channel for the first item in the order..</param>
+        /// <param name="shipServiceLevel">The order&#39;s shipment service level..</param>
         /// <param name="orderTotal">The total charge for this order..</param>
         /// <param name="numberOfItemsShipped">The number of items shipped..</param>
         /// <param name="numberOfItemsUnshipped">The number of items unshipped..</param>
-        /// <param name="paymentExecutionDetail">Information about sub-payment methods for a Cash On Delivery (COD) order.  __Note__: For a COD order that is paid for using one sub-payment method, one PaymentExecutionDetailItem object is returned, with PaymentExecutionDetailItem/PaymentMethod &#x3D; COD. For a COD order that is paid for using multiple sub-payment methods, two or more PaymentExecutionDetailItem objects are returned..</param>
-        /// <param name="paymentMethod">The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information..</param>
+        /// <param name="paymentExecutionDetail">Information about sub-payment methods for a cash-on-delivery (COD) order.  __Note__: For a COD order that is paid for using one sub-payment method, one &#x60;PaymentExecutionDetailItem&#x60; object is returned, with &#x60;PaymentExecutionDetailItem&#x60;/&#x60;PaymentMethod &#x3D; COD&#x60;. For a COD order that is paid for using multiple sub-payment methods, two or more &#x60;PaymentExecutionDetailItem&#x60; objects are returned..</param>
+        /// <param name="paymentMethod">The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the &#x60;PaymentExecutionDetailItem&#x60; object, we recommend using the &#x60;PaymentMethodDetails&#x60; property to get payment method information..</param>
         /// <param name="paymentMethodDetails">A list of payment methods for the order..</param>
         /// <param name="marketplaceId">The identifier for the marketplace where the order was placed..</param>
-        /// <param name="shipmentServiceLevelCategory">The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard..</param>
-        /// <param name="easyShipShipmentStatus">The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders..</param>
+        /// <param name="shipmentServiceLevelCategory">The shipment service level category for the order.  **Possible values**: &#x60;Expedited&#x60;, &#x60;FreeEconomy&#x60;, &#x60;NextDay&#x60;, &#x60;Priority&#x60;, &#x60;SameDay&#x60;, &#x60;SecondDay&#x60;, &#x60;Scheduled&#x60;, and &#x60;Standard&#x60;..</param>
+        /// <param name="easyShipShipmentStatus">The status of the Amazon Easy Ship order. This property is only included for Amazon Easy Ship orders..</param>
         /// <param name="cbaDisplayableShippingLabel">Custom ship label for Checkout by Amazon (CBA)..</param>
-        /// <param name="orderType">The type of the order..</param>
-        /// <param name="earliestShipDate">The start of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013..</param>
-        /// <param name="latestShipDate">The end of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013..</param>
-        /// <param name="earliestDeliveryDate">The start of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders..</param>
-        /// <param name="latestDeliveryDate">The end of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status..</param>
+        /// <param name="orderType">The order&#39;s type..</param>
+        /// <param name="earliestShipDate">The start of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.  __Note__: &#x60;EarliestShipDate&#x60; might not be returned for orders placed before February 1, 2013..</param>
+        /// <param name="latestShipDate">The end of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.  __Note__: &#x60;LatestShipDate&#x60; might not be returned for orders placed before February 1, 2013..</param>
+        /// <param name="earliestDeliveryDate">The start of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders..</param>
+        /// <param name="latestDeliveryDate">The end of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders that do not have a &#x60;PendingAvailability&#x60;, &#x60;Pending&#x60;, or &#x60;Canceled&#x60; status..</param>
         /// <param name="isBusinessOrder">When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer..</param>
         /// <param name="isPrime">When true, the order is a seller-fulfilled Amazon Prime order..</param>
-        /// <param name="isPremiumOrder">When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \&quot;Premium Shipping Options\&quot; in the Seller Central Help for your marketplace..</param>
-        /// <param name="isGlobalExpressEnabled">When true, the order is a GlobalExpress order..</param>
+        /// <param name="isPremiumOrder">When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, refer to \&quot;Premium Shipping Options\&quot; in the Seller Central Help for your marketplace..</param>
+        /// <param name="isGlobalExpressEnabled">When true, the order is a &#x60;GlobalExpress&#x60; order..</param>
         /// <param name="replacedOrderId">The order ID value for the order that is being replaced. Returned only if IsReplacementOrder &#x3D; true..</param>
         /// <param name="isReplacementOrder">When true, this is a replacement order..</param>
-        /// <param name="promiseResponseDueDate">Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders..</param>
-        /// <param name="isEstimatedShipDateSet">When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders..</param>
+        /// <param name="promiseResponseDueDate">Indicates the date by which the seller must respond to the buyer with an estimated ship date. Only returned for Sourcing on Demand orders..</param>
+        /// <param name="isEstimatedShipDateSet">When true, the estimated ship date is set for the order. Only returned for Sourcing on Demand orders..</param>
         /// <param name="isSoldByAB">When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller..</param>
         /// <param name="isIBA">When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller..</param>
         /// <param name="defaultShipFromLocationAddress">The recommended location for the seller to ship the items from. It is calculated at checkout. The seller may or may not choose to ship from this location..</param>
-        /// <param name="buyerInvoicePreference">The buyer&#39;s invoicing preference. Available only in the TR marketplace..</param>
-        /// <param name="buyerTaxInformation">Contains the business invoice tax information..</param>
-        /// <param name="fulfillmentInstruction">Contains the instructions about the fulfillment like where should it be fulfilled from..</param>
+        /// <param name="buyerInvoicePreference">The buyer&#39;s invoicing preference. Sellers can use this data to issue electronic invoices for orders in Turkey.  **Note**: This attribute is only available in the Turkey marketplace..</param>
+        /// <param name="buyerTaxInformation">Contains the business invoice tax information. Sellers could use this data to issue electronic invoices for business orders in Turkey.  **Note**: 1. This attribute is only available in the Turkey marketplace for the orders that &#x60;BuyerInvoicePreference&#x60; is BUSINESS. 2. The &#x60;BuyerTaxInformation&#x60; is a restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access this restricted data..</param>
+        /// <param name="fulfillmentInstruction">Contains the instructions about the fulfillment, such as the location from where you want the order filled..</param>
         /// <param name="isISPU">When true, this order is marked to be picked up from a store rather than delivered..</param>
         /// <param name="isAccessPointOrder">When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers..</param>
-        /// <param name="marketplaceTaxInfo">Tax information about the marketplace..</param>
-        /// <param name="sellerDisplayName">The seller’s friendly name registered in the marketplace..</param>
-        /// <param name="shippingAddress">shippingAddress.</param>
-        /// <param name="buyerInfo">buyerInfo.</param>
+        /// <param name="marketplaceTaxInfo">Tax information about the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.  **Note**: This attribute is only available in the Brazil marketplace for the orders with &#x60;Pending&#x60; or &#x60;Unshipped&#x60; status..</param>
+        /// <param name="sellerDisplayName">The seller’s friendly name registered in the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.  **Note**: This attribute is only available in the Brazil marketplace for the orders with &#x60;Pending&#x60; or &#x60;Unshipped&#x60; status..</param>
+        /// <param name="shippingAddress">The shipping address for the order.  **Note**: 1. &#x60;ShippingAddress&#x60; is only available for orders with the following status values: Unshipped, &#x60;PartiallyShipped&#x60;, Shipped and &#x60;InvoiceUnconfirmed&#x60;. 2. The &#x60;ShippingAddress&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;ShippingAddress&#x60;. For example, &#x60;Name&#x60;, &#x60;AddressLine1&#x60;, &#x60;AddressLine2&#x60;, &#x60;AddressLine3&#x60;, &#x60;Phone&#x60;, &#x60;AddressType&#x60;, and &#x60;ExtendedFields&#x60;..</param>
+        /// <param name="buyerInfo">Buyer information.  **Note**: The &#x60;BuyerInfo&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;BuyerInfo&#x60;. For example, &#x60;BuyerName&#x60;, &#x60;BuyerTaxInfo&#x60;, and &#x60;PurchaseOrderNumber&#x60;..</param>
         /// <param name="automatedShippingSettings">Contains information regarding the Shipping Settings Automaton program, such as whether the order&#39;s shipping settings were generated automatically, and what those settings are..</param>
         /// <param name="hasRegulatedItems">Whether the order contains regulated items which may require additional approval steps before being fulfilled..</param>
         /// <param name="electronicInvoiceStatus">The status of the electronic invoice..</param>
@@ -397,32 +397,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string PurchaseDate { get; set; }
 
         /// <summary>
-        /// The date when the order was last updated.  __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
+        /// The date when the order was last updated.  __Note__: &#x60;LastUpdateDate&#x60; is returned with an incorrect date for orders that were last updated before 2009-04-01.
         /// </summary>
-        /// <value>The date when the order was last updated.  __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.</value>
+        /// <value>The date when the order was last updated.  __Note__: &#x60;LastUpdateDate&#x60; is returned with an incorrect date for orders that were last updated before 2009-04-01.</value>
         [DataMember(Name="LastUpdateDate", EmitDefaultValue=false)]
         public string LastUpdateDate { get; set; }
 
 
 
         /// <summary>
-        /// The sales channel of the first item in the order.
+        /// The sales channel for the first item in the order.
         /// </summary>
-        /// <value>The sales channel of the first item in the order.</value>
+        /// <value>The sales channel for the first item in the order.</value>
         [DataMember(Name="SalesChannel", EmitDefaultValue=false)]
         public string SalesChannel { get; set; }
 
         /// <summary>
-        /// The order channel of the first item in the order.
+        /// The order channel for the first item in the order.
         /// </summary>
-        /// <value>The order channel of the first item in the order.</value>
+        /// <value>The order channel for the first item in the order.</value>
         [DataMember(Name="OrderChannel", EmitDefaultValue=false)]
         public string OrderChannel { get; set; }
 
         /// <summary>
-        /// The shipment service level of the order.
+        /// The order&#39;s shipment service level.
         /// </summary>
-        /// <value>The shipment service level of the order.</value>
+        /// <value>The order&#39;s shipment service level.</value>
         [DataMember(Name="ShipServiceLevel", EmitDefaultValue=false)]
         public string ShipServiceLevel { get; set; }
 
@@ -448,9 +448,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public int? NumberOfItemsUnshipped { get; set; }
 
         /// <summary>
-        /// Information about sub-payment methods for a Cash On Delivery (COD) order.  __Note__: For a COD order that is paid for using one sub-payment method, one PaymentExecutionDetailItem object is returned, with PaymentExecutionDetailItem/PaymentMethod &#x3D; COD. For a COD order that is paid for using multiple sub-payment methods, two or more PaymentExecutionDetailItem objects are returned.
+        /// Information about sub-payment methods for a cash-on-delivery (COD) order.  __Note__: For a COD order that is paid for using one sub-payment method, one &#x60;PaymentExecutionDetailItem&#x60; object is returned, with &#x60;PaymentExecutionDetailItem&#x60;/&#x60;PaymentMethod &#x3D; COD&#x60;. For a COD order that is paid for using multiple sub-payment methods, two or more &#x60;PaymentExecutionDetailItem&#x60; objects are returned.
         /// </summary>
-        /// <value>Information about sub-payment methods for a Cash On Delivery (COD) order.  __Note__: For a COD order that is paid for using one sub-payment method, one PaymentExecutionDetailItem object is returned, with PaymentExecutionDetailItem/PaymentMethod &#x3D; COD. For a COD order that is paid for using multiple sub-payment methods, two or more PaymentExecutionDetailItem objects are returned.</value>
+        /// <value>Information about sub-payment methods for a cash-on-delivery (COD) order.  __Note__: For a COD order that is paid for using one sub-payment method, one &#x60;PaymentExecutionDetailItem&#x60; object is returned, with &#x60;PaymentExecutionDetailItem&#x60;/&#x60;PaymentMethod &#x3D; COD&#x60;. For a COD order that is paid for using multiple sub-payment methods, two or more &#x60;PaymentExecutionDetailItem&#x60; objects are returned.</value>
         [DataMember(Name="PaymentExecutionDetail", EmitDefaultValue=false)]
         public PaymentExecutionDetailItemList PaymentExecutionDetail { get; set; }
 
@@ -470,9 +470,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string MarketplaceId { get; set; }
 
         /// <summary>
-        /// The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.
+        /// The shipment service level category for the order.  **Possible values**: &#x60;Expedited&#x60;, &#x60;FreeEconomy&#x60;, &#x60;NextDay&#x60;, &#x60;Priority&#x60;, &#x60;SameDay&#x60;, &#x60;SecondDay&#x60;, &#x60;Scheduled&#x60;, and &#x60;Standard&#x60;.
         /// </summary>
-        /// <value>The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.</value>
+        /// <value>The shipment service level category for the order.  **Possible values**: &#x60;Expedited&#x60;, &#x60;FreeEconomy&#x60;, &#x60;NextDay&#x60;, &#x60;Priority&#x60;, &#x60;SameDay&#x60;, &#x60;SecondDay&#x60;, &#x60;Scheduled&#x60;, and &#x60;Standard&#x60;.</value>
         [DataMember(Name="ShipmentServiceLevelCategory", EmitDefaultValue=false)]
         public string ShipmentServiceLevelCategory { get; set; }
 
@@ -486,30 +486,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 
 
         /// <summary>
-        /// The start of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+        /// The start of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.  __Note__: &#x60;EarliestShipDate&#x60; might not be returned for orders placed before February 1, 2013.
         /// </summary>
-        /// <value>The start of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.</value>
+        /// <value>The start of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.  __Note__: &#x60;EarliestShipDate&#x60; might not be returned for orders placed before February 1, 2013.</value>
         [DataMember(Name="EarliestShipDate", EmitDefaultValue=false)]
         public string EarliestShipDate { get; set; }
 
         /// <summary>
-        /// The end of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
+        /// The end of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.  __Note__: &#x60;LatestShipDate&#x60; might not be returned for orders placed before February 1, 2013.
         /// </summary>
-        /// <value>The end of the time period within which you have committed to ship the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.</value>
+        /// <value>The end of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.  __Note__: &#x60;LatestShipDate&#x60; might not be returned for orders placed before February 1, 2013.</value>
         [DataMember(Name="LatestShipDate", EmitDefaultValue=false)]
         public string LatestShipDate { get; set; }
 
         /// <summary>
-        /// The start of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.
+        /// The start of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.
         /// </summary>
-        /// <value>The start of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders.</value>
+        /// <value>The start of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.</value>
         [DataMember(Name="EarliestDeliveryDate", EmitDefaultValue=false)]
         public string EarliestDeliveryDate { get; set; }
 
         /// <summary>
-        /// The end of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
+        /// The end of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders that do not have a &#x60;PendingAvailability&#x60;, &#x60;Pending&#x60;, or &#x60;Canceled&#x60; status.
         /// </summary>
-        /// <value>The end of the time period within which you have committed to fulfill the order. In &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.</value>
+        /// <value>The end of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders that do not have a &#x60;PendingAvailability&#x60;, &#x60;Pending&#x60;, or &#x60;Canceled&#x60; status.</value>
         [DataMember(Name="LatestDeliveryDate", EmitDefaultValue=false)]
         public string LatestDeliveryDate { get; set; }
 
@@ -528,16 +528,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public bool? IsPrime { get; set; }
 
         /// <summary>
-        /// When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \&quot;Premium Shipping Options\&quot; in the Seller Central Help for your marketplace.
+        /// When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, refer to \&quot;Premium Shipping Options\&quot; in the Seller Central Help for your marketplace.
         /// </summary>
-        /// <value>When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \&quot;Premium Shipping Options\&quot; in the Seller Central Help for your marketplace.</value>
+        /// <value>When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, refer to \&quot;Premium Shipping Options\&quot; in the Seller Central Help for your marketplace.</value>
         [DataMember(Name="IsPremiumOrder", EmitDefaultValue=false)]
         public bool? IsPremiumOrder { get; set; }
 
         /// <summary>
-        /// When true, the order is a GlobalExpress order.
+        /// When true, the order is a &#x60;GlobalExpress&#x60; order.
         /// </summary>
-        /// <value>When true, the order is a GlobalExpress order.</value>
+        /// <value>When true, the order is a &#x60;GlobalExpress&#x60; order.</value>
         [DataMember(Name="IsGlobalExpressEnabled", EmitDefaultValue=false)]
         public bool? IsGlobalExpressEnabled { get; set; }
 
@@ -556,16 +556,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public bool? IsReplacementOrder { get; set; }
 
         /// <summary>
-        /// Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders.
+        /// Indicates the date by which the seller must respond to the buyer with an estimated ship date. Only returned for Sourcing on Demand orders.
         /// </summary>
-        /// <value>Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders.</value>
+        /// <value>Indicates the date by which the seller must respond to the buyer with an estimated ship date. Only returned for Sourcing on Demand orders.</value>
         [DataMember(Name="PromiseResponseDueDate", EmitDefaultValue=false)]
         public string PromiseResponseDueDate { get; set; }
 
         /// <summary>
-        /// When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders.
+        /// When true, the estimated ship date is set for the order. Only returned for Sourcing on Demand orders.
         /// </summary>
-        /// <value>When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders.</value>
+        /// <value>When true, the estimated ship date is set for the order. Only returned for Sourcing on Demand orders.</value>
         [DataMember(Name="IsEstimatedShipDateSet", EmitDefaultValue=false)]
         public bool? IsEstimatedShipDateSet { get; set; }
 
@@ -592,16 +592,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 
 
         /// <summary>
-        /// Contains the business invoice tax information.
+        /// Contains the business invoice tax information. Sellers could use this data to issue electronic invoices for business orders in Turkey.  **Note**: 1. This attribute is only available in the Turkey marketplace for the orders that &#x60;BuyerInvoicePreference&#x60; is BUSINESS. 2. The &#x60;BuyerTaxInformation&#x60; is a restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access this restricted data.
         /// </summary>
-        /// <value>Contains the business invoice tax information.</value>
+        /// <value>Contains the business invoice tax information. Sellers could use this data to issue electronic invoices for business orders in Turkey.  **Note**: 1. This attribute is only available in the Turkey marketplace for the orders that &#x60;BuyerInvoicePreference&#x60; is BUSINESS. 2. The &#x60;BuyerTaxInformation&#x60; is a restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access this restricted data.</value>
         [DataMember(Name="BuyerTaxInformation", EmitDefaultValue=false)]
         public BuyerTaxInformation BuyerTaxInformation { get; set; }
 
         /// <summary>
-        /// Contains the instructions about the fulfillment like where should it be fulfilled from.
+        /// Contains the instructions about the fulfillment, such as the location from where you want the order filled.
         /// </summary>
-        /// <value>Contains the instructions about the fulfillment like where should it be fulfilled from.</value>
+        /// <value>Contains the instructions about the fulfillment, such as the location from where you want the order filled.</value>
         [DataMember(Name="FulfillmentInstruction", EmitDefaultValue=false)]
         public FulfillmentInstruction FulfillmentInstruction { get; set; }
 
@@ -620,28 +620,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public bool? IsAccessPointOrder { get; set; }
 
         /// <summary>
-        /// Tax information about the marketplace.
+        /// Tax information about the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.  **Note**: This attribute is only available in the Brazil marketplace for the orders with &#x60;Pending&#x60; or &#x60;Unshipped&#x60; status.
         /// </summary>
-        /// <value>Tax information about the marketplace.</value>
+        /// <value>Tax information about the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.  **Note**: This attribute is only available in the Brazil marketplace for the orders with &#x60;Pending&#x60; or &#x60;Unshipped&#x60; status.</value>
         [DataMember(Name="MarketplaceTaxInfo", EmitDefaultValue=false)]
         public MarketplaceTaxInfo MarketplaceTaxInfo { get; set; }
 
         /// <summary>
-        /// The seller’s friendly name registered in the marketplace.
+        /// The seller’s friendly name registered in the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.  **Note**: This attribute is only available in the Brazil marketplace for the orders with &#x60;Pending&#x60; or &#x60;Unshipped&#x60; status.
         /// </summary>
-        /// <value>The seller’s friendly name registered in the marketplace.</value>
+        /// <value>The seller’s friendly name registered in the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.  **Note**: This attribute is only available in the Brazil marketplace for the orders with &#x60;Pending&#x60; or &#x60;Unshipped&#x60; status.</value>
         [DataMember(Name="SellerDisplayName", EmitDefaultValue=false)]
         public string SellerDisplayName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShippingAddress
+        /// The shipping address for the order.  **Note**: 1. &#x60;ShippingAddress&#x60; is only available for orders with the following status values: Unshipped, &#x60;PartiallyShipped&#x60;, Shipped and &#x60;InvoiceUnconfirmed&#x60;. 2. The &#x60;ShippingAddress&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;ShippingAddress&#x60;. For example, &#x60;Name&#x60;, &#x60;AddressLine1&#x60;, &#x60;AddressLine2&#x60;, &#x60;AddressLine3&#x60;, &#x60;Phone&#x60;, &#x60;AddressType&#x60;, and &#x60;ExtendedFields&#x60;.
         /// </summary>
+        /// <value>The shipping address for the order.  **Note**: 1. &#x60;ShippingAddress&#x60; is only available for orders with the following status values: Unshipped, &#x60;PartiallyShipped&#x60;, Shipped and &#x60;InvoiceUnconfirmed&#x60;. 2. The &#x60;ShippingAddress&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;ShippingAddress&#x60;. For example, &#x60;Name&#x60;, &#x60;AddressLine1&#x60;, &#x60;AddressLine2&#x60;, &#x60;AddressLine3&#x60;, &#x60;Phone&#x60;, &#x60;AddressType&#x60;, and &#x60;ExtendedFields&#x60;.</value>
         [DataMember(Name="ShippingAddress", EmitDefaultValue=false)]
         public Address ShippingAddress { get; set; }
 
         /// <summary>
-        /// Gets or Sets BuyerInfo
+        /// Buyer information.  **Note**: The &#x60;BuyerInfo&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;BuyerInfo&#x60;. For example, &#x60;BuyerName&#x60;, &#x60;BuyerTaxInfo&#x60;, and &#x60;PurchaseOrderNumber&#x60;.
         /// </summary>
+        /// <value>Buyer information.  **Note**: The &#x60;BuyerInfo&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;BuyerInfo&#x60;. For example, &#x60;BuyerName&#x60;, &#x60;BuyerTaxInfo&#x60;, and &#x60;PurchaseOrderNumber&#x60;.</value>
         [DataMember(Name="BuyerInfo", EmitDefaultValue=false)]
         public BuyerInfo BuyerInfo { get; set; }
 

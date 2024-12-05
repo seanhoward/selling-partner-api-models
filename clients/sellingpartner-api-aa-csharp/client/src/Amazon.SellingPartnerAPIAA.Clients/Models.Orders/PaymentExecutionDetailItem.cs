@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Initializes a new instance of the <see cref="PaymentExecutionDetailItem" /> class.
         /// </summary>
         /// <param name="payment">payment (required).</param>
-        /// <param name="paymentMethod">A sub-payment method for a COD order.  Possible values: * &#x60;COD&#x60;: Cash On Delivery. * &#x60;GC&#x60;: Gift Card. * &#x60;PointsAccount&#x60;: Amazon Points. * &#x60;Invoice&#x60;: Invoice. (required).</param>
+        /// <param name="paymentMethod">A sub-payment method for a COD order.  **Possible values**: * &#x60;COD&#x60;: Cash on delivery  * &#x60;GC&#x60;: Gift card  * &#x60;PointsAccount&#x60;: Amazon Points * &#x60;Invoice&#x60;: Invoice (required).</param>
         public PaymentExecutionDetailItem(Money payment = default(Money), string paymentMethod = default(string))
         {
             // to ensure "payment" is required (not null)
@@ -69,9 +69,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public Money Payment { get; set; }
 
         /// <summary>
-        /// A sub-payment method for a COD order.  Possible values: * &#x60;COD&#x60;: Cash On Delivery. * &#x60;GC&#x60;: Gift Card. * &#x60;PointsAccount&#x60;: Amazon Points. * &#x60;Invoice&#x60;: Invoice.
+        /// A sub-payment method for a COD order.  **Possible values**: * &#x60;COD&#x60;: Cash on delivery  * &#x60;GC&#x60;: Gift card  * &#x60;PointsAccount&#x60;: Amazon Points * &#x60;Invoice&#x60;: Invoice
         /// </summary>
-        /// <value>A sub-payment method for a COD order.  Possible values: * &#x60;COD&#x60;: Cash On Delivery. * &#x60;GC&#x60;: Gift Card. * &#x60;PointsAccount&#x60;: Amazon Points. * &#x60;Invoice&#x60;: Invoice.</value>
+        /// <value>A sub-payment method for a COD order.  **Possible values**: * &#x60;COD&#x60;: Cash on delivery  * &#x60;GC&#x60;: Gift card  * &#x60;PointsAccount&#x60;: Amazon Points * &#x60;Invoice&#x60;: Invoice</value>
         [DataMember(Name="PaymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
 

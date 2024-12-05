@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Orders
+ * Orders v0
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -39,10 +39,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Initializes a new instance of the <see cref="OrderItemBuyerInfo" /> class.
         /// </summary>
         /// <param name="orderItemId">An Amazon-defined order item identifier. (required).</param>
-        /// <param name="buyerCustomizedInfo">Buyer information for custom orders from the Amazon Custom program..</param>
+        /// <param name="buyerCustomizedInfo">Buyer information for custom orders from the Amazon Custom program.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders..</param>
         /// <param name="giftWrapPrice">The gift wrap price of the item..</param>
         /// <param name="giftWrapTax">The tax on the gift wrap price..</param>
-        /// <param name="giftMessageText">A gift message provided by the buyer..</param>
+        /// <param name="giftMessageText">A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders..</param>
         /// <param name="giftWrapLevel">The gift wrap level specified by the buyer..</param>
         public OrderItemBuyerInfo(string orderItemId = default(string), BuyerCustomizedInfoDetail buyerCustomizedInfo = default(BuyerCustomizedInfoDetail), Money giftWrapPrice = default(Money), Money giftWrapTax = default(Money), string giftMessageText = default(string), string giftWrapLevel = default(string))
         {
@@ -70,9 +70,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public string OrderItemId { get; set; }
 
         /// <summary>
-        /// Buyer information for custom orders from the Amazon Custom program.
+        /// Buyer information for custom orders from the Amazon Custom program.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.
         /// </summary>
-        /// <value>Buyer information for custom orders from the Amazon Custom program.</value>
+        /// <value>Buyer information for custom orders from the Amazon Custom program.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.</value>
         [DataMember(Name="BuyerCustomizedInfo", EmitDefaultValue=false)]
         public BuyerCustomizedInfoDetail BuyerCustomizedInfo { get; set; }
 
@@ -91,9 +91,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         public Money GiftWrapTax { get; set; }
 
         /// <summary>
-        /// A gift message provided by the buyer.
+        /// A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.
         /// </summary>
-        /// <value>A gift message provided by the buyer.</value>
+        /// <value>A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.</value>
         [DataMember(Name="GiftMessageText", EmitDefaultValue=false)]
         public string GiftMessageText { get; set; }
 

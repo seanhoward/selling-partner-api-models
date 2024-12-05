@@ -1,5 +1,5 @@
 /* 
- * Selling Partner API for Reports
+ * Report v2021-06-30
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorList" /> class.
         /// </summary>
-        /// <param name="errors">errors (required).</param>
+        /// <param name="errors">Error response returned when the request is unsuccessful. (required).</param>
         public ErrorList(List<Error> errors = default(List<Error>))
         {
             // to ensure "errors" is required (not null)
@@ -53,8 +53,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         }
         
         /// <summary>
-        /// Gets or Sets Errors
+        /// Error response returned when the request is unsuccessful.
         /// </summary>
+        /// <value>Error response returned when the request is unsuccessful.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<Error> Errors { get; set; }
 
