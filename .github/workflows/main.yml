@@ -13,20 +13,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: '4.8.x'
-
-    - name: Restore dependencies
-      run: nuget restore
-
-    - name: Build
-      run: msbuild /p:Configuration=Release
-
-    - name: Pack
-      run: nuget pack YourProject.csproj -Prop Configuration=Release -OutputDirectory ./nupkg
-
     - name: Push NuGet package
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
