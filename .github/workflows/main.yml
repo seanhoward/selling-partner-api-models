@@ -28,7 +28,5 @@ jobs:
       working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
 
     - name: Push NuGet package
-      env:
-        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-      run: nuget push ./nupkg/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey $NUGET_API_KEY      
+      run: nuget push ./nupkg/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }}      
       working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
