@@ -23,7 +23,10 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-
+        
+    - name: Install dependencies 
+      run: npm install nswag
+      
     - name: Build
       run: msbuild $GITHUB_WORKSPACE /p:Configuration=Release
       working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
