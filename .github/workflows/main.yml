@@ -14,25 +14,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Install dependencies 
+      run: npm install nswag
+
     - name: Setup MSBuild path
       uses: microsoft/setup-msbuild@v1.0.0
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
   
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
-      env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-        
-    - name: Install dependencies 
-      run: npm install nswag
-
-    - name: Restore NuGet
-      run: nuget restore $GITHUB_WORKSPACE/Amazon.SellingPartnerAPIAA.Clients.csproj -PackagesDirectory $GITHUB_WORKSPACE/packages
-      working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
-      
     - name: Build
-      run: msbuild $GITHUB_WORKSPACE /p:Configuration=Release
+      run: msbuild $GITHUB_WORKSPACE /t:restore /p:Configuration=Release
       working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
 
     - name: Pack
