@@ -20,7 +20,7 @@ jobs:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
   
     - name: Build
-      run: msbuild $GITHUB_WORKSPACE /t:restore,build /p:Configuration=Release /p:PreBuildEvent=
+      run: msbuild $GITHUB_WORKSPACE /t:restore,build /p:Configuration=Release /p:PreBuildEvent= /p:PostBuildEvent=
       working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
 
     - name: Pack
