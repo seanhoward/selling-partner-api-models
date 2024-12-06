@@ -16,7 +16,7 @@ jobs:
 
     - name: Download NSwag MSI 
       run: | 
-        curl -L -o nswag.msi https://sourceforge.net/projects/nswag.mirror/files/latest/download 
+        curl -L -o nswag.msi https://master.dl.sourceforge.net/project/nswag.mirror/v14.2.0/NSwagStudio.msi?viasf=1 
     
     - name: Install NSwag 
       run: | 
