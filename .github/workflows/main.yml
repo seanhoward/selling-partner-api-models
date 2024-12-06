@@ -29,7 +29,7 @@ jobs:
     
     - name: Verify NSwag installation
       run: |
-        "$env:ProgramFiles(x86)\Rico Suter\NSwagStudio\nswag.exe" version
+        nswag version
         
     - name: Setup MSBuild path
       uses: microsoft/setup-msbuild@v1.0.0
