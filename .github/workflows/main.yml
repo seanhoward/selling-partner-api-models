@@ -14,8 +14,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install dependencies 
-      run: npm install nswag
+    - name: Download NSwag MSI 
+      run: | 
+        curl -L -o nswag.msi https://sourceforge.net/projects/nswag.mirror/files/latest/download 
+    
+    - name: Install NSwag 
+      run: | 
+        msiexec /i nswag.msi /quiet /norestart 
+      
+    - name: Verify NSwag installation 
+      run: | 
+        nswag version
 
     - name: Setup MSBuild path
       uses: microsoft/setup-msbuild@v1.0.0
