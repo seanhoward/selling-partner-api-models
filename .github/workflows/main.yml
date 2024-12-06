@@ -29,6 +29,7 @@ jobs:
 
     - name: Restore NuGet
       run: nuget restore
+      working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
       
     - name: Build
       run: msbuild $GITHUB_WORKSPACE /p:Configuration=Release
