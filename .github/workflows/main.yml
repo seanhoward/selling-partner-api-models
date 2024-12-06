@@ -20,8 +20,10 @@ jobs:
     - name: Install NSwag 
       run: msiexec /i nswag.msi /quiet /norestart 
       
-    - name: Add NSwag to PATH 
-      run: $nswagPath = "C:\Program Files (x86)\Rico Suter\NSwagStudio" echo "##[add-path]$nswagPath" >> $GITHUB_ENV        
+    - name: Add NSwag to PATH
+      run: |
+        $nswagPath = "C:\Program Files (x86)\Rico Suter\NSwagStudio"
+        echo "##[add-path]$nswagPath" >> $GITHUB_ENV
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     
