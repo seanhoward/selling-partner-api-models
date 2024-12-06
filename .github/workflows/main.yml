@@ -24,7 +24,7 @@ jobs:
       working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
 
     - name: Pack
-      run: nuget pack Amazon.SellingPartnerAPIAA.Clients.csproj -Prop Configuration=Release -OutputDirectory ./nupkg
+      run: nuget pack Amazon.SellingPartnerAPIAA.Clients.csproj -Prop Configuration=Release
       working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
 
     - name: Push NuGet package
