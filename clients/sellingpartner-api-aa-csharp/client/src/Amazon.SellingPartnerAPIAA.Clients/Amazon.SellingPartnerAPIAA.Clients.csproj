@@ -86,12 +86,14 @@ OpenAPI spec version: 2020-09-01
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>nuget pack $(ProjectPath) -OutputDirectory $(TargetDir)</PostBuildEvent>
+    <PostBuildEvent>nuget pack $(ProjectPath) -OutputDirectory $(TargetDir) -Properties Configuration=$(Configuration)</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>$(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\feeds\listings-feed-message-schema-v2.json /Name:ListingsFeedMessage /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Messaging /Output:$(ProjectDir)Schemas.Feeds\ListingsFeedMessage.cs -ExcludedTypeNames:Patches,PatchesOp /runtime:WinX64
-$(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\feeds\listings-feed-processing-report-schema-v2.json /Name:ListingsFeedProcessingReport /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Processing /Output:$(ProjectDir)Schemas.Feeds\ListingsFeedProcessingReport.cs /runtime:WinX64
-$(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\feeds\listings-feed-schema-v2.json /Name:ListingsFeed /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds /Output:$(ProjectDir)Schemas.Feeds\ListingsFeed.cs /runtime:WinX64
-</PreBuildEvent>
+    <PreBuildEvent>
+      echo $(NSwagExe)
+      $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\feeds\listings-feed-message-schema-v2.json /Name:ListingsFeedMessage /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Messaging /Output:$(ProjectDir)Schemas.Feeds\ListingsFeedMessage.cs -ExcludedTypeNames:Patches,PatchesOp /runtime:WinX64
+      $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\feeds\listings-feed-processing-report-schema-v2.json /Name:ListingsFeedProcessingReport /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Processing /Output:$(ProjectDir)Schemas.Feeds\ListingsFeedProcessingReport.cs /runtime:WinX64
+      $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\feeds\listings-feed-schema-v2.json /Name:ListingsFeed /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds /Output:$(ProjectDir)Schemas.Feeds\ListingsFeed.cs /runtime:WinX64
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

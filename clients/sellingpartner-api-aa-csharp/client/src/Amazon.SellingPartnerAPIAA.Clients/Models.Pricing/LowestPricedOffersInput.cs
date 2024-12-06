@@ -42,13 +42,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Pricing
         /// <value>The input parameter specifies the type of offers requested for &#x60;LowestPricedOffers&#x60;. This applies to &#x60;Consumer&#x60; and &#x60;Business&#x60; offers. &#x60;Consumer&#x60; is the default &#x60;offerType&#x60;.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OfferTypeEnum
-        {
-            
+        {            
             /// <summary>
             /// Enum CONSUMER for value: CONSUMER
             /// </summary>
-            [EnumMember(Value = "CONSUMER")]
-            CONSUMER = 1
+            [EnumMember(Value = "Consumer")]
+            CONSUMER = 1,
+            [EnumMember(Value = "Business")]
+            BUSINESS = 2
         }
 
         /// <summary>

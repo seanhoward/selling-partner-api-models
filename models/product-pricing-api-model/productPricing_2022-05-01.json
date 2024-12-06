@@ -1279,12 +1279,19 @@
                     "type": "string",
                     "description": "The input parameter specifies the type of offers requested for `LowestPricedOffers`. This applies to `Consumer` and `Business` offers. `Consumer` is the default `offerType`.",
                     "enum": [
-                        "CONSUMER"
+                      "Consumer",
+                      "Business"
                     ],
-                    "x-docgen-enum-table-extension": [{
-                        "value": "CONSUMER",
-                        "description": "An offer that is available to all Amazon customers."
-                    }]
+                  "x-docgen-enum-table-extension": [
+                    {
+                      "value": "Consumer",
+                      "description": "An offer that is available to all Amazon customers."
+                    },
+                    {
+                      "value": "Business",
+                      "description": "An offer that is available on Amazon Business."
+                    }
+                  ]
                 }
             }
         },
