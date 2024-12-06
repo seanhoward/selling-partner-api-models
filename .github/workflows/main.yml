@@ -13,23 +13,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Download NSwag MSI 
-      run: curl -L -o nswag.msi https://master.dl.sourceforge.net/project/nswag.mirror/v14.2.0/NSwagStudio.msi?viasf=1 
-    
-    - name: Install NSwag 
-      run: msiexec /i nswag.msi /quiet /norestart 
-      
-    - name: Add NSwag to PATH
-      run: |
-        $nswagPath = "C:\Program Files (x86)\Rico Suter\NSwagStudio"
-        echo "##[add-path]$nswagPath" >> $GITHUB_ENV
-      env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-    
-    - name: Verify NSwag installation
-      run: |
-        nswag version
         
     - name: Setup MSBuild path
       uses: microsoft/setup-msbuild@v1.0.0
@@ -37,7 +20,7 @@ jobs:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
   
     - name: Build
-      run: msbuild $GITHUB_WORKSPACE /t:restore,build /p:Configuration=Release
+      run: msbuild $GITHUB_WORKSPACE /t:restore,build /p:Configuration=Release /p:SkipPreBuild=true
       working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
 
     - name: Pack
