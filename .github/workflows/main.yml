@@ -28,7 +28,7 @@ jobs:
       run: npm install nswag
 
     - name: Restore NuGet
-      run: nuget restore $GITHUB_WORKSPACE -PackagesDirectory $GITHUB_WORKSPACE/packages
+      run: nuget restore $GITHUB_WORKSPACE/*.csproj -PackagesDirectory $GITHUB_WORKSPACE/packages
       working-directory: ./clients/sellingpartner-api-aa-csharp/client/src/Amazon.SellingPartnerAPIAA.Clients
       
     - name: Build
