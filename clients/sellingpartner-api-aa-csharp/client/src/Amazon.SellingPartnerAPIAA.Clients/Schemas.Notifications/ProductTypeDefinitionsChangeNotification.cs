@@ -5,7 +5,7 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusChange
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDefinitionsChange
 {
     #pragma warning disable // Disable all warnings
 
@@ -74,11 +74,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusCh
     public partial class Payload
     {
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The marketplace where the Product Type Definition has changed
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("OrderStatusChangeNotification", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required]
-        public OrderStatusChangeNotification OrderStatusChangeNotification { get; set; } = new OrderStatusChangeNotification();
+        [Newtonsoft.Json.JsonProperty("MarketplaceId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string MarketplaceId { get; set; } = "";
+
+        /// <summary>
+        /// The Merchant Id or Vendor Group Id related to the subscription.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("AccountId", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string AccountId { get; set; } = "";
+
+        /// <summary>
+        /// Provides the latest released Product Type Definition version.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ProductTypeVersion", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string ProductTypeVersion { get; set; } = "";
+
+        /// <summary>
+        /// List of new Product Types release in the marketplace.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("NewProductTypes", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<object> NewProductTypes { get; set; }
 
 
 
@@ -123,95 +142,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusCh
         [Newtonsoft.Json.JsonProperty("NotificationId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string NotificationId { get; set; } = "";
-
-
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.8.0.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class OrderStatusChangeNotification
-    {
-        /// <summary>
-        /// The selling partner identifier.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("SellerId", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string SellerId { get; set; } = "";
-
-        /// <summary>
-        /// Amazon marketplace identifier of the affected order.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("MarketplaceId", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string MarketplaceId { get; set; }
-
-        /// <summary>
-        /// An Amazon-defined order identifier in 3-7-7 format.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("AmazonOrderId", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string AmazonOrderId { get; set; } = "";
-
-        /// <summary>
-        /// The purchase date of the order in Epoch time.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("PurchaseDate", Required = Newtonsoft.Json.Required.AllowNull)]
-        public int? PurchaseDate { get; set; } = 0;
-
-        /// <summary>
-        /// The current order status. The possible values include UpComing, Pending, Unshipped, PartiallyShipped, PendingAvailability, Canceled, InvoiceUnconfirmed, Shipped, and Unfulfillable.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("OrderStatus", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string OrderStatus { get; set; } = "";
-
-        /// <summary>
-        /// The destination postal code.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("DestinationPostalCode", Required = Newtonsoft.Json.Required.AllowNull)]
-        public string DestinationPostalCode { get; set; } = "";
-
-        /// <summary>
-        /// The unique identifier of the supply source.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("SupplySourceId", Required = Newtonsoft.Json.Required.AllowNull)]
-        public string SupplySourceId { get; set; } = "";
-
-        /// <summary>
-        /// The Amazon-defined order item identifier.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("OrderItemId", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string OrderItemId { get; set; } = "";
-
-        /// <summary>
-        /// The seller-specific SKU identifier for an item.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("SellerSKU", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string SellerSKU { get; set; } = "";
-
-        /// <summary>
-        /// The number of items in the order.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("Quantity", Required = Newtonsoft.Json.Required.Always)]
-        public int Quantity { get; set; } = 0;
-
-        /// <summary>
-        /// Fulfillment channel of the affected order, MFN or AFN.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("FulfillmentChannel", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string FulfillmentChannel { get; set; }
 
 
 

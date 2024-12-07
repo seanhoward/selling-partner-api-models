@@ -36,6 +36,7 @@ OpenAPI spec version: 2020-09-01
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>CS0472</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -91,9 +92,16 @@ OpenAPI spec version: 2020-09-01
   <PropertyGroup>
     <PreBuildEvent>
       echo $(NSwagExe)
+      $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\definitions\Product.json /Name:Product /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.ProductTypeDefinitions.Product /Output:$(ProjectDir)Schemas.ProductTypeDefinitions\Product.cs /runtime:WinX64
       $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\feeds\listings-feed-message-schema-v2.json /Name:ListingsFeedMessage /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Messaging /Output:$(ProjectDir)Schemas.Feeds\ListingsFeedMessage.cs -ExcludedTypeNames:Patches,PatchesOp /runtime:WinX64
       $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\feeds\listings-feed-processing-report-schema-v2.json /Name:ListingsFeedProcessingReport /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Processing /Output:$(ProjectDir)Schemas.Feeds\ListingsFeedProcessingReport.cs /runtime:WinX64
       $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\feeds\listings-feed-schema-v2.json /Name:ListingsFeed /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds /Output:$(ProjectDir)Schemas.Feeds\ListingsFeed.cs /runtime:WinX64
-    </PreBuildEvent>
+      $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\Notifications\AnyOfferChangedNotification.json /Name:NofificationsFeed /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.AnyOfferChanged /Output:$(ProjectDir)Schemas.Notifications\AnyOfferChangedNotification.cs /runtime:WinX64
+      $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\Notifications\FeedProcessingFinishedNotification.json /Name:NofificationsFeed /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessingFinished /Output:$(ProjectDir)Schemas.Notifications\FeedProcessingFinishedNotification.cs /runtime:WinX64
+      $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\Notifications\OrderStatusChangeNotification.json /Name:NofificationsFeed /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusChange /Output:$(ProjectDir)Schemas.Notifications\OrderStatusChangeNotification.cs /runtime:WinX64
+      $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\Notifications\PricingHealthNotification.json /Name:NofificationsFeed /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.PricingHealth /Output:$(ProjectDir)Schemas.Notifications\PricingHealthNotification.cs /runtime:WinX64
+      $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\Notifications\ProductTypeDefinitionsChangeNotification.json /Name:NofificationsFeed /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDefinitionsChange /Output:$(ProjectDir)Schemas.Notifications\ProductTypeDefinitionsChangeNotification.cs /runtime:WinX64
+      $(NSwagExe) jsonschema2csclient /Input:$(ProjectDir)\..\..\..\..\..\schemas\Notifications\ReportProcessingFinishedNotification.json /Name:NofificationsFeed /Namespace:Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ReportProcessingFinished /Output:$(ProjectDir)Schemas.Notifications\ReportProcessingFinishedNotification.cs /runtime:WinX64
+</PreBuildEvent>
   </PropertyGroup>
 </Project>
