@@ -5,53 +5,54 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDefinitionsChange
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ListingsItemStatusChange
 {
     #pragma warning disable // Disable all warnings
 
     /// <summary>
-    /// The root schema comprises the entire JSON document.
+    /// To be delivered when the status (e.g. buyability, discoverability) of a listings item changes.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class ProductTypeDefinitionsChangeNotification
+    public partial class ListingsItemStatusChangeNotification
     {
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The version of the notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("NotificationVersion", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string NotificationVersion { get; set; } = "";
+        public string NotificationVersion { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The type of the notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("NotificationType", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string NotificationType { get; set; } = "";
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ListingsItemStatusChangeNotificationNotificationType NotificationType { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The version of the payload.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("PayloadVersion", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string PayloadVersion { get; set; } = "";
+        public string PayloadVersion { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// Timestamp of the event, formatted as ISO8601 date-time.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("EventTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string EventTime { get; set; } = "";
+        public System.DateTimeOffset EventTime { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The details of this notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("Payload", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public Payload Payload { get; set; } = new Payload();
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The metadata of the notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("NotificationMetadata", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
@@ -74,12 +75,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDe
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static ProductTypeDefinitionsChangeNotification FromJson(string data)
+        public static ListingsItemStatusChangeNotification FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ProductTypeDefinitionsChangeNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ListingsItemStatusChangeNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public enum ListingsItemStatusChangeNotificationNotificationType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"LISTINGS_ITEM_STATUS_CHANGED")]
+        LISTINGS_ITEM_STATUS_CHANGED = 0,
+
 
     }
 
@@ -87,30 +98,43 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDe
     public partial class Payload
     {
         /// <summary>
-        /// The marketplace where the Product Type Definition has changed
+        /// Selling partner identifier, such as a merchant account, of the affected listings item.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SellerId", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string SellerId { get; set; }
+
+        /// <summary>
+        /// Amazon marketplace identifier of the affected listings item.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("MarketplaceId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string MarketplaceId { get; set; } = "";
+        public string MarketplaceId { get; set; }
 
         /// <summary>
-        /// The Merchant Id or Vendor Group Id related to the subscription.
+        /// The Amazon Standard Identification Number (ASIN) identifier of the catalog item associated with the listings item.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("AccountId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("Asin", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Asin { get; set; }
+
+        /// <summary>
+        /// Identifier of the affected listings item.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Sku", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string AccountId { get; set; } = "";
+        public string Sku { get; set; }
 
         /// <summary>
-        /// Provides the latest released Product Type Definition version.
+        /// Timestamp of when the listings item was created, formatted as ISO8601 date-time.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("ProductTypeVersion", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string ProductTypeVersion { get; set; } = "";
+        [Newtonsoft.Json.JsonProperty("CreatedDate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset CreatedDate { get; set; }
 
         /// <summary>
-        /// List of new Product Types release in the marketplace.
+        /// Array of status states currently associated with the affected listings item. The absence of a value indicates the status state is not currently applicable to the listings item. For example, if "BUYABLE" is not present, the listings item is not currently buyable.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("NewProductTypes", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.ICollection<object> NewProductTypes { get; set; }
+        [Newtonsoft.Json.JsonProperty("Status", Required = Newtonsoft.Json.Required.Always, ItemConverterType = typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<Status> Status { get; set; } = new System.Collections.ObjectModel.Collection<Status>();
 
 
 
@@ -142,32 +166,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDe
     public partial class NotificationMetadata
     {
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// Identifies the application.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ApplicationId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string ApplicationId { get; set; } = "";
+        public string ApplicationId { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// Identifies the subscription.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("SubscriptionId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string SubscriptionId { get; set; } = "";
+        public string SubscriptionId { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// Timestamp of when the notification was published, formatted as ISO8601 date-time.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("PublishTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string PublishTime { get; set; } = "";
+        public System.DateTimeOffset PublishTime { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// Identifies the notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("NotificationId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string NotificationId { get; set; } = "";
+        public string NotificationId { get; set; }
 
 
 
@@ -192,6 +216,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDe
             return Newtonsoft.Json.JsonConvert.DeserializeObject<NotificationMetadata>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public enum Status
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"BUYABLE")]
+        BUYABLE = 0,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DISCOVERABLE")]
+        DISCOVERABLE = 1,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DELETED")]
+        DELETED = 2,
+
 
     }
 }

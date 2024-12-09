@@ -130,26 +130,26 @@
       "$ref": "#/definitions/moneyType",
       "description": "The shipping cost."
     },
-    "QuantityDiscountPriceType" : {
-      "type" : "object",
-      "required" : [ "listingPrice", "quantityDiscountType", "quantityTier" ],
-      "properties" : {
-        "quantityTier" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "Indicates at what quantity this price becomes active."
-        },
-        "quantityDiscountType" : {
-          "description" : "Indicates the type of quantity discount this price applies to.",
-          "$ref" : "#/definitions/QuantityDiscountType"
-        },
-        "listingPrice" : {
-          "description" : "The price at this quantity tier.",
-          "$ref" : "#/definitions/MoneyType"
-        }
-      },
-      "description" : "Contains pricing information that includes special pricing when buying in bulk."
-    },
+    //"QuantityDiscountPriceType" : {
+    //  "type" : "object",
+    //  "required" : [ "listingPrice", "quantityDiscountType", "quantityTier" ],
+    //  "properties" : {
+    //    "quantityTier" : {
+    //      "type" : "integer",
+    //      "format" : "int32",
+    //      "description" : "Indicates at what quantity this price becomes active."
+    //    },
+    //    "quantityDiscountType" : {
+    //      "description" : "Indicates the type of quantity discount this price applies to.",
+    //      "$ref" : "#/definitions/QuantityDiscountType"
+    //    },
+    //    "listingPrice" : {
+    //      "description" : "The price at this quantity tier.",
+    //      "$ref" : "#/definitions/MoneyType"
+    //    }
+    //  },
+    //  "description" : "Contains pricing information that includes special pricing when buying in bulk."
+    //},
     "QuantityDiscountType" : {
       "type" : "string",
       "enum" : [ "QUANTITY_DISCOUNT" ],
@@ -331,13 +331,13 @@
         "listingPrice": {
           "$ref": "#/definitions/listingPrice"
         },
-        "quantityDiscountPrice": {
-          "type": "array",
-          "description": "Contains a list of pricing information that includes special pricing when buying in bulk.",
-          "items" : {
-            "$ref" : "#/definitions/QuantityDiscountPriceType"
-          }
-        },
+        //"quantityDiscountPrice": {
+        //  "type": "array",
+        //  "description": "Contains a list of pricing information that includes special pricing when buying in bulk.",
+        //  "items" : {
+        //    "$ref" : "#/definitions/QuantityDiscountPriceType"
+        //  }
+        //},
         "shipping": {
           "$ref": "#/definitions/shipping"
         },

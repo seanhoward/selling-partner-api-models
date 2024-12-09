@@ -5,7 +5,7 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessingFinished
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.MfnOrderStatusChange
 {
     #pragma warning disable // Disable all warnings
 
@@ -13,47 +13,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
     /// The root schema comprises the entire JSON document.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class FeedProcessingNotification
+    public partial class MfnOrderStatusChangeNotification
     {
         /// <summary>
-        /// The version of the notification.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("notificationVersion", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("NotificationVersion", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string NotificationVersion { get; set; }
+        public string NotificationVersion { get; set; } = "";
 
         /// <summary>
-        /// The type of the notification.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("notificationType", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("NotificationType", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string NotificationType { get; set; }
+        public string NotificationType { get; set; } = "";
 
         /// <summary>
-        /// The version of the payload.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("payloadVersion", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("PayloadVersion", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string PayloadVersion { get; set; }
+        public string PayloadVersion { get; set; } = "";
 
         /// <summary>
-        /// The timestamp of the event, formatted as ISO 8601 date-time.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("eventTime", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("EventTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string EventTime { get; set; }
+        public string EventTime { get; set; } = "";
 
         /// <summary>
-        /// The details of this notification.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("payload", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("Payload", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public Payload Payload { get; set; } = new Payload();
 
         /// <summary>
-        /// The metadata of the notification.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("notificationMetadata", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("NotificationMetadata", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public NotificationMetadata NotificationMetadata { get; set; } = new NotificationMetadata();
 
@@ -74,10 +74,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static FeedProcessingNotification FromJson(string data)
+        public static MfnOrderStatusChangeNotification FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<FeedProcessingNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<MfnOrderStatusChangeNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
         /// <summary>
         /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("feedProcessingFinishedNotification", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("MFNOrderStatusChangeNotification", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
-        public FeedProcessingFinishedNotification FeedProcessingFinishedNotification { get; set; } = new FeedProcessingFinishedNotification();
+        public MFNOrderStatusChangeNotification MFNOrderStatusChangeNotification { get; set; } = new MFNOrderStatusChangeNotification();
 
 
 
@@ -123,32 +123,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
     public partial class NotificationMetadata
     {
         /// <summary>
-        /// The application identifier.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("applicationId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("ApplicationId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string ApplicationId { get; set; }
+        public string ApplicationId { get; set; } = "";
 
         /// <summary>
-        /// The subscription identifier.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("subscriptionId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("SubscriptionId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string SubscriptionId { get; set; }
+        public string SubscriptionId { get; set; } = "";
 
         /// <summary>
-        /// The timestamp of when the notification was published, formatted as ISO 8601 date-time.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("publishTime", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("PublishTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string PublishTime { get; set; }
+        public string PublishTime { get; set; } = "";
 
         /// <summary>
-        /// The notification identifier.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("notificationId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("NotificationId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string NotificationId { get; set; }
+        public string NotificationId { get; set; } = "";
 
 
 
@@ -177,48 +177,73 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class FeedProcessingFinishedNotification
+    public partial class MFNOrderStatusChangeNotification
     {
         /// <summary>
-        /// The merchant customer identifier of the selling partner account on whose behalf the feed was submitted. This field will be null when the feed was submitted on behalf of a vendor group identifier.
+        /// The selling partner identifier.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string SellerId { get; set; }
-
-        /// <summary>
-        /// The merchant customer identifier or vendor group identifier of the selling partner account on whose behalf the feed was submitted.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("accountId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("SellerId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string AccountId { get; set; }
+        public string SellerId { get; set; } = "";
 
         /// <summary>
-        /// The feed identifier.
+        /// Amazon marketplace identifier of the affected order.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("feedId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("MarketplaceId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string FeedId { get; set; }
+        public string MarketplaceId { get; set; }
 
         /// <summary>
-        /// The feed type.
+        /// An Amazon-defined order identifier in 3-7-7 format.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("feedType", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("AmazonOrderId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string FeedType { get; set; }
+        public string AmazonOrderId { get; set; } = "";
 
         /// <summary>
-        /// The processing status of the feed.
+        /// The purchase date of the order in Epoch time.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("processingStatus", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("PurchaseDate", Required = Newtonsoft.Json.Required.AllowNull)]
+        public int? PurchaseDate { get; set; } = 0;
+
+        /// <summary>
+        /// The current order status, its possible values are UPCOMINGORDER, PENDING, SHIPPING, WAITING, CANCELED, INVOICEUNCONFIRMED, SHIPPED and UNFULFILLABLE.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("OrderStatus", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public FeedProcessingFinishedNotificationProcessingStatus ProcessingStatus { get; set; }
+        public string OrderStatus { get; set; } = "";
 
         /// <summary>
-        /// The feed document identifier. This identifier is unique only in combination with a seller ID.
+        /// The destination postal code.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("resultFeedDocumentId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string ResultFeedDocumentId { get; set; }
+        [Newtonsoft.Json.JsonProperty("DestinationPostalCode", Required = Newtonsoft.Json.Required.AllowNull)]
+        public string DestinationPostalCode { get; set; } = "";
+
+        /// <summary>
+        /// The unique identifier of the supply source.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SupplySourceId", Required = Newtonsoft.Json.Required.AllowNull)]
+        public string SupplySourceId { get; set; } = "";
+
+        /// <summary>
+        /// The Amazon-defined order item identifier.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("OrderItemId", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string OrderItemId { get; set; } = "";
+
+        /// <summary>
+        /// The seller-specific SKU identifier for an item.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SellerSKU", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string SellerSKU { get; set; } = "";
+
+        /// <summary>
+        /// The number of items in the order.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Quantity", Required = Newtonsoft.Json.Required.Always)]
+        public int Quantity { get; set; } = 0;
 
 
 
@@ -237,30 +262,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static FeedProcessingFinishedNotification FromJson(string data)
+        public static MFNOrderStatusChangeNotification FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<FeedProcessingFinishedNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<MFNOrderStatusChangeNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum FeedProcessingFinishedNotificationProcessingStatus
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"CANCELLED")]
-        CANCELLED = 0,
-
-
-        [System.Runtime.Serialization.EnumMember(Value = @"DONE")]
-        DONE = 1,
-
-
-        [System.Runtime.Serialization.EnumMember(Value = @"FATAL")]
-        FATAL = 2,
-
 
     }
 }

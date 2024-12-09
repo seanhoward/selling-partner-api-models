@@ -1,20 +1,20 @@
 {
   "$schema": "https://schemas.amazon.com/selling-partners/definitions/product-types/meta-schema/v1",
   "$id": "https://schemas.amazon.com/selling-partners/definitions/product-types/meta-schema/v1",
-  "$vocabulary": {
-    "https://json-schema.org/draft/2019-09/vocab/core": true,
-    "https://json-schema.org/draft/2019-09/vocab/applicator": true,
-    "https://json-schema.org/draft/2019-09/vocab/validation": true,
-    "https://json-schema.org/draft/2019-09/vocab/meta-data": true,
-    "https://json-schema.org/draft/2019-09/vocab/format": true,
-    "https://json-schema.org/draft/2019-09/vocab/content": true,
-    "https://schemas.amazon.com/selling-partners/definitions/product-types/vocabulary/v1": true
-  },
-  "allOf": [
-    {
-      "$ref": "https://json-schema.org/draft/2019-09/schema"
-    }
-  ],
+  //"$vocabulary": {
+  //  "http://json-schema.org/draft-07/vocab/core": true,
+  //  "http://json-schema.org/draft-07/vocab/applicator": true,
+  //  "http://json-schema.org/draft-07/vocab/validation": true,
+  //  "http://json-schema.org/draft-07/vocab/meta-data": true,
+  //  "http://json-schema.org/draft-07/vocab/format": true,
+  //  "http://json-schema.org/draft-07/vocab/content": true,
+  //  "https://schemas.amazon.com/selling-partners/definitions/product-types/vocabulary/v1": true
+  //},
+  //"allOf": [
+  //  {
+  //    "$ref": "http://json-schema.org/draft-07/schema"
+  //  }
+  //],
   "title": "Amazon Product Type Definition Meta-Schema v1",
   "$comment": "Meta-schema for JSON Schema instances describing the properties and requirements for Amazon product types, such as LUGGAGE.",
   "properties": {

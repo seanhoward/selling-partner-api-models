@@ -5,53 +5,53 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessingFinished
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.DataKioskQueryProcessingFinished
 {
     #pragma warning disable // Disable all warnings
 
     /// <summary>
-    /// The root schema comprises the entire JSON document.
+    /// This notification is delivered when a Data Kiosk query finishes processing.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class FeedProcessingNotification
+    public partial class DataKioskQueryProcessingFinishedNotification
     {
         /// <summary>
-        /// The version of the notification.
+        /// The notification version.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notificationVersion", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string NotificationVersion { get; set; }
 
         /// <summary>
-        /// The type of the notification.
+        /// The notification type.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notificationType", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string NotificationType { get; set; }
 
         /// <summary>
-        /// The version of the payload.
+        /// The payload version of the notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payloadVersion", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string PayloadVersion { get; set; }
 
         /// <summary>
-        /// The timestamp of the event, formatted as ISO 8601 date-time.
+        /// The time the notification was sent in ISO 8601 format.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("eventTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string EventTime { get; set; }
 
         /// <summary>
-        /// The details of this notification.
+        /// The Data Kiosk query processing notification payload.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payload", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public Payload Payload { get; set; } = new Payload();
 
         /// <summary>
-        /// The metadata of the notification.
+        /// The notification's metadata.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notificationMetadata", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
@@ -74,10 +74,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static FeedProcessingNotification FromJson(string data)
+        public static DataKioskQueryProcessingFinishedNotification FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<FeedProcessingNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<DataKioskQueryProcessingFinishedNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 
@@ -87,11 +87,51 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
     public partial class Payload
     {
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The merchant customer identifier or vendor group identifier of the selling partner account on whose behalf the query was submitted.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("feedProcessingFinishedNotification", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required]
-        public FeedProcessingFinishedNotification FeedProcessingFinishedNotification { get; set; } = new FeedProcessingFinishedNotification();
+        [Newtonsoft.Json.JsonProperty("accountId", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string AccountId { get; set; }
+
+        /// <summary>
+        /// The query identifier. This identifier is unique only in combination with the `accountId`.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("queryId", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string QueryId { get; set; }
+
+        /// <summary>
+        /// The submitted query.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("query", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Query { get; set; }
+
+        /// <summary>
+        /// The processing status of the query.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("processingStatus", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public PayloadProcessingStatus ProcessingStatus { get; set; }
+
+        /// <summary>
+        /// The data document identifier. This document identifier is only present when there is data available as a result of the query. This identifier is unique only in combination with the `accountId`. Pass this identifier into the `getDocument` operation to get the information required to retrieve the data document's contents.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("dataDocumentId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string DataDocumentId { get; set; }
+
+        /// <summary>
+        /// The error document identifier. This document identifier is only present when an error occurs during query processing. This identifier is unique only in combination with the `accountId`. Pass this identifier into the `getDocument` operation to get the information required to retrieve the error document's contents.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("errorDocumentId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ErrorDocumentId { get; set; }
+
+        /// <summary>
+        /// When a query produces results that are not included in the data document, pagination occurs. This means that results are divided into pages. To retrieve the next page, you must pass a `CreateQuerySpecification` object with `paginationToken` set to this object's `nextToken` and with `query` set to this object's `query` in the subsequent `createQuery` request. When there are no more pages to fetch, the `nextToken` field will be absent.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("pagination", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public Pagination Pagination { get; set; }
 
 
 
@@ -137,7 +177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
         public string SubscriptionId { get; set; }
 
         /// <summary>
-        /// The timestamp of when the notification was published, formatted as ISO 8601 date-time.
+        /// The time the notification was published in ISO 8601 format.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("publishTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
@@ -177,48 +217,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class FeedProcessingFinishedNotification
+    public enum PayloadProcessingStatus
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CANCELLED")]
+        CANCELLED = 0,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"DONE")]
+        DONE = 1,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"FATAL")]
+        FATAL = 2,
+
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class Pagination
     {
         /// <summary>
-        /// The merchant customer identifier of the selling partner account on whose behalf the feed was submitted. This field will be null when the feed was submitted on behalf of a vendor group identifier.
+        /// A token that can be used to fetch the next page of results.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string SellerId { get; set; }
-
-        /// <summary>
-        /// The merchant customer identifier or vendor group identifier of the selling partner account on whose behalf the feed was submitted.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("accountId", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string AccountId { get; set; }
-
-        /// <summary>
-        /// The feed identifier.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("feedId", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string FeedId { get; set; }
-
-        /// <summary>
-        /// The feed type.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("feedType", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string FeedType { get; set; }
-
-        /// <summary>
-        /// The processing status of the feed.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("processingStatus", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public FeedProcessingFinishedNotificationProcessingStatus ProcessingStatus { get; set; }
-
-        /// <summary>
-        /// The feed document identifier. This identifier is unique only in combination with a seller ID.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("resultFeedDocumentId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string ResultFeedDocumentId { get; set; }
+        [Newtonsoft.Json.JsonProperty("nextToken", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string NextToken { get; set; }
 
 
 
@@ -237,30 +260,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static FeedProcessingFinishedNotification FromJson(string data)
+        public static Pagination FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<FeedProcessingFinishedNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Pagination>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum FeedProcessingFinishedNotificationProcessingStatus
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"CANCELLED")]
-        CANCELLED = 0,
-
-
-        [System.Runtime.Serialization.EnumMember(Value = @"DONE")]
-        DONE = 1,
-
-
-        [System.Runtime.Serialization.EnumMember(Value = @"FATAL")]
-        FATAL = 2,
-
 
     }
 }

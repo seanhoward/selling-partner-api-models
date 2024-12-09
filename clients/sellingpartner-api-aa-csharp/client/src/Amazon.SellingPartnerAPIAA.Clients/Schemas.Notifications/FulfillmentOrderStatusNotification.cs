@@ -5,7 +5,7 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusChange
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FulfillmentOrderStatus
 {
     #pragma warning disable // Disable all warnings
 
@@ -13,7 +13,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusCh
     /// The root schema comprises the entire JSON document.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class OrderStatusChangeNotification
+    public partial class FulfillmentOrderStatusNotification
     {
         /// <summary>
         /// An explanation about the purpose of this instance.
@@ -74,10 +74,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusCh
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static OrderStatusChangeNotification FromJson(string data)
+        public static FulfillmentOrderStatusNotification FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<OrderStatusChangeNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<FulfillmentOrderStatusNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusCh
         /// <summary>
         /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("OrderStatusChangeNotification", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("FulfillmentOrderStatusNotification", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
-        public OrderStatusChangeNotification2 OrderStatusChangeNotification { get; set; } = new OrderStatusChangeNotification2();
+        public FulfillmentOrderStatusNotification2 FulfillmentOrderStatusNotification { get; set; } = new FulfillmentOrderStatusNotification2();
 
 
 
@@ -177,80 +177,56 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusCh
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class OrderStatusChangeNotification2
+    public partial class FulfillmentOrderStatusNotification2
     {
         /// <summary>
-        /// The selling partner identifier.
+        /// An explanation about the purpose of this instance.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("SellerId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string SellerId { get; set; } = "";
 
         /// <summary>
-        /// Amazon marketplace identifier of the affected order.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("MarketplaceId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("EventType", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string MarketplaceId { get; set; }
+        public string EventType { get; set; } = "";
 
         /// <summary>
-        /// An Amazon-defined order identifier in 3-7-7 format.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("AmazonOrderId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("StatusUpdatedDateTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string AmazonOrderId { get; set; } = "";
+        public string StatusUpdatedDateTime { get; set; } = "";
 
         /// <summary>
-        /// The purchase date of the order in Epoch time.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("PurchaseDate", Required = Newtonsoft.Json.Required.AllowNull)]
-        public int? PurchaseDate { get; set; } = 0;
-
-        /// <summary>
-        /// The current order status. The possible values include UpComing, Pending, Unshipped, PartiallyShipped, PendingAvailability, Canceled, InvoiceUnconfirmed, Shipped, and Unfulfillable.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("OrderStatus", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("SellerFulfillmentOrderId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string OrderStatus { get; set; } = "";
+        public string SellerFulfillmentOrderId { get; set; } = "";
 
         /// <summary>
-        /// The destination postal code.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("DestinationPostalCode", Required = Newtonsoft.Json.Required.AllowNull)]
-        public string DestinationPostalCode { get; set; } = "";
-
-        /// <summary>
-        /// The unique identifier of the supply source.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("SupplySourceId", Required = Newtonsoft.Json.Required.AllowNull)]
-        public string SupplySourceId { get; set; } = "";
-
-        /// <summary>
-        /// The Amazon-defined order item identifier.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("OrderItemId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("FulfillmentOrderStatus", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string OrderItemId { get; set; } = "";
+        public string FulfillmentOrderStatus { get; set; } = "";
 
         /// <summary>
-        /// The seller-specific SKU identifier for an item.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("SellerSKU", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string SellerSKU { get; set; } = "";
+        [Newtonsoft.Json.JsonProperty("FulfillmentShipment", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public FulfillmentShipment FulfillmentShipment { get; set; } = new FulfillmentShipment();
 
         /// <summary>
-        /// The number of items in the order.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("Quantity", Required = Newtonsoft.Json.Required.Always)]
-        public int Quantity { get; set; } = 0;
-
-        /// <summary>
-        /// Fulfillment channel of the affected order, MFN or AFN.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("FulfillmentChannel", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string FulfillmentChannel { get; set; }
+        [Newtonsoft.Json.JsonProperty("FulfillmentReturnItem", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public FulfillmentReturnItem FulfillmentReturnItem { get; set; } = new FulfillmentReturnItem();
 
 
 
@@ -269,10 +245,145 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusCh
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static OrderStatusChangeNotification2 FromJson(string data)
+        public static FulfillmentOrderStatusNotification2 FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<OrderStatusChangeNotification2>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<FulfillmentOrderStatusNotification2>(data, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class FulfillmentShipment
+    {
+        /// <summary>
+        /// An explanation about the purpose of this instance.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FulfillmentShipmentStatus", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string FulfillmentShipmentStatus { get; set; } = "";
+
+        /// <summary>
+        /// An explanation about the purpose of this instance.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("AmazonShipmentId", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string AmazonShipmentId { get; set; } = "";
+
+        /// <summary>
+        /// An explanation about the purpose of this instance.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("EstimatedArrivalDateTime", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string EstimatedArrivalDateTime { get; set; } = "";
+
+        /// <summary>
+        /// An explanation about the purpose of this instance.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("FulfillmentShipmentPackages", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<FulfillmentShipmentPackages> FulfillmentShipmentPackages { get; set; } = new System.Collections.ObjectModel.Collection<FulfillmentShipmentPackages>();
+
+
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+        public string ToJson()
+        {
+
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+        public static FulfillmentShipment FromJson(string data)
+        {
+
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<FulfillmentShipment>(data, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class FulfillmentReturnItem
+    {
+        /// <summary>
+        /// An explanation about the purpose of this instance.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ReceivedDateTime", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string ReceivedDateTime { get; set; } = "";
+
+        /// <summary>
+        /// An explanation about the purpose of this instance.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ReturnedQuantity", Required = Newtonsoft.Json.Required.Always)]
+        public int ReturnedQuantity { get; set; } = 0;
+
+        /// <summary>
+        /// An explanation about the purpose of this instance.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SellerSKU", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string SellerSKU { get; set; } = "";
+
+
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+        public string ToJson()
+        {
+
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+        public static FulfillmentReturnItem FromJson(string data)
+        {
+
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<FulfillmentReturnItem>(data, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class FulfillmentShipmentPackages
+    {
+
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+        public string ToJson()
+        {
+
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+        public static FulfillmentShipmentPackages FromJson(string data)
+        {
+
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<FulfillmentShipmentPackages>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 

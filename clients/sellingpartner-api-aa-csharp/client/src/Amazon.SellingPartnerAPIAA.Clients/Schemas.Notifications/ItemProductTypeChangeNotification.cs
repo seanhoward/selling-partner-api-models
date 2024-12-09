@@ -5,7 +5,7 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDefinitionsChange
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ItemProductTypeChange
 {
     #pragma warning disable // Disable all warnings
 
@@ -13,7 +13,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDe
     /// The root schema comprises the entire JSON document.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class ProductTypeDefinitionsChangeNotification
+    public partial class ItemProductTypeChangeNotification
     {
         /// <summary>
         /// An explanation about the purpose of this instance.
@@ -74,10 +74,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDe
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static ProductTypeDefinitionsChangeNotification FromJson(string data)
+        public static ItemProductTypeChangeNotification FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ProductTypeDefinitionsChangeNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ItemProductTypeChangeNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 
@@ -87,30 +87,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDe
     public partial class Payload
     {
         /// <summary>
-        /// The marketplace where the Product Type Definition has changed
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("MarketplaceId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("MarketplaceId", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string MarketplaceId { get; set; } = "";
 
         /// <summary>
-        /// The Merchant Id or Vendor Group Id related to the subscription.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("AccountId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("Asin", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string AccountId { get; set; } = "";
+        public string Asin { get; set; } = "";
 
         /// <summary>
-        /// Provides the latest released Product Type Definition version.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("ProductTypeVersion", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("PreviousProductType", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string ProductTypeVersion { get; set; } = "";
+        public string PreviousProductType { get; set; } = "";
 
         /// <summary>
-        /// List of new Product Types release in the marketplace.
+        /// An explanation about the purpose of this instance.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("NewProductTypes", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.ICollection<object> NewProductTypes { get; set; }
+        [Newtonsoft.Json.JsonProperty("CurrentProductType", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string CurrentProductType { get; set; } = "";
 
 
 

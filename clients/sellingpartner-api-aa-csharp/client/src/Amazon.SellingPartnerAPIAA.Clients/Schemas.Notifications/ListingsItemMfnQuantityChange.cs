@@ -5,53 +5,54 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDefinitionsChange
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ListingsItemMfnQuantityChange
 {
     #pragma warning disable // Disable all warnings
 
     /// <summary>
-    /// The root schema comprises the entire JSON document.
+    /// To be delivered when the inventory quantity of a MFN Seller listing changes.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class ProductTypeDefinitionsChangeNotification
+    public partial class ListingsItemMfnQuantityChange
     {
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The version of the notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("NotificationVersion", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string NotificationVersion { get; set; } = "";
+        public string NotificationVersion { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The type of the notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("NotificationType", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string NotificationType { get; set; } = "";
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ListingsItemMfnQuantityChangeNotificationType NotificationType { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The version of the payload.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("PayloadVersion", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string PayloadVersion { get; set; } = "";
+        public string PayloadVersion { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// Timestamp of the event, formatted as ISO8601 date-time.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("EventTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string EventTime { get; set; } = "";
+        public System.DateTimeOffset EventTime { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The details of this notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("Payload", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public Payload Payload { get; set; } = new Payload();
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// The metadata of the notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("NotificationMetadata", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
@@ -74,12 +75,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDe
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static ProductTypeDefinitionsChangeNotification FromJson(string data)
+        public static ListingsItemMfnQuantityChange FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ProductTypeDefinitionsChangeNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ListingsItemMfnQuantityChange>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public enum ListingsItemMfnQuantityChangeNotificationType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"LISTINGS_ITEM_MFN_QUANTITY_CHANGE")]
+        LISTINGS_ITEM_MFN_QUANTITY_CHANGE = 0,
+
 
     }
 
@@ -87,30 +98,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDe
     public partial class Payload
     {
         /// <summary>
-        /// The marketplace where the Product Type Definition has changed
+        /// Selling partner identifier, such as a merchant ID, of the affected listings item.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("MarketplaceId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string MarketplaceId { get; set; } = "";
-
-        /// <summary>
-        /// The Merchant Id or Vendor Group Id related to the subscription.
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("AccountId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("SellerId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string AccountId { get; set; } = "";
+        public string SellerId { get; set; }
 
         /// <summary>
-        /// Provides the latest released Product Type Definition version.
+        /// The Fulfillment channel code representing the MFN (seller-fulfilled) fulfillment program, network, or channel where the quantity is applicable.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("ProductTypeVersion", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("FulfillmentChannelCode", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string ProductTypeVersion { get; set; } = "";
+        public string FulfillmentChannelCode { get; set; }
 
         /// <summary>
-        /// List of new Product Types release in the marketplace.
+        /// A selling partner provided identifier for an Amazon listing.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("NewProductTypes", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.ICollection<object> NewProductTypes { get; set; }
+        [Newtonsoft.Json.JsonProperty("Sku", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Sku { get; set; }
+
+        /// <summary>
+        /// The available quantity for MFN (seller-fulfillment) with the fulfillment program, network, or channel.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Quantity", Required = Newtonsoft.Json.Required.Always)]
+        public int Quantity { get; set; }
 
 
 
@@ -142,32 +154,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ProductTypeDe
     public partial class NotificationMetadata
     {
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// An identifier of the application.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ApplicationId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string ApplicationId { get; set; } = "";
+        public string ApplicationId { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// An identifier of the subscription.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("SubscriptionId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string SubscriptionId { get; set; } = "";
+        public string SubscriptionId { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// Timestamp of when the notification was published, formatted as ISO8601 date-time.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("PublishTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string PublishTime { get; set; } = "";
+        public System.DateTimeOffset PublishTime { get; set; }
 
         /// <summary>
-        /// An explanation about the purpose of this instance.
+        /// An identifier of the notification.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("NotificationId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string NotificationId { get; set; } = "";
+        public string NotificationId { get; set; }
 
 
 
