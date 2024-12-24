@@ -19,9 +19,9 @@ using NUnit.Framework;
 
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.API;
-using Amazon.SellingPartnerAPIAA.Clients.Models.Catalog;
+using Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Catalog.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.CatalogItems.Test
 {
     /// <summary>
     ///  Class for testing CatalogItemsApi

@@ -5,7 +5,7 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedprocessingreportschemav2
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsProcessingReportSchema
 {
     #pragma warning disable // Disable all warnings
 

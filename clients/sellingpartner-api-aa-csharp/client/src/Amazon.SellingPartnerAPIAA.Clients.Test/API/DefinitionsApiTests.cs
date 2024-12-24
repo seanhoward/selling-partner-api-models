@@ -19,9 +19,9 @@ using NUnit.Framework;
 
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.API;
-using Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes;
+using Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.ProductTypes.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.DefinitionsProductTypes.Test
 {
     /// <summary>
     ///  Class for testing DefinitionsApi

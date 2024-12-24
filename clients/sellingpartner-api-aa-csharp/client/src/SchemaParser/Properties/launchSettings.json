@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "SchemaParser": {
-      "commandName": "Project",
-      "commandLineArgs": "\"C:\\Users\\Administrator\\source\\repos\\seanhoward\\selling-partner-api-models\\schemas\" \"Output\" -c"
-    }
-  }
-}

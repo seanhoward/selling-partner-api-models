@@ -21,7 +21,7 @@ using Amazon.SellingPartnerAPIAA.Clients.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Notifications.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.Test
 {
     /// <summary>
     ///  Class for testing DeleteDestinationResponse

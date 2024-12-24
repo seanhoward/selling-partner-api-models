@@ -19,9 +19,9 @@ using NUnit.Framework;
 
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.API;
-using Amazon.SellingPartnerAPIAA.Clients.Models.Pricing;
+using Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Pricing.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.ProductPricing.Test
 {
     /// <summary>
     ///  Class for testing ProductPricingApi

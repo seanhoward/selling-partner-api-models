@@ -5,7 +5,7 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Definitions.Metaschema
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Definitions.MetaSchema
 {
     #pragma warning disable // Disable all warnings
 

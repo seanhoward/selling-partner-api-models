@@ -5,7 +5,7 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedschemav2
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsSchema
 {
     #pragma warning disable // Disable all warnings
 
@@ -26,7 +26,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedschemav2
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.MinLength(1)]
         [System.ComponentModel.DataAnnotations.MaxLength(10000)]
-        public System.Collections.Generic.ICollection<Messages> Messages { get; set; } = new System.Collections.ObjectModel.Collection<Messages>();
+        public System.Collections.Generic.ICollection<Message> Messages { get; set; } = new System.Collections.ObjectModel.Collection<Message>();
 
 
 
@@ -107,7 +107,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedschemav2
     /// Message containing an individual listings data submission.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class Messages
+    public partial class Message
     {
         /// <summary>
         /// Identifier for the message that is unique within this feed submission. Response messages are correlated to this identifier.
@@ -143,7 +143,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedschemav2
         /// </summary>
         [Newtonsoft.Json.JsonProperty("requirements", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public MessagesRequirements Requirements { get; set; } = Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedschemav2.MessagesRequirements.LISTING;
+        public MessagesRequirements Requirements { get; set; } = Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsSchema.MessagesRequirements.LISTING;
 
         /// <summary>
         /// Attributes data for the listings data submission.
@@ -175,10 +175,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedschemav2
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static Messages FromJson(string data)
+        public static Message FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Messages>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Message>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 

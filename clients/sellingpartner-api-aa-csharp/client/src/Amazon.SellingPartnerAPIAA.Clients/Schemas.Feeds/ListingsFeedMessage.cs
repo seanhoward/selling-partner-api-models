@@ -5,7 +5,7 @@
 //----------------------
 
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedmessageschemav2
+namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsMessageSchema
 {
     #pragma warning disable // Disable all warnings
 
@@ -32,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedmessagesc
         [Newtonsoft.Json.JsonProperty("operationType", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public Listingsfeedmessageschemav2OperationType OperationType { get; set; }
+        public ListingsFeedMessageSchemaOperationType OperationType { get; set; }
 
         /// <summary>
         /// Amazon product type of the listings data submission in this message.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedmessagesc
         /// </summary>
         [Newtonsoft.Json.JsonProperty("requirements", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public Listingsfeedmessageschemav2Requirements Requirements { get; set; } = Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedmessageschemav2.Listingsfeedmessageschemav2Requirements.LISTING;
+        public ListingsFeedMessageSchemaRequirements Requirements { get; set; } = Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsMessageSchema.ListingsFeedMessageSchemaRequirements.LISTING;
 
         /// <summary>
         /// Attributes data for the listings data submission.
@@ -88,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedmessagesc
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum Listingsfeedmessageschemav2OperationType
+    public enum ListingsFeedMessageSchemaOperationType
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"UPDATE")]
@@ -110,7 +110,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.Listingsfeedmessagesc
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum Listingsfeedmessageschemav2Requirements
+    public enum ListingsFeedMessageSchemaRequirements
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"LISTING")]

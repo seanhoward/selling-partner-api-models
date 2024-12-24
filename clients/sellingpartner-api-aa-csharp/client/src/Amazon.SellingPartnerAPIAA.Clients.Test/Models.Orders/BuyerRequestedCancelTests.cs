@@ -15,10 +15,13 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Amazon.SellingPartnerAPIAA.Clients.API;
+using Amazon.SellingPartnerAPIAA.Clients.Models.Orders;
+using Amazon.SellingPartnerAPIAA.Clients.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Amazon.SellingPartnerAPIAA.Clients.Orders.Test
+namespace Amazon.SellingPartnerAPIAA.Clients.Test
 {
     /// <summary>
     ///  Class for testing BuyerRequestedCancel

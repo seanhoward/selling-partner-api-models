@@ -14,7 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
-using Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes;
+using Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes;
 using Amazon.SellingPartnerAPIAA;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
