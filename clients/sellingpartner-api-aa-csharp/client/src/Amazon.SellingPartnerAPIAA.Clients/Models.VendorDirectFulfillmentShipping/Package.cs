@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
     /// <summary>
-    /// Object describing Package that is going to be associated with given container.
+    /// The package that is associated with the container.
     /// </summary>
     [DataContract]
     public partial class Package :  IEquatable<Package>, IValidatableObject
@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="Package" /> class.
         /// </summary>
-        /// <param name="packageTrackingNumber">tracking identifier present on label of shipment package. Tracking number can be fetched from fetched from shippingLabels API response. Alternatively bar code on the shipping label can be scanned by the scanner to get the tracking number. (required).</param>
+        /// <param name="packageTrackingNumber">The tracking number on the label of shipment package, that you can fetch from the &#x60;shippingLabels&#x60; response. You can also scan the bar code on the shipping label to get the tracking number. (required).</param>
         public Package(string packageTrackingNumber = default(string))
         {
             // to ensure "packageTrackingNumber" is required (not null)
@@ -53,9 +53,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         }
         
         /// <summary>
-        /// tracking identifier present on label of shipment package. Tracking number can be fetched from fetched from shippingLabels API response. Alternatively bar code on the shipping label can be scanned by the scanner to get the tracking number.
+        /// The tracking number on the label of shipment package, that you can fetch from the &#x60;shippingLabels&#x60; response. You can also scan the bar code on the shipping label to get the tracking number.
         /// </summary>
-        /// <value>tracking identifier present on label of shipment package. Tracking number can be fetched from fetched from shippingLabels API response. Alternatively bar code on the shipping label can be scanned by the scanner to get the tracking number.</value>
+        /// <value>The tracking number on the label of shipment package, that you can fetch from the &#x60;shippingLabels&#x60; response. You can also scan the bar code on the shipping label to get the tracking number.</value>
         [DataMember(Name="packageTrackingNumber", EmitDefaultValue=false)]
         public string PackageTrackingNumber { get; set; }
 

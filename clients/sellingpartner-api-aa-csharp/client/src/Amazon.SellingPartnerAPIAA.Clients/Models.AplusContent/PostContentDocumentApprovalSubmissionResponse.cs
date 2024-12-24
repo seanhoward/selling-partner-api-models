@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         {
             this.Warnings = warnings;
         }
-        
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

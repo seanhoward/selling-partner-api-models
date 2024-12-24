@@ -1,5 +1,5 @@
 /* 
- * Vendor Shipments v1
+ * Selling Partner API for Retail Procurement Shipments
  *
  * The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.
  *
@@ -25,15 +25,15 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
     /// <summary>
-    /// Amount of units shipped for items sold by weight at a shipment level.
+    /// The total weight of units that are sold by weight in a shipment.
     /// </summary>
     [DataContract]
     public partial class TotalWeight :  IEquatable<TotalWeight>, IValidatableObject
     {
         /// <summary>
-        /// This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.
+        /// The unit of measure for the weight of items that are ordered by cases and support pricing by weight.
         /// </summary>
-        /// <value>This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.</value>
+        /// <value>The unit of measure for the weight of items that are ordered by cases and support pricing by weight.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitOfMeasureEnum
         {
@@ -64,9 +64,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         }
 
         /// <summary>
-        /// This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.
+        /// The unit of measure for the weight of items that are ordered by cases and support pricing by weight.
         /// </summary>
-        /// <value>This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.</value>
+        /// <value>The unit of measure for the weight of items that are ordered by cases and support pricing by weight.</value>
         [DataMember(Name="unitOfMeasure", EmitDefaultValue=false)]
         public UnitOfMeasureEnum UnitOfMeasure { get; set; }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="TotalWeight" /> class.
         /// </summary>
-        /// <param name="unitOfMeasure">This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight. (required).</param>
+        /// <param name="unitOfMeasure">The unit of measure for the weight of items that are ordered by cases and support pricing by weight. (required).</param>
         /// <param name="amount">amount (required).</param>
         public TotalWeight(UnitOfMeasureEnum unitOfMeasure = default(UnitOfMeasureEnum), string amount = default(string))
         {

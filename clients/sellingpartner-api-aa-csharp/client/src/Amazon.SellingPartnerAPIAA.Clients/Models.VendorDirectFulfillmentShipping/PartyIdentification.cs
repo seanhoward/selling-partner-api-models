@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
     /// <summary>
-    /// Name, address and tax details of a party.
+    /// The name, address, and tax details of a party.
     /// </summary>
     [DataContract]
     public partial class PartyIdentification :  IEquatable<PartyIdentification>, IValidatableObject
@@ -38,9 +38,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="PartyIdentification" /> class.
         /// </summary>
-        /// <param name="partyId">Assigned Identification for the party. (required).</param>
-        /// <param name="address">Identification of the party by address..</param>
-        /// <param name="taxRegistrationDetails">Tax registration details of the entity..</param>
+        /// <param name="partyId">The identifier of the party. (required).</param>
+        /// <param name="address">The address of the party..</param>
+        /// <param name="taxRegistrationDetails">The tax registration details of the party..</param>
         public PartyIdentification(string partyId = default(string), Address address = default(Address), List<TaxRegistrationDetails> taxRegistrationDetails = default(List<TaxRegistrationDetails>))
         {
             // to ensure "partyId" is required (not null)
@@ -57,23 +57,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         }
         
         /// <summary>
-        /// Assigned Identification for the party.
+        /// The identifier of the party.
         /// </summary>
-        /// <value>Assigned Identification for the party.</value>
+        /// <value>The identifier of the party.</value>
         [DataMember(Name="partyId", EmitDefaultValue=false)]
         public string PartyId { get; set; }
 
         /// <summary>
-        /// Identification of the party by address.
+        /// The address of the party.
         /// </summary>
-        /// <value>Identification of the party by address.</value>
+        /// <value>The address of the party.</value>
         [DataMember(Name="address", EmitDefaultValue=false)]
         public Address Address { get; set; }
 
         /// <summary>
-        /// Tax registration details of the entity.
+        /// The tax registration details of the party.
         /// </summary>
-        /// <value>Tax registration details of the entity.</value>
+        /// <value>The tax registration details of the party.</value>
         [DataMember(Name="taxRegistrationDetails", EmitDefaultValue=false)]
         public List<TaxRegistrationDetails> TaxRegistrationDetails { get; set; }
 

@@ -33,19 +33,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSellingPartnerMetricsResponseMetric" /> class.
         /// </summary>
-        /// <param name="notDeliveredDueToOOS">The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;..</param>
-        /// <param name="totalSubscriptionsRevenue">The revenue generated from subscriptions over a period of time. Applicable for both the &#x60;PERFORMANCE&#x60; and &#x60;FORECAST&#x60; &#x60;timePeriodType&#x60;..</param>
-        /// <param name="shippedSubscriptionUnits">The number of units shipped to the subscribers over a period of time. Applicable for both the &#x60;PERFORMANCE&#x60; and &#x60;FORECAST&#x60; &#x60;timePeriodType&#x60;..</param>
-        /// <param name="activeSubscriptions">The number of active subscriptions present at the end of the period. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;..</param>
-        /// <param name="subscriberAverageRevenue">The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;..</param>
-        /// <param name="nonSubscriberAverageRevenue">The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;..</param>
-        /// <param name="lostRevenueDueToOOS">The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType..</param>
-        /// <param name="subscriberAverageReorders">The average reorders per subscriber of the program over a period of 12 months. Applicable only for the PERFORMANCE timePeriodType..</param>
-        /// <param name="nonSubscriberAverageReorders">The average reorders per non-subscriber of the program over a period of past 12 months. Applicable only for the PERFORMANCE timePeriodType..</param>
-        /// <param name="couponsRevenuePenetration">The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType..</param>
+        /// <param name="notDeliveredDueToOOS">The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="totalSubscriptionsRevenue">The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType..</param>
+        /// <param name="shippedSubscriptionUnits">The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType..</param>
+        /// <param name="activeSubscriptions">The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="subscriberAverageRevenue">The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="nonSubscriberAverageRevenue">The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="lostRevenueDueToOOS">The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="subscriberAverageReorders">The average reorders per subscriber of the program over a period of 12 months. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="nonSubscriberAverageReorders">The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="couponsRevenuePenetration">The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="revenueFromSubscriptionsWithMultipleDeliveries">The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="revenueFromActiveSubscriptionsWithSingleDelivery">The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="revenueFromCancelledSubscriptionsAfterSingleDelivery">The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="subscriberRetentionFor30Days">The percentage of subscriptions retained after 30 days of subscription creation. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="subscriberRetentionFor90Days">The percentage of subscriptions retained after 90 days of subscription creation. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="revenuePenetrationFor0PercentSellerFunding">The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="revenuePenetrationFor5PercentSellerFunding">[Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="revenuePenetrationFor10PercentSellerFunding">[Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="revenuePenetrationFor5PlusPercentSellerFunding">[Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType..</param>
+        /// <param name="shareOfCouponSubscriptions">The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType..</param>
         /// <param name="timeInterval">A time interval used to compute metrics..</param>
         /// <param name="currencyCode">The currency code in ISO 4217 format..</param>
-        public GetSellingPartnerMetricsResponseMetric(double? notDeliveredDueToOOS = default(double?), double? totalSubscriptionsRevenue = default(double?), decimal? shippedSubscriptionUnits = default(decimal?), decimal? activeSubscriptions = default(decimal?), double? subscriberAverageRevenue = default(double?), double? nonSubscriberAverageRevenue = default(double?), double? lostRevenueDueToOOS = default(double?), double? subscriberAverageReorders = default(double?), double? nonSubscriberAverageReorders = default(double?), double? couponsRevenuePenetration = default(double?), TimeInterval timeInterval = default(TimeInterval), string currencyCode = default(string))
+        public GetSellingPartnerMetricsResponseMetric(double? notDeliveredDueToOOS = default(double?), double? totalSubscriptionsRevenue = default(double?), decimal? shippedSubscriptionUnits = default(decimal?), decimal? activeSubscriptions = default(decimal?), double? subscriberAverageRevenue = default(double?), double? nonSubscriberAverageRevenue = default(double?), double? lostRevenueDueToOOS = default(double?), double? subscriberAverageReorders = default(double?), double? nonSubscriberAverageReorders = default(double?), double? couponsRevenuePenetration = default(double?), double? revenueFromSubscriptionsWithMultipleDeliveries = default(double?), double? revenueFromActiveSubscriptionsWithSingleDelivery = default(double?), double? revenueFromCancelledSubscriptionsAfterSingleDelivery = default(double?), double? subscriberRetentionFor30Days = default(double?), double? subscriberRetentionFor90Days = default(double?), double? revenuePenetrationFor0PercentSellerFunding = default(double?), double? revenuePenetrationFor5PercentSellerFunding = default(double?), double? revenuePenetrationFor10PercentSellerFunding = default(double?), double? revenuePenetrationFor5PlusPercentSellerFunding = default(double?), double? shareOfCouponSubscriptions = default(double?), TimeInterval timeInterval = default(TimeInterval), string currencyCode = default(string))
         {
             this.NotDeliveredDueToOOS = notDeliveredDueToOOS;
             this.TotalSubscriptionsRevenue = totalSubscriptionsRevenue;
@@ -57,79 +67,159 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             this.SubscriberAverageReorders = subscriberAverageReorders;
             this.NonSubscriberAverageReorders = nonSubscriberAverageReorders;
             this.CouponsRevenuePenetration = couponsRevenuePenetration;
+            this.RevenueFromSubscriptionsWithMultipleDeliveries = revenueFromSubscriptionsWithMultipleDeliveries;
+            this.RevenueFromActiveSubscriptionsWithSingleDelivery = revenueFromActiveSubscriptionsWithSingleDelivery;
+            this.RevenueFromCancelledSubscriptionsAfterSingleDelivery = revenueFromCancelledSubscriptionsAfterSingleDelivery;
+            this.SubscriberRetentionFor30Days = subscriberRetentionFor30Days;
+            this.SubscriberRetentionFor90Days = subscriberRetentionFor90Days;
+            this.RevenuePenetrationFor0PercentSellerFunding = revenuePenetrationFor0PercentSellerFunding;
+            this.RevenuePenetrationFor5PercentSellerFunding = revenuePenetrationFor5PercentSellerFunding;
+            this.RevenuePenetrationFor10PercentSellerFunding = revenuePenetrationFor10PercentSellerFunding;
+            this.RevenuePenetrationFor5PlusPercentSellerFunding = revenuePenetrationFor5PlusPercentSellerFunding;
+            this.ShareOfCouponSubscriptions = shareOfCouponSubscriptions;
             this.TimeInterval = timeInterval;
             this.CurrencyCode = currencyCode;
         }
         
         /// <summary>
-        /// The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;.
+        /// The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
-        /// <value>The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;.</value>
+        /// <value>The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.</value>
         [DataMember(Name="notDeliveredDueToOOS", EmitDefaultValue=false)]
         public double? NotDeliveredDueToOOS { get; set; }
 
         /// <summary>
-        /// The revenue generated from subscriptions over a period of time. Applicable for both the &#x60;PERFORMANCE&#x60; and &#x60;FORECAST&#x60; &#x60;timePeriodType&#x60;.
+        /// The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
         /// </summary>
-        /// <value>The revenue generated from subscriptions over a period of time. Applicable for both the &#x60;PERFORMANCE&#x60; and &#x60;FORECAST&#x60; &#x60;timePeriodType&#x60;.</value>
+        /// <value>The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.</value>
         [DataMember(Name="totalSubscriptionsRevenue", EmitDefaultValue=false)]
         public double? TotalSubscriptionsRevenue { get; set; }
 
         /// <summary>
-        /// The number of units shipped to the subscribers over a period of time. Applicable for both the &#x60;PERFORMANCE&#x60; and &#x60;FORECAST&#x60; &#x60;timePeriodType&#x60;.
+        /// The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
         /// </summary>
-        /// <value>The number of units shipped to the subscribers over a period of time. Applicable for both the &#x60;PERFORMANCE&#x60; and &#x60;FORECAST&#x60; &#x60;timePeriodType&#x60;.</value>
+        /// <value>The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.</value>
         [DataMember(Name="shippedSubscriptionUnits", EmitDefaultValue=false)]
         public decimal? ShippedSubscriptionUnits { get; set; }
 
         /// <summary>
-        /// The number of active subscriptions present at the end of the period. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;.
+        /// The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
-        /// <value>The number of active subscriptions present at the end of the period. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;.</value>
+        /// <value>The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.</value>
         [DataMember(Name="activeSubscriptions", EmitDefaultValue=false)]
         public decimal? ActiveSubscriptions { get; set; }
 
         /// <summary>
-        /// The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;.
+        /// The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
-        /// <value>The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;.</value>
+        /// <value>The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.</value>
         [DataMember(Name="subscriberAverageRevenue", EmitDefaultValue=false)]
         public double? SubscriberAverageRevenue { get; set; }
 
         /// <summary>
-        /// The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;.
+        /// The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
-        /// <value>The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the &#x60;PERFORMANCE&#x60; &#x60;timePeriodType&#x60;.</value>
+        /// <value>The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.</value>
         [DataMember(Name="nonSubscriberAverageRevenue", EmitDefaultValue=false)]
         public double? NonSubscriberAverageRevenue { get; set; }
 
         /// <summary>
-        /// The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType.
+        /// The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
-        /// <value>The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType.</value>
+        /// <value>The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.</value>
         [DataMember(Name="lostRevenueDueToOOS", EmitDefaultValue=false)]
         public double? LostRevenueDueToOOS { get; set; }
 
         /// <summary>
-        /// The average reorders per subscriber of the program over a period of 12 months. Applicable only for the PERFORMANCE timePeriodType.
+        /// The average reorders per subscriber of the program over a period of 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
-        /// <value>The average reorders per subscriber of the program over a period of 12 months. Applicable only for the PERFORMANCE timePeriodType.</value>
+        /// <value>The average reorders per subscriber of the program over a period of 12 months. Applicable to PERFORMANCE timePeriodType.</value>
         [DataMember(Name="subscriberAverageReorders", EmitDefaultValue=false)]
         public double? SubscriberAverageReorders { get; set; }
 
         /// <summary>
-        /// The average reorders per non-subscriber of the program over a period of past 12 months. Applicable only for the PERFORMANCE timePeriodType.
+        /// The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
-        /// <value>The average reorders per non-subscriber of the program over a period of past 12 months. Applicable only for the PERFORMANCE timePeriodType.</value>
+        /// <value>The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to PERFORMANCE timePeriodType.</value>
         [DataMember(Name="nonSubscriberAverageReorders", EmitDefaultValue=false)]
         public double? NonSubscriberAverageReorders { get; set; }
 
         /// <summary>
-        /// The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType.
+        /// The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
-        /// <value>The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType.</value>
+        /// <value>The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.</value>
         [DataMember(Name="couponsRevenuePenetration", EmitDefaultValue=false)]
         public double? CouponsRevenuePenetration { get; set; }
+
+        /// <summary>
+        /// The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+        /// </summary>
+        /// <value>The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to PERFORMANCE timePeriodType.</value>
+        [DataMember(Name="revenueFromSubscriptionsWithMultipleDeliveries", EmitDefaultValue=false)]
+        public double? RevenueFromSubscriptionsWithMultipleDeliveries { get; set; }
+
+        /// <summary>
+        /// The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+        /// </summary>
+        /// <value>The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.</value>
+        [DataMember(Name="revenueFromActiveSubscriptionsWithSingleDelivery", EmitDefaultValue=false)]
+        public double? RevenueFromActiveSubscriptionsWithSingleDelivery { get; set; }
+
+        /// <summary>
+        /// The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+        /// </summary>
+        /// <value>The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.</value>
+        [DataMember(Name="revenueFromCancelledSubscriptionsAfterSingleDelivery", EmitDefaultValue=false)]
+        public double? RevenueFromCancelledSubscriptionsAfterSingleDelivery { get; set; }
+
+        /// <summary>
+        /// The percentage of subscriptions retained after 30 days of subscription creation. Applicable to PERFORMANCE timePeriodType.
+        /// </summary>
+        /// <value>The percentage of subscriptions retained after 30 days of subscription creation. Applicable to PERFORMANCE timePeriodType.</value>
+        [DataMember(Name="subscriberRetentionFor30Days", EmitDefaultValue=false)]
+        public double? SubscriberRetentionFor30Days { get; set; }
+
+        /// <summary>
+        /// The percentage of subscriptions retained after 90 days of subscription creation. Applicable to PERFORMANCE timePeriodType.
+        /// </summary>
+        /// <value>The percentage of subscriptions retained after 90 days of subscription creation. Applicable to PERFORMANCE timePeriodType.</value>
+        [DataMember(Name="subscriberRetentionFor90Days", EmitDefaultValue=false)]
+        public double? SubscriberRetentionFor90Days { get; set; }
+
+        /// <summary>
+        /// The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+        /// </summary>
+        /// <value>The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.</value>
+        [DataMember(Name="revenuePenetrationFor0PercentSellerFunding", EmitDefaultValue=false)]
+        public double? RevenuePenetrationFor0PercentSellerFunding { get; set; }
+
+        /// <summary>
+        /// [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+        /// </summary>
+        /// <value>[Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.</value>
+        [DataMember(Name="revenuePenetrationFor5PercentSellerFunding", EmitDefaultValue=false)]
+        public double? RevenuePenetrationFor5PercentSellerFunding { get; set; }
+
+        /// <summary>
+        /// [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+        /// </summary>
+        /// <value>[Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.</value>
+        [DataMember(Name="revenuePenetrationFor10PercentSellerFunding", EmitDefaultValue=false)]
+        public double? RevenuePenetrationFor10PercentSellerFunding { get; set; }
+
+        /// <summary>
+        /// [Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+        /// </summary>
+        /// <value>[Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.</value>
+        [DataMember(Name="revenuePenetrationFor5PlusPercentSellerFunding", EmitDefaultValue=false)]
+        public double? RevenuePenetrationFor5PlusPercentSellerFunding { get; set; }
+
+        /// <summary>
+        /// The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.
+        /// </summary>
+        /// <value>The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.</value>
+        [DataMember(Name="shareOfCouponSubscriptions", EmitDefaultValue=false)]
+        public double? ShareOfCouponSubscriptions { get; set; }
 
         /// <summary>
         /// A time interval used to compute metrics.
@@ -163,6 +253,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("  SubscriberAverageReorders: ").Append(SubscriberAverageReorders).Append("\n");
             sb.Append("  NonSubscriberAverageReorders: ").Append(NonSubscriberAverageReorders).Append("\n");
             sb.Append("  CouponsRevenuePenetration: ").Append(CouponsRevenuePenetration).Append("\n");
+            sb.Append("  RevenueFromSubscriptionsWithMultipleDeliveries: ").Append(RevenueFromSubscriptionsWithMultipleDeliveries).Append("\n");
+            sb.Append("  RevenueFromActiveSubscriptionsWithSingleDelivery: ").Append(RevenueFromActiveSubscriptionsWithSingleDelivery).Append("\n");
+            sb.Append("  RevenueFromCancelledSubscriptionsAfterSingleDelivery: ").Append(RevenueFromCancelledSubscriptionsAfterSingleDelivery).Append("\n");
+            sb.Append("  SubscriberRetentionFor30Days: ").Append(SubscriberRetentionFor30Days).Append("\n");
+            sb.Append("  SubscriberRetentionFor90Days: ").Append(SubscriberRetentionFor90Days).Append("\n");
+            sb.Append("  RevenuePenetrationFor0PercentSellerFunding: ").Append(RevenuePenetrationFor0PercentSellerFunding).Append("\n");
+            sb.Append("  RevenuePenetrationFor5PercentSellerFunding: ").Append(RevenuePenetrationFor5PercentSellerFunding).Append("\n");
+            sb.Append("  RevenuePenetrationFor10PercentSellerFunding: ").Append(RevenuePenetrationFor10PercentSellerFunding).Append("\n");
+            sb.Append("  RevenuePenetrationFor5PlusPercentSellerFunding: ").Append(RevenuePenetrationFor5PlusPercentSellerFunding).Append("\n");
+            sb.Append("  ShareOfCouponSubscriptions: ").Append(ShareOfCouponSubscriptions).Append("\n");
             sb.Append("  TimeInterval: ").Append(TimeInterval).Append("\n");
             sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
             sb.Append("}\n");
@@ -250,6 +350,56 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
                     this.CouponsRevenuePenetration.Equals(input.CouponsRevenuePenetration))
                 ) && 
                 (
+                    this.RevenueFromSubscriptionsWithMultipleDeliveries == input.RevenueFromSubscriptionsWithMultipleDeliveries ||
+                    (this.RevenueFromSubscriptionsWithMultipleDeliveries != null &&
+                    this.RevenueFromSubscriptionsWithMultipleDeliveries.Equals(input.RevenueFromSubscriptionsWithMultipleDeliveries))
+                ) && 
+                (
+                    this.RevenueFromActiveSubscriptionsWithSingleDelivery == input.RevenueFromActiveSubscriptionsWithSingleDelivery ||
+                    (this.RevenueFromActiveSubscriptionsWithSingleDelivery != null &&
+                    this.RevenueFromActiveSubscriptionsWithSingleDelivery.Equals(input.RevenueFromActiveSubscriptionsWithSingleDelivery))
+                ) && 
+                (
+                    this.RevenueFromCancelledSubscriptionsAfterSingleDelivery == input.RevenueFromCancelledSubscriptionsAfterSingleDelivery ||
+                    (this.RevenueFromCancelledSubscriptionsAfterSingleDelivery != null &&
+                    this.RevenueFromCancelledSubscriptionsAfterSingleDelivery.Equals(input.RevenueFromCancelledSubscriptionsAfterSingleDelivery))
+                ) && 
+                (
+                    this.SubscriberRetentionFor30Days == input.SubscriberRetentionFor30Days ||
+                    (this.SubscriberRetentionFor30Days != null &&
+                    this.SubscriberRetentionFor30Days.Equals(input.SubscriberRetentionFor30Days))
+                ) && 
+                (
+                    this.SubscriberRetentionFor90Days == input.SubscriberRetentionFor90Days ||
+                    (this.SubscriberRetentionFor90Days != null &&
+                    this.SubscriberRetentionFor90Days.Equals(input.SubscriberRetentionFor90Days))
+                ) && 
+                (
+                    this.RevenuePenetrationFor0PercentSellerFunding == input.RevenuePenetrationFor0PercentSellerFunding ||
+                    (this.RevenuePenetrationFor0PercentSellerFunding != null &&
+                    this.RevenuePenetrationFor0PercentSellerFunding.Equals(input.RevenuePenetrationFor0PercentSellerFunding))
+                ) && 
+                (
+                    this.RevenuePenetrationFor5PercentSellerFunding == input.RevenuePenetrationFor5PercentSellerFunding ||
+                    (this.RevenuePenetrationFor5PercentSellerFunding != null &&
+                    this.RevenuePenetrationFor5PercentSellerFunding.Equals(input.RevenuePenetrationFor5PercentSellerFunding))
+                ) && 
+                (
+                    this.RevenuePenetrationFor10PercentSellerFunding == input.RevenuePenetrationFor10PercentSellerFunding ||
+                    (this.RevenuePenetrationFor10PercentSellerFunding != null &&
+                    this.RevenuePenetrationFor10PercentSellerFunding.Equals(input.RevenuePenetrationFor10PercentSellerFunding))
+                ) && 
+                (
+                    this.RevenuePenetrationFor5PlusPercentSellerFunding == input.RevenuePenetrationFor5PlusPercentSellerFunding ||
+                    (this.RevenuePenetrationFor5PlusPercentSellerFunding != null &&
+                    this.RevenuePenetrationFor5PlusPercentSellerFunding.Equals(input.RevenuePenetrationFor5PlusPercentSellerFunding))
+                ) && 
+                (
+                    this.ShareOfCouponSubscriptions == input.ShareOfCouponSubscriptions ||
+                    (this.ShareOfCouponSubscriptions != null &&
+                    this.ShareOfCouponSubscriptions.Equals(input.ShareOfCouponSubscriptions))
+                ) && 
+                (
                     this.TimeInterval == input.TimeInterval ||
                     (this.TimeInterval != null &&
                     this.TimeInterval.Equals(input.TimeInterval))
@@ -290,6 +440,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
                     hashCode = hashCode * 59 + this.NonSubscriberAverageReorders.GetHashCode();
                 if (this.CouponsRevenuePenetration != null)
                     hashCode = hashCode * 59 + this.CouponsRevenuePenetration.GetHashCode();
+                if (this.RevenueFromSubscriptionsWithMultipleDeliveries != null)
+                    hashCode = hashCode * 59 + this.RevenueFromSubscriptionsWithMultipleDeliveries.GetHashCode();
+                if (this.RevenueFromActiveSubscriptionsWithSingleDelivery != null)
+                    hashCode = hashCode * 59 + this.RevenueFromActiveSubscriptionsWithSingleDelivery.GetHashCode();
+                if (this.RevenueFromCancelledSubscriptionsAfterSingleDelivery != null)
+                    hashCode = hashCode * 59 + this.RevenueFromCancelledSubscriptionsAfterSingleDelivery.GetHashCode();
+                if (this.SubscriberRetentionFor30Days != null)
+                    hashCode = hashCode * 59 + this.SubscriberRetentionFor30Days.GetHashCode();
+                if (this.SubscriberRetentionFor90Days != null)
+                    hashCode = hashCode * 59 + this.SubscriberRetentionFor90Days.GetHashCode();
+                if (this.RevenuePenetrationFor0PercentSellerFunding != null)
+                    hashCode = hashCode * 59 + this.RevenuePenetrationFor0PercentSellerFunding.GetHashCode();
+                if (this.RevenuePenetrationFor5PercentSellerFunding != null)
+                    hashCode = hashCode * 59 + this.RevenuePenetrationFor5PercentSellerFunding.GetHashCode();
+                if (this.RevenuePenetrationFor10PercentSellerFunding != null)
+                    hashCode = hashCode * 59 + this.RevenuePenetrationFor10PercentSellerFunding.GetHashCode();
+                if (this.RevenuePenetrationFor5PlusPercentSellerFunding != null)
+                    hashCode = hashCode * 59 + this.RevenuePenetrationFor5PlusPercentSellerFunding.GetHashCode();
+                if (this.ShareOfCouponSubscriptions != null)
+                    hashCode = hashCode * 59 + this.ShareOfCouponSubscriptions.GetHashCode();
                 if (this.TimeInterval != null)
                     hashCode = hashCode * 59 + this.TimeInterval.GetHashCode();
                 if (this.CurrencyCode != null)
@@ -375,6 +545,108 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if(this.CouponsRevenuePenetration < (double?)0)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CouponsRevenuePenetration, must be a value greater than or equal to 0.", new [] { "CouponsRevenuePenetration" });
+            }
+
+            // RevenueFromSubscriptionsWithMultipleDeliveries (double?) minimum
+            if(this.RevenueFromSubscriptionsWithMultipleDeliveries < (double?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenueFromSubscriptionsWithMultipleDeliveries, must be a value greater than or equal to 0.", new [] { "RevenueFromSubscriptionsWithMultipleDeliveries" });
+            }
+
+            // RevenueFromActiveSubscriptionsWithSingleDelivery (double?) minimum
+            if(this.RevenueFromActiveSubscriptionsWithSingleDelivery < (double?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenueFromActiveSubscriptionsWithSingleDelivery, must be a value greater than or equal to 0.", new [] { "RevenueFromActiveSubscriptionsWithSingleDelivery" });
+            }
+
+            // RevenueFromCancelledSubscriptionsAfterSingleDelivery (double?) minimum
+            if(this.RevenueFromCancelledSubscriptionsAfterSingleDelivery < (double?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenueFromCancelledSubscriptionsAfterSingleDelivery, must be a value greater than or equal to 0.", new [] { "RevenueFromCancelledSubscriptionsAfterSingleDelivery" });
+            }
+
+            // SubscriberRetentionFor30Days (double?) maximum
+            if(this.SubscriberRetentionFor30Days > (double?)100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SubscriberRetentionFor30Days, must be a value less than or equal to 100.", new [] { "SubscriberRetentionFor30Days" });
+            }
+
+            // SubscriberRetentionFor30Days (double?) minimum
+            if(this.SubscriberRetentionFor30Days < (double?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SubscriberRetentionFor30Days, must be a value greater than or equal to 0.", new [] { "SubscriberRetentionFor30Days" });
+            }
+
+            // SubscriberRetentionFor90Days (double?) maximum
+            if(this.SubscriberRetentionFor90Days > (double?)100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SubscriberRetentionFor90Days, must be a value less than or equal to 100.", new [] { "SubscriberRetentionFor90Days" });
+            }
+
+            // SubscriberRetentionFor90Days (double?) minimum
+            if(this.SubscriberRetentionFor90Days < (double?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SubscriberRetentionFor90Days, must be a value greater than or equal to 0.", new [] { "SubscriberRetentionFor90Days" });
+            }
+
+            // RevenuePenetrationFor0PercentSellerFunding (double?) maximum
+            if(this.RevenuePenetrationFor0PercentSellerFunding > (double?)100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor0PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor0PercentSellerFunding" });
+            }
+
+            // RevenuePenetrationFor0PercentSellerFunding (double?) minimum
+            if(this.RevenuePenetrationFor0PercentSellerFunding < (double?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor0PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor0PercentSellerFunding" });
+            }
+
+            // RevenuePenetrationFor5PercentSellerFunding (double?) maximum
+            if(this.RevenuePenetrationFor5PercentSellerFunding > (double?)100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor5PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor5PercentSellerFunding" });
+            }
+
+            // RevenuePenetrationFor5PercentSellerFunding (double?) minimum
+            if(this.RevenuePenetrationFor5PercentSellerFunding < (double?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor5PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor5PercentSellerFunding" });
+            }
+
+            // RevenuePenetrationFor10PercentSellerFunding (double?) maximum
+            if(this.RevenuePenetrationFor10PercentSellerFunding > (double?)100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor10PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor10PercentSellerFunding" });
+            }
+
+            // RevenuePenetrationFor10PercentSellerFunding (double?) minimum
+            if(this.RevenuePenetrationFor10PercentSellerFunding < (double?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor10PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor10PercentSellerFunding" });
+            }
+
+            // RevenuePenetrationFor5PlusPercentSellerFunding (double?) maximum
+            if(this.RevenuePenetrationFor5PlusPercentSellerFunding > (double?)100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor5PlusPercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor5PlusPercentSellerFunding" });
+            }
+
+            // RevenuePenetrationFor5PlusPercentSellerFunding (double?) minimum
+            if(this.RevenuePenetrationFor5PlusPercentSellerFunding < (double?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor5PlusPercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor5PlusPercentSellerFunding" });
+            }
+
+            // ShareOfCouponSubscriptions (double?) maximum
+            if(this.ShareOfCouponSubscriptions > (double?)100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShareOfCouponSubscriptions, must be a value less than or equal to 100.", new [] { "ShareOfCouponSubscriptions" });
+            }
+
+            // ShareOfCouponSubscriptions (double?) minimum
+            if(this.ShareOfCouponSubscriptions < (double?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShareOfCouponSubscriptions, must be a value greater than or equal to 0.", new [] { "ShareOfCouponSubscriptions" });
             }
 
             yield break;

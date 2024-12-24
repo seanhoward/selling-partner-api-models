@@ -37,8 +37,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         public PostContentDocumentAsinRelationsResponse(MessageSet warnings = default(MessageSet)) : base()
         {
             this.Warnings = warnings;
-        }
-        
+        }        
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

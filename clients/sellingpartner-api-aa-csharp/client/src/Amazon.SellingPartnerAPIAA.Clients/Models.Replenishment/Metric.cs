@@ -80,7 +80,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// Enum COUPONSREVENUEPENETRATION for value: COUPONS_REVENUE_PENETRATION
         /// </summary>
         [EnumMember(Value = "COUPONS_REVENUE_PENETRATION")]
-        COUPONSREVENUEPENETRATION = 8
+        COUPONSREVENUEPENETRATION = 8,
+        
+        /// <summary>
+        /// Enum REVENUEBYDELIVERIES for value: REVENUE_BY_DELIVERIES
+        /// </summary>
+        [EnumMember(Value = "REVENUE_BY_DELIVERIES")]
+        REVENUEBYDELIVERIES = 9,
+        
+        /// <summary>
+        /// Enum SUBSCRIBERRETENTION for value: SUBSCRIBER_RETENTION
+        /// </summary>
+        [EnumMember(Value = "SUBSCRIBER_RETENTION")]
+        SUBSCRIBERRETENTION = 10,
+        
+        /// <summary>
+        /// Enum REVENUEPENETRATIONBYSELLERFUNDING for value: REVENUE_PENETRATION_BY_SELLER_FUNDING
+        /// </summary>
+        [EnumMember(Value = "REVENUE_PENETRATION_BY_SELLER_FUNDING")]
+        REVENUEPENETRATIONBYSELLERFUNDING = 11,
+        
+        /// <summary>
+        /// Enum SHAREOFCOUPONSUBSCRIPTIONS for value: SHARE_OF_COUPON_SUBSCRIPTIONS
+        /// </summary>
+        [EnumMember(Value = "SHARE_OF_COUPON_SUBSCRIPTIONS")]
+        SHAREOFCOUPONSUBSCRIPTIONS = 12
     }
 
 }

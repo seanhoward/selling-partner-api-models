@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Sellers
+ * The Selling Partner API for Sellers
  *
- * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
+ * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
  *
  * OpenAPI spec version: v1
  * 
@@ -40,7 +40,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="code">An error code that identifies the type of error that occurred. (required).</param>
         /// <param name="message">A message that describes the error condition in a human-readable form. (required).</param>
-        /// <param name="details">Additional details that can help you understand or fix the issue..</param>
+        /// <param name="details">Additional details that can help the caller understand or fix the issue..</param>
         public Error(string code = default(string), string message = default(string), string details = default(string))
         {
             // to ensure "code" is required (not null)
@@ -79,9 +79,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         public string Message { get; set; }
 
         /// <summary>
-        /// Additional details that can help you understand or fix the issue.
+        /// Additional details that can help the caller understand or fix the issue.
         /// </summary>
-        /// <value>Additional details that can help you understand or fix the issue.</value>
+        /// <value>Additional details that can help the caller understand or fix the issue.</value>
         [DataMember(Name="details", EmitDefaultValue=false)]
         public string Details { get; set; }
 

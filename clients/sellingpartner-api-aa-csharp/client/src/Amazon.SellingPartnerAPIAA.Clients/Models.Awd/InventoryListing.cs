@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// Initializes a new instance of the <see cref="InventoryListing" /> class.
         /// </summary>
         /// <param name="inventory">List of inventory summaries. (required).</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results..</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages..</param>
         public InventoryListing(List<InventorySummary> inventory = default(List<InventorySummary>), string nextToken = default(string))
         {
             // to ensure "inventory" is required (not null)
@@ -62,9 +62,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         public List<InventorySummary> Inventory { get; set; }
 
         /// <summary>
-        /// Token to retrieve the next set of paginated results.
+        /// A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
         /// </summary>
-        /// <value>Token to retrieve the next set of paginated results.</value>
+        /// <value>A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.</value>
         [DataMember(Name="nextToken", EmitDefaultValue=false)]
         public string NextToken { get; set; }
 

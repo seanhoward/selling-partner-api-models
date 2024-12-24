@@ -13,7 +13,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
     /// The root schema comprises the entire JSON document.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class FeedProcessingNotification
+    public partial class FeedProcessingFinishedNotification
     {
         /// <summary>
         /// The version of the notification.
@@ -74,10 +74,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static FeedProcessingNotification FromJson(string data)
+        public static FeedProcessingFinishedNotification FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<FeedProcessingNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<FeedProcessingFinishedNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 
@@ -91,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
         /// </summary>
         [Newtonsoft.Json.JsonProperty("feedProcessingFinishedNotification", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
-        public FeedProcessingFinishedNotification FeedProcessingFinishedNotification { get; set; } = new FeedProcessingFinishedNotification();
+        public FeedProcessingFinishedNotification2 FeedProcessingFinishedNotification { get; set; } = new FeedProcessingFinishedNotification2();
 
 
 
@@ -177,7 +177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class FeedProcessingFinishedNotification
+    public partial class FeedProcessingFinishedNotification2
     {
         /// <summary>
         /// The merchant customer identifier of the selling partner account on whose behalf the feed was submitted. This field will be null when the feed was submitted on behalf of a vendor group identifier.
@@ -212,7 +212,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
         [Newtonsoft.Json.JsonProperty("processingStatus", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public FeedProcessingFinishedNotificationProcessingStatus ProcessingStatus { get; set; }
+        public FeedProcessingFinishedNotification2ProcessingStatus ProcessingStatus { get; set; }
 
         /// <summary>
         /// The feed document identifier. This identifier is unique only in combination with a seller ID.
@@ -237,17 +237,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.FeedProcessin
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static FeedProcessingFinishedNotification FromJson(string data)
+        public static FeedProcessingFinishedNotification2 FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<FeedProcessingFinishedNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<FeedProcessingFinishedNotification2>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum FeedProcessingFinishedNotificationProcessingStatus
+    public enum FeedProcessingFinishedNotification2ProcessingStatus
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"CANCELLED")]

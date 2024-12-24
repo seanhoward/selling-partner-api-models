@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Sellers
+ * The Selling Partner API for Sellers
  *
- * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
+ * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
  *
  * OpenAPI spec version: v1
  * 
@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// Initializes a new instance of the <see cref="GetAccountResponse" /> class.
         /// </summary>
         /// <param name="payload">payload.</param>
-        /// <param name="errors">The errors encountered by the &#x60;getAccount&#x60; operation..</param>
+        /// <param name="errors">A list of errors that occurred with the &#x60;getAccount&#x60; operation..</param>
         public GetAccountResponse(Account payload = default(Account), ErrorList errors = default(ErrorList))
         {
             this.Payload = payload;
@@ -48,9 +48,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         public Account Payload { get; set; }
 
         /// <summary>
-        /// The errors encountered by the &#x60;getAccount&#x60; operation.
+        /// A list of errors that occurred with the &#x60;getAccount&#x60; operation.
         /// </summary>
-        /// <value>The errors encountered by the &#x60;getAccount&#x60; operation.</value>
+        /// <value>A list of errors that occurred with the &#x60;getAccount&#x60; operation.</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public ErrorList Errors { get; set; }
 

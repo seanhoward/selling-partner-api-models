@@ -13,7 +13,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.AnyOfferChang
     /// The root schema comprises the entire JSON document.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class AnyOfferNotification
+    public partial class AnyOfferChangedNotification
     {
         /// <summary>
         /// An explanation about the purpose of this instance.
@@ -74,10 +74,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.AnyOfferChang
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static AnyOfferNotification FromJson(string data)
+        public static AnyOfferChangedNotification FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<AnyOfferNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<AnyOfferChangedNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 
@@ -148,7 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.AnyOfferChang
         /// </summary>
         [Newtonsoft.Json.JsonProperty("AnyOfferChangedNotification", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
-        public AnyOfferChangedNotification AnyOfferChangedNotification { get; set; } = new AnyOfferChangedNotification();
+        public AnyOfferChangedNotification2 AnyOfferChangedNotification { get; set; } = new AnyOfferChangedNotification2();
 
 
 
@@ -177,7 +177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.AnyOfferChang
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class AnyOfferChangedNotification
+    public partial class AnyOfferChangedNotification2
     {
         /// <summary>
         /// An explanation about the purpose of this instance.
@@ -224,10 +224,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.AnyOfferChang
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static AnyOfferChangedNotification FromJson(string data)
+        public static AnyOfferChangedNotification2 FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<AnyOfferChangedNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<AnyOfferChangedNotification2>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 

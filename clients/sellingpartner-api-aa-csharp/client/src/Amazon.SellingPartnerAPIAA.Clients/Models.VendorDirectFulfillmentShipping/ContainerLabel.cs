@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -25,15 +25,15 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
     /// <summary>
-    /// Details of the container label.
+    /// The details of the container label.
     /// </summary>
     [DataContract]
     public partial class ContainerLabel :  IEquatable<ContainerLabel>, IValidatableObject
     {
         /// <summary>
-        /// Format of the container label.
+        /// The format of the container label.
         /// </summary>
-        /// <value>Format of the container label.</value>
+        /// <value>The format of the container label.</value>
         [DataMember(Name="format", EmitDefaultValue=false)]
         public ContainerLabelFormat Format { get; set; }
         /// <summary>
@@ -44,9 +44,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerLabel" /> class.
         /// </summary>
-        /// <param name="containerTrackingNumber">Container (pallet) tracking identifier from the shipping carrier..</param>
-        /// <param name="content">This field will contain the Base64encoded string of the container label content. (required).</param>
-        /// <param name="format">Format of the container label. (required).</param>
+        /// <param name="containerTrackingNumber">The container (pallet) tracking identifier from the shipping carrier..</param>
+        /// <param name="content">The &#x60;Base64encoded&#x60; string of the container label content. (required).</param>
+        /// <param name="format">The format of the container label. (required).</param>
         public ContainerLabel(string containerTrackingNumber = default(string), string content = default(string), ContainerLabelFormat format = default(ContainerLabelFormat))
         {
             // to ensure "content" is required (not null)
@@ -71,16 +71,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         }
         
         /// <summary>
-        /// Container (pallet) tracking identifier from the shipping carrier.
+        /// The container (pallet) tracking identifier from the shipping carrier.
         /// </summary>
-        /// <value>Container (pallet) tracking identifier from the shipping carrier.</value>
+        /// <value>The container (pallet) tracking identifier from the shipping carrier.</value>
         [DataMember(Name="containerTrackingNumber", EmitDefaultValue=false)]
         public string ContainerTrackingNumber { get; set; }
 
         /// <summary>
-        /// This field will contain the Base64encoded string of the container label content.
+        /// The &#x60;Base64encoded&#x60; string of the container label content.
         /// </summary>
-        /// <value>This field will contain the Base64encoded string of the container label content.</value>
+        /// <value>The &#x60;Base64encoded&#x60; string of the container label content.</value>
         [DataMember(Name="content", EmitDefaultValue=false)]
         public string Content { get; set; }
 

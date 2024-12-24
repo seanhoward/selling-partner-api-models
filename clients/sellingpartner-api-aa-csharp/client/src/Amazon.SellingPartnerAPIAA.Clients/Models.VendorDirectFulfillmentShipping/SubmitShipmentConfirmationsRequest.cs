@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -33,16 +33,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitShipmentConfirmationsRequest" /> class.
         /// </summary>
-        /// <param name="shipmentConfirmations">Array of ShipmentConfirmation objects, each representing confirmation details for a specific shipment..</param>
+        /// <param name="shipmentConfirmations">Array of &#x60;ShipmentConfirmation&#x60; objects. Each &#x60;ShipmentConfirmation&#x60; object represents the confirmation details for a specific shipment..</param>
         public SubmitShipmentConfirmationsRequest(List<ShipmentConfirmation> shipmentConfirmations = default(List<ShipmentConfirmation>))
         {
             this.ShipmentConfirmations = shipmentConfirmations;
         }
         
         /// <summary>
-        /// Array of ShipmentConfirmation objects, each representing confirmation details for a specific shipment.
+        /// Array of &#x60;ShipmentConfirmation&#x60; objects. Each &#x60;ShipmentConfirmation&#x60; object represents the confirmation details for a specific shipment.
         /// </summary>
-        /// <value>Array of ShipmentConfirmation objects, each representing confirmation details for a specific shipment.</value>
+        /// <value>Array of &#x60;ShipmentConfirmation&#x60; objects. Each &#x60;ShipmentConfirmation&#x60; object represents the confirmation details for a specific shipment.</value>
         [DataMember(Name="shipmentConfirmations", EmitDefaultValue=false)]
         public List<ShipmentConfirmation> ShipmentConfirmations { get; set; }
 

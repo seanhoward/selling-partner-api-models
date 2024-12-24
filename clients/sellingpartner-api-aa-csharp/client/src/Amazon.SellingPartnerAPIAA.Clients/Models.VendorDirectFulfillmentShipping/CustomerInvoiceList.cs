@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// Initializes a new instance of the <see cref="CustomerInvoiceList" /> class.
         /// </summary>
         /// <param name="pagination">The pagination elements required to retrieve the remaining data..</param>
-        /// <param name="customerInvoices">Represents a customer invoice within the CustomerInvoiceList..</param>
+        /// <param name="customerInvoices">Represents a customer invoice within the &#x60;CustomerInvoiceList&#x60;..</param>
         public CustomerInvoiceList(Pagination pagination = default(Pagination), List<CustomerInvoice> customerInvoices = default(List<CustomerInvoice>))
         {
             this.Pagination = pagination;
@@ -49,9 +49,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         public Pagination Pagination { get; set; }
 
         /// <summary>
-        /// Represents a customer invoice within the CustomerInvoiceList.
+        /// Represents a customer invoice within the &#x60;CustomerInvoiceList&#x60;.
         /// </summary>
-        /// <value>Represents a customer invoice within the CustomerInvoiceList.</value>
+        /// <value>Represents a customer invoice within the &#x60;CustomerInvoiceList&#x60;.</value>
         [DataMember(Name="customerInvoices", EmitDefaultValue=false)]
         public List<CustomerInvoice> CustomerInvoices { get; set; }
 

@@ -1,5 +1,5 @@
 /* 
- * Listings Items v2021-08-01
+ * Selling Partner API for Listings Items
  *
  * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
@@ -45,7 +45,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <param name="offers">offers.</param>
         /// <param name="fulfillmentAvailability">The fulfillment availability for the listings item..</param>
         /// <param name="procurement">The vendor procurement information for the listings item..</param>
-        public Item(string sku = default(string), ItemSummaries summaries = default(ItemSummaries), ItemAttributes attributes = default(ItemAttributes), ItemIssues issues = default(ItemIssues), ItemOffers offers = default(ItemOffers), List<FulfillmentAvailability> fulfillmentAvailability = default(List<FulfillmentAvailability>), List<ItemProcurement> procurement = default(List<ItemProcurement>))
+        /// <param name="relationships">relationships.</param>
+        /// <param name="productTypes">productTypes.</param>
+        public Item(string sku = default(string), ItemSummaries summaries = default(ItemSummaries), Newtonsoft.Json.Linq.JObject attributes = default(Newtonsoft.Json.Linq.JObject), ItemIssues issues = default(ItemIssues), ItemOffers offers = default(ItemOffers), List<FulfillmentAvailability> fulfillmentAvailability = default(List<FulfillmentAvailability>), List<ItemProcurement> procurement = default(List<ItemProcurement>), ItemRelationships relationships = default(ItemRelationships), ItemProductTypes productTypes = default(ItemProductTypes))
         {
             // to ensure "sku" is required (not null)
             if (sku == null)
@@ -62,6 +64,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             this.Offers = offers;
             this.FulfillmentAvailability = fulfillmentAvailability;
             this.Procurement = procurement;
+            this.Relationships = relationships;
+            this.ProductTypes = productTypes;
         }
         
         /// <summary>
@@ -81,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// Gets or Sets Attributes
         /// </summary>
         [DataMember(Name="attributes", EmitDefaultValue=false)]
-        public ItemAttributes Attributes { get; set; }
+        public Newtonsoft.Json.Linq.JObject Attributes { get; set; }
 
         /// <summary>
         /// Gets or Sets Issues
@@ -110,6 +114,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         public List<ItemProcurement> Procurement { get; set; }
 
         /// <summary>
+        /// Gets or Sets Relationships
+        /// </summary>
+        [DataMember(Name="relationships", EmitDefaultValue=false)]
+        public ItemRelationships Relationships { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProductTypes
+        /// </summary>
+        [DataMember(Name="productTypes", EmitDefaultValue=false)]
+        public ItemProductTypes ProductTypes { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -124,6 +140,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("  Offers: ").Append(Offers).Append("\n");
             sb.Append("  FulfillmentAvailability: ").Append(FulfillmentAvailability).Append("\n");
             sb.Append("  Procurement: ").Append(Procurement).Append("\n");
+            sb.Append("  Relationships: ").Append(Relationships).Append("\n");
+            sb.Append("  ProductTypes: ").Append(ProductTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -192,6 +210,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
                     this.Procurement == input.Procurement ||
                     this.Procurement != null &&
                     this.Procurement.SequenceEqual(input.Procurement)
+                ) && 
+                (
+                    this.Relationships == input.Relationships ||
+                    (this.Relationships != null &&
+                    this.Relationships.Equals(input.Relationships))
+                ) && 
+                (
+                    this.ProductTypes == input.ProductTypes ||
+                    (this.ProductTypes != null &&
+                    this.ProductTypes.Equals(input.ProductTypes))
                 );
         }
 
@@ -218,6 +246,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
                     hashCode = hashCode * 59 + this.FulfillmentAvailability.GetHashCode();
                 if (this.Procurement != null)
                     hashCode = hashCode * 59 + this.Procurement.GetHashCode();
+                if (this.Relationships != null)
+                    hashCode = hashCode * 59 + this.Relationships.GetHashCode();
+                if (this.ProductTypes != null)
+                    hashCode = hashCode * 59 + this.ProductTypes.GetHashCode();
                 return hashCode;
             }
         }

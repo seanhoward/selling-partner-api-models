@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -38,10 +38,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
         /// </summary>
-        /// <param name="itemSequenceNumber">Item Sequence Number for the item. This must be the same value as sent in order for a given item. (required).</param>
-        /// <param name="buyerProductIdentifier">Buyer&#39;s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required..</param>
-        /// <param name="vendorProductIdentifier">The vendor selected product identification of the item. Should be the same as was sent in the purchase order, like SKU Number..</param>
-        /// <param name="shippedQuantity">Total item quantity shipped in this shipment. (required).</param>
+        /// <param name="itemSequenceNumber">The sequence number of the item. The number must be the same as the order number of the item. (required).</param>
+        /// <param name="buyerProductIdentifier">The buyer&#39;s Amazon Standard Identification Number (ASIN) of an item. Either &#x60;buyerProductIdentifier&#x60; or &#x60;vendorProductIdentifier&#x60; is required..</param>
+        /// <param name="vendorProductIdentifier">An item&#39;s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order..</param>
+        /// <param name="shippedQuantity">The total quantity of items that are in this shipment. (required).</param>
         public Item(int? itemSequenceNumber = default(int?), string buyerProductIdentifier = default(string), string vendorProductIdentifier = default(string), ItemQuantity shippedQuantity = default(ItemQuantity))
         {
             // to ensure "itemSequenceNumber" is required (not null)
@@ -67,30 +67,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         }
         
         /// <summary>
-        /// Item Sequence Number for the item. This must be the same value as sent in order for a given item.
+        /// The sequence number of the item. The number must be the same as the order number of the item.
         /// </summary>
-        /// <value>Item Sequence Number for the item. This must be the same value as sent in order for a given item.</value>
+        /// <value>The sequence number of the item. The number must be the same as the order number of the item.</value>
         [DataMember(Name="itemSequenceNumber", EmitDefaultValue=false)]
         public int? ItemSequenceNumber { get; set; }
 
         /// <summary>
-        /// Buyer&#39;s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+        /// The buyer&#39;s Amazon Standard Identification Number (ASIN) of an item. Either &#x60;buyerProductIdentifier&#x60; or &#x60;vendorProductIdentifier&#x60; is required.
         /// </summary>
-        /// <value>Buyer&#39;s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.</value>
+        /// <value>The buyer&#39;s Amazon Standard Identification Number (ASIN) of an item. Either &#x60;buyerProductIdentifier&#x60; or &#x60;vendorProductIdentifier&#x60; is required.</value>
         [DataMember(Name="buyerProductIdentifier", EmitDefaultValue=false)]
         public string BuyerProductIdentifier { get; set; }
 
         /// <summary>
-        /// The vendor selected product identification of the item. Should be the same as was sent in the purchase order, like SKU Number.
+        /// An item&#39;s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.
         /// </summary>
-        /// <value>The vendor selected product identification of the item. Should be the same as was sent in the purchase order, like SKU Number.</value>
+        /// <value>An item&#39;s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.</value>
         [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
-        /// Total item quantity shipped in this shipment.
+        /// The total quantity of items that are in this shipment.
         /// </summary>
-        /// <value>Total item quantity shipped in this shipment.</value>
+        /// <value>The total quantity of items that are in this shipment.</value>
         [DataMember(Name="shippedQuantity", EmitDefaultValue=false)]
         public ItemQuantity ShippedQuantity { get; set; }
 

@@ -1,5 +1,5 @@
 /* 
- * Vendor Shipments v1
+ * Selling Partner API for Retail Procurement Shipments
  *
  * The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.
  *
@@ -34,11 +34,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// Initializes a new instance of the <see cref="VendorDetails" /> class.
         /// </summary>
         /// <param name="sellingParty">Name/Address and tax details of the selling party..</param>
-        /// <param name="vendorShipmentId">Unique vendor shipment id which is not used in last 365 days.</param>
-        public VendorDetails(PartyIdentification sellingParty = default(PartyIdentification), DateTime? vendorShipmentId = default(DateTime?))
+        /// <param name="vendorShipmentIdentifier">Unique vendor shipment id which is not used in last 365 days.</param>
+        public VendorDetails(PartyIdentification sellingParty = default(PartyIdentification), string vendorShipmentIdentifier = default(string))
         {
             this.SellingParty = sellingParty;
-            this.VendorShipmentId = vendorShipmentId;
+            this.VendorShipmentIdentifier = vendorShipmentIdentifier;
         }
         
         /// <summary>
@@ -52,8 +52,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// Unique vendor shipment id which is not used in last 365 days
         /// </summary>
         /// <value>Unique vendor shipment id which is not used in last 365 days</value>
-        [DataMember(Name="vendorShipmentId", EmitDefaultValue=false)]
-        public DateTime? VendorShipmentId { get; set; }
+        [DataMember(Name="vendorShipmentIdentifier", EmitDefaultValue=false)]
+        public string VendorShipmentIdentifier { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,7 +64,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             var sb = new StringBuilder();
             sb.Append("class VendorDetails {\n");
             sb.Append("  SellingParty: ").Append(SellingParty).Append("\n");
-            sb.Append("  VendorShipmentId: ").Append(VendorShipmentId).Append("\n");
+            sb.Append("  VendorShipmentIdentifier: ").Append(VendorShipmentIdentifier).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,9 +105,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
                     this.SellingParty.Equals(input.SellingParty))
                 ) && 
                 (
-                    this.VendorShipmentId == input.VendorShipmentId ||
-                    (this.VendorShipmentId != null &&
-                    this.VendorShipmentId.Equals(input.VendorShipmentId))
+                    this.VendorShipmentIdentifier == input.VendorShipmentIdentifier ||
+                    (this.VendorShipmentIdentifier != null &&
+                    this.VendorShipmentIdentifier.Equals(input.VendorShipmentIdentifier))
                 );
         }
 
@@ -122,8 +122,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
                 int hashCode = 41;
                 if (this.SellingParty != null)
                     hashCode = hashCode * 59 + this.SellingParty.GetHashCode();
-                if (this.VendorShipmentId != null)
-                    hashCode = hashCode * 59 + this.VendorShipmentId.GetHashCode();
+                if (this.VendorShipmentIdentifier != null)
+                    hashCode = hashCode * 59 + this.VendorShipmentIdentifier.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Sellers
+ * The Selling Partner API for Sellers
  *
- * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
+ * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
  *
  * OpenAPI spec version: v1
  * 
@@ -94,6 +94,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         [DataMember(Name="businessType", EmitDefaultValue=false)]
         public BusinessTypeEnum BusinessType { get; set; }
         /// <summary>
+        /// The selling plan details.
+        /// </summary>
+        /// <value>The selling plan details.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SellingPlanEnum
+        {
+            
+            /// <summary>
+            /// Enum PROFESSIONAL for value: PROFESSIONAL
+            /// </summary>
+            [EnumMember(Value = "PROFESSIONAL")]
+            PROFESSIONAL = 1,
+            
+            /// <summary>
+            /// Enum INDIVIDUAL for value: INDIVIDUAL
+            /// </summary>
+            [EnumMember(Value = "INDIVIDUAL")]
+            INDIVIDUAL = 2
+        }
+
+        /// <summary>
+        /// The selling plan details.
+        /// </summary>
+        /// <value>The selling plan details.</value>
+        [DataMember(Name="sellingPlan", EmitDefaultValue=false)]
+        public SellingPlanEnum SellingPlan { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Account" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -101,20 +128,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <summary>
         /// Initializes a new instance of the <see cref="Account" /> class.
         /// </summary>
-        /// <param name="marketplaceLevelAttributes">A list of details of the marketplaces where the seller account is active. (required).</param>
+        /// <param name="marketplaceParticipationList">marketplaceParticipationList (required).</param>
         /// <param name="businessType">The type of business registered for the seller account. (required).</param>
+        /// <param name="sellingPlan">The selling plan details. (required).</param>
         /// <param name="business">business.</param>
         /// <param name="primaryContact">primaryContact.</param>
-        public Account(List<MarketplaceLevelAttributes> marketplaceLevelAttributes = default(List<MarketplaceLevelAttributes>), BusinessTypeEnum businessType = default(BusinessTypeEnum), Business business = default(Business), PrimaryContact primaryContact = default(PrimaryContact))
+        public Account(MarketplaceParticipationList marketplaceParticipationList = default(MarketplaceParticipationList), BusinessTypeEnum businessType = default(BusinessTypeEnum), SellingPlanEnum sellingPlan = default(SellingPlanEnum), Business business = default(Business), PrimaryContact primaryContact = default(PrimaryContact))
         {
-            // to ensure "marketplaceLevelAttributes" is required (not null)
-            if (marketplaceLevelAttributes == null)
+            // to ensure "marketplaceParticipationList" is required (not null)
+            if (marketplaceParticipationList == null)
             {
-                throw new InvalidDataException("marketplaceLevelAttributes is a required property for Account and cannot be null");
+                throw new InvalidDataException("marketplaceParticipationList is a required property for Account and cannot be null");
             }
             else
             {
-                this.MarketplaceLevelAttributes = marketplaceLevelAttributes;
+                this.MarketplaceParticipationList = marketplaceParticipationList;
             }
             // to ensure "businessType" is required (not null)
             if (businessType == null)
@@ -125,16 +153,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             {
                 this.BusinessType = businessType;
             }
+            // to ensure "sellingPlan" is required (not null)
+            if (sellingPlan == null)
+            {
+                throw new InvalidDataException("sellingPlan is a required property for Account and cannot be null");
+            }
+            else
+            {
+                this.SellingPlan = sellingPlan;
+            }
             this.Business = business;
             this.PrimaryContact = primaryContact;
         }
         
         /// <summary>
-        /// A list of details of the marketplaces where the seller account is active.
+        /// Gets or Sets MarketplaceParticipationList
         /// </summary>
-        /// <value>A list of details of the marketplaces where the seller account is active.</value>
-        [DataMember(Name="marketplaceLevelAttributes", EmitDefaultValue=false)]
-        public List<MarketplaceLevelAttributes> MarketplaceLevelAttributes { get; set; }
+        [DataMember(Name="marketplaceParticipationList", EmitDefaultValue=false)]
+        public MarketplaceParticipationList MarketplaceParticipationList { get; set; }
+
 
 
         /// <summary>
@@ -157,8 +194,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         {
             var sb = new StringBuilder();
             sb.Append("class Account {\n");
-            sb.Append("  MarketplaceLevelAttributes: ").Append(MarketplaceLevelAttributes).Append("\n");
+            sb.Append("  MarketplaceParticipationList: ").Append(MarketplaceParticipationList).Append("\n");
             sb.Append("  BusinessType: ").Append(BusinessType).Append("\n");
+            sb.Append("  SellingPlan: ").Append(SellingPlan).Append("\n");
             sb.Append("  Business: ").Append(Business).Append("\n");
             sb.Append("  PrimaryContact: ").Append(PrimaryContact).Append("\n");
             sb.Append("}\n");
@@ -196,14 +234,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
 
             return 
                 (
-                    this.MarketplaceLevelAttributes == input.MarketplaceLevelAttributes ||
-                    this.MarketplaceLevelAttributes != null &&
-                    this.MarketplaceLevelAttributes.SequenceEqual(input.MarketplaceLevelAttributes)
+                    this.MarketplaceParticipationList == input.MarketplaceParticipationList ||
+                    (this.MarketplaceParticipationList != null &&
+                    this.MarketplaceParticipationList.Equals(input.MarketplaceParticipationList))
                 ) && 
                 (
                     this.BusinessType == input.BusinessType ||
                     (this.BusinessType != null &&
                     this.BusinessType.Equals(input.BusinessType))
+                ) && 
+                (
+                    this.SellingPlan == input.SellingPlan ||
+                    (this.SellingPlan != null &&
+                    this.SellingPlan.Equals(input.SellingPlan))
                 ) && 
                 (
                     this.Business == input.Business ||
@@ -226,10 +269,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MarketplaceLevelAttributes != null)
-                    hashCode = hashCode * 59 + this.MarketplaceLevelAttributes.GetHashCode();
+                if (this.MarketplaceParticipationList != null)
+                    hashCode = hashCode * 59 + this.MarketplaceParticipationList.GetHashCode();
                 if (this.BusinessType != null)
                     hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
+                if (this.SellingPlan != null)
+                    hashCode = hashCode * 59 + this.SellingPlan.GetHashCode();
                 if (this.Business != null)
                     hashCode = hashCode * 59 + this.Business.GetHashCode();
                 if (this.PrimaryContact != null)

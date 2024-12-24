@@ -1,5 +1,5 @@
 /* 
- * Vendor Shipments v1
+ * Selling Partner API for Retail Procurement Shipments
  *
  * The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.
  *
@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="labelCreateDateTime">Date on which label is created..</param>
         /// <param name="shipmentInformation">Indicates the shipment Information details like warehouse and business reference details like ARN, Selling Party detail and Vendor Warehouse details.</param>
         /// <param name="labelData">Indicates the label data,format and type associated ..</param>
-        public TransportLabel(string labelCreateDateTime = default(string), ShipmentInformation shipmentInformation = default(ShipmentInformation), List<LabelData> labelData = default(List<LabelData>))
+        public TransportLabel(DateTime? labelCreateDateTime = default(DateTime?), ShipmentInformation shipmentInformation = default(ShipmentInformation), List<LabelData> labelData = default(List<LabelData>))
         {
             this.LabelCreateDateTime = labelCreateDateTime;
             this.ShipmentInformation = shipmentInformation;
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <value>Date on which label is created.</value>
         [DataMember(Name="labelCreateDateTime", EmitDefaultValue=false)]
-        public string LabelCreateDateTime { get; set; }
+        public DateTime? LabelCreateDateTime { get; set; }
 
         /// <summary>
         /// Indicates the shipment Information details like warehouse and business reference details like ARN, Selling Party detail and Vendor Warehouse details

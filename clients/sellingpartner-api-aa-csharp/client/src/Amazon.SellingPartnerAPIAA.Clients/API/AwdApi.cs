@@ -61,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="updatedAfter">List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="updatedBefore">List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>ShipmentListing</returns>
         ShipmentListing ListInboundShipments (string sortBy = null, string sortOrder = null, string shipmentStatus = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, int? maxResults = null, string nextToken = null);
 
@@ -78,7 +78,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="updatedAfter">List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="updatedBefore">List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>ApiResponse of ShipmentListing</returns>
         ApiResponse<ShipmentListing> ListInboundShipmentsWithHttpInfo (string sortBy = null, string sortOrder = null, string shipmentStatus = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, int? maxResults = null, string nextToken = null);
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sku">Filter by seller or merchant SKU for the item. (optional)</param>
         /// <param name="sortOrder">Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)</param>
         /// <param name="details">Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals. (optional)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
         /// <returns>InventoryListing</returns>
         InventoryListing ListInventory (string sku = null, string sortOrder = null, string details = null, string nextToken = null, int? maxResults = null);
@@ -106,7 +106,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sku">Filter by seller or merchant SKU for the item. (optional)</param>
         /// <param name="sortOrder">Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)</param>
         /// <param name="details">Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals. (optional)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of InventoryListing</returns>
         ApiResponse<InventoryListing> ListInventoryWithHttpInfo (string sku = null, string sortOrder = null, string details = null, string nextToken = null, int? maxResults = null);
@@ -148,7 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="updatedAfter">List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="updatedBefore">List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of ShipmentListing</returns>
         System.Threading.Tasks.Task<ShipmentListing> ListInboundShipmentsAsync (string sortBy = null, string sortOrder = null, string shipmentStatus = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, int? maxResults = null, string nextToken = null);
 
@@ -165,7 +165,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="updatedAfter">List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="updatedBefore">List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of ApiResponse (ShipmentListing)</returns>
         System.Threading.Tasks.Task<ApiResponse<ShipmentListing>> ListInboundShipmentsAsyncWithHttpInfo (string sortBy = null, string sortOrder = null, string shipmentStatus = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, int? maxResults = null, string nextToken = null);
         /// <summary>
@@ -178,7 +178,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sku">Filter by seller or merchant SKU for the item. (optional)</param>
         /// <param name="sortOrder">Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)</param>
         /// <param name="details">Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals. (optional)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
         /// <returns>Task of InventoryListing</returns>
         System.Threading.Tasks.Task<InventoryListing> ListInventoryAsync (string sku = null, string sortOrder = null, string details = null, string nextToken = null, int? maxResults = null);
@@ -193,7 +193,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sku">Filter by seller or merchant SKU for the item. (optional)</param>
         /// <param name="sortOrder">Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)</param>
         /// <param name="details">Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals. (optional)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
         /// <returns>Task of ApiResponse (InventoryListing)</returns>
         System.Threading.Tasks.Task<ApiResponse<InventoryListing>> ListInventoryAsyncWithHttpInfo (string sku = null, string sortOrder = null, string details = null, string nextToken = null, int? maxResults = null);
@@ -433,7 +433,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="updatedAfter">List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="updatedBefore">List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>ShipmentListing</returns>
         public ShipmentListing ListInboundShipments (string sortBy = null, string sortOrder = null, string shipmentStatus = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, int? maxResults = null, string nextToken = null)
         {
@@ -451,7 +451,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="updatedAfter">List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="updatedBefore">List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>ApiResponse of ShipmentListing</returns>
         public ApiResponse< ShipmentListing > ListInboundShipmentsWithHttpInfo (string sortBy = null, string sortOrder = null, string shipmentStatus = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, int? maxResults = null, string nextToken = null)
         {
@@ -515,7 +515,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="updatedAfter">List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="updatedBefore">List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of ShipmentListing</returns>
         public async System.Threading.Tasks.Task<ShipmentListing> ListInboundShipmentsAsync (string sortBy = null, string sortOrder = null, string shipmentStatus = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, int? maxResults = null, string nextToken = null)
         {
@@ -534,7 +534,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="updatedAfter">List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="updatedBefore">List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of ApiResponse (ShipmentListing)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ShipmentListing>> ListInboundShipmentsAsyncWithHttpInfo (string sortBy = null, string sortOrder = null, string shipmentStatus = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, int? maxResults = null, string nextToken = null)
         {
@@ -595,7 +595,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sku">Filter by seller or merchant SKU for the item. (optional)</param>
         /// <param name="sortOrder">Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)</param>
         /// <param name="details">Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals. (optional)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
         /// <returns>InventoryListing</returns>
         public InventoryListing ListInventory (string sku = null, string sortOrder = null, string details = null, string nextToken = null, int? maxResults = null)
@@ -611,7 +611,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sku">Filter by seller or merchant SKU for the item. (optional)</param>
         /// <param name="sortOrder">Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)</param>
         /// <param name="details">Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals. (optional)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of InventoryListing</returns>
         public ApiResponse< InventoryListing > ListInventoryWithHttpInfo (string sku = null, string sortOrder = null, string details = null, string nextToken = null, int? maxResults = null)
@@ -671,7 +671,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sku">Filter by seller or merchant SKU for the item. (optional)</param>
         /// <param name="sortOrder">Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)</param>
         /// <param name="details">Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals. (optional)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
         /// <returns>Task of InventoryListing</returns>
         public async System.Threading.Tasks.Task<InventoryListing> ListInventoryAsync (string sku = null, string sortOrder = null, string details = null, string nextToken = null, int? maxResults = null)
@@ -688,7 +688,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sku">Filter by seller or merchant SKU for the item. (optional)</param>
         /// <param name="sortOrder">Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)</param>
         /// <param name="details">Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals. (optional)</param>
-        /// <param name="nextToken">Token to retrieve the next set of paginated results. (optional)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
         /// <returns>Task of ApiResponse (InventoryListing)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<InventoryListing>> ListInventoryAsyncWithHttpInfo (string sku = null, string sortOrder = null, string details = null, string nextToken = null, int? maxResults = null)

@@ -63,7 +63,7 @@ class Program
                         $"-t \"{args.ResourcesDirectory}\\swagger-codegen\\templates\" " +
                         $"-c \"{args.ResourcesDirectory}\\swagger-codegen\\config.json\" " +
                         $"--ignore-file-override \"{args.ResourcesDirectory}\\swagger-codegen\\.swagger-codegen-ignore\" " +
-                        $"--import-mappings ItemAttributes=Newtonsoft.Json.Linq.JObject" +
+                        $"--import-mappings ItemAttributes=Newtonsoft.Json.Linq.JObject " +
                         $"--api-package API " +
                         $"--model-package Models.{modelName} " +
                         $"--additional-properties testPackage={modelName} ",
@@ -137,12 +137,15 @@ class Program
         string templatePath = "Resources\\template.nswag";
         string templateJson = File.ReadAllText(templatePath);
         JObject templateObj = JObject.Parse(templateJson);
+        string outputPath = $"{args.OutputDirectory}\\Templates";
+        if (!Directory.Exists(outputPath)) 
+            Directory.CreateDirectory(outputPath);
 
         foreach (var schemaFile in schemaFiles)
         {
             var config = new SchemaParserConfig(schemaFile,
                     args.OutputDirectory + "\\src\\Amazon.SellingPartnerAPIAA.Clients" ?? "");
-            string outputFile = $"{args.OutputDirectory}\\Templates\\{config.ClassName}.nswag";
+            string outputFile = $"{outputPath}\\{config.ClassName}.nswag";
 
             // Update the property in the template JSON
             templateObj["documentGenerator"]["jsonSchemaToOpenApi"]["schema"] = config.SchemaJson;

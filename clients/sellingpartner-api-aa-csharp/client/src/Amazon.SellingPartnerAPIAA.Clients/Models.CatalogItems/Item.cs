@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="salesRanks">salesRanks.</param>
         /// <param name="summaries">summaries.</param>
         /// <param name="vendorDetails">vendorDetails.</param>
-        public Item(string asin = default(string), ItemAttributes attributes = default(ItemAttributes), ItemBrowseClassifications classifications = default(ItemBrowseClassifications), ItemDimensions dimensions = default(ItemDimensions), ItemIdentifiers identifiers = default(ItemIdentifiers), ItemImages images = default(ItemImages), ItemProductTypes productTypes = default(ItemProductTypes), ItemRelationships relationships = default(ItemRelationships), ItemSalesRanks salesRanks = default(ItemSalesRanks), ItemSummaries summaries = default(ItemSummaries), ItemVendorDetails vendorDetails = default(ItemVendorDetails))
+        public Item(string asin = default(string), Newtonsoft.Json.Linq.JObject attributes = default(Newtonsoft.Json.Linq.JObject), ItemBrowseClassifications classifications = default(ItemBrowseClassifications), ItemDimensions dimensions = default(ItemDimensions), ItemIdentifiers identifiers = default(ItemIdentifiers), ItemImages images = default(ItemImages), ItemProductTypes productTypes = default(ItemProductTypes), ItemRelationships relationships = default(ItemRelationships), ItemSalesRanks salesRanks = default(ItemSalesRanks), ItemSummaries summaries = default(ItemSummaries), ItemVendorDetails vendorDetails = default(ItemVendorDetails))
         {
             // to ensure "asin" is required (not null)
             if (asin == null)
@@ -82,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// Gets or Sets Attributes
         /// </summary>
         [DataMember(Name="attributes", EmitDefaultValue=false)]
-        public ItemAttributes Attributes { get; set; }
+        public Newtonsoft.Json.Linq.JObject Attributes { get; set; }
 
         /// <summary>
         /// Gets or Sets Classifications

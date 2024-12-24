@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -25,15 +25,15 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
     /// <summary>
-    /// The request body schema for the createContainerLabel operation.
+    /// The request body schema for the &#x60;createContainerLabel&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class CreateContainerLabelRequest :  IEquatable<CreateContainerLabelRequest>, IValidatableObject
     {
         /// <summary>
-        /// Carrier for which container (pallet) label requested.
+        /// The container (pallet) label&#39;s carrier.
         /// </summary>
-        /// <value>Carrier for which container (pallet) label requested.</value>
+        /// <value>The container (pallet) label&#39;s carrier.</value>
         [DataMember(Name="carrierId", EmitDefaultValue=false)]
         public CarrierId CarrierId { get; set; }
         /// <summary>
@@ -44,11 +44,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerLabelRequest" /> class.
         /// </summary>
-        /// <param name="sellingParty">ID of the selling party or vendor. (required).</param>
-        /// <param name="shipFromParty">Warehouse code of vendor. (required).</param>
-        /// <param name="carrierId">Carrier for which container (pallet) label requested. (required).</param>
-        /// <param name="vendorContainerId"> Unique identifier for the container request incoming from vendor side. (required).</param>
-        /// <param name="packages">Array of Package object in order to associate shipment packages with container (required).</param>
+        /// <param name="sellingParty">The ID of the selling party or vendor. (required).</param>
+        /// <param name="shipFromParty">The warehouse code of the vendor. (required).</param>
+        /// <param name="carrierId">The container (pallet) label&#39;s carrier. (required).</param>
+        /// <param name="vendorContainerId">The vendor&#39;s unique identifier for the container. (required).</param>
+        /// <param name="packages">An array of package objects that associates shipment packages with a container. (required).</param>
         public CreateContainerLabelRequest(PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), CarrierId carrierId = default(CarrierId), string vendorContainerId = default(string), Packages packages = default(Packages))
         {
             // to ensure "sellingParty" is required (not null)
@@ -99,31 +99,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         }
         
         /// <summary>
-        /// ID of the selling party or vendor.
+        /// The ID of the selling party or vendor.
         /// </summary>
-        /// <value>ID of the selling party or vendor.</value>
+        /// <value>The ID of the selling party or vendor.</value>
         [DataMember(Name="sellingParty", EmitDefaultValue=false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
-        /// Warehouse code of vendor.
+        /// The warehouse code of the vendor.
         /// </summary>
-        /// <value>Warehouse code of vendor.</value>
+        /// <value>The warehouse code of the vendor.</value>
         [DataMember(Name="shipFromParty", EmitDefaultValue=false)]
         public PartyIdentification ShipFromParty { get; set; }
 
 
         /// <summary>
-        ///  Unique identifier for the container request incoming from vendor side.
+        /// The vendor&#39;s unique identifier for the container.
         /// </summary>
-        /// <value> Unique identifier for the container request incoming from vendor side.</value>
+        /// <value>The vendor&#39;s unique identifier for the container.</value>
         [DataMember(Name="vendorContainerId", EmitDefaultValue=false)]
         public string VendorContainerId { get; set; }
 
         /// <summary>
-        /// Array of Package object in order to associate shipment packages with container
+        /// An array of package objects that associates shipment packages with a container.
         /// </summary>
-        /// <value>Array of Package object in order to associate shipment packages with container</value>
+        /// <value>An array of package objects that associates shipment packages with a container.</value>
         [DataMember(Name="packages", EmitDefaultValue=false)]
         public Packages Packages { get; set; }
 

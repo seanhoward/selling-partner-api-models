@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
 {
     /// <summary>
-    /// GetMessagingActionsForOrderResponseEmbedded
+    /// The messaging actions response that is associated with the specified &#x60;amazonOrderId&#x60;.
     /// </summary>
     [DataContract]
     public partial class GetMessagingActionsForOrderResponseEmbedded :  IEquatable<GetMessagingActionsForOrderResponseEmbedded>, IValidatableObject

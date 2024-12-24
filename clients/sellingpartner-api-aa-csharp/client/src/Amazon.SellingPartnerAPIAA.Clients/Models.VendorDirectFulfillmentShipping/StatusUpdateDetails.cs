@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -38,10 +38,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="StatusUpdateDetails" /> class.
         /// </summary>
-        /// <param name="trackingNumber">This is required to be provided for every package and should match with the trackingNumber sent for the shipment confirmation. (required).</param>
+        /// <param name="trackingNumber">The shipment tracking number is required for every package and should match the &#x60;trackingNumber&#x60; sent for the shipment confirmation. (required).</param>
         /// <param name="statusCode">Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation). (required).</param>
         /// <param name="reasonCode">Provides a reason code for the status of the package that will provide additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation). (required).</param>
-        /// <param name="statusDateTime">The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00. (required).</param>
+        /// <param name="statusDateTime">The date and time when the shipment status was updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00. (required).</param>
         /// <param name="statusLocationAddress">statusLocationAddress (required).</param>
         /// <param name="shipmentSchedule">shipmentSchedule.</param>
         public StatusUpdateDetails(string trackingNumber = default(string), string statusCode = default(string), string reasonCode = default(string), DateTime? statusDateTime = default(DateTime?), Address statusLocationAddress = default(Address), ShipmentSchedule shipmentSchedule = default(ShipmentSchedule))
@@ -95,9 +95,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         }
         
         /// <summary>
-        /// This is required to be provided for every package and should match with the trackingNumber sent for the shipment confirmation.
+        /// The shipment tracking number is required for every package and should match the &#x60;trackingNumber&#x60; sent for the shipment confirmation.
         /// </summary>
-        /// <value>This is required to be provided for every package and should match with the trackingNumber sent for the shipment confirmation.</value>
+        /// <value>The shipment tracking number is required for every package and should match the &#x60;trackingNumber&#x60; sent for the shipment confirmation.</value>
         [DataMember(Name="trackingNumber", EmitDefaultValue=false)]
         public string TrackingNumber { get; set; }
 
@@ -116,9 +116,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         public string ReasonCode { get; set; }
 
         /// <summary>
-        /// The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+        /// The date and time when the shipment status was updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
         /// </summary>
-        /// <value>The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.</value>
+        /// <value>The date and time when the shipment status was updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.</value>
         [DataMember(Name="statusDateTime", EmitDefaultValue=false)]
         public DateTime? StatusDateTime { get; set; }
 

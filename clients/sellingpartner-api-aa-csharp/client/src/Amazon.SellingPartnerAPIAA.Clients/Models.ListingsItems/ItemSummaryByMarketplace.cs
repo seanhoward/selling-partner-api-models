@@ -1,5 +1,5 @@
 /* 
- * Listings Items v2021-08-01
+ * Selling Partner API for Listings Items
  *
  * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
@@ -159,12 +159,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// Initializes a new instance of the <see cref="ItemSummaryByMarketplace" /> class.
         /// </summary>
         /// <param name="marketplaceId">A marketplace identifier. Identifies the Amazon marketplace for the listings item. (required).</param>
-        /// <param name="asin">Amazon Standard Identification Number (ASIN) of the listings item. (required).</param>
+        /// <param name="asin">Amazon Standard Identification Number (ASIN) of the listings item..</param>
         /// <param name="productType">The Amazon product type of the listings item. (required).</param>
         /// <param name="conditionType">Identifies the condition of the listings item..</param>
         /// <param name="status">Statuses that apply to the listings item. (required).</param>
         /// <param name="fnSku">The fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item..</param>
-        /// <param name="itemName">The name or title associated with an Amazon catalog item. (required).</param>
+        /// <param name="itemName">The name or title associated with an Amazon catalog item..</param>
         /// <param name="createdDate">The date the listings item was created in ISO 8601 format. (required).</param>
         /// <param name="lastUpdatedDate">The date the listings item was last updated in ISO 8601 format. (required).</param>
         /// <param name="mainImage">The main image for the listings item..</param>
@@ -178,15 +178,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             else
             {
                 this.MarketplaceId = marketplaceId;
-            }
-            // to ensure "asin" is required (not null)
-            if (asin == null)
-            {
-                throw new InvalidDataException("asin is a required property for ItemSummaryByMarketplace and cannot be null");
-            }
-            else
-            {
-                this.Asin = asin;
             }
             // to ensure "productType" is required (not null)
             if (productType == null)
@@ -206,15 +197,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             {
                 this.Status = status;
             }
-            // to ensure "itemName" is required (not null)
-            if (itemName == null)
-            {
-                throw new InvalidDataException("itemName is a required property for ItemSummaryByMarketplace and cannot be null");
-            }
-            else
-            {
-                this.ItemName = itemName;
-            }
             // to ensure "createdDate" is required (not null)
             if (createdDate == null)
             {
@@ -233,8 +215,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             {
                 this.LastUpdatedDate = lastUpdatedDate;
             }
+            this.Asin = asin;
             this.ConditionType = conditionType;
             this.FnSku = fnSku;
+            this.ItemName = itemName;
             this.MainImage = mainImage;
         }
         

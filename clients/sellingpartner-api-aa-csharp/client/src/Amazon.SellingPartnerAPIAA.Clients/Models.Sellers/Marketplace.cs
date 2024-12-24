@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Sellers
+ * The Selling Partner API for Sellers
  *
- * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
+ * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
  *
  * OpenAPI spec version: v1
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
 {
     /// <summary>
-    /// Information about an Amazon marketplace where a seller can list items and customers can view and purchase items.
+    /// Detailed information about an Amazon market where a seller can list items for sale and customers can view and purchase items.
     /// </summary>
     [DataContract]
     public partial class Marketplace :  IEquatable<Marketplace>, IValidatableObject
@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// Initializes a new instance of the <see cref="Marketplace" /> class.
         /// </summary>
         /// <param name="id">The encrypted marketplace value. (required).</param>
-        /// <param name="name">The marketplace name. (required).</param>
+        /// <param name="name">Marketplace name. (required).</param>
         /// <param name="countryCode">The ISO 3166-1 alpha-2 format country code of the marketplace. (required).</param>
         /// <param name="defaultCurrencyCode">The ISO 4217 format currency code of the marketplace. (required).</param>
         /// <param name="defaultLanguageCode">The ISO 639-1 format language code of the marketplace. (required).</param>
@@ -110,9 +110,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         public string Id { get; set; }
 
         /// <summary>
-        /// The marketplace name.
+        /// Marketplace name.
         /// </summary>
-        /// <value>The marketplace name.</value>
+        /// <value>Marketplace name.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
 

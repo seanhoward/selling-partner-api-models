@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
 {
     /// <summary>
-    /// The request schema for the sendInvoice operation.
+    /// The request schema for the &#x60;sendInvoice&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class InvoiceRequest :  IEquatable<InvoiceRequest>, IValidatableObject

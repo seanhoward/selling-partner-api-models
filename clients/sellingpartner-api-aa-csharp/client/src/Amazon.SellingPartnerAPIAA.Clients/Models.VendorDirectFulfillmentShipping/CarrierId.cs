@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -25,9 +25,9 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
     /// <summary>
-    /// Unique carrier code for the carrier for whom container labels are requested.
+    /// The unique carrier code for the carrier for whom container labels are requested.
     /// </summary>
-    /// <value>Unique carrier code for the carrier for whom container labels are requested.</value>
+    /// <value>The unique carrier code for the carrier for whom container labels are requested.</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

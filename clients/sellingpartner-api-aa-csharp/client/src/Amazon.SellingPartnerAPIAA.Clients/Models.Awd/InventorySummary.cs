@@ -38,11 +38,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="InventorySummary" /> class.
         /// </summary>
+        /// <param name="expirationDetails">The expiration details of the inventory. This object will only appear if the &#x60;details&#x60; parameter in the request is set to &#x60;SHOW&#x60;..</param>
         /// <param name="inventoryDetails">inventoryDetails.</param>
         /// <param name="sku">The seller or merchant SKU. (required).</param>
         /// <param name="totalInboundQuantity">Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center.</param>
         /// <param name="totalOnhandQuantity">Total quantity that is present in AWD distribution centers..</param>
-        public InventorySummary(InventoryDetails inventoryDetails = default(InventoryDetails), string sku = default(string), long? totalInboundQuantity = default(long?), long? totalOnhandQuantity = default(long?))
+        public InventorySummary(List<ExpirationDetails> expirationDetails = default(List<ExpirationDetails>), InventoryDetails inventoryDetails = default(InventoryDetails), string sku = default(string), long? totalInboundQuantity = default(long?), long? totalOnhandQuantity = default(long?))
         {
             // to ensure "sku" is required (not null)
             if (sku == null)
@@ -53,11 +54,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             {
                 this.Sku = sku;
             }
+            this.ExpirationDetails = expirationDetails;
             this.InventoryDetails = inventoryDetails;
             this.TotalInboundQuantity = totalInboundQuantity;
             this.TotalOnhandQuantity = totalOnhandQuantity;
         }
         
+        /// <summary>
+        /// The expiration details of the inventory. This object will only appear if the &#x60;details&#x60; parameter in the request is set to &#x60;SHOW&#x60;.
+        /// </summary>
+        /// <value>The expiration details of the inventory. This object will only appear if the &#x60;details&#x60; parameter in the request is set to &#x60;SHOW&#x60;.</value>
+        [DataMember(Name="expirationDetails", EmitDefaultValue=false)]
+        public List<ExpirationDetails> ExpirationDetails { get; set; }
+
         /// <summary>
         /// Gets or Sets InventoryDetails
         /// </summary>
@@ -93,6 +102,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         {
             var sb = new StringBuilder();
             sb.Append("class InventorySummary {\n");
+            sb.Append("  ExpirationDetails: ").Append(ExpirationDetails).Append("\n");
             sb.Append("  InventoryDetails: ").Append(InventoryDetails).Append("\n");
             sb.Append("  Sku: ").Append(Sku).Append("\n");
             sb.Append("  TotalInboundQuantity: ").Append(TotalInboundQuantity).Append("\n");
@@ -132,6 +142,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 
             return 
                 (
+                    this.ExpirationDetails == input.ExpirationDetails ||
+                    this.ExpirationDetails != null &&
+                    this.ExpirationDetails.SequenceEqual(input.ExpirationDetails)
+                ) && 
+                (
                     this.InventoryDetails == input.InventoryDetails ||
                     (this.InventoryDetails != null &&
                     this.InventoryDetails.Equals(input.InventoryDetails))
@@ -162,6 +177,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ExpirationDetails != null)
+                    hashCode = hashCode * 59 + this.ExpirationDetails.GetHashCode();
                 if (this.InventoryDetails != null)
                     hashCode = hashCode * 59 + this.InventoryDetails.GetHashCode();
                 if (this.Sku != null)

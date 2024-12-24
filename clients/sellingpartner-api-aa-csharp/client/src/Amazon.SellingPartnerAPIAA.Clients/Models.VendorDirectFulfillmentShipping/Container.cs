@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -70,7 +70,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="trackingNumber">The tracking number..</param>
         /// <param name="manifestId">The manifest identifier..</param>
         /// <param name="manifestDate">The date of the manifest..</param>
-        /// <param name="shipMethod">The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise..</param>
+        /// <param name="shipMethod">The shipment method. This property is required when calling the &#x60;submitShipmentConfirmations&#x60; operation, and optional otherwise..</param>
         /// <param name="scacCode">SCAC code required for NA VOC vendors only..</param>
         /// <param name="carrier">Carrier required for EU VOC vendors only..</param>
         /// <param name="containerSequenceNumber">An integer that must be submitted for multi-box shipments only, where one item may come in separate packages..</param>
@@ -155,9 +155,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         public string ManifestDate { get; set; }
 
         /// <summary>
-        /// The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise.
+        /// The shipment method. This property is required when calling the &#x60;submitShipmentConfirmations&#x60; operation, and optional otherwise.
         /// </summary>
-        /// <value>The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise.</value>
+        /// <value>The shipment method. This property is required when calling the &#x60;submitShipmentConfirmations&#x60; operation, and optional otherwise.</value>
         [DataMember(Name="shipMethod", EmitDefaultValue=false)]
         public string ShipMethod { get; set; }
 

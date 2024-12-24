@@ -13,7 +13,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ReportProcess
     /// The root schema comprises the entire JSON document.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class ReportProcessingNotification
+    public partial class ReportProcessingFinishedNotification
     {
         /// <summary>
         /// The version of the notification.
@@ -74,10 +74,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ReportProcess
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static ReportProcessingNotification FromJson(string data)
+        public static ReportProcessingFinishedNotification FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ReportProcessingNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ReportProcessingFinishedNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 
@@ -91,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ReportProcess
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reportProcessingFinishedNotification", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
-        public ReportProcessingFinishedNotification ReportProcessingFinishedNotification { get; set; } = new ReportProcessingFinishedNotification();
+        public ReportProcessingFinishedNotification2 ReportProcessingFinishedNotification { get; set; } = new ReportProcessingFinishedNotification2();
 
 
 
@@ -177,7 +177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ReportProcess
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class ReportProcessingFinishedNotification
+    public partial class ReportProcessingFinishedNotification2
     {
         /// <summary>
         /// The merchant customer identifier of the selling partner account on whose behalf the report was submitted. This field will be null when the report was submitted on behalf of a vendor group identifier.
@@ -212,7 +212,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ReportProcess
         [Newtonsoft.Json.JsonProperty("processingStatus", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public ReportProcessingFinishedNotificationProcessingStatus ProcessingStatus { get; set; }
+        public ReportProcessingFinishedNotification2ProcessingStatus ProcessingStatus { get; set; }
 
         /// <summary>
         /// The report document identifier. This identifier is unique only in combination with a seller ID.
@@ -237,17 +237,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ReportProcess
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static ReportProcessingFinishedNotification FromJson(string data)
+        public static ReportProcessingFinishedNotification2 FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ReportProcessingFinishedNotification>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ReportProcessingFinishedNotification2>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum ReportProcessingFinishedNotificationProcessingStatus
+    public enum ReportProcessingFinishedNotification2ProcessingStatus
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"CANCELLED")]

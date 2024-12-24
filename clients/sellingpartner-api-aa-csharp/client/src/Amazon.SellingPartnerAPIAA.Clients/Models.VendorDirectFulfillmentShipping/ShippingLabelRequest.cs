@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -38,9 +38,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingLabelRequest" /> class.
         /// </summary>
-        /// <param name="purchaseOrderNumber">Purchase order number of the order for which to create a shipping label. (required).</param>
-        /// <param name="sellingParty">ID of the selling party or vendor. (required).</param>
-        /// <param name="shipFromParty">Warehouse code of vendor. (required).</param>
+        /// <param name="purchaseOrderNumber">The purchase order number of the order for which to create a shipping label. (required).</param>
+        /// <param name="sellingParty">The ID of the selling party or vendor. (required).</param>
+        /// <param name="shipFromParty">The warehouse code of the vendor. (required).</param>
         /// <param name="containers">A list of the packages in this shipment..</param>
         public ShippingLabelRequest(string purchaseOrderNumber = default(string), PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), List<Container> containers = default(List<Container>))
         {
@@ -75,23 +75,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         }
         
         /// <summary>
-        /// Purchase order number of the order for which to create a shipping label.
+        /// The purchase order number of the order for which to create a shipping label.
         /// </summary>
-        /// <value>Purchase order number of the order for which to create a shipping label.</value>
+        /// <value>The purchase order number of the order for which to create a shipping label.</value>
         [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
-        /// ID of the selling party or vendor.
+        /// The ID of the selling party or vendor.
         /// </summary>
-        /// <value>ID of the selling party or vendor.</value>
+        /// <value>The ID of the selling party or vendor.</value>
         [DataMember(Name="sellingParty", EmitDefaultValue=false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
-        /// Warehouse code of vendor.
+        /// The warehouse code of the vendor.
         /// </summary>
-        /// <value>Warehouse code of vendor.</value>
+        /// <value>The warehouse code of the vendor.</value>
         [DataMember(Name="shipFromParty", EmitDefaultValue=false)]
         public PartyIdentification ShipFromParty { get; set; }
 

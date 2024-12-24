@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
 {
     /// <summary>
-    /// The request schema for the createDigitalAccessKey operation.
+    /// The request schema for the &#x60;createDigitalAccessKey&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class CreateDigitalAccessKeyRequest :  IEquatable<CreateDigitalAccessKeyRequest>, IValidatableObject
@@ -33,8 +33,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDigitalAccessKeyRequest" /> class.
         /// </summary>
-        /// <param name="text">The text to be sent to the buyer. Only links related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer&#39;s language of preference, which can be retrieved from the GetAttributes operation..</param>
-        /// <param name="attachments">Attachments to include in the message to the buyer..</param>
+        /// <param name="text">The text that is sent to the buyer. Only links that are related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer&#39;s preferred language, which you can retrieve from the &#x60;GetAttributes&#x60; operation..</param>
+        /// <param name="attachments">Attachments that you want to include in the message to the buyer..</param>
         public CreateDigitalAccessKeyRequest(string text = default(string), List<Attachment> attachments = default(List<Attachment>))
         {
             this.Text = text;
@@ -42,16 +42,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         }
         
         /// <summary>
-        /// The text to be sent to the buyer. Only links related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer&#39;s language of preference, which can be retrieved from the GetAttributes operation.
+        /// The text that is sent to the buyer. Only links that are related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer&#39;s preferred language, which you can retrieve from the &#x60;GetAttributes&#x60; operation.
         /// </summary>
-        /// <value>The text to be sent to the buyer. Only links related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer&#39;s language of preference, which can be retrieved from the GetAttributes operation.</value>
+        /// <value>The text that is sent to the buyer. Only links that are related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer&#39;s preferred language, which you can retrieve from the &#x60;GetAttributes&#x60; operation.</value>
         [DataMember(Name="text", EmitDefaultValue=false)]
         public string Text { get; set; }
 
         /// <summary>
-        /// Attachments to include in the message to the buyer.
+        /// Attachments that you want to include in the message to the buyer.
         /// </summary>
-        /// <value>Attachments to include in the message to the buyer.</value>
+        /// <value>Attachments that you want to include in the message to the buyer.</value>
         [DataMember(Name="attachments", EmitDefaultValue=false)]
         public List<Attachment> Attachments { get; set; }
 

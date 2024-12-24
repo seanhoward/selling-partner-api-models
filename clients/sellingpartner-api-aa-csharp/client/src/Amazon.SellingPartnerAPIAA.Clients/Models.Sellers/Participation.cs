@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Sellers
+ * The Selling Partner API for Sellers
  *
- * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
+ * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
  *
  * OpenAPI spec version: v1
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
 {
     /// <summary>
-    /// Information that is specific to a seller in a marketplace.
+    /// Detailed information that is specific to a seller in a marketplace.
     /// </summary>
     [DataContract]
     public partial class Participation :  IEquatable<Participation>, IValidatableObject
@@ -38,8 +38,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <summary>
         /// Initializes a new instance of the <see cref="Participation" /> class.
         /// </summary>
-        /// <param name="isParticipating">If &#x60;true&#x60;, the seller participates in the marketplace. Otherwise &#x60;false&#x60;. (required).</param>
-        /// <param name="hasSuspendedListings">Specifies if the seller has suspended listings. &#x60;true&#x60; if the seller Listing Status is set to Inactive, otherwise &#x60;false&#x60;. (required).</param>
+        /// <param name="isParticipating">If true, the seller participates in the marketplace. (required).</param>
+        /// <param name="hasSuspendedListings">If true, the seller has suspended listings. (required).</param>
         public Participation(bool? isParticipating = default(bool?), bool? hasSuspendedListings = default(bool?))
         {
             // to ensure "isParticipating" is required (not null)
@@ -63,16 +63,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         }
         
         /// <summary>
-        /// If &#x60;true&#x60;, the seller participates in the marketplace. Otherwise &#x60;false&#x60;.
+        /// If true, the seller participates in the marketplace.
         /// </summary>
-        /// <value>If &#x60;true&#x60;, the seller participates in the marketplace. Otherwise &#x60;false&#x60;.</value>
+        /// <value>If true, the seller participates in the marketplace.</value>
         [DataMember(Name="isParticipating", EmitDefaultValue=false)]
         public bool? IsParticipating { get; set; }
 
         /// <summary>
-        /// Specifies if the seller has suspended listings. &#x60;true&#x60; if the seller Listing Status is set to Inactive, otherwise &#x60;false&#x60;.
+        /// If true, the seller has suspended listings.
         /// </summary>
-        /// <value>Specifies if the seller has suspended listings. &#x60;true&#x60; if the seller Listing Status is set to Inactive, otherwise &#x60;false&#x60;.</value>
+        /// <value>If true, the seller has suspended listings.</value>
         [DataMember(Name="hasSuspendedListings", EmitDefaultValue=false)]
         public bool? HasSuspendedListings { get; set; }
 

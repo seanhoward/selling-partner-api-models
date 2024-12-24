@@ -1,5 +1,5 @@
 /* 
- * Vendor Shipments v1
+ * Selling Partner API for Retail Procurement Shipments
  *
  * The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.
  *
@@ -31,9 +31,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     public partial class LabelData :  IEquatable<LabelData>, IValidatableObject
     {
         /// <summary>
-        /// Type of the label format like PDF
+        /// The format of the label.
         /// </summary>
-        /// <value>Type of the label format like PDF</value>
+        /// <value>The format of the label.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LabelFormatEnum
         {
@@ -46,19 +46,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         }
 
         /// <summary>
-        /// Type of the label format like PDF
+        /// The format of the label.
         /// </summary>
-        /// <value>Type of the label format like PDF</value>
+        /// <value>The format of the label.</value>
         [DataMember(Name="labelFormat", EmitDefaultValue=false)]
         public LabelFormatEnum? LabelFormat { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelData" /> class.
         /// </summary>
-        /// <param name="labelSequenceNumber">Label list sequence number.</param>
-        /// <param name="labelFormat">Type of the label format like PDF.</param>
-        /// <param name="carrierCode">Unique identification for  the carrier like UPS,DHL,USPS..etc.</param>
+        /// <param name="labelSequenceNumber">A sequential number assigned to each label within a shipment..</param>
+        /// <param name="labelFormat">The format of the label..</param>
+        /// <param name="carrierCode">Unique identification of the carrier..</param>
         /// <param name="trackingId">Tracking Id for the transportation..</param>
-        /// <param name="label">Label created as part of the transportation and it is base64 encoded.</param>
+        /// <param name="label">The base-64 encoded string that represents the shipment label..</param>
         public LabelData(int? labelSequenceNumber = default(int?), LabelFormatEnum? labelFormat = default(LabelFormatEnum?), string carrierCode = default(string), string trackingId = default(string), string label = default(string))
         {
             this.LabelSequenceNumber = labelSequenceNumber;
@@ -69,17 +69,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         }
         
         /// <summary>
-        /// Label list sequence number
+        /// A sequential number assigned to each label within a shipment.
         /// </summary>
-        /// <value>Label list sequence number</value>
+        /// <value>A sequential number assigned to each label within a shipment.</value>
         [DataMember(Name="labelSequenceNumber", EmitDefaultValue=false)]
         public int? LabelSequenceNumber { get; set; }
 
 
         /// <summary>
-        /// Unique identification for  the carrier like UPS,DHL,USPS..etc
+        /// Unique identification of the carrier.
         /// </summary>
-        /// <value>Unique identification for  the carrier like UPS,DHL,USPS..etc</value>
+        /// <value>Unique identification of the carrier.</value>
         [DataMember(Name="carrierCode", EmitDefaultValue=false)]
         public string CarrierCode { get; set; }
 
@@ -91,9 +91,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         public string TrackingId { get; set; }
 
         /// <summary>
-        /// Label created as part of the transportation and it is base64 encoded
+        /// The base-64 encoded string that represents the shipment label.
         /// </summary>
-        /// <value>Label created as part of the transportation and it is base64 encoded</value>
+        /// <value>The base-64 encoded string that represents the shipment label.</value>
         [DataMember(Name="label", EmitDefaultValue=false)]
         public string Label { get; set; }
 

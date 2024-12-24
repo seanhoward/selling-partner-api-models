@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -33,16 +33,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="Pagination" /> class.
         /// </summary>
-        /// <param name="nextToken">A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return..</param>
+        /// <param name="nextToken">Pagination occurs when a request produces a response that exceeds the &#x60;pageSize&#x60;. This means that the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the &#x60;nextToken&#x60; value or the &#x60;previousToken&#x60; value as the &#x60;pageToken&#x60; parameter in the next request. There is no &#x60;nextToken&#x60; in the pagination object on the last page..</param>
         public Pagination(string nextToken = default(string))
         {
             this.NextToken = nextToken;
         }
         
         /// <summary>
-        /// A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return.
+        /// Pagination occurs when a request produces a response that exceeds the &#x60;pageSize&#x60;. This means that the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the &#x60;nextToken&#x60; value or the &#x60;previousToken&#x60; value as the &#x60;pageToken&#x60; parameter in the next request. There is no &#x60;nextToken&#x60; in the pagination object on the last page.
         /// </summary>
-        /// <value>A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return.</value>
+        /// <value>Pagination occurs when a request produces a response that exceeds the &#x60;pageSize&#x60;. This means that the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the &#x60;nextToken&#x60; value or the &#x60;previousToken&#x60; value as the &#x60;pageToken&#x60; parameter in the next request. There is no &#x60;nextToken&#x60; in the pagination object on the last page.</value>
         [DataMember(Name="nextToken", EmitDefaultValue=false)]
         public string NextToken { get; set; }
 

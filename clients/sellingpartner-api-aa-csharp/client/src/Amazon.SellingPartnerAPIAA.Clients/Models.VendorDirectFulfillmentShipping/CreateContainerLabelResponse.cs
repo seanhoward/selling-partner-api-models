@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
     /// <summary>
-    /// The response schema for the createContainerLabel operation.
+    /// The response schema for the &#x60;createContainerLabel&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class CreateContainerLabelResponse :  IEquatable<CreateContainerLabelResponse>, IValidatableObject
@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerLabelResponse" /> class.
         /// </summary>
-        /// <param name="containerLabel">Label data for container label. (required).</param>
+        /// <param name="containerLabel">The label data for the container label. (required).</param>
         public CreateContainerLabelResponse(ContainerLabel containerLabel = default(ContainerLabel))
         {
             // to ensure "containerLabel" is required (not null)
@@ -53,9 +53,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         }
         
         /// <summary>
-        /// Label data for container label.
+        /// The label data for the container label.
         /// </summary>
-        /// <value>Label data for container label.</value>
+        /// <value>The label data for the container label.</value>
         [DataMember(Name="containerLabel", EmitDefaultValue=false)]
         public ContainerLabel ContainerLabel { get; set; }
 

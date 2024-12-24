@@ -131,10 +131,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ListingsItemI
         public System.Collections.Generic.ICollection<Severities> Severities { get; set; } = new System.Collections.ObjectModel.Collection<Severities>();
 
         /// <summary>
-        /// Array of enforcement actions taken by Amazon for the issues associated with the affected listings item.
+        /// Array of enforcement actions taken by Amazon for the issues associated with the affected listings item. Possible values: 'LISTING_SUPPRESSED' - This enforcement takes down the current listing item's buyability. 'ATTRIBUTE_SUPPRESSED' - An attribute's value on the listing item is invalid, which causes it to be rejected by Amazon. 'CATALOG_ITEM_REMOVED' - This catalog item is inactive on Amazon, and all offers against it in the applicable marketplace are non-buyable. 'SEARCH_SUPPRESSED' - This value indicates that the catalog item is hidden from search results.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("EnforcementActions", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore, ItemConverterType = typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public System.Collections.Generic.ICollection<EnforcementActions> EnforcementActions { get; set; }
+        [Newtonsoft.Json.JsonProperty("EnforcementActions", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<string> EnforcementActions { get; set; }
 
 
 
@@ -233,16 +233,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.ListingsItemI
 
         [System.Runtime.Serialization.EnumMember(Value = @"WARNING")]
         WARNING = 2,
-
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum EnforcementActions
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"SEARCH_SUPPRESSED")]
-        SEARCH_SUPPRESSED = 0,
 
 
     }

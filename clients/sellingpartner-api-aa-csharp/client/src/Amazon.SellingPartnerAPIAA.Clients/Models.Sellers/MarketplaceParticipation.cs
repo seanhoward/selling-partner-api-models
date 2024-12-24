@@ -1,7 +1,7 @@
 /* 
- * Selling Partner API for Sellers
+ * The Selling Partner API for Sellers
  *
- * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
+ * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
  *
  * OpenAPI spec version: v1
  * 
@@ -40,7 +40,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="marketplace">marketplace (required).</param>
         /// <param name="participation">participation (required).</param>
-        public MarketplaceParticipation(Marketplace marketplace = default(Marketplace), Participation participation = default(Participation))
+        /// <param name="storeName">The name of the seller&#39;s store as displayed in the marketplace. (required).</param>
+        public MarketplaceParticipation(Marketplace marketplace = default(Marketplace), Participation participation = default(Participation), string storeName = default(string))
         {
             // to ensure "marketplace" is required (not null)
             if (marketplace == null)
@@ -60,6 +61,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             {
                 this.Participation = participation;
             }
+            // to ensure "storeName" is required (not null)
+            if (storeName == null)
+            {
+                throw new InvalidDataException("storeName is a required property for MarketplaceParticipation and cannot be null");
+            }
+            else
+            {
+                this.StoreName = storeName;
+            }
         }
         
         /// <summary>
@@ -75,6 +85,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         public Participation Participation { get; set; }
 
         /// <summary>
+        /// The name of the seller&#39;s store as displayed in the marketplace.
+        /// </summary>
+        /// <value>The name of the seller&#39;s store as displayed in the marketplace.</value>
+        [DataMember(Name="storeName", EmitDefaultValue=false)]
+        public string StoreName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             sb.Append("class MarketplaceParticipation {\n");
             sb.Append("  Marketplace: ").Append(Marketplace).Append("\n");
             sb.Append("  Participation: ").Append(Participation).Append("\n");
+            sb.Append("  StoreName: ").Append(StoreName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,6 +145,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
                     this.Participation == input.Participation ||
                     (this.Participation != null &&
                     this.Participation.Equals(input.Participation))
+                ) && 
+                (
+                    this.StoreName == input.StoreName ||
+                    (this.StoreName != null &&
+                    this.StoreName.Equals(input.StoreName))
                 );
         }
 
@@ -143,6 +166,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
                     hashCode = hashCode * 59 + this.Marketplace.GetHashCode();
                 if (this.Participation != null)
                     hashCode = hashCode * 59 + this.Participation.GetHashCode();
+                if (this.StoreName != null)
+                    hashCode = hashCode * 59 + this.StoreName.GetHashCode();
                 return hashCode;
             }
         }

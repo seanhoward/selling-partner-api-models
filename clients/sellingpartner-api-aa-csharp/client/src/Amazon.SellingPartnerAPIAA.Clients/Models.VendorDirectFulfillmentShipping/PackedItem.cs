@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
     /// <summary>
-    /// Represents an item that has been packed into a container for shipping.
+    /// An item that has been packed into a container for shipping.
     /// </summary>
     [DataContract]
     public partial class PackedItem :  IEquatable<PackedItem>, IValidatableObject
@@ -38,11 +38,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="PackedItem" /> class.
         /// </summary>
-        /// <param name="itemSequenceNumber">Item Sequence Number for the item. This must be the same value as sent in the order for a given item. (required).</param>
-        /// <param name="buyerProductIdentifier">Buyer&#39;s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required..</param>
+        /// <param name="itemSequenceNumber">The sequence number of the item. The number must be the same as the order number of the item. (required).</param>
+        /// <param name="buyerProductIdentifier">The buyer&#39;s Amazon Standard Identification Number (ASIN) of an item. Either &#x60;buyerProductIdentifier&#x60; or &#x60;vendorProductIdentifier&#x60; is required..</param>
         /// <param name="pieceNumber">The piece number of the item in this container. This is required when the item is split across different containers..</param>
-        /// <param name="vendorProductIdentifier">The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number..</param>
-        /// <param name="packedQuantity">Total item quantity packed in the container. (required).</param>
+        /// <param name="vendorProductIdentifier">An item&#39;s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order..</param>
+        /// <param name="packedQuantity">The total quantity of items that are packed in the shipment. (required).</param>
         public PackedItem(int? itemSequenceNumber = default(int?), string buyerProductIdentifier = default(string), int? pieceNumber = default(int?), string vendorProductIdentifier = default(string), ItemQuantity packedQuantity = default(ItemQuantity))
         {
             // to ensure "itemSequenceNumber" is required (not null)
@@ -69,16 +69,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         }
         
         /// <summary>
-        /// Item Sequence Number for the item. This must be the same value as sent in the order for a given item.
+        /// The sequence number of the item. The number must be the same as the order number of the item.
         /// </summary>
-        /// <value>Item Sequence Number for the item. This must be the same value as sent in the order for a given item.</value>
+        /// <value>The sequence number of the item. The number must be the same as the order number of the item.</value>
         [DataMember(Name="itemSequenceNumber", EmitDefaultValue=false)]
         public int? ItemSequenceNumber { get; set; }
 
         /// <summary>
-        /// Buyer&#39;s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+        /// The buyer&#39;s Amazon Standard Identification Number (ASIN) of an item. Either &#x60;buyerProductIdentifier&#x60; or &#x60;vendorProductIdentifier&#x60; is required.
         /// </summary>
-        /// <value>Buyer&#39;s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.</value>
+        /// <value>The buyer&#39;s Amazon Standard Identification Number (ASIN) of an item. Either &#x60;buyerProductIdentifier&#x60; or &#x60;vendorProductIdentifier&#x60; is required.</value>
         [DataMember(Name="buyerProductIdentifier", EmitDefaultValue=false)]
         public string BuyerProductIdentifier { get; set; }
 
@@ -90,16 +90,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         public int? PieceNumber { get; set; }
 
         /// <summary>
-        /// The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number.
+        /// An item&#39;s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.
         /// </summary>
-        /// <value>The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number.</value>
+        /// <value>An item&#39;s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.</value>
         [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
-        /// Total item quantity packed in the container.
+        /// The total quantity of items that are packed in the shipment.
         /// </summary>
-        /// <value>Total item quantity packed in the container.</value>
+        /// <value>The total quantity of items that are packed in the shipment.</value>
         [DataMember(Name="packedQuantity", EmitDefaultValue=false)]
         public ItemQuantity PackedQuantity { get; set; }
 

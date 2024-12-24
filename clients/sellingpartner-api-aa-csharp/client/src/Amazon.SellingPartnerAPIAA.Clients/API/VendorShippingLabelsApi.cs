@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * OpenAPI spec version: 2021-12-28
  * 
@@ -26,197 +26,197 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// createShippingLabels
         /// </summary>
         /// <remarks>
-        /// Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.</param>
-        /// <param name="body">The request payload containing parameters for creating shipping labels.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
+        /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>ShippingLabel</returns>
         ShippingLabel CreateShippingLabels (string purchaseOrderNumber, CreateShippingLabelsRequest body);
 
         /// <summary>
-        /// 
+        /// createShippingLabels
         /// </summary>
         /// <remarks>
-        /// Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.</param>
-        /// <param name="body">The request payload containing parameters for creating shipping labels.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
+        /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>ApiResponse of ShippingLabel</returns>
         ApiResponse<ShippingLabel> CreateShippingLabelsWithHttpInfo (string purchaseOrderNumber, CreateShippingLabelsRequest body);
         /// <summary>
-        /// 
+        /// getShippingLabel
         /// </summary>
         /// <remarks>
-        /// Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns a shipping label for the &#x60;purchaseOrderNumber&#x60; that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>ShippingLabel</returns>
         ShippingLabel GetShippingLabel (string purchaseOrderNumber);
 
         /// <summary>
-        /// 
+        /// getShippingLabel
         /// </summary>
         /// <remarks>
-        /// Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns a shipping label for the &#x60;purchaseOrderNumber&#x60; that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>ApiResponse of ShippingLabel</returns>
         ApiResponse<ShippingLabel> GetShippingLabelWithHttpInfo (string purchaseOrderNumber);
         /// <summary>
-        /// 
+        /// getShippingLabels
         /// </summary>
         /// <remarks>
-        /// Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns a list of shipping labels created during the time frame that you specify. Use the &#x60;createdAfter&#x60; and &#x60;createdBefore&#x60; parameters to define the time frame. You must use both of these parameters. The date range to search must not be more than seven days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="shipFromPartyId">The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)</param>
+        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="shipFromPartyId">The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses. (optional)</param>
         /// <param name="limit">The limit to the number of records returned. (optional)</param>
-        /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional, default to ASC)</param>
+        /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>ShippingLabelList</returns>
         ShippingLabelList GetShippingLabels (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
 
         /// <summary>
-        /// 
+        /// getShippingLabels
         /// </summary>
         /// <remarks>
-        /// Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns a list of shipping labels created during the time frame that you specify. Use the &#x60;createdAfter&#x60; and &#x60;createdBefore&#x60; parameters to define the time frame. You must use both of these parameters. The date range to search must not be more than seven days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="shipFromPartyId">The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)</param>
+        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="shipFromPartyId">The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses. (optional)</param>
         /// <param name="limit">The limit to the number of records returned. (optional)</param>
-        /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional, default to ASC)</param>
+        /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>ApiResponse of ShippingLabelList</returns>
         ApiResponse<ShippingLabelList> GetShippingLabelsWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
         /// <summary>
-        /// 
+        /// submitShippingLabelRequest
         /// </summary>
         /// <remarks>
-        /// Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates a shipping label for a purchase order and returns a &#x60;transactionId&#x60; for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Request body containing the shipping labels data.</param>
+        /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>TransactionReference</returns>
         TransactionReference SubmitShippingLabelRequest (SubmitShippingLabelsRequest body);
 
         /// <summary>
-        /// 
+        /// submitShippingLabelRequest
         /// </summary>
         /// <remarks>
-        /// Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates a shipping label for a purchase order and returns a &#x60;transactionId&#x60; for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Request body containing the shipping labels data.</param>
+        /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>ApiResponse of TransactionReference</returns>
         ApiResponse<TransactionReference> SubmitShippingLabelRequestWithHttpInfo (SubmitShippingLabelsRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// createShippingLabels
         /// </summary>
         /// <remarks>
-        /// Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.</param>
-        /// <param name="body">The request payload containing parameters for creating shipping labels.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
+        /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>Task of ShippingLabel</returns>
         System.Threading.Tasks.Task<ShippingLabel> CreateShippingLabelsAsync (string purchaseOrderNumber, CreateShippingLabelsRequest body);
 
         /// <summary>
-        /// 
+        /// createShippingLabels
         /// </summary>
         /// <remarks>
-        /// Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.</param>
-        /// <param name="body">The request payload containing parameters for creating shipping labels.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
+        /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>Task of ApiResponse (ShippingLabel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> CreateShippingLabelsAsyncWithHttpInfo (string purchaseOrderNumber, CreateShippingLabelsRequest body);
         /// <summary>
-        /// 
+        /// getShippingLabel
         /// </summary>
         /// <remarks>
-        /// Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns a shipping label for the &#x60;purchaseOrderNumber&#x60; that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>Task of ShippingLabel</returns>
         System.Threading.Tasks.Task<ShippingLabel> GetShippingLabelAsync (string purchaseOrderNumber);
 
         /// <summary>
-        /// 
+        /// getShippingLabel
         /// </summary>
         /// <remarks>
-        /// Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns a shipping label for the &#x60;purchaseOrderNumber&#x60; that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>Task of ApiResponse (ShippingLabel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> GetShippingLabelAsyncWithHttpInfo (string purchaseOrderNumber);
         /// <summary>
-        /// 
+        /// getShippingLabels
         /// </summary>
         /// <remarks>
-        /// Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns a list of shipping labels created during the time frame that you specify. Use the &#x60;createdAfter&#x60; and &#x60;createdBefore&#x60; parameters to define the time frame. You must use both of these parameters. The date range to search must not be more than seven days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="shipFromPartyId">The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)</param>
+        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="shipFromPartyId">The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses. (optional)</param>
         /// <param name="limit">The limit to the number of records returned. (optional)</param>
-        /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional, default to ASC)</param>
+        /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of ShippingLabelList</returns>
         System.Threading.Tasks.Task<ShippingLabelList> GetShippingLabelsAsync (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
 
         /// <summary>
-        /// 
+        /// getShippingLabels
         /// </summary>
         /// <remarks>
-        /// Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns a list of shipping labels created during the time frame that you specify. Use the &#x60;createdAfter&#x60; and &#x60;createdBefore&#x60; parameters to define the time frame. You must use both of these parameters. The date range to search must not be more than seven days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="shipFromPartyId">The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)</param>
+        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="shipFromPartyId">The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses. (optional)</param>
         /// <param name="limit">The limit to the number of records returned. (optional)</param>
-        /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional, default to ASC)</param>
+        /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of ApiResponse (ShippingLabelList)</returns>
         System.Threading.Tasks.Task<ApiResponse<ShippingLabelList>> GetShippingLabelsAsyncWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
         /// <summary>
-        /// 
+        /// submitShippingLabelRequest
         /// </summary>
         /// <remarks>
-        /// Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates a shipping label for a purchase order and returns a &#x60;transactionId&#x60; for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Request body containing the shipping labels data.</param>
+        /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>Task of TransactionReference</returns>
         System.Threading.Tasks.Task<TransactionReference> SubmitShippingLabelRequestAsync (SubmitShippingLabelsRequest body);
 
         /// <summary>
-        /// 
+        /// submitShippingLabelRequest
         /// </summary>
         /// <remarks>
-        /// Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates a shipping label for a purchase order and returns a &#x60;transactionId&#x60; for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </remarks>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Request body containing the shipping labels data.</param>
+        /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>Task of ApiResponse (TransactionReference)</returns>
         System.Threading.Tasks.Task<ApiResponse<TransactionReference>> SubmitShippingLabelRequestAsyncWithHttpInfo (SubmitShippingLabelsRequest body);
         #endregion Asynchronous Operations
@@ -305,11 +305,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// createShippingLabels Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.</param>
-        /// <param name="body">The request payload containing parameters for creating shipping labels.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
+        /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>ShippingLabel</returns>
         public ShippingLabel CreateShippingLabels (string purchaseOrderNumber, CreateShippingLabelsRequest body)
         {
@@ -318,11 +318,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// createShippingLabels Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.</param>
-        /// <param name="body">The request payload containing parameters for creating shipping labels.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
+        /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>ApiResponse of ShippingLabel</returns>
         public ApiResponse< ShippingLabel > CreateShippingLabelsWithHttpInfo (string purchaseOrderNumber, CreateShippingLabelsRequest body)
         {
@@ -385,11 +385,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// createShippingLabels Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.</param>
-        /// <param name="body">The request payload containing parameters for creating shipping labels.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
+        /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>Task of ShippingLabel</returns>
         public async System.Threading.Tasks.Task<ShippingLabel> CreateShippingLabelsAsync (string purchaseOrderNumber, CreateShippingLabelsRequest body)
         {
@@ -399,11 +399,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// createShippingLabels Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.</param>
-        /// <param name="body">The request payload containing parameters for creating shipping labels.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
+        /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>Task of ApiResponse (ShippingLabel)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> CreateShippingLabelsAsyncWithHttpInfo (string purchaseOrderNumber, CreateShippingLabelsRequest body)
         {
@@ -466,10 +466,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// getShippingLabel Returns a shipping label for the &#x60;purchaseOrderNumber&#x60; that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>ShippingLabel</returns>
         public ShippingLabel GetShippingLabel (string purchaseOrderNumber)
         {
@@ -478,10 +478,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// getShippingLabel Returns a shipping label for the &#x60;purchaseOrderNumber&#x60; that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>ApiResponse of ShippingLabel</returns>
         public ApiResponse< ShippingLabel > GetShippingLabelWithHttpInfo (string purchaseOrderNumber)
         {
@@ -533,10 +533,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// getShippingLabel Returns a shipping label for the &#x60;purchaseOrderNumber&#x60; that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>Task of ShippingLabel</returns>
         public async System.Threading.Tasks.Task<ShippingLabel> GetShippingLabelAsync (string purchaseOrderNumber)
         {
@@ -546,10 +546,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// getShippingLabel Returns a shipping label for the &#x60;purchaseOrderNumber&#x60; that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.</param>
+        /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>Task of ApiResponse (ShippingLabel)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> GetShippingLabelAsyncWithHttpInfo (string purchaseOrderNumber)
         {
@@ -601,14 +601,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// getShippingLabels Returns a list of shipping labels created during the time frame that you specify. Use the &#x60;createdAfter&#x60; and &#x60;createdBefore&#x60; parameters to define the time frame. You must use both of these parameters. The date range to search must not be more than seven days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="shipFromPartyId">The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)</param>
+        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="shipFromPartyId">The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses. (optional)</param>
         /// <param name="limit">The limit to the number of records returned. (optional)</param>
-        /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional, default to ASC)</param>
+        /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>ShippingLabelList</returns>
         public ShippingLabelList GetShippingLabels (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
@@ -618,14 +618,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// getShippingLabels Returns a list of shipping labels created during the time frame that you specify. Use the &#x60;createdAfter&#x60; and &#x60;createdBefore&#x60; parameters to define the time frame. You must use both of these parameters. The date range to search must not be more than seven days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="shipFromPartyId">The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)</param>
+        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="shipFromPartyId">The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses. (optional)</param>
         /// <param name="limit">The limit to the number of records returned. (optional)</param>
-        /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional, default to ASC)</param>
+        /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>ApiResponse of ShippingLabelList</returns>
         public ApiResponse< ShippingLabelList > GetShippingLabelsWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
@@ -686,14 +686,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// getShippingLabels Returns a list of shipping labels created during the time frame that you specify. Use the &#x60;createdAfter&#x60; and &#x60;createdBefore&#x60; parameters to define the time frame. You must use both of these parameters. The date range to search must not be more than seven days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="shipFromPartyId">The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)</param>
+        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="shipFromPartyId">The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses. (optional)</param>
         /// <param name="limit">The limit to the number of records returned. (optional)</param>
-        /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional, default to ASC)</param>
+        /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of ShippingLabelList</returns>
         public async System.Threading.Tasks.Task<ShippingLabelList> GetShippingLabelsAsync (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
@@ -704,14 +704,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// getShippingLabels Returns a list of shipping labels created during the time frame that you specify. Use the &#x60;createdAfter&#x60; and &#x60;createdBefore&#x60; parameters to define the time frame. You must use both of these parameters. The date range to search must not be more than seven days.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.</param>
-        /// <param name="shipFromPartyId">The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)</param>
+        /// <param name="createdAfter">Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="createdBefore">Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</param>
+        /// <param name="shipFromPartyId">The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses. (optional)</param>
         /// <param name="limit">The limit to the number of records returned. (optional)</param>
-        /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional, default to ASC)</param>
+        /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of ApiResponse (ShippingLabelList)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ShippingLabelList>> GetShippingLabelsAsyncWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
@@ -772,10 +772,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// submitShippingLabelRequest Creates a shipping label for a purchase order and returns a &#x60;transactionId&#x60; for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Request body containing the shipping labels data.</param>
+        /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>TransactionReference</returns>
         public TransactionReference SubmitShippingLabelRequest (SubmitShippingLabelsRequest body)
         {
@@ -784,10 +784,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// submitShippingLabelRequest Creates a shipping label for a purchase order and returns a &#x60;transactionId&#x60; for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Request body containing the shipping labels data.</param>
+        /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>ApiResponse of TransactionReference</returns>
         public ApiResponse< TransactionReference > SubmitShippingLabelRequestWithHttpInfo (SubmitShippingLabelsRequest body)
         {
@@ -846,10 +846,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// submitShippingLabelRequest Creates a shipping label for a purchase order and returns a &#x60;transactionId&#x60; for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Request body containing the shipping labels data.</param>
+        /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>Task of TransactionReference</returns>
         public async System.Threading.Tasks.Task<TransactionReference> SubmitShippingLabelRequestAsync (SubmitShippingLabelsRequest body)
         {
@@ -859,10 +859,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// submitShippingLabelRequest Creates a shipping label for a purchase order and returns a &#x60;transactionId&#x60; for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
         /// </summary>
         /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Request body containing the shipping labels data.</param>
+        /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>Task of ApiResponse (TransactionReference)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<TransactionReference>> SubmitShippingLabelRequestAsyncWithHttpInfo (SubmitShippingLabelsRequest body)
         {

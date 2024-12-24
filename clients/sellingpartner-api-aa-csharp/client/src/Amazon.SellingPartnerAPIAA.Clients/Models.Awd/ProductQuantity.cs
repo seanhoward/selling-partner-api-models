@@ -41,7 +41,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="attributes">Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU..</param>
         /// <param name="quantity">Product quantity. (required).</param>
         /// <param name="sku">The seller or merchant SKU. (required).</param>
-        public ProductQuantity(List<ProductAttribute> attributes = default(List<ProductAttribute>), int? quantity = default(int?), string sku = default(string))
+        /// <param name="expiration">The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format..</param>
+        /// <param name="prepDetails">Preparation details of a product which contains the prep category, prep owner and the label owner. If not passed while creating an inbound order, NO_PREP will be used on the product by-default. Prep instructions will be generated based on the category passed.</param>
+        public ProductQuantity(List<ProductAttribute> attributes = default(List<ProductAttribute>), int? quantity = default(int?), string sku = default(string), DateTime? expiration = default(DateTime?), PrepDetails prepDetails = default(PrepDetails))
         {
             // to ensure "quantity" is required (not null)
             if (quantity == null)
@@ -62,6 +64,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 this.Sku = sku;
             }
             this.Attributes = attributes;
+            this.Expiration = expiration;
+            this.PrepDetails = prepDetails;
         }
         
         /// <summary>
@@ -86,6 +90,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         public string Sku { get; set; }
 
         /// <summary>
+        /// The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+        /// </summary>
+        /// <value>The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</value>
+        [DataMember(Name="expiration", EmitDefaultValue=false)]
+        public DateTime? Expiration { get; set; }
+
+        /// <summary>
+        /// Preparation details of a product which contains the prep category, prep owner and the label owner. If not passed while creating an inbound order, NO_PREP will be used on the product by-default. Prep instructions will be generated based on the category passed
+        /// </summary>
+        /// <value>Preparation details of a product which contains the prep category, prep owner and the label owner. If not passed while creating an inbound order, NO_PREP will be used on the product by-default. Prep instructions will be generated based on the category passed</value>
+        [DataMember(Name="prepDetails", EmitDefaultValue=false)]
+        public PrepDetails PrepDetails { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -96,6 +114,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  Sku: ").Append(Sku).Append("\n");
+            sb.Append("  Expiration: ").Append(Expiration).Append("\n");
+            sb.Append("  PrepDetails: ").Append(PrepDetails).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -144,6 +164,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                     this.Sku == input.Sku ||
                     (this.Sku != null &&
                     this.Sku.Equals(input.Sku))
+                ) && 
+                (
+                    this.Expiration == input.Expiration ||
+                    (this.Expiration != null &&
+                    this.Expiration.Equals(input.Expiration))
+                ) && 
+                (
+                    this.PrepDetails == input.PrepDetails ||
+                    (this.PrepDetails != null &&
+                    this.PrepDetails.Equals(input.PrepDetails))
                 );
         }
 
@@ -162,6 +192,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                     hashCode = hashCode * 59 + this.Quantity.GetHashCode();
                 if (this.Sku != null)
                     hashCode = hashCode * 59 + this.Sku.GetHashCode();
+                if (this.Expiration != null)
+                    hashCode = hashCode * 59 + this.Expiration.GetHashCode();
+                if (this.PrepDetails != null)
+                    hashCode = hashCode * 59 + this.PrepDetails.GetHashCode();
                 return hashCode;
             }
         }

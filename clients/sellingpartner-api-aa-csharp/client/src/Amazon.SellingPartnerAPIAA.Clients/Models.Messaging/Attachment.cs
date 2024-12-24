@@ -25,7 +25,7 @@ using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDa
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
 {
     /// <summary>
-    /// Represents a file uploaded to a destination that was created by the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Selling Partner API for Uploads.
+    /// Represents a file that was uploaded to a destination that was created by the Uploads API [&#x60;createUploadDestinationForResource&#x60;](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation.
     /// </summary>
     [DataContract]
     public partial class Attachment :  IEquatable<Attachment>, IValidatableObject
@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// <summary>
         /// Initializes a new instance of the <see cref="Attachment" /> class.
         /// </summary>
-        /// <param name="uploadDestinationId">The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API. (required).</param>
+        /// <param name="uploadDestinationId">The identifier for the upload destination. To retrieve this value, call the Uploads API [&#x60;createUploadDestinationForResource&#x60;](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation. (required).</param>
         /// <param name="fileName">The name of the file, including the extension. This is the file name that will appear in the message. This does not need to match the file name of the file that you uploaded. (required).</param>
         public Attachment(string uploadDestinationId = default(string), string fileName = default(string))
         {
@@ -63,9 +63,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         }
         
         /// <summary>
-        /// The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API.
+        /// The identifier for the upload destination. To retrieve this value, call the Uploads API [&#x60;createUploadDestinationForResource&#x60;](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation.
         /// </summary>
-        /// <value>The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API.</value>
+        /// <value>The identifier for the upload destination. To retrieve this value, call the Uploads API [&#x60;createUploadDestinationForResource&#x60;](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation.</value>
         [DataMember(Name="uploadDestinationId", EmitDefaultValue=false)]
         public string UploadDestinationId { get; set; }
 

@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagingAction" /> class.
         /// </summary>
-        /// <param name="name">name (required).</param>
+        /// <param name="name">The name of the template. (required).</param>
         public MessagingAction(string name = default(string))
         {
             // to ensure "name" is required (not null)
@@ -53,8 +53,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         }
         
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the template.
         /// </summary>
+        /// <value>The name of the template.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
 
