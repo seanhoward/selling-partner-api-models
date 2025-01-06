@@ -74,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <param name="op">Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information. (required).</param>
         /// <param name="path">JSON Pointer path of the element to patch. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information. (required).</param>
         /// <param name="value">JSON value to add, replace, or delete..</param>
-        public PatchOperation(OpEnum op = default(OpEnum), string path = default(string), List<Dictionary<string, object>> value = default(List<Dictionary<string, object>>))
+        public PatchOperation(OpEnum op = default(OpEnum), string path = default(string), object value = default(object))
         {
             // to ensure "op" is required (not null)
             if (op == null)
@@ -110,7 +110,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <value>JSON value to add, replace, or delete.</value>
         [DataMember(Name="value", EmitDefaultValue=false)]
-        public List<Dictionary<string, object>> Value { get; set; }
+        public object Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -170,7 +170,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
                 (
                     this.Value == input.Value ||
                     this.Value != null &&
-                    this.Value.SequenceEqual(input.Value)
+                    this.Value.Equals(input.Value)
                 );
         }
 

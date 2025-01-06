@@ -938,7 +938,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Definitions.ABIS_MUSIC
         [Newtonsoft.Json.JsonProperty("fulfillment_channel_code", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public Fulfillment_availabilityFulfillment_channel_code Fulfillment_channel_code { get; set; }
+        public Fulfillment_channel_code Fulfillment_channel_code { get; set; }
 
         /// <summary>
         /// Enter the quantity of the item you are making available for sale. This is your current inventory commitment (as a whole number)
@@ -950,21 +950,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Definitions.ABIS_MUSIC
         /// <summary>
         /// Provide the time, in days, between when you receive an order for an item and when you can ship the item
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("lead_time_to_ship_max_days", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("lead_time_to_ship_max_days", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.Range(0, 30)]
-        public int Lead_time_to_ship_max_days { get; set; }
+        public int? Lead_time_to_ship_max_days { get; set; }
 
         /// <summary>
         /// Date that product will be restocked
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("restock_date", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTimeOffset Restock_date { get; set; }
+        [Newtonsoft.Json.JsonProperty("restock_date", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Restock_date { get; set; }
 
         /// <summary>
         /// Always available inventory is an alternative to quantity that allows inventory to never deplete. Enabling or disabling will toggle this feature on or off. Note that a quantity cannot be specified when provided.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("is_inventory_available", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool Is_inventory_available { get; set; }
+        [Newtonsoft.Json.JsonProperty("is_inventory_available", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Is_inventory_available { get; set; }
 
 
         public string ToJson()
@@ -3626,7 +3626,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Definitions.ABIS_MUSIC
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum Fulfillment_availabilityFulfillment_channel_code
+    public enum Fulfillment_channel_code
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"2822a114-1181-4d28-ad68-8c009ca417e9")]
