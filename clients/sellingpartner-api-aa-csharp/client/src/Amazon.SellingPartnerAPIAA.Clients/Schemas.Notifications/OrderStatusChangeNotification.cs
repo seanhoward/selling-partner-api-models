@@ -204,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusCh
         /// The purchase date of the order in Epoch time.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("PurchaseDate", Required = Newtonsoft.Json.Required.AllowNull)]
-        public int? PurchaseDate { get; set; } = 0;
+        public string PurchaseDate { get; set; } = "";
 
         /// <summary>
         /// The current order status. The possible values include UpComing, Pending, Unshipped, PartiallyShipped, PendingAvailability, Canceled, InvoiceUnconfirmed, Shipped, and Unfulfillable.
