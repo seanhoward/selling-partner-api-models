@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsMessageSchema
         /// </summary>
         [Newtonsoft.Json.JsonProperty("requirements", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public ListingsFeedMessageSchemaRequirements Requirements { get; set; } = Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsMessageSchema.ListingsFeedMessageSchemaRequirements.LISTING;
+        public ListingsFeedMessageSchemaRequirements? Requirements { get; set; } = Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsMessageSchema.ListingsFeedMessageSchemaRequirements.LISTING;
 
         /// <summary>
         /// Attributes data for the listings data submission.
