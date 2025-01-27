@@ -310,26 +310,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.PricingHealth
         /// </summary>
         [Newtonsoft.Json.JsonProperty("numberOfOffers", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Tuple<OfferConditionCount> NumberOfOffers { get; set; }
+        public System.Collections.Generic.List<OfferConditionCount> NumberOfOffers { get; set; }
 
         /// <summary>
         /// A list that contains the total number of offers that are eligible for the Buy Box for the given conditions and fulfillment channels
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buyBoxEligibleOffers", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Tuple<OfferConditionCount> BuyBoxEligibleOffers { get; set; }
+        public System.Collections.Generic.List<OfferConditionCount> BuyBoxEligibleOffers { get; set; }
 
         /// <summary>
         /// A list that contains the Buy Box price of the item for the given conditions
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buyBoxPrices", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Tuple<BuyBoxPrice> BuyBoxPrices { get; set; }
+        public System.Collections.Generic.List<BuyBoxPrice> BuyBoxPrices { get; set; }
 
         /// <summary>
         /// A list that contains the sales rankings of the asin in various product categories
         /// </summary>
         [Newtonsoft.Json.JsonProperty("salesRankings", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Tuple<SalesRanking> SalesRankings { get; set; }
+        public System.Collections.Generic.List<SalesRanking> SalesRankings { get; set; }
 
         [Newtonsoft.Json.JsonProperty("referencePrice", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
