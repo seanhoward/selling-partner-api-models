@@ -25,5 +25,8 @@
 
         [Option('r', "ResourcesDirectory", Required = false, HelpText = "Resources Directory")]
         public string? ResourcesDirectory { get; set; }
+
+        [Option('f', "ModelFilePath", Required = false, HelpText = "Model File Path")]
+        public string? ModelFilePath { get; set; }
     }
 }

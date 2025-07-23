@@ -14,6 +14,7 @@ class Program
     {
         Parser.Default.ParseArguments<Options>(args)
             .WithParsed(args => Utilities.EnsureDirectoryExists(args.OutputDirectory ?? ""))
+            .WithParsed(ProcessModel)
             .WithParsed(ProcessModels)
             .WithParsed(ProcessSchemas)
             .WithParsed(GenerateTemplates)
@@ -32,8 +33,8 @@ class Program
 
                 if (files.Count != 0)
                 {
-                    string firstFile = files.First();
-                    var fileName = Path.GetFileNameWithoutExtension(firstFile);
+                    args.ModelFilePath = files.First();
+                    var fileName = Path.GetFileNameWithoutExtension(args.ModelFilePath);
                     if ((fileName.EndsWith("V0")
                         || fileName.EndsWith("V1")
                         || fileName.EndsWith("V2")
@@ -42,52 +43,67 @@ class Program
                         || fileName.EndsWith("v2"))
                         && files.Count > 1)
                     {
-                        firstFile = files.Skip(1).First();
-                        fileName = Path.GetFileNameWithoutExtension(firstFile);
+                        args.ModelFilePath = files.Skip(1).First();
                     }
-                    var modelName = fileName
-                        .Capitalize()
-                        .Replace("V0", "")
-                        .Replace("V1", "")
-                        .Replace("V2", "")
-                        .RemoveDateFromFilename();
-
-                    ProcessStartInfo startInfo = new()
-                    {
-                        FileName = "java",
-                        Arguments =
-                        $"-jar \"{args.SwaggerPath}\" generate " +
-                        $"-l csharp " +
-                        $"-i \"{firstFile}\" " +
-                        $"-o \"{args.OutputDirectory}\" " +
-                        $"-t \"{args.ResourcesDirectory}\\swagger-codegen\\templates\" " +
-                        $"-c \"{args.ResourcesDirectory}\\swagger-codegen\\config.json\" " +
-                        $"--ignore-file-override \"{args.ResourcesDirectory}\\swagger-codegen\\.swagger-codegen-ignore\" " +
-                        $"--import-mappings ItemAttributes=Newtonsoft.Json.Linq.JObject " +
-                        $"--api-package API " +
-                        $"--model-package Models.{modelName} " +
-                        $"--additional-properties testPackage={modelName} ",
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true,
-                        UseShellExecute = false,
-                        CreateNoWindow = true
-                    };
-
-                    using (Process process = Process.Start(startInfo))
-                    {
-                        process.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
-                        process.ErrorDataReceived += (sender, e) => Console.WriteLine("ERROR: " + e.Data);
-
-                        process.BeginOutputReadLine();
-                        process.BeginErrorReadLine();
-
-                        process.WaitForExit();
-                    }
+                    ProcessModel(args);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"{subdirectory}: {ex.Message}");
+            }
+        }
+    }
+
+    static void ProcessModel(Options args)
+    {
+        if (!string.IsNullOrEmpty(args.ModelFilePath))
+        {
+            try
+            {
+                var fileName = Path.GetFileNameWithoutExtension(args.ModelFilePath ?? "");
+                var modelName = fileName
+                    .Capitalize()
+                    .Replace("V0", "")
+                    .Replace("V1", "")
+                    .Replace("V2", "")
+                    .RemoveDateFromFilename();
+
+                ProcessStartInfo startInfo = new()
+                {
+                    FileName = "java",
+                    Arguments =
+                    $"-jar \"{args.SwaggerPath}\" generate " +
+                    $"-l csharp " +
+                    $"-i \"{args.ModelFilePath}\" " +
+                    $"-o \"{args.OutputDirectory}\" " +
+                    $"-t \"{args.ResourcesDirectory}\\swagger-codegen\\templates\" " +
+                    $"-c \"{args.ResourcesDirectory}\\swagger-codegen\\config.json\" " +
+                    $"--ignore-file-override \"{args.ResourcesDirectory}\\swagger-codegen\\.swagger-codegen-ignore\" " +
+                    $"--import-mappings ItemAttributes=Newtonsoft.Json.Linq.JObject " +
+                    $"--api-package API " +
+                    $"--model-package Models.{modelName} " +
+                    $"--additional-properties testPackage={modelName} ",
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                using (Process process = Process.Start(startInfo))
+                {
+                    process.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
+                    process.ErrorDataReceived += (sender, e) => Console.WriteLine(e.Data);
+
+                    process.BeginOutputReadLine();
+                    process.BeginErrorReadLine();
+
+                    process.WaitForExit();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{args.ModelFilePath}: {ex.Message}");
             }
         }
     }
