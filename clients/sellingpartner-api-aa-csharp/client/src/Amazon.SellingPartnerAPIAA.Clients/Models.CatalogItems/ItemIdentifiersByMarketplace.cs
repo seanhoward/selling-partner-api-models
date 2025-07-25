@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemIdentifiersByMarketplace" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemIdentifiersByMarketplace() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemIdentifiersByMarketplace" /> class.
         /// </summary>
         /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
         /// <param name="identifiers">Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace. (required).</param>
-        public ItemIdentifiersByMarketplace(string marketplaceId = default(string), List<ItemIdentifier> identifiers = default(List<ItemIdentifier>))
+        public ItemIdentifiersByMarketplace(string marketplaceId = default, List<ItemIdentifier> identifiers = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

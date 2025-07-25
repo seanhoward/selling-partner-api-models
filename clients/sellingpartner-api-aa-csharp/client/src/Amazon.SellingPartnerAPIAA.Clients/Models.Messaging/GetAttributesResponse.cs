@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// </summary>
         /// <param name="buyer">buyer.</param>
         /// <param name="errors">errors.</param>
-        public GetAttributesResponse(GetAttributesResponseBuyer buyer = default(GetAttributesResponseBuyer), ErrorList errors = default(ErrorList))
+        public GetAttributesResponse(GetAttributesResponseBuyer buyer = default, ErrorList errors = default)
         {
             this.Buyer = buyer;
             this.Errors = errors;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

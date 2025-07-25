@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Address() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <param name="stateOrProvinceCode">The state or province code..</param>
         /// <param name="city">The city..</param>
         /// <param name="postalCode">The postal code..</param>
-        public Address(string addressLine1 = default(string), string addressLine2 = default(string), string countryCode = default(string), string stateOrProvinceCode = default(string), string city = default(string), string postalCode = default(string))
+        public Address(string addressLine1 = default, string addressLine2 = default, string countryCode = default, string stateOrProvinceCode = default, string city = default, string postalCode = default)
         {
             // to ensure "addressLine1" is required (not null)
             if (addressLine1 == null)
@@ -222,7 +222,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

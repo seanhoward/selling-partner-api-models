@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="alphaCode">The carrier code. For example, USPS or DHLEX..</param>
         /// <param name="name">The name of the carrier..</param>
-        public Carrier(string alphaCode = default(string), string name = default(string))
+        public Carrier(string alphaCode = default, string name = default)
         {
             this.AlphaCode = alphaCode;
             this.Name = name;
@@ -133,30 +133,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AlphaCode (string) maxLength
             if(this.AlphaCode != null && this.AlphaCode.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AlphaCode, length must be less than 1024.", new [] { "AlphaCode" });
+                yield return new ValidationResult("Invalid value for AlphaCode, length must be less than 1024.", new [] { "AlphaCode" });
             }
 
             // AlphaCode (string) minLength
             if(this.AlphaCode != null && this.AlphaCode.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AlphaCode, length must be greater than 1.", new [] { "AlphaCode" });
+                yield return new ValidationResult("Invalid value for AlphaCode, length must be greater than 1.", new [] { "AlphaCode" });
             }
 
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 1024.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 1024.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if(this.Name != null && this.Name.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             yield break;

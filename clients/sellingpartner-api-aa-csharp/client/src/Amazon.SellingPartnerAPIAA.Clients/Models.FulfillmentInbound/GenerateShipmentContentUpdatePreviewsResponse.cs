@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateShipmentContentUpdatePreviewsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GenerateShipmentContentUpdatePreviewsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateShipmentContentUpdatePreviewsResponse" /> class.
         /// </summary>
         /// <param name="operationId">UUID for the given operation. (required).</param>
-        public GenerateShipmentContentUpdatePreviewsResponse(string operationId = default(string))
+        public GenerateShipmentContentUpdatePreviewsResponse(string operationId = default)
         {
             // to ensure "operationId" is required (not null)
             if (operationId == null)
@@ -129,25 +129,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // OperationId (string) maxLength
             if(this.OperationId != null && this.OperationId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OperationId, length must be less than 38.", new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, length must be less than 38.", new [] { "OperationId" });
             }
 
             // OperationId (string) minLength
             if(this.OperationId != null && this.OperationId.Length < 36)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OperationId, length must be greater than 36.", new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, length must be greater than 36.", new [] { "OperationId" });
             }
 
             // OperationId (string) pattern
             Regex regexOperationId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexOperationId.Match(this.OperationId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OperationId, must match a pattern of " + regexOperationId, new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, must match a pattern of " + regexOperationId, new [] { "OperationId" });
             }
 
             yield break;

@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRegistrationDetail" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TaxRegistrationDetail() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRegistrationDetail" /> class.
@@ -69,7 +69,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// <param name="taxRegistrationNumber">Tax registration number for the entity. For example, VAT ID, Consumption Tax ID. (required).</param>
         /// <param name="taxRegistrationAddress">Address associated with the tax registration number..</param>
         /// <param name="taxRegistrationMessage">Tax registration message that can be used for additional tax related details..</param>
-        public TaxRegistrationDetail(TaxRegistrationTypeEnum? taxRegistrationType = default(TaxRegistrationTypeEnum?), string taxRegistrationNumber = default(string), Address taxRegistrationAddress = default(Address), string taxRegistrationMessage = default(string))
+        public TaxRegistrationDetail(TaxRegistrationTypeEnum? taxRegistrationType = default, string taxRegistrationNumber = default, Address taxRegistrationAddress = default, string taxRegistrationMessage = default)
         {
             // to ensure "taxRegistrationNumber" is required (not null)
             if (taxRegistrationNumber == null)
@@ -201,7 +201,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

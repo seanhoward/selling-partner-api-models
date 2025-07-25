@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOperationStatus" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InboundOperationStatus() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOperationStatus" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="operationId">The operation ID returned by the asynchronous API call. (required).</param>
         /// <param name="operationProblems">The problems in the processing of the asynchronous operation. (required).</param>
         /// <param name="operationStatus">operationStatus (required).</param>
-        public InboundOperationStatus(string operation = default(string), string operationId = default(string), List<OperationProblem> operationProblems = default(List<OperationProblem>), OperationStatus operationStatus = default(OperationStatus))
+        public InboundOperationStatus(string operation = default, string operationId = default, List<OperationProblem> operationProblems = default, OperationStatus operationStatus = default)
         {
             // to ensure "operation" is required (not null)
             if (operation == null)
@@ -203,37 +203,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Operation (string) maxLength
             if(this.Operation != null && this.Operation.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Operation, length must be less than 1024.", new [] { "Operation" });
+                yield return new ValidationResult("Invalid value for Operation, length must be less than 1024.", new [] { "Operation" });
             }
 
             // Operation (string) minLength
             if(this.Operation != null && this.Operation.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Operation, length must be greater than 1.", new [] { "Operation" });
+                yield return new ValidationResult("Invalid value for Operation, length must be greater than 1.", new [] { "Operation" });
             }
 
             // OperationId (string) maxLength
             if(this.OperationId != null && this.OperationId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OperationId, length must be less than 38.", new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, length must be less than 38.", new [] { "OperationId" });
             }
 
             // OperationId (string) minLength
             if(this.OperationId != null && this.OperationId.Length < 36)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OperationId, length must be greater than 36.", new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, length must be greater than 36.", new [] { "OperationId" });
             }
 
             // OperationId (string) pattern
             Regex regexOperationId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexOperationId.Match(this.OperationId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OperationId, must match a pattern of " + regexOperationId, new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, must match a pattern of " + regexOperationId, new [] { "OperationId" });
             }
 
             yield break;

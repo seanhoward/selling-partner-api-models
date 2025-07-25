@@ -78,14 +78,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerIdentification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ContainerIdentification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerIdentification" /> class.
         /// </summary>
         /// <param name="containerIdentificationType">The container identification type. (required).</param>
         /// <param name="containerIdentificationNumber">Container identification number that adheres to the definition of the container identification type. (required).</param>
-        public ContainerIdentification(ContainerIdentificationTypeEnum containerIdentificationType = default(ContainerIdentificationTypeEnum), string containerIdentificationNumber = default(string))
+        public ContainerIdentification(ContainerIdentificationTypeEnum containerIdentificationType = default, string containerIdentificationNumber = default)
         {
             // to ensure "containerIdentificationType" is required (not null)
             if (containerIdentificationType == null)
@@ -193,7 +193,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -52,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <param name="offerProgramConfiguration">offerProgramConfiguration.</param>
         /// <param name="programType">The replenishment program for the offer..</param>
         /// <param name="vendorCodes">A list of vendor codes associated with the offer..</param>
-        public ListOffersResponseOffer(string sku = default(string), string asin = default(string), string marketplaceId = default(string), EligibilityStatus? eligibility = default(EligibilityStatus?), OfferProgramConfiguration offerProgramConfiguration = default(OfferProgramConfiguration), ProgramType? programType = default(ProgramType?), List<string> vendorCodes = default(List<string>))
+        public ListOffersResponseOffer(string sku = default, string asin = default, string marketplaceId = default, EligibilityStatus? eligibility = default, OfferProgramConfiguration offerProgramConfiguration = default, ProgramType? programType = default, List<string> vendorCodes = default)
         {
             this.Sku = sku;
             this.Asin = asin;
@@ -217,7 +217,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

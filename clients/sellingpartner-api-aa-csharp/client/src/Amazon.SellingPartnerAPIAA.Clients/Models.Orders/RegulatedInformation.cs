@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="RegulatedInformation" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RegulatedInformation() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RegulatedInformation" /> class.
         /// </summary>
         /// <param name="fields">A list of regulated information fields as collected from the regulatory form. (required).</param>
-        public RegulatedInformation(List<RegulatedInformationField> fields = default(List<RegulatedInformationField>))
+        public RegulatedInformation(List<RegulatedInformationField> fields = default)
         {
             // to ensure "fields" is required (not null)
             if (fields == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

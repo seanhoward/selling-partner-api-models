@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="giftWrapTax">The tax on the gift wrap price..</param>
         /// <param name="giftMessageText">A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders..</param>
         /// <param name="giftWrapLevel">The gift wrap level specified by the buyer..</param>
-        public ItemBuyerInfo(BuyerCustomizedInfoDetail buyerCustomizedInfo = default(BuyerCustomizedInfoDetail), Money giftWrapPrice = default(Money), Money giftWrapTax = default(Money), string giftMessageText = default(string), string giftWrapLevel = default(string))
+        public ItemBuyerInfo(BuyerCustomizedInfoDetail buyerCustomizedInfo = default, Money giftWrapPrice = default, Money giftWrapTax = default, string giftMessageText = default, string giftWrapLevel = default)
         {
             this.BuyerCustomizedInfo = buyerCustomizedInfo;
             this.GiftWrapPrice = giftWrapPrice;
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

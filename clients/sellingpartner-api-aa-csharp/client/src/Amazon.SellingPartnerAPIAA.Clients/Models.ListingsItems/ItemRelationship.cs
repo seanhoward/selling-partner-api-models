@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemRelationship" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemRelationship() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemRelationship" /> class.
@@ -69,7 +69,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <param name="parentSkus">Identifiers (SKUs) of the related items that are parents of this listing item..</param>
         /// <param name="variationTheme">For &#x60;VARIATION&#x60; relationships, the variation theme is the combination of listing item attributes that define the variation family..</param>
         /// <param name="type">The type of relationship. (required).</param>
-        public ItemRelationship(List<string> childSkus = default(List<string>), List<string> parentSkus = default(List<string>), ItemVariationTheme variationTheme = default(ItemVariationTheme), TypeEnum type = default(TypeEnum))
+        public ItemRelationship(List<string> childSkus = default, List<string> parentSkus = default, ItemVariationTheme variationTheme = default, TypeEnum type = default)
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -201,7 +201,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

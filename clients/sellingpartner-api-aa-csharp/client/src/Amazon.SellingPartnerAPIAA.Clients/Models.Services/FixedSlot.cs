@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="availableCapacity">Available capacity corresponding to the slot. This capacity represents the capacity available for allocation to reservations..</param>
         /// <param name="encumberedCapacity">Encumbered capacity corresponding to the slot. This capacity represents the capacity allocated for Amazon Jobs/Appointments/Orders..</param>
         /// <param name="reservedCapacity">Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch..</param>
-        public FixedSlot(DateTime? startDateTime = default(DateTime?), int? scheduledCapacity = default(int?), int? availableCapacity = default(int?), int? encumberedCapacity = default(int?), int? reservedCapacity = default(int?))
+        public FixedSlot(DateTime? startDateTime = default, int? scheduledCapacity = default, int? availableCapacity = default, int? encumberedCapacity = default, int? reservedCapacity = default)
         {
             this.StartDateTime = startDateTime;
             this.ScheduledCapacity = scheduledCapacity;
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

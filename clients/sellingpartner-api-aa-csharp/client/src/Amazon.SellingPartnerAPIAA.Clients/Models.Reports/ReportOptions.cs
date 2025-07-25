@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportOptions" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         public ReportOptions() : base()
         {
         }
@@ -101,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// Initializes a new instance of the <see cref="ParkingWithAddressConfiguration" /> class.
         /// </summary>
         /// <param name="address">The address of the parking location..</param>
-        public ParkingWithAddressConfiguration(Address address = default(Address), ParkingCostType? parkingCostType = default(ParkingCostType?), ParkingSpotIdentificationType? parkingSpotIdentificationType = default(ParkingSpotIdentificationType?), int? numberOfParkingSpots = default(int?)) : base(parkingCostType, parkingSpotIdentificationType, numberOfParkingSpots)
+        public ParkingWithAddressConfiguration(Address address = default, ParkingCostType? parkingCostType = default, ParkingSpotIdentificationType? parkingSpotIdentificationType = default, int? numberOfParkingSpots = default) : base(parkingCostType, parkingSpotIdentificationType, numberOfParkingSpots)
         {
             this.Address = address;
         }
@@ -117,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

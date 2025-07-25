@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemOfferByMarketplace" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemOfferByMarketplace() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemOfferByMarketplace" /> class.
@@ -70,7 +70,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <param name="price">The purchase price of the listings item (required).</param>
         /// <param name="points">points.</param>
         /// <param name="audience">Buyer segment or program this offer is applicable to..</param>
-        public ItemOfferByMarketplace(string marketplaceId = default(string), OfferTypeEnum offerType = default(OfferTypeEnum), Money price = default(Money), Points points = default(Points), Audience audience = default(Audience))
+        public ItemOfferByMarketplace(string marketplaceId = default, OfferTypeEnum offerType = default, Money price = default, Points points = default, Audience audience = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -233,7 +233,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

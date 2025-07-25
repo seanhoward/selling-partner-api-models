@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// Initializes a new instance of the <see cref="GetQueriesResponsePagination" /> class.
         /// </summary>
         /// <param name="nextToken">A token that can be used to fetch the next page of results..</param>
-        public GetQueriesResponsePagination(string nextToken = default(string))
+        public GetQueriesResponsePagination(string nextToken = default)
         {
             this.NextToken = nextToken;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -192,14 +192,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="Measurement" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Measurement() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Measurement" /> class.
         /// </summary>
         /// <param name="unit">The unit of measure. (required).</param>
         /// <param name="value">The measurement value. (required).</param>
-        public Measurement(UnitEnum unit = default(UnitEnum), decimal? value = default(decimal?))
+        public Measurement(UnitEnum unit = default, decimal? value = default)
         {
             // to ensure "unit" is required (not null)
             if (unit == null)
@@ -307,7 +307,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPriceRequestParams" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeaturedOfferExpectedPriceRequestParams() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPriceRequestParams" /> class.
         /// </summary>
         /// <param name="marketplaceId">marketplaceId (required).</param>
         /// <param name="sku">sku (required).</param>
-        public FeaturedOfferExpectedPriceRequestParams(string marketplaceId = default(string), string sku = default(string))
+        public FeaturedOfferExpectedPriceRequestParams(string marketplaceId = default, string sku = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -72,14 +72,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Weight" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Weight() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Weight" /> class.
         /// </summary>
         /// <param name="unit">The unit of weight. (required).</param>
         /// <param name="value">The weight value. (required).</param>
-        public Weight(UnitEnum unit = default(UnitEnum), string value = default(string))
+        public Weight(UnitEnum unit = default, string value = default)
         {
             // to ensure "unit" is required (not null)
             if (unit == null)
@@ -187,7 +187,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

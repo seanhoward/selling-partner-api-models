@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// Initializes a new instance of the <see cref="ServiceJobProvider" /> class.
         /// </summary>
         /// <param name="serviceJobProviderId">The identifier of the service job provider..</param>
-        public ServiceJobProvider(string serviceJobProviderId = default(string))
+        public ServiceJobProvider(string serviceJobProviderId = default)
         {
             this.ServiceJobProviderId = serviceJobProviderId;
         }
@@ -116,13 +116,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ServiceJobProviderId (string) pattern
             Regex regexServiceJobProviderId = new Regex(@"^[A-Z0-9]*$", RegexOptions.CultureInvariant);
             if (false == regexServiceJobProviderId.Match(this.ServiceJobProviderId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ServiceJobProviderId, must match a pattern of " + regexServiceJobProviderId, new [] { "ServiceJobProviderId" });
+                yield return new ValidationResult("Invalid value for ServiceJobProviderId, must match a pattern of " + regexServiceJobProviderId, new [] { "ServiceJobProviderId" });
             }
 
             yield break;

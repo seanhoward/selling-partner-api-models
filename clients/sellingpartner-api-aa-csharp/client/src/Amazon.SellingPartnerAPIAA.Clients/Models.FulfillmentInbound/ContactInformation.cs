@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactInformation" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ContactInformation() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactInformation" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="email">The email address..</param>
         /// <param name="name">The contact&#39;s name. (required).</param>
         /// <param name="phoneNumber">The phone number. (required).</param>
-        public ContactInformation(string email = default(string), string name = default(string), string phoneNumber = default(string))
+        public ContactInformation(string email = default, string name = default, string phoneNumber = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -171,42 +171,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Email (string) maxLength
             if(this.Email != null && this.Email.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be less than 1024.", new [] { "Email" });
+                yield return new ValidationResult("Invalid value for Email, length must be less than 1024.", new [] { "Email" });
             }
 
             // Email (string) minLength
             if(this.Email != null && this.Email.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be greater than 1.", new [] { "Email" });
+                yield return new ValidationResult("Invalid value for Email, length must be greater than 1.", new [] { "Email" });
             }
 
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 50.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 50.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if(this.Name != null && this.Name.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             // PhoneNumber (string) maxLength
             if(this.PhoneNumber != null && this.PhoneNumber.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PhoneNumber, length must be less than 20.", new [] { "PhoneNumber" });
+                yield return new ValidationResult("Invalid value for PhoneNumber, length must be less than 20.", new [] { "PhoneNumber" });
             }
 
             // PhoneNumber (string) minLength
             if(this.PhoneNumber != null && this.PhoneNumber.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PhoneNumber, length must be greater than 1.", new [] { "PhoneNumber" });
+                yield return new ValidationResult("Invalid value for PhoneNumber, length must be greater than 1.", new [] { "PhoneNumber" });
             }
 
             yield break;

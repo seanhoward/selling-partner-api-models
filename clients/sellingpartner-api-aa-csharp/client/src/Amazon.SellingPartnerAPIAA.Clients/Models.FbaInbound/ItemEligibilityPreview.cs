@@ -310,7 +310,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemEligibilityPreview" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemEligibilityPreview() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemEligibilityPreview" /> class.
@@ -320,7 +320,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
         /// <param name="program">The program for which eligibility was determined. (required).</param>
         /// <param name="isEligibleForProgram">Indicates if the item is eligible for the program. (required).</param>
         /// <param name="ineligibilityReasonList">Potential Ineligibility Reason Codes..</param>
-        public ItemEligibilityPreview(string asin = default(string), string marketplaceId = default(string), ProgramEnum program = default(ProgramEnum), bool? isEligibleForProgram = default(bool?), List<IneligibilityReasonListEnum> ineligibilityReasonList = default(List<IneligibilityReasonListEnum>))
+        public ItemEligibilityPreview(string asin = default, string marketplaceId = default, ProgramEnum program = default, bool? isEligibleForProgram = default, List<IneligibilityReasonListEnum> ineligibilityReasonList = default)
         {
             // to ensure "asin" is required (not null)
             if (asin == null)
@@ -478,7 +478,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

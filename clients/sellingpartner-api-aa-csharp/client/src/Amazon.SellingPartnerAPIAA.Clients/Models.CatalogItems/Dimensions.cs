@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="length">Length of an item or item package..</param>
         /// <param name="weight">Weight of an item or item package..</param>
         /// <param name="width">Width of an item or item package..</param>
-        public Dimensions(Dimension height = default(Dimension), Dimension length = default(Dimension), Dimension weight = default(Dimension), Dimension width = default(Dimension))
+        public Dimensions(Dimension height = default, Dimension length = default, Dimension weight = default, Dimension width = default)
         {
             this.Height = height;
             this.Length = length;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

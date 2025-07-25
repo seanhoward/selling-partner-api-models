@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="type">Type of location identification..</param>
         /// <param name="locationCode">Location code..</param>
         /// <param name="countryCode">The two digit country code. In ISO 3166-1 alpha-2 format..</param>
-        public Location(string type = default(string), string locationCode = default(string), string countryCode = default(string))
+        public Location(string type = default, string locationCode = default, string countryCode = default)
         {
             this.Type = type;
             this.LocationCode = locationCode;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

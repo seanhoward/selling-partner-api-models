@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduledDeliveryInfo" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ScheduledDeliveryInfo() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduledDeliveryInfo" /> class.
         /// </summary>
         /// <param name="deliveryTimeZone">The time zone of the destination address for the fulfillment order preview. Must be an IANA time zone name. Example: Asia/Tokyo. (required).</param>
         /// <param name="deliveryWindows">An array of time ranges that are available for scheduled delivery. (required).</param>
-        public ScheduledDeliveryInfo(string deliveryTimeZone = default(string), DeliveryWindowList deliveryWindows = default(DeliveryWindowList))
+        public ScheduledDeliveryInfo(string deliveryTimeZone = default, DeliveryWindowList deliveryWindows = default)
         {
             // to ensure "deliveryTimeZone" is required (not null)
             if (deliveryTimeZone == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeatureInventoryResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetFeatureInventoryResult() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeatureInventoryResult" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="featureName">The name of the feature. (required).</param>
         /// <param name="nextToken">When present and not empty, pass this string token in the next request to return the next response page..</param>
         /// <param name="featureSkus">An array of SKUs eligible for this feature and the quantity available..</param>
-        public GetFeatureInventoryResult(string marketplaceId = default(string), string featureName = default(string), string nextToken = default(string), List<FeatureSku> featureSkus = default(List<FeatureSku>))
+        public GetFeatureInventoryResult(string marketplaceId = default, string featureName = default, string nextToken = default, List<FeatureSku> featureSkus = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -188,7 +188,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

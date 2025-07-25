@@ -38,14 +38,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardImageTextOverlayModule" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected StandardImageTextOverlayModule() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardImageTextOverlayModule" /> class.
         /// </summary>
         /// <param name="overlayColorType">overlayColorType (required).</param>
         /// <param name="block">block.</param>
-        public StandardImageTextOverlayModule(ColorType overlayColorType = default(ColorType), StandardImageTextBlock block = default(StandardImageTextBlock))
+        public StandardImageTextOverlayModule(ColorType overlayColorType = default, StandardImageTextBlock block = default)
         {
             // to ensure "overlayColorType" is required (not null)
             if (overlayColorType == null)
@@ -144,7 +144,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageDetail" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PackageDetail() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageDetail" /> class.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="shipDate">The shipping date for the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required).</param>
         /// <param name="shipFromSupplySourceId">The unique identifier for the supply source..</param>
         /// <param name="orderItems">The list of order items and quantities to be updated. (required).</param>
-        public PackageDetail(string packageReferenceId = default(string), string carrierCode = default(string), string carrierName = default(string), string shippingMethod = default(string), string trackingNumber = default(string), DateTime? shipDate = default(DateTime?), string shipFromSupplySourceId = default(string), ConfirmShipmentOrderItemsList orderItems = default(ConfirmShipmentOrderItemsList))
+        public PackageDetail(string packageReferenceId = default, string carrierCode = default, string carrierName = default, string shippingMethod = default, string trackingNumber = default, DateTime? shipDate = default, string shipFromSupplySourceId = default, ConfirmShipmentOrderItemsList orderItems = default)
         {
             // to ensure "packageReferenceId" is required (not null)
             if (packageReferenceId == null)
@@ -279,7 +279,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

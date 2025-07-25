@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// Initializes a new instance of the <see cref="GetFeaturedOfferExpectedPriceBatchRequest" /> class.
         /// </summary>
         /// <param name="requests">requests.</param>
-        public GetFeaturedOfferExpectedPriceBatchRequest(FeaturedOfferExpectedPriceRequestList requests = default(FeaturedOfferExpectedPriceRequestList))
+        public GetFeaturedOfferExpectedPriceBatchRequest(FeaturedOfferExpectedPriceRequestList requests = default)
         {
             this.Requests = requests;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

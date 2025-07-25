@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="text">The message content for a delivery offering..</param>
         /// <param name="locale">The locale for the message (for example, en_US)..</param>
-        public DeliveryMessage(string text = default(string), string locale = default(string))
+        public DeliveryMessage(string text = default, string locale = default)
         {
             this.Text = text;
             this.Locale = locale;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

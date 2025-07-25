@@ -38,14 +38,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardSingleSideImageModule" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected StandardSingleSideImageModule() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardSingleSideImageModule" /> class.
         /// </summary>
         /// <param name="imagePositionType">imagePositionType (required).</param>
         /// <param name="block">block.</param>
-        public StandardSingleSideImageModule(PositionType imagePositionType = default(PositionType), StandardImageTextBlock block = default(StandardImageTextBlock))
+        public StandardSingleSideImageModule(PositionType imagePositionType = default, StandardImageTextBlock block = default)
         {
             // to ensure "imagePositionType" is required (not null)
             if (imagePositionType == null)
@@ -144,7 +144,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

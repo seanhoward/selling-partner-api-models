@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFeedDocumentResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateFeedDocumentResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFeedDocumentResponse" /> class.
         /// </summary>
         /// <param name="feedDocumentId">The identifier of the feed document. (required).</param>
         /// <param name="url">The presigned URL for uploading the feed contents. This URL expires after 5 minutes. (required).</param>
-        public CreateFeedDocumentResponse(string feedDocumentId = default(string), string url = default(string))
+        public CreateFeedDocumentResponse(string feedDocumentId = default, string url = default)
         {
             // to ensure "feedDocumentId" is required (not null)
             if (feedDocumentId == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

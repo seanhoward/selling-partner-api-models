@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <param name="sellingPartnerFundedTieredDiscount">A tiered discount set by the selling partner on the offer..</param>
         /// <param name="amazonFundedBaseDiscount">A base discount set by Amazon on the offer..</param>
         /// <param name="amazonFundedTieredDiscount">A tiered discount set by Amazon on the offer..</param>
-        public Promotion(DiscountFunding sellingPartnerFundedBaseDiscount = default(DiscountFunding), DiscountFunding sellingPartnerFundedTieredDiscount = default(DiscountFunding), DiscountFunding amazonFundedBaseDiscount = default(DiscountFunding), DiscountFunding amazonFundedTieredDiscount = default(DiscountFunding))
+        public Promotion(DiscountFunding sellingPartnerFundedBaseDiscount = default, DiscountFunding sellingPartnerFundedTieredDiscount = default, DiscountFunding amazonFundedBaseDiscount = default, DiscountFunding amazonFundedTieredDiscount = default)
         {
             this.SellingPartnerFundedBaseDiscount = sellingPartnerFundedBaseDiscount;
             this.SellingPartnerFundedTieredDiscount = sellingPartnerFundedTieredDiscount;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

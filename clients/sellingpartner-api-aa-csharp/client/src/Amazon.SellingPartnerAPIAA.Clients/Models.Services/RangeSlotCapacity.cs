@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="resourceId">Resource Identifier..</param>
         /// <param name="capacities">Array of range capacities where each entry is for a specific capacity type..</param>
         /// <param name="nextPageToken">Next page token, if there are more pages..</param>
-        public RangeSlotCapacity(string resourceId = default(string), List<RangeCapacity> capacities = default(List<RangeCapacity>), string nextPageToken = default(string))
+        public RangeSlotCapacity(string resourceId = default, List<RangeCapacity> capacities = default, string nextPageToken = default)
         {
             this.ResourceId = resourceId;
             this.Capacities = capacities;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

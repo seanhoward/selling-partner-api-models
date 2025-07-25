@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="RangeSlotCapacityQuery" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RangeSlotCapacityQuery() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RangeSlotCapacityQuery" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="capacityTypes">An array of capacity types which are being requested. Default value is &#x60;[SCHEDULED_CAPACITY]&#x60;..</param>
         /// <param name="startDateTime">Start date time from which the capacity slots are being requested in ISO 8601 format. (required).</param>
         /// <param name="endDateTime">End date time up to which the capacity slots are being requested in ISO 8601 format. (required).</param>
-        public RangeSlotCapacityQuery(List<CapacityType> capacityTypes = default(List<CapacityType>), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?))
+        public RangeSlotCapacityQuery(List<CapacityType> capacityTypes = default, DateTime? startDateTime = default, DateTime? endDateTime = default)
         {
             // to ensure "startDateTime" is required (not null)
             if (startDateTime == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

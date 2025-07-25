@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentPreviewShipment" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FulfillmentPreviewShipment() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentPreviewShipment" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="latestArrivalDate">The latest date that the shipment is expected to arrive at its destination. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format..</param>
         /// <param name="shippingNotes">Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed..</param>
         /// <param name="fulfillmentPreviewItems">Information about the items in the shipment. (required).</param>
-        public FulfillmentPreviewShipment(DateTime? earliestShipDate = default(DateTime?), DateTime? latestShipDate = default(DateTime?), DateTime? earliestArrivalDate = default(DateTime?), DateTime? latestArrivalDate = default(DateTime?), List<string> shippingNotes = default(List<string>), FulfillmentPreviewItemList fulfillmentPreviewItems = default(FulfillmentPreviewItemList))
+        public FulfillmentPreviewShipment(DateTime? earliestShipDate = default, DateTime? latestShipDate = default, DateTime? earliestArrivalDate = default, DateTime? latestArrivalDate = default, List<string> shippingNotes = default, FulfillmentPreviewItemList fulfillmentPreviewItems = default)
         {
             // to ensure "fulfillmentPreviewItems" is required (not null)
             if (fulfillmentPreviewItems == null)
@@ -214,7 +214,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

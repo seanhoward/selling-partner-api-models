@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="orderItemId">The order item&#39;s unique identifier..</param>
         /// <param name="quantity">The quantity for which to update the shipment status..</param>
-        public OrderItemsInner(string orderItemId = default(string), int? quantity = default(int?))
+        public OrderItemsInner(string orderItemId = default, int? quantity = default)
         {
             this.OrderItemId = orderItemId;
             this.Quantity = quantity;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

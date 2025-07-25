@@ -56,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="amount">Acknowledged quantity. This value should not be zero..</param>
         /// <param name="unitOfMeasure">Unit of measure for the acknowledged quantity..</param>
-        public ItemQuantity(int? amount = default(int?), UnitOfMeasureEnum? unitOfMeasure = default(UnitOfMeasureEnum?))
+        public ItemQuantity(int? amount = default, UnitOfMeasureEnum? unitOfMeasure = default)
         {
             this.Amount = amount;
             this.UnitOfMeasure = unitOfMeasure;
@@ -148,7 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

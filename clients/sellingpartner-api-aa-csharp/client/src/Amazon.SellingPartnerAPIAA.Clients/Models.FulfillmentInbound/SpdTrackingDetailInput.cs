@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="SpdTrackingDetailInput" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SpdTrackingDetailInput() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SpdTrackingDetailInput" /> class.
         /// </summary>
         /// <param name="spdTrackingItems">List of Small Parcel Delivery (SPD) tracking items input. (required).</param>
-        public SpdTrackingDetailInput(List<SpdTrackingItemInput> spdTrackingItems = default(List<SpdTrackingItemInput>))
+        public SpdTrackingDetailInput(List<SpdTrackingItemInput> spdTrackingItems = default)
         {
             // to ensure "spdTrackingItems" is required (not null)
             if (spdTrackingItems == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

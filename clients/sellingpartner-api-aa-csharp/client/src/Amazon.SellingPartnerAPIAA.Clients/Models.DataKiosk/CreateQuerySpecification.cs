@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateQuerySpecification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateQuerySpecification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateQuerySpecification" /> class.
         /// </summary>
         /// <param name="query">The GraphQL query to submit. A query must be at most 8000 characters after unnecessary whitespace is removed. (required).</param>
         /// <param name="paginationToken">A token to fetch a certain page of query results when there are multiple pages of query results available. The value of this token must be fetched from the &#x60;pagination.nextToken&#x60; field of the &#x60;Query&#x60; object, and the &#x60;query&#x60; field for this object must also be set to the &#x60;query&#x60; field of the same &#x60;Query&#x60; object. A &#x60;Query&#x60; object can be retrieved from either the &#x60;getQueries&#x60; or &#x60;getQuery&#x60; operation. In the absence of this token value, the first page of query results will be requested..</param>
-        public CreateQuerySpecification(string query = default(string), string paginationToken = default(string))
+        public CreateQuerySpecification(string query = default, string paginationToken = default)
         {
             // to ensure "query" is required (not null)
             if (query == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="slotDuration">The duration of each slot which is returned. This value will be a multiple of 5 and fall in the following range: 5 &lt;&#x3D; &#x60;slotDuration&#x60; &lt;&#x3D; 360..</param>
         /// <param name="capacities">Array of capacity slots in fixed slot format..</param>
         /// <param name="nextPageToken">Next page token, if there are more pages..</param>
-        public FixedSlotCapacity(string resourceId = default(string), decimal? slotDuration = default(decimal?), List<FixedSlot> capacities = default(List<FixedSlot>), string nextPageToken = default(string))
+        public FixedSlotCapacity(string resourceId = default, decimal? slotDuration = default, List<FixedSlot> capacities = default, string nextPageToken = default)
         {
             this.ResourceId = resourceId;
             this.SlotDuration = slotDuration;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

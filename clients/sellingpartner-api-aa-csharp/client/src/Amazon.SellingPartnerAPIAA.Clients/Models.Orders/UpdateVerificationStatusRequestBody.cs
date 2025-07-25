@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateVerificationStatusRequestBody" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected UpdateVerificationStatusRequestBody() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateVerificationStatusRequestBody" /> class.
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="externalReviewerId">The identifier of the order&#39;s regulated information reviewer. (required).</param>
         /// <param name="rejectionReasonId">The unique identifier of the rejection reason used for rejecting the order&#39;s regulated information. Only required if the new status is rejected..</param>
         /// <param name="verificationDetails">Additional information regarding the verification of the order..</param>
-        public UpdateVerificationStatusRequestBody(VerificationStatus? status = default(VerificationStatus?), string externalReviewerId = default(string), string rejectionReasonId = default(string), VerificationDetails verificationDetails = default(VerificationDetails))
+        public UpdateVerificationStatusRequestBody(VerificationStatus? status = default, string externalReviewerId = default, string rejectionReasonId = default, VerificationDetails verificationDetails = default)
         {
             // to ensure "externalReviewerId" is required (not null)
             if (externalReviewerId == null)
@@ -180,7 +180,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// <param name="status">The invoice status classification. Use the &#x60;getInvoicesAttributes&#x60; operation to check invoice status options..</param>
         /// <param name="transactionIds">List with identifiers for the transactions associated to the invoice..</param>
         /// <param name="transactionType">Classification of the transaction that originated this invoice. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionType&#x60; options..</param>
-        public Invoice(DateTime? date = default(DateTime?), string errorCode = default(string), string externalInvoiceId = default(string), string govResponse = default(string), string id = default(string), string invoiceType = default(string), string series = default(string), string status = default(string), List<TransactionIdentifier> transactionIds = default(List<TransactionIdentifier>), string transactionType = default(string))
+        public Invoice(DateTime? date = default, string errorCode = default, string externalInvoiceId = default, string govResponse = default, string id = default, string invoiceType = default, string series = default, string status = default, List<TransactionIdentifier> transactionIds = default, string transactionType = default)
         {
             this.Date = date;
             this.ErrorCode = errorCode;
@@ -269,7 +269,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

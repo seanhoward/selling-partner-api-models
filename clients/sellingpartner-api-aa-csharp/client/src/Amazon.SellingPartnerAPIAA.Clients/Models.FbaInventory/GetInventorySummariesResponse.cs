@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <param name="payload">The payload for the getInventorySummaries operation..</param>
         /// <param name="pagination">pagination.</param>
         /// <param name="errors">One or more unexpected errors occurred during the getInventorySummaries operation..</param>
-        public GetInventorySummariesResponse(GetInventorySummariesResult payload = default(GetInventorySummariesResult), Pagination pagination = default(Pagination), ErrorList errors = default(ErrorList))
+        public GetInventorySummariesResponse(GetInventorySummariesResult payload = default, Pagination pagination = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Pagination = pagination;
@@ -149,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Window" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Window() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Window" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="editableUntil">The timestamp at which this Window can no longer be edited..</param>
         /// <param name="end">The end timestamp of the window. (required).</param>
         /// <param name="start">The start timestamp of the window. (required).</param>
-        public Window(DateTime? editableUntil = default(DateTime?), DateTime? end = default(DateTime?), DateTime? start = default(DateTime?))
+        public Window(DateTime? editableUntil = default, DateTime? end = default, DateTime? start = default)
         {
             // to ensure "end" is required (not null)
             if (end == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

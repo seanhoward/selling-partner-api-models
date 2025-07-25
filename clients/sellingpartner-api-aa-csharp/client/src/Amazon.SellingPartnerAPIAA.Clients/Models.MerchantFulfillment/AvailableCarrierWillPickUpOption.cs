@@ -38,14 +38,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableCarrierWillPickUpOption" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AvailableCarrierWillPickUpOption() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableCarrierWillPickUpOption" /> class.
         /// </summary>
         /// <param name="carrierWillPickUpOption">carrierWillPickUpOption (required).</param>
         /// <param name="charge">The fee charged. (required).</param>
-        public AvailableCarrierWillPickUpOption(CarrierWillPickUpOption carrierWillPickUpOption = default(CarrierWillPickUpOption), CurrencyAmount charge = default(CurrencyAmount))
+        public AvailableCarrierWillPickUpOption(CarrierWillPickUpOption carrierWillPickUpOption = default, CurrencyAmount charge = default)
         {
             // to ensure "carrierWillPickUpOption" is required (not null)
             if (carrierWillPickUpOption == null)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

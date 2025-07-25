@@ -40,7 +40,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="value">value.</param>
         /// <param name="unit">unit.</param>
-        public Weight(float? value = default(float?), UnitOfWeight? unit = default(UnitOfWeight?))
+        public Weight(float? value = default, UnitOfWeight? unit = default)
         {
             this.Value = value;
             this.Unit = unit;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

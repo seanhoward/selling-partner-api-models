@@ -54,14 +54,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingOption" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShippingOption() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingOption" /> class.
         /// </summary>
         /// <param name="shippingOptionType">The type of shipping option. (required).</param>
         /// <param name="price">Shipping price for the offer. (required).</param>
-        public ShippingOption(ShippingOptionTypeEnum shippingOptionType = default(ShippingOptionTypeEnum), MoneyType price = default(MoneyType))
+        public ShippingOption(ShippingOptionTypeEnum shippingOptionType = default, MoneyType price = default)
         {
             // to ensure "shippingOptionType" is required (not null)
             if (shippingOptionType == null)
@@ -169,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

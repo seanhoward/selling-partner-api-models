@@ -66,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ListingsItemPutRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListingsItemPutRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListingsItemPutRequest" /> class.
@@ -74,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <param name="productType">The Amazon product type of the listings item. (required).</param>
         /// <param name="requirements">The name of the requirements set for the provided data..</param>
         /// <param name="attributes">A JSON object containing structured listings item attribute data keyed by attribute name. (required).</param>
-        public ListingsItemPutRequest(string productType = default(string), RequirementsEnum? requirements = default(RequirementsEnum?), Dictionary<string, object> attributes = default(Dictionary<string, object>))
+        public ListingsItemPutRequest(string productType = default, RequirementsEnum? requirements = default, Dictionary<string, object> attributes = default)
         {
             // to ensure "productType" is required (not null)
             if (productType == null)
@@ -198,7 +198,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="boxes">A list of boxes that will be present in the shipment after the update..</param>
         /// <param name="items">A list of all items that will be present in the shipment after the update..</param>
-        public RequestedUpdates(List<BoxUpdateInput> boxes = default(List<BoxUpdateInput>), List<ItemInput> items = default(List<ItemInput>))
+        public RequestedUpdates(List<BoxUpdateInput> boxes = default, List<ItemInput> items = default)
         {
             this.Boxes = boxes;
             this.Items = items;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

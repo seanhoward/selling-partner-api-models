@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="payload">The payload for the submitAcknowledgement operation..</param>
         /// <param name="errors">errors.</param>
-        public SubmitAcknowledgementResponse(TransactionId payload = default(TransactionId), ErrorList errors = default(ErrorList))
+        public SubmitAcknowledgementResponse(TransactionId payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

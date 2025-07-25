@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFulfillmentOrderItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateFulfillmentOrderItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFulfillmentOrderItem" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="perUnitDeclaredValue">The monetary value assigned by the seller to this item. This is a required field for India MCF orders..</param>
         /// <param name="perUnitPrice">The amount to be collected from the recipient for this item in a COD (Cash On Delivery) order..</param>
         /// <param name="perUnitTax">The tax on the amount to be collected from the recipient for this item in a COD (Cash On Delivery) order..</param>
-        public CreateFulfillmentOrderItem(string sellerSku = default(string), string sellerFulfillmentOrderItemId = default(string), int? quantity = default(int?), string giftMessage = default(string), string displayableComment = default(string), string fulfillmentNetworkSku = default(string), Money perUnitDeclaredValue = default(Money), Money perUnitPrice = default(Money), Money perUnitTax = default(Money))
+        public CreateFulfillmentOrderItem(string sellerSku = default, string sellerFulfillmentOrderItemId = default, int? quantity = default, string giftMessage = default, string displayableComment = default, string fulfillmentNetworkSku = default, Money perUnitDeclaredValue = default, Money perUnitPrice = default, Money perUnitTax = default)
         {
             // to ensure "sellerSku" is required (not null)
             if (sellerSku == null)
@@ -280,30 +280,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // SellerSku (string) maxLength
             if(this.SellerSku != null && this.SellerSku.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SellerSku, length must be less than 50.", new [] { "SellerSku" });
+                yield return new ValidationResult("Invalid value for SellerSku, length must be less than 50.", new [] { "SellerSku" });
             }
 
             // SellerFulfillmentOrderItemId (string) maxLength
             if(this.SellerFulfillmentOrderItemId != null && this.SellerFulfillmentOrderItemId.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SellerFulfillmentOrderItemId, length must be less than 50.", new [] { "SellerFulfillmentOrderItemId" });
+                yield return new ValidationResult("Invalid value for SellerFulfillmentOrderItemId, length must be less than 50.", new [] { "SellerFulfillmentOrderItemId" });
             }
 
             // GiftMessage (string) maxLength
             if(this.GiftMessage != null && this.GiftMessage.Length > 512)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for GiftMessage, length must be less than 512.", new [] { "GiftMessage" });
+                yield return new ValidationResult("Invalid value for GiftMessage, length must be less than 512.", new [] { "GiftMessage" });
             }
 
             // DisplayableComment (string) maxLength
             if(this.DisplayableComment != null && this.DisplayableComment.Length > 250)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DisplayableComment, length must be less than 250.", new [] { "DisplayableComment" });
+                yield return new ValidationResult("Invalid value for DisplayableComment, length must be less than 250.", new [] { "DisplayableComment" });
             }
 
             yield break;

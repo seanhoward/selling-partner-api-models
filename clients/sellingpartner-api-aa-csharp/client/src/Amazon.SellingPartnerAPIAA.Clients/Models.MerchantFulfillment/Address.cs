@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Address() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="postalCode">postalCode (required).</param>
         /// <param name="countryCode">countryCode (required).</param>
         /// <param name="phone">phone (required).</param>
-        public Address(string name = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string districtOrCounty = default(string), string email = default(string), string city = default(string), string stateOrProvinceCode = default(string), string postalCode = default(string), string countryCode = default(string), string phone = default(string))
+        public Address(string name = default, string addressLine1 = default, string addressLine2 = default, string addressLine3 = default, string districtOrCounty = default, string email = default, string city = default, string stateOrProvinceCode = default, string postalCode = default, string countryCode = default, string phone = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -336,7 +336,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

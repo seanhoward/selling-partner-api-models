@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="businessHours">Business hours when the business is open for deliveries..</param>
         /// <param name="exceptionDates">Dates when the business is closed during the next 30 days..</param>
-        public PreferredDeliveryTime(List<BusinessHours> businessHours = default(List<BusinessHours>), List<ExceptionDates> exceptionDates = default(List<ExceptionDates>))
+        public PreferredDeliveryTime(List<BusinessHours> businessHours = default, List<ExceptionDates> exceptionDates = default)
         {
             this.BusinessHours = businessHours;
             this.ExceptionDates = exceptionDates;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

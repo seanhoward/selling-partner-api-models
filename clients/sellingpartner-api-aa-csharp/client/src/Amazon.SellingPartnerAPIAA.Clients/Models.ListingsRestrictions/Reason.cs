@@ -66,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// <summary>
         /// Initializes a new instance of the <see cref="Reason" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Reason() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Reason" /> class.
@@ -74,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// <param name="message">A message describing the reason for the restriction. (required).</param>
         /// <param name="reasonCode">A code indicating why the listing is restricted..</param>
         /// <param name="links">A list of path forward links that may allow Selling Partners to remove the restriction..</param>
-        public Reason(string message = default(string), ReasonCodeEnum? reasonCode = default(ReasonCodeEnum?), List<Link> links = default(List<Link>))
+        public Reason(string message = default, ReasonCodeEnum? reasonCode = default, List<Link> links = default)
         {
             // to ensure "message" is required (not null)
             if (message == null)
@@ -190,7 +190,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="phone">The field is used to represent the Carrier contact number..</param>
         /// <param name="email">The field is used to represent the carrier Email id..</param>
         /// <param name="shipmentReferenceNumber">The field is also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for US, CA, MX shipment confirmations..</param>
-        public CarrierDetails(string name = default(string), string code = default(string), string phone = default(string), string email = default(string), string shipmentReferenceNumber = default(string))
+        public CarrierDetails(string name = default, string code = default, string phone = default, string email = default, string shipmentReferenceNumber = default)
         {
             this.Name = name;
             this.Code = code;
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

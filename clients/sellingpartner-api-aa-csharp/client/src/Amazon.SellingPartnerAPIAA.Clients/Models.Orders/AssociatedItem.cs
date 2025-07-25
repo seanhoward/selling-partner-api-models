@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="orderId">The order item&#39;s order identifier, in 3-7-7 format..</param>
         /// <param name="orderItemId">An Amazon-defined item identifier for the associated item..</param>
         /// <param name="associationType">associationType.</param>
-        public AssociatedItem(string orderId = default(string), string orderItemId = default(string), AssociationType? associationType = default(AssociationType?))
+        public AssociatedItem(string orderId = default, string orderItemId = default, AssociationType? associationType = default)
         {
             this.OrderId = orderId;
             this.OrderItemId = orderItemId;
@@ -149,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

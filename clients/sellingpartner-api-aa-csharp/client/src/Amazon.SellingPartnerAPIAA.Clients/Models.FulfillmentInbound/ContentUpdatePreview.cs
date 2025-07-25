@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentUpdatePreview" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ContentUpdatePreview() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentUpdatePreview" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="expiration">The time at which the content update expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;. (required).</param>
         /// <param name="requestedUpdates">requestedUpdates (required).</param>
         /// <param name="transportationOption">transportationOption (required).</param>
-        public ContentUpdatePreview(string contentUpdatePreviewId = default(string), DateTime? expiration = default(DateTime?), RequestedUpdates requestedUpdates = default(RequestedUpdates), TransportationOption transportationOption = default(TransportationOption))
+        public ContentUpdatePreview(string contentUpdatePreviewId = default, DateTime? expiration = default, RequestedUpdates requestedUpdates = default, TransportationOption transportationOption = default)
         {
             // to ensure "contentUpdatePreviewId" is required (not null)
             if (contentUpdatePreviewId == null)
@@ -202,25 +202,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ContentUpdatePreviewId (string) maxLength
             if(this.ContentUpdatePreviewId != null && this.ContentUpdatePreviewId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContentUpdatePreviewId, length must be less than 38.", new [] { "ContentUpdatePreviewId" });
+                yield return new ValidationResult("Invalid value for ContentUpdatePreviewId, length must be less than 38.", new [] { "ContentUpdatePreviewId" });
             }
 
             // ContentUpdatePreviewId (string) minLength
             if(this.ContentUpdatePreviewId != null && this.ContentUpdatePreviewId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContentUpdatePreviewId, length must be greater than 38.", new [] { "ContentUpdatePreviewId" });
+                yield return new ValidationResult("Invalid value for ContentUpdatePreviewId, length must be greater than 38.", new [] { "ContentUpdatePreviewId" });
             }
 
             // ContentUpdatePreviewId (string) pattern
             Regex regexContentUpdatePreviewId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexContentUpdatePreviewId.Match(this.ContentUpdatePreviewId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContentUpdatePreviewId, must match a pattern of " + regexContentUpdatePreviewId, new [] { "ContentUpdatePreviewId" });
+                yield return new ValidationResult("Invalid value for ContentUpdatePreviewId, must match a pattern of " + regexContentUpdatePreviewId, new [] { "ContentUpdatePreviewId" });
             }
 
             yield break;

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="Package" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Package() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Package" /> class.
         /// </summary>
         /// <param name="packageTrackingNumber">The tracking number on the label of shipment package, that you can fetch from the &#x60;shippingLabels&#x60; response. You can also scan the bar code on the shipping label to get the tracking number. (required).</param>
-        public Package(string packageTrackingNumber = default(string))
+        public Package(string packageTrackingNumber = default)
         {
             // to ensure "packageTrackingNumber" is required (not null)
             if (packageTrackingNumber == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

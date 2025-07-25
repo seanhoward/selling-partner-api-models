@@ -98,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="relatedIdentifierName">An enumerated set of related business identifier names..</param>
         /// <param name="relatedIdentifierValue">Corresponding value of &#x60;RelatedIdentifierName&#x60;..</param>
-        public RelatedIdentifier(RelatedIdentifierNameEnum? relatedIdentifierName = default(RelatedIdentifierNameEnum?), string relatedIdentifierValue = default(string))
+        public RelatedIdentifier(RelatedIdentifierNameEnum? relatedIdentifierName = default, string relatedIdentifierValue = default)
         {
             this.RelatedIdentifierName = relatedIdentifierName;
             this.RelatedIdentifierValue = relatedIdentifierValue;
@@ -190,7 +190,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

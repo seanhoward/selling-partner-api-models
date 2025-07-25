@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFulfillmentOrderResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetFulfillmentOrderResult() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFulfillmentOrderResult" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="returnItems">returnItems (required).</param>
         /// <param name="returnAuthorizations">returnAuthorizations (required).</param>
         /// <param name="paymentInformation">paymentInformation.</param>
-        public GetFulfillmentOrderResult(FulfillmentOrder fulfillmentOrder = default(FulfillmentOrder), FulfillmentOrderItemList fulfillmentOrderItems = default(FulfillmentOrderItemList), FulfillmentShipmentList fulfillmentShipments = default(FulfillmentShipmentList), ReturnItemList returnItems = default(ReturnItemList), ReturnAuthorizationList returnAuthorizations = default(ReturnAuthorizationList), PaymentInformationList paymentInformation = default(PaymentInformationList))
+        public GetFulfillmentOrderResult(FulfillmentOrder fulfillmentOrder = default, FulfillmentOrderItemList fulfillmentOrderItems = default, FulfillmentShipmentList fulfillmentShipments = default, ReturnItemList returnItems = default, ReturnAuthorizationList returnAuthorizations = default, PaymentInformationList paymentInformation = default)
         {
             // to ensure "fulfillmentOrder" is required (not null)
             if (fulfillmentOrder == null)
@@ -232,7 +232,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="sku">The Stock Keeping Unit (SKU) of the item..</param>
         /// <param name="quantityShipped">The quantity of the item shipped..</param>
         /// <param name="fulfillmentNetwork">The fulfillment network of the item..</param>
-        public ProductContext(string asin = default(string), string sku = default(string), int? quantityShipped = default(int?), string fulfillmentNetwork = default(string))
+        public ProductContext(string asin = default, string sku = default, int? quantityShipped = default, string fulfillmentNetwork = default)
         {
             this.Asin = asin;
             this.Sku = sku;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

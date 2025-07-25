@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="supplySourceId">The Amazon provided &#x60;supplySourceId&#x60; where orders can be returned to..</param>
         /// <param name="addressWithContact">addressWithContact.</param>
-        public ReturnLocation(string supplySourceId = default(string), AddressWithContact addressWithContact = default(AddressWithContact))
+        public ReturnLocation(string supplySourceId = default, AddressWithContact addressWithContact = default)
         {
             this.SupplySourceId = supplySourceId;
             this.AddressWithContact = addressWithContact;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

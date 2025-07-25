@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeaturesResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetFeaturesResult() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeaturesResult" /> class.
         /// </summary>
         /// <param name="features">features (required).</param>
-        public GetFeaturesResult(Features features = default(Features))
+        public GetFeaturesResult(Features features = default)
         {
             // to ensure "features" is required (not null)
             if (features == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

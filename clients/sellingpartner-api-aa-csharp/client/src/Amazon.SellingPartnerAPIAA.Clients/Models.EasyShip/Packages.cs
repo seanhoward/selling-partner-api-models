@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <summary>
         /// Initializes a new instance of the <see cref="Packages" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Packages() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Packages" /> class.
         /// </summary>
         /// <param name="packages">A list of packages. (required).</param>
-        public Packages(List<Package> packages = default(List<Package>))
+        public Packages(List<Package> packages = default)
         {
             // to ensure "packages" is required (not null)
             if (packages == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

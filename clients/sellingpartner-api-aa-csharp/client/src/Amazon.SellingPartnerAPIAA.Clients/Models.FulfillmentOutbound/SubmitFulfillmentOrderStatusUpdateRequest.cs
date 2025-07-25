@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// Initializes a new instance of the <see cref="SubmitFulfillmentOrderStatusUpdateRequest" /> class.
         /// </summary>
         /// <param name="fulfillmentOrderStatus">fulfillmentOrderStatus.</param>
-        public SubmitFulfillmentOrderStatusUpdateRequest(FulfillmentOrderStatus? fulfillmentOrderStatus = default(FulfillmentOrderStatus?))
+        public SubmitFulfillmentOrderStatusUpdateRequest(FulfillmentOrderStatus? fulfillmentOrderStatus = default)
         {
             this.FulfillmentOrderStatus = fulfillmentOrderStatus;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

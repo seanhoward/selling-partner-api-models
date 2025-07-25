@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingAddress" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TrackingAddress() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingAddress" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="city">The city. (required).</param>
         /// <param name="state">The state. (required).</param>
         /// <param name="country">The country. (required).</param>
-        public TrackingAddress(string city = default(string), string state = default(string), string country = default(string))
+        public TrackingAddress(string city = default, string state = default, string country = default)
         {
             // to ensure "city" is required (not null)
             if (city == null)
@@ -179,24 +179,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // City (string) maxLength
             if(this.City != null && this.City.Length > 150)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for City, length must be less than 150.", new [] { "City" });
+                yield return new ValidationResult("Invalid value for City, length must be less than 150.", new [] { "City" });
             }
 
             // State (string) maxLength
             if(this.State != null && this.State.Length > 150)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for State, length must be less than 150.", new [] { "State" });
+                yield return new ValidationResult("Invalid value for State, length must be less than 150.", new [] { "State" });
             }
 
             // Country (string) maxLength
             if(this.Country != null && this.Country.Length > 6)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Country, length must be less than 6.", new [] { "Country" });
+                yield return new ValidationResult("Invalid value for Country, length must be less than 6.", new [] { "Country" });
             }
 
             yield break;

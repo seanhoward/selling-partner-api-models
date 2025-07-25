@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="SetPackingInformationRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SetPackingInformationRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SetPackingInformationRequest" /> class.
         /// </summary>
         /// <param name="packageGroupings">List of packing information for the inbound plan. (required).</param>
-        public SetPackingInformationRequest(List<PackageGroupingInput> packageGroupings = default(List<PackageGroupingInput>))
+        public SetPackingInformationRequest(List<PackageGroupingInput> packageGroupings = default)
         {
             // to ensure "packageGroupings" is required (not null)
             if (packageGroupings == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// Initializes a new instance of the <see cref="BuyerCustomizedInfoDetail" /> class.
         /// </summary>
         /// <param name="customizedUrl">A [Base 64](https://datatracker.ietf.org/doc/html/rfc4648#section-4) encoded URL using the UTF-8 character set. The URL provides the location of the zip file that specifies the types of customizations or configurations allowed by the vendor, along with types and ranges for the attributes of their products..</param>
-        public BuyerCustomizedInfoDetail(string customizedUrl = default(string))
+        public BuyerCustomizedInfoDetail(string customizedUrl = default)
         {
             this.CustomizedUrl = customizedUrl;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

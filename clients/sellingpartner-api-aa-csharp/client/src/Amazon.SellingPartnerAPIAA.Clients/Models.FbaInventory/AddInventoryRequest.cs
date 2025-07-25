@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// Initializes a new instance of the <see cref="AddInventoryRequest" /> class.
         /// </summary>
         /// <param name="inventoryItems">inventoryItems.</param>
-        public AddInventoryRequest(InventoryItems inventoryItems = default(InventoryItems))
+        public AddInventoryRequest(InventoryItems inventoryItems = default)
         {
             this.InventoryItems = inventoryItems;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

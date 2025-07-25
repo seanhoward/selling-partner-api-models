@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Feature" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Feature() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Feature" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="featureName">The feature name. (required).</param>
         /// <param name="featureDescription">The feature description. (required).</param>
         /// <param name="sellerEligible">When true, indicates that the seller is eligible to use the feature..</param>
-        public Feature(string featureName = default(string), string featureDescription = default(string), bool? sellerEligible = default(bool?))
+        public Feature(string featureName = default, string featureDescription = default, bool? sellerEligible = default)
         {
             // to ensure "featureName" is required (not null)
             if (featureName == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

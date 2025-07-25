@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryWindowOption" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected DeliveryWindowOption() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryWindowOption" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="endDate">The time at which this delivery window option ends. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern &#x60;yyyy-MM-ddTHH:mmZ&#x60;. (required).</param>
         /// <param name="startDate">The time at which this delivery window option starts. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern &#x60;yyyy-MM-ddTHH:mmZ&#x60;. (required).</param>
         /// <param name="validUntil">The time at which this window delivery option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern &#x60;yyyy-MM-ddTHH:mmZ&#x60;. (required).</param>
-        public DeliveryWindowOption(string availabilityType = default(string), string deliveryWindowOptionId = default(string), DateTime? endDate = default(DateTime?), DateTime? startDate = default(DateTime?), DateTime? validUntil = default(DateTime?))
+        public DeliveryWindowOption(string availabilityType = default, string deliveryWindowOptionId = default, DateTime? endDate = default, DateTime? startDate = default, DateTime? validUntil = default)
         {
             // to ensure "availabilityType" is required (not null)
             if (availabilityType == null)
@@ -229,25 +229,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DeliveryWindowOptionId (string) maxLength
             if(this.DeliveryWindowOptionId != null && this.DeliveryWindowOptionId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DeliveryWindowOptionId, length must be less than 38.", new [] { "DeliveryWindowOptionId" });
+                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, length must be less than 38.", new [] { "DeliveryWindowOptionId" });
             }
 
             // DeliveryWindowOptionId (string) minLength
             if(this.DeliveryWindowOptionId != null && this.DeliveryWindowOptionId.Length < 36)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DeliveryWindowOptionId, length must be greater than 36.", new [] { "DeliveryWindowOptionId" });
+                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, length must be greater than 36.", new [] { "DeliveryWindowOptionId" });
             }
 
             // DeliveryWindowOptionId (string) pattern
             Regex regexDeliveryWindowOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexDeliveryWindowOptionId.Match(this.DeliveryWindowOptionId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DeliveryWindowOptionId, must match a pattern of " + regexDeliveryWindowOptionId, new [] { "DeliveryWindowOptionId" });
+                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, must match a pattern of " + regexDeliveryWindowOptionId, new [] { "DeliveryWindowOptionId" });
             }
 
             yield break;

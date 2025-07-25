@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasonCodeDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ReasonCodeDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasonCodeDetails" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="returnReasonCode">A code that indicates a valid return reason. (required).</param>
         /// <param name="description">A human readable description of the return reason code. (required).</param>
         /// <param name="translatedDescription">A translation of the description. The translation is in the language specified in the Language request parameter..</param>
-        public ReasonCodeDetails(string returnReasonCode = default(string), string description = default(string), string translatedDescription = default(string))
+        public ReasonCodeDetails(string returnReasonCode = default, string description = default, string translatedDescription = default)
         {
             // to ensure "returnReasonCode" is required (not null)
             if (returnReasonCode == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

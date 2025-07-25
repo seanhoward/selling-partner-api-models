@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// Initializes a new instance of the <see cref="InboundPreferences" /> class.
         /// </summary>
         /// <param name="destinationRegion">Pass a preferred region so that the inbound order can be shipped to an AWD warehouse located in that region. This doesn&#39;t guarantee the order to be assigned in the specified destination region as it depends on warehouse capacity availability. AWD currently supports following region IDs: [us-west, us-east].</param>
-        public InboundPreferences(string destinationRegion = default(string))
+        public InboundPreferences(string destinationRegion = default)
         {
             this.DestinationRegion = destinationRegion;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

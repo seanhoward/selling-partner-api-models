@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="IssueEnforcements" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected IssueEnforcements() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="IssueEnforcements" /> class.
         /// </summary>
         /// <param name="actions">List of enforcement actions taken by Amazon that affect the publishing or status of a listing. (required).</param>
         /// <param name="exemption">The \&quot;exemption\&quot; field serves to convey the status of enforcement actions by Amazon. (required).</param>
-        public IssueEnforcements(List<IssueEnforcementAction> actions = default(List<IssueEnforcementAction>), IssueExemption exemption = default(IssueExemption))
+        public IssueEnforcements(List<IssueEnforcementAction> actions = default, IssueExemption exemption = default)
         {
             // to ensure "actions" is required (not null)
             if (actions == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

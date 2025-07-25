@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="deliveryDocumentList">All of the delivery documents for a package..</param>
         /// <param name="dropOffLocation">The drop off location for a package..</param>
-        public DeliveryInformation(DeliveryDocumentList deliveryDocumentList = default(DeliveryDocumentList), DropOffLocation dropOffLocation = default(DropOffLocation))
+        public DeliveryInformation(DeliveryDocumentList deliveryDocumentList = default, DropOffLocation dropOffLocation = default)
         {
             this.DeliveryDocumentList = deliveryDocumentList;
             this.DropOffLocation = dropOffLocation;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentTransportationConfiguration" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShipmentTransportationConfiguration() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentTransportationConfiguration" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="pallets">List of pallet configuration inputs..</param>
         /// <param name="readyToShipWindow">The range of dates within which the seller intends to ship their items. This is the pick-up date or &#39;ready to ship&#39; date, not an estimated delivery date. (required).</param>
         /// <param name="shipmentId">Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required).</param>
-        public ShipmentTransportationConfiguration(ContactInformation contactInformation = default(ContactInformation), FreightInformation freightInformation = default(FreightInformation), List<PalletInput> pallets = default(List<PalletInput>), WindowInput readyToShipWindow = default(WindowInput), string shipmentId = default(string))
+        public ShipmentTransportationConfiguration(ContactInformation contactInformation = default, FreightInformation freightInformation = default, List<PalletInput> pallets = default, WindowInput readyToShipWindow = default, string shipmentId = default)
         {
             // to ensure "readyToShipWindow" is required (not null)
             if (readyToShipWindow == null)
@@ -203,25 +203,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ShipmentId (string) maxLength
             if(this.ShipmentId != null && this.ShipmentId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
             }
 
             // ShipmentId (string) minLength
             if(this.ShipmentId != null && this.ShipmentId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
             }
 
             // ShipmentId (string) pattern
             Regex regexShipmentId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexShipmentId.Match(this.ShipmentId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
             }
 
             yield break;

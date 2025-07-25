@@ -53,7 +53,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="MskuPrepDetail" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected MskuPrepDetail() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="MskuPrepDetail" /> class.
@@ -64,7 +64,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="prepCategory">prepCategory (required).</param>
         /// <param name="prepOwnerConstraint">prepOwnerConstraint.</param>
         /// <param name="prepTypes">A list of preparation types associated with a preparation category. (required).</param>
-        public MskuPrepDetail(AllOwnersConstraint? allOwnersConstraint = default(AllOwnersConstraint?), OwnerConstraint? labelOwnerConstraint = default(OwnerConstraint?), string msku = default(string), PrepCategory prepCategory = default(PrepCategory), OwnerConstraint? prepOwnerConstraint = default(OwnerConstraint?), List<PrepType> prepTypes = default(List<PrepType>))
+        public MskuPrepDetail(AllOwnersConstraint? allOwnersConstraint = default, OwnerConstraint? labelOwnerConstraint = default, string msku = default, PrepCategory prepCategory = default, OwnerConstraint? prepOwnerConstraint = default, List<PrepType> prepTypes = default)
         {
             // to ensure "msku" is required (not null)
             if (msku == null)
@@ -226,18 +226,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Msku (string) maxLength
             if(this.Msku != null && this.Msku.Length > 40)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
             }
 
             // Msku (string) minLength
             if(this.Msku != null && this.Msku.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
             }
 
             yield break;

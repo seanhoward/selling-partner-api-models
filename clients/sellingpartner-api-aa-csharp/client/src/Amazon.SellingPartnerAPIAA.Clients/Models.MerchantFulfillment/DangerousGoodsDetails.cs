@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="transportationRegulatoryClass">The specific regulatory class of the shipped item..</param>
         /// <param name="packingGroup">The specific packaging group of the item being shipped..</param>
         /// <param name="packingInstruction">The specific packing instruction of the item being shipped..</param>
-        public DangerousGoodsDetails(string unitedNationsRegulatoryId = default(string), string transportationRegulatoryClass = default(string), PackingGroupEnum? packingGroup = default(PackingGroupEnum?), PackingInstructionEnum? packingInstruction = default(PackingInstructionEnum?))
+        public DangerousGoodsDetails(string unitedNationsRegulatoryId = default, string transportationRegulatoryClass = default, PackingGroupEnum? packingGroup = default, PackingInstructionEnum? packingInstruction = default)
         {
             this.UnitedNationsRegulatoryId = unitedNationsRegulatoryId;
             this.TransportationRegulatoryClass = transportationRegulatoryClass;
@@ -281,20 +281,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // UnitedNationsRegulatoryId (string) pattern
             Regex regexUnitedNationsRegulatoryId = new Regex(@"^(UN|ID|NA)[0-9]{4}$", RegexOptions.CultureInvariant);
             if (false == regexUnitedNationsRegulatoryId.Match(this.UnitedNationsRegulatoryId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for UnitedNationsRegulatoryId, must match a pattern of " + regexUnitedNationsRegulatoryId, new [] { "UnitedNationsRegulatoryId" });
+                yield return new ValidationResult("Invalid value for UnitedNationsRegulatoryId, must match a pattern of " + regexUnitedNationsRegulatoryId, new [] { "UnitedNationsRegulatoryId" });
             }
 
             // TransportationRegulatoryClass (string) pattern
             Regex regexTransportationRegulatoryClass = new Regex(@"^[1-9](\\.[1-9])?$", RegexOptions.CultureInvariant);
             if (false == regexTransportationRegulatoryClass.Match(this.TransportationRegulatoryClass).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TransportationRegulatoryClass, must match a pattern of " + regexTransportationRegulatoryClass, new [] { "TransportationRegulatoryClass" });
+                yield return new ValidationResult("Invalid value for TransportationRegulatoryClass, must match a pattern of " + regexTransportationRegulatoryClass, new [] { "TransportationRegulatoryClass" });
             }
 
             yield break;

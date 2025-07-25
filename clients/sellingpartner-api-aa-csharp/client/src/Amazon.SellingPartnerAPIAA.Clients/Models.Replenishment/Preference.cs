@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// Initializes a new instance of the <see cref="Preference" /> class.
         /// </summary>
         /// <param name="autoEnrollment">Filters the results to only include offers with the auto-enrollment preference specified..</param>
-        public Preference(List<AutoEnrollmentPreference> autoEnrollment = default(List<AutoEnrollmentPreference>))
+        public Preference(List<AutoEnrollmentPreference> autoEnrollment = default)
         {
             this.AutoEnrollment = autoEnrollment;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// <summary>
         /// Initializes a new instance of the <see cref="Attachment" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Attachment() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Attachment" /> class.
         /// </summary>
         /// <param name="uploadDestinationId">The identifier for the upload destination. To retrieve this value, call the Uploads API [&#x60;createUploadDestinationForResource&#x60;](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation. (required).</param>
         /// <param name="fileName">The name of the file, including the extension. This is the file name that will appear in the message. This does not need to match the file name of the file that you uploaded. (required).</param>
-        public Attachment(string uploadDestinationId = default(string), string fileName = default(string))
+        public Attachment(string uploadDestinationId = default, string fileName = default)
         {
             // to ensure "uploadDestinationId" is required (not null)
             if (uploadDestinationId == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

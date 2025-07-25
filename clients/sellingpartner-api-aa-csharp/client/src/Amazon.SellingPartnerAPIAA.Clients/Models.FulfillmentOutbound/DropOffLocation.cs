@@ -96,14 +96,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="DropOffLocation" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected DropOffLocation() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="DropOffLocation" /> class.
         /// </summary>
         /// <param name="type">Specifies the preferred location to leave the package at the destination address. (required).</param>
         /// <param name="attributes">Additional information about the drop-off location that can vary depending on the type of drop-off location specified in the &#x60;type&#x60; field. If the &#x60;type&#x60; is set to &#x60;FALLBACK_NEIGHBOR_DELIVERY&#x60;, the &#x60;attributes&#x60; object should include the exact keys &#x60;neighborName&#x60; and &#x60;houseNumber&#x60; to provide the name and house number of the designated neighbor..</param>
-        public DropOffLocation(TypeEnum type = default(TypeEnum), Dictionary<string, string> attributes = default(Dictionary<string, string>))
+        public DropOffLocation(TypeEnum type = default, Dictionary<string, string> attributes = default)
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -203,7 +203,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

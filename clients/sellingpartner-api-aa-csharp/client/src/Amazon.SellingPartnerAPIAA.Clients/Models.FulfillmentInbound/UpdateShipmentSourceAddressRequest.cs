@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateShipmentSourceAddressRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected UpdateShipmentSourceAddressRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateShipmentSourceAddressRequest" /> class.
         /// </summary>
         /// <param name="address">address (required).</param>
-        public UpdateShipmentSourceAddressRequest(AddressInput address = default(AddressInput))
+        public UpdateShipmentSourceAddressRequest(AddressInput address = default)
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

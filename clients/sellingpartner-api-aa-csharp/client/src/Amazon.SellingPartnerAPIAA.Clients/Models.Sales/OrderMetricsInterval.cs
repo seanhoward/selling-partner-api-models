@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderMetricsInterval" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderMetricsInterval() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderMetricsInterval" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
         /// <param name="orderCount">The number of orders based on the specified filters. (required).</param>
         /// <param name="averageUnitPrice">The average price for an item based on the specified filters. Formula is totalSales/unitCount. (required).</param>
         /// <param name="totalSales">The total ordered product sales for all orders based on the specified filters. (required).</param>
-        public OrderMetricsInterval(string interval = default(string), int? unitCount = default(int?), int? orderItemCount = default(int?), int? orderCount = default(int?), Money averageUnitPrice = default(Money), Money totalSales = default(Money))
+        public OrderMetricsInterval(string interval = default, int? unitCount = default, int? orderItemCount = default, int? orderCount = default, Money averageUnitPrice = default, Money totalSales = default)
         {
             // to ensure "interval" is required (not null)
             if (interval == null)
@@ -254,7 +254,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

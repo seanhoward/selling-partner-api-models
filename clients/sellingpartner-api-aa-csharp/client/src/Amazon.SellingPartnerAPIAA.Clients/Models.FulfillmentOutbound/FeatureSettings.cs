@@ -62,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="featureName">The name of the feature..</param>
         /// <param name="featureFulfillmentPolicy">Specifies the policy to use when fulfilling an order..</param>
-        public FeatureSettings(string featureName = default(string), FeatureFulfillmentPolicyEnum? featureFulfillmentPolicy = default(FeatureFulfillmentPolicyEnum?))
+        public FeatureSettings(string featureName = default, FeatureFulfillmentPolicyEnum? featureFulfillmentPolicy = default)
         {
             this.FeatureName = featureName;
             this.FeatureFulfillmentPolicy = featureFulfillmentPolicy;
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

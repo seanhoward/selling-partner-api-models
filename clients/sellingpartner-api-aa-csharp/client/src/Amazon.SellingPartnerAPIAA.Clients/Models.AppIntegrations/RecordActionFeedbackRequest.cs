@@ -54,13 +54,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// <summary>
         /// Initializes a new instance of the <see cref="RecordActionFeedbackRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RecordActionFeedbackRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RecordActionFeedbackRequest" /> class.
         /// </summary>
         /// <param name="feedbackActionCode">The unique identifier for each notification status. (required).</param>
-        public RecordActionFeedbackRequest(FeedbackActionCodeEnum feedbackActionCode = default(FeedbackActionCodeEnum))
+        public RecordActionFeedbackRequest(FeedbackActionCodeEnum feedbackActionCode = default)
         {
             // to ensure "feedbackActionCode" is required (not null)
             if (feedbackActionCode == null)
@@ -144,7 +144,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

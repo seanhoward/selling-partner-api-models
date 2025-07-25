@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShipmentDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDetails" /> class.
@@ -45,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <param name="shipMethod">Ship method to be used for shipping the order. Amazon defines ship method codes indicating the shipping carrier and shipment service level. To see the full list of ship methods in use, including both the code and the friendly name, search the &#39;Help&#39; section on Vendor Central for &#39;ship methods&#39;. (required).</param>
         /// <param name="shipmentDates">shipmentDates (required).</param>
         /// <param name="messageToCustomer">Message to customer for order status. (required).</param>
-        public ShipmentDetails(bool? isPriorityShipment = default(bool?), bool? isScheduledDeliveryShipment = default(bool?), bool? isPslipRequired = default(bool?), bool? isGift = default(bool?), string shipMethod = default(string), ShipmentDates shipmentDates = default(ShipmentDates), string messageToCustomer = default(string))
+        public ShipmentDetails(bool? isPriorityShipment = default, bool? isScheduledDeliveryShipment = default, bool? isPslipRequired = default, bool? isGift = default, string shipMethod = default, ShipmentDates shipmentDates = default, string messageToCustomer = default)
         {
             // to ensure "isPriorityShipment" is required (not null)
             if (isPriorityShipment == null)
@@ -262,7 +262,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

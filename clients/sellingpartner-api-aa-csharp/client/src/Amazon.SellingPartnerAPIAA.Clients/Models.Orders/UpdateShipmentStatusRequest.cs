@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateShipmentStatusRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected UpdateShipmentStatusRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateShipmentStatusRequest" /> class.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="marketplaceId">marketplaceId (required).</param>
         /// <param name="shipmentStatus">shipmentStatus (required).</param>
         /// <param name="orderItems">orderItems.</param>
-        public UpdateShipmentStatusRequest(string marketplaceId = default(string), ShipmentStatus shipmentStatus = default(ShipmentStatus), OrderItems orderItems = default(OrderItems))
+        public UpdateShipmentStatusRequest(string marketplaceId = default, ShipmentStatus shipmentStatus = default, OrderItems orderItems = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -168,7 +168,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

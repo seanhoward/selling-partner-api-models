@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateTransportationOptionsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GenerateTransportationOptionsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateTransportationOptionsRequest" /> class.
         /// </summary>
         /// <param name="placementOptionId">The placement option to generate transportation options for. (required).</param>
         /// <param name="shipmentTransportationConfigurations">List of shipment transportation configurations. (required).</param>
-        public GenerateTransportationOptionsRequest(string placementOptionId = default(string), List<ShipmentTransportationConfiguration> shipmentTransportationConfigurations = default(List<ShipmentTransportationConfiguration>))
+        public GenerateTransportationOptionsRequest(string placementOptionId = default, List<ShipmentTransportationConfiguration> shipmentTransportationConfigurations = default)
         {
             // to ensure "placementOptionId" is required (not null)
             if (placementOptionId == null)
@@ -154,25 +154,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PlacementOptionId (string) maxLength
             if(this.PlacementOptionId != null && this.PlacementOptionId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PlacementOptionId, length must be less than 38.", new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be less than 38.", new [] { "PlacementOptionId" });
             }
 
             // PlacementOptionId (string) minLength
             if(this.PlacementOptionId != null && this.PlacementOptionId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PlacementOptionId, length must be greater than 38.", new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be greater than 38.", new [] { "PlacementOptionId" });
             }
 
             // PlacementOptionId (string) pattern
             Regex regexPlacementOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPlacementOptionId.Match(this.PlacementOptionId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PlacementOptionId, must match a pattern of " + regexPlacementOptionId, new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, must match a pattern of " + regexPlacementOptionId, new [] { "PlacementOptionId" });
             }
 
             yield break;

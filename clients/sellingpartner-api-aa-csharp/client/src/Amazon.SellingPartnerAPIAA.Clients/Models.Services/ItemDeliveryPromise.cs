@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="startTime">The date and time of the start of the promised delivery window in ISO 8601 format..</param>
         /// <param name="endTime">The date and time of the end of the promised delivery window in ISO 8601 format..</param>
-        public ItemDeliveryPromise(DateTime? startTime = default(DateTime?), DateTime? endTime = default(DateTime?))
+        public ItemDeliveryPromise(DateTime? startTime = default, DateTime? endTime = default)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="payload">&#x60;UpdateReservationRecord&#x60; contains only the new &#x60;reservationId&#x60; if the operation was successful. Otherwise it will contain the reservation entity with warnings/errors..</param>
         /// <param name="errors">Errors encountered, if any..</param>
-        public UpdateReservationResponse(UpdateReservationRecord payload = default(UpdateReservationRecord), ErrorList errors = default(ErrorList))
+        public UpdateReservationResponse(UpdateReservationRecord payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

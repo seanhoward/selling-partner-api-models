@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderAcknowledgement" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderAcknowledgement() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderAcknowledgement" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="sellingParty">Name, address and tax details of the party receiving a shipment of products. (required).</param>
         /// <param name="acknowledgementDate">The date and time when the purchase order is acknowledged, in ISO-8601 date/time format. (required).</param>
         /// <param name="items">A list of the items being acknowledged with associated details. (required).</param>
-        public OrderAcknowledgement(string purchaseOrderNumber = default(string), PartyIdentification sellingParty = default(PartyIdentification), DateTime? acknowledgementDate = default(DateTime?), List<OrderAcknowledgementItem> items = default(List<OrderAcknowledgementItem>))
+        public OrderAcknowledgement(string purchaseOrderNumber = default, PartyIdentification sellingParty = default, DateTime? acknowledgementDate = default, List<OrderAcknowledgementItem> items = default)
         {
             // to ensure "purchaseOrderNumber" is required (not null)
             if (purchaseOrderNumber == null)
@@ -204,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

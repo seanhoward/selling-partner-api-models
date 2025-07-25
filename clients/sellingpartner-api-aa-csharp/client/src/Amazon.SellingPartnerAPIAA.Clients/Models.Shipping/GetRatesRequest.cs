@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="GetRatesRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetRatesRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetRatesRequest" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="serviceTypes">serviceTypes (required).</param>
         /// <param name="shipDate">The start date and time. This defaults to the current date and time..</param>
         /// <param name="containerSpecifications">containerSpecifications (required).</param>
-        public GetRatesRequest(Address shipTo = default(Address), Address shipFrom = default(Address), ServiceTypeList serviceTypes = default(ServiceTypeList), DateTime? shipDate = default(DateTime?), ContainerSpecificationList containerSpecifications = default(ContainerSpecificationList))
+        public GetRatesRequest(Address shipTo = default, Address shipFrom = default, ServiceTypeList serviceTypes = default, DateTime? shipDate = default, ContainerSpecificationList containerSpecifications = default)
         {
             // to ensure "shipTo" is required (not null)
             if (shipTo == null)
@@ -217,7 +217,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

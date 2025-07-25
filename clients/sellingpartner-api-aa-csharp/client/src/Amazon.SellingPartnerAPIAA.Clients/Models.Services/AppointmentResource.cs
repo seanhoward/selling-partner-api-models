@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// Initializes a new instance of the <see cref="AppointmentResource" /> class.
         /// </summary>
         /// <param name="resourceId">The resource identifier..</param>
-        public AppointmentResource(string resourceId = default(string))
+        public AppointmentResource(string resourceId = default)
         {
             this.ResourceId = resourceId;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

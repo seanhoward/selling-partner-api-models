@@ -38,14 +38,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidItemReason" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InvalidItemReason() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidItemReason" /> class.
         /// </summary>
         /// <param name="invalidItemReasonCode">invalidItemReasonCode (required).</param>
         /// <param name="description">A human readable description of the invalid item reason code. (required).</param>
-        public InvalidItemReason(InvalidItemReasonCode invalidItemReasonCode = default(InvalidItemReasonCode), string description = default(string))
+        public InvalidItemReason(InvalidItemReasonCode invalidItemReasonCode = default, string description = default)
         {
             // to ensure "invalidItemReasonCode" is required (not null)
             if (invalidItemReasonCode == null)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

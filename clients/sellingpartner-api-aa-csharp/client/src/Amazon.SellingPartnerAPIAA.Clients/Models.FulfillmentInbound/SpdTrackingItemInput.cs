@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="SpdTrackingItemInput" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SpdTrackingItemInput() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SpdTrackingItemInput" /> class.
         /// </summary>
         /// <param name="boxId">The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box. (required).</param>
         /// <param name="trackingId">The tracking Id associated with each box in a non-Amazon partnered Small Parcel Delivery (SPD) shipment. The seller must provide this information. (required).</param>
-        public SpdTrackingItemInput(string boxId = default(string), string trackingId = default(string))
+        public SpdTrackingItemInput(string boxId = default, string trackingId = default)
         {
             // to ensure "boxId" is required (not null)
             if (boxId == null)
@@ -154,30 +154,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // BoxId (string) maxLength
             if(this.BoxId != null && this.BoxId.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BoxId, length must be less than 1024.", new [] { "BoxId" });
+                yield return new ValidationResult("Invalid value for BoxId, length must be less than 1024.", new [] { "BoxId" });
             }
 
             // BoxId (string) minLength
             if(this.BoxId != null && this.BoxId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BoxId, length must be greater than 1.", new [] { "BoxId" });
+                yield return new ValidationResult("Invalid value for BoxId, length must be greater than 1.", new [] { "BoxId" });
             }
 
             // TrackingId (string) maxLength
             if(this.TrackingId != null && this.TrackingId.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TrackingId, length must be less than 1024.", new [] { "TrackingId" });
+                yield return new ValidationResult("Invalid value for TrackingId, length must be less than 1024.", new [] { "TrackingId" });
             }
 
             // TrackingId (string) minLength
             if(this.TrackingId != null && this.TrackingId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TrackingId, length must be greater than 1.", new [] { "TrackingId" });
+                yield return new ValidationResult("Invalid value for TrackingId, length must be greater than 1.", new [] { "TrackingId" });
             }
 
             yield break;

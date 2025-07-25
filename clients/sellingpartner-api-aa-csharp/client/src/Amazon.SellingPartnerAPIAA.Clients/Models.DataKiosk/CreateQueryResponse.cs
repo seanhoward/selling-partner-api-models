@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateQueryResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateQueryResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateQueryResponse" /> class.
         /// </summary>
         /// <param name="queryId">The identifier for the query. This identifier is unique only in combination with a selling partner account ID. (required).</param>
-        public CreateQueryResponse(string queryId = default(string))
+        public CreateQueryResponse(string queryId = default)
         {
             // to ensure "queryId" is required (not null)
             if (queryId == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

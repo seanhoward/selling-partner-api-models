@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentModule" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ContentModule() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentModule" /> class.
@@ -59,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="standardTechSpecs">standardTechSpecs.</param>
         /// <param name="standardText">standardText.</param>
         /// <param name="standardThreeImageText">standardThreeImageText.</param>
-        public ContentModule(ContentModuleType contentModuleType = default(ContentModuleType), StandardCompanyLogoModule standardCompanyLogo = default(StandardCompanyLogoModule), StandardComparisonTableModule standardComparisonTable = default(StandardComparisonTableModule), StandardFourImageTextModule standardFourImageText = default(StandardFourImageTextModule), StandardFourImageTextQuadrantModule standardFourImageTextQuadrant = default(StandardFourImageTextQuadrantModule), StandardHeaderImageTextModule standardHeaderImageText = default(StandardHeaderImageTextModule), StandardImageSidebarModule standardImageSidebar = default(StandardImageSidebarModule), StandardImageTextOverlayModule standardImageTextOverlay = default(StandardImageTextOverlayModule), StandardMultipleImageTextModule standardMultipleImageText = default(StandardMultipleImageTextModule), StandardProductDescriptionModule standardProductDescription = default(StandardProductDescriptionModule), StandardSingleImageHighlightsModule standardSingleImageHighlights = default(StandardSingleImageHighlightsModule), StandardSingleImageSpecsDetailModule standardSingleImageSpecsDetail = default(StandardSingleImageSpecsDetailModule), StandardSingleSideImageModule standardSingleSideImage = default(StandardSingleSideImageModule), StandardTechSpecsModule standardTechSpecs = default(StandardTechSpecsModule), StandardTextModule standardText = default(StandardTextModule), StandardThreeImageTextModule standardThreeImageText = default(StandardThreeImageTextModule))
+        public ContentModule(ContentModuleType contentModuleType = default, StandardCompanyLogoModule standardCompanyLogo = default, StandardComparisonTableModule standardComparisonTable = default, StandardFourImageTextModule standardFourImageText = default, StandardFourImageTextQuadrantModule standardFourImageTextQuadrant = default, StandardHeaderImageTextModule standardHeaderImageText = default, StandardImageSidebarModule standardImageSidebar = default, StandardImageTextOverlayModule standardImageTextOverlay = default, StandardMultipleImageTextModule standardMultipleImageText = default, StandardProductDescriptionModule standardProductDescription = default, StandardSingleImageHighlightsModule standardSingleImageHighlights = default, StandardSingleImageSpecsDetailModule standardSingleImageSpecsDetail = default, StandardSingleSideImageModule standardSingleSideImage = default, StandardTechSpecsModule standardTechSpecs = default, StandardTextModule standardText = default, StandardThreeImageTextModule standardThreeImageText = default)
         {
             // to ensure "contentModuleType" is required (not null)
             if (contentModuleType == null)
@@ -368,7 +368,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

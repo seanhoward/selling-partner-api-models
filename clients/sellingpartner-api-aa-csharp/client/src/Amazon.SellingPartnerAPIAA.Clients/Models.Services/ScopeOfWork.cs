@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="title">The title of the service job..</param>
         /// <param name="quantity">The number of service jobs..</param>
         /// <param name="requiredSkills">A list of skills required to perform the job..</param>
-        public ScopeOfWork(string asin = default(string), string title = default(string), int? quantity = default(int?), List<string> requiredSkills = default(List<string>))
+        public ScopeOfWork(string asin = default, string title = default, int? quantity = default, List<string> requiredSkills = default)
         {
             this.Asin = asin;
             this.Title = title;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

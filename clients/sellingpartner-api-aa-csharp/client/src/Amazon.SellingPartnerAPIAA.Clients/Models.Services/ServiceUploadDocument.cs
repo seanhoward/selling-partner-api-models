@@ -84,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceUploadDocument" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ServiceUploadDocument() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceUploadDocument" /> class.
@@ -92,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="contentType">The content type of the to-be-uploaded file (required).</param>
         /// <param name="contentLength">The content length of the to-be-uploaded file (required).</param>
         /// <param name="contentMD5">An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit..</param>
-        public ServiceUploadDocument(ContentTypeEnum contentType = default(ContentTypeEnum), decimal? contentLength = default(decimal?), string contentMD5 = default(string))
+        public ServiceUploadDocument(ContentTypeEnum contentType = default, decimal? contentLength = default, string contentMD5 = default)
         {
             // to ensure "contentType" is required (not null)
             if (contentType == null)
@@ -216,25 +216,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ContentLength (decimal?) maximum
             if(this.ContentLength > (decimal?)5242880)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContentLength, must be a value less than or equal to 5242880.", new [] { "ContentLength" });
+                yield return new ValidationResult("Invalid value for ContentLength, must be a value less than or equal to 5242880.", new [] { "ContentLength" });
             }
 
             // ContentLength (decimal?) minimum
             if(this.ContentLength < (decimal?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContentLength, must be a value greater than or equal to 1.", new [] { "ContentLength" });
+                yield return new ValidationResult("Invalid value for ContentLength, must be a value greater than or equal to 1.", new [] { "ContentLength" });
             }
 
             // ContentMD5 (string) pattern
             Regex regexContentMD5 = new Regex(@"^[A-Za-z0-9\\\\+\/]{22}={2}$", RegexOptions.CultureInvariant);
             if (false == regexContentMD5.Match(this.ContentMD5).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContentMD5, must match a pattern of " + regexContentMD5, new [] { "ContentMD5" });
+                yield return new ValidationResult("Invalid value for ContentMD5, must match a pattern of " + regexContentMD5, new [] { "ContentMD5" });
             }
 
             yield break;

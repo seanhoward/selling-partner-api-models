@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Item() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="liquidVolume">liquidVolume.</param>
         /// <param name="isHazmat">When true, the item qualifies as hazardous materials (hazmat). Defaults to false..</param>
         /// <param name="dangerousGoodsDetails">dangerousGoodsDetails.</param>
-        public Item(string orderItemId = default(string), int? quantity = default(int?), Weight itemWeight = default(Weight), string itemDescription = default(string), TransparencyCodeList transparencyCodeList = default(TransparencyCodeList), AdditionalSellerInputsList itemLevelSellerInputsList = default(AdditionalSellerInputsList), LiquidVolume liquidVolume = default(LiquidVolume), bool? isHazmat = default(bool?), DangerousGoodsDetails dangerousGoodsDetails = default(DangerousGoodsDetails))
+        public Item(string orderItemId = default, int? quantity = default, Weight itemWeight = default, string itemDescription = default, TransparencyCodeList transparencyCodeList = default, AdditionalSellerInputsList itemLevelSellerInputsList = default, LiquidVolume liquidVolume = default, bool? isHazmat = default, DangerousGoodsDetails dangerousGoodsDetails = default)
         {
             // to ensure "orderItemId" is required (not null)
             if (orderItemId == null)
@@ -266,7 +266,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

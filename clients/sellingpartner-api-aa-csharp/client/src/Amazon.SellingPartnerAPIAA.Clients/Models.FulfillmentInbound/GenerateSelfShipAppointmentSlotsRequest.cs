@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="desiredEndDate">The desired end date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format..</param>
         /// <param name="desiredStartDate">The desired start date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format..</param>
-        public GenerateSelfShipAppointmentSlotsRequest(DateTime? desiredEndDate = default(DateTime?), DateTime? desiredStartDate = default(DateTime?))
+        public GenerateSelfShipAppointmentSlotsRequest(DateTime? desiredEndDate = default, DateTime? desiredStartDate = default)
         {
             this.DesiredEndDate = desiredEndDate;
             this.DesiredStartDate = desiredStartDate;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

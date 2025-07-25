@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentShipmentItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FulfillmentShipmentItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentShipmentItem" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="packageNumber">An identifier for the package that contains the item quantity..</param>
         /// <param name="serialNumber">The serial number of the shipped item..</param>
         /// <param name="manufacturerLotCodes">The manufacturer lot codes of the shipped items..</param>
-        public FulfillmentShipmentItem(string sellerSku = default(string), string sellerFulfillmentOrderItemId = default(string), int? quantity = default(int?), int? packageNumber = default(int?), string serialNumber = default(string), StringList manufacturerLotCodes = default(StringList))
+        public FulfillmentShipmentItem(string sellerSku = default, string sellerFulfillmentOrderItemId = default, int? quantity = default, int? packageNumber = default, string serialNumber = default, StringList manufacturerLotCodes = default)
         {
             // to ensure "sellerSku" is required (not null)
             if (sellerSku == null)
@@ -229,7 +229,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

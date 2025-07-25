@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="Points" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Points() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Points" /> class.
         /// </summary>
         /// <param name="pointsNumber">pointsNumber (required).</param>
-        public Points(int? pointsNumber = default(int?))
+        public Points(int? pointsNumber = default)
         {
             // to ensure "pointsNumber" is required (not null)
             if (pointsNumber == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

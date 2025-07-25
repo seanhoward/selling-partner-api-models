@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageOffsets" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ImageOffsets() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageOffsets" /> class.
         /// </summary>
         /// <param name="x">x (required).</param>
         /// <param name="y">y (required).</param>
-        public ImageOffsets(IntegerWithUnits x = default(IntegerWithUnits), IntegerWithUnits y = default(IntegerWithUnits))
+        public ImageOffsets(IntegerWithUnits x = default, IntegerWithUnits y = default)
         {
             // to ensure "x" is required (not null)
             if (x == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

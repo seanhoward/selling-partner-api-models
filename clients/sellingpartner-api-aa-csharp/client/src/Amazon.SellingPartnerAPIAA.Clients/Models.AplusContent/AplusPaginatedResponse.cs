@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// Initializes a new instance of the <see cref="AplusPaginatedResponse" /> class.
         /// </summary>
         /// <param name="nextPageToken">nextPageToken.</param>
-        public AplusPaginatedResponse(string nextPageToken = default(string), MessageSet warnings = default(MessageSet)) : base(warnings)
+        public AplusPaginatedResponse(string nextPageToken = default, MessageSet warnings = default) : base(warnings)
         {
             this.NextPageToken = nextPageToken;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

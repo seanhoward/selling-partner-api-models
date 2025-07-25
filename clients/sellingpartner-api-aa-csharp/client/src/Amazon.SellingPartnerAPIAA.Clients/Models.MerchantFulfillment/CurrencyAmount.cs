@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="CurrencyAmount" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CurrencyAmount() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CurrencyAmount" /> class.
         /// </summary>
         /// <param name="currencyCode">Three-digit currency code in ISO 4217 format. (required).</param>
         /// <param name="amount">The currency amount. (required).</param>
-        public CurrencyAmount(string currencyCode = default(string), double? amount = default(double?))
+        public CurrencyAmount(string currencyCode = default, double? amount = default)
         {
             // to ensure "currencyCode" is required (not null)
             if (currencyCode == null)
@@ -154,12 +154,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // CurrencyCode (string) maxLength
             if(this.CurrencyCode != null && this.CurrencyCode.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CurrencyCode, length must be less than 3.", new [] { "CurrencyCode" });
+                yield return new ValidationResult("Invalid value for CurrencyCode, length must be less than 3.", new [] { "CurrencyCode" });
             }
 
             yield break;

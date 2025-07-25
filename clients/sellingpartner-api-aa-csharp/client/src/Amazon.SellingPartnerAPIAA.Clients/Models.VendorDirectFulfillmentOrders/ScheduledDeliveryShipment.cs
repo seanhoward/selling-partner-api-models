@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <param name="scheduledDeliveryServiceType">Scheduled delivery service type..</param>
         /// <param name="earliestNominatedDeliveryDate">Earliest nominated delivery date for the scheduled delivery..</param>
         /// <param name="latestNominatedDeliveryDate">Latest nominated delivery date for the scheduled delivery..</param>
-        public ScheduledDeliveryShipment(string scheduledDeliveryServiceType = default(string), DateTime? earliestNominatedDeliveryDate = default(DateTime?), DateTime? latestNominatedDeliveryDate = default(DateTime?))
+        public ScheduledDeliveryShipment(string scheduledDeliveryServiceType = default, DateTime? earliestNominatedDeliveryDate = default, DateTime? latestNominatedDeliveryDate = default)
         {
             this.ScheduledDeliveryServiceType = scheduledDeliveryServiceType;
             this.EarliestNominatedDeliveryDate = earliestNominatedDeliveryDate;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

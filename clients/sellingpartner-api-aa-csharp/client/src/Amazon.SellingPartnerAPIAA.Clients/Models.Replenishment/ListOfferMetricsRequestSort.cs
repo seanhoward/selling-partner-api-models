@@ -44,14 +44,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOfferMetricsRequestSort" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListOfferMetricsRequestSort() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOfferMetricsRequestSort" /> class.
         /// </summary>
         /// <param name="order">The sort order. (required).</param>
         /// <param name="key">key (required).</param>
-        public ListOfferMetricsRequestSort(SortOrder order = default(SortOrder), ListOfferMetricsSortKey key = default(ListOfferMetricsSortKey))
+        public ListOfferMetricsRequestSort(SortOrder order = default, ListOfferMetricsSortKey key = default)
         {
             // to ensure "order" is required (not null)
             if (order == null)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

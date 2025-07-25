@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidReturnItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InvalidReturnItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidReturnItem" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="sellerReturnItemId">An identifier assigned by the seller to the return item. (required).</param>
         /// <param name="sellerFulfillmentOrderItemId">The identifier assigned to the item by the seller when the fulfillment order was created. (required).</param>
         /// <param name="invalidItemReason">invalidItemReason (required).</param>
-        public InvalidReturnItem(string sellerReturnItemId = default(string), string sellerFulfillmentOrderItemId = default(string), InvalidItemReason invalidItemReason = default(InvalidItemReason))
+        public InvalidReturnItem(string sellerReturnItemId = default, string sellerFulfillmentOrderItemId = default, InvalidItemReason invalidItemReason = default)
         {
             // to ensure "sellerReturnItemId" is required (not null)
             if (sellerReturnItemId == null)
@@ -178,7 +178,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

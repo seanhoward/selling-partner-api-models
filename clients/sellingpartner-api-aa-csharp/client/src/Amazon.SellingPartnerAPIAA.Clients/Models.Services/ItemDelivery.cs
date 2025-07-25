@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="estimatedDeliveryDate">The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format..</param>
         /// <param name="itemDeliveryPromise">Promised delivery information for the item..</param>
-        public ItemDelivery(DateTime? estimatedDeliveryDate = default(DateTime?), ItemDeliveryPromise itemDeliveryPromise = default(ItemDeliveryPromise))
+        public ItemDelivery(DateTime? estimatedDeliveryDate = default, ItemDeliveryPromise itemDeliveryPromise = default)
         {
             this.EstimatedDeliveryDate = estimatedDeliveryDate;
             this.ItemDeliveryPromise = itemDeliveryPromise;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

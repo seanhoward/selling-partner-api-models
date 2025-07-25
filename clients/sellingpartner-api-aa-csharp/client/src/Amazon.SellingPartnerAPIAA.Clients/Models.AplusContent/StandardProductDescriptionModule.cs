@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardProductDescriptionModule" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected StandardProductDescriptionModule() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardProductDescriptionModule" /> class.
         /// </summary>
         /// <param name="body">body (required).</param>
-        public StandardProductDescriptionModule(ParagraphComponent body = default(ParagraphComponent))
+        public StandardProductDescriptionModule(ParagraphComponent body = default)
         {
             // to ensure "body" is required (not null)
             if (body == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

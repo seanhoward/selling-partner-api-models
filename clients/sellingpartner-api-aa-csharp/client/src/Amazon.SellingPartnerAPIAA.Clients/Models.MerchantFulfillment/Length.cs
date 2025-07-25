@@ -40,7 +40,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="value">The value in units..</param>
         /// <param name="unit">unit.</param>
-        public Length(decimal? value = default(decimal?), UnitOfLength? unit = default(UnitOfLength?))
+        public Length(decimal? value = default, UnitOfLength? unit = default)
         {
             this.Value = value;
             this.Unit = unit;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageCropSpecification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ImageCropSpecification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageCropSpecification" /> class.
         /// </summary>
         /// <param name="size">size (required).</param>
         /// <param name="offset">offset.</param>
-        public ImageCropSpecification(ImageDimensions size = default(ImageDimensions), ImageOffsets offset = default(ImageOffsets))
+        public ImageCropSpecification(ImageDimensions size = default, ImageOffsets offset = default)
         {
             // to ensure "size" is required (not null)
             if (size == null)
@@ -144,7 +144,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

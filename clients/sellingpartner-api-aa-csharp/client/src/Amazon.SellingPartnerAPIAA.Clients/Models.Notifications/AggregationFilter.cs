@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// Initializes a new instance of the <see cref="AggregationFilter" /> class.
         /// </summary>
         /// <param name="aggregationSettings">aggregationSettings.</param>
-        public AggregationFilter(AggregationSettings aggregationSettings = default(AggregationSettings))
+        public AggregationFilter(AggregationSettings aggregationSettings = default)
         {
             this.AggregationSettings = aggregationSettings;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

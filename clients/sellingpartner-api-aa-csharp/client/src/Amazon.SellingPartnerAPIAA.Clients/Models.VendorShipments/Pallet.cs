@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="Pallet" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Pallet() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Pallet" /> class.
@@ -45,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="weight">weight.</param>
         /// <param name="cartonReferenceDetails">Carton reference details..</param>
         /// <param name="items">A list of container item details..</param>
-        public Pallet(List<ContainerIdentification> palletIdentifiers = default(List<ContainerIdentification>), int? tier = default(int?), int? block = default(int?), Dimensions dimensions = default(Dimensions), Weight weight = default(Weight), CartonReferenceDetails cartonReferenceDetails = default(CartonReferenceDetails), List<ContainerItem> items = default(List<ContainerItem>))
+        public Pallet(List<ContainerIdentification> palletIdentifiers = default, int? tier = default, int? block = default, Dimensions dimensions = default, Weight weight = default, CartonReferenceDetails cartonReferenceDetails = default, List<ContainerItem> items = default)
         {
             // to ensure "palletIdentifiers" is required (not null)
             if (palletIdentifiers == null)
@@ -229,7 +229,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

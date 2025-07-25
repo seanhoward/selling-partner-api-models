@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="purchaseOrderDate">Purchase order numbers involved in this shipment, list all the PO that are involved as part of this shipment..</param>
         /// <param name="shipWindow">Date range in which shipment is expected for these purchase orders..</param>
         /// <param name="items">A list of the items that are associated to the PO in this transport and their associated details..</param>
-        public PurchaseOrders(string purchaseOrderNumber = default(string), DateTime? purchaseOrderDate = default(DateTime?), string shipWindow = default(string), List<PurchaseOrderItems> items = default(List<PurchaseOrderItems>))
+        public PurchaseOrders(string purchaseOrderNumber = default, DateTime? purchaseOrderDate = default, string shipWindow = default, List<PurchaseOrderItems> items = default)
         {
             this.PurchaseOrderNumber = purchaseOrderNumber;
             this.PurchaseOrderDate = purchaseOrderDate;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

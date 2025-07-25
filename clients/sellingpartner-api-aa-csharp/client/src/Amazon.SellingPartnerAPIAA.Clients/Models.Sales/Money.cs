@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
         /// <summary>
         /// Initializes a new instance of the <see cref="Money" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Money() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Money" /> class.
         /// </summary>
         /// <param name="currencyCode">Three-digit currency code. In ISO 4217 format. (required).</param>
         /// <param name="amount">The currency amount. (required).</param>
-        public Money(string currencyCode = default(string), string amount = default(string))
+        public Money(string currencyCode = default, string amount = default)
         {
             // to ensure "currencyCode" is required (not null)
             if (currencyCode == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

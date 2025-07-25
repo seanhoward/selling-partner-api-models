@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="shipmentVolume">Gross Volume of the shipment..</param>
         /// <param name="cartonCount">Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments..</param>
         /// <param name="palletCount">Number of pallets present in the shipment. Provide the palletCount only for palletized shipments..</param>
-        public ShipmentMeasurements(Weight grossShipmentWeight = default(Weight), Volume shipmentVolume = default(Volume), int? cartonCount = default(int?), int? palletCount = default(int?))
+        public ShipmentMeasurements(Weight grossShipmentWeight = default, Volume shipmentVolume = default, int? cartonCount = default, int? palletCount = default)
         {
             this.GrossShipmentWeight = grossShipmentWeight;
             this.ShipmentVolume = shipmentVolume;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

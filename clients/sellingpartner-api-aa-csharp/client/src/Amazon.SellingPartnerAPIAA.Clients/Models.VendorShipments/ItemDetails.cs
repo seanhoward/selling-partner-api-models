@@ -77,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="expiry">Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items..</param>
         /// <param name="maximumRetailPrice">Maximum retail price of the item being shipped..</param>
         /// <param name="handlingCode">Identification of the instructions on how specified item/carton/pallet should be handled..</param>
-        public ItemDetails(string purchaseOrderNumber = default(string), string lotNumber = default(string), Expiry expiry = default(Expiry), Money maximumRetailPrice = default(Money), HandlingCodeEnum? handlingCode = default(HandlingCodeEnum?))
+        public ItemDetails(string purchaseOrderNumber = default, string lotNumber = default, Expiry expiry = default, Money maximumRetailPrice = default, HandlingCodeEnum? handlingCode = default)
         {
             this.PurchaseOrderNumber = purchaseOrderNumber;
             this.LotNumber = lotNumber;
@@ -217,7 +217,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

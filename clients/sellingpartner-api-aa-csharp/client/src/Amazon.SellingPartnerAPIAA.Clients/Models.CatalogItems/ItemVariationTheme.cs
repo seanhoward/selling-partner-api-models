@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="attributes">Names of the Amazon catalog item attributes associated with the variation theme..</param>
         /// <param name="theme">Variation theme indicating the combination of Amazon item catalog attributes that define the variation family..</param>
-        public ItemVariationTheme(List<string> attributes = default(List<string>), string theme = default(string))
+        public ItemVariationTheme(List<string> attributes = default, string theme = default)
         {
             this.Attributes = attributes;
             this.Theme = theme;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="FileContents" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FileContents() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FileContents" /> class.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="contents">Data for printing labels encoded into a Base64, GZip-compressed string. (required).</param>
         /// <param name="fileType">fileType (required).</param>
         /// <param name="checksum">An MD5 hash to validate the PDF document data, in the form of a Base64 string. (required).</param>
-        public FileContents(string contents = default(string), FileType fileType = default(FileType), string checksum = default(string))
+        public FileContents(string contents = default, FileType fileType = default, string checksum = default)
         {
             // to ensure "contents" is required (not null)
             if (contents == null)
@@ -178,7 +178,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

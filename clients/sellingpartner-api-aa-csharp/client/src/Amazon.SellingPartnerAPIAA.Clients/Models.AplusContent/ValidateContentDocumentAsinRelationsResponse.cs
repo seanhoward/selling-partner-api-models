@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ValidateContentDocumentAsinRelationsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ValidateContentDocumentAsinRelationsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ValidateContentDocumentAsinRelationsResponse" /> class.
         /// </summary>
         /// <param name="errors">A list of error responses returned when a request is unsuccessful. (required).</param>
-        public ValidateContentDocumentAsinRelationsResponse(List<Error> errors = default(List<Error>), MessageSet warnings = default(MessageSet)) : base(warnings)
+        public ValidateContentDocumentAsinRelationsResponse(List<Error> errors = default, MessageSet warnings = default) : base(warnings)
         {
             // to ensure "errors" is required (not null)
             if (errors == null)
@@ -130,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

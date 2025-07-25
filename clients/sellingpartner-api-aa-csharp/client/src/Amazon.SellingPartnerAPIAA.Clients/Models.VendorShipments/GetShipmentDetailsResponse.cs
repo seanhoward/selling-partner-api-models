@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="payload">payload.</param>
         /// <param name="errors">errors.</param>
-        public GetShipmentDetailsResponse(ShipmentDetails payload = default(ShipmentDetails), ErrorList errors = default(ErrorList))
+        public GetShipmentDetailsResponse(ShipmentDetails payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

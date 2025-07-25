@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelDimensions" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected LabelDimensions() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelDimensions" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="length">The length dimension. (required).</param>
         /// <param name="width">The width dimension. (required).</param>
         /// <param name="unit">The unit of measurement. (required).</param>
-        public LabelDimensions(decimal? length = default(decimal?), decimal? width = default(decimal?), UnitOfLength unit = default(UnitOfLength))
+        public LabelDimensions(decimal? length = default, decimal? width = default, UnitOfLength unit = default)
         {
             // to ensure "length" is required (not null)
             if (length == null)
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

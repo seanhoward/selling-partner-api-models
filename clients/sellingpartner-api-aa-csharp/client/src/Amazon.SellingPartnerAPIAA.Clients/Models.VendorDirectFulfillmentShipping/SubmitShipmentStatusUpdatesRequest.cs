@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// Initializes a new instance of the <see cref="SubmitShipmentStatusUpdatesRequest" /> class.
         /// </summary>
         /// <param name="shipmentStatusUpdates">Contains a list of one or more &#x60;ShipmentStatusUpdate&#x60; objects. Each &#x60;ShipmentStatusUpdate&#x60; object represents an update to the status of a specific shipment..</param>
-        public SubmitShipmentStatusUpdatesRequest(List<ShipmentStatusUpdate> shipmentStatusUpdates = default(List<ShipmentStatusUpdate>))
+        public SubmitShipmentStatusUpdatesRequest(List<ShipmentStatusUpdate> shipmentStatusUpdates = default)
         {
             this.ShipmentStatusUpdates = shipmentStatusUpdates;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

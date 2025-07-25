@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="name">Product attribute name..</param>
         /// <param name="value">Product attribute value..</param>
-        public ProductAttribute(string name = default(string), string value = default(string))
+        public ProductAttribute(string name = default, string value = default)
         {
             this.Name = name;
             this.Value = value;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

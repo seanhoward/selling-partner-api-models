@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentShipmentPackage" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FulfillmentShipmentPackage() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentShipmentPackage" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="estimatedArrivalDate">The estimated arrival date and time of the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format..</param>
         /// <param name="lockerDetails">The locker details, if provided can be used to access locker delivery box..</param>
         /// <param name="deliveryInformation">The delivery information for the package. This information is available after the package is delivered..</param>
-        public FulfillmentShipmentPackage(int? packageNumber = default(int?), string carrierCode = default(string), string trackingNumber = default(string), DateTime? estimatedArrivalDate = default(DateTime?), LockerDetails lockerDetails = default(LockerDetails), DeliveryInformation deliveryInformation = default(DeliveryInformation))
+        public FulfillmentShipmentPackage(int? packageNumber = default, string carrierCode = default, string trackingNumber = default, DateTime? estimatedArrivalDate = default, LockerDetails lockerDetails = default, DeliveryInformation deliveryInformation = default)
         {
             // to ensure "packageNumber" is required (not null)
             if (packageNumber == null)
@@ -222,7 +222,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

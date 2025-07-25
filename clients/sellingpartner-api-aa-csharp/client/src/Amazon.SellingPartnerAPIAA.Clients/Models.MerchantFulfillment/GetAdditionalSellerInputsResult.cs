@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="shipmentLevelFields">shipmentLevelFields.</param>
         /// <param name="itemLevelFieldsList">itemLevelFieldsList.</param>
-        public GetAdditionalSellerInputsResult(AdditionalInputsList shipmentLevelFields = default(AdditionalInputsList), ItemLevelFieldsList itemLevelFieldsList = default(ItemLevelFieldsList))
+        public GetAdditionalSellerInputsResult(AdditionalInputsList shipmentLevelFields = default, ItemLevelFieldsList itemLevelFieldsList = default)
         {
             this.ShipmentLevelFields = shipmentLevelFields;
             this.ItemLevelFieldsList = itemLevelFieldsList;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

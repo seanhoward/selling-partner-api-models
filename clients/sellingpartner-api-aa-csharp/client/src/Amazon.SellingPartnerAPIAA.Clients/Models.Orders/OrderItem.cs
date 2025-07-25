@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItem" /> class.
@@ -105,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="measurement">Measurement information for the order item..</param>
         /// <param name="shippingConstraints">Shipping constraints applicable to this order..</param>
         /// <param name="amazonPrograms">Contains the list of programs that are associated with an item..</param>
-        public OrderItem(string aSIN = default(string), string sellerSKU = default(string), string orderItemId = default(string), List<AssociatedItem> associatedItems = default(List<AssociatedItem>), string title = default(string), int? quantityOrdered = default(int?), int? quantityShipped = default(int?), ProductInfoDetail productInfo = default(ProductInfoDetail), PointsGrantedDetail pointsGranted = default(PointsGrantedDetail), Money itemPrice = default(Money), Money shippingPrice = default(Money), Money itemTax = default(Money), Money shippingTax = default(Money), Money shippingDiscount = default(Money), Money shippingDiscountTax = default(Money), Money promotionDiscount = default(Money), Money promotionDiscountTax = default(Money), PromotionIdList promotionIds = default(PromotionIdList), Money cODFee = default(Money), Money cODFeeDiscount = default(Money), string isGift = default(string), string conditionNote = default(string), string conditionId = default(string), string conditionSubtypeId = default(string), string scheduledDeliveryStartDate = default(string), string scheduledDeliveryEndDate = default(string), string priceDesignation = default(string), TaxCollection taxCollection = default(TaxCollection), bool? serialNumberRequired = default(bool?), bool? isTransparency = default(bool?), string iossNumber = default(string), string storeChainStoreId = default(string), DeemedResellerCategoryEnum? deemedResellerCategory = default(DeemedResellerCategoryEnum?), ItemBuyerInfo buyerInfo = default(ItemBuyerInfo), BuyerRequestedCancel buyerRequestedCancel = default(BuyerRequestedCancel), List<string> serialNumbers = default(List<string>), SubstitutionPreferences substitutionPreferences = default(SubstitutionPreferences), Measurement measurement = default(Measurement), ShippingConstraints shippingConstraints = default(ShippingConstraints), AmazonPrograms amazonPrograms = default(AmazonPrograms))
+        public OrderItem(string aSIN = default, string sellerSKU = default, string orderItemId = default, List<AssociatedItem> associatedItems = default, string title = default, int? quantityOrdered = default, int? quantityShipped = default, ProductInfoDetail productInfo = default, PointsGrantedDetail pointsGranted = default, Money itemPrice = default, Money shippingPrice = default, Money itemTax = default, Money shippingTax = default, Money shippingDiscount = default, Money shippingDiscountTax = default, Money promotionDiscount = default, Money promotionDiscountTax = default, PromotionIdList promotionIds = default, Money cODFee = default, Money cODFeeDiscount = default, string isGift = default, string conditionNote = default, string conditionId = default, string conditionSubtypeId = default, string scheduledDeliveryStartDate = default, string scheduledDeliveryEndDate = default, string priceDesignation = default, TaxCollection taxCollection = default, bool? serialNumberRequired = default, bool? isTransparency = default, string iossNumber = default, string storeChainStoreId = default, DeemedResellerCategoryEnum? deemedResellerCategory = default, ItemBuyerInfo buyerInfo = default, BuyerRequestedCancel buyerRequestedCancel = default, List<string> serialNumbers = default, SubstitutionPreferences substitutionPreferences = default, Measurement measurement = default, ShippingConstraints shippingConstraints = default, AmazonPrograms amazonPrograms = default)
         {
             // to ensure "aSIN" is required (not null)
             if (aSIN == null)
@@ -828,7 +828,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

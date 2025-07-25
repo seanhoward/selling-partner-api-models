@@ -40,7 +40,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="customTextForLabel">customTextForLabel.</param>
         /// <param name="standardIdForLabel">standardIdForLabel.</param>
-        public LabelCustomization(string customTextForLabel = default(string), StandardIdForLabel? standardIdForLabel = default(StandardIdForLabel?))
+        public LabelCustomization(string customTextForLabel = default, StandardIdForLabel? standardIdForLabel = default)
         {
             this.CustomTextForLabel = customTextForLabel;
             this.StandardIdForLabel = standardIdForLabel;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

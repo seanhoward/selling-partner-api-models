@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFulfillmentPreviewRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetFulfillmentPreviewRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFulfillmentPreviewRequest" /> class.
@@ -45,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="includeCODFulfillmentPreview">When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD..</param>
         /// <param name="includeDeliveryWindows">When true, returns the &#x60;ScheduledDeliveryInfo&#x60; response object, which contains the available delivery windows for a Scheduled Delivery. The &#x60;ScheduledDeliveryInfo&#x60; response object can only be returned for fulfillment order previews with &#x60;ShippingSpeedCategories&#x60; &#x3D; &#x60;ScheduledDelivery&#x60;..</param>
         /// <param name="featureConstraints">A list of features and their fulfillment policies to apply to the order..</param>
-        public GetFulfillmentPreviewRequest(string marketplaceId = default(string), Address address = default(Address), GetFulfillmentPreviewItemList items = default(GetFulfillmentPreviewItemList), ShippingSpeedCategoryList shippingSpeedCategories = default(ShippingSpeedCategoryList), bool? includeCODFulfillmentPreview = default(bool?), bool? includeDeliveryWindows = default(bool?), List<FeatureSettings> featureConstraints = default(List<FeatureSettings>))
+        public GetFulfillmentPreviewRequest(string marketplaceId = default, Address address = default, GetFulfillmentPreviewItemList items = default, ShippingSpeedCategoryList shippingSpeedCategories = default, bool? includeCODFulfillmentPreview = default, bool? includeDeliveryWindows = default, List<FeatureSettings> featureConstraints = default)
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -239,7 +239,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

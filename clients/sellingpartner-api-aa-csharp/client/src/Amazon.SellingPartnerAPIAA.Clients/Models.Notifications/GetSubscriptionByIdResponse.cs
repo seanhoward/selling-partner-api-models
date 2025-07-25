@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="payload">The payload for the &#x60;getSubscriptionById&#x60; operation..</param>
         /// <param name="errors">An unexpected condition occurred during the &#x60;getSubscriptionById&#x60; operation..</param>
-        public GetSubscriptionByIdResponse(Subscription payload = default(Subscription), ErrorList errors = default(ErrorList))
+        public GetSubscriptionByIdResponse(Subscription payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

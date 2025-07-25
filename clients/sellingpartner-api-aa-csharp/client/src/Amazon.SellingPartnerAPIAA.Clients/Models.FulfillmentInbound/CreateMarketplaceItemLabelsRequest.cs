@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateMarketplaceItemLabelsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateMarketplaceItemLabelsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateMarketplaceItemLabelsRequest" /> class.
@@ -55,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="mskuQuantities">Represents the quantity of an MSKU to print item labels for. (required).</param>
         /// <param name="pageType">pageType.</param>
         /// <param name="width">The width of the item label..</param>
-        public CreateMarketplaceItemLabelsRequest(decimal? height = default(decimal?), LabelPrintType labelType = default(LabelPrintType), string localeCode = "en_US", string marketplaceId = default(string), List<MskuQuantity> mskuQuantities = default(List<MskuQuantity>), ItemLabelPageType? pageType = default(ItemLabelPageType?), decimal? width = default(decimal?))
+        public CreateMarketplaceItemLabelsRequest(decimal? height = default, LabelPrintType labelType = default, string localeCode = "en_US", string marketplaceId = default, List<MskuQuantity> mskuQuantities = default, ItemLabelPageType? pageType = default, decimal? width = default)
         {
             // to ensure "labelType" is required (not null)
             if (labelType == null)
@@ -253,49 +253,49 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Height (decimal?) maximum
             if(this.Height > (decimal?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Height, must be a value less than or equal to 100.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value less than or equal to 100.", new [] { "Height" });
             }
 
             // Height (decimal?) minimum
             if(this.Height < (decimal?)25)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Height, must be a value greater than or equal to 25.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value greater than or equal to 25.", new [] { "Height" });
             }
 
             // LocaleCode (string) pattern
             Regex regexLocaleCode = new Regex(@"^[a-z]{2}_[A-Z]{2}$", RegexOptions.CultureInvariant);
             if (false == regexLocaleCode.Match(this.LocaleCode).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LocaleCode, must match a pattern of " + regexLocaleCode, new [] { "LocaleCode" });
+                yield return new ValidationResult("Invalid value for LocaleCode, must match a pattern of " + regexLocaleCode, new [] { "LocaleCode" });
             }
 
             // MarketplaceId (string) maxLength
             if(this.MarketplaceId != null && this.MarketplaceId.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MarketplaceId, length must be less than 20.", new [] { "MarketplaceId" });
+                yield return new ValidationResult("Invalid value for MarketplaceId, length must be less than 20.", new [] { "MarketplaceId" });
             }
 
             // MarketplaceId (string) minLength
             if(this.MarketplaceId != null && this.MarketplaceId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MarketplaceId, length must be greater than 1.", new [] { "MarketplaceId" });
+                yield return new ValidationResult("Invalid value for MarketplaceId, length must be greater than 1.", new [] { "MarketplaceId" });
             }
 
             // Width (decimal?) maximum
             if(this.Width > (decimal?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Width, must be a value less than or equal to 100.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value less than or equal to 100.", new [] { "Width" });
             }
 
             // Width (decimal?) minimum
             if(this.Width < (decimal?)25)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Width, must be a value greater than or equal to 25.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value greater than or equal to 25.", new [] { "Width" });
             }
 
             yield break;

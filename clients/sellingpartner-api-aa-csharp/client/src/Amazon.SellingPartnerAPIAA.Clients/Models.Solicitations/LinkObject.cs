@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkObject" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected LinkObject() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkObject" /> class.
         /// </summary>
         /// <param name="href">A URI for this object. (required).</param>
         /// <param name="name">An identifier for this object..</param>
-        public LinkObject(string href = default(string), string name = default(string))
+        public LinkObject(string href = default, string name = default)
         {
             // to ensure "href" is required (not null)
             if (href == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

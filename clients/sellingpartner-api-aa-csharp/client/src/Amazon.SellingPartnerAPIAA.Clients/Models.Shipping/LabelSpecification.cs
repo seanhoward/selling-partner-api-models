@@ -75,14 +75,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelSpecification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected LabelSpecification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelSpecification" /> class.
         /// </summary>
         /// <param name="labelFormat">The format of the label. Enum of PNG only for now. (required).</param>
         /// <param name="labelStockSize">The label stock size specification in length and height. Enum of 4x6 only for now. (required).</param>
-        public LabelSpecification(LabelFormatEnum labelFormat = default(LabelFormatEnum), LabelStockSizeEnum labelStockSize = default(LabelStockSizeEnum))
+        public LabelSpecification(LabelFormatEnum labelFormat = default, LabelStockSizeEnum labelStockSize = default)
         {
             // to ensure "labelFormat" is required (not null)
             if (labelFormat == null)
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

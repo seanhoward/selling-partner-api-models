@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSupplySourceRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateSupplySourceRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSupplySourceRequest" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <param name="supplySourceCode">supplySourceCode (required).</param>
         /// <param name="alias">alias (required).</param>
         /// <param name="address">address (required).</param>
-        public CreateSupplySourceRequest(string supplySourceCode = default(string), string alias = default(string), Address address = default(Address))
+        public CreateSupplySourceRequest(string supplySourceCode = default, string alias = default, Address address = default)
         {
             // to ensure "supplySourceCode" is required (not null)
             if (supplySourceCode == null)
@@ -176,7 +176,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

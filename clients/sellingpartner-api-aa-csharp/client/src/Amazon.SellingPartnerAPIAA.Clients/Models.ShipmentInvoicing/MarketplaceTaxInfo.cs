@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// <param name="companyLegalName">The legal name of the company..</param>
         /// <param name="taxingRegion">The country or region imposing the tax..</param>
         /// <param name="taxClassifications">taxClassifications.</param>
-        public MarketplaceTaxInfo(string companyLegalName = default(string), string taxingRegion = default(string), TaxClassificationList taxClassifications = default(TaxClassificationList))
+        public MarketplaceTaxInfo(string companyLegalName = default, string taxingRegion = default, TaxClassificationList taxClassifications = default)
         {
             this.CompanyLegalName = companyLegalName;
             this.TaxingRegion = taxingRegion;
@@ -149,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

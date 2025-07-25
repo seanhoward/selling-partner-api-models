@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingInformation" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TrackingInformation() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingInformation" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="summary">summary (required).</param>
         /// <param name="promisedDeliveryDate">promisedDeliveryDate (required).</param>
         /// <param name="eventHistory">eventHistory (required).</param>
-        public TrackingInformation(string trackingId = default(string), TrackingSummary summary = default(TrackingSummary), DateTime? promisedDeliveryDate = default(DateTime?), EventList eventHistory = default(EventList))
+        public TrackingInformation(string trackingId = default, TrackingSummary summary = default, DateTime? promisedDeliveryDate = default, EventList eventHistory = default)
         {
             // to ensure "trackingId" is required (not null)
             if (trackingId == null)
@@ -200,7 +200,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

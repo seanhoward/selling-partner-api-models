@@ -104,7 +104,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="buyer">Information about the buyer..</param>
         /// <param name="associatedItems">A list of items associated with the service job..</param>
         /// <param name="serviceLocation">Information about the location of the service job..</param>
-        public ServiceJob(DateTime? createTime = default(DateTime?), string serviceJobId = default(string), ServiceJobStatusEnum? serviceJobStatus = default(ServiceJobStatusEnum?), ScopeOfWork scopeOfWork = default(ScopeOfWork), Seller seller = default(Seller), ServiceJobProvider serviceJobProvider = default(ServiceJobProvider), List<AppointmentTime> preferredAppointmentTimes = default(List<AppointmentTime>), List<Appointment> appointments = default(List<Appointment>), string serviceOrderId = default(string), string marketplaceId = default(string), string storeId = default(string), Buyer buyer = default(Buyer), List<AssociatedItem> associatedItems = default(List<AssociatedItem>), ServiceLocation serviceLocation = default(ServiceLocation))
+        public ServiceJob(DateTime? createTime = default, string serviceJobId = default, ServiceJobStatusEnum? serviceJobStatus = default, ScopeOfWork scopeOfWork = default, Seller seller = default, ServiceJobProvider serviceJobProvider = default, List<AppointmentTime> preferredAppointmentTimes = default, List<Appointment> appointments = default, string serviceOrderId = default, string marketplaceId = default, string storeId = default, Buyer buyer = default, List<AssociatedItem> associatedItems = default, ServiceLocation serviceLocation = default)
         {
             this.CreateTime = createTime;
             this.ServiceJobId = serviceJobId;
@@ -388,25 +388,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // MarketplaceId (string) pattern
             Regex regexMarketplaceId = new Regex(@"^[A-Z0-9]*$", RegexOptions.CultureInvariant);
             if (false == regexMarketplaceId.Match(this.MarketplaceId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MarketplaceId, must match a pattern of " + regexMarketplaceId, new [] { "MarketplaceId" });
+                yield return new ValidationResult("Invalid value for MarketplaceId, must match a pattern of " + regexMarketplaceId, new [] { "MarketplaceId" });
             }
 
             // StoreId (string) maxLength
             if(this.StoreId != null && this.StoreId.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StoreId, length must be less than 100.", new [] { "StoreId" });
+                yield return new ValidationResult("Invalid value for StoreId, length must be less than 100.", new [] { "StoreId" });
             }
 
             // StoreId (string) minLength
             if(this.StoreId != null && this.StoreId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StoreId, length must be greater than 1.", new [] { "StoreId" });
+                yield return new ValidationResult("Invalid value for StoreId, length must be greater than 1.", new [] { "StoreId" });
             }
 
             yield break;

@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomPlacementInput" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CustomPlacementInput() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomPlacementInput" /> class.
         /// </summary>
         /// <param name="items">Items included while creating Inbound Plan. (required).</param>
         /// <param name="warehouseId">Warehouse Id. (required).</param>
-        public CustomPlacementInput(List<ItemInput> items = default(List<ItemInput>), string warehouseId = default(string))
+        public CustomPlacementInput(List<ItemInput> items = default, string warehouseId = default)
         {
             // to ensure "items" is required (not null)
             if (items == null)
@@ -154,18 +154,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // WarehouseId (string) maxLength
             if(this.WarehouseId != null && this.WarehouseId.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WarehouseId, length must be less than 1024.", new [] { "WarehouseId" });
+                yield return new ValidationResult("Invalid value for WarehouseId, length must be less than 1024.", new [] { "WarehouseId" });
             }
 
             // WarehouseId (string) minLength
             if(this.WarehouseId != null && this.WarehouseId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WarehouseId, length must be greater than 1.", new [] { "WarehouseId" });
+                yield return new ValidationResult("Invalid value for WarehouseId, length must be greater than 1.", new [] { "WarehouseId" });
             }
 
             yield break;

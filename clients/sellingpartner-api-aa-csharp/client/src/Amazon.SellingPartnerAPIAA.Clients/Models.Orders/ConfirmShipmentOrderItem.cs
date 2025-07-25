@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfirmShipmentOrderItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ConfirmShipmentOrderItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfirmShipmentOrderItem" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="orderItemId">The order item&#39;s unique identifier. (required).</param>
         /// <param name="quantity">The item&#39;s quantity. (required).</param>
         /// <param name="transparencyCodes">The list of transparency codes..</param>
-        public ConfirmShipmentOrderItem(string orderItemId = default(string), int? quantity = default(int?), TransparencyCodeList transparencyCodes = default(TransparencyCodeList))
+        public ConfirmShipmentOrderItem(string orderItemId = default, int? quantity = default, TransparencyCodeList transparencyCodes = default)
         {
             // to ensure "orderItemId" is required (not null)
             if (orderItemId == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="isBuyerRequestedCancel">Indicate whether the buyer has requested cancellation.  **Possible Values**: &#x60;true&#x60;, &#x60;false&#x60;..</param>
         /// <param name="buyerCancelReason">The reason that the buyer requested cancellation..</param>
-        public BuyerRequestedCancel(string isBuyerRequestedCancel = default(string), string buyerCancelReason = default(string))
+        public BuyerRequestedCancel(string isBuyerRequestedCancel = default, string buyerCancelReason = default)
         {
             this.IsBuyerRequestedCancel = isBuyerRequestedCancel;
             this.BuyerCancelReason = buyerCancelReason;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

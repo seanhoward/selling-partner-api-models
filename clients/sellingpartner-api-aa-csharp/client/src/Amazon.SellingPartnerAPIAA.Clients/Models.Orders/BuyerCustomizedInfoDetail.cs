@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Initializes a new instance of the <see cref="BuyerCustomizedInfoDetail" /> class.
         /// </summary>
         /// <param name="customizedURL">The location of a ZIP file containing Amazon Custom data..</param>
-        public BuyerCustomizedInfoDetail(string customizedURL = default(string))
+        public BuyerCustomizedInfoDetail(string customizedURL = default)
         {
             this.CustomizedURL = customizedURL;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

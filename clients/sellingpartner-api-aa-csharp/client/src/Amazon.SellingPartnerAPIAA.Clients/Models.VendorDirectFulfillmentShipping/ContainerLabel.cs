@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerLabel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ContainerLabel() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerLabel" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="containerTrackingNumber">The container (pallet) tracking identifier from the shipping carrier..</param>
         /// <param name="content">The &#x60;Base64encoded&#x60; string of the container label content. (required).</param>
         /// <param name="format">The format of the container label. (required).</param>
-        public ContainerLabel(string containerTrackingNumber = default(string), string content = default(string), ContainerLabelFormat format = default(ContainerLabelFormat))
+        public ContainerLabel(string containerTrackingNumber = default, string content = default, ContainerLabelFormat format = default)
         {
             // to ensure "content" is required (not null)
             if (content == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

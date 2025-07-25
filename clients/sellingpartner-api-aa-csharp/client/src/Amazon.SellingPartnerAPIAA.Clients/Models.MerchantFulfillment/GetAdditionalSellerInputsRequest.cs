@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAdditionalSellerInputsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetAdditionalSellerInputsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAdditionalSellerInputsRequest" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="shippingServiceId">shippingServiceId (required).</param>
         /// <param name="shipFromAddress">The address from which to ship. (required).</param>
         /// <param name="orderId">An Amazon defined order identifier (required).</param>
-        public GetAdditionalSellerInputsRequest(string shippingServiceId = default(string), Address shipFromAddress = default(Address), string orderId = default(string))
+        public GetAdditionalSellerInputsRequest(string shippingServiceId = default, Address shipFromAddress = default, string orderId = default)
         {
             // to ensure "shippingServiceId" is required (not null)
             if (shippingServiceId == null)
@@ -178,7 +178,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

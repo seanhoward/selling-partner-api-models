@@ -78,7 +78,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// <summary>
         /// Initializes a new instance of the <see cref="Query" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Query() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Query" /> class.
@@ -92,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// <param name="dataDocumentId">The data document identifier. This identifier is only present when there is data available as a result of the query. This identifier is unique only in combination with a selling partner account ID. Pass this identifier into the &#x60;getDocument&#x60; operation to get the information required to retrieve the data document&#39;s contents..</param>
         /// <param name="errorDocumentId">The error document identifier. This identifier is only present when an error occurs during query processing. This identifier is unique only in combination with a selling partner account ID. Pass this identifier into the &#x60;getDocument&#x60; operation to get the information required to retrieve the error document&#39;s contents..</param>
         /// <param name="pagination">pagination.</param>
-        public Query(string queryId = default(string), string query = default(string), DateTime? createdTime = default(DateTime?), ProcessingStatusEnum processingStatus = default(ProcessingStatusEnum), DateTime? processingStartTime = default(DateTime?), DateTime? processingEndTime = default(DateTime?), string dataDocumentId = default(string), string errorDocumentId = default(string), QueryPagination pagination = default(QueryPagination))
+        public Query(string queryId = default, string query = default, DateTime? createdTime = default, ProcessingStatusEnum processingStatus = default, DateTime? processingStartTime = default, DateTime? processingEndTime = default, string dataDocumentId = default, string errorDocumentId = default, QueryPagination pagination = default)
         {
             // to ensure "queryId" is required (not null)
             if (queryId == null)
@@ -327,7 +327,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

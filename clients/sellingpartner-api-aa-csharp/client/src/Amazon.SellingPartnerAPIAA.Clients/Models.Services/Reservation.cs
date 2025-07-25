@@ -78,7 +78,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="Reservation" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Reservation() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Reservation" /> class.
@@ -86,7 +86,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="reservationId">Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request..</param>
         /// <param name="type">Type of reservation. (required).</param>
         /// <param name="availability">&#x60;AvailabilityRecord&#x60; to represent the capacity of a resource over a time range. (required).</param>
-        public Reservation(string reservationId = default(string), TypeEnum type = default(TypeEnum), AvailabilityRecord availability = default(AvailabilityRecord))
+        public Reservation(string reservationId = default, TypeEnum type = default, AvailabilityRecord availability = default)
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -210,7 +210,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

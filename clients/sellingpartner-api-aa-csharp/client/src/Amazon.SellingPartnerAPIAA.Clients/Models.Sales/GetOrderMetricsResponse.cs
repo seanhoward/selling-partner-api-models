@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
         /// </summary>
         /// <param name="payload">The payload for the getOrderMetrics operation..</param>
         /// <param name="errors">Encountered errors for the getOrderMetrics operation..</param>
-        public GetOrderMetricsResponse(OrderMetricsList payload = default(OrderMetricsList), ErrorList errors = default(ErrorList))
+        public GetOrderMetricsResponse(OrderMetricsList payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

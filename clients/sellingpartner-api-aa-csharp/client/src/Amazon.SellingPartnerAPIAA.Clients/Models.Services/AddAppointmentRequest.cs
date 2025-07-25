@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="AddAppointmentRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AddAppointmentRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AddAppointmentRequest" /> class.
         /// </summary>
         /// <param name="appointmentTime">Input appointment time details. (required).</param>
-        public AddAppointmentRequest(AppointmentTimeInput appointmentTime = default(AppointmentTimeInput))
+        public AddAppointmentRequest(AppointmentTimeInput appointmentTime = default)
         {
             // to ensure "appointmentTime" is required (not null)
             if (appointmentTime == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

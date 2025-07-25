@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="invoices">A list of invoices..</param>
         /// <param name="nextToken">This token is returned when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the &#x60;getInvoices&#x60; operation and include this token with the previous call parameters..</param>
-        public GetInvoicesResponse(List<Invoice> invoices = default(List<Invoice>), string nextToken = default(string))
+        public GetInvoicesResponse(List<Invoice> invoices = default, string nextToken = default)
         {
             this.Invoices = invoices;
             this.NextToken = nextToken;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

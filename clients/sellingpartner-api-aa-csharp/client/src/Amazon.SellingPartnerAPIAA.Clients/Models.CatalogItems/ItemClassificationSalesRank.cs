@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemClassificationSalesRank" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemClassificationSalesRank() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemClassificationSalesRank" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="title">Title, or name, of the sales rank. (required).</param>
         /// <param name="link">Corresponding Amazon retail website link, or URL, for the sales rank..</param>
         /// <param name="rank">Sales rank value. (required).</param>
-        public ItemClassificationSalesRank(string classificationId = default(string), string title = default(string), string link = default(string), int? rank = default(int?))
+        public ItemClassificationSalesRank(string classificationId = default, string title = default, string link = default, int? rank = default)
         {
             // to ensure "classificationId" is required (not null)
             if (classificationId == null)
@@ -196,7 +196,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

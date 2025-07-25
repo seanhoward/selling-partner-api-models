@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportationSelection" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TransportationSelection() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportationSelection" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="contactInformation">contactInformation.</param>
         /// <param name="shipmentId">Shipment ID that the transportation Option is for. (required).</param>
         /// <param name="transportationOptionId">Transportation option being selected for the provided shipment. (required).</param>
-        public TransportationSelection(ContactInformation contactInformation = default(ContactInformation), string shipmentId = default(string), string transportationOptionId = default(string))
+        public TransportationSelection(ContactInformation contactInformation = default, string shipmentId = default, string transportationOptionId = default)
         {
             // to ensure "shipmentId" is required (not null)
             if (shipmentId == null)
@@ -170,44 +170,44 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ShipmentId (string) maxLength
             if(this.ShipmentId != null && this.ShipmentId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
             }
 
             // ShipmentId (string) minLength
             if(this.ShipmentId != null && this.ShipmentId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
             }
 
             // ShipmentId (string) pattern
             Regex regexShipmentId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexShipmentId.Match(this.ShipmentId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
             }
 
             // TransportationOptionId (string) maxLength
             if(this.TransportationOptionId != null && this.TransportationOptionId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TransportationOptionId, length must be less than 38.", new [] { "TransportationOptionId" });
+                yield return new ValidationResult("Invalid value for TransportationOptionId, length must be less than 38.", new [] { "TransportationOptionId" });
             }
 
             // TransportationOptionId (string) minLength
             if(this.TransportationOptionId != null && this.TransportationOptionId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TransportationOptionId, length must be greater than 38.", new [] { "TransportationOptionId" });
+                yield return new ValidationResult("Invalid value for TransportationOptionId, length must be greater than 38.", new [] { "TransportationOptionId" });
             }
 
             // TransportationOptionId (string) pattern
             Regex regexTransportationOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexTransportationOptionId.Match(this.TransportationOptionId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TransportationOptionId, must match a pattern of " + regexTransportationOptionId, new [] { "TransportationOptionId" });
+                yield return new ValidationResult("Invalid value for TransportationOptionId, must match a pattern of " + regexTransportationOptionId, new [] { "TransportationOptionId" });
             }
 
             yield break;

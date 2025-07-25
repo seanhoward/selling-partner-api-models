@@ -130,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="billableWeight">Billable weight of the direct imports shipment..</param>
         /// <param name="estimatedShipByDate">Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future..</param>
         /// <param name="handlingInstructions">Identification of the instructions on how specified item/carton/pallet should be handled..</param>
-        public ImportDetails(MethodOfPaymentEnum? methodOfPayment = default(MethodOfPaymentEnum?), string sealNumber = default(string), Route route = default(Route), string importContainers = default(string), Weight billableWeight = default(Weight), DateTime? estimatedShipByDate = default(DateTime?), HandlingInstructionsEnum? handlingInstructions = default(HandlingInstructionsEnum?))
+        public ImportDetails(MethodOfPaymentEnum? methodOfPayment = default, string sealNumber = default, Route route = default, string importContainers = default, Weight billableWeight = default, DateTime? estimatedShipByDate = default, HandlingInstructionsEnum? handlingInstructions = default)
         {
             this.MethodOfPayment = methodOfPayment;
             this.SealNumber = sealNumber;
@@ -296,12 +296,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ImportContainers (string) maxLength
             if(this.ImportContainers != null && this.ImportContainers.Length > 64)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ImportContainers, length must be less than 64.", new [] { "ImportContainers" });
+                yield return new ValidationResult("Invalid value for ImportContainers, length must be less than 64.", new [] { "ImportContainers" });
             }
 
             yield break;

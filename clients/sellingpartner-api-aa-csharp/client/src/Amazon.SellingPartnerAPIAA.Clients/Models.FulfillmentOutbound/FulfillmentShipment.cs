@@ -72,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentShipment" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FulfillmentShipment() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentShipment" /> class.
@@ -85,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="shippingNotes">Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren&#39;t available..</param>
         /// <param name="fulfillmentShipmentItem">fulfillmentShipmentItem (required).</param>
         /// <param name="fulfillmentShipmentPackage">fulfillmentShipmentPackage.</param>
-        public FulfillmentShipment(string amazonShipmentId = default(string), string fulfillmentCenterId = default(string), FulfillmentShipmentStatusEnum fulfillmentShipmentStatus = default(FulfillmentShipmentStatusEnum), DateTime? shippingDate = default(DateTime?), DateTime? estimatedArrivalDate = default(DateTime?), List<string> shippingNotes = default(List<string>), FulfillmentShipmentItemList fulfillmentShipmentItem = default(FulfillmentShipmentItemList), FulfillmentShipmentPackageList fulfillmentShipmentPackage = default(FulfillmentShipmentPackageList))
+        public FulfillmentShipment(string amazonShipmentId = default, string fulfillmentCenterId = default, FulfillmentShipmentStatusEnum fulfillmentShipmentStatus = default, DateTime? shippingDate = default, DateTime? estimatedArrivalDate = default, List<string> shippingNotes = default, FulfillmentShipmentItemList fulfillmentShipmentItem = default, FulfillmentShipmentPackageList fulfillmentShipmentPackage = default)
         {
             // to ensure "amazonShipmentId" is required (not null)
             if (amazonShipmentId == null)
@@ -303,7 +303,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -38,14 +38,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="Weight" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Weight() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Weight" /> class.
         /// </summary>
         /// <param name="value">value (required).</param>
         /// <param name="unit">unit (required).</param>
-        public Weight(double? value = default(double?), UnitOfWeight unit = default(UnitOfWeight))
+        public Weight(double? value = default, UnitOfWeight unit = default)
         {
             // to ensure "value" is required (not null)
             if (value == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

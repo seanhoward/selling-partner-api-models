@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// Initializes a new instance of the <see cref="Pagination" /> class.
         /// </summary>
         /// <param name="nextToken">When present, pass this string token in the next request to return the next response page..</param>
-        public Pagination(string nextToken = default(string))
+        public Pagination(string nextToken = default)
         {
             this.NextToken = nextToken;
         }
@@ -116,18 +116,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // NextToken (string) maxLength
             if(this.NextToken != null && this.NextToken.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NextToken, length must be less than 1024.", new [] { "NextToken" });
+                yield return new ValidationResult("Invalid value for NextToken, length must be less than 1024.", new [] { "NextToken" });
             }
 
             // NextToken (string) minLength
             if(this.NextToken != null && this.NextToken.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NextToken, length must be greater than 1.", new [] { "NextToken" });
+                yield return new ValidationResult("Invalid value for NextToken, length must be greater than 1.", new [] { "NextToken" });
             }
 
             yield break;

@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="declaredValue">declaredValue.</param>
         /// <param name="hsnCode">Harmonized System of Nomenclature code..</param>
         /// <param name="taxRates">List of tax rates..</param>
-        public TaxDetails(Currency declaredValue = default(Currency), string hsnCode = default(string), List<TaxRate> taxRates = default(List<TaxRate>))
+        public TaxDetails(Currency declaredValue = default, string hsnCode = default, List<TaxRate> taxRates = default)
         {
             this.DeclaredValue = declaredValue;
             this.HsnCode = hsnCode;
@@ -149,18 +149,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // HsnCode (string) maxLength
             if(this.HsnCode != null && this.HsnCode.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HsnCode, length must be less than 1024.", new [] { "HsnCode" });
+                yield return new ValidationResult("Invalid value for HsnCode, length must be less than 1024.", new [] { "HsnCode" });
             }
 
             // HsnCode (string) minLength
             if(this.HsnCode != null && this.HsnCode.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HsnCode, length must be greater than 1.", new [] { "HsnCode" });
+                yield return new ValidationResult("Invalid value for HsnCode, length must be greater than 1.", new [] { "HsnCode" });
             }
 
             yield break;

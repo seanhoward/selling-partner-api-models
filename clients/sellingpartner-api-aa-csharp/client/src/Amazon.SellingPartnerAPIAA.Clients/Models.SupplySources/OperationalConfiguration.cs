@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <param name="throughputConfig">throughputConfig.</param>
         /// <param name="operatingHoursByDay">operatingHoursByDay.</param>
         /// <param name="handlingTime">handlingTime.</param>
-        public OperationalConfiguration(ContactDetails contactDetails = default(ContactDetails), ThroughputConfig throughputConfig = default(ThroughputConfig), OperatingHoursByDay operatingHoursByDay = default(OperatingHoursByDay), Duration handlingTime = default(Duration))
+        public OperationalConfiguration(ContactDetails contactDetails = default, ThroughputConfig throughputConfig = default, OperatingHoursByDay operatingHoursByDay = default, Duration handlingTime = default)
         {
             this.ContactDetails = contactDetails;
             this.ThroughputConfig = throughputConfig;
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

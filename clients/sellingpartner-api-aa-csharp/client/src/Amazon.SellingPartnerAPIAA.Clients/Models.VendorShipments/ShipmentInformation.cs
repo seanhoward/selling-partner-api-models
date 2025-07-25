@@ -68,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="masterTrackingId">Unique Id with  which  the shipment can be tracked for Small Parcels..</param>
         /// <param name="totalLabelCount">Number of Labels that are created as part of this shipment..</param>
         /// <param name="shipMode">Type of shipment whether it is Small Parcel.</param>
-        public ShipmentInformation(VendorDetails vendorDetails = default(VendorDetails), string buyerReferenceNumber = default(string), PartyIdentification shipToParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), string warehouseId = default(string), string masterTrackingId = default(string), int? totalLabelCount = default(int?), ShipModeEnum? shipMode = default(ShipModeEnum?))
+        public ShipmentInformation(VendorDetails vendorDetails = default, string buyerReferenceNumber = default, PartyIdentification shipToParty = default, PartyIdentification shipFromParty = default, string warehouseId = default, string masterTrackingId = default, int? totalLabelCount = default, ShipModeEnum? shipMode = default)
         {
             this.VendorDetails = vendorDetails;
             this.BuyerReferenceNumber = buyerReferenceNumber;
@@ -256,7 +256,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

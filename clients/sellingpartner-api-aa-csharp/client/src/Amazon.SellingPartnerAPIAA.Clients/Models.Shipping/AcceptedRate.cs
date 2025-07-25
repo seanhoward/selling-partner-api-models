@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="billedWeight">The weight that was used to calculate the totalCharge..</param>
         /// <param name="serviceType">serviceType.</param>
         /// <param name="promise">promise.</param>
-        public AcceptedRate(Currency totalCharge = default(Currency), Weight billedWeight = default(Weight), ServiceType? serviceType = default(ServiceType?), ShippingPromiseSet promise = default(ShippingPromiseSet))
+        public AcceptedRate(Currency totalCharge = default, Weight billedWeight = default, ServiceType? serviceType = default, ShippingPromiseSet promise = default)
         {
             this.TotalCharge = totalCharge;
             this.BilledWeight = billedWeight;
@@ -165,7 +165,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

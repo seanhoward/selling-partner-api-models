@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// <param name="embedded">embedded.</param>
         /// <param name="payload">payload.</param>
         /// <param name="errors">errors.</param>
-        public GetSolicitationActionResponse(GetSolicitationActionResponseLinks links = default(GetSolicitationActionResponseLinks), GetSolicitationActionResponseEmbedded embedded = default(GetSolicitationActionResponseEmbedded), SolicitationsAction payload = default(SolicitationsAction), ErrorList errors = default(ErrorList))
+        public GetSolicitationActionResponse(GetSolicitationActionResponseLinks links = default, GetSolicitationActionResponseEmbedded embedded = default, SolicitationsAction payload = default, ErrorList errors = default)
         {
             this.Links = links;
             this.Embedded = embedded;
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

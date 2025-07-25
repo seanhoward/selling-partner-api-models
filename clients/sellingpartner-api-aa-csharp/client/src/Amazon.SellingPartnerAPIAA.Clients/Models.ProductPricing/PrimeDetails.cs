@@ -66,13 +66,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="PrimeDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PrimeDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PrimeDetails" /> class.
         /// </summary>
         /// <param name="eligibility">Indicates whether the offer is an Amazon Prime offer. (required).</param>
-        public PrimeDetails(EligibilityEnum eligibility = default(EligibilityEnum))
+        public PrimeDetails(EligibilityEnum eligibility = default)
         {
             // to ensure "eligibility" is required (not null)
             if (eligibility == null)
@@ -156,7 +156,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="label">label.</param>
         /// <param name="description">description.</param>
-        public StandardTextPairBlock(TextComponent label = default(TextComponent), TextComponent description = default(TextComponent))
+        public StandardTextPairBlock(TextComponent label = default, TextComponent description = default)
         {
             this.Label = label;
             this.Description = description;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

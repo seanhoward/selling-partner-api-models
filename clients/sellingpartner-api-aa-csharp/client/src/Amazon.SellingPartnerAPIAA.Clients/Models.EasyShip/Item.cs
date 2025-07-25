@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="orderItemId">orderItemId.</param>
         /// <param name="orderItemSerialNumbers">orderItemSerialNumbers.</param>
-        public Item(string orderItemId = default(string), OrderItemSerialNumbers orderItemSerialNumbers = default(OrderItemSerialNumbers))
+        public Item(string orderItemId = default, OrderItemSerialNumbers orderItemSerialNumbers = default)
         {
             this.OrderItemId = orderItemId;
             this.OrderItemSerialNumbers = orderItemSerialNumbers;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

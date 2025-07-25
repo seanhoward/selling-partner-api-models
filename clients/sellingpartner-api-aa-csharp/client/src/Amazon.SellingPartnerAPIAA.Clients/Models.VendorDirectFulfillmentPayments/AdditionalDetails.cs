@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AdditionalDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalDetails" /> class.
@@ -68,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// <param name="type">The type of the additional information provided by the selling party. (required).</param>
         /// <param name="detail">The detail of the additional information provided by the selling party. (required).</param>
         /// <param name="languageCode">The language code of the additional information detail..</param>
-        public AdditionalDetails(TypeEnum type = default(TypeEnum), string detail = default(string), string languageCode = default(string))
+        public AdditionalDetails(TypeEnum type = default, string detail = default, string languageCode = default)
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -192,7 +192,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

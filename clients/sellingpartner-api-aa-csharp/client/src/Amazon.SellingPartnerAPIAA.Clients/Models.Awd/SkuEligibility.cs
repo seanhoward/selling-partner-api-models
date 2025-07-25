@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="SkuEligibility" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SkuEligibility() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SkuEligibility" /> class.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="ineligibilityReasons">If not eligible, these are list of error codes and descriptions..</param>
         /// <param name="packageQuantity">packageQuantity (required).</param>
         /// <param name="status">status (required).</param>
-        public SkuEligibility(List<SkuIneligibilityReason> ineligibilityReasons = default(List<SkuIneligibilityReason>), DistributionPackageQuantity packageQuantity = default(DistributionPackageQuantity), InboundEligibilityStatus status = default(InboundEligibilityStatus))
+        public SkuEligibility(List<SkuIneligibilityReason> ineligibilityReasons = default, DistributionPackageQuantity packageQuantity = default, InboundEligibilityStatus status = default)
         {
             // to ensure "packageQuantity" is required (not null)
             if (packageQuantity == null)
@@ -169,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

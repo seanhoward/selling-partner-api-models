@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardComparisonProductBlock" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected StandardComparisonProductBlock() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardComparisonProductBlock" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="asin">asin.</param>
         /// <param name="highlight">Determines whether this block of content is visually highlighted..</param>
         /// <param name="metrics">Comparison metrics for the product..</param>
-        public StandardComparisonProductBlock(int? position = default(int?), ImageComponent image = default(ImageComponent), string title = default(string), string asin = default(string), bool? highlight = default(bool?), List<PlainTextItem> metrics = default(List<PlainTextItem>))
+        public StandardComparisonProductBlock(int? position = default, ImageComponent image = default, string title = default, string asin = default, bool? highlight = default, List<PlainTextItem> metrics = default)
         {
             // to ensure "position" is required (not null)
             if (position == null)
@@ -212,30 +212,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Position (int?) maximum
             if(this.Position > (int?)6)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Position, must be a value less than or equal to 6.", new [] { "Position" });
+                yield return new ValidationResult("Invalid value for Position, must be a value less than or equal to 6.", new [] { "Position" });
             }
 
             // Position (int?) minimum
             if(this.Position < (int?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Position, must be a value greater than or equal to 1.", new [] { "Position" });
+                yield return new ValidationResult("Invalid value for Position, must be a value greater than or equal to 1.", new [] { "Position" });
             }
 
             // Title (string) maxLength
             if(this.Title != null && this.Title.Length > 80)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Title, length must be less than 80.", new [] { "Title" });
+                yield return new ValidationResult("Invalid value for Title, length must be less than 80.", new [] { "Title" });
             }
 
             // Title (string) minLength
             if(this.Title != null && this.Title.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Title, length must be greater than 1.", new [] { "Title" });
+                yield return new ValidationResult("Invalid value for Title, length must be greater than 1.", new [] { "Title" });
             }
 
             yield break;

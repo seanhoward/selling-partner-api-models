@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="isSupported">isSupported.</param>
         /// <param name="operationalConfiguration">operationalConfiguration.</param>
-        public DeliveryChannel(bool? isSupported = default(bool?), OperationalConfiguration operationalConfiguration = default(OperationalConfiguration))
+        public DeliveryChannel(bool? isSupported = default, OperationalConfiguration operationalConfiguration = default)
         {
             this.IsSupported = isSupported;
             this.OperationalConfiguration = operationalConfiguration;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

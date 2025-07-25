@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="sqs">An Amazon Simple Queue Service (SQS) queue destination..</param>
         /// <param name="eventBridge">An Amazon EventBridge destination..</param>
-        public DestinationResource(SqsResource sqs = default(SqsResource), EventBridgeResource eventBridge = default(EventBridgeResource))
+        public DestinationResource(SqsResource sqs = default, EventBridgeResource eventBridge = default)
         {
             this.Sqs = sqs;
             this.EventBridge = eventBridge;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

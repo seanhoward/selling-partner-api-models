@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="lockerNumber">Indicates the locker number.</param>
         /// <param name="lockerAccessCode">Indicates the locker access code.</param>
-        public LockerDetails(string lockerNumber = default(string), string lockerAccessCode = default(string))
+        public LockerDetails(string lockerNumber = default, string lockerAccessCode = default)
         {
             this.LockerNumber = lockerNumber;
             this.LockerAccessCode = lockerAccessCode;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

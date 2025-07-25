@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="Errors" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Errors() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Errors" /> class.
         /// </summary>
         /// <param name="errors">One or more unexpected errors occurred during the operation. (required).</param>
-        public Errors(ErrorList errors = default(ErrorList))
+        public Errors(ErrorList errors = default)
         {
             // to ensure "errors" is required (not null)
             if (errors == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

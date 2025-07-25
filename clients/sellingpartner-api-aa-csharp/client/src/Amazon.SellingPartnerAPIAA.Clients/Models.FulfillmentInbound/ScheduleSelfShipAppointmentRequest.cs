@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// Initializes a new instance of the <see cref="ScheduleSelfShipAppointmentRequest" /> class.
         /// </summary>
         /// <param name="reasonComment">reasonComment.</param>
-        public ScheduleSelfShipAppointmentRequest(ReasonComment? reasonComment = default(ReasonComment?))
+        public ScheduleSelfShipAppointmentRequest(ReasonComment? reasonComment = default)
         {
             this.ReasonComment = reasonComment;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

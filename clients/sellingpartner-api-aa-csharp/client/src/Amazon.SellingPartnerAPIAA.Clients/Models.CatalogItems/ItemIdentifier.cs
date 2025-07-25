@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemIdentifier" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemIdentifier() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemIdentifier" /> class.
         /// </summary>
         /// <param name="identifierType">Type of identifier, such as UPC, EAN, or ISBN. (required).</param>
         /// <param name="identifier">Identifier. (required).</param>
-        public ItemIdentifier(string identifierType = default(string), string identifier = default(string))
+        public ItemIdentifier(string identifierType = default, string identifier = default)
         {
             // to ensure "identifierType" is required (not null)
             if (identifierType == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -66,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="Stop" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Stop() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Stop" /> class.
@@ -75,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="locationIdentification">locationIdentification.</param>
         /// <param name="arrivalTime">Date and time of the arrival of the cargo..</param>
         /// <param name="departureTime">Date and time of the departure of the cargo..</param>
-        public Stop(FunctionCodeEnum functionCode = default(FunctionCodeEnum), Location locationIdentification = default(Location), DateTime? arrivalTime = default(DateTime?), DateTime? departureTime = default(DateTime?))
+        public Stop(FunctionCodeEnum functionCode = default, Location locationIdentification = default, DateTime? arrivalTime = default, DateTime? departureTime = default)
         {
             // to ensure "functionCode" is required (not null)
             if (functionCode == null)
@@ -206,7 +206,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

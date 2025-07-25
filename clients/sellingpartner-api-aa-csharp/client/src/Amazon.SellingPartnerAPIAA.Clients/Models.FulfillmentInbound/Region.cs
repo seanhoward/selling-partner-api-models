@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="countryCode">ISO 3166 standard alpha-2 country code..</param>
         /// <param name="state">State..</param>
         /// <param name="warehouseId">An identifier for a warehouse, such as a FC, IXD, upstream storage..</param>
-        public Region(string countryCode = default(string), string state = default(string), string warehouseId = default(string))
+        public Region(string countryCode = default, string state = default, string warehouseId = default)
         {
             this.CountryCode = countryCode;
             this.State = state;
@@ -150,42 +150,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // CountryCode (string) maxLength
             if(this.CountryCode != null && this.CountryCode.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryCode, length must be less than 1024.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be less than 1024.", new [] { "CountryCode" });
             }
 
             // CountryCode (string) minLength
             if(this.CountryCode != null && this.CountryCode.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryCode, length must be greater than 1.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be greater than 1.", new [] { "CountryCode" });
             }
 
             // State (string) maxLength
             if(this.State != null && this.State.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for State, length must be less than 1024.", new [] { "State" });
+                yield return new ValidationResult("Invalid value for State, length must be less than 1024.", new [] { "State" });
             }
 
             // State (string) minLength
             if(this.State != null && this.State.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for State, length must be greater than 1.", new [] { "State" });
+                yield return new ValidationResult("Invalid value for State, length must be greater than 1.", new [] { "State" });
             }
 
             // WarehouseId (string) maxLength
             if(this.WarehouseId != null && this.WarehouseId.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WarehouseId, length must be less than 1024.", new [] { "WarehouseId" });
+                yield return new ValidationResult("Invalid value for WarehouseId, length must be less than 1024.", new [] { "WarehouseId" });
             }
 
             // WarehouseId (string) minLength
             if(this.WarehouseId != null && this.WarehouseId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WarehouseId, length must be greater than 1.", new [] { "WarehouseId" });
+                yield return new ValidationResult("Invalid value for WarehouseId, length must be greater than 1.", new [] { "WarehouseId" });
             }
 
             yield break;

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSalesRanksByMarketplace" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemSalesRanksByMarketplace() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSalesRanksByMarketplace" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
         /// <param name="classificationRanks">Sales ranks of an Amazon catalog item for an Amazon marketplace by classification..</param>
         /// <param name="displayGroupRanks">Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group..</param>
-        public ItemSalesRanksByMarketplace(string marketplaceId = default(string), List<ItemClassificationSalesRank> classificationRanks = default(List<ItemClassificationSalesRank>), List<ItemDisplayGroupSalesRank> displayGroupRanks = default(List<ItemDisplayGroupSalesRank>))
+        public ItemSalesRanksByMarketplace(string marketplaceId = default, List<ItemClassificationSalesRank> classificationRanks = default, List<ItemDisplayGroupSalesRank> displayGroupRanks = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

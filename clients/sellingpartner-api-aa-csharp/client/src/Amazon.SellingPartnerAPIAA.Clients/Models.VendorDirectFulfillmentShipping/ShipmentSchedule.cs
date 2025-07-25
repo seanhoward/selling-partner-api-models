@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="estimatedDeliveryDateTime">Date on which the shipment is expected to reach the customer delivery location. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00..</param>
         /// <param name="apptWindowStartDateTime">The date and time at the start of the appointment window when the shipment is expected to be delivered. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00..</param>
         /// <param name="apptWindowEndDateTime">The date and time at the end of the appointment window when the shipment is expected to be delivered. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00..</param>
-        public ShipmentSchedule(DateTime? estimatedDeliveryDateTime = default(DateTime?), DateTime? apptWindowStartDateTime = default(DateTime?), DateTime? apptWindowEndDateTime = default(DateTime?))
+        public ShipmentSchedule(DateTime? estimatedDeliveryDateTime = default, DateTime? apptWindowStartDateTime = default, DateTime? apptWindowEndDateTime = default)
         {
             this.EstimatedDeliveryDateTime = estimatedDeliveryDateTime;
             this.ApptWindowStartDateTime = apptWindowStartDateTime;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

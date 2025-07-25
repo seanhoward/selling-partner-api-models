@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="MskuQuantity" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected MskuQuantity() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="MskuQuantity" /> class.
         /// </summary>
         /// <param name="msku">The merchant SKU, a merchant-supplied identifier for a specific SKU. (required).</param>
         /// <param name="quantity">A positive integer. (required).</param>
-        public MskuQuantity(string msku = default(string), int? quantity = default(int?))
+        public MskuQuantity(string msku = default, int? quantity = default)
         {
             // to ensure "msku" is required (not null)
             if (msku == null)
@@ -154,30 +154,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Msku (string) maxLength
             if(this.Msku != null && this.Msku.Length > 40)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
             }
 
             // Msku (string) minLength
             if(this.Msku != null && this.Msku.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
             }
 
             // Quantity (int?) maximum
             if(this.Quantity > (int?)10000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
             }
 
             // Quantity (int?) minimum
             if(this.Quantity < (int?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
             }
 
             yield break;

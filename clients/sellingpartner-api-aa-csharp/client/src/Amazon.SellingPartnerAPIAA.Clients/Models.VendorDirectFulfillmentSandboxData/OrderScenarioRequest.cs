@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderScenarioRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderScenarioRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderScenarioRequest" /> class.
         /// </summary>
         /// <param name="sellingParty">The identifier of the selling party or vendor. (required).</param>
         /// <param name="shipFromParty">The warehouse code of the vendor. (required).</param>
-        public OrderScenarioRequest(PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification))
+        public OrderScenarioRequest(PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default)
         {
             // to ensure "sellingParty" is required (not null)
             if (sellingParty == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

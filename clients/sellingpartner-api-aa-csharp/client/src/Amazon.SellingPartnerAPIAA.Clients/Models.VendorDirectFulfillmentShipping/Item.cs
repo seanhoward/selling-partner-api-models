@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Item() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="buyerProductIdentifier">The buyer&#39;s Amazon Standard Identification Number (ASIN) of an item. Either &#x60;buyerProductIdentifier&#x60; or &#x60;vendorProductIdentifier&#x60; is required..</param>
         /// <param name="vendorProductIdentifier">An item&#39;s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order..</param>
         /// <param name="shippedQuantity">The total quantity of items that are in this shipment. (required).</param>
-        public Item(int? itemSequenceNumber = default(int?), string buyerProductIdentifier = default(string), string vendorProductIdentifier = default(string), ItemQuantity shippedQuantity = default(ItemQuantity))
+        public Item(int? itemSequenceNumber = default, string buyerProductIdentifier = default, string vendorProductIdentifier = default, ItemQuantity shippedQuantity = default)
         {
             // to ensure "itemSequenceNumber" is required (not null)
             if (itemSequenceNumber == null)
@@ -188,7 +188,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

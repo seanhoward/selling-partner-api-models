@@ -54,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="EncryptionDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected EncryptionDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="EncryptionDetails" /> class.
@@ -62,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="standard">The encryption standard required to encrypt or decrypt the document contents. (required).</param>
         /// <param name="initializationVector">The vector to encrypt or decrypt the document contents using Cipher Block Chaining (CBC). (required).</param>
         /// <param name="key">The encryption key used to encrypt or decrypt the document contents. (required).</param>
-        public EncryptionDetails(StandardEnum standard = default(StandardEnum), string initializationVector = default(string), string key = default(string))
+        public EncryptionDetails(StandardEnum standard = default, string initializationVector = default, string key = default)
         {
             // to ensure "standard" is required (not null)
             if (standard == null)
@@ -194,7 +194,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

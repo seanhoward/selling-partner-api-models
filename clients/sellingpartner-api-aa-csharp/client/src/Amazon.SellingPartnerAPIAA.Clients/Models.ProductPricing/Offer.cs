@@ -138,7 +138,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="Offer" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Offer() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Offer" /> class.
@@ -151,7 +151,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <param name="shippingOptions">A list of shipping options associated with this offer.</param>
         /// <param name="points">The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points. Note that the Points element is only returned in Japan (JP)..</param>
         /// <param name="primeDetails">Amazon Prime details..</param>
-        public Offer(string sellerId = default(string), Condition condition = default(Condition), SubConditionEnum? subCondition = default(SubConditionEnum?), FulfillmentType fulfillmentType = default(FulfillmentType), MoneyType listingPrice = default(MoneyType), List<ShippingOption> shippingOptions = default(List<ShippingOption>), Points points = default(Points), PrimeDetails primeDetails = default(PrimeDetails))
+        public Offer(string sellerId = default, Condition condition = default, SubConditionEnum? subCondition = default, FulfillmentType fulfillmentType = default, MoneyType listingPrice = default, List<ShippingOption> shippingOptions = default, Points points = default, PrimeDetails primeDetails = default)
         {
             // to ensure "sellerId" is required (not null)
             if (sellerId == null)
@@ -359,7 +359,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -61,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="signatureConfirmation">Indicates that the recipient of the line item must sign to confirm its delivery..</param>
         /// <param name="recipientIdentityVerification">Indicates that the person receiving the line item must be the same as the intended recipient of the order..</param>
         /// <param name="recipientAgeVerification">Indicates that the carrier must confirm the recipient is of the legal age to receive the line item upon delivery..</param>
-        public ShippingConstraints(ConstraintType? palletDelivery = default(ConstraintType?), ConstraintType? signatureConfirmation = default(ConstraintType?), ConstraintType? recipientIdentityVerification = default(ConstraintType?), ConstraintType? recipientAgeVerification = default(ConstraintType?))
+        public ShippingConstraints(ConstraintType? palletDelivery = default, ConstraintType? signatureConfirmation = default, ConstraintType? recipientIdentityVerification = default, ConstraintType? recipientAgeVerification = default)
         {
             this.PalletDelivery = palletDelivery;
             this.SignatureConfirmation = signatureConfirmation;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

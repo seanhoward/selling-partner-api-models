@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemProductTypeByMarketplace" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemProductTypeByMarketplace() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemProductTypeByMarketplace" /> class.
         /// </summary>
         /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
         /// <param name="productType">The name of the product type that is submitted by the Selling Partner. (required).</param>
-        public ItemProductTypeByMarketplace(string marketplaceId = default(string), string productType = default(string))
+        public ItemProductTypeByMarketplace(string marketplaceId = default, string productType = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

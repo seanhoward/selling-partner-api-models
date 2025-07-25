@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentConfirmation" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShipmentConfirmation() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentConfirmation" /> class.
@@ -172,7 +172,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="shippedItems">A list of the items in this shipment and their associated details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level. (required).</param>
         /// <param name="cartons">A list of the cartons in this shipment..</param>
         /// <param name="pallets">A list of the pallets in this shipment..</param>
-        public ShipmentConfirmation(string shipmentIdentifier = default(string), ShipmentConfirmationTypeEnum shipmentConfirmationType = default(ShipmentConfirmationTypeEnum), ShipmentTypeEnum? shipmentType = default(ShipmentTypeEnum?), ShipmentStructureEnum? shipmentStructure = default(ShipmentStructureEnum?), TransportationDetailsForShipmentConfirmation transportationDetails = default(TransportationDetailsForShipmentConfirmation), string amazonReferenceNumber = default(string), DateTime? shipmentConfirmationDate = default(DateTime?), DateTime? shippedDate = default(DateTime?), DateTime? estimatedDeliveryDate = default(DateTime?), PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), PartyIdentification shipToParty = default(PartyIdentification), ShipmentMeasurements shipmentMeasurements = default(ShipmentMeasurements), ImportDetails importDetails = default(ImportDetails), List<Item> shippedItems = default(List<Item>), List<Carton> cartons = default(List<Carton>), List<Pallet> pallets = default(List<Pallet>))
+        public ShipmentConfirmation(string shipmentIdentifier = default, ShipmentConfirmationTypeEnum shipmentConfirmationType = default, ShipmentTypeEnum? shipmentType = default, ShipmentStructureEnum? shipmentStructure = default, TransportationDetailsForShipmentConfirmation transportationDetails = default, string amazonReferenceNumber = default, DateTime? shipmentConfirmationDate = default, DateTime? shippedDate = default, DateTime? estimatedDeliveryDate = default, PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, PartyIdentification shipToParty = default, ShipmentMeasurements shipmentMeasurements = default, ImportDetails importDetails = default, List<Item> shippedItems = default, List<Carton> cartons = default, List<Pallet> pallets = default)
         {
             // to ensure "shipmentIdentifier" is required (not null)
             if (shipmentIdentifier == null)
@@ -547,7 +547,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

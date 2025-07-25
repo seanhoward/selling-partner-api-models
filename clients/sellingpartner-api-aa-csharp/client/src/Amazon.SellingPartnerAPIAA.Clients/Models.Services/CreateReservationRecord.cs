@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="reservation">Reservation record if the operation failed. It will only contain the new &#x60;reservationId&#x60; if the operation is successful..</param>
         /// <param name="warnings">Warnings encountered, if any..</param>
         /// <param name="errors">Errors encountered, if any..</param>
-        public CreateReservationRecord(Reservation reservation = default(Reservation), WarningList warnings = default(WarningList), ErrorList errors = default(ErrorList))
+        public CreateReservationRecord(Reservation reservation = default, WarningList warnings = default, ErrorList errors = default)
         {
             this.Reservation = reservation;
             this.Warnings = warnings;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

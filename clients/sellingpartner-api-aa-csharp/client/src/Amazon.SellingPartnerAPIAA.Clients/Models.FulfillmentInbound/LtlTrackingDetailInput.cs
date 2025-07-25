@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="LtlTrackingDetailInput" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected LtlTrackingDetailInput() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="LtlTrackingDetailInput" /> class.
         /// </summary>
         /// <param name="billOfLadingNumber">The number of the carrier shipment acknowledgement document..</param>
         /// <param name="freightBillNumber">Number associated with the freight bill. (required).</param>
-        public LtlTrackingDetailInput(string billOfLadingNumber = default(string), List<string> freightBillNumber = default(List<string>))
+        public LtlTrackingDetailInput(string billOfLadingNumber = default, List<string> freightBillNumber = default)
         {
             // to ensure "freightBillNumber" is required (not null)
             if (freightBillNumber == null)
@@ -146,18 +146,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // BillOfLadingNumber (string) maxLength
             if(this.BillOfLadingNumber != null && this.BillOfLadingNumber.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BillOfLadingNumber, length must be less than 1024.", new [] { "BillOfLadingNumber" });
+                yield return new ValidationResult("Invalid value for BillOfLadingNumber, length must be less than 1024.", new [] { "BillOfLadingNumber" });
             }
 
             // BillOfLadingNumber (string) minLength
             if(this.BillOfLadingNumber != null && this.BillOfLadingNumber.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BillOfLadingNumber, length must be greater than 1.", new [] { "BillOfLadingNumber" });
+                yield return new ValidationResult("Invalid value for BillOfLadingNumber, length must be greater than 1.", new [] { "BillOfLadingNumber" });
             }
 
             yield break;

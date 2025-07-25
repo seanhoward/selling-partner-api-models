@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateScheduledPackagesRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected UpdateScheduledPackagesRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateScheduledPackagesRequest" /> class.
         /// </summary>
         /// <param name="marketplaceId">marketplaceId (required).</param>
         /// <param name="updatePackageDetailsList">updatePackageDetailsList (required).</param>
-        public UpdateScheduledPackagesRequest(string marketplaceId = default(string), UpdatePackageDetailsList updatePackageDetailsList = default(UpdatePackageDetailsList))
+        public UpdateScheduledPackagesRequest(string marketplaceId = default, UpdatePackageDetailsList updatePackageDetailsList = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

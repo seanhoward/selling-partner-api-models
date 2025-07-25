@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="availableDistributableQuantity">Quantity that is available for downstream channel replenishment..</param>
         /// <param name="reservedDistributableQuantity">Quantity that is reserved for a downstream channel replenishment order that is being prepared for shipment..</param>
-        public InventoryDetails(long? availableDistributableQuantity = default(long?), long? reservedDistributableQuantity = default(long?))
+        public InventoryDetails(long? availableDistributableQuantity = default, long? reservedDistributableQuantity = default)
         {
             this.AvailableDistributableQuantity = availableDistributableQuantity;
             this.ReservedDistributableQuantity = reservedDistributableQuantity;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

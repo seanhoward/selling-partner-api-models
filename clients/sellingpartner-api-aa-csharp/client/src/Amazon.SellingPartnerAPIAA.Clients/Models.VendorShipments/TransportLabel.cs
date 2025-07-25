@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="labelCreateDateTime">Date on which label is created..</param>
         /// <param name="shipmentInformation">Indicates the shipment Information details like warehouse and business reference details like ARN, Selling Party detail and Vendor Warehouse details.</param>
         /// <param name="labelData">Indicates the label data,format and type associated ..</param>
-        public TransportLabel(DateTime? labelCreateDateTime = default(DateTime?), ShipmentInformation shipmentInformation = default(ShipmentInformation), List<LabelData> labelData = default(List<LabelData>))
+        public TransportLabel(DateTime? labelCreateDateTime = default, ShipmentInformation shipmentInformation = default, List<LabelData> labelData = default)
         {
             this.LabelCreateDateTime = labelCreateDateTime;
             this.ShipmentInformation = shipmentInformation;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

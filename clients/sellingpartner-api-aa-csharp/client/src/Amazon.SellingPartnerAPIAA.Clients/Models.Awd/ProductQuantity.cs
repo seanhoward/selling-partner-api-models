@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductQuantity" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ProductQuantity() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductQuantity" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="sku">The seller or merchant SKU. (required).</param>
         /// <param name="expiration">The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format..</param>
         /// <param name="prepDetails">Preparation details of a product which contains the prep category, prep owner and the label owner. If not passed while creating an inbound order, NO_PREP will be used on the product by-default. Prep instructions will be generated based on the category passed.</param>
-        public ProductQuantity(List<ProductAttribute> attributes = default(List<ProductAttribute>), int? quantity = default(int?), string sku = default(string), DateTime? expiration = default(DateTime?), PrepDetails prepDetails = default(PrepDetails))
+        public ProductQuantity(List<ProductAttribute> attributes = default, int? quantity = default, string sku = default, DateTime? expiration = default, PrepDetails prepDetails = default)
         {
             // to ensure "quantity" is required (not null)
             if (quantity == null)
@@ -205,7 +205,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

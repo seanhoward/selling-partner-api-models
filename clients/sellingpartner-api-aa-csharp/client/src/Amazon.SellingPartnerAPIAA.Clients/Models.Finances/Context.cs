@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="deferralStatus">The status of the transaction. For example, &#x60;HOLD&#x60;,&#x60;RELEASE&#x60;..</param>
         /// <param name="startTime">The start time of the transaction..</param>
         /// <param name="endTime">The end time of the transaction..</param>
-        public Context(string storeName = default(string), string orderType = default(string), string channel = default(string), string asin = default(string), string sku = default(string), int? quantityShipped = default(int?), string fulfillmentNetwork = default(string), string paymentType = default(string), string paymentMethod = default(string), string paymentReference = default(string), DateTime? paymentDate = default(DateTime?), string deferralReason = default(string), DateTime? maturityDate = default(DateTime?), string deferralStatus = default(string), DateTime? startTime = default(DateTime?), DateTime? endTime = default(DateTime?))
+        public Context(string storeName = default, string orderType = default, string channel = default, string asin = default, string sku = default, int? quantityShipped = default, string fulfillmentNetwork = default, string paymentType = default, string paymentMethod = default, string paymentReference = default, DateTime? paymentDate = default, string deferralReason = default, DateTime? maturityDate = default, string deferralStatus = default, DateTime? startTime = default, DateTime? endTime = default)
         {
             this.StoreName = storeName;
             this.OrderType = orderType;
@@ -371,7 +371,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

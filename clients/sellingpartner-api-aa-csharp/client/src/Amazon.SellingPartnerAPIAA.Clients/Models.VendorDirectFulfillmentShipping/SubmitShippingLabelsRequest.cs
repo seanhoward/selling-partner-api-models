@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// Initializes a new instance of the <see cref="SubmitShippingLabelsRequest" /> class.
         /// </summary>
         /// <param name="shippingLabelRequests">An array of shipping label requests to be processed..</param>
-        public SubmitShippingLabelsRequest(List<ShippingLabelRequest> shippingLabelRequests = default(List<ShippingLabelRequest>))
+        public SubmitShippingLabelsRequest(List<ShippingLabelRequest> shippingLabelRequests = default)
         {
             this.ShippingLabelRequests = shippingLabelRequests;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

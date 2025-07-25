@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="pagination">pagination.</param>
         /// <param name="ordersStatus">Represents an order status within the OrderListStatus..</param>
-        public OrderListStatus(Pagination pagination = default(Pagination), List<OrderStatus> ordersStatus = default(List<OrderStatus>))
+        public OrderListStatus(Pagination pagination = default, List<OrderStatus> ordersStatus = default)
         {
             this.Pagination = pagination;
             this.OrdersStatus = ordersStatus;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

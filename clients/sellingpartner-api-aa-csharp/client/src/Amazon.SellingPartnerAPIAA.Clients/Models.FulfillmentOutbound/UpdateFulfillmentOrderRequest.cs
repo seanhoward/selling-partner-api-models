@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="notificationEmails">notificationEmails.</param>
         /// <param name="featureConstraints">A list of features and their fulfillment policies to apply to the order..</param>
         /// <param name="items">A list of items to include in the fulfillment order preview, including quantity..</param>
-        public UpdateFulfillmentOrderRequest(string marketplaceId = default(string), string displayableOrderId = default(string), DateTime? displayableOrderDate = default(DateTime?), string displayableOrderComment = default(string), ShippingSpeedCategory? shippingSpeedCategory = default(ShippingSpeedCategory?), Address destinationAddress = default(Address), FulfillmentAction? fulfillmentAction = default(FulfillmentAction?), FulfillmentPolicy? fulfillmentPolicy = default(FulfillmentPolicy?), string shipFromCountryCode = default(string), NotificationEmailList notificationEmails = default(NotificationEmailList), List<FeatureSettings> featureConstraints = default(List<FeatureSettings>), UpdateFulfillmentOrderItemList items = default(UpdateFulfillmentOrderItemList))
+        public UpdateFulfillmentOrderRequest(string marketplaceId = default, string displayableOrderId = default, DateTime? displayableOrderDate = default, string displayableOrderComment = default, ShippingSpeedCategory? shippingSpeedCategory = default, Address destinationAddress = default, FulfillmentAction? fulfillmentAction = default, FulfillmentPolicy? fulfillmentPolicy = default, string shipFromCountryCode = default, NotificationEmailList notificationEmails = default, List<FeatureSettings> featureConstraints = default, UpdateFulfillmentOrderItemList items = default)
         {
             this.MarketplaceId = marketplaceId;
             this.DisplayableOrderId = displayableOrderId;
@@ -299,18 +299,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DisplayableOrderId (string) maxLength
             if(this.DisplayableOrderId != null && this.DisplayableOrderId.Length > 40)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DisplayableOrderId, length must be less than 40.", new [] { "DisplayableOrderId" });
+                yield return new ValidationResult("Invalid value for DisplayableOrderId, length must be less than 40.", new [] { "DisplayableOrderId" });
             }
 
             // DisplayableOrderComment (string) maxLength
             if(this.DisplayableOrderComment != null && this.DisplayableOrderComment.Length > 750)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DisplayableOrderComment, length must be less than 750.", new [] { "DisplayableOrderComment" });
+                yield return new ValidationResult("Invalid value for DisplayableOrderComment, length must be less than 750.", new [] { "DisplayableOrderComment" });
             }
 
             yield break;

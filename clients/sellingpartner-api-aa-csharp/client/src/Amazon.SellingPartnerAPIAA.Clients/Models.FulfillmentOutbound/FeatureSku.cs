@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item..</param>
         /// <param name="skuCount">The number of SKUs available for this service..</param>
         /// <param name="overlappingSkus">Other seller SKUs that are shared across the same inventory..</param>
-        public FeatureSku(string sellerSku = default(string), string fnSku = default(string), string asin = default(string), decimal? skuCount = default(decimal?), List<string> overlappingSkus = default(List<string>))
+        public FeatureSku(string sellerSku = default, string fnSku = default, string asin = default, decimal? skuCount = default, List<string> overlappingSkus = default)
         {
             this.SellerSku = sellerSku;
             this.FnSku = fnSku;
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

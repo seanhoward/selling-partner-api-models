@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentTimeInput" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AppointmentTimeInput() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentTimeInput" /> class.
         /// </summary>
         /// <param name="startTime">The date, time in UTC for the start time of an appointment in ISO 8601 format. (required).</param>
         /// <param name="durationInMinutes">The duration of an appointment in minutes..</param>
-        public AppointmentTimeInput(DateTime? startTime = default(DateTime?), int? durationInMinutes = default(int?))
+        public AppointmentTimeInput(DateTime? startTime = default, int? durationInMinutes = default)
         {
             // to ensure "startTime" is required (not null)
             if (startTime == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

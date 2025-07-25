@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDeliveryOffersRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetDeliveryOffersRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDeliveryOffersRequest" /> class.
         /// </summary>
         /// <param name="product">The product details for the delivery offer. (required).</param>
         /// <param name="terms">The terms for the delivery offer. (required).</param>
-        public GetDeliveryOffersRequest(GetDeliveryOffersProduct product = default(GetDeliveryOffersProduct), GetDeliveryOffersTerms terms = default(GetDeliveryOffersTerms))
+        public GetDeliveryOffersRequest(GetDeliveryOffersProduct product = default, GetDeliveryOffersTerms terms = default)
         {
             // to ensure "product" is required (not null)
             if (product == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

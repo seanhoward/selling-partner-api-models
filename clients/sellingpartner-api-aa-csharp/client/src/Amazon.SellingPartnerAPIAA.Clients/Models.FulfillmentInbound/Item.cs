@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Item() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="msku">The merchant SKU, a merchant-supplied identifier of a specific SKU. (required).</param>
         /// <param name="prepInstructions">Special preparations that are required for an item. (required).</param>
         /// <param name="quantity">The number of the specified MSKU. (required).</param>
-        public Item(string asin = default(string), string expiration = default(string), string fnsku = default(string), string labelOwner = default(string), string manufacturingLotCode = default(string), string msku = default(string), List<PrepInstruction> prepInstructions = default(List<PrepInstruction>), int? quantity = default(int?))
+        public Item(string asin = default, string expiration = default, string fnsku = default, string labelOwner = default, string manufacturingLotCode = default, string msku = default, List<PrepInstruction> prepInstructions = default, int? quantity = default)
         {
             // to ensure "asin" is required (not null)
             if (asin == null)
@@ -288,85 +288,85 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Asin (string) maxLength
             if(this.Asin != null && this.Asin.Length > 10)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Asin, length must be less than 10.", new [] { "Asin" });
+                yield return new ValidationResult("Invalid value for Asin, length must be less than 10.", new [] { "Asin" });
             }
 
             // Asin (string) minLength
             if(this.Asin != null && this.Asin.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Asin, length must be greater than 1.", new [] { "Asin" });
+                yield return new ValidationResult("Invalid value for Asin, length must be greater than 1.", new [] { "Asin" });
             }
 
             // Expiration (string) pattern
             Regex regexExpiration = new Regex(@"^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$", RegexOptions.CultureInvariant);
             if (false == regexExpiration.Match(this.Expiration).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Expiration, must match a pattern of " + regexExpiration, new [] { "Expiration" });
+                yield return new ValidationResult("Invalid value for Expiration, must match a pattern of " + regexExpiration, new [] { "Expiration" });
             }
 
             // Fnsku (string) maxLength
             if(this.Fnsku != null && this.Fnsku.Length > 10)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Fnsku, length must be less than 10.", new [] { "Fnsku" });
+                yield return new ValidationResult("Invalid value for Fnsku, length must be less than 10.", new [] { "Fnsku" });
             }
 
             // Fnsku (string) minLength
             if(this.Fnsku != null && this.Fnsku.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Fnsku, length must be greater than 1.", new [] { "Fnsku" });
+                yield return new ValidationResult("Invalid value for Fnsku, length must be greater than 1.", new [] { "Fnsku" });
             }
 
             // LabelOwner (string) maxLength
             if(this.LabelOwner != null && this.LabelOwner.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LabelOwner, length must be less than 1024.", new [] { "LabelOwner" });
+                yield return new ValidationResult("Invalid value for LabelOwner, length must be less than 1024.", new [] { "LabelOwner" });
             }
 
             // LabelOwner (string) minLength
             if(this.LabelOwner != null && this.LabelOwner.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LabelOwner, length must be greater than 1.", new [] { "LabelOwner" });
+                yield return new ValidationResult("Invalid value for LabelOwner, length must be greater than 1.", new [] { "LabelOwner" });
             }
 
             // ManufacturingLotCode (string) maxLength
             if(this.ManufacturingLotCode != null && this.ManufacturingLotCode.Length > 256)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ManufacturingLotCode, length must be less than 256.", new [] { "ManufacturingLotCode" });
+                yield return new ValidationResult("Invalid value for ManufacturingLotCode, length must be less than 256.", new [] { "ManufacturingLotCode" });
             }
 
             // ManufacturingLotCode (string) minLength
             if(this.ManufacturingLotCode != null && this.ManufacturingLotCode.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ManufacturingLotCode, length must be greater than 1.", new [] { "ManufacturingLotCode" });
+                yield return new ValidationResult("Invalid value for ManufacturingLotCode, length must be greater than 1.", new [] { "ManufacturingLotCode" });
             }
 
             // Msku (string) maxLength
             if(this.Msku != null && this.Msku.Length > 40)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
             }
 
             // Msku (string) minLength
             if(this.Msku != null && this.Msku.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
             }
 
             // Quantity (int?) maximum
             if(this.Quantity > (int?)10000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
             }
 
             // Quantity (int?) minimum
             if(this.Quantity < (int?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
             }
 
             yield break;

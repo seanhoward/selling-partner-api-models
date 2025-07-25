@@ -74,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="itemRelatedIdentifierName">Enumerated set of related item identifier names for the item..</param>
         /// <param name="itemRelatedIdentifierValue">Corresponding value to &#x60;ItemRelatedIdentifierName&#x60;..</param>
-        public ItemRelatedIdentifier(ItemRelatedIdentifierNameEnum? itemRelatedIdentifierName = default(ItemRelatedIdentifierNameEnum?), string itemRelatedIdentifierValue = default(string))
+        public ItemRelatedIdentifier(ItemRelatedIdentifierNameEnum? itemRelatedIdentifierName = default, string itemRelatedIdentifierValue = default)
         {
             this.ItemRelatedIdentifierName = itemRelatedIdentifierName;
             this.ItemRelatedIdentifierValue = itemRelatedIdentifierValue;
@@ -166,7 +166,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

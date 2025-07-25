@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Client
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.LWAException">Thrown when there is an error during LWA Authorization</exception>
+        /// <exception cref="LWAException">Thrown when there is an error during LWA Authorization</exception>
         private void InterceptRequest(IRestRequest request)
         {
             lwaAuthorizationSigner.Sign(request);
@@ -102,7 +102,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Client
 
         // Creates and sets up a RestRequest prior to a call.
         private RestRequest PrepareRequest(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Client
         /// <param name="contentType">Content Type of the request</param>
         /// <returns>Object</returns>
         public Object CallApi(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
@@ -174,7 +174,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Client
                 var cancellationSource = new CancellationTokenSource(rateLimitConfig.getTimeOut());
                 try
                 {
-                    var response = rateLimiter.Enqueue<IRestResponse>(() => RestClient.Execute(request), cancellationSource.Token);
+                    var response = rateLimiter.Enqueue(() => RestClient.Execute(request), cancellationSource.Token);
                     InterceptResponse(request, response);
                     return response;
                 }
@@ -205,7 +205,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Client
         /// <param name="contentType">Content type.</param>
         /// <returns>The Task instance.</returns>
         public async System.Threading.Tasks.Task<Object> CallApiAsync(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
@@ -217,7 +217,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Client
             if (rateLimitConfig != null)
             {
               var cancellationSource = new CancellationTokenSource(rateLimitConfig.getTimeOut());
-              var response = await rateLimiter.Enqueue<IRestResponse>(() => RestClient.ExecuteAsync(request), cancellationSource.Token);                
+              var response = await rateLimiter.Enqueue(() => RestClient.ExecuteAsync(request), cancellationSource.Token);                
               InterceptResponse(request, response);
               return response;
             }

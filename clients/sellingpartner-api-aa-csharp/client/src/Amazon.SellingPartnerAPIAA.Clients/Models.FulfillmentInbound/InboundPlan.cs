@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundPlan" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InboundPlan() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundPlan" /> class.
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="shipments">A list of shipment IDs for the inbound plan. This property is populated when it has been generated with the &#x60;confirmPlacementOptions&#x60; operation. Only shipments from the chosen placement option are returned. Query the shipment for more details..</param>
         /// <param name="sourceAddress">sourceAddress (required).</param>
         /// <param name="status">Current status of the inbound plan. Possible values: &#x60;ACTIVE&#x60;, &#x60;VOIDED&#x60;, &#x60;SHIPPED&#x60;, &#x60;ERRORED&#x60;. (required).</param>
-        public InboundPlan(DateTime? createdAt = default(DateTime?), string inboundPlanId = default(string), DateTime? lastUpdatedAt = default(DateTime?), List<string> marketplaceIds = default(List<string>), string name = default(string), List<PackingOptionSummary> packingOptions = default(List<PackingOptionSummary>), List<PlacementOptionSummary> placementOptions = default(List<PlacementOptionSummary>), List<ShipmentSummary> shipments = default(List<ShipmentSummary>), Address sourceAddress = default(Address), string status = default(string))
+        public InboundPlan(DateTime? createdAt = default, string inboundPlanId = default, DateTime? lastUpdatedAt = default, List<string> marketplaceIds = default, string name = default, List<PackingOptionSummary> packingOptions = default, List<PlacementOptionSummary> placementOptions = default, List<ShipmentSummary> shipments = default, Address sourceAddress = default, string status = default)
         {
             // to ensure "createdAt" is required (not null)
             if (createdAt == null)
@@ -329,37 +329,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // InboundPlanId (string) maxLength
             if(this.InboundPlanId != null && this.InboundPlanId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InboundPlanId, length must be less than 38.", new [] { "InboundPlanId" });
+                yield return new ValidationResult("Invalid value for InboundPlanId, length must be less than 38.", new [] { "InboundPlanId" });
             }
 
             // InboundPlanId (string) minLength
             if(this.InboundPlanId != null && this.InboundPlanId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InboundPlanId, length must be greater than 38.", new [] { "InboundPlanId" });
+                yield return new ValidationResult("Invalid value for InboundPlanId, length must be greater than 38.", new [] { "InboundPlanId" });
             }
 
             // InboundPlanId (string) pattern
             Regex regexInboundPlanId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexInboundPlanId.Match(this.InboundPlanId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InboundPlanId, must match a pattern of " + regexInboundPlanId, new [] { "InboundPlanId" });
+                yield return new ValidationResult("Invalid value for InboundPlanId, must match a pattern of " + regexInboundPlanId, new [] { "InboundPlanId" });
             }
 
             // Status (string) maxLength
             if(this.Status != null && this.Status.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
             }
 
             // Status (string) minLength
             if(this.Status != null && this.Status.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
             }
 
             yield break;

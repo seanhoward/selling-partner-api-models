@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="Event" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Event() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Event" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="eventCode">eventCode (required).</param>
         /// <param name="eventTime">The date and time of an event for a shipment. (required).</param>
         /// <param name="location">location.</param>
-        public Event(string eventCode = default(string), DateTime? eventTime = default(DateTime?), Location location = default(Location))
+        public Event(string eventCode = default, DateTime? eventTime = default, Location location = default)
         {
             // to ensure "eventCode" is required (not null)
             if (eventCode == null)
@@ -169,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

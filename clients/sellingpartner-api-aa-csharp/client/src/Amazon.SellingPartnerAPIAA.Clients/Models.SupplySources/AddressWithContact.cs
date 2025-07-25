@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="contactDetails">contactDetails.</param>
         /// <param name="address">address.</param>
-        public AddressWithContact(ContactDetails contactDetails = default(ContactDetails), Address address = default(Address))
+        public AddressWithContact(ContactDetails contactDetails = default, Address address = default)
         {
             this.ContactDetails = contactDetails;
             this.Address = address;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

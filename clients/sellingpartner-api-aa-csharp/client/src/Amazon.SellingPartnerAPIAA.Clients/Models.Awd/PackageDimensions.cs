@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageDimensions" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PackageDimensions() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageDimensions" /> class.
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="length">Length of the package. (required).</param>
         /// <param name="unitOfMeasurement">Unit of measurement for package dimensions. (required).</param>
         /// <param name="width">Width of the package. (required).</param>
-        public PackageDimensions(double? height = default(double?), double? length = default(double?), DimensionUnitOfMeasurement unitOfMeasurement = default(DimensionUnitOfMeasurement), double? width = default(double?))
+        public PackageDimensions(double? height = default, double? length = default, DimensionUnitOfMeasurement unitOfMeasurement = default, double? width = default)
         {
             // to ensure "height" is required (not null)
             if (height == null)
@@ -204,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

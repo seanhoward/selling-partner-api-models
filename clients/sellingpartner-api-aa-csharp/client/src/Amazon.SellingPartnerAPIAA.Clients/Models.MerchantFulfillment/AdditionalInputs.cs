@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="additionalInputFieldName">The field name..</param>
         /// <param name="sellerInputDefinition">sellerInputDefinition.</param>
-        public AdditionalInputs(string additionalInputFieldName = default(string), SellerInputDefinition sellerInputDefinition = default(SellerInputDefinition))
+        public AdditionalInputs(string additionalInputFieldName = default, SellerInputDefinition sellerInputDefinition = default)
         {
             this.AdditionalInputFieldName = additionalInputFieldName;
             this.SellerInputDefinition = sellerInputDefinition;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

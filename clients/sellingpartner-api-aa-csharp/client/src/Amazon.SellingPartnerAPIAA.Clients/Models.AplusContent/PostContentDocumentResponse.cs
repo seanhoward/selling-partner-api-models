@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="PostContentDocumentResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PostContentDocumentResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PostContentDocumentResponse" /> class.
         /// </summary>
         /// <param name="contentReferenceKey">contentReferenceKey (required).</param>
-        public PostContentDocumentResponse(string contentReferenceKey = default(string), MessageSet warnings = default(MessageSet)) : base(warnings)
+        public PostContentDocumentResponse(string contentReferenceKey = default, MessageSet warnings = default) : base(warnings)
         {
             // to ensure "contentReferenceKey" is required (not null)
             if (contentReferenceKey == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

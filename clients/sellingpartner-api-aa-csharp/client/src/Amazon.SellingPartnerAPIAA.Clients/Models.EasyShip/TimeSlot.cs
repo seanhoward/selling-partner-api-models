@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <summary>
         /// Initializes a new instance of the <see cref="TimeSlot" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TimeSlot() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TimeSlot" /> class.
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <param name="startTime">The start date and time of the time slot..</param>
         /// <param name="endTime">The end date and time of the time slot..</param>
         /// <param name="handoverMethod">The method by which a seller will hand a package over to Amazon Logistics..</param>
-        public TimeSlot(string slotId = default(string), DateTime? startTime = default(DateTime?), DateTime? endTime = default(DateTime?), HandoverMethod? handoverMethod = default(HandoverMethod?))
+        public TimeSlot(string slotId = default, DateTime? startTime = default, DateTime? endTime = default, HandoverMethod? handoverMethod = default)
         {
             // to ensure "slotId" is required (not null)
             if (slotId == null)
@@ -180,7 +180,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// Initializes a new instance of the <see cref="InvoiceResponse" /> class.
         /// </summary>
         /// <param name="errors">errors.</param>
-        public InvoiceResponse(ErrorList errors = default(ErrorList))
+        public InvoiceResponse(ErrorList errors = default)
         {
             this.Errors = errors;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

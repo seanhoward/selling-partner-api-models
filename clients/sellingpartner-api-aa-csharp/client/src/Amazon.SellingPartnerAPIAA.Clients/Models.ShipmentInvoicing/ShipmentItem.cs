@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// <param name="shippingDiscount">The discount on the shipping price..</param>
         /// <param name="promotionDiscount">The total of all promotional discounts in the offer..</param>
         /// <param name="serialNumbers">The list of serial numbers..</param>
-        public ShipmentItem(string aSIN = default(string), string sellerSKU = default(string), string orderItemId = default(string), string title = default(string), decimal? quantityOrdered = default(decimal?), Money itemPrice = default(Money), Money shippingPrice = default(Money), Money giftWrapPrice = default(Money), Money shippingDiscount = default(Money), Money promotionDiscount = default(Money), SerialNumbersList serialNumbers = default(SerialNumbersList))
+        public ShipmentItem(string aSIN = default, string sellerSKU = default, string orderItemId = default, string title = default, decimal? quantityOrdered = default, Money itemPrice = default, Money shippingPrice = default, Money giftWrapPrice = default, Money shippingDiscount = default, Money promotionDiscount = default, SerialNumbersList serialNumbers = default)
         {
             this.ASIN = aSIN;
             this.SellerSKU = sellerSKU;
@@ -286,7 +286,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

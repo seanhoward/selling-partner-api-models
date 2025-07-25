@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ListingsItemPatchRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListingsItemPatchRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListingsItemPatchRequest" /> class.
         /// </summary>
         /// <param name="productType">The Amazon product type of the listings item. (required).</param>
         /// <param name="patches">One or more JSON Patch operations to perform on the listings item. (required).</param>
-        public ListingsItemPatchRequest(string productType = default(string), List<PatchOperation> patches = default(List<PatchOperation>))
+        public ListingsItemPatchRequest(string productType = default, List<PatchOperation> patches = default)
         {
             // to ensure "productType" is required (not null)
             if (productType == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

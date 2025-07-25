@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// Initializes a new instance of the <see cref="FixedSlotCapacityErrors" /> class.
         /// </summary>
         /// <param name="errors">Errors encountered during the &#x60;getFixedSlotCapacity&#x60; operation..</param>
-        public FixedSlotCapacityErrors(ErrorList errors = default(ErrorList))
+        public FixedSlotCapacityErrors(ErrorList errors = default)
         {
             this.Errors = errors;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

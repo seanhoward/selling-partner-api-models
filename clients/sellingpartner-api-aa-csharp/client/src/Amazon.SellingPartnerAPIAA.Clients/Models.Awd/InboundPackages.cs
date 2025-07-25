@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundPackages" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InboundPackages() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundPackages" /> class.
         /// </summary>
         /// <param name="packagesToInbound">List of packages to be inbounded. (required).</param>
-        public InboundPackages(List<DistributionPackageQuantity> packagesToInbound = default(List<DistributionPackageQuantity>))
+        public InboundPackages(List<DistributionPackageQuantity> packagesToInbound = default)
         {
             // to ensure "packagesToInbound" is required (not null)
             if (packagesToInbound == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

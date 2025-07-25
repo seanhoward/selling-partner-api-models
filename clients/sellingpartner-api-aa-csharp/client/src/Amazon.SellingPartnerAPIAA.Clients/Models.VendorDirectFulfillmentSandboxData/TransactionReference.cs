@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// Initializes a new instance of the <see cref="TransactionReference" /> class.
         /// </summary>
         /// <param name="transactionId">A GUID (Globally Unique Identifier) assigned by Amazon to uniquely identify the transaction..</param>
-        public TransactionReference(string transactionId = default(string))
+        public TransactionReference(string transactionId = default)
         {
             this.TransactionId = transactionId;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

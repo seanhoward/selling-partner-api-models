@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentDownload" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected DocumentDownload() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentDownload" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="downloadType">The type of download. Possible values: &#x60;URL&#x60;. (required).</param>
         /// <param name="expiration">The URI&#39;s expiration time. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;..</param>
         /// <param name="uri">Uniform resource identifier to identify where the document is located. (required).</param>
-        public DocumentDownload(string downloadType = default(string), DateTime? expiration = default(DateTime?), string uri = default(string))
+        public DocumentDownload(string downloadType = default, DateTime? expiration = default, string uri = default)
         {
             // to ensure "downloadType" is required (not null)
             if (downloadType == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

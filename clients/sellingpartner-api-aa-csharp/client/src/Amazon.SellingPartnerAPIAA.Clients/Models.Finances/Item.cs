@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="totalAmount">The total monetary amount of the item..</param>
         /// <param name="breakdowns">A list of breakdowns that provide details on how the total amount is calculated for the transaction..</param>
         /// <param name="contexts">Additional Information about the item..</param>
-        public Item(string description = default(string), ItemRelatedIdentifiers relatedIdentifiers = default(ItemRelatedIdentifiers), Currency totalAmount = default(Currency), Breakdowns breakdowns = default(Breakdowns), Contexts contexts = default(Contexts))
+        public Item(string description = default, ItemRelatedIdentifiers relatedIdentifiers = default, Currency totalAmount = default, Breakdowns breakdowns = default, Contexts contexts = default)
         {
             this.Description = description;
             this.RelatedIdentifiers = relatedIdentifiers;
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

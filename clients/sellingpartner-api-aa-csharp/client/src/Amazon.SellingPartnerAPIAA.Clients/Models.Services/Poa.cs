@@ -77,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="uploadingTechnician">The identifier of the technician who uploaded the POA..</param>
         /// <param name="uploadTime">The date and time when the POA was uploaded in ISO 8601 format..</param>
         /// <param name="poaType">The type of POA uploaded..</param>
-        public Poa(AppointmentTime appointmentTime = default(AppointmentTime), List<Technician> technicians = default(List<Technician>), string uploadingTechnician = default(string), DateTime? uploadTime = default(DateTime?), PoaTypeEnum? poaType = default(PoaTypeEnum?))
+        public Poa(AppointmentTime appointmentTime = default, List<Technician> technicians = default, string uploadingTechnician = default, DateTime? uploadTime = default, PoaTypeEnum? poaType = default)
         {
             this.AppointmentTime = appointmentTime;
             this.Technicians = technicians;
@@ -217,13 +217,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // UploadingTechnician (string) pattern
             Regex regexUploadingTechnician = new Regex(@"^[A-Z0-9]*$", RegexOptions.CultureInvariant);
             if (false == regexUploadingTechnician.Match(this.UploadingTechnician).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for UploadingTechnician, must match a pattern of " + regexUploadingTechnician, new [] { "UploadingTechnician" });
+                yield return new ValidationResult("Invalid value for UploadingTechnician, must match a pattern of " + regexUploadingTechnician, new [] { "UploadingTechnician" });
             }
 
             yield break;

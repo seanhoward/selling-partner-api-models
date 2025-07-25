@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="GetEligibleShipmentServicesResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetEligibleShipmentServicesResult() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetEligibleShipmentServicesResult" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="rejectedShippingServiceList">rejectedShippingServiceList.</param>
         /// <param name="temporarilyUnavailableCarrierList">temporarilyUnavailableCarrierList.</param>
         /// <param name="termsAndConditionsNotAcceptedCarrierList">termsAndConditionsNotAcceptedCarrierList.</param>
-        public GetEligibleShipmentServicesResult(ShippingServiceList shippingServiceList = default(ShippingServiceList), RejectedShippingServiceList rejectedShippingServiceList = default(RejectedShippingServiceList), TemporarilyUnavailableCarrierList temporarilyUnavailableCarrierList = default(TemporarilyUnavailableCarrierList), TermsAndConditionsNotAcceptedCarrierList termsAndConditionsNotAcceptedCarrierList = default(TermsAndConditionsNotAcceptedCarrierList))
+        public GetEligibleShipmentServicesResult(ShippingServiceList shippingServiceList = default, RejectedShippingServiceList rejectedShippingServiceList = default, TemporarilyUnavailableCarrierList temporarilyUnavailableCarrierList = default, TermsAndConditionsNotAcceptedCarrierList termsAndConditionsNotAcceptedCarrierList = default)
         {
             // to ensure "shippingServiceList" is required (not null)
             if (shippingServiceList == null)
@@ -177,7 +177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

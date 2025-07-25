@@ -75,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="currencyCode">Three digit currency code in ISO 4217 format. String of length 3..</param>
         /// <param name="amount">amount.</param>
         /// <param name="unitOfMeasure">The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches..</param>
-        public Money(string currencyCode = default(string), string amount = default(string), UnitOfMeasureEnum? unitOfMeasure = default(UnitOfMeasureEnum?))
+        public Money(string currencyCode = default, string amount = default, UnitOfMeasureEnum? unitOfMeasure = default)
         {
             this.CurrencyCode = currencyCode;
             this.Amount = amount;
@@ -182,12 +182,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // CurrencyCode (string) maxLength
             if(this.CurrencyCode != null && this.CurrencyCode.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CurrencyCode, length must be less than 3.", new [] { "CurrencyCode" });
+                yield return new ValidationResult("Invalid value for CurrencyCode, length must be less than 3.", new [] { "CurrencyCode" });
             }
 
             yield break;

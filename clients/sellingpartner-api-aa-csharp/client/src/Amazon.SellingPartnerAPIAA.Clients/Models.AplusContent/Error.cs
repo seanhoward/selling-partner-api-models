@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Error() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="code">The code that identifies the type of error condition. (required).</param>
         /// <param name="message">A human readable description of the error condition. (required).</param>
         /// <param name="details">Additional information, if available, to clarify the error condition..</param>
-        public Error(string code = default(string), string message = default(string), string details = default(string))
+        public Error(string code = default, string message = default, string details = default)
         {
             // to ensure "code" is required (not null)
             if (code == null)
@@ -171,24 +171,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Code (string) minLength
             if(this.Code != null && this.Code.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Code, length must be greater than 1.", new [] { "Code" });
+                yield return new ValidationResult("Invalid value for Code, length must be greater than 1.", new [] { "Code" });
             }
 
             // Message (string) minLength
             if(this.Message != null && this.Message.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Message, length must be greater than 1.", new [] { "Message" });
+                yield return new ValidationResult("Invalid value for Message, length must be greater than 1.", new [] { "Message" });
             }
 
             // Details (string) minLength
             if(this.Details != null && this.Details.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Details, length must be greater than 1.", new [] { "Details" });
+                yield return new ValidationResult("Invalid value for Details, length must be greater than 1.", new [] { "Details" });
             }
 
             yield break;

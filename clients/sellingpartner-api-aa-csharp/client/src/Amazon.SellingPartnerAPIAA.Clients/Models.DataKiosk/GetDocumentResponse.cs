@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetDocumentResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentResponse" /> class.
         /// </summary>
         /// <param name="documentId">The identifier for the Data Kiosk document. This identifier is unique only in combination with a selling partner account ID. (required).</param>
         /// <param name="documentUrl">A presigned URL that can be used to retrieve the Data Kiosk document. This URL expires after 5 minutes. If the Data Kiosk document is compressed, the &#x60;Content-Encoding&#x60; header will indicate the compression algorithm.  **Note:** Most HTTP clients are capable of automatically decompressing downloaded files based on the &#x60;Content-Encoding&#x60; header. (required).</param>
-        public GetDocumentResponse(string documentId = default(string), string documentUrl = default(string))
+        public GetDocumentResponse(string documentId = default, string documentUrl = default)
         {
             // to ensure "documentId" is required (not null)
             if (documentId == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

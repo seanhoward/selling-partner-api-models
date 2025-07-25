@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFeedSpecification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateFeedSpecification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFeedSpecification" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <param name="marketplaceIds">A list of identifiers for marketplaces that you want the feed to be applied to. (required).</param>
         /// <param name="inputFeedDocumentId">The document identifier returned by the createFeedDocument operation. Upload the feed document contents before calling the createFeed operation. (required).</param>
         /// <param name="feedOptions">feedOptions.</param>
-        public CreateFeedSpecification(string feedType = default(string), List<string> marketplaceIds = default(List<string>), string inputFeedDocumentId = default(string), FeedOptions feedOptions = default(FeedOptions))
+        public CreateFeedSpecification(string feedType = default, List<string> marketplaceIds = default, string inputFeedDocumentId = default, FeedOptions feedOptions = default)
         {
             // to ensure "feedType" is required (not null)
             if (feedType == null)
@@ -195,7 +195,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

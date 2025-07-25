@@ -53,7 +53,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentOrder" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FulfillmentOrder() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentOrder" /> class.
@@ -74,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="statusUpdatedDate">The date and time that the status of the fulfillment order last changed. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (required).</param>
         /// <param name="notificationEmails">notificationEmails.</param>
         /// <param name="featureConstraints">A list of features and their fulfillment policies to apply to the order..</param>
-        public FulfillmentOrder(string sellerFulfillmentOrderId = default(string), string marketplaceId = default(string), string displayableOrderId = default(string), DateTime? displayableOrderDate = default(DateTime?), string displayableOrderComment = default(string), ShippingSpeedCategory shippingSpeedCategory = default(ShippingSpeedCategory), DeliveryWindow deliveryWindow = default(DeliveryWindow), Address destinationAddress = default(Address), FulfillmentAction? fulfillmentAction = default(FulfillmentAction?), FulfillmentPolicy? fulfillmentPolicy = default(FulfillmentPolicy?), CODSettings codSettings = default(CODSettings), DateTime? receivedDate = default(DateTime?), FulfillmentOrderStatus fulfillmentOrderStatus = default(FulfillmentOrderStatus), DateTime? statusUpdatedDate = default(DateTime?), NotificationEmailList notificationEmails = default(NotificationEmailList), List<FeatureSettings> featureConstraints = default(List<FeatureSettings>))
+        public FulfillmentOrder(string sellerFulfillmentOrderId = default, string marketplaceId = default, string displayableOrderId = default, DateTime? displayableOrderDate = default, string displayableOrderComment = default, ShippingSpeedCategory shippingSpeedCategory = default, DeliveryWindow deliveryWindow = default, Address destinationAddress = default, FulfillmentAction? fulfillmentAction = default, FulfillmentPolicy? fulfillmentPolicy = default, CODSettings codSettings = default, DateTime? receivedDate = default, FulfillmentOrderStatus fulfillmentOrderStatus = default, DateTime? statusUpdatedDate = default, NotificationEmailList notificationEmails = default, List<FeatureSettings> featureConstraints = default)
         {
             // to ensure "sellerFulfillmentOrderId" is required (not null)
             if (sellerFulfillmentOrderId == null)
@@ -449,7 +449,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

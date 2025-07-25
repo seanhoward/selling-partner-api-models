@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <summary>
         /// Initializes a new instance of the <see cref="Package" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Package() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Package" /> class.
@@ -52,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <param name="invoice">invoice.</param>
         /// <param name="packageStatus">packageStatus.</param>
         /// <param name="trackingDetails">trackingDetails.</param>
-        public Package(ScheduledPackageId scheduledPackageId = default(ScheduledPackageId), Dimensions packageDimensions = default(Dimensions), Weight packageWeight = default(Weight), Items packageItems = default(Items), TimeSlot packageTimeSlot = default(TimeSlot), string packageIdentifier = default(string), InvoiceData invoice = default(InvoiceData), PackageStatus? packageStatus = default(PackageStatus?), TrackingDetails trackingDetails = default(TrackingDetails))
+        public Package(ScheduledPackageId scheduledPackageId = default, Dimensions packageDimensions = default, Weight packageWeight = default, Items packageItems = default, TimeSlot packageTimeSlot = default, string packageIdentifier = default, InvoiceData invoice = default, PackageStatus? packageStatus = default, TrackingDetails trackingDetails = default)
         {
             // to ensure "scheduledPackageId" is required (not null)
             if (scheduledPackageId == null)
@@ -280,7 +280,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

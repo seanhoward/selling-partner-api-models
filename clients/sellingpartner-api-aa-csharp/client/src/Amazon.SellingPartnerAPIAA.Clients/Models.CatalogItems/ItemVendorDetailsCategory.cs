@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="displayName">Display name of the product category or subcategory.</param>
         /// <param name="value">Value (code) of the product category or subcategory..</param>
-        public ItemVendorDetailsCategory(string displayName = default(string), string value = default(string))
+        public ItemVendorDetailsCategory(string displayName = default, string value = default)
         {
             this.DisplayName = displayName;
             this.Value = value;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

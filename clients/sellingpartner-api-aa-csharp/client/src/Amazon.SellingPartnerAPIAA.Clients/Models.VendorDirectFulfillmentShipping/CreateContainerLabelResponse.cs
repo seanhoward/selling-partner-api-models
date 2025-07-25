@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerLabelResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateContainerLabelResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerLabelResponse" /> class.
         /// </summary>
         /// <param name="containerLabel">The label data for the container label. (required).</param>
-        public CreateContainerLabelResponse(ContainerLabel containerLabel = default(ContainerLabel))
+        public CreateContainerLabelResponse(ContainerLabel containerLabel = default)
         {
             // to ensure "containerLabel" is required (not null)
             if (containerLabel == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

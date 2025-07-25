@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Quote" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Quote() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Quote" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="cost">cost (required).</param>
         /// <param name="expiration">The time at which this transportation option quote expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;..</param>
         /// <param name="voidableUntil">Voidable until timestamp..</param>
-        public Quote(Currency cost = default(Currency), DateTime? expiration = default(DateTime?), DateTime? voidableUntil = default(DateTime?))
+        public Quote(Currency cost = default, DateTime? expiration = default, DateTime? voidableUntil = default)
         {
             // to ensure "cost" is required (not null)
             if (cost == null)
@@ -162,7 +162,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

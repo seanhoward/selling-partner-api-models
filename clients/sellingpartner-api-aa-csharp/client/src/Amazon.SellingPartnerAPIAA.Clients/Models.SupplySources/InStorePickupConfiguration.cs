@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="isSupported">When true, in-store pickup is supported by the supply source (default: &#x60;isSupported&#x60; value in &#x60;PickupChannel&#x60;)..</param>
         /// <param name="parkingConfiguration">The parking configuration for in-store pickup..</param>
-        public InStorePickupConfiguration(bool? isSupported = default(bool?), ParkingConfiguration parkingConfiguration = default(ParkingConfiguration))
+        public InStorePickupConfiguration(bool? isSupported = default, ParkingConfiguration parkingConfiguration = default)
         {
             this.IsSupported = isSupported;
             this.ParkingConfiguration = parkingConfiguration;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

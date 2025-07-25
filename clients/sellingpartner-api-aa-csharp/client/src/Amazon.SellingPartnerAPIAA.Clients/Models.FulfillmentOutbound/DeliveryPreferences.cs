@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="deliveryInstructions">Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, &#39;Beware of dogs&#39;, etc..</param>
         /// <param name="dropOffLocation">The preferred location to leave packages at the destination address..</param>
-        public DeliveryPreferences(string deliveryInstructions = default(string), DropOffLocation dropOffLocation = default(DropOffLocation))
+        public DeliveryPreferences(string deliveryInstructions = default, DropOffLocation dropOffLocation = default)
         {
             this.DeliveryInstructions = deliveryInstructions;
             this.DropOffLocation = dropOffLocation;
@@ -133,12 +133,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DeliveryInstructions (string) maxLength
             if(this.DeliveryInstructions != null && this.DeliveryInstructions.Length > 250)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DeliveryInstructions, length must be less than 250.", new [] { "DeliveryInstructions" });
+                yield return new ValidationResult("Invalid value for DeliveryInstructions, length must be less than 250.", new [] { "DeliveryInstructions" });
             }
 
             yield break;

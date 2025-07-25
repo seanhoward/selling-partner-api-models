@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="purchaseOrderNumber">The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code..</param>
         /// <param name="lotNumber">The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items..</param>
         /// <param name="expiry">Either expiryDate or mfgDate and expiryAfterDuration are mandatory for perishable items..</param>
-        public PackageItemDetails(string purchaseOrderNumber = default(string), string lotNumber = default(string), Expiry expiry = default(Expiry))
+        public PackageItemDetails(string purchaseOrderNumber = default, string lotNumber = default, Expiry expiry = default)
         {
             this.PurchaseOrderNumber = purchaseOrderNumber;
             this.LotNumber = lotNumber;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

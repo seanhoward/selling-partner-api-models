@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="PackedQuantity" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PackedQuantity() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackedQuantity" /> class.
@@ -68,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="amount">Amount of units shipped for a specific item at a shipment level. If the item is present only in certain cartons or pallets within the shipment, please provide this at the appropriate carton or pallet level. (required).</param>
         /// <param name="unitOfMeasure">Unit of measure for the shipped quantity. (required).</param>
         /// <param name="unitSize">The case size, in the event that we ordered using cases. Otherwise, 1..</param>
-        public PackedQuantity(int? amount = default(int?), UnitOfMeasureEnum unitOfMeasure = default(UnitOfMeasureEnum), int? unitSize = default(int?))
+        public PackedQuantity(int? amount = default, UnitOfMeasureEnum unitOfMeasure = default, int? unitSize = default)
         {
             // to ensure "amount" is required (not null)
             if (amount == null)
@@ -192,7 +192,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

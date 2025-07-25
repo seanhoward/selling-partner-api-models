@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItem" /> class.
@@ -45,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="isBackOrderAllowed">When true, we will accept backorder confirmations for this item. (required).</param>
         /// <param name="netCost">The net cost of an item per each or weight unit..</param>
         /// <param name="listPrice">The list price of an item per each or weight unit..</param>
-        public OrderItem(string itemSequenceNumber = default(string), string amazonProductIdentifier = default(string), string vendorProductIdentifier = default(string), ItemQuantity orderedQuantity = default(ItemQuantity), bool? isBackOrderAllowed = default(bool?), Money netCost = default(Money), Money listPrice = default(Money))
+        public OrderItem(string itemSequenceNumber = default, string amazonProductIdentifier = default, string vendorProductIdentifier = default, ItemQuantity orderedQuantity = default, bool? isBackOrderAllowed = default, Money netCost = default, Money listPrice = default)
         {
             // to ensure "itemSequenceNumber" is required (not null)
             if (itemSequenceNumber == null)
@@ -247,7 +247,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

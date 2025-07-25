@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="shippingMode">Mode of shipment transportation that this option will provide.  Possible values: &#x60;GROUND_SMALL_PARCEL&#x60;, &#x60;FREIGHT_LTL&#x60;, &#x60;FREIGHT_FTL_PALLET&#x60;, &#x60;FREIGHT_FTL_NONPALLET&#x60;, &#x60;OCEAN_LCL&#x60;, &#x60;OCEAN_FCL&#x60;, &#x60;AIR_SMALL_PARCEL&#x60;, &#x60;AIR_SMALL_PARCEL_EXPRESS&#x60;..</param>
         /// <param name="shippingSolution">Shipping program for the option. Possible values: &#x60;AMAZON_PARTNERED_CARRIER&#x60;, &#x60;USE_YOUR_OWN_CARRIER&#x60;..</param>
-        public ShippingConfiguration(string shippingMode = default(string), string shippingSolution = default(string))
+        public ShippingConfiguration(string shippingMode = default, string shippingSolution = default)
         {
             this.ShippingMode = shippingMode;
             this.ShippingSolution = shippingSolution;
@@ -133,30 +133,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ShippingMode (string) maxLength
             if(this.ShippingMode != null && this.ShippingMode.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShippingMode, length must be less than 1024.", new [] { "ShippingMode" });
+                yield return new ValidationResult("Invalid value for ShippingMode, length must be less than 1024.", new [] { "ShippingMode" });
             }
 
             // ShippingMode (string) minLength
             if(this.ShippingMode != null && this.ShippingMode.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShippingMode, length must be greater than 1.", new [] { "ShippingMode" });
+                yield return new ValidationResult("Invalid value for ShippingMode, length must be greater than 1.", new [] { "ShippingMode" });
             }
 
             // ShippingSolution (string) maxLength
             if(this.ShippingSolution != null && this.ShippingSolution.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShippingSolution, length must be less than 1024.", new [] { "ShippingSolution" });
+                yield return new ValidationResult("Invalid value for ShippingSolution, length must be less than 1024.", new [] { "ShippingSolution" });
             }
 
             // ShippingSolution (string) minLength
             if(this.ShippingSolution != null && this.ShippingSolution.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShippingSolution, length must be greater than 1.", new [] { "ShippingSolution" });
+                yield return new ValidationResult("Invalid value for ShippingSolution, length must be greater than 1.", new [] { "ShippingSolution" });
             }
 
             yield break;

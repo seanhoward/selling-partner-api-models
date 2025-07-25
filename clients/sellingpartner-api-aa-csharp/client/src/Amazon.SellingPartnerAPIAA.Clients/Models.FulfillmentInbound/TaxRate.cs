@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="cessRate">Rate of cess tax..</param>
         /// <param name="gstRate">Rate of gst tax..</param>
         /// <param name="taxType">Type of tax. Possible values: &#x60;CGST&#x60;, &#x60;SGST&#x60;, &#x60;IGST&#x60;, &#x60;TOTAL_TAX&#x60;..</param>
-        public TaxRate(decimal? cessRate = default(decimal?), decimal? gstRate = default(decimal?), string taxType = default(string))
+        public TaxRate(decimal? cessRate = default, decimal? gstRate = default, string taxType = default)
         {
             this.CessRate = cessRate;
             this.GstRate = gstRate;
@@ -150,18 +150,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // TaxType (string) maxLength
             if(this.TaxType != null && this.TaxType.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TaxType, length must be less than 1024.", new [] { "TaxType" });
+                yield return new ValidationResult("Invalid value for TaxType, length must be less than 1024.", new [] { "TaxType" });
             }
 
             // TaxType (string) minLength
             if(this.TaxType != null && this.TaxType.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TaxType, length must be greater than 1.", new [] { "TaxType" });
+                yield return new ValidationResult("Invalid value for TaxType, length must be greater than 1.", new [] { "TaxType" });
             }
 
             yield break;

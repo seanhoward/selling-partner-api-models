@@ -88,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// <param name="discountPercent">The discount percent value, which is good until the discount due date..</param>
         /// <param name="discountDueDays">The number of calendar days from the Base date (Invoice date) until the discount is no longer valid..</param>
         /// <param name="netDueDays">The number of calendar days from the base date (invoice date) until the total amount on the invoice is due..</param>
-        public PaymentTerms(TypeEnum? type = default(TypeEnum?), string discountPercent = default(string), decimal? discountDueDays = default(decimal?), decimal? netDueDays = default(decimal?))
+        public PaymentTerms(TypeEnum? type = default, string discountPercent = default, decimal? discountDueDays = default, decimal? netDueDays = default)
         {
             this.Type = type;
             this.DiscountPercent = discountPercent;
@@ -212,7 +212,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

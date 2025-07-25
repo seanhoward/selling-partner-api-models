@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <summary>
         /// Initializes a new instance of the <see cref="GetInventorySummariesResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetInventorySummariesResult() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetInventorySummariesResult" /> class.
         /// </summary>
         /// <param name="granularity">granularity (required).</param>
         /// <param name="inventorySummaries">inventorySummaries (required).</param>
-        public GetInventorySummariesResult(Granularity granularity = default(Granularity), InventorySummaries inventorySummaries = default(InventorySummaries))
+        public GetInventorySummariesResult(Granularity granularity = default, InventorySummaries inventorySummaries = default)
         {
             // to ensure "granularity" is required (not null)
             if (granularity == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

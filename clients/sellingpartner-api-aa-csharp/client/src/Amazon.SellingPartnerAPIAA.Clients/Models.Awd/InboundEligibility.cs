@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundEligibility" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InboundEligibility() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundEligibility" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="packagesToInbound">Details on SKU eligibility for each inbound package. (required).</param>
         /// <param name="previewedAt">Timestamp when the eligibility check is performed. (required).</param>
         /// <param name="status">status (required).</param>
-        public InboundEligibility(List<OrderIneligibilityReason> ineligibilityReasons = default(List<OrderIneligibilityReason>), List<SkuEligibility> packagesToInbound = default(List<SkuEligibility>), DateTime? previewedAt = default(DateTime?), InboundEligibilityStatus status = default(InboundEligibilityStatus))
+        public InboundEligibility(List<OrderIneligibilityReason> ineligibilityReasons = default, List<SkuEligibility> packagesToInbound = default, DateTime? previewedAt = default, InboundEligibilityStatus status = default)
         {
             // to ensure "packagesToInbound" is required (not null)
             if (packagesToInbound == null)
@@ -195,7 +195,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

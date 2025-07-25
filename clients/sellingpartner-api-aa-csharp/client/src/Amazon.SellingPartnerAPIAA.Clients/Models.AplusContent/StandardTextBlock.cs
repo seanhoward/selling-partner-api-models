@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="headline">headline.</param>
         /// <param name="body">body.</param>
-        public StandardTextBlock(TextComponent headline = default(TextComponent), ParagraphComponent body = default(ParagraphComponent))
+        public StandardTextBlock(TextComponent headline = default, ParagraphComponent body = default)
         {
             this.Headline = headline;
             this.Body = body;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

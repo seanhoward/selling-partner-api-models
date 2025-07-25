@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="pointsNumber">The number of Amazon Points granted with the purchase of an item..</param>
         /// <param name="pointsMonetaryValue">The monetary value of the Amazon Points granted..</param>
-        public PointsGrantedDetail(int? pointsNumber = default(int?), Money pointsMonetaryValue = default(Money))
+        public PointsGrantedDetail(int? pointsNumber = default, Money pointsMonetaryValue = default)
         {
             this.PointsNumber = pointsNumber;
             this.PointsMonetaryValue = pointsMonetaryValue;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

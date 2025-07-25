@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="CODSettings" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CODSettings() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CODSettings" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="codChargeTax">The amount of the tax on the COD charge to be collected from the recipient for a COD order..</param>
         /// <param name="shippingCharge">The amount of the tax on the COD charge to be collected from the recipient for a COD order..</param>
         /// <param name="shippingChargeTax">The amount of the tax on the shipping charge to be collected from the recipient for a COD order..</param>
-        public CODSettings(bool? isCodRequired = default(bool?), Money codCharge = default(Money), Money codChargeTax = default(Money), Money shippingCharge = default(Money), Money shippingChargeTax = default(Money))
+        public CODSettings(bool? isCodRequired = default, Money codCharge = default, Money codChargeTax = default, Money shippingCharge = default, Money shippingChargeTax = default)
         {
             // to ensure "isCodRequired" is required (not null)
             if (isCodRequired == null)
@@ -197,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

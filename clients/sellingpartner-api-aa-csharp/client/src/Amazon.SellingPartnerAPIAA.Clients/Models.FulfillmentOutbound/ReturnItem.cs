@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ReturnItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ReturnItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ReturnItem" /> class.
@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="returnAuthorizationId">Identifies the return authorization used to return this item. Refer to &#x60;ReturnAuthorization&#x60;..</param>
         /// <param name="returnReceivedCondition">returnReceivedCondition.</param>
         /// <param name="fulfillmentCenterId">The identifier for the Amazon fulfillment center that processed the return item..</param>
-        public ReturnItem(string sellerReturnItemId = default(string), string sellerFulfillmentOrderItemId = default(string), string amazonShipmentId = default(string), string sellerReturnReasonCode = default(string), string returnComment = default(string), string amazonReturnReasonCode = default(string), FulfillmentReturnItemStatus status = default(FulfillmentReturnItemStatus), DateTime? statusChangedDate = default(DateTime?), string returnAuthorizationId = default(string), ReturnItemDisposition? returnReceivedCondition = default(ReturnItemDisposition?), string fulfillmentCenterId = default(string))
+        public ReturnItem(string sellerReturnItemId = default, string sellerFulfillmentOrderItemId = default, string amazonShipmentId = default, string sellerReturnReasonCode = default, string returnComment = default, string amazonReturnReasonCode = default, FulfillmentReturnItemStatus status = default, DateTime? statusChangedDate = default, string returnAuthorizationId = default, ReturnItemDisposition? returnReceivedCondition = default, string fulfillmentCenterId = default)
         {
             // to ensure "sellerReturnItemId" is required (not null)
             if (sellerReturnItemId == null)
@@ -338,7 +338,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

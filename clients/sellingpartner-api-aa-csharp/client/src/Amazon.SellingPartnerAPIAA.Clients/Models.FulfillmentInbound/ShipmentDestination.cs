@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDestination" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShipmentDestination() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDestination" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="address">The address the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;..</param>
         /// <param name="destinationType">The type of destination for this shipment. Possible values: &#x60;AMAZON_OPTIMIZED&#x60;, &#x60;AMAZON_WAREHOUSE&#x60;. (required).</param>
         /// <param name="warehouseId">The warehouse that the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;..</param>
-        public ShipmentDestination(Address address = default(Address), string destinationType = default(string), string warehouseId = default(string))
+        public ShipmentDestination(Address address = default, string destinationType = default, string warehouseId = default)
         {
             // to ensure "destinationType" is required (not null)
             if (destinationType == null)
@@ -163,30 +163,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DestinationType (string) maxLength
             if(this.DestinationType != null && this.DestinationType.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DestinationType, length must be less than 1024.", new [] { "DestinationType" });
+                yield return new ValidationResult("Invalid value for DestinationType, length must be less than 1024.", new [] { "DestinationType" });
             }
 
             // DestinationType (string) minLength
             if(this.DestinationType != null && this.DestinationType.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DestinationType, length must be greater than 1.", new [] { "DestinationType" });
+                yield return new ValidationResult("Invalid value for DestinationType, length must be greater than 1.", new [] { "DestinationType" });
             }
 
             // WarehouseId (string) maxLength
             if(this.WarehouseId != null && this.WarehouseId.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WarehouseId, length must be less than 1024.", new [] { "WarehouseId" });
+                yield return new ValidationResult("Invalid value for WarehouseId, length must be less than 1024.", new [] { "WarehouseId" });
             }
 
             // WarehouseId (string) minLength
             if(this.WarehouseId != null && this.WarehouseId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WarehouseId, length must be greater than 1.", new [] { "WarehouseId" });
+                yield return new ValidationResult("Invalid value for WarehouseId, length must be greater than 1.", new [] { "WarehouseId" });
             }
 
             yield break;

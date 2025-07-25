@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="PackingOptionSummary" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PackingOptionSummary() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackingOptionSummary" /> class.
         /// </summary>
         /// <param name="packingOptionId">Identifier of a packing option. (required).</param>
         /// <param name="status">The status of a packing option. Possible values: &#39;OFFERED&#39;, &#39;ACCEPTED&#39;, &#39;EXPIRED&#39;. (required).</param>
-        public PackingOptionSummary(string packingOptionId = default(string), string status = default(string))
+        public PackingOptionSummary(string packingOptionId = default, string status = default)
         {
             // to ensure "packingOptionId" is required (not null)
             if (packingOptionId == null)
@@ -154,37 +154,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PackingOptionId (string) maxLength
             if(this.PackingOptionId != null && this.PackingOptionId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackingOptionId, length must be less than 38.", new [] { "PackingOptionId" });
+                yield return new ValidationResult("Invalid value for PackingOptionId, length must be less than 38.", new [] { "PackingOptionId" });
             }
 
             // PackingOptionId (string) minLength
             if(this.PackingOptionId != null && this.PackingOptionId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackingOptionId, length must be greater than 38.", new [] { "PackingOptionId" });
+                yield return new ValidationResult("Invalid value for PackingOptionId, length must be greater than 38.", new [] { "PackingOptionId" });
             }
 
             // PackingOptionId (string) pattern
             Regex regexPackingOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPackingOptionId.Match(this.PackingOptionId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackingOptionId, must match a pattern of " + regexPackingOptionId, new [] { "PackingOptionId" });
+                yield return new ValidationResult("Invalid value for PackingOptionId, must match a pattern of " + regexPackingOptionId, new [] { "PackingOptionId" });
             }
 
             // Status (string) maxLength
             if(this.Status != null && this.Status.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
             }
 
             // Status (string) minLength
             if(this.Status != null && this.Status.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
             }
 
             yield break;

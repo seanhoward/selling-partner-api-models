@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="giftMessage">Gift message to be printed in shipment..</param>
         /// <param name="giftWrapId">Gift wrap identifier for the gift wrapping, if any..</param>
-        public GiftDetails(string giftMessage = default(string), string giftWrapId = default(string))
+        public GiftDetails(string giftMessage = default, string giftWrapId = default)
         {
             this.GiftMessage = giftMessage;
             this.GiftWrapId = giftWrapId;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

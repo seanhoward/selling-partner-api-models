@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="PartyIdentification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PartyIdentification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PartyIdentification" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="address">Identification of the party by address..</param>
         /// <param name="partyId">Assigned identification for the party. (required).</param>
         /// <param name="taxRegistrationDetails">Tax registration details of the entity..</param>
-        public PartyIdentification(Address address = default(Address), string partyId = default(string), List<TaxRegistrationDetails> taxRegistrationDetails = default(List<TaxRegistrationDetails>))
+        public PartyIdentification(Address address = default, string partyId = default, List<TaxRegistrationDetails> taxRegistrationDetails = default)
         {
             // to ensure "partyId" is required (not null)
             if (partyId == null)
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

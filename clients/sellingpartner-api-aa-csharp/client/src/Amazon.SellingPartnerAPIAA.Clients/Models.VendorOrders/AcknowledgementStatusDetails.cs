@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="acknowledgementDate">The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format..</param>
         /// <param name="acceptedQuantity">Item quantity accepted by vendor to be shipped..</param>
         /// <param name="rejectedQuantity">Item quantity rejected by vendor..</param>
-        public AcknowledgementStatusDetails(DateTime? acknowledgementDate = default(DateTime?), ItemQuantity acceptedQuantity = default(ItemQuantity), ItemQuantity rejectedQuantity = default(ItemQuantity))
+        public AcknowledgementStatusDetails(DateTime? acknowledgementDate = default, ItemQuantity acceptedQuantity = default, ItemQuantity rejectedQuantity = default)
         {
             this.AcknowledgementDate = acknowledgementDate;
             this.AcceptedQuantity = acceptedQuantity;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -66,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ListingsItemSubmissionResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListingsItemSubmissionResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListingsItemSubmissionResponse" /> class.
@@ -76,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <param name="submissionId">The unique identifier of the listings item submission. (required).</param>
         /// <param name="issues">Listings item issues related to the listings item submission..</param>
         /// <param name="identifiers">Identity attributes associated with the item in the Amazon catalog, such as the ASIN..</param>
-        public ListingsItemSubmissionResponse(string sku = default(string), StatusEnum status = default(StatusEnum), string submissionId = default(string), List<Issue> issues = default(List<Issue>), ItemIdentifiers identifiers = default(ItemIdentifiers))
+        public ListingsItemSubmissionResponse(string sku = default, StatusEnum status = default, string submissionId = default, List<Issue> issues = default, ItemIdentifiers identifiers = default)
         {
             // to ensure "sku" is required (not null)
             if (sku == null)
@@ -240,7 +240,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

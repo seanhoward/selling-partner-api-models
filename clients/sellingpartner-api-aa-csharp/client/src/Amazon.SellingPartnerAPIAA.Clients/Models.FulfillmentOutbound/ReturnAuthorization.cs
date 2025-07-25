@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ReturnAuthorization" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ReturnAuthorization() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ReturnAuthorization" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="returnToAddress">The address of the Amazon fulfillment center that the return items should be sent to. (required).</param>
         /// <param name="amazonRmaId">The return merchandise authorization (RMA) that Amazon needs to process the return. (required).</param>
         /// <param name="rmaPageURL">A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping. (required).</param>
-        public ReturnAuthorization(string returnAuthorizationId = default(string), string fulfillmentCenterId = default(string), Address returnToAddress = default(Address), string amazonRmaId = default(string), string rmaPageURL = default(string))
+        public ReturnAuthorization(string returnAuthorizationId = default, string fulfillmentCenterId = default, Address returnToAddress = default, string amazonRmaId = default, string rmaPageURL = default)
         {
             // to ensure "returnAuthorizationId" is required (not null)
             if (returnAuthorizationId == null)
@@ -229,7 +229,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

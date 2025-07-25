@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="updatedDate">The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format..</param>
         /// <param name="orderedQuantity">Item quantity ordered..</param>
         /// <param name="cancelledQuantity">Item quantity ordered..</param>
-        public OrderedQuantityDetails(DateTime? updatedDate = default(DateTime?), ItemQuantity orderedQuantity = default(ItemQuantity), ItemQuantity cancelledQuantity = default(ItemQuantity))
+        public OrderedQuantityDetails(DateTime? updatedDate = default, ItemQuantity orderedQuantity = default, ItemQuantity cancelledQuantity = default)
         {
             this.UpdatedDate = updatedDate;
             this.OrderedQuantity = orderedQuantity;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

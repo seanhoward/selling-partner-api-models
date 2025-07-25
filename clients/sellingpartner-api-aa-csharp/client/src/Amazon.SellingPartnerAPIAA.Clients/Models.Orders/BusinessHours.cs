@@ -92,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="dayOfWeek">Day of the week..</param>
         /// <param name="openIntervals">Time window during the day when the business is open..</param>
-        public BusinessHours(DayOfWeekEnum? dayOfWeek = default(DayOfWeekEnum?), List<OpenInterval> openIntervals = default(List<OpenInterval>))
+        public BusinessHours(DayOfWeekEnum? dayOfWeek = default, List<OpenInterval> openIntervals = default)
         {
             this.DayOfWeek = dayOfWeek;
             this.OpenIntervals = openIntervals;
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Origin" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Origin() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Origin" /> class.
         /// </summary>
         /// <param name="countryCode">The two digit country code the items should ship from. In ISO 3166-1 alpha-2 format. (required).</param>
-        public Origin(string countryCode = default(string))
+        public Origin(string countryCode = default)
         {
             // to ensure "countryCode" is required (not null)
             if (countryCode == null)
@@ -129,18 +129,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // CountryCode (string) maxLength
             if(this.CountryCode != null && this.CountryCode.Length > 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryCode, length must be less than 2.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be less than 2.", new [] { "CountryCode" });
             }
 
             // CountryCode (string) minLength
             if(this.CountryCode != null && this.CountryCode.Length < 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryCode, length must be greater than 2.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be greater than 2.", new [] { "CountryCode" });
             }
 
             yield break;

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="TemporarilyUnavailableCarrier" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TemporarilyUnavailableCarrier() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TemporarilyUnavailableCarrier" /> class.
         /// </summary>
         /// <param name="carrierName">The name of the carrier. (required).</param>
-        public TemporarilyUnavailableCarrier(string carrierName = default(string))
+        public TemporarilyUnavailableCarrier(string carrierName = default)
         {
             // to ensure "carrierName" is required (not null)
             if (carrierName == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

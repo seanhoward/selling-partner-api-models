@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="companyLegalName">The legal name of the company..</param>
         /// <param name="taxingRegion">The country or region imposing the tax..</param>
         /// <param name="taxClassifications">A list of tax classifications that apply to the order..</param>
-        public BuyerTaxInfo(string companyLegalName = default(string), string taxingRegion = default(string), List<TaxClassification> taxClassifications = default(List<TaxClassification>))
+        public BuyerTaxInfo(string companyLegalName = default, string taxingRegion = default, List<TaxClassification> taxClassifications = default)
         {
             this.CompanyLegalName = companyLegalName;
             this.TaxingRegion = taxingRegion;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

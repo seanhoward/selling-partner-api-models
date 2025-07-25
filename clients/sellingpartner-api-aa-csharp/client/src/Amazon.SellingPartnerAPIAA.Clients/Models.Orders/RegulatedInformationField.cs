@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="RegulatedInformationField" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RegulatedInformationField() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RegulatedInformationField" /> class.
@@ -69,7 +69,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="fieldLabel">The name of the field. (required).</param>
         /// <param name="fieldType">The type of field. (required).</param>
         /// <param name="fieldValue">The content of the field as collected in regulatory form. Note that &#x60;FileAttachment&#x60; type fields contain a URL where you can download the attachment. (required).</param>
-        public RegulatedInformationField(string fieldId = default(string), string fieldLabel = default(string), FieldTypeEnum fieldType = default(FieldTypeEnum), string fieldValue = default(string))
+        public RegulatedInformationField(string fieldId = default, string fieldLabel = default, FieldTypeEnum fieldType = default, string fieldValue = default)
         {
             // to ensure "fieldId" is required (not null)
             if (fieldId == null)
@@ -225,7 +225,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

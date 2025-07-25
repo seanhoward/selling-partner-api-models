@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemQuantity" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemQuantity() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemQuantity" /> class.
         /// </summary>
         /// <param name="amount">Quantity of units available for a specific item..</param>
         /// <param name="unitOfMeasure">Unit of measure for the available quantity. (required).</param>
-        public ItemQuantity(int? amount = default(int?), string unitOfMeasure = default(string))
+        public ItemQuantity(int? amount = default, string unitOfMeasure = default)
         {
             // to ensure "unitOfMeasure" is required (not null)
             if (unitOfMeasure == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

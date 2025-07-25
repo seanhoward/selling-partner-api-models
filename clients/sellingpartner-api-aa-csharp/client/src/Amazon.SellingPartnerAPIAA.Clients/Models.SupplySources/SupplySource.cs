@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <param name="capabilities">capabilities.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public SupplySource(string supplySourceId = default(string), string supplySourceCode = default(string), string alias = default(string), SupplySourceStatusReadOnly? status = default(SupplySourceStatusReadOnly?), Address address = default(Address), SupplySourceConfiguration configuration = default(SupplySourceConfiguration), SupplySourceCapabilities capabilities = default(SupplySourceCapabilities), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?))
+        public SupplySource(string supplySourceId = default, string supplySourceCode = default, string alias = default, SupplySourceStatusReadOnly? status = default, Address address = default, SupplySourceConfiguration configuration = default, SupplySourceCapabilities capabilities = default, DateTime? createdAt = default, DateTime? updatedAt = default)
         {
             this.SupplySourceId = supplySourceId;
             this.SupplySourceCode = supplySourceCode;
@@ -243,7 +243,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

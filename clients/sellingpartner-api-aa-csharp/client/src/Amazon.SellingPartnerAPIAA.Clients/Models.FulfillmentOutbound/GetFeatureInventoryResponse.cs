@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="payload">payload.</param>
         /// <param name="errors">One or more unexpected errors occurred during the &#x60;getFeatureInventory&#x60; operation..</param>
-        public GetFeatureInventoryResponse(GetFeatureInventoryResult payload = default(GetFeatureInventoryResult), ErrorList errors = default(ErrorList))
+        public GetFeatureInventoryResponse(GetFeatureInventoryResult payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

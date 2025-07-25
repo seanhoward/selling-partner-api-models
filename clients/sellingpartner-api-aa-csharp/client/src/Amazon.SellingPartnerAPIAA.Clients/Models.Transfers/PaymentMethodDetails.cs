@@ -52,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
         /// <param name="countryCode">The two-letter country code in ISO 3166-1 alpha-2 format. For payment methods in the &#x60;card&#x60; category, the code is for the country where the card was issued. For payment methods in the &#x60;bank account&#x60; category, the code is for the country where the account is located..</param>
         /// <param name="paymentMethodType">The payment method type..</param>
         /// <param name="assignmentType">The payment method assignment type, whether it is assigned as default to the given marketplace or not..</param>
-        public PaymentMethodDetails(string accountHolderName = default(string), string paymentMethodId = default(string), string tail = default(string), ExpiryDate expiryDate = default(ExpiryDate), string countryCode = default(string), PaymentMethodType? paymentMethodType = default(PaymentMethodType?), AssignmentType? assignmentType = default(AssignmentType?))
+        public PaymentMethodDetails(string accountHolderName = default, string paymentMethodId = default, string tail = default, ExpiryDate expiryDate = default, string countryCode = default, PaymentMethodType? paymentMethodType = default, AssignmentType? assignmentType = default)
         {
             this.AccountHolderName = accountHolderName;
             this.PaymentMethodId = paymentMethodId;
@@ -218,7 +218,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

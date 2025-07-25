@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="name">The transaction identifier name. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionIdentifierName&#x60; options..</param>
         /// <param name="id">The transaction identifier..</param>
-        public TransactionIdentifier(string name = default(string), string id = default(string))
+        public TransactionIdentifier(string name = default, string id = default)
         {
             this.Name = name;
             this.Id = id;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

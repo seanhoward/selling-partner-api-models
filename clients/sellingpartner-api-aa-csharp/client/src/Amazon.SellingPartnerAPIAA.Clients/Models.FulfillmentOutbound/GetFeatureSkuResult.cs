@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeatureSkuResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetFeatureSkuResult() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeatureSkuResult" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="isEligible">When true, the seller SKU is eligible for the requested feature. (required).</param>
         /// <param name="ineligibleReasons">A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * &#x60;MERCHANT_NOT_ENROLLED&#x60; - The merchant isn&#39;t enrolled for the feature. * &#x60;SKU_NOT_ELIGIBLE&#x60; - The SKU doesn&#39;t reside in a warehouse that supports the feature. * &#x60;INVALID_SKU&#x60; - There is an issue with the SKU provided..</param>
         /// <param name="skuInfo">Information about the SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool..</param>
-        public GetFeatureSkuResult(string marketplaceId = default(string), string featureName = default(string), bool? isEligible = default(bool?), List<string> ineligibleReasons = default(List<string>), FeatureSku skuInfo = default(FeatureSku))
+        public GetFeatureSkuResult(string marketplaceId = default, string featureName = default, bool? isEligible = default, List<string> ineligibleReasons = default, FeatureSku skuInfo = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -213,7 +213,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

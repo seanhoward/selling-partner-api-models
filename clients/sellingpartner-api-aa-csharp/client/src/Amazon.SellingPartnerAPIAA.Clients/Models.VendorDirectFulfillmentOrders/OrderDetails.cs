@@ -72,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderDetails" /> class.
@@ -87,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <param name="shipToParty">Name/Address and tax details of the ship to party. (required).</param>
         /// <param name="billToParty">Name/Address and tax details of the bill to party. (required).</param>
         /// <param name="items">A list of items in this purchase order. (required).</param>
-        public OrderDetails(string customerOrderNumber = default(string), DateTime? orderDate = default(DateTime?), OrderStatusEnum? orderStatus = default(OrderStatusEnum?), ShipmentDetails shipmentDetails = default(ShipmentDetails), TaxItemDetails taxTotal = default(TaxItemDetails), PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), Address shipToParty = default(Address), PartyIdentification billToParty = default(PartyIdentification), List<OrderItem> items = default(List<OrderItem>))
+        public OrderDetails(string customerOrderNumber = default, DateTime? orderDate = default, OrderStatusEnum? orderStatus = default, ShipmentDetails shipmentDetails = default, TaxItemDetails taxTotal = default, PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, Address shipToParty = default, PartyIdentification billToParty = default, List<OrderItem> items = default)
         {
             // to ensure "customerOrderNumber" is required (not null)
             if (customerOrderNumber == null)
@@ -369,7 +369,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

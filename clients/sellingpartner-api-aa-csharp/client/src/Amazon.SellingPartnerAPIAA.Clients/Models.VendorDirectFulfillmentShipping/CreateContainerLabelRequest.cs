@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerLabelRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateContainerLabelRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerLabelRequest" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="carrierId">The container (pallet) label&#39;s carrier. (required).</param>
         /// <param name="vendorContainerId">The vendor&#39;s unique identifier for the container. (required).</param>
         /// <param name="packages">An array of package objects that associates shipment packages with a container. (required).</param>
-        public CreateContainerLabelRequest(PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), CarrierId carrierId = default(CarrierId), string vendorContainerId = default(string), Packages packages = default(Packages))
+        public CreateContainerLabelRequest(PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, CarrierId carrierId = default, string vendorContainerId = default, Packages packages = default)
         {
             // to ensure "sellingParty" is required (not null)
             if (sellingParty == null)
@@ -229,7 +229,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

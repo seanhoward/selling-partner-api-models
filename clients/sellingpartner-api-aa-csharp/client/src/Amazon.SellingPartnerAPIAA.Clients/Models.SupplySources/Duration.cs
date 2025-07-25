@@ -40,7 +40,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="value">value.</param>
         /// <param name="timeUnit">timeUnit.</param>
-        public Duration(int? value = default(int?), TimeUnit? timeUnit = default(TimeUnit?))
+        public Duration(int? value = default, TimeUnit? timeUnit = default)
         {
             this.Value = value;
             this.TimeUnit = timeUnit;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

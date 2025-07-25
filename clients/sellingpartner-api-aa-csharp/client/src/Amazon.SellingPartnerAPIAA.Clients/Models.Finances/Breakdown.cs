@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="breakdownType">The type of charge..</param>
         /// <param name="breakdownAmount">The monetary amount of the charge..</param>
         /// <param name="breakdowns">Further breakdowns of &#x60;BreakdownType&#x60;..</param>
-        public Breakdown(string breakdownType = default(string), Currency breakdownAmount = default(Currency), Breakdown breakdowns = default(Breakdown))
+        public Breakdown(string breakdownType = default, Currency breakdownAmount = default, Breakdown breakdowns = default)
         {
             this.BreakdownType = breakdownType;
             this.BreakdownAmount = breakdownAmount;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

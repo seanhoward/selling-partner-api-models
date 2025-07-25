@@ -55,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <param name="shareOfCouponSubscriptions">The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType..</param>
         /// <param name="timeInterval">A time interval used to compute metrics..</param>
         /// <param name="currencyCode">The currency code in ISO 4217 format..</param>
-        public GetSellingPartnerMetricsResponseMetric(double? notDeliveredDueToOOS = default(double?), double? totalSubscriptionsRevenue = default(double?), decimal? shippedSubscriptionUnits = default(decimal?), decimal? activeSubscriptions = default(decimal?), double? subscriberAverageRevenue = default(double?), double? nonSubscriberAverageRevenue = default(double?), double? lostRevenueDueToOOS = default(double?), double? subscriberAverageReorders = default(double?), double? nonSubscriberAverageReorders = default(double?), double? couponsRevenuePenetration = default(double?), double? revenueFromSubscriptionsWithMultipleDeliveries = default(double?), double? revenueFromActiveSubscriptionsWithSingleDelivery = default(double?), double? revenueFromCancelledSubscriptionsAfterSingleDelivery = default(double?), double? subscriberRetentionFor30Days = default(double?), double? subscriberRetentionFor90Days = default(double?), double? revenuePenetrationFor0PercentSellerFunding = default(double?), double? revenuePenetrationFor5PercentSellerFunding = default(double?), double? revenuePenetrationFor10PercentSellerFunding = default(double?), double? revenuePenetrationFor5PlusPercentSellerFunding = default(double?), double? shareOfCouponSubscriptions = default(double?), TimeInterval timeInterval = default(TimeInterval), string currencyCode = default(string))
+        public GetSellingPartnerMetricsResponseMetric(double? notDeliveredDueToOOS = default, double? totalSubscriptionsRevenue = default, decimal? shippedSubscriptionUnits = default, decimal? activeSubscriptions = default, double? subscriberAverageRevenue = default, double? nonSubscriberAverageRevenue = default, double? lostRevenueDueToOOS = default, double? subscriberAverageReorders = default, double? nonSubscriberAverageReorders = default, double? couponsRevenuePenetration = default, double? revenueFromSubscriptionsWithMultipleDeliveries = default, double? revenueFromActiveSubscriptionsWithSingleDelivery = default, double? revenueFromCancelledSubscriptionsAfterSingleDelivery = default, double? subscriberRetentionFor30Days = default, double? subscriberRetentionFor90Days = default, double? revenuePenetrationFor0PercentSellerFunding = default, double? revenuePenetrationFor5PercentSellerFunding = default, double? revenuePenetrationFor10PercentSellerFunding = default, double? revenuePenetrationFor5PlusPercentSellerFunding = default, double? shareOfCouponSubscriptions = default, TimeInterval timeInterval = default, string currencyCode = default)
         {
             this.NotDeliveredDueToOOS = notDeliveredDueToOOS;
             this.TotalSubscriptionsRevenue = totalSubscriptionsRevenue;
@@ -473,180 +473,180 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // NotDeliveredDueToOOS (double?) maximum
             if(this.NotDeliveredDueToOOS > (double?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NotDeliveredDueToOOS, must be a value less than or equal to 100.", new [] { "NotDeliveredDueToOOS" });
+                yield return new ValidationResult("Invalid value for NotDeliveredDueToOOS, must be a value less than or equal to 100.", new [] { "NotDeliveredDueToOOS" });
             }
 
             // NotDeliveredDueToOOS (double?) minimum
             if(this.NotDeliveredDueToOOS < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NotDeliveredDueToOOS, must be a value greater than or equal to 0.", new [] { "NotDeliveredDueToOOS" });
+                yield return new ValidationResult("Invalid value for NotDeliveredDueToOOS, must be a value greater than or equal to 0.", new [] { "NotDeliveredDueToOOS" });
             }
 
             // TotalSubscriptionsRevenue (double?) minimum
             if(this.TotalSubscriptionsRevenue < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TotalSubscriptionsRevenue, must be a value greater than or equal to 0.", new [] { "TotalSubscriptionsRevenue" });
+                yield return new ValidationResult("Invalid value for TotalSubscriptionsRevenue, must be a value greater than or equal to 0.", new [] { "TotalSubscriptionsRevenue" });
             }
 
             // ShippedSubscriptionUnits (decimal?) minimum
             if(this.ShippedSubscriptionUnits < (decimal?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShippedSubscriptionUnits, must be a value greater than or equal to 0.", new [] { "ShippedSubscriptionUnits" });
+                yield return new ValidationResult("Invalid value for ShippedSubscriptionUnits, must be a value greater than or equal to 0.", new [] { "ShippedSubscriptionUnits" });
             }
 
             // ActiveSubscriptions (decimal?) minimum
             if(this.ActiveSubscriptions < (decimal?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ActiveSubscriptions, must be a value greater than or equal to 0.", new [] { "ActiveSubscriptions" });
+                yield return new ValidationResult("Invalid value for ActiveSubscriptions, must be a value greater than or equal to 0.", new [] { "ActiveSubscriptions" });
             }
 
             // SubscriberAverageRevenue (double?) minimum
             if(this.SubscriberAverageRevenue < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SubscriberAverageRevenue, must be a value greater than or equal to 0.", new [] { "SubscriberAverageRevenue" });
+                yield return new ValidationResult("Invalid value for SubscriberAverageRevenue, must be a value greater than or equal to 0.", new [] { "SubscriberAverageRevenue" });
             }
 
             // NonSubscriberAverageRevenue (double?) minimum
             if(this.NonSubscriberAverageRevenue < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NonSubscriberAverageRevenue, must be a value greater than or equal to 0.", new [] { "NonSubscriberAverageRevenue" });
+                yield return new ValidationResult("Invalid value for NonSubscriberAverageRevenue, must be a value greater than or equal to 0.", new [] { "NonSubscriberAverageRevenue" });
             }
 
             // LostRevenueDueToOOS (double?) minimum
             if(this.LostRevenueDueToOOS < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LostRevenueDueToOOS, must be a value greater than or equal to 0.", new [] { "LostRevenueDueToOOS" });
+                yield return new ValidationResult("Invalid value for LostRevenueDueToOOS, must be a value greater than or equal to 0.", new [] { "LostRevenueDueToOOS" });
             }
 
             // SubscriberAverageReorders (double?) minimum
             if(this.SubscriberAverageReorders < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SubscriberAverageReorders, must be a value greater than or equal to 0.", new [] { "SubscriberAverageReorders" });
+                yield return new ValidationResult("Invalid value for SubscriberAverageReorders, must be a value greater than or equal to 0.", new [] { "SubscriberAverageReorders" });
             }
 
             // NonSubscriberAverageReorders (double?) minimum
             if(this.NonSubscriberAverageReorders < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NonSubscriberAverageReorders, must be a value greater than or equal to 0.", new [] { "NonSubscriberAverageReorders" });
+                yield return new ValidationResult("Invalid value for NonSubscriberAverageReorders, must be a value greater than or equal to 0.", new [] { "NonSubscriberAverageReorders" });
             }
 
             // CouponsRevenuePenetration (double?) maximum
             if(this.CouponsRevenuePenetration > (double?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CouponsRevenuePenetration, must be a value less than or equal to 100.", new [] { "CouponsRevenuePenetration" });
+                yield return new ValidationResult("Invalid value for CouponsRevenuePenetration, must be a value less than or equal to 100.", new [] { "CouponsRevenuePenetration" });
             }
 
             // CouponsRevenuePenetration (double?) minimum
             if(this.CouponsRevenuePenetration < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CouponsRevenuePenetration, must be a value greater than or equal to 0.", new [] { "CouponsRevenuePenetration" });
+                yield return new ValidationResult("Invalid value for CouponsRevenuePenetration, must be a value greater than or equal to 0.", new [] { "CouponsRevenuePenetration" });
             }
 
             // RevenueFromSubscriptionsWithMultipleDeliveries (double?) minimum
             if(this.RevenueFromSubscriptionsWithMultipleDeliveries < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenueFromSubscriptionsWithMultipleDeliveries, must be a value greater than or equal to 0.", new [] { "RevenueFromSubscriptionsWithMultipleDeliveries" });
+                yield return new ValidationResult("Invalid value for RevenueFromSubscriptionsWithMultipleDeliveries, must be a value greater than or equal to 0.", new [] { "RevenueFromSubscriptionsWithMultipleDeliveries" });
             }
 
             // RevenueFromActiveSubscriptionsWithSingleDelivery (double?) minimum
             if(this.RevenueFromActiveSubscriptionsWithSingleDelivery < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenueFromActiveSubscriptionsWithSingleDelivery, must be a value greater than or equal to 0.", new [] { "RevenueFromActiveSubscriptionsWithSingleDelivery" });
+                yield return new ValidationResult("Invalid value for RevenueFromActiveSubscriptionsWithSingleDelivery, must be a value greater than or equal to 0.", new [] { "RevenueFromActiveSubscriptionsWithSingleDelivery" });
             }
 
             // RevenueFromCancelledSubscriptionsAfterSingleDelivery (double?) minimum
             if(this.RevenueFromCancelledSubscriptionsAfterSingleDelivery < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenueFromCancelledSubscriptionsAfterSingleDelivery, must be a value greater than or equal to 0.", new [] { "RevenueFromCancelledSubscriptionsAfterSingleDelivery" });
+                yield return new ValidationResult("Invalid value for RevenueFromCancelledSubscriptionsAfterSingleDelivery, must be a value greater than or equal to 0.", new [] { "RevenueFromCancelledSubscriptionsAfterSingleDelivery" });
             }
 
             // SubscriberRetentionFor30Days (double?) maximum
             if(this.SubscriberRetentionFor30Days > (double?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SubscriberRetentionFor30Days, must be a value less than or equal to 100.", new [] { "SubscriberRetentionFor30Days" });
+                yield return new ValidationResult("Invalid value for SubscriberRetentionFor30Days, must be a value less than or equal to 100.", new [] { "SubscriberRetentionFor30Days" });
             }
 
             // SubscriberRetentionFor30Days (double?) minimum
             if(this.SubscriberRetentionFor30Days < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SubscriberRetentionFor30Days, must be a value greater than or equal to 0.", new [] { "SubscriberRetentionFor30Days" });
+                yield return new ValidationResult("Invalid value for SubscriberRetentionFor30Days, must be a value greater than or equal to 0.", new [] { "SubscriberRetentionFor30Days" });
             }
 
             // SubscriberRetentionFor90Days (double?) maximum
             if(this.SubscriberRetentionFor90Days > (double?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SubscriberRetentionFor90Days, must be a value less than or equal to 100.", new [] { "SubscriberRetentionFor90Days" });
+                yield return new ValidationResult("Invalid value for SubscriberRetentionFor90Days, must be a value less than or equal to 100.", new [] { "SubscriberRetentionFor90Days" });
             }
 
             // SubscriberRetentionFor90Days (double?) minimum
             if(this.SubscriberRetentionFor90Days < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SubscriberRetentionFor90Days, must be a value greater than or equal to 0.", new [] { "SubscriberRetentionFor90Days" });
+                yield return new ValidationResult("Invalid value for SubscriberRetentionFor90Days, must be a value greater than or equal to 0.", new [] { "SubscriberRetentionFor90Days" });
             }
 
             // RevenuePenetrationFor0PercentSellerFunding (double?) maximum
             if(this.RevenuePenetrationFor0PercentSellerFunding > (double?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor0PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor0PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor0PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor0PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor0PercentSellerFunding (double?) minimum
             if(this.RevenuePenetrationFor0PercentSellerFunding < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor0PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor0PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor0PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor0PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor5PercentSellerFunding (double?) maximum
             if(this.RevenuePenetrationFor5PercentSellerFunding > (double?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor5PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor5PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor5PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor5PercentSellerFunding (double?) minimum
             if(this.RevenuePenetrationFor5PercentSellerFunding < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor5PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor5PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor5PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor10PercentSellerFunding (double?) maximum
             if(this.RevenuePenetrationFor10PercentSellerFunding > (double?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor10PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor10PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor10PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor10PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor10PercentSellerFunding (double?) minimum
             if(this.RevenuePenetrationFor10PercentSellerFunding < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor10PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor10PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor10PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor10PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor5PlusPercentSellerFunding (double?) maximum
             if(this.RevenuePenetrationFor5PlusPercentSellerFunding > (double?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor5PlusPercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor5PlusPercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PlusPercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor5PlusPercentSellerFunding" });
             }
 
             // RevenuePenetrationFor5PlusPercentSellerFunding (double?) minimum
             if(this.RevenuePenetrationFor5PlusPercentSellerFunding < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RevenuePenetrationFor5PlusPercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor5PlusPercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PlusPercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor5PlusPercentSellerFunding" });
             }
 
             // ShareOfCouponSubscriptions (double?) maximum
             if(this.ShareOfCouponSubscriptions > (double?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShareOfCouponSubscriptions, must be a value less than or equal to 100.", new [] { "ShareOfCouponSubscriptions" });
+                yield return new ValidationResult("Invalid value for ShareOfCouponSubscriptions, must be a value less than or equal to 100.", new [] { "ShareOfCouponSubscriptions" });
             }
 
             // ShareOfCouponSubscriptions (double?) minimum
             if(this.ShareOfCouponSubscriptions < (double?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShareOfCouponSubscriptions, must be a value greater than or equal to 0.", new [] { "ShareOfCouponSubscriptions" });
+                yield return new ValidationResult("Invalid value for ShareOfCouponSubscriptions, must be a value greater than or equal to 0.", new [] { "ShareOfCouponSubscriptions" });
             }
 
             yield break;

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ContainerItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerItem" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="itemReference">The reference number for the item. Please provide the itemSequenceNumber from the &#39;items&#39; segment to refer to that item&#39;s details here. (required).</param>
         /// <param name="shippedQuantity">Total item quantity shipped in this carton/pallet. (required).</param>
         /// <param name="itemDetails">itemDetails.</param>
-        public ContainerItem(string itemReference = default(string), ItemQuantity shippedQuantity = default(ItemQuantity), ItemDetails itemDetails = default(ItemDetails))
+        public ContainerItem(string itemReference = default, ItemQuantity shippedQuantity = default, ItemDetails itemDetails = default)
         {
             // to ensure "itemReference" is required (not null)
             if (itemReference == null)
@@ -170,7 +170,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

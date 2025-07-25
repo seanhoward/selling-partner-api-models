@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateRestrictedDataTokenRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateRestrictedDataTokenRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateRestrictedDataTokenRequest" /> class.
         /// </summary>
         /// <param name="targetApplication">The application ID for the target application to which access is being delegated..</param>
         /// <param name="restrictedResources">A list of restricted resources. Maximum: 50 (required).</param>
-        public CreateRestrictedDataTokenRequest(string targetApplication = default(string), List<RestrictedResource> restrictedResources = default(List<RestrictedResource>))
+        public CreateRestrictedDataTokenRequest(string targetApplication = default, List<RestrictedResource> restrictedResources = default)
         {
             // to ensure "restrictedResources" is required (not null)
             if (restrictedResources == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

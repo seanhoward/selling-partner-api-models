@@ -106,7 +106,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="shipmentDeliveryDate">Date on which shipment will be delivered from Vendor to Buyer.</param>
         /// <param name="carrierDetails">Indicates the carrier details and their contact informations.</param>
         /// <param name="billOfLadingNumber">The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field..</param>
-        public TransportationDetails(ShipModeEnum? shipMode = default(ShipModeEnum?), TransportationModeEnum? transportationMode = default(TransportationModeEnum?), DateTime? shippedDate = default(DateTime?), DateTime? estimatedDeliveryDate = default(DateTime?), DateTime? shipmentDeliveryDate = default(DateTime?), CarrierDetails carrierDetails = default(CarrierDetails), string billOfLadingNumber = default(string))
+        public TransportationDetails(ShipModeEnum? shipMode = default, TransportationModeEnum? transportationMode = default, DateTime? shippedDate = default, DateTime? estimatedDeliveryDate = default, DateTime? shipmentDeliveryDate = default, CarrierDetails carrierDetails = default, string billOfLadingNumber = default)
         {
             this.ShipMode = shipMode;
             this.TransportationMode = transportationMode;
@@ -272,7 +272,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

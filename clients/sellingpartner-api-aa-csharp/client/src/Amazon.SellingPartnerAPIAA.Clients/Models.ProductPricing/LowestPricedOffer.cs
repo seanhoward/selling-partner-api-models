@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="LowestPricedOffer" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected LowestPricedOffer() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="LowestPricedOffer" /> class.
         /// </summary>
         /// <param name="lowestPricedOffersInput">The filtering criteria that are used to retrieve the lowest priced offers that correspond to the &#x60;lowestPricedOffersInputs&#x60; request. (required).</param>
         /// <param name="offers">A list of up to 20 lowest priced offers that match the criteria specified in &#x60;lowestPricedOffersInput&#x60;. (required).</param>
-        public LowestPricedOffer(LowestPricedOffersInput lowestPricedOffersInput = default(LowestPricedOffersInput), List<Offer> offers = default(List<Offer>))
+        public LowestPricedOffer(LowestPricedOffersInput lowestPricedOffersInput = default, List<Offer> offers = default)
         {
             // to ensure "lowestPricedOffersInput" is required (not null)
             if (lowestPricedOffersInput == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

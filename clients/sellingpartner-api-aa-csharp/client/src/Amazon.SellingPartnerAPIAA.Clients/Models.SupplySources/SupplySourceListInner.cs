@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <param name="supplySourceId">supplySourceId.</param>
         /// <param name="supplySourceCode">supplySourceCode.</param>
         /// <param name="address">address.</param>
-        public SupplySourceListInner(string alias = default(string), string supplySourceId = default(string), string supplySourceCode = default(string), Address address = default(Address))
+        public SupplySourceListInner(string alias = default, string supplySourceId = default, string supplySourceCode = default, Address address = default)
         {
             this.Alias = alias;
             this.SupplySourceId = supplySourceId;
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

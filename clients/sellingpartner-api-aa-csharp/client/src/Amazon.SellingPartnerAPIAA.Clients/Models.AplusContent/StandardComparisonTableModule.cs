@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="productColumns">productColumns.</param>
         /// <param name="metricRowLabels">metricRowLabels.</param>
-        public StandardComparisonTableModule(List<StandardComparisonProductBlock> productColumns = default(List<StandardComparisonProductBlock>), List<PlainTextItem> metricRowLabels = default(List<PlainTextItem>))
+        public StandardComparisonTableModule(List<StandardComparisonProductBlock> productColumns = default, List<PlainTextItem> metricRowLabels = default)
         {
             this.ProductColumns = productColumns;
             this.MetricRowLabels = metricRowLabels;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

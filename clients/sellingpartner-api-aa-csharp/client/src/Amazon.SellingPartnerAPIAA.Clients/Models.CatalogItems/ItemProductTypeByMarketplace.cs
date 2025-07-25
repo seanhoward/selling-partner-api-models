@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="marketplaceId">Amazon marketplace identifier..</param>
         /// <param name="productType">Name of the product type associated with the Amazon catalog item..</param>
-        public ItemProductTypeByMarketplace(string marketplaceId = default(string), string productType = default(string))
+        public ItemProductTypeByMarketplace(string marketplaceId = default, string productType = default)
         {
             this.MarketplaceId = marketplaceId;
             this.ProductType = productType;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

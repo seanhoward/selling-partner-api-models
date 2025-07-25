@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <param name="returnLocation">returnLocation.</param>
         /// <param name="deliveryChannel">deliveryChannel.</param>
         /// <param name="pickupChannel">pickupChannel.</param>
-        public OutboundCapability(bool? isSupported = default(bool?), OperationalConfiguration operationalConfiguration = default(OperationalConfiguration), ReturnLocation returnLocation = default(ReturnLocation), DeliveryChannel deliveryChannel = default(DeliveryChannel), PickupChannel pickupChannel = default(PickupChannel))
+        public OutboundCapability(bool? isSupported = default, OperationalConfiguration operationalConfiguration = default, ReturnLocation returnLocation = default, DeliveryChannel deliveryChannel = default, PickupChannel pickupChannel = default)
         {
             this.IsSupported = isSupported;
             this.OperationalConfiguration = operationalConfiguration;
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

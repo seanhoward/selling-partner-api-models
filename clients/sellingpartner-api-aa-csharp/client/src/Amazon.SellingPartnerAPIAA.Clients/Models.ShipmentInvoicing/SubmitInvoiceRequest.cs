@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitInvoiceRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SubmitInvoiceRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitInvoiceRequest" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// <param name="invoiceContent">invoiceContent (required).</param>
         /// <param name="marketplaceId">An Amazon marketplace identifier..</param>
         /// <param name="contentMD5Value">MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html). (required).</param>
-        public SubmitInvoiceRequest(byte[] invoiceContent = default(byte[]), string marketplaceId = default(string), string contentMD5Value = default(string))
+        public SubmitInvoiceRequest(byte[] invoiceContent = default, string marketplaceId = default, string contentMD5Value = default)
         {
             // to ensure "invoiceContent" is required (not null)
             if (invoiceContent == null)
@@ -170,7 +170,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

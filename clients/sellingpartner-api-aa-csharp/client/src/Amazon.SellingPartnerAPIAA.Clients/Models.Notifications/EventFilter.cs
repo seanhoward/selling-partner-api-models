@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <summary>
         /// Initializes a new instance of the <see cref="EventFilter" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected EventFilter() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="EventFilter" /> class.
@@ -68,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <param name="marketplaceIds">marketplaceIds.</param>
         /// <param name="orderChangeTypes">orderChangeTypes.</param>
         /// <param name="eventFilterType">An &#x60;eventFilterType&#x60; value that is supported by the specific &#x60;notificationType&#x60;. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an &#x60;eventFilterType&#x60; is supported. (required).</param>
-        public EventFilter(MarketplaceIds marketplaceIds = default(MarketplaceIds), OrderChangeTypes orderChangeTypes = default(OrderChangeTypes), EventFilterTypeEnum eventFilterType = default(EventFilterTypeEnum), AggregationSettings aggregationSettings = default(AggregationSettings)) : base(aggregationSettings)
+        public EventFilter(MarketplaceIds marketplaceIds = default, OrderChangeTypes orderChangeTypes = default, EventFilterTypeEnum eventFilterType = default, AggregationSettings aggregationSettings = default) : base(aggregationSettings)
         {
             // to ensure "eventFilterType" is required (not null)
             if (eventFilterType == null)
@@ -183,7 +183,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

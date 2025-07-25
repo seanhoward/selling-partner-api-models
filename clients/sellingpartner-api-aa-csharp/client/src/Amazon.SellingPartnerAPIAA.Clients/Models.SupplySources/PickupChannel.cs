@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <param name="operationalConfiguration">operationalConfiguration.</param>
         /// <param name="inStorePickupConfiguration">The configuration for supporting in-store pickup..</param>
         /// <param name="curbsidePickupConfiguration">The configuration for supporting curbside pickup..</param>
-        public PickupChannel(Duration inventoryHoldPeriod = default(Duration), bool? isSupported = default(bool?), OperationalConfiguration operationalConfiguration = default(OperationalConfiguration), InStorePickupConfiguration inStorePickupConfiguration = default(InStorePickupConfiguration), CurbsidePickupConfiguration curbsidePickupConfiguration = default(CurbsidePickupConfiguration))
+        public PickupChannel(Duration inventoryHoldPeriod = default, bool? isSupported = default, OperationalConfiguration operationalConfiguration = default, InStorePickupConfiguration inStorePickupConfiguration = default, CurbsidePickupConfiguration curbsidePickupConfiguration = default)
         {
             this.InventoryHoldPeriod = inventoryHoldPeriod;
             this.IsSupported = isSupported;
@@ -181,7 +181,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

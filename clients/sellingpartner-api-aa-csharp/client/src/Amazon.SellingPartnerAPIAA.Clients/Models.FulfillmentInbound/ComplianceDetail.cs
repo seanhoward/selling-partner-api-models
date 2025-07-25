@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="fnsku">The Fulfillment Network SKU, which identifies a real fulfillable item with catalog data and condition..</param>
         /// <param name="msku">The merchant SKU, a merchant-supplied identifier for a specific SKU..</param>
         /// <param name="taxDetails">taxDetails.</param>
-        public ComplianceDetail(string asin = default(string), string fnsku = default(string), string msku = default(string), TaxDetails taxDetails = default(TaxDetails))
+        public ComplianceDetail(string asin = default, string fnsku = default, string msku = default, TaxDetails taxDetails = default)
         {
             this.Asin = asin;
             this.Fnsku = fnsku;
@@ -166,42 +166,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Asin (string) maxLength
             if(this.Asin != null && this.Asin.Length > 10)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Asin, length must be less than 10.", new [] { "Asin" });
+                yield return new ValidationResult("Invalid value for Asin, length must be less than 10.", new [] { "Asin" });
             }
 
             // Asin (string) minLength
             if(this.Asin != null && this.Asin.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Asin, length must be greater than 1.", new [] { "Asin" });
+                yield return new ValidationResult("Invalid value for Asin, length must be greater than 1.", new [] { "Asin" });
             }
 
             // Fnsku (string) maxLength
             if(this.Fnsku != null && this.Fnsku.Length > 10)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Fnsku, length must be less than 10.", new [] { "Fnsku" });
+                yield return new ValidationResult("Invalid value for Fnsku, length must be less than 10.", new [] { "Fnsku" });
             }
 
             // Fnsku (string) minLength
             if(this.Fnsku != null && this.Fnsku.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Fnsku, length must be greater than 1.", new [] { "Fnsku" });
+                yield return new ValidationResult("Invalid value for Fnsku, length must be greater than 1.", new [] { "Fnsku" });
             }
 
             // Msku (string) maxLength
             if(this.Msku != null && this.Msku.Length > 40)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
             }
 
             // Msku (string) minLength
             if(this.Msku != null && this.Msku.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
             }
 
             yield break;

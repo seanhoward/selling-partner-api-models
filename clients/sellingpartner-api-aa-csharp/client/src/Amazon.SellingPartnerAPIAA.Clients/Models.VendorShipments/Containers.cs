@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="Containers" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Containers() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Containers" /> class.
@@ -75,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="block">Number of cartons per layer on the pallet..</param>
         /// <param name="innerContainersDetails">innerContainersDetails.</param>
         /// <param name="packedItems">A list of packed items..</param>
-        public Containers(ContainerTypeEnum containerType = default(ContainerTypeEnum), string containerSequenceNumber = default(string), List<ContainerIdentification> containerIdentifiers = default(List<ContainerIdentification>), string trackingNumber = default(string), Dimensions dimensions = default(Dimensions), Weight weight = default(Weight), int? tier = default(int?), int? block = default(int?), InnerContainersDetails innerContainersDetails = default(InnerContainersDetails), List<PackedItems> packedItems = default(List<PackedItems>))
+        public Containers(ContainerTypeEnum containerType = default, string containerSequenceNumber = default, List<ContainerIdentification> containerIdentifiers = default, string trackingNumber = default, Dimensions dimensions = default, Weight weight = default, int? tier = default, int? block = default, InnerContainersDetails innerContainersDetails = default, List<PackedItems> packedItems = default)
         {
             // to ensure "containerType" is required (not null)
             if (containerType == null)
@@ -308,7 +308,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

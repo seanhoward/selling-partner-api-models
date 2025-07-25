@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// Initializes a new instance of the <see cref="SpdTrackingDetail" /> class.
         /// </summary>
         /// <param name="spdTrackingItems">List of Small Parcel Delivery (SPD) tracking items..</param>
-        public SpdTrackingDetail(List<SpdTrackingItem> spdTrackingItems = default(List<SpdTrackingItem>))
+        public SpdTrackingDetail(List<SpdTrackingItem> spdTrackingItems = default)
         {
             this.SpdTrackingItems = spdTrackingItems;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

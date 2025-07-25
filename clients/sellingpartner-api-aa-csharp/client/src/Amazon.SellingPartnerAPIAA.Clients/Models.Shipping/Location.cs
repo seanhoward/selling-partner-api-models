@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="city">city.</param>
         /// <param name="countryCode">countryCode.</param>
         /// <param name="postalCode">postalCode.</param>
-        public Location(string stateOrRegion = default(string), string city = default(string), string countryCode = default(string), string postalCode = default(string))
+        public Location(string stateOrRegion = default, string city = default, string countryCode = default, string postalCode = default)
         {
             this.StateOrRegion = stateOrRegion;
             this.City = city;
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

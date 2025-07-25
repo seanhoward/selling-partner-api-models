@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Box" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Box() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Box" /> class.
@@ -52,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="quantity">The number of containers where all other properties like weight or dimensions are identical..</param>
         /// <param name="templateName">Template name of the box..</param>
         /// <param name="weight">weight.</param>
-        public Box(string boxId = default(string), BoxContentInformationSource? contentInformationSource = default(BoxContentInformationSource?), Region destinationRegion = default(Region), Dimensions dimensions = default(Dimensions), List<Item> items = default(List<Item>), string packageId = default(string), int? quantity = default(int?), string templateName = default(string), Weight weight = default(Weight))
+        public Box(string boxId = default, BoxContentInformationSource? contentInformationSource = default, Region destinationRegion = default, Dimensions dimensions = default, List<Item> items = default, string packageId = default, int? quantity = default, string templateName = default, Weight weight = default)
         {
             // to ensure "packageId" is required (not null)
             if (packageId == null)
@@ -261,61 +261,61 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // BoxId (string) maxLength
             if(this.BoxId != null && this.BoxId.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BoxId, length must be less than 1024.", new [] { "BoxId" });
+                yield return new ValidationResult("Invalid value for BoxId, length must be less than 1024.", new [] { "BoxId" });
             }
 
             // BoxId (string) minLength
             if(this.BoxId != null && this.BoxId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BoxId, length must be greater than 1.", new [] { "BoxId" });
+                yield return new ValidationResult("Invalid value for BoxId, length must be greater than 1.", new [] { "BoxId" });
             }
 
             // PackageId (string) maxLength
             if(this.PackageId != null && this.PackageId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackageId, length must be less than 38.", new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, length must be less than 38.", new [] { "PackageId" });
             }
 
             // PackageId (string) minLength
             if(this.PackageId != null && this.PackageId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackageId, length must be greater than 38.", new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, length must be greater than 38.", new [] { "PackageId" });
             }
 
             // PackageId (string) pattern
             Regex regexPackageId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPackageId.Match(this.PackageId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackageId, must match a pattern of " + regexPackageId, new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, must match a pattern of " + regexPackageId, new [] { "PackageId" });
             }
 
             // Quantity (int?) maximum
             if(this.Quantity > (int?)10000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
             }
 
             // Quantity (int?) minimum
             if(this.Quantity < (int?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
             }
 
             // TemplateName (string) maxLength
             if(this.TemplateName != null && this.TemplateName.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TemplateName, length must be less than 1024.", new [] { "TemplateName" });
+                yield return new ValidationResult("Invalid value for TemplateName, length must be less than 1024.", new [] { "TemplateName" });
             }
 
             // TemplateName (string) minLength
             if(this.TemplateName != null && this.TemplateName.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TemplateName, length must be greater than 1.", new [] { "TemplateName" });
+                yield return new ValidationResult("Invalid value for TemplateName, length must be greater than 1.", new [] { "TemplateName" });
             }
 
             yield break;

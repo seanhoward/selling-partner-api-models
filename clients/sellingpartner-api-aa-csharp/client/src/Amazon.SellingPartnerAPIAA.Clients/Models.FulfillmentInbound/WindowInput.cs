@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="WindowInput" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected WindowInput() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="WindowInput" /> class.
         /// </summary>
         /// <param name="start">The start date of the window. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with minute precision. Supports patterns &#x60;yyyy-MM-ddTHH:mmZ&#x60;, &#x60;yyyy-MM-ddTHH:mm:ssZ&#x60;, or &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;. Note that non-zero second and millisecond components are removed. (required).</param>
-        public WindowInput(DateTime? start = default(DateTime?))
+        public WindowInput(DateTime? start = default)
         {
             // to ensure "start" is required (not null)
             if (start == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

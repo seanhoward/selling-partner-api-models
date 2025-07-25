@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// Initializes a new instance of the <see cref="AplusResponse" /> class.
         /// </summary>
         /// <param name="warnings">warnings.</param>
-        public AplusResponse(MessageSet warnings = default(MessageSet))
+        public AplusResponse(MessageSet warnings = default)
         {
             this.Warnings = warnings;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

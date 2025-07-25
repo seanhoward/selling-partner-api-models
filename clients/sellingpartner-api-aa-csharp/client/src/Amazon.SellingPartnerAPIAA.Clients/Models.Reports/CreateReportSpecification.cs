@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReportSpecification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateReportSpecification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReportSpecification" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <param name="dataStartTime">The start of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this..</param>
         /// <param name="dataEndTime">The end of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this..</param>
         /// <param name="marketplaceIds">A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise. (required).</param>
-        public CreateReportSpecification(ReportOptions reportOptions = default(ReportOptions), string reportType = default(string), DateTime? dataStartTime = default(DateTime?), DateTime? dataEndTime = default(DateTime?), List<string> marketplaceIds = default(List<string>))
+        public CreateReportSpecification(ReportOptions reportOptions = default, string reportType = default, DateTime? dataStartTime = default, DateTime? dataEndTime = default, List<string> marketplaceIds = default)
         {
             // to ensure "reportType" is required (not null)
             if (reportType == null)
@@ -204,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

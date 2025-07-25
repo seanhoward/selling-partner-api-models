@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="start">The start date and time. This defaults to the current date and time..</param>
         /// <param name="end">The end date and time. This must come after the value of start. This defaults to the next business day from the start..</param>
-        public TimeRange(DateTime? start = default(DateTime?), DateTime? end = default(DateTime?))
+        public TimeRange(DateTime? start = default, DateTime? end = default)
         {
             this.Start = start;
             this.End = end;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

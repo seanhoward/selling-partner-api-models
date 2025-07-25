@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="uploadDestinationId">The identifier of the upload destination. Get this value by calling the &#x60;createServiceDocumentUploadDestination&#x60; operation of the Services API..</param>
         /// <param name="contentSha256">Sha256 hash of the file content. This value is used to determine if the file has been corrupted or tampered with during transit..</param>
-        public FulfillmentDocument(string uploadDestinationId = default(string), string contentSha256 = default(string))
+        public FulfillmentDocument(string uploadDestinationId = default, string contentSha256 = default)
         {
             this.UploadDestinationId = uploadDestinationId;
             this.ContentSha256 = contentSha256;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

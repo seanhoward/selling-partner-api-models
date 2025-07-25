@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// <summary>
         /// Initializes a new instance of the <see cref="RestrictionList" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RestrictionList() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RestrictionList" /> class.
         /// </summary>
         /// <param name="restrictions">restrictions (required).</param>
-        public RestrictionList(List<Restriction> restrictions = default(List<Restriction>))
+        public RestrictionList(List<Restriction> restrictions = default)
         {
             // to ensure "restrictions" is required (not null)
             if (restrictions == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

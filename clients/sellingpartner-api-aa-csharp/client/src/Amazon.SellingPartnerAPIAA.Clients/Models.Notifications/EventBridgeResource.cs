@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <summary>
         /// Initializes a new instance of the <see cref="EventBridgeResource" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected EventBridgeResource() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="EventBridgeResource" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <param name="name">The name of the partner event source associated with the destination. (required).</param>
         /// <param name="region">The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html). (required).</param>
         /// <param name="accountId">The identifier for the AWS account that is responsible for charges related to receiving notifications. (required).</param>
-        public EventBridgeResource(string name = default(string), string region = default(string), string accountId = default(string))
+        public EventBridgeResource(string name = default, string region = default, string accountId = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -179,12 +179,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 256)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 256.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 256.", new [] { "Name" });
             }
 
             yield break;

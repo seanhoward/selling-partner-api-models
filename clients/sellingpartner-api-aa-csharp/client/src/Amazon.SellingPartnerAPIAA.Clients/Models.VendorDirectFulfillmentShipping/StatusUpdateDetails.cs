@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="StatusUpdateDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected StatusUpdateDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="StatusUpdateDetails" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="statusDateTime">The date and time when the shipment status was updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00. (required).</param>
         /// <param name="statusLocationAddress">statusLocationAddress (required).</param>
         /// <param name="shipmentSchedule">shipmentSchedule.</param>
-        public StatusUpdateDetails(string trackingNumber = default(string), string statusCode = default(string), string reasonCode = default(string), DateTime? statusDateTime = default(DateTime?), Address statusLocationAddress = default(Address), ShipmentSchedule shipmentSchedule = default(ShipmentSchedule))
+        public StatusUpdateDetails(string trackingNumber = default, string statusCode = default, string reasonCode = default, DateTime? statusDateTime = default, Address statusLocationAddress = default, ShipmentSchedule shipmentSchedule = default)
         {
             // to ensure "trackingNumber" is required (not null)
             if (trackingNumber == null)
@@ -244,7 +244,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

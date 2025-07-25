@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// Initializes a new instance of the <see cref="CancelFulfillmentOrderResponse" /> class.
         /// </summary>
         /// <param name="errors">One or more unexpected errors occurred during the &#x60;cancelFulfillmentOrder&#x60; operation..</param>
-        public CancelFulfillmentOrderResponse(ErrorList errors = default(ErrorList))
+        public CancelFulfillmentOrderResponse(ErrorList errors = default)
         {
             this.Errors = errors;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

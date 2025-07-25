@@ -108,7 +108,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemVendorDetailsByMarketplace" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemVendorDetailsByMarketplace() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemVendorDetailsByMarketplace" /> class.
@@ -121,7 +121,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="productGroup">Product group associated with an Amazon catalog item..</param>
         /// <param name="productSubcategory">Product subcategory associated with an Amazon catalog item..</param>
         /// <param name="replenishmentCategory">Replenishment category associated with an Amazon catalog item..</param>
-        public ItemVendorDetailsByMarketplace(string marketplaceId = default(string), string brandCode = default(string), string manufacturerCode = default(string), string manufacturerCodeParent = default(string), ItemVendorDetailsCategory productCategory = default(ItemVendorDetailsCategory), string productGroup = default(string), ItemVendorDetailsCategory productSubcategory = default(ItemVendorDetailsCategory), ReplenishmentCategoryEnum? replenishmentCategory = default(ReplenishmentCategoryEnum?))
+        public ItemVendorDetailsByMarketplace(string marketplaceId = default, string brandCode = default, string manufacturerCode = default, string manufacturerCodeParent = default, ItemVendorDetailsCategory productCategory = default, string productGroup = default, ItemVendorDetailsCategory productSubcategory = default, ReplenishmentCategoryEnum? replenishmentCategory = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -317,7 +317,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

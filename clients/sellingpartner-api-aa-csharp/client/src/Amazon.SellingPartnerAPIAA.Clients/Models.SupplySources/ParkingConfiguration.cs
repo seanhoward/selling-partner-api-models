@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <param name="parkingCostType">The type of cost at parking location..</param>
         /// <param name="parkingSpotIdentificationType">The type of parking spot identification used at parking location..</param>
         /// <param name="numberOfParkingSpots">The number of parking spots..</param>
-        public ParkingConfiguration(ParkingCostType? parkingCostType = default(ParkingCostType?), ParkingSpotIdentificationType? parkingSpotIdentificationType = default(ParkingSpotIdentificationType?), int? numberOfParkingSpots = default(int?))
+        public ParkingConfiguration(ParkingCostType? parkingCostType = default, ParkingSpotIdentificationType? parkingSpotIdentificationType = default, int? numberOfParkingSpots = default)
         {
             this.ParkingCostType = parkingCostType;
             this.ParkingSpotIdentificationType = parkingSpotIdentificationType;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

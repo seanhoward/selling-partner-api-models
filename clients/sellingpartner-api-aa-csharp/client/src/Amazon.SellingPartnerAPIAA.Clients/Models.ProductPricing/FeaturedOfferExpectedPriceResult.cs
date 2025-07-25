@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPriceResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeaturedOfferExpectedPriceResult() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPriceResult" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <param name="resultStatus">The status of the FOEP computation. Possible values include &#x60;VALID_FOEP&#x60;, &#x60;NO_COMPETING_OFFER&#x60;, &#x60;OFFER_NOT_ELIGIBLE&#x60;, &#x60;OFFER_NOT_FOUND&#x60;, and &#x60;ASIN_NOT_ELIGIBLE&#x60;. Additional values might be added in the future. (required).</param>
         /// <param name="competingFeaturedOffer">The offer that will likely be the featured offer if the target offer is priced above its FOEP. If the target offer is currently the featured offer, this property will be different than &#x60;currentFeaturedOffer&#x60;..</param>
         /// <param name="currentFeaturedOffer">The offer that is currently the featured offer. If the target offer is not currently featured, then this property will be equal to &#x60;competingFeaturedOffer&#x60;..</param>
-        public FeaturedOfferExpectedPriceResult(FeaturedOfferExpectedPrice featuredOfferExpectedPrice = default(FeaturedOfferExpectedPrice), string resultStatus = default(string), FeaturedOffer competingFeaturedOffer = default(FeaturedOffer), FeaturedOffer currentFeaturedOffer = default(FeaturedOffer))
+        public FeaturedOfferExpectedPriceResult(FeaturedOfferExpectedPrice featuredOfferExpectedPrice = default, string resultStatus = default, FeaturedOffer competingFeaturedOffer = default, FeaturedOffer currentFeaturedOffer = default)
         {
             // to ensure "resultStatus" is required (not null)
             if (resultStatus == null)
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

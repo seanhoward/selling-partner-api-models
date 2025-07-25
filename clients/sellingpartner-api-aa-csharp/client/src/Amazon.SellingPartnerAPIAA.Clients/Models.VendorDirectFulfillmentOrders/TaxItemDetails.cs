@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// Initializes a new instance of the <see cref="TaxItemDetails" /> class.
         /// </summary>
         /// <param name="taxLineItem">Tax details..</param>
-        public TaxItemDetails(TaxLineItem taxLineItem = default(TaxLineItem))
+        public TaxItemDetails(TaxLineItem taxLineItem = default)
         {
             this.TaxLineItem = taxLineItem;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

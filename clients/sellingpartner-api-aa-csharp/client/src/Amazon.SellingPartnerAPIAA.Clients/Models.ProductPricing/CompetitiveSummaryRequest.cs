@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CompetitiveSummaryRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryRequest" /> class.
@@ -50,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <param name="lowestPricedOffersInputs">The list of &#x60;lowestPricedOffersInput&#x60; parameters that are used to build &#x60;lowestPricedOffers&#x60; in the response. This attribute is only valid if &#x60;lowestPricedOffers&#x60; is requested in &#x60;includedData&#x60;.</param>
         /// <param name="method">HTTP method type (required).</param>
         /// <param name="uri">The URI associated with the individual APIs that are called as part of the batch request. For &#x60;getCompetitiveSummary&#x60;, this is &#x60;/products/pricing/2022-05-01/items/competitiveSummary&#x60;. (required).</param>
-        public CompetitiveSummaryRequest(string asin = default(string), string marketplaceId = default(string), List<CompetitiveSummaryIncludedData> includedData = default(List<CompetitiveSummaryIncludedData>), List<LowestPricedOffersInput> lowestPricedOffersInputs = default(List<LowestPricedOffersInput>), HttpMethod method = default(HttpMethod), string uri = default(string))
+        public CompetitiveSummaryRequest(string asin = default, string marketplaceId = default, List<CompetitiveSummaryIncludedData> includedData = default, List<LowestPricedOffersInput> lowestPricedOffersInputs = default, HttpMethod method = default, string uri = default)
         {
             // to ensure "asin" is required (not null)
             if (asin == null)
@@ -246,7 +246,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

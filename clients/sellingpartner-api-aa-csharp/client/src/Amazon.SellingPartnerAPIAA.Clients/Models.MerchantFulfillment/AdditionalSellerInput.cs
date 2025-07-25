@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="valueAsWeight">valueAsWeight.</param>
         /// <param name="valueAsDimension">valueAsDimension.</param>
         /// <param name="valueAsCurrency">valueAsCurrency.</param>
-        public AdditionalSellerInput(string dataType = default(string), string valueAsString = default(string), bool? valueAsBoolean = default(bool?), int? valueAsInteger = default(int?), DateTime? valueAsTimestamp = default(DateTime?), Address valueAsAddress = default(Address), Weight valueAsWeight = default(Weight), Length valueAsDimension = default(Length), CurrencyAmount valueAsCurrency = default(CurrencyAmount))
+        public AdditionalSellerInput(string dataType = default, string valueAsString = default, bool? valueAsBoolean = default, int? valueAsInteger = default, DateTime? valueAsTimestamp = default, Address valueAsAddress = default, Weight valueAsWeight = default, Length valueAsDimension = default, CurrencyAmount valueAsCurrency = default)
         {
             this.DataType = dataType;
             this.ValueAsString = valueAsString;
@@ -248,7 +248,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

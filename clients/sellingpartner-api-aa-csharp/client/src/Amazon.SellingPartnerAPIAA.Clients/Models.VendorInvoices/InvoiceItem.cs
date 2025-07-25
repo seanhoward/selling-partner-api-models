@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InvoiceItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceItem" /> class.
@@ -56,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// <param name="taxDetails">Individual tax details per line item..</param>
         /// <param name="chargeDetails">Individual charge details per line item..</param>
         /// <param name="allowanceDetails">Individual allowance details per line item..</param>
-        public InvoiceItem(int? itemSequenceNumber = default(int?), string amazonProductIdentifier = default(string), string vendorProductIdentifier = default(string), ItemQuantity invoicedQuantity = default(ItemQuantity), Money netCost = default(Money), NetCostUnitOfMeasure? netCostUnitOfMeasure = default(NetCostUnitOfMeasure?), string purchaseOrderNumber = default(string), string hsnCode = default(string), CreditNoteDetails creditNoteDetails = default(CreditNoteDetails), List<TaxDetails> taxDetails = default(List<TaxDetails>), List<ChargeDetails> chargeDetails = default(List<ChargeDetails>), List<AllowanceDetails> allowanceDetails = default(List<AllowanceDetails>))
+        public InvoiceItem(int? itemSequenceNumber = default, string amazonProductIdentifier = default, string vendorProductIdentifier = default, ItemQuantity invoicedQuantity = default, Money netCost = default, NetCostUnitOfMeasure? netCostUnitOfMeasure = default, string purchaseOrderNumber = default, string hsnCode = default, CreditNoteDetails creditNoteDetails = default, List<TaxDetails> taxDetails = default, List<ChargeDetails> chargeDetails = default, List<AllowanceDetails> allowanceDetails = default)
         {
             // to ensure "itemSequenceNumber" is required (not null)
             if (itemSequenceNumber == null)
@@ -332,7 +332,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

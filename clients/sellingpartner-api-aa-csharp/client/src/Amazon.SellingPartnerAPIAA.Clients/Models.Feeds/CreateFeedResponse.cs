@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFeedResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateFeedResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFeedResponse" /> class.
         /// </summary>
         /// <param name="feedId">The identifier for the feed. This identifier is unique only in combination with a seller ID. (required).</param>
-        public CreateFeedResponse(string feedId = default(string))
+        public CreateFeedResponse(string feedId = default)
         {
             // to ensure "feedId" is required (not null)
             if (feedId == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

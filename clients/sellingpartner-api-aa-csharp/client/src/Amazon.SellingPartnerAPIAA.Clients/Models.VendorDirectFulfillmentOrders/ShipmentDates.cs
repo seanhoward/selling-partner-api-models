@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDates" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShipmentDates() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDates" /> class.
         /// </summary>
         /// <param name="requiredShipDate">Time by which the vendor is required to ship the order. (required).</param>
         /// <param name="promisedDeliveryDate">Delivery date promised to the Amazon customer..</param>
-        public ShipmentDates(DateTime? requiredShipDate = default(DateTime?), DateTime? promisedDeliveryDate = default(DateTime?))
+        public ShipmentDates(DateTime? requiredShipDate = default, DateTime? promisedDeliveryDate = default)
         {
             // to ensure "requiredShipDate" is required (not null)
             if (requiredShipDate == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

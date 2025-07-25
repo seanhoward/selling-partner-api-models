@@ -39,14 +39,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryQuantity" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InventoryQuantity() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryQuantity" /> class.
         /// </summary>
         /// <param name="quantity">Quantity of the respective inventory. (required).</param>
         /// <param name="unitOfMeasurement">Unit of measurement for the inventory. (required).</param>
-        public InventoryQuantity(decimal? quantity = default(decimal?), InventoryUnitOfMeasurement unitOfMeasurement = default(InventoryUnitOfMeasurement))
+        public InventoryQuantity(decimal? quantity = default, InventoryUnitOfMeasurement unitOfMeasurement = default)
         {
             // to ensure "quantity" is required (not null)
             if (quantity == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemBuyerInfo" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderItemBuyerInfo() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemBuyerInfo" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="giftWrapTax">The tax on the gift wrap price..</param>
         /// <param name="giftMessageText">A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders..</param>
         /// <param name="giftWrapLevel">The gift wrap level specified by the buyer..</param>
-        public OrderItemBuyerInfo(string orderItemId = default(string), BuyerCustomizedInfoDetail buyerCustomizedInfo = default(BuyerCustomizedInfoDetail), Money giftWrapPrice = default(Money), Money giftWrapTax = default(Money), string giftMessageText = default(string), string giftWrapLevel = default(string))
+        public OrderItemBuyerInfo(string orderItemId = default, BuyerCustomizedInfoDetail buyerCustomizedInfo = default, Money giftWrapPrice = default, Money giftWrapTax = default, string giftMessageText = default, string giftWrapLevel = default)
         {
             // to ensure "orderItemId" is required (not null)
             if (orderItemId == null)
@@ -214,7 +214,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

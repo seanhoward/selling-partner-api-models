@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemBrowseClassificationsByMarketplace" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemBrowseClassificationsByMarketplace() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemBrowseClassificationsByMarketplace" /> class.
         /// </summary>
         /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
         /// <param name="classifications">Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace..</param>
-        public ItemBrowseClassificationsByMarketplace(string marketplaceId = default(string), List<ItemBrowseClassification> classifications = default(List<ItemBrowseClassification>))
+        public ItemBrowseClassificationsByMarketplace(string marketplaceId = default, List<ItemBrowseClassification> classifications = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -72,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="assignedTechnicians">A list of technicians assigned to the service job..</param>
         /// <param name="rescheduledAppointmentId">The identifier of a rescheduled appointment..</param>
         /// <param name="poa">Proof of Appointment (POA) details..</param>
-        public Appointment(string appointmentId = default(string), AppointmentStatusEnum? appointmentStatus = default(AppointmentStatusEnum?), AppointmentTime appointmentTime = default(AppointmentTime), List<Technician> assignedTechnicians = default(List<Technician>), string rescheduledAppointmentId = default(string), Poa poa = default(Poa))
+        public Appointment(string appointmentId = default, AppointmentStatusEnum? appointmentStatus = default, AppointmentTime appointmentTime = default, List<Technician> assignedTechnicians = default, string rescheduledAppointmentId = default, Poa poa = default)
         {
             this.AppointmentId = appointmentId;
             this.AppointmentStatus = appointmentStatus;
@@ -228,7 +228,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ListContentDocumentAsinRelationsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListContentDocumentAsinRelationsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListContentDocumentAsinRelationsResponse" /> class.
         /// </summary>
         /// <param name="asinMetadataSet">asinMetadataSet (required).</param>
-        public ListContentDocumentAsinRelationsResponse(AsinMetadataSet asinMetadataSet = default(AsinMetadataSet), MessageSet warnings = default(MessageSet), string nextPageToken = default(string)) : base(nextPageToken)
+        public ListContentDocumentAsinRelationsResponse(AsinMetadataSet asinMetadataSet = default, MessageSet warnings = default, string nextPageToken = default) : base(nextPageToken)
         {
             // to ensure "asinMetadataSet" is required (not null)
             if (asinMetadataSet == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

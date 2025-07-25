@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderAddress" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderAddress() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderAddress" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="buyerCompanyName">The company name of the contact buyer. For IBA orders, the buyer company must be Amazon entities..</param>
         /// <param name="shippingAddress">The shipping address for the order.  **Note**: &#x60;ShippingAddress&#x60; is only available for orders with the following status values: &#x60;Unshipped&#x60;, &#x60;PartiallyShipped&#x60;, &#x60;Shipped&#x60;, and &#x60;InvoiceUnconfirmed&#x60;..</param>
         /// <param name="deliveryPreferences">deliveryPreferences.</param>
-        public OrderAddress(string amazonOrderId = default(string), string buyerCompanyName = default(string), Address shippingAddress = default(Address), DeliveryPreferences deliveryPreferences = default(DeliveryPreferences))
+        public OrderAddress(string amazonOrderId = default, string buyerCompanyName = default, Address shippingAddress = default, DeliveryPreferences deliveryPreferences = default)
         {
             // to ensure "amazonOrderId" is required (not null)
             if (amazonOrderId == null)
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Initializes a new instance of the <see cref="FulfillmentInstruction" /> class.
         /// </summary>
         /// <param name="fulfillmentSupplySourceId">The &#x60;sourceId&#x60; of the location from where you want the order fulfilled..</param>
-        public FulfillmentInstruction(string fulfillmentSupplySourceId = default(string))
+        public FulfillmentInstruction(string fulfillmentSupplySourceId = default)
         {
             this.FulfillmentSupplySourceId = fulfillmentSupplySourceId;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

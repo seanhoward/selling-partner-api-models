@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerSpecification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ContainerSpecification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerSpecification" /> class.
         /// </summary>
         /// <param name="dimensions">The length, width, and height of the container. (required).</param>
         /// <param name="weight">The weight of the container. (required).</param>
-        public ContainerSpecification(Dimensions dimensions = default(Dimensions), Weight weight = default(Weight))
+        public ContainerSpecification(Dimensions dimensions = default, Weight weight = default)
         {
             // to ensure "dimensions" is required (not null)
             if (dimensions == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

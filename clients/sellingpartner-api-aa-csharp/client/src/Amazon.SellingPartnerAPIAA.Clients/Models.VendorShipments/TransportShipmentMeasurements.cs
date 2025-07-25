@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="totalPalletNonStackable">Total number of Non Stackable Pallets present in the shipment..</param>
         /// <param name="shipmentWeight">Total Weight of the shipment..</param>
         /// <param name="shipmentVolume">Total Volume of the shipment..</param>
-        public TransportShipmentMeasurements(int? totalCartonCount = default(int?), int? totalPalletStackable = default(int?), int? totalPalletNonStackable = default(int?), Weight shipmentWeight = default(Weight), Volume shipmentVolume = default(Volume))
+        public TransportShipmentMeasurements(int? totalCartonCount = default, int? totalPalletStackable = default, int? totalPalletNonStackable = default, Weight shipmentWeight = default, Volume shipmentVolume = default)
         {
             this.TotalCartonCount = totalCartonCount;
             this.TotalPalletStackable = totalPalletStackable;
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

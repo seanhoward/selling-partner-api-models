@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TrackingDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingDetails" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="carrierCode">Unique or identifying code for the carrier..</param>
         /// <param name="shipBy">Timestamp denoting when the shipment will be shipped Date should be in ISO 8601 format as defined by date-time. (required).</param>
         /// <param name="bookingId">The identifier that is received from transportation to uniquely identify a booking..</param>
-        public TrackingDetails(CarrierCode carrierCode = default(CarrierCode), DateTime? shipBy = default(DateTime?), string bookingId = default(string))
+        public TrackingDetails(CarrierCode carrierCode = default, DateTime? shipBy = default, string bookingId = default)
         {
             // to ensure "shipBy" is required (not null)
             if (shipBy == null)
@@ -163,12 +163,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // BookingId (string) minLength
             if(this.BookingId != null && this.BookingId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BookingId, length must be greater than 1.", new [] { "BookingId" });
+                yield return new ValidationResult("Invalid value for BookingId, length must be greater than 1.", new [] { "BookingId" });
             }
 
             yield break;

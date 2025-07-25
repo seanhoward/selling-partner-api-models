@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
         /// <summary>
         /// Initializes a new instance of the <see cref="InitiatePayoutRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InitiatePayoutRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InitiatePayoutRequest" /> class.
         /// </summary>
         /// <param name="marketplaceId">The identifier of the Amazon marketplace. This API supports the following marketplaces: DE, FR, IT, ES, SE, NL, PL, and BE. For a list of possible marketplace IDs, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required).</param>
         /// <param name="accountType">The account type in the selected marketplace for which a payout must be initiated. For supported EU marketplaces, the only account type is &#x60;Standard Orders&#x60;. (required).</param>
-        public InitiatePayoutRequest(string marketplaceId = default(string), string accountType = default(string))
+        public InitiatePayoutRequest(string marketplaceId = default, string accountType = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

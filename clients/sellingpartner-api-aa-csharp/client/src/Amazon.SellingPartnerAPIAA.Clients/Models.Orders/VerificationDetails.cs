@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Initializes a new instance of the <see cref="VerificationDetails" /> class.
         /// </summary>
         /// <param name="prescriptionDetail">Information regarding the prescription tied to the order..</param>
-        public VerificationDetails(PrescriptionDetail prescriptionDetail = default(PrescriptionDetail))
+        public VerificationDetails(PrescriptionDetail prescriptionDetail = default)
         {
             this.PrescriptionDetail = prescriptionDetail;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

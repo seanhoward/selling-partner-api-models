@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeedsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetFeedsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeedsResponse" /> class.
         /// </summary>
         /// <param name="feeds">The feeds. (required).</param>
         /// <param name="nextToken">Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter..</param>
-        public GetFeedsResponse(FeedList feeds = default(FeedList), string nextToken = default(string))
+        public GetFeedsResponse(FeedList feeds = default, string nextToken = default)
         {
             // to ensure "feeds" is required (not null)
             if (feeds == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

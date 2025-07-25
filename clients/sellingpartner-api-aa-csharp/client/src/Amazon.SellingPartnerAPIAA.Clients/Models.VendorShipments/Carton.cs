@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="Carton" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Carton() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Carton" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="weight">weight.</param>
         /// <param name="trackingNumber">This is required to be provided for every carton in the small parcel shipments..</param>
         /// <param name="items">A list of container item details. (required).</param>
-        public Carton(List<ContainerIdentification> cartonIdentifiers = default(List<ContainerIdentification>), string cartonSequenceNumber = default(string), Dimensions dimensions = default(Dimensions), Weight weight = default(Weight), string trackingNumber = default(string), List<ContainerItem> items = default(List<ContainerItem>))
+        public Carton(List<ContainerIdentification> cartonIdentifiers = default, string cartonSequenceNumber = default, Dimensions dimensions = default, Weight weight = default, string trackingNumber = default, List<ContainerItem> items = default)
         {
             // to ensure "cartonSequenceNumber" is required (not null)
             if (cartonSequenceNumber == null)
@@ -220,7 +220,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

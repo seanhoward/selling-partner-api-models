@@ -66,14 +66,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="LowestPricedOffersInput" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected LowestPricedOffersInput() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="LowestPricedOffersInput" /> class.
         /// </summary>
         /// <param name="itemCondition">The input parameter specifies the &#x60;itemCondition&#x60; of the offer that is requested for &#x60;LowestPricedOffers&#x60;. &#x60;New&#x60; is the default value for &#x60;itemCondition&#x60;. (required).</param>
         /// <param name="offerType">The input parameter specifies the type of offers requested for &#x60;LowestPricedOffers&#x60;. This applies to &#x60;Consumer&#x60; and &#x60;Business&#x60; offers. &#x60;Consumer&#x60; is the default &#x60;offerType&#x60;. (required).</param>
-        public LowestPricedOffersInput(Condition itemCondition = default(Condition), OfferTypeEnum offerType = default(OfferTypeEnum))
+        public LowestPricedOffersInput(Condition itemCondition = default, OfferTypeEnum offerType = default)
         {
             // to ensure "itemCondition" is required (not null)
             if (itemCondition == null)
@@ -175,7 +175,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

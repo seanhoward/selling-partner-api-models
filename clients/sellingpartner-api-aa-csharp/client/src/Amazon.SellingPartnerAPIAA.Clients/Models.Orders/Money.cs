@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="currencyCode">The three-digit currency code. In ISO 4217 format..</param>
         /// <param name="amount">The currency amount..</param>
-        public Money(string currencyCode = default(string), string amount = default(string))
+        public Money(string currencyCode = default, string amount = default)
         {
             this.CurrencyCode = currencyCode;
             this.Amount = amount;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDeliveryOffersProduct" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetDeliveryOffersProduct() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDeliveryOffersProduct" /> class.
         /// </summary>
         /// <param name="productIdentifier">Product identifier input that locates a product for MCF. (required).</param>
         /// <param name="amount">The amount of the requested product..</param>
-        public GetDeliveryOffersProduct(ProductIdentifier productIdentifier = default(ProductIdentifier), Amount amount = default(Amount))
+        public GetDeliveryOffersProduct(ProductIdentifier productIdentifier = default, Amount amount = default)
         {
             // to ensure "productIdentifier" is required (not null)
             if (productIdentifier == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

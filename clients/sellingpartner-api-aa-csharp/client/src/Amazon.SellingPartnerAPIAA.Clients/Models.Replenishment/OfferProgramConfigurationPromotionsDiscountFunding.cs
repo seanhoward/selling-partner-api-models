@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// Initializes a new instance of the <see cref="OfferProgramConfigurationPromotionsDiscountFunding" /> class.
         /// </summary>
         /// <param name="percentage">The percentage discount on the offer..</param>
-        public OfferProgramConfigurationPromotionsDiscountFunding(decimal? percentage = default(decimal?))
+        public OfferProgramConfigurationPromotionsDiscountFunding(decimal? percentage = default)
         {
             this.Percentage = percentage;
         }
@@ -116,18 +116,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Percentage (decimal?) maximum
             if(this.Percentage > (decimal?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Percentage, must be a value less than or equal to 100.", new [] { "Percentage" });
+                yield return new ValidationResult("Invalid value for Percentage, must be a value less than or equal to 100.", new [] { "Percentage" });
             }
 
             // Percentage (decimal?) minimum
             if(this.Percentage < (decimal?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Percentage, must be a value greater than or equal to 0.", new [] { "Percentage" });
+                yield return new ValidationResult("Invalid value for Percentage, must be a value greater than or equal to 0.", new [] { "Percentage" });
             }
 
             yield break;

@@ -2,7 +2,7 @@
   "profiles": {
     "APIBuilder": {
       "commandName": "Project",
-      "commandLineArgs": "-m $(SolutionDir)..\\..\\models \r\n-s $(SolutionDir)..\\..\\schemas \r\n-j C:\\swagger-codegen\\swagger-codegen-cli.jar \r\n-r $(SolutionDir)src\\Amazon.SellingPartnerAPIAA\\resources \r\n-o Output2\r\n"
+      "commandLineArgs": "-m $(SolutionDir)..\\..\\models \r\n-s $(SolutionDir)..\\..\\schemas \r\n-j C:\\swagger-codegen\\swagger-codegen-cli.jar \r\n-r $(SolutionDir)src\\Amazon.SellingPartnerAPIAA\\resources \r\n-o Output\r\n"
     },
     "Transfers.json": {
       "commandName": "Project",

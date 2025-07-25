@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageComponent" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ImageComponent() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageComponent" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="uploadDestinationId">This identifier is provided by the Selling Partner API for Uploads. (required).</param>
         /// <param name="imageCropSpecification">imageCropSpecification (required).</param>
         /// <param name="altText">The alternative text for the image. (required).</param>
-        public ImageComponent(string uploadDestinationId = default(string), ImageCropSpecification imageCropSpecification = default(ImageCropSpecification), string altText = default(string))
+        public ImageComponent(string uploadDestinationId = default, ImageCropSpecification imageCropSpecification = default, string altText = default)
         {
             // to ensure "uploadDestinationId" is required (not null)
             if (uploadDestinationId == null)
@@ -178,24 +178,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // UploadDestinationId (string) minLength
             if(this.UploadDestinationId != null && this.UploadDestinationId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for UploadDestinationId, length must be greater than 1.", new [] { "UploadDestinationId" });
+                yield return new ValidationResult("Invalid value for UploadDestinationId, length must be greater than 1.", new [] { "UploadDestinationId" });
             }
 
             // AltText (string) maxLength
             if(this.AltText != null && this.AltText.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AltText, length must be less than 100.", new [] { "AltText" });
+                yield return new ValidationResult("Invalid value for AltText, length must be less than 100.", new [] { "AltText" });
             }
 
             // AltText (string) minLength
             if(this.AltText != null && this.AltText.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AltText, length must be greater than 1.", new [] { "AltText" });
+                yield return new ValidationResult("Invalid value for AltText, length must be greater than 1.", new [] { "AltText" });
             }
 
             yield break;

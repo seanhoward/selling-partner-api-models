@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
         /// </summary>
         /// <param name="restrictedDataToken">A Restricted Data Token (RDT). This is a short-lived access token that authorizes calls to restricted operations. Pass this value with the x-amz-access-token header when making subsequent calls to these restricted resources..</param>
         /// <param name="expiresIn">The lifetime of the Restricted Data Token, in seconds..</param>
-        public CreateRestrictedDataTokenResponse(string restrictedDataToken = default(string), int? expiresIn = default(int?))
+        public CreateRestrictedDataTokenResponse(string restrictedDataToken = default, int? expiresIn = default)
         {
             this.RestrictedDataToken = restrictedDataToken;
             this.ExpiresIn = expiresIn;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

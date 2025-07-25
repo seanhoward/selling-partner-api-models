@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateShipmentTrackingDetailsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected UpdateShipmentTrackingDetailsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateShipmentTrackingDetailsRequest" /> class.
         /// </summary>
         /// <param name="trackingDetails">trackingDetails (required).</param>
-        public UpdateShipmentTrackingDetailsRequest(TrackingDetailsInput trackingDetails = default(TrackingDetailsInput))
+        public UpdateShipmentTrackingDetailsRequest(TrackingDetailsInput trackingDetails = default)
         {
             // to ensure "trackingDetails" is required (not null)
             if (trackingDetails == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

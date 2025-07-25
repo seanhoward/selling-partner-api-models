@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInventoryItemRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateInventoryItemRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInventoryItemRequest" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <param name="sellerSku">The seller SKU of the item. (required).</param>
         /// <param name="marketplaceId">The marketplaceId. (required).</param>
         /// <param name="productName">The name of the item. (required).</param>
-        public CreateInventoryItemRequest(string sellerSku = default(string), string marketplaceId = default(string), string productName = default(string))
+        public CreateInventoryItemRequest(string sellerSku = default, string marketplaceId = default, string productName = default)
         {
             // to ensure "sellerSku" is required (not null)
             if (sellerSku == null)
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

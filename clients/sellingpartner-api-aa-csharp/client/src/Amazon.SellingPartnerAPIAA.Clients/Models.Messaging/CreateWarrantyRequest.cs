@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// <param name="attachments">Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer&#39;s language of preference, which can be retrieved from the GetAttributes operation..</param>
         /// <param name="coverageStartDate">The start date of the warranty coverage to include in the message to the buyer..</param>
         /// <param name="coverageEndDate">The end date of the warranty coverage to include in the message to the buyer..</param>
-        public CreateWarrantyRequest(List<Attachment> attachments = default(List<Attachment>), DateTime? coverageStartDate = default(DateTime?), DateTime? coverageEndDate = default(DateTime?))
+        public CreateWarrantyRequest(List<Attachment> attachments = default, DateTime? coverageStartDate = default, DateTime? coverageEndDate = default)
         {
             this.Attachments = attachments;
             this.CoverageStartDate = coverageStartDate;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

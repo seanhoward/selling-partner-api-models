@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxDetail" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TaxDetail() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxDetail" /> class.
@@ -141,7 +141,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// <param name="taxRate">Tax percentage applied. Percentage must be expressed in decimal..</param>
         /// <param name="taxAmount">Total tax amount applied on invoice total or an item total. (required).</param>
         /// <param name="taxableAmount">This field will contain the invoice amount that is taxable at the rate specified in the tax rate field..</param>
-        public TaxDetail(TaxTypeEnum taxType = default(TaxTypeEnum), string taxRate = default(string), Money taxAmount = default(Money), Money taxableAmount = default(Money))
+        public TaxDetail(TaxTypeEnum taxType = default, string taxRate = default, Money taxAmount = default, Money taxableAmount = default)
         {
             // to ensure "taxType" is required (not null)
             if (taxType == null)
@@ -281,7 +281,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

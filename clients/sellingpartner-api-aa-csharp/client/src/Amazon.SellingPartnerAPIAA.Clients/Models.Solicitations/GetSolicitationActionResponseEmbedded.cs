@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// Initializes a new instance of the <see cref="GetSolicitationActionResponseEmbedded" /> class.
         /// </summary>
         /// <param name="schema">schema.</param>
-        public GetSolicitationActionResponseEmbedded(GetSchemaResponse schema = default(GetSchemaResponse))
+        public GetSolicitationActionResponseEmbedded(GetSchemaResponse schema = default)
         {
             this.Schema = schema;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

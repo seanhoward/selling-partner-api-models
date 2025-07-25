@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemProcurement" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemProcurement() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemProcurement" /> class.
         /// </summary>
         /// <param name="costPrice">The price (numeric value) that you want Amazon to pay you for this product. (required).</param>
-        public ItemProcurement(Money costPrice = default(Money))
+        public ItemProcurement(Money costPrice = default)
         {
             // to ensure "costPrice" is required (not null)
             if (costPrice == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

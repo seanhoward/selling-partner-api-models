@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// Initializes a new instance of the <see cref="AssignAppointmentResourcesResponsePayload" /> class.
         /// </summary>
         /// <param name="warnings">Warnings generated during the &#x60;assignAppointmentResources&#x60; operation..</param>
-        public AssignAppointmentResourcesResponsePayload(WarningList warnings = default(WarningList))
+        public AssignAppointmentResourcesResponsePayload(WarningList warnings = default)
         {
             this.Warnings = warnings;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

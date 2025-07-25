@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalSellerInputs" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AdditionalSellerInputs() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalSellerInputs" /> class.
         /// </summary>
         /// <param name="additionalInputFieldName">The name of the additional input field. (required).</param>
         /// <param name="additionalSellerInput">additionalSellerInput (required).</param>
-        public AdditionalSellerInputs(string additionalInputFieldName = default(string), AdditionalSellerInput additionalSellerInput = default(AdditionalSellerInput))
+        public AdditionalSellerInputs(string additionalInputFieldName = default, AdditionalSellerInput additionalSellerInput = default)
         {
             // to ensure "additionalInputFieldName" is required (not null)
             if (additionalInputFieldName == null)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

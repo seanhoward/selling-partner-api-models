@@ -66,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Order() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
@@ -74,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="purchaseOrderNumber">The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code. (required).</param>
         /// <param name="purchaseOrderState">This field will contain the current state of the purchase order. (required).</param>
         /// <param name="orderDetails">Details of an order..</param>
-        public Order(string purchaseOrderNumber = default(string), PurchaseOrderStateEnum purchaseOrderState = default(PurchaseOrderStateEnum), OrderDetails orderDetails = default(OrderDetails))
+        public Order(string purchaseOrderNumber = default, PurchaseOrderStateEnum purchaseOrderState = default, OrderDetails orderDetails = default)
         {
             // to ensure "purchaseOrderNumber" is required (not null)
             if (purchaseOrderNumber == null)
@@ -198,7 +198,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

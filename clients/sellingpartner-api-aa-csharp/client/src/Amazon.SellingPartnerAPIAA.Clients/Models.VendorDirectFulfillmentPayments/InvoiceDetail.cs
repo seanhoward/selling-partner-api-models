@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceDetail" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InvoiceDetail() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceDetail" /> class.
@@ -51,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// <param name="additionalDetails">Additional details provided by the selling party, for tax-related or other purposes..</param>
         /// <param name="chargeDetails">Total charge amount details for all line items..</param>
         /// <param name="items">Provides the details of the items in this invoice. (required).</param>
-        public InvoiceDetail(string invoiceNumber = default(string), DateTime? invoiceDate = default(DateTime?), string referenceNumber = default(string), PartyIdentification remitToParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), PartyIdentification billToParty = default(PartyIdentification), string shipToCountryCode = default(string), string paymentTermsCode = default(string), Money invoiceTotal = default(Money), List<TaxDetail> taxTotals = default(List<TaxDetail>), List<AdditionalDetails> additionalDetails = default(List<AdditionalDetails>), List<ChargeDetails> chargeDetails = default(List<ChargeDetails>), List<InvoiceItem> items = default(List<InvoiceItem>))
+        public InvoiceDetail(string invoiceNumber = default, DateTime? invoiceDate = default, string referenceNumber = default, PartyIdentification remitToParty = default, PartyIdentification shipFromParty = default, PartyIdentification billToParty = default, string shipToCountryCode = default, string paymentTermsCode = default, Money invoiceTotal = default, List<TaxDetail> taxTotals = default, List<AdditionalDetails> additionalDetails = default, List<ChargeDetails> chargeDetails = default, List<InvoiceItem> items = default)
         {
             // to ensure "invoiceNumber" is required (not null)
             if (invoiceNumber == null)
@@ -373,7 +373,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

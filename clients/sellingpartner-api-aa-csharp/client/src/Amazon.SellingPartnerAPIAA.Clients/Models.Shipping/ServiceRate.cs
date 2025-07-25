@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceRate" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ServiceRate() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceRate" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="billableWeight">The weight that was used to calculate the totalCharge. (required).</param>
         /// <param name="serviceType">serviceType (required).</param>
         /// <param name="promise">promise (required).</param>
-        public ServiceRate(Currency totalCharge = default(Currency), Weight billableWeight = default(Weight), ServiceType serviceType = default(ServiceType), ShippingPromiseSet promise = default(ShippingPromiseSet))
+        public ServiceRate(Currency totalCharge = default, Weight billableWeight = default, ServiceType serviceType = default, ShippingPromiseSet promise = default)
         {
             // to ensure "totalCharge" is required (not null)
             if (totalCharge == null)
@@ -202,7 +202,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

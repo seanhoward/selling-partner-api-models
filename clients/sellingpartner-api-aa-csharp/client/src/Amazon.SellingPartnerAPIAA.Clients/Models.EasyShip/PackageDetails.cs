@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PackageDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageDetails" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <param name="packageItems">packageItems.</param>
         /// <param name="packageTimeSlot">packageTimeSlot (required).</param>
         /// <param name="packageIdentifier">packageIdentifier.</param>
-        public PackageDetails(Items packageItems = default(Items), TimeSlot packageTimeSlot = default(TimeSlot), string packageIdentifier = default(string))
+        public PackageDetails(Items packageItems = default, TimeSlot packageTimeSlot = default, string packageIdentifier = default)
         {
             // to ensure "packageTimeSlot" is required (not null)
             if (packageTimeSlot == null)
@@ -160,7 +160,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

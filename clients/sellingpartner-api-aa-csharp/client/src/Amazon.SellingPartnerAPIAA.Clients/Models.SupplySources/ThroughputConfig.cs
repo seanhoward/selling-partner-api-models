@@ -38,14 +38,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <summary>
         /// Initializes a new instance of the <see cref="ThroughputConfig" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ThroughputConfig() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ThroughputConfig" /> class.
         /// </summary>
         /// <param name="throughputCap">throughputCap.</param>
         /// <param name="throughputUnit">throughputUnit (required).</param>
-        public ThroughputConfig(ThroughputCap throughputCap = default(ThroughputCap), ThroughputUnit throughputUnit = default(ThroughputUnit))
+        public ThroughputConfig(ThroughputCap throughputCap = default, ThroughputUnit throughputUnit = default)
         {
             // to ensure "throughputUnit" is required (not null)
             if (throughputUnit == null)
@@ -144,7 +144,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

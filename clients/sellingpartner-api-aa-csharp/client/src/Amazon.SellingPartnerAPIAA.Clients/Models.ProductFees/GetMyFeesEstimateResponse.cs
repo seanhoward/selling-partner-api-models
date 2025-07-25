@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="payload">The payload for the operation..</param>
         /// <param name="errors">errors.</param>
-        public GetMyFeesEstimateResponse(GetMyFeesEstimateResult payload = default(GetMyFeesEstimateResult), ErrorList errors = default(ErrorList))
+        public GetMyFeesEstimateResponse(GetMyFeesEstimateResult payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

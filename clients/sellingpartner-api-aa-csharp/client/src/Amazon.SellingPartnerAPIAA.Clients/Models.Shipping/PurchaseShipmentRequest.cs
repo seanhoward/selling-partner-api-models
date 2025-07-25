@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="PurchaseShipmentRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PurchaseShipmentRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PurchaseShipmentRequest" /> class.
@@ -50,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="serviceType">serviceType (required).</param>
         /// <param name="containers">containers (required).</param>
         /// <param name="labelSpecification">labelSpecification (required).</param>
-        public PurchaseShipmentRequest(string clientReferenceId = default(string), Address shipTo = default(Address), Address shipFrom = default(Address), DateTime? shipDate = default(DateTime?), ServiceType serviceType = default(ServiceType), ContainerList containers = default(ContainerList), LabelSpecification labelSpecification = default(LabelSpecification))
+        public PurchaseShipmentRequest(string clientReferenceId = default, Address shipTo = default, Address shipFrom = default, DateTime? shipDate = default, ServiceType serviceType = default, ContainerList containers = default, LabelSpecification labelSpecification = default)
         {
             // to ensure "clientReferenceId" is required (not null)
             if (clientReferenceId == null)
@@ -265,7 +265,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

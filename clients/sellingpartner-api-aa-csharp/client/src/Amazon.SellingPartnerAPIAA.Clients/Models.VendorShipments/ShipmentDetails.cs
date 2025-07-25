@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="pagination">pagination.</param>
         /// <param name="shipments">A list of one or more shipments with underlying details..</param>
-        public ShipmentDetails(Pagination pagination = default(Pagination), List<Shipment> shipments = default(List<Shipment>))
+        public ShipmentDetails(Pagination pagination = default, List<Shipment> shipments = default)
         {
             this.Pagination = pagination;
             this.Shipments = shipments;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

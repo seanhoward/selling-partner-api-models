@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="PlacementOption" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PlacementOption() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PlacementOption" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="placementOptionId">The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs. (required).</param>
         /// <param name="shipmentIds">Shipment ids. (required).</param>
         /// <param name="status">The status of a placement option. Possible values: &#x60;OFFERED&#x60;, &#x60;ACCEPTED&#x60;, &#x60;EXPIRED&#x60;. (required).</param>
-        public PlacementOption(List<Incentive> discounts = default(List<Incentive>), DateTime? expiration = default(DateTime?), List<Incentive> fees = default(List<Incentive>), string placementOptionId = default(string), List<string> shipmentIds = default(List<string>), string status = default(string))
+        public PlacementOption(List<Incentive> discounts = default, DateTime? expiration = default, List<Incentive> fees = default, string placementOptionId = default, List<string> shipmentIds = default, string status = default)
         {
             // to ensure "discounts" is required (not null)
             if (discounts == null)
@@ -246,37 +246,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PlacementOptionId (string) maxLength
             if(this.PlacementOptionId != null && this.PlacementOptionId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PlacementOptionId, length must be less than 38.", new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be less than 38.", new [] { "PlacementOptionId" });
             }
 
             // PlacementOptionId (string) minLength
             if(this.PlacementOptionId != null && this.PlacementOptionId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PlacementOptionId, length must be greater than 38.", new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be greater than 38.", new [] { "PlacementOptionId" });
             }
 
             // PlacementOptionId (string) pattern
             Regex regexPlacementOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPlacementOptionId.Match(this.PlacementOptionId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PlacementOptionId, must match a pattern of " + regexPlacementOptionId, new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, must match a pattern of " + regexPlacementOptionId, new [] { "PlacementOptionId" });
             }
 
             // Status (string) maxLength
             if(this.Status != null && this.Status.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
             }
 
             // Status (string) minLength
             if(this.Status != null && this.Status.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
             }
 
             yield break;

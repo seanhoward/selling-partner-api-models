@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="sellingParty">Name/Address and tax details of the selling party..</param>
         /// <param name="vendorShipmentIdentifier">Unique vendor shipment id which is not used in last 365 days.</param>
-        public VendorDetails(PartyIdentification sellingParty = default(PartyIdentification), string vendorShipmentIdentifier = default(string))
+        public VendorDetails(PartyIdentification sellingParty = default, string vendorShipmentIdentifier = default)
         {
             this.SellingParty = sellingParty;
             this.VendorShipmentIdentifier = vendorShipmentIdentifier;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

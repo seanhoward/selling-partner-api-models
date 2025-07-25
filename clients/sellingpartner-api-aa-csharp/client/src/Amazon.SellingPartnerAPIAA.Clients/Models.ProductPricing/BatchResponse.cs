@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected BatchResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchResponse" /> class.
         /// </summary>
         /// <param name="headers">headers (required).</param>
         /// <param name="status">status (required).</param>
-        public BatchResponse(HttpHeaders headers = default(HttpHeaders), HttpStatusLine status = default(HttpStatusLine))
+        public BatchResponse(HttpHeaders headers = default, HttpStatusLine status = default)
         {
             // to ensure "headers" is required (not null)
             if (headers == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

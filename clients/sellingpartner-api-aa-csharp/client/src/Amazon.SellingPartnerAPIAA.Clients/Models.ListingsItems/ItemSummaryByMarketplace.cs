@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSummaryByMarketplace" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemSummaryByMarketplace() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSummaryByMarketplace" /> class.
@@ -168,7 +168,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <param name="createdDate">The date the listings item was created in ISO 8601 format. (required).</param>
         /// <param name="lastUpdatedDate">The date the listings item was last updated in ISO 8601 format. (required).</param>
         /// <param name="mainImage">The main image for the listings item..</param>
-        public ItemSummaryByMarketplace(string marketplaceId = default(string), string asin = default(string), string productType = default(string), ConditionTypeEnum? conditionType = default(ConditionTypeEnum?), List<StatusEnum> status = default(List<StatusEnum>), string fnSku = default(string), string itemName = default(string), DateTime? createdDate = default(DateTime?), DateTime? lastUpdatedDate = default(DateTime?), ItemImage mainImage = default(ItemImage))
+        public ItemSummaryByMarketplace(string marketplaceId = default, string asin = default, string productType = default, ConditionTypeEnum? conditionType = default, List<StatusEnum> status = default, string fnSku = default, string itemName = default, DateTime? createdDate = default, DateTime? lastUpdatedDate = default, ItemImage mainImage = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -422,7 +422,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

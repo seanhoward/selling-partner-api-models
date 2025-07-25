@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <param name="scheduledPackages">A list of packages. Refer to the &#x60;Package&#x60; object..</param>
         /// <param name="rejectedOrders">A list of orders we couldn&#39;t scheduled on your behalf. Each element contains the reason and details on the error..</param>
         /// <param name="printableDocumentsUrl">printableDocumentsUrl.</param>
-        public CreateScheduledPackagesResponse(List<Package> scheduledPackages = default(List<Package>), List<RejectedOrder> rejectedOrders = default(List<RejectedOrder>), string printableDocumentsUrl = default(string))
+        public CreateScheduledPackagesResponse(List<Package> scheduledPackages = default, List<RejectedOrder> rejectedOrders = default, string printableDocumentsUrl = default)
         {
             this.ScheduledPackages = scheduledPackages;
             this.RejectedOrders = rejectedOrders;
@@ -149,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

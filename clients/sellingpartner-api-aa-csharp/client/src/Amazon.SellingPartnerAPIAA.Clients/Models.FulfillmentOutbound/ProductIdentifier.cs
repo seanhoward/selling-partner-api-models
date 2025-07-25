@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductIdentifier" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ProductIdentifier() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductIdentifier" /> class.
         /// </summary>
         /// <param name="merchantSku">The merchant SKU for the product. (required).</param>
-        public ProductIdentifier(string merchantSku = default(string))
+        public ProductIdentifier(string merchantSku = default)
         {
             // to ensure "merchantSku" is required (not null)
             if (merchantSku == null)
@@ -129,12 +129,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // MerchantSku (string) maxLength
             if(this.MerchantSku != null && this.MerchantSku.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MerchantSku, length must be less than 50.", new [] { "MerchantSku" });
+                yield return new ValidationResult("Invalid value for MerchantSku, length must be less than 50.", new [] { "MerchantSku" });
             }
 
             yield break;

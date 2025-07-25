@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="payload">The payload for the &#x60;getOrderRegulatedInfo&#x60; operation..</param>
         /// <param name="errors">One or more unexpected errors occurred during the &#x60;getOrderRegulatedInfo&#x60; operation..</param>
-        public GetOrderRegulatedInfoResponse(OrderRegulatedInfo payload = default(OrderRegulatedInfo), ErrorList errors = default(ErrorList))
+        public GetOrderRegulatedInfoResponse(OrderRegulatedInfo payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

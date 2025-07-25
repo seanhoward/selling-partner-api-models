@@ -40,7 +40,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <param name="friday">friday.</param>
         /// <param name="saturday">saturday.</param>
         /// <param name="sunday">sunday.</param>
-        public OperatingHoursByDay(OperatingHours monday = default(OperatingHours), OperatingHours tuesday = default(OperatingHours), OperatingHours wednesday = default(OperatingHours), OperatingHours thursday = default(OperatingHours), OperatingHours friday = default(OperatingHours), OperatingHours saturday = default(OperatingHours), OperatingHours sunday = default(OperatingHours))
+        public OperatingHoursByDay(OperatingHours monday = default, OperatingHours tuesday = default, OperatingHours wednesday = default, OperatingHours thursday = default, OperatingHours friday = default, OperatingHours saturday = default, OperatingHours sunday = default)
         {
             this.Monday = monday;
             this.Tuesday = tuesday;
@@ -211,7 +211,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="invoicesDocumentId">The identifier of the export document..</param>
         /// <param name="invoicesDocumentUrl">A pre-signed URL that you can use to download the invoices document in zip format. This URL expires after 30 seconds..</param>
-        public InvoicesDocument(string invoicesDocumentId = default(string), string invoicesDocumentUrl = default(string))
+        public InvoicesDocument(string invoicesDocumentId = default, string invoicesDocumentUrl = default)
         {
             this.InvoicesDocumentId = invoicesDocumentId;
             this.InvoicesDocumentUrl = invoicesDocumentUrl;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// Initializes a new instance of the <see cref="GenerateOrderScenarioRequest" /> class.
         /// </summary>
         /// <param name="orders">The list of test orders requested as indicated by party identifiers..</param>
-        public GenerateOrderScenarioRequest(List<OrderScenarioRequest> orders = default(List<OrderScenarioRequest>))
+        public GenerateOrderScenarioRequest(List<OrderScenarioRequest> orders = default)
         {
             this.Orders = orders;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

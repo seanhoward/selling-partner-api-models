@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemVariationTheme" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemVariationTheme() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemVariationTheme" /> class.
         /// </summary>
         /// <param name="attributes">The names of the listing item attributes that are associated with the variation theme. (required).</param>
         /// <param name="theme">The variation theme that indicates the combination of listing item attributes that define the variation family. (required).</param>
-        public ItemVariationTheme(List<string> attributes = default(List<string>), string theme = default(string))
+        public ItemVariationTheme(List<string> attributes = default, string theme = default)
         {
             // to ensure "attributes" is required (not null)
             if (attributes == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

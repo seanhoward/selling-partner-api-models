@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="AssignAppointmentResourcesRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AssignAppointmentResourcesRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AssignAppointmentResourcesRequest" /> class.
         /// </summary>
         /// <param name="resources">List of resource objects to be assigned. (required).</param>
-        public AssignAppointmentResourcesRequest(AppointmentResources resources = default(AppointmentResources))
+        public AssignAppointmentResourcesRequest(AppointmentResources resources = default)
         {
             // to ensure "resources" is required (not null)
             if (resources == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

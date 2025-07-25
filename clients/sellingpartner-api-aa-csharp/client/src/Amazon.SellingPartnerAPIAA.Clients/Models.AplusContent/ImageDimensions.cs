@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageDimensions" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ImageDimensions() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageDimensions" /> class.
         /// </summary>
         /// <param name="width">width (required).</param>
         /// <param name="height">height (required).</param>
-        public ImageDimensions(IntegerWithUnits width = default(IntegerWithUnits), IntegerWithUnits height = default(IntegerWithUnits))
+        public ImageDimensions(IntegerWithUnits width = default, IntegerWithUnits height = default)
         {
             // to ensure "width" is required (not null)
             if (width == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="TermsAndConditionsNotAcceptedCarrier" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TermsAndConditionsNotAcceptedCarrier() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TermsAndConditionsNotAcceptedCarrier" /> class.
         /// </summary>
         /// <param name="carrierName">The name of the carrier. (required).</param>
-        public TermsAndConditionsNotAcceptedCarrier(string carrierName = default(string))
+        public TermsAndConditionsNotAcceptedCarrier(string carrierName = default)
         {
             // to ensure "carrierName" is required (not null)
             if (carrierName == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

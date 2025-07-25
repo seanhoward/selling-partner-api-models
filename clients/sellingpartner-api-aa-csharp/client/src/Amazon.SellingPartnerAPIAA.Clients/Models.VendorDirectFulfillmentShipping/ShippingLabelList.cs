@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="pagination">pagination.</param>
         /// <param name="shippingLabels">An array containing the details of the generated shipping labels..</param>
-        public ShippingLabelList(Pagination pagination = default(Pagination), List<ShippingLabel> shippingLabels = default(List<ShippingLabel>))
+        public ShippingLabelList(Pagination pagination = default, List<ShippingLabel> shippingLabels = default)
         {
             this.Pagination = pagination;
             this.ShippingLabels = shippingLabels;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -72,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSummaryByMarketplace" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemSummaryByMarketplace() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSummaryByMarketplace" /> class.
@@ -97,7 +97,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="tradeInEligible">Identifies an Amazon catalog item is eligible for trade-in..</param>
         /// <param name="websiteDisplayGroup">Identifier of the website display group associated with an Amazon catalog item..</param>
         /// <param name="websiteDisplayGroupName">Display name of the website display group associated with an Amazon catalog item..</param>
-        public ItemSummaryByMarketplace(string marketplaceId = default(string), bool? adultProduct = default(bool?), bool? autographed = default(bool?), string brand = default(string), ItemBrowseClassification browseClassification = default(ItemBrowseClassification), string color = default(string), List<ItemContributor> contributors = default(List<ItemContributor>), ItemClassificationEnum? itemClassification = default(ItemClassificationEnum?), string itemName = default(string), string manufacturer = default(string), bool? memorabilia = default(bool?), string modelNumber = default(string), int? packageQuantity = default(int?), string partNumber = default(string), DateTime? releaseDate = default(DateTime?), string size = default(string), string style = default(string), bool? tradeInEligible = default(bool?), string websiteDisplayGroup = default(string), string websiteDisplayGroupName = default(string))
+        public ItemSummaryByMarketplace(string marketplaceId = default, bool? adultProduct = default, bool? autographed = default, string brand = default, ItemBrowseClassification browseClassification = default, string color = default, List<ItemContributor> contributors = default, ItemClassificationEnum? itemClassification = default, string itemName = default, string manufacturer = default, bool? memorabilia = default, string modelNumber = default, int? packageQuantity = default, string partNumber = default, DateTime? releaseDate = default, string size = default, string style = default, bool? tradeInEligible = default, string websiteDisplayGroup = default, string websiteDisplayGroupName = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -486,7 +486,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

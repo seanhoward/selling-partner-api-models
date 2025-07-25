@@ -90,7 +90,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TaxDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxDetails" /> class.
@@ -99,7 +99,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <param name="taxAmount">taxAmount (required).</param>
         /// <param name="taxableAmount">taxableAmount.</param>
         /// <param name="type">Tax type..</param>
-        public TaxDetails(string taxRate = default(string), Money taxAmount = default(Money), Money taxableAmount = default(Money), TypeEnum? type = default(TypeEnum?))
+        public TaxDetails(string taxRate = default, Money taxAmount = default, Money taxableAmount = default, TypeEnum? type = default)
         {
             // to ensure "taxAmount" is required (not null)
             if (taxAmount == null)
@@ -228,7 +228,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

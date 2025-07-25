@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="payload">Contains the &#x60;UpdateScheduleRecords&#x60; for which the error/warning has occurred..</param>
         /// <param name="errors">Errors encountered, if any..</param>
-        public UpdateScheduleResponse(List<UpdateScheduleRecord> payload = default(List<UpdateScheduleRecord>), ErrorList errors = default(ErrorList))
+        public UpdateScheduleResponse(List<UpdateScheduleRecord> payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

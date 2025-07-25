@@ -63,7 +63,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="amount">Acknowledged quantity. This value should not be zero..</param>
         /// <param name="unitOfMeasure">Unit of measure for the acknowledged quantity..</param>
         /// <param name="unitSize">The case size, in the event that we ordered using cases..</param>
-        public ItemQuantity(int? amount = default(int?), UnitOfMeasureEnum? unitOfMeasure = default(UnitOfMeasureEnum?), int? unitSize = default(int?))
+        public ItemQuantity(int? amount = default, UnitOfMeasureEnum? unitOfMeasure = default, int? unitSize = default)
         {
             this.Amount = amount;
             this.UnitOfMeasure = unitOfMeasure;
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

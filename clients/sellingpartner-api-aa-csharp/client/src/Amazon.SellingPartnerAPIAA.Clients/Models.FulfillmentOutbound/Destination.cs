@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="deliveryAddress">deliveryAddress.</param>
         /// <param name="ipAddress">The IP address of the customer..</param>
-        public Destination(VariablePrecisionAddress deliveryAddress = default(VariablePrecisionAddress), string ipAddress = default(string))
+        public Destination(VariablePrecisionAddress deliveryAddress = default, string ipAddress = default)
         {
             this.DeliveryAddress = deliveryAddress;
             this.IpAddress = ipAddress;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

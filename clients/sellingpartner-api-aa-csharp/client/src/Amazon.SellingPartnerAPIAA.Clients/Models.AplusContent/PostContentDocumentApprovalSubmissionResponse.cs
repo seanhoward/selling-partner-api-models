@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// Initializes a new instance of the <see cref="PostContentDocumentApprovalSubmissionResponse" /> class.
         /// </summary>
         /// <param name="warnings">warnings.</param>
-        public PostContentDocumentApprovalSubmissionResponse(MessageSet warnings = default(MessageSet)) : base()
+        public PostContentDocumentApprovalSubmissionResponse(MessageSet warnings = default) : base()
         {
             this.Warnings = warnings;
         }
@@ -110,7 +110,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <summary>
         /// Initializes a new instance of the <see cref="ProgramTypes" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         public ProgramTypes() : base()
         {
         }
@@ -101,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

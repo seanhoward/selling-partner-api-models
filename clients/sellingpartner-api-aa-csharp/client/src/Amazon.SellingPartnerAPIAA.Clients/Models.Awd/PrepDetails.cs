@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="prepCategory">The preparation category for shipping an item to Amazon&#39;s fulfillment network..</param>
         /// <param name="prepInstructions">Information that pertains to the preparation of inbound products. This is generated based on the specified category..</param>
         /// <param name="prepOwner">prepOwner.</param>
-        public PrepDetails(LabelOwner? labelOwner = default(LabelOwner?), string prepCategory = default(string), List<PrepInstruction> prepInstructions = default(List<PrepInstruction>), PrepOwner? prepOwner = default(PrepOwner?))
+        public PrepDetails(LabelOwner? labelOwner = default, string prepCategory = default, List<PrepInstruction> prepInstructions = default, PrepOwner? prepOwner = default)
         {
             this.LabelOwner = labelOwner;
             this.PrepCategory = prepCategory;
@@ -165,7 +165,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

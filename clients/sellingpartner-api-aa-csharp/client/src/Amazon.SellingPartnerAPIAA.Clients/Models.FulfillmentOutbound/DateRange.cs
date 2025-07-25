@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="DateRange" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected DateRange() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="DateRange" /> class.
         /// </summary>
         /// <param name="earliest">The earliest point in a date range. (required).</param>
         /// <param name="latest">The latest point in a date range. (required).</param>
-        public DateRange(DateTime? earliest = default(DateTime?), DateTime? latest = default(DateTime?))
+        public DateRange(DateTime? earliest = default, DateTime? latest = default)
         {
             // to ensure "earliest" is required (not null)
             if (earliest == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

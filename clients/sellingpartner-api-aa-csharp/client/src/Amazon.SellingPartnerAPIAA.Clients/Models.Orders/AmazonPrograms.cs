@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="AmazonPrograms" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AmazonPrograms() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AmazonPrograms" /> class.
         /// </summary>
         /// <param name="programs">A list of the programs that are associated with the specified order item.  **Possible values**: &#x60;SUBSCRIBE_AND_SAVE&#x60; (required).</param>
-        public AmazonPrograms(List<string> programs = default(List<string>))
+        public AmazonPrograms(List<string> programs = default)
         {
             // to ensure "programs" is required (not null)
             if (programs == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

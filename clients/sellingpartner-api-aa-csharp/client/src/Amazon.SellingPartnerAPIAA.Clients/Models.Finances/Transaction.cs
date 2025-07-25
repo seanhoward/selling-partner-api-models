@@ -45,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="items">Additional information about the items in the transaction..</param>
         /// <param name="contexts">Additional Information about the transaction..</param>
         /// <param name="breakdowns">A list of breakdowns that provide details on how the total amount is calculated for the transaction..</param>
-        public Transaction(SellingPartnerMetadata sellingPartnerMetadata = default(SellingPartnerMetadata), RelatedIdentifiers relatedIdentifiers = default(RelatedIdentifiers), string transactionType = default(string), string transactionId = default(string), string transactionStatus = default(string), string description = default(string), DateTime? postedDate = default(DateTime?), Currency totalAmount = default(Currency), MarketplaceDetails marketplaceDetails = default(MarketplaceDetails), Items items = default(Items), Contexts contexts = default(Contexts), Breakdowns breakdowns = default(Breakdowns))
+        public Transaction(SellingPartnerMetadata sellingPartnerMetadata = default, RelatedIdentifiers relatedIdentifiers = default, string transactionType = default, string transactionId = default, string transactionStatus = default, string description = default, DateTime? postedDate = default, Currency totalAmount = default, MarketplaceDetails marketplaceDetails = default, Items items = default, Contexts contexts = default, Breakdowns breakdowns = default)
         {
             this.SellingPartnerMetadata = sellingPartnerMetadata;
             this.RelatedIdentifiers = relatedIdentifiers;
@@ -303,7 +303,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

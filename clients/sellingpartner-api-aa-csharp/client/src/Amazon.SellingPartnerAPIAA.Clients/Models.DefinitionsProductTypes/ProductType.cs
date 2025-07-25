@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductType" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ProductType() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductType" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// <param name="name">The name of the Amazon product type. (required).</param>
         /// <param name="displayName">The human-readable and localized description of the Amazon product type. (required).</param>
         /// <param name="marketplaceIds">The Amazon marketplace identifiers for which the product type definition is available. (required).</param>
-        public ProductType(string name = default(string), string displayName = default(string), List<string> marketplaceIds = default(List<string>))
+        public ProductType(string name = default, string displayName = default, List<string> marketplaceIds = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

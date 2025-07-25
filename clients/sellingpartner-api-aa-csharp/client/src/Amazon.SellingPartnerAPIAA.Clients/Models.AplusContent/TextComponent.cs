@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="TextComponent" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TextComponent() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TextComponent" /> class.
         /// </summary>
         /// <param name="value">The actual plain text. (required).</param>
         /// <param name="decoratorSet">decoratorSet.</param>
-        public TextComponent(string value = default(string), DecoratorSet decoratorSet = default(DecoratorSet))
+        public TextComponent(string value = default, DecoratorSet decoratorSet = default)
         {
             // to ensure "value" is required (not null)
             if (value == null)
@@ -145,18 +145,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Value (string) maxLength
             if(this.Value != null && this.Value.Length > 10000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, length must be less than 10000.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, length must be less than 10000.", new [] { "Value" });
             }
 
             // Value (string) minLength
             if(this.Value != null && this.Value.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, length must be greater than 1.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, length must be greater than 1.", new [] { "Value" });
             }
 
             yield break;

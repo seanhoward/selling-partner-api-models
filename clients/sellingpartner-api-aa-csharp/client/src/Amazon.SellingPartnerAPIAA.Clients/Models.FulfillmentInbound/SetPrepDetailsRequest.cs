@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="SetPrepDetailsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SetPrepDetailsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SetPrepDetailsRequest" /> class.
         /// </summary>
         /// <param name="marketplaceId">The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required).</param>
         /// <param name="mskuPrepDetails">A list of MSKUs and related prep details. (required).</param>
-        public SetPrepDetailsRequest(string marketplaceId = default(string), List<MskuPrepDetailInput> mskuPrepDetails = default(List<MskuPrepDetailInput>))
+        public SetPrepDetailsRequest(string marketplaceId = default, List<MskuPrepDetailInput> mskuPrepDetails = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -154,18 +154,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // MarketplaceId (string) maxLength
             if(this.MarketplaceId != null && this.MarketplaceId.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MarketplaceId, length must be less than 20.", new [] { "MarketplaceId" });
+                yield return new ValidationResult("Invalid value for MarketplaceId, length must be less than 20.", new [] { "MarketplaceId" });
             }
 
             // MarketplaceId (string) minLength
             if(this.MarketplaceId != null && this.MarketplaceId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MarketplaceId, length must be greater than 1.", new [] { "MarketplaceId" });
+                yield return new ValidationResult("Invalid value for MarketplaceId, length must be greater than 1.", new [] { "MarketplaceId" });
             }
 
             yield break;

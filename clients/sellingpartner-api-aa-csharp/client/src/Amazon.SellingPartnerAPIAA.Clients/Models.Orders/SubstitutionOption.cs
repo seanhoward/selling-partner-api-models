@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="sellerSKU">The item&#39;s seller stock keeping unit (SKU)..</param>
         /// <param name="title">The item&#39;s title..</param>
         /// <param name="measurement">Measurement information for the substitution option..</param>
-        public SubstitutionOption(string aSIN = default(string), int? quantityOrdered = default(int?), string sellerSKU = default(string), string title = default(string), Measurement measurement = default(Measurement))
+        public SubstitutionOption(string aSIN = default, int? quantityOrdered = default, string sellerSKU = default, string title = default, Measurement measurement = default)
         {
             this.ASIN = aSIN;
             this.QuantityOrdered = quantityOrdered;
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

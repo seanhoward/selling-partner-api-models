@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceData" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InvoiceData() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceData" /> class.
         /// </summary>
         /// <param name="invoiceNumber">The invoice number. (required).</param>
         /// <param name="invoiceDate">The date that the invoice was generated..</param>
-        public InvoiceData(string invoiceNumber = default(string), DateTime? invoiceDate = default(DateTime?))
+        public InvoiceData(string invoiceNumber = default, DateTime? invoiceDate = default)
         {
             // to ensure "invoiceNumber" is required (not null)
             if (invoiceNumber == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

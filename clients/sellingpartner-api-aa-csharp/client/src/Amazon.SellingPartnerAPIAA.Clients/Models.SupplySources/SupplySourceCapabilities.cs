@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="outbound">outbound.</param>
         /// <param name="services">services.</param>
-        public SupplySourceCapabilities(OutboundCapability outbound = default(OutboundCapability), ServicesCapability services = default(ServicesCapability))
+        public SupplySourceCapabilities(OutboundCapability outbound = default, ServicesCapability services = default)
         {
             this.Outbound = outbound;
             this.Services = services;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

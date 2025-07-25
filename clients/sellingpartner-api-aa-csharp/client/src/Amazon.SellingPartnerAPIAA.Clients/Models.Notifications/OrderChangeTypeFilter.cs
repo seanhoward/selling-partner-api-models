@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// Initializes a new instance of the <see cref="OrderChangeTypeFilter" /> class.
         /// </summary>
         /// <param name="orderChangeTypes">orderChangeTypes.</param>
-        public OrderChangeTypeFilter(OrderChangeTypes orderChangeTypes = default(OrderChangeTypes))
+        public OrderChangeTypeFilter(OrderChangeTypes orderChangeTypes = default)
         {
             this.OrderChangeTypes = orderChangeTypes;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

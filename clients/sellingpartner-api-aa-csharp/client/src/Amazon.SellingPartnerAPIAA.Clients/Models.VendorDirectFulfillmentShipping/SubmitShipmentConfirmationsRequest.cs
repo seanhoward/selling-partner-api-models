@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// Initializes a new instance of the <see cref="SubmitShipmentConfirmationsRequest" /> class.
         /// </summary>
         /// <param name="shipmentConfirmations">Array of &#x60;ShipmentConfirmation&#x60; objects. Each &#x60;ShipmentConfirmation&#x60; object represents the confirmation details for a specific shipment..</param>
-        public SubmitShipmentConfirmationsRequest(List<ShipmentConfirmation> shipmentConfirmations = default(List<ShipmentConfirmation>))
+        public SubmitShipmentConfirmationsRequest(List<ShipmentConfirmation> shipmentConfirmations = default)
         {
             this.ShipmentConfirmations = shipmentConfirmations;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

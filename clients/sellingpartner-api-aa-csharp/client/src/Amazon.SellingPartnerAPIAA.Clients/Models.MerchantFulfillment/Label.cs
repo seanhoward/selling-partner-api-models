@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="Label" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Label() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Label" /> class.
@@ -53,7 +53,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="fileContents">fileContents (required).</param>
         /// <param name="labelFormat">labelFormat.</param>
         /// <param name="standardIdForLabel">standardIdForLabel.</param>
-        public Label(string customTextForLabel = default(string), LabelDimensions dimensions = default(LabelDimensions), FileContents fileContents = default(FileContents), LabelFormat? labelFormat = default(LabelFormat?), StandardIdForLabel? standardIdForLabel = default(StandardIdForLabel?))
+        public Label(string customTextForLabel = default, LabelDimensions dimensions = default, FileContents fileContents = default, LabelFormat? labelFormat = default, StandardIdForLabel? standardIdForLabel = default)
         {
             // to ensure "dimensions" is required (not null)
             if (dimensions == null)
@@ -200,7 +200,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

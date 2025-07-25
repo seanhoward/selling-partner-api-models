@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimateByIdRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeesEstimateByIdRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimateByIdRequest" /> class.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <param name="feesEstimateRequest">feesEstimateRequest.</param>
         /// <param name="idType">idType (required).</param>
         /// <param name="idValue">The item identifier. (required).</param>
-        public FeesEstimateByIdRequest(FeesEstimateRequest feesEstimateRequest = default(FeesEstimateRequest), IdType idType = default(IdType), string idValue = default(string))
+        public FeesEstimateByIdRequest(FeesEstimateRequest feesEstimateRequest = default, IdType idType = default, string idValue = default)
         {
             // to ensure "idType" is required (not null)
             if (idType == null)
@@ -169,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

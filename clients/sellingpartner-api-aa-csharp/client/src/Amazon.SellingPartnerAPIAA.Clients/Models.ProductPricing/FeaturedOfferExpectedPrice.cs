@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPrice" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeaturedOfferExpectedPrice() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPrice" /> class.
         /// </summary>
         /// <param name="listingPrice">A computed listing price at or below which a seller can expect to become the featured offer (before applicable promotions). (required).</param>
         /// <param name="points">The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points..</param>
-        public FeaturedOfferExpectedPrice(MoneyType listingPrice = default(MoneyType), Points points = default(Points))
+        public FeaturedOfferExpectedPrice(MoneyType listingPrice = default, Points points = default)
         {
             // to ensure "listingPrice" is required (not null)
             if (listingPrice == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

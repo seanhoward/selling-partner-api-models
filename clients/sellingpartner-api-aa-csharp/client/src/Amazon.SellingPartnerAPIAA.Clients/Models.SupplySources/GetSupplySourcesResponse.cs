@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="supplySources">supplySources.</param>
         /// <param name="nextPageToken">If present, use this pagination token to retrieve the next page of supply sources..</param>
-        public GetSupplySourcesResponse(SupplySourceList supplySources = default(SupplySourceList), string nextPageToken = default(string))
+        public GetSupplySourcesResponse(SupplySourceList supplySources = default, string nextPageToken = default)
         {
             this.SupplySources = supplySources;
             this.NextPageToken = nextPageToken;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

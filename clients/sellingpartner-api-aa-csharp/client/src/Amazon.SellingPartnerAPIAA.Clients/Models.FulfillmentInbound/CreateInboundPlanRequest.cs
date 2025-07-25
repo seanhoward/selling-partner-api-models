@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInboundPlanRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateInboundPlanRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInboundPlanRequest" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="items">Items included in this plan. (required).</param>
         /// <param name="name">Name for the Inbound Plan. If one isn&#39;t provided, a default name will be provided..</param>
         /// <param name="sourceAddress">sourceAddress (required).</param>
-        public CreateInboundPlanRequest(List<string> destinationMarketplaces = default(List<string>), List<ItemInput> items = default(List<ItemInput>), string name = default(string), AddressInput sourceAddress = default(AddressInput))
+        public CreateInboundPlanRequest(List<string> destinationMarketplaces = default, List<ItemInput> items = default, string name = default, AddressInput sourceAddress = default)
         {
             // to ensure "destinationMarketplaces" is required (not null)
             if (destinationMarketplaces == null)
@@ -195,18 +195,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 40)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 40.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 40.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if(this.Name != null && this.Name.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             yield break;

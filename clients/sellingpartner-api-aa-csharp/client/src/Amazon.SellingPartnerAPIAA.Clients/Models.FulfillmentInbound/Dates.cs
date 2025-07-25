@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// Initializes a new instance of the <see cref="Dates" /> class.
         /// </summary>
         /// <param name="readyToShipWindow">readyToShipWindow.</param>
-        public Dates(Window readyToShipWindow = default(Window))
+        public Dates(Window readyToShipWindow = default)
         {
             this.ReadyToShipWindow = readyToShipWindow;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

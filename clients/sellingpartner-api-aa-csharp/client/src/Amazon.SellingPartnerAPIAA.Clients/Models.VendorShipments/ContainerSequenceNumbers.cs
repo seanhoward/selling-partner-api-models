@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// Initializes a new instance of the <see cref="ContainerSequenceNumbers" /> class.
         /// </summary>
         /// <param name="containerSequenceNumber">A list of containers shipped.</param>
-        public ContainerSequenceNumbers(string containerSequenceNumber = default(string))
+        public ContainerSequenceNumbers(string containerSequenceNumber = default)
         {
             this.ContainerSequenceNumber = containerSequenceNumber;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

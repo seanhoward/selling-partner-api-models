@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// Initializes a new instance of the <see cref="ProcessingDirective" /> class.
         /// </summary>
         /// <param name="eventFilter">A &#x60;notificationType&#x60; specific filter..</param>
-        public ProcessingDirective(EventFilter eventFilter = default(EventFilter))
+        public ProcessingDirective(EventFilter eventFilter = default)
         {
             this.EventFilter = eventFilter;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// Initializes a new instance of the <see cref="LabelFormatOptionRequest" /> class.
         /// </summary>
         /// <param name="includePackingSlipWithLabel">When true, include a packing slip with the label..</param>
-        public LabelFormatOptionRequest(bool? includePackingSlipWithLabel = default(bool?))
+        public LabelFormatOptionRequest(bool? includePackingSlipWithLabel = default)
         {
             this.IncludePackingSlipWithLabel = includePackingSlipWithLabel;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="includeComplexShippingOptions">When true, include complex shipping options..</param>
         /// <param name="carrierWillPickUp">carrierWillPickUp.</param>
         /// <param name="deliveryExperience">deliveryExperience.</param>
-        public ShippingOfferingFilter(bool? includePackingSlipWithLabel = default(bool?), bool? includeComplexShippingOptions = default(bool?), CarrierWillPickUpOption? carrierWillPickUp = default(CarrierWillPickUpOption?), DeliveryExperienceOption? deliveryExperience = default(DeliveryExperienceOption?))
+        public ShippingOfferingFilter(bool? includePackingSlipWithLabel = default, bool? includeComplexShippingOptions = default, CarrierWillPickUpOption? carrierWillPickUp = default, DeliveryExperienceOption? deliveryExperience = default)
         {
             this.IncludePackingSlipWithLabel = includePackingSlipWithLabel;
             this.IncludeComplexShippingOptions = includeComplexShippingOptions;
@@ -165,7 +165,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateMarketplaceItemLabelsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateMarketplaceItemLabelsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateMarketplaceItemLabelsResponse" /> class.
         /// </summary>
         /// <param name="documentDownloads">Resources to download the requested document. (required).</param>
-        public CreateMarketplaceItemLabelsResponse(List<DocumentDownload> documentDownloads = default(List<DocumentDownload>))
+        public CreateMarketplaceItemLabelsResponse(List<DocumentDownload> documentDownloads = default)
         {
             // to ensure "documentDownloads" is required (not null)
             if (documentDownloads == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

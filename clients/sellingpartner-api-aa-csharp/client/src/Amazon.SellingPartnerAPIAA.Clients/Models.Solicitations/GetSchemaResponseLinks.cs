@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSchemaResponseLinks" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetSchemaResponseLinks() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSchemaResponseLinks" /> class.
         /// </summary>
         /// <param name="self">self (required).</param>
-        public GetSchemaResponseLinks(LinkObject self = default(LinkObject))
+        public GetSchemaResponseLinks(LinkObject self = default)
         {
             // to ensure "self" is required (not null)
             if (self == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

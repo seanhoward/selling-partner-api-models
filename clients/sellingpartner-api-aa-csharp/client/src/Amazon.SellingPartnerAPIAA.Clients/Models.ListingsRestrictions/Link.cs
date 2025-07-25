@@ -54,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// <summary>
         /// Initializes a new instance of the <see cref="Link" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Link() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Link" /> class.
@@ -63,7 +63,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// <param name="verb">The HTTP verb used to interact with the related resource. (required).</param>
         /// <param name="title">The title of the related resource..</param>
         /// <param name="type">The media type of the related resource..</param>
-        public Link(string resource = default(string), VerbEnum verb = default(VerbEnum), string title = default(string), string type = default(string))
+        public Link(string resource = default, VerbEnum verb = default, string title = default, string type = default)
         {
             // to ensure "resource" is required (not null)
             if (resource == null)
@@ -203,7 +203,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

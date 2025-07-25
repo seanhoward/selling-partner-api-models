@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="startTime">The time when the business opens..</param>
         /// <param name="endTime">The time when the business closes..</param>
-        public OpenInterval(OpenTimeInterval startTime = default(OpenTimeInterval), OpenTimeInterval endTime = default(OpenTimeInterval))
+        public OpenInterval(OpenTimeInterval startTime = default, OpenTimeInterval endTime = default)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

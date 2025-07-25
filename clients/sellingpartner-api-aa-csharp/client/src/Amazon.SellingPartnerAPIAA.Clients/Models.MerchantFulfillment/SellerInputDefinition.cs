@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="SellerInputDefinition" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SellerInputDefinition() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SellerInputDefinition" /> class.
@@ -51,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="inputTarget">Whether the seller input applies to the item or the shipment..</param>
         /// <param name="storedValue">storedValue (required).</param>
         /// <param name="restrictedSetValues">restrictedSetValues.</param>
-        public SellerInputDefinition(bool? isRequired = default(bool?), string dataType = default(string), Constraints constraints = default(Constraints), string inputDisplayText = default(string), InputTargetType? inputTarget = default(InputTargetType?), AdditionalSellerInput storedValue = default(AdditionalSellerInput), RestrictedSetValues restrictedSetValues = default(RestrictedSetValues))
+        public SellerInputDefinition(bool? isRequired = default, string dataType = default, Constraints constraints = default, string inputDisplayText = default, InputTargetType? inputTarget = default, AdditionalSellerInput storedValue = default, RestrictedSetValues restrictedSetValues = default)
         {
             // to ensure "isRequired" is required (not null)
             if (isRequired == null)
@@ -260,7 +260,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

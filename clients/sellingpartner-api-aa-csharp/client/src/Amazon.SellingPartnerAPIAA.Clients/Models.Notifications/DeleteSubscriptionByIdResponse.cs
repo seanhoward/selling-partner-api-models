@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// Initializes a new instance of the <see cref="DeleteSubscriptionByIdResponse" /> class.
         /// </summary>
         /// <param name="errors">An unexpected condition occurred during the &#x60;deleteSubscriptionById&#x60; operation..</param>
-        public DeleteSubscriptionByIdResponse(ErrorList errors = default(ErrorList))
+        public DeleteSubscriptionByIdResponse(ErrorList errors = default)
         {
             this.Errors = errors;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

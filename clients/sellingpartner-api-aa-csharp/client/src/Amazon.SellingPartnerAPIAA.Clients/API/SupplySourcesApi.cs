@@ -31,7 +31,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Archive a supply source, making it inactive. Cannot be undone.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ErrorList</returns>
         ErrorList ArchiveSupplySource (string supplySourceId);
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Archive a supply source, making it inactive. Cannot be undone.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ApiResponse of ErrorList</returns>
         ApiResponse<ErrorList> ArchiveSupplySourceWithHttpInfo (string supplySourceId);
@@ -52,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a new supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>CreateSupplySourceResponse</returns>
         CreateSupplySourceResponse CreateSupplySource (CreateSupplySourceRequest payload);
@@ -63,7 +63,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a new supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>ApiResponse of CreateSupplySourceResponse</returns>
         ApiResponse<CreateSupplySourceResponse> CreateSupplySourceWithHttpInfo (CreateSupplySourceRequest payload);
@@ -73,7 +73,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>SupplySource</returns>
         SupplySource GetSupplySource (string supplySourceId);
@@ -84,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ApiResponse of SupplySource</returns>
         ApiResponse<SupplySource> GetSupplySourceWithHttpInfo (string supplySourceId);
@@ -94,7 +94,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// The path to retrieve paginated supply sources.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>GetSupplySourcesResponse</returns>
@@ -106,7 +106,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// The path to retrieve paginated supply sources.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>ApiResponse of GetSupplySourcesResponse</returns>
@@ -117,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update the configuration and capabilities of a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ErrorList</returns>
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update the configuration and capabilities of a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ApiResponse of ErrorList</returns>
@@ -140,7 +140,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update the status of a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ErrorList</returns>
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update the status of a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ApiResponse of ErrorList</returns>
@@ -165,7 +165,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Archive a supply source, making it inactive. Cannot be undone.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ErrorList</returns>
         System.Threading.Tasks.Task<ErrorList> ArchiveSupplySourceAsync (string supplySourceId);
@@ -176,7 +176,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Archive a supply source, making it inactive. Cannot be undone.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
         System.Threading.Tasks.Task<ApiResponse<ErrorList>> ArchiveSupplySourceAsyncWithHttpInfo (string supplySourceId);
@@ -186,7 +186,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a new supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>Task of CreateSupplySourceResponse</returns>
         System.Threading.Tasks.Task<CreateSupplySourceResponse> CreateSupplySourceAsync (CreateSupplySourceRequest payload);
@@ -197,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a new supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>Task of ApiResponse (CreateSupplySourceResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateSupplySourceResponse>> CreateSupplySourceAsyncWithHttpInfo (CreateSupplySourceRequest payload);
@@ -207,7 +207,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of SupplySource</returns>
         System.Threading.Tasks.Task<SupplySource> GetSupplySourceAsync (string supplySourceId);
@@ -218,7 +218,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ApiResponse (SupplySource)</returns>
         System.Threading.Tasks.Task<ApiResponse<SupplySource>> GetSupplySourceAsyncWithHttpInfo (string supplySourceId);
@@ -228,7 +228,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// The path to retrieve paginated supply sources.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>Task of GetSupplySourcesResponse</returns>
@@ -240,7 +240,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// The path to retrieve paginated supply sources.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (GetSupplySourcesResponse)</returns>
@@ -251,7 +251,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update the configuration and capabilities of a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ErrorList</returns>
@@ -263,7 +263,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update the configuration and capabilities of a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
@@ -274,7 +274,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update the status of a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ErrorList</returns>
@@ -286,7 +286,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update the status of a supply source.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
@@ -299,7 +299,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     /// </summary>
     public partial class SupplySourcesApi : ISupplySourcesApi
     {
-        private Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SupplySourcesApi"/> class
@@ -307,7 +307,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public SupplySourcesApi(Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration)
+        public SupplySourcesApi(Configuration configuration)
         {
             this.Configuration = configuration;
             ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
@@ -336,12 +336,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.Configuration Configuration {get; set;}
+        public Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -379,7 +379,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Archive a supply source, making it inactive. Cannot be undone.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ErrorList</returns>
         public ErrorList ArchiveSupplySource (string supplySourceId)
@@ -391,7 +391,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Archive a supply source, making it inactive. Cannot be undone.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ApiResponse of ErrorList</returns>
         public ApiResponse< ErrorList > ArchiveSupplySourceWithHttpInfo (string supplySourceId)
@@ -446,7 +446,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Archive a supply source, making it inactive. Cannot be undone.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ErrorList</returns>
         public async System.Threading.Tasks.Task<ErrorList> ArchiveSupplySourceAsync (string supplySourceId)
@@ -459,7 +459,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Archive a supply source, making it inactive. Cannot be undone.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ErrorList>> ArchiveSupplySourceAsyncWithHttpInfo (string supplySourceId)
@@ -514,7 +514,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Create a new supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>CreateSupplySourceResponse</returns>
         public CreateSupplySourceResponse CreateSupplySource (CreateSupplySourceRequest payload)
@@ -526,7 +526,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Create a new supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>ApiResponse of CreateSupplySourceResponse</returns>
         public ApiResponse< CreateSupplySourceResponse > CreateSupplySourceWithHttpInfo (CreateSupplySourceRequest payload)
@@ -588,7 +588,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Create a new supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>Task of CreateSupplySourceResponse</returns>
         public async System.Threading.Tasks.Task<CreateSupplySourceResponse> CreateSupplySourceAsync (CreateSupplySourceRequest payload)
@@ -601,7 +601,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Create a new supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>Task of ApiResponse (CreateSupplySourceResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<CreateSupplySourceResponse>> CreateSupplySourceAsyncWithHttpInfo (CreateSupplySourceRequest payload)
@@ -663,7 +663,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>SupplySource</returns>
         public SupplySource GetSupplySource (string supplySourceId)
@@ -675,7 +675,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ApiResponse of SupplySource</returns>
         public ApiResponse< SupplySource > GetSupplySourceWithHttpInfo (string supplySourceId)
@@ -730,7 +730,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of SupplySource</returns>
         public async System.Threading.Tasks.Task<SupplySource> GetSupplySourceAsync (string supplySourceId)
@@ -743,7 +743,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ApiResponse (SupplySource)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<SupplySource>> GetSupplySourceAsyncWithHttpInfo (string supplySourceId)
@@ -798,7 +798,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  The path to retrieve paginated supply sources.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>GetSupplySourcesResponse</returns>
@@ -811,7 +811,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  The path to retrieve paginated supply sources.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>ApiResponse of GetSupplySourcesResponse</returns>
@@ -865,7 +865,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  The path to retrieve paginated supply sources.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>Task of GetSupplySourcesResponse</returns>
@@ -879,7 +879,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  The path to retrieve paginated supply sources.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (GetSupplySourcesResponse)</returns>
@@ -933,7 +933,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Update the configuration and capabilities of a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ErrorList</returns>
@@ -946,7 +946,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Update the configuration and capabilities of a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ApiResponse of ErrorList</returns>
@@ -1010,7 +1010,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Update the configuration and capabilities of a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ErrorList</returns>
@@ -1024,7 +1024,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Update the configuration and capabilities of a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
@@ -1088,7 +1088,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Update the status of a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ErrorList</returns>
@@ -1101,7 +1101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Update the status of a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ApiResponse of ErrorList</returns>
@@ -1165,7 +1165,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Update the status of a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ErrorList</returns>
@@ -1179,7 +1179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Update the status of a supply source.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
@@ -1266,15 +1266,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }
 
-                
-                Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration = new Amazon.SellingPartnerAPIAA.Clients.Client.Configuration()
+
+                Configuration configuration = new Configuration
                 {
                     AuthorizationCredentials = lwaAuthorizationCredentials,
-                    RateLimitConfig = rateLimitConfiguration
+                    RateLimitConfig = rateLimitConfiguration,
+                    // default HTTP connection timeout (in milliseconds)
+                    Timeout = 100000
                 };
-
-                // default HTTP connection timeout (in milliseconds)
-                configuration.Timeout = 100000;
 
                 return new SupplySourcesApi(configuration);
             }

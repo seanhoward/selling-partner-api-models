@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected BatchRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchRequest" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <param name="method">method (required).</param>
         /// <param name="body">body.</param>
         /// <param name="headers">headers.</param>
-        public BatchRequest(string uri = default(string), HttpMethod method = default(HttpMethod), HttpBody body = default(HttpBody), HttpHeaders headers = default(HttpHeaders))
+        public BatchRequest(string uri = default, HttpMethod method = default, HttpBody body = default, HttpHeaders headers = default)
         {
             // to ensure "uri" is required (not null)
             if (uri == null)
@@ -185,7 +185,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

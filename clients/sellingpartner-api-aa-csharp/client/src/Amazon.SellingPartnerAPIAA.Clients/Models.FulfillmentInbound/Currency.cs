@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Currency" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Currency() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Currency" /> class.
         /// </summary>
         /// <param name="amount">Decimal value of the currency. (required).</param>
         /// <param name="code">ISO 4217 standard of a currency code. (required).</param>
-        public Currency(decimal? amount = default(decimal?), string code = default(string))
+        public Currency(decimal? amount = default, string code = default)
         {
             // to ensure "amount" is required (not null)
             if (amount == null)
@@ -154,18 +154,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Code (string) maxLength
             if(this.Code != null && this.Code.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Code, length must be less than 3.", new [] { "Code" });
+                yield return new ValidationResult("Invalid value for Code, length must be less than 3.", new [] { "Code" });
             }
 
             // Code (string) minLength
             if(this.Code != null && this.Code.Length < 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Code, length must be greater than 3.", new [] { "Code" });
+                yield return new ValidationResult("Invalid value for Code, length must be greater than 3.", new [] { "Code" });
             }
 
             yield break;

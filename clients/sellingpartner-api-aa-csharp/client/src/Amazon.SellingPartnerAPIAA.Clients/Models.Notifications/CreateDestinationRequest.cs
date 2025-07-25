@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDestinationRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateDestinationRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDestinationRequest" /> class.
         /// </summary>
         /// <param name="resourceSpecification">The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination. (required).</param>
         /// <param name="name">A developer-defined name to help identify this destination. (required).</param>
-        public CreateDestinationRequest(DestinationResourceSpecification resourceSpecification = default(DestinationResourceSpecification), string name = default(string))
+        public CreateDestinationRequest(DestinationResourceSpecification resourceSpecification = default, string name = default)
         {
             // to ensure "resourceSpecification" is required (not null)
             if (resourceSpecification == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

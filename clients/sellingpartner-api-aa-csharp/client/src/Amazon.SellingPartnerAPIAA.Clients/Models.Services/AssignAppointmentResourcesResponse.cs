@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="payload">payload.</param>
         /// <param name="errors">Errors occurred during during the &#x60;assignAppointmentResources&#x60; operation..</param>
-        public AssignAppointmentResourcesResponse(AssignAppointmentResourcesResponsePayload payload = default(AssignAppointmentResourcesResponsePayload), ErrorList errors = default(ErrorList))
+        public AssignAppointmentResourcesResponse(AssignAppointmentResourcesResponsePayload payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

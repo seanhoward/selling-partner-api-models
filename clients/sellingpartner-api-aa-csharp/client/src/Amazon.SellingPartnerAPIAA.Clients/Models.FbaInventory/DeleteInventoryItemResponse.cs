@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// Initializes a new instance of the <see cref="DeleteInventoryItemResponse" /> class.
         /// </summary>
         /// <param name="errors">One or more unexpected errors occurred during the DeleteInventoryItem operation..</param>
-        public DeleteInventoryItemResponse(ErrorList errors = default(ErrorList))
+        public DeleteInventoryItemResponse(ErrorList errors = default)
         {
             this.Errors = errors;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

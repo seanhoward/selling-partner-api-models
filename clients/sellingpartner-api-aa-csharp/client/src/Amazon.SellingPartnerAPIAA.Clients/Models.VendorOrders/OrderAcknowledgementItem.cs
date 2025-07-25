@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderAcknowledgementItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderAcknowledgementItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderAcknowledgementItem" /> class.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="listPrice">The list price of an item per each or weight unit. Required only if a vendor sells books at list price..</param>
         /// <param name="discountMultiplier">The discount multiplier that should be applied to the price if a vendor sells books with a list price. This is a multiplier factor to arrive at a final discounted price. A multiplier of .90 would be the factor if a 10% discount is given..</param>
         /// <param name="itemAcknowledgements">This is used to indicate acknowledged quantity. (required).</param>
-        public OrderAcknowledgementItem(string itemSequenceNumber = default(string), string amazonProductIdentifier = default(string), string vendorProductIdentifier = default(string), ItemQuantity orderedQuantity = default(ItemQuantity), Money netCost = default(Money), Money listPrice = default(Money), string discountMultiplier = default(string), List<OrderItemAcknowledgement> itemAcknowledgements = default(List<OrderItemAcknowledgement>))
+        public OrderAcknowledgementItem(string itemSequenceNumber = default, string amazonProductIdentifier = default, string vendorProductIdentifier = default, ItemQuantity orderedQuantity = default, Money netCost = default, Money listPrice = default, string discountMultiplier = default, List<OrderItemAcknowledgement> itemAcknowledgements = default)
         {
             // to ensure "orderedQuantity" is required (not null)
             if (orderedQuantity == null)
@@ -256,7 +256,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

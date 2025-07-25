@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// <summary>
         /// Initializes a new instance of the <see cref="SchemaLink" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SchemaLink() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SchemaLink" /> class.
         /// </summary>
         /// <param name="link">link (required).</param>
         /// <param name="checksum">Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching. (required).</param>
-        public SchemaLink(SchemaLinkLink link = default(SchemaLinkLink), string checksum = default(string))
+        public SchemaLink(SchemaLinkLink link = default, string checksum = default)
         {
             // to ensure "link" is required (not null)
             if (link == null)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// <param name="generateExportStartedAt">The date and time when the export generation started. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format..</param>
         /// <param name="invoicesDocumentIds">The identifier for the export documents. To get the information required to retrieve the export document&#39;s contents, pass each ID in the &#x60;getInvoicesDocument&#x60; operation.  This list is empty until the status is &#x60;DONE&#x60;..</param>
         /// <param name="status">status.</param>
-        public Export(string errorMessage = default(string), string exportId = default(string), DateTime? generateExportFinishedAt = default(DateTime?), DateTime? generateExportStartedAt = default(DateTime?), List<string> invoicesDocumentIds = default(List<string>), ExportStatus? status = default(ExportStatus?))
+        public Export(string errorMessage = default, string exportId = default, DateTime? generateExportFinishedAt = default, DateTime? generateExportStartedAt = default, List<string> invoicesDocumentIds = default, ExportStatus? status = default)
         {
             this.ErrorMessage = errorMessage;
             this.ExportId = exportId;
@@ -200,7 +200,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

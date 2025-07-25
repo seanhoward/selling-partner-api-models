@@ -66,14 +66,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="IssueExemption" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected IssueExemption() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="IssueExemption" /> class.
         /// </summary>
         /// <param name="status">This field indicates the current exemption status for the listed enforcement actions. It can take values such as &#x60;EXEMPT&#x60;, signifying permanent exemption, &#x60;EXEMPT_UNTIL_EXPIRY_DATE&#x60; indicating temporary exemption until a specified date, or &#x60;NOT_EXEMPT&#x60; signifying no exemptions, and enforcement actions were already applied. (required).</param>
         /// <param name="expiryDate">This field represents the timestamp, following the ISO 8601 format, which specifies the date when temporary exemptions, if applicable, will expire, and Amazon will begin enforcing the listed actions..</param>
-        public IssueExemption(StatusEnum status = default(StatusEnum), DateTime? expiryDate = default(DateTime?))
+        public IssueExemption(StatusEnum status = default, DateTime? expiryDate = default)
         {
             // to ensure "status" is required (not null)
             if (status == null)
@@ -173,7 +173,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

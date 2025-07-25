@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="VariablePrecisionAddress" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected VariablePrecisionAddress() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="VariablePrecisionAddress" /> class.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="stateOrRegion">The state or region where the person, business or institution is located..</param>
         /// <param name="postalCode">The postal code of the address. (required).</param>
         /// <param name="countryCode">The two digit country code. In ISO 3166-1 alpha-2 format. (required).</param>
-        public VariablePrecisionAddress(string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string city = default(string), string districtOrCounty = default(string), string stateOrRegion = default(string), string postalCode = default(string), string countryCode = default(string))
+        public VariablePrecisionAddress(string addressLine1 = default, string addressLine2 = default, string addressLine3 = default, string city = default, string districtOrCounty = default, string stateOrRegion = default, string postalCode = default, string countryCode = default)
         {
             // to ensure "postalCode" is required (not null)
             if (postalCode == null)
@@ -256,18 +256,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // CountryCode (string) maxLength
             if(this.CountryCode != null && this.CountryCode.Length > 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryCode, length must be less than 2.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be less than 2.", new [] { "CountryCode" });
             }
 
             // CountryCode (string) minLength
             if(this.CountryCode != null && this.CountryCode.Length < 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryCode, length must be greater than 2.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be greater than 2.", new [] { "CountryCode" });
             }
 
             yield break;

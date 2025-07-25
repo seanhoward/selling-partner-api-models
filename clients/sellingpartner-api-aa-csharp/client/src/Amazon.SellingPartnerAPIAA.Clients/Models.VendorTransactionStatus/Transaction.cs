@@ -66,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus
         /// <summary>
         /// Initializes a new instance of the <see cref="Transaction" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Transaction() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Transaction" /> class.
@@ -74,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus
         /// <param name="transactionId">The unique identifier returned in the &#39;transactionId&#39; field in response to the post request of a specific transaction. (required).</param>
         /// <param name="status">Current processing status of the transaction. (required).</param>
         /// <param name="errors">errors.</param>
-        public Transaction(string transactionId = default(string), StatusEnum status = default(StatusEnum), ErrorList errors = default(ErrorList))
+        public Transaction(string transactionId = default, StatusEnum status = default, ErrorList errors = default)
         {
             // to ensure "transactionId" is required (not null)
             if (transactionId == null)
@@ -197,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

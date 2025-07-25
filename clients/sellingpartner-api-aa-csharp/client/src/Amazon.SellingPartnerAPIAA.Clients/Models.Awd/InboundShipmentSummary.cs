@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundShipmentSummary" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InboundShipmentSummary() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundShipmentSummary" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="shipmentId">A unique shipment ID. (required).</param>
         /// <param name="shipmentStatus">shipmentStatus (required).</param>
         /// <param name="updatedAt">Timestamp when the shipment was updated..</param>
-        public InboundShipmentSummary(DateTime? createdAt = default(DateTime?), string externalReferenceId = default(string), string orderId = default(string), string shipmentId = default(string), InboundShipmentStatus shipmentStatus = default(InboundShipmentStatus), DateTime? updatedAt = default(DateTime?))
+        public InboundShipmentSummary(DateTime? createdAt = default, string externalReferenceId = default, string orderId = default, string shipmentId = default, InboundShipmentStatus shipmentStatus = default, DateTime? updatedAt = default)
         {
             // to ensure "orderId" is required (not null)
             if (orderId == null)
@@ -229,18 +229,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // OrderId (string) minLength
             if(this.OrderId != null && this.OrderId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OrderId, length must be greater than 1.", new [] { "OrderId" });
+                yield return new ValidationResult("Invalid value for OrderId, length must be greater than 1.", new [] { "OrderId" });
             }
 
             // ShipmentId (string) minLength
             if(this.ShipmentId != null && this.ShipmentId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be greater than 1.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 1.", new [] { "ShipmentId" });
             }
 
             yield break;

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderMetricsList" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         public OrderMetricsList() : base()
         {
         }
@@ -101,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <param name="alias">alias.</param>
         /// <param name="configuration">configuration.</param>
         /// <param name="capabilities">capabilities.</param>
-        public UpdateSupplySourceRequest(string alias = default(string), SupplySourceConfiguration configuration = default(SupplySourceConfiguration), SupplySourceCapabilities capabilities = default(SupplySourceCapabilities))
+        public UpdateSupplySourceRequest(string alias = default, SupplySourceConfiguration configuration = default, SupplySourceCapabilities capabilities = default)
         {
             this.Alias = alias;
             this.Configuration = configuration;
@@ -147,7 +147,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

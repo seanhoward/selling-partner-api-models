@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="vendorProductIdentifier">The vendor selected product identification of the item. Should be the same as was sent in the purchase order..</param>
         /// <param name="packedQuantity">Total item quantity shipped in this shipment..</param>
         /// <param name="itemDetails">itemDetails.</param>
-        public PackedItems(string itemSequenceNumber = default(string), string buyerProductIdentifier = default(string), string vendorProductIdentifier = default(string), ItemQuantity packedQuantity = default(ItemQuantity), PackageItemDetails itemDetails = default(PackageItemDetails))
+        public PackedItems(string itemSequenceNumber = default, string buyerProductIdentifier = default, string vendorProductIdentifier = default, ItemQuantity packedQuantity = default, PackageItemDetails itemDetails = default)
         {
             this.ItemSequenceNumber = itemSequenceNumber;
             this.BuyerProductIdentifier = buyerProductIdentifier;
@@ -183,7 +183,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

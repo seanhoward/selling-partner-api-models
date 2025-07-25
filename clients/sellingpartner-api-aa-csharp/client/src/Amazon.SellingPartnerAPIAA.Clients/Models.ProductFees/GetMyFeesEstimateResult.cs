@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// Initializes a new instance of the <see cref="GetMyFeesEstimateResult" /> class.
         /// </summary>
         /// <param name="feesEstimateResult">The item&#39;s estimated fees..</param>
-        public GetMyFeesEstimateResult(FeesEstimateResult feesEstimateResult = default(FeesEstimateResult))
+        public GetMyFeesEstimateResult(FeesEstimateResult feesEstimateResult = default)
         {
             this.FeesEstimateResult = feesEstimateResult;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// Initializes a new instance of the <see cref="TrackingSummary" /> class.
         /// </summary>
         /// <param name="status">The derived status based on the events in the eventHistory..</param>
-        public TrackingSummary(string status = default(string))
+        public TrackingSummary(string status = default)
         {
             this.Status = status;
         }
@@ -116,18 +116,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Status (string) maxLength
             if(this.Status != null && this.Status.Length > 60)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be less than 60.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be less than 60.", new [] { "Status" });
             }
 
             // Status (string) minLength
             if(this.Status != null && this.Status.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
             }
 
             yield break;

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageGroupingInput" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PackageGroupingInput() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageGroupingInput" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="boxes">Box level information being provided. (required).</param>
         /// <param name="packingGroupId">The ID of the &#x60;packingGroup&#x60; that packages are grouped according to. The &#x60;PackingGroupId&#x60; can only be provided before placement confirmation, and it must belong to the confirmed &#x60;PackingOption&#x60;. One of &#x60;ShipmentId&#x60; or &#x60;PackingGroupId&#x60; must be provided with every request..</param>
         /// <param name="shipmentId">The ID of the shipment that packages are grouped according to. The &#x60;ShipmentId&#x60; can only be provided after placement confirmation, and the shipment must belong to the confirmed placement option. One of &#x60;ShipmentId&#x60; or &#x60;PackingGroupId&#x60; must be provided with every request..</param>
-        public PackageGroupingInput(List<BoxInput> boxes = default(List<BoxInput>), string packingGroupId = default(string), string shipmentId = default(string))
+        public PackageGroupingInput(List<BoxInput> boxes = default, string packingGroupId = default, string shipmentId = default)
         {
             // to ensure "boxes" is required (not null)
             if (boxes == null)
@@ -163,44 +163,44 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PackingGroupId (string) maxLength
             if(this.PackingGroupId != null && this.PackingGroupId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackingGroupId, length must be less than 38.", new [] { "PackingGroupId" });
+                yield return new ValidationResult("Invalid value for PackingGroupId, length must be less than 38.", new [] { "PackingGroupId" });
             }
 
             // PackingGroupId (string) minLength
             if(this.PackingGroupId != null && this.PackingGroupId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackingGroupId, length must be greater than 38.", new [] { "PackingGroupId" });
+                yield return new ValidationResult("Invalid value for PackingGroupId, length must be greater than 38.", new [] { "PackingGroupId" });
             }
 
             // PackingGroupId (string) pattern
             Regex regexPackingGroupId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPackingGroupId.Match(this.PackingGroupId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackingGroupId, must match a pattern of " + regexPackingGroupId, new [] { "PackingGroupId" });
+                yield return new ValidationResult("Invalid value for PackingGroupId, must match a pattern of " + regexPackingGroupId, new [] { "PackingGroupId" });
             }
 
             // ShipmentId (string) maxLength
             if(this.ShipmentId != null && this.ShipmentId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
             }
 
             // ShipmentId (string) minLength
             if(this.ShipmentId != null && this.ShipmentId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
             }
 
             // ShipmentId (string) pattern
             Regex regexShipmentId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexShipmentId.Match(this.ShipmentId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
             }
 
             yield break;

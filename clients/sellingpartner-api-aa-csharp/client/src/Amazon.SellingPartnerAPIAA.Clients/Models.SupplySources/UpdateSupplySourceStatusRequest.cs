@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// Initializes a new instance of the <see cref="UpdateSupplySourceStatusRequest" /> class.
         /// </summary>
         /// <param name="status">status.</param>
-        public UpdateSupplySourceStatusRequest(SupplySourceStatus? status = default(SupplySourceStatus?))
+        public UpdateSupplySourceStatusRequest(SupplySourceStatus? status = default)
         {
             this.Status = status;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

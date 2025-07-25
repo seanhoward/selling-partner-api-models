@@ -67,7 +67,6 @@ OpenAPI spec version: 2020-09-01
     <Compile Include="API\FbaOutboundApi.cs" />
     <Compile Include="API\FeedsApi.cs" />
     <Compile Include="API\FeesApi.cs" />
-    <Compile Include="API\FulfillmentInboundApi.cs" />
     <Compile Include="API\InvoicesApi.cs" />
     <Compile Include="API\ListingsRestrictionsApi.cs" />
     <Compile Include="API\ListingsItemsApi.cs" />
@@ -93,9 +92,7 @@ OpenAPI spec version: 2020-09-01
     <Compile Include="API\VendorDFSandboxApi.cs" />
     <Compile Include="API\VendorDFSandboxtransactionstatusApi.cs" />
     <Compile Include="API\VendorInvoiceApi.cs" />
-    <Compile Include="API\VendorInvoicesApi.cs" />
     <Compile Include="API\VendorOrdersApi.cs" />
-    <Compile Include="API\VendorShipmentsApi.cs" />
     <Compile Include="API\VendorShippingApi.cs" />
     <Compile Include="API\VendorShippingLabelsApi.cs" />
     <Compile Include="API\VendorTransactionApi.cs" />
@@ -201,7 +198,6 @@ OpenAPI spec version: 2020-09-01
     <Compile Include="Models.Awd\Error.cs" />
     <Compile Include="Models.Awd\ErrorList.cs" />
     <Compile Include="Models.Awd\ExpirationDetails.cs" />
-    <Compile Include="Models.Awd\FormatType.cs" />
     <Compile Include="Models.Awd\InboundEligibility.cs" />
     <Compile Include="Models.Awd\InboundEligibilityStatus.cs" />
     <Compile Include="Models.Awd\InboundOrder.cs" />
@@ -214,7 +210,6 @@ OpenAPI spec version: 2020-09-01
     <Compile Include="Models.Awd\InboundShipmentSummary.cs" />
     <Compile Include="Models.Awd\InboundStatus.cs" />
     <Compile Include="Models.Awd\InventoryDetails.cs" />
-    <Compile Include="Models.Awd\InventoryDetailsVisibility.cs" />
     <Compile Include="Models.Awd\InventoryListing.cs" />
     <Compile Include="Models.Awd\InventoryQuantity.cs" />
     <Compile Include="Models.Awd\InventorySummary.cs" />
@@ -222,22 +217,10 @@ OpenAPI spec version: 2020-09-01
     <Compile Include="Models.Awd\LabelOwner.cs" />
     <Compile Include="Models.Awd\LabelStatus.cs" />
     <Compile Include="Models.Awd\MeasurementData.cs" />
-    <Compile Include="Models.Awd\OrderAttribute.cs" />
     <Compile Include="Models.Awd\OrderIneligibilityReason.cs" />
-    <Compile Include="Models.Awd\OrderPreference.cs" />
-    <Compile Include="Models.Awd\OrderPreferenceValue.cs" />
-    <Compile Include="Models.Awd\OutboundExecutionError.cs" />
-    <Compile Include="Models.Awd\OutboundListing.cs" />
-    <Compile Include="Models.Awd\OutboundOrder.cs" />
-    <Compile Include="Models.Awd\OutboundOrderCreationData.cs" />
-    <Compile Include="Models.Awd\OutboundOrderReference.cs" />
-    <Compile Include="Models.Awd\OutboundShipment.cs" />
-    <Compile Include="Models.Awd\OutboundShipmentStatus.cs" />
-    <Compile Include="Models.Awd\OutboundStatus.cs" />
     <Compile Include="Models.Awd\PackageDimensions.cs" />
     <Compile Include="Models.Awd\PackageVolume.cs" />
     <Compile Include="Models.Awd\PackageWeight.cs" />
-    <Compile Include="Models.Awd\PageType.cs" />
     <Compile Include="Models.Awd\PrepDetails.cs" />
     <Compile Include="Models.Awd\PrepInstruction.cs" />
     <Compile Include="Models.Awd\PrepOwner.cs" />
@@ -245,12 +228,9 @@ OpenAPI spec version: 2020-09-01
     <Compile Include="Models.Awd\ProductQuantity.cs" />
     <Compile Include="Models.Awd\ShipmentLabels.cs" />
     <Compile Include="Models.Awd\ShipmentListing.cs" />
-    <Compile Include="Models.Awd\ShipmentSortableField.cs" />
     <Compile Include="Models.Awd\SkuEligibility.cs" />
     <Compile Include="Models.Awd\SkuIneligibilityReason.cs" />
-    <Compile Include="Models.Awd\SkuQuantitiesVisibility.cs" />
     <Compile Include="Models.Awd\SkuQuantity.cs" />
-    <Compile Include="Models.Awd\SortOrder.cs" />
     <Compile Include="Models.Awd\TrackingDetails.cs" />
     <Compile Include="Models.Awd\TransportationDetails.cs" />
     <Compile Include="Models.Awd\VolumeUnitOfMeasurement.cs" />
@@ -1067,7 +1047,6 @@ OpenAPI spec version: 2020-09-01
     <Compile Include="Models.Sellers\GetAccountResponse.cs" />
     <Compile Include="Models.Sellers\GetMarketplaceParticipationsResponse.cs" />
     <Compile Include="Models.Sellers\Marketplace.cs" />
-    <Compile Include="Models.Sellers\MarketplaceLevelAttributes.cs" />
     <Compile Include="Models.Sellers\MarketplaceParticipation.cs" />
     <Compile Include="Models.Sellers\MarketplaceParticipationList.cs" />
     <Compile Include="Models.Sellers\Participation.cs" />

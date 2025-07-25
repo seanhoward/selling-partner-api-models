@@ -72,14 +72,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="TotalWeight" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TotalWeight() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TotalWeight" /> class.
         /// </summary>
         /// <param name="unitOfMeasure">The unit of measure for the weight of items that are ordered by cases and support pricing by weight. (required).</param>
         /// <param name="amount">amount (required).</param>
-        public TotalWeight(UnitOfMeasureEnum unitOfMeasure = default(UnitOfMeasureEnum), string amount = default(string))
+        public TotalWeight(UnitOfMeasureEnum unitOfMeasure = default, string amount = default)
         {
             // to ensure "unitOfMeasure" is required (not null)
             if (unitOfMeasure == null)
@@ -186,7 +186,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

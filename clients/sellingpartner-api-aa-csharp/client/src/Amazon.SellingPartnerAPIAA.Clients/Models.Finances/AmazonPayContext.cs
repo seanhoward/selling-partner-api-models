@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="storeName">The name of the store that is related to the transaction..</param>
         /// <param name="orderType">The transaction&#39;s order type..</param>
         /// <param name="channel">Channel details of related transaction..</param>
-        public AmazonPayContext(string storeName = default(string), string orderType = default(string), string channel = default(string))
+        public AmazonPayContext(string storeName = default, string orderType = default, string channel = default)
         {
             this.StoreName = storeName;
             this.OrderType = orderType;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

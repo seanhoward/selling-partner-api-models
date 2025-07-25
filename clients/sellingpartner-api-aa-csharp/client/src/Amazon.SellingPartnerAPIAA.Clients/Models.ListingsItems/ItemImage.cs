@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemImage" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemImage() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemImage" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <param name="link">The link, or URL, to the image. (required).</param>
         /// <param name="height">The height of the image in pixels. (required).</param>
         /// <param name="width">The width of the image in pixels. (required).</param>
-        public ItemImage(string link = default(string), int? height = default(int?), int? width = default(int?))
+        public ItemImage(string link = default, int? height = default, int? width = default)
         {
             // to ensure "link" is required (not null)
             if (link == null)
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

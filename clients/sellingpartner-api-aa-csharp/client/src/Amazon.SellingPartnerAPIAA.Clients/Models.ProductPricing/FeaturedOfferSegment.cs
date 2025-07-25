@@ -60,14 +60,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferSegment" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeaturedOfferSegment() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferSegment" /> class.
         /// </summary>
         /// <param name="customerMembership">The customer membership type that makes up this segment (required).</param>
         /// <param name="segmentDetails">The details about the segment. (required).</param>
-        public FeaturedOfferSegment(CustomerMembershipEnum customerMembership = default(CustomerMembershipEnum), SegmentDetails segmentDetails = default(SegmentDetails))
+        public FeaturedOfferSegment(CustomerMembershipEnum customerMembership = default, SegmentDetails segmentDetails = default)
         {
             // to ensure "customerMembership" is required (not null)
             if (customerMembership == null)
@@ -175,7 +175,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

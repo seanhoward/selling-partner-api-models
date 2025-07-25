@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <param name="preferences">An object which contains the preferences applied to the offer..</param>
         /// <param name="promotions">An object which contains the promotions applied to the offer..</param>
         /// <param name="enrollmentMethod">Determines whether the offer was automatically or manually enrolled in the program. This property is only supported for sellers and not vendors..</param>
-        public OfferProgramConfiguration(OfferProgramConfigurationPreferences preferences = default(OfferProgramConfigurationPreferences), OfferProgramConfigurationPromotions promotions = default(OfferProgramConfigurationPromotions), EnrollmentMethod? enrollmentMethod = default(EnrollmentMethod?))
+        public OfferProgramConfiguration(OfferProgramConfigurationPreferences preferences = default, OfferProgramConfigurationPromotions promotions = default, EnrollmentMethod? enrollmentMethod = default)
         {
             this.Preferences = preferences;
             this.Promotions = promotions;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

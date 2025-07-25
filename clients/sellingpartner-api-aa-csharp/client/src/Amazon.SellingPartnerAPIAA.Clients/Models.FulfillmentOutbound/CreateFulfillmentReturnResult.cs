@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="returnItems">returnItems.</param>
         /// <param name="invalidReturnItems">invalidReturnItems.</param>
         /// <param name="returnAuthorizations">returnAuthorizations.</param>
-        public CreateFulfillmentReturnResult(ReturnItemList returnItems = default(ReturnItemList), InvalidReturnItemList invalidReturnItems = default(InvalidReturnItemList), ReturnAuthorizationList returnAuthorizations = default(ReturnAuthorizationList))
+        public CreateFulfillmentReturnResult(ReturnItemList returnItems = default, InvalidReturnItemList invalidReturnItems = default, ReturnAuthorizationList returnAuthorizations = default)
         {
             this.ReturnItems = returnItems;
             this.InvalidReturnItems = invalidReturnItems;
@@ -147,7 +147,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

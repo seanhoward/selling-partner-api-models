@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="packages">This is required only when &#x60;DistributionPackageType&#x3D;PALLET&#x60;..</param>
         /// <param name="products">This is required only when &#x60;DistributionPackageType&#x3D;CASE&#x60;..</param>
-        public DistributionPackageContents(List<DistributionPackageQuantity> packages = default(List<DistributionPackageQuantity>), List<ProductQuantity> products = default(List<ProductQuantity>))
+        public DistributionPackageContents(List<DistributionPackageQuantity> packages = default, List<ProductQuantity> products = default)
         {
             this.Packages = packages;
             this.Products = products;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="startTime">The opening time, ISO 8601 formatted timestamp without date, HH:mm..</param>
         /// <param name="endTime">The closing time, ISO 8601 formatted timestamp without date, HH:mm..</param>
-        public OperatingHour(string startTime = default(string), string endTime = default(string))
+        public OperatingHour(string startTime = default, string endTime = default)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

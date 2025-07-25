@@ -66,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// <summary>
         /// Initializes a new instance of the <see cref="Transaction" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Transaction() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Transaction" /> class.
@@ -74,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// <param name="transactionId">The unique identifier returned in the response to the generateOrderScenarios request. (required).</param>
         /// <param name="status">The current processing status of the transaction. (required).</param>
         /// <param name="testCaseData">Test case data for the transaction. Only available when the transaction status is SUCCESS..</param>
-        public Transaction(string transactionId = default(string), StatusEnum status = default(StatusEnum), TestCaseData testCaseData = default(TestCaseData))
+        public Transaction(string transactionId = default, StatusEnum status = default, TestCaseData testCaseData = default)
         {
             // to ensure "transactionId" is required (not null)
             if (transactionId == null)
@@ -198,7 +198,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

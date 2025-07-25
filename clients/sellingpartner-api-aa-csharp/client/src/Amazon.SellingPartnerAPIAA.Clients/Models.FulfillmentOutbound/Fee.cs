@@ -72,14 +72,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Fee" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Fee() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Fee" /> class.
         /// </summary>
         /// <param name="name">The type of fee. (required).</param>
         /// <param name="amount">The amount of the fee. (required).</param>
-        public Fee(NameEnum name = default(NameEnum), Money amount = default(Money))
+        public Fee(NameEnum name = default, Money amount = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -187,7 +187,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

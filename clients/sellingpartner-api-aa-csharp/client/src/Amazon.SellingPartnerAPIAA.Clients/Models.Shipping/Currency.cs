@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="Currency" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Currency() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Currency" /> class.
         /// </summary>
         /// <param name="value">The amount of currency. (required).</param>
         /// <param name="unit">A 3-character currency code. (required).</param>
-        public Currency(decimal? value = default(decimal?), string unit = default(string))
+        public Currency(decimal? value = default, string unit = default)
         {
             // to ensure "value" is required (not null)
             if (value == null)
@@ -154,18 +154,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Unit (string) maxLength
             if(this.Unit != null && this.Unit.Length > 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Unit, length must be less than 3.", new [] { "Unit" });
+                yield return new ValidationResult("Invalid value for Unit, length must be less than 3.", new [] { "Unit" });
             }
 
             // Unit (string) minLength
             if(this.Unit != null && this.Unit.Length < 3)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Unit, length must be greater than 3.", new [] { "Unit" });
+                yield return new ValidationResult("Invalid value for Unit, length must be greater than 3.", new [] { "Unit" });
             }
 
             yield break;

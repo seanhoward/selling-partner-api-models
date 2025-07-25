@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// <param name="invoiceTypeOptions">A list of all the options that are available for the invoice type attribute..</param>
         /// <param name="transactionIdentifierNameOptions">A list of all the options that are available for the transaction identifier name attribute..</param>
         /// <param name="transactionTypeOptions">A list of all the options that are available for the transaction type attribute..</param>
-        public InvoicesAttributes(List<AttributeOption> invoiceStatusOptions = default(List<AttributeOption>), List<AttributeOption> invoiceTypeOptions = default(List<AttributeOption>), List<AttributeOption> transactionIdentifierNameOptions = default(List<AttributeOption>), List<AttributeOption> transactionTypeOptions = default(List<AttributeOption>))
+        public InvoicesAttributes(List<AttributeOption> invoiceStatusOptions = default, List<AttributeOption> invoiceTypeOptions = default, List<AttributeOption> transactionIdentifierNameOptions = default, List<AttributeOption> transactionTypeOptions = default)
         {
             this.InvoiceStatusOptions = invoiceStatusOptions;
             this.InvoiceTypeOptions = invoiceTypeOptions;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

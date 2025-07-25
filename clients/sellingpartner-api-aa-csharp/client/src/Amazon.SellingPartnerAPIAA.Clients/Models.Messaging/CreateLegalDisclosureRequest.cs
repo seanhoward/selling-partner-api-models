@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// Initializes a new instance of the <see cref="CreateLegalDisclosureRequest" /> class.
         /// </summary>
         /// <param name="attachments">Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer&#39;s language of preference, which can be retrieved from the GetAttributes operation..</param>
-        public CreateLegalDisclosureRequest(List<Attachment> attachments = default(List<Attachment>))
+        public CreateLegalDisclosureRequest(List<Attachment> attachments = default)
         {
             this.Attachments = attachments;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

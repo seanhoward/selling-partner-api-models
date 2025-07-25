@@ -54,14 +54,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Amount" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Amount() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Amount" /> class.
         /// </summary>
         /// <param name="unitOfMeasure">The unit of measure for the amount. (required).</param>
         /// <param name="value">The amount of a product in the associated unit of measure. (required).</param>
-        public Amount(UnitOfMeasureEnum unitOfMeasure = default(UnitOfMeasureEnum), string value = default(string))
+        public Amount(UnitOfMeasureEnum unitOfMeasure = default, string value = default)
         {
             // to ensure "unitOfMeasure" is required (not null)
             if (unitOfMeasure == null)
@@ -169,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

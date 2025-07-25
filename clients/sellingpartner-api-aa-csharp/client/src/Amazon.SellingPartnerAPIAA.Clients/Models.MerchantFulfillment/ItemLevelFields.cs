@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemLevelFields" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemLevelFields() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemLevelFields" /> class.
         /// </summary>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item. (required).</param>
         /// <param name="additionalInputs">additionalInputs (required).</param>
-        public ItemLevelFields(string asin = default(string), AdditionalInputsList additionalInputs = default(AdditionalInputsList))
+        public ItemLevelFields(string asin = default, AdditionalInputsList additionalInputs = default)
         {
             // to ensure "asin" is required (not null)
             if (asin == null)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

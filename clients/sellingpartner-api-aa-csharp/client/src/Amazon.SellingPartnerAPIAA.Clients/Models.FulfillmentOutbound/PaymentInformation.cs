@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentInformation" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PaymentInformation() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentInformation" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="paymentTransactionId">The transaction identifier of this payment. (required).</param>
         /// <param name="paymentMode">The transaction mode of this payment. (required).</param>
         /// <param name="paymentDate">The transaction date of this payment. (required).</param>
-        public PaymentInformation(string paymentTransactionId = default(string), string paymentMode = default(string), DateTime? paymentDate = default(DateTime?))
+        public PaymentInformation(string paymentTransactionId = default, string paymentMode = default, DateTime? paymentDate = default)
         {
             // to ensure "paymentTransactionId" is required (not null)
             if (paymentTransactionId == null)
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="appointmentId">New appointment identifier generated during the &#x60;addAppointmentForServiceJobByServiceJobId&#x60; or &#x60;rescheduleAppointmentForServiceJobByServiceJobId&#x60; operations..</param>
         /// <param name="warnings">Warnings generated during the &#x60;addAppointmentForServiceJobByServiceJobId&#x60; or &#x60;rescheduleAppointmentForServiceJobByServiceJobId&#x60; operations..</param>
         /// <param name="errors">Errors occurred during during the &#x60;addAppointmentForServiceJobByServiceJobId&#x60; or &#x60;rescheduleAppointmentForServiceJobByServiceJobId&#x60; operations..</param>
-        public SetAppointmentResponse(string appointmentId = default(string), WarningList warnings = default(WarningList), ErrorList errors = default(ErrorList))
+        public SetAppointmentResponse(string appointmentId = default, WarningList warnings = default, ErrorList errors = default)
         {
             this.AppointmentId = appointmentId;
             this.Warnings = warnings;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

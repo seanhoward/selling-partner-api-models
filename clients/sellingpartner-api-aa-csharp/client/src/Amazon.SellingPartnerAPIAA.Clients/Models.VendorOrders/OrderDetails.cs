@@ -111,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderDetails" /> class.
@@ -130,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="shipWindow">This indicates the ship window. Format is start and end date separated by double hyphen (- -). For example, 2007-03-01T13:00:00Z- -2007-03-11T15:30:00Z..</param>
         /// <param name="deliveryWindow">This indicates the delivery window. Format is start and end date separated by double hyphen (- -). For example, 2007-03-01T13:00:00Z- -2007-03-11T15:30:00Z..</param>
         /// <param name="items">A list of items in this purchase order. (required).</param>
-        public OrderDetails(DateTime? purchaseOrderDate = default(DateTime?), DateTime? purchaseOrderChangedDate = default(DateTime?), DateTime? purchaseOrderStateChangedDate = default(DateTime?), PurchaseOrderTypeEnum? purchaseOrderType = default(PurchaseOrderTypeEnum?), ImportDetails importDetails = default(ImportDetails), string dealCode = default(string), PaymentMethodEnum? paymentMethod = default(PaymentMethodEnum?), PartyIdentification buyingParty = default(PartyIdentification), PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipToParty = default(PartyIdentification), PartyIdentification billToParty = default(PartyIdentification), string shipWindow = default(string), string deliveryWindow = default(string), List<OrderItem> items = default(List<OrderItem>))
+        public OrderDetails(DateTime? purchaseOrderDate = default, DateTime? purchaseOrderChangedDate = default, DateTime? purchaseOrderStateChangedDate = default, PurchaseOrderTypeEnum? purchaseOrderType = default, ImportDetails importDetails = default, string dealCode = default, PaymentMethodEnum? paymentMethod = default, PartyIdentification buyingParty = default, PartyIdentification sellingParty = default, PartyIdentification shipToParty = default, PartyIdentification billToParty = default, string shipWindow = default, string deliveryWindow = default, List<OrderItem> items = default)
         {
             // to ensure "purchaseOrderDate" is required (not null)
             if (purchaseOrderDate == null)
@@ -432,7 +432,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

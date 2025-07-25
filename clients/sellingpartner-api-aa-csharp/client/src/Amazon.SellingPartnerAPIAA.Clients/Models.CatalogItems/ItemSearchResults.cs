@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSearchResults" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemSearchResults() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSearchResults" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="pagination">If available, the &#x60;nextToken&#x60; and/or &#x60;previousToken&#x60; values required to return paginated results. (required).</param>
         /// <param name="refinements">Search refinements for &#x60;keywords&#x60;-based searches. (required).</param>
         /// <param name="items">A list of items from the Amazon catalog. (required).</param>
-        public ItemSearchResults(int? numberOfResults = default(int?), Pagination pagination = default(Pagination), Refinements refinements = default(Refinements), List<Item> items = default(List<Item>))
+        public ItemSearchResults(int? numberOfResults = default, Pagination pagination = default, Refinements refinements = default, List<Item> items = default)
         {
             // to ensure "numberOfResults" is required (not null)
             if (numberOfResults == null)
@@ -204,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

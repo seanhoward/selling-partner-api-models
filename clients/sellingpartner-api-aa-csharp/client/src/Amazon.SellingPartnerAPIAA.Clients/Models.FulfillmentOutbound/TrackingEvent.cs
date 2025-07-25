@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingEvent" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TrackingEvent() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingEvent" /> class.
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="eventAddress">The city where the delivery event took place. (required).</param>
         /// <param name="eventCode">The event code for the delivery event. (required).</param>
         /// <param name="eventDescription">A description for the corresponding event code. (required).</param>
-        public TrackingEvent(DateTime? eventDate = default(DateTime?), TrackingAddress eventAddress = default(TrackingAddress), EventCode eventCode = default(EventCode), string eventDescription = default(string))
+        public TrackingEvent(DateTime? eventDate = default, TrackingAddress eventAddress = default, EventCode eventCode = default, string eventDescription = default)
         {
             // to ensure "eventDate" is required (not null)
             if (eventDate == null)
@@ -204,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

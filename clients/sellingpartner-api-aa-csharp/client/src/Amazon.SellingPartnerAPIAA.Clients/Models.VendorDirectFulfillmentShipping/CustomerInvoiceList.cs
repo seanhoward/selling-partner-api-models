@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="pagination">The pagination elements required to retrieve the remaining data..</param>
         /// <param name="customerInvoices">Represents a customer invoice within the &#x60;CustomerInvoiceList&#x60;..</param>
-        public CustomerInvoiceList(Pagination pagination = default(Pagination), List<CustomerInvoice> customerInvoices = default(List<CustomerInvoice>))
+        public CustomerInvoiceList(Pagination pagination = default, List<CustomerInvoice> customerInvoices = default)
         {
             this.Pagination = pagination;
             this.CustomerInvoices = customerInvoices;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

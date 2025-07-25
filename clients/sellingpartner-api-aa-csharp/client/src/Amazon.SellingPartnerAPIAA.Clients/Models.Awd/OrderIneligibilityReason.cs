@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderIneligibilityReason" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderIneligibilityReason() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderIneligibilityReason" /> class.
         /// </summary>
         /// <param name="code">Code for the order ineligibility. (required).</param>
         /// <param name="description">Description detailing the ineligibility reason of the order. (required).</param>
-        public OrderIneligibilityReason(string code = default(string), string description = default(string))
+        public OrderIneligibilityReason(string code = default, string description = default)
         {
             // to ensure "code" is required (not null)
             if (code == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

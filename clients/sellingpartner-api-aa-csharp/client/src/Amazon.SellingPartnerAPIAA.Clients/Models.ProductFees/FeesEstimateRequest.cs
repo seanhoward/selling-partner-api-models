@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimateRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeesEstimateRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimateRequest" /> class.
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <param name="priceToEstimateFees">The product price that the fee estimate is based on. (required).</param>
         /// <param name="identifier">A unique identifier provided by the caller to track this request. (required).</param>
         /// <param name="optionalFulfillmentProgram">optionalFulfillmentProgram.</param>
-        public FeesEstimateRequest(string marketplaceId = default(string), bool? isAmazonFulfilled = default(bool?), PriceToEstimateFees priceToEstimateFees = default(PriceToEstimateFees), string identifier = default(string), OptionalFulfillmentProgram? optionalFulfillmentProgram = default(OptionalFulfillmentProgram?))
+        public FeesEstimateRequest(string marketplaceId = default, bool? isAmazonFulfilled = default, PriceToEstimateFees priceToEstimateFees = default, string identifier = default, OptionalFulfillmentProgram? optionalFulfillmentProgram = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -212,7 +212,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

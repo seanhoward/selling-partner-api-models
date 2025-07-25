@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Initializes a new instance of the <see cref="ProductInfoDetail" /> class.
         /// </summary>
         /// <param name="numberOfItems">The total number of items that are included in the ASIN..</param>
-        public ProductInfoDetail(string numberOfItems = default(string))
+        public ProductInfoDetail(string numberOfItems = default)
         {
             this.NumberOfItems = numberOfItems;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

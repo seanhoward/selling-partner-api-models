@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemContributor" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemContributor() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemContributor" /> class.
         /// </summary>
         /// <param name="role">role (required).</param>
         /// <param name="value">Name of the contributor, such as Jane Austen. (required).</param>
-        public ItemContributor(ItemContributorRole role = default(ItemContributorRole), string value = default(string))
+        public ItemContributor(ItemContributorRole role = default, string value = default)
         {
             // to ensure "role" is required (not null)
             if (role == null)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

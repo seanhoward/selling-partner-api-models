@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// <param name="marketplaceTaxInfo">marketplaceTaxInfo.</param>
         /// <param name="sellerDisplayName">The seller’s friendly name registered in the marketplace..</param>
         /// <param name="shipmentItems">shipmentItems.</param>
-        public ShipmentDetail(string warehouseId = default(string), string amazonOrderId = default(string), string amazonShipmentId = default(string), DateTime? purchaseDate = default(DateTime?), Address shippingAddress = default(Address), PaymentMethodDetailItemList paymentMethodDetails = default(PaymentMethodDetailItemList), string marketplaceId = default(string), string sellerId = default(string), string buyerName = default(string), string buyerCounty = default(string), BuyerTaxInfo buyerTaxInfo = default(BuyerTaxInfo), MarketplaceTaxInfo marketplaceTaxInfo = default(MarketplaceTaxInfo), string sellerDisplayName = default(string), ShipmentItems shipmentItems = default(ShipmentItems))
+        public ShipmentDetail(string warehouseId = default, string amazonOrderId = default, string amazonShipmentId = default, DateTime? purchaseDate = default, Address shippingAddress = default, PaymentMethodDetailItemList paymentMethodDetails = default, string marketplaceId = default, string sellerId = default, string buyerName = default, string buyerCounty = default, BuyerTaxInfo buyerTaxInfo = default, MarketplaceTaxInfo marketplaceTaxInfo = default, string sellerDisplayName = default, ShipmentItems shipmentItems = default)
         {
             this.WarehouseId = warehouseId;
             this.AmazonOrderId = amazonOrderId;
@@ -332,7 +332,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

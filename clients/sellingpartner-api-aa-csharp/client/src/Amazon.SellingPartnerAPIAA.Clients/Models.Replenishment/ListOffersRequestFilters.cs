@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOffersRequestFilters" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListOffersRequestFilters() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOffersRequestFilters" /> class.
@@ -45,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <param name="preferences">Offer preferences to include in the result filter criteria..</param>
         /// <param name="promotions">Offer promotions to include in the result filter criteria..</param>
         /// <param name="programTypes">programTypes (required).</param>
-        public ListOffersRequestFilters(string marketplaceId = default(string), List<string> skus = default(List<string>), List<string> asins = default(List<string>), List<EligibilityStatus> eligibilities = default(List<EligibilityStatus>), Preference preferences = default(Preference), Promotion promotions = default(Promotion), ProgramTypes programTypes = default(ProgramTypes))
+        public ListOffersRequestFilters(string marketplaceId = default, List<string> skus = default, List<string> asins = default, List<EligibilityStatus> eligibilities = default, Preference preferences = default, Promotion promotions = default, ProgramTypes programTypes = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -238,7 +238,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

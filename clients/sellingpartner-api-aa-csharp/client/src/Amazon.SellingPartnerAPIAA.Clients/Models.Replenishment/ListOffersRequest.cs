@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOffersRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListOffersRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOffersRequest" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <param name="pagination">Use these parameters to paginate through the response. (required).</param>
         /// <param name="filters">Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array. (required).</param>
         /// <param name="sort">Use these parameters to sort the response..</param>
-        public ListOffersRequest(ListOffersRequestPagination pagination = default(ListOffersRequestPagination), ListOffersRequestFilters filters = default(ListOffersRequestFilters), ListOffersRequestSort sort = default(ListOffersRequestSort))
+        public ListOffersRequest(ListOffersRequestPagination pagination = default, ListOffersRequestFilters filters = default, ListOffersRequestSort sort = default)
         {
             // to ensure "pagination" is required (not null)
             if (pagination == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

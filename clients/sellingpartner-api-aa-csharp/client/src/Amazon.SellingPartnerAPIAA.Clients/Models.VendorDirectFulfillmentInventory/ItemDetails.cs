@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDetails" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         /// <param name="vendorProductIdentifier">The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted..</param>
         /// <param name="availableQuantity">Total item quantity available in the warehouse. (required).</param>
         /// <param name="isObsolete">When true, the item is permanently unavailable..</param>
-        public ItemDetails(string buyerProductIdentifier = default(string), string vendorProductIdentifier = default(string), ItemQuantity availableQuantity = default(ItemQuantity), bool? isObsolete = default(bool?))
+        public ItemDetails(string buyerProductIdentifier = default, string vendorProductIdentifier = default, ItemQuantity availableQuantity = default, bool? isObsolete = default)
         {
             // to ensure "availableQuantity" is required (not null)
             if (availableQuantity == null)
@@ -180,7 +180,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

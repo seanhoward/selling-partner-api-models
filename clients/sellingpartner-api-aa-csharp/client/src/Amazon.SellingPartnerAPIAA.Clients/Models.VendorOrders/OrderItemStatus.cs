@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemStatus" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderItemStatus() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemStatus" /> class.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="orderedQuantity">orderedQuantity.</param>
         /// <param name="acknowledgementStatus">acknowledgementStatus.</param>
         /// <param name="receivingStatus">receivingStatus.</param>
-        public OrderItemStatus(string itemSequenceNumber = default(string), string buyerProductIdentifier = default(string), string vendorProductIdentifier = default(string), Money netCost = default(Money), Money listPrice = default(Money), OrderItemStatusOrderedQuantity orderedQuantity = default(OrderItemStatusOrderedQuantity), OrderItemStatusAcknowledgementStatus acknowledgementStatus = default(OrderItemStatusAcknowledgementStatus), OrderItemStatusReceivingStatus receivingStatus = default(OrderItemStatusReceivingStatus))
+        public OrderItemStatus(string itemSequenceNumber = default, string buyerProductIdentifier = default, string vendorProductIdentifier = default, Money netCost = default, Money listPrice = default, OrderItemStatusOrderedQuantity orderedQuantity = default, OrderItemStatusAcknowledgementStatus acknowledgementStatus = default, OrderItemStatusReceivingStatus receivingStatus = default)
         {
             // to ensure "itemSequenceNumber" is required (not null)
             if (itemSequenceNumber == null)
@@ -245,7 +245,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -39,13 +39,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <summary>
         /// Initializes a new instance of the <see cref="AggregationSettings" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AggregationSettings() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AggregationSettings" /> class.
         /// </summary>
         /// <param name="aggregationTimePeriod">The supported time period to use to perform marketplace-ASIN level aggregation. (required).</param>
-        public AggregationSettings(AggregationTimePeriod aggregationTimePeriod = default(AggregationTimePeriod))
+        public AggregationSettings(AggregationTimePeriod aggregationTimePeriod = default)
         {
             // to ensure "aggregationTimePeriod" is required (not null)
             if (aggregationTimePeriod == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

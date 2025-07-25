@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <summary>
         /// Initializes a new instance of the <see cref="RejectedOrder" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RejectedOrder() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RejectedOrder" /> class.
         /// </summary>
         /// <param name="amazonOrderId">amazonOrderId (required).</param>
         /// <param name="error">error.</param>
-        public RejectedOrder(string amazonOrderId = default(string), Error error = default(Error))
+        public RejectedOrder(string amazonOrderId = default, Error error = default)
         {
             // to ensure "amazonOrderId" is required (not null)
             if (amazonOrderId == null)
@@ -144,7 +144,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

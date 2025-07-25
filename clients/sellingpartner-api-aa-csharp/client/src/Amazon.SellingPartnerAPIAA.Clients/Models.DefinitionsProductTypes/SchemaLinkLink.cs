@@ -54,14 +54,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// <summary>
         /// Initializes a new instance of the <see cref="SchemaLinkLink" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SchemaLinkLink() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SchemaLinkLink" /> class.
         /// </summary>
         /// <param name="resource">URI resource for the link. (required).</param>
         /// <param name="verb">HTTP method for the link operation. (required).</param>
-        public SchemaLinkLink(string resource = default(string), VerbEnum verb = default(VerbEnum))
+        public SchemaLinkLink(string resource = default, VerbEnum verb = default)
         {
             // to ensure "resource" is required (not null)
             if (resource == null)
@@ -169,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

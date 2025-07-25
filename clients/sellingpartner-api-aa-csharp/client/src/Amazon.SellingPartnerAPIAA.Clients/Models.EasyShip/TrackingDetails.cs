@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// Initializes a new instance of the <see cref="TrackingDetails" /> class.
         /// </summary>
         /// <param name="trackingId">The tracking identifier for the scheduled package..</param>
-        public TrackingDetails(string trackingId = default(string))
+        public TrackingDetails(string trackingId = default)
         {
             this.TrackingId = trackingId;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

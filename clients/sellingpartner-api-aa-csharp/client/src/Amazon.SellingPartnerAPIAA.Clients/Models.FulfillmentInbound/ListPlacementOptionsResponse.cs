@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ListPlacementOptionsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListPlacementOptionsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListPlacementOptionsResponse" /> class.
         /// </summary>
         /// <param name="pagination">pagination.</param>
         /// <param name="placementOptions">Placement options generated for the inbound plan. (required).</param>
-        public ListPlacementOptionsResponse(Pagination pagination = default(Pagination), List<PlacementOption> placementOptions = default(List<PlacementOption>))
+        public ListPlacementOptionsResponse(Pagination pagination = default, List<PlacementOption> placementOptions = default)
         {
             // to ensure "placementOptions" is required (not null)
             if (placementOptions == null)
@@ -145,7 +145,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

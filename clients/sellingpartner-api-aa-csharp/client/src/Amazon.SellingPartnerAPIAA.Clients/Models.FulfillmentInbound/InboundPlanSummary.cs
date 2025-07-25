@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundPlanSummary" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InboundPlanSummary() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundPlanSummary" /> class.
@@ -45,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="name">Human-readable name of the inbound plan. (required).</param>
         /// <param name="sourceAddress">sourceAddress (required).</param>
         /// <param name="status">The current status of the inbound plan. Possible values: &#x60;ACTIVE&#x60;, &#x60;VOIDED&#x60;, &#x60;SHIPPED&#x60;, &#x60;ERRORED&#x60;. (required).</param>
-        public InboundPlanSummary(DateTime? createdAt = default(DateTime?), string inboundPlanId = default(string), DateTime? lastUpdatedAt = default(DateTime?), List<string> marketplaceIds = default(List<string>), string name = default(string), Address sourceAddress = default(Address), string status = default(string))
+        public InboundPlanSummary(DateTime? createdAt = default, string inboundPlanId = default, DateTime? lastUpdatedAt = default, List<string> marketplaceIds = default, string name = default, Address sourceAddress = default, string status = default)
         {
             // to ensure "createdAt" is required (not null)
             if (createdAt == null)
@@ -278,37 +278,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // InboundPlanId (string) maxLength
             if(this.InboundPlanId != null && this.InboundPlanId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InboundPlanId, length must be less than 38.", new [] { "InboundPlanId" });
+                yield return new ValidationResult("Invalid value for InboundPlanId, length must be less than 38.", new [] { "InboundPlanId" });
             }
 
             // InboundPlanId (string) minLength
             if(this.InboundPlanId != null && this.InboundPlanId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InboundPlanId, length must be greater than 38.", new [] { "InboundPlanId" });
+                yield return new ValidationResult("Invalid value for InboundPlanId, length must be greater than 38.", new [] { "InboundPlanId" });
             }
 
             // InboundPlanId (string) pattern
             Regex regexInboundPlanId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexInboundPlanId.Match(this.InboundPlanId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InboundPlanId, must match a pattern of " + regexInboundPlanId, new [] { "InboundPlanId" });
+                yield return new ValidationResult("Invalid value for InboundPlanId, must match a pattern of " + regexInboundPlanId, new [] { "InboundPlanId" });
             }
 
             // Status (string) maxLength
             if(this.Status != null && this.Status.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
             }
 
             // Status (string) minLength
             if(this.Status != null && this.Status.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
             }
 
             yield break;

@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentMetadata" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ContentMetadata() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentMetadata" /> class.
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="status">status (required).</param>
         /// <param name="badgeSet">badgeSet (required).</param>
         /// <param name="updateTime">The approximate age of the A+ Content document and metadata. (required).</param>
-        public ContentMetadata(string name = default(string), string marketplaceId = default(string), ContentStatus status = default(ContentStatus), ContentBadgeSet badgeSet = default(ContentBadgeSet), DateTime? updateTime = default(DateTime?))
+        public ContentMetadata(string name = default, string marketplaceId = default, ContentStatus status = default, ContentBadgeSet badgeSet = default, DateTime? updateTime = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -226,18 +226,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 100.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 100.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if(this.Name != null && this.Name.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             yield break;

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingLabelRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShippingLabelRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingLabelRequest" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="sellingParty">The ID of the selling party or vendor. (required).</param>
         /// <param name="shipFromParty">The warehouse code of the vendor. (required).</param>
         /// <param name="containers">A list of the packages in this shipment..</param>
-        public ShippingLabelRequest(string purchaseOrderNumber = default(string), PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), List<Container> containers = default(List<Container>))
+        public ShippingLabelRequest(string purchaseOrderNumber = default, PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, List<Container> containers = default)
         {
             // to ensure "purchaseOrderNumber" is required (not null)
             if (purchaseOrderNumber == null)
@@ -196,13 +196,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PurchaseOrderNumber (string) pattern
             Regex regexPurchaseOrderNumber = new Regex(@"^[a-zA-Z0-9]+$", RegexOptions.CultureInvariant);
             if (false == regexPurchaseOrderNumber.Match(this.PurchaseOrderNumber).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new [] { "PurchaseOrderNumber" });
+                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new [] { "PurchaseOrderNumber" });
             }
 
             yield break;

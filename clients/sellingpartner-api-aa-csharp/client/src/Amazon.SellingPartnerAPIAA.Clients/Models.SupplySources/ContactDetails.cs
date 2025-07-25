@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// Initializes a new instance of the <see cref="ContactDetails" /> class.
         /// </summary>
         /// <param name="primary">primary.</param>
-        public ContactDetails(ContactDetailsPrimary primary = default(ContactDetailsPrimary))
+        public ContactDetails(ContactDetailsPrimary primary = default)
         {
             this.Primary = primary;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

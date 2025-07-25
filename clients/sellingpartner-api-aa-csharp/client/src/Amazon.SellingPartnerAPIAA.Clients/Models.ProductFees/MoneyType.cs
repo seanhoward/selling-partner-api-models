@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="currencyCode">The currency code in ISO 4217 format..</param>
         /// <param name="amount">The monetary value..</param>
-        public MoneyType(string currencyCode = default(string), decimal? amount = default(decimal?))
+        public MoneyType(string currencyCode = default, decimal? amount = default)
         {
             this.CurrencyCode = currencyCode;
             this.Amount = amount;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

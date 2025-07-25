@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
         /// </summary>
         /// <param name="month">The month the card expires expressed as a number from &#x60;1&#x60; to &#x60;12&#x60;..</param>
         /// <param name="year">Year.</param>
-        public ExpiryDate(string month = default(string), string year = default(string))
+        public ExpiryDate(string month = default, string year = default)
         {
             this.Month = month;
             this.Year = year;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="appointmentId">Identifier for appointment..</param>
         /// <param name="appointmentSlotTime">appointmentSlotTime.</param>
         /// <param name="appointmentStatus">Status of the appointment..</param>
-        public SelfShipAppointmentDetails(decimal? appointmentId = default(decimal?), AppointmentSlotTime appointmentSlotTime = default(AppointmentSlotTime), string appointmentStatus = default(string))
+        public SelfShipAppointmentDetails(decimal? appointmentId = default, AppointmentSlotTime appointmentSlotTime = default, string appointmentStatus = default)
         {
             this.AppointmentId = appointmentId;
             this.AppointmentSlotTime = appointmentSlotTime;
@@ -149,18 +149,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AppointmentStatus (string) maxLength
             if(this.AppointmentStatus != null && this.AppointmentStatus.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AppointmentStatus, length must be less than 1024.", new [] { "AppointmentStatus" });
+                yield return new ValidationResult("Invalid value for AppointmentStatus, length must be less than 1024.", new [] { "AppointmentStatus" });
             }
 
             // AppointmentStatus (string) minLength
             if(this.AppointmentStatus != null && this.AppointmentStatus.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AppointmentStatus, length must be greater than 1.", new [] { "AppointmentStatus" });
+                yield return new ValidationResult("Invalid value for AppointmentStatus, length must be greater than 1.", new [] { "AppointmentStatus" });
             }
 
             yield break;

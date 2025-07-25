@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="deliveryWindow">The time window in which the shipment will be delivered..</param>
         /// <param name="receiveWindow">The time window in which Amazon Shipping will pick up the shipment..</param>
-        public ShippingPromiseSet(TimeRange deliveryWindow = default(TimeRange), TimeRange receiveWindow = default(TimeRange))
+        public ShippingPromiseSet(TimeRange deliveryWindow = default, TimeRange receiveWindow = default)
         {
             this.DeliveryWindow = deliveryWindow;
             this.ReceiveWindow = receiveWindow;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

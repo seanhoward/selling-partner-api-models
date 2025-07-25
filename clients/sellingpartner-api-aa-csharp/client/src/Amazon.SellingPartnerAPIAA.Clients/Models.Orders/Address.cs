@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Address() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -80,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="phone">The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. In some cases, the buyer phone number is suppressed:  a. Phone is suppressed for all &#x60;AFN&#x60; (fulfilled by Amazon) orders. b. Phone is suppressed for the shipped &#x60;MFN&#x60; (fulfilled by seller) order when the current date is past the Latest Delivery Date..</param>
         /// <param name="extendedFields">The container for address extended fields. For example, street name or street number.   **Note**: This attribute is currently only available with Brazil shipping addresses..</param>
         /// <param name="addressType">The address type of the shipping address..</param>
-        public Address(string name = default(string), string companyName = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string city = default(string), string county = default(string), string district = default(string), string stateOrRegion = default(string), string municipality = default(string), string postalCode = default(string), string countryCode = default(string), string phone = default(string), AddressExtendedFields extendedFields = default(AddressExtendedFields), AddressTypeEnum? addressType = default(AddressTypeEnum?))
+        public Address(string name = default, string companyName = default, string addressLine1 = default, string addressLine2 = default, string addressLine3 = default, string city = default, string county = default, string district = default, string stateOrRegion = default, string municipality = default, string postalCode = default, string countryCode = default, string phone = default, AddressExtendedFields extendedFields = default, AddressTypeEnum? addressType = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -388,7 +388,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -69,7 +69,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="receiveStatus">Receive status of the line item..</param>
         /// <param name="receivedQuantity">The total item quantity received by the buyer so far..</param>
         /// <param name="lastReceiveDate">The date when the most recent item was received at the buyer&#39;s warehouse. Must be in ISO-8601 date/time format..</param>
-        public OrderItemStatusReceivingStatus(ReceiveStatusEnum? receiveStatus = default(ReceiveStatusEnum?), ItemQuantity receivedQuantity = default(ItemQuantity), DateTime? lastReceiveDate = default(DateTime?))
+        public OrderItemStatusReceivingStatus(ReceiveStatusEnum? receiveStatus = default, ItemQuantity receivedQuantity = default, DateTime? lastReceiveDate = default)
         {
             this.ReceiveStatus = receiveStatus;
             this.ReceivedQuantity = receivedQuantity;
@@ -177,7 +177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -156,7 +156,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReportScheduleSpecification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateReportScheduleSpecification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReportScheduleSpecification" /> class.
@@ -166,7 +166,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <param name="reportOptions">reportOptions.</param>
         /// <param name="period">One of a set of predefined &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; periods that specifies how often a report should be created. (required).</param>
         /// <param name="nextReportCreationTime">The date and time when the schedule will create its next report, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
-        public CreateReportScheduleSpecification(string reportType = default(string), List<string> marketplaceIds = default(List<string>), ReportOptions reportOptions = default(ReportOptions), PeriodEnum period = default(PeriodEnum), DateTime? nextReportCreationTime = default(DateTime?))
+        public CreateReportScheduleSpecification(string reportType = default, List<string> marketplaceIds = default, ReportOptions reportOptions = default, PeriodEnum period = default, DateTime? nextReportCreationTime = default)
         {
             // to ensure "reportType" is required (not null)
             if (reportType == null)
@@ -329,7 +329,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

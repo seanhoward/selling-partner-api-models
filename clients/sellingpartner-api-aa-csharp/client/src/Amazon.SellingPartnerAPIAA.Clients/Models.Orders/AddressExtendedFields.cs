@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="streetNumber">The house, building, or property number associated with the location&#39;s street address..</param>
         /// <param name="complement">The floor number/unit number in the building/private house number..</param>
         /// <param name="neighborhood">The neighborhood. This value is only used in some countries (such as Brazil)..</param>
-        public AddressExtendedFields(string streetName = default(string), string streetNumber = default(string), string complement = default(string), string neighborhood = default(string))
+        public AddressExtendedFields(string streetName = default, string streetNumber = default, string complement = default, string neighborhood = default)
         {
             this.StreetName = streetName;
             this.StreetNumber = streetNumber;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

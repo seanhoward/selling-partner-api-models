@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReportResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateReportResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReportResponse" /> class.
         /// </summary>
         /// <param name="reportId">The identifier for the report. This identifier is unique only in combination with a seller ID. (required).</param>
-        public CreateReportResponse(string reportId = default(string))
+        public CreateReportResponse(string reportId = default)
         {
             // to ensure "reportId" is required (not null)
             if (reportId == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

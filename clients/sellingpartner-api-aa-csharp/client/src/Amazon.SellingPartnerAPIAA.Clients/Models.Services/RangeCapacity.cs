@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="capacityType">Capacity type corresponding to the slots..</param>
         /// <param name="slots">Array of capacity slots in range slot format..</param>
-        public RangeCapacity(CapacityType? capacityType = default(CapacityType?), List<RangeSlot> slots = default(List<RangeSlot>))
+        public RangeCapacity(CapacityType? capacityType = default, List<RangeSlot> slots = default)
         {
             this.CapacityType = capacityType;
             this.Slots = slots;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

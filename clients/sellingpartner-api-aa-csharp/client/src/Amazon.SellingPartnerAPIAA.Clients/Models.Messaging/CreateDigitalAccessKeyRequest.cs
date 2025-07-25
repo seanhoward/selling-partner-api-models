@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// </summary>
         /// <param name="text">The text that is sent to the buyer. Only links that are related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer&#39;s preferred language, which you can retrieve from the &#x60;GetAttributes&#x60; operation..</param>
         /// <param name="attachments">Attachments that you want to include in the message to the buyer..</param>
-        public CreateDigitalAccessKeyRequest(string text = default(string), List<Attachment> attachments = default(List<Attachment>))
+        public CreateDigitalAccessKeyRequest(string text = default, List<Attachment> attachments = default)
         {
             this.Text = text;
             this.Attachments = attachments;
@@ -133,18 +133,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Text (string) maxLength
             if(this.Text != null && this.Text.Length > 400)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Text, length must be less than 400.", new [] { "Text" });
+                yield return new ValidationResult("Invalid value for Text, length must be less than 400.", new [] { "Text" });
             }
 
             // Text (string) minLength
             if(this.Text != null && this.Text.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Text, length must be greater than 1.", new [] { "Text" });
+                yield return new ValidationResult("Invalid value for Text, length must be greater than 1.", new [] { "Text" });
             }
 
             yield break;

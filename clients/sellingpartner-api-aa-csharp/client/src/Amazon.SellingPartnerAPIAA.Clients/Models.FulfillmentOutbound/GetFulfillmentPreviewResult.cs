@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// Initializes a new instance of the <see cref="GetFulfillmentPreviewResult" /> class.
         /// </summary>
         /// <param name="fulfillmentPreviews">fulfillmentPreviews.</param>
-        public GetFulfillmentPreviewResult(FulfillmentPreviewList fulfillmentPreviews = default(FulfillmentPreviewList))
+        public GetFulfillmentPreviewResult(FulfillmentPreviewList fulfillmentPreviews = default)
         {
             this.FulfillmentPreviews = fulfillmentPreviews;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

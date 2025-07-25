@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageTrackingDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PackageTrackingDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageTrackingDetails" /> class.
@@ -62,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="signedForBy">The name of the person who signed for the package..</param>
         /// <param name="additionalLocationInfo">additionalLocationInfo.</param>
         /// <param name="trackingEvents">trackingEvents.</param>
-        public PackageTrackingDetails(int? packageNumber = default(int?), string trackingNumber = default(string), string customerTrackingLink = default(string), string carrierCode = default(string), string carrierPhoneNumber = default(string), string carrierURL = default(string), DateTime? shipDate = default(DateTime?), DateTime? estimatedArrivalDate = default(DateTime?), TrackingAddress shipToAddress = default(TrackingAddress), CurrentStatus? currentStatus = default(CurrentStatus?), string currentStatusDescription = default(string), string signedForBy = default(string), AdditionalLocationInfo? additionalLocationInfo = default(AdditionalLocationInfo?), TrackingEventList trackingEvents = default(TrackingEventList))
+        public PackageTrackingDetails(int? packageNumber = default, string trackingNumber = default, string customerTrackingLink = default, string carrierCode = default, string carrierPhoneNumber = default, string carrierURL = default, DateTime? shipDate = default, DateTime? estimatedArrivalDate = default, TrackingAddress shipToAddress = default, CurrentStatus? currentStatus = default, string currentStatusDescription = default, string signedForBy = default, AdditionalLocationInfo? additionalLocationInfo = default, TrackingEventList trackingEvents = default)
         {
             // to ensure "packageNumber" is required (not null)
             if (packageNumber == null)
@@ -347,7 +347,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

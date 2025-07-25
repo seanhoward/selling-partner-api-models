@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// <summary>
         /// Initializes a new instance of the <see cref="GetQueriesResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetQueriesResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetQueriesResponse" /> class.
         /// </summary>
         /// <param name="queries">The Data Kiosk queries. (required).</param>
         /// <param name="pagination">pagination.</param>
-        public GetQueriesResponse(QueryList queries = default(QueryList), GetQueriesResponsePagination pagination = default(GetQueriesResponsePagination))
+        public GetQueriesResponse(QueryList queries = default, GetQueriesResponsePagination pagination = default)
         {
             // to ensure "queries" is required (not null)
             if (queries == null)
@@ -145,7 +145,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

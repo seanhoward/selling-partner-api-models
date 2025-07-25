@@ -50,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingServiceOptions" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShippingServiceOptions() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingServiceOptions" /> class.
@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="carrierWillPickUp">When true, the carrier will pick up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK). (required).</param>
         /// <param name="carrierWillPickUpOption">carrierWillPickUpOption.</param>
         /// <param name="labelFormat">The seller&#39;s preferred label format..</param>
-        public ShippingServiceOptions(DeliveryExperienceType deliveryExperience = default(DeliveryExperienceType), CurrencyAmount declaredValue = default(CurrencyAmount), bool? carrierWillPickUp = default(bool?), CarrierWillPickUpOption? carrierWillPickUpOption = default(CarrierWillPickUpOption?), LabelFormat? labelFormat = default(LabelFormat?))
+        public ShippingServiceOptions(DeliveryExperienceType deliveryExperience = default, CurrencyAmount declaredValue = default, bool? carrierWillPickUp = default, CarrierWillPickUpOption? carrierWillPickUpOption = default, LabelFormat? labelFormat = default)
         {
             // to ensure "deliveryExperience" is required (not null)
             if (deliveryExperience == null)
@@ -204,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

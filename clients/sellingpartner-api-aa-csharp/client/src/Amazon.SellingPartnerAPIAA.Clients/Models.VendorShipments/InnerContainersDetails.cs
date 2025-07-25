@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="containerCount">Total containers as part of the shipment.</param>
         /// <param name="containerSequenceNumbers">Container sequence numbers that are involved in this shipment..</param>
-        public InnerContainersDetails(int? containerCount = default(int?), List<ContainerSequenceNumbers> containerSequenceNumbers = default(List<ContainerSequenceNumbers>))
+        public InnerContainersDetails(int? containerCount = default, List<ContainerSequenceNumbers> containerSequenceNumbers = default)
         {
             this.ContainerCount = containerCount;
             this.ContainerSequenceNumbers = containerSequenceNumbers;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

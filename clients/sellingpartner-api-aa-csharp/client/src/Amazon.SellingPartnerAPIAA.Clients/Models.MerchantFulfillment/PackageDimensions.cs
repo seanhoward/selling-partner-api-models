@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="height">The height dimension. If you don&#39;t specify &#x60;PredefinedPackageDimensions&#x60;, you must specify the height..</param>
         /// <param name="unit">The unit of measurement. If you don&#39;t specify &#x60;PredefinedPackageDimensions&#x60;, you must specify the unit..</param>
         /// <param name="predefinedPackageDimensions">predefinedPackageDimensions.</param>
-        public PackageDimensions(double? length = default(double?), double? width = default(double?), double? height = default(double?), UnitOfLength? unit = default(UnitOfLength?), PredefinedPackageDimensions? predefinedPackageDimensions = default(PredefinedPackageDimensions?))
+        public PackageDimensions(double? length = default, double? width = default, double? height = default, UnitOfLength? unit = default, PredefinedPackageDimensions? predefinedPackageDimensions = default)
         {
             this.Length = length;
             this.Width = width;
@@ -183,7 +183,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

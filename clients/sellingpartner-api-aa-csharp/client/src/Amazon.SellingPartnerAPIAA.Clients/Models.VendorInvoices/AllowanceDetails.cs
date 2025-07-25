@@ -84,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// <summary>
         /// Initializes a new instance of the <see cref="AllowanceDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AllowanceDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AllowanceDetails" /> class.
@@ -93,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// <param name="description">Description of the allowance..</param>
         /// <param name="allowanceAmount">Total monetary amount related to this allowance. (required).</param>
         /// <param name="taxDetails">Tax amount details applied on this allowance..</param>
-        public AllowanceDetails(TypeEnum type = default(TypeEnum), string description = default(string), Money allowanceAmount = default(Money), List<TaxDetails> taxDetails = default(List<TaxDetails>))
+        public AllowanceDetails(TypeEnum type = default, string description = default, Money allowanceAmount = default, List<TaxDetails> taxDetails = default)
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -233,7 +233,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

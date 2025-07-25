@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// Initializes a new instance of the <see cref="TestCaseData" /> class.
         /// </summary>
         /// <param name="scenarios">Set of use cases that describes the possible test scenarios..</param>
-        public TestCaseData(List<Scenario> scenarios = default(List<Scenario>))
+        public TestCaseData(List<Scenario> scenarios = default)
         {
             this.Scenarios = scenarios;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

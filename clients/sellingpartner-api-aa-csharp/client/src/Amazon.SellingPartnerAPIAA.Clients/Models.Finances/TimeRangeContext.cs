@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="startTime">The start time of the transaction..</param>
         /// <param name="endTime">The end time of the transaction..</param>
-        public TimeRangeContext(DateTime? startTime = default(DateTime?), DateTime? endTime = default(DateTime?))
+        public TimeRangeContext(DateTime? startTime = default, DateTime? endTime = default)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

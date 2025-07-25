@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <param name="feesEstimateIdentifier">Information used to identify a fees estimate request..</param>
         /// <param name="feesEstimate">The total estimated fees for an item and a list of details..</param>
         /// <param name="error">An error object with a type, code, and message..</param>
-        public FeesEstimateResult(string status = default(string), FeesEstimateIdentifier feesEstimateIdentifier = default(FeesEstimateIdentifier), FeesEstimate feesEstimate = default(FeesEstimate), FeesEstimateError error = default(FeesEstimateError))
+        public FeesEstimateResult(string status = default, FeesEstimateIdentifier feesEstimateIdentifier = default, FeesEstimate feesEstimate = default, FeesEstimateError error = default)
         {
             this.Status = status;
             this.FeesEstimateIdentifier = feesEstimateIdentifier;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

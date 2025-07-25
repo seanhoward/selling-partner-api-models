@@ -54,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="Container" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Container() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Container" /> class.
@@ -65,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="dimensions">The length, width, height, and weight of the container. (required).</param>
         /// <param name="items">A list of the items in the container. (required).</param>
         /// <param name="weight">The weight of the container. (required).</param>
-        public Container(ContainerTypeEnum? containerType = default(ContainerTypeEnum?), string containerReferenceId = default(string), Currency value = default(Currency), Dimensions dimensions = default(Dimensions), List<ContainerItem> items = default(List<ContainerItem>), Weight weight = default(Weight))
+        public Container(ContainerTypeEnum? containerType = default, string containerReferenceId = default, Currency value = default, Dimensions dimensions = default, List<ContainerItem> items = default, Weight weight = default)
         {
             // to ensure "containerReferenceId" is required (not null)
             if (containerReferenceId == null)
@@ -260,7 +260,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

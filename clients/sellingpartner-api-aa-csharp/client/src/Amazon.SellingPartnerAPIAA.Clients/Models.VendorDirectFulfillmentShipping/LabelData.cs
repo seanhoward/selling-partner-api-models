@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelData" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected LabelData() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelData" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="shipMethod">Ship method to be used for shipping the order. Amazon defines Ship Method Codes indicating shipping carrier and shipment service level. Ship Method Codes are case and format sensitive. The same ship method code should returned on the shipment confirmation. Note that the Ship Method Codes are vendor specific and will be provided to each vendor during the implementation..</param>
         /// <param name="shipMethodName">Shipping method name for internal reference..</param>
         /// <param name="content">This field will contain the Base64encoded string of the shipment label content. (required).</param>
-        public LabelData(string packageIdentifier = default(string), string trackingNumber = default(string), string shipMethod = default(string), string shipMethodName = default(string), string content = default(string))
+        public LabelData(string packageIdentifier = default, string trackingNumber = default, string shipMethod = default, string shipMethodName = default, string content = default)
         {
             // to ensure "content" is required (not null)
             if (content == null)
@@ -197,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

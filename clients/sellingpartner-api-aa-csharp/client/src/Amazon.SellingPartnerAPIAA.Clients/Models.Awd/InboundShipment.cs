@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundShipment" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InboundShipment() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundShipment" /> class.
@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="trackingId">Carrier-unique tracking ID for this shipment..</param>
         /// <param name="updatedAt">Timestamp when the shipment was updated. The date is returned in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format..</param>
         /// <param name="warehouseReferenceId">An AWD-provided reference ID that you can use to interact with the warehouse. For example, a carrier appointment booking..</param>
-        public InboundShipment(CarrierCode carrierCode = default(CarrierCode), DateTime? createdAt = default(DateTime?), Address destinationAddress = default(Address), string externalReferenceId = default(string), string orderId = default(string), Address originAddress = default(Address), List<InventoryQuantity> receivedQuantity = default(List<InventoryQuantity>), DateTime? shipBy = default(DateTime?), List<DistributionPackageQuantity> shipmentContainerQuantities = default(List<DistributionPackageQuantity>), string shipmentId = default(string), List<SkuQuantity> shipmentSkuQuantities = default(List<SkuQuantity>), string destinationRegion = default(string), InboundShipmentStatus shipmentStatus = default(InboundShipmentStatus), string trackingId = default(string), DateTime? updatedAt = default(DateTime?), string warehouseReferenceId = default(string))
+        public InboundShipment(CarrierCode carrierCode = default, DateTime? createdAt = default, Address destinationAddress = default, string externalReferenceId = default, string orderId = default, Address originAddress = default, List<InventoryQuantity> receivedQuantity = default, DateTime? shipBy = default, List<DistributionPackageQuantity> shipmentContainerQuantities = default, string shipmentId = default, List<SkuQuantity> shipmentSkuQuantities = default, string destinationRegion = default, InboundShipmentStatus shipmentStatus = default, string trackingId = default, DateTime? updatedAt = default, string warehouseReferenceId = default)
         {
             // to ensure "destinationAddress" is required (not null)
             if (destinationAddress == null)
@@ -424,24 +424,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // OrderId (string) minLength
             if(this.OrderId != null && this.OrderId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OrderId, length must be greater than 1.", new [] { "OrderId" });
+                yield return new ValidationResult("Invalid value for OrderId, length must be greater than 1.", new [] { "OrderId" });
             }
 
             // ShipmentId (string) minLength
             if(this.ShipmentId != null && this.ShipmentId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be greater than 1.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 1.", new [] { "ShipmentId" });
             }
 
             // TrackingId (string) minLength
             if(this.TrackingId != null && this.TrackingId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TrackingId, length must be greater than 1.", new [] { "TrackingId" });
+                yield return new ValidationResult("Invalid value for TrackingId, length must be greater than 1.", new [] { "TrackingId" });
             }
 
             yield break;

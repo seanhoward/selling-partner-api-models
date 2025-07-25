@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ListDeliveryWindowOptionsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListDeliveryWindowOptionsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListDeliveryWindowOptionsResponse" /> class.
         /// </summary>
         /// <param name="deliveryWindowOptions">Delivery window options generated for the placement option. (required).</param>
         /// <param name="pagination">pagination.</param>
-        public ListDeliveryWindowOptionsResponse(List<DeliveryWindowOption> deliveryWindowOptions = default(List<DeliveryWindowOption>), Pagination pagination = default(Pagination))
+        public ListDeliveryWindowOptionsResponse(List<DeliveryWindowOption> deliveryWindowOptions = default, Pagination pagination = default)
         {
             // to ensure "deliveryWindowOptions" is required (not null)
             if (deliveryWindowOptions == null)
@@ -145,7 +145,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="exceptionDate">Date when the business is closed, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date format..</param>
         /// <param name="isOpen">Boolean indicating if the business is closed or open on that date..</param>
         /// <param name="openIntervals">Time window during the day when the business is open..</param>
-        public ExceptionDates(string exceptionDate = default(string), bool? isOpen = default(bool?), List<OpenInterval> openIntervals = default(List<OpenInterval>))
+        public ExceptionDates(string exceptionDate = default, bool? isOpen = default, List<OpenInterval> openIntervals = default)
         {
             this.ExceptionDate = exceptionDate;
             this.IsOpen = isOpen;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

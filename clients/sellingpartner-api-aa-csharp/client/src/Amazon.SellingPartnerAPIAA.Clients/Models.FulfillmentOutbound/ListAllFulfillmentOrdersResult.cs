@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="nextToken">When present and not empty, pass this string token in the next request to return the next response page..</param>
         /// <param name="fulfillmentOrders">An array of fulfillment order information..</param>
-        public ListAllFulfillmentOrdersResult(string nextToken = default(string), List<FulfillmentOrder> fulfillmentOrders = default(List<FulfillmentOrder>))
+        public ListAllFulfillmentOrdersResult(string nextToken = default, List<FulfillmentOrder> fulfillmentOrders = default)
         {
             this.NextToken = nextToken;
             this.FulfillmentOrders = fulfillmentOrders;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

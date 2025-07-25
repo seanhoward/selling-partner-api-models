@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentOrderItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FulfillmentOrderItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentOrderItem" /> class.
@@ -52,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="perUnitPrice">The amount to be collected from the recipient for this item in a COD (Cash On Delivery) order..</param>
         /// <param name="perUnitTax">The tax on the amount to be collected from the recipient for this item in a COD (Cash On Delivery) order..</param>
         /// <param name="perUnitDeclaredValue">The monetary value assigned by the seller to this item. This is a required field for India MCF orders..</param>
-        public FulfillmentOrderItem(string sellerSku = default(string), string sellerFulfillmentOrderItemId = default(string), int? quantity = default(int?), string giftMessage = default(string), string displayableComment = default(string), string fulfillmentNetworkSku = default(string), string orderItemDisposition = default(string), int? cancelledQuantity = default(int?), int? unfulfillableQuantity = default(int?), DateTime? estimatedShipDate = default(DateTime?), DateTime? estimatedArrivalDate = default(DateTime?), Money perUnitPrice = default(Money), Money perUnitTax = default(Money), Money perUnitDeclaredValue = default(Money))
+        public FulfillmentOrderItem(string sellerSku = default, string sellerFulfillmentOrderItemId = default, int? quantity = default, string giftMessage = default, string displayableComment = default, string fulfillmentNetworkSku = default, string orderItemDisposition = default, int? cancelledQuantity = default, int? unfulfillableQuantity = default, DateTime? estimatedShipDate = default, DateTime? estimatedArrivalDate = default, Money perUnitPrice = default, Money perUnitTax = default, Money perUnitDeclaredValue = default)
         {
             // to ensure "sellerSku" is required (not null)
             if (sellerSku == null)
@@ -381,7 +381,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="totalResearchingQuantity">The total number of units currently being researched in Amazon&#39;s fulfillment network..</param>
         /// <param name="researchingQuantityBreakdown">A list of quantity details for items currently being researched..</param>
-        public ResearchingQuantity(int? totalResearchingQuantity = default(int?), List<ResearchingQuantityEntry> researchingQuantityBreakdown = default(List<ResearchingQuantityEntry>))
+        public ResearchingQuantity(int? totalResearchingQuantity = default, List<ResearchingQuantityEntry> researchingQuantityBreakdown = default)
         {
             this.TotalResearchingQuantity = totalResearchingQuantity;
             this.ResearchingQuantityBreakdown = researchingQuantityBreakdown;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="OfferIdentifier" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OfferIdentifier() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OfferIdentifier" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <param name="sku">The seller SKU of the item. This will only be present for the target offer, which belongs to the requesting seller..</param>
         /// <param name="asin">The Amazon identifier for the item. (required).</param>
         /// <param name="fulfillmentType">The fulfillment type for the offer..</param>
-        public OfferIdentifier(string marketplaceId = default(string), string sellerId = default(string), string sku = default(string), string asin = default(string), FulfillmentType? fulfillmentType = default(FulfillmentType?))
+        public OfferIdentifier(string marketplaceId = default, string sellerId = default, string sku = default, string asin = default, FulfillmentType? fulfillmentType = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -205,7 +205,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentExecutionDetailItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PaymentExecutionDetailItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentExecutionDetailItem" /> class.
         /// </summary>
         /// <param name="payment">payment (required).</param>
         /// <param name="paymentMethod">A sub-payment method for a COD order.  **Possible values**: * &#x60;COD&#x60;: Cash on delivery  * &#x60;GC&#x60;: Gift card  * &#x60;PointsAccount&#x60;: Amazon Points * &#x60;Invoice&#x60;: Invoice (required).</param>
-        public PaymentExecutionDetailItem(Money payment = default(Money), string paymentMethod = default(string))
+        public PaymentExecutionDetailItem(Money payment = default, string paymentMethod = default)
         {
             // to ensure "payment" is required (not null)
             if (payment == null)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

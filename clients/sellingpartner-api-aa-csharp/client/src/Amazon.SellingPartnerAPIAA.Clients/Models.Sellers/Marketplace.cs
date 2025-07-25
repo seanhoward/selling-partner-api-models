@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <summary>
         /// Initializes a new instance of the <see cref="Marketplace" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Marketplace() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Marketplace" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <param name="defaultCurrencyCode">The ISO 4217 format currency code of the marketplace. (required).</param>
         /// <param name="defaultLanguageCode">The ISO 639-1 format language code of the marketplace. (required).</param>
         /// <param name="domainName">The domain name of the marketplace. (required).</param>
-        public Marketplace(string id = default(string), string name = default(string), string countryCode = default(string), string defaultCurrencyCode = default(string), string defaultLanguageCode = default(string), string domainName = default(string))
+        public Marketplace(string id = default, string name = default, string countryCode = default, string defaultCurrencyCode = default, string defaultLanguageCode = default, string domainName = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -254,13 +254,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // CountryCode (string) pattern
             Regex regexCountryCode = new Regex(@"^([A-Z]{2})$", RegexOptions.CultureInvariant);
             if (false == regexCountryCode.Match(this.CountryCode).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryCode, must match a pattern of " + regexCountryCode, new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, must match a pattern of " + regexCountryCode, new [] { "CountryCode" });
             }
 
             yield break;

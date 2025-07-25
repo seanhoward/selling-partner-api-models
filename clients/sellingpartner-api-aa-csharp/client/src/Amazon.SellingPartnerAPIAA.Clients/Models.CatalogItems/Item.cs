@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Item() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="salesRanks">salesRanks.</param>
         /// <param name="summaries">summaries.</param>
         /// <param name="vendorDetails">vendorDetails.</param>
-        public Item(string asin = default(string), Newtonsoft.Json.Linq.JObject attributes = default(Newtonsoft.Json.Linq.JObject), ItemBrowseClassifications classifications = default(ItemBrowseClassifications), ItemDimensions dimensions = default(ItemDimensions), ItemIdentifiers identifiers = default(ItemIdentifiers), ItemImages images = default(ItemImages), ItemProductTypes productTypes = default(ItemProductTypes), ItemRelationships relationships = default(ItemRelationships), ItemSalesRanks salesRanks = default(ItemSalesRanks), ItemSummaries summaries = default(ItemSummaries), ItemVendorDetails vendorDetails = default(ItemVendorDetails))
+        public Item(string asin = default, Newtonsoft.Json.Linq.JObject attributes = default, ItemBrowseClassifications classifications = default, ItemDimensions dimensions = default, ItemIdentifiers identifiers = default, ItemImages images = default, ItemProductTypes productTypes = default, ItemRelationships relationships = default, ItemSalesRanks salesRanks = default, ItemSummaries summaries = default, ItemVendorDetails vendorDetails = default)
         {
             // to ensure "asin" is required (not null)
             if (asin == null)
@@ -288,7 +288,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

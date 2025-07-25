@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReturnItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateReturnItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReturnItem" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="amazonShipmentId">The identifier for the shipment that is associated with the return item. (required).</param>
         /// <param name="returnReasonCode">The return reason code assigned to the return item by the seller. (required).</param>
         /// <param name="returnComment">An optional comment about the return item..</param>
-        public CreateReturnItem(string sellerReturnItemId = default(string), string sellerFulfillmentOrderItemId = default(string), string amazonShipmentId = default(string), string returnReasonCode = default(string), string returnComment = default(string))
+        public CreateReturnItem(string sellerReturnItemId = default, string sellerFulfillmentOrderItemId = default, string amazonShipmentId = default, string returnReasonCode = default, string returnComment = default)
         {
             // to ensure "sellerReturnItemId" is required (not null)
             if (sellerReturnItemId == null)
@@ -221,18 +221,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // SellerReturnItemId (string) maxLength
             if(this.SellerReturnItemId != null && this.SellerReturnItemId.Length > 80)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SellerReturnItemId, length must be less than 80.", new [] { "SellerReturnItemId" });
+                yield return new ValidationResult("Invalid value for SellerReturnItemId, length must be less than 80.", new [] { "SellerReturnItemId" });
             }
 
             // ReturnComment (string) maxLength
             if(this.ReturnComment != null && this.ReturnComment.Length > 1000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReturnComment, length must be less than 1000.", new [] { "ReturnComment" });
+                yield return new ValidationResult("Invalid value for ReturnComment, length must be less than 1000.", new [] { "ReturnComment" });
             }
 
             yield break;

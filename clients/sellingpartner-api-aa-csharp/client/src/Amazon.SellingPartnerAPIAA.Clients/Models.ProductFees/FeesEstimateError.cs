@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimateError" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeesEstimateError() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimateError" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <param name="code">An error code that identifies the type of error that occurred. (required).</param>
         /// <param name="message">A message that describes the error condition. (required).</param>
         /// <param name="detail">detail (required).</param>
-        public FeesEstimateError(string type = default(string), string code = default(string), string message = default(string), FeesEstimateErrorDetail detail = default(FeesEstimateErrorDetail))
+        public FeesEstimateError(string type = default, string code = default, string message = default, FeesEstimateErrorDetail detail = default)
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -203,7 +203,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

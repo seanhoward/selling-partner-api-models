@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="paymentMethod">The method of payment..</param>
         /// <param name="paymentReference">The reference number of the payment..</param>
         /// <param name="paymentDate">The date of the payment..</param>
-        public PaymentsContext(string paymentType = default(string), string paymentMethod = default(string), string paymentReference = default(string), DateTime? paymentDate = default(DateTime?))
+        public PaymentsContext(string paymentType = default, string paymentMethod = default, string paymentReference = default, DateTime? paymentDate = default)
         {
             this.PaymentType = paymentType;
             this.PaymentMethod = paymentMethod;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

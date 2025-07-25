@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <summary>
         /// Initializes a new instance of the <see cref="IncludedFeeDetail" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected IncludedFeeDetail() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="IncludedFeeDetail" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <param name="feePromotion">The promotion amount for a given fee..</param>
         /// <param name="taxAmount">The tax amount for a given fee..</param>
         /// <param name="finalFee">The final fee amount for a given fee. (required).</param>
-        public IncludedFeeDetail(string feeType = default(string), MoneyType feeAmount = default(MoneyType), MoneyType feePromotion = default(MoneyType), MoneyType taxAmount = default(MoneyType), MoneyType finalFee = default(MoneyType))
+        public IncludedFeeDetail(string feeType = default, MoneyType feeAmount = default, MoneyType feePromotion = default, MoneyType taxAmount = default, MoneyType finalFee = default)
         {
             // to ensure "feeType" is required (not null)
             if (feeType == null)
@@ -213,7 +213,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

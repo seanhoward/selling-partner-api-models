@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="AddressInput" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AddressInput() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AddressInput" /> class.
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="phoneNumber">The phone number. (required).</param>
         /// <param name="postalCode">The postal code. (required).</param>
         /// <param name="stateOrProvinceCode">The state or province code..</param>
-        public AddressInput(string addressLine1 = default(string), string addressLine2 = default(string), string city = default(string), string companyName = default(string), string countryCode = default(string), string email = default(string), string name = default(string), string phoneNumber = default(string), string postalCode = default(string), string stateOrProvinceCode = default(string))
+        public AddressInput(string addressLine1 = default, string addressLine2 = default, string city = default, string companyName = default, string countryCode = default, string email = default, string name = default, string phoneNumber = default, string postalCode = default, string stateOrProvinceCode = default)
         {
             // to ensure "addressLine1" is required (not null)
             if (addressLine1 == null)
@@ -322,133 +322,133 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AddressLine1 (string) maxLength
             if(this.AddressLine1 != null && this.AddressLine1.Length > 180)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressLine1, length must be less than 180.", new [] { "AddressLine1" });
+                yield return new ValidationResult("Invalid value for AddressLine1, length must be less than 180.", new [] { "AddressLine1" });
             }
 
             // AddressLine1 (string) minLength
             if(this.AddressLine1 != null && this.AddressLine1.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressLine1, length must be greater than 1.", new [] { "AddressLine1" });
+                yield return new ValidationResult("Invalid value for AddressLine1, length must be greater than 1.", new [] { "AddressLine1" });
             }
 
             // AddressLine2 (string) maxLength
             if(this.AddressLine2 != null && this.AddressLine2.Length > 60)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressLine2, length must be less than 60.", new [] { "AddressLine2" });
+                yield return new ValidationResult("Invalid value for AddressLine2, length must be less than 60.", new [] { "AddressLine2" });
             }
 
             // AddressLine2 (string) minLength
             if(this.AddressLine2 != null && this.AddressLine2.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressLine2, length must be greater than 1.", new [] { "AddressLine2" });
+                yield return new ValidationResult("Invalid value for AddressLine2, length must be greater than 1.", new [] { "AddressLine2" });
             }
 
             // City (string) maxLength
             if(this.City != null && this.City.Length > 30)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for City, length must be less than 30.", new [] { "City" });
+                yield return new ValidationResult("Invalid value for City, length must be less than 30.", new [] { "City" });
             }
 
             // City (string) minLength
             if(this.City != null && this.City.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for City, length must be greater than 1.", new [] { "City" });
+                yield return new ValidationResult("Invalid value for City, length must be greater than 1.", new [] { "City" });
             }
 
             // CompanyName (string) maxLength
             if(this.CompanyName != null && this.CompanyName.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CompanyName, length must be less than 50.", new [] { "CompanyName" });
+                yield return new ValidationResult("Invalid value for CompanyName, length must be less than 50.", new [] { "CompanyName" });
             }
 
             // CompanyName (string) minLength
             if(this.CompanyName != null && this.CompanyName.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CompanyName, length must be greater than 1.", new [] { "CompanyName" });
+                yield return new ValidationResult("Invalid value for CompanyName, length must be greater than 1.", new [] { "CompanyName" });
             }
 
             // CountryCode (string) maxLength
             if(this.CountryCode != null && this.CountryCode.Length > 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryCode, length must be less than 2.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be less than 2.", new [] { "CountryCode" });
             }
 
             // CountryCode (string) minLength
             if(this.CountryCode != null && this.CountryCode.Length < 2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryCode, length must be greater than 2.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be greater than 2.", new [] { "CountryCode" });
             }
 
             // CountryCode (string) pattern
             Regex regexCountryCode = new Regex(@"^[A-Z]{2}$", RegexOptions.CultureInvariant);
             if (false == regexCountryCode.Match(this.CountryCode).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryCode, must match a pattern of " + regexCountryCode, new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, must match a pattern of " + regexCountryCode, new [] { "CountryCode" });
             }
 
             // Email (string) maxLength
             if(this.Email != null && this.Email.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be less than 1024.", new [] { "Email" });
+                yield return new ValidationResult("Invalid value for Email, length must be less than 1024.", new [] { "Email" });
             }
 
             // Email (string) minLength
             if(this.Email != null && this.Email.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be greater than 1.", new [] { "Email" });
+                yield return new ValidationResult("Invalid value for Email, length must be greater than 1.", new [] { "Email" });
             }
 
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 50.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 50.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if(this.Name != null && this.Name.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             // PhoneNumber (string) maxLength
             if(this.PhoneNumber != null && this.PhoneNumber.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PhoneNumber, length must be less than 20.", new [] { "PhoneNumber" });
+                yield return new ValidationResult("Invalid value for PhoneNumber, length must be less than 20.", new [] { "PhoneNumber" });
             }
 
             // PhoneNumber (string) minLength
             if(this.PhoneNumber != null && this.PhoneNumber.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PhoneNumber, length must be greater than 1.", new [] { "PhoneNumber" });
+                yield return new ValidationResult("Invalid value for PhoneNumber, length must be greater than 1.", new [] { "PhoneNumber" });
             }
 
             // PostalCode (string) maxLength
             if(this.PostalCode != null && this.PostalCode.Length > 32)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PostalCode, length must be less than 32.", new [] { "PostalCode" });
+                yield return new ValidationResult("Invalid value for PostalCode, length must be less than 32.", new [] { "PostalCode" });
             }
 
             // PostalCode (string) minLength
             if(this.PostalCode != null && this.PostalCode.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PostalCode, length must be greater than 1.", new [] { "PostalCode" });
+                yield return new ValidationResult("Invalid value for PostalCode, length must be greater than 1.", new [] { "PostalCode" });
             }
 
             // StateOrProvinceCode (string) maxLength
             if(this.StateOrProvinceCode != null && this.StateOrProvinceCode.Length > 64)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StateOrProvinceCode, length must be less than 64.", new [] { "StateOrProvinceCode" });
+                yield return new ValidationResult("Invalid value for StateOrProvinceCode, length must be less than 64.", new [] { "StateOrProvinceCode" });
             }
 
             // StateOrProvinceCode (string) minLength
             if(this.StateOrProvinceCode != null && this.StateOrProvinceCode.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StateOrProvinceCode, length must be greater than 1.", new [] { "StateOrProvinceCode" });
+                yield return new ValidationResult("Invalid value for StateOrProvinceCode, length must be greater than 1.", new [] { "StateOrProvinceCode" });
             }
 
             yield break;

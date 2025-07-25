@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportationDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TransportationDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportationDetails" /> class.
         /// </summary>
         /// <param name="trackingDetails">Tracking details for the shipment. If using SPD transportation, this can be for each case. If not using SPD transportation, this is a single tracking entry for the entire shipment. (required).</param>
-        public TransportationDetails(List<TrackingDetails> trackingDetails = default(List<TrackingDetails>))
+        public TransportationDetails(List<TrackingDetails> trackingDetails = default)
         {
             // to ensure "trackingDetails" is required (not null)
             if (trackingDetails == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

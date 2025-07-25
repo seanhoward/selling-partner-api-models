@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="offset">The starting character of this decorator within the content string. Use zero for the first character..</param>
         /// <param name="length">The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters..</param>
         /// <param name="depth">The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths..</param>
-        public Decorator(DecoratorType? type = default(DecoratorType?), int? offset = default(int?), int? length = default(int?), int? depth = default(int?))
+        public Decorator(DecoratorType? type = default, int? offset = default, int? length = default, int? depth = default)
         {
             this.Type = type;
             this.Offset = offset;
@@ -166,42 +166,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Offset (int?) maximum
             if(this.Offset > (int?)10000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Offset, must be a value less than or equal to 10000.", new [] { "Offset" });
+                yield return new ValidationResult("Invalid value for Offset, must be a value less than or equal to 10000.", new [] { "Offset" });
             }
 
             // Offset (int?) minimum
             if(this.Offset < (int?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Offset, must be a value greater than or equal to 0.", new [] { "Offset" });
+                yield return new ValidationResult("Invalid value for Offset, must be a value greater than or equal to 0.", new [] { "Offset" });
             }
 
             // Length (int?) maximum
             if(this.Length > (int?)10000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Length, must be a value less than or equal to 10000.", new [] { "Length" });
+                yield return new ValidationResult("Invalid value for Length, must be a value less than or equal to 10000.", new [] { "Length" });
             }
 
             // Length (int?) minimum
             if(this.Length < (int?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Length, must be a value greater than or equal to 0.", new [] { "Length" });
+                yield return new ValidationResult("Invalid value for Length, must be a value greater than or equal to 0.", new [] { "Length" });
             }
 
             // Depth (int?) maximum
             if(this.Depth > (int?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Depth, must be a value less than or equal to 100.", new [] { "Depth" });
+                yield return new ValidationResult("Invalid value for Depth, must be a value less than or equal to 100.", new [] { "Depth" });
             }
 
             // Depth (int?) minimum
             if(this.Depth < (int?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Depth, must be a value greater than or equal to 0.", new [] { "Depth" });
+                yield return new ValidationResult("Invalid value for Depth, must be a value greater than or equal to 0.", new [] { "Depth" });
             }
 
             yield break;

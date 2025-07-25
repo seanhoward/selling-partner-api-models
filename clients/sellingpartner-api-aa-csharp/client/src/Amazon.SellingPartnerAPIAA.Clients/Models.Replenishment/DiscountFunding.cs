@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// Initializes a new instance of the <see cref="DiscountFunding" /> class.
         /// </summary>
         /// <param name="percentage">Filters the results to only include offers with the percentage specified..</param>
-        public DiscountFunding(List<decimal?> percentage = default(List<decimal?>))
+        public DiscountFunding(List<decimal?> percentage = default)
         {
             this.Percentage = percentage;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -54,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfirmShipmentRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ConfirmShipmentRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfirmShipmentRequest" /> class.
@@ -62,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="packageDetail">packageDetail (required).</param>
         /// <param name="codCollectionMethod">The COD collection method (only supported in the JP marketplace)..</param>
         /// <param name="marketplaceId">marketplaceId (required).</param>
-        public ConfirmShipmentRequest(PackageDetail packageDetail = default(PackageDetail), CodCollectionMethodEnum? codCollectionMethod = default(CodCollectionMethodEnum?), string marketplaceId = default(string))
+        public ConfirmShipmentRequest(PackageDetail packageDetail = default, CodCollectionMethodEnum? codCollectionMethod = default, string marketplaceId = default)
         {
             // to ensure "packageDetail" is required (not null)
             if (packageDetail == null)
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

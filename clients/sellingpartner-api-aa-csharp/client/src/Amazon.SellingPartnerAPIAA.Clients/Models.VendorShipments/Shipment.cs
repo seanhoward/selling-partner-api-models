@@ -126,7 +126,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="Shipment" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Shipment() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Shipment" /> class.
@@ -151,7 +151,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="importDetails">Provide these fields only if this shipment is a direct import..</param>
         /// <param name="containers">A list of the items in this transportation and their associated inner container details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level..</param>
         /// <param name="transportationDetails">Transportation details this a mandatory information which states delivery date, shipping date and carrier details..</param>
-        public Shipment(string vendorShipmentIdentifier = default(string), TransactionTypeEnum transactionType = default(TransactionTypeEnum), string buyerReferenceNumber = default(string), DateTime? transactionDate = default(DateTime?), CurrentShipmentStatusEnum? currentShipmentStatus = default(CurrentShipmentStatusEnum?), DateTime? currentshipmentStatusDate = default(DateTime?), List<ShipmentStatusDetails> shipmentStatusDetails = default(List<ShipmentStatusDetails>), DateTime? shipmentCreateDate = default(DateTime?), DateTime? shipmentConfirmDate = default(DateTime?), DateTime? packageLabelCreateDate = default(DateTime?), ShipmentFreightTermEnum? shipmentFreightTerm = default(ShipmentFreightTermEnum?), PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), PartyIdentification shipToParty = default(PartyIdentification), TransportShipmentMeasurements shipmentMeasurements = default(TransportShipmentMeasurements), CollectFreightPickupDetails collectFreightPickupDetails = default(CollectFreightPickupDetails), List<PurchaseOrders> purchaseOrders = default(List<PurchaseOrders>), ImportDetails importDetails = default(ImportDetails), List<Containers> containers = default(List<Containers>), TransportationDetails transportationDetails = default(TransportationDetails))
+        public Shipment(string vendorShipmentIdentifier = default, TransactionTypeEnum transactionType = default, string buyerReferenceNumber = default, DateTime? transactionDate = default, CurrentShipmentStatusEnum? currentShipmentStatus = default, DateTime? currentshipmentStatusDate = default, List<ShipmentStatusDetails> shipmentStatusDetails = default, DateTime? shipmentCreateDate = default, DateTime? shipmentConfirmDate = default, DateTime? packageLabelCreateDate = default, ShipmentFreightTermEnum? shipmentFreightTerm = default, PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, PartyIdentification shipToParty = default, TransportShipmentMeasurements shipmentMeasurements = default, CollectFreightPickupDetails collectFreightPickupDetails = default, List<PurchaseOrders> purchaseOrders = default, ImportDetails importDetails = default, List<Containers> containers = default, TransportationDetails transportationDetails = default)
         {
             // to ensure "vendorShipmentIdentifier" is required (not null)
             if (vendorShipmentIdentifier == null)
@@ -567,7 +567,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

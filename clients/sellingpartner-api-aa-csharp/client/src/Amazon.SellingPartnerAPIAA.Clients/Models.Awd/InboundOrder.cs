@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOrder" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InboundOrder() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOrder" /> class.
@@ -55,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="preferences">preferences.</param>
         /// <param name="shipBy">Date by which this order will be shipped..</param>
         /// <param name="updatedAt">Date when this order was last updated..</param>
-        public InboundOrder(List<InboundShipment> channelPlacedInboundShipments = default(List<InboundShipment>), DateTime? createdAt = default(DateTime?), string externalReferenceId = default(string), string orderId = default(string), InboundStatus orderStatus = default(InboundStatus), string orderVersion = default(string), Address originAddress = default(Address), List<DistributionPackageQuantity> packagesToInbound = default(List<DistributionPackageQuantity>), InboundPreferences preferences = default(InboundPreferences), DateTime? shipBy = default(DateTime?), DateTime? updatedAt = default(DateTime?))
+        public InboundOrder(List<InboundShipment> channelPlacedInboundShipments = default, DateTime? createdAt = default, string externalReferenceId = default, string orderId = default, InboundStatus orderStatus = default, string orderVersion = default, Address originAddress = default, List<DistributionPackageQuantity> packagesToInbound = default, InboundPreferences preferences = default, DateTime? shipBy = default, DateTime? updatedAt = default)
         {
             // to ensure "channelPlacedInboundShipments" is required (not null)
             if (channelPlacedInboundShipments == null)
@@ -346,7 +346,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

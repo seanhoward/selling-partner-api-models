@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceDocumentUploadDestination" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ServiceDocumentUploadDestination() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceDocumentUploadDestination" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="url">The URL to which to upload the file. (required).</param>
         /// <param name="encryptionDetails">encryptionDetails (required).</param>
         /// <param name="headers">The headers to include in the upload request..</param>
-        public ServiceDocumentUploadDestination(string uploadDestinationId = default(string), string url = default(string), EncryptionDetails encryptionDetails = default(EncryptionDetails), Object headers = default(Object))
+        public ServiceDocumentUploadDestination(string uploadDestinationId = default, string url = default, EncryptionDetails encryptionDetails = default, Object headers = default)
         {
             // to ensure "uploadDestinationId" is required (not null)
             if (uploadDestinationId == null)
@@ -195,7 +195,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

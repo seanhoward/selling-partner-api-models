@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardCompanyLogoModule" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected StandardCompanyLogoModule() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardCompanyLogoModule" /> class.
         /// </summary>
         /// <param name="companyLogo">companyLogo (required).</param>
-        public StandardCompanyLogoModule(ImageComponent companyLogo = default(ImageComponent))
+        public StandardCompanyLogoModule(ImageComponent companyLogo = default)
         {
             // to ensure "companyLogo" is required (not null)
             if (companyLogo == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

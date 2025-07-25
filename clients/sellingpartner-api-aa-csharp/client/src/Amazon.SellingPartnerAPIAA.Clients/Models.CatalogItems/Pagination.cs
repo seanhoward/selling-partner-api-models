@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="nextToken">A token that can be used to fetch the next page..</param>
         /// <param name="previousToken">A token that can be used to fetch the previous page..</param>
-        public Pagination(string nextToken = default(string), string previousToken = default(string))
+        public Pagination(string nextToken = default, string previousToken = default)
         {
             this.NextToken = nextToken;
             this.PreviousToken = previousToken;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

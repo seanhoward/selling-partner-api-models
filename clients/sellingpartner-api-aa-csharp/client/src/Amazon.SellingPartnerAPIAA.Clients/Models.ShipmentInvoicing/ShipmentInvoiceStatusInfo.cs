@@ -40,7 +40,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// </summary>
         /// <param name="amazonShipmentId">The Amazon-defined shipment identifier..</param>
         /// <param name="invoiceStatus">invoiceStatus.</param>
-        public ShipmentInvoiceStatusInfo(string amazonShipmentId = default(string), ShipmentInvoiceStatus? invoiceStatus = default(ShipmentInvoiceStatus?))
+        public ShipmentInvoiceStatusInfo(string amazonShipmentId = default, ShipmentInvoiceStatus? invoiceStatus = default)
         {
             this.AmazonShipmentId = amazonShipmentId;
             this.InvoiceStatus = invoiceStatus;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

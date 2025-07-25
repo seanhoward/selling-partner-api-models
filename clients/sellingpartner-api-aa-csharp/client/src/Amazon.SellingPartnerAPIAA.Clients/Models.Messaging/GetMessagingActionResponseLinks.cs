@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// <summary>
         /// Initializes a new instance of the <see cref="GetMessagingActionResponseLinks" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetMessagingActionResponseLinks() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetMessagingActionResponseLinks" /> class.
         /// </summary>
         /// <param name="self">self (required).</param>
         /// <param name="schema">schema (required).</param>
-        public GetMessagingActionResponseLinks(LinkObject self = default(LinkObject), LinkObject schema = default(LinkObject))
+        public GetMessagingActionResponseLinks(LinkObject self = default, LinkObject schema = default)
         {
             // to ensure "self" is required (not null)
             if (self == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

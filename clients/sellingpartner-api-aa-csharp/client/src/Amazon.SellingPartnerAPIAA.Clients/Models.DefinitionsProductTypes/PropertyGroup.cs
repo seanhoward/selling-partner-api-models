@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// <param name="title">The display label of the property group..</param>
         /// <param name="description">The description of the property group..</param>
         /// <param name="propertyNames">The names of the schema properties for the property group..</param>
-        public PropertyGroup(string title = default(string), string description = default(string), List<string> propertyNames = default(List<string>))
+        public PropertyGroup(string title = default, string description = default, List<string> propertyNames = default)
         {
             this.Title = title;
             this.Description = description;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

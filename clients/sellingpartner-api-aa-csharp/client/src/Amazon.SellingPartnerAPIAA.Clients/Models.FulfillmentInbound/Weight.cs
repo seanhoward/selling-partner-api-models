@@ -38,14 +38,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Weight" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Weight() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Weight" /> class.
         /// </summary>
         /// <param name="unit">unit (required).</param>
         /// <param name="value">Value of a weight. (required).</param>
-        public Weight(UnitOfWeight unit = default(UnitOfWeight), decimal? value = default(decimal?))
+        public Weight(UnitOfWeight unit = default, decimal? value = default)
         {
             // to ensure "unit" is required (not null)
             if (unit == null)
@@ -153,18 +153,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Value (decimal?) maximum
             if(this.Value > (decimal?)100000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, must be a value less than or equal to 100000.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, must be a value less than or equal to 100000.", new [] { "Value" });
             }
 
             // Value (decimal?) minimum
             if(this.Value < (decimal?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, must be a value greater than or equal to 0.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, must be a value greater than or equal to 0.", new [] { "Value" });
             }
 
             yield break;

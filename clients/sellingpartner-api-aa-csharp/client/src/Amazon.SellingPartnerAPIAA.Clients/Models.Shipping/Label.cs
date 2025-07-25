@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="labelStream">labelStream.</param>
         /// <param name="labelSpecification">labelSpecification.</param>
-        public Label(string labelStream = default(string), LabelSpecification labelSpecification = default(LabelSpecification))
+        public Label(string labelStream = default, LabelSpecification labelSpecification = default)
         {
             this.LabelStream = labelStream;
             this.LabelSpecification = labelSpecification;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

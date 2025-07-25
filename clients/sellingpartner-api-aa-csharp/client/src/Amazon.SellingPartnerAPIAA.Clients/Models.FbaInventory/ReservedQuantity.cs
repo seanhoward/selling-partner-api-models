@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <param name="pendingCustomerOrderQuantity">The number of units reserved for customer orders..</param>
         /// <param name="pendingTransshipmentQuantity">The number of units being transferred from one fulfillment center to another..</param>
         /// <param name="fcProcessingQuantity">The number of units that have been sidelined at the fulfillment center for additional processing..</param>
-        public ReservedQuantity(int? totalReservedQuantity = default(int?), int? pendingCustomerOrderQuantity = default(int?), int? pendingTransshipmentQuantity = default(int?), int? fcProcessingQuantity = default(int?))
+        public ReservedQuantity(int? totalReservedQuantity = default, int? pendingCustomerOrderQuantity = default, int? pendingTransshipmentQuantity = default, int? fcProcessingQuantity = default)
         {
             this.TotalReservedQuantity = totalReservedQuantity;
             this.PendingCustomerOrderQuantity = pendingCustomerOrderQuantity;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

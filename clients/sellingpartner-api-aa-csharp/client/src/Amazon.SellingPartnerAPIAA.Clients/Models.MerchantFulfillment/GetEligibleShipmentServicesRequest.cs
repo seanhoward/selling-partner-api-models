@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="GetEligibleShipmentServicesRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetEligibleShipmentServicesRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetEligibleShipmentServicesRequest" /> class.
         /// </summary>
         /// <param name="shipmentRequestDetails">Shipment information required for requesting shipping service offers. (required).</param>
         /// <param name="shippingOfferingFilter">shippingOfferingFilter.</param>
-        public GetEligibleShipmentServicesRequest(ShipmentRequestDetails shipmentRequestDetails = default(ShipmentRequestDetails), ShippingOfferingFilter shippingOfferingFilter = default(ShippingOfferingFilter))
+        public GetEligibleShipmentServicesRequest(ShipmentRequestDetails shipmentRequestDetails = default, ShippingOfferingFilter shippingOfferingFilter = default)
         {
             // to ensure "shipmentRequestDetails" is required (not null)
             if (shipmentRequestDetails == null)
@@ -145,7 +145,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

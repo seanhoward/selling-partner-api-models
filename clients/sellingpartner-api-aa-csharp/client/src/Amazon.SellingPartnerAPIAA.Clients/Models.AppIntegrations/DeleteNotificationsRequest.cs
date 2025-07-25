@@ -60,14 +60,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteNotificationsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected DeleteNotificationsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteNotificationsRequest" /> class.
         /// </summary>
         /// <param name="templateId">The unique identifier of the notification template you used to onboard your application. (required).</param>
         /// <param name="deletionReason">The unique identifier that maps each notification status to a reason code. (required).</param>
-        public DeleteNotificationsRequest(string templateId = default(string), DeletionReasonEnum deletionReason = default(DeletionReasonEnum))
+        public DeleteNotificationsRequest(string templateId = default, DeletionReasonEnum deletionReason = default)
         {
             // to ensure "templateId" is required (not null)
             if (templateId == null)
@@ -175,7 +175,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

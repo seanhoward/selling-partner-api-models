@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// Initializes a new instance of the <see cref="GetSellingPartnerMetricsResponse" /> class.
         /// </summary>
         /// <param name="metrics">A list of metrics data for the selling partner..</param>
-        public GetSellingPartnerMetricsResponse(List<GetSellingPartnerMetricsResponseMetric> metrics = default(List<GetSellingPartnerMetricsResponseMetric>))
+        public GetSellingPartnerMetricsResponse(List<GetSellingPartnerMetricsResponseMetric> metrics = default)
         {
             this.Metrics = metrics;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

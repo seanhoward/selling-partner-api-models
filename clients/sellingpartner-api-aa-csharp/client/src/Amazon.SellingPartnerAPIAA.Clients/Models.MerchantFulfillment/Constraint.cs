@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="Constraint" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Constraint() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Constraint" /> class.
         /// </summary>
         /// <param name="validationRegEx">A regular expression..</param>
         /// <param name="validationString">A validation string. (required).</param>
-        public Constraint(string validationRegEx = default(string), string validationString = default(string))
+        public Constraint(string validationRegEx = default, string validationString = default)
         {
             // to ensure "validationString" is required (not null)
             if (validationString == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

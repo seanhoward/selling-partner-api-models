@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <summary>
         /// Initializes a new instance of the <see cref="Business" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Business() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Business" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <param name="companyRegistrationNumber">The seller&#39;s company registration number, if applicable. This field will be absent for individual sellers and sole proprietorships..</param>
         /// <param name="companyTaxIdentificationNumber">The seller&#39;s company tax identification number, if applicable. This field will be present for certain business types only, such as sole proprietorships..</param>
         /// <param name="nonLatinName">The non-Latin script version of the registered business name, if applicable..</param>
-        public Business(string name = default(string), Address registeredBusinessAddress = default(Address), string companyRegistrationNumber = default(string), string companyTaxIdentificationNumber = default(string), string nonLatinName = default(string))
+        public Business(string name = default, Address registeredBusinessAddress = default, string companyRegistrationNumber = default, string companyTaxIdentificationNumber = default, string nonLatinName = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -205,7 +205,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

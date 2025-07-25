@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="pagination">The pagination elements required to retrieve the remaining data..</param>
         /// <param name="packingSlips">An array of packing slip objects..</param>
-        public PackingSlipList(Pagination pagination = default(Pagination), List<PackingSlip> packingSlips = default(List<PackingSlip>))
+        public PackingSlipList(Pagination pagination = default, List<PackingSlip> packingSlips = default)
         {
             this.Pagination = pagination;
             this.PackingSlips = packingSlips;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

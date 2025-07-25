@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateVerificationStatusRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected UpdateVerificationStatusRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateVerificationStatusRequest" /> class.
         /// </summary>
         /// <param name="regulatedOrderVerificationStatus">The updated values of the &#x60;VerificationStatus&#x60; field. (required).</param>
-        public UpdateVerificationStatusRequest(UpdateVerificationStatusRequestBody regulatedOrderVerificationStatus = default(UpdateVerificationStatusRequestBody))
+        public UpdateVerificationStatusRequest(UpdateVerificationStatusRequestBody regulatedOrderVerificationStatus = default)
         {
             // to ensure "regulatedOrderVerificationStatus" is required (not null)
             if (regulatedOrderVerificationStatus == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

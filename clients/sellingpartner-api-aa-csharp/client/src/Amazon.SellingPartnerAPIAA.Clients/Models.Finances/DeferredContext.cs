@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="deferralReason">Deferral policy applied on the transaction.  **Examples:** &#x60;B2B&#x60;,&#x60;DD7&#x60;.</param>
         /// <param name="maturityDate">The release date of the transaction..</param>
         /// <param name="deferralStatus">The status of the transaction. For example, &#x60;HOLD&#x60;,&#x60;RELEASE&#x60;..</param>
-        public DeferredContext(string deferralReason = default(string), DateTime? maturityDate = default(DateTime?), string deferralStatus = default(string))
+        public DeferredContext(string deferralReason = default, DateTime? maturityDate = default, string deferralStatus = default)
         {
             this.DeferralReason = deferralReason;
             this.MaturityDate = maturityDate;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

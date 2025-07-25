@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="name">The name of the buyer..</param>
         /// <param name="phone">The phone number of the buyer..</param>
         /// <param name="isPrimeMember">When true, the service is for an Amazon Prime buyer..</param>
-        public Buyer(string buyerId = default(string), string name = default(string), string phone = default(string), bool? isPrimeMember = default(bool?))
+        public Buyer(string buyerId = default, string name = default, string phone = default, bool? isPrimeMember = default)
         {
             this.BuyerId = buyerId;
             this.Name = name;
@@ -167,13 +167,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // BuyerId (string) pattern
             Regex regexBuyerId = new Regex(@"^[A-Z0-9]*$", RegexOptions.CultureInvariant);
             if (false == regexBuyerId.Match(this.BuyerId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BuyerId, must match a pattern of " + regexBuyerId, new [] { "BuyerId" });
+                yield return new ValidationResult("Invalid value for BuyerId, must match a pattern of " + regexBuyerId, new [] { "BuyerId" });
             }
 
             yield break;

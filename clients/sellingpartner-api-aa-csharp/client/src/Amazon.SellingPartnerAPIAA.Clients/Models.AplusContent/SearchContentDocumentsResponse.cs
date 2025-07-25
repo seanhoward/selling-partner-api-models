@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchContentDocumentsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SearchContentDocumentsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchContentDocumentsResponse" /> class.
         /// </summary>
         /// <param name="contentMetadataRecords">The content metadata records. (required).</param>
-        public SearchContentDocumentsResponse(ContentMetadataRecordList contentMetadataRecords = default(ContentMetadataRecordList), MessageSet warnings = default(MessageSet), string nextPageToken = default(string)) : base(nextPageToken)
+        public SearchContentDocumentsResponse(ContentMetadataRecordList contentMetadataRecords = default, MessageSet warnings = default, string nextPageToken = default) : base(nextPageToken)
         {
             // to ensure "contentMetadataRecords" is required (not null)
             if (contentMetadataRecords == null)
@@ -130,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

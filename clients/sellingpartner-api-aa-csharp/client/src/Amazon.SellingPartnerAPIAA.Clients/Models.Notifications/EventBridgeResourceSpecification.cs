@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <summary>
         /// Initializes a new instance of the <see cref="EventBridgeResourceSpecification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected EventBridgeResourceSpecification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="EventBridgeResourceSpecification" /> class.
         /// </summary>
         /// <param name="region">The AWS region in which you will be receiving the notifications. (required).</param>
         /// <param name="accountId">The identifier for the AWS account that is responsible for charges related to receiving notifications. (required).</param>
-        public EventBridgeResourceSpecification(string region = default(string), string accountId = default(string))
+        public EventBridgeResourceSpecification(string region = default, string accountId = default)
         {
             // to ensure "region" is required (not null)
             if (region == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

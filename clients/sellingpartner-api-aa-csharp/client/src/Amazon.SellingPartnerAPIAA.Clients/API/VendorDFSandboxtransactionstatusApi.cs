@@ -31,7 +31,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The transaction identifier returned in the response to the generateOrderScenarios operation.</param>
         /// <returns>TransactionStatus</returns>
         TransactionStatus GetOrderScenarios (string transactionId);
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The transaction identifier returned in the response to the generateOrderScenarios operation.</param>
         /// <returns>ApiResponse of TransactionStatus</returns>
         ApiResponse<TransactionStatus> GetOrderScenariosWithHttpInfo (string transactionId);
@@ -54,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The transaction identifier returned in the response to the generateOrderScenarios operation.</param>
         /// <returns>Task of TransactionStatus</returns>
         System.Threading.Tasks.Task<TransactionStatus> GetOrderScenariosAsync (string transactionId);
@@ -65,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The transaction identifier returned in the response to the generateOrderScenarios operation.</param>
         /// <returns>Task of ApiResponse (TransactionStatus)</returns>
         System.Threading.Tasks.Task<ApiResponse<TransactionStatus>> GetOrderScenariosAsyncWithHttpInfo (string transactionId);
@@ -77,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     /// </summary>
     public partial class VendorDFSandboxtransactionstatusApi : IVendorDFSandboxtransactionstatusApi
     {
-        private Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="VendorDFSandboxtransactionstatusApi"/> class
@@ -85,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public VendorDFSandboxtransactionstatusApi(Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration)
+        public VendorDFSandboxtransactionstatusApi(Configuration configuration)
         {
             this.Configuration = configuration;
             ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
@@ -114,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.Configuration Configuration {get; set;}
+        public Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -157,7 +157,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The transaction identifier returned in the response to the generateOrderScenarios operation.</param>
         /// <returns>TransactionStatus</returns>
         public TransactionStatus GetOrderScenarios (string transactionId)
@@ -169,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The transaction identifier returned in the response to the generateOrderScenarios operation.</param>
         /// <returns>ApiResponse of TransactionStatus</returns>
         public ApiResponse< TransactionStatus > GetOrderScenariosWithHttpInfo (string transactionId)
@@ -224,7 +224,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The transaction identifier returned in the response to the generateOrderScenarios operation.</param>
         /// <returns>Task of TransactionStatus</returns>
         public async System.Threading.Tasks.Task<TransactionStatus> GetOrderScenariosAsync (string transactionId)
@@ -237,7 +237,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The transaction identifier returned in the response to the generateOrderScenarios operation.</param>
         /// <returns>Task of ApiResponse (TransactionStatus)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<TransactionStatus>> GetOrderScenariosAsyncWithHttpInfo (string transactionId)
@@ -315,15 +315,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }
 
-                
-                Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration = new Amazon.SellingPartnerAPIAA.Clients.Client.Configuration()
+
+                Configuration configuration = new Configuration
                 {
                     AuthorizationCredentials = lwaAuthorizationCredentials,
-                    RateLimitConfig = rateLimitConfiguration
+                    RateLimitConfig = rateLimitConfiguration,
+                    // default HTTP connection timeout (in milliseconds)
+                    Timeout = 100000
                 };
-
-                // default HTTP connection timeout (in milliseconds)
-                configuration.Timeout = 100000;
 
                 return new VendorDFSandboxtransactionstatusApi(configuration);
             }

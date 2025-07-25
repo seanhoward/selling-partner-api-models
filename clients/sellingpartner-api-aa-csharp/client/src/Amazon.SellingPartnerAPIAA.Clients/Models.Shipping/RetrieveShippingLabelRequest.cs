@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="RetrieveShippingLabelRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RetrieveShippingLabelRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RetrieveShippingLabelRequest" /> class.
         /// </summary>
         /// <param name="labelSpecification">labelSpecification (required).</param>
-        public RetrieveShippingLabelRequest(LabelSpecification labelSpecification = default(LabelSpecification))
+        public RetrieveShippingLabelRequest(LabelSpecification labelSpecification = default)
         {
             // to ensure "labelSpecification" is required (not null)
             if (labelSpecification == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

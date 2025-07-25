@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFulfillmentOrderRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateFulfillmentOrderRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFulfillmentOrderRequest" /> class.
@@ -71,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="featureConstraints">A list of features and their fulfillment policies to apply to the order..</param>
         /// <param name="items">A list of items to include in the fulfillment order preview, including quantity. Maximum of 100 line items with a maximum of 250 units per order. (required).</param>
         /// <param name="paymentInformation">An array of various payment attributes related to this fulfillment order. This property is required if the order is placed against the India marketplace..</param>
-        public CreateFulfillmentOrderRequest(string marketplaceId = default(string), string sellerFulfillmentOrderId = default(string), string displayableOrderId = default(string), DateTime? displayableOrderDate = default(DateTime?), string displayableOrderComment = default(string), ShippingSpeedCategory shippingSpeedCategory = default(ShippingSpeedCategory), DeliveryWindow deliveryWindow = default(DeliveryWindow), Address destinationAddress = default(Address), DeliveryPreferences deliveryPreferences = default(DeliveryPreferences), FulfillmentAction? fulfillmentAction = default(FulfillmentAction?), FulfillmentPolicy? fulfillmentPolicy = default(FulfillmentPolicy?), CODSettings codSettings = default(CODSettings), string shipFromCountryCode = default(string), NotificationEmailList notificationEmails = default(NotificationEmailList), List<FeatureSettings> featureConstraints = default(List<FeatureSettings>), CreateFulfillmentOrderItemList items = default(CreateFulfillmentOrderItemList), PaymentInformationList paymentInformation = default(PaymentInformationList))
+        public CreateFulfillmentOrderRequest(string marketplaceId = default, string sellerFulfillmentOrderId = default, string displayableOrderId = default, DateTime? displayableOrderDate = default, string displayableOrderComment = default, ShippingSpeedCategory shippingSpeedCategory = default, DeliveryWindow deliveryWindow = default, Address destinationAddress = default, DeliveryPreferences deliveryPreferences = default, FulfillmentAction? fulfillmentAction = default, FulfillmentPolicy? fulfillmentPolicy = default, CODSettings codSettings = default, string shipFromCountryCode = default, NotificationEmailList notificationEmails = default, List<FeatureSettings> featureConstraints = default, CreateFulfillmentOrderItemList items = default, PaymentInformationList paymentInformation = default)
         {
             // to ensure "sellerFulfillmentOrderId" is required (not null)
             if (sellerFulfillmentOrderId == null)
@@ -444,24 +444,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // SellerFulfillmentOrderId (string) maxLength
             if(this.SellerFulfillmentOrderId != null && this.SellerFulfillmentOrderId.Length > 40)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SellerFulfillmentOrderId, length must be less than 40.", new [] { "SellerFulfillmentOrderId" });
+                yield return new ValidationResult("Invalid value for SellerFulfillmentOrderId, length must be less than 40.", new [] { "SellerFulfillmentOrderId" });
             }
 
             // DisplayableOrderId (string) maxLength
             if(this.DisplayableOrderId != null && this.DisplayableOrderId.Length > 40)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DisplayableOrderId, length must be less than 40.", new [] { "DisplayableOrderId" });
+                yield return new ValidationResult("Invalid value for DisplayableOrderId, length must be less than 40.", new [] { "DisplayableOrderId" });
             }
 
             // DisplayableOrderComment (string) maxLength
             if(this.DisplayableOrderComment != null && this.DisplayableOrderComment.Length > 750)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DisplayableOrderComment, length must be less than 750.", new [] { "DisplayableOrderComment" });
+                yield return new ValidationResult("Invalid value for DisplayableOrderComment, length must be less than 750.", new [] { "DisplayableOrderComment" });
             }
 
             yield break;

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFeedDocumentSpecification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateFeedDocumentSpecification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFeedDocumentSpecification" /> class.
         /// </summary>
         /// <param name="contentType">The content type of the feed. (required).</param>
-        public CreateFeedDocumentSpecification(string contentType = default(string))
+        public CreateFeedDocumentSpecification(string contentType = default)
         {
             // to ensure "contentType" is required (not null)
             if (contentType == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

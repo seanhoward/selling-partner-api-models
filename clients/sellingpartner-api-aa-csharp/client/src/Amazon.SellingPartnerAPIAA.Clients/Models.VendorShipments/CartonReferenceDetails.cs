@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="CartonReferenceDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CartonReferenceDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CartonReferenceDetails" /> class.
         /// </summary>
         /// <param name="cartonCount">Pallet level carton count is mandatory for single item pallet and optional for mixed item pallet..</param>
         /// <param name="cartonReferenceNumbers">Array of reference numbers for the carton that are part of this pallet/shipment. Please provide the cartonSequenceNumber from the &#39;cartons&#39; segment to refer to that carton&#39;s details here. (required).</param>
-        public CartonReferenceDetails(int? cartonCount = default(int?), List<string> cartonReferenceNumbers = default(List<string>))
+        public CartonReferenceDetails(int? cartonCount = default, List<string> cartonReferenceNumbers = default)
         {
             // to ensure "cartonReferenceNumbers" is required (not null)
             if (cartonReferenceNumbers == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

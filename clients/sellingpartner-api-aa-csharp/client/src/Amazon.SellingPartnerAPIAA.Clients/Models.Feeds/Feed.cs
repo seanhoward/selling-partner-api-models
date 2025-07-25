@@ -78,7 +78,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <summary>
         /// Initializes a new instance of the <see cref="Feed" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Feed() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Feed" /> class.
@@ -91,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <param name="processingStartTime">The date and time when feed processing started, in ISO 8601 date time format..</param>
         /// <param name="processingEndTime">The date and time when feed processing completed, in ISO 8601 date time format..</param>
         /// <param name="resultFeedDocumentId">The identifier for the feed document. This identifier is unique only in combination with a seller ID..</param>
-        public Feed(string feedId = default(string), string feedType = default(string), List<string> marketplaceIds = default(List<string>), DateTime? createdTime = default(DateTime?), ProcessingStatusEnum processingStatus = default(ProcessingStatusEnum), DateTime? processingStartTime = default(DateTime?), DateTime? processingEndTime = default(DateTime?), string resultFeedDocumentId = default(string))
+        public Feed(string feedId = default, string feedType = default, List<string> marketplaceIds = default, DateTime? createdTime = default, ProcessingStatusEnum processingStatus = default, DateTime? processingStartTime = default, DateTime? processingEndTime = default, string resultFeedDocumentId = default)
         {
             // to ensure "feedId" is required (not null)
             if (feedId == null)
@@ -311,7 +311,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

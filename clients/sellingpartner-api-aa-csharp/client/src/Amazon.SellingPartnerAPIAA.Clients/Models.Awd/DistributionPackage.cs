@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="DistributionPackage" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected DistributionPackage() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="DistributionPackage" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="contents">The contents appropriate for the type. (required).</param>
         /// <param name="measurements">Measurements of a package, including weight, volume, and dimensions. (required).</param>
         /// <param name="type">Type of distribution package. (required).</param>
-        public DistributionPackage(DistributionPackageContents contents = default(DistributionPackageContents), MeasurementData measurements = default(MeasurementData), DistributionPackageType type = default(DistributionPackageType))
+        public DistributionPackage(DistributionPackageContents contents = default, MeasurementData measurements = default, DistributionPackageType type = default)
         {
             // to ensure "contents" is required (not null)
             if (contents == null)
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

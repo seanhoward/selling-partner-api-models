@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Address() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="phoneNumber">Optional E.164-formatted phone number for an available contact at this address..</param>
         /// <param name="postalCode">Optional postal code where this address is located..</param>
         /// <param name="stateOrRegion">State or region where this address is located. Note that this is contextual to the specified country code. (required).</param>
-        public Address(string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string city = default(string), string countryCode = default(string), string county = default(string), string district = default(string), string name = default(string), string phoneNumber = default(string), string postalCode = default(string), string stateOrRegion = default(string))
+        public Address(string addressLine1 = default, string addressLine2 = default, string addressLine3 = default, string city = default, string countryCode = default, string county = default, string district = default, string name = default, string phoneNumber = default, string postalCode = default, string stateOrRegion = default)
         {
             // to ensure "addressLine1" is required (not null)
             if (addressLine1 == null)
@@ -323,7 +323,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

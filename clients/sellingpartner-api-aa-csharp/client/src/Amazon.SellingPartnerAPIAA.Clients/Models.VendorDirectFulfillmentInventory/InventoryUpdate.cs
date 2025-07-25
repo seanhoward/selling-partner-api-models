@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryUpdate" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InventoryUpdate() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryUpdate" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         /// <param name="sellingParty">ID of the selling party or vendor. (required).</param>
         /// <param name="isFullUpdate">When true, this request contains a full feed. Otherwise, this request contains a partial feed. When sending a full feed, you must send information about all items in the warehouse. Any items not in the full feed are updated as not available. When sending a partial feed, only include the items that need an update to inventory. The status of other items will remain unchanged. (required).</param>
         /// <param name="items">A list of inventory items with updated details, including quantity available. (required).</param>
-        public InventoryUpdate(PartyIdentification sellingParty = default(PartyIdentification), bool? isFullUpdate = default(bool?), List<ItemDetails> items = default(List<ItemDetails>))
+        public InventoryUpdate(PartyIdentification sellingParty = default, bool? isFullUpdate = default, List<ItemDetails> items = default)
         {
             // to ensure "sellingParty" is required (not null)
             if (sellingParty == null)
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

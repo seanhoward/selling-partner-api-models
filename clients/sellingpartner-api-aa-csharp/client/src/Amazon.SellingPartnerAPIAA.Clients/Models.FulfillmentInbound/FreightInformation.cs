@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="declaredValue">declaredValue.</param>
         /// <param name="freightClass">Freight class.  Possible values: &#x60;NONE&#x60;, &#x60;FC_50&#x60;, &#x60;FC_55&#x60;, &#x60;FC_60&#x60;, &#x60;FC_65&#x60;, &#x60;FC_70&#x60;, &#x60;FC_77_5&#x60;, &#x60;FC_85&#x60;, &#x60;FC_92_5&#x60;, &#x60;FC_100&#x60;, &#x60;FC_110&#x60;, &#x60;FC_125&#x60;, &#x60;FC_150&#x60;, &#x60;FC_175&#x60;, &#x60;FC_200&#x60;, &#x60;FC_250&#x60;, &#x60;FC_300&#x60;, &#x60;FC_400&#x60;, &#x60;FC_500&#x60;..</param>
-        public FreightInformation(Currency declaredValue = default(Currency), string freightClass = default(string))
+        public FreightInformation(Currency declaredValue = default, string freightClass = default)
         {
             this.DeclaredValue = declaredValue;
             this.FreightClass = freightClass;
@@ -132,18 +132,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // FreightClass (string) maxLength
             if(this.FreightClass != null && this.FreightClass.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FreightClass, length must be less than 1024.", new [] { "FreightClass" });
+                yield return new ValidationResult("Invalid value for FreightClass, length must be less than 1024.", new [] { "FreightClass" });
             }
 
             // FreightClass (string) minLength
             if(this.FreightClass != null && this.FreightClass.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FreightClass, length must be greater than 1.", new [] { "FreightClass" });
+                yield return new ValidationResult("Invalid value for FreightClass, length must be greater than 1.", new [] { "FreightClass" });
             }
 
             yield break;

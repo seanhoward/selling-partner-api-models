@@ -50,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// <param name="countryCode">The country code..</param>
         /// <param name="phone">The phone number..</param>
         /// <param name="addressType">addressType.</param>
-        public Address(string name = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string city = default(string), string county = default(string), string district = default(string), string stateOrRegion = default(string), string postalCode = default(string), string countryCode = default(string), string phone = default(string), AddressTypeEnum? addressType = default(AddressTypeEnum?))
+        public Address(string name = default, string addressLine1 = default, string addressLine2 = default, string addressLine3 = default, string city = default, string county = default, string district = default, string stateOrRegion = default, string postalCode = default, string countryCode = default, string phone = default, AddressTypeEnum? addressType = default)
         {
             this.Name = name;
             this.AddressLine1 = addressLine1;
@@ -302,7 +302,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPriceResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeaturedOfferExpectedPriceResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPriceResponse" /> class.
         /// </summary>
         /// <param name="request">Use these request parameters to map the response back to the request. (required).</param>
         /// <param name="body">body.</param>
-        public FeaturedOfferExpectedPriceResponse(FeaturedOfferExpectedPriceRequestParams request = default(FeaturedOfferExpectedPriceRequestParams), FeaturedOfferExpectedPriceResponseBody body = default(FeaturedOfferExpectedPriceResponseBody), HttpHeaders headers = default(HttpHeaders), HttpStatusLine status = default(HttpStatusLine)) : base(headers, status)
+        public FeaturedOfferExpectedPriceResponse(FeaturedOfferExpectedPriceRequestParams request = default, FeaturedOfferExpectedPriceResponseBody body = default, HttpHeaders headers = default, HttpStatusLine status = default) : base(headers, status)
         {
             // to ensure "request" is required (not null)
             if (request == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

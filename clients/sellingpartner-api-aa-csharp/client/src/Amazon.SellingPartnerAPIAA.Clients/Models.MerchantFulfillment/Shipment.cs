@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="Shipment" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Shipment() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Shipment" /> class.
@@ -59,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="trackingId">trackingId.</param>
         /// <param name="createdDate">The date and time the shipment is created. (required).</param>
         /// <param name="lastUpdatedDate">The date and time of the last update..</param>
-        public Shipment(string shipmentId = default(string), string amazonOrderId = default(string), string sellerOrderId = default(string), ItemList itemList = default(ItemList), Address shipFromAddress = default(Address), Address shipToAddress = default(Address), PackageDimensions packageDimensions = default(PackageDimensions), Weight weight = default(Weight), CurrencyAmount insurance = default(CurrencyAmount), ShippingService shippingService = default(ShippingService), Label label = default(Label), ShipmentStatus status = default(ShipmentStatus), string trackingId = default(string), DateTime? createdDate = default(DateTime?), DateTime? lastUpdatedDate = default(DateTime?))
+        public Shipment(string shipmentId = default, string amazonOrderId = default, string sellerOrderId = default, ItemList itemList = default, Address shipFromAddress = default, Address shipToAddress = default, PackageDimensions packageDimensions = default, Weight weight = default, CurrencyAmount insurance = default, ShippingService shippingService = default, Label label = default, ShipmentStatus status = default, string trackingId = default, DateTime? createdDate = default, DateTime? lastUpdatedDate = default)
         {
             // to ensure "shipmentId" is required (not null)
             if (shipmentId == null)
@@ -448,7 +448,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

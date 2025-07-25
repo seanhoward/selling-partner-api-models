@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderBuyerInfo" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderBuyerInfo() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderBuyerInfo" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="buyerCounty">The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace..</param>
         /// <param name="buyerTaxInfo">Tax information about the buyer. Sellers can use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces..</param>
         /// <param name="purchaseOrderNumber">The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout..</param>
-        public OrderBuyerInfo(string amazonOrderId = default(string), string buyerEmail = default(string), string buyerName = default(string), string buyerCounty = default(string), BuyerTaxInfo buyerTaxInfo = default(BuyerTaxInfo), string purchaseOrderNumber = default(string))
+        public OrderBuyerInfo(string amazonOrderId = default, string buyerEmail = default, string buyerName = default, string buyerCounty = default, BuyerTaxInfo buyerTaxInfo = default, string purchaseOrderNumber = default)
         {
             // to ensure "amazonOrderId" is required (not null)
             if (amazonOrderId == null)
@@ -214,7 +214,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

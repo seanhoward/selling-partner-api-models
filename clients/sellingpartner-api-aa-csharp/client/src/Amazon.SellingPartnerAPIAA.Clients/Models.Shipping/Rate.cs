@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="expirationTime">The time after which the offering will expire..</param>
         /// <param name="serviceType">serviceType.</param>
         /// <param name="promise">promise.</param>
-        public Rate(string rateId = default(string), Currency totalCharge = default(Currency), Weight billedWeight = default(Weight), DateTime? expirationTime = default(DateTime?), ServiceType? serviceType = default(ServiceType?), ShippingPromiseSet promise = default(ShippingPromiseSet))
+        public Rate(string rateId = default, Currency totalCharge = default, Weight billedWeight = default, DateTime? expirationTime = default, ServiceType? serviceType = default, ShippingPromiseSet promise = default)
         {
             this.RateId = rateId;
             this.TotalCharge = totalCharge;
@@ -199,7 +199,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

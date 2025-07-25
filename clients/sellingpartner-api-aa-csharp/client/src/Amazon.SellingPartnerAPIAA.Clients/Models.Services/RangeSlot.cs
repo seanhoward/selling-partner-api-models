@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="startDateTime">Start date time of slot in ISO 8601 format with precision of seconds..</param>
         /// <param name="endDateTime">End date time of slot in ISO 8601 format with precision of seconds..</param>
         /// <param name="capacity">Capacity of the slot..</param>
-        public RangeSlot(DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? capacity = default(int?))
+        public RangeSlot(DateTime? startDateTime = default, DateTime? endDateTime = default, int? capacity = default)
         {
             this.StartDateTime = startDateTime;
             this.EndDateTime = endDateTime;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

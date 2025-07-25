@@ -51,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <param name="priceToEstimateFees">The item price on which the fee estimate is based..</param>
         /// <param name="sellerInputIdentifier">A unique identifier provided by the caller to track this request..</param>
         /// <param name="optionalFulfillmentProgram">optionalFulfillmentProgram.</param>
-        public FeesEstimateIdentifier(string marketplaceId = default(string), string sellerId = default(string), IdType? idType = default(IdType?), string idValue = default(string), bool? isAmazonFulfilled = default(bool?), PriceToEstimateFees priceToEstimateFees = default(PriceToEstimateFees), string sellerInputIdentifier = default(string), OptionalFulfillmentProgram? optionalFulfillmentProgram = default(OptionalFulfillmentProgram?))
+        public FeesEstimateIdentifier(string marketplaceId = default, string sellerId = default, IdType? idType = default, string idValue = default, bool? isAmazonFulfilled = default, PriceToEstimateFees priceToEstimateFees = default, string sellerInputIdentifier = default, OptionalFulfillmentProgram? optionalFulfillmentProgram = default)
         {
             this.MarketplaceId = marketplaceId;
             this.SellerId = sellerId;
@@ -233,7 +233,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

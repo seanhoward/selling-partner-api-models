@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// Initializes a new instance of the <see cref="CreateNotificationResponse" /> class.
         /// </summary>
         /// <param name="notificationId">The unique identifier assigned to each notification..</param>
-        public CreateNotificationResponse(string notificationId = default(string))
+        public CreateNotificationResponse(string notificationId = default)
         {
             this.NotificationId = notificationId;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

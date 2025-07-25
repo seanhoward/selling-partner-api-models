@@ -38,14 +38,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableDeliveryExperienceOption" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AvailableDeliveryExperienceOption() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableDeliveryExperienceOption" /> class.
         /// </summary>
         /// <param name="deliveryExperienceOption">deliveryExperienceOption (required).</param>
         /// <param name="charge">charge (required).</param>
-        public AvailableDeliveryExperienceOption(DeliveryExperienceOption deliveryExperienceOption = default(DeliveryExperienceOption), CurrencyAmount charge = default(CurrencyAmount))
+        public AvailableDeliveryExperienceOption(DeliveryExperienceOption deliveryExperienceOption = default, CurrencyAmount charge = default)
         {
             // to ensure "deliveryExperienceOption" is required (not null)
             if (deliveryExperienceOption == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

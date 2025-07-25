@@ -123,7 +123,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <summary>
         /// Initializes a new instance of the <see cref="Account" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Account() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Account" /> class.
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <param name="sellingPlan">The selling plan details. (required).</param>
         /// <param name="business">business.</param>
         /// <param name="primaryContact">primaryContact.</param>
-        public Account(MarketplaceParticipationList marketplaceParticipationList = default(MarketplaceParticipationList), BusinessTypeEnum businessType = default(BusinessTypeEnum), SellingPlanEnum sellingPlan = default(SellingPlanEnum), Business business = default(Business), PrimaryContact primaryContact = default(PrimaryContact))
+        public Account(MarketplaceParticipationList marketplaceParticipationList = default, BusinessTypeEnum businessType = default, SellingPlanEnum sellingPlan = default, Business business = default, PrimaryContact primaryContact = default)
         {
             // to ensure "marketplaceParticipationList" is required (not null)
             if (marketplaceParticipationList == null)
@@ -288,7 +288,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

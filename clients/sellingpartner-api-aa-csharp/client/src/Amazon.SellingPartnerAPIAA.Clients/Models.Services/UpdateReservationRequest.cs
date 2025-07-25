@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateReservationRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected UpdateReservationRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateReservationRequest" /> class.
         /// </summary>
         /// <param name="resourceId">Resource (store) identifier. (required).</param>
         /// <param name="reservation">&#x60;Reservation&#x60; object to reduce the capacity of a resource. (required).</param>
-        public UpdateReservationRequest(string resourceId = default(string), Reservation reservation = default(Reservation))
+        public UpdateReservationRequest(string resourceId = default, Reservation reservation = default)
         {
             // to ensure "resourceId" is required (not null)
             if (resourceId == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

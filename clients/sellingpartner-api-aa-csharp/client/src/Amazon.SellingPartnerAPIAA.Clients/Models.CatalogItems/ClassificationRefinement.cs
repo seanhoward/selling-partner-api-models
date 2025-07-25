@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassificationRefinement" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ClassificationRefinement() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassificationRefinement" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="numberOfResults">The estimated number of results that would still be returned if refinement key applied. (required).</param>
         /// <param name="displayName">Display name for the classification. (required).</param>
         /// <param name="classificationId">Identifier for the classification that can be used for search refinement purposes. (required).</param>
-        public ClassificationRefinement(int? numberOfResults = default(int?), string displayName = default(string), string classificationId = default(string))
+        public ClassificationRefinement(int? numberOfResults = default, string displayName = default, string classificationId = default)
         {
             // to ensure "numberOfResults" is required (not null)
             if (numberOfResults == null)
@@ -179,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

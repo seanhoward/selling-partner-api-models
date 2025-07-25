@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemsBuyerInfoList" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderItemsBuyerInfoList() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemsBuyerInfoList" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="orderItems">orderItems (required).</param>
         /// <param name="nextToken">When present and not empty, pass this string token in the next request to return the next response page..</param>
         /// <param name="amazonOrderId">An Amazon-defined order identifier, in 3-7-7 format. (required).</param>
-        public OrderItemsBuyerInfoList(OrderItemBuyerInfoList orderItems = default(OrderItemBuyerInfoList), string nextToken = default(string), string amazonOrderId = default(string))
+        public OrderItemsBuyerInfoList(OrderItemBuyerInfoList orderItems = default, string nextToken = default, string amazonOrderId = default)
         {
             // to ensure "orderItems" is required (not null)
             if (orderItems == null)
@@ -170,7 +170,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

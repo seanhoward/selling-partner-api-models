@@ -114,7 +114,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ChargeDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeDetails" /> class.
@@ -123,7 +123,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// <param name="description">Description of the charge..</param>
         /// <param name="chargeAmount">Total monetary amount related to this charge. (required).</param>
         /// <param name="taxDetails">Tax amount details applied on this charge..</param>
-        public ChargeDetails(TypeEnum type = default(TypeEnum), string description = default(string), Money chargeAmount = default(Money), List<TaxDetails> taxDetails = default(List<TaxDetails>))
+        public ChargeDetails(TypeEnum type = default, string description = default, Money chargeAmount = default, List<TaxDetails> taxDetails = default)
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -263,7 +263,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

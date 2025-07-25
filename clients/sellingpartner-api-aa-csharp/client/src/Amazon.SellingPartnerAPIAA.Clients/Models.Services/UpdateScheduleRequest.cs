@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateScheduleRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected UpdateScheduleRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateScheduleRequest" /> class.
         /// </summary>
         /// <param name="schedules">List of schedule objects to define the normal working hours of a resource. (required).</param>
-        public UpdateScheduleRequest(AvailabilityRecords schedules = default(AvailabilityRecords))
+        public UpdateScheduleRequest(AvailabilityRecords schedules = default)
         {
             // to ensure "schedules" is required (not null)
             if (schedules == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

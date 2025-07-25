@@ -72,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="Dimensions" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Dimensions() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Dimensions" /> class.
@@ -81,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="width">The width of the container. (required).</param>
         /// <param name="height">The height of the container. (required).</param>
         /// <param name="unitOfMeasure">The unit of measure for dimensions. (required).</param>
-        public Dimensions(string length = default(string), string width = default(string), string height = default(string), UnitOfMeasureEnum unitOfMeasure = default(UnitOfMeasureEnum))
+        public Dimensions(string length = default, string width = default, string height = default, UnitOfMeasureEnum unitOfMeasure = default)
         {
             // to ensure "length" is required (not null)
             if (length == null)
@@ -237,7 +237,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

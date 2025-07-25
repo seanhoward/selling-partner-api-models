@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderAcknowledgementItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderAcknowledgementItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderAcknowledgementItem" /> class.
@@ -45,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <param name="sellingParty">PartyID as vendor code. (required).</param>
         /// <param name="shipFromParty">PartyID as the vendor&#39;s warehouseId. (required).</param>
         /// <param name="itemAcknowledgements">Item details including acknowledged quantity. (required).</param>
-        public OrderAcknowledgementItem(string purchaseOrderNumber = default(string), string vendorOrderNumber = default(string), DateTime? acknowledgementDate = default(DateTime?), AcknowledgementStatus acknowledgementStatus = default(AcknowledgementStatus), PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), List<OrderItemAcknowledgement> itemAcknowledgements = default(List<OrderItemAcknowledgement>))
+        public OrderAcknowledgementItem(string purchaseOrderNumber = default, string vendorOrderNumber = default, DateTime? acknowledgementDate = default, AcknowledgementStatus acknowledgementStatus = default, PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, List<OrderItemAcknowledgement> itemAcknowledgements = default)
         {
             // to ensure "purchaseOrderNumber" is required (not null)
             if (purchaseOrderNumber == null)
@@ -279,7 +279,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

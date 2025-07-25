@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="AsinMetadata" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AsinMetadata() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AsinMetadata" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="title">The title for the ASIN in the Amazon catalog..</param>
         /// <param name="imageUrl">The default image for the ASIN in the Amazon catalog..</param>
         /// <param name="contentReferenceKeySet">contentReferenceKeySet.</param>
-        public AsinMetadata(string asin = default(string), AsinBadgeSet badgeSet = default(AsinBadgeSet), string parent = default(string), string title = default(string), string imageUrl = default(string), ContentReferenceKeySet contentReferenceKeySet = default(ContentReferenceKeySet))
+        public AsinMetadata(string asin = default, AsinBadgeSet badgeSet = default, string parent = default, string title = default, string imageUrl = default, ContentReferenceKeySet contentReferenceKeySet = default)
         {
             // to ensure "asin" is required (not null)
             if (asin == null)
@@ -210,18 +210,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Title (string) minLength
             if(this.Title != null && this.Title.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Title, length must be greater than 1.", new [] { "Title" });
+                yield return new ValidationResult("Invalid value for Title, length must be greater than 1.", new [] { "Title" });
             }
 
             // ImageUrl (string) minLength
             if(this.ImageUrl != null && this.ImageUrl.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ImageUrl, length must be greater than 1.", new [] { "ImageUrl" });
+                yield return new ValidationResult("Invalid value for ImageUrl, length must be greater than 1.", new [] { "ImageUrl" });
             }
 
             yield break;

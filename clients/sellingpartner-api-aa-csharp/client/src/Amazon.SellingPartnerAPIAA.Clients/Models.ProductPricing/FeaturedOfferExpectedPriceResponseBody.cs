@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <param name="offerIdentifier">Metadata that identifies the target offer for which the FOEP result data was computed..</param>
         /// <param name="featuredOfferExpectedPriceResults">The FOEP results for the requested target offer..</param>
         /// <param name="errors">The errors that occurred if the operation wasn&#39;t successful (HTTP status code non-200)..</param>
-        public FeaturedOfferExpectedPriceResponseBody(OfferIdentifier offerIdentifier = default(OfferIdentifier), FeaturedOfferExpectedPriceResultList featuredOfferExpectedPriceResults = default(FeaturedOfferExpectedPriceResultList), ErrorList errors = default(ErrorList))
+        public FeaturedOfferExpectedPriceResponseBody(OfferIdentifier offerIdentifier = default, FeaturedOfferExpectedPriceResultList featuredOfferExpectedPriceResults = default, ErrorList errors = default)
         {
             this.OfferIdentifier = offerIdentifier;
             this.FeaturedOfferExpectedPriceResults = featuredOfferExpectedPriceResults;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

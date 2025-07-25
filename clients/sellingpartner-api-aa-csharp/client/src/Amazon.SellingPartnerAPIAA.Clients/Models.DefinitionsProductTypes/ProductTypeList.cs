@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTypeList" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ProductTypeList() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTypeList" /> class.
         /// </summary>
         /// <param name="productTypes">productTypes (required).</param>
         /// <param name="productTypeVersion">Amazon product type version identifier. (required).</param>
-        public ProductTypeList(List<ProductType> productTypes = default(List<ProductType>), string productTypeVersion = default(string))
+        public ProductTypeList(List<ProductType> productTypes = default, string productTypeVersion = default)
         {
             // to ensure "productTypes" is required (not null)
             if (productTypes == null)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

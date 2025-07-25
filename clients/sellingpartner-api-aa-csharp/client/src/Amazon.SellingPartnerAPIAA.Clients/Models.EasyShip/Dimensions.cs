@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <param name="height">The height dimension..</param>
         /// <param name="unit">unit.</param>
         /// <param name="identifier">Identifier for custom package dimensions..</param>
-        public Dimensions(float? length = default(float?), float? width = default(float?), float? height = default(float?), UnitOfLength? unit = default(UnitOfLength?), string identifier = default(string))
+        public Dimensions(float? length = default, float? width = default, float? height = default, UnitOfLength? unit = default, string identifier = default)
         {
             this.Length = length;
             this.Width = width;
@@ -183,7 +183,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

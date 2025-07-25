@@ -60,14 +60,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRegistrationDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TaxRegistrationDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRegistrationDetails" /> class.
         /// </summary>
         /// <param name="taxRegistrationType">Tax registration type for the entity. (required).</param>
         /// <param name="taxRegistrationNumber">Tax registration number for the entity. For example, VAT ID. (required).</param>
-        public TaxRegistrationDetails(TaxRegistrationTypeEnum taxRegistrationType = default(TaxRegistrationTypeEnum), string taxRegistrationNumber = default(string))
+        public TaxRegistrationDetails(TaxRegistrationTypeEnum taxRegistrationType = default, string taxRegistrationNumber = default)
         {
             // to ensure "taxRegistrationType" is required (not null)
             if (taxRegistrationType == null)
@@ -175,7 +175,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

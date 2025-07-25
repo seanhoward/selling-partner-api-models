@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// Initializes a new instance of the <see cref="PurchaseOrderItemDetails" /> class.
         /// </summary>
         /// <param name="maximumRetailPrice">Maximum retail price of the item being shipped..</param>
-        public PurchaseOrderItemDetails(Money maximumRetailPrice = default(Money))
+        public PurchaseOrderItemDetails(Money maximumRetailPrice = default)
         {
             this.MaximumRetailPrice = maximumRetailPrice;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

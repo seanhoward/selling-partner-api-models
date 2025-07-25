@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentSlotTime" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AppointmentSlotTime() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentSlotTime" /> class.
         /// </summary>
         /// <param name="endTime">The end timestamp of the appointment in UTC. (required).</param>
         /// <param name="startTime">The start timestamp of the appointment in UTC. (required).</param>
-        public AppointmentSlotTime(DateTime? endTime = default(DateTime?), DateTime? startTime = default(DateTime?))
+        public AppointmentSlotTime(DateTime? endTime = default, DateTime? startTime = default)
         {
             // to ensure "endTime" is required (not null)
             if (endTime == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

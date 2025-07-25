@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="preferredDeliveryTime">Business hours and days when the delivery is preferred..</param>
         /// <param name="otherAttributes">Enumerated list of miscellaneous delivery attributes associated with the shipping address..</param>
         /// <param name="addressInstructions">Building instructions, nearby landmark or navigation instructions..</param>
-        public DeliveryPreferences(string dropOffLocation = default(string), PreferredDeliveryTime preferredDeliveryTime = default(PreferredDeliveryTime), List<OtherDeliveryAttributes> otherAttributes = default(List<OtherDeliveryAttributes>), string addressInstructions = default(string))
+        public DeliveryPreferences(string dropOffLocation = default, PreferredDeliveryTime preferredDeliveryTime = default, List<OtherDeliveryAttributes> otherAttributes = default, string addressInstructions = default)
         {
             this.DropOffLocation = dropOffLocation;
             this.PreferredDeliveryTime = preferredDeliveryTime;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

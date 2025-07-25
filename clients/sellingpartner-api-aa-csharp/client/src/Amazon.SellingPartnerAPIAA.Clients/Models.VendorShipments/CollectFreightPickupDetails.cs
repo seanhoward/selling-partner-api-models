@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="requestedPickUp">Date on which the items can be picked up from vendor warehouse by Buyer used for WePay/Collect vendors..</param>
         /// <param name="scheduledPickUp">Date on which the items are scheduled to be picked from vendor warehouse by Buyer used for WePay/Collect vendors..</param>
         /// <param name="carrierAssignmentDate">Date on which the carrier is being scheduled to pickup items from vendor warehouse by Byer used for WePay/Collect vendors..</param>
-        public CollectFreightPickupDetails(DateTime? requestedPickUp = default(DateTime?), DateTime? scheduledPickUp = default(DateTime?), DateTime? carrierAssignmentDate = default(DateTime?))
+        public CollectFreightPickupDetails(DateTime? requestedPickUp = default, DateTime? scheduledPickUp = default, DateTime? carrierAssignmentDate = default)
         {
             this.RequestedPickUp = requestedPickUp;
             this.ScheduledPickUp = scheduledPickUp;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InvoiceItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceItem" /> class.
@@ -48,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// <param name="hsnCode">Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets..</param>
         /// <param name="taxDetails">Individual tax details per line item..</param>
         /// <param name="chargeDetails">Individual charge details per line item..</param>
-        public InvoiceItem(string itemSequenceNumber = default(string), string buyerProductIdentifier = default(string), string vendorProductIdentifier = default(string), ItemQuantity invoicedQuantity = default(ItemQuantity), Money netCost = default(Money), string purchaseOrderNumber = default(string), string vendorOrderNumber = default(string), string hsnCode = default(string), List<TaxDetail> taxDetails = default(List<TaxDetail>), List<ChargeDetails> chargeDetails = default(List<ChargeDetails>))
+        public InvoiceItem(string itemSequenceNumber = default, string buyerProductIdentifier = default, string vendorProductIdentifier = default, ItemQuantity invoicedQuantity = default, Money netCost = default, string purchaseOrderNumber = default, string vendorOrderNumber = default, string hsnCode = default, List<TaxDetail> taxDetails = default, List<ChargeDetails> chargeDetails = default)
         {
             // to ensure "itemSequenceNumber" is required (not null)
             if (itemSequenceNumber == null)
@@ -306,7 +306,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

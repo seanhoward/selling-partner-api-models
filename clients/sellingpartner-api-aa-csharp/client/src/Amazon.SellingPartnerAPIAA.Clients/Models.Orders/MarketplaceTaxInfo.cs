@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Initializes a new instance of the <see cref="MarketplaceTaxInfo" /> class.
         /// </summary>
         /// <param name="taxClassifications">A list of tax classifications that apply to the order..</param>
-        public MarketplaceTaxInfo(List<TaxClassification> taxClassifications = default(List<TaxClassification>))
+        public MarketplaceTaxInfo(List<TaxClassification> taxClassifications = default)
         {
             this.TaxClassifications = taxClassifications;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

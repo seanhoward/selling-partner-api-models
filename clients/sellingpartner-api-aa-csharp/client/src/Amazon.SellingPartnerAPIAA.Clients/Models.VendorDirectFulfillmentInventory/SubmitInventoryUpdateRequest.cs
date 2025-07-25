@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         /// Initializes a new instance of the <see cref="SubmitInventoryUpdateRequest" /> class.
         /// </summary>
         /// <param name="inventory">Inventory details required to update some or all items for the requested warehouse..</param>
-        public SubmitInventoryUpdateRequest(InventoryUpdate inventory = default(InventoryUpdate))
+        public SubmitInventoryUpdateRequest(InventoryUpdate inventory = default)
         {
             this.Inventory = inventory;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

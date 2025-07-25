@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateScheduledPackageRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateScheduledPackageRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateScheduledPackageRequest" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <param name="amazonOrderId">amazonOrderId (required).</param>
         /// <param name="marketplaceId">marketplaceId (required).</param>
         /// <param name="packageDetails">packageDetails (required).</param>
-        public CreateScheduledPackageRequest(string amazonOrderId = default(string), string marketplaceId = default(string), PackageDetails packageDetails = default(PackageDetails))
+        public CreateScheduledPackageRequest(string amazonOrderId = default, string marketplaceId = default, PackageDetails packageDetails = default)
         {
             // to ensure "amazonOrderId" is required (not null)
             if (amazonOrderId == null)
@@ -176,7 +176,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

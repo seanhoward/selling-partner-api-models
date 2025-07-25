@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ListShipmentContentUpdatePreviewsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListShipmentContentUpdatePreviewsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListShipmentContentUpdatePreviewsResponse" /> class.
         /// </summary>
         /// <param name="contentUpdatePreviews">A list of content update previews in a shipment. (required).</param>
         /// <param name="pagination">pagination.</param>
-        public ListShipmentContentUpdatePreviewsResponse(List<ContentUpdatePreview> contentUpdatePreviews = default(List<ContentUpdatePreview>), Pagination pagination = default(Pagination))
+        public ListShipmentContentUpdatePreviewsResponse(List<ContentUpdatePreview> contentUpdatePreviews = default, Pagination pagination = default)
         {
             // to ensure "contentUpdatePreviews" is required (not null)
             if (contentUpdatePreviews == null)
@@ -145,7 +145,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItem" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <param name="taxDetails">Total tax details for the line item..</param>
         /// <param name="totalPrice">The price to Amazon each (cost)..</param>
         /// <param name="buyerCustomizedInfo">The buyer information for products the vendor has configured as customizable, specifying the types of customizations or configurations along with types and ranges for their product. This provides the ability for buyers to customize multiple aspects of the products according to what the vendor allows..</param>
-        public OrderItem(string itemSequenceNumber = default(string), string buyerProductIdentifier = default(string), string vendorProductIdentifier = default(string), string title = default(string), ItemQuantity orderedQuantity = default(ItemQuantity), ScheduledDeliveryShipment scheduledDeliveryShipment = default(ScheduledDeliveryShipment), GiftDetails giftDetails = default(GiftDetails), Money netPrice = default(Money), TaxItemDetails taxDetails = default(TaxItemDetails), Money totalPrice = default(Money), BuyerCustomizedInfoDetail buyerCustomizedInfo = default(BuyerCustomizedInfoDetail))
+        public OrderItem(string itemSequenceNumber = default, string buyerProductIdentifier = default, string vendorProductIdentifier = default, string title = default, ItemQuantity orderedQuantity = default, ScheduledDeliveryShipment scheduledDeliveryShipment = default, GiftDetails giftDetails = default, Money netPrice = default, TaxItemDetails taxDetails = default, Money totalPrice = default, BuyerCustomizedInfoDetail buyerCustomizedInfo = default)
         {
             // to ensure "itemSequenceNumber" is required (not null)
             if (itemSequenceNumber == null)
@@ -315,7 +315,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

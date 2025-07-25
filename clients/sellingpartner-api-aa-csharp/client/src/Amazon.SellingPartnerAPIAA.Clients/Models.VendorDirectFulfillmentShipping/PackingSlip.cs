@@ -54,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="PackingSlip" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PackingSlip() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackingSlip" /> class.
@@ -62,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="purchaseOrderNumber">Purchase order number of the shipment that the packing slip is for. (required).</param>
         /// <param name="content">A Base64encoded string of the packing slip PDF. (required).</param>
         /// <param name="contentType">The format of the file such as PDF, JPEG etc..</param>
-        public PackingSlip(string purchaseOrderNumber = default(string), string content = default(string), ContentTypeEnum? contentType = default(ContentTypeEnum?))
+        public PackingSlip(string purchaseOrderNumber = default, string content = default, ContentTypeEnum? contentType = default)
         {
             // to ensure "purchaseOrderNumber" is required (not null)
             if (purchaseOrderNumber == null)
@@ -186,13 +186,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PurchaseOrderNumber (string) pattern
             Regex regexPurchaseOrderNumber = new Regex(@"^[a-zA-Z0-9]+$", RegexOptions.CultureInvariant);
             if (false == regexPurchaseOrderNumber.Match(this.PurchaseOrderNumber).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new [] { "PurchaseOrderNumber" });
+                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new [] { "PurchaseOrderNumber" });
             }
 
             yield break;

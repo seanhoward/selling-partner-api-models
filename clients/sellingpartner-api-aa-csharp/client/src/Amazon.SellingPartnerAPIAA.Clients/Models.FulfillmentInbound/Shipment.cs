@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Shipment" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Shipment() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Shipment" /> class.
@@ -53,7 +53,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="source">source (required).</param>
         /// <param name="status">The status of a shipment. The state of the shipment will typically start as &#x60;UNCONFIRMED&#x60;, then transition to &#x60;WORKING&#x60; after a placement option has been confirmed, and then to &#x60;READY_TO_SHIP&#x60; once labels are generated.  Possible values: &#x60;ABANDONED&#x60;, &#x60;CANCELLED&#x60;, &#x60;CHECKED_IN&#x60;, &#x60;CLOSED&#x60;, &#x60;DELETED&#x60;, &#x60;DELIVERED&#x60;, &#x60;IN_TRANSIT&#x60;, &#x60;MIXED&#x60;, &#x60;READY_TO_SHIP&#x60;, &#x60;RECEIVING&#x60;, &#x60;SHIPPED&#x60;, &#x60;UNCONFIRMED&#x60;, &#x60;WORKING&#x60;.</param>
         /// <param name="trackingDetails">trackingDetails.</param>
-        public Shipment(string amazonReferenceId = default(string), ContactInformation contactInformation = default(ContactInformation), Dates dates = default(Dates), ShipmentDestination destination = default(ShipmentDestination), FreightInformation freightInformation = default(FreightInformation), string name = default(string), string placementOptionId = default(string), SelectedDeliveryWindow selectedDeliveryWindow = default(SelectedDeliveryWindow), string selectedTransportationOptionId = default(string), List<SelfShipAppointmentDetails> selfShipAppointmentDetails = default(List<SelfShipAppointmentDetails>), string shipmentConfirmationId = default(string), string shipmentId = default(string), ShipmentSource source = default(ShipmentSource), string status = default(string), TrackingDetails trackingDetails = default(TrackingDetails))
+        public Shipment(string amazonReferenceId = default, ContactInformation contactInformation = default, Dates dates = default, ShipmentDestination destination = default, FreightInformation freightInformation = default, string name = default, string placementOptionId = default, SelectedDeliveryWindow selectedDeliveryWindow = default, string selectedTransportationOptionId = default, List<SelfShipAppointmentDetails> selfShipAppointmentDetails = default, string shipmentConfirmationId = default, string shipmentId = default, ShipmentSource source = default, string status = default, TrackingDetails trackingDetails = default)
         {
             // to ensure "destination" is required (not null)
             if (destination == null)
@@ -384,99 +384,99 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AmazonReferenceId (string) maxLength
             if(this.AmazonReferenceId != null && this.AmazonReferenceId.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AmazonReferenceId, length must be less than 1024.", new [] { "AmazonReferenceId" });
+                yield return new ValidationResult("Invalid value for AmazonReferenceId, length must be less than 1024.", new [] { "AmazonReferenceId" });
             }
 
             // AmazonReferenceId (string) minLength
             if(this.AmazonReferenceId != null && this.AmazonReferenceId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AmazonReferenceId, length must be greater than 1.", new [] { "AmazonReferenceId" });
+                yield return new ValidationResult("Invalid value for AmazonReferenceId, length must be greater than 1.", new [] { "AmazonReferenceId" });
             }
 
             // PlacementOptionId (string) maxLength
             if(this.PlacementOptionId != null && this.PlacementOptionId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PlacementOptionId, length must be less than 38.", new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be less than 38.", new [] { "PlacementOptionId" });
             }
 
             // PlacementOptionId (string) minLength
             if(this.PlacementOptionId != null && this.PlacementOptionId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PlacementOptionId, length must be greater than 38.", new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be greater than 38.", new [] { "PlacementOptionId" });
             }
 
             // PlacementOptionId (string) pattern
             Regex regexPlacementOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPlacementOptionId.Match(this.PlacementOptionId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PlacementOptionId, must match a pattern of " + regexPlacementOptionId, new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, must match a pattern of " + regexPlacementOptionId, new [] { "PlacementOptionId" });
             }
 
             // SelectedTransportationOptionId (string) maxLength
             if(this.SelectedTransportationOptionId != null && this.SelectedTransportationOptionId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SelectedTransportationOptionId, length must be less than 38.", new [] { "SelectedTransportationOptionId" });
+                yield return new ValidationResult("Invalid value for SelectedTransportationOptionId, length must be less than 38.", new [] { "SelectedTransportationOptionId" });
             }
 
             // SelectedTransportationOptionId (string) minLength
             if(this.SelectedTransportationOptionId != null && this.SelectedTransportationOptionId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SelectedTransportationOptionId, length must be greater than 38.", new [] { "SelectedTransportationOptionId" });
+                yield return new ValidationResult("Invalid value for SelectedTransportationOptionId, length must be greater than 38.", new [] { "SelectedTransportationOptionId" });
             }
 
             // SelectedTransportationOptionId (string) pattern
             Regex regexSelectedTransportationOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexSelectedTransportationOptionId.Match(this.SelectedTransportationOptionId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SelectedTransportationOptionId, must match a pattern of " + regexSelectedTransportationOptionId, new [] { "SelectedTransportationOptionId" });
+                yield return new ValidationResult("Invalid value for SelectedTransportationOptionId, must match a pattern of " + regexSelectedTransportationOptionId, new [] { "SelectedTransportationOptionId" });
             }
 
             // ShipmentConfirmationId (string) maxLength
             if(this.ShipmentConfirmationId != null && this.ShipmentConfirmationId.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentConfirmationId, length must be less than 1024.", new [] { "ShipmentConfirmationId" });
+                yield return new ValidationResult("Invalid value for ShipmentConfirmationId, length must be less than 1024.", new [] { "ShipmentConfirmationId" });
             }
 
             // ShipmentConfirmationId (string) minLength
             if(this.ShipmentConfirmationId != null && this.ShipmentConfirmationId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentConfirmationId, length must be greater than 1.", new [] { "ShipmentConfirmationId" });
+                yield return new ValidationResult("Invalid value for ShipmentConfirmationId, length must be greater than 1.", new [] { "ShipmentConfirmationId" });
             }
 
             // ShipmentId (string) maxLength
             if(this.ShipmentId != null && this.ShipmentId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
             }
 
             // ShipmentId (string) minLength
             if(this.ShipmentId != null && this.ShipmentId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
             }
 
             // ShipmentId (string) pattern
             Regex regexShipmentId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexShipmentId.Match(this.ShipmentId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
             }
 
             // Status (string) maxLength
             if(this.Status != null && this.Status.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
             }
 
             // Status (string) minLength
             if(this.Status != null && this.Status.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
             }
 
             yield break;

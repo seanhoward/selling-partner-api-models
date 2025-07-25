@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTypeVersion" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ProductTypeVersion() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTypeVersion" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// <param name="version">Version identifier. (required).</param>
         /// <param name="latest">When true, the version indicated by the version identifier is the latest available for the Amazon product type. (required).</param>
         /// <param name="releaseCandidate">When true, the version indicated by the version identifier is the prerelease (release candidate) for the Amazon product type..</param>
-        public ProductTypeVersion(string version = default(string), bool? latest = default(bool?), bool? releaseCandidate = default(bool?))
+        public ProductTypeVersion(string version = default, bool? latest = default, bool? releaseCandidate = default)
         {
             // to ensure "version" is required (not null)
             if (version == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="orderedQuantity">Item quantity ordered..</param>
         /// <param name="orderedQuantityDetails">Details of item quantity ordered..</param>
-        public OrderItemStatusOrderedQuantity(ItemQuantity orderedQuantity = default(ItemQuantity), List<OrderedQuantityDetails> orderedQuantityDetails = default(List<OrderedQuantityDetails>))
+        public OrderItemStatusOrderedQuantity(ItemQuantity orderedQuantity = default, List<OrderedQuantityDetails> orderedQuantityDetails = default)
         {
             this.OrderedQuantity = orderedQuantity;
             this.OrderedQuantityDetails = orderedQuantityDetails;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

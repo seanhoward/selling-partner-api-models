@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// <summary>
         /// Initializes a new instance of the <see cref="Scenario" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Scenario() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Scenario" /> class.
         /// </summary>
         /// <param name="scenarioId">An identifier that identifies the type of scenario that user can use for testing. (required).</param>
         /// <param name="orders">A list of orders that can be used by the caller to test each life cycle or scenario. (required).</param>
-        public Scenario(string scenarioId = default(string), List<TestOrder> orders = default(List<TestOrder>))
+        public Scenario(string scenarioId = default, List<TestOrder> orders = default)
         {
             // to ensure "scenarioId" is required (not null)
             if (scenarioId == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

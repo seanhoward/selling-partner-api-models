@@ -77,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="model">The tax collection model applied to the item..</param>
         /// <param name="responsibleParty">The party responsible for withholding the taxes and remitting them to the taxing authority..</param>
-        public TaxCollection(ModelEnum? model = default(ModelEnum?), ResponsiblePartyEnum? responsibleParty = default(ResponsiblePartyEnum?))
+        public TaxCollection(ModelEnum? model = default, ResponsiblePartyEnum? responsibleParty = default)
         {
             this.Model = model;
             this.ResponsibleParty = responsibleParty;
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

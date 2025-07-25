@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="payload">The appointment slots fetched based on service context..</param>
         /// <param name="errors">Errors occurred in getting schedule..</param>
-        public GetAppointmentSlotsResponse(AppointmentSlotReport payload = default(AppointmentSlotReport), ErrorList errors = default(ErrorList))
+        public GetAppointmentSlotsResponse(AppointmentSlotReport payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

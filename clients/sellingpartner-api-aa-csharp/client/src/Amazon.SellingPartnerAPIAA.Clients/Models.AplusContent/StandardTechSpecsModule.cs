@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardTechSpecsModule" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected StandardTechSpecsModule() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardTechSpecsModule" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="headline">headline.</param>
         /// <param name="specificationList">The specification list. (required).</param>
         /// <param name="tableCount">The number of tables to present. Features are evenly divided between the tables..</param>
-        public StandardTechSpecsModule(TextComponent headline = default(TextComponent), List<StandardTextPairBlock> specificationList = default(List<StandardTextPairBlock>), int? tableCount = default(int?))
+        public StandardTechSpecsModule(TextComponent headline = default, List<StandardTextPairBlock> specificationList = default, int? tableCount = default)
         {
             // to ensure "specificationList" is required (not null)
             if (specificationList == null)
@@ -162,18 +162,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // TableCount (int?) maximum
             if(this.TableCount > (int?)2)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TableCount, must be a value less than or equal to 2.", new [] { "TableCount" });
+                yield return new ValidationResult("Invalid value for TableCount, must be a value less than or equal to 2.", new [] { "TableCount" });
             }
 
             // TableCount (int?) minimum
             if(this.TableCount < (int?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TableCount, must be a value greater than or equal to 1.", new [] { "TableCount" });
+                yield return new ValidationResult("Invalid value for TableCount, must be a value greater than or equal to 1.", new [] { "TableCount" });
             }
 
             yield break;

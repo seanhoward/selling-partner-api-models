@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="pagination">The pagination elements required to retrieve the remaining data..</param>
         /// <param name="orders">Represents a purchase order within the OrderList..</param>
-        public OrderList(Pagination pagination = default(Pagination), List<Order> orders = default(List<Order>))
+        public OrderList(Pagination pagination = default, List<Order> orders = default)
         {
             this.Pagination = pagination;
             this.Orders = orders;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="expiresAt">The time at which the self ship appointment slot expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format..</param>
         /// <param name="slots">A list of appointment slots..</param>
-        public SelfShipAppointmentSlotsAvailability(DateTime? expiresAt = default(DateTime?), List<AppointmentSlot> slots = default(List<AppointmentSlot>))
+        public SelfShipAppointmentSlotsAvailability(DateTime? expiresAt = default, List<AppointmentSlot> slots = default)
         {
             this.ExpiresAt = expiresAt;
             this.Slots = slots;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// <param name="isSupported">When true, curbside pickup is supported by the supply source..</param>
         /// <param name="operationalConfiguration">The operational configuration for the curbside pickup configuration..</param>
         /// <param name="parkingWithAddressConfiguration">The parking configuration for curbside pickup with address for customers to use..</param>
-        public CurbsidePickupConfiguration(bool? isSupported = default(bool?), OperationalConfiguration operationalConfiguration = default(OperationalConfiguration), ParkingWithAddressConfiguration parkingWithAddressConfiguration = default(ParkingWithAddressConfiguration))
+        public CurbsidePickupConfiguration(bool? isSupported = default, OperationalConfiguration operationalConfiguration = default, ParkingWithAddressConfiguration parkingWithAddressConfiguration = default)
         {
             this.IsSupported = isSupported;
             this.OperationalConfiguration = operationalConfiguration;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

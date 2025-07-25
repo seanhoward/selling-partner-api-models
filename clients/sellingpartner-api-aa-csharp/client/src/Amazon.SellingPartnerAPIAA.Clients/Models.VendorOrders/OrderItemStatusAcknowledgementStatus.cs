@@ -76,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="acceptedQuantity">Item quantities accepted by vendor to be shipped..</param>
         /// <param name="rejectedQuantity">Item quantities rejected by vendor..</param>
         /// <param name="acknowledgementStatusDetails">Details of item quantity confirmed..</param>
-        public OrderItemStatusAcknowledgementStatus(ConfirmationStatusEnum? confirmationStatus = default(ConfirmationStatusEnum?), ItemQuantity acceptedQuantity = default(ItemQuantity), ItemQuantity rejectedQuantity = default(ItemQuantity), List<AcknowledgementStatusDetails> acknowledgementStatusDetails = default(List<AcknowledgementStatusDetails>))
+        public OrderItemStatusAcknowledgementStatus(ConfirmationStatusEnum? confirmationStatus = default, ItemQuantity acceptedQuantity = default, ItemQuantity rejectedQuantity = default, List<AcknowledgementStatusDetails> acknowledgementStatusDetails = default)
         {
             this.ConfirmationStatus = confirmationStatus;
             this.AcceptedQuantity = acceptedQuantity;
@@ -200,7 +200,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

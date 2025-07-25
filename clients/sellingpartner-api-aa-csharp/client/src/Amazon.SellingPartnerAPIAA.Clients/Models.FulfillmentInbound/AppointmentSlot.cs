@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentSlot" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AppointmentSlot() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentSlot" /> class.
         /// </summary>
         /// <param name="slotId">An identifier to a self-ship appointment slot. (required).</param>
         /// <param name="slotTime">slotTime (required).</param>
-        public AppointmentSlot(string slotId = default(string), AppointmentSlotTime slotTime = default(AppointmentSlotTime))
+        public AppointmentSlot(string slotId = default, AppointmentSlotTime slotTime = default)
         {
             // to ensure "slotId" is required (not null)
             if (slotId == null)
@@ -153,25 +153,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // SlotId (string) maxLength
             if(this.SlotId != null && this.SlotId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SlotId, length must be less than 38.", new [] { "SlotId" });
+                yield return new ValidationResult("Invalid value for SlotId, length must be less than 38.", new [] { "SlotId" });
             }
 
             // SlotId (string) minLength
             if(this.SlotId != null && this.SlotId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SlotId, length must be greater than 38.", new [] { "SlotId" });
+                yield return new ValidationResult("Invalid value for SlotId, length must be greater than 38.", new [] { "SlotId" });
             }
 
             // SlotId (string) pattern
             Regex regexSlotId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexSlotId.Match(this.SlotId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SlotId, must match a pattern of " + regexSlotId, new [] { "SlotId" });
+                yield return new ValidationResult("Invalid value for SlotId, must match a pattern of " + regexSlotId, new [] { "SlotId" });
             }
 
             yield break;

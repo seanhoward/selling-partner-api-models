@@ -54,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedDocument" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeedDocument() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedDocument" /> class.
@@ -62,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// <param name="feedDocumentId">The identifier for the feed document. This identifier is unique only in combination with a seller ID. (required).</param>
         /// <param name="url">A presigned URL for the feed document. If &#x60;compressionAlgorithm&#x60; is not returned, you can download the feed directly from this URL. This URL expires after 5 minutes. (required).</param>
         /// <param name="compressionAlgorithm">If the feed document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the feed when you download. Otherwise, you can download the feed directly. Refer to [Step 7. Download the feed processing report](doc:feeds-api-v2021-06-30-use-case-guide#step-7-download-the-feed-processing-report) in the use case guide, where sample code is provided..</param>
-        public FeedDocument(string feedDocumentId = default(string), string url = default(string), CompressionAlgorithmEnum? compressionAlgorithm = default(CompressionAlgorithmEnum?))
+        public FeedDocument(string feedDocumentId = default, string url = default, CompressionAlgorithmEnum? compressionAlgorithm = default)
         {
             // to ensure "feedDocumentId" is required (not null)
             if (feedDocumentId == null)
@@ -186,7 +186,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

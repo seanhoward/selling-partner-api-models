@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="PlainTextItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PlainTextItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PlainTextItem" /> class.
         /// </summary>
         /// <param name="position">The rank or index of this text item within the collection. Different items cannot occupy the same position within a single collection. (required).</param>
         /// <param name="value">The actual plain text. (required).</param>
-        public PlainTextItem(int? position = default(int?), string value = default(string))
+        public PlainTextItem(int? position = default, string value = default)
         {
             // to ensure "position" is required (not null)
             if (position == null)
@@ -154,30 +154,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Position (int?) maximum
             if(this.Position > (int?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Position, must be a value less than or equal to 100.", new [] { "Position" });
+                yield return new ValidationResult("Invalid value for Position, must be a value less than or equal to 100.", new [] { "Position" });
             }
 
             // Position (int?) minimum
             if(this.Position < (int?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Position, must be a value greater than or equal to 1.", new [] { "Position" });
+                yield return new ValidationResult("Invalid value for Position, must be a value greater than or equal to 1.", new [] { "Position" });
             }
 
             // Value (string) maxLength
             if(this.Value != null && this.Value.Length > 250)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, length must be less than 250.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, length must be less than 250.", new [] { "Value" });
             }
 
             // Value (string) minLength
             if(this.Value != null && this.Value.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, length must be greater than 1.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, length must be greater than 1.", new [] { "Value" });
             }
 
             yield break;

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="SegmentedFeaturedOffer" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SegmentedFeaturedOffer() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SegmentedFeaturedOffer" /> class.
         /// </summary>
         /// <param name="featuredOfferSegments">The list of segment information in which the offer is featured. (required).</param>
-        public SegmentedFeaturedOffer(List<FeaturedOfferSegment> featuredOfferSegments = default(List<FeaturedOfferSegment>), string sellerId = default(string), Condition condition = default(Condition), SubConditionEnum? subCondition = default(SubConditionEnum?), FulfillmentType fulfillmentType = default(FulfillmentType), MoneyType listingPrice = default(MoneyType), List<ShippingOption> shippingOptions = default(List<ShippingOption>), Points points = default(Points), PrimeDetails primeDetails = default(PrimeDetails)) : base(sellerId, condition, subCondition, fulfillmentType, listingPrice, shippingOptions, points, primeDetails)
+        public SegmentedFeaturedOffer(List<FeaturedOfferSegment> featuredOfferSegments = default, string sellerId = default, Condition condition = default, SubConditionEnum? subCondition = default, FulfillmentType fulfillmentType = default, MoneyType listingPrice = default, List<ShippingOption> shippingOptions = default, Points points = default, PrimeDetails primeDetails = default) : base(sellerId, condition, subCondition, fulfillmentType, listingPrice, shippingOptions, points, primeDetails)
         {
             // to ensure "featuredOfferSegments" is required (not null)
             if (featuredOfferSegments == null)
@@ -130,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             //foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;

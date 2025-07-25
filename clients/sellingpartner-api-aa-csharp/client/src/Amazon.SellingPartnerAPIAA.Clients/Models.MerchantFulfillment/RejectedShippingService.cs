@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="RejectedShippingService" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RejectedShippingService() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RejectedShippingService" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="shippingServiceId">The rejected shipping service identifier. For example, &#x60;FEDEX_PTP_STANDARD_OVERNIGHT&#x60;. (required).</param>
         /// <param name="rejectionReasonCode">A reason code meant to be consumed programatically. For example, &#x60;CARRIER_CANNOT_SHIP_TO_POBOX&#x60;. (required).</param>
         /// <param name="rejectionReasonMessage">A localized human readable description of the rejected reason..</param>
-        public RejectedShippingService(string carrierName = default(string), string shippingServiceName = default(string), string shippingServiceId = default(string), string rejectionReasonCode = default(string), string rejectionReasonMessage = default(string))
+        public RejectedShippingService(string carrierName = default, string shippingServiceName = default, string shippingServiceId = default, string rejectionReasonCode = default, string rejectionReasonMessage = default)
         {
             // to ensure "carrierName" is required (not null)
             if (carrierName == null)
@@ -221,7 +221,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="Route" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Route() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Route" /> class.
         /// </summary>
         /// <param name="stops">The port or location involved in transporting the cargo, as specified in transportation contracts or operational plans. (required).</param>
-        public Route(List<Stop> stops = default(List<Stop>))
+        public Route(List<Stop> stops = default)
         {
             // to ensure "stops" is required (not null)
             if (stops == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

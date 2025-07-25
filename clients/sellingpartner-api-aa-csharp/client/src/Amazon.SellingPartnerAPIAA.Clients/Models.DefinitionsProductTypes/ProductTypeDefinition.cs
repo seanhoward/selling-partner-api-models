@@ -93,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTypeDefinition" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ProductTypeDefinition() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTypeDefinition" /> class.
@@ -108,7 +108,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// <param name="productType">The name of the Amazon product type that this product type definition applies to. (required).</param>
         /// <param name="displayName">Human-readable and localized description of the Amazon product type. (required).</param>
         /// <param name="productTypeVersion">The version details for the Amazon product type. (required).</param>
-        public ProductTypeDefinition(SchemaLink metaSchema = default(SchemaLink), SchemaLink schema = default(SchemaLink), RequirementsEnum requirements = default(RequirementsEnum), RequirementsEnforcedEnum requirementsEnforced = default(RequirementsEnforcedEnum), Dictionary<string, PropertyGroup> propertyGroups = default(Dictionary<string, PropertyGroup>), string locale = default(string), List<string> marketplaceIds = default(List<string>), string productType = default(string), string displayName = default(string), ProductTypeVersion productTypeVersion = default(ProductTypeVersion))
+        public ProductTypeDefinition(SchemaLink metaSchema = default, SchemaLink schema = default, RequirementsEnum requirements = default, RequirementsEnforcedEnum requirementsEnforced = default, Dictionary<string, PropertyGroup> propertyGroups = default, string locale = default, List<string> marketplaceIds = default, string productType = default, string displayName = default, ProductTypeVersion productTypeVersion = default)
         {
             // to ensure "schema" is required (not null)
             if (schema == null)
@@ -394,7 +394,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

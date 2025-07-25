@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSelfShipAppointmentSlotsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetSelfShipAppointmentSlotsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSelfShipAppointmentSlotsResponse" /> class.
         /// </summary>
         /// <param name="pagination">pagination.</param>
         /// <param name="selfShipAppointmentSlotsAvailability">selfShipAppointmentSlotsAvailability (required).</param>
-        public GetSelfShipAppointmentSlotsResponse(Pagination pagination = default(Pagination), SelfShipAppointmentSlotsAvailability selfShipAppointmentSlotsAvailability = default(SelfShipAppointmentSlotsAvailability))
+        public GetSelfShipAppointmentSlotsResponse(Pagination pagination = default, SelfShipAppointmentSlotsAvailability selfShipAppointmentSlotsAvailability = default)
         {
             // to ensure "selfShipAppointmentSlotsAvailability" is required (not null)
             if (selfShipAppointmentSlotsAvailability == null)
@@ -144,7 +144,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

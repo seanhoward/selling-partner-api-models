@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <summary>
         /// Initializes a new instance of the <see cref="MarketplaceParticipation" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected MarketplaceParticipation() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="MarketplaceParticipation" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <param name="marketplace">marketplace (required).</param>
         /// <param name="participation">participation (required).</param>
         /// <param name="storeName">The name of the seller&#39;s store as displayed in the marketplace. (required).</param>
-        public MarketplaceParticipation(Marketplace marketplace = default(Marketplace), Participation participation = default(Participation), string storeName = default(string))
+        public MarketplaceParticipation(Marketplace marketplace = default, Participation participation = default, string storeName = default)
         {
             // to ensure "marketplace" is required (not null)
             if (marketplace == null)
@@ -177,7 +177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

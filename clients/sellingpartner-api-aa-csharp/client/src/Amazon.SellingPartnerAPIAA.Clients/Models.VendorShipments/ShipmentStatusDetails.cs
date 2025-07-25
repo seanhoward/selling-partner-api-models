@@ -74,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="shipmentStatus">Current status of the shipment on whether it is picked up or scheduled..</param>
         /// <param name="shipmentStatusDate">Date and time on last status update received for the shipment.</param>
-        public ShipmentStatusDetails(ShipmentStatusEnum? shipmentStatus = default(ShipmentStatusEnum?), DateTime? shipmentStatusDate = default(DateTime?))
+        public ShipmentStatusDetails(ShipmentStatusEnum? shipmentStatus = default, DateTime? shipmentStatusDate = default)
         {
             this.ShipmentStatus = shipmentStatus;
             this.ShipmentStatusDate = shipmentStatusDate;
@@ -166,7 +166,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

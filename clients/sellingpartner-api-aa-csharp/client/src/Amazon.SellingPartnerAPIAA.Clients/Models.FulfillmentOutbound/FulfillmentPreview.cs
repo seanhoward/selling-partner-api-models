@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentPreview" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FulfillmentPreview() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentPreview" /> class.
@@ -54,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="orderUnfulfillableReasons">Error codes associated with the fulfillment order preview that indicate why the order is not fulfillable.  Error code examples:  &#x60;DeliverySLAUnavailable&#x60; &#x60;InvalidDestinationAddress&#x60;.</param>
         /// <param name="marketplaceId">The marketplace the fulfillment order is placed against. (required).</param>
         /// <param name="featureConstraints">A list of features and their fulfillment policies to apply to the order..</param>
-        public FulfillmentPreview(ShippingSpeedCategory shippingSpeedCategory = default(ShippingSpeedCategory), ScheduledDeliveryInfo scheduledDeliveryInfo = default(ScheduledDeliveryInfo), bool? isFulfillable = default(bool?), bool? isCODCapable = default(bool?), Weight estimatedShippingWeight = default(Weight), FeeList estimatedFees = default(FeeList), FulfillmentPreviewShipmentList fulfillmentPreviewShipments = default(FulfillmentPreviewShipmentList), UnfulfillablePreviewItemList unfulfillablePreviewItems = default(UnfulfillablePreviewItemList), StringList orderUnfulfillableReasons = default(StringList), string marketplaceId = default(string), List<FeatureSettings> featureConstraints = default(List<FeatureSettings>))
+        public FulfillmentPreview(ShippingSpeedCategory shippingSpeedCategory = default, ScheduledDeliveryInfo scheduledDeliveryInfo = default, bool? isFulfillable = default, bool? isCODCapable = default, Weight estimatedShippingWeight = default, FeeList estimatedFees = default, FulfillmentPreviewShipmentList fulfillmentPreviewShipments = default, UnfulfillablePreviewItemList unfulfillablePreviewItems = default, StringList orderUnfulfillableReasons = default, string marketplaceId = default, List<FeatureSettings> featureConstraints = default)
         {
             // to ensure "shippingSpeedCategory" is required (not null)
             if (shippingSpeedCategory == null)
@@ -319,7 +319,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOrderCreationData" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InboundOrderCreationData() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOrderCreationData" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="packagesToInbound">List of packages to be inbounded. (required).</param>
         /// <param name="preferences">preferences.</param>
         /// <param name="shipBy">Estimated date by when goods have to be picked up..</param>
-        public InboundOrderCreationData(string externalReferenceId = default(string), Address originAddress = default(Address), List<DistributionPackageQuantity> packagesToInbound = default(List<DistributionPackageQuantity>), InboundPreferences preferences = default(InboundPreferences), DateTime? shipBy = default(DateTime?))
+        public InboundOrderCreationData(string externalReferenceId = default, Address originAddress = default, List<DistributionPackageQuantity> packagesToInbound = default, InboundPreferences preferences = default, DateTime? shipBy = default)
         {
             // to ensure "originAddress" is required (not null)
             if (originAddress == null)
@@ -204,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

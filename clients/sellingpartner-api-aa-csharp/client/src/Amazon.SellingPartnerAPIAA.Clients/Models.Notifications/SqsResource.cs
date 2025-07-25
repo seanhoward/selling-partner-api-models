@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <summary>
         /// Initializes a new instance of the <see cref="SqsResource" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SqsResource() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SqsResource" /> class.
         /// </summary>
         /// <param name="arn">The Amazon Resource Name (ARN) associated with the SQS queue. (required).</param>
-        public SqsResource(string arn = default(string))
+        public SqsResource(string arn = default)
         {
             // to ensure "arn" is required (not null)
             if (arn == null)
@@ -129,19 +129,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Arn (string) maxLength
             if(this.Arn != null && this.Arn.Length > 1000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Arn, length must be less than 1000.", new [] { "Arn" });
+                yield return new ValidationResult("Invalid value for Arn, length must be less than 1000.", new [] { "Arn" });
             }
 
             // Arn (string) pattern
             Regex regexArn = new Regex(@"^arn:aws:sqs:\\S+:\\S+:\\S+", RegexOptions.CultureInvariant);
             if (false == regexArn.Match(this.Arn).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Arn, must match a pattern of " + regexArn, new [] { "Arn" });
+                yield return new ValidationResult("Invalid value for Arn, must match a pattern of " + regexArn, new [] { "Arn" });
             }
 
             yield break;

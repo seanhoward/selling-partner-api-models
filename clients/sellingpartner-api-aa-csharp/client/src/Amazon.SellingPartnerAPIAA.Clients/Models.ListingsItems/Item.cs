@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Item() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <param name="procurement">The vendor procurement information for the listings item..</param>
         /// <param name="relationships">relationships.</param>
         /// <param name="productTypes">productTypes.</param>
-        public Item(string sku = default(string), ItemSummaries summaries = default(ItemSummaries), Newtonsoft.Json.Linq.JObject attributes = default(Newtonsoft.Json.Linq.JObject), ItemIssues issues = default(ItemIssues), ItemOffers offers = default(ItemOffers), List<FulfillmentAvailability> fulfillmentAvailability = default(List<FulfillmentAvailability>), List<ItemProcurement> procurement = default(List<ItemProcurement>), ItemRelationships relationships = default(ItemRelationships), ItemProductTypes productTypes = default(ItemProductTypes))
+        public Item(string sku = default, ItemSummaries summaries = default, Newtonsoft.Json.Linq.JObject attributes = default, ItemIssues issues = default, ItemOffers offers = default, List<FulfillmentAvailability> fulfillmentAvailability = default, List<ItemProcurement> procurement = default, ItemRelationships relationships = default, ItemProductTypes productTypes = default)
         {
             // to ensure "sku" is required (not null)
             if (sku == null)
@@ -259,7 +259,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

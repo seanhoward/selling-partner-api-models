@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="ltlTrackingDetail">ltlTrackingDetail.</param>
         /// <param name="spdTrackingDetail">spdTrackingDetail.</param>
-        public TrackingDetails(LtlTrackingDetail ltlTrackingDetail = default(LtlTrackingDetail), SpdTrackingDetail spdTrackingDetail = default(SpdTrackingDetail))
+        public TrackingDetails(LtlTrackingDetail ltlTrackingDetail = default, SpdTrackingDetail spdTrackingDetail = default)
         {
             this.LtlTrackingDetail = ltlTrackingDetail;
             this.SpdTrackingDetail = spdTrackingDetail;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

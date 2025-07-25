@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// Initializes a new instance of the <see cref="PaginationResponse" /> class.
         /// </summary>
         /// <param name="totalResults">Total number of results matching the given filter criteria..</param>
-        public PaginationResponse(long? totalResults = default(long?))
+        public PaginationResponse(long? totalResults = default)
         {
             this.TotalResults = totalResults;
         }
@@ -116,12 +116,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // TotalResults (long?) minimum
             if(this.TotalResults < (long?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TotalResults, must be a value greater than or equal to 0.", new [] { "TotalResults" });
+                yield return new ValidationResult("Invalid value for TotalResults, must be a value greater than or equal to 0.", new [] { "TotalResults" });
             }
 
             yield break;

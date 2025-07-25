@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// Initializes a new instance of the <see cref="ExportInvoicesResponse" /> class.
         /// </summary>
         /// <param name="exportId">The export identifier..</param>
-        public ExportInvoicesResponse(string exportId = default(string))
+        public ExportInvoicesResponse(string exportId = default)
         {
             this.ExportId = exportId;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <param name="productName">The localized language product title of the item within the specific marketplace..</param>
         /// <param name="totalQuantity">The total number of units in an inbound shipment or in Amazon fulfillment centers..</param>
         /// <param name="stores">A list of seller-enrolled stores that apply to this seller SKU..</param>
-        public InventorySummary(string asin = default(string), string fnSku = default(string), string sellerSku = default(string), string condition = default(string), InventoryDetails inventoryDetails = default(InventoryDetails), DateTime? lastUpdatedTime = default(DateTime?), string productName = default(string), int? totalQuantity = default(int?), List<string> stores = default(List<string>))
+        public InventorySummary(string asin = default, string fnSku = default, string sellerSku = default, string condition = default, InventoryDetails inventoryDetails = default, DateTime? lastUpdatedTime = default, string productName = default, int? totalQuantity = default, List<string> stores = default)
         {
             this.Asin = asin;
             this.FnSku = fnSku;
@@ -251,7 +251,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

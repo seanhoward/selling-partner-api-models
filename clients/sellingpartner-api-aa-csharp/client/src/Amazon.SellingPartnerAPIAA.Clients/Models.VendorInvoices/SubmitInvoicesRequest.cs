@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// Initializes a new instance of the <see cref="SubmitInvoicesRequest" /> class.
         /// </summary>
         /// <param name="invoices">An array of Invoice objects representing the invoices or credit notes to be submitted..</param>
-        public SubmitInvoicesRequest(List<Invoice> invoices = default(List<Invoice>))
+        public SubmitInvoicesRequest(List<Invoice> invoices = default)
         {
             this.Invoices = invoices;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

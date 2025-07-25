@@ -60,14 +60,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <summary>
         /// Initializes a new instance of the <see cref="Duration" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Duration() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Duration" /> class.
         /// </summary>
         /// <param name="durationUnit">Unit for duration. (required).</param>
         /// <param name="durationValue">Value for the duration in terms of the durationUnit. (required).</param>
-        public Duration(DurationUnitEnum durationUnit = default(DurationUnitEnum), int? durationValue = default(int?))
+        public Duration(DurationUnitEnum durationUnit = default, int? durationValue = default)
         {
             // to ensure "durationUnit" is required (not null)
             if (durationUnit == null)
@@ -175,7 +175,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

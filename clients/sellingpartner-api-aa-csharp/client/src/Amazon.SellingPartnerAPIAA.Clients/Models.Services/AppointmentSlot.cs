@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="startTime">Time window start time in ISO 8601 format..</param>
         /// <param name="endTime">Time window end time in ISO 8601 format..</param>
         /// <param name="capacity">Number of resources for which a slot can be reserved..</param>
-        public AppointmentSlot(DateTime? startTime = default(DateTime?), DateTime? endTime = default(DateTime?), int? capacity = default(int?))
+        public AppointmentSlot(DateTime? startTime = default, DateTime? endTime = default, int? capacity = default)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
@@ -150,12 +150,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Capacity (int?) minimum
             if(this.Capacity < (int?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Capacity, must be a value greater than or equal to 0.", new [] { "Capacity" });
+                yield return new ValidationResult("Invalid value for Capacity, must be a value greater than or equal to 0.", new [] { "Capacity" });
             }
 
             yield break;

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
         /// <summary>
         /// Initializes a new instance of the <see cref="InitiatePayoutResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InitiatePayoutResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InitiatePayoutResponse" /> class.
         /// </summary>
         /// <param name="payoutReferenceId">The financial event group ID for a successfully initiated payout. You can use this ID to track payout information. (required).</param>
-        public InitiatePayoutResponse(string payoutReferenceId = default(string))
+        public InitiatePayoutResponse(string payoutReferenceId = default)
         {
             // to ensure "payoutReferenceId" is required (not null)
             if (payoutReferenceId == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

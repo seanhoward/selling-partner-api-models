@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemAcknowledgement" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderItemAcknowledgement() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemAcknowledgement" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <param name="buyerProductIdentifier">Buyer&#39;s standard identification number (ASIN) of an item..</param>
         /// <param name="vendorProductIdentifier">The vendor selected product identification of the item. Should be the same as was provided in the purchase order..</param>
         /// <param name="acknowledgedQuantity">Details of quantity acknowledged with the above acknowledgement code. (required).</param>
-        public OrderItemAcknowledgement(string itemSequenceNumber = default(string), string buyerProductIdentifier = default(string), string vendorProductIdentifier = default(string), ItemQuantity acknowledgedQuantity = default(ItemQuantity))
+        public OrderItemAcknowledgement(string itemSequenceNumber = default, string buyerProductIdentifier = default, string vendorProductIdentifier = default, ItemQuantity acknowledgedQuantity = default)
         {
             // to ensure "itemSequenceNumber" is required (not null)
             if (itemSequenceNumber == null)
@@ -188,7 +188,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

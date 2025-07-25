@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingService" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShippingService() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingService" /> class.
@@ -52,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="availableFormatOptionsForLabel">availableFormatOptionsForLabel.</param>
         /// <param name="requiresAdditionalSellerInputs">When true, additional seller inputs are required. (required).</param>
         /// <param name="benefits">benefits.</param>
-        public ShippingService(string shippingServiceName = default(string), string carrierName = default(string), string shippingServiceId = default(string), string shippingServiceOfferId = default(string), DateTime? shipDate = default(DateTime?), DateTime? earliestEstimatedDeliveryDate = default(DateTime?), DateTime? latestEstimatedDeliveryDate = default(DateTime?), CurrencyAmount rate = default(CurrencyAmount), ShippingServiceOptions shippingServiceOptions = default(ShippingServiceOptions), AvailableShippingServiceOptions availableShippingServiceOptions = default(AvailableShippingServiceOptions), LabelFormatList availableLabelFormats = default(LabelFormatList), AvailableFormatOptionsForLabelList availableFormatOptionsForLabel = default(AvailableFormatOptionsForLabelList), bool? requiresAdditionalSellerInputs = default(bool?), Benefits benefits = default(Benefits))
+        public ShippingService(string shippingServiceName = default, string carrierName = default, string shippingServiceId = default, string shippingServiceOfferId = default, DateTime? shipDate = default, DateTime? earliestEstimatedDeliveryDate = default, DateTime? latestEstimatedDeliveryDate = default, CurrencyAmount rate = default, ShippingServiceOptions shippingServiceOptions = default, AvailableShippingServiceOptions availableShippingServiceOptions = default, LabelFormatList availableLabelFormats = default, AvailableFormatOptionsForLabelList availableFormatOptionsForLabel = default, bool? requiresAdditionalSellerInputs = default, Benefits benefits = default)
         {
             // to ensure "shippingServiceName" is required (not null)
             if (shippingServiceName == null)
@@ -401,7 +401,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

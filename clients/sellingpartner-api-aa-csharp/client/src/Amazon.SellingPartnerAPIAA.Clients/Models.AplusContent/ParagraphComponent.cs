@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ParagraphComponent" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ParagraphComponent() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ParagraphComponent" /> class.
         /// </summary>
         /// <param name="textList">textList (required).</param>
-        public ParagraphComponent(List<TextComponent> textList = default(List<TextComponent>))
+        public ParagraphComponent(List<TextComponent> textList = default)
         {
             // to ensure "textList" is required (not null)
             if (textList == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

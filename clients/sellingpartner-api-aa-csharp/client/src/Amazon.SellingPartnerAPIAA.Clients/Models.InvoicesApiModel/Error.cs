@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Error() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// <param name="code">An error code that identifies the type of error that occurred. (required).</param>
         /// <param name="details">Additional details that can help the caller understand or fix the issue..</param>
         /// <param name="message">A message that describes the error condition. (required).</param>
-        public Error(string code = default(string), string details = default(string), string message = default(string))
+        public Error(string code = default, string details = default, string message = default)
         {
             // to ensure "code" is required (not null)
             if (code == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailabilityRecord" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AvailabilityRecord() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailabilityRecord" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="endTime">Denotes the time till when the resource is available in a day in ISO-8601 format. (required).</param>
         /// <param name="recurrence">Recurrence object containing the recurrence pattern of schedule..</param>
         /// <param name="capacity">Signifies the capacity of a resource which is available..</param>
-        public AvailabilityRecord(DateTime? startTime = default(DateTime?), DateTime? endTime = default(DateTime?), Recurrence recurrence = default(Recurrence), int? capacity = default(int?))
+        public AvailabilityRecord(DateTime? startTime = default, DateTime? endTime = default, Recurrence recurrence = default, int? capacity = default)
         {
             // to ensure "startTime" is required (not null)
             if (startTime == null)
@@ -188,12 +188,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Capacity (int?) minimum
             if(this.Capacity < (int?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Capacity, must be a value greater than or equal to 1.", new [] { "Capacity" });
+                yield return new ValidationResult("Invalid value for Capacity, must be a value greater than or equal to 1.", new [] { "Capacity" });
             }
 
             yield break;

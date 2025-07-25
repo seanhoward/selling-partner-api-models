@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportScheduleList" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ReportScheduleList() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportScheduleList" /> class.
         /// </summary>
         /// <param name="reportSchedules">Detailed information about a report schedule. (required).</param>
-        public ReportScheduleList(List<ReportSchedule> reportSchedules = default(List<ReportSchedule>))
+        public ReportScheduleList(List<ReportSchedule> reportSchedules = default)
         {
             // to ensure "reportSchedules" is required (not null)
             if (reportSchedules == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

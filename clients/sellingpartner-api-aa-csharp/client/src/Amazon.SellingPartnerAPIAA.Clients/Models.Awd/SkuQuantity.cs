@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="SkuQuantity" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SkuQuantity() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SkuQuantity" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="expectedQuantity">expectedQuantity (required).</param>
         /// <param name="receivedQuantity">receivedQuantity.</param>
         /// <param name="sku">The merchant stock keeping unit (required).</param>
-        public SkuQuantity(InventoryQuantity expectedQuantity = default(InventoryQuantity), InventoryQuantity receivedQuantity = default(InventoryQuantity), string sku = default(string))
+        public SkuQuantity(InventoryQuantity expectedQuantity = default, InventoryQuantity receivedQuantity = default, string sku = default)
         {
             // to ensure "expectedQuantity" is required (not null)
             if (expectedQuantity == null)
@@ -169,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

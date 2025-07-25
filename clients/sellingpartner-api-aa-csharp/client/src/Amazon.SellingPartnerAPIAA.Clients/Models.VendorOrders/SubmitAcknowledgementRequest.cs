@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// Initializes a new instance of the <see cref="SubmitAcknowledgementRequest" /> class.
         /// </summary>
         /// <param name="acknowledgements">An array of order acknowledgements to be submitted..</param>
-        public SubmitAcknowledgementRequest(List<OrderAcknowledgement> acknowledgements = default(List<OrderAcknowledgement>))
+        public SubmitAcknowledgementRequest(List<OrderAcknowledgement> acknowledgements = default)
         {
             this.Acknowledgements = acknowledgements;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

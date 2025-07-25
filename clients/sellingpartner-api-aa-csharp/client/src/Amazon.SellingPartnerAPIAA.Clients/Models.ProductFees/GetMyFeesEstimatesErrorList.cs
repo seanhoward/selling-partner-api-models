@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <summary>
         /// Initializes a new instance of the <see cref="GetMyFeesEstimatesErrorList" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetMyFeesEstimatesErrorList() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetMyFeesEstimatesErrorList" /> class.
         /// </summary>
         /// <param name="errors">errors (required).</param>
-        public GetMyFeesEstimatesErrorList(List<Error> errors = default(List<Error>))
+        public GetMyFeesEstimatesErrorList(List<Error> errors = default)
         {
             // to ensure "errors" is required (not null)
             if (errors == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

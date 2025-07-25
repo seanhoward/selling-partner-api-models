@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// Initializes a new instance of the <see cref="GetInvoicesAttributesResponse" /> class.
         /// </summary>
         /// <param name="invoicesAttributes">invoicesAttributes.</param>
-        public GetInvoicesAttributesResponse(InvoicesAttributes invoicesAttributes = default(InvoicesAttributes))
+        public GetInvoicesAttributesResponse(InvoicesAttributes invoicesAttributes = default)
         {
             this.InvoicesAttributes = invoicesAttributes;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

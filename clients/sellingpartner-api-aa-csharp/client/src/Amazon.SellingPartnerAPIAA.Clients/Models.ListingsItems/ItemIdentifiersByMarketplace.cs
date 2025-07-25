@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="marketplaceId">A marketplace identifier. Identifies the Amazon marketplace for the listings item..</param>
         /// <param name="asin">Amazon Standard Identification Number (ASIN) of the listings item..</param>
-        public ItemIdentifiersByMarketplace(string marketplaceId = default(string), string asin = default(string))
+        public ItemIdentifiersByMarketplace(string marketplaceId = default, string asin = default)
         {
             this.MarketplaceId = marketplaceId;
             this.Asin = asin;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

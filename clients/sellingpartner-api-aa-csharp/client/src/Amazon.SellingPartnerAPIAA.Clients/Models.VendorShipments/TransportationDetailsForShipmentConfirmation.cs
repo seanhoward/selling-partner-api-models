@@ -70,7 +70,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="carrierShipmentReferenceNumber">The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations..</param>
         /// <param name="transportationMode">The mode of transportation for this shipment..</param>
         /// <param name="billOfLadingNumber">The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field..</param>
-        public TransportationDetailsForShipmentConfirmation(string carrierScac = default(string), string carrierShipmentReferenceNumber = default(string), TransportationModeEnum? transportationMode = default(TransportationModeEnum?), string billOfLadingNumber = default(string))
+        public TransportationDetailsForShipmentConfirmation(string carrierScac = default, string carrierShipmentReferenceNumber = default, TransportationModeEnum? transportationMode = default, string billOfLadingNumber = default)
         {
             this.CarrierScac = carrierScac;
             this.CarrierShipmentReferenceNumber = carrierShipmentReferenceNumber;
@@ -194,7 +194,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

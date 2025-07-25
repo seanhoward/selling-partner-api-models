@@ -66,14 +66,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <summary>
         /// Initializes a new instance of the <see cref="ResearchingQuantityEntry" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ResearchingQuantityEntry() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ResearchingQuantityEntry" /> class.
         /// </summary>
         /// <param name="name">The duration of the research. (required).</param>
         /// <param name="quantity">The number of units. (required).</param>
-        public ResearchingQuantityEntry(NameEnum name = default(NameEnum), int? quantity = default(int?))
+        public ResearchingQuantityEntry(NameEnum name = default, int? quantity = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -181,7 +181,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

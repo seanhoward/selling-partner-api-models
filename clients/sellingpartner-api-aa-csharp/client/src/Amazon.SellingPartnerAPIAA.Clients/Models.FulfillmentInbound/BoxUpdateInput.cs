@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="BoxUpdateInput" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected BoxUpdateInput() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="BoxUpdateInput" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="packageId">Primary key to uniquely identify a Box Package. PackageId must be provided if the intent is to update an existing box. Adding a new box will not require providing this value. Any existing PackageIds not provided will be treated as to-be-removed.</param>
         /// <param name="quantity">The number of containers where all other properties like weight or dimensions are identical. (required).</param>
         /// <param name="weight">weight (required).</param>
-        public BoxUpdateInput(BoxContentInformationSource contentInformationSource = default(BoxContentInformationSource), Dimensions dimensions = default(Dimensions), List<ItemInput> items = default(List<ItemInput>), string packageId = default(string), int? quantity = default(int?), Weight weight = default(Weight))
+        public BoxUpdateInput(BoxContentInformationSource contentInformationSource = default, Dimensions dimensions = default, List<ItemInput> items = default, string packageId = default, int? quantity = default, Weight weight = default)
         {
             // to ensure "contentInformationSource" is required (not null)
             if (contentInformationSource == null)
@@ -235,37 +235,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PackageId (string) maxLength
             if(this.PackageId != null && this.PackageId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackageId, length must be less than 38.", new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, length must be less than 38.", new [] { "PackageId" });
             }
 
             // PackageId (string) minLength
             if(this.PackageId != null && this.PackageId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackageId, length must be greater than 38.", new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, length must be greater than 38.", new [] { "PackageId" });
             }
 
             // PackageId (string) pattern
             Regex regexPackageId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPackageId.Match(this.PackageId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PackageId, must match a pattern of " + regexPackageId, new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, must match a pattern of " + regexPackageId, new [] { "PackageId" });
             }
 
             // Quantity (int?) maximum
             if(this.Quantity > (int?)10000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
             }
 
             // Quantity (int?) minimum
             if(this.Quantity < (int?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
             }
 
             yield break;

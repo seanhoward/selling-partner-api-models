@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOffersRequestPagination" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListOffersRequestPagination() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOffersRequestPagination" /> class.
         /// </summary>
         /// <param name="limit">The maximum number of results to return in the response. (required).</param>
         /// <param name="offset">The offset from which to retrieve the number of results specified by the &#x60;limit&#x60; value. The first result is at offset 0. (required).</param>
-        public ListOffersRequestPagination(long? limit = default(long?), long? offset = default(long?))
+        public ListOffersRequestPagination(long? limit = default, long? offset = default)
         {
             // to ensure "limit" is required (not null)
             if (limit == null)
@@ -154,30 +154,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Limit (long?) maximum
             if(this.Limit > (long?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Limit, must be a value less than or equal to 100.", new [] { "Limit" });
+                yield return new ValidationResult("Invalid value for Limit, must be a value less than or equal to 100.", new [] { "Limit" });
             }
 
             // Limit (long?) minimum
             if(this.Limit < (long?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Limit, must be a value greater than or equal to 1.", new [] { "Limit" });
+                yield return new ValidationResult("Invalid value for Limit, must be a value greater than or equal to 1.", new [] { "Limit" });
             }
 
             // Offset (long?) maximum
             if(this.Offset > (long?)9000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Offset, must be a value less than or equal to 9000.", new [] { "Offset" });
+                yield return new ValidationResult("Invalid value for Offset, must be a value less than or equal to 9000.", new [] { "Offset" });
             }
 
             // Offset (long?) minimum
             if(this.Offset < (long?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Offset, must be a value greater than or equal to 0.", new [] { "Offset" });
+                yield return new ValidationResult("Invalid value for Offset, must be a value greater than or equal to 0.", new [] { "Offset" });
             }
 
             yield break;

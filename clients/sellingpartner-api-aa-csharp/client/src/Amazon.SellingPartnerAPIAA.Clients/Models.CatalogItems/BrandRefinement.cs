@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandRefinement" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected BrandRefinement() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandRefinement" /> class.
         /// </summary>
         /// <param name="numberOfResults">The estimated number of results that would still be returned if refinement key applied. (required).</param>
         /// <param name="brandName">Brand name. For display and can be used as a search refinement. (required).</param>
-        public BrandRefinement(int? numberOfResults = default(int?), string brandName = default(string))
+        public BrandRefinement(int? numberOfResults = default, string brandName = default)
         {
             // to ensure "numberOfResults" is required (not null)
             if (numberOfResults == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

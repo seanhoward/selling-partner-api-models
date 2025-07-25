@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="marketplaceId">The identifier of the marketplace where the transaction occured..</param>
         /// <param name="marketplaceName">The name of the marketplace where the transaction occurred. For example: &#x60;Amazon.com&#x60;,&#x60;Amazon.in&#x60;.</param>
-        public MarketplaceDetails(string marketplaceId = default(string), string marketplaceName = default(string))
+        public MarketplaceDetails(string marketplaceId = default, string marketplaceName = default)
         {
             this.MarketplaceId = marketplaceId;
             this.MarketplaceName = marketplaceName;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

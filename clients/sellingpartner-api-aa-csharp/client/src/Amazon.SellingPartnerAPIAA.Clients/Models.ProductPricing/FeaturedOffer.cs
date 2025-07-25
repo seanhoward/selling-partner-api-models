@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOffer" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeaturedOffer() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOffer" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <param name="offerIdentifier">An offer identifier used to identify the merchant of the featured offer. Since this may not belong to the requester, the SKU field is omitted. (required).</param>
         /// <param name="condition">The item condition..</param>
         /// <param name="price">The current active price of the offer..</param>
-        public FeaturedOffer(OfferIdentifier offerIdentifier = default(OfferIdentifier), Condition? condition = default(Condition?), Price price = default(Price))
+        public FeaturedOffer(OfferIdentifier offerIdentifier = default, Condition? condition = default, Price price = default)
         {
             // to ensure "offerIdentifier" is required (not null)
             if (offerIdentifier == null)
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

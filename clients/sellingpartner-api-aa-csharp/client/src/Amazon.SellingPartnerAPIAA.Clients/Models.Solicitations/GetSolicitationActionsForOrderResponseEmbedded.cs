@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSolicitationActionsForOrderResponseEmbedded" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetSolicitationActionsForOrderResponseEmbedded() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSolicitationActionsForOrderResponseEmbedded" /> class.
         /// </summary>
         /// <param name="actions">actions (required).</param>
-        public GetSolicitationActionsForOrderResponseEmbedded(List<GetSolicitationActionResponse> actions = default(List<GetSolicitationActionResponse>))
+        public GetSolicitationActionsForOrderResponseEmbedded(List<GetSolicitationActionResponse> actions = default)
         {
             // to ensure "actions" is required (not null)
             if (actions == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

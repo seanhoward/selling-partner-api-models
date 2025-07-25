@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="PrescriptionDetail" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PrescriptionDetail() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PrescriptionDetail" /> class.
@@ -45,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="refillsRemaining">The number of refills remaining for the prescription used to verify the regulated product. If a prescription originally had 10 total refills, this value must be &#x60;10&#x60; for the first order, &#x60;9&#x60; for the second order, and &#x60;0&#x60; for the eleventh order. If a prescription originally had no refills, this value must be 0. (required).</param>
         /// <param name="clinicId">The identifier for the clinic which provided the prescription used to verify the regulated product. (required).</param>
         /// <param name="usageInstructions">The instructions for the prescription as provided by the approver of the regulated product. (required).</param>
-        public PrescriptionDetail(string prescriptionId = default(string), DateTime? expirationDate = default(DateTime?), int? writtenQuantity = default(int?), int? totalRefillsAuthorized = default(int?), int? refillsRemaining = default(int?), string clinicId = default(string), string usageInstructions = default(string))
+        public PrescriptionDetail(string prescriptionId = default, DateTime? expirationDate = default, int? writtenQuantity = default, int? totalRefillsAuthorized = default, int? refillsRemaining = default, string clinicId = default, string usageInstructions = default)
         {
             // to ensure "prescriptionId" is required (not null)
             if (prescriptionId == null)
@@ -279,24 +279,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // WrittenQuantity (int?) minimum
             if(this.WrittenQuantity < (int?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WrittenQuantity, must be a value greater than or equal to 1.", new [] { "WrittenQuantity" });
+                yield return new ValidationResult("Invalid value for WrittenQuantity, must be a value greater than or equal to 1.", new [] { "WrittenQuantity" });
             }
 
             // TotalRefillsAuthorized (int?) minimum
             if(this.TotalRefillsAuthorized < (int?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TotalRefillsAuthorized, must be a value greater than or equal to 0.", new [] { "TotalRefillsAuthorized" });
+                yield return new ValidationResult("Invalid value for TotalRefillsAuthorized, must be a value greater than or equal to 0.", new [] { "TotalRefillsAuthorized" });
             }
 
             // RefillsRemaining (int?) minimum
             if(this.RefillsRemaining < (int?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RefillsRemaining, must be a value greater than or equal to 0.", new [] { "RefillsRemaining" });
+                yield return new ValidationResult("Invalid value for RefillsRemaining, must be a value greater than or equal to 0.", new [] { "RefillsRemaining" });
             }
 
             yield break;

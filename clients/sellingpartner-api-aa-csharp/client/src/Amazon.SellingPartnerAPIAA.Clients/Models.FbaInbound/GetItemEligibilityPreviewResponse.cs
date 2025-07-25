@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
         /// </summary>
         /// <param name="payload">The payload for the getItemEligibilityPreview operation..</param>
         /// <param name="errors">An unexpected condition occurred during the GetItemEligibilityPreview operation..</param>
-        public GetItemEligibilityPreviewResponse(ItemEligibilityPreview payload = default(ItemEligibilityPreview), ErrorList errors = default(ErrorList))
+        public GetItemEligibilityPreviewResponse(ItemEligibilityPreview payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

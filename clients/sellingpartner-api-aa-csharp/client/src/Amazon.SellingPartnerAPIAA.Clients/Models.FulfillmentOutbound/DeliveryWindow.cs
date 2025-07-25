@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryWindow" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected DeliveryWindow() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryWindow" /> class.
         /// </summary>
         /// <param name="startDate">The date and time of the start of the Scheduled Delivery window. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (required).</param>
         /// <param name="endDate">The date and time of the end of the Scheduled Delivery window. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (required).</param>
-        public DeliveryWindow(DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?))
+        public DeliveryWindow(DateTime? startDate = default, DateTime? endDate = default)
         {
             // to ensure "startDate" is required (not null)
             if (startDate == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

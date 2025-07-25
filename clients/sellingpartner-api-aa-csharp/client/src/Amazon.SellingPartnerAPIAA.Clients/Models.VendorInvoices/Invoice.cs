@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// <summary>
         /// Initializes a new instance of the <see cref="Invoice" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Invoice() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Invoice" /> class.
@@ -80,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// <param name="chargeDetails">Total charge amount details for all line items..</param>
         /// <param name="allowanceDetails">Total allowance amount details for all line items..</param>
         /// <param name="items">The list of invoice items..</param>
-        public Invoice(InvoiceTypeEnum invoiceType = default(InvoiceTypeEnum), string id = default(string), string referenceNumber = default(string), DateTime? date = default(DateTime?), PartyIdentification remitToParty = default(PartyIdentification), PartyIdentification shipToParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), PartyIdentification billToParty = default(PartyIdentification), PaymentTerms paymentTerms = default(PaymentTerms), Money invoiceTotal = default(Money), List<TaxDetails> taxDetails = default(List<TaxDetails>), List<AdditionalDetails> additionalDetails = default(List<AdditionalDetails>), List<ChargeDetails> chargeDetails = default(List<ChargeDetails>), List<AllowanceDetails> allowanceDetails = default(List<AllowanceDetails>), List<InvoiceItem> items = default(List<InvoiceItem>))
+        public Invoice(InvoiceTypeEnum invoiceType = default, string id = default, string referenceNumber = default, DateTime? date = default, PartyIdentification remitToParty = default, PartyIdentification shipToParty = default, PartyIdentification shipFromParty = default, PartyIdentification billToParty = default, PaymentTerms paymentTerms = default, Money invoiceTotal = default, List<TaxDetails> taxDetails = default, List<AdditionalDetails> additionalDetails = default, List<ChargeDetails> chargeDetails = default, List<AllowanceDetails> allowanceDetails = default, List<InvoiceItem> items = default)
         {
             // to ensure "invoiceType" is required (not null)
             if (invoiceType == null)
@@ -420,7 +420,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

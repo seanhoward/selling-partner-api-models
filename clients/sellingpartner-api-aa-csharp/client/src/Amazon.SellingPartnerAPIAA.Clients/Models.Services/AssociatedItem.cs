@@ -79,7 +79,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="itemStatus">The status of the item..</param>
         /// <param name="brandName">The brand name of the item..</param>
         /// <param name="itemDelivery">Delivery information for the item..</param>
-        public AssociatedItem(string asin = default(string), string title = default(string), int? quantity = default(int?), string orderId = default(string), ItemStatusEnum? itemStatus = default(ItemStatusEnum?), string brandName = default(string), ItemDelivery itemDelivery = default(ItemDelivery))
+        public AssociatedItem(string asin = default, string title = default, int? quantity = default, string orderId = default, ItemStatusEnum? itemStatus = default, string brandName = default, ItemDelivery itemDelivery = default)
         {
             this.Asin = asin;
             this.Title = title;
@@ -251,7 +251,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

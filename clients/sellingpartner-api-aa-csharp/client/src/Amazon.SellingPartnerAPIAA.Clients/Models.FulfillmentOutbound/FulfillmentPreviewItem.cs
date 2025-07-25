@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentPreviewItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FulfillmentPreviewItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentPreviewItem" /> class.
@@ -70,7 +70,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="sellerFulfillmentOrderItemId">A fulfillment order item identifier that the seller created with a call to the &#x60;createFulfillmentOrder&#x60; operation. (required).</param>
         /// <param name="estimatedShippingWeight">The estimated shipping weight of the item quantity for a single item, as identified by &#x60;sellerSku&#x60;, in a shipment..</param>
         /// <param name="shippingWeightCalculationMethod">The method used to calculate the estimated shipping weight..</param>
-        public FulfillmentPreviewItem(string sellerSku = default(string), int? quantity = default(int?), string sellerFulfillmentOrderItemId = default(string), Weight estimatedShippingWeight = default(Weight), ShippingWeightCalculationMethodEnum? shippingWeightCalculationMethod = default(ShippingWeightCalculationMethodEnum?))
+        public FulfillmentPreviewItem(string sellerSku = default, int? quantity = default, string sellerFulfillmentOrderItemId = default, Weight estimatedShippingWeight = default, ShippingWeightCalculationMethodEnum? shippingWeightCalculationMethod = default)
         {
             // to ensure "sellerSku" is required (not null)
             if (sellerSku == null)
@@ -234,7 +234,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

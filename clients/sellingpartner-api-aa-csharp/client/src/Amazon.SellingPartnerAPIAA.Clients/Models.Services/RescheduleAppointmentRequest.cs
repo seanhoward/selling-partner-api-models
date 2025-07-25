@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="RescheduleAppointmentRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RescheduleAppointmentRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RescheduleAppointmentRequest" /> class.
         /// </summary>
         /// <param name="appointmentTime">Input appointment time details. (required).</param>
         /// <param name="rescheduleReasonCode">Input appointment reschedule reason. (required).</param>
-        public RescheduleAppointmentRequest(AppointmentTimeInput appointmentTime = default(AppointmentTimeInput), string rescheduleReasonCode = default(string))
+        public RescheduleAppointmentRequest(AppointmentTimeInput appointmentTime = default, string rescheduleReasonCode = default)
         {
             // to ensure "appointmentTime" is required (not null)
             if (appointmentTime == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

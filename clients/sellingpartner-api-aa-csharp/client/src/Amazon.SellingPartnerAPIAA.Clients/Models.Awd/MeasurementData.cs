@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="MeasurementData" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected MeasurementData() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="MeasurementData" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="dimensions">Dimensions of the package. Dimensions are required when creating an inbound or outbound order..</param>
         /// <param name="volume">Volume of the package..</param>
         /// <param name="weight">Weight of the package. (required).</param>
-        public MeasurementData(PackageDimensions dimensions = default(PackageDimensions), PackageVolume volume = default(PackageVolume), PackageWeight weight = default(PackageWeight))
+        public MeasurementData(PackageDimensions dimensions = default, PackageVolume volume = default, PackageWeight weight = default)
         {
             // to ensure "weight" is required (not null)
             if (weight == null)
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

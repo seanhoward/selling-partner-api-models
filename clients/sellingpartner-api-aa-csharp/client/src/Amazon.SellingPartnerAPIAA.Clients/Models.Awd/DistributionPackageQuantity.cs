@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="DistributionPackageQuantity" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected DistributionPackageQuantity() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="DistributionPackageQuantity" /> class.
         /// </summary>
         /// <param name="count">Number of cases or pallets with the same package configuration. (required).</param>
         /// <param name="distributionPackage">distributionPackage (required).</param>
-        public DistributionPackageQuantity(int? count = default(int?), DistributionPackage distributionPackage = default(DistributionPackage))
+        public DistributionPackageQuantity(int? count = default, DistributionPackage distributionPackage = default)
         {
             // to ensure "count" is required (not null)
             if (count == null)
@@ -153,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

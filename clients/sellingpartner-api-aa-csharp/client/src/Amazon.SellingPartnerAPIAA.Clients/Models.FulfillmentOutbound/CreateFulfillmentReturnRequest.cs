@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFulfillmentReturnRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateFulfillmentReturnRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFulfillmentReturnRequest" /> class.
         /// </summary>
         /// <param name="items">items (required).</param>
-        public CreateFulfillmentReturnRequest(CreateReturnItemList items = default(CreateReturnItemList))
+        public CreateFulfillmentReturnRequest(CreateReturnItemList items = default)
         {
             // to ensure "items" is required (not null)
             if (items == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

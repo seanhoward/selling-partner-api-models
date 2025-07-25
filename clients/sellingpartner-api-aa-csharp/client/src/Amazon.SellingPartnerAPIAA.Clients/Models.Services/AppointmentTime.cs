@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentTime" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AppointmentTime() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentTime" /> class.
         /// </summary>
         /// <param name="startTime">The date and time of the start of the appointment window in ISO 8601 format. (required).</param>
         /// <param name="durationInMinutes">The duration of the appointment window, in minutes. (required).</param>
-        public AppointmentTime(DateTime? startTime = default(DateTime?), int? durationInMinutes = default(int?))
+        public AppointmentTime(DateTime? startTime = default, int? durationInMinutes = default)
         {
             // to ensure "startTime" is required (not null)
             if (startTime == null)
@@ -154,12 +154,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DurationInMinutes (int?) minimum
             if(this.DurationInMinutes < (int?)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DurationInMinutes, must be a value greater than or equal to 1.", new [] { "DurationInMinutes" });
+                yield return new ValidationResult("Invalid value for DurationInMinutes, must be a value greater than or equal to 1.", new [] { "DurationInMinutes" });
             }
 
             yield break;

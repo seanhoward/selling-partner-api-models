@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <summary>
         /// Initializes a new instance of the <see cref="Destination" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Destination() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Destination" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <param name="name">The developer-defined name for this destination. (required).</param>
         /// <param name="destinationId">The destination identifier generated when you created the destination. (required).</param>
         /// <param name="resource">The resource that will receive notifications associated with this destination. (required).</param>
-        public Destination(string name = default(string), string destinationId = default(string), DestinationResource resource = default(DestinationResource))
+        public Destination(string name = default, string destinationId = default, DestinationResource resource = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -179,12 +179,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 256)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 256.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 256.", new [] { "Name" });
             }
 
             yield break;

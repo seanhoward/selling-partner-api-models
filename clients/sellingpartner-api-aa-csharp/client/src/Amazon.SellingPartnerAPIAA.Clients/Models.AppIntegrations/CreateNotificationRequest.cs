@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateNotificationRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateNotificationRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateNotificationRequest" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// <param name="templateId">The unique identifier of the notification template you used to onboard your application. (required).</param>
         /// <param name="notificationParameters">The parameters specified in the template you used to onboard your application. (required).</param>
         /// <param name="marketplaceId">An encrypted marketplace identifier for the posted notification..</param>
-        public CreateNotificationRequest(string templateId = default(string), NotificationParameters notificationParameters = default(NotificationParameters), string marketplaceId = default(string))
+        public CreateNotificationRequest(string templateId = default, NotificationParameters notificationParameters = default, string marketplaceId = default)
         {
             // to ensure "templateId" is required (not null)
             if (templateId == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

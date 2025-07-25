@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateShipmentContentUpdatePreviewsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GenerateShipmentContentUpdatePreviewsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateShipmentContentUpdatePreviewsRequest" /> class.
         /// </summary>
         /// <param name="boxes">A list of boxes that will be present in the shipment after the update. (required).</param>
         /// <param name="items">A list of all items that will be present in the shipment after the update. (required).</param>
-        public GenerateShipmentContentUpdatePreviewsRequest(List<BoxUpdateInput> boxes = default(List<BoxUpdateInput>), List<ItemInput> items = default(List<ItemInput>))
+        public GenerateShipmentContentUpdatePreviewsRequest(List<BoxUpdateInput> boxes = default, List<ItemInput> items = default)
         {
             // to ensure "boxes" is required (not null)
             if (boxes == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ContainerItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerItem" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="unitPrice">The unit price of an item of this type (the total value of this item type in the container is unitPrice * quantity). (required).</param>
         /// <param name="unitWeight">The unit weight of an item of this type (the total weight of this item type in the container is unitWeight * quantity). (required).</param>
         /// <param name="title">A descriptive title of the item. (required).</param>
-        public ContainerItem(decimal? quantity = default(decimal?), Currency unitPrice = default(Currency), Weight unitWeight = default(Weight), string title = default(string))
+        public ContainerItem(decimal? quantity = default, Currency unitPrice = default, Weight unitWeight = default, string title = default)
         {
             // to ensure "quantity" is required (not null)
             if (quantity == null)
@@ -204,12 +204,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Title (string) maxLength
             if(this.Title != null && this.Title.Length > 30)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Title, length must be less than 30.", new [] { "Title" });
+                yield return new ValidationResult("Invalid value for Title, length must be less than 30.", new [] { "Title" });
             }
 
             yield break;

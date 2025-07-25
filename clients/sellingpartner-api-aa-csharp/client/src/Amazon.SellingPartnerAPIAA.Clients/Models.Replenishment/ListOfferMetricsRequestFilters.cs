@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOfferMetricsRequestFilters" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListOfferMetricsRequestFilters() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOfferMetricsRequestFilters" /> class.
@@ -54,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// <param name="marketplaceId">The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace. (required).</param>
         /// <param name="programTypes">programTypes (required).</param>
         /// <param name="asins">A list of Amazon Standard Identification Numbers (ASINs)..</param>
-        public ListOfferMetricsRequestFilters(AggregationFrequency? aggregationFrequency = default(AggregationFrequency?), TimeInterval timeInterval = default(TimeInterval), TimePeriodType timePeriodType = default(TimePeriodType), string marketplaceId = default(string), ProgramTypes programTypes = default(ProgramTypes), List<string> asins = default(List<string>))
+        public ListOfferMetricsRequestFilters(AggregationFrequency? aggregationFrequency = default, TimeInterval timeInterval = default, TimePeriodType timePeriodType = default, string marketplaceId = default, ProgramTypes programTypes = default, List<string> asins = default)
         {
             // to ensure "timeInterval" is required (not null)
             if (timeInterval == null)
@@ -235,7 +235,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

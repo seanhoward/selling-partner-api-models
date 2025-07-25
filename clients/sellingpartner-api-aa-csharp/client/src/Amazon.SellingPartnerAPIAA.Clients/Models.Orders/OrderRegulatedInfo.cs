@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderRegulatedInfo" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderRegulatedInfo() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderRegulatedInfo" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="regulatedInformation">The regulated information collected during purchase and used to verify the order. (required).</param>
         /// <param name="requiresDosageLabel">When true, the order requires attaching a dosage information label when shipped. (required).</param>
         /// <param name="regulatedOrderVerificationStatus">The order&#39;s verification status. (required).</param>
-        public OrderRegulatedInfo(string amazonOrderId = default(string), RegulatedInformation regulatedInformation = default(RegulatedInformation), bool? requiresDosageLabel = default(bool?), RegulatedOrderVerificationStatus regulatedOrderVerificationStatus = default(RegulatedOrderVerificationStatus))
+        public OrderRegulatedInfo(string amazonOrderId = default, RegulatedInformation regulatedInformation = default, bool? requiresDosageLabel = default, RegulatedOrderVerificationStatus regulatedOrderVerificationStatus = default)
         {
             // to ensure "amazonOrderId" is required (not null)
             if (amazonOrderId == null)
@@ -204,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

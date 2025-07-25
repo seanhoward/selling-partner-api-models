@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <summary>
         /// Initializes a new instance of the <see cref="PriceToEstimateFees" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PriceToEstimateFees() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PriceToEstimateFees" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <param name="listingPrice">The price of the item. (required).</param>
         /// <param name="shipping">The shipping cost..</param>
         /// <param name="points">The number of Amazon Points offered with the purchase of an item..</param>
-        public PriceToEstimateFees(MoneyType listingPrice = default(MoneyType), MoneyType shipping = default(MoneyType), Points points = default(Points))
+        public PriceToEstimateFees(MoneyType listingPrice = default, MoneyType shipping = default, Points points = default)
         {
             // to ensure "listingPrice" is required (not null)
             if (listingPrice == null)
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentConfirmation" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShipmentConfirmation() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentConfirmation" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="shipFromParty">Warehouse code of vendor. (required).</param>
         /// <param name="items">Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package. (required).</param>
         /// <param name="containers">Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package..</param>
-        public ShipmentConfirmation(string purchaseOrderNumber = default(string), ShipmentDetails shipmentDetails = default(ShipmentDetails), PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), List<Item> items = default(List<Item>), List<Container> containers = default(List<Container>))
+        public ShipmentConfirmation(string purchaseOrderNumber = default, ShipmentDetails shipmentDetails = default, PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, List<Item> items = default, List<Container> containers = default)
         {
             // to ensure "purchaseOrderNumber" is required (not null)
             if (purchaseOrderNumber == null)
@@ -246,13 +246,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PurchaseOrderNumber (string) pattern
             Regex regexPurchaseOrderNumber = new Regex(@"^[a-zA-Z0-9]+$", RegexOptions.CultureInvariant);
             if (false == regexPurchaseOrderNumber.Match(this.PurchaseOrderNumber).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new [] { "PurchaseOrderNumber" });
+                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new [] { "PurchaseOrderNumber" });
             }
 
             yield break;

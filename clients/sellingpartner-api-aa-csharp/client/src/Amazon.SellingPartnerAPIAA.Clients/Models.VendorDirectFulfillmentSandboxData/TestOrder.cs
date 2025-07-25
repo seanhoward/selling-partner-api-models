@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// <summary>
         /// Initializes a new instance of the <see cref="TestOrder" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TestOrder() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TestOrder" /> class.
         /// </summary>
         /// <param name="orderId">An error code that identifies the type of error that occurred. (required).</param>
-        public TestOrder(string orderId = default(string))
+        public TestOrder(string orderId = default)
         {
             // to ensure "orderId" is required (not null)
             if (orderId == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

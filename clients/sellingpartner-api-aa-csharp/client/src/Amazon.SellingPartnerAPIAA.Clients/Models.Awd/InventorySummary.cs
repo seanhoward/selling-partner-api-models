@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="InventorySummary" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InventorySummary() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InventorySummary" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="sku">The seller or merchant SKU. (required).</param>
         /// <param name="totalInboundQuantity">Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center.</param>
         /// <param name="totalOnhandQuantity">Total quantity that is present in AWD distribution centers..</param>
-        public InventorySummary(List<ExpirationDetails> expirationDetails = default(List<ExpirationDetails>), InventoryDetails inventoryDetails = default(InventoryDetails), string sku = default(string), long? totalInboundQuantity = default(long?), long? totalOnhandQuantity = default(long?))
+        public InventorySummary(List<ExpirationDetails> expirationDetails = default, InventoryDetails inventoryDetails = default, string sku = default, long? totalInboundQuantity = default, long? totalOnhandQuantity = default)
         {
             // to ensure "sku" is required (not null)
             if (sku == null)
@@ -196,7 +196,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

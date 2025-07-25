@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShippingLabelsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateShippingLabelsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShippingLabelsRequest" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="sellingParty">ID of the selling party or vendor. (required).</param>
         /// <param name="shipFromParty">Warehouse code of vendor. (required).</param>
         /// <param name="containers">A list of the packages in this shipment..</param>
-        public CreateShippingLabelsRequest(PartyIdentification sellingParty = default(PartyIdentification), PartyIdentification shipFromParty = default(PartyIdentification), List<Container> containers = default(List<Container>))
+        public CreateShippingLabelsRequest(PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, List<Container> containers = default)
         {
             // to ensure "sellingParty" is required (not null)
             if (sellingParty == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

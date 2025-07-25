@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// <summary>
         /// Initializes a new instance of the <see cref="ListHandoverSlotsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListHandoverSlotsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListHandoverSlotsResponse" /> class.
         /// </summary>
         /// <param name="amazonOrderId">amazonOrderId (required).</param>
         /// <param name="timeSlots">timeSlots (required).</param>
-        public ListHandoverSlotsResponse(string amazonOrderId = default(string), TimeSlots timeSlots = default(TimeSlots))
+        public ListHandoverSlotsResponse(string amazonOrderId = default, TimeSlots timeSlots = default)
         {
             // to ensure "amazonOrderId" is required (not null)
             if (amazonOrderId == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

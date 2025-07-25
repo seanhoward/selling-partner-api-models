@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="inboundPlans">A list of inbound plans with minimal information..</param>
         /// <param name="pagination">pagination.</param>
-        public ListInboundPlansResponse(List<InboundPlanSummary> inboundPlans = default(List<InboundPlanSummary>), Pagination pagination = default(Pagination))
+        public ListInboundPlansResponse(List<InboundPlanSummary> inboundPlans = default, Pagination pagination = default)
         {
             this.InboundPlans = inboundPlans;
             this.Pagination = pagination;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

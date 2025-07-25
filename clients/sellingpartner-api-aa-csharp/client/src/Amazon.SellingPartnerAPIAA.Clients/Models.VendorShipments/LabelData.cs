@@ -59,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="carrierCode">Unique identification of the carrier..</param>
         /// <param name="trackingId">Tracking Id for the transportation..</param>
         /// <param name="label">The base-64 encoded string that represents the shipment label..</param>
-        public LabelData(int? labelSequenceNumber = default(int?), LabelFormatEnum? labelFormat = default(LabelFormatEnum?), string carrierCode = default(string), string trackingId = default(string), string label = default(string))
+        public LabelData(int? labelSequenceNumber = default, LabelFormatEnum? labelFormat = default, string carrierCode = default, string trackingId = default, string label = default)
         {
             this.LabelSequenceNumber = labelSequenceNumber;
             this.LabelFormat = labelFormat;
@@ -199,7 +199,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

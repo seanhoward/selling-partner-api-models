@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Address() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="postalCode">The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation..</param>
         /// <param name="countryCode">The two-letter country code in [ISO 3166-1 alpha-2](https://www.iban.com/country-codes) format. (required).</param>
         /// <param name="phone">The phone number of the person, business or institution located at that address..</param>
-        public Address(string name = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string city = default(string), string county = default(string), string district = default(string), string stateOrRegion = default(string), string postalCode = default(string), string countryCode = default(string), string phone = default(string))
+        public Address(string name = default, string addressLine1 = default, string addressLine2 = default, string addressLine3 = default, string city = default, string county = default, string district = default, string stateOrRegion = default, string postalCode = default, string countryCode = default, string phone = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -315,7 +315,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

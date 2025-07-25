@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="technicianId">The technician identifier..</param>
         /// <param name="name">The name of the technician..</param>
-        public Technician(string technicianId = default(string), string name = default(string))
+        public Technician(string technicianId = default, string name = default)
         {
             this.TechnicianId = technicianId;
             this.Name = name;
@@ -133,18 +133,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // TechnicianId (string) maxLength
             if(this.TechnicianId != null && this.TechnicianId.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TechnicianId, length must be less than 50.", new [] { "TechnicianId" });
+                yield return new ValidationResult("Invalid value for TechnicianId, length must be less than 50.", new [] { "TechnicianId" });
             }
 
             // TechnicianId (string) minLength
             if(this.TechnicianId != null && this.TechnicianId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TechnicianId, length must be greater than 1.", new [] { "TechnicianId" });
+                yield return new ValidationResult("Invalid value for TechnicianId, length must be greater than 1.", new [] { "TechnicianId" });
             }
 
             yield break;

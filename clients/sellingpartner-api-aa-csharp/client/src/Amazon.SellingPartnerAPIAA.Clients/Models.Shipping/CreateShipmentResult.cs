@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShipmentResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateShipmentResult() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShipmentResult" /> class.
         /// </summary>
         /// <param name="shipmentId">shipmentId (required).</param>
         /// <param name="eligibleRates">eligibleRates (required).</param>
-        public CreateShipmentResult(string shipmentId = default(string), RateList eligibleRates = default(RateList))
+        public CreateShipmentResult(string shipmentId = default, RateList eligibleRates = default)
         {
             // to ensure "shipmentId" is required (not null)
             if (shipmentId == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

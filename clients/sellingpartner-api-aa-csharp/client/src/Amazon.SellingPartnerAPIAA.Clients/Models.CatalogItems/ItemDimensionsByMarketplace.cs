@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDimensionsByMarketplace" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemDimensionsByMarketplace() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDimensionsByMarketplace" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
         /// <param name="item">Dimensions of an Amazon catalog item..</param>
         /// <param name="package">Dimensions of an Amazon catalog item in its packaging..</param>
-        public ItemDimensionsByMarketplace(string marketplaceId = default(string), Dimensions item = default(Dimensions), Dimensions package = default(Dimensions))
+        public ItemDimensionsByMarketplace(string marketplaceId = default, Dimensions item = default, Dimensions package = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

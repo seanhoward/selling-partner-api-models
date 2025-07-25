@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="GetRatesResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetRatesResult() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetRatesResult" /> class.
         /// </summary>
         /// <param name="serviceRates">serviceRates (required).</param>
-        public GetRatesResult(ServiceRateList serviceRates = default(ServiceRateList))
+        public GetRatesResult(ServiceRateList serviceRates = default)
         {
             // to ensure "serviceRates" is required (not null)
             if (serviceRates == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

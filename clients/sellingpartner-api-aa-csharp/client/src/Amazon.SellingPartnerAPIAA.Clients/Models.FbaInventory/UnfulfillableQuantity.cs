@@ -40,7 +40,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <param name="carrierDamagedQuantity">The number of units in carrier damaged disposition..</param>
         /// <param name="defectiveQuantity">The number of units in defective disposition..</param>
         /// <param name="expiredQuantity">The number of units in expired disposition..</param>
-        public UnfulfillableQuantity(int? totalUnfulfillableQuantity = default(int?), int? customerDamagedQuantity = default(int?), int? warehouseDamagedQuantity = default(int?), int? distributorDamagedQuantity = default(int?), int? carrierDamagedQuantity = default(int?), int? defectiveQuantity = default(int?), int? expiredQuantity = default(int?))
+        public UnfulfillableQuantity(int? totalUnfulfillableQuantity = default, int? customerDamagedQuantity = default, int? warehouseDamagedQuantity = default, int? distributorDamagedQuantity = default, int? carrierDamagedQuantity = default, int? defectiveQuantity = default, int? expiredQuantity = default)
         {
             this.TotalUnfulfillableQuantity = totalUnfulfillableQuantity;
             this.CustomerDamagedQuantity = customerDamagedQuantity;
@@ -218,7 +218,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

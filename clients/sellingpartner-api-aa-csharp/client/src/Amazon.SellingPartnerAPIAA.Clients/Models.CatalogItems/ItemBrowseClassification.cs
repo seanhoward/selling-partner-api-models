@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemBrowseClassification" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ItemBrowseClassification() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemBrowseClassification" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <param name="displayName">Display name for the classification (browse node). (required).</param>
         /// <param name="classificationId">Identifier of the classification (browse node identifier). (required).</param>
         /// <param name="parent">Parent classification (browse node) of the current classification..</param>
-        public ItemBrowseClassification(string displayName = default(string), string classificationId = default(string), ItemBrowseClassification parent = default(ItemBrowseClassification))
+        public ItemBrowseClassification(string displayName = default, string classificationId = default, ItemBrowseClassification parent = default)
         {
             // to ensure "displayName" is required (not null)
             if (displayName == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="expiration">The expiration date of the SKU..</param>
         /// <param name="onhandQuantity">The quantity that is present in AWD..</param>
-        public ExpirationDetails(DateTime? expiration = default(DateTime?), long? onhandQuantity = default(long?))
+        public ExpirationDetails(DateTime? expiration = default, long? onhandQuantity = default)
         {
             this.Expiration = expiration;
             this.OnhandQuantity = onhandQuantity;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// Initializes a new instance of the <see cref="ListReturnReasonCodesResult" /> class.
         /// </summary>
         /// <param name="reasonCodeDetails">reasonCodeDetails.</param>
-        public ListReturnReasonCodesResult(ReasonCodeDetailsList reasonCodeDetails = default(ReasonCodeDetailsList))
+        public ListReturnReasonCodesResult(ReasonCodeDetailsList reasonCodeDetails = default)
         {
             this.ReasonCodeDetails = reasonCodeDetails;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

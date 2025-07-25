@@ -39,14 +39,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageVolume" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PackageVolume() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageVolume" /> class.
         /// </summary>
         /// <param name="unitOfMeasurement">Unit of measurement for the package volume. (required).</param>
         /// <param name="volume">The package volume value. (required).</param>
-        public PackageVolume(VolumeUnitOfMeasurement unitOfMeasurement = default(VolumeUnitOfMeasurement), double? volume = default(double?))
+        public PackageVolume(VolumeUnitOfMeasurement unitOfMeasurement = default, double? volume = default)
         {
             // to ensure "unitOfMeasurement" is required (not null)
             if (unitOfMeasurement == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

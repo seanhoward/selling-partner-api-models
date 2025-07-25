@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// Initializes a new instance of the <see cref="CompleteServiceJobByServiceJobIdResponse" /> class.
         /// </summary>
         /// <param name="errors">Encountered errors for the &#x60;completeServiceJobByServiceJobId&#x60; operation..</param>
-        public CompleteServiceJobByServiceJobIdResponse(ErrorList errors = default(ErrorList))
+        public CompleteServiceJobByServiceJobIdResponse(ErrorList errors = default)
         {
             this.Errors = errors;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShipmentRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateShipmentRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShipmentRequest" /> class.
@@ -50,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="hazmatType">Hazardous materials options for a package. Consult the terms and conditions for each carrier for more information about hazardous materials..</param>
         /// <param name="labelFormatOption">labelFormatOption.</param>
         /// <param name="shipmentLevelSellerInputsList">A list of additional seller inputs required to ship this shipment..</param>
-        public CreateShipmentRequest(ShipmentRequestDetails shipmentRequestDetails = default(ShipmentRequestDetails), string shippingServiceId = default(string), string shippingServiceOfferId = default(string), HazmatType? hazmatType = default(HazmatType?), LabelFormatOptionRequest labelFormatOption = default(LabelFormatOptionRequest), AdditionalSellerInputsList shipmentLevelSellerInputsList = default(AdditionalSellerInputsList))
+        public CreateShipmentRequest(ShipmentRequestDetails shipmentRequestDetails = default, string shippingServiceId = default, string shippingServiceOfferId = default, HazmatType? hazmatType = default, LabelFormatOptionRequest labelFormatOption = default, AdditionalSellerInputsList shipmentLevelSellerInputsList = default)
         {
             // to ensure "shipmentRequestDetails" is required (not null)
             if (shipmentRequestDetails == null)
@@ -220,7 +220,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

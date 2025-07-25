@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <summary>
         /// Initializes a new instance of the <see cref="PrimaryContact" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PrimaryContact() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PrimaryContact" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <param name="name">The full name of the seller&#39;s primary contact. (required).</param>
         /// <param name="address">The primary contact&#39;s residential address. (required).</param>
         /// <param name="nonLatinName">The non-Latin script version of the primary contact&#39;s name, if applicable..</param>
-        public PrimaryContact(string name = default(string), Address address = default(Address), string nonLatinName = default(string))
+        public PrimaryContact(string name = default, Address address = default, string nonLatinName = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -171,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

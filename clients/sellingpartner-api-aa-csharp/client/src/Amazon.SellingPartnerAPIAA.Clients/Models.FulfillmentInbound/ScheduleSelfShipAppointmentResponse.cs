@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduleSelfShipAppointmentResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ScheduleSelfShipAppointmentResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduleSelfShipAppointmentResponse" /> class.
         /// </summary>
         /// <param name="selfShipAppointmentDetails">selfShipAppointmentDetails (required).</param>
-        public ScheduleSelfShipAppointmentResponse(SelfShipAppointmentDetails selfShipAppointmentDetails = default(SelfShipAppointmentDetails))
+        public ScheduleSelfShipAppointmentResponse(SelfShipAppointmentDetails selfShipAppointmentDetails = default)
         {
             // to ensure "selfShipAppointmentDetails" is required (not null)
             if (selfShipAppointmentDetails == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

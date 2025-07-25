@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="RegulatedOrderVerificationStatus" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RegulatedOrderVerificationStatus() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RegulatedOrderVerificationStatus" /> class.
@@ -51,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="reviewDate">The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format..</param>
         /// <param name="externalReviewerId">The identifier for the order&#39;s regulated information reviewer..</param>
         /// <param name="validVerificationDetails">A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided..</param>
-        public RegulatedOrderVerificationStatus(VerificationStatus status = default(VerificationStatus), bool? requiresMerchantAction = default(bool?), List<RejectionReason> validRejectionReasons = default(List<RejectionReason>), RejectionReason rejectionReason = default(RejectionReason), string reviewDate = default(string), string externalReviewerId = default(string), List<ValidVerificationDetail> validVerificationDetails = default(List<ValidVerificationDetail>))
+        public RegulatedOrderVerificationStatus(VerificationStatus status = default, bool? requiresMerchantAction = default, List<RejectionReason> validRejectionReasons = default, RejectionReason rejectionReason = default, string reviewDate = default, string externalReviewerId = default, List<ValidVerificationDetail> validVerificationDetails = default)
         {
             // to ensure "status" is required (not null)
             if (status == null)
@@ -247,7 +247,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

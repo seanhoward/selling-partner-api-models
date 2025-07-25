@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="FixedSlotCapacityQuery" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FixedSlotCapacityQuery() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FixedSlotCapacityQuery" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="slotDuration">Size in which slots are being requested. This value should be a multiple of 5 and fall in the range: 5 &lt;&#x3D; &#x60;slotDuration&#x60; &lt;&#x3D; 360..</param>
         /// <param name="startDateTime">Start date time from which the capacity slots are being requested in ISO 8601 format. (required).</param>
         /// <param name="endDateTime">End date time up to which the capacity slots are being requested in ISO 8601 format. (required).</param>
-        public FixedSlotCapacityQuery(List<CapacityType> capacityTypes = default(List<CapacityType>), decimal? slotDuration = default(decimal?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?))
+        public FixedSlotCapacityQuery(List<CapacityType> capacityTypes = default, decimal? slotDuration = default, DateTime? startDateTime = default, DateTime? endDateTime = default)
         {
             // to ensure "startDateTime" is required (not null)
             if (startDateTime == null)
@@ -188,7 +188,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

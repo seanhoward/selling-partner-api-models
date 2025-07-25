@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="PostContentDocumentAsinRelationsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PostContentDocumentAsinRelationsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PostContentDocumentAsinRelationsRequest" /> class.
         /// </summary>
         /// <param name="asinSet">asinSet (required).</param>
-        public PostContentDocumentAsinRelationsRequest(AsinSet asinSet = default(AsinSet))
+        public PostContentDocumentAsinRelationsRequest(AsinSet asinSet = default)
         {
             // to ensure "asinSet" is required (not null)
             if (asinSet == null)
@@ -128,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

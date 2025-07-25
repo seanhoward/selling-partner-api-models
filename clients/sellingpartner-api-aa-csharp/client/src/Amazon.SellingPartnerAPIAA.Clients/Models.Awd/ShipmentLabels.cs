@@ -39,14 +39,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentLabels" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ShipmentLabels() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentLabels" /> class.
         /// </summary>
         /// <param name="labelDownloadURL">URL to download generated labels..</param>
         /// <param name="labelStatus">Status of label generation. (required).</param>
-        public ShipmentLabels(string labelDownloadURL = default(string), LabelStatus labelStatus = default(LabelStatus))
+        public ShipmentLabels(string labelDownloadURL = default, LabelStatus labelStatus = default)
         {
             // to ensure "labelStatus" is required (not null)
             if (labelStatus == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

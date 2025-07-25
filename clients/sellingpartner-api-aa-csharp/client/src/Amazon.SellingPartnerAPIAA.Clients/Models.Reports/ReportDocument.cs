@@ -54,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportDocument" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ReportDocument() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportDocument" /> class.
@@ -62,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <param name="reportDocumentId">The identifier for the report document. This identifier is unique only in combination with a seller ID. (required).</param>
         /// <param name="url">A presigned URL for the report document. If &#x60;compressionAlgorithm&#x60; is not returned, you can download the report directly from this URL. This URL expires after 5 minutes. (required).</param>
         /// <param name="compressionAlgorithm">If the report document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the report when you download. Otherwise, you can download the report directly. Refer to [Step 2. Download the report](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-retrieve-a-report#step-2-download-the-report) in the use case guide, where sample code is provided..</param>
-        public ReportDocument(string reportDocumentId = default(string), string url = default(string), CompressionAlgorithmEnum? compressionAlgorithm = default(CompressionAlgorithmEnum?))
+        public ReportDocument(string reportDocumentId = default, string url = default, CompressionAlgorithmEnum? compressionAlgorithm = default)
         {
             // to ensure "reportDocumentId" is required (not null)
             if (reportDocumentId == null)
@@ -186,7 +186,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

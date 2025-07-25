@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardFourImageTextQuadrantModule" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected StandardFourImageTextQuadrantModule() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardFourImageTextQuadrantModule" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="block2">block2 (required).</param>
         /// <param name="block3">block3 (required).</param>
         /// <param name="block4">block4 (required).</param>
-        public StandardFourImageTextQuadrantModule(StandardImageTextBlock block1 = default(StandardImageTextBlock), StandardImageTextBlock block2 = default(StandardImageTextBlock), StandardImageTextBlock block3 = default(StandardImageTextBlock), StandardImageTextBlock block4 = default(StandardImageTextBlock))
+        public StandardFourImageTextQuadrantModule(StandardImageTextBlock block1 = default, StandardImageTextBlock block2 = default, StandardImageTextBlock block3 = default, StandardImageTextBlock block4 = default)
         {
             // to ensure "block1" is required (not null)
             if (block1 == null)
@@ -200,7 +200,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

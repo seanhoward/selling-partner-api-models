@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Dimensions" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Dimensions() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Dimensions" /> class.
@@ -47,7 +47,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="length">The length of a package. (required).</param>
         /// <param name="unitOfMeasurement">unitOfMeasurement (required).</param>
         /// <param name="width">The width of a package. (required).</param>
-        public Dimensions(decimal? height = default(decimal?), decimal? length = default(decimal?), UnitOfMeasurement unitOfMeasurement = default(UnitOfMeasurement), decimal? width = default(decimal?))
+        public Dimensions(decimal? height = default, decimal? length = default, UnitOfMeasurement unitOfMeasurement = default, decimal? width = default)
         {
             // to ensure "height" is required (not null)
             if (height == null)
@@ -203,42 +203,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Height (decimal?) maximum
             if(this.Height > (decimal?)100000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Height, must be a value less than or equal to 100000.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value less than or equal to 100000.", new [] { "Height" });
             }
 
             // Height (decimal?) minimum
             if(this.Height < (decimal?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Height, must be a value greater than or equal to 0.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value greater than or equal to 0.", new [] { "Height" });
             }
 
             // Length (decimal?) maximum
             if(this.Length > (decimal?)100000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Length, must be a value less than or equal to 100000.", new [] { "Length" });
+                yield return new ValidationResult("Invalid value for Length, must be a value less than or equal to 100000.", new [] { "Length" });
             }
 
             // Length (decimal?) minimum
             if(this.Length < (decimal?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Length, must be a value greater than or equal to 0.", new [] { "Length" });
+                yield return new ValidationResult("Invalid value for Length, must be a value greater than or equal to 0.", new [] { "Length" });
             }
 
             // Width (decimal?) maximum
             if(this.Width > (decimal?)100000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Width, must be a value less than or equal to 100000.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value less than or equal to 100000.", new [] { "Width" });
             }
 
             // Width (decimal?) minimum
             if(this.Width < (decimal?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Width, must be a value greater than or equal to 0.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value greater than or equal to 0.", new [] { "Width" });
             }
 
             yield break;

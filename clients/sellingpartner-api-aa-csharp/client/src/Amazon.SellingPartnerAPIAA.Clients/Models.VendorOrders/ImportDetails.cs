@@ -170,7 +170,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="portOfDelivery">The port where goods on an import purchase order must be delivered by the vendor. This should only be specified when the internationalCommercialTerms is FOB..</param>
         /// <param name="importContainers">Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if the shipment has multiple containers. HC signifies a high-capacity container. Free-text field, limited to 64 characters. The format will be a comma-delimited list containing values of the type: $NUMBER_OF_CONTAINERS_OF_THIS_TYPE-$CONTAINER_TYPE. The list of values for the container type is: 40&#39;(40-foot container), 40&#39;HC (40-foot high-capacity container), 45&#39;, 45&#39;HC, 30&#39;, 30&#39;HC, 20&#39;, 20&#39;HC..</param>
         /// <param name="shippingInstructions">Special instructions regarding the shipment. This field is for import purchase orders..</param>
-        public ImportDetails(MethodOfPaymentEnum? methodOfPayment = default(MethodOfPaymentEnum?), InternationalCommercialTermsEnum? internationalCommercialTerms = default(InternationalCommercialTermsEnum?), string portOfDelivery = default(string), string importContainers = default(string), string shippingInstructions = default(string))
+        public ImportDetails(MethodOfPaymentEnum? methodOfPayment = default, InternationalCommercialTermsEnum? internationalCommercialTerms = default, string portOfDelivery = default, string importContainers = default, string shippingInstructions = default)
         {
             this.MethodOfPayment = methodOfPayment;
             this.InternationalCommercialTerms = internationalCommercialTerms;
@@ -304,18 +304,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PortOfDelivery (string) maxLength
             if(this.PortOfDelivery != null && this.PortOfDelivery.Length > 64)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PortOfDelivery, length must be less than 64.", new [] { "PortOfDelivery" });
+                yield return new ValidationResult("Invalid value for PortOfDelivery, length must be less than 64.", new [] { "PortOfDelivery" });
             }
 
             // ImportContainers (string) maxLength
             if(this.ImportContainers != null && this.ImportContainers.Length > 64)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ImportContainers, length must be less than 64.", new [] { "ImportContainers" });
+                yield return new ValidationResult("Invalid value for ImportContainers, length must be less than 64.", new [] { "ImportContainers" });
             }
 
             yield break;

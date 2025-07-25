@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryBatchResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CompetitiveSummaryBatchResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryBatchResponse" /> class.
         /// </summary>
         /// <param name="responses">The response list for the &#x60;competitiveSummaryBatch&#x60; operation. (required).</param>
-        public CompetitiveSummaryBatchResponse(CompetitiveSummaryResponseList responses = default(CompetitiveSummaryResponseList))
+        public CompetitiveSummaryBatchResponse(CompetitiveSummaryResponseList responses = default)
         {
             // to ensure "responses" is required (not null)
             if (responses == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

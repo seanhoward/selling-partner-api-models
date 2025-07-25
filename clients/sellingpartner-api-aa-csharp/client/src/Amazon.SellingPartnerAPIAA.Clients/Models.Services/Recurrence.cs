@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="Recurrence" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Recurrence() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Recurrence" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="endTime">End time of the recurrence. (required).</param>
         /// <param name="daysOfWeek">Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain &#x60;MONDAY&#x60; in the list..</param>
         /// <param name="daysOfMonth">Days of the month when recurrence is valid..</param>
-        public Recurrence(DateTime? endTime = default(DateTime?), List<DayOfWeek> daysOfWeek = default(List<DayOfWeek>), List<int?> daysOfMonth = default(List<int?>))
+        public Recurrence(DateTime? endTime = default, List<DayOfWeek> daysOfWeek = default, List<int?> daysOfMonth = default)
         {
             // to ensure "endTime" is required (not null)
             if (endTime == null)
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

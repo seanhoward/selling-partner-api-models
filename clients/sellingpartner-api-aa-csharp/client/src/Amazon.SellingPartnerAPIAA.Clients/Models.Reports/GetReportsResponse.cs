@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="GetReportsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected GetReportsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetReportsResponse" /> class.
         /// </summary>
         /// <param name="reports">The reports. (required).</param>
         /// <param name="nextToken">Returned when the number of results exceeds &#x60;pageSize&#x60;. To get the next page of results, call &#x60;getReports&#x60; with this token as the only parameter..</param>
-        public GetReportsResponse(ReportList reports = default(ReportList), string nextToken = default(string))
+        public GetReportsResponse(ReportList reports = default, string nextToken = default)
         {
             // to ensure "reports" is required (not null)
             if (reports == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

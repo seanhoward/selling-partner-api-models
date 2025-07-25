@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="offers">A list of offers..</param>
         /// <param name="pagination">Use these parameters to paginate through the response..</param>
-        public ListOffersResponse(List<ListOffersResponseOffer> offers = default(List<ListOffersResponseOffer>), PaginationResponse pagination = default(PaginationResponse))
+        public ListOffersResponse(List<ListOffersResponseOffer> offers = default, PaginationResponse pagination = default)
         {
             this.Offers = offers;
             this.Pagination = pagination;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

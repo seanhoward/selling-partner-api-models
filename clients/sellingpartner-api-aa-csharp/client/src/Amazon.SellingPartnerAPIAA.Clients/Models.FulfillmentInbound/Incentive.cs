@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Incentive" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Incentive() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Incentive" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="target">Target of the incentive. Possible values: &#39;Placement Services&#39;, &#39;Fulfillment Fee Discount&#39;. (required).</param>
         /// <param name="type">Type of incentive. Possible values: &#x60;FEE&#x60;, &#x60;DISCOUNT&#x60;. (required).</param>
         /// <param name="value">value (required).</param>
-        public Incentive(string description = default(string), string target = default(string), string type = default(string), Currency value = default(Currency))
+        public Incentive(string description = default, string target = default, string type = default, Currency value = default)
         {
             // to ensure "description" is required (not null)
             if (description == null)
@@ -203,42 +203,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Description (string) maxLength
             if(this.Description != null && this.Description.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 1024.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be less than 1024.", new [] { "Description" });
             }
 
             // Description (string) minLength
             if(this.Description != null && this.Description.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be greater than 1.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be greater than 1.", new [] { "Description" });
             }
 
             // Target (string) maxLength
             if(this.Target != null && this.Target.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Target, length must be less than 1024.", new [] { "Target" });
+                yield return new ValidationResult("Invalid value for Target, length must be less than 1024.", new [] { "Target" });
             }
 
             // Target (string) minLength
             if(this.Target != null && this.Target.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Target, length must be greater than 1.", new [] { "Target" });
+                yield return new ValidationResult("Invalid value for Target, length must be greater than 1.", new [] { "Target" });
             }
 
             // Type (string) maxLength
             if(this.Type != null && this.Type.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Type, length must be less than 1024.", new [] { "Type" });
+                yield return new ValidationResult("Invalid value for Type, length must be less than 1024.", new [] { "Type" });
             }
 
             // Type (string) minLength
             if(this.Type != null && this.Type.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Type, length must be greater than 1.", new [] { "Type" });
+                yield return new ValidationResult("Invalid value for Type, length must be greater than 1.", new [] { "Type" });
             }
 
             yield break;

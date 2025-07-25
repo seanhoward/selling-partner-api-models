@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryResponseBody" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CompetitiveSummaryResponseBody() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryResponseBody" /> class.
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <param name="lowestPricedOffers">A list of lowest priced offers for the specified ASIN &#x60;marketplaceId&#x60; combination..</param>
         /// <param name="referencePrices">A list of reference prices for the specified ASIN &#x60;marketplaceId&#x60; combination..</param>
         /// <param name="errors">A list of errors.</param>
-        public CompetitiveSummaryResponseBody(string asin = default(string), string marketplaceId = default(string), List<FeaturedBuyingOption> featuredBuyingOptions = default(List<FeaturedBuyingOption>), List<LowestPricedOffer> lowestPricedOffers = default(List<LowestPricedOffer>), List<ReferencePrice> referencePrices = default(List<ReferencePrice>), ErrorList errors = default(ErrorList))
+        public CompetitiveSummaryResponseBody(string asin = default, string marketplaceId = default, List<FeaturedBuyingOption> featuredBuyingOptions = default, List<LowestPricedOffer> lowestPricedOffers = default, List<ReferencePrice> referencePrices = default, ErrorList errors = default)
         {
             // to ensure "asin" is required (not null)
             if (asin == null)
@@ -222,7 +222,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

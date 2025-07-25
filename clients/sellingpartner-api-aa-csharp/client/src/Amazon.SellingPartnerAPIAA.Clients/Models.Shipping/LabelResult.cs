@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="containerReferenceId">containerReferenceId.</param>
         /// <param name="trackingId">The tracking identifier assigned to the container..</param>
         /// <param name="label">label.</param>
-        public LabelResult(string containerReferenceId = default(string), string trackingId = default(string), Label label = default(Label))
+        public LabelResult(string containerReferenceId = default, string trackingId = default, Label label = default)
         {
             this.ContainerReferenceId = containerReferenceId;
             this.TrackingId = trackingId;
@@ -148,7 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

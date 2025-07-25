@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="Refinements" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Refinements() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Refinements" /> class.
         /// </summary>
         /// <param name="brands">Brand search refinements. (required).</param>
         /// <param name="classifications">Classification search refinements. (required).</param>
-        public Refinements(List<BrandRefinement> brands = default(List<BrandRefinement>), List<ClassificationRefinement> classifications = default(List<ClassificationRefinement>))
+        public Refinements(List<BrandRefinement> brands = default, List<ClassificationRefinement> classifications = default)
         {
             // to ensure "brands" is required (not null)
             if (brands == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="operationalConfiguration">operationalConfiguration.</param>
         /// <param name="timezone">Please see RFC 6557, should be a canonical time zone ID as listed here: https://www.joda.org/joda-time/timezones.html..</param>
-        public SupplySourceConfiguration(OperationalConfiguration operationalConfiguration = default(OperationalConfiguration), string timezone = default(string))
+        public SupplySourceConfiguration(OperationalConfiguration operationalConfiguration = default, string timezone = default)
         {
             this.OperationalConfiguration = operationalConfiguration;
             this.Timezone = timezone;
@@ -132,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

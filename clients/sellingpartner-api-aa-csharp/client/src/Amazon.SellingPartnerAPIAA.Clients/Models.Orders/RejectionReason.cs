@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="RejectionReason" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected RejectionReason() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="RejectionReason" /> class.
         /// </summary>
         /// <param name="rejectionReasonId">The unique identifier for the rejection reason. (required).</param>
         /// <param name="rejectionReasonDescription">The description of this rejection reason. (required).</param>
-        public RejectionReason(string rejectionReasonId = default(string), string rejectionReasonDescription = default(string))
+        public RejectionReason(string rejectionReasonId = default, string rejectionReasonDescription = default)
         {
             // to ensure "rejectionReasonId" is required (not null)
             if (rejectionReasonId == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

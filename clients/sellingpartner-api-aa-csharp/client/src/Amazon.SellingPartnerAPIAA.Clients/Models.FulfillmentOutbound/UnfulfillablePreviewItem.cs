@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="UnfulfillablePreviewItem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected UnfulfillablePreviewItem() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="UnfulfillablePreviewItem" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="quantity">quantity (required).</param>
         /// <param name="sellerFulfillmentOrderItemId">A fulfillment order item identifier created with a call to the &#x60;getFulfillmentPreview&#x60; operation. (required).</param>
         /// <param name="itemUnfulfillableReasons">Error codes associated with the fulfillment order preview that indicate why the item is unfulfillable..</param>
-        public UnfulfillablePreviewItem(string sellerSku = default(string), int? quantity = default(int?), string sellerFulfillmentOrderItemId = default(string), StringList itemUnfulfillableReasons = default(StringList))
+        public UnfulfillablePreviewItem(string sellerSku = default, int? quantity = default, string sellerFulfillmentOrderItemId = default, StringList itemUnfulfillableReasons = default)
         {
             // to ensure "sellerSku" is required (not null)
             if (sellerSku == null)
@@ -195,18 +195,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // SellerSku (string) maxLength
             if(this.SellerSku != null && this.SellerSku.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SellerSku, length must be less than 50.", new [] { "SellerSku" });
+                yield return new ValidationResult("Invalid value for SellerSku, length must be less than 50.", new [] { "SellerSku" });
             }
 
             // SellerFulfillmentOrderItemId (string) maxLength
             if(this.SellerFulfillmentOrderItemId != null && this.SellerFulfillmentOrderItemId.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SellerFulfillmentOrderItemId, length must be less than 50.", new [] { "SellerFulfillmentOrderItemId" });
+                yield return new ValidationResult("Invalid value for SellerFulfillmentOrderItemId, length must be less than 50.", new [] { "SellerFulfillmentOrderItemId" });
             }
 
             yield break;

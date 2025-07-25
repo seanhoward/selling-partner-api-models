@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// Initializes a new instance of the <see cref="ShipmentInvoiceStatusResponse" /> class.
         /// </summary>
         /// <param name="shipments">shipments.</param>
-        public ShipmentInvoiceStatusResponse(ShipmentInvoiceStatusInfo shipments = default(ShipmentInvoiceStatusInfo))
+        public ShipmentInvoiceStatusResponse(ShipmentInvoiceStatusInfo shipments = default)
         {
             this.Shipments = shipments;
         }
@@ -115,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

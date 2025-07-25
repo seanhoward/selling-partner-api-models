@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="statusCode">The HTTP response status code..</param>
         /// <param name="reasonPhrase">The HTTP response reason phrase..</param>
-        public HttpStatusLine(int? statusCode = default(int?), string reasonPhrase = default(string))
+        public HttpStatusLine(int? statusCode = default, string reasonPhrase = default)
         {
             this.StatusCode = statusCode;
             this.ReasonPhrase = reasonPhrase;
@@ -133,18 +133,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // StatusCode (int?) maximum
             if(this.StatusCode > (int?)599)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StatusCode, must be a value less than or equal to 599.", new [] { "StatusCode" });
+                yield return new ValidationResult("Invalid value for StatusCode, must be a value less than or equal to 599.", new [] { "StatusCode" });
             }
 
             // StatusCode (int?) minimum
             if(this.StatusCode < (int?)100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StatusCode, must be a value greater than or equal to 100.", new [] { "StatusCode" });
+                yield return new ValidationResult("Invalid value for StatusCode, must be a value greater than or equal to 100.", new [] { "StatusCode" });
             }
 
             yield break;

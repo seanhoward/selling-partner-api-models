@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Error() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="code">An error code that identifies the type of error that occurred. (required).</param>
         /// <param name="details">Additional details that can help the caller understand or fix the issue..</param>
         /// <param name="message">A message that describes the error condition. (required).</param>
-        public Error(string code = default(string), string details = default(string), string message = default(string))
+        public Error(string code = default, string details = default, string message = default)
         {
             // to ensure "code" is required (not null)
             if (code == null)
@@ -171,42 +171,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Code (string) maxLength
             if(this.Code != null && this.Code.Length > 256)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Code, length must be less than 256.", new [] { "Code" });
+                yield return new ValidationResult("Invalid value for Code, length must be less than 256.", new [] { "Code" });
             }
 
             // Code (string) minLength
             if(this.Code != null && this.Code.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Code, length must be greater than 1.", new [] { "Code" });
+                yield return new ValidationResult("Invalid value for Code, length must be greater than 1.", new [] { "Code" });
             }
 
             // Details (string) maxLength
             if(this.Details != null && this.Details.Length > 8192)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Details, length must be less than 8192.", new [] { "Details" });
+                yield return new ValidationResult("Invalid value for Details, length must be less than 8192.", new [] { "Details" });
             }
 
             // Details (string) minLength
             if(this.Details != null && this.Details.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Details, length must be greater than 0.", new [] { "Details" });
+                yield return new ValidationResult("Invalid value for Details, length must be greater than 0.", new [] { "Details" });
             }
 
             // Message (string) maxLength
             if(this.Message != null && this.Message.Length > 2048)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Message, length must be less than 2048.", new [] { "Message" });
+                yield return new ValidationResult("Invalid value for Message, length must be less than 2048.", new [] { "Message" });
             }
 
             // Message (string) minLength
             if(this.Message != null && this.Message.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Message, length must be greater than 1.", new [] { "Message" });
+                yield return new ValidationResult("Invalid value for Message, length must be greater than 1.", new [] { "Message" });
             }
 
             yield break;

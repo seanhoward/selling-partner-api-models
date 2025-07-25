@@ -40,7 +40,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <param name="reservedQuantity">reservedQuantity.</param>
         /// <param name="researchingQuantity">researchingQuantity.</param>
         /// <param name="unfulfillableQuantity">unfulfillableQuantity.</param>
-        public InventoryDetails(int? fulfillableQuantity = default(int?), int? inboundWorkingQuantity = default(int?), int? inboundShippedQuantity = default(int?), int? inboundReceivingQuantity = default(int?), ReservedQuantity reservedQuantity = default(ReservedQuantity), ResearchingQuantity researchingQuantity = default(ResearchingQuantity), UnfulfillableQuantity unfulfillableQuantity = default(UnfulfillableQuantity))
+        public InventoryDetails(int? fulfillableQuantity = default, int? inboundWorkingQuantity = default, int? inboundShippedQuantity = default, int? inboundReceivingQuantity = default, ReservedQuantity reservedQuantity = default, ResearchingQuantity researchingQuantity = default, UnfulfillableQuantity unfulfillableQuantity = default)
         {
             this.FulfillableQuantity = fulfillableQuantity;
             this.InboundWorkingQuantity = inboundWorkingQuantity;
@@ -215,7 +215,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

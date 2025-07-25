@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfirmTransportationOptionsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ConfirmTransportationOptionsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfirmTransportationOptionsRequest" /> class.
         /// </summary>
         /// <param name="transportationSelections">Information needed to confirm one of the available transportation options. (required).</param>
-        public ConfirmTransportationOptionsRequest(List<TransportationSelection> transportationSelections = default(List<TransportationSelection>))
+        public ConfirmTransportationOptionsRequest(List<TransportationSelection> transportationSelections = default)
         {
             // to ensure "transportationSelections" is required (not null)
             if (transportationSelections == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

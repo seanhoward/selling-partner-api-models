@@ -37,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="buyerBusinessAddress">Business buyer&#39;s address..</param>
         /// <param name="buyerTaxRegistrationId">Business buyer&#39;s tax registration ID..</param>
         /// <param name="buyerTaxOffice">Business buyer&#39;s tax office..</param>
-        public BuyerTaxInformation(string buyerLegalCompanyName = default(string), string buyerBusinessAddress = default(string), string buyerTaxRegistrationId = default(string), string buyerTaxOffice = default(string))
+        public BuyerTaxInformation(string buyerLegalCompanyName = default, string buyerBusinessAddress = default, string buyerTaxRegistrationId = default, string buyerTaxOffice = default)
         {
             this.BuyerLegalCompanyName = buyerLegalCompanyName;
             this.BuyerBusinessAddress = buyerBusinessAddress;
@@ -167,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

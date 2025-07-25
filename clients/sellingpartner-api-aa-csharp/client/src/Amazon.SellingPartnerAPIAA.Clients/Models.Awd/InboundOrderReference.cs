@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOrderReference" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected InboundOrderReference() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOrderReference" /> class.
         /// </summary>
         /// <param name="orderId">Order ID of the inbound order. (required).</param>
         /// <param name="orderVersion">Order version of the inbound order. (required).</param>
-        public InboundOrderReference(string orderId = default(string), string orderVersion = default(string))
+        public InboundOrderReference(string orderId = default, string orderVersion = default)
         {
             // to ensure "orderId" is required (not null)
             if (orderId == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -60,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRegistrationDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TaxRegistrationDetails() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRegistrationDetails" /> class.
@@ -69,7 +69,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="taxRegistrationNumber">Tax registration number for the party. For example, VAT ID. (required).</param>
         /// <param name="taxRegistrationAddress">Address associated with the tax registration number..</param>
         /// <param name="taxRegistrationMessages">Tax registration message that can be used for additional tax related details..</param>
-        public TaxRegistrationDetails(TaxRegistrationTypeEnum? taxRegistrationType = default(TaxRegistrationTypeEnum?), string taxRegistrationNumber = default(string), Address taxRegistrationAddress = default(Address), string taxRegistrationMessages = default(string))
+        public TaxRegistrationDetails(TaxRegistrationTypeEnum? taxRegistrationType = default, string taxRegistrationNumber = default, Address taxRegistrationAddress = default, string taxRegistrationMessages = default)
         {
             // to ensure "taxRegistrationNumber" is required (not null)
             if (taxRegistrationNumber == null)
@@ -201,7 +201,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

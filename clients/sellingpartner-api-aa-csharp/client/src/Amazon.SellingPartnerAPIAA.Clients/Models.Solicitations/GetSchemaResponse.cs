@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// <param name="links">links.</param>
         /// <param name="payload">payload.</param>
         /// <param name="errors">errors.</param>
-        public GetSchemaResponse(GetSchemaResponseLinks links = default(GetSchemaResponseLinks), Schema payload = default(Schema), ErrorList errors = default(ErrorList))
+        public GetSchemaResponse(GetSchemaResponseLinks links = default, Schema payload = default, ErrorList errors = default)
         {
             this.Links = links;
             this.Payload = payload;
@@ -147,7 +147,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

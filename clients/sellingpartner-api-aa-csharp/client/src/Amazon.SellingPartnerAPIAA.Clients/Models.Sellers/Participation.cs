@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <summary>
         /// Initializes a new instance of the <see cref="Participation" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Participation() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Participation" /> class.
         /// </summary>
         /// <param name="isParticipating">If true, the seller participates in the marketplace. (required).</param>
         /// <param name="hasSuspendedListings">If true, the seller has suspended listings. (required).</param>
-        public Participation(bool? isParticipating = default(bool?), bool? hasSuspendedListings = default(bool?))
+        public Participation(bool? isParticipating = default, bool? hasSuspendedListings = default)
         {
             // to ensure "isParticipating" is required (not null)
             if (isParticipating == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Error() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// <param name="code">An error code that identifies the type of error that occurred. (required).</param>
         /// <param name="message">A message that describes the error condition in a human-readable form..</param>
         /// <param name="details">Additional information that can help the caller understand or fix the issue..</param>
-        public Error(string code = default(string), string message = default(string), string details = default(string))
+        public Error(string code = default, string message = default, string details = default)
         {
             // to ensure "code" is required (not null)
             if (code == null)
@@ -163,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

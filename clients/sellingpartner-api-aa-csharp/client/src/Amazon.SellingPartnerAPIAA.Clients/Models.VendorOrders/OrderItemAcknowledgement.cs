@@ -99,7 +99,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemAcknowledgement" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected OrderItemAcknowledgement() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemAcknowledgement" /> class.
@@ -109,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// <param name="scheduledShipDate">Estimated ship date per line item. Must be in ISO-8601 date/time format..</param>
         /// <param name="scheduledDeliveryDate">Estimated delivery date per line item. Must be in ISO-8601 date/time format..</param>
         /// <param name="rejectionReason">Indicates the reason for rejection..</param>
-        public OrderItemAcknowledgement(AcknowledgementCodeEnum acknowledgementCode = default(AcknowledgementCodeEnum), ItemQuantity acknowledgedQuantity = default(ItemQuantity), DateTime? scheduledShipDate = default(DateTime?), DateTime? scheduledDeliveryDate = default(DateTime?), RejectionReasonEnum? rejectionReason = default(RejectionReasonEnum?))
+        public OrderItemAcknowledgement(AcknowledgementCodeEnum acknowledgementCode = default, ItemQuantity acknowledgedQuantity = default, DateTime? scheduledShipDate = default, DateTime? scheduledDeliveryDate = default, RejectionReasonEnum? rejectionReason = default)
         {
             // to ensure "acknowledgementCode" is required (not null)
             if (acknowledgementCode == null)
@@ -259,7 +259,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

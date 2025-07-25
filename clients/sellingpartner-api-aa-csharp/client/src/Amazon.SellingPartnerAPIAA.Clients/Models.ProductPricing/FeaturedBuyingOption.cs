@@ -54,14 +54,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedBuyingOption" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeaturedBuyingOption() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedBuyingOption" /> class.
         /// </summary>
         /// <param name="buyingOptionType">The buying option type for the featured offer. &#x60;buyingOptionType&#x60; represents the buying options that a customer receives on the detail page, such as &#x60;B2B&#x60;, &#x60;Fresh&#x60;, and &#x60;Subscribe n Save&#x60;. &#x60;buyingOptionType&#x60; currently supports &#x60;NEW&#x60; as a value. (required).</param>
         /// <param name="segmentedFeaturedOffers">A list of segmented featured offers for the current buying option type. A segment can be considered as a group of regional contexts that all have the same featured offer. A regional context is a combination of factors such as customer type, region, or postal code and buying option. (required).</param>
-        public FeaturedBuyingOption(BuyingOptionTypeEnum buyingOptionType = default(BuyingOptionTypeEnum), List<SegmentedFeaturedOffer> segmentedFeaturedOffers = default(List<SegmentedFeaturedOffer>))
+        public FeaturedBuyingOption(BuyingOptionTypeEnum buyingOptionType = default, List<SegmentedFeaturedOffer> segmentedFeaturedOffers = default)
         {
             // to ensure "buyingOptionType" is required (not null)
             if (buyingOptionType == null)
@@ -169,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

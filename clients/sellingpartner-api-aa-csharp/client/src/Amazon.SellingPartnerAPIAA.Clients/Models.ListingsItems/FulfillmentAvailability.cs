@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentAvailability" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FulfillmentAvailability() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentAvailability" /> class.
         /// </summary>
         /// <param name="fulfillmentChannelCode">The code of the fulfillment network that will be used. (required).</param>
         /// <param name="quantity">The quantity of the item you are making available for sale..</param>
-        public FulfillmentAvailability(string fulfillmentChannelCode = default(string), int? quantity = default(int?))
+        public FulfillmentAvailability(string fulfillmentChannelCode = default, int? quantity = default)
         {
             // to ensure "fulfillmentChannelCode" is required (not null)
             if (fulfillmentChannelCode == null)
@@ -146,12 +146,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Quantity (int?) minimum
             if(this.Quantity < (int?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 0.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 0.", new [] { "Quantity" });
             }
 
             yield break;

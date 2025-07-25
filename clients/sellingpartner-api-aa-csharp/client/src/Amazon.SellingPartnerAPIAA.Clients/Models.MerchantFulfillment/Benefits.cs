@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="includedBenefits">includedBenefits.</param>
         /// <param name="excludedBenefits">excludedBenefits.</param>
-        public Benefits(IncludedBenefits includedBenefits = default(IncludedBenefits), ExcludedBenefits excludedBenefits = default(ExcludedBenefits))
+        public Benefits(IncludedBenefits includedBenefits = default, ExcludedBenefits excludedBenefits = default)
         {
             this.IncludedBenefits = includedBenefits;
             this.ExcludedBenefits = excludedBenefits;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

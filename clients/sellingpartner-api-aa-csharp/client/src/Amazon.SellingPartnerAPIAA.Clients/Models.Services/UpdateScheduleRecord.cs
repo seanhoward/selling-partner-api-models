@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="availability">Availability record if the operation failed..</param>
         /// <param name="warnings">Warnings encountered, if any..</param>
         /// <param name="errors">Errors encountered, if any..</param>
-        public UpdateScheduleRecord(AvailabilityRecord availability = default(AvailabilityRecord), WarningList warnings = default(WarningList), ErrorList errors = default(ErrorList))
+        public UpdateScheduleRecord(AvailabilityRecord availability = default, WarningList warnings = default, ErrorList errors = default)
         {
             this.Availability = availability;
             this.Warnings = warnings;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

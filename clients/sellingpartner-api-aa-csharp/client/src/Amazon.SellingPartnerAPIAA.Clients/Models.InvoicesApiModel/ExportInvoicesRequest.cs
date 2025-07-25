@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// <summary>
         /// Initializes a new instance of the <see cref="ExportInvoicesRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ExportInvoicesRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ExportInvoicesRequest" /> class.
@@ -53,7 +53,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// <param name="statuses">A list of statuses that you can use to filter invoices. Use the &#x60;getInvoicesAttributes&#x60; operation to check invoice status options.  Min count: 1.</param>
         /// <param name="transactionIdentifier">transactionIdentifier.</param>
         /// <param name="transactionType">The marketplace-specific classification of the transaction type for which the invoice was created. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionType&#x60; options.</param>
-        public ExportInvoicesRequest(DateTime? dateEnd = default(DateTime?), DateTime? dateStart = default(DateTime?), string externalInvoiceId = default(string), FileFormat? fileFormat = default(FileFormat?), string invoiceType = default(string), string marketplaceId = default(string), string series = default(string), List<string> statuses = default(List<string>), TransactionIdentifier transactionIdentifier = default(TransactionIdentifier), string transactionType = default(string))
+        public ExportInvoicesRequest(DateTime? dateEnd = default, DateTime? dateStart = default, string externalInvoiceId = default, FileFormat? fileFormat = default, string invoiceType = default, string marketplaceId = default, string series = default, List<string> statuses = default, TransactionIdentifier transactionIdentifier = default, string transactionType = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -282,7 +282,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

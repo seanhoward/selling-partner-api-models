@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableShippingServiceOptions" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected AvailableShippingServiceOptions() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableShippingServiceOptions" /> class.
         /// </summary>
         /// <param name="availableCarrierWillPickUpOptions">availableCarrierWillPickUpOptions (required).</param>
         /// <param name="availableDeliveryExperienceOptions">availableDeliveryExperienceOptions (required).</param>
-        public AvailableShippingServiceOptions(AvailableCarrierWillPickUpOptionsList availableCarrierWillPickUpOptions = default(AvailableCarrierWillPickUpOptionsList), AvailableDeliveryExperienceOptionsList availableDeliveryExperienceOptions = default(AvailableDeliveryExperienceOptionsList))
+        public AvailableShippingServiceOptions(AvailableCarrierWillPickUpOptionsList availableCarrierWillPickUpOptions = default, AvailableDeliveryExperienceOptionsList availableDeliveryExperienceOptions = default)
         {
             // to ensure "availableCarrierWillPickUpOptions" is required (not null)
             if (availableCarrierWillPickUpOptions == null)
@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

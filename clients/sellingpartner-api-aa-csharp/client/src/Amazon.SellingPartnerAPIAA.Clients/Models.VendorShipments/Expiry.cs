@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <param name="manufacturerDate">Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context..</param>
         /// <param name="expiryDate">The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context..</param>
         /// <param name="expiryAfterDuration">Duration after manufacturing date during which the product is valid for consumption..</param>
-        public Expiry(DateTime? manufacturerDate = default(DateTime?), DateTime? expiryDate = default(DateTime?), Duration expiryAfterDuration = default(Duration))
+        public Expiry(DateTime? manufacturerDate = default, DateTime? expiryDate = default, Duration expiryAfterDuration = default)
         {
             this.ManufacturerDate = manufacturerDate;
             this.ExpiryDate = expiryDate;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

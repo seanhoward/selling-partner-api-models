@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectedDeliveryWindow" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SelectedDeliveryWindow() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectedDeliveryWindow" /> class.
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="editableUntil">The timestamp at which this Window can no longer be edited..</param>
         /// <param name="endDate">The end timestamp of the window. (required).</param>
         /// <param name="startDate">The start timestamp of the window. (required).</param>
-        public SelectedDeliveryWindow(string availabilityType = default(string), string deliveryWindowOptionId = default(string), DateTime? editableUntil = default(DateTime?), DateTime? endDate = default(DateTime?), DateTime? startDate = default(DateTime?))
+        public SelectedDeliveryWindow(string availabilityType = default, string deliveryWindowOptionId = default, DateTime? editableUntil = default, DateTime? endDate = default, DateTime? startDate = default)
         {
             // to ensure "availabilityType" is required (not null)
             if (availabilityType == null)
@@ -221,25 +221,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DeliveryWindowOptionId (string) maxLength
             if(this.DeliveryWindowOptionId != null && this.DeliveryWindowOptionId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DeliveryWindowOptionId, length must be less than 38.", new [] { "DeliveryWindowOptionId" });
+                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, length must be less than 38.", new [] { "DeliveryWindowOptionId" });
             }
 
             // DeliveryWindowOptionId (string) minLength
             if(this.DeliveryWindowOptionId != null && this.DeliveryWindowOptionId.Length < 36)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DeliveryWindowOptionId, length must be greater than 36.", new [] { "DeliveryWindowOptionId" });
+                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, length must be greater than 36.", new [] { "DeliveryWindowOptionId" });
             }
 
             // DeliveryWindowOptionId (string) pattern
             Regex regexDeliveryWindowOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexDeliveryWindowOptionId.Match(this.DeliveryWindowOptionId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DeliveryWindowOptionId, must match a pattern of " + regexDeliveryWindowOptionId, new [] { "DeliveryWindowOptionId" });
+                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, must match a pattern of " + regexDeliveryWindowOptionId, new [] { "DeliveryWindowOptionId" });
             }
 
             yield break;

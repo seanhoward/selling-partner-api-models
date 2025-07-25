@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// <param name="fulfillmentTime">Input appointment time details..</param>
         /// <param name="appointmentResources">Resources involved in appointment fulfillment..</param>
         /// <param name="fulfillmentDocuments">Documents specific to appointment fulfillment..</param>
-        public SetAppointmentFulfillmentDataRequest(FulfillmentTime fulfillmentTime = default(FulfillmentTime), AppointmentResources appointmentResources = default(AppointmentResources), FulfillmentDocuments fulfillmentDocuments = default(FulfillmentDocuments))
+        public SetAppointmentFulfillmentDataRequest(FulfillmentTime fulfillmentTime = default, AppointmentResources appointmentResources = default, FulfillmentDocuments fulfillmentDocuments = default)
         {
             this.FulfillmentTime = fulfillmentTime;
             this.AppointmentResources = appointmentResources;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

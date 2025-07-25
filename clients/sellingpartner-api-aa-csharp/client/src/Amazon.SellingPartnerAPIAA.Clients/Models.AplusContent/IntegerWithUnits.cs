@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="IntegerWithUnits" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected IntegerWithUnits() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="IntegerWithUnits" /> class.
         /// </summary>
         /// <param name="value">The dimension value. (required).</param>
         /// <param name="units">The unit of measurement. (required).</param>
-        public IntegerWithUnits(int? value = default(int?), string units = default(string))
+        public IntegerWithUnits(int? value = default, string units = default)
         {
             // to ensure "value" is required (not null)
             if (value == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

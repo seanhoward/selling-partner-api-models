@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Address() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// <param name="email">The email address of the contact associated with the address..</param>
         /// <param name="copyEmails">The email cc addresses of the contact associated with the address..</param>
         /// <param name="phoneNumber">The phone number of the person, business or institution located at that address..</param>
-        public Address(string name = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string stateOrRegion = default(string), string city = default(string), string countryCode = default(string), string postalCode = default(string), string email = default(string), List<string> copyEmails = default(List<string>), string phoneNumber = default(string))
+        public Address(string name = default, string addressLine1 = default, string addressLine2 = default, string addressLine3 = default, string stateOrRegion = default, string city = default, string countryCode = default, string postalCode = default, string email = default, List<string> copyEmails = default, string phoneNumber = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -335,72 +335,72 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if(this.Name != null && this.Name.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 50.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 50.", new [] { "Name" });
             }
 
             // Name (string) minLength
             if(this.Name != null && this.Name.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             // AddressLine1 (string) maxLength
             if(this.AddressLine1 != null && this.AddressLine1.Length > 60)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressLine1, length must be less than 60.", new [] { "AddressLine1" });
+                yield return new ValidationResult("Invalid value for AddressLine1, length must be less than 60.", new [] { "AddressLine1" });
             }
 
             // AddressLine1 (string) minLength
             if(this.AddressLine1 != null && this.AddressLine1.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressLine1, length must be greater than 1.", new [] { "AddressLine1" });
+                yield return new ValidationResult("Invalid value for AddressLine1, length must be greater than 1.", new [] { "AddressLine1" });
             }
 
             // AddressLine2 (string) maxLength
             if(this.AddressLine2 != null && this.AddressLine2.Length > 60)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressLine2, length must be less than 60.", new [] { "AddressLine2" });
+                yield return new ValidationResult("Invalid value for AddressLine2, length must be less than 60.", new [] { "AddressLine2" });
             }
 
             // AddressLine2 (string) minLength
             if(this.AddressLine2 != null && this.AddressLine2.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressLine2, length must be greater than 1.", new [] { "AddressLine2" });
+                yield return new ValidationResult("Invalid value for AddressLine2, length must be greater than 1.", new [] { "AddressLine2" });
             }
 
             // AddressLine3 (string) maxLength
             if(this.AddressLine3 != null && this.AddressLine3.Length > 60)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressLine3, length must be less than 60.", new [] { "AddressLine3" });
+                yield return new ValidationResult("Invalid value for AddressLine3, length must be less than 60.", new [] { "AddressLine3" });
             }
 
             // AddressLine3 (string) minLength
             if(this.AddressLine3 != null && this.AddressLine3.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressLine3, length must be greater than 1.", new [] { "AddressLine3" });
+                yield return new ValidationResult("Invalid value for AddressLine3, length must be greater than 1.", new [] { "AddressLine3" });
             }
 
             // Email (string) maxLength
             if(this.Email != null && this.Email.Length > 64)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be less than 64.", new [] { "Email" });
+                yield return new ValidationResult("Invalid value for Email, length must be less than 64.", new [] { "Email" });
             }
 
             // PhoneNumber (string) maxLength
             if(this.PhoneNumber != null && this.PhoneNumber.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PhoneNumber, length must be less than 20.", new [] { "PhoneNumber" });
+                yield return new ValidationResult("Invalid value for PhoneNumber, length must be less than 20.", new [] { "PhoneNumber" });
             }
 
             // PhoneNumber (string) minLength
             if(this.PhoneNumber != null && this.PhoneNumber.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PhoneNumber, length must be greater than 1.", new [] { "PhoneNumber" });
+                yield return new ValidationResult("Invalid value for PhoneNumber, length must be greater than 1.", new [] { "PhoneNumber" });
             }
 
             yield break;

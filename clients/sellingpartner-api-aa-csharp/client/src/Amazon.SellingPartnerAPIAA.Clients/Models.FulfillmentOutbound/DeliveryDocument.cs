@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryDocument" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected DeliveryDocument() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryDocument" /> class.
         /// </summary>
         /// <param name="documentType">The delivery document type. Values are &#x60;SIGNATURE&#x60; and &#x60;DELIVERY_IMAGE&#x60;. (required).</param>
         /// <param name="url">A URL that you can use to download the document. This URL has a &#x60;Content-Type&#x60; header. Note that the URL expires after one hour. To get a new URL, you must call the API again..</param>
-        public DeliveryDocument(string documentType = default(string), string url = default(string))
+        public DeliveryDocument(string documentType = default, string url = default)
         {
             // to ensure "documentType" is required (not null)
             if (documentType == null)
@@ -146,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

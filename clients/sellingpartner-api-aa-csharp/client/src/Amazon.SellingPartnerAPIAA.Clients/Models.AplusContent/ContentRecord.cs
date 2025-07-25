@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentRecord" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ContentRecord() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentRecord" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="contentReferenceKey">contentReferenceKey (required).</param>
         /// <param name="contentMetadata">contentMetadata.</param>
         /// <param name="contentDocument">contentDocument.</param>
-        public ContentRecord(string contentReferenceKey = default(string), ContentMetadata contentMetadata = default(ContentMetadata), ContentDocument contentDocument = default(ContentDocument))
+        public ContentRecord(string contentReferenceKey = default, ContentMetadata contentMetadata = default, ContentDocument contentDocument = default)
         {
             // to ensure "contentReferenceKey" is required (not null)
             if (contentReferenceKey == null)
@@ -160,7 +160,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

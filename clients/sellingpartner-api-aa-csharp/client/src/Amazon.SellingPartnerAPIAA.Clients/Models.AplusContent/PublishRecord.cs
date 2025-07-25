@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="PublishRecord" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected PublishRecord() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PublishRecord" /> class.
@@ -49,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="contentType">contentType (required).</param>
         /// <param name="contentSubType">contentSubType.</param>
         /// <param name="contentReferenceKey">contentReferenceKey (required).</param>
-        public PublishRecord(string marketplaceId = default(string), string locale = default(string), string asin = default(string), ContentType contentType = default(ContentType), string contentSubType = default(string), string contentReferenceKey = default(string))
+        public PublishRecord(string marketplaceId = default, string locale = default, string asin = default, ContentType contentType = default, string contentSubType = default, string contentReferenceKey = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -240,7 +240,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

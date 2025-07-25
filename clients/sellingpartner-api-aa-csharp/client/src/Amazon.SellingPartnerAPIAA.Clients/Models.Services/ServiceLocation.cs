@@ -68,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="serviceLocationType">The location of the service job..</param>
         /// <param name="address">The shipping address for the service job..</param>
-        public ServiceLocation(ServiceLocationTypeEnum? serviceLocationType = default(ServiceLocationTypeEnum?), Address address = default(Address))
+        public ServiceLocation(ServiceLocationTypeEnum? serviceLocationType = default, Address address = default)
         {
             this.ServiceLocationType = serviceLocationType;
             this.Address = address;
@@ -160,7 +160,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

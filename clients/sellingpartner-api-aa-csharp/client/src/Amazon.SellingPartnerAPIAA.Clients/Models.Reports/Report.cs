@@ -78,7 +78,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <summary>
         /// Initializes a new instance of the <see cref="Report" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Report() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Report" /> class.
@@ -94,7 +94,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// <param name="processingStartTime">The date and time when the report processing started, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
         /// <param name="processingEndTime">The date and time when the report processing completed, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format..</param>
         /// <param name="reportDocumentId">The identifier for the report document. Pass this into the &#x60;getReportDocument&#x60; operation to get the information you will need to retrieve the report document&#39;s contents..</param>
-        public Report(List<string> marketplaceIds = default(List<string>), string reportId = default(string), string reportType = default(string), DateTime? dataStartTime = default(DateTime?), DateTime? dataEndTime = default(DateTime?), string reportScheduleId = default(string), DateTime? createdTime = default(DateTime?), ProcessingStatusEnum processingStatus = default(ProcessingStatusEnum), DateTime? processingStartTime = default(DateTime?), DateTime? processingEndTime = default(DateTime?), string reportDocumentId = default(string))
+        public Report(List<string> marketplaceIds = default, string reportId = default, string reportType = default, DateTime? dataStartTime = default, DateTime? dataEndTime = default, string reportScheduleId = default, DateTime? createdTime = default, ProcessingStatusEnum processingStatus = default, DateTime? processingStartTime = default, DateTime? processingEndTime = default, string reportDocumentId = default)
         {
             // to ensure "reportId" is required (not null)
             if (reportId == null)
@@ -362,7 +362,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

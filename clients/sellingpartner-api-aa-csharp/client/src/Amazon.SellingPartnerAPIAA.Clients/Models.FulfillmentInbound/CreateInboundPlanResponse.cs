@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInboundPlanResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected CreateInboundPlanResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInboundPlanResponse" /> class.
         /// </summary>
         /// <param name="inboundPlanId">Identifier of an inbound plan. (required).</param>
         /// <param name="operationId">UUID for the given operation. (required).</param>
-        public CreateInboundPlanResponse(string inboundPlanId = default(string), string operationId = default(string))
+        public CreateInboundPlanResponse(string inboundPlanId = default, string operationId = default)
         {
             // to ensure "inboundPlanId" is required (not null)
             if (inboundPlanId == null)
@@ -154,44 +154,44 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // InboundPlanId (string) maxLength
             if(this.InboundPlanId != null && this.InboundPlanId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InboundPlanId, length must be less than 38.", new [] { "InboundPlanId" });
+                yield return new ValidationResult("Invalid value for InboundPlanId, length must be less than 38.", new [] { "InboundPlanId" });
             }
 
             // InboundPlanId (string) minLength
             if(this.InboundPlanId != null && this.InboundPlanId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InboundPlanId, length must be greater than 38.", new [] { "InboundPlanId" });
+                yield return new ValidationResult("Invalid value for InboundPlanId, length must be greater than 38.", new [] { "InboundPlanId" });
             }
 
             // InboundPlanId (string) pattern
             Regex regexInboundPlanId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexInboundPlanId.Match(this.InboundPlanId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InboundPlanId, must match a pattern of " + regexInboundPlanId, new [] { "InboundPlanId" });
+                yield return new ValidationResult("Invalid value for InboundPlanId, must match a pattern of " + regexInboundPlanId, new [] { "InboundPlanId" });
             }
 
             // OperationId (string) maxLength
             if(this.OperationId != null && this.OperationId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OperationId, length must be less than 38.", new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, length must be less than 38.", new [] { "OperationId" });
             }
 
             // OperationId (string) minLength
             if(this.OperationId != null && this.OperationId.Length < 36)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OperationId, length must be greater than 36.", new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, length must be greater than 36.", new [] { "OperationId" });
             }
 
             // OperationId (string) pattern
             Regex regexOperationId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexOperationId.Match(this.OperationId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for OperationId, must match a pattern of " + regexOperationId, new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, must match a pattern of " + regexOperationId, new [] { "OperationId" });
             }
 
             yield break;

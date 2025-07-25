@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="headline">headline.</param>
         /// <param name="block">block.</param>
-        public StandardHeaderImageTextModule(TextComponent headline = default(TextComponent), StandardImageTextBlock block = default(StandardImageTextBlock))
+        public StandardHeaderImageTextModule(TextComponent headline = default, StandardImageTextBlock block = default)
         {
             this.Headline = headline;
             this.Block = block;
@@ -131,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -35,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="payload">The payload for the &#x60;getMarketplaceParticipations&#x60; operation..</param>
         /// <param name="errors">A list of errors that occurred with the &#x60;getMarketplaceParticipations&#x60; operation..</param>
-        public GetMarketplaceParticipationsResponse(MarketplaceParticipationList payload = default(MarketplaceParticipationList), ErrorList errors = default(ErrorList))
+        public GetMarketplaceParticipationsResponse(MarketplaceParticipationList payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
             this.Errors = errors;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

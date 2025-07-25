@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportationOption" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected TransportationOption() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportationOption" /> class.
@@ -46,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="shippingMode">Mode of shipment transportation that this option will provide.  Possible values: &#x60;GROUND_SMALL_PARCEL&#x60;, &#x60;FREIGHT_LTL&#x60;, &#x60;FREIGHT_FTL_PALLET&#x60;, &#x60;FREIGHT_FTL_NONPALLET&#x60;, &#x60;OCEAN_LCL&#x60;, &#x60;OCEAN_FCL&#x60;, &#x60;AIR_SMALL_PARCEL&#x60;, &#x60;AIR_SMALL_PARCEL_EXPRESS&#x60;. (required).</param>
         /// <param name="shippingSolution">Shipping program for the option. Possible values: &#x60;AMAZON_PARTNERED_CARRIER&#x60;, &#x60;USE_YOUR_OWN_CARRIER&#x60;. (required).</param>
         /// <param name="transportationOptionId">Identifier of a transportation option. A transportation option represent one option for how to send a shipment. (required).</param>
-        public TransportationOption(Carrier carrier = default(Carrier), CarrierAppointment carrierAppointment = default(CarrierAppointment), List<string> preconditions = default(List<string>), Quote quote = default(Quote), string shipmentId = default(string), string shippingMode = default(string), string shippingSolution = default(string), string transportationOptionId = default(string))
+        public TransportationOption(Carrier carrier = default, CarrierAppointment carrierAppointment = default, List<string> preconditions = default, Quote quote = default, string shipmentId = default, string shippingMode = default, string shippingSolution = default, string transportationOptionId = default)
         {
             // to ensure "carrier" is required (not null)
             if (carrier == null)
@@ -285,68 +285,68 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ShipmentId (string) maxLength
             if(this.ShipmentId != null && this.ShipmentId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
             }
 
             // ShipmentId (string) minLength
             if(this.ShipmentId != null && this.ShipmentId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
             }
 
             // ShipmentId (string) pattern
             Regex regexShipmentId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexShipmentId.Match(this.ShipmentId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
             }
 
             // ShippingMode (string) maxLength
             if(this.ShippingMode != null && this.ShippingMode.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShippingMode, length must be less than 1024.", new [] { "ShippingMode" });
+                yield return new ValidationResult("Invalid value for ShippingMode, length must be less than 1024.", new [] { "ShippingMode" });
             }
 
             // ShippingMode (string) minLength
             if(this.ShippingMode != null && this.ShippingMode.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShippingMode, length must be greater than 1.", new [] { "ShippingMode" });
+                yield return new ValidationResult("Invalid value for ShippingMode, length must be greater than 1.", new [] { "ShippingMode" });
             }
 
             // ShippingSolution (string) maxLength
             if(this.ShippingSolution != null && this.ShippingSolution.Length > 1024)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShippingSolution, length must be less than 1024.", new [] { "ShippingSolution" });
+                yield return new ValidationResult("Invalid value for ShippingSolution, length must be less than 1024.", new [] { "ShippingSolution" });
             }
 
             // ShippingSolution (string) minLength
             if(this.ShippingSolution != null && this.ShippingSolution.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShippingSolution, length must be greater than 1.", new [] { "ShippingSolution" });
+                yield return new ValidationResult("Invalid value for ShippingSolution, length must be greater than 1.", new [] { "ShippingSolution" });
             }
 
             // TransportationOptionId (string) maxLength
             if(this.TransportationOptionId != null && this.TransportationOptionId.Length > 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TransportationOptionId, length must be less than 38.", new [] { "TransportationOptionId" });
+                yield return new ValidationResult("Invalid value for TransportationOptionId, length must be less than 38.", new [] { "TransportationOptionId" });
             }
 
             // TransportationOptionId (string) minLength
             if(this.TransportationOptionId != null && this.TransportationOptionId.Length < 38)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TransportationOptionId, length must be greater than 38.", new [] { "TransportationOptionId" });
+                yield return new ValidationResult("Invalid value for TransportationOptionId, length must be greater than 38.", new [] { "TransportationOptionId" });
             }
 
             // TransportationOptionId (string) pattern
             Regex regexTransportationOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexTransportationOptionId.Match(this.TransportationOptionId).Success)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TransportationOptionId, must match a pattern of " + regexTransportationOptionId, new [] { "TransportationOptionId" });
+                yield return new ValidationResult("Invalid value for TransportationOptionId, must match a pattern of " + regexTransportationOptionId, new [] { "TransportationOptionId" });
             }
 
             yield break;

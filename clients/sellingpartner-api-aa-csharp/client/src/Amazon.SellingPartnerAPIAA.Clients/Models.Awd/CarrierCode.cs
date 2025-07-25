@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="carrierCodeType">Denotes the carrier type..</param>
         /// <param name="carrierCodeValue">Value of the carrier code..</param>
-        public CarrierCode(CarrierCodeType? carrierCodeType = default(CarrierCodeType?), string carrierCodeValue = default(string))
+        public CarrierCode(CarrierCodeType? carrierCodeType = default, string carrierCodeValue = default)
         {
             this.CarrierCodeType = carrierCodeType;
             this.CarrierCodeValue = carrierCodeValue;
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

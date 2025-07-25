@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="expiresAt">The timestamp at which a delivery offer expires..</param>
         /// <param name="dateRange">The range between which delivery is expected..</param>
         /// <param name="policy">The policy for a delivery offer, including localized messaging..</param>
-        public DeliveryOffer(DateTime? expiresAt = default(DateTime?), DateRange dateRange = default(DateRange), DeliveryPolicy policy = default(DeliveryPolicy))
+        public DeliveryOffer(DateTime? expiresAt = default, DateRange dateRange = default, DeliveryPolicy policy = default)
         {
             this.ExpiresAt = expiresAt;
             this.DateRange = dateRange;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -33,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ListPrepDetailsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ListPrepDetailsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListPrepDetailsResponse" /> class.
         /// </summary>
         /// <param name="mskuPrepDetails">A list of MSKUs and related prep details. (required).</param>
-        public ListPrepDetailsResponse(List<MskuPrepDetail> mskuPrepDetails = default(List<MskuPrepDetail>))
+        public ListPrepDetailsResponse(List<MskuPrepDetail> mskuPrepDetails = default)
         {
             // to ensure "mskuPrepDetails" is required (not null)
             if (mskuPrepDetails == null)
@@ -129,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

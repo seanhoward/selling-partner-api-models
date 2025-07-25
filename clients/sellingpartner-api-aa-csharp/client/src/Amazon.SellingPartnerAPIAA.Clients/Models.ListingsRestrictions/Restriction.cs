@@ -126,7 +126,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// <summary>
         /// Initializes a new instance of the <see cref="Restriction" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Restriction() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Restriction" /> class.
@@ -134,7 +134,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// <param name="marketplaceId">A marketplace identifier. Identifies the Amazon marketplace where the restriction is enforced. (required).</param>
         /// <param name="conditionType">The condition that applies to the restriction..</param>
         /// <param name="reasons">A list of reasons for the restriction..</param>
-        public Restriction(string marketplaceId = default(string), ConditionTypeEnum? conditionType = default(ConditionTypeEnum?), List<Reason> reasons = default(List<Reason>))
+        public Restriction(string marketplaceId = default, ConditionTypeEnum? conditionType = default, List<Reason> reasons = default)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -250,7 +250,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

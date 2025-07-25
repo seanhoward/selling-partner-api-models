@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="sellingPartnerId">A unique seller identifier..</param>
         /// <param name="accountType">The type of account in the transaction..</param>
         /// <param name="marketplaceId">The identifier of the marketplace where the transaction occurred..</param>
-        public SellingPartnerMetadata(string sellingPartnerId = default(string), string accountType = default(string), string marketplaceId = default(string))
+        public SellingPartnerMetadata(string sellingPartnerId = default, string accountType = default, string marketplaceId = default)
         {
             this.SellingPartnerId = sellingPartnerId;
             this.AccountType = accountType;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

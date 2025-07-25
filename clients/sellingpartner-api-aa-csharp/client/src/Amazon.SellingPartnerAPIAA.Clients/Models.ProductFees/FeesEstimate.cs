@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimate" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected FeesEstimate() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimate" /> class.
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <param name="timeOfFeesEstimation">The time at which the fees were estimated. This defaults to the time the request is made. (required).</param>
         /// <param name="totalFeesEstimate">Total estimated fees for a given item, price, and fulfillment channel..</param>
         /// <param name="feeDetailList">feeDetailList.</param>
-        public FeesEstimate(DateTime? timeOfFeesEstimation = default(DateTime?), MoneyType totalFeesEstimate = default(MoneyType), FeeDetailList feeDetailList = default(FeeDetailList))
+        public FeesEstimate(DateTime? timeOfFeesEstimation = default, MoneyType totalFeesEstimate = default, FeeDetailList feeDetailList = default)
         {
             // to ensure "timeOfFeesEstimation" is required (not null)
             if (timeOfFeesEstimation == null)
@@ -162,7 +162,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

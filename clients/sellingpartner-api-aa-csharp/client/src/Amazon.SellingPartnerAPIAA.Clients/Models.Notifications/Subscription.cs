@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <summary>
         /// Initializes a new instance of the <see cref="Subscription" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected Subscription() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="Subscription" /> class.
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// <param name="payloadVersion">The version of the payload object to be used in the notification. (required).</param>
         /// <param name="destinationId">The identifier for the destination where notifications will be delivered. (required).</param>
         /// <param name="processingDirective">processingDirective.</param>
-        public Subscription(string subscriptionId = default(string), string payloadVersion = default(string), string destinationId = default(string), ProcessingDirective processingDirective = default(ProcessingDirective))
+        public Subscription(string subscriptionId = default, string payloadVersion = default, string destinationId = default, ProcessingDirective processingDirective = default)
         {
             // to ensure "subscriptionId" is required (not null)
             if (subscriptionId == null)
@@ -195,7 +195,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

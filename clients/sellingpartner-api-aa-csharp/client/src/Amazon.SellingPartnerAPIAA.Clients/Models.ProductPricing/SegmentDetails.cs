@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// Initializes a new instance of the <see cref="SegmentDetails" /> class.
         /// </summary>
         /// <param name="glanceViewWeightPercentage">The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer..</param>
-        public SegmentDetails(decimal? glanceViewWeightPercentage = default(decimal?))
+        public SegmentDetails(decimal? glanceViewWeightPercentage = default)
         {
             this.GlanceViewWeightPercentage = glanceViewWeightPercentage;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

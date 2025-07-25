@@ -36,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Uploads
         /// <param name="uploadDestinationId">The unique identifier for the upload destination..</param>
         /// <param name="url">The URL for the upload destination..</param>
         /// <param name="headers">The headers to include in the upload request..</param>
-        public UploadDestination(string uploadDestinationId = default(string), string url = default(string), Object headers = default(Object))
+        public UploadDestination(string uploadDestinationId = default, string url = default, Object headers = default)
         {
             this.UploadDestinationId = uploadDestinationId;
             this.Url = url;
@@ -150,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Uploads
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

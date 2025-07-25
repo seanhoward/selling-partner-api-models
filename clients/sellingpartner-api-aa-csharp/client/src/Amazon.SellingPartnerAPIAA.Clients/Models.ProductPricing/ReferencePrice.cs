@@ -33,14 +33,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="ReferencePrice" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected ReferencePrice() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ReferencePrice" /> class.
         /// </summary>
         /// <param name="name">The name of the reference price, such as &#x60;CompetitivePriceThreshold&#x60; and &#x60;WasPrice&#x60;. For reference price definitions, refer to the [Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide). (required).</param>
         /// <param name="price">The reference price for the ASIN &#x60;marketplaceId&#x60; combination. (required).</param>
-        public ReferencePrice(string name = default(string), MoneyType price = default(MoneyType))
+        public ReferencePrice(string name = default, MoneyType price = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -154,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

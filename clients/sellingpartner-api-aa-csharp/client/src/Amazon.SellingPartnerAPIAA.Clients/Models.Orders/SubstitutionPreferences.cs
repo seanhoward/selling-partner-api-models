@@ -66,14 +66,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="SubstitutionPreferences" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected SubstitutionPreferences() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SubstitutionPreferences" /> class.
         /// </summary>
         /// <param name="substitutionType">The type of substitution that these preferences represent. (required).</param>
         /// <param name="substitutionOptions">Substitution options for the order item..</param>
-        public SubstitutionPreferences(SubstitutionTypeEnum substitutionType = default(SubstitutionTypeEnum), SubstitutionOptionList substitutionOptions = default(SubstitutionOptionList))
+        public SubstitutionPreferences(SubstitutionTypeEnum substitutionType = default, SubstitutionOptionList substitutionOptions = default)
         {
             // to ensure "substitutionType" is required (not null)
             if (substitutionType == null)
@@ -173,7 +173,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
