@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
     /// The tax classification for the entity.
     /// </summary>
     [DataContract]
-    public partial class TaxClassification :  IEquatable<TaxClassification>, IValidatableObject
+    public partial class TaxClassification : IEquatable<TaxClassification>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxClassification" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             this.Name = name;
             this.Value = value;
         }
-        
+
         /// <summary>
         /// The type of tax.
         /// </summary>
         /// <value>The type of tax.</value>
-        [DataMember(Name="Name", EmitDefaultValue=false)]
+        [DataMember(Name = "Name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The entity&#39;s tax identifier.
         /// </summary>
         /// <value>The entity&#39;s tax identifier.</value>
-        [DataMember(Name="Value", EmitDefaultValue=false)]
+        [DataMember(Name = "Value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&

@@ -9,18 +9,14 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Proof of Appointment (POA) details.
     /// </summary>
     [DataContract]
-    public partial class Poa :  IEquatable<Poa>, IValidatableObject
+    public partial class Poa : IEquatable<Poa>, IValidatableObject
     {
         /// <summary>
         /// The type of POA uploaded.
@@ -37,25 +33,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PoaTypeEnum
         {
-            
+
             /// <summary>
             /// Enum NOSIGNATUREDUMMYPOS for value: NO_SIGNATURE_DUMMY_POS
             /// </summary>
             [EnumMember(Value = "NO_SIGNATURE_DUMMY_POS")]
             NOSIGNATUREDUMMYPOS = 1,
-            
+
             /// <summary>
             /// Enum CUSTOMERSIGNATURE for value: CUSTOMER_SIGNATURE
             /// </summary>
             [EnumMember(Value = "CUSTOMER_SIGNATURE")]
             CUSTOMERSIGNATURE = 2,
-            
+
             /// <summary>
             /// Enum DUMMYRECEIPT for value: DUMMY_RECEIPT
             /// </summary>
             [EnumMember(Value = "DUMMY_RECEIPT")]
             DUMMYRECEIPT = 3,
-            
+
             /// <summary>
             /// Enum POARECEIPT for value: POA_RECEIPT
             /// </summary>
@@ -67,7 +63,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The type of POA uploaded.
         /// </summary>
         /// <value>The type of POA uploaded.</value>
-        [DataMember(Name="poaType", EmitDefaultValue=false)]
+        [DataMember(Name = "poaType", EmitDefaultValue = false)]
         public PoaTypeEnum? PoaType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Poa" /> class.
@@ -85,33 +81,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.UploadTime = uploadTime;
             this.PoaType = poaType;
         }
-        
+
         /// <summary>
         /// The time of the appointment window.
         /// </summary>
         /// <value>The time of the appointment window.</value>
-        [DataMember(Name="appointmentTime", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentTime", EmitDefaultValue = false)]
         public AppointmentTime AppointmentTime { get; set; }
 
         /// <summary>
         /// A list of technicians.
         /// </summary>
         /// <value>A list of technicians.</value>
-        [DataMember(Name="technicians", EmitDefaultValue=false)]
+        [DataMember(Name = "technicians", EmitDefaultValue = false)]
         public List<Technician> Technicians { get; set; }
 
         /// <summary>
         /// The identifier of the technician who uploaded the POA.
         /// </summary>
         /// <value>The identifier of the technician who uploaded the POA.</value>
-        [DataMember(Name="uploadingTechnician", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadingTechnician", EmitDefaultValue = false)]
         public string UploadingTechnician { get; set; }
 
         /// <summary>
         /// The date and time when the POA was uploaded in ISO 8601 format.
         /// </summary>
         /// <value>The date and time when the POA was uploaded in ISO 8601 format.</value>
-        [DataMember(Name="uploadTime", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadTime", EmitDefaultValue = false)]
         public DateTime? UploadTime { get; set; }
 
 
@@ -131,7 +127,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -161,27 +157,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AppointmentTime == input.AppointmentTime ||
                     (this.AppointmentTime != null &&
                     this.AppointmentTime.Equals(input.AppointmentTime))
-                ) && 
+                ) &&
                 (
                     this.Technicians == input.Technicians ||
                     this.Technicians != null &&
                     this.Technicians.SequenceEqual(input.Technicians)
-                ) && 
+                ) &&
                 (
                     this.UploadingTechnician == input.UploadingTechnician ||
                     (this.UploadingTechnician != null &&
                     this.UploadingTechnician.Equals(input.UploadingTechnician))
-                ) && 
+                ) &&
                 (
                     this.UploadTime == input.UploadTime ||
                     (this.UploadTime != null &&
                     this.UploadTime.Equals(input.UploadTime))
-                ) && 
+                ) &&
                 (
                     this.PoaType == input.PoaType ||
                     (this.PoaType != null &&
@@ -223,7 +219,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             Regex regexUploadingTechnician = new Regex(@"^[A-Z0-9]*$", RegexOptions.CultureInvariant);
             if (false == regexUploadingTechnician.Match(this.UploadingTechnician).Success)
             {
-                yield return new ValidationResult("Invalid value for UploadingTechnician, must match a pattern of " + regexUploadingTechnician, new [] { "UploadingTechnician" });
+                yield return new ValidationResult("Invalid value for UploadingTechnician, must match a pattern of " + regexUploadingTechnician, new[] { "UploadingTechnician" });
             }
 
             yield break;

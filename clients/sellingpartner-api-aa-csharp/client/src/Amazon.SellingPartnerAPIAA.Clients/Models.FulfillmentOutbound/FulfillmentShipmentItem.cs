@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Item information for a shipment in a fulfillment order.
     /// </summary>
     [DataContract]
-    public partial class FulfillmentShipmentItem :  IEquatable<FulfillmentShipmentItem>, IValidatableObject
+    public partial class FulfillmentShipmentItem : IEquatable<FulfillmentShipmentItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentShipmentItem" /> class.
@@ -77,46 +71,46 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.SerialNumber = serialNumber;
             this.ManufacturerLotCodes = manufacturerLotCodes;
         }
-        
+
         /// <summary>
         /// The seller SKU of the item.
         /// </summary>
         /// <value>The seller SKU of the item.</value>
-        [DataMember(Name="sellerSku", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerSku", EmitDefaultValue = false)]
         public string SellerSku { get; set; }
 
         /// <summary>
         /// The fulfillment order item identifier that the seller created and submitted with a call to the &#x60;createFulfillmentOrder&#x60; operation.
         /// </summary>
         /// <value>The fulfillment order item identifier that the seller created and submitted with a call to the &#x60;createFulfillmentOrder&#x60; operation.</value>
-        [DataMember(Name="sellerFulfillmentOrderItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerFulfillmentOrderItemId", EmitDefaultValue = false)]
         public string SellerFulfillmentOrderItemId { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
         /// </summary>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// An identifier for the package that contains the item quantity.
         /// </summary>
         /// <value>An identifier for the package that contains the item quantity.</value>
-        [DataMember(Name="packageNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "packageNumber", EmitDefaultValue = false)]
         public int? PackageNumber { get; set; }
 
         /// <summary>
         /// The serial number of the shipped item.
         /// </summary>
         /// <value>The serial number of the shipped item.</value>
-        [DataMember(Name="serialNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "serialNumber", EmitDefaultValue = false)]
         public string SerialNumber { get; set; }
 
         /// <summary>
         /// The manufacturer lot codes of the shipped items.
         /// </summary>
         /// <value>The manufacturer lot codes of the shipped items.</value>
-        [DataMember(Name="manufacturerLotCodes", EmitDefaultValue=false)]
+        [DataMember(Name = "manufacturerLotCodes", EmitDefaultValue = false)]
         public StringList ManufacturerLotCodes { get; set; }
 
         /// <summary>
@@ -136,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -166,32 +160,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerSku == input.SellerSku ||
                     (this.SellerSku != null &&
                     this.SellerSku.Equals(input.SellerSku))
-                ) && 
+                ) &&
                 (
                     this.SellerFulfillmentOrderItemId == input.SellerFulfillmentOrderItemId ||
                     (this.SellerFulfillmentOrderItemId != null &&
                     this.SellerFulfillmentOrderItemId.Equals(input.SellerFulfillmentOrderItemId))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.PackageNumber == input.PackageNumber ||
                     (this.PackageNumber != null &&
                     this.PackageNumber.Equals(input.PackageNumber))
-                ) && 
+                ) &&
                 (
                     this.SerialNumber == input.SerialNumber ||
                     (this.SerialNumber != null &&
                     this.SerialNumber.Equals(input.SerialNumber))
-                ) && 
+                ) &&
                 (
                     this.ManufacturerLotCodes == input.ManufacturerLotCodes ||
                     (this.ManufacturerLotCodes != null &&

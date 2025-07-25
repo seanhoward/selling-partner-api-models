@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Ordered quantity information.
     /// </summary>
     [DataContract]
-    public partial class OrderItemStatusOrderedQuantity :  IEquatable<OrderItemStatusOrderedQuantity>, IValidatableObject
+    public partial class OrderItemStatusOrderedQuantity : IEquatable<OrderItemStatusOrderedQuantity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemStatusOrderedQuantity" /> class.
@@ -40,19 +34,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.OrderedQuantity = orderedQuantity;
             this.OrderedQuantityDetails = orderedQuantityDetails;
         }
-        
+
         /// <summary>
         /// Item quantity ordered.
         /// </summary>
         /// <value>Item quantity ordered.</value>
-        [DataMember(Name="orderedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "orderedQuantity", EmitDefaultValue = false)]
         public ItemQuantity OrderedQuantity { get; set; }
 
         /// <summary>
         /// Details of item quantity ordered.
         /// </summary>
         /// <value>Details of item quantity ordered.</value>
-        [DataMember(Name="orderedQuantityDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "orderedQuantityDetails", EmitDefaultValue = false)]
         public List<OrderedQuantityDetails> OrderedQuantityDetails { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.OrderedQuantity == input.OrderedQuantity ||
                     (this.OrderedQuantity != null &&
                     this.OrderedQuantity.Equals(input.OrderedQuantity))
-                ) && 
+                ) &&
                 (
                     this.OrderedQuantityDetails == input.OrderedQuantityDetails ||
                     this.OrderedQuantityDetails != null &&

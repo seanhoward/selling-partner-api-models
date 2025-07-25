@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The fulfillment center appointment slot for the transportation option.
     /// </summary>
     [DataContract]
-    public partial class AppointmentSlot :  IEquatable<AppointmentSlot>, IValidatableObject
+    public partial class AppointmentSlot : IEquatable<AppointmentSlot>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentSlot" /> class.
@@ -61,18 +56,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.SlotTime = slotTime;
             }
         }
-        
+
         /// <summary>
         /// An identifier to a self-ship appointment slot.
         /// </summary>
         /// <value>An identifier to a self-ship appointment slot.</value>
-        [DataMember(Name="slotId", EmitDefaultValue=false)]
+        [DataMember(Name = "slotId", EmitDefaultValue = false)]
         public string SlotId { get; set; }
 
         /// <summary>
         /// Gets or Sets SlotTime
         /// </summary>
-        [DataMember(Name="slotTime", EmitDefaultValue=false)]
+        [DataMember(Name = "slotTime", EmitDefaultValue = false)]
         public AppointmentSlotTime SlotTime { get; set; }
 
         /// <summary>
@@ -88,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SlotId == input.SlotId ||
                     (this.SlotId != null &&
                     this.SlotId.Equals(input.SlotId))
-                ) && 
+                ) &&
                 (
                     this.SlotTime == input.SlotTime ||
                     (this.SlotTime != null &&
@@ -156,22 +151,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // SlotId (string) maxLength
-            if(this.SlotId != null && this.SlotId.Length > 38)
+            if (this.SlotId != null && this.SlotId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for SlotId, length must be less than 38.", new [] { "SlotId" });
+                yield return new ValidationResult("Invalid value for SlotId, length must be less than 38.", new[] { "SlotId" });
             }
 
             // SlotId (string) minLength
-            if(this.SlotId != null && this.SlotId.Length < 38)
+            if (this.SlotId != null && this.SlotId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for SlotId, length must be greater than 38.", new [] { "SlotId" });
+                yield return new ValidationResult("Invalid value for SlotId, length must be greater than 38.", new[] { "SlotId" });
             }
 
             // SlotId (string) pattern
             Regex regexSlotId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexSlotId.Match(this.SlotId).Success)
             {
-                yield return new ValidationResult("Invalid value for SlotId, must match a pattern of " + regexSlotId, new [] { "SlotId" });
+                yield return new ValidationResult("Invalid value for SlotId, must match a pattern of " + regexSlotId, new[] { "SlotId" });
             }
 
             yield break;

@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Information about a sub-payment method used to pay for a COD order.
     /// </summary>
     [DataContract]
-    public partial class PaymentExecutionDetailItem :  IEquatable<PaymentExecutionDetailItem>, IValidatableObject
+    public partial class PaymentExecutionDetailItem : IEquatable<PaymentExecutionDetailItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentExecutionDetailItem" /> class.
@@ -61,18 +55,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                 this.PaymentMethod = paymentMethod;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets Payment
         /// </summary>
-        [DataMember(Name="Payment", EmitDefaultValue=false)]
+        [DataMember(Name = "Payment", EmitDefaultValue = false)]
         public Money Payment { get; set; }
 
         /// <summary>
         /// A sub-payment method for a COD order.  **Possible values**: * &#x60;COD&#x60;: Cash on delivery  * &#x60;GC&#x60;: Gift card  * &#x60;PointsAccount&#x60;: Amazon Points * &#x60;Invoice&#x60;: Invoice
         /// </summary>
         /// <value>A sub-payment method for a COD order.  **Possible values**: * &#x60;COD&#x60;: Cash on delivery  * &#x60;GC&#x60;: Gift card  * &#x60;PointsAccount&#x60;: Amazon Points * &#x60;Invoice&#x60;: Invoice</value>
-        [DataMember(Name="PaymentMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "PaymentMethod", EmitDefaultValue = false)]
         public string PaymentMethod { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +112,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Payment == input.Payment ||
                     (this.Payment != null &&
                     this.Payment.Equals(input.Payment))
-                ) && 
+                ) &&
                 (
                     this.PaymentMethod == input.PaymentMethod ||
                     (this.PaymentMethod != null &&

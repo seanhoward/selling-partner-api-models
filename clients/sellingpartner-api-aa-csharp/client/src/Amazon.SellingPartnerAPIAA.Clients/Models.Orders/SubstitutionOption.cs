@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Substitution options for an order item.
     /// </summary>
     [DataContract]
-    public partial class SubstitutionOption :  IEquatable<SubstitutionOption>, IValidatableObject
+    public partial class SubstitutionOption : IEquatable<SubstitutionOption>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SubstitutionOption" /> class.
@@ -46,40 +39,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.Title = title;
             this.Measurement = measurement;
         }
-        
+
         /// <summary>
         /// The item&#39;s Amazon Standard Identification Number (ASIN).
         /// </summary>
         /// <value>The item&#39;s Amazon Standard Identification Number (ASIN).</value>
-        [DataMember(Name="ASIN", EmitDefaultValue=false)]
+        [DataMember(Name = "ASIN", EmitDefaultValue = false)]
         public string ASIN { get; set; }
 
         /// <summary>
         /// The number of items to be picked for this substitution option. 
         /// </summary>
         /// <value>The number of items to be picked for this substitution option. </value>
-        [DataMember(Name="QuantityOrdered", EmitDefaultValue=false)]
+        [DataMember(Name = "QuantityOrdered", EmitDefaultValue = false)]
         public int? QuantityOrdered { get; set; }
 
         /// <summary>
         /// The item&#39;s seller stock keeping unit (SKU).
         /// </summary>
         /// <value>The item&#39;s seller stock keeping unit (SKU).</value>
-        [DataMember(Name="SellerSKU", EmitDefaultValue=false)]
+        [DataMember(Name = "SellerSKU", EmitDefaultValue = false)]
         public string SellerSKU { get; set; }
 
         /// <summary>
         /// The item&#39;s title.
         /// </summary>
         /// <value>The item&#39;s title.</value>
-        [DataMember(Name="Title", EmitDefaultValue=false)]
+        [DataMember(Name = "Title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// Measurement information for the substitution option.
         /// </summary>
         /// <value>Measurement information for the substitution option.</value>
-        [DataMember(Name="Measurement", EmitDefaultValue=false)]
+        [DataMember(Name = "Measurement", EmitDefaultValue = false)]
         public Measurement Measurement { get; set; }
 
         /// <summary>
@@ -98,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,27 +121,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ASIN == input.ASIN ||
                     (this.ASIN != null &&
                     this.ASIN.Equals(input.ASIN))
-                ) && 
+                ) &&
                 (
                     this.QuantityOrdered == input.QuantityOrdered ||
                     (this.QuantityOrdered != null &&
                     this.QuantityOrdered.Equals(input.QuantityOrdered))
-                ) && 
+                ) &&
                 (
                     this.SellerSKU == input.SellerSKU ||
                     (this.SellerSKU != null &&
                     this.SellerSKU.Equals(input.SellerSKU))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.Measurement == input.Measurement ||
                     (this.Measurement != null &&

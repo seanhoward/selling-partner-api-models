@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
     /// The request for the &#x60;deleteNotifications&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class DeleteNotificationsRequest :  IEquatable<DeleteNotificationsRequest>, IValidatableObject
+    public partial class DeleteNotificationsRequest : IEquatable<DeleteNotificationsRequest>, IValidatableObject
     {
         /// <summary>
         /// The unique identifier that maps each notification status to a reason code.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DeletionReasonEnum
         {
-            
+
             /// <summary>
             /// Enum CONTENT for value: INCORRECT_CONTENT
             /// </summary>
             [EnumMember(Value = "INCORRECT_CONTENT")]
             CONTENT = 1,
-            
+
             /// <summary>
             /// Enum RECIPIENT for value: INCORRECT_RECIPIENT
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// The unique identifier that maps each notification status to a reason code.
         /// </summary>
         /// <value>The unique identifier that maps each notification status to a reason code.</value>
-        [DataMember(Name="deletionReason", EmitDefaultValue=false)]
+        [DataMember(Name = "deletionReason", EmitDefaultValue = false)]
         public DeletionReasonEnum DeletionReason { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteNotificationsRequest" /> class.
@@ -88,12 +83,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
                 this.DeletionReason = deletionReason;
             }
         }
-        
+
         /// <summary>
         /// The unique identifier of the notification template you used to onboard your application.
         /// </summary>
         /// <value>The unique identifier of the notification template you used to onboard your application.</value>
-        [DataMember(Name="templateId", EmitDefaultValue=false)]
+        [DataMember(Name = "templateId", EmitDefaultValue = false)]
         public string TemplateId { get; set; }
 
 
@@ -110,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -140,12 +135,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TemplateId == input.TemplateId ||
                     (this.TemplateId != null &&
                     this.TemplateId.Equals(input.TemplateId))
-                ) && 
+                ) &&
                 (
                     this.DeletionReason == input.DeletionReason ||
                     (this.DeletionReason != null &&

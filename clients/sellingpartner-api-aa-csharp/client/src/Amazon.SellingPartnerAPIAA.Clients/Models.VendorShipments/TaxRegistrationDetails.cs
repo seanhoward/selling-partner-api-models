@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Tax registration details of the entity.
     /// </summary>
     [DataContract]
-    public partial class TaxRegistrationDetails :  IEquatable<TaxRegistrationDetails>, IValidatableObject
+    public partial class TaxRegistrationDetails : IEquatable<TaxRegistrationDetails>, IValidatableObject
     {
         /// <summary>
         /// Tax registration type for the entity.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TaxRegistrationTypeEnum
         {
-            
+
             /// <summary>
             /// Enum VAT for value: VAT
             /// </summary>
             [EnumMember(Value = "VAT")]
             VAT = 1,
-            
+
             /// <summary>
             /// Enum GST for value: GST
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// Tax registration type for the entity.
         /// </summary>
         /// <value>Tax registration type for the entity.</value>
-        [DataMember(Name="taxRegistrationType", EmitDefaultValue=false)]
+        [DataMember(Name = "taxRegistrationType", EmitDefaultValue = false)]
         public TaxRegistrationTypeEnum TaxRegistrationType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRegistrationDetails" /> class.
@@ -88,13 +83,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
                 this.TaxRegistrationNumber = taxRegistrationNumber;
             }
         }
-        
+
 
         /// <summary>
         /// Tax registration number for the entity. For example, VAT ID.
         /// </summary>
         /// <value>Tax registration number for the entity. For example, VAT ID.</value>
-        [DataMember(Name="taxRegistrationNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "taxRegistrationNumber", EmitDefaultValue = false)]
         public string TaxRegistrationNumber { get; set; }
 
         /// <summary>
@@ -110,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -140,12 +135,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TaxRegistrationType == input.TaxRegistrationType ||
                     (this.TaxRegistrationType != null &&
                     this.TaxRegistrationType.Equals(input.TaxRegistrationType))
-                ) && 
+                ) &&
                 (
                     this.TaxRegistrationNumber == input.TaxRegistrationNumber ||
                     (this.TaxRegistrationNumber != null &&

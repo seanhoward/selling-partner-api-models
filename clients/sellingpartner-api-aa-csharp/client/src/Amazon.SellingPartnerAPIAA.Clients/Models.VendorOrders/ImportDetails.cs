@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Import details for an import order.
     /// </summary>
     [DataContract]
-    public partial class ImportDetails :  IEquatable<ImportDetails>, IValidatableObject
+    public partial class ImportDetails : IEquatable<ImportDetails>, IValidatableObject
     {
         /// <summary>
         /// If the recipient requests, contains the shipment method of payment. This is for import PO&#39;s only.
@@ -37,37 +31,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MethodOfPaymentEnum
         {
-            
+
             /// <summary>
             /// Enum PaidByBuyer for value: PaidByBuyer
             /// </summary>
             [EnumMember(Value = "PaidByBuyer")]
             PaidByBuyer = 1,
-            
+
             /// <summary>
             /// Enum CollectOnDelivery for value: CollectOnDelivery
             /// </summary>
             [EnumMember(Value = "CollectOnDelivery")]
             CollectOnDelivery = 2,
-            
+
             /// <summary>
             /// Enum DefinedByBuyerAndSeller for value: DefinedByBuyerAndSeller
             /// </summary>
             [EnumMember(Value = "DefinedByBuyerAndSeller")]
             DefinedByBuyerAndSeller = 3,
-            
+
             /// <summary>
             /// Enum FOBPortOfCall for value: FOBPortOfCall
             /// </summary>
             [EnumMember(Value = "FOBPortOfCall")]
             FOBPortOfCall = 4,
-            
+
             /// <summary>
             /// Enum PrepaidBySeller for value: PrepaidBySeller
             /// </summary>
             [EnumMember(Value = "PrepaidBySeller")]
             PrepaidBySeller = 5,
-            
+
             /// <summary>
             /// Enum PaidBySeller for value: PaidBySeller
             /// </summary>
@@ -79,7 +73,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// If the recipient requests, contains the shipment method of payment. This is for import PO&#39;s only.
         /// </summary>
         /// <value>If the recipient requests, contains the shipment method of payment. This is for import PO&#39;s only.</value>
-        [DataMember(Name="methodOfPayment", EmitDefaultValue=false)]
+        [DataMember(Name = "methodOfPayment", EmitDefaultValue = false)]
         public MethodOfPaymentEnum? MethodOfPayment { get; set; }
         /// <summary>
         /// Incoterms (International Commercial Terms) are used to divide transaction costs and responsibilities between buyer and seller and reflect state-of-the-art transportation practices. This is for import purchase orders only. 
@@ -88,67 +82,67 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InternationalCommercialTermsEnum
         {
-            
+
             /// <summary>
             /// Enum ExWorks for value: ExWorks
             /// </summary>
             [EnumMember(Value = "ExWorks")]
             ExWorks = 1,
-            
+
             /// <summary>
             /// Enum FreeCarrier for value: FreeCarrier
             /// </summary>
             [EnumMember(Value = "FreeCarrier")]
             FreeCarrier = 2,
-            
+
             /// <summary>
             /// Enum FreeOnBoard for value: FreeOnBoard
             /// </summary>
             [EnumMember(Value = "FreeOnBoard")]
             FreeOnBoard = 3,
-            
+
             /// <summary>
             /// Enum FreeAlongSideShip for value: FreeAlongSideShip
             /// </summary>
             [EnumMember(Value = "FreeAlongSideShip")]
             FreeAlongSideShip = 4,
-            
+
             /// <summary>
             /// Enum CarriagePaidTo for value: CarriagePaidTo
             /// </summary>
             [EnumMember(Value = "CarriagePaidTo")]
             CarriagePaidTo = 5,
-            
+
             /// <summary>
             /// Enum CostAndFreight for value: CostAndFreight
             /// </summary>
             [EnumMember(Value = "CostAndFreight")]
             CostAndFreight = 6,
-            
+
             /// <summary>
             /// Enum CarriageAndInsurancePaidTo for value: CarriageAndInsurancePaidTo
             /// </summary>
             [EnumMember(Value = "CarriageAndInsurancePaidTo")]
             CarriageAndInsurancePaidTo = 7,
-            
+
             /// <summary>
             /// Enum CostInsuranceAndFreight for value: CostInsuranceAndFreight
             /// </summary>
             [EnumMember(Value = "CostInsuranceAndFreight")]
             CostInsuranceAndFreight = 8,
-            
+
             /// <summary>
             /// Enum DeliveredAtTerminal for value: DeliveredAtTerminal
             /// </summary>
             [EnumMember(Value = "DeliveredAtTerminal")]
             DeliveredAtTerminal = 9,
-            
+
             /// <summary>
             /// Enum DeliveredAtPlace for value: DeliveredAtPlace
             /// </summary>
             [EnumMember(Value = "DeliveredAtPlace")]
             DeliveredAtPlace = 10,
-            
+
             /// <summary>
             /// Enum DeliverDutyPaid for value: DeliverDutyPaid
             /// </summary>
@@ -160,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// Incoterms (International Commercial Terms) are used to divide transaction costs and responsibilities between buyer and seller and reflect state-of-the-art transportation practices. This is for import purchase orders only. 
         /// </summary>
         /// <value>Incoterms (International Commercial Terms) are used to divide transaction costs and responsibilities between buyer and seller and reflect state-of-the-art transportation practices. This is for import purchase orders only. </value>
-        [DataMember(Name="internationalCommercialTerms", EmitDefaultValue=false)]
+        [DataMember(Name = "internationalCommercialTerms", EmitDefaultValue = false)]
         public InternationalCommercialTermsEnum? InternationalCommercialTerms { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ImportDetails" /> class.
@@ -178,28 +172,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.ImportContainers = importContainers;
             this.ShippingInstructions = shippingInstructions;
         }
-        
+
 
 
         /// <summary>
         /// The port where goods on an import purchase order must be delivered by the vendor. This should only be specified when the internationalCommercialTerms is FOB.
         /// </summary>
         /// <value>The port where goods on an import purchase order must be delivered by the vendor. This should only be specified when the internationalCommercialTerms is FOB.</value>
-        [DataMember(Name="portOfDelivery", EmitDefaultValue=false)]
+        [DataMember(Name = "portOfDelivery", EmitDefaultValue = false)]
         public string PortOfDelivery { get; set; }
 
         /// <summary>
         /// Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if the shipment has multiple containers. HC signifies a high-capacity container. Free-text field, limited to 64 characters. The format will be a comma-delimited list containing values of the type: $NUMBER_OF_CONTAINERS_OF_THIS_TYPE-$CONTAINER_TYPE. The list of values for the container type is: 40&#39;(40-foot container), 40&#39;HC (40-foot high-capacity container), 45&#39;, 45&#39;HC, 30&#39;, 30&#39;HC, 20&#39;, 20&#39;HC.
         /// </summary>
         /// <value>Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if the shipment has multiple containers. HC signifies a high-capacity container. Free-text field, limited to 64 characters. The format will be a comma-delimited list containing values of the type: $NUMBER_OF_CONTAINERS_OF_THIS_TYPE-$CONTAINER_TYPE. The list of values for the container type is: 40&#39;(40-foot container), 40&#39;HC (40-foot high-capacity container), 45&#39;, 45&#39;HC, 30&#39;, 30&#39;HC, 20&#39;, 20&#39;HC.</value>
-        [DataMember(Name="importContainers", EmitDefaultValue=false)]
+        [DataMember(Name = "importContainers", EmitDefaultValue = false)]
         public string ImportContainers { get; set; }
 
         /// <summary>
         /// Special instructions regarding the shipment. This field is for import purchase orders.
         /// </summary>
         /// <value>Special instructions regarding the shipment. This field is for import purchase orders.</value>
-        [DataMember(Name="shippingInstructions", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingInstructions", EmitDefaultValue = false)]
         public string ShippingInstructions { get; set; }
 
         /// <summary>
@@ -218,7 +212,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -248,27 +242,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MethodOfPayment == input.MethodOfPayment ||
                     (this.MethodOfPayment != null &&
                     this.MethodOfPayment.Equals(input.MethodOfPayment))
-                ) && 
+                ) &&
                 (
                     this.InternationalCommercialTerms == input.InternationalCommercialTerms ||
                     (this.InternationalCommercialTerms != null &&
                     this.InternationalCommercialTerms.Equals(input.InternationalCommercialTerms))
-                ) && 
+                ) &&
                 (
                     this.PortOfDelivery == input.PortOfDelivery ||
                     (this.PortOfDelivery != null &&
                     this.PortOfDelivery.Equals(input.PortOfDelivery))
-                ) && 
+                ) &&
                 (
                     this.ImportContainers == input.ImportContainers ||
                     (this.ImportContainers != null &&
                     this.ImportContainers.Equals(input.ImportContainers))
-                ) && 
+                ) &&
                 (
                     this.ShippingInstructions == input.ShippingInstructions ||
                     (this.ShippingInstructions != null &&
@@ -307,15 +301,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PortOfDelivery (string) maxLength
-            if(this.PortOfDelivery != null && this.PortOfDelivery.Length > 64)
+            if (this.PortOfDelivery != null && this.PortOfDelivery.Length > 64)
             {
-                yield return new ValidationResult("Invalid value for PortOfDelivery, length must be less than 64.", new [] { "PortOfDelivery" });
+                yield return new ValidationResult("Invalid value for PortOfDelivery, length must be less than 64.", new[] { "PortOfDelivery" });
             }
 
             // ImportContainers (string) maxLength
-            if(this.ImportContainers != null && this.ImportContainers.Length > 64)
+            if (this.ImportContainers != null && this.ImportContainers.Length > 64)
             {
-                yield return new ValidationResult("Invalid value for ImportContainers, length must be less than 64.", new [] { "ImportContainers" });
+                yield return new ValidationResult("Invalid value for ImportContainers, length must be less than 64.", new[] { "ImportContainers" });
             }
 
             yield break;

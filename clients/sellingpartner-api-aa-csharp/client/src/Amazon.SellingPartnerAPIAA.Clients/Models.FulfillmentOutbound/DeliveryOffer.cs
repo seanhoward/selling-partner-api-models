@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// An available offer for delivery of a product.
     /// </summary>
     [DataContract]
-    public partial class DeliveryOffer :  IEquatable<DeliveryOffer>, IValidatableObject
+    public partial class DeliveryOffer : IEquatable<DeliveryOffer>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryOffer" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.DateRange = dateRange;
             this.Policy = policy;
         }
-        
+
         /// <summary>
         /// The timestamp at which a delivery offer expires.
         /// </summary>
         /// <value>The timestamp at which a delivery offer expires.</value>
-        [DataMember(Name="expiresAt", EmitDefaultValue=false)]
+        [DataMember(Name = "expiresAt", EmitDefaultValue = false)]
         public DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// The range between which delivery is expected.
         /// </summary>
         /// <value>The range between which delivery is expected.</value>
-        [DataMember(Name="dateRange", EmitDefaultValue=false)]
+        [DataMember(Name = "dateRange", EmitDefaultValue = false)]
         public DateRange DateRange { get; set; }
 
         /// <summary>
         /// The policy for a delivery offer, including localized messaging.
         /// </summary>
         /// <value>The policy for a delivery offer, including localized messaging.</value>
-        [DataMember(Name="policy", EmitDefaultValue=false)]
+        [DataMember(Name = "policy", EmitDefaultValue = false)]
         public DeliveryPolicy Policy { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ExpiresAt == input.ExpiresAt ||
                     (this.ExpiresAt != null &&
                     this.ExpiresAt.Equals(input.ExpiresAt))
-                ) && 
+                ) &&
                 (
                     this.DateRange == input.DateRange ||
                     (this.DateRange != null &&
                     this.DateRange.Equals(input.DateRange))
-                ) && 
+                ) &&
                 (
                     this.Policy == input.Policy ||
                     (this.Policy != null &&

@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,12 +23,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Input information for a given box.
     /// </summary>
     [DataContract]
-    public partial class BoxInput :  IEquatable<BoxInput>, IValidatableObject
+    public partial class BoxInput : IEquatable<BoxInput>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ContentInformationSource
         /// </summary>
-        [DataMember(Name="contentInformationSource", EmitDefaultValue=false)]
+        [DataMember(Name = "contentInformationSource", EmitDefaultValue = false)]
         public BoxContentInformationSource ContentInformationSource { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BoxInput" /> class.
@@ -88,32 +83,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
             this.Items = items;
         }
-        
+
 
         /// <summary>
         /// Gets or Sets Dimensions
         /// </summary>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public Dimensions Dimensions { get; set; }
 
         /// <summary>
         /// The items and their quantity in the box. This must be empty if the box &#x60;contentInformationSource&#x60; is &#x60;BARCODE_2D&#x60; or &#x60;MANUAL_PROCESS&#x60;.
         /// </summary>
         /// <value>The items and their quantity in the box. This must be empty if the box &#x60;contentInformationSource&#x60; is &#x60;BARCODE_2D&#x60; or &#x60;MANUAL_PROCESS&#x60;.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<ItemInput> Items { get; set; }
 
         /// <summary>
         /// The number of containers where all other properties like weight or dimensions are identical.
         /// </summary>
         /// <value>The number of containers where all other properties like weight or dimensions are identical.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public Weight Weight { get; set; }
 
         /// <summary>
@@ -132,7 +127,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -162,27 +157,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContentInformationSource == input.ContentInformationSource ||
                     (this.ContentInformationSource != null &&
                     this.ContentInformationSource.Equals(input.ContentInformationSource))
-                ) && 
+                ) &&
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&
                     this.Items.SequenceEqual(input.Items)
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
@@ -221,15 +216,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Quantity (int?) maximum
-            if(this.Quantity > (int?)10000)
+            if (this.Quantity > (int?)10000)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new[] { "Quantity" });
             }
 
             // Quantity (int?) minimum
-            if(this.Quantity < (int?)1)
+            if (this.Quantity < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new[] { "Quantity" });
             }
 
             yield break;

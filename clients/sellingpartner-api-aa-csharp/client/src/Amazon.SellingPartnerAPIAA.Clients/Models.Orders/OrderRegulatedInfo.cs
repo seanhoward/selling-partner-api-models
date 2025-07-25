@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The order&#39;s regulated information along with its verification status.
     /// </summary>
     [DataContract]
-    public partial class OrderRegulatedInfo :  IEquatable<OrderRegulatedInfo>, IValidatableObject
+    public partial class OrderRegulatedInfo : IEquatable<OrderRegulatedInfo>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderRegulatedInfo" /> class.
@@ -81,33 +75,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                 this.RegulatedOrderVerificationStatus = regulatedOrderVerificationStatus;
             }
         }
-        
+
         /// <summary>
         /// An Amazon-defined order identifier, in 3-7-7 format.
         /// </summary>
         /// <value>An Amazon-defined order identifier, in 3-7-7 format.</value>
-        [DataMember(Name="AmazonOrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "AmazonOrderId", EmitDefaultValue = false)]
         public string AmazonOrderId { get; set; }
 
         /// <summary>
         /// The regulated information collected during purchase and used to verify the order.
         /// </summary>
         /// <value>The regulated information collected during purchase and used to verify the order.</value>
-        [DataMember(Name="RegulatedInformation", EmitDefaultValue=false)]
+        [DataMember(Name = "RegulatedInformation", EmitDefaultValue = false)]
         public RegulatedInformation RegulatedInformation { get; set; }
 
         /// <summary>
         /// When true, the order requires attaching a dosage information label when shipped.
         /// </summary>
         /// <value>When true, the order requires attaching a dosage information label when shipped.</value>
-        [DataMember(Name="RequiresDosageLabel", EmitDefaultValue=false)]
+        [DataMember(Name = "RequiresDosageLabel", EmitDefaultValue = false)]
         public bool? RequiresDosageLabel { get; set; }
 
         /// <summary>
         /// The order&#39;s verification status.
         /// </summary>
         /// <value>The order&#39;s verification status.</value>
-        [DataMember(Name="RegulatedOrderVerificationStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "RegulatedOrderVerificationStatus", EmitDefaultValue = false)]
         public RegulatedOrderVerificationStatus RegulatedOrderVerificationStatus { get; set; }
 
         /// <summary>
@@ -125,7 +119,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -155,22 +149,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AmazonOrderId == input.AmazonOrderId ||
                     (this.AmazonOrderId != null &&
                     this.AmazonOrderId.Equals(input.AmazonOrderId))
-                ) && 
+                ) &&
                 (
                     this.RegulatedInformation == input.RegulatedInformation ||
                     (this.RegulatedInformation != null &&
                     this.RegulatedInformation.Equals(input.RegulatedInformation))
-                ) && 
+                ) &&
                 (
                     this.RequiresDosageLabel == input.RequiresDosageLabel ||
                     (this.RequiresDosageLabel != null &&
                     this.RequiresDosageLabel.Equals(input.RequiresDosageLabel))
-                ) && 
+                ) &&
                 (
                     this.RegulatedOrderVerificationStatus == input.RegulatedOrderVerificationStatus ||
                     (this.RegulatedOrderVerificationStatus != null &&

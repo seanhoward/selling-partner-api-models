@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,26 +9,19 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
     /// <summary>
-    /// A standard image with paragraphs and a bulleted list, and extra space for technical details.
+    /// A standard image with paragraphs, a bulleted list, and extra space for technical details.
     /// </summary>
     [DataContract]
-    public partial class StandardSingleImageSpecsDetailModule :  IEquatable<StandardSingleImageSpecsDetailModule>, IValidatableObject
+    public partial class StandardSingleImageSpecsDetailModule : IEquatable<StandardSingleImageSpecsDetailModule>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardSingleImageSpecsDetailModule" /> class.
@@ -52,53 +45,53 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             this.SpecificationListBlock = specificationListBlock;
             this.SpecificationTextBlock = specificationTextBlock;
         }
-        
+
         /// <summary>
         /// Gets or Sets Headline
         /// </summary>
-        [DataMember(Name="headline", EmitDefaultValue=false)]
+        [DataMember(Name = "headline", EmitDefaultValue = false)]
         public TextComponent Headline { get; set; }
 
         /// <summary>
         /// Gets or Sets Image
         /// </summary>
-        [DataMember(Name="image", EmitDefaultValue=false)]
+        [DataMember(Name = "image", EmitDefaultValue = false)]
         public ImageComponent Image { get; set; }
 
         /// <summary>
         /// Gets or Sets DescriptionHeadline
         /// </summary>
-        [DataMember(Name="descriptionHeadline", EmitDefaultValue=false)]
+        [DataMember(Name = "descriptionHeadline", EmitDefaultValue = false)]
         public TextComponent DescriptionHeadline { get; set; }
 
         /// <summary>
         /// Gets or Sets DescriptionBlock1
         /// </summary>
-        [DataMember(Name="descriptionBlock1", EmitDefaultValue=false)]
+        [DataMember(Name = "descriptionBlock1", EmitDefaultValue = false)]
         public StandardTextBlock DescriptionBlock1 { get; set; }
 
         /// <summary>
         /// Gets or Sets DescriptionBlock2
         /// </summary>
-        [DataMember(Name="descriptionBlock2", EmitDefaultValue=false)]
+        [DataMember(Name = "descriptionBlock2", EmitDefaultValue = false)]
         public StandardTextBlock DescriptionBlock2 { get; set; }
 
         /// <summary>
         /// Gets or Sets SpecificationHeadline
         /// </summary>
-        [DataMember(Name="specificationHeadline", EmitDefaultValue=false)]
+        [DataMember(Name = "specificationHeadline", EmitDefaultValue = false)]
         public TextComponent SpecificationHeadline { get; set; }
 
         /// <summary>
         /// Gets or Sets SpecificationListBlock
         /// </summary>
-        [DataMember(Name="specificationListBlock", EmitDefaultValue=false)]
+        [DataMember(Name = "specificationListBlock", EmitDefaultValue = false)]
         public StandardHeaderTextListBlock SpecificationListBlock { get; set; }
 
         /// <summary>
         /// Gets or Sets SpecificationTextBlock
         /// </summary>
-        [DataMember(Name="specificationTextBlock", EmitDefaultValue=false)]
+        [DataMember(Name = "specificationTextBlock", EmitDefaultValue = false)]
         public StandardTextBlock SpecificationTextBlock { get; set; }
 
         /// <summary>
@@ -120,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -150,42 +143,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Headline == input.Headline ||
                     (this.Headline != null &&
                     this.Headline.Equals(input.Headline))
-                ) && 
+                ) &&
                 (
                     this.Image == input.Image ||
                     (this.Image != null &&
                     this.Image.Equals(input.Image))
-                ) && 
+                ) &&
                 (
                     this.DescriptionHeadline == input.DescriptionHeadline ||
                     (this.DescriptionHeadline != null &&
                     this.DescriptionHeadline.Equals(input.DescriptionHeadline))
-                ) && 
+                ) &&
                 (
                     this.DescriptionBlock1 == input.DescriptionBlock1 ||
                     (this.DescriptionBlock1 != null &&
                     this.DescriptionBlock1.Equals(input.DescriptionBlock1))
-                ) && 
+                ) &&
                 (
                     this.DescriptionBlock2 == input.DescriptionBlock2 ||
                     (this.DescriptionBlock2 != null &&
                     this.DescriptionBlock2.Equals(input.DescriptionBlock2))
-                ) && 
+                ) &&
                 (
                     this.SpecificationHeadline == input.SpecificationHeadline ||
                     (this.SpecificationHeadline != null &&
                     this.SpecificationHeadline.Equals(input.SpecificationHeadline))
-                ) && 
+                ) &&
                 (
                     this.SpecificationListBlock == input.SpecificationListBlock ||
                     (this.SpecificationListBlock != null &&
                     this.SpecificationListBlock.Equals(input.SpecificationListBlock))
-                ) && 
+                ) &&
                 (
                     this.SpecificationTextBlock == input.SpecificationTextBlock ||
                     (this.SpecificationTextBlock != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Information about an upload destination.
     /// </summary>
     [DataContract]
-    public partial class ServiceDocumentUploadDestination :  IEquatable<ServiceDocumentUploadDestination>, IValidatableObject
+    public partial class ServiceDocumentUploadDestination : IEquatable<ServiceDocumentUploadDestination>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceDocumentUploadDestination" /> class.
@@ -73,32 +67,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             }
             this.Headers = headers;
         }
-        
+
         /// <summary>
         /// The unique identifier to be used by APIs that reference the upload destination.
         /// </summary>
         /// <value>The unique identifier to be used by APIs that reference the upload destination.</value>
-        [DataMember(Name="uploadDestinationId", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadDestinationId", EmitDefaultValue = false)]
         public string UploadDestinationId { get; set; }
 
         /// <summary>
         /// The URL to which to upload the file.
         /// </summary>
         /// <value>The URL to which to upload the file.</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets EncryptionDetails
         /// </summary>
-        [DataMember(Name="encryptionDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "encryptionDetails", EmitDefaultValue = false)]
         public EncryptionDetails EncryptionDetails { get; set; }
 
         /// <summary>
         /// The headers to include in the upload request.
         /// </summary>
         /// <value>The headers to include in the upload request.</value>
-        [DataMember(Name="headers", EmitDefaultValue=false)]
+        [DataMember(Name = "headers", EmitDefaultValue = false)]
         public Object Headers { get; set; }
 
         /// <summary>
@@ -116,7 +110,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -146,22 +140,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UploadDestinationId == input.UploadDestinationId ||
                     (this.UploadDestinationId != null &&
                     this.UploadDestinationId.Equals(input.UploadDestinationId))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.EncryptionDetails == input.EncryptionDetails ||
                     (this.EncryptionDetails != null &&
                     this.EncryptionDetails.Equals(input.EncryptionDetails))
-                ) && 
+                ) &&
                 (
                     this.Headers == input.Headers ||
                     (this.Headers != null &&

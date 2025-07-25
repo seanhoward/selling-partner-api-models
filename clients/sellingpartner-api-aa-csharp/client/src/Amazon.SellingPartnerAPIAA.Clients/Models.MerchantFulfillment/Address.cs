@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// The postal address information.
     /// </summary>
     [DataContract]
-    public partial class Address :  IEquatable<Address>, IValidatableObject
+    public partial class Address : IEquatable<Address>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -119,71 +113,71 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.DistrictOrCounty = districtOrCounty;
             this.StateOrProvinceCode = stateOrProvinceCode;
         }
-        
+
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="Name", EmitDefaultValue=false)]
+        [DataMember(Name = "Name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets AddressLine1
         /// </summary>
-        [DataMember(Name="AddressLine1", EmitDefaultValue=false)]
+        [DataMember(Name = "AddressLine1", EmitDefaultValue = false)]
         public string AddressLine1 { get; set; }
 
         /// <summary>
         /// Gets or Sets AddressLine2
         /// </summary>
-        [DataMember(Name="AddressLine2", EmitDefaultValue=false)]
+        [DataMember(Name = "AddressLine2", EmitDefaultValue = false)]
         public string AddressLine2 { get; set; }
 
         /// <summary>
         /// Gets or Sets AddressLine3
         /// </summary>
-        [DataMember(Name="AddressLine3", EmitDefaultValue=false)]
+        [DataMember(Name = "AddressLine3", EmitDefaultValue = false)]
         public string AddressLine3 { get; set; }
 
         /// <summary>
         /// Gets or Sets DistrictOrCounty
         /// </summary>
-        [DataMember(Name="DistrictOrCounty", EmitDefaultValue=false)]
+        [DataMember(Name = "DistrictOrCounty", EmitDefaultValue = false)]
         public string DistrictOrCounty { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        [DataMember(Name="Email", EmitDefaultValue=false)]
+        [DataMember(Name = "Email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets City
         /// </summary>
-        [DataMember(Name="City", EmitDefaultValue=false)]
+        [DataMember(Name = "City", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// Gets or Sets StateOrProvinceCode
         /// </summary>
-        [DataMember(Name="StateOrProvinceCode", EmitDefaultValue=false)]
+        [DataMember(Name = "StateOrProvinceCode", EmitDefaultValue = false)]
         public string StateOrProvinceCode { get; set; }
 
         /// <summary>
         /// Gets or Sets PostalCode
         /// </summary>
-        [DataMember(Name="PostalCode", EmitDefaultValue=false)]
+        [DataMember(Name = "PostalCode", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// Gets or Sets CountryCode
         /// </summary>
-        [DataMember(Name="CountryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "CountryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
-        [DataMember(Name="Phone", EmitDefaultValue=false)]
+        [DataMember(Name = "Phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
         /// <summary>
@@ -208,7 +202,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -238,57 +232,57 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.AddressLine1 == input.AddressLine1 ||
                     (this.AddressLine1 != null &&
                     this.AddressLine1.Equals(input.AddressLine1))
-                ) && 
+                ) &&
                 (
                     this.AddressLine2 == input.AddressLine2 ||
                     (this.AddressLine2 != null &&
                     this.AddressLine2.Equals(input.AddressLine2))
-                ) && 
+                ) &&
                 (
                     this.AddressLine3 == input.AddressLine3 ||
                     (this.AddressLine3 != null &&
                     this.AddressLine3.Equals(input.AddressLine3))
-                ) && 
+                ) &&
                 (
                     this.DistrictOrCounty == input.DistrictOrCounty ||
                     (this.DistrictOrCounty != null &&
                     this.DistrictOrCounty.Equals(input.DistrictOrCounty))
-                ) && 
+                ) &&
                 (
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
-                ) && 
+                ) &&
                 (
                     this.City == input.City ||
                     (this.City != null &&
                     this.City.Equals(input.City))
-                ) && 
+                ) &&
                 (
                     this.StateOrProvinceCode == input.StateOrProvinceCode ||
                     (this.StateOrProvinceCode != null &&
                     this.StateOrProvinceCode.Equals(input.StateOrProvinceCode))
-                ) && 
+                ) &&
                 (
                     this.PostalCode == input.PostalCode ||
                     (this.PostalCode != null &&
                     this.PostalCode.Equals(input.PostalCode))
-                ) && 
+                ) &&
                 (
                     this.CountryCode == input.CountryCode ||
                     (this.CountryCode != null &&
                     this.CountryCode.Equals(input.CountryCode))
-                ) && 
+                ) &&
                 (
                     this.Phone == input.Phone ||
                     (this.Phone != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
     /// The response schema for the getShipmentDetails operation.
     /// </summary>
     [DataContract]
-    public partial class GetShipmentDetailsResponse :  IEquatable<GetShipmentDetailsResponse>, IValidatableObject
+    public partial class GetShipmentDetailsResponse : IEquatable<GetShipmentDetailsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetShipmentDetailsResponse" /> class.
@@ -40,18 +33,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             this.Payload = payload;
             this.Errors = errors;
         }
-        
+
         /// <summary>
         /// The payload for the getShipmentDetails operation
         /// </summary>
         /// <value>The payload for the getShipmentDetails operation</value>
-        [DataMember(Name="payload", EmitDefaultValue=false)]
+        [DataMember(Name = "payload", EmitDefaultValue = false)]
         public ShipmentDetail Payload { get; set; }
 
         /// <summary>
         /// Gets or Sets Errors
         /// </summary>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 
         /// <summary>
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Payload == input.Payload ||
                     (this.Payload != null &&
                     this.Payload.Equals(input.Payload))
-                ) && 
+                ) &&
                 (
                     this.Errors == input.Errors ||
                     (this.Errors != null &&

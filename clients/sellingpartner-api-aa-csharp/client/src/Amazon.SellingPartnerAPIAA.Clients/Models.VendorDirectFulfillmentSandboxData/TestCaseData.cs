@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandboxData
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
     /// The set of test case data returned in response to the test data request.
     /// </summary>
     [DataContract]
-    public partial class TestCaseData :  IEquatable<TestCaseData>, IValidatableObject
+    public partial class TestCaseData : IEquatable<TestCaseData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TestCaseData" /> class.
@@ -38,12 +32,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         {
             this.Scenarios = scenarios;
         }
-        
+
         /// <summary>
         /// Set of use cases that describes the possible test scenarios.
         /// </summary>
         /// <value>Set of use cases that describes the possible test scenarios.</value>
-        [DataMember(Name="scenarios", EmitDefaultValue=false)]
+        [DataMember(Name = "scenarios", EmitDefaultValue = false)]
         public List<Scenario> Scenarios { get; set; }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Scenarios == input.Scenarios ||
                     this.Scenarios != null &&

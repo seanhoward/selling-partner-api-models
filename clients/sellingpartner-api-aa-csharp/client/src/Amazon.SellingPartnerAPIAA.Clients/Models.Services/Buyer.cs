@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Information about the buyer.
     /// </summary>
     [DataContract]
-    public partial class Buyer :  IEquatable<Buyer>, IValidatableObject
+    public partial class Buyer : IEquatable<Buyer>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Buyer" /> class.
@@ -44,33 +38,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.Phone = phone;
             this.IsPrimeMember = isPrimeMember;
         }
-        
+
         /// <summary>
         /// The identifier of the buyer.
         /// </summary>
         /// <value>The identifier of the buyer.</value>
-        [DataMember(Name="buyerId", EmitDefaultValue=false)]
+        [DataMember(Name = "buyerId", EmitDefaultValue = false)]
         public string BuyerId { get; set; }
 
         /// <summary>
         /// The name of the buyer.
         /// </summary>
         /// <value>The name of the buyer.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The phone number of the buyer.
         /// </summary>
         /// <value>The phone number of the buyer.</value>
-        [DataMember(Name="phone", EmitDefaultValue=false)]
+        [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
         /// <summary>
         /// When true, the service is for an Amazon Prime buyer.
         /// </summary>
         /// <value>When true, the service is for an Amazon Prime buyer.</value>
-        [DataMember(Name="isPrimeMember", EmitDefaultValue=false)]
+        [DataMember(Name = "isPrimeMember", EmitDefaultValue = false)]
         public bool? IsPrimeMember { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +112,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BuyerId == input.BuyerId ||
                     (this.BuyerId != null &&
                     this.BuyerId.Equals(input.BuyerId))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Phone == input.Phone ||
                     (this.Phone != null &&
                     this.Phone.Equals(input.Phone))
-                ) && 
+                ) &&
                 (
                     this.IsPrimeMember == input.IsPrimeMember ||
                     (this.IsPrimeMember != null &&
@@ -173,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             Regex regexBuyerId = new Regex(@"^[A-Z0-9]*$", RegexOptions.CultureInvariant);
             if (false == regexBuyerId.Match(this.BuyerId).Success)
             {
-                yield return new ValidationResult("Invalid value for BuyerId, must match a pattern of " + regexBuyerId, new [] { "BuyerId" });
+                yield return new ValidationResult("Invalid value for BuyerId, must match a pattern of " + regexBuyerId, new[] { "BuyerId" });
             }
 
             yield break;

@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
     /// Role of an individual contributor in the creation of an item, such as author or actor.
     /// </summary>
     [DataContract]
-    public partial class ItemContributorRole :  IEquatable<ItemContributorRole>, IValidatableObject
+    public partial class ItemContributorRole : IEquatable<ItemContributorRole>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemContributorRole" /> class.
@@ -38,8 +32,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemContributorRole" /> class.
         /// </summary>
-        /// <param name="displayName">Display name of the role in the requested locale, such as Author or Actor..</param>
-        /// <param name="value">Role value for the Amazon catalog item, such as author or actor. (required).</param>
+        /// <param name="displayName">Display name of the role in the requested locale, such as &#x60;Author&#x60; or &#x60;Actor&#x60;..</param>
+        /// <param name="value">Role value for the Amazon catalog item, such as &#x60;author&#x60; or &#x60;actor&#x60;. (required).</param>
         public ItemContributorRole(string displayName = default, string value = default)
         {
             // to ensure "value" is required (not null)
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             }
             this.DisplayName = displayName;
         }
-        
+
         /// <summary>
-        /// Display name of the role in the requested locale, such as Author or Actor.
+        /// Display name of the role in the requested locale, such as &#x60;Author&#x60; or &#x60;Actor&#x60;.
         /// </summary>
-        /// <value>Display name of the role in the requested locale, such as Author or Actor.</value>
-        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        /// <value>Display name of the role in the requested locale, such as &#x60;Author&#x60; or &#x60;Actor&#x60;.</value>
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// Role value for the Amazon catalog item, such as author or actor.
+        /// Role value for the Amazon catalog item, such as &#x60;author&#x60; or &#x60;actor&#x60;.
         /// </summary>
-        /// <value>Role value for the Amazon catalog item, such as author or actor.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        /// <value>Role value for the Amazon catalog item, such as &#x60;author&#x60; or &#x60;actor&#x60;.</value>
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&

@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="requests">The batch of &#x60;getCompetitiveSummary&#x60; requests.</param>
         /// <returns>CompetitiveSummaryBatchResponse</returns>
-        CompetitiveSummaryBatchResponse GetCompetitiveSummary (CompetitiveSummaryBatchRequest requests);
+        CompetitiveSummaryBatchResponse GetCompetitiveSummary(CompetitiveSummaryBatchRequest requests);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="requests">The batch of &#x60;getCompetitiveSummary&#x60; requests.</param>
         /// <returns>ApiResponse of CompetitiveSummaryBatchResponse</returns>
-        ApiResponse<CompetitiveSummaryBatchResponse> GetCompetitiveSummaryWithHttpInfo (CompetitiveSummaryBatchRequest requests);
+        ApiResponse<CompetitiveSummaryBatchResponse> GetCompetitiveSummaryWithHttpInfo(CompetitiveSummaryBatchRequest requests);
         /// <summary>
         /// 
         /// </summary>
@@ -55,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="getFeaturedOfferExpectedPriceBatchRequestBody">The batch of &#x60;getFeaturedOfferExpectedPrice&#x60; requests.</param>
         /// <returns>GetFeaturedOfferExpectedPriceBatchResponse</returns>
-        GetFeaturedOfferExpectedPriceBatchResponse GetFeaturedOfferExpectedPriceBatch (GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody);
+        GetFeaturedOfferExpectedPriceBatchResponse GetFeaturedOfferExpectedPriceBatch(GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody);
 
         /// <summary>
         /// 
@@ -66,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="getFeaturedOfferExpectedPriceBatchRequestBody">The batch of &#x60;getFeaturedOfferExpectedPrice&#x60; requests.</param>
         /// <returns>ApiResponse of GetFeaturedOfferExpectedPriceBatchResponse</returns>
-        ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse> GetFeaturedOfferExpectedPriceBatchWithHttpInfo (GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody);
+        ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse> GetFeaturedOfferExpectedPriceBatchWithHttpInfo(GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -78,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="requests">The batch of &#x60;getCompetitiveSummary&#x60; requests.</param>
         /// <returns>Task of CompetitiveSummaryBatchResponse</returns>
-        System.Threading.Tasks.Task<CompetitiveSummaryBatchResponse> GetCompetitiveSummaryAsync (CompetitiveSummaryBatchRequest requests);
+        System.Threading.Tasks.Task<CompetitiveSummaryBatchResponse> GetCompetitiveSummaryAsync(CompetitiveSummaryBatchRequest requests);
 
         /// <summary>
         /// 
@@ -89,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="requests">The batch of &#x60;getCompetitiveSummary&#x60; requests.</param>
         /// <returns>Task of ApiResponse (CompetitiveSummaryBatchResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CompetitiveSummaryBatchResponse>> GetCompetitiveSummaryAsyncWithHttpInfo (CompetitiveSummaryBatchRequest requests);
+        System.Threading.Tasks.Task<ApiResponse<CompetitiveSummaryBatchResponse>> GetCompetitiveSummaryAsyncWithHttpInfo(CompetitiveSummaryBatchRequest requests);
         /// <summary>
         /// 
         /// </summary>
@@ -99,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="getFeaturedOfferExpectedPriceBatchRequestBody">The batch of &#x60;getFeaturedOfferExpectedPrice&#x60; requests.</param>
         /// <returns>Task of GetFeaturedOfferExpectedPriceBatchResponse</returns>
-        System.Threading.Tasks.Task<GetFeaturedOfferExpectedPriceBatchResponse> GetFeaturedOfferExpectedPriceBatchAsync (GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody);
+        System.Threading.Tasks.Task<GetFeaturedOfferExpectedPriceBatchResponse> GetFeaturedOfferExpectedPriceBatchAsync(GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody);
 
         /// <summary>
         /// 
@@ -110,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="getFeaturedOfferExpectedPriceBatchRequestBody">The batch of &#x60;getFeaturedOfferExpectedPrice&#x60; requests.</param>
         /// <returns>Task of ApiResponse (GetFeaturedOfferExpectedPriceBatchResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse>> GetFeaturedOfferExpectedPriceBatchAsyncWithHttpInfo (GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody);
+        System.Threading.Tasks.Task<ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse>> GetFeaturedOfferExpectedPriceBatchAsyncWithHttpInfo(GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody);
         #endregion Asynchronous Operations
     }
 
@@ -130,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public ProductPricingApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -156,7 +155,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -202,10 +201,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="requests">The batch of &#x60;getCompetitiveSummary&#x60; requests.</param>
         /// <returns>CompetitiveSummaryBatchResponse</returns>
-        public CompetitiveSummaryBatchResponse GetCompetitiveSummary (CompetitiveSummaryBatchRequest requests)
+        public CompetitiveSummaryBatchResponse GetCompetitiveSummary(CompetitiveSummaryBatchRequest requests)
         {
-             ApiResponse<CompetitiveSummaryBatchResponse> localVarResponse = GetCompetitiveSummaryWithHttpInfo(requests);
-             return localVarResponse.Data;
+            ApiResponse<CompetitiveSummaryBatchResponse> localVarResponse = GetCompetitiveSummaryWithHttpInfo(requests);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -214,7 +213,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="requests">The batch of &#x60;getCompetitiveSummary&#x60; requests.</param>
         /// <returns>ApiResponse of CompetitiveSummaryBatchResponse</returns>
-        public ApiResponse< CompetitiveSummaryBatchResponse > GetCompetitiveSummaryWithHttpInfo (CompetitiveSummaryBatchRequest requests)
+        public ApiResponse<CompetitiveSummaryBatchResponse> GetCompetitiveSummaryWithHttpInfo(CompetitiveSummaryBatchRequest requests)
         {
             // verify the required parameter 'requests' is set
             if (requests == null)
@@ -253,11 +252,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -267,7 +266,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CompetitiveSummaryBatchResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CompetitiveSummaryBatchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CompetitiveSummaryBatchResponse)));
+                (CompetitiveSummaryBatchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CompetitiveSummaryBatchResponse)));
         }
 
         /// <summary>
@@ -276,10 +275,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="requests">The batch of &#x60;getCompetitiveSummary&#x60; requests.</param>
         /// <returns>Task of CompetitiveSummaryBatchResponse</returns>
-        public async System.Threading.Tasks.Task<CompetitiveSummaryBatchResponse> GetCompetitiveSummaryAsync (CompetitiveSummaryBatchRequest requests)
+        public async System.Threading.Tasks.Task<CompetitiveSummaryBatchResponse> GetCompetitiveSummaryAsync(CompetitiveSummaryBatchRequest requests)
         {
-             ApiResponse<CompetitiveSummaryBatchResponse> localVarResponse = await GetCompetitiveSummaryAsyncWithHttpInfo(requests);
-             return localVarResponse.Data;
+            ApiResponse<CompetitiveSummaryBatchResponse> localVarResponse = await GetCompetitiveSummaryAsyncWithHttpInfo(requests);
+            return localVarResponse.Data;
 
         }
 
@@ -289,7 +288,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="requests">The batch of &#x60;getCompetitiveSummary&#x60; requests.</param>
         /// <returns>Task of ApiResponse (CompetitiveSummaryBatchResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CompetitiveSummaryBatchResponse>> GetCompetitiveSummaryAsyncWithHttpInfo (CompetitiveSummaryBatchRequest requests)
+        public async System.Threading.Tasks.Task<ApiResponse<CompetitiveSummaryBatchResponse>> GetCompetitiveSummaryAsyncWithHttpInfo(CompetitiveSummaryBatchRequest requests)
         {
             // verify the required parameter 'requests' is set
             if (requests == null)
@@ -328,11 +327,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -342,7 +341,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CompetitiveSummaryBatchResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CompetitiveSummaryBatchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CompetitiveSummaryBatchResponse)));
+                (CompetitiveSummaryBatchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CompetitiveSummaryBatchResponse)));
         }
 
         /// <summary>
@@ -351,10 +350,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="getFeaturedOfferExpectedPriceBatchRequestBody">The batch of &#x60;getFeaturedOfferExpectedPrice&#x60; requests.</param>
         /// <returns>GetFeaturedOfferExpectedPriceBatchResponse</returns>
-        public GetFeaturedOfferExpectedPriceBatchResponse GetFeaturedOfferExpectedPriceBatch (GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody)
+        public GetFeaturedOfferExpectedPriceBatchResponse GetFeaturedOfferExpectedPriceBatch(GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody)
         {
-             ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse> localVarResponse = GetFeaturedOfferExpectedPriceBatchWithHttpInfo(getFeaturedOfferExpectedPriceBatchRequestBody);
-             return localVarResponse.Data;
+            ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse> localVarResponse = GetFeaturedOfferExpectedPriceBatchWithHttpInfo(getFeaturedOfferExpectedPriceBatchRequestBody);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -363,7 +362,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="getFeaturedOfferExpectedPriceBatchRequestBody">The batch of &#x60;getFeaturedOfferExpectedPrice&#x60; requests.</param>
         /// <returns>ApiResponse of GetFeaturedOfferExpectedPriceBatchResponse</returns>
-        public ApiResponse< GetFeaturedOfferExpectedPriceBatchResponse > GetFeaturedOfferExpectedPriceBatchWithHttpInfo (GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody)
+        public ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse> GetFeaturedOfferExpectedPriceBatchWithHttpInfo(GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody)
         {
             // verify the required parameter 'getFeaturedOfferExpectedPriceBatchRequestBody' is set
             if (getFeaturedOfferExpectedPriceBatchRequestBody == null)
@@ -402,11 +401,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -416,7 +415,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFeaturedOfferExpectedPriceBatchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeaturedOfferExpectedPriceBatchResponse)));
+                (GetFeaturedOfferExpectedPriceBatchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeaturedOfferExpectedPriceBatchResponse)));
         }
 
         /// <summary>
@@ -425,10 +424,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="getFeaturedOfferExpectedPriceBatchRequestBody">The batch of &#x60;getFeaturedOfferExpectedPrice&#x60; requests.</param>
         /// <returns>Task of GetFeaturedOfferExpectedPriceBatchResponse</returns>
-        public async System.Threading.Tasks.Task<GetFeaturedOfferExpectedPriceBatchResponse> GetFeaturedOfferExpectedPriceBatchAsync (GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody)
+        public async System.Threading.Tasks.Task<GetFeaturedOfferExpectedPriceBatchResponse> GetFeaturedOfferExpectedPriceBatchAsync(GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody)
         {
-             ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse> localVarResponse = await GetFeaturedOfferExpectedPriceBatchAsyncWithHttpInfo(getFeaturedOfferExpectedPriceBatchRequestBody);
-             return localVarResponse.Data;
+            ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse> localVarResponse = await GetFeaturedOfferExpectedPriceBatchAsyncWithHttpInfo(getFeaturedOfferExpectedPriceBatchRequestBody);
+            return localVarResponse.Data;
 
         }
 
@@ -438,7 +437,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="getFeaturedOfferExpectedPriceBatchRequestBody">The batch of &#x60;getFeaturedOfferExpectedPrice&#x60; requests.</param>
         /// <returns>Task of ApiResponse (GetFeaturedOfferExpectedPriceBatchResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse>> GetFeaturedOfferExpectedPriceBatchAsyncWithHttpInfo (GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody)
+        public async System.Threading.Tasks.Task<ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse>> GetFeaturedOfferExpectedPriceBatchAsyncWithHttpInfo(GetFeaturedOfferExpectedPriceBatchRequest getFeaturedOfferExpectedPriceBatchRequestBody)
         {
             // verify the required parameter 'getFeaturedOfferExpectedPriceBatchRequestBody' is set
             if (getFeaturedOfferExpectedPriceBatchRequestBody == null)
@@ -477,11 +476,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -491,7 +490,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFeaturedOfferExpectedPriceBatchResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFeaturedOfferExpectedPriceBatchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeaturedOfferExpectedPriceBatchResponse)));
+                (GetFeaturedOfferExpectedPriceBatchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeaturedOfferExpectedPriceBatchResponse)));
         }
 
 
@@ -505,17 +504,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public ProductPricingApi Build() 
+            public ProductPricingApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

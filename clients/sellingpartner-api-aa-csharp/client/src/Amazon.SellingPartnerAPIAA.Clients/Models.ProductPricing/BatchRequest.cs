@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The common properties for individual requests within a batch.
     /// </summary>
     [DataContract]
-    public partial class BatchRequest :  IEquatable<BatchRequest>, IValidatableObject
+    public partial class BatchRequest : IEquatable<BatchRequest>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Method
         /// </summary>
-        [DataMember(Name="method", EmitDefaultValue=false)]
+        [DataMember(Name = "method", EmitDefaultValue = false)]
         public HttpMethod Method { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchRequest" /> class.
@@ -70,25 +64,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             this.Body = body;
             this.Headers = headers;
         }
-        
+
         /// <summary>
         /// The URI associated with an individual request within a batch. For &#x60;FeaturedOfferExpectedPrice&#x60;, this is &#x60;/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice&#x60;.
         /// </summary>
         /// <value>The URI associated with an individual request within a batch. For &#x60;FeaturedOfferExpectedPrice&#x60;, this is &#x60;/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice&#x60;.</value>
-        [DataMember(Name="uri", EmitDefaultValue=false)]
+        [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
 
         /// <summary>
         /// Gets or Sets Body
         /// </summary>
-        [DataMember(Name="body", EmitDefaultValue=false)]
+        [DataMember(Name = "body", EmitDefaultValue = false)]
         public HttpBody Body { get; set; }
 
         /// <summary>
         /// Gets or Sets Headers
         /// </summary>
-        [DataMember(Name="headers", EmitDefaultValue=false)]
+        [DataMember(Name = "headers", EmitDefaultValue = false)]
         public HttpHeaders Headers { get; set; }
 
         /// <summary>
@@ -106,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -136,22 +130,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Uri == input.Uri ||
                     (this.Uri != null &&
                     this.Uri.Equals(input.Uri))
-                ) && 
+                ) &&
                 (
                     this.Method == input.Method ||
                     (this.Method != null &&
                     this.Method.Equals(input.Method))
-                ) && 
+                ) &&
                 (
                     this.Body == input.Body ||
                     (this.Body != null &&
                     this.Body.Equals(input.Body))
-                ) && 
+                ) &&
                 (
                     this.Headers == input.Headers ||
                     (this.Headers != null &&

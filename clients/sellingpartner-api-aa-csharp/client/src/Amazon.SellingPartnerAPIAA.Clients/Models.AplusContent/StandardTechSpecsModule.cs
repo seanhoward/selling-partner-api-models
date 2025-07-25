@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// The standard table of technical feature names and definitions.
     /// </summary>
     [DataContract]
-    public partial class StandardTechSpecsModule :  IEquatable<StandardTechSpecsModule>, IValidatableObject
+    public partial class StandardTechSpecsModule : IEquatable<StandardTechSpecsModule>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardTechSpecsModule" /> class.
@@ -40,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// </summary>
         /// <param name="headline">headline.</param>
         /// <param name="specificationList">The specification list. (required).</param>
-        /// <param name="tableCount">The number of tables to present. Features are evenly divided between the tables..</param>
+        /// <param name="tableCount">The number of tables you want present. Features are evenly divided between the tables..</param>
         public StandardTechSpecsModule(TextComponent headline = default, List<StandardTextPairBlock> specificationList = default, int? tableCount = default)
         {
             // to ensure "specificationList" is required (not null)
@@ -55,25 +50,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             this.Headline = headline;
             this.TableCount = tableCount;
         }
-        
+
         /// <summary>
         /// Gets or Sets Headline
         /// </summary>
-        [DataMember(Name="headline", EmitDefaultValue=false)]
+        [DataMember(Name = "headline", EmitDefaultValue = false)]
         public TextComponent Headline { get; set; }
 
         /// <summary>
         /// The specification list.
         /// </summary>
         /// <value>The specification list.</value>
-        [DataMember(Name="specificationList", EmitDefaultValue=false)]
+        [DataMember(Name = "specificationList", EmitDefaultValue = false)]
         public List<StandardTextPairBlock> SpecificationList { get; set; }
 
         /// <summary>
-        /// The number of tables to present. Features are evenly divided between the tables.
+        /// The number of tables you want present. Features are evenly divided between the tables.
         /// </summary>
-        /// <value>The number of tables to present. Features are evenly divided between the tables.</value>
-        [DataMember(Name="tableCount", EmitDefaultValue=false)]
+        /// <value>The number of tables you want present. Features are evenly divided between the tables.</value>
+        [DataMember(Name = "tableCount", EmitDefaultValue = false)]
         public int? TableCount { get; set; }
 
         /// <summary>
@@ -90,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -120,17 +115,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Headline == input.Headline ||
                     (this.Headline != null &&
                     this.Headline.Equals(input.Headline))
-                ) && 
+                ) &&
                 (
                     this.SpecificationList == input.SpecificationList ||
                     this.SpecificationList != null &&
                     this.SpecificationList.SequenceEqual(input.SpecificationList)
-                ) && 
+                ) &&
                 (
                     this.TableCount == input.TableCount ||
                     (this.TableCount != null &&
@@ -165,15 +160,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // TableCount (int?) maximum
-            if(this.TableCount > (int?)2)
+            if (this.TableCount > (int?)2)
             {
-                yield return new ValidationResult("Invalid value for TableCount, must be a value less than or equal to 2.", new [] { "TableCount" });
+                yield return new ValidationResult("Invalid value for TableCount, must be a value less than or equal to 2.", new[] { "TableCount" });
             }
 
             // TableCount (int?) minimum
-            if(this.TableCount < (int?)1)
+            if (this.TableCount < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for TableCount, must be a value greater than or equal to 1.", new [] { "TableCount" });
+                yield return new ValidationResult("Invalid value for TableCount, must be a value greater than or equal to 1.", new[] { "TableCount" });
             }
 
             yield break;

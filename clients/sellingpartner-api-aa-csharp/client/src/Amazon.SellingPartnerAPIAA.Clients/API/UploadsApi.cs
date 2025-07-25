@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Uploads;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -32,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.</param>
+        /// <param name="marketplaceIds">The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="contentMD5">An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.</param>
-        /// <param name="resource">The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you are creating an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
-        /// <param name="contentType">The content type of the file to be uploaded. (optional)</param>
+        /// <param name="resource">The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
+        /// <param name="contentType">The content type of the file you upload. (optional)</param>
         /// <returns>CreateUploadDestinationResponse</returns>
-        CreateUploadDestinationResponse CreateUploadDestinationForResource (List<string> marketplaceIds, string contentMD5, string resource, string contentType = null);
+        CreateUploadDestinationResponse CreateUploadDestinationForResource(List<string> marketplaceIds, string contentMD5, string resource, string contentType = null);
 
         /// <summary>
         /// 
@@ -46,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.</param>
+        /// <param name="marketplaceIds">The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="contentMD5">An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.</param>
-        /// <param name="resource">The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you are creating an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
-        /// <param name="contentType">The content type of the file to be uploaded. (optional)</param>
+        /// <param name="resource">The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
+        /// <param name="contentType">The content type of the file you upload. (optional)</param>
         /// <returns>ApiResponse of CreateUploadDestinationResponse</returns>
-        ApiResponse<CreateUploadDestinationResponse> CreateUploadDestinationForResourceWithHttpInfo (List<string> marketplaceIds, string contentMD5, string resource, string contentType = null);
+        ApiResponse<CreateUploadDestinationResponse> CreateUploadDestinationForResourceWithHttpInfo(List<string> marketplaceIds, string contentMD5, string resource, string contentType = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -61,12 +60,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.</param>
+        /// <param name="marketplaceIds">The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="contentMD5">An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.</param>
-        /// <param name="resource">The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you are creating an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
-        /// <param name="contentType">The content type of the file to be uploaded. (optional)</param>
+        /// <param name="resource">The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
+        /// <param name="contentType">The content type of the file you upload. (optional)</param>
         /// <returns>Task of CreateUploadDestinationResponse</returns>
-        System.Threading.Tasks.Task<CreateUploadDestinationResponse> CreateUploadDestinationForResourceAsync (List<string> marketplaceIds, string contentMD5, string resource, string contentType = null);
+        System.Threading.Tasks.Task<CreateUploadDestinationResponse> CreateUploadDestinationForResourceAsync(List<string> marketplaceIds, string contentMD5, string resource, string contentType = null);
 
         /// <summary>
         /// 
@@ -75,12 +74,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.</param>
+        /// <param name="marketplaceIds">The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="contentMD5">An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.</param>
-        /// <param name="resource">The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you are creating an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
-        /// <param name="contentType">The content type of the file to be uploaded. (optional)</param>
+        /// <param name="resource">The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
+        /// <param name="contentType">The content type of the file you upload. (optional)</param>
         /// <returns>Task of ApiResponse (CreateUploadDestinationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateUploadDestinationResponse>> CreateUploadDestinationForResourceAsyncWithHttpInfo (List<string> marketplaceIds, string contentMD5, string resource, string contentType = null);
+        System.Threading.Tasks.Task<ApiResponse<CreateUploadDestinationResponse>> CreateUploadDestinationForResourceAsyncWithHttpInfo(List<string> marketplaceIds, string contentMD5, string resource, string contentType = null);
         #endregion Asynchronous Operations
     }
 
@@ -100,7 +99,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public UploadsApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -126,7 +125,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -170,27 +169,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.</param>
+        /// <param name="marketplaceIds">The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="contentMD5">An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.</param>
-        /// <param name="resource">The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you are creating an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
-        /// <param name="contentType">The content type of the file to be uploaded. (optional)</param>
+        /// <param name="resource">The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
+        /// <param name="contentType">The content type of the file you upload. (optional)</param>
         /// <returns>CreateUploadDestinationResponse</returns>
-        public CreateUploadDestinationResponse CreateUploadDestinationForResource (List<string> marketplaceIds, string contentMD5, string resource, string contentType = null)
+        public CreateUploadDestinationResponse CreateUploadDestinationForResource(List<string> marketplaceIds, string contentMD5, string resource, string contentType = null)
         {
-             ApiResponse<CreateUploadDestinationResponse> localVarResponse = CreateUploadDestinationForResourceWithHttpInfo(marketplaceIds, contentMD5, resource, contentType);
-             return localVarResponse.Data;
+            ApiResponse<CreateUploadDestinationResponse> localVarResponse = CreateUploadDestinationForResourceWithHttpInfo(marketplaceIds, contentMD5, resource, contentType);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.</param>
+        /// <param name="marketplaceIds">The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="contentMD5">An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.</param>
-        /// <param name="resource">The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you are creating an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
-        /// <param name="contentType">The content type of the file to be uploaded. (optional)</param>
+        /// <param name="resource">The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
+        /// <param name="contentType">The content type of the file you upload. (optional)</param>
         /// <returns>ApiResponse of CreateUploadDestinationResponse</returns>
-        public ApiResponse< CreateUploadDestinationResponse > CreateUploadDestinationForResourceWithHttpInfo (List<string> marketplaceIds, string contentMD5, string resource, string contentType = null)
+        public ApiResponse<CreateUploadDestinationResponse> CreateUploadDestinationForResourceWithHttpInfo(List<string> marketplaceIds, string contentMD5, string resource, string contentType = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -231,11 +230,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -245,22 +244,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateUploadDestinationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateUploadDestinationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUploadDestinationResponse)));
+                (CreateUploadDestinationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUploadDestinationResponse)));
         }
 
         /// <summary>
         ///  Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.</param>
+        /// <param name="marketplaceIds">The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="contentMD5">An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.</param>
-        /// <param name="resource">The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you are creating an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
-        /// <param name="contentType">The content type of the file to be uploaded. (optional)</param>
+        /// <param name="resource">The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
+        /// <param name="contentType">The content type of the file you upload. (optional)</param>
         /// <returns>Task of CreateUploadDestinationResponse</returns>
-        public async System.Threading.Tasks.Task<CreateUploadDestinationResponse> CreateUploadDestinationForResourceAsync (List<string> marketplaceIds, string contentMD5, string resource, string contentType = null)
+        public async System.Threading.Tasks.Task<CreateUploadDestinationResponse> CreateUploadDestinationForResourceAsync(List<string> marketplaceIds, string contentMD5, string resource, string contentType = null)
         {
-             ApiResponse<CreateUploadDestinationResponse> localVarResponse = await CreateUploadDestinationForResourceAsyncWithHttpInfo(marketplaceIds, contentMD5, resource, contentType);
-             return localVarResponse.Data;
+            ApiResponse<CreateUploadDestinationResponse> localVarResponse = await CreateUploadDestinationForResourceAsyncWithHttpInfo(marketplaceIds, contentMD5, resource, contentType);
+            return localVarResponse.Data;
 
         }
 
@@ -268,12 +267,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 10 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.</param>
+        /// <param name="marketplaceIds">The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="contentMD5">An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.</param>
-        /// <param name="resource">The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you are creating an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
-        /// <param name="contentType">The content type of the file to be uploaded. (optional)</param>
+        /// <param name="resource">The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.</param>
+        /// <param name="contentType">The content type of the file you upload. (optional)</param>
         /// <returns>Task of ApiResponse (CreateUploadDestinationResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateUploadDestinationResponse>> CreateUploadDestinationForResourceAsyncWithHttpInfo (List<string> marketplaceIds, string contentMD5, string resource, string contentType = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateUploadDestinationResponse>> CreateUploadDestinationForResourceAsyncWithHttpInfo(List<string> marketplaceIds, string contentMD5, string resource, string contentType = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -314,11 +313,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -328,7 +327,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateUploadDestinationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateUploadDestinationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUploadDestinationResponse)));
+                (CreateUploadDestinationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUploadDestinationResponse)));
         }
 
 
@@ -342,17 +341,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public UploadsApi Build() 
+            public UploadsApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

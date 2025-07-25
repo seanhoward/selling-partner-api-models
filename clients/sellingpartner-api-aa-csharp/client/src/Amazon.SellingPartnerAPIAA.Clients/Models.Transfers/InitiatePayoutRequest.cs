@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
     /// The request schema for the &#x60;initiatePayout&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class InitiatePayoutRequest :  IEquatable<InitiatePayoutRequest>, IValidatableObject
+    public partial class InitiatePayoutRequest : IEquatable<InitiatePayoutRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InitiatePayoutRequest" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
                 this.AccountType = accountType;
             }
         }
-        
+
         /// <summary>
         /// The identifier of the Amazon marketplace. This API supports the following marketplaces: DE, FR, IT, ES, SE, NL, PL, and BE. For a list of possible marketplace IDs, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
         /// <value>The identifier of the Amazon marketplace. This API supports the following marketplaces: DE, FR, IT, ES, SE, NL, PL, and BE. For a list of possible marketplace IDs, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The account type in the selected marketplace for which a payout must be initiated. For supported EU marketplaces, the only account type is &#x60;Standard Orders&#x60;.
         /// </summary>
         /// <value>The account type in the selected marketplace for which a payout must be initiated. For supported EU marketplaces, the only account type is &#x60;Standard Orders&#x60;.</value>
-        [DataMember(Name="accountType", EmitDefaultValue=false)]
+        [DataMember(Name = "accountType", EmitDefaultValue = false)]
         public string AccountType { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.AccountType == input.AccountType ||
                     (this.AccountType != null &&

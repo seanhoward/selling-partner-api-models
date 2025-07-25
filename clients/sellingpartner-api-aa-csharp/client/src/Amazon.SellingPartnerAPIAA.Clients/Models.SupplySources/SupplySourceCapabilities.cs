@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The capabilities of a supply source.
     /// </summary>
     [DataContract]
-    public partial class SupplySourceCapabilities :  IEquatable<SupplySourceCapabilities>, IValidatableObject
+    public partial class SupplySourceCapabilities : IEquatable<SupplySourceCapabilities>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SupplySourceCapabilities" /> class.
@@ -40,17 +33,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.Outbound = outbound;
             this.Services = services;
         }
-        
+
         /// <summary>
         /// Gets or Sets Outbound
         /// </summary>
-        [DataMember(Name="outbound", EmitDefaultValue=false)]
+        [DataMember(Name = "outbound", EmitDefaultValue = false)]
         public OutboundCapability Outbound { get; set; }
 
         /// <summary>
         /// Gets or Sets Services
         /// </summary>
-        [DataMember(Name="services", EmitDefaultValue=false)]
+        [DataMember(Name = "services", EmitDefaultValue = false)]
         public ServicesCapability Services { get; set; }
 
         /// <summary>
@@ -66,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -96,12 +89,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Outbound == input.Outbound ||
                     (this.Outbound != null &&
                     this.Outbound.Equals(input.Outbound))
-                ) && 
+                ) &&
                 (
                     this.Services == input.Services ||
                     (this.Services != null &&

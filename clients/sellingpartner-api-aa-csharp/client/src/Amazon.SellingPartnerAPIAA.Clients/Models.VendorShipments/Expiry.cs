@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items.
     /// </summary>
     [DataContract]
-    public partial class Expiry :  IEquatable<Expiry>, IValidatableObject
+    public partial class Expiry : IEquatable<Expiry>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Expiry" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.ExpiryDate = expiryDate;
             this.ExpiryAfterDuration = expiryAfterDuration;
         }
-        
+
         /// <summary>
         /// Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
         /// </summary>
         /// <value>Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.</value>
-        [DataMember(Name="manufacturerDate", EmitDefaultValue=false)]
+        [DataMember(Name = "manufacturerDate", EmitDefaultValue = false)]
         public DateTime? ManufacturerDate { get; set; }
 
         /// <summary>
         /// The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
         /// </summary>
         /// <value>The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.</value>
-        [DataMember(Name="expiryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "expiryDate", EmitDefaultValue = false)]
         public DateTime? ExpiryDate { get; set; }
 
         /// <summary>
         /// Duration after manufacturing date during which the product is valid for consumption.
         /// </summary>
         /// <value>Duration after manufacturing date during which the product is valid for consumption.</value>
-        [DataMember(Name="expiryAfterDuration", EmitDefaultValue=false)]
+        [DataMember(Name = "expiryAfterDuration", EmitDefaultValue = false)]
         public Duration ExpiryAfterDuration { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ManufacturerDate == input.ManufacturerDate ||
                     (this.ManufacturerDate != null &&
                     this.ManufacturerDate.Equals(input.ManufacturerDate))
-                ) && 
+                ) &&
                 (
                     this.ExpiryDate == input.ExpiryDate ||
                     (this.ExpiryDate != null &&
                     this.ExpiryDate.Equals(input.ExpiryDate))
-                ) && 
+                ) &&
                 (
                     this.ExpiryAfterDuration == input.ExpiryAfterDuration ||
                     (this.ExpiryAfterDuration != null &&

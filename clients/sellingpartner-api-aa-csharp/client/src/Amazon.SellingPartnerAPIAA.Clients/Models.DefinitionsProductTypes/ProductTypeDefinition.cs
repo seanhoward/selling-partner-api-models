@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
     /// A product type definition represents the attributes and data requirements for a product type in the Amazon catalog. Product type definitions are used interchangeably between the Selling Partner API for Listings Items, Selling Partner API for Catalog Items, and JSON-based listings feeds in the Selling Partner API for Feeds.
     /// </summary>
     [DataContract]
-    public partial class ProductTypeDefinition :  IEquatable<ProductTypeDefinition>, IValidatableObject
+    public partial class ProductTypeDefinition : IEquatable<ProductTypeDefinition>, IValidatableObject
     {
         /// <summary>
         /// Name of the requirements set represented in this product type definition.
@@ -37,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RequirementsEnum
         {
-            
+
             /// <summary>
             /// Enum LISTING for value: LISTING
             /// </summary>
             [EnumMember(Value = "LISTING")]
             LISTING = 1,
-            
+
             /// <summary>
             /// Enum LISTINGPRODUCTONLY for value: LISTING_PRODUCT_ONLY
             /// </summary>
             [EnumMember(Value = "LISTING_PRODUCT_ONLY")]
             LISTINGPRODUCTONLY = 2,
-            
+
             /// <summary>
             /// Enum LISTINGOFFERONLY for value: LISTING_OFFER_ONLY
             /// </summary>
@@ -61,7 +57,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// Name of the requirements set represented in this product type definition.
         /// </summary>
         /// <value>Name of the requirements set represented in this product type definition.</value>
-        [DataMember(Name="requirements", EmitDefaultValue=false)]
+        [DataMember(Name = "requirements", EmitDefaultValue = false)]
         public RequirementsEnum Requirements { get; set; }
         /// <summary>
         /// Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all of the required attributes being present (such as for partial updates).
@@ -70,13 +66,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RequirementsEnforcedEnum
         {
-            
+
             /// <summary>
             /// Enum ENFORCED for value: ENFORCED
             /// </summary>
             [EnumMember(Value = "ENFORCED")]
             ENFORCED = 1,
-            
+
             /// <summary>
             /// Enum NOTENFORCED for value: NOT_ENFORCED
             /// </summary>
@@ -88,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all of the required attributes being present (such as for partial updates).
         /// </summary>
         /// <value>Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all of the required attributes being present (such as for partial updates).</value>
-        [DataMember(Name="requirementsEnforced", EmitDefaultValue=false)]
+        [DataMember(Name = "requirementsEnforced", EmitDefaultValue = false)]
         public RequirementsEnforcedEnum RequirementsEnforced { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTypeDefinition" /> class.
@@ -193,19 +189,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             }
             this.MetaSchema = metaSchema;
         }
-        
+
         /// <summary>
         /// Link to meta-schema describing the vocabulary used by the product type schema.
         /// </summary>
         /// <value>Link to meta-schema describing the vocabulary used by the product type schema.</value>
-        [DataMember(Name="metaSchema", EmitDefaultValue=false)]
+        [DataMember(Name = "metaSchema", EmitDefaultValue = false)]
         public SchemaLink MetaSchema { get; set; }
 
         /// <summary>
         /// Link to schema describing the attributes and requirements for the product type.
         /// </summary>
         /// <value>Link to schema describing the attributes and requirements for the product type.</value>
-        [DataMember(Name="schema", EmitDefaultValue=false)]
+        [DataMember(Name = "schema", EmitDefaultValue = false)]
         public SchemaLink Schema { get; set; }
 
 
@@ -214,42 +210,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes.
         /// </summary>
         /// <value>Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes.</value>
-        [DataMember(Name="propertyGroups", EmitDefaultValue=false)]
+        [DataMember(Name = "propertyGroups", EmitDefaultValue = false)]
         public Dictionary<string, PropertyGroup> PropertyGroups { get; set; }
 
         /// <summary>
         /// Locale of the display elements contained in the product type definition.
         /// </summary>
         /// <value>Locale of the display elements contained in the product type definition.</value>
-        [DataMember(Name="locale", EmitDefaultValue=false)]
+        [DataMember(Name = "locale", EmitDefaultValue = false)]
         public string Locale { get; set; }
 
         /// <summary>
         /// Amazon marketplace identifiers for which the product type definition is applicable.
         /// </summary>
         /// <value>Amazon marketplace identifiers for which the product type definition is applicable.</value>
-        [DataMember(Name="marketplaceIds", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceIds", EmitDefaultValue = false)]
         public List<string> MarketplaceIds { get; set; }
 
         /// <summary>
         /// The name of the Amazon product type that this product type definition applies to.
         /// </summary>
         /// <value>The name of the Amazon product type that this product type definition applies to.</value>
-        [DataMember(Name="productType", EmitDefaultValue=false)]
+        [DataMember(Name = "productType", EmitDefaultValue = false)]
         public string ProductType { get; set; }
 
         /// <summary>
         /// Human-readable and localized description of the Amazon product type.
         /// </summary>
         /// <value>Human-readable and localized description of the Amazon product type.</value>
-        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// The version details for the Amazon product type.
         /// </summary>
         /// <value>The version details for the Amazon product type.</value>
-        [DataMember(Name="productTypeVersion", EmitDefaultValue=false)]
+        [DataMember(Name = "productTypeVersion", EmitDefaultValue = false)]
         public ProductTypeVersion ProductTypeVersion { get; set; }
 
         /// <summary>
@@ -273,7 +269,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -303,52 +299,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MetaSchema == input.MetaSchema ||
                     (this.MetaSchema != null &&
                     this.MetaSchema.Equals(input.MetaSchema))
-                ) && 
+                ) &&
                 (
                     this.Schema == input.Schema ||
                     (this.Schema != null &&
                     this.Schema.Equals(input.Schema))
-                ) && 
+                ) &&
                 (
                     this.Requirements == input.Requirements ||
                     (this.Requirements != null &&
                     this.Requirements.Equals(input.Requirements))
-                ) && 
+                ) &&
                 (
                     this.RequirementsEnforced == input.RequirementsEnforced ||
                     (this.RequirementsEnforced != null &&
                     this.RequirementsEnforced.Equals(input.RequirementsEnforced))
-                ) && 
+                ) &&
                 (
                     this.PropertyGroups == input.PropertyGroups ||
                     this.PropertyGroups != null &&
                     this.PropertyGroups.SequenceEqual(input.PropertyGroups)
-                ) && 
+                ) &&
                 (
                     this.Locale == input.Locale ||
                     (this.Locale != null &&
                     this.Locale.Equals(input.Locale))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceIds == input.MarketplaceIds ||
                     this.MarketplaceIds != null &&
                     this.MarketplaceIds.SequenceEqual(input.MarketplaceIds)
-                ) && 
+                ) &&
                 (
                     this.ProductType == input.ProductType ||
                     (this.ProductType != null &&
                     this.ProductType.Equals(input.ProductType))
-                ) && 
+                ) &&
                 (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
-                ) && 
+                ) &&
                 (
                     this.ProductTypeVersion == input.ProductTypeVersion ||
                     (this.ProductTypeVersion != null &&

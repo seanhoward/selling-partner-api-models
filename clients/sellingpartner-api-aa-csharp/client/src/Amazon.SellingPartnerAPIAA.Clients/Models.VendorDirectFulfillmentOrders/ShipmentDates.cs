@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
     /// Shipment dates.
     /// </summary>
     [DataContract]
-    public partial class ShipmentDates :  IEquatable<ShipmentDates>, IValidatableObject
+    public partial class ShipmentDates : IEquatable<ShipmentDates>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDates" /> class.
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             }
             this.PromisedDeliveryDate = promisedDeliveryDate;
         }
-        
+
         /// <summary>
         /// Time by which the vendor is required to ship the order.
         /// </summary>
         /// <value>Time by which the vendor is required to ship the order.</value>
-        [DataMember(Name="requiredShipDate", EmitDefaultValue=false)]
+        [DataMember(Name = "requiredShipDate", EmitDefaultValue = false)]
         public DateTime? RequiredShipDate { get; set; }
 
         /// <summary>
         /// Delivery date promised to the Amazon customer.
         /// </summary>
         /// <value>Delivery date promised to the Amazon customer.</value>
-        [DataMember(Name="promisedDeliveryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "promisedDeliveryDate", EmitDefaultValue = false)]
         public DateTime? PromisedDeliveryDate { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.RequiredShipDate == input.RequiredShipDate ||
                     (this.RequiredShipDate != null &&
                     this.RequiredShipDate.Equals(input.RequiredShipDate))
-                ) && 
+                ) &&
                 (
                     this.PromisedDeliveryDate == input.PromisedDeliveryDate ||
                     (this.PromisedDeliveryDate != null &&

@@ -10,7 +10,6 @@
 
 
 using System.Collections.Generic;
-using Amazon.SellingPartnerAPIAA;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Client
 {
@@ -97,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Client
         /// </summary>
         /// <value>AuthorizationCredentials</value>
         LWAAuthorizationCredentials AuthorizationCredentials { get; }
-        
+
         /// <summary>
         /// Gets the RateLimitConfigurationOnRequests for Amazon Selling Partner API RateLimit
         /// </summary>

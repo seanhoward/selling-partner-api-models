@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The payload schema for the getRates operation.
     /// </summary>
     [DataContract]
-    public partial class GetRatesRequest :  IEquatable<GetRatesRequest>, IValidatableObject
+    public partial class GetRatesRequest : IEquatable<GetRatesRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetRatesRequest" /> class.
@@ -83,36 +77,36 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             }
             this.ShipDate = shipDate;
         }
-        
+
         /// <summary>
         /// Gets or Sets ShipTo
         /// </summary>
-        [DataMember(Name="shipTo", EmitDefaultValue=false)]
+        [DataMember(Name = "shipTo", EmitDefaultValue = false)]
         public Address ShipTo { get; set; }
 
         /// <summary>
         /// Gets or Sets ShipFrom
         /// </summary>
-        [DataMember(Name="shipFrom", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFrom", EmitDefaultValue = false)]
         public Address ShipFrom { get; set; }
 
         /// <summary>
         /// Gets or Sets ServiceTypes
         /// </summary>
-        [DataMember(Name="serviceTypes", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceTypes", EmitDefaultValue = false)]
         public ServiceTypeList ServiceTypes { get; set; }
 
         /// <summary>
         /// The start date and time. This defaults to the current date and time.
         /// </summary>
         /// <value>The start date and time. This defaults to the current date and time.</value>
-        [DataMember(Name="shipDate", EmitDefaultValue=false)]
+        [DataMember(Name = "shipDate", EmitDefaultValue = false)]
         public DateTime? ShipDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ContainerSpecifications
         /// </summary>
-        [DataMember(Name="containerSpecifications", EmitDefaultValue=false)]
+        [DataMember(Name = "containerSpecifications", EmitDefaultValue = false)]
         public ContainerSpecificationList ContainerSpecifications { get; set; }
 
         /// <summary>
@@ -131,7 +125,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -161,27 +155,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShipTo == input.ShipTo ||
                     (this.ShipTo != null &&
                     this.ShipTo.Equals(input.ShipTo))
-                ) && 
+                ) &&
                 (
                     this.ShipFrom == input.ShipFrom ||
                     (this.ShipFrom != null &&
                     this.ShipFrom.Equals(input.ShipFrom))
-                ) && 
+                ) &&
                 (
                     this.ServiceTypes == input.ServiceTypes ||
                     (this.ServiceTypes != null &&
                     this.ServiceTypes.Equals(input.ServiceTypes))
-                ) && 
+                ) &&
                 (
                     this.ShipDate == input.ShipDate ||
                     (this.ShipDate != null &&
                     this.ShipDate.Equals(input.ShipDate))
-                ) && 
+                ) &&
                 (
                     this.ContainerSpecifications == input.ContainerSpecifications ||
                     (this.ContainerSpecifications != null &&

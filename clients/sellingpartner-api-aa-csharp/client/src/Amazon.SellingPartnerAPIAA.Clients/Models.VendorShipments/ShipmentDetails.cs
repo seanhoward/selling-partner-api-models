@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// The request schema for the GetShipmentDetails operation.
     /// </summary>
     [DataContract]
-    public partial class ShipmentDetails :  IEquatable<ShipmentDetails>, IValidatableObject
+    public partial class ShipmentDetails : IEquatable<ShipmentDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDetails" /> class.
@@ -40,18 +34,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.Pagination = pagination;
             this.Shipments = shipments;
         }
-        
+
         /// <summary>
         /// Gets or Sets Pagination
         /// </summary>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
         public Pagination Pagination { get; set; }
 
         /// <summary>
         /// A list of one or more shipments with underlying details.
         /// </summary>
         /// <value>A list of one or more shipments with underlying details.</value>
-        [DataMember(Name="shipments", EmitDefaultValue=false)]
+        [DataMember(Name = "shipments", EmitDefaultValue = false)]
         public List<Shipment> Shipments { get; set; }
 
         /// <summary>
@@ -67,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Pagination == input.Pagination ||
                     (this.Pagination != null &&
                     this.Pagination.Equals(input.Pagination))
-                ) && 
+                ) &&
                 (
                     this.Shipments == input.Shipments ||
                     this.Shipments != null &&

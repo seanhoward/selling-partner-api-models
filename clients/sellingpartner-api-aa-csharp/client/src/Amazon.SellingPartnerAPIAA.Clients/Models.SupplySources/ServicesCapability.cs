@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The services capability of a supply source.
     /// </summary>
     [DataContract]
-    public partial class ServicesCapability :  IEquatable<ServicesCapability>, IValidatableObject
+    public partial class ServicesCapability : IEquatable<ServicesCapability>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ServicesCapability" /> class.
@@ -40,18 +33,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.IsSupported = isSupported;
             this.OperationalConfiguration = operationalConfiguration;
         }
-        
+
         /// <summary>
         /// When true, &#x60;SupplySource&#x60; supports the Service capability.
         /// </summary>
         /// <value>When true, &#x60;SupplySource&#x60; supports the Service capability.</value>
-        [DataMember(Name="isSupported", EmitDefaultValue=false)]
+        [DataMember(Name = "isSupported", EmitDefaultValue = false)]
         public bool? IsSupported { get; set; }
 
         /// <summary>
         /// Gets or Sets OperationalConfiguration
         /// </summary>
-        [DataMember(Name="operationalConfiguration", EmitDefaultValue=false)]
+        [DataMember(Name = "operationalConfiguration", EmitDefaultValue = false)]
         public OperationalConfiguration OperationalConfiguration { get; set; }
 
         /// <summary>
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IsSupported == input.IsSupported ||
                     (this.IsSupported != null &&
                     this.IsSupported.Equals(input.IsSupported))
-                ) && 
+                ) &&
                 (
                     this.OperationalConfiguration == input.OperationalConfiguration ||
                     (this.OperationalConfiguration != null &&

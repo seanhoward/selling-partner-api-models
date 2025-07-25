@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Contains all of the delivery instructions provided by the customer for the shipping address.
     /// </summary>
     [DataContract]
-    public partial class DeliveryPreferences :  IEquatable<DeliveryPreferences>, IValidatableObject
+    public partial class DeliveryPreferences : IEquatable<DeliveryPreferences>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryPreferences" /> class.
@@ -44,33 +38,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.OtherAttributes = otherAttributes;
             this.AddressInstructions = addressInstructions;
         }
-        
+
         /// <summary>
         /// Drop-off location selected by the customer.
         /// </summary>
         /// <value>Drop-off location selected by the customer.</value>
-        [DataMember(Name="DropOffLocation", EmitDefaultValue=false)]
+        [DataMember(Name = "DropOffLocation", EmitDefaultValue = false)]
         public string DropOffLocation { get; set; }
 
         /// <summary>
         /// Business hours and days when the delivery is preferred.
         /// </summary>
         /// <value>Business hours and days when the delivery is preferred.</value>
-        [DataMember(Name="PreferredDeliveryTime", EmitDefaultValue=false)]
+        [DataMember(Name = "PreferredDeliveryTime", EmitDefaultValue = false)]
         public PreferredDeliveryTime PreferredDeliveryTime { get; set; }
 
         /// <summary>
         /// Enumerated list of miscellaneous delivery attributes associated with the shipping address.
         /// </summary>
         /// <value>Enumerated list of miscellaneous delivery attributes associated with the shipping address.</value>
-        [DataMember(Name="OtherAttributes", EmitDefaultValue=false)]
+        [DataMember(Name = "OtherAttributes", EmitDefaultValue = false)]
         public List<OtherDeliveryAttributes> OtherAttributes { get; set; }
 
         /// <summary>
         /// Building instructions, nearby landmark or navigation instructions.
         /// </summary>
         /// <value>Building instructions, nearby landmark or navigation instructions.</value>
-        [DataMember(Name="AddressInstructions", EmitDefaultValue=false)]
+        [DataMember(Name = "AddressInstructions", EmitDefaultValue = false)]
         public string AddressInstructions { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +112,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DropOffLocation == input.DropOffLocation ||
                     (this.DropOffLocation != null &&
                     this.DropOffLocation.Equals(input.DropOffLocation))
-                ) && 
+                ) &&
                 (
                     this.PreferredDeliveryTime == input.PreferredDeliveryTime ||
                     (this.PreferredDeliveryTime != null &&
                     this.PreferredDeliveryTime.Equals(input.PreferredDeliveryTime))
-                ) && 
+                ) &&
                 (
                     this.OtherAttributes == input.OtherAttributes ||
                     this.OtherAttributes != null &&
                     this.OtherAttributes.SequenceEqual(input.OtherAttributes)
-                ) && 
+                ) &&
                 (
                     this.AddressInstructions == input.AddressInstructions ||
                     (this.AddressInstructions != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Response schema for the &#x60;addAppointmentForServiceJobByServiceJobId&#x60; and &#x60;rescheduleAppointmentForServiceJobByServiceJobId&#x60; operations.
     /// </summary>
     [DataContract]
-    public partial class SetAppointmentResponse :  IEquatable<SetAppointmentResponse>, IValidatableObject
+    public partial class SetAppointmentResponse : IEquatable<SetAppointmentResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SetAppointmentResponse" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.Warnings = warnings;
             this.Errors = errors;
         }
-        
+
         /// <summary>
         /// New appointment identifier generated during the &#x60;addAppointmentForServiceJobByServiceJobId&#x60; or &#x60;rescheduleAppointmentForServiceJobByServiceJobId&#x60; operations.
         /// </summary>
         /// <value>New appointment identifier generated during the &#x60;addAppointmentForServiceJobByServiceJobId&#x60; or &#x60;rescheduleAppointmentForServiceJobByServiceJobId&#x60; operations.</value>
-        [DataMember(Name="appointmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentId", EmitDefaultValue = false)]
         public string AppointmentId { get; set; }
 
         /// <summary>
         /// Warnings generated during the &#x60;addAppointmentForServiceJobByServiceJobId&#x60; or &#x60;rescheduleAppointmentForServiceJobByServiceJobId&#x60; operations.
         /// </summary>
         /// <value>Warnings generated during the &#x60;addAppointmentForServiceJobByServiceJobId&#x60; or &#x60;rescheduleAppointmentForServiceJobByServiceJobId&#x60; operations.</value>
-        [DataMember(Name="warnings", EmitDefaultValue=false)]
+        [DataMember(Name = "warnings", EmitDefaultValue = false)]
         public WarningList Warnings { get; set; }
 
         /// <summary>
         /// Errors occurred during during the &#x60;addAppointmentForServiceJobByServiceJobId&#x60; or &#x60;rescheduleAppointmentForServiceJobByServiceJobId&#x60; operations.
         /// </summary>
         /// <value>Errors occurred during during the &#x60;addAppointmentForServiceJobByServiceJobId&#x60; or &#x60;rescheduleAppointmentForServiceJobByServiceJobId&#x60; operations.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AppointmentId == input.AppointmentId ||
                     (this.AppointmentId != null &&
                     this.AppointmentId.Equals(input.AppointmentId))
-                ) && 
+                ) &&
                 (
                     this.Warnings == input.Warnings ||
                     (this.Warnings != null &&
                     this.Warnings.Equals(input.Warnings))
-                ) && 
+                ) &&
                 (
                     this.Errors == input.Errors ||
                     (this.Errors != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The location where the person, business or institution is located.
     /// </summary>
     [DataContract]
-    public partial class Location :  IEquatable<Location>, IValidatableObject
+    public partial class Location : IEquatable<Location>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Location" /> class.
@@ -44,29 +37,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             this.CountryCode = countryCode;
             this.PostalCode = postalCode;
         }
-        
+
         /// <summary>
         /// Gets or Sets StateOrRegion
         /// </summary>
-        [DataMember(Name="stateOrRegion", EmitDefaultValue=false)]
+        [DataMember(Name = "stateOrRegion", EmitDefaultValue = false)]
         public string StateOrRegion { get; set; }
 
         /// <summary>
         /// Gets or Sets City
         /// </summary>
-        [DataMember(Name="city", EmitDefaultValue=false)]
+        [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// Gets or Sets CountryCode
         /// </summary>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
         /// Gets or Sets PostalCode
         /// </summary>
-        [DataMember(Name="postalCode", EmitDefaultValue=false)]
+        [DataMember(Name = "postalCode", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
         /// <summary>
@@ -84,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -114,22 +107,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StateOrRegion == input.StateOrRegion ||
                     (this.StateOrRegion != null &&
                     this.StateOrRegion.Equals(input.StateOrRegion))
-                ) && 
+                ) &&
                 (
                     this.City == input.City ||
                     (this.City != null &&
                     this.City.Equals(input.City))
-                ) && 
+                ) &&
                 (
                     this.CountryCode == input.CountryCode ||
                     (this.CountryCode != null &&
                     this.CountryCode.Equals(input.CountryCode))
-                ) && 
+                ) &&
                 (
                     this.PostalCode == input.PostalCode ||
                     (this.PostalCode != null &&

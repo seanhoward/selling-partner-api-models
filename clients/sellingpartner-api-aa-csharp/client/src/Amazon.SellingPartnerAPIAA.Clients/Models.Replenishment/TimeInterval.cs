@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// A date-time interval in ISO 8601 format which is used to compute metrics. Only the date is required, but you must pass the complete date and time value. For example, November 11, 2022 should be passed as \&quot;2022-11-07T00:00:00Z\&quot;. Note that only data for the trailing 2 years is supported.   **Note**: The &#x60;listOfferMetrics&#x60; operation only supports a time interval which covers a single unit of the aggregation frequency. For example, for a MONTH aggregation frequency, the duration of the interval between the startDate and endDate can not be more than 1 month.
     /// </summary>
     [DataContract]
-    public partial class TimeInterval :  IEquatable<TimeInterval>, IValidatableObject
+    public partial class TimeInterval : IEquatable<TimeInterval>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TimeInterval" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
                 this.EndDate = endDate;
             }
         }
-        
+
         /// <summary>
         /// When this object is used as a request parameter, the specified &#x60;startDate&#x60; is adjusted based on the aggregation frequency.  * For &#x60;WEEK&#x60; the metric is computed from the first day of the week (Sunday, based on ISO 8601) that contains the &#x60;startDate&#x60;. * For &#x60;MONTH&#x60; the metric is computed from the first day of the month that contains the &#x60;startDate&#x60;. * For &#x60;QUARTER&#x60; the metric is computed from the first day of the quarter that contains the &#x60;startDate&#x60;. * For &#x60;YEAR&#x60; the metric is computed from the first day of the year that contains the &#x60;startDate&#x60;.
         /// </summary>
         /// <value>When this object is used as a request parameter, the specified &#x60;startDate&#x60; is adjusted based on the aggregation frequency.  * For &#x60;WEEK&#x60; the metric is computed from the first day of the week (Sunday, based on ISO 8601) that contains the &#x60;startDate&#x60;. * For &#x60;MONTH&#x60; the metric is computed from the first day of the month that contains the &#x60;startDate&#x60;. * For &#x60;QUARTER&#x60; the metric is computed from the first day of the quarter that contains the &#x60;startDate&#x60;. * For &#x60;YEAR&#x60; the metric is computed from the first day of the year that contains the &#x60;startDate&#x60;.</value>
-        [DataMember(Name="startDate", EmitDefaultValue=false)]
+        [DataMember(Name = "startDate", EmitDefaultValue = false)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
         /// When this object is used as a request parameter, the specified &#x60;endDate&#x60; is adjusted based on the aggregation frequency.  * For &#x60;WEEK&#x60; the metric is computed up to the last day of the week (Sunday, based on ISO 8601) that contains the &#x60;endDate&#x60;. * For &#x60;MONTH&#x60;, the metric is computed up to the last day that contains the &#x60;endDate&#x60;. * For &#x60;QUARTER&#x60; the metric is computed up to the last day of the quarter that contains the &#x60;endDate&#x60;. * For &#x60;YEAR&#x60; the metric is computed up to the last day of the year that contains the &#x60;endDate&#x60;.  Note: The end date may be adjusted to a lower value based on the data available in our system.
         /// </summary>
         /// <value>When this object is used as a request parameter, the specified &#x60;endDate&#x60; is adjusted based on the aggregation frequency.  * For &#x60;WEEK&#x60; the metric is computed up to the last day of the week (Sunday, based on ISO 8601) that contains the &#x60;endDate&#x60;. * For &#x60;MONTH&#x60;, the metric is computed up to the last day that contains the &#x60;endDate&#x60;. * For &#x60;QUARTER&#x60; the metric is computed up to the last day of the quarter that contains the &#x60;endDate&#x60;. * For &#x60;YEAR&#x60; the metric is computed up to the last day of the year that contains the &#x60;endDate&#x60;.  Note: The end date may be adjusted to a lower value based on the data available in our system.</value>
-        [DataMember(Name="endDate", EmitDefaultValue=false)]
+        [DataMember(Name = "endDate", EmitDefaultValue = false)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StartDate == input.StartDate ||
                     (this.StartDate != null &&
                     this.StartDate.Equals(input.StartDate))
-                ) && 
+                ) &&
                 (
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&

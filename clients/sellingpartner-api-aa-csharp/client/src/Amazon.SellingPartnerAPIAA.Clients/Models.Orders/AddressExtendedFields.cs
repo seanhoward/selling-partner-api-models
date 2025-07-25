@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The container for address extended fields (such as &#x60;street name&#x60; and &#x60;street number&#x60;). Currently only available with Brazil shipping addresses.
     /// </summary>
     [DataContract]
-    public partial class AddressExtendedFields :  IEquatable<AddressExtendedFields>, IValidatableObject
+    public partial class AddressExtendedFields : IEquatable<AddressExtendedFields>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AddressExtendedFields" /> class.
@@ -44,33 +37,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.Complement = complement;
             this.Neighborhood = neighborhood;
         }
-        
+
         /// <summary>
         /// The street name.
         /// </summary>
         /// <value>The street name.</value>
-        [DataMember(Name="StreetName", EmitDefaultValue=false)]
+        [DataMember(Name = "StreetName", EmitDefaultValue = false)]
         public string StreetName { get; set; }
 
         /// <summary>
         /// The house, building, or property number associated with the location&#39;s street address.
         /// </summary>
         /// <value>The house, building, or property number associated with the location&#39;s street address.</value>
-        [DataMember(Name="StreetNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "StreetNumber", EmitDefaultValue = false)]
         public string StreetNumber { get; set; }
 
         /// <summary>
         /// The floor number/unit number in the building/private house number.
         /// </summary>
         /// <value>The floor number/unit number in the building/private house number.</value>
-        [DataMember(Name="Complement", EmitDefaultValue=false)]
+        [DataMember(Name = "Complement", EmitDefaultValue = false)]
         public string Complement { get; set; }
 
         /// <summary>
         /// The neighborhood. This value is only used in some countries (such as Brazil).
         /// </summary>
         /// <value>The neighborhood. This value is only used in some countries (such as Brazil).</value>
-        [DataMember(Name="Neighborhood", EmitDefaultValue=false)]
+        [DataMember(Name = "Neighborhood", EmitDefaultValue = false)]
         public string Neighborhood { get; set; }
 
         /// <summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +111,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StreetName == input.StreetName ||
                     (this.StreetName != null &&
                     this.StreetName.Equals(input.StreetName))
-                ) && 
+                ) &&
                 (
                     this.StreetNumber == input.StreetNumber ||
                     (this.StreetNumber != null &&
                     this.StreetNumber.Equals(input.StreetNumber))
-                ) && 
+                ) &&
                 (
                     this.Complement == input.Complement ||
                     (this.Complement != null &&
                     this.Complement.Equals(input.Complement))
-                ) && 
+                ) &&
                 (
                     this.Neighborhood == input.Neighborhood ||
                     (this.Neighborhood != null &&

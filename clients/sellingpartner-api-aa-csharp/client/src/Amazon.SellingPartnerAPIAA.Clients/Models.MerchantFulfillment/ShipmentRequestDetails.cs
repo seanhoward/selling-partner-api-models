@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Shipment information required for requesting shipping service offers or for creating a shipment.
     /// </summary>
     [DataContract]
-    public partial class ShipmentRequestDetails :  IEquatable<ShipmentRequestDetails>, IValidatableObject
+    public partial class ShipmentRequestDetails : IEquatable<ShipmentRequestDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentRequestDetails" /> class.
@@ -109,74 +103,74 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.ShipDate = shipDate;
             this.LabelCustomization = labelCustomization;
         }
-        
+
         /// <summary>
         /// An Amazon-defined order identifier in 3-7-7 format.
         /// </summary>
         /// <value>An Amazon-defined order identifier in 3-7-7 format.</value>
-        [DataMember(Name="AmazonOrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "AmazonOrderId", EmitDefaultValue = false)]
         public string AmazonOrderId { get; set; }
 
         /// <summary>
         /// A seller-defined order identifier.
         /// </summary>
         /// <value>A seller-defined order identifier.</value>
-        [DataMember(Name="SellerOrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "SellerOrderId", EmitDefaultValue = false)]
         public string SellerOrderId { get; set; }
 
         /// <summary>
         /// Gets or Sets ItemList
         /// </summary>
-        [DataMember(Name="ItemList", EmitDefaultValue=false)]
+        [DataMember(Name = "ItemList", EmitDefaultValue = false)]
         public ItemList ItemList { get; set; }
 
         /// <summary>
         /// The address of the sender.
         /// </summary>
         /// <value>The address of the sender.</value>
-        [DataMember(Name="ShipFromAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "ShipFromAddress", EmitDefaultValue = false)]
         public Address ShipFromAddress { get; set; }
 
         /// <summary>
         /// The package dimensions.
         /// </summary>
         /// <value>The package dimensions.</value>
-        [DataMember(Name="PackageDimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "PackageDimensions", EmitDefaultValue = false)]
         public PackageDimensions PackageDimensions { get; set; }
 
         /// <summary>
         /// The package weight.
         /// </summary>
         /// <value>The package weight.</value>
-        [DataMember(Name="Weight", EmitDefaultValue=false)]
+        [DataMember(Name = "Weight", EmitDefaultValue = false)]
         public Weight Weight { get; set; }
 
         /// <summary>
         /// The date by which the package must arrive to keep the promise to the customer, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. If &#x60;MustArriveByDate&#x60; is specified, only shipping service offers that can be delivered by that date are returned.
         /// </summary>
         /// <value>The date by which the package must arrive to keep the promise to the customer, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. If &#x60;MustArriveByDate&#x60; is specified, only shipping service offers that can be delivered by that date are returned.</value>
-        [DataMember(Name="MustArriveByDate", EmitDefaultValue=false)]
+        [DataMember(Name = "MustArriveByDate", EmitDefaultValue = false)]
         public DateTime? MustArriveByDate { get; set; }
 
         /// <summary>
         /// When used in a request, this is the date and time that the seller wants to ship the package. When used in a response, this is the date and time that the package can be shipped by the indicated method.
         /// </summary>
         /// <value>When used in a request, this is the date and time that the seller wants to ship the package. When used in a response, this is the date and time that the package can be shipped by the indicated method.</value>
-        [DataMember(Name="ShipDate", EmitDefaultValue=false)]
+        [DataMember(Name = "ShipDate", EmitDefaultValue = false)]
         public DateTime? ShipDate { get; set; }
 
         /// <summary>
         /// Extra services offered by the carrier.
         /// </summary>
         /// <value>Extra services offered by the carrier.</value>
-        [DataMember(Name="ShippingServiceOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingServiceOptions", EmitDefaultValue = false)]
         public ShippingServiceOptions ShippingServiceOptions { get; set; }
 
         /// <summary>
         /// Label customization options.
         /// </summary>
         /// <value>Label customization options.</value>
-        [DataMember(Name="LabelCustomization", EmitDefaultValue=false)]
+        [DataMember(Name = "LabelCustomization", EmitDefaultValue = false)]
         public LabelCustomization LabelCustomization { get; set; }
 
         /// <summary>
@@ -200,7 +194,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -230,52 +224,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AmazonOrderId == input.AmazonOrderId ||
                     (this.AmazonOrderId != null &&
                     this.AmazonOrderId.Equals(input.AmazonOrderId))
-                ) && 
+                ) &&
                 (
                     this.SellerOrderId == input.SellerOrderId ||
                     (this.SellerOrderId != null &&
                     this.SellerOrderId.Equals(input.SellerOrderId))
-                ) && 
+                ) &&
                 (
                     this.ItemList == input.ItemList ||
                     (this.ItemList != null &&
                     this.ItemList.Equals(input.ItemList))
-                ) && 
+                ) &&
                 (
                     this.ShipFromAddress == input.ShipFromAddress ||
                     (this.ShipFromAddress != null &&
                     this.ShipFromAddress.Equals(input.ShipFromAddress))
-                ) && 
+                ) &&
                 (
                     this.PackageDimensions == input.PackageDimensions ||
                     (this.PackageDimensions != null &&
                     this.PackageDimensions.Equals(input.PackageDimensions))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
                     this.Weight.Equals(input.Weight))
-                ) && 
+                ) &&
                 (
                     this.MustArriveByDate == input.MustArriveByDate ||
                     (this.MustArriveByDate != null &&
                     this.MustArriveByDate.Equals(input.MustArriveByDate))
-                ) && 
+                ) &&
                 (
                     this.ShipDate == input.ShipDate ||
                     (this.ShipDate != null &&
                     this.ShipDate.Equals(input.ShipDate))
-                ) && 
+                ) &&
                 (
                     this.ShippingServiceOptions == input.ShippingServiceOptions ||
                     (this.ShippingServiceOptions != null &&
                     this.ShippingServiceOptions.Equals(input.ShippingServiceOptions))
-                ) && 
+                ) &&
                 (
                     this.LabelCustomization == input.LabelCustomization ||
                     (this.LabelCustomization != null &&

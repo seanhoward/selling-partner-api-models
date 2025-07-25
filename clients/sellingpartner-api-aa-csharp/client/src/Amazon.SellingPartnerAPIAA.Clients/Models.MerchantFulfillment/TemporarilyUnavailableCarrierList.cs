@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// A list of temporarily unavailable carriers.
     /// </summary>
     [DataContract]
-    public partial class TemporarilyUnavailableCarrierList : List<TemporarilyUnavailableCarrier>,  IEquatable<TemporarilyUnavailableCarrierList>, IValidatableObject
+    public partial class TemporarilyUnavailableCarrierList : List<TemporarilyUnavailableCarrier>, IEquatable<TemporarilyUnavailableCarrierList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TemporarilyUnavailableCarrierList" /> class.
@@ -37,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         public TemporarilyUnavailableCarrierList() : base()
         {
         }
-        
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -50,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

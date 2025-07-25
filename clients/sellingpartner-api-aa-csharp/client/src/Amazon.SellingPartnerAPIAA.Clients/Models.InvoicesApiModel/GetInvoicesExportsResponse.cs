@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
     /// Success.
     /// </summary>
     [DataContract]
-    public partial class GetInvoicesExportsResponse :  IEquatable<GetInvoicesExportsResponse>, IValidatableObject
+    public partial class GetInvoicesExportsResponse : IEquatable<GetInvoicesExportsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetInvoicesExportsResponse" /> class.
@@ -40,19 +34,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             this.Exports = exports;
             this.NextToken = nextToken;
         }
-        
+
         /// <summary>
         /// A list of exports.
         /// </summary>
         /// <value>A list of exports.</value>
-        [DataMember(Name="exports", EmitDefaultValue=false)]
+        [DataMember(Name = "exports", EmitDefaultValue = false)]
         public List<Export> Exports { get; set; }
 
         /// <summary>
         /// This token is returned when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the &#x60;getInvoices&#x60; operation and include this token with the previous call parameters.
         /// </summary>
         /// <value>This token is returned when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the &#x60;getInvoices&#x60; operation and include this token with the previous call parameters.</value>
-        [DataMember(Name="nextToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextToken", EmitDefaultValue = false)]
         public string NextToken { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Exports == input.Exports ||
                     this.Exports != null &&
                     this.Exports.SequenceEqual(input.Exports)
-                ) && 
+                ) &&
                 (
                     this.NextToken == input.NextToken ||
                     (this.NextToken != null &&

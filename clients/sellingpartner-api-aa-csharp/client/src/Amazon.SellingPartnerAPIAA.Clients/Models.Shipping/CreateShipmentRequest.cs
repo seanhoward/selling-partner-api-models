@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The request schema for the createShipment operation.
     /// </summary>
     [DataContract]
-    public partial class CreateShipmentRequest :  IEquatable<CreateShipmentRequest>, IValidatableObject
+    public partial class CreateShipmentRequest : IEquatable<CreateShipmentRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShipmentRequest" /> class.
@@ -81,29 +75,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
                 this.Containers = containers;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets ClientReferenceId
         /// </summary>
-        [DataMember(Name="clientReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "clientReferenceId", EmitDefaultValue = false)]
         public string ClientReferenceId { get; set; }
 
         /// <summary>
         /// Gets or Sets ShipTo
         /// </summary>
-        [DataMember(Name="shipTo", EmitDefaultValue=false)]
+        [DataMember(Name = "shipTo", EmitDefaultValue = false)]
         public Address ShipTo { get; set; }
 
         /// <summary>
         /// Gets or Sets ShipFrom
         /// </summary>
-        [DataMember(Name="shipFrom", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFrom", EmitDefaultValue = false)]
         public Address ShipFrom { get; set; }
 
         /// <summary>
         /// Gets or Sets Containers
         /// </summary>
-        [DataMember(Name="containers", EmitDefaultValue=false)]
+        [DataMember(Name = "containers", EmitDefaultValue = false)]
         public ContainerList Containers { get; set; }
 
         /// <summary>
@@ -121,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -151,22 +145,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ClientReferenceId == input.ClientReferenceId ||
                     (this.ClientReferenceId != null &&
                     this.ClientReferenceId.Equals(input.ClientReferenceId))
-                ) && 
+                ) &&
                 (
                     this.ShipTo == input.ShipTo ||
                     (this.ShipTo != null &&
                     this.ShipTo.Equals(input.ShipTo))
-                ) && 
+                ) &&
                 (
                     this.ShipFrom == input.ShipFrom ||
                     (this.ShipFrom != null &&
                     this.ShipFrom.Equals(input.ShipFrom))
-                ) && 
+                ) &&
                 (
                     this.Containers == input.Containers ||
                     (this.Containers != null &&

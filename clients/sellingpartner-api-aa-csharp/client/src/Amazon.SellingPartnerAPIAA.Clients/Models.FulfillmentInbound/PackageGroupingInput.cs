@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Packing information for the inbound plan.
     /// </summary>
     [DataContract]
-    public partial class PackageGroupingInput :  IEquatable<PackageGroupingInput>, IValidatableObject
+    public partial class PackageGroupingInput : IEquatable<PackageGroupingInput>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageGroupingInput" /> class.
@@ -55,26 +51,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.PackingGroupId = packingGroupId;
             this.ShipmentId = shipmentId;
         }
-        
+
         /// <summary>
         /// Box level information being provided.
         /// </summary>
         /// <value>Box level information being provided.</value>
-        [DataMember(Name="boxes", EmitDefaultValue=false)]
+        [DataMember(Name = "boxes", EmitDefaultValue = false)]
         public List<BoxInput> Boxes { get; set; }
 
         /// <summary>
         /// The ID of the &#x60;packingGroup&#x60; that packages are grouped according to. The &#x60;PackingGroupId&#x60; can only be provided before placement confirmation, and it must belong to the confirmed &#x60;PackingOption&#x60;. One of &#x60;ShipmentId&#x60; or &#x60;PackingGroupId&#x60; must be provided with every request.
         /// </summary>
         /// <value>The ID of the &#x60;packingGroup&#x60; that packages are grouped according to. The &#x60;PackingGroupId&#x60; can only be provided before placement confirmation, and it must belong to the confirmed &#x60;PackingOption&#x60;. One of &#x60;ShipmentId&#x60; or &#x60;PackingGroupId&#x60; must be provided with every request.</value>
-        [DataMember(Name="packingGroupId", EmitDefaultValue=false)]
+        [DataMember(Name = "packingGroupId", EmitDefaultValue = false)]
         public string PackingGroupId { get; set; }
 
         /// <summary>
         /// The ID of the shipment that packages are grouped according to. The &#x60;ShipmentId&#x60; can only be provided after placement confirmation, and the shipment must belong to the confirmed placement option. One of &#x60;ShipmentId&#x60; or &#x60;PackingGroupId&#x60; must be provided with every request.
         /// </summary>
         /// <value>The ID of the shipment that packages are grouped according to. The &#x60;ShipmentId&#x60; can only be provided after placement confirmation, and the shipment must belong to the confirmed placement option. One of &#x60;ShipmentId&#x60; or &#x60;PackingGroupId&#x60; must be provided with every request.</value>
-        [DataMember(Name="shipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentId", EmitDefaultValue = false)]
         public string ShipmentId { get; set; }
 
         /// <summary>
@@ -91,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +117,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Boxes == input.Boxes ||
                     this.Boxes != null &&
                     this.Boxes.SequenceEqual(input.Boxes)
-                ) && 
+                ) &&
                 (
                     this.PackingGroupId == input.PackingGroupId ||
                     (this.PackingGroupId != null &&
                     this.PackingGroupId.Equals(input.PackingGroupId))
-                ) && 
+                ) &&
                 (
                     this.ShipmentId == input.ShipmentId ||
                     (this.ShipmentId != null &&
@@ -166,41 +162,41 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PackingGroupId (string) maxLength
-            if(this.PackingGroupId != null && this.PackingGroupId.Length > 38)
+            if (this.PackingGroupId != null && this.PackingGroupId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for PackingGroupId, length must be less than 38.", new [] { "PackingGroupId" });
+                yield return new ValidationResult("Invalid value for PackingGroupId, length must be less than 38.", new[] { "PackingGroupId" });
             }
 
             // PackingGroupId (string) minLength
-            if(this.PackingGroupId != null && this.PackingGroupId.Length < 38)
+            if (this.PackingGroupId != null && this.PackingGroupId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for PackingGroupId, length must be greater than 38.", new [] { "PackingGroupId" });
+                yield return new ValidationResult("Invalid value for PackingGroupId, length must be greater than 38.", new[] { "PackingGroupId" });
             }
 
             // PackingGroupId (string) pattern
             Regex regexPackingGroupId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPackingGroupId.Match(this.PackingGroupId).Success)
             {
-                yield return new ValidationResult("Invalid value for PackingGroupId, must match a pattern of " + regexPackingGroupId, new [] { "PackingGroupId" });
+                yield return new ValidationResult("Invalid value for PackingGroupId, must match a pattern of " + regexPackingGroupId, new[] { "PackingGroupId" });
             }
 
             // ShipmentId (string) maxLength
-            if(this.ShipmentId != null && this.ShipmentId.Length > 38)
+            if (this.ShipmentId != null && this.ShipmentId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new[] { "ShipmentId" });
             }
 
             // ShipmentId (string) minLength
-            if(this.ShipmentId != null && this.ShipmentId.Length < 38)
+            if (this.ShipmentId != null && this.ShipmentId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new[] { "ShipmentId" });
             }
 
             // ShipmentId (string) pattern
             Regex regexShipmentId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexShipmentId.Match(this.ShipmentId).Success)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new[] { "ShipmentId" });
             }
 
             yield break;

@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
     /// A field where the selling party can provide additional information for tax-related or any other purposes.
     /// </summary>
     [DataContract]
-    public partial class AdditionalDetails :  IEquatable<AdditionalDetails>, IValidatableObject
+    public partial class AdditionalDetails : IEquatable<AdditionalDetails>, IValidatableObject
     {
         /// <summary>
         /// The type of the additional information provided by the selling party.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
-            
+
             /// <summary>
             /// Enum SUR for value: SUR
             /// </summary>
             [EnumMember(Value = "SUR")]
             SUR = 1,
-            
+
             /// <summary>
             /// Enum OCR for value: OCR
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// The type of the additional information provided by the selling party.
         /// </summary>
         /// <value>The type of the additional information provided by the selling party.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalDetails" /> class.
@@ -90,20 +85,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             }
             this.LanguageCode = languageCode;
         }
-        
+
 
         /// <summary>
         /// The detail of the additional information provided by the selling party.
         /// </summary>
         /// <value>The detail of the additional information provided by the selling party.</value>
-        [DataMember(Name="detail", EmitDefaultValue=false)]
+        [DataMember(Name = "detail", EmitDefaultValue = false)]
         public string Detail { get; set; }
 
         /// <summary>
         /// The language code of the additional information detail.
         /// </summary>
         /// <value>The language code of the additional information detail.</value>
-        [DataMember(Name="languageCode", EmitDefaultValue=false)]
+        [DataMember(Name = "languageCode", EmitDefaultValue = false)]
         public string LanguageCode { get; set; }
 
         /// <summary>
@@ -120,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -150,17 +145,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     this.Detail == input.Detail ||
                     (this.Detail != null &&
                     this.Detail.Equals(input.Detail))
-                ) && 
+                ) &&
                 (
                     this.LanguageCode == input.LanguageCode ||
                     (this.LanguageCode != null &&

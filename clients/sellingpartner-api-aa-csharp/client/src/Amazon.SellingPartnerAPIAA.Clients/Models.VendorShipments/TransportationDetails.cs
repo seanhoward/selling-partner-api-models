@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Transportation details for this shipment.
     /// </summary>
     [DataContract]
-    public partial class TransportationDetails :  IEquatable<TransportationDetails>, IValidatableObject
+    public partial class TransportationDetails : IEquatable<TransportationDetails>, IValidatableObject
     {
         /// <summary>
         /// The type of shipment.
@@ -37,19 +31,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ShipModeEnum
         {
-            
+
             /// <summary>
             /// Enum TruckLoad for value: TruckLoad
             /// </summary>
             [EnumMember(Value = "TruckLoad")]
             TruckLoad = 1,
-            
+
             /// <summary>
             /// Enum LessThanTruckLoad for value: LessThanTruckLoad
             /// </summary>
             [EnumMember(Value = "LessThanTruckLoad")]
             LessThanTruckLoad = 2,
-            
+
             /// <summary>
             /// Enum SmallParcel for value: SmallParcel
             /// </summary>
@@ -61,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// The type of shipment.
         /// </summary>
         /// <value>The type of shipment.</value>
-        [DataMember(Name="shipMode", EmitDefaultValue=false)]
+        [DataMember(Name = "shipMode", EmitDefaultValue = false)]
         public ShipModeEnum? ShipMode { get; set; }
         /// <summary>
         /// The mode of transportation for this shipment.
@@ -70,19 +64,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TransportationModeEnum
         {
-            
+
             /// <summary>
             /// Enum Road for value: Road
             /// </summary>
             [EnumMember(Value = "Road")]
             Road = 1,
-            
+
             /// <summary>
             /// Enum Air for value: Air
             /// </summary>
             [EnumMember(Value = "Air")]
             Air = 2,
-            
+
             /// <summary>
             /// Enum Ocean for value: Ocean
             /// </summary>
@@ -94,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// The mode of transportation for this shipment.
         /// </summary>
         /// <value>The mode of transportation for this shipment.</value>
-        [DataMember(Name="transportationMode", EmitDefaultValue=false)]
+        [DataMember(Name = "transportationMode", EmitDefaultValue = false)]
         public TransportationModeEnum? TransportationMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportationDetails" /> class.
@@ -116,42 +110,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.CarrierDetails = carrierDetails;
             this.BillOfLadingNumber = billOfLadingNumber;
         }
-        
+
 
 
         /// <summary>
         /// Date when shipment is performed by the Vendor to Buyer
         /// </summary>
         /// <value>Date when shipment is performed by the Vendor to Buyer</value>
-        [DataMember(Name="shippedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "shippedDate", EmitDefaultValue = false)]
         public DateTime? ShippedDate { get; set; }
 
         /// <summary>
         /// Estimated Date on which shipment will be delivered from Vendor to Buyer
         /// </summary>
         /// <value>Estimated Date on which shipment will be delivered from Vendor to Buyer</value>
-        [DataMember(Name="estimatedDeliveryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "estimatedDeliveryDate", EmitDefaultValue = false)]
         public DateTime? EstimatedDeliveryDate { get; set; }
 
         /// <summary>
         /// Date on which shipment will be delivered from Vendor to Buyer
         /// </summary>
         /// <value>Date on which shipment will be delivered from Vendor to Buyer</value>
-        [DataMember(Name="shipmentDeliveryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentDeliveryDate", EmitDefaultValue = false)]
         public DateTime? ShipmentDeliveryDate { get; set; }
 
         /// <summary>
         /// Indicates the carrier details and their contact informations
         /// </summary>
         /// <value>Indicates the carrier details and their contact informations</value>
-        [DataMember(Name="carrierDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierDetails", EmitDefaultValue = false)]
         public CarrierDetails CarrierDetails { get; set; }
 
         /// <summary>
         /// The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
         /// </summary>
         /// <value>The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.</value>
-        [DataMember(Name="billOfLadingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "billOfLadingNumber", EmitDefaultValue = false)]
         public string BillOfLadingNumber { get; set; }
 
         /// <summary>
@@ -172,7 +166,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -202,37 +196,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShipMode == input.ShipMode ||
                     (this.ShipMode != null &&
                     this.ShipMode.Equals(input.ShipMode))
-                ) && 
+                ) &&
                 (
                     this.TransportationMode == input.TransportationMode ||
                     (this.TransportationMode != null &&
                     this.TransportationMode.Equals(input.TransportationMode))
-                ) && 
+                ) &&
                 (
                     this.ShippedDate == input.ShippedDate ||
                     (this.ShippedDate != null &&
                     this.ShippedDate.Equals(input.ShippedDate))
-                ) && 
+                ) &&
                 (
                     this.EstimatedDeliveryDate == input.EstimatedDeliveryDate ||
                     (this.EstimatedDeliveryDate != null &&
                     this.EstimatedDeliveryDate.Equals(input.EstimatedDeliveryDate))
-                ) && 
+                ) &&
                 (
                     this.ShipmentDeliveryDate == input.ShipmentDeliveryDate ||
                     (this.ShipmentDeliveryDate != null &&
                     this.ShipmentDeliveryDate.Equals(input.ShipmentDeliveryDate))
-                ) && 
+                ) &&
                 (
                     this.CarrierDetails == input.CarrierDetails ||
                     (this.CarrierDetails != null &&
                     this.CarrierDetails.Equals(input.CarrierDetails))
-                ) && 
+                ) &&
                 (
                     this.BillOfLadingNumber == input.BillOfLadingNumber ||
                     (this.BillOfLadingNumber != null &&

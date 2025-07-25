@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
     /// GetSolicitationActionResponseLinks
     /// </summary>
     [DataContract]
-    public partial class GetSolicitationActionResponseLinks :  IEquatable<GetSolicitationActionResponseLinks>, IValidatableObject
+    public partial class GetSolicitationActionResponseLinks : IEquatable<GetSolicitationActionResponseLinks>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSolicitationActionResponseLinks" /> class.
@@ -61,17 +55,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
                 this.Schema = schema;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets Self
         /// </summary>
-        [DataMember(Name="self", EmitDefaultValue=false)]
+        [DataMember(Name = "self", EmitDefaultValue = false)]
         public LinkObject Self { get; set; }
 
         /// <summary>
         /// Gets or Sets Schema
         /// </summary>
-        [DataMember(Name="schema", EmitDefaultValue=false)]
+        [DataMember(Name = "schema", EmitDefaultValue = false)]
         public LinkObject Schema { get; set; }
 
         /// <summary>
@@ -87,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -117,12 +111,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Self == input.Self ||
                     (this.Self != null &&
                     this.Self.Equals(input.Self))
-                ) && 
+                ) &&
                 (
                     this.Schema == input.Schema ||
                     (this.Schema != null &&

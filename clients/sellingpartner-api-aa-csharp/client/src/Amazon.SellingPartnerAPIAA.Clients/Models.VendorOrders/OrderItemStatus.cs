@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Represents the current status of an order item, including acknowledgement and receiving details.
     /// </summary>
     [DataContract]
-    public partial class OrderItemStatus :  IEquatable<OrderItemStatus>, IValidatableObject
+    public partial class OrderItemStatus : IEquatable<OrderItemStatus>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemStatus" /> class.
@@ -65,58 +59,58 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.AcknowledgementStatus = acknowledgementStatus;
             this.ReceivingStatus = receivingStatus;
         }
-        
+
         /// <summary>
         /// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
         /// </summary>
         /// <value>Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.</value>
-        [DataMember(Name="itemSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "itemSequenceNumber", EmitDefaultValue = false)]
         public string ItemSequenceNumber { get; set; }
 
         /// <summary>
         /// Buyer&#39;s Standard Identification Number (ASIN) of an item.
         /// </summary>
         /// <value>Buyer&#39;s Standard Identification Number (ASIN) of an item.</value>
-        [DataMember(Name="buyerProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "buyerProductIdentifier", EmitDefaultValue = false)]
         public string BuyerProductIdentifier { get; set; }
 
         /// <summary>
         /// The vendor selected product identification of the item.
         /// </summary>
         /// <value>The vendor selected product identification of the item.</value>
-        [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorProductIdentifier", EmitDefaultValue = false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
         /// The net cost of an item per each or weight unit.
         /// </summary>
         /// <value>The net cost of an item per each or weight unit.</value>
-        [DataMember(Name="netCost", EmitDefaultValue=false)]
+        [DataMember(Name = "netCost", EmitDefaultValue = false)]
         public Money NetCost { get; set; }
 
         /// <summary>
         /// The list price of an item per each or weight unit.
         /// </summary>
         /// <value>The list price of an item per each or weight unit.</value>
-        [DataMember(Name="listPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "listPrice", EmitDefaultValue = false)]
         public Money ListPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets OrderedQuantity
         /// </summary>
-        [DataMember(Name="orderedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "orderedQuantity", EmitDefaultValue = false)]
         public OrderItemStatusOrderedQuantity OrderedQuantity { get; set; }
 
         /// <summary>
         /// Gets or Sets AcknowledgementStatus
         /// </summary>
-        [DataMember(Name="acknowledgementStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "acknowledgementStatus", EmitDefaultValue = false)]
         public OrderItemStatusAcknowledgementStatus AcknowledgementStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets ReceivingStatus
         /// </summary>
-        [DataMember(Name="receivingStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "receivingStatus", EmitDefaultValue = false)]
         public OrderItemStatusReceivingStatus ReceivingStatus { get; set; }
 
         /// <summary>
@@ -138,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -168,42 +162,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemSequenceNumber == input.ItemSequenceNumber ||
                     (this.ItemSequenceNumber != null &&
                     this.ItemSequenceNumber.Equals(input.ItemSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.BuyerProductIdentifier == input.BuyerProductIdentifier ||
                     (this.BuyerProductIdentifier != null &&
                     this.BuyerProductIdentifier.Equals(input.BuyerProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.VendorProductIdentifier == input.VendorProductIdentifier ||
                     (this.VendorProductIdentifier != null &&
                     this.VendorProductIdentifier.Equals(input.VendorProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.NetCost == input.NetCost ||
                     (this.NetCost != null &&
                     this.NetCost.Equals(input.NetCost))
-                ) && 
+                ) &&
                 (
                     this.ListPrice == input.ListPrice ||
                     (this.ListPrice != null &&
                     this.ListPrice.Equals(input.ListPrice))
-                ) && 
+                ) &&
                 (
                     this.OrderedQuantity == input.OrderedQuantity ||
                     (this.OrderedQuantity != null &&
                     this.OrderedQuantity.Equals(input.OrderedQuantity))
-                ) && 
+                ) &&
                 (
                     this.AcknowledgementStatus == input.AcknowledgementStatus ||
                     (this.AcknowledgementStatus != null &&
                     this.AcknowledgementStatus.Equals(input.AcknowledgementStatus))
-                ) && 
+                ) &&
                 (
                     this.ReceivingStatus == input.ReceivingStatus ||
                     (this.ReceivingStatus != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
     /// The identifier for a transaction.
     /// </summary>
     [DataContract]
-    public partial class TransactionIdentifier :  IEquatable<TransactionIdentifier>, IValidatableObject
+    public partial class TransactionIdentifier : IEquatable<TransactionIdentifier>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionIdentifier" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             this.Name = name;
             this.Id = id;
         }
-        
+
         /// <summary>
         /// The transaction identifier name. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionIdentifierName&#x60; options.
         /// </summary>
         /// <value>The transaction identifier name. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionIdentifierName&#x60; options.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The transaction identifier.
         /// </summary>
         /// <value>The transaction identifier.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&

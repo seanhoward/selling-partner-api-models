@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// The package that is associated with the container.
     /// </summary>
     [DataContract]
-    public partial class Package :  IEquatable<Package>, IValidatableObject
+    public partial class Package : IEquatable<Package>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Package" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
                 this.PackageTrackingNumber = packageTrackingNumber;
             }
         }
-        
+
         /// <summary>
         /// The tracking number on the label of shipment package, that you can fetch from the &#x60;shippingLabels&#x60; response. You can also scan the bar code on the shipping label to get the tracking number.
         /// </summary>
         /// <value>The tracking number on the label of shipment package, that you can fetch from the &#x60;shippingLabels&#x60; response. You can also scan the bar code on the shipping label to get the tracking number.</value>
-        [DataMember(Name="packageTrackingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "packageTrackingNumber", EmitDefaultValue = false)]
         public string PackageTrackingNumber { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PackageTrackingNumber == input.PackageTrackingNumber ||
                     (this.PackageTrackingNumber != null &&

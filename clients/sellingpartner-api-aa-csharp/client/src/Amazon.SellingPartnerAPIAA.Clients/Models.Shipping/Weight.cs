@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The weight.
     /// </summary>
     [DataContract]
-    public partial class Weight :  IEquatable<Weight>, IValidatableObject
+    public partial class Weight : IEquatable<Weight>, IValidatableObject
     {
         /// <summary>
         /// The unit of measurement.
@@ -37,25 +32,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitEnum
         {
-            
+
             /// <summary>
             /// Enum G for value: g
             /// </summary>
             [EnumMember(Value = "g")]
             G = 1,
-            
+
             /// <summary>
             /// Enum Kg for value: kg
             /// </summary>
             [EnumMember(Value = "kg")]
             Kg = 2,
-            
+
             /// <summary>
             /// Enum Oz for value: oz
             /// </summary>
             [EnumMember(Value = "oz")]
             Oz = 3,
-            
+
             /// <summary>
             /// Enum Lb for value: lb
             /// </summary>
@@ -67,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// The unit of measurement.
         /// </summary>
         /// <value>The unit of measurement.</value>
-        [DataMember(Name="unit", EmitDefaultValue=false)]
+        [DataMember(Name = "unit", EmitDefaultValue = false)]
         public UnitEnum Unit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Weight" /> class.
@@ -100,13 +95,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
                 this.Value = value;
             }
         }
-        
+
 
         /// <summary>
         /// The measurement value.
         /// </summary>
         /// <value>The measurement value.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public decimal? Value { get; set; }
 
         /// <summary>
@@ -122,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -152,12 +147,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Unit == input.Unit ||
                     (this.Unit != null &&
                     this.Unit.Equals(input.Unit))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&

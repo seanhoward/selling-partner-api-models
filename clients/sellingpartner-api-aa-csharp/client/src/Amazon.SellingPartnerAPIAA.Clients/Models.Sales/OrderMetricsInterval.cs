@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
     /// Contains order metrics.
     /// </summary>
     [DataContract]
-    public partial class OrderMetricsInterval :  IEquatable<OrderMetricsInterval>, IValidatableObject
+    public partial class OrderMetricsInterval : IEquatable<OrderMetricsInterval>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderMetricsInterval" /> class.
@@ -101,47 +95,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
                 this.TotalSales = totalSales;
             }
         }
-        
+
         /// <summary>
         /// The interval of time based on requested granularity (ex. Hour, Day, etc.) If this is the first or the last interval from the list, it might contain incomplete data if the requested interval doesn&#39;t align with the requested granularity (ex. request interval 2018-09-01T02:00:00Z- -2018-09-04T19:00:00Z and granularity day will result in Sept 1st UTC day and Sept 4th UTC days having partial data).
         /// </summary>
         /// <value>The interval of time based on requested granularity (ex. Hour, Day, etc.) If this is the first or the last interval from the list, it might contain incomplete data if the requested interval doesn&#39;t align with the requested granularity (ex. request interval 2018-09-01T02:00:00Z- -2018-09-04T19:00:00Z and granularity day will result in Sept 1st UTC day and Sept 4th UTC days having partial data).</value>
-        [DataMember(Name="interval", EmitDefaultValue=false)]
+        [DataMember(Name = "interval", EmitDefaultValue = false)]
         public string Interval { get; set; }
 
         /// <summary>
         /// The number of units in orders based on the specified filters.
         /// </summary>
         /// <value>The number of units in orders based on the specified filters.</value>
-        [DataMember(Name="unitCount", EmitDefaultValue=false)]
+        [DataMember(Name = "unitCount", EmitDefaultValue = false)]
         public int? UnitCount { get; set; }
 
         /// <summary>
         /// The number of order items based on the specified filters.
         /// </summary>
         /// <value>The number of order items based on the specified filters.</value>
-        [DataMember(Name="orderItemCount", EmitDefaultValue=false)]
+        [DataMember(Name = "orderItemCount", EmitDefaultValue = false)]
         public int? OrderItemCount { get; set; }
 
         /// <summary>
         /// The number of orders based on the specified filters.
         /// </summary>
         /// <value>The number of orders based on the specified filters.</value>
-        [DataMember(Name="orderCount", EmitDefaultValue=false)]
+        [DataMember(Name = "orderCount", EmitDefaultValue = false)]
         public int? OrderCount { get; set; }
 
         /// <summary>
         /// The average price for an item based on the specified filters. Formula is totalSales/unitCount.
         /// </summary>
         /// <value>The average price for an item based on the specified filters. Formula is totalSales/unitCount.</value>
-        [DataMember(Name="averageUnitPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "averageUnitPrice", EmitDefaultValue = false)]
         public Money AverageUnitPrice { get; set; }
 
         /// <summary>
         /// The total ordered product sales for all orders based on the specified filters.
         /// </summary>
         /// <value>The total ordered product sales for all orders based on the specified filters.</value>
-        [DataMember(Name="totalSales", EmitDefaultValue=false)]
+        [DataMember(Name = "totalSales", EmitDefaultValue = false)]
         public Money TotalSales { get; set; }
 
         /// <summary>
@@ -161,7 +155,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -191,32 +185,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sales
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Interval == input.Interval ||
                     (this.Interval != null &&
                     this.Interval.Equals(input.Interval))
-                ) && 
+                ) &&
                 (
                     this.UnitCount == input.UnitCount ||
                     (this.UnitCount != null &&
                     this.UnitCount.Equals(input.UnitCount))
-                ) && 
+                ) &&
                 (
                     this.OrderItemCount == input.OrderItemCount ||
                     (this.OrderItemCount != null &&
                     this.OrderItemCount.Equals(input.OrderItemCount))
-                ) && 
+                ) &&
                 (
                     this.OrderCount == input.OrderCount ||
                     (this.OrderCount != null &&
                     this.OrderCount.Equals(input.OrderCount))
-                ) && 
+                ) &&
                 (
                     this.AverageUnitPrice == input.AverageUnitPrice ||
                     (this.AverageUnitPrice != null &&
                     this.AverageUnitPrice.Equals(input.AverageUnitPrice))
-                ) && 
+                ) &&
                 (
                     this.TotalSales == input.TotalSales ||
                     (this.TotalSales != null &&

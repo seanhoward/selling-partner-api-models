@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInventory
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
     /// Inventory details required to update some or all items for the requested warehouse.
     /// </summary>
     [DataContract]
-    public partial class InventoryUpdate :  IEquatable<InventoryUpdate>, IValidatableObject
+    public partial class InventoryUpdate : IEquatable<InventoryUpdate>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryUpdate" /> class.
@@ -71,26 +66,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
                 this.Items = items;
             }
         }
-        
+
         /// <summary>
         /// ID of the selling party or vendor.
         /// </summary>
         /// <value>ID of the selling party or vendor.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// When true, this request contains a full feed. Otherwise, this request contains a partial feed. When sending a full feed, you must send information about all items in the warehouse. Any items not in the full feed are updated as not available. When sending a partial feed, only include the items that need an update to inventory. The status of other items will remain unchanged.
         /// </summary>
         /// <value>When true, this request contains a full feed. Otherwise, this request contains a partial feed. When sending a full feed, you must send information about all items in the warehouse. Any items not in the full feed are updated as not available. When sending a partial feed, only include the items that need an update to inventory. The status of other items will remain unchanged.</value>
-        [DataMember(Name="isFullUpdate", EmitDefaultValue=false)]
+        [DataMember(Name = "isFullUpdate", EmitDefaultValue = false)]
         public bool? IsFullUpdate { get; set; }
 
         /// <summary>
         /// A list of inventory items with updated details, including quantity available.
         /// </summary>
         /// <value>A list of inventory items with updated details, including quantity available.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<ItemDetails> Items { get; set; }
 
         /// <summary>
@@ -107,7 +102,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +132,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.IsFullUpdate == input.IsFullUpdate ||
                     (this.IsFullUpdate != null &&
                     this.IsFullUpdate.Equals(input.IsFullUpdate))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Details of the carton/package being shipped.
     /// </summary>
     [DataContract]
-    public partial class Carton :  IEquatable<Carton>, IValidatableObject
+    public partial class Carton : IEquatable<Carton>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Carton" /> class.
@@ -69,45 +64,45 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.Weight = weight;
             this.TrackingNumber = trackingNumber;
         }
-        
+
         /// <summary>
         /// A list of carton identifiers.
         /// </summary>
         /// <value>A list of carton identifiers.</value>
-        [DataMember(Name="cartonIdentifiers", EmitDefaultValue=false)]
+        [DataMember(Name = "cartonIdentifiers", EmitDefaultValue = false)]
         public List<ContainerIdentification> CartonIdentifiers { get; set; }
 
         /// <summary>
         /// Carton sequence number for the carton. The first carton will be 001, the second 002, and so on. This number is used as a reference to refer to this carton from the pallet level.
         /// </summary>
         /// <value>Carton sequence number for the carton. The first carton will be 001, the second 002, and so on. This number is used as a reference to refer to this carton from the pallet level.</value>
-        [DataMember(Name="cartonSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "cartonSequenceNumber", EmitDefaultValue = false)]
         public string CartonSequenceNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets Dimensions
         /// </summary>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public Dimensions Dimensions { get; set; }
 
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public Weight Weight { get; set; }
 
         /// <summary>
         /// This is required to be provided for every carton in the small parcel shipments.
         /// </summary>
         /// <value>This is required to be provided for every carton in the small parcel shipments.</value>
-        [DataMember(Name="trackingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingNumber", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
         /// <summary>
         /// A list of container item details.
         /// </summary>
         /// <value>A list of container item details.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<ContainerItem> Items { get; set; }
 
         /// <summary>
@@ -127,7 +122,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -157,32 +152,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CartonIdentifiers == input.CartonIdentifiers ||
                     this.CartonIdentifiers != null &&
                     this.CartonIdentifiers.SequenceEqual(input.CartonIdentifiers)
-                ) && 
+                ) &&
                 (
                     this.CartonSequenceNumber == input.CartonSequenceNumber ||
                     (this.CartonSequenceNumber != null &&
                     this.CartonSequenceNumber.Equals(input.CartonSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
                     this.Weight.Equals(input.Weight))
-                ) && 
+                ) &&
                 (
                     this.TrackingNumber == input.TrackingNumber ||
                     (this.TrackingNumber != null &&
                     this.TrackingNumber.Equals(input.TrackingNumber))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

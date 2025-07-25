@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// SupplySourceListInner
     /// </summary>
     [DataContract]
-    public partial class SupplySourceListInner :  IEquatable<SupplySourceListInner>, IValidatableObject
+    public partial class SupplySourceListInner : IEquatable<SupplySourceListInner>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SupplySourceListInner" /> class.
@@ -44,29 +37,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.SupplySourceCode = supplySourceCode;
             this.Address = address;
         }
-        
+
         /// <summary>
         /// Gets or Sets Alias
         /// </summary>
-        [DataMember(Name="alias", EmitDefaultValue=false)]
+        [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
         /// <summary>
         /// Gets or Sets SupplySourceId
         /// </summary>
-        [DataMember(Name="supplySourceId", EmitDefaultValue=false)]
+        [DataMember(Name = "supplySourceId", EmitDefaultValue = false)]
         public string SupplySourceId { get; set; }
 
         /// <summary>
         /// Gets or Sets SupplySourceCode
         /// </summary>
-        [DataMember(Name="supplySourceCode", EmitDefaultValue=false)]
+        [DataMember(Name = "supplySourceCode", EmitDefaultValue = false)]
         public string SupplySourceCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
         /// <summary>
@@ -84,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -114,22 +107,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Alias == input.Alias ||
                     (this.Alias != null &&
                     this.Alias.Equals(input.Alias))
-                ) && 
+                ) &&
                 (
                     this.SupplySourceId == input.SupplySourceId ||
                     (this.SupplySourceId != null &&
                     this.SupplySourceId.Equals(input.SupplySourceId))
-                ) && 
+                ) &&
                 (
                     this.SupplySourceCode == input.SupplySourceCode ||
                     (this.SupplySourceCode != null &&
                     this.SupplySourceCode.Equals(input.SupplySourceCode))
-                ) && 
+                ) &&
                 (
                     this.Address == input.Address ||
                     (this.Address != null &&

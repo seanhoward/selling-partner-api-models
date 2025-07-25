@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,18 +22,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// Use these parameters to sort the response.
     /// </summary>
     [DataContract]
-    public partial class ListOfferMetricsRequestSort :  IEquatable<ListOfferMetricsRequestSort>, IValidatableObject
+    public partial class ListOfferMetricsRequestSort : IEquatable<ListOfferMetricsRequestSort>, IValidatableObject
     {
         /// <summary>
         /// The sort order.
         /// </summary>
         /// <value>The sort order.</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
+        [DataMember(Name = "order", EmitDefaultValue = false)]
         public SortOrder Order { get; set; }
         /// <summary>
         /// Gets or Sets Key
         /// </summary>
-        [DataMember(Name="key", EmitDefaultValue=false)]
+        [DataMember(Name = "key", EmitDefaultValue = false)]
         public ListOfferMetricsSortKey Key { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOfferMetricsRequestSort" /> class.
@@ -72,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
                 this.Key = key;
             }
         }
-        
+
 
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +112,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Order == input.Order ||
                     (this.Order != null &&
                     this.Order.Equals(input.Order))
-                ) && 
+                ) &&
                 (
                     this.Key == input.Key ||
                     (this.Key != null &&

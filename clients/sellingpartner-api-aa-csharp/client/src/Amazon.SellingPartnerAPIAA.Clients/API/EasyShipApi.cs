@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Easy Ship
  *
- * The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders.  Your Easy Ship applications can:  * Get available time slots for packages to be scheduled for delivery.  * Schedule, reschedule, and cancel Easy Ship orders.  * Print labels, invoices, and warranties.  See the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
+ * Use the Selling Partner API for Easy Ship to build applications for sellers to manage and ship Amazon Easy Ship orders. With this API, you can get available time slots, schedule and reschedule Easy Ship orders, and print shipping labels, invoices, and warranties. To review the differences in Easy Ship operations by marketplace, refer to [Marketplace support](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support).
  *
  * OpenAPI spec version: 2022-03-23
  * 
@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackageRequest">The request schema for the &#x60;createScheduledPackage&#x60; operation.</param>
         /// <returns>Package</returns>
-        Package CreateScheduledPackage (CreateScheduledPackageRequest createScheduledPackageRequest);
+        Package CreateScheduledPackage(CreateScheduledPackageRequest createScheduledPackageRequest);
 
         /// <summary>
         /// 
@@ -45,28 +44,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackageRequest">The request schema for the &#x60;createScheduledPackage&#x60; operation.</param>
         /// <returns>ApiResponse of Package</returns>
-        ApiResponse<Package> CreateScheduledPackageWithHttpInfo (CreateScheduledPackageRequest createScheduledPackageRequest);
+        ApiResponse<Package> CreateScheduledPackageWithHttpInfo(CreateScheduledPackageRequest createScheduledPackageRequest);
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This operation automatically schedules a time slot for all specified &#x60;amazonOrderId&#x60; values and generates the associated shipping labels and compliance documents based on the marketplace. For more information, refer to the [marketplace support table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  You can optionally assign a &#x60;packageDetails&#x60; object to input a preferred time slot for each order in your request. In such cases, Amazon schedules the respective packages using the specified optional settings. If you don&#39;t specify a time slot, Amazon assigns the earliest available time slot.   You can choose PDF or ZPL for your shipping label&#39;s file format and Amazon creates the label accordingly.  This operation returns an array that contains the scheduled packages, and a temporary URL that you can use to access a ZIP file. The ZIP file includes the generated shipping labels and any other documents that are required for your marketplace. If an order can&#39;t be scheduled, Amazon adds the &#x60;rejectedOrders&#x60; list in the response. The response contains an entry for each order that could not be processed. Each entry contains an error message that describes the reason for the failure.  The following table contains the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// This operation automatically schedules a time slot for all the &#x60;amazonOrderId&#x60;s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).  Developers calling this operation may optionally assign a &#x60;packageDetails&#x60; object, allowing them to input a preferred time slot for each order in their request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.   Regarding the shipping label&#39;s file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.  This operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn&#39;t be scheduled, then Amazon adds the &#x60;rejectedOrders&#x60; list into the response, which contains an entry for each order we couldn&#39;t process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.  The table below displays the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackagesRequest">The request schema for the &#x60;createScheduledPackageBulk&#x60; operation.</param>
         /// <returns>CreateScheduledPackagesResponse</returns>
-        CreateScheduledPackagesResponse CreateScheduledPackageBulk (CreateScheduledPackagesRequest createScheduledPackagesRequest);
+        CreateScheduledPackagesResponse CreateScheduledPackageBulk(CreateScheduledPackagesRequest createScheduledPackagesRequest);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This operation automatically schedules a time slot for all specified &#x60;amazonOrderId&#x60; values and generates the associated shipping labels and compliance documents based on the marketplace. For more information, refer to the [marketplace support table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  You can optionally assign a &#x60;packageDetails&#x60; object to input a preferred time slot for each order in your request. In such cases, Amazon schedules the respective packages using the specified optional settings. If you don&#39;t specify a time slot, Amazon assigns the earliest available time slot.   You can choose PDF or ZPL for your shipping label&#39;s file format and Amazon creates the label accordingly.  This operation returns an array that contains the scheduled packages, and a temporary URL that you can use to access a ZIP file. The ZIP file includes the generated shipping labels and any other documents that are required for your marketplace. If an order can&#39;t be scheduled, Amazon adds the &#x60;rejectedOrders&#x60; list in the response. The response contains an entry for each order that could not be processed. Each entry contains an error message that describes the reason for the failure.  The following table contains the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// This operation automatically schedules a time slot for all the &#x60;amazonOrderId&#x60;s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).  Developers calling this operation may optionally assign a &#x60;packageDetails&#x60; object, allowing them to input a preferred time slot for each order in their request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.   Regarding the shipping label&#39;s file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.  This operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn&#39;t be scheduled, then Amazon adds the &#x60;rejectedOrders&#x60; list into the response, which contains an entry for each order we couldn&#39;t process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.  The table below displays the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackagesRequest">The request schema for the &#x60;createScheduledPackageBulk&#x60; operation.</param>
         /// <returns>ApiResponse of CreateScheduledPackagesResponse</returns>
-        ApiResponse<CreateScheduledPackagesResponse> CreateScheduledPackageBulkWithHttpInfo (CreateScheduledPackagesRequest createScheduledPackagesRequest);
+        ApiResponse<CreateScheduledPackagesResponse> CreateScheduledPackageBulkWithHttpInfo(CreateScheduledPackagesRequest createScheduledPackagesRequest);
         /// <summary>
         /// 
         /// </summary>
@@ -77,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.</param>
         /// <param name="marketplaceId">An identifier for the marketplace in which the seller is selling.</param>
         /// <returns>Package</returns>
-        Package GetScheduledPackage (string amazonOrderId, string marketplaceId);
+        Package GetScheduledPackage(string amazonOrderId, string marketplaceId);
 
         /// <summary>
         /// 
@@ -89,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.</param>
         /// <param name="marketplaceId">An identifier for the marketplace in which the seller is selling.</param>
         /// <returns>ApiResponse of Package</returns>
-        ApiResponse<Package> GetScheduledPackageWithHttpInfo (string amazonOrderId, string marketplaceId);
+        ApiResponse<Package> GetScheduledPackageWithHttpInfo(string amazonOrderId, string marketplaceId);
         /// <summary>
         /// 
         /// </summary>
@@ -99,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="listHandoverSlotsRequest">The request schema for the &#x60;listHandoverSlots&#x60; operation. (optional)</param>
         /// <returns>ListHandoverSlotsResponse</returns>
-        ListHandoverSlotsResponse ListHandoverSlots (ListHandoverSlotsRequest listHandoverSlotsRequest = null);
+        ListHandoverSlotsResponse ListHandoverSlots(ListHandoverSlotsRequest listHandoverSlotsRequest = null);
 
         /// <summary>
         /// 
@@ -110,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="listHandoverSlotsRequest">The request schema for the &#x60;listHandoverSlots&#x60; operation. (optional)</param>
         /// <returns>ApiResponse of ListHandoverSlotsResponse</returns>
-        ApiResponse<ListHandoverSlotsResponse> ListHandoverSlotsWithHttpInfo (ListHandoverSlotsRequest listHandoverSlotsRequest = null);
+        ApiResponse<ListHandoverSlotsResponse> ListHandoverSlotsWithHttpInfo(ListHandoverSlotsRequest listHandoverSlotsRequest = null);
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +119,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateScheduledPackagesRequest">The request schema for the &#x60;updateScheduledPackages&#x60; operation. (optional)</param>
         /// <returns>Packages</returns>
-        Packages UpdateScheduledPackages (UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null);
+        Packages UpdateScheduledPackages(UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null);
 
         /// <summary>
         /// 
@@ -131,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateScheduledPackagesRequest">The request schema for the &#x60;updateScheduledPackages&#x60; operation. (optional)</param>
         /// <returns>ApiResponse of Packages</returns>
-        ApiResponse<Packages> UpdateScheduledPackagesWithHttpInfo (UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null);
+        ApiResponse<Packages> UpdateScheduledPackagesWithHttpInfo(UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -143,7 +142,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackageRequest">The request schema for the &#x60;createScheduledPackage&#x60; operation.</param>
         /// <returns>Task of Package</returns>
-        System.Threading.Tasks.Task<Package> CreateScheduledPackageAsync (CreateScheduledPackageRequest createScheduledPackageRequest);
+        System.Threading.Tasks.Task<Package> CreateScheduledPackageAsync(CreateScheduledPackageRequest createScheduledPackageRequest);
 
         /// <summary>
         /// 
@@ -154,28 +153,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackageRequest">The request schema for the &#x60;createScheduledPackage&#x60; operation.</param>
         /// <returns>Task of ApiResponse (Package)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Package>> CreateScheduledPackageAsyncWithHttpInfo (CreateScheduledPackageRequest createScheduledPackageRequest);
+        System.Threading.Tasks.Task<ApiResponse<Package>> CreateScheduledPackageAsyncWithHttpInfo(CreateScheduledPackageRequest createScheduledPackageRequest);
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This operation automatically schedules a time slot for all specified &#x60;amazonOrderId&#x60; values and generates the associated shipping labels and compliance documents based on the marketplace. For more information, refer to the [marketplace support table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  You can optionally assign a &#x60;packageDetails&#x60; object to input a preferred time slot for each order in your request. In such cases, Amazon schedules the respective packages using the specified optional settings. If you don&#39;t specify a time slot, Amazon assigns the earliest available time slot.   You can choose PDF or ZPL for your shipping label&#39;s file format and Amazon creates the label accordingly.  This operation returns an array that contains the scheduled packages, and a temporary URL that you can use to access a ZIP file. The ZIP file includes the generated shipping labels and any other documents that are required for your marketplace. If an order can&#39;t be scheduled, Amazon adds the &#x60;rejectedOrders&#x60; list in the response. The response contains an entry for each order that could not be processed. Each entry contains an error message that describes the reason for the failure.  The following table contains the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// This operation automatically schedules a time slot for all the &#x60;amazonOrderId&#x60;s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).  Developers calling this operation may optionally assign a &#x60;packageDetails&#x60; object, allowing them to input a preferred time slot for each order in their request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.   Regarding the shipping label&#39;s file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.  This operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn&#39;t be scheduled, then Amazon adds the &#x60;rejectedOrders&#x60; list into the response, which contains an entry for each order we couldn&#39;t process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.  The table below displays the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackagesRequest">The request schema for the &#x60;createScheduledPackageBulk&#x60; operation.</param>
         /// <returns>Task of CreateScheduledPackagesResponse</returns>
-        System.Threading.Tasks.Task<CreateScheduledPackagesResponse> CreateScheduledPackageBulkAsync (CreateScheduledPackagesRequest createScheduledPackagesRequest);
+        System.Threading.Tasks.Task<CreateScheduledPackagesResponse> CreateScheduledPackageBulkAsync(CreateScheduledPackagesRequest createScheduledPackagesRequest);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This operation automatically schedules a time slot for all specified &#x60;amazonOrderId&#x60; values and generates the associated shipping labels and compliance documents based on the marketplace. For more information, refer to the [marketplace support table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  You can optionally assign a &#x60;packageDetails&#x60; object to input a preferred time slot for each order in your request. In such cases, Amazon schedules the respective packages using the specified optional settings. If you don&#39;t specify a time slot, Amazon assigns the earliest available time slot.   You can choose PDF or ZPL for your shipping label&#39;s file format and Amazon creates the label accordingly.  This operation returns an array that contains the scheduled packages, and a temporary URL that you can use to access a ZIP file. The ZIP file includes the generated shipping labels and any other documents that are required for your marketplace. If an order can&#39;t be scheduled, Amazon adds the &#x60;rejectedOrders&#x60; list in the response. The response contains an entry for each order that could not be processed. Each entry contains an error message that describes the reason for the failure.  The following table contains the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// This operation automatically schedules a time slot for all the &#x60;amazonOrderId&#x60;s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).  Developers calling this operation may optionally assign a &#x60;packageDetails&#x60; object, allowing them to input a preferred time slot for each order in their request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.   Regarding the shipping label&#39;s file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.  This operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn&#39;t be scheduled, then Amazon adds the &#x60;rejectedOrders&#x60; list into the response, which contains an entry for each order we couldn&#39;t process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.  The table below displays the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackagesRequest">The request schema for the &#x60;createScheduledPackageBulk&#x60; operation.</param>
         /// <returns>Task of ApiResponse (CreateScheduledPackagesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateScheduledPackagesResponse>> CreateScheduledPackageBulkAsyncWithHttpInfo (CreateScheduledPackagesRequest createScheduledPackagesRequest);
+        System.Threading.Tasks.Task<ApiResponse<CreateScheduledPackagesResponse>> CreateScheduledPackageBulkAsyncWithHttpInfo(CreateScheduledPackagesRequest createScheduledPackagesRequest);
         /// <summary>
         /// 
         /// </summary>
@@ -186,7 +185,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.</param>
         /// <param name="marketplaceId">An identifier for the marketplace in which the seller is selling.</param>
         /// <returns>Task of Package</returns>
-        System.Threading.Tasks.Task<Package> GetScheduledPackageAsync (string amazonOrderId, string marketplaceId);
+        System.Threading.Tasks.Task<Package> GetScheduledPackageAsync(string amazonOrderId, string marketplaceId);
 
         /// <summary>
         /// 
@@ -198,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.</param>
         /// <param name="marketplaceId">An identifier for the marketplace in which the seller is selling.</param>
         /// <returns>Task of ApiResponse (Package)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Package>> GetScheduledPackageAsyncWithHttpInfo (string amazonOrderId, string marketplaceId);
+        System.Threading.Tasks.Task<ApiResponse<Package>> GetScheduledPackageAsyncWithHttpInfo(string amazonOrderId, string marketplaceId);
         /// <summary>
         /// 
         /// </summary>
@@ -208,7 +207,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="listHandoverSlotsRequest">The request schema for the &#x60;listHandoverSlots&#x60; operation. (optional)</param>
         /// <returns>Task of ListHandoverSlotsResponse</returns>
-        System.Threading.Tasks.Task<ListHandoverSlotsResponse> ListHandoverSlotsAsync (ListHandoverSlotsRequest listHandoverSlotsRequest = null);
+        System.Threading.Tasks.Task<ListHandoverSlotsResponse> ListHandoverSlotsAsync(ListHandoverSlotsRequest listHandoverSlotsRequest = null);
 
         /// <summary>
         /// 
@@ -219,7 +218,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="listHandoverSlotsRequest">The request schema for the &#x60;listHandoverSlots&#x60; operation. (optional)</param>
         /// <returns>Task of ApiResponse (ListHandoverSlotsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListHandoverSlotsResponse>> ListHandoverSlotsAsyncWithHttpInfo (ListHandoverSlotsRequest listHandoverSlotsRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<ListHandoverSlotsResponse>> ListHandoverSlotsAsyncWithHttpInfo(ListHandoverSlotsRequest listHandoverSlotsRequest = null);
         /// <summary>
         /// 
         /// </summary>
@@ -229,7 +228,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateScheduledPackagesRequest">The request schema for the &#x60;updateScheduledPackages&#x60; operation. (optional)</param>
         /// <returns>Task of Packages</returns>
-        System.Threading.Tasks.Task<Packages> UpdateScheduledPackagesAsync (UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null);
+        System.Threading.Tasks.Task<Packages> UpdateScheduledPackagesAsync(UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null);
 
         /// <summary>
         /// 
@@ -240,7 +239,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateScheduledPackagesRequest">The request schema for the &#x60;updateScheduledPackages&#x60; operation. (optional)</param>
         /// <returns>Task of ApiResponse (Packages)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Packages>> UpdateScheduledPackagesAsyncWithHttpInfo (UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<Packages>> UpdateScheduledPackagesAsyncWithHttpInfo(UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null);
         #endregion Asynchronous Operations
     }
 
@@ -260,7 +259,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public EasyShipApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -286,7 +285,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -332,10 +331,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackageRequest">The request schema for the &#x60;createScheduledPackage&#x60; operation.</param>
         /// <returns>Package</returns>
-        public Package CreateScheduledPackage (CreateScheduledPackageRequest createScheduledPackageRequest)
+        public Package CreateScheduledPackage(CreateScheduledPackageRequest createScheduledPackageRequest)
         {
-             ApiResponse<Package> localVarResponse = CreateScheduledPackageWithHttpInfo(createScheduledPackageRequest);
-             return localVarResponse.Data;
+            ApiResponse<Package> localVarResponse = CreateScheduledPackageWithHttpInfo(createScheduledPackageRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -344,7 +343,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackageRequest">The request schema for the &#x60;createScheduledPackage&#x60; operation.</param>
         /// <returns>ApiResponse of Package</returns>
-        public ApiResponse< Package > CreateScheduledPackageWithHttpInfo (CreateScheduledPackageRequest createScheduledPackageRequest)
+        public ApiResponse<Package> CreateScheduledPackageWithHttpInfo(CreateScheduledPackageRequest createScheduledPackageRequest)
         {
             // verify the required parameter 'createScheduledPackageRequest' is set
             if (createScheduledPackageRequest == null)
@@ -383,11 +382,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -397,7 +396,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Package>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Package) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Package)));
+                (Package)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Package)));
         }
 
         /// <summary>
@@ -406,10 +405,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackageRequest">The request schema for the &#x60;createScheduledPackage&#x60; operation.</param>
         /// <returns>Task of Package</returns>
-        public async System.Threading.Tasks.Task<Package> CreateScheduledPackageAsync (CreateScheduledPackageRequest createScheduledPackageRequest)
+        public async System.Threading.Tasks.Task<Package> CreateScheduledPackageAsync(CreateScheduledPackageRequest createScheduledPackageRequest)
         {
-             ApiResponse<Package> localVarResponse = await CreateScheduledPackageAsyncWithHttpInfo(createScheduledPackageRequest);
-             return localVarResponse.Data;
+            ApiResponse<Package> localVarResponse = await CreateScheduledPackageAsyncWithHttpInfo(createScheduledPackageRequest);
+            return localVarResponse.Data;
 
         }
 
@@ -419,7 +418,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackageRequest">The request schema for the &#x60;createScheduledPackage&#x60; operation.</param>
         /// <returns>Task of ApiResponse (Package)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Package>> CreateScheduledPackageAsyncWithHttpInfo (CreateScheduledPackageRequest createScheduledPackageRequest)
+        public async System.Threading.Tasks.Task<ApiResponse<Package>> CreateScheduledPackageAsyncWithHttpInfo(CreateScheduledPackageRequest createScheduledPackageRequest)
         {
             // verify the required parameter 'createScheduledPackageRequest' is set
             if (createScheduledPackageRequest == null)
@@ -458,11 +457,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -472,28 +471,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Package>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Package) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Package)));
+                (Package)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Package)));
         }
 
         /// <summary>
-        ///  This operation automatically schedules a time slot for all specified &#x60;amazonOrderId&#x60; values and generates the associated shipping labels and compliance documents based on the marketplace. For more information, refer to the [marketplace support table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  You can optionally assign a &#x60;packageDetails&#x60; object to input a preferred time slot for each order in your request. In such cases, Amazon schedules the respective packages using the specified optional settings. If you don&#39;t specify a time slot, Amazon assigns the earliest available time slot.   You can choose PDF or ZPL for your shipping label&#39;s file format and Amazon creates the label accordingly.  This operation returns an array that contains the scheduled packages, and a temporary URL that you can use to access a ZIP file. The ZIP file includes the generated shipping labels and any other documents that are required for your marketplace. If an order can&#39;t be scheduled, Amazon adds the &#x60;rejectedOrders&#x60; list in the response. The response contains an entry for each order that could not be processed. Each entry contains an error message that describes the reason for the failure.  The following table contains the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  This operation automatically schedules a time slot for all the &#x60;amazonOrderId&#x60;s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).  Developers calling this operation may optionally assign a &#x60;packageDetails&#x60; object, allowing them to input a preferred time slot for each order in their request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.   Regarding the shipping label&#39;s file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.  This operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn&#39;t be scheduled, then Amazon adds the &#x60;rejectedOrders&#x60; list into the response, which contains an entry for each order we couldn&#39;t process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.  The table below displays the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackagesRequest">The request schema for the &#x60;createScheduledPackageBulk&#x60; operation.</param>
         /// <returns>CreateScheduledPackagesResponse</returns>
-        public CreateScheduledPackagesResponse CreateScheduledPackageBulk (CreateScheduledPackagesRequest createScheduledPackagesRequest)
+        public CreateScheduledPackagesResponse CreateScheduledPackageBulk(CreateScheduledPackagesRequest createScheduledPackagesRequest)
         {
-             ApiResponse<CreateScheduledPackagesResponse> localVarResponse = CreateScheduledPackageBulkWithHttpInfo(createScheduledPackagesRequest);
-             return localVarResponse.Data;
+            ApiResponse<CreateScheduledPackagesResponse> localVarResponse = CreateScheduledPackageBulkWithHttpInfo(createScheduledPackagesRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  This operation automatically schedules a time slot for all specified &#x60;amazonOrderId&#x60; values and generates the associated shipping labels and compliance documents based on the marketplace. For more information, refer to the [marketplace support table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  You can optionally assign a &#x60;packageDetails&#x60; object to input a preferred time slot for each order in your request. In such cases, Amazon schedules the respective packages using the specified optional settings. If you don&#39;t specify a time slot, Amazon assigns the earliest available time slot.   You can choose PDF or ZPL for your shipping label&#39;s file format and Amazon creates the label accordingly.  This operation returns an array that contains the scheduled packages, and a temporary URL that you can use to access a ZIP file. The ZIP file includes the generated shipping labels and any other documents that are required for your marketplace. If an order can&#39;t be scheduled, Amazon adds the &#x60;rejectedOrders&#x60; list in the response. The response contains an entry for each order that could not be processed. Each entry contains an error message that describes the reason for the failure.  The following table contains the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  This operation automatically schedules a time slot for all the &#x60;amazonOrderId&#x60;s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).  Developers calling this operation may optionally assign a &#x60;packageDetails&#x60; object, allowing them to input a preferred time slot for each order in their request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.   Regarding the shipping label&#39;s file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.  This operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn&#39;t be scheduled, then Amazon adds the &#x60;rejectedOrders&#x60; list into the response, which contains an entry for each order we couldn&#39;t process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.  The table below displays the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackagesRequest">The request schema for the &#x60;createScheduledPackageBulk&#x60; operation.</param>
         /// <returns>ApiResponse of CreateScheduledPackagesResponse</returns>
-        public ApiResponse< CreateScheduledPackagesResponse > CreateScheduledPackageBulkWithHttpInfo (CreateScheduledPackagesRequest createScheduledPackagesRequest)
+        public ApiResponse<CreateScheduledPackagesResponse> CreateScheduledPackageBulkWithHttpInfo(CreateScheduledPackagesRequest createScheduledPackagesRequest)
         {
             // verify the required parameter 'createScheduledPackagesRequest' is set
             if (createScheduledPackagesRequest == null)
@@ -532,11 +531,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -546,29 +545,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateScheduledPackagesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateScheduledPackagesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateScheduledPackagesResponse)));
+                (CreateScheduledPackagesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateScheduledPackagesResponse)));
         }
 
         /// <summary>
-        ///  This operation automatically schedules a time slot for all specified &#x60;amazonOrderId&#x60; values and generates the associated shipping labels and compliance documents based on the marketplace. For more information, refer to the [marketplace support table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  You can optionally assign a &#x60;packageDetails&#x60; object to input a preferred time slot for each order in your request. In such cases, Amazon schedules the respective packages using the specified optional settings. If you don&#39;t specify a time slot, Amazon assigns the earliest available time slot.   You can choose PDF or ZPL for your shipping label&#39;s file format and Amazon creates the label accordingly.  This operation returns an array that contains the scheduled packages, and a temporary URL that you can use to access a ZIP file. The ZIP file includes the generated shipping labels and any other documents that are required for your marketplace. If an order can&#39;t be scheduled, Amazon adds the &#x60;rejectedOrders&#x60; list in the response. The response contains an entry for each order that could not be processed. Each entry contains an error message that describes the reason for the failure.  The following table contains the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  This operation automatically schedules a time slot for all the &#x60;amazonOrderId&#x60;s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).  Developers calling this operation may optionally assign a &#x60;packageDetails&#x60; object, allowing them to input a preferred time slot for each order in their request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.   Regarding the shipping label&#39;s file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.  This operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn&#39;t be scheduled, then Amazon adds the &#x60;rejectedOrders&#x60; list into the response, which contains an entry for each order we couldn&#39;t process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.  The table below displays the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackagesRequest">The request schema for the &#x60;createScheduledPackageBulk&#x60; operation.</param>
         /// <returns>Task of CreateScheduledPackagesResponse</returns>
-        public async System.Threading.Tasks.Task<CreateScheduledPackagesResponse> CreateScheduledPackageBulkAsync (CreateScheduledPackagesRequest createScheduledPackagesRequest)
+        public async System.Threading.Tasks.Task<CreateScheduledPackagesResponse> CreateScheduledPackageBulkAsync(CreateScheduledPackagesRequest createScheduledPackagesRequest)
         {
-             ApiResponse<CreateScheduledPackagesResponse> localVarResponse = await CreateScheduledPackageBulkAsyncWithHttpInfo(createScheduledPackagesRequest);
-             return localVarResponse.Data;
+            ApiResponse<CreateScheduledPackagesResponse> localVarResponse = await CreateScheduledPackageBulkAsyncWithHttpInfo(createScheduledPackagesRequest);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        ///  This operation automatically schedules a time slot for all specified &#x60;amazonOrderId&#x60; values and generates the associated shipping labels and compliance documents based on the marketplace. For more information, refer to the [marketplace support table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  You can optionally assign a &#x60;packageDetails&#x60; object to input a preferred time slot for each order in your request. In such cases, Amazon schedules the respective packages using the specified optional settings. If you don&#39;t specify a time slot, Amazon assigns the earliest available time slot.   You can choose PDF or ZPL for your shipping label&#39;s file format and Amazon creates the label accordingly.  This operation returns an array that contains the scheduled packages, and a temporary URL that you can use to access a ZIP file. The ZIP file includes the generated shipping labels and any other documents that are required for your marketplace. If an order can&#39;t be scheduled, Amazon adds the &#x60;rejectedOrders&#x60; list in the response. The response contains an entry for each order that could not be processed. Each entry contains an error message that describes the reason for the failure.  The following table contains the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  This operation automatically schedules a time slot for all the &#x60;amazonOrderId&#x60;s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).  Developers calling this operation may optionally assign a &#x60;packageDetails&#x60; object, allowing them to input a preferred time slot for each order in their request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.   Regarding the shipping label&#39;s file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.  This operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn&#39;t be scheduled, then Amazon adds the &#x60;rejectedOrders&#x60; list into the response, which contains an entry for each order we couldn&#39;t process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.  The table below displays the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createScheduledPackagesRequest">The request schema for the &#x60;createScheduledPackageBulk&#x60; operation.</param>
         /// <returns>Task of ApiResponse (CreateScheduledPackagesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateScheduledPackagesResponse>> CreateScheduledPackageBulkAsyncWithHttpInfo (CreateScheduledPackagesRequest createScheduledPackagesRequest)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateScheduledPackagesResponse>> CreateScheduledPackageBulkAsyncWithHttpInfo(CreateScheduledPackagesRequest createScheduledPackagesRequest)
         {
             // verify the required parameter 'createScheduledPackagesRequest' is set
             if (createScheduledPackagesRequest == null)
@@ -607,11 +606,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -621,7 +620,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateScheduledPackagesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateScheduledPackagesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateScheduledPackagesResponse)));
+                (CreateScheduledPackagesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateScheduledPackagesResponse)));
         }
 
         /// <summary>
@@ -631,10 +630,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.</param>
         /// <param name="marketplaceId">An identifier for the marketplace in which the seller is selling.</param>
         /// <returns>Package</returns>
-        public Package GetScheduledPackage (string amazonOrderId, string marketplaceId)
+        public Package GetScheduledPackage(string amazonOrderId, string marketplaceId)
         {
-             ApiResponse<Package> localVarResponse = GetScheduledPackageWithHttpInfo(amazonOrderId, marketplaceId);
-             return localVarResponse.Data;
+            ApiResponse<Package> localVarResponse = GetScheduledPackageWithHttpInfo(amazonOrderId, marketplaceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -644,7 +643,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.</param>
         /// <param name="marketplaceId">An identifier for the marketplace in which the seller is selling.</param>
         /// <returns>ApiResponse of Package</returns>
-        public ApiResponse< Package > GetScheduledPackageWithHttpInfo (string amazonOrderId, string marketplaceId)
+        public ApiResponse<Package> GetScheduledPackageWithHttpInfo(string amazonOrderId, string marketplaceId)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -680,11 +679,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -694,7 +693,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Package>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Package) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Package)));
+                (Package)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Package)));
         }
 
         /// <summary>
@@ -704,10 +703,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.</param>
         /// <param name="marketplaceId">An identifier for the marketplace in which the seller is selling.</param>
         /// <returns>Task of Package</returns>
-        public async System.Threading.Tasks.Task<Package> GetScheduledPackageAsync (string amazonOrderId, string marketplaceId)
+        public async System.Threading.Tasks.Task<Package> GetScheduledPackageAsync(string amazonOrderId, string marketplaceId)
         {
-             ApiResponse<Package> localVarResponse = await GetScheduledPackageAsyncWithHttpInfo(amazonOrderId, marketplaceId);
-             return localVarResponse.Data;
+            ApiResponse<Package> localVarResponse = await GetScheduledPackageAsyncWithHttpInfo(amazonOrderId, marketplaceId);
+            return localVarResponse.Data;
 
         }
 
@@ -718,7 +717,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.</param>
         /// <param name="marketplaceId">An identifier for the marketplace in which the seller is selling.</param>
         /// <returns>Task of ApiResponse (Package)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Package>> GetScheduledPackageAsyncWithHttpInfo (string amazonOrderId, string marketplaceId)
+        public async System.Threading.Tasks.Task<ApiResponse<Package>> GetScheduledPackageAsyncWithHttpInfo(string amazonOrderId, string marketplaceId)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -754,11 +753,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -768,7 +767,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Package>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Package) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Package)));
+                (Package)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Package)));
         }
 
         /// <summary>
@@ -777,10 +776,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="listHandoverSlotsRequest">The request schema for the &#x60;listHandoverSlots&#x60; operation. (optional)</param>
         /// <returns>ListHandoverSlotsResponse</returns>
-        public ListHandoverSlotsResponse ListHandoverSlots (ListHandoverSlotsRequest listHandoverSlotsRequest = null)
+        public ListHandoverSlotsResponse ListHandoverSlots(ListHandoverSlotsRequest listHandoverSlotsRequest = null)
         {
-             ApiResponse<ListHandoverSlotsResponse> localVarResponse = ListHandoverSlotsWithHttpInfo(listHandoverSlotsRequest);
-             return localVarResponse.Data;
+            ApiResponse<ListHandoverSlotsResponse> localVarResponse = ListHandoverSlotsWithHttpInfo(listHandoverSlotsRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -789,7 +788,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="listHandoverSlotsRequest">The request schema for the &#x60;listHandoverSlots&#x60; operation. (optional)</param>
         /// <returns>ApiResponse of ListHandoverSlotsResponse</returns>
-        public ApiResponse< ListHandoverSlotsResponse > ListHandoverSlotsWithHttpInfo (ListHandoverSlotsRequest listHandoverSlotsRequest = null)
+        public ApiResponse<ListHandoverSlotsResponse> ListHandoverSlotsWithHttpInfo(ListHandoverSlotsRequest listHandoverSlotsRequest = null)
         {
 
             var localVarPath = "/easyShip/2022-03-23/timeSlot";
@@ -825,11 +824,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -839,7 +838,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListHandoverSlotsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListHandoverSlotsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListHandoverSlotsResponse)));
+                (ListHandoverSlotsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListHandoverSlotsResponse)));
         }
 
         /// <summary>
@@ -848,10 +847,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="listHandoverSlotsRequest">The request schema for the &#x60;listHandoverSlots&#x60; operation. (optional)</param>
         /// <returns>Task of ListHandoverSlotsResponse</returns>
-        public async System.Threading.Tasks.Task<ListHandoverSlotsResponse> ListHandoverSlotsAsync (ListHandoverSlotsRequest listHandoverSlotsRequest = null)
+        public async System.Threading.Tasks.Task<ListHandoverSlotsResponse> ListHandoverSlotsAsync(ListHandoverSlotsRequest listHandoverSlotsRequest = null)
         {
-             ApiResponse<ListHandoverSlotsResponse> localVarResponse = await ListHandoverSlotsAsyncWithHttpInfo(listHandoverSlotsRequest);
-             return localVarResponse.Data;
+            ApiResponse<ListHandoverSlotsResponse> localVarResponse = await ListHandoverSlotsAsyncWithHttpInfo(listHandoverSlotsRequest);
+            return localVarResponse.Data;
 
         }
 
@@ -861,7 +860,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="listHandoverSlotsRequest">The request schema for the &#x60;listHandoverSlots&#x60; operation. (optional)</param>
         /// <returns>Task of ApiResponse (ListHandoverSlotsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListHandoverSlotsResponse>> ListHandoverSlotsAsyncWithHttpInfo (ListHandoverSlotsRequest listHandoverSlotsRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListHandoverSlotsResponse>> ListHandoverSlotsAsyncWithHttpInfo(ListHandoverSlotsRequest listHandoverSlotsRequest = null)
         {
 
             var localVarPath = "/easyShip/2022-03-23/timeSlot";
@@ -897,11 +896,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -911,7 +910,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListHandoverSlotsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListHandoverSlotsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListHandoverSlotsResponse)));
+                (ListHandoverSlotsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListHandoverSlotsResponse)));
         }
 
         /// <summary>
@@ -920,10 +919,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateScheduledPackagesRequest">The request schema for the &#x60;updateScheduledPackages&#x60; operation. (optional)</param>
         /// <returns>Packages</returns>
-        public Packages UpdateScheduledPackages (UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null)
+        public Packages UpdateScheduledPackages(UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null)
         {
-             ApiResponse<Packages> localVarResponse = UpdateScheduledPackagesWithHttpInfo(updateScheduledPackagesRequest);
-             return localVarResponse.Data;
+            ApiResponse<Packages> localVarResponse = UpdateScheduledPackagesWithHttpInfo(updateScheduledPackagesRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -932,7 +931,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateScheduledPackagesRequest">The request schema for the &#x60;updateScheduledPackages&#x60; operation. (optional)</param>
         /// <returns>ApiResponse of Packages</returns>
-        public ApiResponse< Packages > UpdateScheduledPackagesWithHttpInfo (UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null)
+        public ApiResponse<Packages> UpdateScheduledPackagesWithHttpInfo(UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null)
         {
 
             var localVarPath = "/easyShip/2022-03-23/package";
@@ -968,11 +967,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -982,7 +981,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Packages>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Packages) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Packages)));
+                (Packages)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Packages)));
         }
 
         /// <summary>
@@ -991,10 +990,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateScheduledPackagesRequest">The request schema for the &#x60;updateScheduledPackages&#x60; operation. (optional)</param>
         /// <returns>Task of Packages</returns>
-        public async System.Threading.Tasks.Task<Packages> UpdateScheduledPackagesAsync (UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null)
+        public async System.Threading.Tasks.Task<Packages> UpdateScheduledPackagesAsync(UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null)
         {
-             ApiResponse<Packages> localVarResponse = await UpdateScheduledPackagesAsyncWithHttpInfo(updateScheduledPackagesRequest);
-             return localVarResponse.Data;
+            ApiResponse<Packages> localVarResponse = await UpdateScheduledPackagesAsyncWithHttpInfo(updateScheduledPackagesRequest);
+            return localVarResponse.Data;
 
         }
 
@@ -1004,7 +1003,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateScheduledPackagesRequest">The request schema for the &#x60;updateScheduledPackages&#x60; operation. (optional)</param>
         /// <returns>Task of ApiResponse (Packages)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Packages>> UpdateScheduledPackagesAsyncWithHttpInfo (UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Packages>> UpdateScheduledPackagesAsyncWithHttpInfo(UpdateScheduledPackagesRequest updateScheduledPackagesRequest = null)
         {
 
             var localVarPath = "/easyShip/2022-03-23/package";
@@ -1040,11 +1039,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1054,7 +1053,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Packages>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Packages) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Packages)));
+                (Packages)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Packages)));
         }
 
 
@@ -1068,17 +1067,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public EasyShipApi Build() 
+            public EasyShipApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

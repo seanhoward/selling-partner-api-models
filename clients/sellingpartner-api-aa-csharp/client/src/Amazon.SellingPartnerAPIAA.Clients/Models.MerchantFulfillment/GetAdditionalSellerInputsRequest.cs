@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Request schema.
     /// </summary>
     [DataContract]
-    public partial class GetAdditionalSellerInputsRequest :  IEquatable<GetAdditionalSellerInputsRequest>, IValidatableObject
+    public partial class GetAdditionalSellerInputsRequest : IEquatable<GetAdditionalSellerInputsRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAdditionalSellerInputsRequest" /> class.
@@ -71,25 +65,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                 this.OrderId = orderId;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets ShippingServiceId
         /// </summary>
-        [DataMember(Name="ShippingServiceId", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingServiceId", EmitDefaultValue = false)]
         public string ShippingServiceId { get; set; }
 
         /// <summary>
         /// The address from which to ship.
         /// </summary>
         /// <value>The address from which to ship.</value>
-        [DataMember(Name="ShipFromAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "ShipFromAddress", EmitDefaultValue = false)]
         public Address ShipFromAddress { get; set; }
 
         /// <summary>
         /// An Amazon defined order identifier
         /// </summary>
         /// <value>An Amazon defined order identifier</value>
-        [DataMember(Name="OrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "OrderId", EmitDefaultValue = false)]
         public string OrderId { get; set; }
 
         /// <summary>
@@ -106,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -136,17 +130,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShippingServiceId == input.ShippingServiceId ||
                     (this.ShippingServiceId != null &&
                     this.ShippingServiceId.Equals(input.ShippingServiceId))
-                ) && 
+                ) &&
                 (
                     this.ShipFromAddress == input.ShipFromAddress ||
                     (this.ShipFromAddress != null &&
                     this.ShipFromAddress.Equals(input.ShipFromAddress))
-                ) && 
+                ) &&
                 (
                     this.OrderId == input.OrderId ||
                     (this.OrderId != null &&

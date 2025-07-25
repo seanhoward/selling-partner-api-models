@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The &#x60;listItemComplianceDetails&#x60; response.
     /// </summary>
     [DataContract]
-    public partial class ListItemComplianceDetailsResponse :  IEquatable<ListItemComplianceDetailsResponse>, IValidatableObject
+    public partial class ListItemComplianceDetailsResponse : IEquatable<ListItemComplianceDetailsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ListItemComplianceDetailsResponse" /> class.
@@ -38,12 +32,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         {
             this.ComplianceDetails = complianceDetails;
         }
-        
+
         /// <summary>
         /// List of compliance details.
         /// </summary>
         /// <value>List of compliance details.</value>
-        [DataMember(Name="complianceDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "complianceDetails", EmitDefaultValue = false)]
         public List<ComplianceDetail> ComplianceDetails { get; set; }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ComplianceDetails == input.ComplianceDetails ||
                     this.ComplianceDetails != null &&

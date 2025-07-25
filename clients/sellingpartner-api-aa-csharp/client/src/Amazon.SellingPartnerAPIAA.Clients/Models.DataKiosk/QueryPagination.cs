@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
     /// When a query produces results that are not included in the data document, pagination occurs. This means the results are divided into pages. To retrieve the next page, you must pass a &#x60;CreateQuerySpecification&#x60; object with &#x60;paginationToken&#x60; set to this object&#39;s &#x60;nextToken&#x60; and with &#x60;query&#x60; set to this object&#39;s &#x60;query&#x60; in the subsequent &#x60;createQuery&#x60; request. When there are no more pages to fetch, the &#x60;nextToken&#x60; field will be absent.
     /// </summary>
     [DataContract]
-    public partial class QueryPagination :  IEquatable<QueryPagination>, IValidatableObject
+    public partial class QueryPagination : IEquatable<QueryPagination>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryPagination" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         {
             this.NextToken = nextToken;
         }
-        
+
         /// <summary>
         /// A token that can be used to fetch the next page of results.
         /// </summary>
         /// <value>A token that can be used to fetch the next page of results.</value>
-        [DataMember(Name="nextToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextToken", EmitDefaultValue = false)]
         public string NextToken { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.NextToken == input.NextToken ||
                     (this.NextToken != null &&

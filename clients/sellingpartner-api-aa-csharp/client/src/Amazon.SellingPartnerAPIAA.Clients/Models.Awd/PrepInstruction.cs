@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,12 +21,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Information pertaining to the preparation of inbound products.
     /// </summary>
     [DataContract]
-    public partial class PrepInstruction :  IEquatable<PrepInstruction>, IValidatableObject
+    public partial class PrepInstruction : IEquatable<PrepInstruction>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets PrepOwner
         /// </summary>
-        [DataMember(Name="prepOwner", EmitDefaultValue=false)]
+        [DataMember(Name = "prepOwner", EmitDefaultValue = false)]
         public PrepOwner? PrepOwner { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PrepInstruction" /> class.
@@ -45,13 +38,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             this.PrepOwner = prepOwner;
             this.PrepType = prepType;
         }
-        
+
 
         /// <summary>
         /// The type of preparation to be done. For more information about preparing items, refer to [Prep guidance](https://sellercentral.amazon.com/help/hub/reference/external/GF4G7547KSLDX2KC) on Seller Central.
         /// </summary>
         /// <value>The type of preparation to be done. For more information about preparing items, refer to [Prep guidance](https://sellercentral.amazon.com/help/hub/reference/external/GF4G7547KSLDX2KC) on Seller Central.</value>
-        [DataMember(Name="prepType", EmitDefaultValue=false)]
+        [DataMember(Name = "prepType", EmitDefaultValue = false)]
         public string PrepType { get; set; }
 
         /// <summary>
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PrepOwner == input.PrepOwner ||
                     (this.PrepOwner != null &&
                     this.PrepOwner.Equals(input.PrepOwner))
-                ) && 
+                ) &&
                 (
                     this.PrepType == input.PrepType ||
                     (this.PrepType != null &&

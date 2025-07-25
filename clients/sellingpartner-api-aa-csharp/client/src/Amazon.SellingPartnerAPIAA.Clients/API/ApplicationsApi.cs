@@ -12,10 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
-using Amazon.SellingPartnerAPIAA.Clients.Models.Application;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -33,7 +31,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
-        void RotateApplicationClientSecret ();
+        void RotateApplicationClientSecret();
 
         /// <summary>
         /// 
@@ -43,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RotateApplicationClientSecretWithHttpInfo ();
+        ApiResponse<Object> RotateApplicationClientSecretWithHttpInfo();
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -54,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RotateApplicationClientSecretAsync ();
+        System.Threading.Tasks.Task RotateApplicationClientSecretAsync();
 
         /// <summary>
         /// 
@@ -64,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RotateApplicationClientSecretAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<Object>> RotateApplicationClientSecretAsyncWithHttpInfo();
         #endregion Asynchronous Operations
     }
 
@@ -84,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public ApplicationsApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -110,7 +108,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -155,9 +153,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
-        public void RotateApplicationClientSecret ()
+        public void RotateApplicationClientSecret()
         {
-             RotateApplicationClientSecretWithHttpInfo();
+            RotateApplicationClientSecretWithHttpInfo();
         }
 
         /// <summary>
@@ -165,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> RotateApplicationClientSecretWithHttpInfo ()
+        public ApiResponse<Object> RotateApplicationClientSecretWithHttpInfo()
         {
 
             var localVarPath = "/applications/2023-11-30/clientSecret";
@@ -193,11 +191,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -215,9 +213,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RotateApplicationClientSecretAsync ()
+        public async System.Threading.Tasks.Task RotateApplicationClientSecretAsync()
         {
-             await RotateApplicationClientSecretAsyncWithHttpInfo();
+            await RotateApplicationClientSecretAsyncWithHttpInfo();
 
         }
 
@@ -226,7 +224,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> RotateApplicationClientSecretAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RotateApplicationClientSecretAsyncWithHttpInfo()
         {
 
             var localVarPath = "/applications/2023-11-30/clientSecret";
@@ -254,11 +252,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -282,17 +280,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public ApplicationsApi Build() 
+            public ApplicationsApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

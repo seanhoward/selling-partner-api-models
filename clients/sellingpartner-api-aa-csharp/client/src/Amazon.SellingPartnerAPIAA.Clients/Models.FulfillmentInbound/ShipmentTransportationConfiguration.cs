@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Details needed to generate the transportation options.
     /// </summary>
     [DataContract]
-    public partial class ShipmentTransportationConfiguration :  IEquatable<ShipmentTransportationConfiguration>, IValidatableObject
+    public partial class ShipmentTransportationConfiguration : IEquatable<ShipmentTransportationConfiguration>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentTransportationConfiguration" /> class.
@@ -67,38 +63,38 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.FreightInformation = freightInformation;
             this.Pallets = pallets;
         }
-        
+
         /// <summary>
         /// Gets or Sets ContactInformation
         /// </summary>
-        [DataMember(Name="contactInformation", EmitDefaultValue=false)]
+        [DataMember(Name = "contactInformation", EmitDefaultValue = false)]
         public ContactInformation ContactInformation { get; set; }
 
         /// <summary>
         /// Gets or Sets FreightInformation
         /// </summary>
-        [DataMember(Name="freightInformation", EmitDefaultValue=false)]
+        [DataMember(Name = "freightInformation", EmitDefaultValue = false)]
         public FreightInformation FreightInformation { get; set; }
 
         /// <summary>
         /// List of pallet configuration inputs.
         /// </summary>
         /// <value>List of pallet configuration inputs.</value>
-        [DataMember(Name="pallets", EmitDefaultValue=false)]
+        [DataMember(Name = "pallets", EmitDefaultValue = false)]
         public List<PalletInput> Pallets { get; set; }
 
         /// <summary>
         /// The range of dates within which the seller intends to ship their items. This is the pick-up date or &#39;ready to ship&#39; date, not an estimated delivery date.
         /// </summary>
         /// <value>The range of dates within which the seller intends to ship their items. This is the pick-up date or &#39;ready to ship&#39; date, not an estimated delivery date.</value>
-        [DataMember(Name="readyToShipWindow", EmitDefaultValue=false)]
+        [DataMember(Name = "readyToShipWindow", EmitDefaultValue = false)]
         public WindowInput ReadyToShipWindow { get; set; }
 
         /// <summary>
         /// Identifier of a shipment. A shipment contains the boxes and units being inbounded.
         /// </summary>
         /// <value>Identifier of a shipment. A shipment contains the boxes and units being inbounded.</value>
-        [DataMember(Name="shipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentId", EmitDefaultValue = false)]
         public string ShipmentId { get; set; }
 
         /// <summary>
@@ -117,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -147,27 +143,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContactInformation == input.ContactInformation ||
                     (this.ContactInformation != null &&
                     this.ContactInformation.Equals(input.ContactInformation))
-                ) && 
+                ) &&
                 (
                     this.FreightInformation == input.FreightInformation ||
                     (this.FreightInformation != null &&
                     this.FreightInformation.Equals(input.FreightInformation))
-                ) && 
+                ) &&
                 (
                     this.Pallets == input.Pallets ||
                     this.Pallets != null &&
                     this.Pallets.SequenceEqual(input.Pallets)
-                ) && 
+                ) &&
                 (
                     this.ReadyToShipWindow == input.ReadyToShipWindow ||
                     (this.ReadyToShipWindow != null &&
                     this.ReadyToShipWindow.Equals(input.ReadyToShipWindow))
-                ) && 
+                ) &&
                 (
                     this.ShipmentId == input.ShipmentId ||
                     (this.ShipmentId != null &&
@@ -206,22 +202,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ShipmentId (string) maxLength
-            if(this.ShipmentId != null && this.ShipmentId.Length > 38)
+            if (this.ShipmentId != null && this.ShipmentId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new[] { "ShipmentId" });
             }
 
             // ShipmentId (string) minLength
-            if(this.ShipmentId != null && this.ShipmentId.Length < 38)
+            if (this.ShipmentId != null && this.ShipmentId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new[] { "ShipmentId" });
             }
 
             // ShipmentId (string) pattern
             Regex regexShipmentId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexShipmentId.Match(this.ShipmentId).Success)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new[] { "ShipmentId" });
             }
 
             yield break;

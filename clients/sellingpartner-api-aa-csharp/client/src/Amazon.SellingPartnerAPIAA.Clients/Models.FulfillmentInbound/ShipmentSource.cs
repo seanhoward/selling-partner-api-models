@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Specifies the &#39;ship from&#39; address for the shipment.
     /// </summary>
     [DataContract]
-    public partial class ShipmentSource :  IEquatable<ShipmentSource>, IValidatableObject
+    public partial class ShipmentSource : IEquatable<ShipmentSource>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentSource" /> class.
@@ -53,18 +47,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
             this.Address = address;
         }
-        
+
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
         /// <summary>
         /// The type of source for this shipment. Possible values: &#x60;SELLER_FACILITY&#x60;.
         /// </summary>
         /// <value>The type of source for this shipment. Possible values: &#x60;SELLER_FACILITY&#x60;.</value>
-        [DataMember(Name="sourceType", EmitDefaultValue=false)]
+        [DataMember(Name = "sourceType", EmitDefaultValue = false)]
         public string SourceType { get; set; }
 
         /// <summary>
@@ -80,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -110,12 +104,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
-                ) && 
+                ) &&
                 (
                     this.SourceType == input.SourceType ||
                     (this.SourceType != null &&
@@ -148,15 +142,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // SourceType (string) maxLength
-            if(this.SourceType != null && this.SourceType.Length > 1024)
+            if (this.SourceType != null && this.SourceType.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for SourceType, length must be less than 1024.", new [] { "SourceType" });
+                yield return new ValidationResult("Invalid value for SourceType, length must be less than 1024.", new[] { "SourceType" });
             }
 
             // SourceType (string) minLength
-            if(this.SourceType != null && this.SourceType.Length < 1)
+            if (this.SourceType != null && this.SourceType.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for SourceType, length must be greater than 1.", new [] { "SourceType" });
+                yield return new ValidationResult("Invalid value for SourceType, length must be greater than 1.", new[] { "SourceType" });
             }
 
             yield break;

@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction.</param>
         /// <returns>GetTransactionResponse</returns>
-        GetTransactionResponse GetTransaction (string transactionId);
+        GetTransactionResponse GetTransaction(string transactionId);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction.</param>
         /// <returns>ApiResponse of GetTransactionResponse</returns>
-        ApiResponse<GetTransactionResponse> GetTransactionWithHttpInfo (string transactionId);
+        ApiResponse<GetTransactionResponse> GetTransactionWithHttpInfo(string transactionId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -57,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction.</param>
         /// <returns>Task of GetTransactionResponse</returns>
-        System.Threading.Tasks.Task<GetTransactionResponse> GetTransactionAsync (string transactionId);
+        System.Threading.Tasks.Task<GetTransactionResponse> GetTransactionAsync(string transactionId);
 
         /// <summary>
         /// 
@@ -68,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction.</param>
         /// <returns>Task of ApiResponse (GetTransactionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetTransactionResponse>> GetTransactionAsyncWithHttpInfo (string transactionId);
+        System.Threading.Tasks.Task<ApiResponse<GetTransactionResponse>> GetTransactionAsyncWithHttpInfo(string transactionId);
         #endregion Asynchronous Operations
     }
 
@@ -88,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public VendorTransactionApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -114,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -160,10 +159,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction.</param>
         /// <returns>GetTransactionResponse</returns>
-        public GetTransactionResponse GetTransaction (string transactionId)
+        public GetTransactionResponse GetTransaction(string transactionId)
         {
-             ApiResponse<GetTransactionResponse> localVarResponse = GetTransactionWithHttpInfo(transactionId);
-             return localVarResponse.Data;
+            ApiResponse<GetTransactionResponse> localVarResponse = GetTransactionWithHttpInfo(transactionId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -172,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction.</param>
         /// <returns>ApiResponse of GetTransactionResponse</returns>
-        public ApiResponse< GetTransactionResponse > GetTransactionWithHttpInfo (string transactionId)
+        public ApiResponse<GetTransactionResponse> GetTransactionWithHttpInfo(string transactionId)
         {
             // verify the required parameter 'transactionId' is set
             if (transactionId == null)
@@ -204,11 +203,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -218,7 +217,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetTransactionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetTransactionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTransactionResponse)));
+                (GetTransactionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTransactionResponse)));
         }
 
         /// <summary>
@@ -227,10 +226,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction.</param>
         /// <returns>Task of GetTransactionResponse</returns>
-        public async System.Threading.Tasks.Task<GetTransactionResponse> GetTransactionAsync (string transactionId)
+        public async System.Threading.Tasks.Task<GetTransactionResponse> GetTransactionAsync(string transactionId)
         {
-             ApiResponse<GetTransactionResponse> localVarResponse = await GetTransactionAsyncWithHttpInfo(transactionId);
-             return localVarResponse.Data;
+            ApiResponse<GetTransactionResponse> localVarResponse = await GetTransactionAsyncWithHttpInfo(transactionId);
+            return localVarResponse.Data;
 
         }
 
@@ -240,7 +239,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction.</param>
         /// <returns>Task of ApiResponse (GetTransactionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetTransactionResponse>> GetTransactionAsyncWithHttpInfo (string transactionId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetTransactionResponse>> GetTransactionAsyncWithHttpInfo(string transactionId)
         {
             // verify the required parameter 'transactionId' is set
             if (transactionId == null)
@@ -272,11 +271,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -286,7 +285,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetTransactionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetTransactionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTransactionResponse)));
+                (GetTransactionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTransactionResponse)));
         }
 
 
@@ -300,17 +299,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public VendorTransactionApi Build() 
+            public VendorTransactionApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

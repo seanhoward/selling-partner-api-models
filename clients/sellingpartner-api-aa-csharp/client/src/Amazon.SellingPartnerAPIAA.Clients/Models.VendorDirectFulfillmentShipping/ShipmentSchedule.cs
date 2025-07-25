@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Details about the estimated delivery window.
     /// </summary>
     [DataContract]
-    public partial class ShipmentSchedule :  IEquatable<ShipmentSchedule>, IValidatableObject
+    public partial class ShipmentSchedule : IEquatable<ShipmentSchedule>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentSchedule" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             this.ApptWindowStartDateTime = apptWindowStartDateTime;
             this.ApptWindowEndDateTime = apptWindowEndDateTime;
         }
-        
+
         /// <summary>
         /// Date on which the shipment is expected to reach the customer delivery location. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
         /// </summary>
         /// <value>Date on which the shipment is expected to reach the customer delivery location. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.</value>
-        [DataMember(Name="estimatedDeliveryDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "estimatedDeliveryDateTime", EmitDefaultValue = false)]
         public DateTime? EstimatedDeliveryDateTime { get; set; }
 
         /// <summary>
         /// The date and time at the start of the appointment window when the shipment is expected to be delivered. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
         /// </summary>
         /// <value>The date and time at the start of the appointment window when the shipment is expected to be delivered. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.</value>
-        [DataMember(Name="apptWindowStartDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "apptWindowStartDateTime", EmitDefaultValue = false)]
         public DateTime? ApptWindowStartDateTime { get; set; }
 
         /// <summary>
         /// The date and time at the end of the appointment window when the shipment is expected to be delivered. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
         /// </summary>
         /// <value>The date and time at the end of the appointment window when the shipment is expected to be delivered. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.</value>
-        [DataMember(Name="apptWindowEndDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "apptWindowEndDateTime", EmitDefaultValue = false)]
         public DateTime? ApptWindowEndDateTime { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.EstimatedDeliveryDateTime == input.EstimatedDeliveryDateTime ||
                     (this.EstimatedDeliveryDateTime != null &&
                     this.EstimatedDeliveryDateTime.Equals(input.EstimatedDeliveryDateTime))
-                ) && 
+                ) &&
                 (
                     this.ApptWindowStartDateTime == input.ApptWindowStartDateTime ||
                     (this.ApptWindowStartDateTime != null &&
                     this.ApptWindowStartDateTime.Equals(input.ApptWindowStartDateTime))
-                ) && 
+                ) &&
                 (
                     this.ApptWindowEndDateTime == input.ApptWindowEndDateTime ||
                     (this.ApptWindowEndDateTime != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
     /// The response for the &#x60;getDocument&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class GetDocumentResponse :  IEquatable<GetDocumentResponse>, IValidatableObject
+    public partial class GetDocumentResponse : IEquatable<GetDocumentResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentResponse" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
                 this.DocumentUrl = documentUrl;
             }
         }
-        
+
         /// <summary>
         /// The identifier for the Data Kiosk document. This identifier is unique only in combination with a selling partner account ID.
         /// </summary>
         /// <value>The identifier for the Data Kiosk document. This identifier is unique only in combination with a selling partner account ID.</value>
-        [DataMember(Name="documentId", EmitDefaultValue=false)]
+        [DataMember(Name = "documentId", EmitDefaultValue = false)]
         public string DocumentId { get; set; }
 
         /// <summary>
         /// A presigned URL that can be used to retrieve the Data Kiosk document. This URL expires after 5 minutes. If the Data Kiosk document is compressed, the &#x60;Content-Encoding&#x60; header will indicate the compression algorithm.  **Note:** Most HTTP clients are capable of automatically decompressing downloaded files based on the &#x60;Content-Encoding&#x60; header.
         /// </summary>
         /// <value>A presigned URL that can be used to retrieve the Data Kiosk document. This URL expires after 5 minutes. If the Data Kiosk document is compressed, the &#x60;Content-Encoding&#x60; header will indicate the compression algorithm.  **Note:** Most HTTP clients are capable of automatically decompressing downloaded files based on the &#x60;Content-Encoding&#x60; header.</value>
-        [DataMember(Name="documentUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "documentUrl", EmitDefaultValue = false)]
         public string DocumentUrl { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DocumentId == input.DocumentId ||
                     (this.DocumentId != null &&
                     this.DocumentId.Equals(input.DocumentId))
-                ) && 
+                ) &&
                 (
                     this.DocumentUrl == input.DocumentUrl ||
                     (this.DocumentUrl != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// The quantity of reserved inventory.
     /// </summary>
     [DataContract]
-    public partial class ReservedQuantity :  IEquatable<ReservedQuantity>, IValidatableObject
+    public partial class ReservedQuantity : IEquatable<ReservedQuantity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReservedQuantity" /> class.
@@ -44,33 +37,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             this.PendingTransshipmentQuantity = pendingTransshipmentQuantity;
             this.FcProcessingQuantity = fcProcessingQuantity;
         }
-        
+
         /// <summary>
         /// The total number of units in Amazon&#39;s fulfillment network that are currently being picked, packed, and shipped; or are sidelined for measurement, sampling, or other internal processes.
         /// </summary>
         /// <value>The total number of units in Amazon&#39;s fulfillment network that are currently being picked, packed, and shipped; or are sidelined for measurement, sampling, or other internal processes.</value>
-        [DataMember(Name="totalReservedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "totalReservedQuantity", EmitDefaultValue = false)]
         public int? TotalReservedQuantity { get; set; }
 
         /// <summary>
         /// The number of units reserved for customer orders.
         /// </summary>
         /// <value>The number of units reserved for customer orders.</value>
-        [DataMember(Name="pendingCustomerOrderQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "pendingCustomerOrderQuantity", EmitDefaultValue = false)]
         public int? PendingCustomerOrderQuantity { get; set; }
 
         /// <summary>
         /// The number of units being transferred from one fulfillment center to another.
         /// </summary>
         /// <value>The number of units being transferred from one fulfillment center to another.</value>
-        [DataMember(Name="pendingTransshipmentQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "pendingTransshipmentQuantity", EmitDefaultValue = false)]
         public int? PendingTransshipmentQuantity { get; set; }
 
         /// <summary>
         /// The number of units that have been sidelined at the fulfillment center for additional processing.
         /// </summary>
         /// <value>The number of units that have been sidelined at the fulfillment center for additional processing.</value>
-        [DataMember(Name="fcProcessingQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "fcProcessingQuantity", EmitDefaultValue = false)]
         public int? FcProcessingQuantity { get; set; }
 
         /// <summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +111,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TotalReservedQuantity == input.TotalReservedQuantity ||
                     (this.TotalReservedQuantity != null &&
                     this.TotalReservedQuantity.Equals(input.TotalReservedQuantity))
-                ) && 
+                ) &&
                 (
                     this.PendingCustomerOrderQuantity == input.PendingCustomerOrderQuantity ||
                     (this.PendingCustomerOrderQuantity != null &&
                     this.PendingCustomerOrderQuantity.Equals(input.PendingCustomerOrderQuantity))
-                ) && 
+                ) &&
                 (
                     this.PendingTransshipmentQuantity == input.PendingTransshipmentQuantity ||
                     (this.PendingTransshipmentQuantity != null &&
                     this.PendingTransshipmentQuantity.Equals(input.PendingTransshipmentQuantity))
-                ) && 
+                ) &&
                 (
                     this.FcProcessingQuantity == input.FcProcessingQuantity ||
                     (this.FcProcessingQuantity != null &&

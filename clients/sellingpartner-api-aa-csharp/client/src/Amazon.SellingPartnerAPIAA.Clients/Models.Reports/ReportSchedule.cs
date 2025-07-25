@@ -1,5 +1,5 @@
 /* 
- * Report v2021-06-30
+ * Selling Partner API for Reports
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
     /// Detailed information about a report schedule.
     /// </summary>
     [DataContract]
-    public partial class ReportSchedule :  IEquatable<ReportSchedule>, IValidatableObject
+    public partial class ReportSchedule : IEquatable<ReportSchedule>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportSchedule" /> class.
@@ -77,46 +72,46 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             this.ReportOptions = reportOptions;
             this.NextReportCreationTime = nextReportCreationTime;
         }
-        
+
         /// <summary>
         /// The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
         /// </summary>
         /// <value>The identifier for the report schedule. This identifier is unique only in combination with a seller ID.</value>
-        [DataMember(Name="reportScheduleId", EmitDefaultValue=false)]
+        [DataMember(Name = "reportScheduleId", EmitDefaultValue = false)]
         public string ReportScheduleId { get; set; }
 
         /// <summary>
         /// The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
         /// </summary>
         /// <value>The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.</value>
-        [DataMember(Name="reportType", EmitDefaultValue=false)]
+        [DataMember(Name = "reportType", EmitDefaultValue = false)]
         public string ReportType { get; set; }
 
         /// <summary>
         /// A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
         /// </summary>
         /// <value>A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.</value>
-        [DataMember(Name="marketplaceIds", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceIds", EmitDefaultValue = false)]
         public List<string> MarketplaceIds { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportOptions
         /// </summary>
-        [DataMember(Name="reportOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "reportOptions", EmitDefaultValue = false)]
         public ReportOptions ReportOptions { get; set; }
 
         /// <summary>
         /// An &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; period value that indicates how often a report should be created.
         /// </summary>
         /// <value>An &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; period value that indicates how often a report should be created.</value>
-        [DataMember(Name="period", EmitDefaultValue=false)]
+        [DataMember(Name = "period", EmitDefaultValue = false)]
         public string Period { get; set; }
 
         /// <summary>
         /// The date and time when the schedule will create its next report, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
         /// </summary>
         /// <value>The date and time when the schedule will create its next report, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
-        [DataMember(Name="nextReportCreationTime", EmitDefaultValue=false)]
+        [DataMember(Name = "nextReportCreationTime", EmitDefaultValue = false)]
         public DateTime? NextReportCreationTime { get; set; }
 
         /// <summary>
@@ -136,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -166,32 +161,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReportScheduleId == input.ReportScheduleId ||
                     (this.ReportScheduleId != null &&
                     this.ReportScheduleId.Equals(input.ReportScheduleId))
-                ) && 
+                ) &&
                 (
                     this.ReportType == input.ReportType ||
                     (this.ReportType != null &&
                     this.ReportType.Equals(input.ReportType))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceIds == input.MarketplaceIds ||
                     this.MarketplaceIds != null &&
                     this.MarketplaceIds.SequenceEqual(input.MarketplaceIds)
-                ) && 
+                ) &&
                 (
                     this.ReportOptions == input.ReportOptions ||
                     (this.ReportOptions != null &&
                     this.ReportOptions.Equals(input.ReportOptions))
-                ) && 
+                ) &&
                 (
                     this.Period == input.Period ||
                     (this.Period != null &&
                     this.Period.Equals(input.Period))
-                ) && 
+                ) &&
                 (
                     this.NextReportCreationTime == input.NextReportCreationTime ||
                     (this.NextReportCreationTime != null &&

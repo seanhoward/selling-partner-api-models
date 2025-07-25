@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Selected delivery window attributes.
     /// </summary>
     [DataContract]
-    public partial class SelectedDeliveryWindow :  IEquatable<SelectedDeliveryWindow>, IValidatableObject
+    public partial class SelectedDeliveryWindow : IEquatable<SelectedDeliveryWindow>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectedDeliveryWindow" /> class.
@@ -83,40 +78,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
             this.EditableUntil = editableUntil;
         }
-        
+
         /// <summary>
         /// Identifies type of Delivery Window Availability. Values: &#x60;AVAILABLE&#x60;, &#x60;CONGESTED&#x60;
         /// </summary>
         /// <value>Identifies type of Delivery Window Availability. Values: &#x60;AVAILABLE&#x60;, &#x60;CONGESTED&#x60;</value>
-        [DataMember(Name="availabilityType", EmitDefaultValue=false)]
+        [DataMember(Name = "availabilityType", EmitDefaultValue = false)]
         public string AvailabilityType { get; set; }
 
         /// <summary>
         /// Identifier of a delivery window option. A delivery window option represent one option for when a shipment is expected to be delivered.
         /// </summary>
         /// <value>Identifier of a delivery window option. A delivery window option represent one option for when a shipment is expected to be delivered.</value>
-        [DataMember(Name="deliveryWindowOptionId", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryWindowOptionId", EmitDefaultValue = false)]
         public string DeliveryWindowOptionId { get; set; }
 
         /// <summary>
         /// The timestamp at which this Window can no longer be edited.
         /// </summary>
         /// <value>The timestamp at which this Window can no longer be edited.</value>
-        [DataMember(Name="editableUntil", EmitDefaultValue=false)]
+        [DataMember(Name = "editableUntil", EmitDefaultValue = false)]
         public DateTime? EditableUntil { get; set; }
 
         /// <summary>
         /// The end timestamp of the window.
         /// </summary>
         /// <value>The end timestamp of the window.</value>
-        [DataMember(Name="endDate", EmitDefaultValue=false)]
+        [DataMember(Name = "endDate", EmitDefaultValue = false)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
         /// The start timestamp of the window.
         /// </summary>
         /// <value>The start timestamp of the window.</value>
-        [DataMember(Name="startDate", EmitDefaultValue=false)]
+        [DataMember(Name = "startDate", EmitDefaultValue = false)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
@@ -135,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -165,27 +160,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AvailabilityType == input.AvailabilityType ||
                     (this.AvailabilityType != null &&
                     this.AvailabilityType.Equals(input.AvailabilityType))
-                ) && 
+                ) &&
                 (
                     this.DeliveryWindowOptionId == input.DeliveryWindowOptionId ||
                     (this.DeliveryWindowOptionId != null &&
                     this.DeliveryWindowOptionId.Equals(input.DeliveryWindowOptionId))
-                ) && 
+                ) &&
                 (
                     this.EditableUntil == input.EditableUntil ||
                     (this.EditableUntil != null &&
                     this.EditableUntil.Equals(input.EditableUntil))
-                ) && 
+                ) &&
                 (
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&
                     this.EndDate.Equals(input.EndDate))
-                ) && 
+                ) &&
                 (
                     this.StartDate == input.StartDate ||
                     (this.StartDate != null &&
@@ -224,22 +219,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DeliveryWindowOptionId (string) maxLength
-            if(this.DeliveryWindowOptionId != null && this.DeliveryWindowOptionId.Length > 38)
+            if (this.DeliveryWindowOptionId != null && this.DeliveryWindowOptionId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, length must be less than 38.", new [] { "DeliveryWindowOptionId" });
+                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, length must be less than 38.", new[] { "DeliveryWindowOptionId" });
             }
 
             // DeliveryWindowOptionId (string) minLength
-            if(this.DeliveryWindowOptionId != null && this.DeliveryWindowOptionId.Length < 36)
+            if (this.DeliveryWindowOptionId != null && this.DeliveryWindowOptionId.Length < 36)
             {
-                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, length must be greater than 36.", new [] { "DeliveryWindowOptionId" });
+                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, length must be greater than 36.", new[] { "DeliveryWindowOptionId" });
             }
 
             // DeliveryWindowOptionId (string) pattern
             Regex regexDeliveryWindowOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexDeliveryWindowOptionId.Match(this.DeliveryWindowOptionId).Success)
             {
-                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, must match a pattern of " + regexDeliveryWindowOptionId, new [] { "DeliveryWindowOptionId" });
+                yield return new ValidationResult("Invalid value for DeliveryWindowOptionId, must match a pattern of " + regexDeliveryWindowOptionId, new[] { "DeliveryWindowOptionId" });
             }
 
             yield break;

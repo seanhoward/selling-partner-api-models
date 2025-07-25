@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// Describes a granularity at which inventory data can be aggregated. For example, if you use Marketplace granularity, the fulfillable quantity will reflect inventory that could be fulfilled in the given marketplace.
     /// </summary>
     [DataContract]
-    public partial class Granularity :  IEquatable<Granularity>, IValidatableObject
+    public partial class Granularity : IEquatable<Granularity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Granularity" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             this.GranularityType = granularityType;
             this.GranularityId = granularityId;
         }
-        
+
         /// <summary>
         /// The granularity type for the inventory aggregation level.
         /// </summary>
         /// <value>The granularity type for the inventory aggregation level.</value>
-        [DataMember(Name="granularityType", EmitDefaultValue=false)]
+        [DataMember(Name = "granularityType", EmitDefaultValue = false)]
         public string GranularityType { get; set; }
 
         /// <summary>
         /// The granularity ID for the specified granularity type. When granularityType is Marketplace, specify the marketplaceId.
         /// </summary>
         /// <value>The granularity ID for the specified granularity type. When granularityType is Marketplace, specify the marketplaceId.</value>
-        [DataMember(Name="granularityId", EmitDefaultValue=false)]
+        [DataMember(Name = "granularityId", EmitDefaultValue = false)]
         public string GranularityId { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.GranularityType == input.GranularityType ||
                     (this.GranularityType != null &&
                     this.GranularityType.Equals(input.GranularityType))
-                ) && 
+                ) &&
                 (
                     this.GranularityId == input.GranularityId ||
                     (this.GranularityId != null &&

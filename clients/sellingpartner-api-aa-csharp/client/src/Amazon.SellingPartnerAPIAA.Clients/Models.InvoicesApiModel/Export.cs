@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
     /// Detailed information about the export.
     /// </summary>
     [DataContract]
-    public partial class Export :  IEquatable<Export>, IValidatableObject
+    public partial class Export : IEquatable<Export>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public ExportStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Export" /> class.
@@ -53,40 +47,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             this.InvoicesDocumentIds = invoicesDocumentIds;
             this.Status = status;
         }
-        
+
         /// <summary>
         /// When the export generation fails, this attribute contains a description of the error.
         /// </summary>
         /// <value>When the export generation fails, this attribute contains a description of the error.</value>
-        [DataMember(Name="errorMessage", EmitDefaultValue=false)]
+        [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
         public string ErrorMessage { get; set; }
 
         /// <summary>
         /// The export identifier.
         /// </summary>
         /// <value>The export identifier.</value>
-        [DataMember(Name="exportId", EmitDefaultValue=false)]
+        [DataMember(Name = "exportId", EmitDefaultValue = false)]
         public string ExportId { get; set; }
 
         /// <summary>
         /// The date and time when the export generation finished. Vales are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
         /// </summary>
         /// <value>The date and time when the export generation finished. Vales are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</value>
-        [DataMember(Name="generateExportFinishedAt", EmitDefaultValue=false)]
+        [DataMember(Name = "generateExportFinishedAt", EmitDefaultValue = false)]
         public DateTime? GenerateExportFinishedAt { get; set; }
 
         /// <summary>
         /// The date and time when the export generation started. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
         /// </summary>
         /// <value>The date and time when the export generation started. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</value>
-        [DataMember(Name="generateExportStartedAt", EmitDefaultValue=false)]
+        [DataMember(Name = "generateExportStartedAt", EmitDefaultValue = false)]
         public DateTime? GenerateExportStartedAt { get; set; }
 
         /// <summary>
         /// The identifier for the export documents. To get the information required to retrieve the export document&#39;s contents, pass each ID in the &#x60;getInvoicesDocument&#x60; operation.  This list is empty until the status is &#x60;DONE&#x60;.
         /// </summary>
         /// <value>The identifier for the export documents. To get the information required to retrieve the export document&#39;s contents, pass each ID in the &#x60;getInvoicesDocument&#x60; operation.  This list is empty until the status is &#x60;DONE&#x60;.</value>
-        [DataMember(Name="invoicesDocumentIds", EmitDefaultValue=false)]
+        [DataMember(Name = "invoicesDocumentIds", EmitDefaultValue = false)]
         public List<string> InvoicesDocumentIds { get; set; }
 
 
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,32 +131,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ErrorMessage == input.ErrorMessage ||
                     (this.ErrorMessage != null &&
                     this.ErrorMessage.Equals(input.ErrorMessage))
-                ) && 
+                ) &&
                 (
                     this.ExportId == input.ExportId ||
                     (this.ExportId != null &&
                     this.ExportId.Equals(input.ExportId))
-                ) && 
+                ) &&
                 (
                     this.GenerateExportFinishedAt == input.GenerateExportFinishedAt ||
                     (this.GenerateExportFinishedAt != null &&
                     this.GenerateExportFinishedAt.Equals(input.GenerateExportFinishedAt))
-                ) && 
+                ) &&
                 (
                     this.GenerateExportStartedAt == input.GenerateExportStartedAt ||
                     (this.GenerateExportStartedAt != null &&
                     this.GenerateExportStartedAt.Equals(input.GenerateExportStartedAt))
-                ) && 
+                ) &&
                 (
                     this.InvoicesDocumentIds == input.InvoicesDocumentIds ||
                     this.InvoicesDocumentIds != null &&
                     this.InvoicesDocumentIds.SequenceEqual(input.InvoicesDocumentIds)
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&

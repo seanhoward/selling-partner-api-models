@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
     /// A JSON schema document describing the expected payload of the action. This object can be validated against &lt;a href&#x3D;http://json-schema.org/draft-04/schema&gt;http://json-schema.org/draft-04/schema&lt;/a&gt;.
     /// </summary>
     [DataContract]
-    public partial class Schema : Dictionary<String, Object>,  IEquatable<Schema>, IValidatableObject
+    public partial class Schema : Dictionary<String, Object>, IEquatable<Schema>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Schema" /> class.
@@ -37,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         public Schema() : base()
         {
         }
-        
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -50,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

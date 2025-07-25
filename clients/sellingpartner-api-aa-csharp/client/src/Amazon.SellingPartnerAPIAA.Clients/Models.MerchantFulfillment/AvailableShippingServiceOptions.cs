@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// The available shipping service options.
     /// </summary>
     [DataContract]
-    public partial class AvailableShippingServiceOptions :  IEquatable<AvailableShippingServiceOptions>, IValidatableObject
+    public partial class AvailableShippingServiceOptions : IEquatable<AvailableShippingServiceOptions>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableShippingServiceOptions" /> class.
@@ -61,17 +55,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                 this.AvailableDeliveryExperienceOptions = availableDeliveryExperienceOptions;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets AvailableCarrierWillPickUpOptions
         /// </summary>
-        [DataMember(Name="AvailableCarrierWillPickUpOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "AvailableCarrierWillPickUpOptions", EmitDefaultValue = false)]
         public AvailableCarrierWillPickUpOptionsList AvailableCarrierWillPickUpOptions { get; set; }
 
         /// <summary>
         /// Gets or Sets AvailableDeliveryExperienceOptions
         /// </summary>
-        [DataMember(Name="AvailableDeliveryExperienceOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "AvailableDeliveryExperienceOptions", EmitDefaultValue = false)]
         public AvailableDeliveryExperienceOptionsList AvailableDeliveryExperienceOptions { get; set; }
 
         /// <summary>
@@ -87,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -117,12 +111,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AvailableCarrierWillPickUpOptions == input.AvailableCarrierWillPickUpOptions ||
                     (this.AvailableCarrierWillPickUpOptions != null &&
                     this.AvailableCarrierWillPickUpOptions.Equals(input.AvailableCarrierWillPickUpOptions))
-                ) && 
+                ) &&
                 (
                     this.AvailableDeliveryExperienceOptions == input.AvailableDeliveryExperienceOptions ||
                     (this.AvailableDeliveryExperienceOptions != null &&

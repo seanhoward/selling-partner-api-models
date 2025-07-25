@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,26 +9,21 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Sales ranks of an Amazon catalog item for the indicated Amazon marketplace.
+    /// Sales ranks of an Amazon catalog item, grouped by &#x60;marketplaceId&#x60;.
     /// </summary>
     [DataContract]
-    public partial class ItemSalesRanksByMarketplace :  IEquatable<ItemSalesRanksByMarketplace>, IValidatableObject
+    public partial class ItemSalesRanksByMarketplace : IEquatable<ItemSalesRanksByMarketplace>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSalesRanksByMarketplace" /> class.
@@ -38,9 +33,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSalesRanksByMarketplace" /> class.
         /// </summary>
-        /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
-        /// <param name="classificationRanks">Sales ranks of an Amazon catalog item for an Amazon marketplace by classification..</param>
-        /// <param name="displayGroupRanks">Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group..</param>
+        /// <param name="marketplaceId">Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required).</param>
+        /// <param name="classificationRanks">Sales ranks of an Amazon catalog item for a &#x60;marketplaceId&#x60;, grouped by classification..</param>
+        /// <param name="displayGroupRanks">Sales ranks of an Amazon catalog item for a &#x60;marketplaceId&#x60;, grouped by website display group..</param>
         public ItemSalesRanksByMarketplace(string marketplaceId = default, List<ItemClassificationSalesRank> classificationRanks = default, List<ItemDisplayGroupSalesRank> displayGroupRanks = default)
         {
             // to ensure "marketplaceId" is required (not null)
@@ -55,26 +50,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             this.ClassificationRanks = classificationRanks;
             this.DisplayGroupRanks = displayGroupRanks;
         }
-        
+
         /// <summary>
-        /// Amazon marketplace identifier.
+        /// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
-        /// <value>Amazon marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        /// <value>Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
-        /// Sales ranks of an Amazon catalog item for an Amazon marketplace by classification.
+        /// Sales ranks of an Amazon catalog item for a &#x60;marketplaceId&#x60;, grouped by classification.
         /// </summary>
-        /// <value>Sales ranks of an Amazon catalog item for an Amazon marketplace by classification.</value>
-        [DataMember(Name="classificationRanks", EmitDefaultValue=false)]
+        /// <value>Sales ranks of an Amazon catalog item for a &#x60;marketplaceId&#x60;, grouped by classification.</value>
+        [DataMember(Name = "classificationRanks", EmitDefaultValue = false)]
         public List<ItemClassificationSalesRank> ClassificationRanks { get; set; }
 
         /// <summary>
-        /// Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.
+        /// Sales ranks of an Amazon catalog item for a &#x60;marketplaceId&#x60;, grouped by website display group.
         /// </summary>
-        /// <value>Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.</value>
-        [DataMember(Name="displayGroupRanks", EmitDefaultValue=false)]
+        /// <value>Sales ranks of an Amazon catalog item for a &#x60;marketplaceId&#x60;, grouped by website display group.</value>
+        [DataMember(Name = "displayGroupRanks", EmitDefaultValue = false)]
         public List<ItemDisplayGroupSalesRank> DisplayGroupRanks { get; set; }
 
         /// <summary>
@@ -91,7 +86,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +116,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.ClassificationRanks == input.ClassificationRanks ||
                     this.ClassificationRanks != null &&
                     this.ClassificationRanks.SequenceEqual(input.ClassificationRanks)
-                ) && 
+                ) &&
                 (
                     this.DisplayGroupRanks == input.DisplayGroupRanks ||
                     this.DisplayGroupRanks != null &&

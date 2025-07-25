@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The carrier for the inbound shipment.
     /// </summary>
     [DataContract]
-    public partial class Carrier :  IEquatable<Carrier>, IValidatableObject
+    public partial class Carrier : IEquatable<Carrier>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Carrier" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.AlphaCode = alphaCode;
             this.Name = name;
         }
-        
+
         /// <summary>
         /// The carrier code. For example, USPS or DHLEX.
         /// </summary>
         /// <value>The carrier code. For example, USPS or DHLEX.</value>
-        [DataMember(Name="alphaCode", EmitDefaultValue=false)]
+        [DataMember(Name = "alphaCode", EmitDefaultValue = false)]
         public string AlphaCode { get; set; }
 
         /// <summary>
         /// The name of the carrier.
         /// </summary>
         /// <value>The name of the carrier.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AlphaCode == input.AlphaCode ||
                     (this.AlphaCode != null &&
                     this.AlphaCode.Equals(input.AlphaCode))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -136,27 +129,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AlphaCode (string) maxLength
-            if(this.AlphaCode != null && this.AlphaCode.Length > 1024)
+            if (this.AlphaCode != null && this.AlphaCode.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for AlphaCode, length must be less than 1024.", new [] { "AlphaCode" });
+                yield return new ValidationResult("Invalid value for AlphaCode, length must be less than 1024.", new[] { "AlphaCode" });
             }
 
             // AlphaCode (string) minLength
-            if(this.AlphaCode != null && this.AlphaCode.Length < 1)
+            if (this.AlphaCode != null && this.AlphaCode.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for AlphaCode, length must be greater than 1.", new [] { "AlphaCode" });
+                yield return new ValidationResult("Invalid value for AlphaCode, length must be greater than 1.", new[] { "AlphaCode" });
             }
 
             // Name (string) maxLength
-            if(this.Name != null && this.Name.Length > 1024)
+            if (this.Name != null && this.Name.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 1024.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 1024.", new[] { "Name" });
             }
 
             // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
+            if (this.Name != null && this.Name.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new[] { "Name" });
             }
 
             yield break;

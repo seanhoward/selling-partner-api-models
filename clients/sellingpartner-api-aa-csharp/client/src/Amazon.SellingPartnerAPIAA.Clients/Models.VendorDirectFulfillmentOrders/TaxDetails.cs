@@ -9,26 +9,21 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrders
 {
     /// <summary>
-    /// The tax details related to the order.
+    /// The tax details for the order. _Note:_ Amazon calculates tax on the list price (Amazon retail price).
     /// </summary>
     [DataContract]
-    public partial class TaxDetails :  IEquatable<TaxDetails>, IValidatableObject
+    public partial class TaxDetails : IEquatable<TaxDetails>, IValidatableObject
     {
         /// <summary>
         /// Tax type.
@@ -37,43 +32,43 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
-            
+
             /// <summary>
             /// Enum CONSUMPTION for value: CONSUMPTION
             /// </summary>
             [EnumMember(Value = "CONSUMPTION")]
             CONSUMPTION = 1,
-            
+
             /// <summary>
             /// Enum GST for value: GST
             /// </summary>
             [EnumMember(Value = "GST")]
             GST = 2,
-            
+
             /// <summary>
             /// Enum MwSt for value: MwSt.
             /// </summary>
             [EnumMember(Value = "MwSt.")]
             MwSt = 3,
-            
+
             /// <summary>
             /// Enum PST for value: PST
             /// </summary>
             [EnumMember(Value = "PST")]
             PST = 4,
-            
+
             /// <summary>
             /// Enum TOTAL for value: TOTAL
             /// </summary>
             [EnumMember(Value = "TOTAL")]
             TOTAL = 5,
-            
+
             /// <summary>
             /// Enum TVA for value: TVA
             /// </summary>
             [EnumMember(Value = "TVA")]
             TVA = 6,
-            
+
             /// <summary>
             /// Enum VAT for value: VAT
             /// </summary>
@@ -85,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// Tax type.
         /// </summary>
         /// <value>Tax type.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxDetails" /> class.
@@ -114,23 +109,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             this.TaxableAmount = taxableAmount;
             this.Type = type;
         }
-        
+
         /// <summary>
         /// Gets or Sets TaxRate
         /// </summary>
-        [DataMember(Name="taxRate", EmitDefaultValue=false)]
+        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
         public string TaxRate { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxAmount
         /// </summary>
-        [DataMember(Name="taxAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "taxAmount", EmitDefaultValue = false)]
         public Money TaxAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxableAmount
         /// </summary>
-        [DataMember(Name="taxableAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "taxableAmount", EmitDefaultValue = false)]
         public Money TaxableAmount { get; set; }
 
 
@@ -149,7 +144,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -179,22 +174,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TaxRate == input.TaxRate ||
                     (this.TaxRate != null &&
                     this.TaxRate.Equals(input.TaxRate))
-                ) && 
+                ) &&
                 (
                     this.TaxAmount == input.TaxAmount ||
                     (this.TaxAmount != null &&
                     this.TaxAmount.Equals(input.TaxAmount))
-                ) && 
+                ) &&
                 (
                     this.TaxableAmount == input.TaxableAmount ||
                     (this.TaxableAmount != null &&
                     this.TaxableAmount.Equals(input.TaxableAmount))
-                ) && 
+                ) &&
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&

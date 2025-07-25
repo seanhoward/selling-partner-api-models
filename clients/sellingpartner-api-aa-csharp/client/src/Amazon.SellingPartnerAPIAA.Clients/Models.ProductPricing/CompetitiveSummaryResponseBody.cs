@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The &#x60;competitiveSummaryResponse&#x60; body for a requested ASIN and &#x60;marketplaceId&#x60;.
     /// </summary>
     [DataContract]
-    public partial class CompetitiveSummaryResponseBody :  IEquatable<CompetitiveSummaryResponseBody>, IValidatableObject
+    public partial class CompetitiveSummaryResponseBody : IEquatable<CompetitiveSummaryResponseBody>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryResponseBody" /> class.
@@ -69,47 +64,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             this.ReferencePrices = referencePrices;
             this.Errors = errors;
         }
-        
+
         /// <summary>
         /// The Amazon identifier for the item.
         /// </summary>
         /// <value>The Amazon identifier for the item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// A marketplace identifier.
         /// </summary>
         /// <value>A marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// A list of featured buying options for the specified ASIN &#x60;marketplaceId&#x60; combination.
         /// </summary>
         /// <value>A list of featured buying options for the specified ASIN &#x60;marketplaceId&#x60; combination.</value>
-        [DataMember(Name="featuredBuyingOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "featuredBuyingOptions", EmitDefaultValue = false)]
         public List<FeaturedBuyingOption> FeaturedBuyingOptions { get; set; }
 
         /// <summary>
         /// A list of lowest priced offers for the specified ASIN &#x60;marketplaceId&#x60; combination.
         /// </summary>
         /// <value>A list of lowest priced offers for the specified ASIN &#x60;marketplaceId&#x60; combination.</value>
-        [DataMember(Name="lowestPricedOffers", EmitDefaultValue=false)]
+        [DataMember(Name = "lowestPricedOffers", EmitDefaultValue = false)]
         public List<LowestPricedOffer> LowestPricedOffers { get; set; }
 
         /// <summary>
         /// A list of reference prices for the specified ASIN &#x60;marketplaceId&#x60; combination.
         /// </summary>
         /// <value>A list of reference prices for the specified ASIN &#x60;marketplaceId&#x60; combination.</value>
-        [DataMember(Name="referencePrices", EmitDefaultValue=false)]
+        [DataMember(Name = "referencePrices", EmitDefaultValue = false)]
         public List<ReferencePrice> ReferencePrices { get; set; }
 
         /// <summary>
         /// A list of errors
         /// </summary>
         /// <value>A list of errors</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 
         /// <summary>
@@ -129,7 +124,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -159,32 +154,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.FeaturedBuyingOptions == input.FeaturedBuyingOptions ||
                     this.FeaturedBuyingOptions != null &&
                     this.FeaturedBuyingOptions.SequenceEqual(input.FeaturedBuyingOptions)
-                ) && 
+                ) &&
                 (
                     this.LowestPricedOffers == input.LowestPricedOffers ||
                     this.LowestPricedOffers != null &&
                     this.LowestPricedOffers.SequenceEqual(input.LowestPricedOffers)
-                ) && 
+                ) &&
                 (
                     this.ReferencePrices == input.ReferencePrices ||
                     this.ReferencePrices != null &&
                     this.ReferencePrices.SequenceEqual(input.ReferencePrices)
-                ) && 
+                ) &&
                 (
                     this.Errors == input.Errors ||
                     (this.Errors != null &&

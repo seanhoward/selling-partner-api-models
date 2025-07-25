@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Represents the confirmation details of a shipment, including the purchase order number and other shipment details.
     /// </summary>
     [DataContract]
-    public partial class ShipmentConfirmation :  IEquatable<ShipmentConfirmation>, IValidatableObject
+    public partial class ShipmentConfirmation : IEquatable<ShipmentConfirmation>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentConfirmation" /> class.
@@ -93,47 +89,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             }
             this.Containers = containers;
         }
-        
+
         /// <summary>
         /// Purchase order number corresponding to the shipment.
         /// </summary>
         /// <value>Purchase order number corresponding to the shipment.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
         /// Shipment information.
         /// </summary>
         /// <value>Shipment information.</value>
-        [DataMember(Name="shipmentDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentDetails", EmitDefaultValue = false)]
         public ShipmentDetails ShipmentDetails { get; set; }
 
         /// <summary>
         /// ID of the selling party or vendor.
         /// </summary>
         /// <value>ID of the selling party or vendor.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// Warehouse code of vendor.
         /// </summary>
         /// <value>Warehouse code of vendor.</value>
-        [DataMember(Name="shipFromParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFromParty", EmitDefaultValue = false)]
         public PartyIdentification ShipFromParty { get; set; }
 
         /// <summary>
         /// Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
         /// </summary>
         /// <value>Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<Item> Items { get; set; }
 
         /// <summary>
         /// Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
         /// </summary>
         /// <value>Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.</value>
-        [DataMember(Name="containers", EmitDefaultValue=false)]
+        [DataMember(Name = "containers", EmitDefaultValue = false)]
         public List<Container> Containers { get; set; }
 
         /// <summary>
@@ -153,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -183,32 +179,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.ShipmentDetails == input.ShipmentDetails ||
                     (this.ShipmentDetails != null &&
                     this.ShipmentDetails.Equals(input.ShipmentDetails))
-                ) && 
+                ) &&
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.ShipFromParty == input.ShipFromParty ||
                     (this.ShipFromParty != null &&
                     this.ShipFromParty.Equals(input.ShipFromParty))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&
                     this.Items.SequenceEqual(input.Items)
-                ) && 
+                ) &&
                 (
                     this.Containers == input.Containers ||
                     this.Containers != null &&
@@ -252,7 +248,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             Regex regexPurchaseOrderNumber = new Regex(@"^[a-zA-Z0-9]+$", RegexOptions.CultureInvariant);
             if (false == regexPurchaseOrderNumber.Match(this.PurchaseOrderNumber).Success)
             {
-                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new [] { "PurchaseOrderNumber" });
+                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new[] { "PurchaseOrderNumber" });
             }
 
             yield break;

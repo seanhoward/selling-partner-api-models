@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,26 +9,20 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Classification (browse node) associated with an Amazon catalog item.
+    /// Classification (browse node) for an Amazon catalog item.
     /// </summary>
     [DataContract]
-    public partial class ItemBrowseClassification :  IEquatable<ItemBrowseClassification>, IValidatableObject
+    public partial class ItemBrowseClassification : IEquatable<ItemBrowseClassification>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemBrowseClassification" /> class.
@@ -38,9 +32,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemBrowseClassification" /> class.
         /// </summary>
-        /// <param name="displayName">Display name for the classification (browse node). (required).</param>
-        /// <param name="classificationId">Identifier of the classification (browse node identifier). (required).</param>
-        /// <param name="parent">Parent classification (browse node) of the current classification..</param>
+        /// <param name="displayName">Display name for the classification. (required).</param>
+        /// <param name="classificationId">Identifier of the classification. (required).</param>
+        /// <param name="parent">Parent classification of the current classification..</param>
         public ItemBrowseClassification(string displayName = default, string classificationId = default, ItemBrowseClassification parent = default)
         {
             // to ensure "displayName" is required (not null)
@@ -63,26 +57,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             }
             this.Parent = parent;
         }
-        
+
         /// <summary>
-        /// Display name for the classification (browse node).
+        /// Display name for the classification.
         /// </summary>
-        /// <value>Display name for the classification (browse node).</value>
-        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        /// <value>Display name for the classification.</value>
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// Identifier of the classification (browse node identifier).
+        /// Identifier of the classification.
         /// </summary>
-        /// <value>Identifier of the classification (browse node identifier).</value>
-        [DataMember(Name="classificationId", EmitDefaultValue=false)]
+        /// <value>Identifier of the classification.</value>
+        [DataMember(Name = "classificationId", EmitDefaultValue = false)]
         public string ClassificationId { get; set; }
 
         /// <summary>
-        /// Parent classification (browse node) of the current classification.
+        /// Parent classification of the current classification.
         /// </summary>
-        /// <value>Parent classification (browse node) of the current classification.</value>
-        [DataMember(Name="parent", EmitDefaultValue=false)]
+        /// <value>Parent classification of the current classification.</value>
+        [DataMember(Name = "parent", EmitDefaultValue = false)]
         public ItemBrowseClassification Parent { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
-                ) && 
+                ) &&
                 (
                     this.ClassificationId == input.ClassificationId ||
                     (this.ClassificationId != null &&
                     this.ClassificationId.Equals(input.ClassificationId))
-                ) && 
+                ) &&
                 (
                     this.Parent == input.Parent ||
                     (this.Parent != null &&

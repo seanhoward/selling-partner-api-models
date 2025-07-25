@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
     /// The response object which contains the ASIN, marketplaceId if required, eligibility program, the eligibility status (boolean), and a list of ineligibility reason codes.
     /// </summary>
     [DataContract]
-    public partial class ItemEligibilityPreview :  IEquatable<ItemEligibilityPreview>, IValidatableObject
+    public partial class ItemEligibilityPreview : IEquatable<ItemEligibilityPreview>, IValidatableObject
     {
         /// <summary>
         /// The program for which eligibility was determined.
@@ -37,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ProgramEnum
         {
-            
+
             /// <summary>
             /// Enum INBOUND for value: INBOUND
             /// </summary>
             [EnumMember(Value = "INBOUND")]
             INBOUND = 1,
-            
+
             /// <summary>
             /// Enum COMMINGLING for value: COMMINGLING
             /// </summary>
@@ -55,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
         /// The program for which eligibility was determined.
         /// </summary>
         /// <value>The program for which eligibility was determined.</value>
-        [DataMember(Name="program", EmitDefaultValue=false)]
+        [DataMember(Name = "program", EmitDefaultValue = false)]
         public ProgramEnum Program { get; set; }
         /// <summary>
         /// Potential Ineligibility Reason Codes.
@@ -64,235 +60,235 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
         [JsonConverter(typeof(StringEnumConverter))]
         public enum IneligibilityReasonListEnum
         {
-            
+
             /// <summary>
             /// Enum FBAINB0004 for value: FBA_INB_0004
             /// </summary>
             [EnumMember(Value = "FBA_INB_0004")]
             FBAINB0004 = 1,
-            
+
             /// <summary>
             /// Enum FBAINB0006 for value: FBA_INB_0006
             /// </summary>
             [EnumMember(Value = "FBA_INB_0006")]
             FBAINB0006 = 2,
-            
+
             /// <summary>
             /// Enum FBAINB0007 for value: FBA_INB_0007
             /// </summary>
             [EnumMember(Value = "FBA_INB_0007")]
             FBAINB0007 = 3,
-            
+
             /// <summary>
             /// Enum FBAINB0008 for value: FBA_INB_0008
             /// </summary>
             [EnumMember(Value = "FBA_INB_0008")]
             FBAINB0008 = 4,
-            
+
             /// <summary>
             /// Enum FBAINB0009 for value: FBA_INB_0009
             /// </summary>
             [EnumMember(Value = "FBA_INB_0009")]
             FBAINB0009 = 5,
-            
+
             /// <summary>
             /// Enum FBAINB0010 for value: FBA_INB_0010
             /// </summary>
             [EnumMember(Value = "FBA_INB_0010")]
             FBAINB0010 = 6,
-            
+
             /// <summary>
             /// Enum FBAINB0011 for value: FBA_INB_0011
             /// </summary>
             [EnumMember(Value = "FBA_INB_0011")]
             FBAINB0011 = 7,
-            
+
             /// <summary>
             /// Enum FBAINB0012 for value: FBA_INB_0012
             /// </summary>
             [EnumMember(Value = "FBA_INB_0012")]
             FBAINB0012 = 8,
-            
+
             /// <summary>
             /// Enum FBAINB0013 for value: FBA_INB_0013
             /// </summary>
             [EnumMember(Value = "FBA_INB_0013")]
             FBAINB0013 = 9,
-            
+
             /// <summary>
             /// Enum FBAINB0014 for value: FBA_INB_0014
             /// </summary>
             [EnumMember(Value = "FBA_INB_0014")]
             FBAINB0014 = 10,
-            
+
             /// <summary>
             /// Enum FBAINB0015 for value: FBA_INB_0015
             /// </summary>
             [EnumMember(Value = "FBA_INB_0015")]
             FBAINB0015 = 11,
-            
+
             /// <summary>
             /// Enum FBAINB0016 for value: FBA_INB_0016
             /// </summary>
             [EnumMember(Value = "FBA_INB_0016")]
             FBAINB0016 = 12,
-            
+
             /// <summary>
             /// Enum FBAINB0017 for value: FBA_INB_0017
             /// </summary>
             [EnumMember(Value = "FBA_INB_0017")]
             FBAINB0017 = 13,
-            
+
             /// <summary>
             /// Enum FBAINB0018 for value: FBA_INB_0018
             /// </summary>
             [EnumMember(Value = "FBA_INB_0018")]
             FBAINB0018 = 14,
-            
+
             /// <summary>
             /// Enum FBAINB0019 for value: FBA_INB_0019
             /// </summary>
             [EnumMember(Value = "FBA_INB_0019")]
             FBAINB0019 = 15,
-            
+
             /// <summary>
             /// Enum FBAINB0034 for value: FBA_INB_0034
             /// </summary>
             [EnumMember(Value = "FBA_INB_0034")]
             FBAINB0034 = 16,
-            
+
             /// <summary>
             /// Enum FBAINB0035 for value: FBA_INB_0035
             /// </summary>
             [EnumMember(Value = "FBA_INB_0035")]
             FBAINB0035 = 17,
-            
+
             /// <summary>
             /// Enum FBAINB0036 for value: FBA_INB_0036
             /// </summary>
             [EnumMember(Value = "FBA_INB_0036")]
             FBAINB0036 = 18,
-            
+
             /// <summary>
             /// Enum FBAINB0037 for value: FBA_INB_0037
             /// </summary>
             [EnumMember(Value = "FBA_INB_0037")]
             FBAINB0037 = 19,
-            
+
             /// <summary>
             /// Enum FBAINB0038 for value: FBA_INB_0038
             /// </summary>
             [EnumMember(Value = "FBA_INB_0038")]
             FBAINB0038 = 20,
-            
+
             /// <summary>
             /// Enum FBAINB0050 for value: FBA_INB_0050
             /// </summary>
             [EnumMember(Value = "FBA_INB_0050")]
             FBAINB0050 = 21,
-            
+
             /// <summary>
             /// Enum FBAINB0051 for value: FBA_INB_0051
             /// </summary>
             [EnumMember(Value = "FBA_INB_0051")]
             FBAINB0051 = 22,
-            
+
             /// <summary>
             /// Enum FBAINB0053 for value: FBA_INB_0053
             /// </summary>
             [EnumMember(Value = "FBA_INB_0053")]
             FBAINB0053 = 23,
-            
+
             /// <summary>
             /// Enum FBAINB0055 for value: FBA_INB_0055
             /// </summary>
             [EnumMember(Value = "FBA_INB_0055")]
             FBAINB0055 = 24,
-            
+
             /// <summary>
             /// Enum FBAINB0056 for value: FBA_INB_0056
             /// </summary>
             [EnumMember(Value = "FBA_INB_0056")]
             FBAINB0056 = 25,
-            
+
             /// <summary>
             /// Enum FBAINB0059 for value: FBA_INB_0059
             /// </summary>
             [EnumMember(Value = "FBA_INB_0059")]
             FBAINB0059 = 26,
-            
+
             /// <summary>
             /// Enum FBAINB0065 for value: FBA_INB_0065
             /// </summary>
             [EnumMember(Value = "FBA_INB_0065")]
             FBAINB0065 = 27,
-            
+
             /// <summary>
             /// Enum FBAINB0066 for value: FBA_INB_0066
             /// </summary>
             [EnumMember(Value = "FBA_INB_0066")]
             FBAINB0066 = 28,
-            
+
             /// <summary>
             /// Enum FBAINB0067 for value: FBA_INB_0067
             /// </summary>
             [EnumMember(Value = "FBA_INB_0067")]
             FBAINB0067 = 29,
-            
+
             /// <summary>
             /// Enum FBAINB0068 for value: FBA_INB_0068
             /// </summary>
             [EnumMember(Value = "FBA_INB_0068")]
             FBAINB0068 = 30,
-            
+
             /// <summary>
             /// Enum FBAINB0095 for value: FBA_INB_0095
             /// </summary>
             [EnumMember(Value = "FBA_INB_0095")]
             FBAINB0095 = 31,
-            
+
             /// <summary>
             /// Enum FBAINB0097 for value: FBA_INB_0097
             /// </summary>
             [EnumMember(Value = "FBA_INB_0097")]
             FBAINB0097 = 32,
-            
+
             /// <summary>
             /// Enum FBAINB0098 for value: FBA_INB_0098
             /// </summary>
             [EnumMember(Value = "FBA_INB_0098")]
             FBAINB0098 = 33,
-            
+
             /// <summary>
             /// Enum FBAINB0099 for value: FBA_INB_0099
             /// </summary>
             [EnumMember(Value = "FBA_INB_0099")]
             FBAINB0099 = 34,
-            
+
             /// <summary>
             /// Enum FBAINB0100 for value: FBA_INB_0100
             /// </summary>
             [EnumMember(Value = "FBA_INB_0100")]
             FBAINB0100 = 35,
-            
+
             /// <summary>
             /// Enum FBAINB0103 for value: FBA_INB_0103
             /// </summary>
             [EnumMember(Value = "FBA_INB_0103")]
             FBAINB0103 = 36,
-            
+
             /// <summary>
             /// Enum FBAINB0104 for value: FBA_INB_0104
             /// </summary>
             [EnumMember(Value = "FBA_INB_0104")]
             FBAINB0104 = 37,
-            
+
             /// <summary>
             /// Enum FBAINB0197 for value: FBA_INB_0197
             /// </summary>
             [EnumMember(Value = "FBA_INB_0197")]
             FBAINB0197 = 38,
-            
+
             /// <summary>
             /// Enum UNKNOWNINBERRORCODE for value: UNKNOWN_INB_ERROR_CODE
             /// </summary>
@@ -305,7 +301,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
         /// Potential Ineligibility Reason Codes.
         /// </summary>
         /// <value>Potential Ineligibility Reason Codes.</value>
-        [DataMember(Name="ineligibilityReasonList", EmitDefaultValue=false)]
+        [DataMember(Name = "ineligibilityReasonList", EmitDefaultValue = false)]
         public List<IneligibilityReasonListEnum> IneligibilityReasonList { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemEligibilityPreview" /> class.
@@ -352,19 +348,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
             this.MarketplaceId = marketplaceId;
             this.IneligibilityReasonList = ineligibilityReasonList;
         }
-        
+
         /// <summary>
         /// The ASIN for which eligibility was determined.
         /// </summary>
         /// <value>The ASIN for which eligibility was determined.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// The marketplace for which eligibility was determined.
         /// </summary>
         /// <value>The marketplace for which eligibility was determined.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
 
@@ -372,7 +368,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
         /// Indicates if the item is eligible for the program.
         /// </summary>
         /// <value>Indicates if the item is eligible for the program.</value>
-        [DataMember(Name="isEligibleForProgram", EmitDefaultValue=false)]
+        [DataMember(Name = "isEligibleForProgram", EmitDefaultValue = false)]
         public bool? IsEligibleForProgram { get; set; }
 
 
@@ -392,7 +388,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -422,27 +418,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Program == input.Program ||
                     (this.Program != null &&
                     this.Program.Equals(input.Program))
-                ) && 
+                ) &&
                 (
                     this.IsEligibleForProgram == input.IsEligibleForProgram ||
                     (this.IsEligibleForProgram != null &&
                     this.IsEligibleForProgram.Equals(input.IsEligibleForProgram))
-                ) && 
+                ) &&
                 (
                     this.IneligibilityReasonList == input.IneligibilityReasonList ||
                     this.IneligibilityReasonList != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The pick up channel of a supply source.
     /// </summary>
     [DataContract]
-    public partial class PickupChannel :  IEquatable<PickupChannel>, IValidatableObject
+    public partial class PickupChannel : IEquatable<PickupChannel>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PickupChannel" /> class.
@@ -46,37 +39,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.InStorePickupConfiguration = inStorePickupConfiguration;
             this.CurbsidePickupConfiguration = curbsidePickupConfiguration;
         }
-        
+
         /// <summary>
         /// Gets or Sets InventoryHoldPeriod
         /// </summary>
-        [DataMember(Name="inventoryHoldPeriod", EmitDefaultValue=false)]
+        [DataMember(Name = "inventoryHoldPeriod", EmitDefaultValue = false)]
         public Duration InventoryHoldPeriod { get; set; }
 
         /// <summary>
         /// Gets or Sets IsSupported
         /// </summary>
-        [DataMember(Name="isSupported", EmitDefaultValue=false)]
+        [DataMember(Name = "isSupported", EmitDefaultValue = false)]
         public bool? IsSupported { get; set; }
 
         /// <summary>
         /// Gets or Sets OperationalConfiguration
         /// </summary>
-        [DataMember(Name="operationalConfiguration", EmitDefaultValue=false)]
+        [DataMember(Name = "operationalConfiguration", EmitDefaultValue = false)]
         public OperationalConfiguration OperationalConfiguration { get; set; }
 
         /// <summary>
         /// The configuration for supporting in-store pickup.
         /// </summary>
         /// <value>The configuration for supporting in-store pickup.</value>
-        [DataMember(Name="inStorePickupConfiguration", EmitDefaultValue=false)]
+        [DataMember(Name = "inStorePickupConfiguration", EmitDefaultValue = false)]
         public InStorePickupConfiguration InStorePickupConfiguration { get; set; }
 
         /// <summary>
         /// The configuration for supporting curbside pickup.
         /// </summary>
         /// <value>The configuration for supporting curbside pickup.</value>
-        [DataMember(Name="curbsidePickupConfiguration", EmitDefaultValue=false)]
+        [DataMember(Name = "curbsidePickupConfiguration", EmitDefaultValue = false)]
         public CurbsidePickupConfiguration CurbsidePickupConfiguration { get; set; }
 
         /// <summary>
@@ -95,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -125,27 +118,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.InventoryHoldPeriod == input.InventoryHoldPeriod ||
                     (this.InventoryHoldPeriod != null &&
                     this.InventoryHoldPeriod.Equals(input.InventoryHoldPeriod))
-                ) && 
+                ) &&
                 (
                     this.IsSupported == input.IsSupported ||
                     (this.IsSupported != null &&
                     this.IsSupported.Equals(input.IsSupported))
-                ) && 
+                ) &&
                 (
                     this.OperationalConfiguration == input.OperationalConfiguration ||
                     (this.OperationalConfiguration != null &&
                     this.OperationalConfiguration.Equals(input.OperationalConfiguration))
-                ) && 
+                ) &&
                 (
                     this.InStorePickupConfiguration == input.InStorePickupConfiguration ||
                     (this.InStorePickupConfiguration != null &&
                     this.InStorePickupConfiguration.Equals(input.InStorePickupConfiguration))
-                ) && 
+                ) &&
                 (
                     this.CurbsidePickupConfiguration == input.CurbsidePickupConfiguration ||
                     (this.CurbsidePickupConfiguration != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// Buyer segment or program this offer is applicable to.
     /// </summary>
     [DataContract]
-    public partial class Audience :  IEquatable<Audience>, IValidatableObject
+    public partial class Audience : IEquatable<Audience>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Audience" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             this.Value = value;
             this.DisplayName = displayName;
         }
-        
+
         /// <summary>
         /// Name of the audience an offer is applicable to.   Common values:   * &#39;ALL&#39; - Standard offer audience for buyers on Amazon retail websites.   * &#39;B2B&#39; - Offer audience for Amazon Business website buyers.
         /// </summary>
         /// <value>Name of the audience an offer is applicable to.   Common values:   * &#39;ALL&#39; - Standard offer audience for buyers on Amazon retail websites.   * &#39;B2B&#39; - Offer audience for Amazon Business website buyers.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>
         /// Localized display name for the audience.
         /// </summary>
         /// <value>Localized display name for the audience.</value>
-        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
+                ) &&
                 (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&

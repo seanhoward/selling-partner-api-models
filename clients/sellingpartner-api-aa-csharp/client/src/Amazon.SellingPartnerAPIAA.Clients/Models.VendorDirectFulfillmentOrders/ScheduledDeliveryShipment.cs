@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
     /// Dates for the scheduled delivery shipments.
     /// </summary>
     [DataContract]
-    public partial class ScheduledDeliveryShipment :  IEquatable<ScheduledDeliveryShipment>, IValidatableObject
+    public partial class ScheduledDeliveryShipment : IEquatable<ScheduledDeliveryShipment>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduledDeliveryShipment" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             this.EarliestNominatedDeliveryDate = earliestNominatedDeliveryDate;
             this.LatestNominatedDeliveryDate = latestNominatedDeliveryDate;
         }
-        
+
         /// <summary>
         /// Scheduled delivery service type.
         /// </summary>
         /// <value>Scheduled delivery service type.</value>
-        [DataMember(Name="scheduledDeliveryServiceType", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduledDeliveryServiceType", EmitDefaultValue = false)]
         public string ScheduledDeliveryServiceType { get; set; }
 
         /// <summary>
         /// Earliest nominated delivery date for the scheduled delivery.
         /// </summary>
         /// <value>Earliest nominated delivery date for the scheduled delivery.</value>
-        [DataMember(Name="earliestNominatedDeliveryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "earliestNominatedDeliveryDate", EmitDefaultValue = false)]
         public DateTime? EarliestNominatedDeliveryDate { get; set; }
 
         /// <summary>
         /// Latest nominated delivery date for the scheduled delivery.
         /// </summary>
         /// <value>Latest nominated delivery date for the scheduled delivery.</value>
-        [DataMember(Name="latestNominatedDeliveryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "latestNominatedDeliveryDate", EmitDefaultValue = false)]
         public DateTime? LatestNominatedDeliveryDate { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ScheduledDeliveryServiceType == input.ScheduledDeliveryServiceType ||
                     (this.ScheduledDeliveryServiceType != null &&
                     this.ScheduledDeliveryServiceType.Equals(input.ScheduledDeliveryServiceType))
-                ) && 
+                ) &&
                 (
                     this.EarliestNominatedDeliveryDate == input.EarliestNominatedDeliveryDate ||
                     (this.EarliestNominatedDeliveryDate != null &&
                     this.EarliestNominatedDeliveryDate.Equals(input.EarliestNominatedDeliveryDate))
-                ) && 
+                ) &&
                 (
                     this.LatestNominatedDeliveryDate == input.LatestNominatedDeliveryDate ||
                     (this.LatestNominatedDeliveryDate != null &&

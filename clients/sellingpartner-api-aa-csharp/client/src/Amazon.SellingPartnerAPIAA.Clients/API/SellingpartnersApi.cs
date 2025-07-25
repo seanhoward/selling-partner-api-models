@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;getSellingPartnerMetrics&#x60; operation. (optional)</param>
         /// <returns>GetSellingPartnerMetricsResponse</returns>
-        GetSellingPartnerMetricsResponse GetSellingPartnerMetrics (GetSellingPartnerMetricsRequest body = null);
+        GetSellingPartnerMetricsResponse GetSellingPartnerMetrics(GetSellingPartnerMetricsRequest body = null);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;getSellingPartnerMetrics&#x60; operation. (optional)</param>
         /// <returns>ApiResponse of GetSellingPartnerMetricsResponse</returns>
-        ApiResponse<GetSellingPartnerMetricsResponse> GetSellingPartnerMetricsWithHttpInfo (GetSellingPartnerMetricsRequest body = null);
+        ApiResponse<GetSellingPartnerMetricsResponse> GetSellingPartnerMetricsWithHttpInfo(GetSellingPartnerMetricsRequest body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -57,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;getSellingPartnerMetrics&#x60; operation. (optional)</param>
         /// <returns>Task of GetSellingPartnerMetricsResponse</returns>
-        System.Threading.Tasks.Task<GetSellingPartnerMetricsResponse> GetSellingPartnerMetricsAsync (GetSellingPartnerMetricsRequest body = null);
+        System.Threading.Tasks.Task<GetSellingPartnerMetricsResponse> GetSellingPartnerMetricsAsync(GetSellingPartnerMetricsRequest body = null);
 
         /// <summary>
         /// 
@@ -68,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;getSellingPartnerMetrics&#x60; operation. (optional)</param>
         /// <returns>Task of ApiResponse (GetSellingPartnerMetricsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetSellingPartnerMetricsResponse>> GetSellingPartnerMetricsAsyncWithHttpInfo (GetSellingPartnerMetricsRequest body = null);
+        System.Threading.Tasks.Task<ApiResponse<GetSellingPartnerMetricsResponse>> GetSellingPartnerMetricsAsyncWithHttpInfo(GetSellingPartnerMetricsRequest body = null);
         #endregion Asynchronous Operations
     }
 
@@ -88,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public SellingpartnersApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -114,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -160,10 +159,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;getSellingPartnerMetrics&#x60; operation. (optional)</param>
         /// <returns>GetSellingPartnerMetricsResponse</returns>
-        public GetSellingPartnerMetricsResponse GetSellingPartnerMetrics (GetSellingPartnerMetricsRequest body = null)
+        public GetSellingPartnerMetricsResponse GetSellingPartnerMetrics(GetSellingPartnerMetricsRequest body = null)
         {
-             ApiResponse<GetSellingPartnerMetricsResponse> localVarResponse = GetSellingPartnerMetricsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetSellingPartnerMetricsResponse> localVarResponse = GetSellingPartnerMetricsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -172,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;getSellingPartnerMetrics&#x60; operation. (optional)</param>
         /// <returns>ApiResponse of GetSellingPartnerMetricsResponse</returns>
-        public ApiResponse< GetSellingPartnerMetricsResponse > GetSellingPartnerMetricsWithHttpInfo (GetSellingPartnerMetricsRequest body = null)
+        public ApiResponse<GetSellingPartnerMetricsResponse> GetSellingPartnerMetricsWithHttpInfo(GetSellingPartnerMetricsRequest body = null)
         {
 
             var localVarPath = "/replenishment/2022-11-07/sellingPartners/metrics/search";
@@ -208,11 +207,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -222,7 +221,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetSellingPartnerMetricsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetSellingPartnerMetricsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSellingPartnerMetricsResponse)));
+                (GetSellingPartnerMetricsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSellingPartnerMetricsResponse)));
         }
 
         /// <summary>
@@ -231,10 +230,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;getSellingPartnerMetrics&#x60; operation. (optional)</param>
         /// <returns>Task of GetSellingPartnerMetricsResponse</returns>
-        public async System.Threading.Tasks.Task<GetSellingPartnerMetricsResponse> GetSellingPartnerMetricsAsync (GetSellingPartnerMetricsRequest body = null)
+        public async System.Threading.Tasks.Task<GetSellingPartnerMetricsResponse> GetSellingPartnerMetricsAsync(GetSellingPartnerMetricsRequest body = null)
         {
-             ApiResponse<GetSellingPartnerMetricsResponse> localVarResponse = await GetSellingPartnerMetricsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetSellingPartnerMetricsResponse> localVarResponse = await GetSellingPartnerMetricsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -244,7 +243,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;getSellingPartnerMetrics&#x60; operation. (optional)</param>
         /// <returns>Task of ApiResponse (GetSellingPartnerMetricsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetSellingPartnerMetricsResponse>> GetSellingPartnerMetricsAsyncWithHttpInfo (GetSellingPartnerMetricsRequest body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetSellingPartnerMetricsResponse>> GetSellingPartnerMetricsAsyncWithHttpInfo(GetSellingPartnerMetricsRequest body = null)
         {
 
             var localVarPath = "/replenishment/2022-11-07/sellingPartners/metrics/search";
@@ -280,11 +279,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -294,7 +293,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetSellingPartnerMetricsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetSellingPartnerMetricsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSellingPartnerMetricsResponse)));
+                (GetSellingPartnerMetricsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSellingPartnerMetricsResponse)));
         }
 
 
@@ -308,17 +307,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public SellingpartnersApi Build() 
+            public SellingpartnersApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

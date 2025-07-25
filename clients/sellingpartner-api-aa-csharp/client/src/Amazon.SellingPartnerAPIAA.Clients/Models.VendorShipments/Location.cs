@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Location identifier.
     /// </summary>
     [DataContract]
-    public partial class Location :  IEquatable<Location>, IValidatableObject
+    public partial class Location : IEquatable<Location>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Location" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.LocationCode = locationCode;
             this.CountryCode = countryCode;
         }
-        
+
         /// <summary>
         /// Type of location identification.
         /// </summary>
         /// <value>Type of location identification.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Location code.
         /// </summary>
         /// <value>Location code.</value>
-        [DataMember(Name="locationCode", EmitDefaultValue=false)]
+        [DataMember(Name = "locationCode", EmitDefaultValue = false)]
         public string LocationCode { get; set; }
 
         /// <summary>
         /// The two digit country code. In ISO 3166-1 alpha-2 format.
         /// </summary>
         /// <value>The two digit country code. In ISO 3166-1 alpha-2 format.</value>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     this.LocationCode == input.LocationCode ||
                     (this.LocationCode != null &&
                     this.LocationCode.Equals(input.LocationCode))
-                ) && 
+                ) &&
                 (
                     this.CountryCode == input.CountryCode ||
                     (this.CountryCode != null &&

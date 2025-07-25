@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// A Multi-Channel Fulfillment feature.
     /// </summary>
     [DataContract]
-    public partial class Feature :  IEquatable<Feature>, IValidatableObject
+    public partial class Feature : IEquatable<Feature>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Feature" /> class.
@@ -63,26 +57,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             }
             this.SellerEligible = sellerEligible;
         }
-        
+
         /// <summary>
         /// The feature name.
         /// </summary>
         /// <value>The feature name.</value>
-        [DataMember(Name="featureName", EmitDefaultValue=false)]
+        [DataMember(Name = "featureName", EmitDefaultValue = false)]
         public string FeatureName { get; set; }
 
         /// <summary>
         /// The feature description.
         /// </summary>
         /// <value>The feature description.</value>
-        [DataMember(Name="featureDescription", EmitDefaultValue=false)]
+        [DataMember(Name = "featureDescription", EmitDefaultValue = false)]
         public string FeatureDescription { get; set; }
 
         /// <summary>
         /// When true, indicates that the seller is eligible to use the feature.
         /// </summary>
         /// <value>When true, indicates that the seller is eligible to use the feature.</value>
-        [DataMember(Name="sellerEligible", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerEligible", EmitDefaultValue = false)]
         public bool? SellerEligible { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FeatureName == input.FeatureName ||
                     (this.FeatureName != null &&
                     this.FeatureName.Equals(input.FeatureName))
-                ) && 
+                ) &&
                 (
                     this.FeatureDescription == input.FeatureDescription ||
                     (this.FeatureDescription != null &&
                     this.FeatureDescription.Equals(input.FeatureDescription))
-                ) && 
+                ) &&
                 (
                     this.SellerEligible == input.SellerEligible ||
                     (this.SellerEligible != null &&

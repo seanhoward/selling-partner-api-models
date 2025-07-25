@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -26,147 +25,147 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     {
         #region Synchronous Operations
         /// <summary>
-        /// getCatalogItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Item</returns>
-        Item GetCatalogItem (string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null);
+        Item GetCatalogItem(string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null);
 
         /// <summary>
-        /// getCatalogItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>ApiResponse of Item</returns>
-        ApiResponse<Item> GetCatalogItemWithHttpInfo (string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null);
+        ApiResponse<Item> GetCatalogItemWithHttpInfo(string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null);
         /// <summary>
-        /// searchCatalogItems
+        /// 
         /// </summary>
         /// <remarks>
-        /// Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.  **Usage Plans:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Search for a list of Amazon catalog items and item-related information. You can search by identifier or by keywords.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="identifiers">A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
-        /// <param name="identifiersType">Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;identifiers&#x60; and &#x60;keywords&#x60; in the same request. (optional)</param>
+        /// <param name="identifiersType">The type of product identifiers that you can use to search the Amazon catalog. **Note:** &#x60;identifiersType&#x60; is required when &#x60;identifiers&#x60; is in the request. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="sellerId">A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)</param>
-        /// <param name="keywords">A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="brandNames">A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="classificationIds">A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="pageSize">Number of results to be returned per page. (optional, default to 10)</param>
-        /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
-        /// <param name="keywordsLocale">The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;keywords&#x60; and &#x60;identifiers&#x60; in the same request. (optional)</param>
+        /// <param name="brandNames">A comma-delimited list of brand names that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="classificationIds">A comma-delimited list of classification identifiers that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="pageSize">The number of results to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <param name="keywordsLocale">The language of the keywords that are included in queries based on &#x60;keywords&#x60;. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
         /// <returns>ItemSearchResults</returns>
-        ItemSearchResults SearchCatalogItems (List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null);
+        ItemSearchResults SearchCatalogItems(List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null);
 
         /// <summary>
-        /// searchCatalogItems
+        /// 
         /// </summary>
         /// <remarks>
-        /// Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.  **Usage Plans:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Search for a list of Amazon catalog items and item-related information. You can search by identifier or by keywords.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="identifiers">A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
-        /// <param name="identifiersType">Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;identifiers&#x60; and &#x60;keywords&#x60; in the same request. (optional)</param>
+        /// <param name="identifiersType">The type of product identifiers that you can use to search the Amazon catalog. **Note:** &#x60;identifiersType&#x60; is required when &#x60;identifiers&#x60; is in the request. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="sellerId">A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)</param>
-        /// <param name="keywords">A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="brandNames">A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="classificationIds">A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="pageSize">Number of results to be returned per page. (optional, default to 10)</param>
-        /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
-        /// <param name="keywordsLocale">The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;keywords&#x60; and &#x60;identifiers&#x60; in the same request. (optional)</param>
+        /// <param name="brandNames">A comma-delimited list of brand names that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="classificationIds">A comma-delimited list of classification identifiers that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="pageSize">The number of results to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <param name="keywordsLocale">The language of the keywords that are included in queries based on &#x60;keywords&#x60;. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
         /// <returns>ApiResponse of ItemSearchResults</returns>
-        ApiResponse<ItemSearchResults> SearchCatalogItemsWithHttpInfo (List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null);
+        ApiResponse<ItemSearchResults> SearchCatalogItemsWithHttpInfo(List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// getCatalogItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of Item</returns>
-        System.Threading.Tasks.Task<Item> GetCatalogItemAsync (string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null);
+        System.Threading.Tasks.Task<Item> GetCatalogItemAsync(string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null);
 
         /// <summary>
-        /// getCatalogItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of ApiResponse (Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Item>> GetCatalogItemAsyncWithHttpInfo (string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null);
+        System.Threading.Tasks.Task<ApiResponse<Item>> GetCatalogItemAsyncWithHttpInfo(string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null);
         /// <summary>
-        /// searchCatalogItems
+        /// 
         /// </summary>
         /// <remarks>
-        /// Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.  **Usage Plans:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Search for a list of Amazon catalog items and item-related information. You can search by identifier or by keywords.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="identifiers">A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
-        /// <param name="identifiersType">Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;identifiers&#x60; and &#x60;keywords&#x60; in the same request. (optional)</param>
+        /// <param name="identifiersType">The type of product identifiers that you can use to search the Amazon catalog. **Note:** &#x60;identifiersType&#x60; is required when &#x60;identifiers&#x60; is in the request. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="sellerId">A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)</param>
-        /// <param name="keywords">A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="brandNames">A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="classificationIds">A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="pageSize">Number of results to be returned per page. (optional, default to 10)</param>
-        /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
-        /// <param name="keywordsLocale">The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;keywords&#x60; and &#x60;identifiers&#x60; in the same request. (optional)</param>
+        /// <param name="brandNames">A comma-delimited list of brand names that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="classificationIds">A comma-delimited list of classification identifiers that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="pageSize">The number of results to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <param name="keywordsLocale">The language of the keywords that are included in queries based on &#x60;keywords&#x60;. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
         /// <returns>Task of ItemSearchResults</returns>
-        System.Threading.Tasks.Task<ItemSearchResults> SearchCatalogItemsAsync (List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null);
+        System.Threading.Tasks.Task<ItemSearchResults> SearchCatalogItemsAsync(List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null);
 
         /// <summary>
-        /// searchCatalogItems
+        /// 
         /// </summary>
         /// <remarks>
-        /// Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.  **Usage Plans:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        /// Search for a list of Amazon catalog items and item-related information. You can search by identifier or by keywords.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="identifiers">A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
-        /// <param name="identifiersType">Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;identifiers&#x60; and &#x60;keywords&#x60; in the same request. (optional)</param>
+        /// <param name="identifiersType">The type of product identifiers that you can use to search the Amazon catalog. **Note:** &#x60;identifiersType&#x60; is required when &#x60;identifiers&#x60; is in the request. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="sellerId">A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)</param>
-        /// <param name="keywords">A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="brandNames">A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="classificationIds">A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="pageSize">Number of results to be returned per page. (optional, default to 10)</param>
-        /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
-        /// <param name="keywordsLocale">The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;keywords&#x60; and &#x60;identifiers&#x60; in the same request. (optional)</param>
+        /// <param name="brandNames">A comma-delimited list of brand names that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="classificationIds">A comma-delimited list of classification identifiers that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="pageSize">The number of results to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <param name="keywordsLocale">The language of the keywords that are included in queries based on &#x60;keywords&#x60;. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
         /// <returns>Task of ApiResponse (ItemSearchResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ItemSearchResults>> SearchCatalogItemsAsyncWithHttpInfo (List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null);
+        System.Threading.Tasks.Task<ApiResponse<ItemSearchResults>> SearchCatalogItemsAsyncWithHttpInfo(List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null);
         #endregion Asynchronous Operations
     }
 
@@ -212,7 +211,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -253,37 +252,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        /// getCatalogItem Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Item</returns>
-        public Item GetCatalogItem (string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null)
+        public Item GetCatalogItem(string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null)
         {
-             ApiResponse<Item> localVarResponse = GetCatalogItemWithHttpInfo(asin, marketplaceIds, includedData, locale);
-             return localVarResponse.Data;
+            ApiResponse<Item> localVarResponse = GetCatalogItemWithHttpInfo(asin, marketplaceIds, includedData, locale);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// getCatalogItem Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>ApiResponse of Item</returns>
-        public ApiResponse< Item > GetCatalogItemWithHttpInfo (string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null)
+        public ApiResponse<Item> GetCatalogItemWithHttpInfo(string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null)
         {
             // verify the required parameter 'asin' is set
             if (asin == null)
-                throw new ApiException(400, "Missing required parameter 'asin' when calling CatalogItemsApi->GetCatalogItem");
+                throw new ApiException(400, "Missing required parameter 'asin' when calling CatalogApi->GetCatalogItem");
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling CatalogItemsApi->GetCatalogItem");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling CatalogApi->GetCatalogItem");
 
             var localVarPath = "/catalog/2022-04-01/items/{asin}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -314,11 +313,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -328,42 +327,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Item>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Item) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Item)));
+                (Item)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Item)));
         }
 
         /// <summary>
-        /// getCatalogItem Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of Item</returns>
-        public async System.Threading.Tasks.Task<Item> GetCatalogItemAsync (string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null)
+        public async System.Threading.Tasks.Task<Item> GetCatalogItemAsync(string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null)
         {
-             ApiResponse<Item> localVarResponse = await GetCatalogItemAsyncWithHttpInfo(asin, marketplaceIds, includedData, locale);
-             return localVarResponse.Data;
+            ApiResponse<Item> localVarResponse = await GetCatalogItemAsyncWithHttpInfo(asin, marketplaceIds, includedData, locale);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// getCatalogItem Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of ApiResponse (Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Item>> GetCatalogItemAsyncWithHttpInfo (string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Item>> GetCatalogItemAsyncWithHttpInfo(string asin, List<string> marketplaceIds, List<string> includedData = null, string locale = null)
         {
             // verify the required parameter 'asin' is set
             if (asin == null)
-                throw new ApiException(400, "Missing required parameter 'asin' when calling CatalogItemsApi->GetCatalogItem");
+                throw new ApiException(400, "Missing required parameter 'asin' when calling CatalogApi->GetCatalogItem");
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling CatalogItemsApi->GetCatalogItem");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling CatalogApi->GetCatalogItem");
 
             var localVarPath = "/catalog/2022-04-01/items/{asin}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -394,11 +393,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -408,54 +407,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Item>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Item) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Item)));
+                (Item)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Item)));
         }
 
         /// <summary>
-        /// searchCatalogItems Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.  **Usage Plans:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Search for a list of Amazon catalog items and item-related information. You can search by identifier or by keywords.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="identifiers">A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
-        /// <param name="identifiersType">Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;identifiers&#x60; and &#x60;keywords&#x60; in the same request. (optional)</param>
+        /// <param name="identifiersType">The type of product identifiers that you can use to search the Amazon catalog. **Note:** &#x60;identifiersType&#x60; is required when &#x60;identifiers&#x60; is in the request. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="sellerId">A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)</param>
-        /// <param name="keywords">A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="brandNames">A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="classificationIds">A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="pageSize">Number of results to be returned per page. (optional, default to 10)</param>
-        /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
-        /// <param name="keywordsLocale">The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;keywords&#x60; and &#x60;identifiers&#x60; in the same request. (optional)</param>
+        /// <param name="brandNames">A comma-delimited list of brand names that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="classificationIds">A comma-delimited list of classification identifiers that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="pageSize">The number of results to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <param name="keywordsLocale">The language of the keywords that are included in queries based on &#x60;keywords&#x60;. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
         /// <returns>ItemSearchResults</returns>
-        public ItemSearchResults SearchCatalogItems (List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null)
+        public ItemSearchResults SearchCatalogItems(List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null)
         {
-             ApiResponse<ItemSearchResults> localVarResponse = SearchCatalogItemsWithHttpInfo(marketplaceIds, identifiers, identifiersType, includedData, locale, sellerId, keywords, brandNames, classificationIds, pageSize, pageToken, keywordsLocale);
-             return localVarResponse.Data;
+            ApiResponse<ItemSearchResults> localVarResponse = SearchCatalogItemsWithHttpInfo(marketplaceIds, identifiers, identifiersType, includedData, locale, sellerId, keywords, brandNames, classificationIds, pageSize, pageToken, keywordsLocale);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// searchCatalogItems Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.  **Usage Plans:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Search for a list of Amazon catalog items and item-related information. You can search by identifier or by keywords.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="identifiers">A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
-        /// <param name="identifiersType">Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;identifiers&#x60; and &#x60;keywords&#x60; in the same request. (optional)</param>
+        /// <param name="identifiersType">The type of product identifiers that you can use to search the Amazon catalog. **Note:** &#x60;identifiersType&#x60; is required when &#x60;identifiers&#x60; is in the request. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="sellerId">A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)</param>
-        /// <param name="keywords">A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="brandNames">A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="classificationIds">A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="pageSize">Number of results to be returned per page. (optional, default to 10)</param>
-        /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
-        /// <param name="keywordsLocale">The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;keywords&#x60; and &#x60;identifiers&#x60; in the same request. (optional)</param>
+        /// <param name="brandNames">A comma-delimited list of brand names that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="classificationIds">A comma-delimited list of classification identifiers that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="pageSize">The number of results to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <param name="keywordsLocale">The language of the keywords that are included in queries based on &#x60;keywords&#x60;. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
         /// <returns>ApiResponse of ItemSearchResults</returns>
-        public ApiResponse< ItemSearchResults > SearchCatalogItemsWithHttpInfo (List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null)
+        public ApiResponse<ItemSearchResults> SearchCatalogItemsWithHttpInfo(List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling CatalogItemsApi->SearchCatalogItems");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling CatalogApi->SearchCatalogItems");
 
             var localVarPath = "/catalog/2022-04-01/items";
             var localVarPathParams = new Dictionary<String, String>();
@@ -494,11 +493,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -508,55 +507,55 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ItemSearchResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ItemSearchResults) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemSearchResults)));
+                (ItemSearchResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemSearchResults)));
         }
 
         /// <summary>
-        /// searchCatalogItems Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.  **Usage Plans:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Search for a list of Amazon catalog items and item-related information. You can search by identifier or by keywords.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="identifiers">A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
-        /// <param name="identifiersType">Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;identifiers&#x60; and &#x60;keywords&#x60; in the same request. (optional)</param>
+        /// <param name="identifiersType">The type of product identifiers that you can use to search the Amazon catalog. **Note:** &#x60;identifiersType&#x60; is required when &#x60;identifiers&#x60; is in the request. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="sellerId">A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)</param>
-        /// <param name="keywords">A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="brandNames">A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="classificationIds">A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="pageSize">Number of results to be returned per page. (optional, default to 10)</param>
-        /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
-        /// <param name="keywordsLocale">The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;keywords&#x60; and &#x60;identifiers&#x60; in the same request. (optional)</param>
+        /// <param name="brandNames">A comma-delimited list of brand names that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="classificationIds">A comma-delimited list of classification identifiers that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="pageSize">The number of results to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <param name="keywordsLocale">The language of the keywords that are included in queries based on &#x60;keywords&#x60;. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
         /// <returns>Task of ItemSearchResults</returns>
-        public async System.Threading.Tasks.Task<ItemSearchResults> SearchCatalogItemsAsync (List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null)
+        public async System.Threading.Tasks.Task<ItemSearchResults> SearchCatalogItemsAsync(List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null)
         {
-             ApiResponse<ItemSearchResults> localVarResponse = await SearchCatalogItemsAsyncWithHttpInfo(marketplaceIds, identifiers, identifiersType, includedData, locale, sellerId, keywords, brandNames, classificationIds, pageSize, pageToken, keywordsLocale);
-             return localVarResponse.Data;
+            ApiResponse<ItemSearchResults> localVarResponse = await SearchCatalogItemsAsyncWithHttpInfo(marketplaceIds, identifiers, identifiersType, includedData, locale, sellerId, keywords, brandNames, classificationIds, pageSize, pageToken, keywordsLocale);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// searchCatalogItems Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.  **Usage Plans:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 2 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Search for a list of Amazon catalog items and item-related information. You can search by identifier or by keywords.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
-        /// <param name="identifiers">A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)</param>
-        /// <param name="identifiersType">Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)</param>
-        /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
-        /// <param name="locale">Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;identifiers&#x60; and &#x60;keywords&#x60; in the same request. (optional)</param>
+        /// <param name="identifiersType">The type of product identifiers that you can use to search the Amazon catalog. **Note:** &#x60;identifiersType&#x60; is required when &#x60;identifiers&#x60; is in the request. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets to include in the response. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="locale">The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="sellerId">A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)</param>
-        /// <param name="keywords">A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="brandNames">A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="classificationIds">A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
-        /// <param name="pageSize">Number of results to be returned per page. (optional, default to 10)</param>
-        /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
-        /// <param name="keywordsLocale">The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="keywords">A comma-delimited list of keywords that you can use to search the Amazon catalog. **Note:** You cannot include &#x60;keywords&#x60; and &#x60;identifiers&#x60; in the same request. (optional)</param>
+        /// <param name="brandNames">A comma-delimited list of brand names that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="classificationIds">A comma-delimited list of classification identifiers that you can use to limit the search in queries based on &#x60;keywords&#x60;. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
+        /// <param name="pageSize">The number of results to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <param name="keywordsLocale">The language of the keywords that are included in queries based on &#x60;keywords&#x60;. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)</param>
         /// <returns>Task of ApiResponse (ItemSearchResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ItemSearchResults>> SearchCatalogItemsAsyncWithHttpInfo (List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ItemSearchResults>> SearchCatalogItemsAsyncWithHttpInfo(List<string> marketplaceIds, List<string> identifiers = null, string identifiersType = null, List<string> includedData = null, string locale = null, string sellerId = null, List<string> keywords = null, List<string> brandNames = null, List<string> classificationIds = null, int? pageSize = null, string pageToken = null, string keywordsLocale = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling CatalogItemsApi->SearchCatalogItems");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling CatalogApi->SearchCatalogItems");
 
             var localVarPath = "/catalog/2022-04-01/items";
             var localVarPathParams = new Dictionary<String, String>();
@@ -595,11 +594,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -609,7 +608,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ItemSearchResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ItemSearchResults) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemSearchResults)));
+                (ItemSearchResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemSearchResults)));
         }
 
 
@@ -623,17 +622,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public CatalogItemsApi Build() 
+            public CatalogItemsApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// A single order item&#39;s buyer information list with the order ID.
     /// </summary>
     [DataContract]
-    public partial class OrderItemsBuyerInfoList :  IEquatable<OrderItemsBuyerInfoList>, IValidatableObject
+    public partial class OrderItemsBuyerInfoList : IEquatable<OrderItemsBuyerInfoList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemsBuyerInfoList" /> class.
@@ -63,25 +57,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             }
             this.NextToken = nextToken;
         }
-        
+
         /// <summary>
         /// Gets or Sets OrderItems
         /// </summary>
-        [DataMember(Name="OrderItems", EmitDefaultValue=false)]
+        [DataMember(Name = "OrderItems", EmitDefaultValue = false)]
         public OrderItemBuyerInfoList OrderItems { get; set; }
 
         /// <summary>
         /// When present and not empty, pass this string token in the next request to return the next response page.
         /// </summary>
         /// <value>When present and not empty, pass this string token in the next request to return the next response page.</value>
-        [DataMember(Name="NextToken", EmitDefaultValue=false)]
+        [DataMember(Name = "NextToken", EmitDefaultValue = false)]
         public string NextToken { get; set; }
 
         /// <summary>
         /// An Amazon-defined order identifier, in 3-7-7 format.
         /// </summary>
         /// <value>An Amazon-defined order identifier, in 3-7-7 format.</value>
-        [DataMember(Name="AmazonOrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "AmazonOrderId", EmitDefaultValue = false)]
         public string AmazonOrderId { get; set; }
 
         /// <summary>
@@ -98,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,17 +122,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.OrderItems == input.OrderItems ||
                     (this.OrderItems != null &&
                     this.OrderItems.Equals(input.OrderItems))
-                ) && 
+                ) &&
                 (
                     this.NextToken == input.NextToken ||
                     (this.NextToken != null &&
                     this.NextToken.Equals(input.NextToken))
-                ) && 
+                ) &&
                 (
                     this.AmazonOrderId == input.AmazonOrderId ||
                     (this.AmazonOrderId != null &&

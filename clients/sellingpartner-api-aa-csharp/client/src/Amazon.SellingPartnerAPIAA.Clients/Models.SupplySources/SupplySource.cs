@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,12 +21,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The supply source details, including configurations and capabilities.
     /// </summary>
     [DataContract]
-    public partial class SupplySource :  IEquatable<SupplySource>, IValidatableObject
+    public partial class SupplySource : IEquatable<SupplySource>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public SupplySourceStatusReadOnly? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SupplySource" /> class.
@@ -59,54 +52,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }
-        
+
         /// <summary>
         /// Gets or Sets SupplySourceId
         /// </summary>
-        [DataMember(Name="supplySourceId", EmitDefaultValue=false)]
+        [DataMember(Name = "supplySourceId", EmitDefaultValue = false)]
         public string SupplySourceId { get; set; }
 
         /// <summary>
         /// Gets or Sets SupplySourceCode
         /// </summary>
-        [DataMember(Name="supplySourceCode", EmitDefaultValue=false)]
+        [DataMember(Name = "supplySourceCode", EmitDefaultValue = false)]
         public string SupplySourceCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Alias
         /// </summary>
-        [DataMember(Name="alias", EmitDefaultValue=false)]
+        [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
 
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
         /// <summary>
         /// Gets or Sets Configuration
         /// </summary>
-        [DataMember(Name="configuration", EmitDefaultValue=false)]
+        [DataMember(Name = "configuration", EmitDefaultValue = false)]
         public SupplySourceConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Gets or Sets Capabilities
         /// </summary>
-        [DataMember(Name="capabilities", EmitDefaultValue=false)]
+        [DataMember(Name = "capabilities", EmitDefaultValue = false)]
         public SupplySourceCapabilities Capabilities { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        [DataMember(Name="createdAt", EmitDefaultValue=false)]
+        [DataMember(Name = "createdAt", EmitDefaultValue = false)]
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
-        [DataMember(Name="updatedAt", EmitDefaultValue=false)]
+        [DataMember(Name = "updatedAt", EmitDefaultValue = false)]
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
@@ -129,7 +122,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -159,47 +152,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SupplySourceId == input.SupplySourceId ||
                     (this.SupplySourceId != null &&
                     this.SupplySourceId.Equals(input.SupplySourceId))
-                ) && 
+                ) &&
                 (
                     this.SupplySourceCode == input.SupplySourceCode ||
                     (this.SupplySourceCode != null &&
                     this.SupplySourceCode.Equals(input.SupplySourceCode))
-                ) && 
+                ) &&
                 (
                     this.Alias == input.Alias ||
                     (this.Alias != null &&
                     this.Alias.Equals(input.Alias))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
-                ) && 
+                ) &&
                 (
                     this.Configuration == input.Configuration ||
                     (this.Configuration != null &&
                     this.Configuration.Equals(input.Configuration))
-                ) && 
+                ) &&
                 (
                     this.Capabilities == input.Capabilities ||
                     (this.Capabilities != null &&
                     this.Capabilities.Equals(input.Capabilities))
-                ) && 
+                ) &&
                 (
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
+                ) &&
                 (
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&

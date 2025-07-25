@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,26 +9,19 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
     /// <summary>
-    /// The base response data for paginated A+ Content operations. Individual operations may extend this with additional data. If nextPageToken is not returned, there are no more pages to return.
+    /// A token that you use to retrieve the next page of results. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages.
     /// </summary>
     [DataContract]
-    public partial class AplusPaginatedResponse : AplusResponse,  IEquatable<AplusPaginatedResponse>, IValidatableObject
+    public partial class AplusPaginatedResponse : AplusResponse, IEquatable<AplusPaginatedResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AplusPaginatedResponse" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         {
             this.NextPageToken = nextPageToken;
         }
-        
+
         /// <summary>
         /// Gets or Sets NextPageToken
         /// </summary>
-        [DataMember(Name="nextPageToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextPageToken", EmitDefaultValue = false)]
         public string NextPageToken { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return base.Equals(input) &&
                 (
                     this.NextPageToken == input.NextPageToken ||
                     (this.NextPageToken != null &&

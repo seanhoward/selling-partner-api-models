@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
     /// Error response returned when the request is unsuccessful.
     /// </summary>
     [DataContract]
-    public partial class Error :  IEquatable<Error>, IValidatableObject
+    public partial class Error : IEquatable<Error>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
@@ -39,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
         /// <param name="code">An error code that identifies the type of error that occurred. (required).</param>
-        /// <param name="message">A message that describes the error condition in a human-readable form. (required).</param>
+        /// <param name="message">A message that describes the error condition. (required).</param>
         /// <param name="details">Additional details that can help the caller understand or fix the issue..</param>
         public Error(string code = default, string message = default, string details = default)
         {
@@ -63,26 +57,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
             }
             this.Details = details;
         }
-        
+
         /// <summary>
         /// An error code that identifies the type of error that occurred.
         /// </summary>
         /// <value>An error code that identifies the type of error that occurred.</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
-        /// A message that describes the error condition in a human-readable form.
+        /// A message that describes the error condition.
         /// </summary>
-        /// <value>A message that describes the error condition in a human-readable form.</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        /// <value>A message that describes the error condition.</value>
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
         /// <summary>
         /// Additional details that can help the caller understand or fix the issue.
         /// </summary>
         /// <value>Additional details that can help the caller understand or fix the issue.</value>
-        [DataMember(Name="details", EmitDefaultValue=false)]
+        [DataMember(Name = "details", EmitDefaultValue = false)]
         public string Details { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.Details == input.Details ||
                     (this.Details != null &&

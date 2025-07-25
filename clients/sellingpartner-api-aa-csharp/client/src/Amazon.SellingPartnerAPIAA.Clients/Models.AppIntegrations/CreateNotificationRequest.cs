@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
     /// The request for the &#x60;createNotification&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class CreateNotificationRequest :  IEquatable<CreateNotificationRequest>, IValidatableObject
+    public partial class CreateNotificationRequest : IEquatable<CreateNotificationRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateNotificationRequest" /> class.
@@ -63,26 +57,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
             }
             this.MarketplaceId = marketplaceId;
         }
-        
+
         /// <summary>
         /// The unique identifier of the notification template you used to onboard your application.
         /// </summary>
         /// <value>The unique identifier of the notification template you used to onboard your application.</value>
-        [DataMember(Name="templateId", EmitDefaultValue=false)]
+        [DataMember(Name = "templateId", EmitDefaultValue = false)]
         public string TemplateId { get; set; }
 
         /// <summary>
         /// The parameters specified in the template you used to onboard your application.
         /// </summary>
         /// <value>The parameters specified in the template you used to onboard your application.</value>
-        [DataMember(Name="notificationParameters", EmitDefaultValue=false)]
+        [DataMember(Name = "notificationParameters", EmitDefaultValue = false)]
         public NotificationParameters NotificationParameters { get; set; }
 
         /// <summary>
         /// An encrypted marketplace identifier for the posted notification.
         /// </summary>
         /// <value>An encrypted marketplace identifier for the posted notification.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TemplateId == input.TemplateId ||
                     (this.TemplateId != null &&
                     this.TemplateId.Equals(input.TemplateId))
-                ) && 
+                ) &&
                 (
                     this.NotificationParameters == input.NotificationParameters ||
                     (this.NotificationParameters != null &&
                     this.NotificationParameters.Equals(input.NotificationParameters))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&

@@ -143,12 +143,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ShipmentId (string) minLength
             if (this.ShipmentId != null && this.ShipmentId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShipmentId, length must be greater than 1.", new[] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 1.", new[] { "ShipmentId" });
             }
 
             yield break;

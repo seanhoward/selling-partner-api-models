@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Tax registration details of the entity.
     /// </summary>
     [DataContract]
-    public partial class TaxRegistrationDetails :  IEquatable<TaxRegistrationDetails>, IValidatableObject
+    public partial class TaxRegistrationDetails : IEquatable<TaxRegistrationDetails>, IValidatableObject
     {
         /// <summary>
         /// Tax registration type for the entity.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TaxRegistrationTypeEnum
         {
-            
+
             /// <summary>
             /// Enum VAT for value: VAT
             /// </summary>
             [EnumMember(Value = "VAT")]
             VAT = 1,
-            
+
             /// <summary>
             /// Enum GST for value: GST
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// Tax registration type for the entity.
         /// </summary>
         /// <value>Tax registration type for the entity.</value>
-        [DataMember(Name="taxRegistrationType", EmitDefaultValue=false)]
+        [DataMember(Name = "taxRegistrationType", EmitDefaultValue = false)]
         public TaxRegistrationTypeEnum? TaxRegistrationType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRegistrationDetails" /> class.
@@ -84,27 +79,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             this.TaxRegistrationAddress = taxRegistrationAddress;
             this.TaxRegistrationMessages = taxRegistrationMessages;
         }
-        
+
 
         /// <summary>
         /// Tax registration number for the party. For example, VAT ID.
         /// </summary>
         /// <value>Tax registration number for the party. For example, VAT ID.</value>
-        [DataMember(Name="taxRegistrationNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "taxRegistrationNumber", EmitDefaultValue = false)]
         public string TaxRegistrationNumber { get; set; }
 
         /// <summary>
         /// Address associated with the tax registration number.
         /// </summary>
         /// <value>Address associated with the tax registration number.</value>
-        [DataMember(Name="taxRegistrationAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "taxRegistrationAddress", EmitDefaultValue = false)]
         public Address TaxRegistrationAddress { get; set; }
 
         /// <summary>
         /// Tax registration message that can be used for additional tax related details.
         /// </summary>
         /// <value>Tax registration message that can be used for additional tax related details.</value>
-        [DataMember(Name="taxRegistrationMessages", EmitDefaultValue=false)]
+        [DataMember(Name = "taxRegistrationMessages", EmitDefaultValue = false)]
         public string TaxRegistrationMessages { get; set; }
 
         /// <summary>
@@ -122,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -152,22 +147,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TaxRegistrationType == input.TaxRegistrationType ||
                     (this.TaxRegistrationType != null &&
                     this.TaxRegistrationType.Equals(input.TaxRegistrationType))
-                ) && 
+                ) &&
                 (
                     this.TaxRegistrationNumber == input.TaxRegistrationNumber ||
                     (this.TaxRegistrationNumber != null &&
                     this.TaxRegistrationNumber.Equals(input.TaxRegistrationNumber))
-                ) && 
+                ) &&
                 (
                     this.TaxRegistrationAddress == input.TaxRegistrationAddress ||
                     (this.TaxRegistrationAddress != null &&
                     this.TaxRegistrationAddress.Equals(input.TaxRegistrationAddress))
-                ) && 
+                ) &&
                 (
                     this.TaxRegistrationMessages == input.TaxRegistrationMessages ||
                     (this.TaxRegistrationMessages != null &&

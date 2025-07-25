@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// The A+ Content standard comparison product block.
     /// </summary>
     [DataContract]
-    public partial class StandardComparisonProductBlock :  IEquatable<StandardComparisonProductBlock>, IValidatableObject
+    public partial class StandardComparisonProductBlock : IEquatable<StandardComparisonProductBlock>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardComparisonProductBlock" /> class.
@@ -42,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <param name="image">image.</param>
         /// <param name="title">The comparison product title..</param>
         /// <param name="asin">asin.</param>
-        /// <param name="highlight">Determines whether this block of content is visually highlighted..</param>
+        /// <param name="highlight">When true, indicates that this content block is visually highlighted..</param>
         /// <param name="metrics">Comparison metrics for the product..</param>
         public StandardComparisonProductBlock(int? position = default, ImageComponent image = default, string title = default, string asin = default, bool? highlight = default, List<PlainTextItem> metrics = default)
         {
@@ -61,45 +56,45 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             this.Highlight = highlight;
             this.Metrics = metrics;
         }
-        
+
         /// <summary>
         /// The rank or index of this comparison product block within the module. Different blocks cannot occupy the same position within a single module.
         /// </summary>
         /// <value>The rank or index of this comparison product block within the module. Different blocks cannot occupy the same position within a single module.</value>
-        [DataMember(Name="position", EmitDefaultValue=false)]
+        [DataMember(Name = "position", EmitDefaultValue = false)]
         public int? Position { get; set; }
 
         /// <summary>
         /// Gets or Sets Image
         /// </summary>
-        [DataMember(Name="image", EmitDefaultValue=false)]
+        [DataMember(Name = "image", EmitDefaultValue = false)]
         public ImageComponent Image { get; set; }
 
         /// <summary>
         /// The comparison product title.
         /// </summary>
         /// <value>The comparison product title.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets Asin
         /// </summary>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
-        /// Determines whether this block of content is visually highlighted.
+        /// When true, indicates that this content block is visually highlighted.
         /// </summary>
-        /// <value>Determines whether this block of content is visually highlighted.</value>
-        [DataMember(Name="highlight", EmitDefaultValue=false)]
+        /// <value>When true, indicates that this content block is visually highlighted.</value>
+        [DataMember(Name = "highlight", EmitDefaultValue = false)]
         public bool? Highlight { get; set; }
 
         /// <summary>
         /// Comparison metrics for the product.
         /// </summary>
         /// <value>Comparison metrics for the product.</value>
-        [DataMember(Name="metrics", EmitDefaultValue=false)]
+        [DataMember(Name = "metrics", EmitDefaultValue = false)]
         public List<PlainTextItem> Metrics { get; set; }
 
         /// <summary>
@@ -119,7 +114,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -149,32 +144,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Position == input.Position ||
                     (this.Position != null &&
                     this.Position.Equals(input.Position))
-                ) && 
+                ) &&
                 (
                     this.Image == input.Image ||
                     (this.Image != null &&
                     this.Image.Equals(input.Image))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.Highlight == input.Highlight ||
                     (this.Highlight != null &&
                     this.Highlight.Equals(input.Highlight))
-                ) && 
+                ) &&
                 (
                     this.Metrics == input.Metrics ||
                     this.Metrics != null &&
@@ -215,27 +210,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Position (int?) maximum
-            if(this.Position > (int?)6)
+            if (this.Position > (int?)6)
             {
-                yield return new ValidationResult("Invalid value for Position, must be a value less than or equal to 6.", new [] { "Position" });
+                yield return new ValidationResult("Invalid value for Position, must be a value less than or equal to 6.", new[] { "Position" });
             }
 
             // Position (int?) minimum
-            if(this.Position < (int?)1)
+            if (this.Position < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for Position, must be a value greater than or equal to 1.", new [] { "Position" });
+                yield return new ValidationResult("Invalid value for Position, must be a value greater than or equal to 1.", new[] { "Position" });
             }
 
             // Title (string) maxLength
-            if(this.Title != null && this.Title.Length > 80)
+            if (this.Title != null && this.Title.Length > 80)
             {
-                yield return new ValidationResult("Invalid value for Title, length must be less than 80.", new [] { "Title" });
+                yield return new ValidationResult("Invalid value for Title, length must be less than 80.", new[] { "Title" });
             }
 
             // Title (string) minLength
-            if(this.Title != null && this.Title.Length < 1)
+            if (this.Title != null && this.Title.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Title, length must be greater than 1.", new [] { "Title" });
+                yield return new ValidationResult("Invalid value for Title, length must be greater than 1.", new[] { "Title" });
             }
 
             yield break;

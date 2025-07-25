@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
     /// A simple object containing the name of the template.
     /// </summary>
     [DataContract]
-    public partial class SolicitationsAction :  IEquatable<SolicitationsAction>, IValidatableObject
+    public partial class SolicitationsAction : IEquatable<SolicitationsAction>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SolicitationsAction" /> class.
@@ -51,11 +45,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
                 this.Name = name;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -70,7 +64,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -100,7 +94,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&

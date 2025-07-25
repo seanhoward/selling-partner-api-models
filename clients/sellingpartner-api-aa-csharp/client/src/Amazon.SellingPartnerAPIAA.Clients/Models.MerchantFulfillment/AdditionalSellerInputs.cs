@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// An additional set of seller inputs required to purchase shipping.
     /// </summary>
     [DataContract]
-    public partial class AdditionalSellerInputs :  IEquatable<AdditionalSellerInputs>, IValidatableObject
+    public partial class AdditionalSellerInputs : IEquatable<AdditionalSellerInputs>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalSellerInputs" /> class.
@@ -61,18 +55,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                 this.AdditionalSellerInput = additionalSellerInput;
             }
         }
-        
+
         /// <summary>
         /// The name of the additional input field.
         /// </summary>
         /// <value>The name of the additional input field.</value>
-        [DataMember(Name="AdditionalInputFieldName", EmitDefaultValue=false)]
+        [DataMember(Name = "AdditionalInputFieldName", EmitDefaultValue = false)]
         public string AdditionalInputFieldName { get; set; }
 
         /// <summary>
         /// Gets or Sets AdditionalSellerInput
         /// </summary>
-        [DataMember(Name="AdditionalSellerInput", EmitDefaultValue=false)]
+        [DataMember(Name = "AdditionalSellerInput", EmitDefaultValue = false)]
         public AdditionalSellerInput AdditionalSellerInput { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +112,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AdditionalInputFieldName == input.AdditionalInputFieldName ||
                     (this.AdditionalInputFieldName != null &&
                     this.AdditionalInputFieldName.Equals(input.AdditionalInputFieldName))
-                ) && 
+                ) &&
                 (
                     this.AdditionalSellerInput == input.AdditionalSellerInput ||
                     (this.AdditionalSellerInput != null &&

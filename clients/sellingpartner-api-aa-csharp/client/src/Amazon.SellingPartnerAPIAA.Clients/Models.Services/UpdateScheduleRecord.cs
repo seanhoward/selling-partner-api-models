@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// &#x60;UpdateScheduleRecord&#x60; entity contains the &#x60;AvailabilityRecord&#x60; if there is an error/warning while performing the requested operation on it.
     /// </summary>
     [DataContract]
-    public partial class UpdateScheduleRecord :  IEquatable<UpdateScheduleRecord>, IValidatableObject
+    public partial class UpdateScheduleRecord : IEquatable<UpdateScheduleRecord>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateScheduleRecord" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.Warnings = warnings;
             this.Errors = errors;
         }
-        
+
         /// <summary>
         /// Availability record if the operation failed.
         /// </summary>
         /// <value>Availability record if the operation failed.</value>
-        [DataMember(Name="availability", EmitDefaultValue=false)]
+        [DataMember(Name = "availability", EmitDefaultValue = false)]
         public AvailabilityRecord Availability { get; set; }
 
         /// <summary>
         /// Warnings encountered, if any.
         /// </summary>
         /// <value>Warnings encountered, if any.</value>
-        [DataMember(Name="warnings", EmitDefaultValue=false)]
+        [DataMember(Name = "warnings", EmitDefaultValue = false)]
         public WarningList Warnings { get; set; }
 
         /// <summary>
         /// Errors encountered, if any.
         /// </summary>
         /// <value>Errors encountered, if any.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Availability == input.Availability ||
                     (this.Availability != null &&
                     this.Availability.Equals(input.Availability))
-                ) && 
+                ) &&
                 (
                     this.Warnings == input.Warnings ||
                     (this.Warnings != null &&
                     this.Warnings.Equals(input.Warnings))
-                ) && 
+                ) &&
                 (
                     this.Errors == input.Errors ||
                     (this.Errors != null &&

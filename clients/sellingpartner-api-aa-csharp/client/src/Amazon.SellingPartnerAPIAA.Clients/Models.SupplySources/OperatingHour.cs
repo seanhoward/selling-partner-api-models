@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The operating hour schema
     /// </summary>
     [DataContract]
-    public partial class OperatingHour :  IEquatable<OperatingHour>, IValidatableObject
+    public partial class OperatingHour : IEquatable<OperatingHour>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OperatingHour" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.StartTime = startTime;
             this.EndTime = endTime;
         }
-        
+
         /// <summary>
         /// The opening time, ISO 8601 formatted timestamp without date, HH:mm.
         /// </summary>
         /// <value>The opening time, ISO 8601 formatted timestamp without date, HH:mm.</value>
-        [DataMember(Name="startTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startTime", EmitDefaultValue = false)]
         public string StartTime { get; set; }
 
         /// <summary>
         /// The closing time, ISO 8601 formatted timestamp without date, HH:mm.
         /// </summary>
         /// <value>The closing time, ISO 8601 formatted timestamp without date, HH:mm.</value>
-        [DataMember(Name="endTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endTime", EmitDefaultValue = false)]
         public string EndTime { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StartTime == input.StartTime ||
                     (this.StartTime != null &&
                     this.StartTime.Equals(input.StartTime))
-                ) && 
+                ) &&
                 (
                     this.EndTime == input.EndTime ||
                     (this.EndTime != null &&

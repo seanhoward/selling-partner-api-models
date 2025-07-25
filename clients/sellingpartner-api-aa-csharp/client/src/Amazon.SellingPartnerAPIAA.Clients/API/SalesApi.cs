@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Sales;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -41,8 +40,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="firstDayOfWeek">Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to Monday)</param>
         /// <param name="asin">Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)</param>
         /// <param name="sku">Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)</param>
+        /// <param name="amazonProgram">Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)</param>
         /// <returns>GetOrderMetricsResponse</returns>
-        GetOrderMetricsResponse GetOrderMetrics (List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null);
+        GetOrderMetricsResponse GetOrderMetrics(List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null, string amazonProgram = null);
 
         /// <summary>
         /// 
@@ -60,8 +60,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="firstDayOfWeek">Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to Monday)</param>
         /// <param name="asin">Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)</param>
         /// <param name="sku">Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)</param>
+        /// <param name="amazonProgram">Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)</param>
         /// <returns>ApiResponse of GetOrderMetricsResponse</returns>
-        ApiResponse<GetOrderMetricsResponse> GetOrderMetricsWithHttpInfo (List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null);
+        ApiResponse<GetOrderMetricsResponse> GetOrderMetricsWithHttpInfo(List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null, string amazonProgram = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -80,8 +81,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="firstDayOfWeek">Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to Monday)</param>
         /// <param name="asin">Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)</param>
         /// <param name="sku">Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)</param>
+        /// <param name="amazonProgram">Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)</param>
         /// <returns>Task of GetOrderMetricsResponse</returns>
-        System.Threading.Tasks.Task<GetOrderMetricsResponse> GetOrderMetricsAsync (List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null);
+        System.Threading.Tasks.Task<GetOrderMetricsResponse> GetOrderMetricsAsync(List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null, string amazonProgram = null);
 
         /// <summary>
         /// 
@@ -99,8 +101,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="firstDayOfWeek">Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to Monday)</param>
         /// <param name="asin">Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)</param>
         /// <param name="sku">Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)</param>
+        /// <param name="amazonProgram">Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)</param>
         /// <returns>Task of ApiResponse (GetOrderMetricsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrderMetricsResponse>> GetOrderMetricsAsyncWithHttpInfo (List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null);
+        System.Threading.Tasks.Task<ApiResponse<GetOrderMetricsResponse>> GetOrderMetricsAsyncWithHttpInfo(List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null, string amazonProgram = null);
         #endregion Asynchronous Operations
     }
 
@@ -120,7 +123,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public SalesApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -146,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -199,11 +202,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="firstDayOfWeek">Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to Monday)</param>
         /// <param name="asin">Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)</param>
         /// <param name="sku">Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)</param>
+        /// <param name="amazonProgram">Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)</param>
         /// <returns>GetOrderMetricsResponse</returns>
-        public GetOrderMetricsResponse GetOrderMetrics (List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null)
+        public GetOrderMetricsResponse GetOrderMetrics(List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null, string amazonProgram = null)
         {
-             ApiResponse<GetOrderMetricsResponse> localVarResponse = GetOrderMetricsWithHttpInfo(marketplaceIds, interval, granularity, granularityTimeZone, buyerType, fulfillmentNetwork, firstDayOfWeek, asin, sku);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderMetricsResponse> localVarResponse = GetOrderMetricsWithHttpInfo(marketplaceIds, interval, granularity, granularityTimeZone, buyerType, fulfillmentNetwork, firstDayOfWeek, asin, sku, amazonProgram);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -219,8 +223,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="firstDayOfWeek">Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to Monday)</param>
         /// <param name="asin">Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)</param>
         /// <param name="sku">Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)</param>
+        /// <param name="amazonProgram">Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)</param>
         /// <returns>ApiResponse of GetOrderMetricsResponse</returns>
-        public ApiResponse< GetOrderMetricsResponse > GetOrderMetricsWithHttpInfo (List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null)
+        public ApiResponse<GetOrderMetricsResponse> GetOrderMetricsWithHttpInfo(List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null, string amazonProgram = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -263,14 +268,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
             if (firstDayOfWeek != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "firstDayOfWeek", firstDayOfWeek)); // query parameter
             if (asin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "asin", asin)); // query parameter
             if (sku != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sku", sku)); // query parameter
+            if (amazonProgram != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "amazonProgram", amazonProgram)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -280,7 +286,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderMetricsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderMetricsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderMetricsResponse)));
+                (GetOrderMetricsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderMetricsResponse)));
         }
 
         /// <summary>
@@ -296,11 +302,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="firstDayOfWeek">Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to Monday)</param>
         /// <param name="asin">Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)</param>
         /// <param name="sku">Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)</param>
+        /// <param name="amazonProgram">Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)</param>
         /// <returns>Task of GetOrderMetricsResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrderMetricsResponse> GetOrderMetricsAsync (List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null)
+        public async System.Threading.Tasks.Task<GetOrderMetricsResponse> GetOrderMetricsAsync(List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null, string amazonProgram = null)
         {
-             ApiResponse<GetOrderMetricsResponse> localVarResponse = await GetOrderMetricsAsyncWithHttpInfo(marketplaceIds, interval, granularity, granularityTimeZone, buyerType, fulfillmentNetwork, firstDayOfWeek, asin, sku);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderMetricsResponse> localVarResponse = await GetOrderMetricsAsyncWithHttpInfo(marketplaceIds, interval, granularity, granularityTimeZone, buyerType, fulfillmentNetwork, firstDayOfWeek, asin, sku, amazonProgram);
+            return localVarResponse.Data;
 
         }
 
@@ -317,8 +324,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="firstDayOfWeek">Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to Monday)</param>
         /// <param name="asin">Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)</param>
         /// <param name="sku">Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)</param>
+        /// <param name="amazonProgram">Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)</param>
         /// <returns>Task of ApiResponse (GetOrderMetricsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetOrderMetricsResponse>> GetOrderMetricsAsyncWithHttpInfo (List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetOrderMetricsResponse>> GetOrderMetricsAsyncWithHttpInfo(List<string> marketplaceIds, string interval, string granularity, string granularityTimeZone = null, string buyerType = null, string fulfillmentNetwork = null, string firstDayOfWeek = null, string asin = null, string sku = null, string amazonProgram = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -361,14 +369,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
             if (firstDayOfWeek != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "firstDayOfWeek", firstDayOfWeek)); // query parameter
             if (asin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "asin", asin)); // query parameter
             if (sku != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sku", sku)); // query parameter
+            if (amazonProgram != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "amazonProgram", amazonProgram)); // query parameter
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -378,7 +387,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderMetricsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderMetricsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderMetricsResponse)));
+                (GetOrderMetricsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderMetricsResponse)));
         }
 
 
@@ -392,17 +401,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public SalesApi Build() 
+            public SalesApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Delivery information for a scheduled delivery. This is only available in the JP marketplace.
     /// </summary>
     [DataContract]
-    public partial class ScheduledDeliveryInfo :  IEquatable<ScheduledDeliveryInfo>, IValidatableObject
+    public partial class ScheduledDeliveryInfo : IEquatable<ScheduledDeliveryInfo>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduledDeliveryInfo" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.DeliveryWindows = deliveryWindows;
             }
         }
-        
+
         /// <summary>
         /// The time zone of the destination address for the fulfillment order preview. Must be an IANA time zone name. Example: Asia/Tokyo.
         /// </summary>
         /// <value>The time zone of the destination address for the fulfillment order preview. Must be an IANA time zone name. Example: Asia/Tokyo.</value>
-        [DataMember(Name="deliveryTimeZone", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryTimeZone", EmitDefaultValue = false)]
         public string DeliveryTimeZone { get; set; }
 
         /// <summary>
         /// An array of time ranges that are available for scheduled delivery.
         /// </summary>
         /// <value>An array of time ranges that are available for scheduled delivery.</value>
-        [DataMember(Name="deliveryWindows", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryWindows", EmitDefaultValue = false)]
         public DeliveryWindowList DeliveryWindows { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeliveryTimeZone == input.DeliveryTimeZone ||
                     (this.DeliveryTimeZone != null &&
                     this.DeliveryTimeZone.Equals(input.DeliveryTimeZone))
-                ) && 
+                ) &&
                 (
                     this.DeliveryWindows == input.DeliveryWindows ||
                     (this.DeliveryWindows != null &&

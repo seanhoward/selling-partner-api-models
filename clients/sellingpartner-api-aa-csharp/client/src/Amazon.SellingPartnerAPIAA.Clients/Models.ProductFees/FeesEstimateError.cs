@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
     /// An unexpected error occurred during this operation.
     /// </summary>
     [DataContract]
-    public partial class FeesEstimateError :  IEquatable<FeesEstimateError>, IValidatableObject
+    public partial class FeesEstimateError : IEquatable<FeesEstimateError>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimateError" /> class.
@@ -81,32 +75,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
                 this.Detail = detail;
             }
         }
-        
+
         /// <summary>
         /// An error type, identifying either the receiver or the sender as the originator of the error.
         /// </summary>
         /// <value>An error type, identifying either the receiver or the sender as the originator of the error.</value>
-        [DataMember(Name="Type", EmitDefaultValue=false)]
+        [DataMember(Name = "Type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// An error code that identifies the type of error that occurred.
         /// </summary>
         /// <value>An error code that identifies the type of error that occurred.</value>
-        [DataMember(Name="Code", EmitDefaultValue=false)]
+        [DataMember(Name = "Code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// A message that describes the error condition.
         /// </summary>
         /// <value>A message that describes the error condition.</value>
-        [DataMember(Name="Message", EmitDefaultValue=false)]
+        [DataMember(Name = "Message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Detail
         /// </summary>
-        [DataMember(Name="Detail", EmitDefaultValue=false)]
+        [DataMember(Name = "Detail", EmitDefaultValue = false)]
         public FeesEstimateErrorDetail Detail { get; set; }
 
         /// <summary>
@@ -124,7 +118,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -154,22 +148,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.Detail == input.Detail ||
                     (this.Detail != null &&

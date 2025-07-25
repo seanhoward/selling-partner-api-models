@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
 {
@@ -28,12 +21,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
     /// The shipment invoice status information.
     /// </summary>
     [DataContract]
-    public partial class ShipmentInvoiceStatusInfo :  IEquatable<ShipmentInvoiceStatusInfo>, IValidatableObject
+    public partial class ShipmentInvoiceStatusInfo : IEquatable<ShipmentInvoiceStatusInfo>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets InvoiceStatus
         /// </summary>
-        [DataMember(Name="InvoiceStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "InvoiceStatus", EmitDefaultValue = false)]
         public ShipmentInvoiceStatus? InvoiceStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentInvoiceStatusInfo" /> class.
@@ -45,12 +38,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             this.AmazonShipmentId = amazonShipmentId;
             this.InvoiceStatus = invoiceStatus;
         }
-        
+
         /// <summary>
         /// The Amazon-defined shipment identifier.
         /// </summary>
         /// <value>The Amazon-defined shipment identifier.</value>
-        [DataMember(Name="AmazonShipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "AmazonShipmentId", EmitDefaultValue = false)]
         public string AmazonShipmentId { get; set; }
 
 
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AmazonShipmentId == input.AmazonShipmentId ||
                     (this.AmazonShipmentId != null &&
                     this.AmazonShipmentId.Equals(input.AmazonShipmentId))
-                ) && 
+                ) &&
                 (
                     this.InvoiceStatus == input.InvoiceStatus ||
                     (this.InvoiceStatus != null &&

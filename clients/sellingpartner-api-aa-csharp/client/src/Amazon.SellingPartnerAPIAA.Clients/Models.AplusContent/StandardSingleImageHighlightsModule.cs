@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// A standard image with several paragraphs and a bulleted list.
     /// </summary>
     [DataContract]
-    public partial class StandardSingleImageHighlightsModule :  IEquatable<StandardSingleImageHighlightsModule>, IValidatableObject
+    public partial class StandardSingleImageHighlightsModule : IEquatable<StandardSingleImageHighlightsModule>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardSingleImageHighlightsModule" /> class.
@@ -48,41 +41,41 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             this.TextBlock3 = textBlock3;
             this.BulletedListBlock = bulletedListBlock;
         }
-        
+
         /// <summary>
         /// Gets or Sets Image
         /// </summary>
-        [DataMember(Name="image", EmitDefaultValue=false)]
+        [DataMember(Name = "image", EmitDefaultValue = false)]
         public ImageComponent Image { get; set; }
 
         /// <summary>
         /// Gets or Sets Headline
         /// </summary>
-        [DataMember(Name="headline", EmitDefaultValue=false)]
+        [DataMember(Name = "headline", EmitDefaultValue = false)]
         public TextComponent Headline { get; set; }
 
         /// <summary>
         /// Gets or Sets TextBlock1
         /// </summary>
-        [DataMember(Name="textBlock1", EmitDefaultValue=false)]
+        [DataMember(Name = "textBlock1", EmitDefaultValue = false)]
         public StandardTextBlock TextBlock1 { get; set; }
 
         /// <summary>
         /// Gets or Sets TextBlock2
         /// </summary>
-        [DataMember(Name="textBlock2", EmitDefaultValue=false)]
+        [DataMember(Name = "textBlock2", EmitDefaultValue = false)]
         public StandardTextBlock TextBlock2 { get; set; }
 
         /// <summary>
         /// Gets or Sets TextBlock3
         /// </summary>
-        [DataMember(Name="textBlock3", EmitDefaultValue=false)]
+        [DataMember(Name = "textBlock3", EmitDefaultValue = false)]
         public StandardTextBlock TextBlock3 { get; set; }
 
         /// <summary>
         /// Gets or Sets BulletedListBlock
         /// </summary>
-        [DataMember(Name="bulletedListBlock", EmitDefaultValue=false)]
+        [DataMember(Name = "bulletedListBlock", EmitDefaultValue = false)]
         public StandardHeaderTextListBlock BulletedListBlock { get; set; }
 
         /// <summary>
@@ -102,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -132,32 +125,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Image == input.Image ||
                     (this.Image != null &&
                     this.Image.Equals(input.Image))
-                ) && 
+                ) &&
                 (
                     this.Headline == input.Headline ||
                     (this.Headline != null &&
                     this.Headline.Equals(input.Headline))
-                ) && 
+                ) &&
                 (
                     this.TextBlock1 == input.TextBlock1 ||
                     (this.TextBlock1 != null &&
                     this.TextBlock1.Equals(input.TextBlock1))
-                ) && 
+                ) &&
                 (
                     this.TextBlock2 == input.TextBlock2 ||
                     (this.TextBlock2 != null &&
                     this.TextBlock2.Equals(input.TextBlock2))
-                ) && 
+                ) &&
                 (
                     this.TextBlock3 == input.TextBlock3 ||
                     (this.TextBlock3 != null &&
                     this.TextBlock3.Equals(input.TextBlock3))
-                ) && 
+                ) &&
                 (
                     this.BulletedListBlock == input.BulletedListBlock ||
                     (this.BulletedListBlock != null &&

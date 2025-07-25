@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// An object representing an excluded benefit that is excluded for a shipping offer or rate.
     /// </summary>
     [DataContract]
-    public partial class ExcludedBenefit :  IEquatable<ExcludedBenefit>, IValidatableObject
+    public partial class ExcludedBenefit : IEquatable<ExcludedBenefit>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExcludedBenefit" /> class.
@@ -40,18 +33,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.Benefit = benefit;
             this.ReasonCodes = reasonCodes;
         }
-        
+
         /// <summary>
         /// A benefit that is being excluded from a shipment.
         /// </summary>
         /// <value>A benefit that is being excluded from a shipment.</value>
-        [DataMember(Name="Benefit", EmitDefaultValue=false)]
+        [DataMember(Name = "Benefit", EmitDefaultValue = false)]
         public string Benefit { get; set; }
 
         /// <summary>
         /// Gets or Sets ReasonCodes
         /// </summary>
-        [DataMember(Name="ReasonCodes", EmitDefaultValue=false)]
+        [DataMember(Name = "ReasonCodes", EmitDefaultValue = false)]
         public ExcludedBenefitReasonCodes ReasonCodes { get; set; }
 
         /// <summary>
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Benefit == input.Benefit ||
                     (this.Benefit != null &&
                     this.Benefit.Equals(input.Benefit))
-                ) && 
+                ) &&
                 (
                     this.ReasonCodes == input.ReasonCodes ||
                     (this.ReasonCodes != null &&

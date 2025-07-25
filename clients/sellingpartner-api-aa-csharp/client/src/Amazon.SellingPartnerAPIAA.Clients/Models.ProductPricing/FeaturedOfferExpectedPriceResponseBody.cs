@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The FOEP response data for a requested SKU.
     /// </summary>
     [DataContract]
-    public partial class FeaturedOfferExpectedPriceResponseBody :  IEquatable<FeaturedOfferExpectedPriceResponseBody>, IValidatableObject
+    public partial class FeaturedOfferExpectedPriceResponseBody : IEquatable<FeaturedOfferExpectedPriceResponseBody>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPriceResponseBody" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             this.FeaturedOfferExpectedPriceResults = featuredOfferExpectedPriceResults;
             this.Errors = errors;
         }
-        
+
         /// <summary>
         /// Metadata that identifies the target offer for which the FOEP result data was computed.
         /// </summary>
         /// <value>Metadata that identifies the target offer for which the FOEP result data was computed.</value>
-        [DataMember(Name="offerIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "offerIdentifier", EmitDefaultValue = false)]
         public OfferIdentifier OfferIdentifier { get; set; }
 
         /// <summary>
         /// The FOEP results for the requested target offer.
         /// </summary>
         /// <value>The FOEP results for the requested target offer.</value>
-        [DataMember(Name="featuredOfferExpectedPriceResults", EmitDefaultValue=false)]
+        [DataMember(Name = "featuredOfferExpectedPriceResults", EmitDefaultValue = false)]
         public FeaturedOfferExpectedPriceResultList FeaturedOfferExpectedPriceResults { get; set; }
 
         /// <summary>
         /// The errors that occurred if the operation wasn&#39;t successful (HTTP status code non-200).
         /// </summary>
         /// <value>The errors that occurred if the operation wasn&#39;t successful (HTTP status code non-200).</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.OfferIdentifier == input.OfferIdentifier ||
                     (this.OfferIdentifier != null &&
                     this.OfferIdentifier.Equals(input.OfferIdentifier))
-                ) && 
+                ) &&
                 (
                     this.FeaturedOfferExpectedPriceResults == input.FeaturedOfferExpectedPriceResults ||
                     (this.FeaturedOfferExpectedPriceResults != null &&
                     this.FeaturedOfferExpectedPriceResults.Equals(input.FeaturedOfferExpectedPriceResults))
-                ) && 
+                ) &&
                 (
                     this.Errors == input.Errors ||
                     (this.Errors != null &&

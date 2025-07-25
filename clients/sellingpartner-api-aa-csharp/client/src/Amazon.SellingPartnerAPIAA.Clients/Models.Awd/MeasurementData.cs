@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Package weight and dimension.
     /// </summary>
     [DataContract]
-    public partial class MeasurementData :  IEquatable<MeasurementData>, IValidatableObject
+    public partial class MeasurementData : IEquatable<MeasurementData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MeasurementData" /> class.
@@ -55,26 +49,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             this.Dimensions = dimensions;
             this.Volume = volume;
         }
-        
+
         /// <summary>
         /// Dimensions of the package. Dimensions are required when creating an inbound or outbound order.
         /// </summary>
         /// <value>Dimensions of the package. Dimensions are required when creating an inbound or outbound order.</value>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public PackageDimensions Dimensions { get; set; }
 
         /// <summary>
         /// Volume of the package.
         /// </summary>
         /// <value>Volume of the package.</value>
-        [DataMember(Name="volume", EmitDefaultValue=false)]
+        [DataMember(Name = "volume", EmitDefaultValue = false)]
         public PackageVolume Volume { get; set; }
 
         /// <summary>
         /// Weight of the package.
         /// </summary>
         /// <value>Weight of the package.</value>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public PackageWeight Weight { get; set; }
 
         /// <summary>
@@ -91,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +115,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
                 (
                     this.Volume == input.Volume ||
                     (this.Volume != null &&
                     this.Volume.Equals(input.Volume))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&

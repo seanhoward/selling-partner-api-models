@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,13 +23,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The input required for building &#x60;LowestPricedOffers&#x60; data in the response.
     /// </summary>
     [DataContract]
-    public partial class LowestPricedOffersInput :  IEquatable<LowestPricedOffersInput>, IValidatableObject
+    public partial class LowestPricedOffersInput : IEquatable<LowestPricedOffersInput>, IValidatableObject
     {
         /// <summary>
         /// The input parameter specifies the &#x60;itemCondition&#x60; of the offer that is requested for &#x60;LowestPricedOffers&#x60;. &#x60;New&#x60; is the default value for &#x60;itemCondition&#x60;.
         /// </summary>
         /// <value>The input parameter specifies the &#x60;itemCondition&#x60; of the offer that is requested for &#x60;LowestPricedOffers&#x60;. &#x60;New&#x60; is the default value for &#x60;itemCondition&#x60;.</value>
-        [DataMember(Name="itemCondition", EmitDefaultValue=false)]
+        [DataMember(Name = "itemCondition", EmitDefaultValue = false)]
         public Condition ItemCondition { get; set; }
         /// <summary>
         /// The input parameter specifies the type of offers requested for &#x60;LowestPricedOffers&#x60;. This applies to &#x60;Consumer&#x60; and &#x60;Business&#x60; offers. &#x60;Consumer&#x60; is the default &#x60;offerType&#x60;.
@@ -43,13 +38,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OfferTypeEnum
         {
-            
+
             /// <summary>
             /// Enum Consumer for value: Consumer
             /// </summary>
             [EnumMember(Value = "Consumer")]
             Consumer = 1,
-            
+
             /// <summary>
             /// Enum Business for value: Business
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// The input parameter specifies the type of offers requested for &#x60;LowestPricedOffers&#x60;. This applies to &#x60;Consumer&#x60; and &#x60;Business&#x60; offers. &#x60;Consumer&#x60; is the default &#x60;offerType&#x60;.
         /// </summary>
         /// <value>The input parameter specifies the type of offers requested for &#x60;LowestPricedOffers&#x60;. This applies to &#x60;Consumer&#x60; and &#x60;Business&#x60; offers. &#x60;Consumer&#x60; is the default &#x60;offerType&#x60;.</value>
-        [DataMember(Name="offerType", EmitDefaultValue=false)]
+        [DataMember(Name = "offerType", EmitDefaultValue = false)]
         public OfferTypeEnum OfferType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LowestPricedOffersInput" /> class.
@@ -94,7 +89,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 this.OfferType = offerType;
             }
         }
-        
+
 
 
         /// <summary>
@@ -110,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -140,12 +135,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemCondition == input.ItemCondition ||
                     (this.ItemCondition != null &&
                     this.ItemCondition.Equals(input.ItemCondition))
-                ) && 
+                ) &&
                 (
                     this.OfferType == input.OfferType ||
                     (this.OfferType != null &&

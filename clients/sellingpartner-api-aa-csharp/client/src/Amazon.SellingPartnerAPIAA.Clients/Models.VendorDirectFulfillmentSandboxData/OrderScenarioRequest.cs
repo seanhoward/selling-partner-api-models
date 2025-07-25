@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandboxData
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
     /// The party identifiers required to generate the test data.
     /// </summary>
     [DataContract]
-    public partial class OrderScenarioRequest :  IEquatable<OrderScenarioRequest>, IValidatableObject
+    public partial class OrderScenarioRequest : IEquatable<OrderScenarioRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderScenarioRequest" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
                 this.ShipFromParty = shipFromParty;
             }
         }
-        
+
         /// <summary>
         /// The identifier of the selling party or vendor.
         /// </summary>
         /// <value>The identifier of the selling party or vendor.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// The warehouse code of the vendor.
         /// </summary>
         /// <value>The warehouse code of the vendor.</value>
-        [DataMember(Name="shipFromParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFromParty", EmitDefaultValue = false)]
         public PartyIdentification ShipFromParty { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.ShipFromParty == input.ShipFromParty ||
                     (this.ShipFromParty != null &&

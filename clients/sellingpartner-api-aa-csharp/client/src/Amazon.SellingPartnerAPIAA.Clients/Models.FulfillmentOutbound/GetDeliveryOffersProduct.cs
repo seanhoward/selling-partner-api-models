@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The product details for the delivery offer.
     /// </summary>
     [DataContract]
-    public partial class GetDeliveryOffersProduct :  IEquatable<GetDeliveryOffersProduct>, IValidatableObject
+    public partial class GetDeliveryOffersProduct : IEquatable<GetDeliveryOffersProduct>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDeliveryOffersProduct" /> class.
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             }
             this.Amount = amount;
         }
-        
+
         /// <summary>
         /// Product identifier input that locates a product for MCF.
         /// </summary>
         /// <value>Product identifier input that locates a product for MCF.</value>
-        [DataMember(Name="productIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "productIdentifier", EmitDefaultValue = false)]
         public ProductIdentifier ProductIdentifier { get; set; }
 
         /// <summary>
         /// The amount of the requested product.
         /// </summary>
         /// <value>The amount of the requested product.</value>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public Amount Amount { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ProductIdentifier == input.ProductIdentifier ||
                     (this.ProductIdentifier != null &&
                     this.ProductIdentifier.Equals(input.ProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.Amount == input.Amount ||
                     (this.Amount != null &&

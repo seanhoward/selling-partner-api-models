@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Response containing the transaction ID.
     /// </summary>
     [DataContract]
-    public partial class TransactionReference :  IEquatable<TransactionReference>, IValidatableObject
+    public partial class TransactionReference : IEquatable<TransactionReference>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionReference" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         {
             this.TransactionId = transactionId;
         }
-        
+
         /// <summary>
         /// GUID to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
         /// </summary>
         /// <value>GUID to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.</value>
-        [DataMember(Name="transactionId", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string TransactionId { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TransactionId == input.TransactionId ||
                     (this.TransactionId != null &&

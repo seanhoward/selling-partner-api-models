@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
     /// Describes a messaging action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.
     /// </summary>
     [DataContract]
-    public partial class GetMessagingActionResponse :  IEquatable<GetMessagingActionResponse>, IValidatableObject
+    public partial class GetMessagingActionResponse : IEquatable<GetMessagingActionResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetMessagingActionResponse" /> class.
@@ -44,29 +37,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             this.Payload = payload;
             this.Errors = errors;
         }
-        
+
         /// <summary>
         /// Gets or Sets Links
         /// </summary>
-        [DataMember(Name="_links", EmitDefaultValue=false)]
+        [DataMember(Name = "_links", EmitDefaultValue = false)]
         public GetMessagingActionResponseLinks Links { get; set; }
 
         /// <summary>
         /// Gets or Sets Embedded
         /// </summary>
-        [DataMember(Name="_embedded", EmitDefaultValue=false)]
+        [DataMember(Name = "_embedded", EmitDefaultValue = false)]
         public GetMessagingActionResponseEmbedded Embedded { get; set; }
 
         /// <summary>
         /// Gets or Sets Payload
         /// </summary>
-        [DataMember(Name="payload", EmitDefaultValue=false)]
+        [DataMember(Name = "payload", EmitDefaultValue = false)]
         public MessagingAction Payload { get; set; }
 
         /// <summary>
         /// Gets or Sets Errors
         /// </summary>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 
         /// <summary>
@@ -84,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -114,22 +107,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Links == input.Links ||
                     (this.Links != null &&
                     this.Links.Equals(input.Links))
-                ) && 
+                ) &&
                 (
                     this.Embedded == input.Embedded ||
                     (this.Embedded != null &&
                     this.Embedded.Equals(input.Embedded))
-                ) && 
+                ) &&
                 (
                     this.Payload == input.Payload ||
                     (this.Payload != null &&
                     this.Payload.Equals(input.Payload))
-                ) && 
+                ) &&
                 (
                     this.Errors == input.Errors ||
                     (this.Errors != null &&

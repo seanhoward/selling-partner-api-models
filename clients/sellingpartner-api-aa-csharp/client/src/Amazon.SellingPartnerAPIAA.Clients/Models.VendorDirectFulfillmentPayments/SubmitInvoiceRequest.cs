@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
     /// The request schema for the submitInvoice operation.
     /// </summary>
     [DataContract]
-    public partial class SubmitInvoiceRequest :  IEquatable<SubmitInvoiceRequest>, IValidatableObject
+    public partial class SubmitInvoiceRequest : IEquatable<SubmitInvoiceRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitInvoiceRequest" /> class.
@@ -38,12 +32,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         {
             this.Invoices = invoices;
         }
-        
+
         /// <summary>
         /// An array of invoice details to be submitted.
         /// </summary>
         /// <value>An array of invoice details to be submitted.</value>
-        [DataMember(Name="invoices", EmitDefaultValue=false)]
+        [DataMember(Name = "invoices", EmitDefaultValue = false)]
         public List<InvoiceDetail> Invoices { get; set; }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Invoices == input.Invoices ||
                     this.Invoices != null &&

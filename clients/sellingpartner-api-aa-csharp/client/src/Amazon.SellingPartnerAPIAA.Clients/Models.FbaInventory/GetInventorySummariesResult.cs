@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// The payload schema for the getInventorySummaries operation.
     /// </summary>
     [DataContract]
-    public partial class GetInventorySummariesResult :  IEquatable<GetInventorySummariesResult>, IValidatableObject
+    public partial class GetInventorySummariesResult : IEquatable<GetInventorySummariesResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetInventorySummariesResult" /> class.
@@ -61,17 +55,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
                 this.InventorySummaries = inventorySummaries;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets Granularity
         /// </summary>
-        [DataMember(Name="granularity", EmitDefaultValue=false)]
+        [DataMember(Name = "granularity", EmitDefaultValue = false)]
         public Granularity Granularity { get; set; }
 
         /// <summary>
         /// Gets or Sets InventorySummaries
         /// </summary>
-        [DataMember(Name="inventorySummaries", EmitDefaultValue=false)]
+        [DataMember(Name = "inventorySummaries", EmitDefaultValue = false)]
         public InventorySummaries InventorySummaries { get; set; }
 
         /// <summary>
@@ -87,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -117,12 +111,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Granularity == input.Granularity ||
                     (this.Granularity != null &&
                     this.Granularity.Equals(input.Granularity))
-                ) && 
+                ) &&
                 (
                     this.InventorySummaries == input.InventorySummaries ||
                     (this.InventorySummaries != null &&

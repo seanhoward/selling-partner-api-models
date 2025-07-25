@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The reference price for the specified ASIN &#x60;marketplaceId&#x60; combination.
     /// </summary>
     [DataContract]
-    public partial class ReferencePrice :  IEquatable<ReferencePrice>, IValidatableObject
+    public partial class ReferencePrice : IEquatable<ReferencePrice>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReferencePrice" /> class.
@@ -38,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <summary>
         /// Initializes a new instance of the <see cref="ReferencePrice" /> class.
         /// </summary>
-        /// <param name="name">The name of the reference price, such as &#x60;CompetitivePriceThreshold&#x60; and &#x60;WasPrice&#x60;. For reference price definitions, refer to the [Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide). (required).</param>
+        /// <param name="name">Reference price type (e.g., &#x60;CompetitivePriceThreshold&#x60;, &#x60;WasPrice&#x60;, &#x60;CompetitivePrice&#x60;). For definitions, see the [Product Pricing API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide). (required).</param>
         /// <param name="price">The reference price for the ASIN &#x60;marketplaceId&#x60; combination. (required).</param>
         public ReferencePrice(string name = default, MoneyType price = default)
         {
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 this.Price = price;
             }
         }
-        
+
         /// <summary>
-        /// The name of the reference price, such as &#x60;CompetitivePriceThreshold&#x60; and &#x60;WasPrice&#x60;. For reference price definitions, refer to the [Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
+        /// Reference price type (e.g., &#x60;CompetitivePriceThreshold&#x60;, &#x60;WasPrice&#x60;, &#x60;CompetitivePrice&#x60;). For definitions, see the [Product Pricing API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
         /// </summary>
-        /// <value>The name of the reference price, such as &#x60;CompetitivePriceThreshold&#x60; and &#x60;WasPrice&#x60;. For reference price definitions, refer to the [Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        /// <value>Reference price type (e.g., &#x60;CompetitivePriceThreshold&#x60;, &#x60;WasPrice&#x60;, &#x60;CompetitivePrice&#x60;). For definitions, see the [Product Pricing API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).</value>
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The reference price for the ASIN &#x60;marketplaceId&#x60; combination.
         /// </summary>
         /// <value>The reference price for the ASIN &#x60;marketplaceId&#x60; combination.</value>
-        [DataMember(Name="price", EmitDefaultValue=false)]
+        [DataMember(Name = "price", EmitDefaultValue = false)]
         public MoneyType Price { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Price == input.Price ||
                     (this.Price != null &&

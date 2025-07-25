@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// A delivery document for a package.
     /// </summary>
     [DataContract]
-    public partial class DeliveryDocument :  IEquatable<DeliveryDocument>, IValidatableObject
+    public partial class DeliveryDocument : IEquatable<DeliveryDocument>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryDocument" /> class.
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             }
             this.Url = url;
         }
-        
+
         /// <summary>
         /// The delivery document type. Values are &#x60;SIGNATURE&#x60; and &#x60;DELIVERY_IMAGE&#x60;.
         /// </summary>
         /// <value>The delivery document type. Values are &#x60;SIGNATURE&#x60; and &#x60;DELIVERY_IMAGE&#x60;.</value>
-        [DataMember(Name="documentType", EmitDefaultValue=false)]
+        [DataMember(Name = "documentType", EmitDefaultValue = false)]
         public string DocumentType { get; set; }
 
         /// <summary>
         /// A URL that you can use to download the document. This URL has a &#x60;Content-Type&#x60; header. Note that the URL expires after one hour. To get a new URL, you must call the API again.
         /// </summary>
         /// <value>A URL that you can use to download the document. This URL has a &#x60;Content-Type&#x60; header. Note that the URL expires after one hour. To get a new URL, you must call the API again.</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DocumentType == input.DocumentType ||
                     (this.DocumentType != null &&
                     this.DocumentType.Equals(input.DocumentType))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&

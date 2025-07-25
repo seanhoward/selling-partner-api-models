@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,12 +21,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// The length.
     /// </summary>
     [DataContract]
-    public partial class Length :  IEquatable<Length>, IValidatableObject
+    public partial class Length : IEquatable<Length>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Unit
         /// </summary>
-        [DataMember(Name="unit", EmitDefaultValue=false)]
+        [DataMember(Name = "unit", EmitDefaultValue = false)]
         public UnitOfLength? Unit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Length" /> class.
@@ -45,12 +38,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.Value = value;
             this.Unit = unit;
         }
-        
+
         /// <summary>
         /// The value in units.
         /// </summary>
         /// <value>The value in units.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public decimal? Value { get; set; }
 
 
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
+                ) &&
                 (
                     this.Unit == input.Unit ||
                     (this.Unit != null &&

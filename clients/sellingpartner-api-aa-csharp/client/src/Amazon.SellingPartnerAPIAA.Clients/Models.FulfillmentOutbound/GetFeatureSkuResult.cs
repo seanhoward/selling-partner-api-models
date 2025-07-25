@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The payload for the &#x60;getFeatureSKU&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class GetFeatureSkuResult :  IEquatable<GetFeatureSkuResult>, IValidatableObject
+    public partial class GetFeatureSkuResult : IEquatable<GetFeatureSkuResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeatureSkuResult" /> class.
@@ -75,40 +70,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.IneligibleReasons = ineligibleReasons;
             this.SkuInfo = skuInfo;
         }
-        
+
         /// <summary>
         /// The requested marketplace.
         /// </summary>
         /// <value>The requested marketplace.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The name of the feature.
         /// </summary>
         /// <value>The name of the feature.</value>
-        [DataMember(Name="featureName", EmitDefaultValue=false)]
+        [DataMember(Name = "featureName", EmitDefaultValue = false)]
         public string FeatureName { get; set; }
 
         /// <summary>
         /// When true, the seller SKU is eligible for the requested feature.
         /// </summary>
         /// <value>When true, the seller SKU is eligible for the requested feature.</value>
-        [DataMember(Name="isEligible", EmitDefaultValue=false)]
+        [DataMember(Name = "isEligible", EmitDefaultValue = false)]
         public bool? IsEligible { get; set; }
 
         /// <summary>
         /// A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * &#x60;MERCHANT_NOT_ENROLLED&#x60; - The merchant isn&#39;t enrolled for the feature. * &#x60;SKU_NOT_ELIGIBLE&#x60; - The SKU doesn&#39;t reside in a warehouse that supports the feature. * &#x60;INVALID_SKU&#x60; - There is an issue with the SKU provided.
         /// </summary>
         /// <value>A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * &#x60;MERCHANT_NOT_ENROLLED&#x60; - The merchant isn&#39;t enrolled for the feature. * &#x60;SKU_NOT_ELIGIBLE&#x60; - The SKU doesn&#39;t reside in a warehouse that supports the feature. * &#x60;INVALID_SKU&#x60; - There is an issue with the SKU provided.</value>
-        [DataMember(Name="ineligibleReasons", EmitDefaultValue=false)]
+        [DataMember(Name = "ineligibleReasons", EmitDefaultValue = false)]
         public List<string> IneligibleReasons { get; set; }
 
         /// <summary>
         /// Information about the SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool.
         /// </summary>
         /// <value>Information about the SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool.</value>
-        [DataMember(Name="skuInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "skuInfo", EmitDefaultValue = false)]
         public FeatureSku SkuInfo { get; set; }
 
         /// <summary>
@@ -127,7 +122,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -157,27 +152,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.FeatureName == input.FeatureName ||
                     (this.FeatureName != null &&
                     this.FeatureName.Equals(input.FeatureName))
-                ) && 
+                ) &&
                 (
                     this.IsEligible == input.IsEligible ||
                     (this.IsEligible != null &&
                     this.IsEligible.Equals(input.IsEligible))
-                ) && 
+                ) &&
                 (
                     this.IneligibleReasons == input.IneligibleReasons ||
                     this.IneligibleReasons != null &&
                     this.IneligibleReasons.SequenceEqual(input.IneligibleReasons)
-                ) && 
+                ) &&
                 (
                     this.SkuInfo == input.SkuInfo ||
                     (this.SkuInfo != null &&

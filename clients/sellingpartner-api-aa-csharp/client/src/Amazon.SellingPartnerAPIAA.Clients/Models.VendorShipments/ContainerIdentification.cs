@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// A list of carton identifiers.
     /// </summary>
     [DataContract]
-    public partial class ContainerIdentification :  IEquatable<ContainerIdentification>, IValidatableObject
+    public partial class ContainerIdentification : IEquatable<ContainerIdentification>, IValidatableObject
     {
         /// <summary>
         /// The container identification type.
@@ -37,31 +32,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ContainerIdentificationTypeEnum
         {
-            
+
             /// <summary>
             /// Enum SSCC for value: SSCC
             /// </summary>
             [EnumMember(Value = "SSCC")]
             SSCC = 1,
-            
+
             /// <summary>
             /// Enum AMZNCC for value: AMZNCC
             /// </summary>
             [EnumMember(Value = "AMZNCC")]
             AMZNCC = 2,
-            
+
             /// <summary>
             /// Enum GTIN for value: GTIN
             /// </summary>
             [EnumMember(Value = "GTIN")]
             GTIN = 3,
-            
+
             /// <summary>
             /// Enum BPS for value: BPS
             /// </summary>
             [EnumMember(Value = "BPS")]
             BPS = 4,
-            
+
             /// <summary>
             /// Enum CID for value: CID
             /// </summary>
@@ -73,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// The container identification type.
         /// </summary>
         /// <value>The container identification type.</value>
-        [DataMember(Name="containerIdentificationType", EmitDefaultValue=false)]
+        [DataMember(Name = "containerIdentificationType", EmitDefaultValue = false)]
         public ContainerIdentificationTypeEnum ContainerIdentificationType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerIdentification" /> class.
@@ -106,13 +101,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
                 this.ContainerIdentificationNumber = containerIdentificationNumber;
             }
         }
-        
+
 
         /// <summary>
         /// Container identification number that adheres to the definition of the container identification type.
         /// </summary>
         /// <value>Container identification number that adheres to the definition of the container identification type.</value>
-        [DataMember(Name="containerIdentificationNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "containerIdentificationNumber", EmitDefaultValue = false)]
         public string ContainerIdentificationNumber { get; set; }
 
         /// <summary>
@@ -128,7 +123,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -158,12 +153,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContainerIdentificationType == input.ContainerIdentificationType ||
                     (this.ContainerIdentificationType != null &&
                     this.ContainerIdentificationType.Equals(input.ContainerIdentificationType))
-                ) && 
+                ) &&
                 (
                     this.ContainerIdentificationNumber == input.ContainerIdentificationNumber ||
                     (this.ContainerIdentificationNumber != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// A carrier who is temporarily unavailable, most likely due to a service outage experienced by the carrier.
     /// </summary>
     [DataContract]
-    public partial class TemporarilyUnavailableCarrier :  IEquatable<TemporarilyUnavailableCarrier>, IValidatableObject
+    public partial class TemporarilyUnavailableCarrier : IEquatable<TemporarilyUnavailableCarrier>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TemporarilyUnavailableCarrier" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                 this.CarrierName = carrierName;
             }
         }
-        
+
         /// <summary>
         /// The name of the carrier.
         /// </summary>
         /// <value>The name of the carrier.</value>
-        [DataMember(Name="CarrierName", EmitDefaultValue=false)]
+        [DataMember(Name = "CarrierName", EmitDefaultValue = false)]
         public string CarrierName { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CarrierName == input.CarrierName ||
                     (this.CarrierName != null &&

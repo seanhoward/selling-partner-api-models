@@ -1,5 +1,5 @@
 /* 
- * Vendor Invoices v1
+ * Selling Partner API for Retail Procurement Payments
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
     /// Monetary and tax details of the allowance.
     /// </summary>
     [DataContract]
-    public partial class AllowanceDetails :  IEquatable<AllowanceDetails>, IValidatableObject
+    public partial class AllowanceDetails : IEquatable<AllowanceDetails>, IValidatableObject
     {
         /// <summary>
         /// Type of the allowance applied.
@@ -37,37 +33,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
-            
+
             /// <summary>
             /// Enum Discount for value: Discount
             /// </summary>
             [EnumMember(Value = "Discount")]
             Discount = 1,
-            
+
             /// <summary>
             /// Enum DiscountIncentive for value: DiscountIncentive
             /// </summary>
             [EnumMember(Value = "DiscountIncentive")]
             DiscountIncentive = 2,
-            
+
             /// <summary>
             /// Enum Defective for value: Defective
             /// </summary>
             [EnumMember(Value = "Defective")]
             Defective = 3,
-            
+
             /// <summary>
             /// Enum Promotional for value: Promotional
             /// </summary>
             [EnumMember(Value = "Promotional")]
             Promotional = 4,
-            
+
             /// <summary>
             /// Enum UnsaleableMerchandise for value: UnsaleableMerchandise
             /// </summary>
             [EnumMember(Value = "UnsaleableMerchandise")]
             UnsaleableMerchandise = 5,
-            
+
             /// <summary>
             /// Enum Special for value: Special
             /// </summary>
@@ -79,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// Type of the allowance applied.
         /// </summary>
         /// <value>Type of the allowance applied.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AllowanceDetails" /> class.
@@ -116,27 +112,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             this.Description = description;
             this.TaxDetails = taxDetails;
         }
-        
+
 
         /// <summary>
         /// Description of the allowance.
         /// </summary>
         /// <value>Description of the allowance.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Total monetary amount related to this allowance.
         /// </summary>
         /// <value>Total monetary amount related to this allowance.</value>
-        [DataMember(Name="allowanceAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "allowanceAmount", EmitDefaultValue = false)]
         public Money AllowanceAmount { get; set; }
 
         /// <summary>
         /// Tax amount details applied on this allowance.
         /// </summary>
         /// <value>Tax amount details applied on this allowance.</value>
-        [DataMember(Name="taxDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "taxDetails", EmitDefaultValue = false)]
         public List<TaxDetails> TaxDetails { get; set; }
 
         /// <summary>
@@ -154,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -184,22 +180,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.AllowanceAmount == input.AllowanceAmount ||
                     (this.AllowanceAmount != null &&
                     this.AllowanceAmount.Equals(input.AllowanceAmount))
-                ) && 
+                ) &&
                 (
                     this.TaxDetails == input.TaxDetails ||
                     this.TaxDetails != null &&

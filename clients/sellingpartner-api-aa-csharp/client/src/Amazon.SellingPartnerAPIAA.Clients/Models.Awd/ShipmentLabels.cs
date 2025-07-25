@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Amazon Warehousing and Distribution
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * OpenAPI spec version: 2024-05-09
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Shipment labels.
     /// </summary>
     [DataContract]
-    public partial class ShipmentLabels :  IEquatable<ShipmentLabels>, IValidatableObject
+    public partial class ShipmentLabels : IEquatable<ShipmentLabels>, IValidatableObject
     {
         /// <summary>
         /// Status of label generation.
         /// </summary>
         /// <value>Status of label generation.</value>
-        [DataMember(Name="labelStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "labelStatus", EmitDefaultValue = false)]
         public LabelStatus LabelStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentLabels" /> class.
@@ -44,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentLabels" /> class.
         /// </summary>
-        /// <param name="labelDownloadURL">URL to download generated labels..</param>
+        /// <param name="labelDownloadURL">The URL to download shipment labels. The URL is active for 600 seconds from generation..</param>
         /// <param name="labelStatus">Status of label generation. (required).</param>
         public ShipmentLabels(string labelDownloadURL = default, LabelStatus labelStatus = default)
         {
@@ -59,12 +53,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             }
             this.LabelDownloadURL = labelDownloadURL;
         }
-        
+
         /// <summary>
-        /// URL to download generated labels.
+        /// The URL to download shipment labels. The URL is active for 600 seconds from generation.
         /// </summary>
-        /// <value>URL to download generated labels.</value>
-        [DataMember(Name="labelDownloadURL", EmitDefaultValue=false)]
+        /// <value>The URL to download shipment labels. The URL is active for 600 seconds from generation.</value>
+        [DataMember(Name = "labelDownloadURL", EmitDefaultValue = false)]
         public string LabelDownloadURL { get; set; }
 
 
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.LabelDownloadURL == input.LabelDownloadURL ||
                     (this.LabelDownloadURL != null &&
                     this.LabelDownloadURL.Equals(input.LabelDownloadURL))
-                ) && 
+                ) &&
                 (
                     this.LabelStatus == input.LabelStatus ||
                     (this.LabelStatus != null &&

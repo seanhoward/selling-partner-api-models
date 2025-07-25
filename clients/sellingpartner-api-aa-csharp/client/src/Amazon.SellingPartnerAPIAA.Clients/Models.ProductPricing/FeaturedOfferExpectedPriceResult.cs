@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The FOEP result data for the requested offer.
     /// </summary>
     [DataContract]
-    public partial class FeaturedOfferExpectedPriceResult :  IEquatable<FeaturedOfferExpectedPriceResult>, IValidatableObject
+    public partial class FeaturedOfferExpectedPriceResult : IEquatable<FeaturedOfferExpectedPriceResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPriceResult" /> class.
@@ -57,32 +51,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             this.CompetingFeaturedOffer = competingFeaturedOffer;
             this.CurrentFeaturedOffer = currentFeaturedOffer;
         }
-        
+
         /// <summary>
         /// Gets or Sets FeaturedOfferExpectedPrice
         /// </summary>
-        [DataMember(Name="featuredOfferExpectedPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "featuredOfferExpectedPrice", EmitDefaultValue = false)]
         public FeaturedOfferExpectedPrice FeaturedOfferExpectedPrice { get; set; }
 
         /// <summary>
         /// The status of the FOEP computation. Possible values include &#x60;VALID_FOEP&#x60;, &#x60;NO_COMPETING_OFFER&#x60;, &#x60;OFFER_NOT_ELIGIBLE&#x60;, &#x60;OFFER_NOT_FOUND&#x60;, and &#x60;ASIN_NOT_ELIGIBLE&#x60;. Additional values might be added in the future.
         /// </summary>
         /// <value>The status of the FOEP computation. Possible values include &#x60;VALID_FOEP&#x60;, &#x60;NO_COMPETING_OFFER&#x60;, &#x60;OFFER_NOT_ELIGIBLE&#x60;, &#x60;OFFER_NOT_FOUND&#x60;, and &#x60;ASIN_NOT_ELIGIBLE&#x60;. Additional values might be added in the future.</value>
-        [DataMember(Name="resultStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "resultStatus", EmitDefaultValue = false)]
         public string ResultStatus { get; set; }
 
         /// <summary>
         /// The offer that will likely be the featured offer if the target offer is priced above its FOEP. If the target offer is currently the featured offer, this property will be different than &#x60;currentFeaturedOffer&#x60;.
         /// </summary>
         /// <value>The offer that will likely be the featured offer if the target offer is priced above its FOEP. If the target offer is currently the featured offer, this property will be different than &#x60;currentFeaturedOffer&#x60;.</value>
-        [DataMember(Name="competingFeaturedOffer", EmitDefaultValue=false)]
+        [DataMember(Name = "competingFeaturedOffer", EmitDefaultValue = false)]
         public FeaturedOffer CompetingFeaturedOffer { get; set; }
 
         /// <summary>
         /// The offer that is currently the featured offer. If the target offer is not currently featured, then this property will be equal to &#x60;competingFeaturedOffer&#x60;.
         /// </summary>
         /// <value>The offer that is currently the featured offer. If the target offer is not currently featured, then this property will be equal to &#x60;competingFeaturedOffer&#x60;.</value>
-        [DataMember(Name="currentFeaturedOffer", EmitDefaultValue=false)]
+        [DataMember(Name = "currentFeaturedOffer", EmitDefaultValue = false)]
         public FeaturedOffer CurrentFeaturedOffer { get; set; }
 
         /// <summary>
@@ -100,7 +94,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -130,22 +124,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FeaturedOfferExpectedPrice == input.FeaturedOfferExpectedPrice ||
                     (this.FeaturedOfferExpectedPrice != null &&
                     this.FeaturedOfferExpectedPrice.Equals(input.FeaturedOfferExpectedPrice))
-                ) && 
+                ) &&
                 (
                     this.ResultStatus == input.ResultStatus ||
                     (this.ResultStatus != null &&
                     this.ResultStatus.Equals(input.ResultStatus))
-                ) && 
+                ) &&
                 (
                     this.CompetingFeaturedOffer == input.CompetingFeaturedOffer ||
                     (this.CompetingFeaturedOffer != null &&
                     this.CompetingFeaturedOffer.Equals(input.CompetingFeaturedOffer))
-                ) && 
+                ) &&
                 (
                     this.CurrentFeaturedOffer == input.CurrentFeaturedOffer ||
                     (this.CurrentFeaturedOffer != null &&

@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Contains input information to update Less-Than-Truckload (LTL) tracking information.
     /// </summary>
     [DataContract]
-    public partial class LtlTrackingDetailInput :  IEquatable<LtlTrackingDetailInput>, IValidatableObject
+    public partial class LtlTrackingDetailInput : IEquatable<LtlTrackingDetailInput>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LtlTrackingDetailInput" /> class.
@@ -53,19 +48,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
             this.BillOfLadingNumber = billOfLadingNumber;
         }
-        
+
         /// <summary>
         /// The number of the carrier shipment acknowledgement document.
         /// </summary>
         /// <value>The number of the carrier shipment acknowledgement document.</value>
-        [DataMember(Name="billOfLadingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "billOfLadingNumber", EmitDefaultValue = false)]
         public string BillOfLadingNumber { get; set; }
 
         /// <summary>
         /// Number associated with the freight bill.
         /// </summary>
         /// <value>Number associated with the freight bill.</value>
-        [DataMember(Name="freightBillNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "freightBillNumber", EmitDefaultValue = false)]
         public List<string> FreightBillNumber { get; set; }
 
         /// <summary>
@@ -81,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +106,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BillOfLadingNumber == input.BillOfLadingNumber ||
                     (this.BillOfLadingNumber != null &&
                     this.BillOfLadingNumber.Equals(input.BillOfLadingNumber))
-                ) && 
+                ) &&
                 (
                     this.FreightBillNumber == input.FreightBillNumber ||
                     this.FreightBillNumber != null &&
@@ -149,15 +144,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // BillOfLadingNumber (string) maxLength
-            if(this.BillOfLadingNumber != null && this.BillOfLadingNumber.Length > 1024)
+            if (this.BillOfLadingNumber != null && this.BillOfLadingNumber.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for BillOfLadingNumber, length must be less than 1024.", new [] { "BillOfLadingNumber" });
+                yield return new ValidationResult("Invalid value for BillOfLadingNumber, length must be less than 1024.", new[] { "BillOfLadingNumber" });
             }
 
             // BillOfLadingNumber (string) minLength
-            if(this.BillOfLadingNumber != null && this.BillOfLadingNumber.Length < 1)
+            if (this.BillOfLadingNumber != null && this.BillOfLadingNumber.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for BillOfLadingNumber, length must be greater than 1.", new [] { "BillOfLadingNumber" });
+                yield return new ValidationResult("Invalid value for BillOfLadingNumber, length must be greater than 1.", new[] { "BillOfLadingNumber" });
             }
 
             yield break;

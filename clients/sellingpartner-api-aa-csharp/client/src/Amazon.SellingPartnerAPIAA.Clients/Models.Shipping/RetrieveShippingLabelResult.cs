@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The payload schema for the retrieveShippingLabel operation.
     /// </summary>
     [DataContract]
-    public partial class RetrieveShippingLabelResult :  IEquatable<RetrieveShippingLabelResult>, IValidatableObject
+    public partial class RetrieveShippingLabelResult : IEquatable<RetrieveShippingLabelResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RetrieveShippingLabelResult" /> class.
@@ -61,17 +55,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
                 this.LabelSpecification = labelSpecification;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets LabelStream
         /// </summary>
-        [DataMember(Name="labelStream", EmitDefaultValue=false)]
+        [DataMember(Name = "labelStream", EmitDefaultValue = false)]
         public string LabelStream { get; set; }
 
         /// <summary>
         /// Gets or Sets LabelSpecification
         /// </summary>
-        [DataMember(Name="labelSpecification", EmitDefaultValue=false)]
+        [DataMember(Name = "labelSpecification", EmitDefaultValue = false)]
         public LabelSpecification LabelSpecification { get; set; }
 
         /// <summary>
@@ -87,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -117,12 +111,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.LabelStream == input.LabelStream ||
                     (this.LabelStream != null &&
                     this.LabelStream.Equals(input.LabelStream))
-                ) && 
+                ) &&
                 (
                     this.LabelSpecification == input.LabelSpecification ||
                     (this.LabelSpecification != null &&

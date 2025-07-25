@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Notifications;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>CreateDestinationResponse</returns>
-        CreateDestinationResponse CreateDestination (CreateDestinationRequest body);
+        CreateDestinationResponse CreateDestination(CreateDestinationRequest body);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>ApiResponse of CreateDestinationResponse</returns>
-        ApiResponse<CreateDestinationResponse> CreateDestinationWithHttpInfo (CreateDestinationRequest body);
+        ApiResponse<CreateDestinationResponse> CreateDestinationWithHttpInfo(CreateDestinationRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -56,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>CreateSubscriptionResponse</returns>
-        CreateSubscriptionResponse CreateSubscription (CreateSubscriptionRequest body, string notificationType);
+        CreateSubscriptionResponse CreateSubscription(CreateSubscriptionRequest body, string notificationType);
 
         /// <summary>
         /// 
@@ -68,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>ApiResponse of CreateSubscriptionResponse</returns>
-        ApiResponse<CreateSubscriptionResponse> CreateSubscriptionWithHttpInfo (CreateSubscriptionRequest body, string notificationType);
+        ApiResponse<CreateSubscriptionResponse> CreateSubscriptionWithHttpInfo(CreateSubscriptionRequest body, string notificationType);
         /// <summary>
         /// 
         /// </summary>
@@ -78,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier for the destination that you want to delete.</param>
         /// <returns>DeleteDestinationResponse</returns>
-        DeleteDestinationResponse DeleteDestination (string destinationId);
+        DeleteDestinationResponse DeleteDestination(string destinationId);
 
         /// <summary>
         /// 
@@ -89,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier for the destination that you want to delete.</param>
         /// <returns>ApiResponse of DeleteDestinationResponse</returns>
-        ApiResponse<DeleteDestinationResponse> DeleteDestinationWithHttpInfo (string destinationId);
+        ApiResponse<DeleteDestinationResponse> DeleteDestinationWithHttpInfo(string destinationId);
         /// <summary>
         /// 
         /// </summary>
@@ -100,7 +99,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to delete.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>DeleteSubscriptionByIdResponse</returns>
-        DeleteSubscriptionByIdResponse DeleteSubscriptionById (string subscriptionId, string notificationType);
+        DeleteSubscriptionByIdResponse DeleteSubscriptionById(string subscriptionId, string notificationType);
 
         /// <summary>
         /// 
@@ -112,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to delete.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>ApiResponse of DeleteSubscriptionByIdResponse</returns>
-        ApiResponse<DeleteSubscriptionByIdResponse> DeleteSubscriptionByIdWithHttpInfo (string subscriptionId, string notificationType);
+        ApiResponse<DeleteSubscriptionByIdResponse> DeleteSubscriptionByIdWithHttpInfo(string subscriptionId, string notificationType);
         /// <summary>
         /// 
         /// </summary>
@@ -122,7 +121,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier generated when you created the destination.</param>
         /// <returns>GetDestinationResponse</returns>
-        GetDestinationResponse GetDestination (string destinationId);
+        GetDestinationResponse GetDestination(string destinationId);
 
         /// <summary>
         /// 
@@ -133,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier generated when you created the destination.</param>
         /// <returns>ApiResponse of GetDestinationResponse</returns>
-        ApiResponse<GetDestinationResponse> GetDestinationWithHttpInfo (string destinationId);
+        ApiResponse<GetDestinationResponse> GetDestinationWithHttpInfo(string destinationId);
         /// <summary>
         /// 
         /// </summary>
@@ -142,7 +141,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>GetDestinationsResponse</returns>
-        GetDestinationsResponse GetDestinations ();
+        GetDestinationsResponse GetDestinations();
 
         /// <summary>
         /// 
@@ -152,7 +151,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of GetDestinationsResponse</returns>
-        ApiResponse<GetDestinationsResponse> GetDestinationsWithHttpInfo ();
+        ApiResponse<GetDestinationsResponse> GetDestinationsWithHttpInfo();
         /// <summary>
         /// 
         /// </summary>
@@ -163,7 +162,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <param name="payloadVersion">The version of the payload object to be used in the notification. (optional)</param>
         /// <returns>GetSubscriptionResponse</returns>
-        GetSubscriptionResponse GetSubscription (string notificationType, string payloadVersion = null);
+        GetSubscriptionResponse GetSubscription(string notificationType, string payloadVersion = null);
 
         /// <summary>
         /// 
@@ -175,7 +174,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <param name="payloadVersion">The version of the payload object to be used in the notification. (optional)</param>
         /// <returns>ApiResponse of GetSubscriptionResponse</returns>
-        ApiResponse<GetSubscriptionResponse> GetSubscriptionWithHttpInfo (string notificationType, string payloadVersion = null);
+        ApiResponse<GetSubscriptionResponse> GetSubscriptionWithHttpInfo(string notificationType, string payloadVersion = null);
         /// <summary>
         /// 
         /// </summary>
@@ -186,7 +185,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to get.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>GetSubscriptionByIdResponse</returns>
-        GetSubscriptionByIdResponse GetSubscriptionById (string subscriptionId, string notificationType);
+        GetSubscriptionByIdResponse GetSubscriptionById(string subscriptionId, string notificationType);
 
         /// <summary>
         /// 
@@ -198,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to get.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>ApiResponse of GetSubscriptionByIdResponse</returns>
-        ApiResponse<GetSubscriptionByIdResponse> GetSubscriptionByIdWithHttpInfo (string subscriptionId, string notificationType);
+        ApiResponse<GetSubscriptionByIdResponse> GetSubscriptionByIdWithHttpInfo(string subscriptionId, string notificationType);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -210,7 +209,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of CreateDestinationResponse</returns>
-        System.Threading.Tasks.Task<CreateDestinationResponse> CreateDestinationAsync (CreateDestinationRequest body);
+        System.Threading.Tasks.Task<CreateDestinationResponse> CreateDestinationAsync(CreateDestinationRequest body);
 
         /// <summary>
         /// 
@@ -221,7 +220,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (CreateDestinationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateDestinationResponse>> CreateDestinationAsyncWithHttpInfo (CreateDestinationRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateDestinationResponse>> CreateDestinationAsyncWithHttpInfo(CreateDestinationRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -232,7 +231,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of CreateSubscriptionResponse</returns>
-        System.Threading.Tasks.Task<CreateSubscriptionResponse> CreateSubscriptionAsync (CreateSubscriptionRequest body, string notificationType);
+        System.Threading.Tasks.Task<CreateSubscriptionResponse> CreateSubscriptionAsync(CreateSubscriptionRequest body, string notificationType);
 
         /// <summary>
         /// 
@@ -244,7 +243,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of ApiResponse (CreateSubscriptionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateSubscriptionResponse>> CreateSubscriptionAsyncWithHttpInfo (CreateSubscriptionRequest body, string notificationType);
+        System.Threading.Tasks.Task<ApiResponse<CreateSubscriptionResponse>> CreateSubscriptionAsyncWithHttpInfo(CreateSubscriptionRequest body, string notificationType);
         /// <summary>
         /// 
         /// </summary>
@@ -254,7 +253,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier for the destination that you want to delete.</param>
         /// <returns>Task of DeleteDestinationResponse</returns>
-        System.Threading.Tasks.Task<DeleteDestinationResponse> DeleteDestinationAsync (string destinationId);
+        System.Threading.Tasks.Task<DeleteDestinationResponse> DeleteDestinationAsync(string destinationId);
 
         /// <summary>
         /// 
@@ -265,7 +264,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier for the destination that you want to delete.</param>
         /// <returns>Task of ApiResponse (DeleteDestinationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteDestinationResponse>> DeleteDestinationAsyncWithHttpInfo (string destinationId);
+        System.Threading.Tasks.Task<ApiResponse<DeleteDestinationResponse>> DeleteDestinationAsyncWithHttpInfo(string destinationId);
         /// <summary>
         /// 
         /// </summary>
@@ -276,7 +275,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to delete.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of DeleteSubscriptionByIdResponse</returns>
-        System.Threading.Tasks.Task<DeleteSubscriptionByIdResponse> DeleteSubscriptionByIdAsync (string subscriptionId, string notificationType);
+        System.Threading.Tasks.Task<DeleteSubscriptionByIdResponse> DeleteSubscriptionByIdAsync(string subscriptionId, string notificationType);
 
         /// <summary>
         /// 
@@ -288,7 +287,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to delete.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of ApiResponse (DeleteSubscriptionByIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteSubscriptionByIdResponse>> DeleteSubscriptionByIdAsyncWithHttpInfo (string subscriptionId, string notificationType);
+        System.Threading.Tasks.Task<ApiResponse<DeleteSubscriptionByIdResponse>> DeleteSubscriptionByIdAsyncWithHttpInfo(string subscriptionId, string notificationType);
         /// <summary>
         /// 
         /// </summary>
@@ -298,7 +297,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier generated when you created the destination.</param>
         /// <returns>Task of GetDestinationResponse</returns>
-        System.Threading.Tasks.Task<GetDestinationResponse> GetDestinationAsync (string destinationId);
+        System.Threading.Tasks.Task<GetDestinationResponse> GetDestinationAsync(string destinationId);
 
         /// <summary>
         /// 
@@ -309,7 +308,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier generated when you created the destination.</param>
         /// <returns>Task of ApiResponse (GetDestinationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetDestinationResponse>> GetDestinationAsyncWithHttpInfo (string destinationId);
+        System.Threading.Tasks.Task<ApiResponse<GetDestinationResponse>> GetDestinationAsyncWithHttpInfo(string destinationId);
         /// <summary>
         /// 
         /// </summary>
@@ -318,7 +317,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of GetDestinationsResponse</returns>
-        System.Threading.Tasks.Task<GetDestinationsResponse> GetDestinationsAsync ();
+        System.Threading.Tasks.Task<GetDestinationsResponse> GetDestinationsAsync();
 
         /// <summary>
         /// 
@@ -328,7 +327,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (GetDestinationsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetDestinationsResponse>> GetDestinationsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<GetDestinationsResponse>> GetDestinationsAsyncWithHttpInfo();
         /// <summary>
         /// 
         /// </summary>
@@ -339,7 +338,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <param name="payloadVersion">The version of the payload object to be used in the notification. (optional)</param>
         /// <returns>Task of GetSubscriptionResponse</returns>
-        System.Threading.Tasks.Task<GetSubscriptionResponse> GetSubscriptionAsync (string notificationType, string payloadVersion = null);
+        System.Threading.Tasks.Task<GetSubscriptionResponse> GetSubscriptionAsync(string notificationType, string payloadVersion = null);
 
         /// <summary>
         /// 
@@ -351,7 +350,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <param name="payloadVersion">The version of the payload object to be used in the notification. (optional)</param>
         /// <returns>Task of ApiResponse (GetSubscriptionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetSubscriptionResponse>> GetSubscriptionAsyncWithHttpInfo (string notificationType, string payloadVersion = null);
+        System.Threading.Tasks.Task<ApiResponse<GetSubscriptionResponse>> GetSubscriptionAsyncWithHttpInfo(string notificationType, string payloadVersion = null);
         /// <summary>
         /// 
         /// </summary>
@@ -362,7 +361,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to get.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of GetSubscriptionByIdResponse</returns>
-        System.Threading.Tasks.Task<GetSubscriptionByIdResponse> GetSubscriptionByIdAsync (string subscriptionId, string notificationType);
+        System.Threading.Tasks.Task<GetSubscriptionByIdResponse> GetSubscriptionByIdAsync(string subscriptionId, string notificationType);
 
         /// <summary>
         /// 
@@ -374,7 +373,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to get.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of ApiResponse (GetSubscriptionByIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetSubscriptionByIdResponse>> GetSubscriptionByIdAsyncWithHttpInfo (string subscriptionId, string notificationType);
+        System.Threading.Tasks.Task<ApiResponse<GetSubscriptionByIdResponse>> GetSubscriptionByIdAsyncWithHttpInfo(string subscriptionId, string notificationType);
         #endregion Asynchronous Operations
     }
 
@@ -394,7 +393,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public NotificationsApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -420,7 +419,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -466,10 +465,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>CreateDestinationResponse</returns>
-        public CreateDestinationResponse CreateDestination (CreateDestinationRequest body)
+        public CreateDestinationResponse CreateDestination(CreateDestinationRequest body)
         {
-             ApiResponse<CreateDestinationResponse> localVarResponse = CreateDestinationWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateDestinationResponse> localVarResponse = CreateDestinationWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -478,7 +477,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>ApiResponse of CreateDestinationResponse</returns>
-        public ApiResponse< CreateDestinationResponse > CreateDestinationWithHttpInfo (CreateDestinationRequest body)
+        public ApiResponse<CreateDestinationResponse> CreateDestinationWithHttpInfo(CreateDestinationRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -517,11 +516,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -531,7 +530,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateDestinationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateDestinationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateDestinationResponse)));
+                (CreateDestinationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateDestinationResponse)));
         }
 
         /// <summary>
@@ -540,10 +539,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of CreateDestinationResponse</returns>
-        public async System.Threading.Tasks.Task<CreateDestinationResponse> CreateDestinationAsync (CreateDestinationRequest body)
+        public async System.Threading.Tasks.Task<CreateDestinationResponse> CreateDestinationAsync(CreateDestinationRequest body)
         {
-             ApiResponse<CreateDestinationResponse> localVarResponse = await CreateDestinationAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateDestinationResponse> localVarResponse = await CreateDestinationAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -553,7 +552,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (CreateDestinationResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateDestinationResponse>> CreateDestinationAsyncWithHttpInfo (CreateDestinationRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateDestinationResponse>> CreateDestinationAsyncWithHttpInfo(CreateDestinationRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -592,11 +591,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -606,7 +605,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateDestinationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateDestinationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateDestinationResponse)));
+                (CreateDestinationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateDestinationResponse)));
         }
 
         /// <summary>
@@ -616,10 +615,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>CreateSubscriptionResponse</returns>
-        public CreateSubscriptionResponse CreateSubscription (CreateSubscriptionRequest body, string notificationType)
+        public CreateSubscriptionResponse CreateSubscription(CreateSubscriptionRequest body, string notificationType)
         {
-             ApiResponse<CreateSubscriptionResponse> localVarResponse = CreateSubscriptionWithHttpInfo(body, notificationType);
-             return localVarResponse.Data;
+            ApiResponse<CreateSubscriptionResponse> localVarResponse = CreateSubscriptionWithHttpInfo(body, notificationType);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -629,7 +628,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>ApiResponse of CreateSubscriptionResponse</returns>
-        public ApiResponse< CreateSubscriptionResponse > CreateSubscriptionWithHttpInfo (CreateSubscriptionRequest body, string notificationType)
+        public ApiResponse<CreateSubscriptionResponse> CreateSubscriptionWithHttpInfo(CreateSubscriptionRequest body, string notificationType)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -672,11 +671,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -686,7 +685,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateSubscriptionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateSubscriptionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateSubscriptionResponse)));
+                (CreateSubscriptionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateSubscriptionResponse)));
         }
 
         /// <summary>
@@ -696,10 +695,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of CreateSubscriptionResponse</returns>
-        public async System.Threading.Tasks.Task<CreateSubscriptionResponse> CreateSubscriptionAsync (CreateSubscriptionRequest body, string notificationType)
+        public async System.Threading.Tasks.Task<CreateSubscriptionResponse> CreateSubscriptionAsync(CreateSubscriptionRequest body, string notificationType)
         {
-             ApiResponse<CreateSubscriptionResponse> localVarResponse = await CreateSubscriptionAsyncWithHttpInfo(body, notificationType);
-             return localVarResponse.Data;
+            ApiResponse<CreateSubscriptionResponse> localVarResponse = await CreateSubscriptionAsyncWithHttpInfo(body, notificationType);
+            return localVarResponse.Data;
 
         }
 
@@ -710,7 +709,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of ApiResponse (CreateSubscriptionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateSubscriptionResponse>> CreateSubscriptionAsyncWithHttpInfo (CreateSubscriptionRequest body, string notificationType)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateSubscriptionResponse>> CreateSubscriptionAsyncWithHttpInfo(CreateSubscriptionRequest body, string notificationType)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -753,11 +752,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -767,7 +766,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateSubscriptionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateSubscriptionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateSubscriptionResponse)));
+                (CreateSubscriptionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateSubscriptionResponse)));
         }
 
         /// <summary>
@@ -776,10 +775,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier for the destination that you want to delete.</param>
         /// <returns>DeleteDestinationResponse</returns>
-        public DeleteDestinationResponse DeleteDestination (string destinationId)
+        public DeleteDestinationResponse DeleteDestination(string destinationId)
         {
-             ApiResponse<DeleteDestinationResponse> localVarResponse = DeleteDestinationWithHttpInfo(destinationId);
-             return localVarResponse.Data;
+            ApiResponse<DeleteDestinationResponse> localVarResponse = DeleteDestinationWithHttpInfo(destinationId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -788,7 +787,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier for the destination that you want to delete.</param>
         /// <returns>ApiResponse of DeleteDestinationResponse</returns>
-        public ApiResponse< DeleteDestinationResponse > DeleteDestinationWithHttpInfo (string destinationId)
+        public ApiResponse<DeleteDestinationResponse> DeleteDestinationWithHttpInfo(string destinationId)
         {
             // verify the required parameter 'destinationId' is set
             if (destinationId == null)
@@ -820,11 +819,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -834,7 +833,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<DeleteDestinationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeleteDestinationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteDestinationResponse)));
+                (DeleteDestinationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteDestinationResponse)));
         }
 
         /// <summary>
@@ -843,10 +842,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier for the destination that you want to delete.</param>
         /// <returns>Task of DeleteDestinationResponse</returns>
-        public async System.Threading.Tasks.Task<DeleteDestinationResponse> DeleteDestinationAsync (string destinationId)
+        public async System.Threading.Tasks.Task<DeleteDestinationResponse> DeleteDestinationAsync(string destinationId)
         {
-             ApiResponse<DeleteDestinationResponse> localVarResponse = await DeleteDestinationAsyncWithHttpInfo(destinationId);
-             return localVarResponse.Data;
+            ApiResponse<DeleteDestinationResponse> localVarResponse = await DeleteDestinationAsyncWithHttpInfo(destinationId);
+            return localVarResponse.Data;
 
         }
 
@@ -856,7 +855,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier for the destination that you want to delete.</param>
         /// <returns>Task of ApiResponse (DeleteDestinationResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DeleteDestinationResponse>> DeleteDestinationAsyncWithHttpInfo (string destinationId)
+        public async System.Threading.Tasks.Task<ApiResponse<DeleteDestinationResponse>> DeleteDestinationAsyncWithHttpInfo(string destinationId)
         {
             // verify the required parameter 'destinationId' is set
             if (destinationId == null)
@@ -888,11 +887,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -902,7 +901,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<DeleteDestinationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeleteDestinationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteDestinationResponse)));
+                (DeleteDestinationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteDestinationResponse)));
         }
 
         /// <summary>
@@ -912,10 +911,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to delete.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>DeleteSubscriptionByIdResponse</returns>
-        public DeleteSubscriptionByIdResponse DeleteSubscriptionById (string subscriptionId, string notificationType)
+        public DeleteSubscriptionByIdResponse DeleteSubscriptionById(string subscriptionId, string notificationType)
         {
-             ApiResponse<DeleteSubscriptionByIdResponse> localVarResponse = DeleteSubscriptionByIdWithHttpInfo(subscriptionId, notificationType);
-             return localVarResponse.Data;
+            ApiResponse<DeleteSubscriptionByIdResponse> localVarResponse = DeleteSubscriptionByIdWithHttpInfo(subscriptionId, notificationType);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -925,7 +924,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to delete.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>ApiResponse of DeleteSubscriptionByIdResponse</returns>
-        public ApiResponse< DeleteSubscriptionByIdResponse > DeleteSubscriptionByIdWithHttpInfo (string subscriptionId, string notificationType)
+        public ApiResponse<DeleteSubscriptionByIdResponse> DeleteSubscriptionByIdWithHttpInfo(string subscriptionId, string notificationType)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -961,11 +960,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -975,7 +974,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<DeleteSubscriptionByIdResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeleteSubscriptionByIdResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteSubscriptionByIdResponse)));
+                (DeleteSubscriptionByIdResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteSubscriptionByIdResponse)));
         }
 
         /// <summary>
@@ -985,10 +984,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to delete.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of DeleteSubscriptionByIdResponse</returns>
-        public async System.Threading.Tasks.Task<DeleteSubscriptionByIdResponse> DeleteSubscriptionByIdAsync (string subscriptionId, string notificationType)
+        public async System.Threading.Tasks.Task<DeleteSubscriptionByIdResponse> DeleteSubscriptionByIdAsync(string subscriptionId, string notificationType)
         {
-             ApiResponse<DeleteSubscriptionByIdResponse> localVarResponse = await DeleteSubscriptionByIdAsyncWithHttpInfo(subscriptionId, notificationType);
-             return localVarResponse.Data;
+            ApiResponse<DeleteSubscriptionByIdResponse> localVarResponse = await DeleteSubscriptionByIdAsyncWithHttpInfo(subscriptionId, notificationType);
+            return localVarResponse.Data;
 
         }
 
@@ -999,7 +998,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to delete.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of ApiResponse (DeleteSubscriptionByIdResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DeleteSubscriptionByIdResponse>> DeleteSubscriptionByIdAsyncWithHttpInfo (string subscriptionId, string notificationType)
+        public async System.Threading.Tasks.Task<ApiResponse<DeleteSubscriptionByIdResponse>> DeleteSubscriptionByIdAsyncWithHttpInfo(string subscriptionId, string notificationType)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1035,11 +1034,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1049,7 +1048,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<DeleteSubscriptionByIdResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeleteSubscriptionByIdResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteSubscriptionByIdResponse)));
+                (DeleteSubscriptionByIdResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteSubscriptionByIdResponse)));
         }
 
         /// <summary>
@@ -1058,10 +1057,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier generated when you created the destination.</param>
         /// <returns>GetDestinationResponse</returns>
-        public GetDestinationResponse GetDestination (string destinationId)
+        public GetDestinationResponse GetDestination(string destinationId)
         {
-             ApiResponse<GetDestinationResponse> localVarResponse = GetDestinationWithHttpInfo(destinationId);
-             return localVarResponse.Data;
+            ApiResponse<GetDestinationResponse> localVarResponse = GetDestinationWithHttpInfo(destinationId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1070,7 +1069,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier generated when you created the destination.</param>
         /// <returns>ApiResponse of GetDestinationResponse</returns>
-        public ApiResponse< GetDestinationResponse > GetDestinationWithHttpInfo (string destinationId)
+        public ApiResponse<GetDestinationResponse> GetDestinationWithHttpInfo(string destinationId)
         {
             // verify the required parameter 'destinationId' is set
             if (destinationId == null)
@@ -1102,11 +1101,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1116,7 +1115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetDestinationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetDestinationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDestinationResponse)));
+                (GetDestinationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDestinationResponse)));
         }
 
         /// <summary>
@@ -1125,10 +1124,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier generated when you created the destination.</param>
         /// <returns>Task of GetDestinationResponse</returns>
-        public async System.Threading.Tasks.Task<GetDestinationResponse> GetDestinationAsync (string destinationId)
+        public async System.Threading.Tasks.Task<GetDestinationResponse> GetDestinationAsync(string destinationId)
         {
-             ApiResponse<GetDestinationResponse> localVarResponse = await GetDestinationAsyncWithHttpInfo(destinationId);
-             return localVarResponse.Data;
+            ApiResponse<GetDestinationResponse> localVarResponse = await GetDestinationAsyncWithHttpInfo(destinationId);
+            return localVarResponse.Data;
 
         }
 
@@ -1138,7 +1137,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="destinationId">The identifier generated when you created the destination.</param>
         /// <returns>Task of ApiResponse (GetDestinationResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetDestinationResponse>> GetDestinationAsyncWithHttpInfo (string destinationId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetDestinationResponse>> GetDestinationAsyncWithHttpInfo(string destinationId)
         {
             // verify the required parameter 'destinationId' is set
             if (destinationId == null)
@@ -1170,11 +1169,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1184,7 +1183,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetDestinationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetDestinationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDestinationResponse)));
+                (GetDestinationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDestinationResponse)));
         }
 
         /// <summary>
@@ -1192,10 +1191,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>GetDestinationsResponse</returns>
-        public GetDestinationsResponse GetDestinations ()
+        public GetDestinationsResponse GetDestinations()
         {
-             ApiResponse<GetDestinationsResponse> localVarResponse = GetDestinationsWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<GetDestinationsResponse> localVarResponse = GetDestinationsWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1203,7 +1202,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of GetDestinationsResponse</returns>
-        public ApiResponse< GetDestinationsResponse > GetDestinationsWithHttpInfo ()
+        public ApiResponse<GetDestinationsResponse> GetDestinationsWithHttpInfo()
         {
 
             var localVarPath = "/notifications/v1/destinations";
@@ -1231,11 +1230,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1245,7 +1244,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetDestinationsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetDestinationsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDestinationsResponse)));
+                (GetDestinationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDestinationsResponse)));
         }
 
         /// <summary>
@@ -1253,10 +1252,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of GetDestinationsResponse</returns>
-        public async System.Threading.Tasks.Task<GetDestinationsResponse> GetDestinationsAsync ()
+        public async System.Threading.Tasks.Task<GetDestinationsResponse> GetDestinationsAsync()
         {
-             ApiResponse<GetDestinationsResponse> localVarResponse = await GetDestinationsAsyncWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<GetDestinationsResponse> localVarResponse = await GetDestinationsAsyncWithHttpInfo();
+            return localVarResponse.Data;
 
         }
 
@@ -1265,7 +1264,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (GetDestinationsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetDestinationsResponse>> GetDestinationsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<GetDestinationsResponse>> GetDestinationsAsyncWithHttpInfo()
         {
 
             var localVarPath = "/notifications/v1/destinations";
@@ -1293,11 +1292,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1307,7 +1306,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetDestinationsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetDestinationsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDestinationsResponse)));
+                (GetDestinationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDestinationsResponse)));
         }
 
         /// <summary>
@@ -1317,10 +1316,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <param name="payloadVersion">The version of the payload object to be used in the notification. (optional)</param>
         /// <returns>GetSubscriptionResponse</returns>
-        public GetSubscriptionResponse GetSubscription (string notificationType, string payloadVersion = null)
+        public GetSubscriptionResponse GetSubscription(string notificationType, string payloadVersion = null)
         {
-             ApiResponse<GetSubscriptionResponse> localVarResponse = GetSubscriptionWithHttpInfo(notificationType, payloadVersion);
-             return localVarResponse.Data;
+            ApiResponse<GetSubscriptionResponse> localVarResponse = GetSubscriptionWithHttpInfo(notificationType, payloadVersion);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1330,7 +1329,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <param name="payloadVersion">The version of the payload object to be used in the notification. (optional)</param>
         /// <returns>ApiResponse of GetSubscriptionResponse</returns>
-        public ApiResponse< GetSubscriptionResponse > GetSubscriptionWithHttpInfo (string notificationType, string payloadVersion = null)
+        public ApiResponse<GetSubscriptionResponse> GetSubscriptionWithHttpInfo(string notificationType, string payloadVersion = null)
         {
             // verify the required parameter 'notificationType' is set
             if (notificationType == null)
@@ -1363,11 +1362,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1377,7 +1376,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetSubscriptionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetSubscriptionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSubscriptionResponse)));
+                (GetSubscriptionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSubscriptionResponse)));
         }
 
         /// <summary>
@@ -1387,10 +1386,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <param name="payloadVersion">The version of the payload object to be used in the notification. (optional)</param>
         /// <returns>Task of GetSubscriptionResponse</returns>
-        public async System.Threading.Tasks.Task<GetSubscriptionResponse> GetSubscriptionAsync (string notificationType, string payloadVersion = null)
+        public async System.Threading.Tasks.Task<GetSubscriptionResponse> GetSubscriptionAsync(string notificationType, string payloadVersion = null)
         {
-             ApiResponse<GetSubscriptionResponse> localVarResponse = await GetSubscriptionAsyncWithHttpInfo(notificationType, payloadVersion);
-             return localVarResponse.Data;
+            ApiResponse<GetSubscriptionResponse> localVarResponse = await GetSubscriptionAsyncWithHttpInfo(notificationType, payloadVersion);
+            return localVarResponse.Data;
 
         }
 
@@ -1401,7 +1400,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <param name="payloadVersion">The version of the payload object to be used in the notification. (optional)</param>
         /// <returns>Task of ApiResponse (GetSubscriptionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetSubscriptionResponse>> GetSubscriptionAsyncWithHttpInfo (string notificationType, string payloadVersion = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetSubscriptionResponse>> GetSubscriptionAsyncWithHttpInfo(string notificationType, string payloadVersion = null)
         {
             // verify the required parameter 'notificationType' is set
             if (notificationType == null)
@@ -1434,11 +1433,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1448,7 +1447,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetSubscriptionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetSubscriptionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSubscriptionResponse)));
+                (GetSubscriptionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSubscriptionResponse)));
         }
 
         /// <summary>
@@ -1458,10 +1457,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to get.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>GetSubscriptionByIdResponse</returns>
-        public GetSubscriptionByIdResponse GetSubscriptionById (string subscriptionId, string notificationType)
+        public GetSubscriptionByIdResponse GetSubscriptionById(string subscriptionId, string notificationType)
         {
-             ApiResponse<GetSubscriptionByIdResponse> localVarResponse = GetSubscriptionByIdWithHttpInfo(subscriptionId, notificationType);
-             return localVarResponse.Data;
+            ApiResponse<GetSubscriptionByIdResponse> localVarResponse = GetSubscriptionByIdWithHttpInfo(subscriptionId, notificationType);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1471,7 +1470,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to get.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>ApiResponse of GetSubscriptionByIdResponse</returns>
-        public ApiResponse< GetSubscriptionByIdResponse > GetSubscriptionByIdWithHttpInfo (string subscriptionId, string notificationType)
+        public ApiResponse<GetSubscriptionByIdResponse> GetSubscriptionByIdWithHttpInfo(string subscriptionId, string notificationType)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1507,11 +1506,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1521,7 +1520,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetSubscriptionByIdResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetSubscriptionByIdResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSubscriptionByIdResponse)));
+                (GetSubscriptionByIdResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSubscriptionByIdResponse)));
         }
 
         /// <summary>
@@ -1531,10 +1530,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to get.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of GetSubscriptionByIdResponse</returns>
-        public async System.Threading.Tasks.Task<GetSubscriptionByIdResponse> GetSubscriptionByIdAsync (string subscriptionId, string notificationType)
+        public async System.Threading.Tasks.Task<GetSubscriptionByIdResponse> GetSubscriptionByIdAsync(string subscriptionId, string notificationType)
         {
-             ApiResponse<GetSubscriptionByIdResponse> localVarResponse = await GetSubscriptionByIdAsyncWithHttpInfo(subscriptionId, notificationType);
-             return localVarResponse.Data;
+            ApiResponse<GetSubscriptionByIdResponse> localVarResponse = await GetSubscriptionByIdAsyncWithHttpInfo(subscriptionId, notificationType);
+            return localVarResponse.Data;
 
         }
 
@@ -1545,7 +1544,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="subscriptionId">The identifier for the subscription that you want to get.</param>
         /// <param name="notificationType">The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).</param>
         /// <returns>Task of ApiResponse (GetSubscriptionByIdResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetSubscriptionByIdResponse>> GetSubscriptionByIdAsyncWithHttpInfo (string subscriptionId, string notificationType)
+        public async System.Threading.Tasks.Task<ApiResponse<GetSubscriptionByIdResponse>> GetSubscriptionByIdAsyncWithHttpInfo(string subscriptionId, string notificationType)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1581,11 +1580,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1595,7 +1594,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetSubscriptionByIdResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetSubscriptionByIdResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSubscriptionByIdResponse)));
+                (GetSubscriptionByIdResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSubscriptionByIdResponse)));
         }
 
 
@@ -1609,17 +1608,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public NotificationsApi Build() 
+            public NotificationsApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

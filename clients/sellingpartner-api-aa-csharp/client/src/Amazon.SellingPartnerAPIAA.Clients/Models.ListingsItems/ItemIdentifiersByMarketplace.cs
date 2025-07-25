@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// Identity attributes associated with the item in the Amazon catalog for the indicated Amazon marketplace.
     /// </summary>
     [DataContract]
-    public partial class ItemIdentifiersByMarketplace :  IEquatable<ItemIdentifiersByMarketplace>, IValidatableObject
+    public partial class ItemIdentifiersByMarketplace : IEquatable<ItemIdentifiersByMarketplace>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemIdentifiersByMarketplace" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             this.MarketplaceId = marketplaceId;
             this.Asin = asin;
         }
-        
+
         /// <summary>
         /// A marketplace identifier. Identifies the Amazon marketplace for the listings item.
         /// </summary>
         /// <value>A marketplace identifier. Identifies the Amazon marketplace for the listings item.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// Amazon Standard Identification Number (ASIN) of the listings item.
         /// </summary>
         /// <value>Amazon Standard Identification Number (ASIN) of the listings item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&

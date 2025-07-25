@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// The response schema for the &#x60;getSellingPartnerMetrics&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class GetSellingPartnerMetricsResponse :  IEquatable<GetSellingPartnerMetricsResponse>, IValidatableObject
+    public partial class GetSellingPartnerMetricsResponse : IEquatable<GetSellingPartnerMetricsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSellingPartnerMetricsResponse" /> class.
@@ -38,12 +32,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         {
             this.Metrics = metrics;
         }
-        
+
         /// <summary>
         /// A list of metrics data for the selling partner.
         /// </summary>
         /// <value>A list of metrics data for the selling partner.</value>
-        [DataMember(Name="metrics", EmitDefaultValue=false)]
+        [DataMember(Name = "metrics", EmitDefaultValue = false)]
         public List<GetSellingPartnerMetricsResponseMetric> Metrics { get; set; }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Metrics == input.Metrics ||
                     this.Metrics != null &&

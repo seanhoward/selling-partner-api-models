@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,12 +24,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// GetInboundOperationStatus response.
     /// </summary>
     [DataContract]
-    public partial class InboundOperationStatus :  IEquatable<InboundOperationStatus>, IValidatableObject
+    public partial class InboundOperationStatus : IEquatable<InboundOperationStatus>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets OperationStatus
         /// </summary>
-        [DataMember(Name="operationStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "operationStatus", EmitDefaultValue = false)]
         public OperationStatus OperationStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOperationStatus" /> class.
@@ -86,26 +82,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.OperationStatus = operationStatus;
             }
         }
-        
+
         /// <summary>
         /// The name of the operation in the asynchronous API call.
         /// </summary>
         /// <value>The name of the operation in the asynchronous API call.</value>
-        [DataMember(Name="operation", EmitDefaultValue=false)]
+        [DataMember(Name = "operation", EmitDefaultValue = false)]
         public string Operation { get; set; }
 
         /// <summary>
         /// The operation ID returned by the asynchronous API call.
         /// </summary>
         /// <value>The operation ID returned by the asynchronous API call.</value>
-        [DataMember(Name="operationId", EmitDefaultValue=false)]
+        [DataMember(Name = "operationId", EmitDefaultValue = false)]
         public string OperationId { get; set; }
 
         /// <summary>
         /// The problems in the processing of the asynchronous operation.
         /// </summary>
         /// <value>The problems in the processing of the asynchronous operation.</value>
-        [DataMember(Name="operationProblems", EmitDefaultValue=false)]
+        [DataMember(Name = "operationProblems", EmitDefaultValue = false)]
         public List<OperationProblem> OperationProblems { get; set; }
 
 
@@ -124,7 +120,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -154,22 +150,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Operation == input.Operation ||
                     (this.Operation != null &&
                     this.Operation.Equals(input.Operation))
-                ) && 
+                ) &&
                 (
                     this.OperationId == input.OperationId ||
                     (this.OperationId != null &&
                     this.OperationId.Equals(input.OperationId))
-                ) && 
+                ) &&
                 (
                     this.OperationProblems == input.OperationProblems ||
                     this.OperationProblems != null &&
                     this.OperationProblems.SequenceEqual(input.OperationProblems)
-                ) && 
+                ) &&
                 (
                     this.OperationStatus == input.OperationStatus ||
                     (this.OperationStatus != null &&
@@ -206,34 +202,34 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Operation (string) maxLength
-            if(this.Operation != null && this.Operation.Length > 1024)
+            if (this.Operation != null && this.Operation.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Operation, length must be less than 1024.", new [] { "Operation" });
+                yield return new ValidationResult("Invalid value for Operation, length must be less than 1024.", new[] { "Operation" });
             }
 
             // Operation (string) minLength
-            if(this.Operation != null && this.Operation.Length < 1)
+            if (this.Operation != null && this.Operation.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Operation, length must be greater than 1.", new [] { "Operation" });
+                yield return new ValidationResult("Invalid value for Operation, length must be greater than 1.", new[] { "Operation" });
             }
 
             // OperationId (string) maxLength
-            if(this.OperationId != null && this.OperationId.Length > 38)
+            if (this.OperationId != null && this.OperationId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for OperationId, length must be less than 38.", new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, length must be less than 38.", new[] { "OperationId" });
             }
 
             // OperationId (string) minLength
-            if(this.OperationId != null && this.OperationId.Length < 36)
+            if (this.OperationId != null && this.OperationId.Length < 36)
             {
-                yield return new ValidationResult("Invalid value for OperationId, length must be greater than 36.", new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, length must be greater than 36.", new[] { "OperationId" });
             }
 
             // OperationId (string) pattern
             Regex regexOperationId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexOperationId.Match(this.OperationId).Success)
             {
-                yield return new ValidationResult("Invalid value for OperationId, must match a pattern of " + regexOperationId, new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, must match a pattern of " + regexOperationId, new[] { "OperationId" });
             }
 
             yield break;

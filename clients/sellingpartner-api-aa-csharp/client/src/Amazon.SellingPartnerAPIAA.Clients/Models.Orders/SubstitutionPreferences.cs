@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Substitution preferences for an order item.
     /// </summary>
     [DataContract]
-    public partial class SubstitutionPreferences :  IEquatable<SubstitutionPreferences>, IValidatableObject
+    public partial class SubstitutionPreferences : IEquatable<SubstitutionPreferences>, IValidatableObject
     {
         /// <summary>
         /// The type of substitution that these preferences represent.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SubstitutionTypeEnum
         {
-            
+
             /// <summary>
             /// Enum CUSTOMERPREFERENCE for value: CUSTOMER_PREFERENCE
             /// </summary>
             [EnumMember(Value = "CUSTOMER_PREFERENCE")]
             CUSTOMERPREFERENCE = 1,
-            
+
             /// <summary>
             /// Enum AMAZONRECOMMENDED for value: AMAZON_RECOMMENDED
             /// </summary>
             [EnumMember(Value = "AMAZON_RECOMMENDED")]
             AMAZONRECOMMENDED = 2,
-            
+
             /// <summary>
             /// Enum DONOTSUBSTITUTE for value: DO_NOT_SUBSTITUTE
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// The type of substitution that these preferences represent.
         /// </summary>
         /// <value>The type of substitution that these preferences represent.</value>
-        [DataMember(Name="SubstitutionType", EmitDefaultValue=false)]
+        [DataMember(Name = "SubstitutionType", EmitDefaultValue = false)]
         public SubstitutionTypeEnum SubstitutionType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SubstitutionPreferences" /> class.
@@ -86,13 +81,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             }
             this.SubstitutionOptions = substitutionOptions;
         }
-        
+
 
         /// <summary>
         /// Substitution options for the order item.
         /// </summary>
         /// <value>Substitution options for the order item.</value>
-        [DataMember(Name="SubstitutionOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "SubstitutionOptions", EmitDefaultValue = false)]
         public SubstitutionOptionList SubstitutionOptions { get; set; }
 
         /// <summary>
@@ -108,7 +103,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -138,12 +133,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SubstitutionType == input.SubstitutionType ||
                     (this.SubstitutionType != null &&
                     this.SubstitutionType.Equals(input.SubstitutionType))
-                ) && 
+                ) &&
                 (
                     this.SubstitutionOptions == input.SubstitutionOptions ||
                     (this.SubstitutionOptions != null &&

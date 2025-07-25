@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,26 +9,20 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Dimensions associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+    /// Dimensions that are associated with the item in the Amazon catalog for the indicated &#x60;marketplaceId&#x60;.
     /// </summary>
     [DataContract]
-    public partial class ItemDimensionsByMarketplace :  IEquatable<ItemDimensionsByMarketplace>, IValidatableObject
+    public partial class ItemDimensionsByMarketplace : IEquatable<ItemDimensionsByMarketplace>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDimensionsByMarketplace" /> class.
@@ -38,9 +32,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDimensionsByMarketplace" /> class.
         /// </summary>
-        /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
+        /// <param name="marketplaceId">Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required).</param>
         /// <param name="item">Dimensions of an Amazon catalog item..</param>
-        /// <param name="package">Dimensions of an Amazon catalog item in its packaging..</param>
+        /// <param name="package">Dimensions of a package that contains an Amazon catalog item..</param>
         public ItemDimensionsByMarketplace(string marketplaceId = default, Dimensions item = default, Dimensions package = default)
         {
             // to ensure "marketplaceId" is required (not null)
@@ -55,26 +49,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             this.Item = item;
             this.Package = package;
         }
-        
+
         /// <summary>
-        /// Amazon marketplace identifier.
+        /// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
-        /// <value>Amazon marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        /// <value>Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// Dimensions of an Amazon catalog item.
         /// </summary>
         /// <value>Dimensions of an Amazon catalog item.</value>
-        [DataMember(Name="item", EmitDefaultValue=false)]
+        [DataMember(Name = "item", EmitDefaultValue = false)]
         public Dimensions Item { get; set; }
 
         /// <summary>
-        /// Dimensions of an Amazon catalog item in its packaging.
+        /// Dimensions of a package that contains an Amazon catalog item.
         /// </summary>
-        /// <value>Dimensions of an Amazon catalog item in its packaging.</value>
-        [DataMember(Name="package", EmitDefaultValue=false)]
+        /// <value>Dimensions of a package that contains an Amazon catalog item.</value>
+        [DataMember(Name = "package", EmitDefaultValue = false)]
         public Dimensions Package { get; set; }
 
         /// <summary>
@@ -91,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +115,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Item == input.Item ||
                     (this.Item != null &&
                     this.Item.Equals(input.Item))
-                ) && 
+                ) &&
                 (
                     this.Package == input.Package ||
                     (this.Package != null &&

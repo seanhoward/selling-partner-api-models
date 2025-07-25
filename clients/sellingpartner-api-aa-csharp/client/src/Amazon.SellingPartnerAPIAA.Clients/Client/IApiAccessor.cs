@@ -10,10 +10,6 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Client
 {
@@ -26,14 +22,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Client
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        Configuration Configuration {get; set;}
+        Configuration Configuration { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
         String GetBasePath();
-        
+
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>

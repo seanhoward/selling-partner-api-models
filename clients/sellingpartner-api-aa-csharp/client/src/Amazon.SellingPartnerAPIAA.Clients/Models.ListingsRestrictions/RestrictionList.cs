@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
     /// A list of restrictions for the specified Amazon catalog item.
     /// </summary>
     [DataContract]
-    public partial class RestrictionList :  IEquatable<RestrictionList>, IValidatableObject
+    public partial class RestrictionList : IEquatable<RestrictionList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RestrictionList" /> class.
@@ -51,11 +46,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
                 this.Restrictions = restrictions;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets Restrictions
         /// </summary>
-        [DataMember(Name="restrictions", EmitDefaultValue=false)]
+        [DataMember(Name = "restrictions", EmitDefaultValue = false)]
         public List<Restriction> Restrictions { get; set; }
 
         /// <summary>
@@ -70,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -100,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Restrictions == input.Restrictions ||
                     this.Restrictions != null &&

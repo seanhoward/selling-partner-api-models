@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// Identity attributes associated with the item in the Amazon catalog, such as the ASIN.
     /// </summary>
     [DataContract]
-    public partial class ItemIdentifiers : List<ItemIdentifiersByMarketplace>,  IEquatable<ItemIdentifiers>, IValidatableObject
+    public partial class ItemIdentifiers : List<ItemIdentifiersByMarketplace>, IEquatable<ItemIdentifiers>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemIdentifiers" /> class.
@@ -37,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         public ItemIdentifiers() : base()
         {
         }
-        
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -50,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

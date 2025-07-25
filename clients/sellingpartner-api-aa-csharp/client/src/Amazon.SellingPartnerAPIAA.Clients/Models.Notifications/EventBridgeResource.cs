@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// The Amazon EventBridge destination.
     /// </summary>
     [DataContract]
-    public partial class EventBridgeResource :  IEquatable<EventBridgeResource>, IValidatableObject
+    public partial class EventBridgeResource : IEquatable<EventBridgeResource>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EventBridgeResource" /> class.
@@ -71,26 +65,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
                 this.AccountId = accountId;
             }
         }
-        
+
         /// <summary>
         /// The name of the partner event source associated with the destination.
         /// </summary>
         /// <value>The name of the partner event source associated with the destination.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html).
         /// </summary>
         /// <value>The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html).</value>
-        [DataMember(Name="region", EmitDefaultValue=false)]
+        [DataMember(Name = "region", EmitDefaultValue = false)]
         public string Region { get; set; }
 
         /// <summary>
         /// The identifier for the AWS account that is responsible for charges related to receiving notifications.
         /// </summary>
         /// <value>The identifier for the AWS account that is responsible for charges related to receiving notifications.</value>
-        [DataMember(Name="accountId", EmitDefaultValue=false)]
+        [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
 
         /// <summary>
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +131,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Region == input.Region ||
                     (this.Region != null &&
                     this.Region.Equals(input.Region))
-                ) && 
+                ) &&
                 (
                     this.AccountId == input.AccountId ||
                     (this.AccountId != null &&
@@ -182,9 +176,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
-            if(this.Name != null && this.Name.Length > 256)
+            if (this.Name != null && this.Name.Length > 256)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 256.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 256.", new[] { "Name" });
             }
 
             yield break;

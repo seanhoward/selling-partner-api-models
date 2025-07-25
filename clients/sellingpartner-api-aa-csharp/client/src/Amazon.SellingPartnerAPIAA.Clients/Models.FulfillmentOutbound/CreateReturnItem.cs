@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// An item that Amazon accepted for return.
     /// </summary>
     [DataContract]
-    public partial class CreateReturnItem :  IEquatable<CreateReturnItem>, IValidatableObject
+    public partial class CreateReturnItem : IEquatable<CreateReturnItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReturnItem" /> class.
@@ -83,40 +77,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             }
             this.ReturnComment = returnComment;
         }
-        
+
         /// <summary>
         /// An identifier assigned by the seller to the return item.
         /// </summary>
         /// <value>An identifier assigned by the seller to the return item.</value>
-        [DataMember(Name="sellerReturnItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerReturnItemId", EmitDefaultValue = false)]
         public string SellerReturnItemId { get; set; }
 
         /// <summary>
         /// The identifier assigned to the item by the seller when the fulfillment order was created.
         /// </summary>
         /// <value>The identifier assigned to the item by the seller when the fulfillment order was created.</value>
-        [DataMember(Name="sellerFulfillmentOrderItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerFulfillmentOrderItemId", EmitDefaultValue = false)]
         public string SellerFulfillmentOrderItemId { get; set; }
 
         /// <summary>
         /// The identifier for the shipment that is associated with the return item.
         /// </summary>
         /// <value>The identifier for the shipment that is associated with the return item.</value>
-        [DataMember(Name="amazonShipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonShipmentId", EmitDefaultValue = false)]
         public string AmazonShipmentId { get; set; }
 
         /// <summary>
         /// The return reason code assigned to the return item by the seller.
         /// </summary>
         /// <value>The return reason code assigned to the return item by the seller.</value>
-        [DataMember(Name="returnReasonCode", EmitDefaultValue=false)]
+        [DataMember(Name = "returnReasonCode", EmitDefaultValue = false)]
         public string ReturnReasonCode { get; set; }
 
         /// <summary>
         /// An optional comment about the return item.
         /// </summary>
         /// <value>An optional comment about the return item.</value>
-        [DataMember(Name="returnComment", EmitDefaultValue=false)]
+        [DataMember(Name = "returnComment", EmitDefaultValue = false)]
         public string ReturnComment { get; set; }
 
         /// <summary>
@@ -135,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -165,27 +159,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerReturnItemId == input.SellerReturnItemId ||
                     (this.SellerReturnItemId != null &&
                     this.SellerReturnItemId.Equals(input.SellerReturnItemId))
-                ) && 
+                ) &&
                 (
                     this.SellerFulfillmentOrderItemId == input.SellerFulfillmentOrderItemId ||
                     (this.SellerFulfillmentOrderItemId != null &&
                     this.SellerFulfillmentOrderItemId.Equals(input.SellerFulfillmentOrderItemId))
-                ) && 
+                ) &&
                 (
                     this.AmazonShipmentId == input.AmazonShipmentId ||
                     (this.AmazonShipmentId != null &&
                     this.AmazonShipmentId.Equals(input.AmazonShipmentId))
-                ) && 
+                ) &&
                 (
                     this.ReturnReasonCode == input.ReturnReasonCode ||
                     (this.ReturnReasonCode != null &&
                     this.ReturnReasonCode.Equals(input.ReturnReasonCode))
-                ) && 
+                ) &&
                 (
                     this.ReturnComment == input.ReturnComment ||
                     (this.ReturnComment != null &&
@@ -224,15 +218,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // SellerReturnItemId (string) maxLength
-            if(this.SellerReturnItemId != null && this.SellerReturnItemId.Length > 80)
+            if (this.SellerReturnItemId != null && this.SellerReturnItemId.Length > 80)
             {
-                yield return new ValidationResult("Invalid value for SellerReturnItemId, length must be less than 80.", new [] { "SellerReturnItemId" });
+                yield return new ValidationResult("Invalid value for SellerReturnItemId, length must be less than 80.", new[] { "SellerReturnItemId" });
             }
 
             // ReturnComment (string) maxLength
-            if(this.ReturnComment != null && this.ReturnComment.Length > 1000)
+            if (this.ReturnComment != null && this.ReturnComment.Length > 1000)
             {
-                yield return new ValidationResult("Invalid value for ReturnComment, length must be less than 1000.", new [] { "ReturnComment" });
+                yield return new ValidationResult("Invalid value for ReturnComment, length must be less than 1000.", new[] { "ReturnComment" });
             }
 
             yield break;

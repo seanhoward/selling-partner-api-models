@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// The payload for the &#x60;getServiceJobs&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class JobListing :  IEquatable<JobListing>, IValidatableObject
+    public partial class JobListing : IEquatable<JobListing>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="JobListing" /> class.
@@ -44,33 +38,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.PreviousPageToken = previousPageToken;
             this.Jobs = jobs;
         }
-        
+
         /// <summary>
         /// Total result size of the query result.
         /// </summary>
         /// <value>Total result size of the query result.</value>
-        [DataMember(Name="totalResultSize", EmitDefaultValue=false)]
+        [DataMember(Name = "totalResultSize", EmitDefaultValue = false)]
         public int? TotalResultSize { get; set; }
 
         /// <summary>
         /// A generated string used to pass information to your next request. If &#x60;nextPageToken&#x60; is returned, pass the value of &#x60;nextPageToken&#x60; to the &#x60;pageToken&#x60; to get next results.
         /// </summary>
         /// <value>A generated string used to pass information to your next request. If &#x60;nextPageToken&#x60; is returned, pass the value of &#x60;nextPageToken&#x60; to the &#x60;pageToken&#x60; to get next results.</value>
-        [DataMember(Name="nextPageToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextPageToken", EmitDefaultValue = false)]
         public string NextPageToken { get; set; }
 
         /// <summary>
         /// A generated string used to pass information to your next request. If &#x60;previousPageToken&#x60; is returned, pass the value of &#x60;previousPageToken&#x60; to the &#x60;pageToken&#x60; to get previous page results.
         /// </summary>
         /// <value>A generated string used to pass information to your next request. If &#x60;previousPageToken&#x60; is returned, pass the value of &#x60;previousPageToken&#x60; to the &#x60;pageToken&#x60; to get previous page results.</value>
-        [DataMember(Name="previousPageToken", EmitDefaultValue=false)]
+        [DataMember(Name = "previousPageToken", EmitDefaultValue = false)]
         public string PreviousPageToken { get; set; }
 
         /// <summary>
         /// List of job details for the given input.
         /// </summary>
         /// <value>List of job details for the given input.</value>
-        [DataMember(Name="jobs", EmitDefaultValue=false)]
+        [DataMember(Name = "jobs", EmitDefaultValue = false)]
         public List<ServiceJob> Jobs { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +112,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TotalResultSize == input.TotalResultSize ||
                     (this.TotalResultSize != null &&
                     this.TotalResultSize.Equals(input.TotalResultSize))
-                ) && 
+                ) &&
                 (
                     this.NextPageToken == input.NextPageToken ||
                     (this.NextPageToken != null &&
                     this.NextPageToken.Equals(input.NextPageToken))
-                ) && 
+                ) &&
                 (
                     this.PreviousPageToken == input.PreviousPageToken ||
                     (this.PreviousPageToken != null &&
                     this.PreviousPageToken.Equals(input.PreviousPageToken))
-                ) && 
+                ) &&
                 (
                     this.Jobs == input.Jobs ||
                     this.Jobs != null &&

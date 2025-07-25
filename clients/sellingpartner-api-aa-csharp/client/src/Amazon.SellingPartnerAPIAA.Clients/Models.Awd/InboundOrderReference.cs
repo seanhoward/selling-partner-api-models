@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Amazon Warehousing and Distribution
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * OpenAPI spec version: 2024-05-09
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// A response that contains the reference identifiers for the newly created or updated inbound order. Consists of an order ID and version.
     /// </summary>
     [DataContract]
-    public partial class InboundOrderReference :  IEquatable<InboundOrderReference>, IValidatableObject
+    public partial class InboundOrderReference : IEquatable<InboundOrderReference>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOrderReference" /> class.
@@ -39,8 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// Initializes a new instance of the <see cref="InboundOrderReference" /> class.
         /// </summary>
         /// <param name="orderId">Order ID of the inbound order. (required).</param>
-        /// <param name="orderVersion">Order version of the inbound order. (required).</param>
-        public InboundOrderReference(string orderId = default, string orderVersion = default)
+        public InboundOrderReference(string orderId = default)
         {
             // to ensure "orderId" is required (not null)
             if (orderId == null)
@@ -51,30 +44,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             {
                 this.OrderId = orderId;
             }
-            // to ensure "orderVersion" is required (not null)
-            if (orderVersion == null)
-            {
-                throw new InvalidDataException("orderVersion is a required property for InboundOrderReference and cannot be null");
-            }
-            else
-            {
-                this.OrderVersion = orderVersion;
-            }
         }
-        
+
         /// <summary>
         /// Order ID of the inbound order.
         /// </summary>
         /// <value>Order ID of the inbound order.</value>
-        [DataMember(Name="orderId", EmitDefaultValue=false)]
+        [DataMember(Name = "orderId", EmitDefaultValue = false)]
         public string OrderId { get; set; }
-
-        /// <summary>
-        /// Order version of the inbound order.
-        /// </summary>
-        /// <value>Order version of the inbound order.</value>
-        [DataMember(Name="orderVersion", EmitDefaultValue=false)]
-        public string OrderVersion { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -85,11 +62,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             var sb = new StringBuilder();
             sb.Append("class InboundOrderReference {\n");
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
-            sb.Append("  OrderVersion: ").Append(OrderVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,16 +95,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.OrderId == input.OrderId ||
                     (this.OrderId != null &&
                     this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.OrderVersion == input.OrderVersion ||
-                    (this.OrderVersion != null &&
-                    this.OrderVersion.Equals(input.OrderVersion))
                 );
         }
 
@@ -143,8 +114,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 int hashCode = 41;
                 if (this.OrderId != null)
                     hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.OrderVersion != null)
-                    hashCode = hashCode * 59 + this.OrderVersion.GetHashCode();
                 return hashCode;
             }
         }

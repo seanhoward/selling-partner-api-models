@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,17 +24,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The &#x60;createMarketplaceItemLabels&#x60; request.
     /// </summary>
     [DataContract]
-    public partial class CreateMarketplaceItemLabelsRequest :  IEquatable<CreateMarketplaceItemLabelsRequest>, IValidatableObject
+    public partial class CreateMarketplaceItemLabelsRequest : IEquatable<CreateMarketplaceItemLabelsRequest>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets LabelType
         /// </summary>
-        [DataMember(Name="labelType", EmitDefaultValue=false)]
+        [DataMember(Name = "labelType", EmitDefaultValue = false)]
         public LabelPrintType LabelType { get; set; }
         /// <summary>
         /// Gets or Sets PageType
         /// </summary>
-        [DataMember(Name="pageType", EmitDefaultValue=false)]
+        [DataMember(Name = "pageType", EmitDefaultValue = false)]
         public ItemLabelPageType? PageType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateMarketplaceItemLabelsRequest" /> class.
@@ -97,12 +93,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.PageType = pageType;
             this.Width = width;
         }
-        
+
         /// <summary>
         /// The height of the item label.
         /// </summary>
         /// <value>The height of the item label.</value>
-        [DataMember(Name="height", EmitDefaultValue=false)]
+        [DataMember(Name = "height", EmitDefaultValue = false)]
         public decimal? Height { get; set; }
 
 
@@ -110,21 +106,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// The locale code constructed from ISO 639 language code and ISO 3166-1 alpha-2 standard of country codes separated by an underscore character.
         /// </summary>
         /// <value>The locale code constructed from ISO 639 language code and ISO 3166-1 alpha-2 standard of country codes separated by an underscore character.</value>
-        [DataMember(Name="localeCode", EmitDefaultValue=false)]
+        [DataMember(Name = "localeCode", EmitDefaultValue = false)]
         public string LocaleCode { get; set; }
 
         /// <summary>
         /// The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
         /// <value>The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// Represents the quantity of an MSKU to print item labels for.
         /// </summary>
         /// <value>Represents the quantity of an MSKU to print item labels for.</value>
-        [DataMember(Name="mskuQuantities", EmitDefaultValue=false)]
+        [DataMember(Name = "mskuQuantities", EmitDefaultValue = false)]
         public List<MskuQuantity> MskuQuantities { get; set; }
 
 
@@ -132,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// The width of the item label.
         /// </summary>
         /// <value>The width of the item label.</value>
-        [DataMember(Name="width", EmitDefaultValue=false)]
+        [DataMember(Name = "width", EmitDefaultValue = false)]
         public decimal? Width { get; set; }
 
         /// <summary>
@@ -153,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -183,37 +179,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Height == input.Height ||
                     (this.Height != null &&
                     this.Height.Equals(input.Height))
-                ) && 
+                ) &&
                 (
                     this.LabelType == input.LabelType ||
                     (this.LabelType != null &&
                     this.LabelType.Equals(input.LabelType))
-                ) && 
+                ) &&
                 (
                     this.LocaleCode == input.LocaleCode ||
                     (this.LocaleCode != null &&
                     this.LocaleCode.Equals(input.LocaleCode))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.MskuQuantities == input.MskuQuantities ||
                     this.MskuQuantities != null &&
                     this.MskuQuantities.SequenceEqual(input.MskuQuantities)
-                ) && 
+                ) &&
                 (
                     this.PageType == input.PageType ||
                     (this.PageType != null &&
                     this.PageType.Equals(input.PageType))
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&
@@ -256,46 +252,46 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Height (decimal?) maximum
-            if(this.Height > (decimal?)100)
+            if (this.Height > (decimal?)100)
             {
-                yield return new ValidationResult("Invalid value for Height, must be a value less than or equal to 100.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value less than or equal to 100.", new[] { "Height" });
             }
 
             // Height (decimal?) minimum
-            if(this.Height < (decimal?)25)
+            if (this.Height < (decimal?)25)
             {
-                yield return new ValidationResult("Invalid value for Height, must be a value greater than or equal to 25.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value greater than or equal to 25.", new[] { "Height" });
             }
 
             // LocaleCode (string) pattern
             Regex regexLocaleCode = new Regex(@"^[a-z]{2}_[A-Z]{2}$", RegexOptions.CultureInvariant);
             if (false == regexLocaleCode.Match(this.LocaleCode).Success)
             {
-                yield return new ValidationResult("Invalid value for LocaleCode, must match a pattern of " + regexLocaleCode, new [] { "LocaleCode" });
+                yield return new ValidationResult("Invalid value for LocaleCode, must match a pattern of " + regexLocaleCode, new[] { "LocaleCode" });
             }
 
             // MarketplaceId (string) maxLength
-            if(this.MarketplaceId != null && this.MarketplaceId.Length > 20)
+            if (this.MarketplaceId != null && this.MarketplaceId.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for MarketplaceId, length must be less than 20.", new [] { "MarketplaceId" });
+                yield return new ValidationResult("Invalid value for MarketplaceId, length must be less than 20.", new[] { "MarketplaceId" });
             }
 
             // MarketplaceId (string) minLength
-            if(this.MarketplaceId != null && this.MarketplaceId.Length < 1)
+            if (this.MarketplaceId != null && this.MarketplaceId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for MarketplaceId, length must be greater than 1.", new [] { "MarketplaceId" });
+                yield return new ValidationResult("Invalid value for MarketplaceId, length must be greater than 1.", new[] { "MarketplaceId" });
             }
 
             // Width (decimal?) maximum
-            if(this.Width > (decimal?)100)
+            if (this.Width > (decimal?)100)
             {
-                yield return new ValidationResult("Invalid value for Width, must be a value less than or equal to 100.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value less than or equal to 100.", new[] { "Width" });
             }
 
             // Width (decimal?) minimum
-            if(this.Width < (decimal?)25)
+            if (this.Width < (decimal?)25)
             {
-                yield return new ValidationResult("Invalid value for Width, must be a value greater than or equal to 25.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value greater than or equal to 25.", new[] { "Width" });
             }
 
             yield break;

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Represents a list of customer invoices, potentially paginated.
     /// </summary>
     [DataContract]
-    public partial class CustomerInvoiceList :  IEquatable<CustomerInvoiceList>, IValidatableObject
+    public partial class CustomerInvoiceList : IEquatable<CustomerInvoiceList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerInvoiceList" /> class.
@@ -40,19 +34,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             this.Pagination = pagination;
             this.CustomerInvoices = customerInvoices;
         }
-        
+
         /// <summary>
         /// The pagination elements required to retrieve the remaining data.
         /// </summary>
         /// <value>The pagination elements required to retrieve the remaining data.</value>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
         public Pagination Pagination { get; set; }
 
         /// <summary>
         /// Represents a customer invoice within the &#x60;CustomerInvoiceList&#x60;.
         /// </summary>
         /// <value>Represents a customer invoice within the &#x60;CustomerInvoiceList&#x60;.</value>
-        [DataMember(Name="customerInvoices", EmitDefaultValue=false)]
+        [DataMember(Name = "customerInvoices", EmitDefaultValue = false)]
         public List<CustomerInvoice> CustomerInvoices { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Pagination == input.Pagination ||
                     (this.Pagination != null &&
                     this.Pagination.Equals(input.Pagination))
-                ) && 
+                ) &&
                 (
                     this.CustomerInvoices == input.CustomerInvoices ||
                     this.CustomerInvoices != null &&

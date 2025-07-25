@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,19 +22,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// An object which contains details about an offer.
     /// </summary>
     [DataContract]
-    public partial class ListOffersResponseOffer :  IEquatable<ListOffersResponseOffer>, IValidatableObject
+    public partial class ListOffersResponseOffer : IEquatable<ListOffersResponseOffer>, IValidatableObject
     {
         /// <summary>
         /// The offer eligibility status.
         /// </summary>
         /// <value>The offer eligibility status.</value>
-        [DataMember(Name="eligibility", EmitDefaultValue=false)]
+        [DataMember(Name = "eligibility", EmitDefaultValue = false)]
         public EligibilityStatus? Eligibility { get; set; }
         /// <summary>
         /// The replenishment program for the offer.
         /// </summary>
         /// <value>The replenishment program for the offer.</value>
-        [DataMember(Name="programType", EmitDefaultValue=false)]
+        [DataMember(Name = "programType", EmitDefaultValue = false)]
         public ProgramType? ProgramType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOffersResponseOffer" /> class.
@@ -62,33 +56,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             this.ProgramType = programType;
             this.VendorCodes = vendorCodes;
         }
-        
+
         /// <summary>
         /// The SKU. This property is only supported for sellers and not for vendors.
         /// </summary>
         /// <value>The SKU. This property is only supported for sellers and not for vendors.</value>
-        [DataMember(Name="sku", EmitDefaultValue=false)]
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
         /// <summary>
         /// The Amazon Standard Identification Number (ASIN).
         /// </summary>
         /// <value>The Amazon Standard Identification Number (ASIN).</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
         /// </summary>
         /// <value>The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
 
         /// <summary>
         /// Gets or Sets OfferProgramConfiguration
         /// </summary>
-        [DataMember(Name="offerProgramConfiguration", EmitDefaultValue=false)]
+        [DataMember(Name = "offerProgramConfiguration", EmitDefaultValue = false)]
         public OfferProgramConfiguration OfferProgramConfiguration { get; set; }
 
 
@@ -96,7 +90,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// A list of vendor codes associated with the offer.
         /// </summary>
         /// <value>A list of vendor codes associated with the offer.</value>
-        [DataMember(Name="vendorCodes", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorCodes", EmitDefaultValue = false)]
         public List<string> VendorCodes { get; set; }
 
         /// <summary>
@@ -117,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -147,37 +141,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Sku == input.Sku ||
                     (this.Sku != null &&
                     this.Sku.Equals(input.Sku))
-                ) && 
+                ) &&
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Eligibility == input.Eligibility ||
                     (this.Eligibility != null &&
                     this.Eligibility.Equals(input.Eligibility))
-                ) && 
+                ) &&
                 (
                     this.OfferProgramConfiguration == input.OfferProgramConfiguration ||
                     (this.OfferProgramConfiguration != null &&
                     this.OfferProgramConfiguration.Equals(input.OfferProgramConfiguration))
-                ) && 
+                ) &&
                 (
                     this.ProgramType == input.ProgramType ||
                     (this.ProgramType != null &&
                     this.ProgramType.Equals(input.ProgramType))
-                ) && 
+                ) &&
                 (
                     this.VendorCodes == input.VendorCodes ||
                     this.VendorCodes != null &&

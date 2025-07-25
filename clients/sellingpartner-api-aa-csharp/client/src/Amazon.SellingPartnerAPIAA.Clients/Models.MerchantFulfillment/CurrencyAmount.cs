@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Currency type and amount.
     /// </summary>
     [DataContract]
-    public partial class CurrencyAmount :  IEquatable<CurrencyAmount>, IValidatableObject
+    public partial class CurrencyAmount : IEquatable<CurrencyAmount>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CurrencyAmount" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                 this.Amount = amount;
             }
         }
-        
+
         /// <summary>
         /// Three-digit currency code in ISO 4217 format.
         /// </summary>
         /// <value>Three-digit currency code in ISO 4217 format.</value>
-        [DataMember(Name="CurrencyCode", EmitDefaultValue=false)]
+        [DataMember(Name = "CurrencyCode", EmitDefaultValue = false)]
         public string CurrencyCode { get; set; }
 
         /// <summary>
         /// The currency amount.
         /// </summary>
         /// <value>The currency amount.</value>
-        [DataMember(Name="Amount", EmitDefaultValue=false)]
+        [DataMember(Name = "Amount", EmitDefaultValue = false)]
         public double? Amount { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CurrencyCode == input.CurrencyCode ||
                     (this.CurrencyCode != null &&
                     this.CurrencyCode.Equals(input.CurrencyCode))
-                ) && 
+                ) &&
                 (
                     this.Amount == input.Amount ||
                     (this.Amount != null &&
@@ -157,9 +151,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // CurrencyCode (string) maxLength
-            if(this.CurrencyCode != null && this.CurrencyCode.Length > 3)
+            if (this.CurrencyCode != null && this.CurrencyCode.Length > 3)
             {
-                yield return new ValidationResult("Invalid value for CurrencyCode, length must be less than 3.", new [] { "CurrencyCode" });
+                yield return new ValidationResult("Invalid value for CurrencyCode, length must be less than 3.", new[] { "CurrencyCode" });
             }
 
             yield break;

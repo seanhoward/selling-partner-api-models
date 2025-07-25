@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
 {
@@ -28,19 +21,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
     /// The details of a payment method.
     /// </summary>
     [DataContract]
-    public partial class PaymentMethodDetails :  IEquatable<PaymentMethodDetails>, IValidatableObject
+    public partial class PaymentMethodDetails : IEquatable<PaymentMethodDetails>, IValidatableObject
     {
         /// <summary>
         /// The payment method type.
         /// </summary>
         /// <value>The payment method type.</value>
-        [DataMember(Name="paymentMethodType", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentMethodType", EmitDefaultValue = false)]
         public PaymentMethodType? PaymentMethodType { get; set; }
         /// <summary>
         /// The payment method assignment type, whether it is assigned as default to the given marketplace or not.
         /// </summary>
         /// <value>The payment method assignment type, whether it is assigned as default to the given marketplace or not.</value>
-        [DataMember(Name="assignmentType", EmitDefaultValue=false)]
+        [DataMember(Name = "assignmentType", EmitDefaultValue = false)]
         public AssignmentType? AssignmentType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentMethodDetails" /> class.
@@ -62,40 +55,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             this.PaymentMethodType = paymentMethodType;
             this.AssignmentType = assignmentType;
         }
-        
+
         /// <summary>
         /// The name of the account holder who is registered for the payment method.
         /// </summary>
         /// <value>The name of the account holder who is registered for the payment method.</value>
-        [DataMember(Name="accountHolderName", EmitDefaultValue=false)]
+        [DataMember(Name = "accountHolderName", EmitDefaultValue = false)]
         public string AccountHolderName { get; set; }
 
         /// <summary>
         /// The payment method identifier.
         /// </summary>
         /// <value>The payment method identifier.</value>
-        [DataMember(Name="paymentMethodId", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentMethodId", EmitDefaultValue = false)]
         public string PaymentMethodId { get; set; }
 
         /// <summary>
         /// The last three or four digits of the payment method.
         /// </summary>
         /// <value>The last three or four digits of the payment method.</value>
-        [DataMember(Name="tail", EmitDefaultValue=false)]
+        [DataMember(Name = "tail", EmitDefaultValue = false)]
         public string Tail { get; set; }
 
         /// <summary>
         /// The expiration date of the card used for payment.
         /// </summary>
         /// <value>The expiration date of the card used for payment.</value>
-        [DataMember(Name="expiryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "expiryDate", EmitDefaultValue = false)]
         public ExpiryDate ExpiryDate { get; set; }
 
         /// <summary>
         /// The two-letter country code in ISO 3166-1 alpha-2 format. For payment methods in the &#x60;card&#x60; category, the code is for the country where the card was issued. For payment methods in the &#x60;bank account&#x60; category, the code is for the country where the account is located.
         /// </summary>
         /// <value>The two-letter country code in ISO 3166-1 alpha-2 format. For payment methods in the &#x60;card&#x60; category, the code is for the country where the card was issued. For payment methods in the &#x60;bank account&#x60; category, the code is for the country where the account is located.</value>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
 
@@ -118,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -148,37 +141,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AccountHolderName == input.AccountHolderName ||
                     (this.AccountHolderName != null &&
                     this.AccountHolderName.Equals(input.AccountHolderName))
-                ) && 
+                ) &&
                 (
                     this.PaymentMethodId == input.PaymentMethodId ||
                     (this.PaymentMethodId != null &&
                     this.PaymentMethodId.Equals(input.PaymentMethodId))
-                ) && 
+                ) &&
                 (
                     this.Tail == input.Tail ||
                     (this.Tail != null &&
                     this.Tail.Equals(input.Tail))
-                ) && 
+                ) &&
                 (
                     this.ExpiryDate == input.ExpiryDate ||
                     (this.ExpiryDate != null &&
                     this.ExpiryDate.Equals(input.ExpiryDate))
-                ) && 
+                ) &&
                 (
                     this.CountryCode == input.CountryCode ||
                     (this.CountryCode != null &&
                     this.CountryCode.Equals(input.CountryCode))
-                ) && 
+                ) &&
                 (
                     this.PaymentMethodType == input.PaymentMethodType ||
                     (this.PaymentMethodType != null &&
                     this.PaymentMethodType.Equals(input.PaymentMethodType))
-                ) && 
+                ) &&
                 (
                     this.AssignmentType == input.AssignmentType ||
                     (this.AssignmentType != null &&

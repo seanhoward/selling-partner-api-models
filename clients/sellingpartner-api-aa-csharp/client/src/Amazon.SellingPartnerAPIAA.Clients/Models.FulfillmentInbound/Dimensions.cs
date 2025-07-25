@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Measurement of a package&#39;s dimensions.
     /// </summary>
     [DataContract]
-    public partial class Dimensions :  IEquatable<Dimensions>, IValidatableObject
+    public partial class Dimensions : IEquatable<Dimensions>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets UnitOfMeasurement
         /// </summary>
-        [DataMember(Name="unitOfMeasurement", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasurement", EmitDefaultValue = false)]
         public UnitOfMeasurement UnitOfMeasurement { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Dimensions" /> class.
@@ -86,19 +80,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.Width = width;
             }
         }
-        
+
         /// <summary>
         /// The height of a package.
         /// </summary>
         /// <value>The height of a package.</value>
-        [DataMember(Name="height", EmitDefaultValue=false)]
+        [DataMember(Name = "height", EmitDefaultValue = false)]
         public decimal? Height { get; set; }
 
         /// <summary>
         /// The length of a package.
         /// </summary>
         /// <value>The length of a package.</value>
-        [DataMember(Name="length", EmitDefaultValue=false)]
+        [DataMember(Name = "length", EmitDefaultValue = false)]
         public decimal? Length { get; set; }
 
 
@@ -106,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// The width of a package.
         /// </summary>
         /// <value>The width of a package.</value>
-        [DataMember(Name="width", EmitDefaultValue=false)]
+        [DataMember(Name = "width", EmitDefaultValue = false)]
         public decimal? Width { get; set; }
 
         /// <summary>
@@ -124,7 +118,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -154,22 +148,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Height == input.Height ||
                     (this.Height != null &&
                     this.Height.Equals(input.Height))
-                ) && 
+                ) &&
                 (
                     this.Length == input.Length ||
                     (this.Length != null &&
                     this.Length.Equals(input.Length))
-                ) && 
+                ) &&
                 (
                     this.UnitOfMeasurement == input.UnitOfMeasurement ||
                     (this.UnitOfMeasurement != null &&
                     this.UnitOfMeasurement.Equals(input.UnitOfMeasurement))
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&
@@ -206,39 +200,39 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Height (decimal?) maximum
-            if(this.Height > (decimal?)100000)
+            if (this.Height > (decimal?)100000)
             {
-                yield return new ValidationResult("Invalid value for Height, must be a value less than or equal to 100000.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value less than or equal to 100000.", new[] { "Height" });
             }
 
             // Height (decimal?) minimum
-            if(this.Height < (decimal?)0)
+            if (this.Height < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for Height, must be a value greater than or equal to 0.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value greater than or equal to 0.", new[] { "Height" });
             }
 
             // Length (decimal?) maximum
-            if(this.Length > (decimal?)100000)
+            if (this.Length > (decimal?)100000)
             {
-                yield return new ValidationResult("Invalid value for Length, must be a value less than or equal to 100000.", new [] { "Length" });
+                yield return new ValidationResult("Invalid value for Length, must be a value less than or equal to 100000.", new[] { "Length" });
             }
 
             // Length (decimal?) minimum
-            if(this.Length < (decimal?)0)
+            if (this.Length < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for Length, must be a value greater than or equal to 0.", new [] { "Length" });
+                yield return new ValidationResult("Invalid value for Length, must be a value greater than or equal to 0.", new[] { "Length" });
             }
 
             // Width (decimal?) maximum
-            if(this.Width > (decimal?)100000)
+            if (this.Width > (decimal?)100000)
             {
-                yield return new ValidationResult("Invalid value for Width, must be a value less than or equal to 100000.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value less than or equal to 100000.", new[] { "Width" });
             }
 
             // Width (decimal?) minimum
-            if(this.Width < (decimal?)0)
+            if (this.Width < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for Width, must be a value greater than or equal to 0.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value greater than or equal to 0.", new[] { "Width" });
             }
 
             yield break;

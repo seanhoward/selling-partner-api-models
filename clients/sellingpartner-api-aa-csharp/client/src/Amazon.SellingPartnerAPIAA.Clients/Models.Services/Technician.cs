@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// A technician who is assigned to perform the service job in part or in full.
     /// </summary>
     [DataContract]
-    public partial class Technician :  IEquatable<Technician>, IValidatableObject
+    public partial class Technician : IEquatable<Technician>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Technician" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.TechnicianId = technicianId;
             this.Name = name;
         }
-        
+
         /// <summary>
         /// The technician identifier.
         /// </summary>
         /// <value>The technician identifier.</value>
-        [DataMember(Name="technicianId", EmitDefaultValue=false)]
+        [DataMember(Name = "technicianId", EmitDefaultValue = false)]
         public string TechnicianId { get; set; }
 
         /// <summary>
         /// The name of the technician.
         /// </summary>
         /// <value>The name of the technician.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TechnicianId == input.TechnicianId ||
                     (this.TechnicianId != null &&
                     this.TechnicianId.Equals(input.TechnicianId))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -136,15 +129,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // TechnicianId (string) maxLength
-            if(this.TechnicianId != null && this.TechnicianId.Length > 50)
+            if (this.TechnicianId != null && this.TechnicianId.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for TechnicianId, length must be less than 50.", new [] { "TechnicianId" });
+                yield return new ValidationResult("Invalid value for TechnicianId, length must be less than 50.", new[] { "TechnicianId" });
             }
 
             // TechnicianId (string) minLength
-            if(this.TechnicianId != null && this.TechnicianId.Length < 1)
+            if (this.TechnicianId != null && this.TechnicianId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for TechnicianId, length must be greater than 1.", new [] { "TechnicianId" });
+                yield return new ValidationResult("Invalid value for TechnicianId, length must be greater than 1.", new[] { "TechnicianId" });
             }
 
             yield break;

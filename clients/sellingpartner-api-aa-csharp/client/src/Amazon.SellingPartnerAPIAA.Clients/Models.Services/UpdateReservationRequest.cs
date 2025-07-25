@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Request schema for the &#x60;updateReservation&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class UpdateReservationRequest :  IEquatable<UpdateReservationRequest>, IValidatableObject
+    public partial class UpdateReservationRequest : IEquatable<UpdateReservationRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateReservationRequest" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
                 this.Reservation = reservation;
             }
         }
-        
+
         /// <summary>
         /// Resource (store) identifier.
         /// </summary>
         /// <value>Resource (store) identifier.</value>
-        [DataMember(Name="resourceId", EmitDefaultValue=false)]
+        [DataMember(Name = "resourceId", EmitDefaultValue = false)]
         public string ResourceId { get; set; }
 
         /// <summary>
         /// &#x60;Reservation&#x60; object to reduce the capacity of a resource.
         /// </summary>
         /// <value>&#x60;Reservation&#x60; object to reduce the capacity of a resource.</value>
-        [DataMember(Name="reservation", EmitDefaultValue=false)]
+        [DataMember(Name = "reservation", EmitDefaultValue = false)]
         public Reservation Reservation { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ResourceId == input.ResourceId ||
                     (this.ResourceId != null &&
                     this.ResourceId.Equals(input.ResourceId))
-                ) && 
+                ) &&
                 (
                     this.Reservation == input.Reservation ||
                     (this.Reservation != null &&

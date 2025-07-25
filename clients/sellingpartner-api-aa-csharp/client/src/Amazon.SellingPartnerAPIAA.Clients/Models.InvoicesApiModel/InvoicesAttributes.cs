@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
     /// An object that contains the invoice attributes definition.
     /// </summary>
     [DataContract]
-    public partial class InvoicesAttributes :  IEquatable<InvoicesAttributes>, IValidatableObject
+    public partial class InvoicesAttributes : IEquatable<InvoicesAttributes>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoicesAttributes" /> class.
@@ -44,33 +38,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             this.TransactionIdentifierNameOptions = transactionIdentifierNameOptions;
             this.TransactionTypeOptions = transactionTypeOptions;
         }
-        
+
         /// <summary>
         /// A list of all the options that are available for the invoice status attribute.
         /// </summary>
         /// <value>A list of all the options that are available for the invoice status attribute.</value>
-        [DataMember(Name="invoiceStatusOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "invoiceStatusOptions", EmitDefaultValue = false)]
         public List<AttributeOption> InvoiceStatusOptions { get; set; }
 
         /// <summary>
         /// A list of all the options that are available for the invoice type attribute.
         /// </summary>
         /// <value>A list of all the options that are available for the invoice type attribute.</value>
-        [DataMember(Name="invoiceTypeOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "invoiceTypeOptions", EmitDefaultValue = false)]
         public List<AttributeOption> InvoiceTypeOptions { get; set; }
 
         /// <summary>
         /// A list of all the options that are available for the transaction identifier name attribute.
         /// </summary>
         /// <value>A list of all the options that are available for the transaction identifier name attribute.</value>
-        [DataMember(Name="transactionIdentifierNameOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionIdentifierNameOptions", EmitDefaultValue = false)]
         public List<AttributeOption> TransactionIdentifierNameOptions { get; set; }
 
         /// <summary>
         /// A list of all the options that are available for the transaction type attribute.
         /// </summary>
         /// <value>A list of all the options that are available for the transaction type attribute.</value>
-        [DataMember(Name="transactionTypeOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionTypeOptions", EmitDefaultValue = false)]
         public List<AttributeOption> TransactionTypeOptions { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +112,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.InvoiceStatusOptions == input.InvoiceStatusOptions ||
                     this.InvoiceStatusOptions != null &&
                     this.InvoiceStatusOptions.SequenceEqual(input.InvoiceStatusOptions)
-                ) && 
+                ) &&
                 (
                     this.InvoiceTypeOptions == input.InvoiceTypeOptions ||
                     this.InvoiceTypeOptions != null &&
                     this.InvoiceTypeOptions.SequenceEqual(input.InvoiceTypeOptions)
-                ) && 
+                ) &&
                 (
                     this.TransactionIdentifierNameOptions == input.TransactionIdentifierNameOptions ||
                     this.TransactionIdentifierNameOptions != null &&
                     this.TransactionIdentifierNameOptions.SequenceEqual(input.TransactionIdentifierNameOptions)
-                ) && 
+                ) &&
                 (
                     this.TransactionTypeOptions == input.TransactionTypeOptions ||
                     this.TransactionTypeOptions != null &&

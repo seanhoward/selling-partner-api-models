@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The time range.
     /// </summary>
     [DataContract]
-    public partial class TimeRange :  IEquatable<TimeRange>, IValidatableObject
+    public partial class TimeRange : IEquatable<TimeRange>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TimeRange" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             this.Start = start;
             this.End = end;
         }
-        
+
         /// <summary>
         /// The start date and time. This defaults to the current date and time.
         /// </summary>
         /// <value>The start date and time. This defaults to the current date and time.</value>
-        [DataMember(Name="start", EmitDefaultValue=false)]
+        [DataMember(Name = "start", EmitDefaultValue = false)]
         public DateTime? Start { get; set; }
 
         /// <summary>
         /// The end date and time. This must come after the value of start. This defaults to the next business day from the start.
         /// </summary>
         /// <value>The end date and time. This must come after the value of start. This defaults to the next business day from the start.</value>
-        [DataMember(Name="end", EmitDefaultValue=false)]
+        [DataMember(Name = "end", EmitDefaultValue = false)]
         public DateTime? End { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Start == input.Start ||
                     (this.Start != null &&
                     this.Start.Equals(input.Start))
-                ) && 
+                ) &&
                 (
                     this.End == input.End ||
                     (this.End != null &&

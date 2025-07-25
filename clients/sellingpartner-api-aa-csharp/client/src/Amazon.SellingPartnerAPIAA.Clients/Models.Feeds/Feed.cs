@@ -1,5 +1,5 @@
 /* 
- * Feeds v2021-06-30
+ * Selling Partner API for Feeds
  *
  * The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
     /// Detailed information about the feed.
     /// </summary>
     [DataContract]
-    public partial class Feed :  IEquatable<Feed>, IValidatableObject
+    public partial class Feed : IEquatable<Feed>, IValidatableObject
     {
         /// <summary>
         /// The processing status of the feed.
@@ -37,31 +33,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ProcessingStatusEnum
         {
-            
+
             /// <summary>
             /// Enum CANCELLED for value: CANCELLED
             /// </summary>
             [EnumMember(Value = "CANCELLED")]
             CANCELLED = 1,
-            
+
             /// <summary>
             /// Enum DONE for value: DONE
             /// </summary>
             [EnumMember(Value = "DONE")]
             DONE = 2,
-            
+
             /// <summary>
             /// Enum FATAL for value: FATAL
             /// </summary>
             [EnumMember(Value = "FATAL")]
             FATAL = 3,
-            
+
             /// <summary>
             /// Enum INPROGRESS for value: IN_PROGRESS
             /// </summary>
             [EnumMember(Value = "IN_PROGRESS")]
             INPROGRESS = 4,
-            
+
             /// <summary>
             /// Enum INQUEUE for value: IN_QUEUE
             /// </summary>
@@ -73,7 +69,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// The processing status of the feed.
         /// </summary>
         /// <value>The processing status of the feed.</value>
-        [DataMember(Name="processingStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "processingStatus", EmitDefaultValue = false)]
         public ProcessingStatusEnum ProcessingStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Feed" /> class.
@@ -134,33 +130,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             this.ProcessingEndTime = processingEndTime;
             this.ResultFeedDocumentId = resultFeedDocumentId;
         }
-        
+
         /// <summary>
         /// The identifier for the feed. This identifier is unique only in combination with a seller ID.
         /// </summary>
         /// <value>The identifier for the feed. This identifier is unique only in combination with a seller ID.</value>
-        [DataMember(Name="feedId", EmitDefaultValue=false)]
+        [DataMember(Name = "feedId", EmitDefaultValue = false)]
         public string FeedId { get; set; }
 
         /// <summary>
         /// The feed type.
         /// </summary>
         /// <value>The feed type.</value>
-        [DataMember(Name="feedType", EmitDefaultValue=false)]
+        [DataMember(Name = "feedType", EmitDefaultValue = false)]
         public string FeedType { get; set; }
 
         /// <summary>
         /// A list of identifiers for the marketplaces that the feed is applied to.
         /// </summary>
         /// <value>A list of identifiers for the marketplaces that the feed is applied to.</value>
-        [DataMember(Name="marketplaceIds", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceIds", EmitDefaultValue = false)]
         public List<string> MarketplaceIds { get; set; }
 
         /// <summary>
         /// The date and time when the feed was created, in ISO 8601 date time format.
         /// </summary>
         /// <value>The date and time when the feed was created, in ISO 8601 date time format.</value>
-        [DataMember(Name="createdTime", EmitDefaultValue=false)]
+        [DataMember(Name = "createdTime", EmitDefaultValue = false)]
         public DateTime? CreatedTime { get; set; }
 
 
@@ -168,21 +164,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// The date and time when feed processing started, in ISO 8601 date time format.
         /// </summary>
         /// <value>The date and time when feed processing started, in ISO 8601 date time format.</value>
-        [DataMember(Name="processingStartTime", EmitDefaultValue=false)]
+        [DataMember(Name = "processingStartTime", EmitDefaultValue = false)]
         public DateTime? ProcessingStartTime { get; set; }
 
         /// <summary>
         /// The date and time when feed processing completed, in ISO 8601 date time format.
         /// </summary>
         /// <value>The date and time when feed processing completed, in ISO 8601 date time format.</value>
-        [DataMember(Name="processingEndTime", EmitDefaultValue=false)]
+        [DataMember(Name = "processingEndTime", EmitDefaultValue = false)]
         public DateTime? ProcessingEndTime { get; set; }
 
         /// <summary>
         /// The identifier for the feed document. This identifier is unique only in combination with a seller ID.
         /// </summary>
         /// <value>The identifier for the feed document. This identifier is unique only in combination with a seller ID.</value>
-        [DataMember(Name="resultFeedDocumentId", EmitDefaultValue=false)]
+        [DataMember(Name = "resultFeedDocumentId", EmitDefaultValue = false)]
         public string ResultFeedDocumentId { get; set; }
 
         /// <summary>
@@ -204,7 +200,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -234,42 +230,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FeedId == input.FeedId ||
                     (this.FeedId != null &&
                     this.FeedId.Equals(input.FeedId))
-                ) && 
+                ) &&
                 (
                     this.FeedType == input.FeedType ||
                     (this.FeedType != null &&
                     this.FeedType.Equals(input.FeedType))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceIds == input.MarketplaceIds ||
                     this.MarketplaceIds != null &&
                     this.MarketplaceIds.SequenceEqual(input.MarketplaceIds)
-                ) && 
+                ) &&
                 (
                     this.CreatedTime == input.CreatedTime ||
                     (this.CreatedTime != null &&
                     this.CreatedTime.Equals(input.CreatedTime))
-                ) && 
+                ) &&
                 (
                     this.ProcessingStatus == input.ProcessingStatus ||
                     (this.ProcessingStatus != null &&
                     this.ProcessingStatus.Equals(input.ProcessingStatus))
-                ) && 
+                ) &&
                 (
                     this.ProcessingStartTime == input.ProcessingStartTime ||
                     (this.ProcessingStartTime != null &&
                     this.ProcessingStartTime.Equals(input.ProcessingStartTime))
-                ) && 
+                ) &&
                 (
                     this.ProcessingEndTime == input.ProcessingEndTime ||
                     (this.ProcessingEndTime != null &&
                     this.ProcessingEndTime.Equals(input.ProcessingEndTime))
-                ) && 
+                ) &&
                 (
                     this.ResultFeedDocumentId == input.ResultFeedDocumentId ||
                     (this.ResultFeedDocumentId != null &&

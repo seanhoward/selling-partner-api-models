@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The &#x60;setPackingInformation&#x60; request.
     /// </summary>
     [DataContract]
-    public partial class SetPackingInformationRequest :  IEquatable<SetPackingInformationRequest>, IValidatableObject
+    public partial class SetPackingInformationRequest : IEquatable<SetPackingInformationRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SetPackingInformationRequest" /> class.
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.PackageGroupings = packageGroupings;
             }
         }
-        
+
         /// <summary>
         /// List of packing information for the inbound plan.
         /// </summary>
         /// <value>List of packing information for the inbound plan.</value>
-        [DataMember(Name="packageGroupings", EmitDefaultValue=false)]
+        [DataMember(Name = "packageGroupings", EmitDefaultValue = false)]
         public List<PackageGroupingInput> PackageGroupings { get; set; }
 
         /// <summary>
@@ -71,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PackageGroupings == input.PackageGroupings ||
                     this.PackageGroupings != null &&

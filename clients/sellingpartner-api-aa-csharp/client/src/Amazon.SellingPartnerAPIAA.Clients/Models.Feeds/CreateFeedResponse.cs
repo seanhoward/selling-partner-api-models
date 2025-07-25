@@ -1,5 +1,5 @@
 /* 
- * Feeds v2021-06-30
+ * Selling Partner API for Feeds
  *
  * The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
     /// Response schema.
     /// </summary>
     [DataContract]
-    public partial class CreateFeedResponse :  IEquatable<CreateFeedResponse>, IValidatableObject
+    public partial class CreateFeedResponse : IEquatable<CreateFeedResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFeedResponse" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
                 this.FeedId = feedId;
             }
         }
-        
+
         /// <summary>
         /// The identifier for the feed. This identifier is unique only in combination with a seller ID.
         /// </summary>
         /// <value>The identifier for the feed. This identifier is unique only in combination with a seller ID.</value>
-        [DataMember(Name="feedId", EmitDefaultValue=false)]
+        [DataMember(Name = "feedId", EmitDefaultValue = false)]
         public string FeedId { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FeedId == input.FeedId ||
                     (this.FeedId != null &&

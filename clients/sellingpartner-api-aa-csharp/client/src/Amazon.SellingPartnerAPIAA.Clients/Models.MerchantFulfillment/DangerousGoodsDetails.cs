@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Details related to any dangerous goods or items that are shipped.
     /// </summary>
     [DataContract]
-    public partial class DangerousGoodsDetails :  IEquatable<DangerousGoodsDetails>, IValidatableObject
+    public partial class DangerousGoodsDetails : IEquatable<DangerousGoodsDetails>, IValidatableObject
     {
         /// <summary>
         /// The specific packaging group of the item being shipped.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PackingGroupEnum
         {
-            
+
             /// <summary>
             /// Enum I for value: I
             /// </summary>
             [EnumMember(Value = "I")]
             I = 1,
-            
+
             /// <summary>
             /// Enum II for value: II
             /// </summary>
             [EnumMember(Value = "II")]
             II = 2,
-            
+
             /// <summary>
             /// Enum III for value: III
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// The specific packaging group of the item being shipped.
         /// </summary>
         /// <value>The specific packaging group of the item being shipped.</value>
-        [DataMember(Name="PackingGroup", EmitDefaultValue=false)]
+        [DataMember(Name = "PackingGroup", EmitDefaultValue = false)]
         public PackingGroupEnum? PackingGroup { get; set; }
         /// <summary>
         /// The specific packing instruction of the item being shipped.
@@ -70,79 +65,79 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PackingInstructionEnum
         {
-            
+
             /// <summary>
             /// Enum PI965SECTIONIA for value: PI965_SECTION_IA
             /// </summary>
             [EnumMember(Value = "PI965_SECTION_IA")]
             PI965SECTIONIA = 1,
-            
+
             /// <summary>
             /// Enum PI965SECTIONIB for value: PI965_SECTION_IB
             /// </summary>
             [EnumMember(Value = "PI965_SECTION_IB")]
             PI965SECTIONIB = 2,
-            
+
             /// <summary>
             /// Enum PI965SECTIONII for value: PI965_SECTION_II
             /// </summary>
             [EnumMember(Value = "PI965_SECTION_II")]
             PI965SECTIONII = 3,
-            
+
             /// <summary>
             /// Enum PI966SECTIONI for value: PI966_SECTION_I
             /// </summary>
             [EnumMember(Value = "PI966_SECTION_I")]
             PI966SECTIONI = 4,
-            
+
             /// <summary>
             /// Enum PI966SECTIONII for value: PI966_SECTION_II
             /// </summary>
             [EnumMember(Value = "PI966_SECTION_II")]
             PI966SECTIONII = 5,
-            
+
             /// <summary>
             /// Enum PI967SECTIONI for value: PI967_SECTION_I
             /// </summary>
             [EnumMember(Value = "PI967_SECTION_I")]
             PI967SECTIONI = 6,
-            
+
             /// <summary>
             /// Enum PI967SECTIONII for value: PI967_SECTION_II
             /// </summary>
             [EnumMember(Value = "PI967_SECTION_II")]
             PI967SECTIONII = 7,
-            
+
             /// <summary>
             /// Enum PI968SECTIONIA for value: PI968_SECTION_IA
             /// </summary>
             [EnumMember(Value = "PI968_SECTION_IA")]
             PI968SECTIONIA = 8,
-            
+
             /// <summary>
             /// Enum PI968SECTIONIB for value: PI968_SECTION_IB
             /// </summary>
             [EnumMember(Value = "PI968_SECTION_IB")]
             PI968SECTIONIB = 9,
-            
+
             /// <summary>
             /// Enum PI969SECTIONI for value: PI969_SECTION_I
             /// </summary>
             [EnumMember(Value = "PI969_SECTION_I")]
             PI969SECTIONI = 10,
-            
+
             /// <summary>
             /// Enum PI969SECTIONII for value: PI969_SECTION_II
             /// </summary>
             [EnumMember(Value = "PI969_SECTION_II")]
             PI969SECTIONII = 11,
-            
+
             /// <summary>
             /// Enum PI970SECTIONI for value: PI970_SECTION_I
             /// </summary>
             [EnumMember(Value = "PI970_SECTION_I")]
             PI970SECTIONI = 12,
-            
+
             /// <summary>
             /// Enum PI970SECTIONII for value: PI970_SECTION_II
             /// </summary>
@@ -154,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// The specific packing instruction of the item being shipped.
         /// </summary>
         /// <value>The specific packing instruction of the item being shipped.</value>
-        [DataMember(Name="PackingInstruction", EmitDefaultValue=false)]
+        [DataMember(Name = "PackingInstruction", EmitDefaultValue = false)]
         public PackingInstructionEnum? PackingInstruction { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DangerousGoodsDetails" /> class.
@@ -170,19 +165,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.PackingGroup = packingGroup;
             this.PackingInstruction = packingInstruction;
         }
-        
+
         /// <summary>
         /// The specific UNID of the item being shipped.
         /// </summary>
         /// <value>The specific UNID of the item being shipped.</value>
-        [DataMember(Name="UnitedNationsRegulatoryId", EmitDefaultValue=false)]
+        [DataMember(Name = "UnitedNationsRegulatoryId", EmitDefaultValue = false)]
         public string UnitedNationsRegulatoryId { get; set; }
 
         /// <summary>
         /// The specific regulatory class of the shipped item.
         /// </summary>
         /// <value>The specific regulatory class of the shipped item.</value>
-        [DataMember(Name="TransportationRegulatoryClass", EmitDefaultValue=false)]
+        [DataMember(Name = "TransportationRegulatoryClass", EmitDefaultValue = false)]
         public string TransportationRegulatoryClass { get; set; }
 
 
@@ -202,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -232,22 +227,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UnitedNationsRegulatoryId == input.UnitedNationsRegulatoryId ||
                     (this.UnitedNationsRegulatoryId != null &&
                     this.UnitedNationsRegulatoryId.Equals(input.UnitedNationsRegulatoryId))
-                ) && 
+                ) &&
                 (
                     this.TransportationRegulatoryClass == input.TransportationRegulatoryClass ||
                     (this.TransportationRegulatoryClass != null &&
                     this.TransportationRegulatoryClass.Equals(input.TransportationRegulatoryClass))
-                ) && 
+                ) &&
                 (
                     this.PackingGroup == input.PackingGroup ||
                     (this.PackingGroup != null &&
                     this.PackingGroup.Equals(input.PackingGroup))
-                ) && 
+                ) &&
                 (
                     this.PackingInstruction == input.PackingInstruction ||
                     (this.PackingInstruction != null &&
@@ -287,14 +282,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             Regex regexUnitedNationsRegulatoryId = new Regex(@"^(UN|ID|NA)[0-9]{4}$", RegexOptions.CultureInvariant);
             if (false == regexUnitedNationsRegulatoryId.Match(this.UnitedNationsRegulatoryId).Success)
             {
-                yield return new ValidationResult("Invalid value for UnitedNationsRegulatoryId, must match a pattern of " + regexUnitedNationsRegulatoryId, new [] { "UnitedNationsRegulatoryId" });
+                yield return new ValidationResult("Invalid value for UnitedNationsRegulatoryId, must match a pattern of " + regexUnitedNationsRegulatoryId, new[] { "UnitedNationsRegulatoryId" });
             }
 
             // TransportationRegulatoryClass (string) pattern
             Regex regexTransportationRegulatoryClass = new Regex(@"^[1-9](\\.[1-9])?$", RegexOptions.CultureInvariant);
             if (false == regexTransportationRegulatoryClass.Match(this.TransportationRegulatoryClass).Success)
             {
-                yield return new ValidationResult("Invalid value for TransportationRegulatoryClass, must match a pattern of " + regexTransportationRegulatoryClass, new [] { "TransportationRegulatoryClass" });
+                yield return new ValidationResult("Invalid value for TransportationRegulatoryClass, must match a pattern of " + regexTransportationRegulatoryClass, new[] { "TransportationRegulatoryClass" });
             }
 
             yield break;

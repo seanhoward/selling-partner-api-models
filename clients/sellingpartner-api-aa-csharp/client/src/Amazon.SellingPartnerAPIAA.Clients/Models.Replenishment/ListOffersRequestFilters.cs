@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// Use these parameters to filter results. Any result must match all of the provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
     /// </summary>
     [DataContract]
-    public partial class ListOffersRequestFilters :  IEquatable<ListOffersRequestFilters>, IValidatableObject
+    public partial class ListOffersRequestFilters : IEquatable<ListOffersRequestFilters>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOffersRequestFilters" /> class.
@@ -71,53 +66,53 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             this.Preferences = preferences;
             this.Promotions = promotions;
         }
-        
+
         /// <summary>
         /// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
         /// </summary>
         /// <value>The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// A list of SKUs to filter. This filter is only supported for sellers and not for vendors.
         /// </summary>
         /// <value>A list of SKUs to filter. This filter is only supported for sellers and not for vendors.</value>
-        [DataMember(Name="skus", EmitDefaultValue=false)]
+        [DataMember(Name = "skus", EmitDefaultValue = false)]
         public List<string> Skus { get; set; }
 
         /// <summary>
         /// A list of Amazon Standard Identification Numbers (ASINs).
         /// </summary>
         /// <value>A list of Amazon Standard Identification Numbers (ASINs).</value>
-        [DataMember(Name="asins", EmitDefaultValue=false)]
+        [DataMember(Name = "asins", EmitDefaultValue = false)]
         public List<string> Asins { get; set; }
 
         /// <summary>
         /// A list of eligibilities associated with an offer.
         /// </summary>
         /// <value>A list of eligibilities associated with an offer.</value>
-        [DataMember(Name="eligibilities", EmitDefaultValue=false)]
+        [DataMember(Name = "eligibilities", EmitDefaultValue = false)]
         public List<EligibilityStatus> Eligibilities { get; set; }
 
         /// <summary>
         /// Offer preferences to include in the result filter criteria.
         /// </summary>
         /// <value>Offer preferences to include in the result filter criteria.</value>
-        [DataMember(Name="preferences", EmitDefaultValue=false)]
+        [DataMember(Name = "preferences", EmitDefaultValue = false)]
         public Preference Preferences { get; set; }
 
         /// <summary>
         /// Offer promotions to include in the result filter criteria.
         /// </summary>
         /// <value>Offer promotions to include in the result filter criteria.</value>
-        [DataMember(Name="promotions", EmitDefaultValue=false)]
+        [DataMember(Name = "promotions", EmitDefaultValue = false)]
         public Promotion Promotions { get; set; }
 
         /// <summary>
         /// Gets or Sets ProgramTypes
         /// </summary>
-        [DataMember(Name="programTypes", EmitDefaultValue=false)]
+        [DataMember(Name = "programTypes", EmitDefaultValue = false)]
         public ProgramTypes ProgramTypes { get; set; }
 
         /// <summary>
@@ -138,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -168,37 +163,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Skus == input.Skus ||
                     this.Skus != null &&
                     this.Skus.SequenceEqual(input.Skus)
-                ) && 
+                ) &&
                 (
                     this.Asins == input.Asins ||
                     this.Asins != null &&
                     this.Asins.SequenceEqual(input.Asins)
-                ) && 
+                ) &&
                 (
                     this.Eligibilities == input.Eligibilities ||
                     this.Eligibilities != null &&
                     this.Eligibilities.SequenceEqual(input.Eligibilities)
-                ) && 
+                ) &&
                 (
                     this.Preferences == input.Preferences ||
                     (this.Preferences != null &&
                     this.Preferences.Equals(input.Preferences))
-                ) && 
+                ) &&
                 (
                     this.Promotions == input.Promotions ||
                     (this.Promotions != null &&
                     this.Promotions.Equals(input.Promotions))
-                ) && 
+                ) &&
                 (
                     this.ProgramTypes == input.ProgramTypes ||
                     (this.ProgramTypes != null &&

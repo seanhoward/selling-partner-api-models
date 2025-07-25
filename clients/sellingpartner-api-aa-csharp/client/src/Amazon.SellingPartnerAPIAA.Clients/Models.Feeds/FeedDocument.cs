@@ -1,5 +1,5 @@
 /* 
- * Feeds v2021-06-30
+ * Selling Partner API for Feeds
  *
  * The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
     /// Information required for the feed document.
     /// </summary>
     [DataContract]
-    public partial class FeedDocument :  IEquatable<FeedDocument>, IValidatableObject
+    public partial class FeedDocument : IEquatable<FeedDocument>, IValidatableObject
     {
         /// <summary>
         /// If the feed document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the feed when you download. Otherwise, you can download the feed directly. Refer to [Step 7. Download the feed processing report](doc:feeds-api-v2021-06-30-use-case-guide#step-7-download-the-feed-processing-report) in the use case guide, where sample code is provided.
@@ -37,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompressionAlgorithmEnum
         {
-            
+
             /// <summary>
             /// Enum GZIP for value: GZIP
             /// </summary>
@@ -49,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
         /// If the feed document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the feed when you download. Otherwise, you can download the feed directly. Refer to [Step 7. Download the feed processing report](doc:feeds-api-v2021-06-30-use-case-guide#step-7-download-the-feed-processing-report) in the use case guide, where sample code is provided.
         /// </summary>
         /// <value>If the feed document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the feed when you download. Otherwise, you can download the feed directly. Refer to [Step 7. Download the feed processing report](doc:feeds-api-v2021-06-30-use-case-guide#step-7-download-the-feed-processing-report) in the use case guide, where sample code is provided.</value>
-        [DataMember(Name="compressionAlgorithm", EmitDefaultValue=false)]
+        [DataMember(Name = "compressionAlgorithm", EmitDefaultValue = false)]
         public CompressionAlgorithmEnum? CompressionAlgorithm { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedDocument" /> class.
@@ -84,19 +79,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             }
             this.CompressionAlgorithm = compressionAlgorithm;
         }
-        
+
         /// <summary>
         /// The identifier for the feed document. This identifier is unique only in combination with a seller ID.
         /// </summary>
         /// <value>The identifier for the feed document. This identifier is unique only in combination with a seller ID.</value>
-        [DataMember(Name="feedDocumentId", EmitDefaultValue=false)]
+        [DataMember(Name = "feedDocumentId", EmitDefaultValue = false)]
         public string FeedDocumentId { get; set; }
 
         /// <summary>
         /// A presigned URL for the feed document. If &#x60;compressionAlgorithm&#x60; is not returned, you can download the feed directly from this URL. This URL expires after 5 minutes.
         /// </summary>
         /// <value>A presigned URL for the feed document. If &#x60;compressionAlgorithm&#x60; is not returned, you can download the feed directly from this URL. This URL expires after 5 minutes.</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
 
@@ -114,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -144,17 +139,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FeedDocumentId == input.FeedDocumentId ||
                     (this.FeedDocumentId != null &&
                     this.FeedDocumentId.Equals(input.FeedDocumentId))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.CompressionAlgorithm == input.CompressionAlgorithm ||
                     (this.CompressionAlgorithm != null &&

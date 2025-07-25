@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// This exception is thrown when client inputs are invalid.
     /// </summary>
     [DataContract]
-    public partial class ErrorList :  IEquatable<ErrorList>, IValidatableObject
+    public partial class ErrorList : IEquatable<ErrorList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorList" /> class.
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 this.Errors = errors;
             }
         }
-        
+
         /// <summary>
         /// A list of errors describing the failures.
         /// </summary>
         /// <value>A list of errors describing the failures.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public List<Error> Errors { get; set; }
 
         /// <summary>
@@ -71,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Errors == input.Errors ||
                     this.Errors != null &&

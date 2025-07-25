@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,12 +23,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Information about a fulfillment order preview, including delivery and fee information based on shipping method.
     /// </summary>
     [DataContract]
-    public partial class FulfillmentPreview :  IEquatable<FulfillmentPreview>, IValidatableObject
+    public partial class FulfillmentPreview : IEquatable<FulfillmentPreview>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ShippingSpeedCategory
         /// </summary>
-        [DataMember(Name="shippingSpeedCategory", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingSpeedCategory", EmitDefaultValue = false)]
         public ShippingSpeedCategory ShippingSpeedCategory { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentPreview" /> class.
@@ -100,73 +95,73 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.OrderUnfulfillableReasons = orderUnfulfillableReasons;
             this.FeatureConstraints = featureConstraints;
         }
-        
+
 
         /// <summary>
         /// Gets or Sets ScheduledDeliveryInfo
         /// </summary>
-        [DataMember(Name="scheduledDeliveryInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduledDeliveryInfo", EmitDefaultValue = false)]
         public ScheduledDeliveryInfo ScheduledDeliveryInfo { get; set; }
 
         /// <summary>
         /// When true, this fulfillment order preview is fulfillable.
         /// </summary>
         /// <value>When true, this fulfillment order preview is fulfillable.</value>
-        [DataMember(Name="isFulfillable", EmitDefaultValue=false)]
+        [DataMember(Name = "isFulfillable", EmitDefaultValue = false)]
         public bool? IsFulfillable { get; set; }
 
         /// <summary>
         /// When true, this fulfillment order preview is for COD (Cash On Delivery).
         /// </summary>
         /// <value>When true, this fulfillment order preview is for COD (Cash On Delivery).</value>
-        [DataMember(Name="isCODCapable", EmitDefaultValue=false)]
+        [DataMember(Name = "isCODCapable", EmitDefaultValue = false)]
         public bool? IsCODCapable { get; set; }
 
         /// <summary>
         /// Estimated shipping weight for this fulfillment order preview.
         /// </summary>
         /// <value>Estimated shipping weight for this fulfillment order preview.</value>
-        [DataMember(Name="estimatedShippingWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "estimatedShippingWeight", EmitDefaultValue = false)]
         public Weight EstimatedShippingWeight { get; set; }
 
         /// <summary>
         /// The estimated fulfillment fees for this fulfillment order preview, if applicable. The fees data will not be available for IN marketplace orders.
         /// </summary>
         /// <value>The estimated fulfillment fees for this fulfillment order preview, if applicable. The fees data will not be available for IN marketplace orders.</value>
-        [DataMember(Name="estimatedFees", EmitDefaultValue=false)]
+        [DataMember(Name = "estimatedFees", EmitDefaultValue = false)]
         public FeeList EstimatedFees { get; set; }
 
         /// <summary>
         /// Gets or Sets FulfillmentPreviewShipments
         /// </summary>
-        [DataMember(Name="fulfillmentPreviewShipments", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentPreviewShipments", EmitDefaultValue = false)]
         public FulfillmentPreviewShipmentList FulfillmentPreviewShipments { get; set; }
 
         /// <summary>
         /// Gets or Sets UnfulfillablePreviewItems
         /// </summary>
-        [DataMember(Name="unfulfillablePreviewItems", EmitDefaultValue=false)]
+        [DataMember(Name = "unfulfillablePreviewItems", EmitDefaultValue = false)]
         public UnfulfillablePreviewItemList UnfulfillablePreviewItems { get; set; }
 
         /// <summary>
         /// Error codes associated with the fulfillment order preview that indicate why the order is not fulfillable.  Error code examples:  &#x60;DeliverySLAUnavailable&#x60; &#x60;InvalidDestinationAddress&#x60;
         /// </summary>
         /// <value>Error codes associated with the fulfillment order preview that indicate why the order is not fulfillable.  Error code examples:  &#x60;DeliverySLAUnavailable&#x60; &#x60;InvalidDestinationAddress&#x60;</value>
-        [DataMember(Name="orderUnfulfillableReasons", EmitDefaultValue=false)]
+        [DataMember(Name = "orderUnfulfillableReasons", EmitDefaultValue = false)]
         public StringList OrderUnfulfillableReasons { get; set; }
 
         /// <summary>
         /// The marketplace the fulfillment order is placed against.
         /// </summary>
         /// <value>The marketplace the fulfillment order is placed against.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// A list of features and their fulfillment policies to apply to the order.
         /// </summary>
         /// <value>A list of features and their fulfillment policies to apply to the order.</value>
-        [DataMember(Name="featureConstraints", EmitDefaultValue=false)]
+        [DataMember(Name = "featureConstraints", EmitDefaultValue = false)]
         public List<FeatureSettings> FeatureConstraints { get; set; }
 
         /// <summary>
@@ -191,7 +186,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -221,57 +216,57 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShippingSpeedCategory == input.ShippingSpeedCategory ||
                     (this.ShippingSpeedCategory != null &&
                     this.ShippingSpeedCategory.Equals(input.ShippingSpeedCategory))
-                ) && 
+                ) &&
                 (
                     this.ScheduledDeliveryInfo == input.ScheduledDeliveryInfo ||
                     (this.ScheduledDeliveryInfo != null &&
                     this.ScheduledDeliveryInfo.Equals(input.ScheduledDeliveryInfo))
-                ) && 
+                ) &&
                 (
                     this.IsFulfillable == input.IsFulfillable ||
                     (this.IsFulfillable != null &&
                     this.IsFulfillable.Equals(input.IsFulfillable))
-                ) && 
+                ) &&
                 (
                     this.IsCODCapable == input.IsCODCapable ||
                     (this.IsCODCapable != null &&
                     this.IsCODCapable.Equals(input.IsCODCapable))
-                ) && 
+                ) &&
                 (
                     this.EstimatedShippingWeight == input.EstimatedShippingWeight ||
                     (this.EstimatedShippingWeight != null &&
                     this.EstimatedShippingWeight.Equals(input.EstimatedShippingWeight))
-                ) && 
+                ) &&
                 (
                     this.EstimatedFees == input.EstimatedFees ||
                     (this.EstimatedFees != null &&
                     this.EstimatedFees.Equals(input.EstimatedFees))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentPreviewShipments == input.FulfillmentPreviewShipments ||
                     (this.FulfillmentPreviewShipments != null &&
                     this.FulfillmentPreviewShipments.Equals(input.FulfillmentPreviewShipments))
-                ) && 
+                ) &&
                 (
                     this.UnfulfillablePreviewItems == input.UnfulfillablePreviewItems ||
                     (this.UnfulfillablePreviewItems != null &&
                     this.UnfulfillablePreviewItems.Equals(input.UnfulfillablePreviewItems))
-                ) && 
+                ) &&
                 (
                     this.OrderUnfulfillableReasons == input.OrderUnfulfillableReasons ||
                     (this.OrderUnfulfillableReasons != null &&
                     this.OrderUnfulfillableReasons.Equals(input.OrderUnfulfillableReasons))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.FeatureConstraints == input.FeatureConstraints ||
                     this.FeatureConstraints != null &&

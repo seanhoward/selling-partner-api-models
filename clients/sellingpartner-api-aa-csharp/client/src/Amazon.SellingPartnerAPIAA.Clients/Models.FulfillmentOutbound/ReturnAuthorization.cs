@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Return authorization information for items accepted for return.
     /// </summary>
     [DataContract]
-    public partial class ReturnAuthorization :  IEquatable<ReturnAuthorization>, IValidatableObject
+    public partial class ReturnAuthorization : IEquatable<ReturnAuthorization>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReturnAuthorization" /> class.
@@ -91,40 +85,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.RmaPageURL = rmaPageURL;
             }
         }
-        
+
         /// <summary>
         /// An identifier for the return authorization. This identifier associates return items with the return authorization used to return them.
         /// </summary>
         /// <value>An identifier for the return authorization. This identifier associates return items with the return authorization used to return them.</value>
-        [DataMember(Name="returnAuthorizationId", EmitDefaultValue=false)]
+        [DataMember(Name = "returnAuthorizationId", EmitDefaultValue = false)]
         public string ReturnAuthorizationId { get; set; }
 
         /// <summary>
         /// An identifier for the Amazon fulfillment center that the return items should be sent to.
         /// </summary>
         /// <value>An identifier for the Amazon fulfillment center that the return items should be sent to.</value>
-        [DataMember(Name="fulfillmentCenterId", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentCenterId", EmitDefaultValue = false)]
         public string FulfillmentCenterId { get; set; }
 
         /// <summary>
         /// The address of the Amazon fulfillment center that the return items should be sent to.
         /// </summary>
         /// <value>The address of the Amazon fulfillment center that the return items should be sent to.</value>
-        [DataMember(Name="returnToAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "returnToAddress", EmitDefaultValue = false)]
         public Address ReturnToAddress { get; set; }
 
         /// <summary>
         /// The return merchandise authorization (RMA) that Amazon needs to process the return.
         /// </summary>
         /// <value>The return merchandise authorization (RMA) that Amazon needs to process the return.</value>
-        [DataMember(Name="amazonRmaId", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonRmaId", EmitDefaultValue = false)]
         public string AmazonRmaId { get; set; }
 
         /// <summary>
         /// A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.
         /// </summary>
         /// <value>A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.</value>
-        [DataMember(Name="rmaPageURL", EmitDefaultValue=false)]
+        [DataMember(Name = "rmaPageURL", EmitDefaultValue = false)]
         public string RmaPageURL { get; set; }
 
         /// <summary>
@@ -143,7 +137,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -173,27 +167,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReturnAuthorizationId == input.ReturnAuthorizationId ||
                     (this.ReturnAuthorizationId != null &&
                     this.ReturnAuthorizationId.Equals(input.ReturnAuthorizationId))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentCenterId == input.FulfillmentCenterId ||
                     (this.FulfillmentCenterId != null &&
                     this.FulfillmentCenterId.Equals(input.FulfillmentCenterId))
-                ) && 
+                ) &&
                 (
                     this.ReturnToAddress == input.ReturnToAddress ||
                     (this.ReturnToAddress != null &&
                     this.ReturnToAddress.Equals(input.ReturnToAddress))
-                ) && 
+                ) &&
                 (
                     this.AmazonRmaId == input.AmazonRmaId ||
                     (this.AmazonRmaId != null &&
                     this.AmazonRmaId.Equals(input.AmazonRmaId))
-                ) && 
+                ) &&
                 (
                     this.RmaPageURL == input.RmaPageURL ||
                     (this.RmaPageURL != null &&

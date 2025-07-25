@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// Response containing the results of a submission to the Selling Partner API for Listings Items.
     /// </summary>
     [DataContract]
-    public partial class ListingsItemSubmissionResponse :  IEquatable<ListingsItemSubmissionResponse>, IValidatableObject
+    public partial class ListingsItemSubmissionResponse : IEquatable<ListingsItemSubmissionResponse>, IValidatableObject
     {
         /// <summary>
         /// The status of the listings item submission.
@@ -37,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
-            
+
             /// <summary>
             /// Enum ACCEPTED for value: ACCEPTED
             /// </summary>
             [EnumMember(Value = "ACCEPTED")]
             ACCEPTED = 1,
-            
+
             /// <summary>
             /// Enum INVALID for value: INVALID
             /// </summary>
             [EnumMember(Value = "INVALID")]
             INVALID = 2,
-            
+
             /// <summary>
             /// Enum VALID for value: VALID
             /// </summary>
@@ -61,7 +57,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// The status of the listings item submission.
         /// </summary>
         /// <value>The status of the listings item submission.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListingsItemSubmissionResponse" /> class.
@@ -108,12 +104,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             this.Issues = issues;
             this.Identifiers = identifiers;
         }
-        
+
         /// <summary>
         /// A selling partner provided identifier for an Amazon listing.
         /// </summary>
         /// <value>A selling partner provided identifier for an Amazon listing.</value>
-        [DataMember(Name="sku", EmitDefaultValue=false)]
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
 
@@ -121,21 +117,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// The unique identifier of the listings item submission.
         /// </summary>
         /// <value>The unique identifier of the listings item submission.</value>
-        [DataMember(Name="submissionId", EmitDefaultValue=false)]
+        [DataMember(Name = "submissionId", EmitDefaultValue = false)]
         public string SubmissionId { get; set; }
 
         /// <summary>
         /// Listings item issues related to the listings item submission.
         /// </summary>
         /// <value>Listings item issues related to the listings item submission.</value>
-        [DataMember(Name="issues", EmitDefaultValue=false)]
+        [DataMember(Name = "issues", EmitDefaultValue = false)]
         public List<Issue> Issues { get; set; }
 
         /// <summary>
         /// Identity attributes associated with the item in the Amazon catalog, such as the ASIN.
         /// </summary>
         /// <value>Identity attributes associated with the item in the Amazon catalog, such as the ASIN.</value>
-        [DataMember(Name="identifiers", EmitDefaultValue=false)]
+        [DataMember(Name = "identifiers", EmitDefaultValue = false)]
         public ItemIdentifiers Identifiers { get; set; }
 
         /// <summary>
@@ -154,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -184,27 +180,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Sku == input.Sku ||
                     (this.Sku != null &&
                     this.Sku.Equals(input.Sku))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.SubmissionId == input.SubmissionId ||
                     (this.SubmissionId != null &&
                     this.SubmissionId.Equals(input.SubmissionId))
-                ) && 
+                ) &&
                 (
                     this.Issues == input.Issues ||
                     this.Issues != null &&
                     this.Issues.SequenceEqual(input.Issues)
-                ) && 
+                ) &&
                 (
                     this.Identifiers == input.Identifiers ||
                     (this.Identifiers != null &&

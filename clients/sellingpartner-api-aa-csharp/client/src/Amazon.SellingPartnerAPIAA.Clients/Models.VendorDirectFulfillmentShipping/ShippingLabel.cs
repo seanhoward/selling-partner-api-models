@@ -9,18 +9,15 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +25,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Shipping label information for an order, including the purchase order number, selling party, ship from party, label format, and package details.
     /// </summary>
     [DataContract]
-    public partial class ShippingLabel :  IEquatable<ShippingLabel>, IValidatableObject
+    public partial class ShippingLabel : IEquatable<ShippingLabel>, IValidatableObject
     {
         /// <summary>
         /// Format of the label.
@@ -37,13 +34,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LabelFormatEnum
         {
-            
+
             /// <summary>
             /// Enum PNG for value: PNG
             /// </summary>
             [EnumMember(Value = "PNG")]
             PNG = 1,
-            
+
             /// <summary>
             /// Enum ZPL for value: ZPL
             /// </summary>
@@ -55,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// Format of the label.
         /// </summary>
         /// <value>Format of the label.</value>
-        [DataMember(Name="labelFormat", EmitDefaultValue=false)]
+        [DataMember(Name = "labelFormat", EmitDefaultValue = false)]
         public LabelFormatEnum LabelFormat { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingLabel" /> class.
@@ -118,26 +115,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
                 this.LabelData = labelData;
             }
         }
-        
+
         /// <summary>
         /// This field will contain the Purchase Order Number for this order.
         /// </summary>
         /// <value>This field will contain the Purchase Order Number for this order.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
         /// ID of the selling party or vendor.
         /// </summary>
         /// <value>ID of the selling party or vendor.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// Warehouse code of vendor.
         /// </summary>
         /// <value>Warehouse code of vendor.</value>
-        [DataMember(Name="shipFromParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFromParty", EmitDefaultValue = false)]
         public PartyIdentification ShipFromParty { get; set; }
 
 
@@ -145,7 +142,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// Provides the details of the packages in this shipment.
         /// </summary>
         /// <value>Provides the details of the packages in this shipment.</value>
-        [DataMember(Name="labelData", EmitDefaultValue=false)]
+        [DataMember(Name = "labelData", EmitDefaultValue = false)]
         public List<LabelData> LabelData { get; set; }
 
         /// <summary>
@@ -164,7 +161,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -194,27 +191,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.ShipFromParty == input.ShipFromParty ||
                     (this.ShipFromParty != null &&
                     this.ShipFromParty.Equals(input.ShipFromParty))
-                ) && 
+                ) &&
                 (
                     this.LabelFormat == input.LabelFormat ||
                     (this.LabelFormat != null &&
                     this.LabelFormat.Equals(input.LabelFormat))
-                ) && 
+                ) &&
                 (
                     this.LabelData == input.LabelData ||
                     this.LabelData != null &&
@@ -256,7 +253,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             Regex regexPurchaseOrderNumber = new Regex(@"^[a-zA-Z0-9]+$", RegexOptions.CultureInvariant);
             if (false == regexPurchaseOrderNumber.Match(this.PurchaseOrderNumber).Success)
             {
-                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new [] { "PurchaseOrderNumber" });
+                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new[] { "PurchaseOrderNumber" });
             }
 
             yield break;

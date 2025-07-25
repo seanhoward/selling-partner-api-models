@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -35,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
         /// <returns>GetMyFeesEstimateResponse</returns>
-        GetMyFeesEstimateResponse GetMyFeesEstimateForASIN (GetMyFeesEstimateRequest body, string asin);
+        GetMyFeesEstimateResponse GetMyFeesEstimateForASIN(GetMyFeesEstimateRequest body, string asin);
 
         /// <summary>
         /// 
@@ -47,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
         /// <returns>ApiResponse of GetMyFeesEstimateResponse</returns>
-        ApiResponse<GetMyFeesEstimateResponse> GetMyFeesEstimateForASINWithHttpInfo (GetMyFeesEstimateRequest body, string asin);
+        ApiResponse<GetMyFeesEstimateResponse> GetMyFeesEstimateForASINWithHttpInfo(GetMyFeesEstimateRequest body, string asin);
         /// <summary>
         /// 
         /// </summary>
@@ -58,7 +57,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="sellerSKU">Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.</param>
         /// <returns>GetMyFeesEstimateResponse</returns>
-        GetMyFeesEstimateResponse GetMyFeesEstimateForSKU (GetMyFeesEstimateRequest body, string sellerSKU);
+        GetMyFeesEstimateResponse GetMyFeesEstimateForSKU(GetMyFeesEstimateRequest body, string sellerSKU);
 
         /// <summary>
         /// 
@@ -70,7 +69,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="sellerSKU">Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.</param>
         /// <returns>ApiResponse of GetMyFeesEstimateResponse</returns>
-        ApiResponse<GetMyFeesEstimateResponse> GetMyFeesEstimateForSKUWithHttpInfo (GetMyFeesEstimateRequest body, string sellerSKU);
+        ApiResponse<GetMyFeesEstimateResponse> GetMyFeesEstimateForSKUWithHttpInfo(GetMyFeesEstimateRequest body, string sellerSKU);
         /// <summary>
         /// 
         /// </summary>
@@ -80,7 +79,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>GetMyFeesEstimatesResponse</returns>
-        GetMyFeesEstimatesResponse GetMyFeesEstimates (GetMyFeesEstimatesRequest body);
+        GetMyFeesEstimatesResponse GetMyFeesEstimates(GetMyFeesEstimatesRequest body);
 
         /// <summary>
         /// 
@@ -91,7 +90,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>ApiResponse of GetMyFeesEstimatesResponse</returns>
-        ApiResponse<GetMyFeesEstimatesResponse> GetMyFeesEstimatesWithHttpInfo (GetMyFeesEstimatesRequest body);
+        ApiResponse<GetMyFeesEstimatesResponse> GetMyFeesEstimatesWithHttpInfo(GetMyFeesEstimatesRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -104,7 +103,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
         /// <returns>Task of GetMyFeesEstimateResponse</returns>
-        System.Threading.Tasks.Task<GetMyFeesEstimateResponse> GetMyFeesEstimateForASINAsync (GetMyFeesEstimateRequest body, string asin);
+        System.Threading.Tasks.Task<GetMyFeesEstimateResponse> GetMyFeesEstimateForASINAsync(GetMyFeesEstimateRequest body, string asin);
 
         /// <summary>
         /// 
@@ -116,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
         /// <returns>Task of ApiResponse (GetMyFeesEstimateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimateResponse>> GetMyFeesEstimateForASINAsyncWithHttpInfo (GetMyFeesEstimateRequest body, string asin);
+        System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimateResponse>> GetMyFeesEstimateForASINAsyncWithHttpInfo(GetMyFeesEstimateRequest body, string asin);
         /// <summary>
         /// 
         /// </summary>
@@ -127,7 +126,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="sellerSKU">Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.</param>
         /// <returns>Task of GetMyFeesEstimateResponse</returns>
-        System.Threading.Tasks.Task<GetMyFeesEstimateResponse> GetMyFeesEstimateForSKUAsync (GetMyFeesEstimateRequest body, string sellerSKU);
+        System.Threading.Tasks.Task<GetMyFeesEstimateResponse> GetMyFeesEstimateForSKUAsync(GetMyFeesEstimateRequest body, string sellerSKU);
 
         /// <summary>
         /// 
@@ -139,7 +138,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="sellerSKU">Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.</param>
         /// <returns>Task of ApiResponse (GetMyFeesEstimateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimateResponse>> GetMyFeesEstimateForSKUAsyncWithHttpInfo (GetMyFeesEstimateRequest body, string sellerSKU);
+        System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimateResponse>> GetMyFeesEstimateForSKUAsyncWithHttpInfo(GetMyFeesEstimateRequest body, string sellerSKU);
         /// <summary>
         /// 
         /// </summary>
@@ -149,7 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of GetMyFeesEstimatesResponse</returns>
-        System.Threading.Tasks.Task<GetMyFeesEstimatesResponse> GetMyFeesEstimatesAsync (GetMyFeesEstimatesRequest body);
+        System.Threading.Tasks.Task<GetMyFeesEstimatesResponse> GetMyFeesEstimatesAsync(GetMyFeesEstimatesRequest body);
 
         /// <summary>
         /// 
@@ -160,7 +159,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (GetMyFeesEstimatesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimatesResponse>> GetMyFeesEstimatesAsyncWithHttpInfo (GetMyFeesEstimatesRequest body);
+        System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimatesResponse>> GetMyFeesEstimatesAsyncWithHttpInfo(GetMyFeesEstimatesRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -180,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public FeesApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -206,7 +205,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -253,10 +252,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
         /// <returns>GetMyFeesEstimateResponse</returns>
-        public GetMyFeesEstimateResponse GetMyFeesEstimateForASIN (GetMyFeesEstimateRequest body, string asin)
+        public GetMyFeesEstimateResponse GetMyFeesEstimateForASIN(GetMyFeesEstimateRequest body, string asin)
         {
-             ApiResponse<GetMyFeesEstimateResponse> localVarResponse = GetMyFeesEstimateForASINWithHttpInfo(body, asin);
-             return localVarResponse.Data;
+            ApiResponse<GetMyFeesEstimateResponse> localVarResponse = GetMyFeesEstimateForASINWithHttpInfo(body, asin);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -266,7 +265,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
         /// <returns>ApiResponse of GetMyFeesEstimateResponse</returns>
-        public ApiResponse< GetMyFeesEstimateResponse > GetMyFeesEstimateForASINWithHttpInfo (GetMyFeesEstimateRequest body, string asin)
+        public ApiResponse<GetMyFeesEstimateResponse> GetMyFeesEstimateForASINWithHttpInfo(GetMyFeesEstimateRequest body, string asin)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -309,11 +308,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -323,7 +322,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetMyFeesEstimateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetMyFeesEstimateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimateResponse)));
+                (GetMyFeesEstimateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimateResponse)));
         }
 
         /// <summary>
@@ -333,10 +332,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
         /// <returns>Task of GetMyFeesEstimateResponse</returns>
-        public async System.Threading.Tasks.Task<GetMyFeesEstimateResponse> GetMyFeesEstimateForASINAsync (GetMyFeesEstimateRequest body, string asin)
+        public async System.Threading.Tasks.Task<GetMyFeesEstimateResponse> GetMyFeesEstimateForASINAsync(GetMyFeesEstimateRequest body, string asin)
         {
-             ApiResponse<GetMyFeesEstimateResponse> localVarResponse = await GetMyFeesEstimateForASINAsyncWithHttpInfo(body, asin);
-             return localVarResponse.Data;
+            ApiResponse<GetMyFeesEstimateResponse> localVarResponse = await GetMyFeesEstimateForASINAsyncWithHttpInfo(body, asin);
+            return localVarResponse.Data;
 
         }
 
@@ -347,7 +346,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item.</param>
         /// <returns>Task of ApiResponse (GetMyFeesEstimateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimateResponse>> GetMyFeesEstimateForASINAsyncWithHttpInfo (GetMyFeesEstimateRequest body, string asin)
+        public async System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimateResponse>> GetMyFeesEstimateForASINAsyncWithHttpInfo(GetMyFeesEstimateRequest body, string asin)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -390,11 +389,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -404,7 +403,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetMyFeesEstimateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetMyFeesEstimateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimateResponse)));
+                (GetMyFeesEstimateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimateResponse)));
         }
 
         /// <summary>
@@ -414,10 +413,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="sellerSKU">Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.</param>
         /// <returns>GetMyFeesEstimateResponse</returns>
-        public GetMyFeesEstimateResponse GetMyFeesEstimateForSKU (GetMyFeesEstimateRequest body, string sellerSKU)
+        public GetMyFeesEstimateResponse GetMyFeesEstimateForSKU(GetMyFeesEstimateRequest body, string sellerSKU)
         {
-             ApiResponse<GetMyFeesEstimateResponse> localVarResponse = GetMyFeesEstimateForSKUWithHttpInfo(body, sellerSKU);
-             return localVarResponse.Data;
+            ApiResponse<GetMyFeesEstimateResponse> localVarResponse = GetMyFeesEstimateForSKUWithHttpInfo(body, sellerSKU);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -427,7 +426,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="sellerSKU">Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.</param>
         /// <returns>ApiResponse of GetMyFeesEstimateResponse</returns>
-        public ApiResponse< GetMyFeesEstimateResponse > GetMyFeesEstimateForSKUWithHttpInfo (GetMyFeesEstimateRequest body, string sellerSKU)
+        public ApiResponse<GetMyFeesEstimateResponse> GetMyFeesEstimateForSKUWithHttpInfo(GetMyFeesEstimateRequest body, string sellerSKU)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -470,11 +469,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -484,7 +483,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetMyFeesEstimateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetMyFeesEstimateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimateResponse)));
+                (GetMyFeesEstimateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimateResponse)));
         }
 
         /// <summary>
@@ -494,10 +493,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="sellerSKU">Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.</param>
         /// <returns>Task of GetMyFeesEstimateResponse</returns>
-        public async System.Threading.Tasks.Task<GetMyFeesEstimateResponse> GetMyFeesEstimateForSKUAsync (GetMyFeesEstimateRequest body, string sellerSKU)
+        public async System.Threading.Tasks.Task<GetMyFeesEstimateResponse> GetMyFeesEstimateForSKUAsync(GetMyFeesEstimateRequest body, string sellerSKU)
         {
-             ApiResponse<GetMyFeesEstimateResponse> localVarResponse = await GetMyFeesEstimateForSKUAsyncWithHttpInfo(body, sellerSKU);
-             return localVarResponse.Data;
+            ApiResponse<GetMyFeesEstimateResponse> localVarResponse = await GetMyFeesEstimateForSKUAsyncWithHttpInfo(body, sellerSKU);
+            return localVarResponse.Data;
 
         }
 
@@ -508,7 +507,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body"></param>
         /// <param name="sellerSKU">Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.</param>
         /// <returns>Task of ApiResponse (GetMyFeesEstimateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimateResponse>> GetMyFeesEstimateForSKUAsyncWithHttpInfo (GetMyFeesEstimateRequest body, string sellerSKU)
+        public async System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimateResponse>> GetMyFeesEstimateForSKUAsyncWithHttpInfo(GetMyFeesEstimateRequest body, string sellerSKU)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -551,11 +550,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -565,7 +564,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetMyFeesEstimateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetMyFeesEstimateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimateResponse)));
+                (GetMyFeesEstimateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimateResponse)));
         }
 
         /// <summary>
@@ -574,10 +573,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>GetMyFeesEstimatesResponse</returns>
-        public GetMyFeesEstimatesResponse GetMyFeesEstimates (GetMyFeesEstimatesRequest body)
+        public GetMyFeesEstimatesResponse GetMyFeesEstimates(GetMyFeesEstimatesRequest body)
         {
-             ApiResponse<GetMyFeesEstimatesResponse> localVarResponse = GetMyFeesEstimatesWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetMyFeesEstimatesResponse> localVarResponse = GetMyFeesEstimatesWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -586,7 +585,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>ApiResponse of GetMyFeesEstimatesResponse</returns>
-        public ApiResponse< GetMyFeesEstimatesResponse > GetMyFeesEstimatesWithHttpInfo (GetMyFeesEstimatesRequest body)
+        public ApiResponse<GetMyFeesEstimatesResponse> GetMyFeesEstimatesWithHttpInfo(GetMyFeesEstimatesRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -625,11 +624,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -639,7 +638,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetMyFeesEstimatesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetMyFeesEstimatesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimatesResponse)));
+                (GetMyFeesEstimatesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimatesResponse)));
         }
 
         /// <summary>
@@ -648,10 +647,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of GetMyFeesEstimatesResponse</returns>
-        public async System.Threading.Tasks.Task<GetMyFeesEstimatesResponse> GetMyFeesEstimatesAsync (GetMyFeesEstimatesRequest body)
+        public async System.Threading.Tasks.Task<GetMyFeesEstimatesResponse> GetMyFeesEstimatesAsync(GetMyFeesEstimatesRequest body)
         {
-             ApiResponse<GetMyFeesEstimatesResponse> localVarResponse = await GetMyFeesEstimatesAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetMyFeesEstimatesResponse> localVarResponse = await GetMyFeesEstimatesAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -661,7 +660,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (GetMyFeesEstimatesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimatesResponse>> GetMyFeesEstimatesAsyncWithHttpInfo (GetMyFeesEstimatesRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<GetMyFeesEstimatesResponse>> GetMyFeesEstimatesAsyncWithHttpInfo(GetMyFeesEstimatesRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -700,11 +699,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -714,7 +713,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetMyFeesEstimatesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetMyFeesEstimatesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimatesResponse)));
+                (GetMyFeesEstimatesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMyFeesEstimatesResponse)));
         }
 
 
@@ -728,17 +727,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public FeesApi Build() 
+            public FeesApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

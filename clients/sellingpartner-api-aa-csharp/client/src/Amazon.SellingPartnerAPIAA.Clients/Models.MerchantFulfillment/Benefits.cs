@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (for example, &#x60;CLAIMS_PROTECTED&#x60;) when sellers purchase shipping through Amazon. Benefit details are made available for any shipment placed on or after January 1st 2024 00:00 UTC.
     /// </summary>
     [DataContract]
-    public partial class Benefits :  IEquatable<Benefits>, IValidatableObject
+    public partial class Benefits : IEquatable<Benefits>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Benefits" /> class.
@@ -40,17 +33,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.IncludedBenefits = includedBenefits;
             this.ExcludedBenefits = excludedBenefits;
         }
-        
+
         /// <summary>
         /// Gets or Sets IncludedBenefits
         /// </summary>
-        [DataMember(Name="IncludedBenefits", EmitDefaultValue=false)]
+        [DataMember(Name = "IncludedBenefits", EmitDefaultValue = false)]
         public IncludedBenefits IncludedBenefits { get; set; }
 
         /// <summary>
         /// Gets or Sets ExcludedBenefits
         /// </summary>
-        [DataMember(Name="ExcludedBenefits", EmitDefaultValue=false)]
+        [DataMember(Name = "ExcludedBenefits", EmitDefaultValue = false)]
         public ExcludedBenefits ExcludedBenefits { get; set; }
 
         /// <summary>
@@ -66,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -96,12 +89,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IncludedBenefits == input.IncludedBenefits ||
                     (this.IncludedBenefits != null &&
                     this.IncludedBenefits.Equals(input.IncludedBenefits))
-                ) && 
+                ) &&
                 (
                     this.ExcludedBenefits == input.ExcludedBenefits ||
                     (this.ExcludedBenefits != null &&

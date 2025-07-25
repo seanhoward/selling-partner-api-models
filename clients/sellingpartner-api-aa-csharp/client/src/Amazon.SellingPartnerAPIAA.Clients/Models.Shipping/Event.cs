@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// An event of a shipment
     /// </summary>
     [DataContract]
-    public partial class Event :  IEquatable<Event>, IValidatableObject
+    public partial class Event : IEquatable<Event>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Event" /> class.
@@ -63,24 +57,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             }
             this.Location = location;
         }
-        
+
         /// <summary>
         /// Gets or Sets EventCode
         /// </summary>
-        [DataMember(Name="eventCode", EmitDefaultValue=false)]
+        [DataMember(Name = "eventCode", EmitDefaultValue = false)]
         public string EventCode { get; set; }
 
         /// <summary>
         /// The date and time of an event for a shipment.
         /// </summary>
         /// <value>The date and time of an event for a shipment.</value>
-        [DataMember(Name="eventTime", EmitDefaultValue=false)]
+        [DataMember(Name = "eventTime", EmitDefaultValue = false)]
         public DateTime? EventTime { get; set; }
 
         /// <summary>
         /// Gets or Sets Location
         /// </summary>
-        [DataMember(Name="location", EmitDefaultValue=false)]
+        [DataMember(Name = "location", EmitDefaultValue = false)]
         public Location Location { get; set; }
 
         /// <summary>
@@ -97,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -127,17 +121,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.EventCode == input.EventCode ||
                     (this.EventCode != null &&
                     this.EventCode.Equals(input.EventCode))
-                ) && 
+                ) &&
                 (
                     this.EventTime == input.EventTime ||
                     (this.EventTime != null &&
                     this.EventTime.Equals(input.EventTime))
-                ) && 
+                ) &&
                 (
                     this.Location == input.Location ||
                     (this.Location != null &&

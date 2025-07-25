@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Represents an AWD distribution package.
     /// </summary>
     [DataContract]
-    public partial class DistributionPackage :  IEquatable<DistributionPackage>, IValidatableObject
+    public partial class DistributionPackage : IEquatable<DistributionPackage>, IValidatableObject
     {
         /// <summary>
         /// Type of distribution package.
         /// </summary>
         /// <value>Type of distribution package.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public DistributionPackageType Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DistributionPackage" /> class.
@@ -77,19 +71,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 this.Type = type;
             }
         }
-        
+
         /// <summary>
         /// The contents appropriate for the type.
         /// </summary>
         /// <value>The contents appropriate for the type.</value>
-        [DataMember(Name="contents", EmitDefaultValue=false)]
+        [DataMember(Name = "contents", EmitDefaultValue = false)]
         public DistributionPackageContents Contents { get; set; }
 
         /// <summary>
         /// Measurements of a package, including weight, volume, and dimensions.
         /// </summary>
         /// <value>Measurements of a package, including weight, volume, and dimensions.</value>
-        [DataMember(Name="measurements", EmitDefaultValue=false)]
+        [DataMember(Name = "measurements", EmitDefaultValue = false)]
         public MeasurementData Measurements { get; set; }
 
 
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +131,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Contents == input.Contents ||
                     (this.Contents != null &&
                     this.Contents.Equals(input.Contents))
-                ) && 
+                ) &&
                 (
                     this.Measurements == input.Measurements ||
                     (this.Measurements != null &&
                     this.Measurements.Equals(input.Measurements))
-                ) && 
+                ) &&
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&

@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Delivery and item information for a shipment in a fulfillment order.
     /// </summary>
     [DataContract]
-    public partial class FulfillmentShipment :  IEquatable<FulfillmentShipment>, IValidatableObject
+    public partial class FulfillmentShipment : IEquatable<FulfillmentShipment>, IValidatableObject
     {
         /// <summary>
         /// The current status of the shipment.
@@ -37,25 +33,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FulfillmentShipmentStatusEnum
         {
-            
+
             /// <summary>
             /// Enum PENDING for value: PENDING
             /// </summary>
             [EnumMember(Value = "PENDING")]
             PENDING = 1,
-            
+
             /// <summary>
             /// Enum SHIPPED for value: SHIPPED
             /// </summary>
             [EnumMember(Value = "SHIPPED")]
             SHIPPED = 2,
-            
+
             /// <summary>
             /// Enum CANCELLEDBYFULFILLER for value: CANCELLED_BY_FULFILLER
             /// </summary>
             [EnumMember(Value = "CANCELLED_BY_FULFILLER")]
             CANCELLEDBYFULFILLER = 3,
-            
+
             /// <summary>
             /// Enum CANCELLEDBYSELLER for value: CANCELLED_BY_SELLER
             /// </summary>
@@ -67,7 +63,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// The current status of the shipment.
         /// </summary>
         /// <value>The current status of the shipment.</value>
-        [DataMember(Name="fulfillmentShipmentStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentShipmentStatus", EmitDefaultValue = false)]
         public FulfillmentShipmentStatusEnum FulfillmentShipmentStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentShipment" /> class.
@@ -128,19 +124,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.ShippingNotes = shippingNotes;
             this.FulfillmentShipmentPackage = fulfillmentShipmentPackage;
         }
-        
+
         /// <summary>
         /// A shipment identifier assigned by Amazon.
         /// </summary>
         /// <value>A shipment identifier assigned by Amazon.</value>
-        [DataMember(Name="amazonShipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonShipmentId", EmitDefaultValue = false)]
         public string AmazonShipmentId { get; set; }
 
         /// <summary>
         /// An identifier for the fulfillment center that the shipment will be sent from.
         /// </summary>
         /// <value>An identifier for the fulfillment center that the shipment will be sent from.</value>
-        [DataMember(Name="fulfillmentCenterId", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentCenterId", EmitDefaultValue = false)]
         public string FulfillmentCenterId { get; set; }
 
 
@@ -148,33 +144,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// The meaning of the &#x60;shippingDate&#x60; value depends on the current status of the shipment. If the current value of &#x60;FulfillmentShipmentStatus&#x60; is:  * Pending - &#x60;shippingDate&#x60; represents the estimated time that the shipment will leave the Amazon fulfillment center.  * Shipped - &#x60;shippingDate&#x60; represents the date that the shipment left the Amazon fulfillment center. If a shipment includes more than one package, &#x60;shippingDate&#x60; applies to all of the packages in the shipment. If the value of &#x60;FulfillmentShipmentStatus&#x60; is &#x60;CancelledByFulfiller&#x60; or &#x60;CancelledBySeller&#x60;, &#x60;shippingDate&#x60; is not returned. The value must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
         /// </summary>
         /// <value>The meaning of the &#x60;shippingDate&#x60; value depends on the current status of the shipment. If the current value of &#x60;FulfillmentShipmentStatus&#x60; is:  * Pending - &#x60;shippingDate&#x60; represents the estimated time that the shipment will leave the Amazon fulfillment center.  * Shipped - &#x60;shippingDate&#x60; represents the date that the shipment left the Amazon fulfillment center. If a shipment includes more than one package, &#x60;shippingDate&#x60; applies to all of the packages in the shipment. If the value of &#x60;FulfillmentShipmentStatus&#x60; is &#x60;CancelledByFulfiller&#x60; or &#x60;CancelledBySeller&#x60;, &#x60;shippingDate&#x60; is not returned. The value must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
-        [DataMember(Name="shippingDate", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingDate", EmitDefaultValue = false)]
         public DateTime? ShippingDate { get; set; }
 
         /// <summary>
         /// The estimated arrival date and time of the shipment. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. Note that this value can change over time. If a shipment includes more than one package, &#x60;estimatedArrivalDate&#x60; applies to all of the packages in the shipment. If the shipment has been cancelled, &#x60;estimatedArrivalDate&#x60; is not returned.
         /// </summary>
         /// <value>The estimated arrival date and time of the shipment. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. Note that this value can change over time. If a shipment includes more than one package, &#x60;estimatedArrivalDate&#x60; applies to all of the packages in the shipment. If the shipment has been cancelled, &#x60;estimatedArrivalDate&#x60; is not returned.</value>
-        [DataMember(Name="estimatedArrivalDate", EmitDefaultValue=false)]
+        [DataMember(Name = "estimatedArrivalDate", EmitDefaultValue = false)]
         public DateTime? EstimatedArrivalDate { get; set; }
 
         /// <summary>
         /// Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren&#39;t available.
         /// </summary>
         /// <value>Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren&#39;t available.</value>
-        [DataMember(Name="shippingNotes", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingNotes", EmitDefaultValue = false)]
         public List<string> ShippingNotes { get; set; }
 
         /// <summary>
         /// Gets or Sets FulfillmentShipmentItem
         /// </summary>
-        [DataMember(Name="fulfillmentShipmentItem", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentShipmentItem", EmitDefaultValue = false)]
         public FulfillmentShipmentItemList FulfillmentShipmentItem { get; set; }
 
         /// <summary>
         /// Gets or Sets FulfillmentShipmentPackage
         /// </summary>
-        [DataMember(Name="fulfillmentShipmentPackage", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentShipmentPackage", EmitDefaultValue = false)]
         public FulfillmentShipmentPackageList FulfillmentShipmentPackage { get; set; }
 
         /// <summary>
@@ -196,7 +192,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -226,42 +222,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AmazonShipmentId == input.AmazonShipmentId ||
                     (this.AmazonShipmentId != null &&
                     this.AmazonShipmentId.Equals(input.AmazonShipmentId))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentCenterId == input.FulfillmentCenterId ||
                     (this.FulfillmentCenterId != null &&
                     this.FulfillmentCenterId.Equals(input.FulfillmentCenterId))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentShipmentStatus == input.FulfillmentShipmentStatus ||
                     (this.FulfillmentShipmentStatus != null &&
                     this.FulfillmentShipmentStatus.Equals(input.FulfillmentShipmentStatus))
-                ) && 
+                ) &&
                 (
                     this.ShippingDate == input.ShippingDate ||
                     (this.ShippingDate != null &&
                     this.ShippingDate.Equals(input.ShippingDate))
-                ) && 
+                ) &&
                 (
                     this.EstimatedArrivalDate == input.EstimatedArrivalDate ||
                     (this.EstimatedArrivalDate != null &&
                     this.EstimatedArrivalDate.Equals(input.EstimatedArrivalDate))
-                ) && 
+                ) &&
                 (
                     this.ShippingNotes == input.ShippingNotes ||
                     this.ShippingNotes != null &&
                     this.ShippingNotes.SequenceEqual(input.ShippingNotes)
-                ) && 
+                ) &&
                 (
                     this.FulfillmentShipmentItem == input.FulfillmentShipmentItem ||
                     (this.FulfillmentShipmentItem != null &&
                     this.FulfillmentShipmentItem.Equals(input.FulfillmentShipmentItem))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentShipmentPackage == input.FulfillmentShipmentPackage ||
                     (this.FulfillmentShipmentPackage != null &&

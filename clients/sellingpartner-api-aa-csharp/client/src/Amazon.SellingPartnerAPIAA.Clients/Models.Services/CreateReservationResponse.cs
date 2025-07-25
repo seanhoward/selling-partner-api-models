@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Response schema for the &#x60;createReservation&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class CreateReservationResponse :  IEquatable<CreateReservationResponse>, IValidatableObject
+    public partial class CreateReservationResponse : IEquatable<CreateReservationResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReservationResponse" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.Payload = payload;
             this.Errors = errors;
         }
-        
+
         /// <summary>
         /// &#x60;CreateReservationRecord&#x60; contains only the new &#x60;reservationId&#x60; if the operation was successful. Otherwise it will contain the reservation entity with warnings/errors.
         /// </summary>
         /// <value>&#x60;CreateReservationRecord&#x60; contains only the new &#x60;reservationId&#x60; if the operation was successful. Otherwise it will contain the reservation entity with warnings/errors.</value>
-        [DataMember(Name="payload", EmitDefaultValue=false)]
+        [DataMember(Name = "payload", EmitDefaultValue = false)]
         public CreateReservationRecord Payload { get; set; }
 
         /// <summary>
         /// Errors encountered, if any.
         /// </summary>
         /// <value>Errors encountered, if any.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Payload == input.Payload ||
                     (this.Payload != null &&
                     this.Payload.Equals(input.Payload))
-                ) && 
+                ) &&
                 (
                     this.Errors == input.Errors ||
                     (this.Errors != null &&

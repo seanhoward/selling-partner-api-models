@@ -1,5 +1,5 @@
 /* 
- * Vendor Invoices v1
+ * Selling Partner API for Retail Procurement Payments
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
     /// Represents an invoice or credit note document with details about the transaction, parties involved, and line items.
     /// </summary>
     [DataContract]
-    public partial class Invoice :  IEquatable<Invoice>, IValidatableObject
+    public partial class Invoice : IEquatable<Invoice>, IValidatableObject
     {
         /// <summary>
         /// Identifies the type of invoice.
@@ -37,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InvoiceTypeEnum
         {
-            
+
             /// <summary>
             /// Enum Invoice for value: Invoice
             /// </summary>
             [EnumMember(Value = "Invoice")]
             Invoice = 1,
-            
+
             /// <summary>
             /// Enum CreditNote for value: CreditNote
             /// </summary>
@@ -55,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// Identifies the type of invoice.
         /// </summary>
         /// <value>Identifies the type of invoice.</value>
-        [DataMember(Name="invoiceType", EmitDefaultValue=false)]
+        [DataMember(Name = "invoiceType", EmitDefaultValue = false)]
         public InvoiceTypeEnum InvoiceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Invoice" /> class.
@@ -138,104 +134,104 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             this.AllowanceDetails = allowanceDetails;
             this.Items = items;
         }
-        
+
 
         /// <summary>
         /// Unique number relating to the charges defined in this document. This will be invoice number if the document type is Invoice or CreditNote number if the document type is Credit Note. Failure to provide this reference will result in a rejection.
         /// </summary>
         /// <value>Unique number relating to the charges defined in this document. This will be invoice number if the document type is Invoice or CreditNote number if the document type is Credit Note. Failure to provide this reference will result in a rejection.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// An additional unique reference number used for regulatory or other purposes.
         /// </summary>
         /// <value>An additional unique reference number used for regulatory or other purposes.</value>
-        [DataMember(Name="referenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "referenceNumber", EmitDefaultValue = false)]
         public string ReferenceNumber { get; set; }
 
         /// <summary>
         /// Date when the invoice/credit note information was generated in the origin&#39;s accounting system. The invoice date should be on or after the purchase order creation date.
         /// </summary>
         /// <value>Date when the invoice/credit note information was generated in the origin&#39;s accounting system. The invoice date should be on or after the purchase order creation date.</value>
-        [DataMember(Name="date", EmitDefaultValue=false)]
+        [DataMember(Name = "date", EmitDefaultValue = false)]
         public DateTime? Date { get; set; }
 
         /// <summary>
         /// Name, address and tax details of the party receiving the payment of this invoice.
         /// </summary>
         /// <value>Name, address and tax details of the party receiving the payment of this invoice.</value>
-        [DataMember(Name="remitToParty", EmitDefaultValue=false)]
+        [DataMember(Name = "remitToParty", EmitDefaultValue = false)]
         public PartyIdentification RemitToParty { get; set; }
 
         /// <summary>
         /// Name, address and tax details of the party receiving a shipment of products.
         /// </summary>
         /// <value>Name, address and tax details of the party receiving a shipment of products.</value>
-        [DataMember(Name="shipToParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipToParty", EmitDefaultValue = false)]
         public PartyIdentification ShipToParty { get; set; }
 
         /// <summary>
         /// Name, address and tax details of the party sending a shipment of products.
         /// </summary>
         /// <value>Name, address and tax details of the party sending a shipment of products.</value>
-        [DataMember(Name="shipFromParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFromParty", EmitDefaultValue = false)]
         public PartyIdentification ShipFromParty { get; set; }
 
         /// <summary>
         /// Name, address and tax details of the party to whom this invoice is issued.
         /// </summary>
         /// <value>Name, address and tax details of the party to whom this invoice is issued.</value>
-        [DataMember(Name="billToParty", EmitDefaultValue=false)]
+        [DataMember(Name = "billToParty", EmitDefaultValue = false)]
         public PartyIdentification BillToParty { get; set; }
 
         /// <summary>
         /// The payment terms for the invoice.
         /// </summary>
         /// <value>The payment terms for the invoice.</value>
-        [DataMember(Name="paymentTerms", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentTerms", EmitDefaultValue = false)]
         public PaymentTerms PaymentTerms { get; set; }
 
         /// <summary>
         /// Total monetary amount charged in the invoice or full value of credit note to be paid including all relevant taxes. It is the total amount of invoice (including charges, less allowances) before terms discount (if discount is applicable).
         /// </summary>
         /// <value>Total monetary amount charged in the invoice or full value of credit note to be paid including all relevant taxes. It is the total amount of invoice (including charges, less allowances) before terms discount (if discount is applicable).</value>
-        [DataMember(Name="invoiceTotal", EmitDefaultValue=false)]
+        [DataMember(Name = "invoiceTotal", EmitDefaultValue = false)]
         public Money InvoiceTotal { get; set; }
 
         /// <summary>
         /// Total tax amount details for all line items.
         /// </summary>
         /// <value>Total tax amount details for all line items.</value>
-        [DataMember(Name="taxDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "taxDetails", EmitDefaultValue = false)]
         public List<TaxDetails> TaxDetails { get; set; }
 
         /// <summary>
         /// Additional details provided by the selling party, for tax related or other purposes.
         /// </summary>
         /// <value>Additional details provided by the selling party, for tax related or other purposes.</value>
-        [DataMember(Name="additionalDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "additionalDetails", EmitDefaultValue = false)]
         public List<AdditionalDetails> AdditionalDetails { get; set; }
 
         /// <summary>
         /// Total charge amount details for all line items.
         /// </summary>
         /// <value>Total charge amount details for all line items.</value>
-        [DataMember(Name="chargeDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "chargeDetails", EmitDefaultValue = false)]
         public List<ChargeDetails> ChargeDetails { get; set; }
 
         /// <summary>
         /// Total allowance amount details for all line items.
         /// </summary>
         /// <value>Total allowance amount details for all line items.</value>
-        [DataMember(Name="allowanceDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "allowanceDetails", EmitDefaultValue = false)]
         public List<AllowanceDetails> AllowanceDetails { get; set; }
 
         /// <summary>
         /// The list of invoice items.
         /// </summary>
         /// <value>The list of invoice items.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<InvoiceItem> Items { get; set; }
 
         /// <summary>
@@ -264,7 +260,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -294,77 +290,77 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.InvoiceType == input.InvoiceType ||
                     (this.InvoiceType != null &&
                     this.InvoiceType.Equals(input.InvoiceType))
-                ) && 
+                ) &&
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.ReferenceNumber == input.ReferenceNumber ||
                     (this.ReferenceNumber != null &&
                     this.ReferenceNumber.Equals(input.ReferenceNumber))
-                ) && 
+                ) &&
                 (
                     this.Date == input.Date ||
                     (this.Date != null &&
                     this.Date.Equals(input.Date))
-                ) && 
+                ) &&
                 (
                     this.RemitToParty == input.RemitToParty ||
                     (this.RemitToParty != null &&
                     this.RemitToParty.Equals(input.RemitToParty))
-                ) && 
+                ) &&
                 (
                     this.ShipToParty == input.ShipToParty ||
                     (this.ShipToParty != null &&
                     this.ShipToParty.Equals(input.ShipToParty))
-                ) && 
+                ) &&
                 (
                     this.ShipFromParty == input.ShipFromParty ||
                     (this.ShipFromParty != null &&
                     this.ShipFromParty.Equals(input.ShipFromParty))
-                ) && 
+                ) &&
                 (
                     this.BillToParty == input.BillToParty ||
                     (this.BillToParty != null &&
                     this.BillToParty.Equals(input.BillToParty))
-                ) && 
+                ) &&
                 (
                     this.PaymentTerms == input.PaymentTerms ||
                     (this.PaymentTerms != null &&
                     this.PaymentTerms.Equals(input.PaymentTerms))
-                ) && 
+                ) &&
                 (
                     this.InvoiceTotal == input.InvoiceTotal ||
                     (this.InvoiceTotal != null &&
                     this.InvoiceTotal.Equals(input.InvoiceTotal))
-                ) && 
+                ) &&
                 (
                     this.TaxDetails == input.TaxDetails ||
                     this.TaxDetails != null &&
                     this.TaxDetails.SequenceEqual(input.TaxDetails)
-                ) && 
+                ) &&
                 (
                     this.AdditionalDetails == input.AdditionalDetails ||
                     this.AdditionalDetails != null &&
                     this.AdditionalDetails.SequenceEqual(input.AdditionalDetails)
-                ) && 
+                ) &&
                 (
                     this.ChargeDetails == input.ChargeDetails ||
                     this.ChargeDetails != null &&
                     this.ChargeDetails.SequenceEqual(input.ChargeDetails)
-                ) && 
+                ) &&
                 (
                     this.AllowanceDetails == input.AllowanceDetails ||
                     this.AllowanceDetails != null &&
                     this.AllowanceDetails.SequenceEqual(input.AllowanceDetails)
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

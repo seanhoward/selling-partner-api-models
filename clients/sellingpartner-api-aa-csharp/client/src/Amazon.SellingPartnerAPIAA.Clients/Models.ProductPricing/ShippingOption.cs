@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The shipping option available for the offer.
     /// </summary>
     [DataContract]
-    public partial class ShippingOption :  IEquatable<ShippingOption>, IValidatableObject
+    public partial class ShippingOption : IEquatable<ShippingOption>, IValidatableObject
     {
         /// <summary>
         /// The type of shipping option.
@@ -37,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ShippingOptionTypeEnum
         {
-            
+
             /// <summary>
             /// Enum DEFAULT for value: DEFAULT
             /// </summary>
@@ -49,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// The type of shipping option.
         /// </summary>
         /// <value>The type of shipping option.</value>
-        [DataMember(Name="shippingOptionType", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingOptionType", EmitDefaultValue = false)]
         public ShippingOptionTypeEnum ShippingOptionType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingOption" /> class.
@@ -82,13 +77,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 this.Price = price;
             }
         }
-        
+
 
         /// <summary>
         /// Shipping price for the offer.
         /// </summary>
         /// <value>Shipping price for the offer.</value>
-        [DataMember(Name="price", EmitDefaultValue=false)]
+        [DataMember(Name = "price", EmitDefaultValue = false)]
         public MoneyType Price { get; set; }
 
         /// <summary>
@@ -104,7 +99,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -134,12 +129,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShippingOptionType == input.ShippingOptionType ||
                     (this.ShippingOptionType != null &&
                     this.ShippingOptionType.Equals(input.ShippingOptionType))
-                ) && 
+                ) &&
                 (
                     this.Price == input.Price ||
                     (this.Price != null &&

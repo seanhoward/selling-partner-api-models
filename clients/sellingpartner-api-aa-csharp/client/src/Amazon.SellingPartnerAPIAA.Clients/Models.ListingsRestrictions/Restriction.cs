@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
     /// A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction.
     /// </summary>
     [DataContract]
-    public partial class Restriction :  IEquatable<Restriction>, IValidatableObject
+    public partial class Restriction : IEquatable<Restriction>, IValidatableObject
     {
         /// <summary>
         /// The condition that applies to the restriction.
@@ -37,79 +33,79 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ConditionTypeEnum
         {
-            
+
             /// <summary>
             /// Enum Newnew for value: new_new
             /// </summary>
             [EnumMember(Value = "new_new")]
             Newnew = 1,
-            
+
             /// <summary>
             /// Enum Newopenbox for value: new_open_box
             /// </summary>
             [EnumMember(Value = "new_open_box")]
             Newopenbox = 2,
-            
+
             /// <summary>
             /// Enum Newoem for value: new_oem
             /// </summary>
             [EnumMember(Value = "new_oem")]
             Newoem = 3,
-            
+
             /// <summary>
             /// Enum Refurbishedrefurbished for value: refurbished_refurbished
             /// </summary>
             [EnumMember(Value = "refurbished_refurbished")]
             Refurbishedrefurbished = 4,
-            
+
             /// <summary>
             /// Enum Usedlikenew for value: used_like_new
             /// </summary>
             [EnumMember(Value = "used_like_new")]
             Usedlikenew = 5,
-            
+
             /// <summary>
             /// Enum Usedverygood for value: used_very_good
             /// </summary>
             [EnumMember(Value = "used_very_good")]
             Usedverygood = 6,
-            
+
             /// <summary>
             /// Enum Usedgood for value: used_good
             /// </summary>
             [EnumMember(Value = "used_good")]
             Usedgood = 7,
-            
+
             /// <summary>
             /// Enum Usedacceptable for value: used_acceptable
             /// </summary>
             [EnumMember(Value = "used_acceptable")]
             Usedacceptable = 8,
-            
+
             /// <summary>
             /// Enum Collectiblelikenew for value: collectible_like_new
             /// </summary>
             [EnumMember(Value = "collectible_like_new")]
             Collectiblelikenew = 9,
-            
+
             /// <summary>
             /// Enum Collectibleverygood for value: collectible_very_good
             /// </summary>
             [EnumMember(Value = "collectible_very_good")]
             Collectibleverygood = 10,
-            
+
             /// <summary>
             /// Enum Collectiblegood for value: collectible_good
             /// </summary>
             [EnumMember(Value = "collectible_good")]
             Collectiblegood = 11,
-            
+
             /// <summary>
             /// Enum Collectibleacceptable for value: collectible_acceptable
             /// </summary>
             [EnumMember(Value = "collectible_acceptable")]
             Collectibleacceptable = 12,
-            
+
             /// <summary>
             /// Enum Clubclub for value: club_club
             /// </summary>
@@ -121,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// The condition that applies to the restriction.
         /// </summary>
         /// <value>The condition that applies to the restriction.</value>
-        [DataMember(Name="conditionType", EmitDefaultValue=false)]
+        [DataMember(Name = "conditionType", EmitDefaultValue = false)]
         public ConditionTypeEnum? ConditionType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Restriction" /> class.
@@ -148,12 +144,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             this.ConditionType = conditionType;
             this.Reasons = reasons;
         }
-        
+
         /// <summary>
         /// A marketplace identifier. Identifies the Amazon marketplace where the restriction is enforced.
         /// </summary>
         /// <value>A marketplace identifier. Identifies the Amazon marketplace where the restriction is enforced.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
 
@@ -161,7 +157,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// A list of reasons for the restriction.
         /// </summary>
         /// <value>A list of reasons for the restriction.</value>
-        [DataMember(Name="reasons", EmitDefaultValue=false)]
+        [DataMember(Name = "reasons", EmitDefaultValue = false)]
         public List<Reason> Reasons { get; set; }
 
         /// <summary>
@@ -178,7 +174,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -208,17 +204,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.ConditionType == input.ConditionType ||
                     (this.ConditionType != null &&
                     this.ConditionType.Equals(input.ConditionType))
-                ) && 
+                ) &&
                 (
                     this.Reasons == input.Reasons ||
                     this.Reasons != null &&

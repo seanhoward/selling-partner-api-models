@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// An item to be created in the inventory.
     /// </summary>
     [DataContract]
-    public partial class CreateInventoryItemRequest :  IEquatable<CreateInventoryItemRequest>, IValidatableObject
+    public partial class CreateInventoryItemRequest : IEquatable<CreateInventoryItemRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInventoryItemRequest" /> class.
@@ -71,26 +65,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
                 this.ProductName = productName;
             }
         }
-        
+
         /// <summary>
         /// The seller SKU of the item.
         /// </summary>
         /// <value>The seller SKU of the item.</value>
-        [DataMember(Name="sellerSku", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerSku", EmitDefaultValue = false)]
         public string SellerSku { get; set; }
 
         /// <summary>
         /// The marketplaceId.
         /// </summary>
         /// <value>The marketplaceId.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The name of the item.
         /// </summary>
         /// <value>The name of the item.</value>
-        [DataMember(Name="productName", EmitDefaultValue=false)]
+        [DataMember(Name = "productName", EmitDefaultValue = false)]
         public string ProductName { get; set; }
 
         /// <summary>
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +131,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerSku == input.SellerSku ||
                     (this.SellerSku != null &&
                     this.SellerSku.Equals(input.SellerSku))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.ProductName == input.ProductName ||
                     (this.ProductName != null &&

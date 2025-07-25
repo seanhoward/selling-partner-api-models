@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
     /// Dimensions of an Amazon catalog item or item in its packaging.
     /// </summary>
     [DataContract]
-    public partial class Dimensions :  IEquatable<Dimensions>, IValidatableObject
+    public partial class Dimensions : IEquatable<Dimensions>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Dimensions" /> class.
@@ -44,33 +37,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             this.Weight = weight;
             this.Width = width;
         }
-        
+
         /// <summary>
         /// Height of an item or item package.
         /// </summary>
         /// <value>Height of an item or item package.</value>
-        [DataMember(Name="height", EmitDefaultValue=false)]
+        [DataMember(Name = "height", EmitDefaultValue = false)]
         public Dimension Height { get; set; }
 
         /// <summary>
         /// Length of an item or item package.
         /// </summary>
         /// <value>Length of an item or item package.</value>
-        [DataMember(Name="length", EmitDefaultValue=false)]
+        [DataMember(Name = "length", EmitDefaultValue = false)]
         public Dimension Length { get; set; }
 
         /// <summary>
         /// Weight of an item or item package.
         /// </summary>
         /// <value>Weight of an item or item package.</value>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public Dimension Weight { get; set; }
 
         /// <summary>
         /// Width of an item or item package.
         /// </summary>
         /// <value>Width of an item or item package.</value>
-        [DataMember(Name="width", EmitDefaultValue=false)]
+        [DataMember(Name = "width", EmitDefaultValue = false)]
         public Dimension Width { get; set; }
 
         /// <summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +111,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Height == input.Height ||
                     (this.Height != null &&
                     this.Height.Equals(input.Height))
-                ) && 
+                ) &&
                 (
                     this.Length == input.Length ||
                     (this.Length != null &&
                     this.Length.Equals(input.Length))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
                     this.Weight.Equals(input.Weight))
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&

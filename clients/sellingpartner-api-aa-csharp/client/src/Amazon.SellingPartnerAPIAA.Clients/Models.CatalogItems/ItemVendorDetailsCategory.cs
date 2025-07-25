@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,50 +9,43 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Product category or subcategory associated with an Amazon catalog item.
+    /// The product category or subcategory that is associated with an Amazon catalog item.
     /// </summary>
     [DataContract]
-    public partial class ItemVendorDetailsCategory :  IEquatable<ItemVendorDetailsCategory>, IValidatableObject
+    public partial class ItemVendorDetailsCategory : IEquatable<ItemVendorDetailsCategory>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemVendorDetailsCategory" /> class.
         /// </summary>
-        /// <param name="displayName">Display name of the product category or subcategory.</param>
-        /// <param name="value">Value (code) of the product category or subcategory..</param>
+        /// <param name="displayName">The display name of the product category or subcategory..</param>
+        /// <param name="value">The code that identifies the product category or subcategory..</param>
         public ItemVendorDetailsCategory(string displayName = default, string value = default)
         {
             this.DisplayName = displayName;
             this.Value = value;
         }
-        
+
         /// <summary>
-        /// Display name of the product category or subcategory
+        /// The display name of the product category or subcategory.
         /// </summary>
-        /// <value>Display name of the product category or subcategory</value>
-        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        /// <value>The display name of the product category or subcategory.</value>
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// Value (code) of the product category or subcategory.
+        /// The code that identifies the product category or subcategory.
         /// </summary>
-        /// <value>Value (code) of the product category or subcategory.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        /// <value>The code that identifies the product category or subcategory.</value>
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&

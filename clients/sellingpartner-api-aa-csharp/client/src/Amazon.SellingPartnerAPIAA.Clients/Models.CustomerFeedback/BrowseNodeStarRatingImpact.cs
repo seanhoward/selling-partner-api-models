@@ -27,7 +27,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CustomerFeedback
         /// <summary>
         /// Initializes a new instance of the <see cref="BrowseNodeStarRatingImpact" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected BrowseNodeStarRatingImpact() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="BrowseNodeStarRatingImpact" /> class.
@@ -123,7 +123,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CustomerFeedback
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

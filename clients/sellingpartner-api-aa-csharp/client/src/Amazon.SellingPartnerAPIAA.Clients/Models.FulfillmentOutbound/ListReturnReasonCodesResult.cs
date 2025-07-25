@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The request for the listReturnReasonCodes operation.
     /// </summary>
     [DataContract]
-    public partial class ListReturnReasonCodesResult :  IEquatable<ListReturnReasonCodesResult>, IValidatableObject
+    public partial class ListReturnReasonCodesResult : IEquatable<ListReturnReasonCodesResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ListReturnReasonCodesResult" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         {
             this.ReasonCodeDetails = reasonCodeDetails;
         }
-        
+
         /// <summary>
         /// Gets or Sets ReasonCodeDetails
         /// </summary>
-        [DataMember(Name="reasonCodeDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "reasonCodeDetails", EmitDefaultValue = false)]
         public ReasonCodeDetailsList ReasonCodeDetails { get; set; }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReasonCodeDetails == input.ReasonCodeDetails ||
                     (this.ReasonCodeDetails != null &&

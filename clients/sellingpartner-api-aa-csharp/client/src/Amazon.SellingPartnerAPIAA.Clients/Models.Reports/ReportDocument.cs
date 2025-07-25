@@ -1,5 +1,5 @@
 /* 
- * Report v2021-06-30
+ * Selling Partner API for Reports
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
     /// Information required for the report document.
     /// </summary>
     [DataContract]
-    public partial class ReportDocument :  IEquatable<ReportDocument>, IValidatableObject
+    public partial class ReportDocument : IEquatable<ReportDocument>, IValidatableObject
     {
         /// <summary>
         /// If the report document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the report when you download. Otherwise, you can download the report directly. Refer to [Step 2. Download the report](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-retrieve-a-report#step-2-download-the-report) in the use case guide, where sample code is provided.
@@ -37,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompressionAlgorithmEnum
         {
-            
+
             /// <summary>
             /// Enum GZIP for value: GZIP
             /// </summary>
@@ -49,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// If the report document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the report when you download. Otherwise, you can download the report directly. Refer to [Step 2. Download the report](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-retrieve-a-report#step-2-download-the-report) in the use case guide, where sample code is provided.
         /// </summary>
         /// <value>If the report document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the report when you download. Otherwise, you can download the report directly. Refer to [Step 2. Download the report](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-retrieve-a-report#step-2-download-the-report) in the use case guide, where sample code is provided.</value>
-        [DataMember(Name="compressionAlgorithm", EmitDefaultValue=false)]
+        [DataMember(Name = "compressionAlgorithm", EmitDefaultValue = false)]
         public CompressionAlgorithmEnum? CompressionAlgorithm { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportDocument" /> class.
@@ -84,19 +79,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             }
             this.CompressionAlgorithm = compressionAlgorithm;
         }
-        
+
         /// <summary>
         /// The identifier for the report document. This identifier is unique only in combination with a seller ID.
         /// </summary>
         /// <value>The identifier for the report document. This identifier is unique only in combination with a seller ID.</value>
-        [DataMember(Name="reportDocumentId", EmitDefaultValue=false)]
+        [DataMember(Name = "reportDocumentId", EmitDefaultValue = false)]
         public string ReportDocumentId { get; set; }
 
         /// <summary>
         /// A presigned URL for the report document. If &#x60;compressionAlgorithm&#x60; is not returned, you can download the report directly from this URL. This URL expires after 5 minutes.
         /// </summary>
         /// <value>A presigned URL for the report document. If &#x60;compressionAlgorithm&#x60; is not returned, you can download the report directly from this URL. This URL expires after 5 minutes.</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
 
@@ -114,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -144,17 +139,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReportDocumentId == input.ReportDocumentId ||
                     (this.ReportDocumentId != null &&
                     this.ReportDocumentId.Equals(input.ReportDocumentId))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.CompressionAlgorithm == input.CompressionAlgorithm ||
                     (this.CompressionAlgorithm != null &&

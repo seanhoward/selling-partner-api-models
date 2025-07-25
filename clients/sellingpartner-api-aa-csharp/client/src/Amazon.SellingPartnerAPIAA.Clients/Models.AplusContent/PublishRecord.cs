@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// The full context for an A+ Content publishing event.
     /// </summary>
     [DataContract]
-    public partial class PublishRecord :  IEquatable<PublishRecord>, IValidatableObject
+    public partial class PublishRecord : IEquatable<PublishRecord>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ContentType
         /// </summary>
-        [DataMember(Name="contentType", EmitDefaultValue=false)]
+        [DataMember(Name = "contentType", EmitDefaultValue = false)]
         public ContentType ContentType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PublishRecord" /> class.
@@ -98,36 +92,36 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             }
             this.ContentSubType = contentSubType;
         }
-        
+
         /// <summary>
         /// Gets or Sets MarketplaceId
         /// </summary>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// Gets or Sets Locale
         /// </summary>
-        [DataMember(Name="locale", EmitDefaultValue=false)]
+        [DataMember(Name = "locale", EmitDefaultValue = false)]
         public string Locale { get; set; }
 
         /// <summary>
         /// Gets or Sets Asin
         /// </summary>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
 
         /// <summary>
         /// Gets or Sets ContentSubType
         /// </summary>
-        [DataMember(Name="contentSubType", EmitDefaultValue=false)]
+        [DataMember(Name = "contentSubType", EmitDefaultValue = false)]
         public string ContentSubType { get; set; }
 
         /// <summary>
         /// Gets or Sets ContentReferenceKey
         /// </summary>
-        [DataMember(Name="contentReferenceKey", EmitDefaultValue=false)]
+        [DataMember(Name = "contentReferenceKey", EmitDefaultValue = false)]
         public string ContentReferenceKey { get; set; }
 
         /// <summary>
@@ -147,7 +141,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -177,32 +171,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Locale == input.Locale ||
                     (this.Locale != null &&
                     this.Locale.Equals(input.Locale))
-                ) && 
+                ) &&
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.ContentType == input.ContentType ||
                     (this.ContentType != null &&
                     this.ContentType.Equals(input.ContentType))
-                ) && 
+                ) &&
                 (
                     this.ContentSubType == input.ContentSubType ||
                     (this.ContentSubType != null &&
                     this.ContentSubType.Equals(input.ContentSubType))
-                ) && 
+                ) &&
                 (
                     this.ContentReferenceKey == input.ContentReferenceKey ||
                     (this.ContentReferenceKey != null &&

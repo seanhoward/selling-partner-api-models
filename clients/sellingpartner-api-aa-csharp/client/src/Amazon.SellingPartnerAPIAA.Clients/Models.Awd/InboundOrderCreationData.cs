@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Amazon Warehousing and Distribution
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * OpenAPI spec version: 2024-05-09
  * 
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Payload for creating an inbound order.
     /// </summary>
     [DataContract]
-    public partial class InboundOrderCreationData :  IEquatable<InboundOrderCreationData>, IValidatableObject
+    public partial class InboundOrderCreationData : IEquatable<InboundOrderCreationData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundOrderCreationData" /> class.
@@ -42,8 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="originAddress">Origin address from where the inbound order will be shipped. (required).</param>
         /// <param name="packagesToInbound">List of packages to be inbounded. (required).</param>
         /// <param name="preferences">preferences.</param>
-        /// <param name="shipBy">Estimated date by when goods have to be picked up..</param>
-        public InboundOrderCreationData(string externalReferenceId = default, Address originAddress = default, List<DistributionPackageQuantity> packagesToInbound = default, InboundPreferences preferences = default, DateTime? shipBy = default)
+        public InboundOrderCreationData(string externalReferenceId = default, Address originAddress = default, List<DistributionPackageQuantity> packagesToInbound = default, InboundPreferences preferences = default)
         {
             // to ensure "originAddress" is required (not null)
             if (originAddress == null)
@@ -65,42 +59,34 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             }
             this.ExternalReferenceId = externalReferenceId;
             this.Preferences = preferences;
-            this.ShipBy = shipBy;
         }
-        
+
         /// <summary>
         /// Reference ID that can be used to correlate the order with partner resources.
         /// </summary>
         /// <value>Reference ID that can be used to correlate the order with partner resources.</value>
-        [DataMember(Name="externalReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalReferenceId", EmitDefaultValue = false)]
         public string ExternalReferenceId { get; set; }
 
         /// <summary>
         /// Origin address from where the inbound order will be shipped.
         /// </summary>
         /// <value>Origin address from where the inbound order will be shipped.</value>
-        [DataMember(Name="originAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "originAddress", EmitDefaultValue = false)]
         public Address OriginAddress { get; set; }
 
         /// <summary>
         /// List of packages to be inbounded.
         /// </summary>
         /// <value>List of packages to be inbounded.</value>
-        [DataMember(Name="packagesToInbound", EmitDefaultValue=false)]
+        [DataMember(Name = "packagesToInbound", EmitDefaultValue = false)]
         public List<DistributionPackageQuantity> PackagesToInbound { get; set; }
 
         /// <summary>
         /// Gets or Sets Preferences
         /// </summary>
-        [DataMember(Name="preferences", EmitDefaultValue=false)]
+        [DataMember(Name = "preferences", EmitDefaultValue = false)]
         public InboundPreferences Preferences { get; set; }
-
-        /// <summary>
-        /// Estimated date by when goods have to be picked up.
-        /// </summary>
-        /// <value>Estimated date by when goods have to be picked up.</value>
-        [DataMember(Name="shipBy", EmitDefaultValue=false)]
-        public DateTime? ShipBy { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -114,11 +100,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("  OriginAddress: ").Append(OriginAddress).Append("\n");
             sb.Append("  PackagesToInbound: ").Append(PackagesToInbound).Append("\n");
             sb.Append("  Preferences: ").Append(Preferences).Append("\n");
-            sb.Append("  ShipBy: ").Append(ShipBy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -148,31 +133,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ExternalReferenceId == input.ExternalReferenceId ||
                     (this.ExternalReferenceId != null &&
                     this.ExternalReferenceId.Equals(input.ExternalReferenceId))
-                ) && 
+                ) &&
                 (
                     this.OriginAddress == input.OriginAddress ||
                     (this.OriginAddress != null &&
                     this.OriginAddress.Equals(input.OriginAddress))
-                ) && 
+                ) &&
                 (
                     this.PackagesToInbound == input.PackagesToInbound ||
                     this.PackagesToInbound != null &&
                     this.PackagesToInbound.SequenceEqual(input.PackagesToInbound)
-                ) && 
+                ) &&
                 (
                     this.Preferences == input.Preferences ||
                     (this.Preferences != null &&
                     this.Preferences.Equals(input.Preferences))
-                ) && 
-                (
-                    this.ShipBy == input.ShipBy ||
-                    (this.ShipBy != null &&
-                    this.ShipBy.Equals(input.ShipBy))
                 );
         }
 
@@ -193,8 +173,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                     hashCode = hashCode * 59 + this.PackagesToInbound.GetHashCode();
                 if (this.Preferences != null)
                     hashCode = hashCode * 59 + this.Preferences.GetHashCode();
-                if (this.ShipBy != null)
-                    hashCode = hashCode * 59 + this.ShipBy.GetHashCode();
                 return hashCode;
             }
         }

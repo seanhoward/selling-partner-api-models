@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// The input appointment time details.
     /// </summary>
     [DataContract]
-    public partial class AppointmentTimeInput :  IEquatable<AppointmentTimeInput>, IValidatableObject
+    public partial class AppointmentTimeInput : IEquatable<AppointmentTimeInput>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentTimeInput" /> class.
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             }
             this.DurationInMinutes = durationInMinutes;
         }
-        
+
         /// <summary>
         /// The date, time in UTC for the start time of an appointment in ISO 8601 format.
         /// </summary>
         /// <value>The date, time in UTC for the start time of an appointment in ISO 8601 format.</value>
-        [DataMember(Name="startTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startTime", EmitDefaultValue = false)]
         public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// The duration of an appointment in minutes.
         /// </summary>
         /// <value>The duration of an appointment in minutes.</value>
-        [DataMember(Name="durationInMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "durationInMinutes", EmitDefaultValue = false)]
         public int? DurationInMinutes { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StartTime == input.StartTime ||
                     (this.StartTime != null &&
                     this.StartTime.Equals(input.StartTime))
-                ) && 
+                ) &&
                 (
                     this.DurationInMinutes == input.DurationInMinutes ||
                     (this.DurationInMinutes != null &&

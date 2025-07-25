@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
     /// Provides detailed information about an invoice.
     /// </summary>
     [DataContract]
-    public partial class Invoice :  IEquatable<Invoice>, IValidatableObject
+    public partial class Invoice : IEquatable<Invoice>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Invoice" /> class.
@@ -56,75 +50,75 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             this.TransactionIds = transactionIds;
             this.TransactionType = transactionType;
         }
-        
+
         /// <summary>
         /// The date and time the invoice is issued. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
         /// </summary>
         /// <value>The date and time the invoice is issued. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</value>
-        [DataMember(Name="date", EmitDefaultValue=false)]
+        [DataMember(Name = "date", EmitDefaultValue = false)]
         public DateTime? Date { get; set; }
 
         /// <summary>
         /// If the invoice is in an error state, this attribute displays the error code.
         /// </summary>
         /// <value>If the invoice is in an error state, this attribute displays the error code.</value>
-        [DataMember(Name="errorCode", EmitDefaultValue=false)]
+        [DataMember(Name = "errorCode", EmitDefaultValue = false)]
         public string ErrorCode { get; set; }
 
         /// <summary>
         /// The invoice identifier that is used by an external party. This is typically the government agency that authorized the invoice.
         /// </summary>
         /// <value>The invoice identifier that is used by an external party. This is typically the government agency that authorized the invoice.</value>
-        [DataMember(Name="externalInvoiceId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalInvoiceId", EmitDefaultValue = false)]
         public string ExternalInvoiceId { get; set; }
 
         /// <summary>
         /// The response message from the government authority when there is an error during invoice issuance.
         /// </summary>
         /// <value>The response message from the government authority when there is an error during invoice issuance.</value>
-        [DataMember(Name="govResponse", EmitDefaultValue=false)]
+        [DataMember(Name = "govResponse", EmitDefaultValue = false)]
         public string GovResponse { get; set; }
 
         /// <summary>
         /// The invoice identifier.
         /// </summary>
         /// <value>The invoice identifier.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The classification of the invoice type. This varies across marketplaces. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;invoiceType&#x60; options.
         /// </summary>
         /// <value>The classification of the invoice type. This varies across marketplaces. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;invoiceType&#x60; options.</value>
-        [DataMember(Name="invoiceType", EmitDefaultValue=false)]
+        [DataMember(Name = "invoiceType", EmitDefaultValue = false)]
         public string InvoiceType { get; set; }
 
         /// <summary>
         /// Use this identifier in conjunction with &#x60;externalInvoiceId&#x60; to identify invoices from the same seller.
         /// </summary>
         /// <value>Use this identifier in conjunction with &#x60;externalInvoiceId&#x60; to identify invoices from the same seller.</value>
-        [DataMember(Name="series", EmitDefaultValue=false)]
+        [DataMember(Name = "series", EmitDefaultValue = false)]
         public string Series { get; set; }
 
         /// <summary>
         /// The invoice status classification. Use the &#x60;getInvoicesAttributes&#x60; operation to check invoice status options.
         /// </summary>
         /// <value>The invoice status classification. Use the &#x60;getInvoicesAttributes&#x60; operation to check invoice status options.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// List with identifiers for the transactions associated to the invoice.
         /// </summary>
         /// <value>List with identifiers for the transactions associated to the invoice.</value>
-        [DataMember(Name="transactionIds", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionIds", EmitDefaultValue = false)]
         public List<TransactionIdentifier> TransactionIds { get; set; }
 
         /// <summary>
         /// Classification of the transaction that originated this invoice. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionType&#x60; options.
         /// </summary>
         /// <value>Classification of the transaction that originated this invoice. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionType&#x60; options.</value>
-        [DataMember(Name="transactionType", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionType", EmitDefaultValue = false)]
         public string TransactionType { get; set; }
 
         /// <summary>
@@ -148,7 +142,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -178,52 +172,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Date == input.Date ||
                     (this.Date != null &&
                     this.Date.Equals(input.Date))
-                ) && 
+                ) &&
                 (
                     this.ErrorCode == input.ErrorCode ||
                     (this.ErrorCode != null &&
                     this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
+                ) &&
                 (
                     this.ExternalInvoiceId == input.ExternalInvoiceId ||
                     (this.ExternalInvoiceId != null &&
                     this.ExternalInvoiceId.Equals(input.ExternalInvoiceId))
-                ) && 
+                ) &&
                 (
                     this.GovResponse == input.GovResponse ||
                     (this.GovResponse != null &&
                     this.GovResponse.Equals(input.GovResponse))
-                ) && 
+                ) &&
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.InvoiceType == input.InvoiceType ||
                     (this.InvoiceType != null &&
                     this.InvoiceType.Equals(input.InvoiceType))
-                ) && 
+                ) &&
                 (
                     this.Series == input.Series ||
                     (this.Series != null &&
                     this.Series.Equals(input.Series))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.TransactionIds == input.TransactionIds ||
                     this.TransactionIds != null &&
                     this.TransactionIds.SequenceEqual(input.TransactionIds)
-                ) && 
+                ) &&
                 (
                     this.TransactionType == input.TransactionType ||
                     (this.TransactionType != null &&

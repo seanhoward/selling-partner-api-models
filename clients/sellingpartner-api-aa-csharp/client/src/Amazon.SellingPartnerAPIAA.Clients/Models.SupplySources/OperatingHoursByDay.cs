@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The operating hours per day
     /// </summary>
     [DataContract]
-    public partial class OperatingHoursByDay :  IEquatable<OperatingHoursByDay>, IValidatableObject
+    public partial class OperatingHoursByDay : IEquatable<OperatingHoursByDay>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OperatingHoursByDay" /> class.
@@ -50,47 +43,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.Saturday = saturday;
             this.Sunday = sunday;
         }
-        
+
         /// <summary>
         /// Gets or Sets Monday
         /// </summary>
-        [DataMember(Name="monday", EmitDefaultValue=false)]
+        [DataMember(Name = "monday", EmitDefaultValue = false)]
         public OperatingHours Monday { get; set; }
 
         /// <summary>
         /// Gets or Sets Tuesday
         /// </summary>
-        [DataMember(Name="tuesday", EmitDefaultValue=false)]
+        [DataMember(Name = "tuesday", EmitDefaultValue = false)]
         public OperatingHours Tuesday { get; set; }
 
         /// <summary>
         /// Gets or Sets Wednesday
         /// </summary>
-        [DataMember(Name="wednesday", EmitDefaultValue=false)]
+        [DataMember(Name = "wednesday", EmitDefaultValue = false)]
         public OperatingHours Wednesday { get; set; }
 
         /// <summary>
         /// Gets or Sets Thursday
         /// </summary>
-        [DataMember(Name="thursday", EmitDefaultValue=false)]
+        [DataMember(Name = "thursday", EmitDefaultValue = false)]
         public OperatingHours Thursday { get; set; }
 
         /// <summary>
         /// Gets or Sets Friday
         /// </summary>
-        [DataMember(Name="friday", EmitDefaultValue=false)]
+        [DataMember(Name = "friday", EmitDefaultValue = false)]
         public OperatingHours Friday { get; set; }
 
         /// <summary>
         /// Gets or Sets Saturday
         /// </summary>
-        [DataMember(Name="saturday", EmitDefaultValue=false)]
+        [DataMember(Name = "saturday", EmitDefaultValue = false)]
         public OperatingHours Saturday { get; set; }
 
         /// <summary>
         /// Gets or Sets Sunday
         /// </summary>
-        [DataMember(Name="sunday", EmitDefaultValue=false)]
+        [DataMember(Name = "sunday", EmitDefaultValue = false)]
         public OperatingHours Sunday { get; set; }
 
         /// <summary>
@@ -111,7 +104,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -141,37 +134,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Monday == input.Monday ||
                     (this.Monday != null &&
                     this.Monday.Equals(input.Monday))
-                ) && 
+                ) &&
                 (
                     this.Tuesday == input.Tuesday ||
                     (this.Tuesday != null &&
                     this.Tuesday.Equals(input.Tuesday))
-                ) && 
+                ) &&
                 (
                     this.Wednesday == input.Wednesday ||
                     (this.Wednesday != null &&
                     this.Wednesday.Equals(input.Wednesday))
-                ) && 
+                ) &&
                 (
                     this.Thursday == input.Thursday ||
                     (this.Thursday != null &&
                     this.Thursday.Equals(input.Thursday))
-                ) && 
+                ) &&
                 (
                     this.Friday == input.Friday ||
                     (this.Friday != null &&
                     this.Friday.Equals(input.Friday))
-                ) && 
+                ) &&
                 (
                     this.Saturday == input.Saturday ||
                     (this.Saturday != null &&
                     this.Saturday.Equals(input.Saturday))
-                ) && 
+                ) &&
                 (
                     this.Sunday == input.Sunday ||
                     (this.Sunday != null &&

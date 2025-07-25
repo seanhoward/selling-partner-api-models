@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -40,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requirementsEnforced">Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates). (optional, default to ENFORCED)</param>
         /// <param name="locale">Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to DEFAULT)</param>
         /// <returns>ProductTypeDefinition</returns>
-        ProductTypeDefinition GetDefinitionsProductType (string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null);
+        ProductTypeDefinition GetDefinitionsProductType(string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null);
 
         /// <summary>
         /// 
@@ -57,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requirementsEnforced">Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates). (optional, default to ENFORCED)</param>
         /// <param name="locale">Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to DEFAULT)</param>
         /// <returns>ApiResponse of ProductTypeDefinition</returns>
-        ApiResponse<ProductTypeDefinition> GetDefinitionsProductTypeWithHttpInfo (string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null);
+        ApiResponse<ProductTypeDefinition> GetDefinitionsProductTypeWithHttpInfo(string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null);
         /// <summary>
         /// 
         /// </summary>
@@ -71,7 +70,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>ProductTypeList</returns>
-        ProductTypeList SearchDefinitionsProductTypes (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
+        ProductTypeList SearchDefinitionsProductTypes(List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
 
         /// <summary>
         /// 
@@ -86,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>ApiResponse of ProductTypeList</returns>
-        ApiResponse<ProductTypeList> SearchDefinitionsProductTypesWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
+        ApiResponse<ProductTypeList> SearchDefinitionsProductTypesWithHttpInfo(List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -104,7 +103,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requirementsEnforced">Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates). (optional, default to ENFORCED)</param>
         /// <param name="locale">Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to DEFAULT)</param>
         /// <returns>Task of ProductTypeDefinition</returns>
-        System.Threading.Tasks.Task<ProductTypeDefinition> GetDefinitionsProductTypeAsync (string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null);
+        System.Threading.Tasks.Task<ProductTypeDefinition> GetDefinitionsProductTypeAsync(string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null);
 
         /// <summary>
         /// 
@@ -121,7 +120,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requirementsEnforced">Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates). (optional, default to ENFORCED)</param>
         /// <param name="locale">Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to DEFAULT)</param>
         /// <returns>Task of ApiResponse (ProductTypeDefinition)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProductTypeDefinition>> GetDefinitionsProductTypeAsyncWithHttpInfo (string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null);
+        System.Threading.Tasks.Task<ApiResponse<ProductTypeDefinition>> GetDefinitionsProductTypeAsyncWithHttpInfo(string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null);
         /// <summary>
         /// 
         /// </summary>
@@ -135,7 +134,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of ProductTypeList</returns>
-        System.Threading.Tasks.Task<ProductTypeList> SearchDefinitionsProductTypesAsync (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
+        System.Threading.Tasks.Task<ProductTypeList> SearchDefinitionsProductTypesAsync(List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
 
         /// <summary>
         /// 
@@ -150,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of ApiResponse (ProductTypeList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProductTypeList>> SearchDefinitionsProductTypesAsyncWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
+        System.Threading.Tasks.Task<ApiResponse<ProductTypeList>> SearchDefinitionsProductTypesAsyncWithHttpInfo(List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null);
         #endregion Asynchronous Operations
     }
 
@@ -170,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public DefinitionsApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -196,7 +195,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -248,10 +247,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requirementsEnforced">Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates). (optional, default to ENFORCED)</param>
         /// <param name="locale">Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to DEFAULT)</param>
         /// <returns>ProductTypeDefinition</returns>
-        public ProductTypeDefinition GetDefinitionsProductType (string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null)
+        public ProductTypeDefinition GetDefinitionsProductType(string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null)
         {
-             ApiResponse<ProductTypeDefinition> localVarResponse = GetDefinitionsProductTypeWithHttpInfo(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale);
-             return localVarResponse.Data;
+            ApiResponse<ProductTypeDefinition> localVarResponse = GetDefinitionsProductTypeWithHttpInfo(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -266,7 +265,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requirementsEnforced">Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates). (optional, default to ENFORCED)</param>
         /// <param name="locale">Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to DEFAULT)</param>
         /// <returns>ApiResponse of ProductTypeDefinition</returns>
-        public ApiResponse< ProductTypeDefinition > GetDefinitionsProductTypeWithHttpInfo (string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null)
+        public ApiResponse<ProductTypeDefinition> GetDefinitionsProductTypeWithHttpInfo(string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null)
         {
             // verify the required parameter 'productType' is set
             if (productType == null)
@@ -307,11 +306,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -321,7 +320,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ProductTypeDefinition>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ProductTypeDefinition) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductTypeDefinition)));
+                (ProductTypeDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductTypeDefinition)));
         }
 
         /// <summary>
@@ -336,10 +335,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requirementsEnforced">Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates). (optional, default to ENFORCED)</param>
         /// <param name="locale">Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to DEFAULT)</param>
         /// <returns>Task of ProductTypeDefinition</returns>
-        public async System.Threading.Tasks.Task<ProductTypeDefinition> GetDefinitionsProductTypeAsync (string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null)
+        public async System.Threading.Tasks.Task<ProductTypeDefinition> GetDefinitionsProductTypeAsync(string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null)
         {
-             ApiResponse<ProductTypeDefinition> localVarResponse = await GetDefinitionsProductTypeAsyncWithHttpInfo(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale);
-             return localVarResponse.Data;
+            ApiResponse<ProductTypeDefinition> localVarResponse = await GetDefinitionsProductTypeAsyncWithHttpInfo(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale);
+            return localVarResponse.Data;
 
         }
 
@@ -355,7 +354,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requirementsEnforced">Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates). (optional, default to ENFORCED)</param>
         /// <param name="locale">Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to DEFAULT)</param>
         /// <returns>Task of ApiResponse (ProductTypeDefinition)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ProductTypeDefinition>> GetDefinitionsProductTypeAsyncWithHttpInfo (string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ProductTypeDefinition>> GetDefinitionsProductTypeAsyncWithHttpInfo(string productType, List<string> marketplaceIds, string sellerId = null, string productTypeVersion = null, string requirements = null, string requirementsEnforced = null, string locale = null)
         {
             // verify the required parameter 'productType' is set
             if (productType == null)
@@ -396,11 +395,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -410,7 +409,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ProductTypeDefinition>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ProductTypeDefinition) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductTypeDefinition)));
+                (ProductTypeDefinition)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductTypeDefinition)));
         }
 
         /// <summary>
@@ -423,10 +422,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>ProductTypeList</returns>
-        public ProductTypeList SearchDefinitionsProductTypes (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
+        public ProductTypeList SearchDefinitionsProductTypes(List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
         {
-             ApiResponse<ProductTypeList> localVarResponse = SearchDefinitionsProductTypesWithHttpInfo(marketplaceIds, keywords, itemName, locale, searchLocale);
-             return localVarResponse.Data;
+            ApiResponse<ProductTypeList> localVarResponse = SearchDefinitionsProductTypesWithHttpInfo(marketplaceIds, keywords, itemName, locale, searchLocale);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -439,7 +438,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>ApiResponse of ProductTypeList</returns>
-        public ApiResponse< ProductTypeList > SearchDefinitionsProductTypesWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
+        public ApiResponse<ProductTypeList> SearchDefinitionsProductTypesWithHttpInfo(List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -475,11 +474,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -489,7 +488,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ProductTypeList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ProductTypeList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductTypeList)));
+                (ProductTypeList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductTypeList)));
         }
 
         /// <summary>
@@ -502,10 +501,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of ProductTypeList</returns>
-        public async System.Threading.Tasks.Task<ProductTypeList> SearchDefinitionsProductTypesAsync (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
+        public async System.Threading.Tasks.Task<ProductTypeList> SearchDefinitionsProductTypesAsync(List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
         {
-             ApiResponse<ProductTypeList> localVarResponse = await SearchDefinitionsProductTypesAsyncWithHttpInfo(marketplaceIds, keywords, itemName, locale, searchLocale);
-             return localVarResponse.Data;
+            ApiResponse<ProductTypeList> localVarResponse = await SearchDefinitionsProductTypesAsyncWithHttpInfo(marketplaceIds, keywords, itemName, locale, searchLocale);
+            return localVarResponse.Data;
 
         }
 
@@ -519,7 +518,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="locale">The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <param name="searchLocale">The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)</param>
         /// <returns>Task of ApiResponse (ProductTypeList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ProductTypeList>> SearchDefinitionsProductTypesAsyncWithHttpInfo (List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ProductTypeList>> SearchDefinitionsProductTypesAsyncWithHttpInfo(List<string> marketplaceIds, List<string> keywords = null, string itemName = null, string locale = null, string searchLocale = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -555,11 +554,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -569,7 +568,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ProductTypeList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ProductTypeList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductTypeList)));
+                (ProductTypeList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductTypeList)));
         }
 
 
@@ -583,17 +582,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public DefinitionsApi Build() 
+            public DefinitionsApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,12 +24,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Contains information about a box that is used in the inbound plan. The box is a container that holds multiple items.
     /// </summary>
     [DataContract]
-    public partial class Box :  IEquatable<Box>, IValidatableObject
+    public partial class Box : IEquatable<Box>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ContentInformationSource
         /// </summary>
-        [DataMember(Name="contentInformationSource", EmitDefaultValue=false)]
+        [DataMember(Name = "contentInformationSource", EmitDefaultValue = false)]
         public BoxContentInformationSource? ContentInformationSource { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Box" /> class.
@@ -47,12 +43,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="contentInformationSource">contentInformationSource.</param>
         /// <param name="destinationRegion">destinationRegion.</param>
         /// <param name="dimensions">dimensions.</param>
+        /// <param name="externalContainerIdentifier">The external identifier for this container / box..</param>
+        /// <param name="externalContainerIdentifierType">Type of the external identifier used. Can be: &#x60;AMAZON&#x60;, &#x60;SSCC&#x60;..</param>
         /// <param name="items">Items contained within the box..</param>
         /// <param name="packageId">Primary key to uniquely identify a Package (Box or Pallet). (required).</param>
         /// <param name="quantity">The number of containers where all other properties like weight or dimensions are identical..</param>
         /// <param name="templateName">Template name of the box..</param>
         /// <param name="weight">weight.</param>
-        public Box(string boxId = default, BoxContentInformationSource? contentInformationSource = default, Region destinationRegion = default, Dimensions dimensions = default, List<Item> items = default, string packageId = default, int? quantity = default, string templateName = default, Weight weight = default)
+        public Box(string boxId = default, BoxContentInformationSource? contentInformationSource = default, Region destinationRegion = default, Dimensions dimensions = default, string externalContainerIdentifier = default, string externalContainerIdentifierType = default, List<Item> items = default, string packageId = default, int? quantity = default, string templateName = default, Weight weight = default)
         {
             // to ensure "packageId" is required (not null)
             if (packageId == null)
@@ -67,64 +65,80 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.ContentInformationSource = contentInformationSource;
             this.DestinationRegion = destinationRegion;
             this.Dimensions = dimensions;
+            this.ExternalContainerIdentifier = externalContainerIdentifier;
+            this.ExternalContainerIdentifierType = externalContainerIdentifierType;
             this.Items = items;
             this.Quantity = quantity;
             this.TemplateName = templateName;
             this.Weight = weight;
         }
-        
+
         /// <summary>
         /// The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box.
         /// </summary>
         /// <value>The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box.</value>
-        [DataMember(Name="boxId", EmitDefaultValue=false)]
+        [DataMember(Name = "boxId", EmitDefaultValue = false)]
         public string BoxId { get; set; }
 
 
         /// <summary>
         /// Gets or Sets DestinationRegion
         /// </summary>
-        [DataMember(Name="destinationRegion", EmitDefaultValue=false)]
+        [DataMember(Name = "destinationRegion", EmitDefaultValue = false)]
         public Region DestinationRegion { get; set; }
 
         /// <summary>
         /// Gets or Sets Dimensions
         /// </summary>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public Dimensions Dimensions { get; set; }
+
+        /// <summary>
+        /// The external identifier for this container / box.
+        /// </summary>
+        /// <value>The external identifier for this container / box.</value>
+        [DataMember(Name = "externalContainerIdentifier", EmitDefaultValue = false)]
+        public string ExternalContainerIdentifier { get; set; }
+
+        /// <summary>
+        /// Type of the external identifier used. Can be: &#x60;AMAZON&#x60;, &#x60;SSCC&#x60;.
+        /// </summary>
+        /// <value>Type of the external identifier used. Can be: &#x60;AMAZON&#x60;, &#x60;SSCC&#x60;.</value>
+        [DataMember(Name = "externalContainerIdentifierType", EmitDefaultValue = false)]
+        public string ExternalContainerIdentifierType { get; set; }
 
         /// <summary>
         /// Items contained within the box.
         /// </summary>
         /// <value>Items contained within the box.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<Item> Items { get; set; }
 
         /// <summary>
         /// Primary key to uniquely identify a Package (Box or Pallet).
         /// </summary>
         /// <value>Primary key to uniquely identify a Package (Box or Pallet).</value>
-        [DataMember(Name="packageId", EmitDefaultValue=false)]
+        [DataMember(Name = "packageId", EmitDefaultValue = false)]
         public string PackageId { get; set; }
 
         /// <summary>
         /// The number of containers where all other properties like weight or dimensions are identical.
         /// </summary>
         /// <value>The number of containers where all other properties like weight or dimensions are identical.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// Template name of the box.
         /// </summary>
         /// <value>Template name of the box.</value>
-        [DataMember(Name="templateName", EmitDefaultValue=false)]
+        [DataMember(Name = "templateName", EmitDefaultValue = false)]
         public string TemplateName { get; set; }
 
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public Weight Weight { get; set; }
 
         /// <summary>
@@ -139,6 +153,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("  ContentInformationSource: ").Append(ContentInformationSource).Append("\n");
             sb.Append("  DestinationRegion: ").Append(DestinationRegion).Append("\n");
             sb.Append("  Dimensions: ").Append(Dimensions).Append("\n");
+            sb.Append("  ExternalContainerIdentifier: ").Append(ExternalContainerIdentifier).Append("\n");
+            sb.Append("  ExternalContainerIdentifierType: ").Append(ExternalContainerIdentifierType).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  PackageId: ").Append(PackageId).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
@@ -147,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -177,47 +193,57 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BoxId == input.BoxId ||
                     (this.BoxId != null &&
                     this.BoxId.Equals(input.BoxId))
-                ) && 
+                ) &&
                 (
                     this.ContentInformationSource == input.ContentInformationSource ||
                     (this.ContentInformationSource != null &&
                     this.ContentInformationSource.Equals(input.ContentInformationSource))
-                ) && 
+                ) &&
                 (
                     this.DestinationRegion == input.DestinationRegion ||
                     (this.DestinationRegion != null &&
                     this.DestinationRegion.Equals(input.DestinationRegion))
-                ) && 
+                ) &&
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
+                (
+                    this.ExternalContainerIdentifier == input.ExternalContainerIdentifier ||
+                    (this.ExternalContainerIdentifier != null &&
+                    this.ExternalContainerIdentifier.Equals(input.ExternalContainerIdentifier))
+                ) &&
+                (
+                    this.ExternalContainerIdentifierType == input.ExternalContainerIdentifierType ||
+                    (this.ExternalContainerIdentifierType != null &&
+                    this.ExternalContainerIdentifierType.Equals(input.ExternalContainerIdentifierType))
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&
                     this.Items.SequenceEqual(input.Items)
-                ) && 
+                ) &&
                 (
                     this.PackageId == input.PackageId ||
                     (this.PackageId != null &&
                     this.PackageId.Equals(input.PackageId))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.TemplateName == input.TemplateName ||
                     (this.TemplateName != null &&
                     this.TemplateName.Equals(input.TemplateName))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
@@ -242,6 +268,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                     hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
                 if (this.Dimensions != null)
                     hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                if (this.ExternalContainerIdentifier != null)
+                    hashCode = hashCode * 59 + this.ExternalContainerIdentifier.GetHashCode();
+                if (this.ExternalContainerIdentifierType != null)
+                    hashCode = hashCode * 59 + this.ExternalContainerIdentifierType.GetHashCode();
                 if (this.Items != null)
                     hashCode = hashCode * 59 + this.Items.GetHashCode();
                 if (this.PackageId != null)
@@ -264,58 +294,82 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // BoxId (string) maxLength
-            if(this.BoxId != null && this.BoxId.Length > 1024)
+            if (this.BoxId != null && this.BoxId.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for BoxId, length must be less than 1024.", new [] { "BoxId" });
+                yield return new ValidationResult("Invalid value for BoxId, length must be less than 1024.", new[] { "BoxId" });
             }
 
             // BoxId (string) minLength
-            if(this.BoxId != null && this.BoxId.Length < 1)
+            if (this.BoxId != null && this.BoxId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for BoxId, length must be greater than 1.", new [] { "BoxId" });
+                yield return new ValidationResult("Invalid value for BoxId, length must be greater than 1.", new[] { "BoxId" });
+            }
+
+            // ExternalContainerIdentifier (string) maxLength
+            if (this.ExternalContainerIdentifier != null && this.ExternalContainerIdentifier.Length > 1024)
+            {
+                yield return new ValidationResult("Invalid value for ExternalContainerIdentifier, length must be less than 1024.", new[] { "ExternalContainerIdentifier" });
+            }
+
+            // ExternalContainerIdentifier (string) minLength
+            if (this.ExternalContainerIdentifier != null && this.ExternalContainerIdentifier.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for ExternalContainerIdentifier, length must be greater than 1.", new[] { "ExternalContainerIdentifier" });
+            }
+
+            // ExternalContainerIdentifierType (string) maxLength
+            if (this.ExternalContainerIdentifierType != null && this.ExternalContainerIdentifierType.Length > 1024)
+            {
+                yield return new ValidationResult("Invalid value for ExternalContainerIdentifierType, length must be less than 1024.", new[] { "ExternalContainerIdentifierType" });
+            }
+
+            // ExternalContainerIdentifierType (string) minLength
+            if (this.ExternalContainerIdentifierType != null && this.ExternalContainerIdentifierType.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for ExternalContainerIdentifierType, length must be greater than 1.", new[] { "ExternalContainerIdentifierType" });
             }
 
             // PackageId (string) maxLength
-            if(this.PackageId != null && this.PackageId.Length > 38)
+            if (this.PackageId != null && this.PackageId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for PackageId, length must be less than 38.", new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, length must be less than 38.", new[] { "PackageId" });
             }
 
             // PackageId (string) minLength
-            if(this.PackageId != null && this.PackageId.Length < 38)
+            if (this.PackageId != null && this.PackageId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for PackageId, length must be greater than 38.", new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, length must be greater than 38.", new[] { "PackageId" });
             }
 
             // PackageId (string) pattern
             Regex regexPackageId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPackageId.Match(this.PackageId).Success)
             {
-                yield return new ValidationResult("Invalid value for PackageId, must match a pattern of " + regexPackageId, new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, must match a pattern of " + regexPackageId, new[] { "PackageId" });
             }
 
             // Quantity (int?) maximum
-            if(this.Quantity > (int?)10000)
+            if (this.Quantity > (int?)10000)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new[] { "Quantity" });
             }
 
             // Quantity (int?) minimum
-            if(this.Quantity < (int?)1)
+            if (this.Quantity < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new[] { "Quantity" });
             }
 
             // TemplateName (string) maxLength
-            if(this.TemplateName != null && this.TemplateName.Length > 1024)
+            if (this.TemplateName != null && this.TemplateName.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for TemplateName, length must be less than 1024.", new [] { "TemplateName" });
+                yield return new ValidationResult("Invalid value for TemplateName, length must be less than 1024.", new[] { "TemplateName" });
             }
 
             // TemplateName (string) minLength
-            if(this.TemplateName != null && this.TemplateName.Length < 1)
+            if (this.TemplateName != null && this.TemplateName.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for TemplateName, length must be greater than 1.", new [] { "TemplateName" });
+                yield return new ValidationResult("Invalid value for TemplateName, length must be greater than 1.", new[] { "TemplateName" });
             }
 
             yield break;

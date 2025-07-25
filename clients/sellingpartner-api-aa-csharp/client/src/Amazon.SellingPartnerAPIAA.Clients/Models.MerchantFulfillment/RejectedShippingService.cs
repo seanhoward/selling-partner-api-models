@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Information about a rejected shipping service
     /// </summary>
     [DataContract]
-    public partial class RejectedShippingService :  IEquatable<RejectedShippingService>, IValidatableObject
+    public partial class RejectedShippingService : IEquatable<RejectedShippingService>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RejectedShippingService" /> class.
@@ -83,40 +77,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             }
             this.RejectionReasonMessage = rejectionReasonMessage;
         }
-        
+
         /// <summary>
         /// The rejected shipping carrier name. For example, USPS.
         /// </summary>
         /// <value>The rejected shipping carrier name. For example, USPS.</value>
-        [DataMember(Name="CarrierName", EmitDefaultValue=false)]
+        [DataMember(Name = "CarrierName", EmitDefaultValue = false)]
         public string CarrierName { get; set; }
 
         /// <summary>
         /// The rejected shipping service localized name. For example, FedEx Standard Overnight.
         /// </summary>
         /// <value>The rejected shipping service localized name. For example, FedEx Standard Overnight.</value>
-        [DataMember(Name="ShippingServiceName", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingServiceName", EmitDefaultValue = false)]
         public string ShippingServiceName { get; set; }
 
         /// <summary>
         /// The rejected shipping service identifier. For example, &#x60;FEDEX_PTP_STANDARD_OVERNIGHT&#x60;.
         /// </summary>
         /// <value>The rejected shipping service identifier. For example, &#x60;FEDEX_PTP_STANDARD_OVERNIGHT&#x60;.</value>
-        [DataMember(Name="ShippingServiceId", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingServiceId", EmitDefaultValue = false)]
         public string ShippingServiceId { get; set; }
 
         /// <summary>
         /// A reason code meant to be consumed programatically. For example, &#x60;CARRIER_CANNOT_SHIP_TO_POBOX&#x60;.
         /// </summary>
         /// <value>A reason code meant to be consumed programatically. For example, &#x60;CARRIER_CANNOT_SHIP_TO_POBOX&#x60;.</value>
-        [DataMember(Name="RejectionReasonCode", EmitDefaultValue=false)]
+        [DataMember(Name = "RejectionReasonCode", EmitDefaultValue = false)]
         public string RejectionReasonCode { get; set; }
 
         /// <summary>
         /// A localized human readable description of the rejected reason.
         /// </summary>
         /// <value>A localized human readable description of the rejected reason.</value>
-        [DataMember(Name="RejectionReasonMessage", EmitDefaultValue=false)]
+        [DataMember(Name = "RejectionReasonMessage", EmitDefaultValue = false)]
         public string RejectionReasonMessage { get; set; }
 
         /// <summary>
@@ -135,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -165,27 +159,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CarrierName == input.CarrierName ||
                     (this.CarrierName != null &&
                     this.CarrierName.Equals(input.CarrierName))
-                ) && 
+                ) &&
                 (
                     this.ShippingServiceName == input.ShippingServiceName ||
                     (this.ShippingServiceName != null &&
                     this.ShippingServiceName.Equals(input.ShippingServiceName))
-                ) && 
+                ) &&
                 (
                     this.ShippingServiceId == input.ShippingServiceId ||
                     (this.ShippingServiceId != null &&
                     this.ShippingServiceId.Equals(input.ShippingServiceId))
-                ) && 
+                ) &&
                 (
                     this.RejectionReasonCode == input.RejectionReasonCode ||
                     (this.RejectionReasonCode != null &&
                     this.RejectionReasonCode.Equals(input.RejectionReasonCode))
-                ) && 
+                ) &&
                 (
                     this.RejectionReasonMessage == input.RejectionReasonMessage ||
                     (this.RejectionReasonMessage != null &&

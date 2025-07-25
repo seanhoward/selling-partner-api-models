@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Easy Ship
  *
- * The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders.  Your Easy Ship applications can:  * Get available time slots for packages to be scheduled for delivery.  * Schedule, reschedule, and cancel Easy Ship orders.  * Print labels, invoices, and warranties.  See the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
+ * Use the Selling Partner API for Easy Ship to build applications for sellers to manage and ship Amazon Easy Ship orders. With this API, you can get available time slots, schedule and reschedule Easy Ship orders, and print shipping labels, invoices, and warranties. To review the differences in Easy Ship operations by marketplace, refer to [Marketplace support](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support).
  *
  * OpenAPI spec version: 2022-03-23
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
     /// The response schema for the bulk scheduling API. It returns by the bulk scheduling API containing an array of the scheduled packtages, an optional list of orders we couldn&#39;t schedule with the reason, and a pre-signed URL for a ZIP file containing the associated shipping labels plus the documents enabled for your marketplace.
     /// </summary>
     [DataContract]
-    public partial class CreateScheduledPackagesResponse :  IEquatable<CreateScheduledPackagesResponse>, IValidatableObject
+    public partial class CreateScheduledPackagesResponse : IEquatable<CreateScheduledPackagesResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateScheduledPackagesResponse" /> class.
@@ -42,25 +36,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             this.RejectedOrders = rejectedOrders;
             this.PrintableDocumentsUrl = printableDocumentsUrl;
         }
-        
+
         /// <summary>
         /// A list of packages. Refer to the &#x60;Package&#x60; object.
         /// </summary>
         /// <value>A list of packages. Refer to the &#x60;Package&#x60; object.</value>
-        [DataMember(Name="scheduledPackages", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduledPackages", EmitDefaultValue = false)]
         public List<Package> ScheduledPackages { get; set; }
 
         /// <summary>
         /// A list of orders we couldn&#39;t scheduled on your behalf. Each element contains the reason and details on the error.
         /// </summary>
         /// <value>A list of orders we couldn&#39;t scheduled on your behalf. Each element contains the reason and details on the error.</value>
-        [DataMember(Name="rejectedOrders", EmitDefaultValue=false)]
+        [DataMember(Name = "rejectedOrders", EmitDefaultValue = false)]
         public List<RejectedOrder> RejectedOrders { get; set; }
 
         /// <summary>
         /// Gets or Sets PrintableDocumentsUrl
         /// </summary>
-        [DataMember(Name="printableDocumentsUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "printableDocumentsUrl", EmitDefaultValue = false)]
         public string PrintableDocumentsUrl { get; set; }
 
         /// <summary>
@@ -77,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -107,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ScheduledPackages == input.ScheduledPackages ||
                     this.ScheduledPackages != null &&
                     this.ScheduledPackages.SequenceEqual(input.ScheduledPackages)
-                ) && 
+                ) &&
                 (
                     this.RejectedOrders == input.RejectedOrders ||
                     this.RejectedOrders != null &&
                     this.RejectedOrders.SequenceEqual(input.RejectedOrders)
-                ) && 
+                ) &&
                 (
                     this.PrintableDocumentsUrl == input.PrintableDocumentsUrl ||
                     (this.PrintableDocumentsUrl != null &&

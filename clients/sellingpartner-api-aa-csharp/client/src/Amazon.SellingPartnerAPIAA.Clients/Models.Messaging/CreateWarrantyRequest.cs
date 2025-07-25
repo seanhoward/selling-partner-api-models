@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
     /// The request schema for the createWarranty operation.
     /// </summary>
     [DataContract]
-    public partial class CreateWarrantyRequest :  IEquatable<CreateWarrantyRequest>, IValidatableObject
+    public partial class CreateWarrantyRequest : IEquatable<CreateWarrantyRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateWarrantyRequest" /> class.
@@ -42,26 +36,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             this.CoverageStartDate = coverageStartDate;
             this.CoverageEndDate = coverageEndDate;
         }
-        
+
         /// <summary>
         /// Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer&#39;s language of preference, which can be retrieved from the GetAttributes operation.
         /// </summary>
         /// <value>Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer&#39;s language of preference, which can be retrieved from the GetAttributes operation.</value>
-        [DataMember(Name="attachments", EmitDefaultValue=false)]
+        [DataMember(Name = "attachments", EmitDefaultValue = false)]
         public List<Attachment> Attachments { get; set; }
 
         /// <summary>
         /// The start date of the warranty coverage to include in the message to the buyer.
         /// </summary>
         /// <value>The start date of the warranty coverage to include in the message to the buyer.</value>
-        [DataMember(Name="coverageStartDate", EmitDefaultValue=false)]
+        [DataMember(Name = "coverageStartDate", EmitDefaultValue = false)]
         public DateTime? CoverageStartDate { get; set; }
 
         /// <summary>
         /// The end date of the warranty coverage to include in the message to the buyer.
         /// </summary>
         /// <value>The end date of the warranty coverage to include in the message to the buyer.</value>
-        [DataMember(Name="coverageEndDate", EmitDefaultValue=false)]
+        [DataMember(Name = "coverageEndDate", EmitDefaultValue = false)]
         public DateTime? CoverageEndDate { get; set; }
 
         /// <summary>
@@ -78,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +102,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Attachments == input.Attachments ||
                     this.Attachments != null &&
                     this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
+                ) &&
                 (
                     this.CoverageStartDate == input.CoverageStartDate ||
                     (this.CoverageStartDate != null &&
                     this.CoverageStartDate.Equals(input.CoverageStartDate))
-                ) && 
+                ) &&
                 (
                     this.CoverageEndDate == input.CoverageEndDate ||
                     (this.CoverageEndDate != null &&

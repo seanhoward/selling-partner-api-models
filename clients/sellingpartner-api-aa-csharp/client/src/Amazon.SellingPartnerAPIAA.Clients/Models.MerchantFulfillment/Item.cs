@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// An Amazon order item identifier and a quantity.
     /// </summary>
     [DataContract]
-    public partial class Item :  IEquatable<Item>, IValidatableObject
+    public partial class Item : IEquatable<Item>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -75,61 +69,61 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.IsHazmat = isHazmat;
             this.DangerousGoodsDetails = dangerousGoodsDetails;
         }
-        
+
         /// <summary>
         /// Gets or Sets OrderItemId
         /// </summary>
-        [DataMember(Name="OrderItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "OrderItemId", EmitDefaultValue = false)]
         public string OrderItemId { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
         /// </summary>
-        [DataMember(Name="Quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "Quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// Gets or Sets ItemWeight
         /// </summary>
-        [DataMember(Name="ItemWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "ItemWeight", EmitDefaultValue = false)]
         public Weight ItemWeight { get; set; }
 
         /// <summary>
         /// Gets or Sets ItemDescription
         /// </summary>
-        [DataMember(Name="ItemDescription", EmitDefaultValue=false)]
+        [DataMember(Name = "ItemDescription", EmitDefaultValue = false)]
         public string ItemDescription { get; set; }
 
         /// <summary>
         /// Gets or Sets TransparencyCodeList
         /// </summary>
-        [DataMember(Name="TransparencyCodeList", EmitDefaultValue=false)]
+        [DataMember(Name = "TransparencyCodeList", EmitDefaultValue = false)]
         public TransparencyCodeList TransparencyCodeList { get; set; }
 
         /// <summary>
         /// A list of additional seller inputs required to ship this item using the chosen shipping service.
         /// </summary>
         /// <value>A list of additional seller inputs required to ship this item using the chosen shipping service.</value>
-        [DataMember(Name="ItemLevelSellerInputsList", EmitDefaultValue=false)]
+        [DataMember(Name = "ItemLevelSellerInputsList", EmitDefaultValue = false)]
         public AdditionalSellerInputsList ItemLevelSellerInputsList { get; set; }
 
         /// <summary>
         /// Gets or Sets LiquidVolume
         /// </summary>
-        [DataMember(Name="LiquidVolume", EmitDefaultValue=false)]
+        [DataMember(Name = "LiquidVolume", EmitDefaultValue = false)]
         public LiquidVolume LiquidVolume { get; set; }
 
         /// <summary>
         /// When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
         /// </summary>
         /// <value>When true, the item qualifies as hazardous materials (hazmat). Defaults to false.</value>
-        [DataMember(Name="IsHazmat", EmitDefaultValue=false)]
+        [DataMember(Name = "IsHazmat", EmitDefaultValue = false)]
         public bool? IsHazmat { get; set; }
 
         /// <summary>
         /// Gets or Sets DangerousGoodsDetails
         /// </summary>
-        [DataMember(Name="DangerousGoodsDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "DangerousGoodsDetails", EmitDefaultValue = false)]
         public DangerousGoodsDetails DangerousGoodsDetails { get; set; }
 
         /// <summary>
@@ -152,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -182,47 +176,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.OrderItemId == input.OrderItemId ||
                     (this.OrderItemId != null &&
                     this.OrderItemId.Equals(input.OrderItemId))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.ItemWeight == input.ItemWeight ||
                     (this.ItemWeight != null &&
                     this.ItemWeight.Equals(input.ItemWeight))
-                ) && 
+                ) &&
                 (
                     this.ItemDescription == input.ItemDescription ||
                     (this.ItemDescription != null &&
                     this.ItemDescription.Equals(input.ItemDescription))
-                ) && 
+                ) &&
                 (
                     this.TransparencyCodeList == input.TransparencyCodeList ||
                     (this.TransparencyCodeList != null &&
                     this.TransparencyCodeList.Equals(input.TransparencyCodeList))
-                ) && 
+                ) &&
                 (
                     this.ItemLevelSellerInputsList == input.ItemLevelSellerInputsList ||
                     (this.ItemLevelSellerInputsList != null &&
                     this.ItemLevelSellerInputsList.Equals(input.ItemLevelSellerInputsList))
-                ) && 
+                ) &&
                 (
                     this.LiquidVolume == input.LiquidVolume ||
                     (this.LiquidVolume != null &&
                     this.LiquidVolume.Equals(input.LiquidVolume))
-                ) && 
+                ) &&
                 (
                     this.IsHazmat == input.IsHazmat ||
                     (this.IsHazmat != null &&
                     this.IsHazmat.Equals(input.IsHazmat))
-                ) && 
+                ) &&
                 (
                     this.DangerousGoodsDetails == input.DangerousGoodsDetails ||
                     (this.DangerousGoodsDetails != null &&

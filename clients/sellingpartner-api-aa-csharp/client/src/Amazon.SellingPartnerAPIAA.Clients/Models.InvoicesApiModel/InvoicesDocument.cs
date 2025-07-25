@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
     /// An object that contains the &#x60;documentId&#x60; and an S3 pre-signed URL that you can use to download the specified file.
     /// </summary>
     [DataContract]
-    public partial class InvoicesDocument :  IEquatable<InvoicesDocument>, IValidatableObject
+    public partial class InvoicesDocument : IEquatable<InvoicesDocument>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoicesDocument" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             this.InvoicesDocumentId = invoicesDocumentId;
             this.InvoicesDocumentUrl = invoicesDocumentUrl;
         }
-        
+
         /// <summary>
         /// The identifier of the export document.
         /// </summary>
         /// <value>The identifier of the export document.</value>
-        [DataMember(Name="invoicesDocumentId", EmitDefaultValue=false)]
+        [DataMember(Name = "invoicesDocumentId", EmitDefaultValue = false)]
         public string InvoicesDocumentId { get; set; }
 
         /// <summary>
         /// A pre-signed URL that you can use to download the invoices document in zip format. This URL expires after 30 seconds.
         /// </summary>
         /// <value>A pre-signed URL that you can use to download the invoices document in zip format. This URL expires after 30 seconds.</value>
-        [DataMember(Name="invoicesDocumentUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "invoicesDocumentUrl", EmitDefaultValue = false)]
         public string InvoicesDocumentUrl { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.InvoicesDocumentId == input.InvoicesDocumentId ||
                     (this.InvoicesDocumentId != null &&
                     this.InvoicesDocumentId.Equals(input.InvoicesDocumentId))
-                ) && 
+                ) &&
                 (
                     this.InvoicesDocumentUrl == input.InvoicesDocumentUrl ||
                     (this.InvoicesDocumentUrl != null &&

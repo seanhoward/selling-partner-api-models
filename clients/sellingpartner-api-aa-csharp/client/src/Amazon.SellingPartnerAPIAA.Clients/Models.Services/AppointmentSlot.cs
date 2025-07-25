@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// A time window along with associated capacity in which the service can be performed.
     /// </summary>
     [DataContract]
-    public partial class AppointmentSlot :  IEquatable<AppointmentSlot>, IValidatableObject
+    public partial class AppointmentSlot : IEquatable<AppointmentSlot>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentSlot" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.EndTime = endTime;
             this.Capacity = capacity;
         }
-        
+
         /// <summary>
         /// Time window start time in ISO 8601 format.
         /// </summary>
         /// <value>Time window start time in ISO 8601 format.</value>
-        [DataMember(Name="startTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startTime", EmitDefaultValue = false)]
         public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// Time window end time in ISO 8601 format.
         /// </summary>
         /// <value>Time window end time in ISO 8601 format.</value>
-        [DataMember(Name="endTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endTime", EmitDefaultValue = false)]
         public DateTime? EndTime { get; set; }
 
         /// <summary>
         /// Number of resources for which a slot can be reserved.
         /// </summary>
         /// <value>Number of resources for which a slot can be reserved.</value>
-        [DataMember(Name="capacity", EmitDefaultValue=false)]
+        [DataMember(Name = "capacity", EmitDefaultValue = false)]
         public int? Capacity { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StartTime == input.StartTime ||
                     (this.StartTime != null &&
                     this.StartTime.Equals(input.StartTime))
-                ) && 
+                ) &&
                 (
                     this.EndTime == input.EndTime ||
                     (this.EndTime != null &&
                     this.EndTime.Equals(input.EndTime))
-                ) && 
+                ) &&
                 (
                     this.Capacity == input.Capacity ||
                     (this.Capacity != null &&
@@ -153,9 +146,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Capacity (int?) minimum
-            if(this.Capacity < (int?)0)
+            if (this.Capacity < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for Capacity, must be a value greater than or equal to 0.", new [] { "Capacity" });
+                yield return new ValidationResult("Invalid value for Capacity, must be a value greater than or equal to 0.", new[] { "Capacity" });
             }
 
             yield break;

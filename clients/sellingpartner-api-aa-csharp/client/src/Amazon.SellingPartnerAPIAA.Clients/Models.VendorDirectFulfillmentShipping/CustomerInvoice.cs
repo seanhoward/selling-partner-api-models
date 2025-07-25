@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Represents a customer invoice associated with a purchase order.
     /// </summary>
     [DataContract]
-    public partial class CustomerInvoice :  IEquatable<CustomerInvoice>, IValidatableObject
+    public partial class CustomerInvoice : IEquatable<CustomerInvoice>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerInvoice" /> class.
@@ -39,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// Initializes a new instance of the <see cref="CustomerInvoice" /> class.
         /// </summary>
         /// <param name="purchaseOrderNumber">The purchase order number for this order. (required).</param>
-        /// <param name="content">The Base64encoded customer invoice. (required).</param>
+        /// <param name="content">The Base64 customer invoice. (required).</param>
         public CustomerInvoice(string purchaseOrderNumber = default, string content = default)
         {
             // to ensure "purchaseOrderNumber" is required (not null)
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
                 this.Content = content;
             }
         }
-        
+
         /// <summary>
         /// The purchase order number for this order.
         /// </summary>
         /// <value>The purchase order number for this order.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
-        /// The Base64encoded customer invoice.
+        /// The Base64 customer invoice.
         /// </summary>
-        /// <value>The Base64encoded customer invoice.</value>
-        [DataMember(Name="content", EmitDefaultValue=false)]
+        /// <value>The Base64 customer invoice.</value>
+        [DataMember(Name = "content", EmitDefaultValue = false)]
         public string Content { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.Content == input.Content ||
                     (this.Content != null &&
@@ -160,7 +155,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             Regex regexPurchaseOrderNumber = new Regex(@"^[a-zA-Z0-9]+$", RegexOptions.CultureInvariant);
             if (false == regexPurchaseOrderNumber.Match(this.PurchaseOrderNumber).Success)
             {
-                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new [] { "PurchaseOrderNumber" });
+                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new[] { "PurchaseOrderNumber" });
             }
 
             yield break;

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// The image for the listings item.
     /// </summary>
     [DataContract]
-    public partial class ItemImage :  IEquatable<ItemImage>, IValidatableObject
+    public partial class ItemImage : IEquatable<ItemImage>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemImage" /> class.
@@ -71,26 +65,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
                 this.Width = width;
             }
         }
-        
+
         /// <summary>
         /// The link, or URL, to the image.
         /// </summary>
         /// <value>The link, or URL, to the image.</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
+        [DataMember(Name = "link", EmitDefaultValue = false)]
         public string Link { get; set; }
 
         /// <summary>
         /// The height of the image in pixels.
         /// </summary>
         /// <value>The height of the image in pixels.</value>
-        [DataMember(Name="height", EmitDefaultValue=false)]
+        [DataMember(Name = "height", EmitDefaultValue = false)]
         public int? Height { get; set; }
 
         /// <summary>
         /// The width of the image in pixels.
         /// </summary>
         /// <value>The width of the image in pixels.</value>
-        [DataMember(Name="width", EmitDefaultValue=false)]
+        [DataMember(Name = "width", EmitDefaultValue = false)]
         public int? Width { get; set; }
 
         /// <summary>
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +131,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Link == input.Link ||
                     (this.Link != null &&
                     this.Link.Equals(input.Link))
-                ) && 
+                ) &&
                 (
                     this.Height == input.Height ||
                     (this.Height != null &&
                     this.Height.Equals(input.Height))
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&

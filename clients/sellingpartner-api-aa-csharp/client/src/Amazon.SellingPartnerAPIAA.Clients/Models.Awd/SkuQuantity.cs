@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Quantity details for a SKU as part of a shipment
     /// </summary>
     [DataContract]
-    public partial class SkuQuantity :  IEquatable<SkuQuantity>, IValidatableObject
+    public partial class SkuQuantity : IEquatable<SkuQuantity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SkuQuantity" /> class.
@@ -63,24 +57,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             }
             this.ReceivedQuantity = receivedQuantity;
         }
-        
+
         /// <summary>
         /// Gets or Sets ExpectedQuantity
         /// </summary>
-        [DataMember(Name="expectedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "expectedQuantity", EmitDefaultValue = false)]
         public InventoryQuantity ExpectedQuantity { get; set; }
 
         /// <summary>
         /// Gets or Sets ReceivedQuantity
         /// </summary>
-        [DataMember(Name="receivedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "receivedQuantity", EmitDefaultValue = false)]
         public InventoryQuantity ReceivedQuantity { get; set; }
 
         /// <summary>
         /// The merchant stock keeping unit
         /// </summary>
         /// <value>The merchant stock keeping unit</value>
-        [DataMember(Name="sku", EmitDefaultValue=false)]
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
         /// <summary>
@@ -97,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -127,17 +121,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ExpectedQuantity == input.ExpectedQuantity ||
                     (this.ExpectedQuantity != null &&
                     this.ExpectedQuantity.Equals(input.ExpectedQuantity))
-                ) && 
+                ) &&
                 (
                     this.ReceivedQuantity == input.ReceivedQuantity ||
                     (this.ReceivedQuantity != null &&
                     this.ReceivedQuantity.Equals(input.ReceivedQuantity))
-                ) && 
+                ) &&
                 (
                     this.Sku == input.Sku ||
                     (this.Sku != null &&

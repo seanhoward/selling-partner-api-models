@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Represents an order placed by Amazon, including the purchase order number, current state, and order details.
     /// </summary>
     [DataContract]
-    public partial class Order :  IEquatable<Order>, IValidatableObject
+    public partial class Order : IEquatable<Order>, IValidatableObject
     {
         /// <summary>
         /// This field will contain the current state of the purchase order.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PurchaseOrderStateEnum
         {
-            
+
             /// <summary>
             /// Enum New for value: New
             /// </summary>
             [EnumMember(Value = "New")]
             New = 1,
-            
+
             /// <summary>
             /// Enum Acknowledged for value: Acknowledged
             /// </summary>
             [EnumMember(Value = "Acknowledged")]
             Acknowledged = 2,
-            
+
             /// <summary>
             /// Enum Closed for value: Closed
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// This field will contain the current state of the purchase order.
         /// </summary>
         /// <value>This field will contain the current state of the purchase order.</value>
-        [DataMember(Name="purchaseOrderState", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderState", EmitDefaultValue = false)]
         public PurchaseOrderStateEnum PurchaseOrderState { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
@@ -96,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             }
             this.OrderDetails = orderDetails;
         }
-        
+
         /// <summary>
         /// The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
         /// </summary>
         /// <value>The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
 
@@ -109,7 +104,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// Details of an order.
         /// </summary>
         /// <value>Details of an order.</value>
-        [DataMember(Name="orderDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "orderDetails", EmitDefaultValue = false)]
         public OrderDetails OrderDetails { get; set; }
 
         /// <summary>
@@ -126,7 +121,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -156,17 +151,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.PurchaseOrderState == input.PurchaseOrderState ||
                     (this.PurchaseOrderState != null &&
                     this.PurchaseOrderState.Equals(input.PurchaseOrderState))
-                ) && 
+                ) &&
                 (
                     this.OrderDetails == input.OrderDetails ||
                     (this.OrderDetails != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.
     /// </summary>
     [DataContract]
-    public partial class PackageItemDetails :  IEquatable<PackageItemDetails>, IValidatableObject
+    public partial class PackageItemDetails : IEquatable<PackageItemDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageItemDetails" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.LotNumber = lotNumber;
             this.Expiry = expiry;
         }
-        
+
         /// <summary>
         /// The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
         /// </summary>
         /// <value>The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
         /// The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.
         /// </summary>
         /// <value>The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.</value>
-        [DataMember(Name="lotNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "lotNumber", EmitDefaultValue = false)]
         public string LotNumber { get; set; }
 
         /// <summary>
         /// Either expiryDate or mfgDate and expiryAfterDuration are mandatory for perishable items.
         /// </summary>
         /// <value>Either expiryDate or mfgDate and expiryAfterDuration are mandatory for perishable items.</value>
-        [DataMember(Name="expiry", EmitDefaultValue=false)]
+        [DataMember(Name = "expiry", EmitDefaultValue = false)]
         public Expiry Expiry { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.LotNumber == input.LotNumber ||
                     (this.LotNumber != null &&
                     this.LotNumber.Equals(input.LotNumber))
-                ) && 
+                ) &&
                 (
                     this.Expiry == input.Expiry ||
                     (this.Expiry != null &&

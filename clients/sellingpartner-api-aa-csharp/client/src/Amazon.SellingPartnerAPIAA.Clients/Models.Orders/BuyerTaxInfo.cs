@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Tax information about the buyer.
     /// </summary>
     [DataContract]
-    public partial class BuyerTaxInfo :  IEquatable<BuyerTaxInfo>, IValidatableObject
+    public partial class BuyerTaxInfo : IEquatable<BuyerTaxInfo>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuyerTaxInfo" /> class.
@@ -42,26 +36,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.TaxingRegion = taxingRegion;
             this.TaxClassifications = taxClassifications;
         }
-        
+
         /// <summary>
         /// The legal name of the company.
         /// </summary>
         /// <value>The legal name of the company.</value>
-        [DataMember(Name="CompanyLegalName", EmitDefaultValue=false)]
+        [DataMember(Name = "CompanyLegalName", EmitDefaultValue = false)]
         public string CompanyLegalName { get; set; }
 
         /// <summary>
         /// The country or region imposing the tax.
         /// </summary>
         /// <value>The country or region imposing the tax.</value>
-        [DataMember(Name="TaxingRegion", EmitDefaultValue=false)]
+        [DataMember(Name = "TaxingRegion", EmitDefaultValue = false)]
         public string TaxingRegion { get; set; }
 
         /// <summary>
         /// A list of tax classifications that apply to the order.
         /// </summary>
         /// <value>A list of tax classifications that apply to the order.</value>
-        [DataMember(Name="TaxClassifications", EmitDefaultValue=false)]
+        [DataMember(Name = "TaxClassifications", EmitDefaultValue = false)]
         public List<TaxClassification> TaxClassifications { get; set; }
 
         /// <summary>
@@ -78,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +102,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CompanyLegalName == input.CompanyLegalName ||
                     (this.CompanyLegalName != null &&
                     this.CompanyLegalName.Equals(input.CompanyLegalName))
-                ) && 
+                ) &&
                 (
                     this.TaxingRegion == input.TaxingRegion ||
                     (this.TaxingRegion != null &&
                     this.TaxingRegion.Equals(input.TaxingRegion))
-                ) && 
+                ) &&
                 (
                     this.TaxClassifications == input.TaxClassifications ||
                     this.TaxClassifications != null &&

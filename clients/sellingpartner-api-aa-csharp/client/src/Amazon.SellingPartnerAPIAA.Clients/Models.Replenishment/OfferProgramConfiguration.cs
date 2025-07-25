@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,13 +21,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// The offer program configuration contains a set of program properties for an offer.
     /// </summary>
     [DataContract]
-    public partial class OfferProgramConfiguration :  IEquatable<OfferProgramConfiguration>, IValidatableObject
+    public partial class OfferProgramConfiguration : IEquatable<OfferProgramConfiguration>, IValidatableObject
     {
         /// <summary>
         /// Determines whether the offer was automatically or manually enrolled in the program. This property is only supported for sellers and not vendors.
         /// </summary>
         /// <value>Determines whether the offer was automatically or manually enrolled in the program. This property is only supported for sellers and not vendors.</value>
-        [DataMember(Name="enrollmentMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "enrollmentMethod", EmitDefaultValue = false)]
         public EnrollmentMethod? EnrollmentMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OfferProgramConfiguration" /> class.
@@ -48,19 +41,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             this.Promotions = promotions;
             this.EnrollmentMethod = enrollmentMethod;
         }
-        
+
         /// <summary>
         /// An object which contains the preferences applied to the offer.
         /// </summary>
         /// <value>An object which contains the preferences applied to the offer.</value>
-        [DataMember(Name="preferences", EmitDefaultValue=false)]
+        [DataMember(Name = "preferences", EmitDefaultValue = false)]
         public OfferProgramConfigurationPreferences Preferences { get; set; }
 
         /// <summary>
         /// An object which contains the promotions applied to the offer.
         /// </summary>
         /// <value>An object which contains the promotions applied to the offer.</value>
-        [DataMember(Name="promotions", EmitDefaultValue=false)]
+        [DataMember(Name = "promotions", EmitDefaultValue = false)]
         public OfferProgramConfigurationPromotions Promotions { get; set; }
 
 
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Preferences == input.Preferences ||
                     (this.Preferences != null &&
                     this.Preferences.Equals(input.Preferences))
-                ) && 
+                ) &&
                 (
                     this.Promotions == input.Promotions ||
                     (this.Promotions != null &&
                     this.Promotions.Equals(input.Promotions))
-                ) && 
+                ) &&
                 (
                     this.EnrollmentMethod == input.EnrollmentMethod ||
                     (this.EnrollmentMethod != null &&

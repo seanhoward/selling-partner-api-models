@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// A quantity based on unit of measure.
     /// </summary>
     [DataContract]
-    public partial class Amount :  IEquatable<Amount>, IValidatableObject
+    public partial class Amount : IEquatable<Amount>, IValidatableObject
     {
         /// <summary>
         /// The unit of measure for the amount.
@@ -37,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitOfMeasureEnum
         {
-            
+
             /// <summary>
             /// Enum Eaches for value: Eaches
             /// </summary>
@@ -49,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// The unit of measure for the amount.
         /// </summary>
         /// <value>The unit of measure for the amount.</value>
-        [DataMember(Name="unitOfMeasure", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasure", EmitDefaultValue = false)]
         public UnitOfMeasureEnum UnitOfMeasure { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Amount" /> class.
@@ -82,13 +77,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.Value = value;
             }
         }
-        
+
 
         /// <summary>
         /// The amount of a product in the associated unit of measure.
         /// </summary>
         /// <value>The amount of a product in the associated unit of measure.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>
@@ -104,7 +99,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -134,12 +129,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UnitOfMeasure == input.UnitOfMeasure ||
                     (this.UnitOfMeasure != null &&
                     this.UnitOfMeasure.Equals(input.UnitOfMeasure))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&

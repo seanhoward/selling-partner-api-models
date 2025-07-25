@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Information about the seller of the service job.
     /// </summary>
     [DataContract]
-    public partial class Seller :  IEquatable<Seller>, IValidatableObject
+    public partial class Seller : IEquatable<Seller>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Seller" /> class.
@@ -38,12 +32,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         {
             this.SellerId = sellerId;
         }
-        
+
         /// <summary>
         /// The identifier of the seller of the service job.
         /// </summary>
         /// <value>The identifier of the seller of the service job.</value>
-        [DataMember(Name="sellerId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerId", EmitDefaultValue = false)]
         public string SellerId { get; set; }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerId == input.SellerId ||
                     (this.SellerId != null &&
@@ -122,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             Regex regexSellerId = new Regex(@"^[A-Z0-9]*$", RegexOptions.CultureInvariant);
             if (false == regexSellerId.Match(this.SellerId).Success)
             {
-                yield return new ValidationResult("Invalid value for SellerId, must match a pattern of " + regexSellerId, new [] { "SellerId" });
+                yield return new ValidationResult("Invalid value for SellerId, must match a pattern of " + regexSellerId, new[] { "SellerId" });
             }
 
             yield break;

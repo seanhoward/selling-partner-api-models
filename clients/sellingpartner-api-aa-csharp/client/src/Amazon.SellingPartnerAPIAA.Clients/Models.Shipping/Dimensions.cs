@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// A set of measurements for a three-dimensional object.
     /// </summary>
     [DataContract]
-    public partial class Dimensions :  IEquatable<Dimensions>, IValidatableObject
+    public partial class Dimensions : IEquatable<Dimensions>, IValidatableObject
     {
         /// <summary>
         /// The unit of these measurements.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitEnum
         {
-            
+
             /// <summary>
             /// Enum IN for value: IN
             /// </summary>
             [EnumMember(Value = "IN")]
             IN = 1,
-            
+
             /// <summary>
             /// Enum CM for value: CM
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// The unit of these measurements.
         /// </summary>
         /// <value>The unit of these measurements.</value>
-        [DataMember(Name="unit", EmitDefaultValue=false)]
+        [DataMember(Name = "unit", EmitDefaultValue = false)]
         public UnitEnum Unit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Dimensions" /> class.
@@ -108,26 +103,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
                 this.Unit = unit;
             }
         }
-        
+
         /// <summary>
         /// The length of the container.
         /// </summary>
         /// <value>The length of the container.</value>
-        [DataMember(Name="length", EmitDefaultValue=false)]
+        [DataMember(Name = "length", EmitDefaultValue = false)]
         public decimal? Length { get; set; }
 
         /// <summary>
         /// The width of the container.
         /// </summary>
         /// <value>The width of the container.</value>
-        [DataMember(Name="width", EmitDefaultValue=false)]
+        [DataMember(Name = "width", EmitDefaultValue = false)]
         public decimal? Width { get; set; }
 
         /// <summary>
         /// The height of the container.
         /// </summary>
         /// <value>The height of the container.</value>
-        [DataMember(Name="height", EmitDefaultValue=false)]
+        [DataMember(Name = "height", EmitDefaultValue = false)]
         public decimal? Height { get; set; }
 
 
@@ -146,7 +141,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -176,22 +171,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Length == input.Length ||
                     (this.Length != null &&
                     this.Length.Equals(input.Length))
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&
                     this.Width.Equals(input.Width))
-                ) && 
+                ) &&
                 (
                     this.Height == input.Height ||
                     (this.Height != null &&
                     this.Height.Equals(input.Height))
-                ) && 
+                ) &&
                 (
                     this.Unit == input.Unit ||
                     (this.Unit != null &&

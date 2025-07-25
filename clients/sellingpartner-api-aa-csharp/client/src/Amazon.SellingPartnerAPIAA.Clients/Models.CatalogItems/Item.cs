@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
     /// An item in the Amazon catalog.
     /// </summary>
     [DataContract]
-    public partial class Item :  IEquatable<Item>, IValidatableObject
+    public partial class Item : IEquatable<Item>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -71,71 +65,71 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             this.Summaries = summaries;
             this.VendorDetails = vendorDetails;
         }
-        
+
         /// <summary>
         /// Gets or Sets Asin
         /// </summary>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public Newtonsoft.Json.Linq.JObject Attributes { get; set; }
 
         /// <summary>
         /// Gets or Sets Classifications
         /// </summary>
-        [DataMember(Name="classifications", EmitDefaultValue=false)]
+        [DataMember(Name = "classifications", EmitDefaultValue = false)]
         public ItemBrowseClassifications Classifications { get; set; }
 
         /// <summary>
         /// Gets or Sets Dimensions
         /// </summary>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public ItemDimensions Dimensions { get; set; }
 
         /// <summary>
         /// Gets or Sets Identifiers
         /// </summary>
-        [DataMember(Name="identifiers", EmitDefaultValue=false)]
+        [DataMember(Name = "identifiers", EmitDefaultValue = false)]
         public ItemIdentifiers Identifiers { get; set; }
 
         /// <summary>
         /// Gets or Sets Images
         /// </summary>
-        [DataMember(Name="images", EmitDefaultValue=false)]
+        [DataMember(Name = "images", EmitDefaultValue = false)]
         public ItemImages Images { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductTypes
         /// </summary>
-        [DataMember(Name="productTypes", EmitDefaultValue=false)]
+        [DataMember(Name = "productTypes", EmitDefaultValue = false)]
         public ItemProductTypes ProductTypes { get; set; }
 
         /// <summary>
         /// Gets or Sets Relationships
         /// </summary>
-        [DataMember(Name="relationships", EmitDefaultValue=false)]
+        [DataMember(Name = "relationships", EmitDefaultValue = false)]
         public ItemRelationships Relationships { get; set; }
 
         /// <summary>
         /// Gets or Sets SalesRanks
         /// </summary>
-        [DataMember(Name="salesRanks", EmitDefaultValue=false)]
+        [DataMember(Name = "salesRanks", EmitDefaultValue = false)]
         public ItemSalesRanks SalesRanks { get; set; }
 
         /// <summary>
         /// Gets or Sets Summaries
         /// </summary>
-        [DataMember(Name="summaries", EmitDefaultValue=false)]
+        [DataMember(Name = "summaries", EmitDefaultValue = false)]
         public ItemSummaries Summaries { get; set; }
 
         /// <summary>
         /// Gets or Sets VendorDetails
         /// </summary>
-        [DataMember(Name="vendorDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorDetails", EmitDefaultValue = false)]
         public ItemVendorDetails VendorDetails { get; set; }
 
         /// <summary>
@@ -160,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -190,57 +184,57 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.Attributes == input.Attributes ||
                     (this.Attributes != null &&
                     this.Attributes.Equals(input.Attributes))
-                ) && 
+                ) &&
                 (
                     this.Classifications == input.Classifications ||
                     (this.Classifications != null &&
                     this.Classifications.Equals(input.Classifications))
-                ) && 
+                ) &&
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
                 (
                     this.Identifiers == input.Identifiers ||
                     (this.Identifiers != null &&
                     this.Identifiers.Equals(input.Identifiers))
-                ) && 
+                ) &&
                 (
                     this.Images == input.Images ||
                     (this.Images != null &&
                     this.Images.Equals(input.Images))
-                ) && 
+                ) &&
                 (
                     this.ProductTypes == input.ProductTypes ||
                     (this.ProductTypes != null &&
                     this.ProductTypes.Equals(input.ProductTypes))
-                ) && 
+                ) &&
                 (
                     this.Relationships == input.Relationships ||
                     (this.Relationships != null &&
                     this.Relationships.Equals(input.Relationships))
-                ) && 
+                ) &&
                 (
                     this.SalesRanks == input.SalesRanks ||
                     (this.SalesRanks != null &&
                     this.SalesRanks.Equals(input.SalesRanks))
-                ) && 
+                ) &&
                 (
                     this.Summaries == input.Summaries ||
                     (this.Summaries != null &&
                     this.Summaries.Equals(input.Summaries))
-                ) && 
+                ) &&
                 (
                     this.VendorDetails == input.VendorDetails ||
                     (this.VendorDetails != null &&

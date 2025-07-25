@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,89 +9,84 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Vendor details associated with an Amazon catalog item for the indicated Amazon marketplace.
+    /// The vendor details that are associated with an Amazon catalog item for the specified &#x60;marketplaceId&#x60;.
     /// </summary>
     [DataContract]
-    public partial class ItemVendorDetailsByMarketplace :  IEquatable<ItemVendorDetailsByMarketplace>, IValidatableObject
+    public partial class ItemVendorDetailsByMarketplace : IEquatable<ItemVendorDetailsByMarketplace>, IValidatableObject
     {
         /// <summary>
-        /// Replenishment category associated with an Amazon catalog item.
+        /// The replenishment category that is associated with an Amazon catalog item.
         /// </summary>
-        /// <value>Replenishment category associated with an Amazon catalog item.</value>
+        /// <value>The replenishment category that is associated with an Amazon catalog item.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ReplenishmentCategoryEnum
         {
-            
+
             /// <summary>
             /// Enum ALLOCATED for value: ALLOCATED
             /// </summary>
             [EnumMember(Value = "ALLOCATED")]
             ALLOCATED = 1,
-            
+
             /// <summary>
             /// Enum BASICREPLENISHMENT for value: BASIC_REPLENISHMENT
             /// </summary>
             [EnumMember(Value = "BASIC_REPLENISHMENT")]
             BASICREPLENISHMENT = 2,
-            
+
             /// <summary>
             /// Enum INSEASON for value: IN_SEASON
             /// </summary>
             [EnumMember(Value = "IN_SEASON")]
             INSEASON = 3,
-            
+
             /// <summary>
             /// Enum LIMITEDREPLENISHMENT for value: LIMITED_REPLENISHMENT
             /// </summary>
             [EnumMember(Value = "LIMITED_REPLENISHMENT")]
             LIMITEDREPLENISHMENT = 4,
-            
+
             /// <summary>
             /// Enum MANUFACTUREROUTOFSTOCK for value: MANUFACTURER_OUT_OF_STOCK
             /// </summary>
             [EnumMember(Value = "MANUFACTURER_OUT_OF_STOCK")]
             MANUFACTUREROUTOFSTOCK = 5,
-            
+
             /// <summary>
             /// Enum NEWPRODUCT for value: NEW_PRODUCT
             /// </summary>
             [EnumMember(Value = "NEW_PRODUCT")]
             NEWPRODUCT = 6,
-            
+
             /// <summary>
             /// Enum NONREPLENISHABLE for value: NON_REPLENISHABLE
             /// </summary>
             [EnumMember(Value = "NON_REPLENISHABLE")]
             NONREPLENISHABLE = 7,
-            
+
             /// <summary>
             /// Enum NONSTOCKUPABLE for value: NON_STOCKUPABLE
             /// </summary>
             [EnumMember(Value = "NON_STOCKUPABLE")]
             NONSTOCKUPABLE = 8,
-            
+
             /// <summary>
             /// Enum OBSOLETE for value: OBSOLETE
             /// </summary>
             [EnumMember(Value = "OBSOLETE")]
             OBSOLETE = 9,
-            
+
             /// <summary>
             /// Enum PLANNEDREPLENISHMENT for value: PLANNED_REPLENISHMENT
             /// </summary>
@@ -100,10 +95,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         }
 
         /// <summary>
-        /// Replenishment category associated with an Amazon catalog item.
+        /// The replenishment category that is associated with an Amazon catalog item.
         /// </summary>
-        /// <value>Replenishment category associated with an Amazon catalog item.</value>
-        [DataMember(Name="replenishmentCategory", EmitDefaultValue=false)]
+        /// <value>The replenishment category that is associated with an Amazon catalog item.</value>
+        [DataMember(Name = "replenishmentCategory", EmitDefaultValue = false)]
         public ReplenishmentCategoryEnum? ReplenishmentCategory { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemVendorDetailsByMarketplace" /> class.
@@ -113,14 +108,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemVendorDetailsByMarketplace" /> class.
         /// </summary>
-        /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
-        /// <param name="brandCode">Brand code associated with an Amazon catalog item..</param>
-        /// <param name="manufacturerCode">Manufacturer code associated with an Amazon catalog item..</param>
-        /// <param name="manufacturerCodeParent">Parent vendor code of the manufacturer code..</param>
-        /// <param name="productCategory">Product category associated with an Amazon catalog item..</param>
-        /// <param name="productGroup">Product group associated with an Amazon catalog item..</param>
-        /// <param name="productSubcategory">Product subcategory associated with an Amazon catalog item..</param>
-        /// <param name="replenishmentCategory">Replenishment category associated with an Amazon catalog item..</param>
+        /// <param name="marketplaceId">Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required).</param>
+        /// <param name="brandCode">The brand code that is associated with an Amazon catalog item..</param>
+        /// <param name="manufacturerCode">The manufacturer code that is associated with an Amazon catalog item..</param>
+        /// <param name="manufacturerCodeParent">The parent vendor code of the manufacturer code..</param>
+        /// <param name="productCategory">The product category that is associated with an Amazon catalog item..</param>
+        /// <param name="productGroup">The product group that is associated with an Amazon catalog item..</param>
+        /// <param name="productSubcategory">The product subcategory that is associated with an Amazon catalog item..</param>
+        /// <param name="replenishmentCategory">The replenishment category that is associated with an Amazon catalog item..</param>
         public ItemVendorDetailsByMarketplace(string marketplaceId = default, string brandCode = default, string manufacturerCode = default, string manufacturerCodeParent = default, ItemVendorDetailsCategory productCategory = default, string productGroup = default, ItemVendorDetailsCategory productSubcategory = default, ReplenishmentCategoryEnum? replenishmentCategory = default)
         {
             // to ensure "marketplaceId" is required (not null)
@@ -140,54 +135,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             this.ProductSubcategory = productSubcategory;
             this.ReplenishmentCategory = replenishmentCategory;
         }
-        
+
         /// <summary>
-        /// Amazon marketplace identifier.
+        /// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
-        /// <value>Amazon marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        /// <value>Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
-        /// Brand code associated with an Amazon catalog item.
+        /// The brand code that is associated with an Amazon catalog item.
         /// </summary>
-        /// <value>Brand code associated with an Amazon catalog item.</value>
-        [DataMember(Name="brandCode", EmitDefaultValue=false)]
+        /// <value>The brand code that is associated with an Amazon catalog item.</value>
+        [DataMember(Name = "brandCode", EmitDefaultValue = false)]
         public string BrandCode { get; set; }
 
         /// <summary>
-        /// Manufacturer code associated with an Amazon catalog item.
+        /// The manufacturer code that is associated with an Amazon catalog item.
         /// </summary>
-        /// <value>Manufacturer code associated with an Amazon catalog item.</value>
-        [DataMember(Name="manufacturerCode", EmitDefaultValue=false)]
+        /// <value>The manufacturer code that is associated with an Amazon catalog item.</value>
+        [DataMember(Name = "manufacturerCode", EmitDefaultValue = false)]
         public string ManufacturerCode { get; set; }
 
         /// <summary>
-        /// Parent vendor code of the manufacturer code.
+        /// The parent vendor code of the manufacturer code.
         /// </summary>
-        /// <value>Parent vendor code of the manufacturer code.</value>
-        [DataMember(Name="manufacturerCodeParent", EmitDefaultValue=false)]
+        /// <value>The parent vendor code of the manufacturer code.</value>
+        [DataMember(Name = "manufacturerCodeParent", EmitDefaultValue = false)]
         public string ManufacturerCodeParent { get; set; }
 
         /// <summary>
-        /// Product category associated with an Amazon catalog item.
+        /// The product category that is associated with an Amazon catalog item.
         /// </summary>
-        /// <value>Product category associated with an Amazon catalog item.</value>
-        [DataMember(Name="productCategory", EmitDefaultValue=false)]
+        /// <value>The product category that is associated with an Amazon catalog item.</value>
+        [DataMember(Name = "productCategory", EmitDefaultValue = false)]
         public ItemVendorDetailsCategory ProductCategory { get; set; }
 
         /// <summary>
-        /// Product group associated with an Amazon catalog item.
+        /// The product group that is associated with an Amazon catalog item.
         /// </summary>
-        /// <value>Product group associated with an Amazon catalog item.</value>
-        [DataMember(Name="productGroup", EmitDefaultValue=false)]
+        /// <value>The product group that is associated with an Amazon catalog item.</value>
+        [DataMember(Name = "productGroup", EmitDefaultValue = false)]
         public string ProductGroup { get; set; }
 
         /// <summary>
-        /// Product subcategory associated with an Amazon catalog item.
+        /// The product subcategory that is associated with an Amazon catalog item.
         /// </summary>
-        /// <value>Product subcategory associated with an Amazon catalog item.</value>
-        [DataMember(Name="productSubcategory", EmitDefaultValue=false)]
+        /// <value>The product subcategory that is associated with an Amazon catalog item.</value>
+        [DataMember(Name = "productSubcategory", EmitDefaultValue = false)]
         public ItemVendorDetailsCategory ProductSubcategory { get; set; }
 
 
@@ -210,7 +205,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -240,42 +235,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.BrandCode == input.BrandCode ||
                     (this.BrandCode != null &&
                     this.BrandCode.Equals(input.BrandCode))
-                ) && 
+                ) &&
                 (
                     this.ManufacturerCode == input.ManufacturerCode ||
                     (this.ManufacturerCode != null &&
                     this.ManufacturerCode.Equals(input.ManufacturerCode))
-                ) && 
+                ) &&
                 (
                     this.ManufacturerCodeParent == input.ManufacturerCodeParent ||
                     (this.ManufacturerCodeParent != null &&
                     this.ManufacturerCodeParent.Equals(input.ManufacturerCodeParent))
-                ) && 
+                ) &&
                 (
                     this.ProductCategory == input.ProductCategory ||
                     (this.ProductCategory != null &&
                     this.ProductCategory.Equals(input.ProductCategory))
-                ) && 
+                ) &&
                 (
                     this.ProductGroup == input.ProductGroup ||
                     (this.ProductGroup != null &&
                     this.ProductGroup.Equals(input.ProductGroup))
-                ) && 
+                ) &&
                 (
                     this.ProductSubcategory == input.ProductSubcategory ||
                     (this.ProductSubcategory != null &&
                     this.ProductSubcategory.Equals(input.ProductSubcategory))
-                ) && 
+                ) &&
                 (
                     this.ReplenishmentCategory == input.ReplenishmentCategory ||
                     (this.ReplenishmentCategory != null &&

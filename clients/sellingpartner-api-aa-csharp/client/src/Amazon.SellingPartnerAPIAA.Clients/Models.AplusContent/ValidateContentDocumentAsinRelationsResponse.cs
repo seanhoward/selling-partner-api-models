@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// ValidateContentDocumentAsinRelationsResponse
     /// </summary>
     [DataContract]
-    public partial class ValidateContentDocumentAsinRelationsResponse : AplusResponse,  IEquatable<ValidateContentDocumentAsinRelationsResponse>, IValidatableObject
+    public partial class ValidateContentDocumentAsinRelationsResponse : AplusResponse, IEquatable<ValidateContentDocumentAsinRelationsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ValidateContentDocumentAsinRelationsResponse" /> class.
@@ -38,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ValidateContentDocumentAsinRelationsResponse" /> class.
         /// </summary>
-        /// <param name="errors">A list of error responses returned when a request is unsuccessful. (required).</param>
+        /// <param name="errors">A list of error responses that are returned when a request is unsuccessful. (required).</param>
         public ValidateContentDocumentAsinRelationsResponse(List<Error> errors = default, MessageSet warnings = default) : base(warnings)
         {
             // to ensure "errors" is required (not null)
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
                 this.Errors = errors;
             }
         }
-        
+
         /// <summary>
-        /// A list of error responses returned when a request is unsuccessful.
+        /// A list of error responses that are returned when a request is unsuccessful.
         /// </summary>
-        /// <value>A list of error responses returned when a request is unsuccessful.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        /// <value>A list of error responses that are returned when a request is unsuccessful.</value>
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public List<Error> Errors { get; set; }
 
         /// <summary>
@@ -72,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -102,7 +97,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return base.Equals(input) &&
                 (
                     this.Errors == input.Errors ||
                     this.Errors != null &&

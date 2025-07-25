@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// A list of item level fields.
     /// </summary>
     [DataContract]
-    public partial class ItemLevelFields :  IEquatable<ItemLevelFields>, IValidatableObject
+    public partial class ItemLevelFields : IEquatable<ItemLevelFields>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemLevelFields" /> class.
@@ -61,18 +55,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                 this.AdditionalInputs = additionalInputs;
             }
         }
-        
+
         /// <summary>
         /// The Amazon Standard Identification Number (ASIN) of the item.
         /// </summary>
         /// <value>The Amazon Standard Identification Number (ASIN) of the item.</value>
-        [DataMember(Name="Asin", EmitDefaultValue=false)]
+        [DataMember(Name = "Asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// Gets or Sets AdditionalInputs
         /// </summary>
-        [DataMember(Name="AdditionalInputs", EmitDefaultValue=false)]
+        [DataMember(Name = "AdditionalInputs", EmitDefaultValue = false)]
         public AdditionalInputsList AdditionalInputs { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +112,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.AdditionalInputs == input.AdditionalInputs ||
                     (this.AdditionalInputs != null &&

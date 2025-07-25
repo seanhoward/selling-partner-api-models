@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
     /// A list of Amazon product types with definitions available.
     /// </summary>
     [DataContract]
-    public partial class ProductTypeList :  IEquatable<ProductTypeList>, IValidatableObject
+    public partial class ProductTypeList : IEquatable<ProductTypeList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTypeList" /> class.
@@ -61,18 +56,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
                 this.ProductTypeVersion = productTypeVersion;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets ProductTypes
         /// </summary>
-        [DataMember(Name="productTypes", EmitDefaultValue=false)]
+        [DataMember(Name = "productTypes", EmitDefaultValue = false)]
         public List<ProductType> ProductTypes { get; set; }
 
         /// <summary>
         /// Amazon product type version identifier.
         /// </summary>
         /// <value>Amazon product type version identifier.</value>
-        [DataMember(Name="productTypeVersion", EmitDefaultValue=false)]
+        [DataMember(Name = "productTypeVersion", EmitDefaultValue = false)]
         public string ProductTypeVersion { get; set; }
 
         /// <summary>
@@ -88,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ProductTypes == input.ProductTypes ||
                     this.ProductTypes != null &&
                     this.ProductTypes.SequenceEqual(input.ProductTypes)
-                ) && 
+                ) &&
                 (
                     this.ProductTypeVersion == input.ProductTypeVersion ||
                     (this.ProductTypeVersion != null &&

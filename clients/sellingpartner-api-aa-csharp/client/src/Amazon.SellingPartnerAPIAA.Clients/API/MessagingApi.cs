@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Messaging;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -36,7 +35,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateConfirmCustomizationDetailsResponse</returns>
-        CreateConfirmCustomizationDetailsResponse ConfirmCustomizationDetails (string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body);
+        CreateConfirmCustomizationDetailsResponse ConfirmCustomizationDetails(string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body);
 
         /// <summary>
         /// 
@@ -49,7 +48,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateConfirmCustomizationDetailsResponse</returns>
-        ApiResponse<CreateConfirmCustomizationDetailsResponse> ConfirmCustomizationDetailsWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body);
+        ApiResponse<CreateConfirmCustomizationDetailsResponse> ConfirmCustomizationDetailsWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -61,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateAmazonMotorsResponse</returns>
-        CreateAmazonMotorsResponse CreateAmazonMotors (string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body);
+        CreateAmazonMotorsResponse CreateAmazonMotors(string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body);
 
         /// <summary>
         /// 
@@ -74,7 +73,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateAmazonMotorsResponse</returns>
-        ApiResponse<CreateAmazonMotorsResponse> CreateAmazonMotorsWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body);
+        ApiResponse<CreateAmazonMotorsResponse> CreateAmazonMotorsWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -86,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateConfirmDeliveryDetailsResponse</returns>
-        CreateConfirmDeliveryDetailsResponse CreateConfirmDeliveryDetails (string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body);
+        CreateConfirmDeliveryDetailsResponse CreateConfirmDeliveryDetails(string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body);
 
         /// <summary>
         /// 
@@ -99,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateConfirmDeliveryDetailsResponse</returns>
-        ApiResponse<CreateConfirmDeliveryDetailsResponse> CreateConfirmDeliveryDetailsWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body);
+        ApiResponse<CreateConfirmDeliveryDetailsResponse> CreateConfirmDeliveryDetailsWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -111,7 +110,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateConfirmOrderDetailsResponse</returns>
-        CreateConfirmOrderDetailsResponse CreateConfirmOrderDetails (string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body);
+        CreateConfirmOrderDetailsResponse CreateConfirmOrderDetails(string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body);
 
         /// <summary>
         /// 
@@ -124,7 +123,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateConfirmOrderDetailsResponse</returns>
-        ApiResponse<CreateConfirmOrderDetailsResponse> CreateConfirmOrderDetailsWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body);
+        ApiResponse<CreateConfirmOrderDetailsResponse> CreateConfirmOrderDetailsWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -136,7 +135,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateConfirmServiceDetailsResponse</returns>
-        CreateConfirmServiceDetailsResponse CreateConfirmServiceDetails (string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body);
+        CreateConfirmServiceDetailsResponse CreateConfirmServiceDetails(string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body);
 
         /// <summary>
         /// 
@@ -149,7 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateConfirmServiceDetailsResponse</returns>
-        ApiResponse<CreateConfirmServiceDetailsResponse> CreateConfirmServiceDetailsWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body);
+        ApiResponse<CreateConfirmServiceDetailsResponse> CreateConfirmServiceDetailsWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -161,7 +160,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateDigitalAccessKeyResponse</returns>
-        CreateDigitalAccessKeyResponse CreateDigitalAccessKey (string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body);
+        CreateDigitalAccessKeyResponse CreateDigitalAccessKey(string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body);
 
         /// <summary>
         /// 
@@ -174,7 +173,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateDigitalAccessKeyResponse</returns>
-        ApiResponse<CreateDigitalAccessKeyResponse> CreateDigitalAccessKeyWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body);
+        ApiResponse<CreateDigitalAccessKeyResponse> CreateDigitalAccessKeyWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -186,7 +185,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateLegalDisclosureResponse</returns>
-        CreateLegalDisclosureResponse CreateLegalDisclosure (string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body);
+        CreateLegalDisclosureResponse CreateLegalDisclosure(string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body);
 
         /// <summary>
         /// 
@@ -199,7 +198,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateLegalDisclosureResponse</returns>
-        ApiResponse<CreateLegalDisclosureResponse> CreateLegalDisclosureWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body);
+        ApiResponse<CreateLegalDisclosureResponse> CreateLegalDisclosureWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -210,7 +209,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>CreateNegativeFeedbackRemovalResponse</returns>
-        CreateNegativeFeedbackRemovalResponse CreateNegativeFeedbackRemoval (string amazonOrderId, List<string> marketplaceIds);
+        CreateNegativeFeedbackRemovalResponse CreateNegativeFeedbackRemoval(string amazonOrderId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -222,7 +221,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>ApiResponse of CreateNegativeFeedbackRemovalResponse</returns>
-        ApiResponse<CreateNegativeFeedbackRemovalResponse> CreateNegativeFeedbackRemovalWithHttpInfo (string amazonOrderId, List<string> marketplaceIds);
+        ApiResponse<CreateNegativeFeedbackRemovalResponse> CreateNegativeFeedbackRemovalWithHttpInfo(string amazonOrderId, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -234,7 +233,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateUnexpectedProblemResponse</returns>
-        CreateUnexpectedProblemResponse CreateUnexpectedProblem (string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body);
+        CreateUnexpectedProblemResponse CreateUnexpectedProblem(string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body);
 
         /// <summary>
         /// 
@@ -247,7 +246,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateUnexpectedProblemResponse</returns>
-        ApiResponse<CreateUnexpectedProblemResponse> CreateUnexpectedProblemWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body);
+        ApiResponse<CreateUnexpectedProblemResponse> CreateUnexpectedProblemWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -259,7 +258,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateWarrantyResponse</returns>
-        CreateWarrantyResponse CreateWarranty (string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body);
+        CreateWarrantyResponse CreateWarranty(string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body);
 
         /// <summary>
         /// 
@@ -272,7 +271,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateWarrantyResponse</returns>
-        ApiResponse<CreateWarrantyResponse> CreateWarrantyWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body);
+        ApiResponse<CreateWarrantyResponse> CreateWarrantyWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -283,7 +282,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>GetAttributesResponse</returns>
-        GetAttributesResponse GetAttributes (string amazonOrderId, List<string> marketplaceIds);
+        GetAttributesResponse GetAttributes(string amazonOrderId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -295,7 +294,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>ApiResponse of GetAttributesResponse</returns>
-        ApiResponse<GetAttributesResponse> GetAttributesWithHttpInfo (string amazonOrderId, List<string> marketplaceIds);
+        ApiResponse<GetAttributesResponse> GetAttributesWithHttpInfo(string amazonOrderId, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -306,7 +305,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available message types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>GetMessagingActionsForOrderResponse</returns>
-        GetMessagingActionsForOrderResponse GetMessagingActionsForOrder (string amazonOrderId, List<string> marketplaceIds);
+        GetMessagingActionsForOrderResponse GetMessagingActionsForOrder(string amazonOrderId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -318,7 +317,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available message types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>ApiResponse of GetMessagingActionsForOrderResponse</returns>
-        ApiResponse<GetMessagingActionsForOrderResponse> GetMessagingActionsForOrderWithHttpInfo (string amazonOrderId, List<string> marketplaceIds);
+        ApiResponse<GetMessagingActionsForOrderResponse> GetMessagingActionsForOrderWithHttpInfo(string amazonOrderId, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -330,7 +329,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>InvoiceResponse</returns>
-        InvoiceResponse SendInvoice (string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body);
+        InvoiceResponse SendInvoice(string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body);
 
         /// <summary>
         /// 
@@ -343,7 +342,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of InvoiceResponse</returns>
-        ApiResponse<InvoiceResponse> SendInvoiceWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body);
+        ApiResponse<InvoiceResponse> SendInvoiceWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -357,7 +356,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateConfirmCustomizationDetailsResponse</returns>
-        System.Threading.Tasks.Task<CreateConfirmCustomizationDetailsResponse> ConfirmCustomizationDetailsAsync (string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body);
+        System.Threading.Tasks.Task<CreateConfirmCustomizationDetailsResponse> ConfirmCustomizationDetailsAsync(string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body);
 
         /// <summary>
         /// 
@@ -370,7 +369,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateConfirmCustomizationDetailsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateConfirmCustomizationDetailsResponse>> ConfirmCustomizationDetailsAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateConfirmCustomizationDetailsResponse>> ConfirmCustomizationDetailsAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -382,7 +381,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateAmazonMotorsResponse</returns>
-        System.Threading.Tasks.Task<CreateAmazonMotorsResponse> CreateAmazonMotorsAsync (string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body);
+        System.Threading.Tasks.Task<CreateAmazonMotorsResponse> CreateAmazonMotorsAsync(string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body);
 
         /// <summary>
         /// 
@@ -395,7 +394,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateAmazonMotorsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateAmazonMotorsResponse>> CreateAmazonMotorsAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateAmazonMotorsResponse>> CreateAmazonMotorsAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -407,7 +406,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateConfirmDeliveryDetailsResponse</returns>
-        System.Threading.Tasks.Task<CreateConfirmDeliveryDetailsResponse> CreateConfirmDeliveryDetailsAsync (string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body);
+        System.Threading.Tasks.Task<CreateConfirmDeliveryDetailsResponse> CreateConfirmDeliveryDetailsAsync(string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body);
 
         /// <summary>
         /// 
@@ -420,7 +419,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateConfirmDeliveryDetailsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateConfirmDeliveryDetailsResponse>> CreateConfirmDeliveryDetailsAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateConfirmDeliveryDetailsResponse>> CreateConfirmDeliveryDetailsAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -432,7 +431,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateConfirmOrderDetailsResponse</returns>
-        System.Threading.Tasks.Task<CreateConfirmOrderDetailsResponse> CreateConfirmOrderDetailsAsync (string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body);
+        System.Threading.Tasks.Task<CreateConfirmOrderDetailsResponse> CreateConfirmOrderDetailsAsync(string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body);
 
         /// <summary>
         /// 
@@ -445,7 +444,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateConfirmOrderDetailsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateConfirmOrderDetailsResponse>> CreateConfirmOrderDetailsAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateConfirmOrderDetailsResponse>> CreateConfirmOrderDetailsAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -457,7 +456,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateConfirmServiceDetailsResponse</returns>
-        System.Threading.Tasks.Task<CreateConfirmServiceDetailsResponse> CreateConfirmServiceDetailsAsync (string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body);
+        System.Threading.Tasks.Task<CreateConfirmServiceDetailsResponse> CreateConfirmServiceDetailsAsync(string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body);
 
         /// <summary>
         /// 
@@ -470,7 +469,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateConfirmServiceDetailsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateConfirmServiceDetailsResponse>> CreateConfirmServiceDetailsAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateConfirmServiceDetailsResponse>> CreateConfirmServiceDetailsAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -482,7 +481,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateDigitalAccessKeyResponse</returns>
-        System.Threading.Tasks.Task<CreateDigitalAccessKeyResponse> CreateDigitalAccessKeyAsync (string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body);
+        System.Threading.Tasks.Task<CreateDigitalAccessKeyResponse> CreateDigitalAccessKeyAsync(string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body);
 
         /// <summary>
         /// 
@@ -495,7 +494,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateDigitalAccessKeyResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateDigitalAccessKeyResponse>> CreateDigitalAccessKeyAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateDigitalAccessKeyResponse>> CreateDigitalAccessKeyAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -507,7 +506,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateLegalDisclosureResponse</returns>
-        System.Threading.Tasks.Task<CreateLegalDisclosureResponse> CreateLegalDisclosureAsync (string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body);
+        System.Threading.Tasks.Task<CreateLegalDisclosureResponse> CreateLegalDisclosureAsync(string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body);
 
         /// <summary>
         /// 
@@ -520,7 +519,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateLegalDisclosureResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateLegalDisclosureResponse>> CreateLegalDisclosureAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateLegalDisclosureResponse>> CreateLegalDisclosureAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -531,7 +530,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of CreateNegativeFeedbackRemovalResponse</returns>
-        System.Threading.Tasks.Task<CreateNegativeFeedbackRemovalResponse> CreateNegativeFeedbackRemovalAsync (string amazonOrderId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<CreateNegativeFeedbackRemovalResponse> CreateNegativeFeedbackRemovalAsync(string amazonOrderId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -543,7 +542,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of ApiResponse (CreateNegativeFeedbackRemovalResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateNegativeFeedbackRemovalResponse>> CreateNegativeFeedbackRemovalAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<ApiResponse<CreateNegativeFeedbackRemovalResponse>> CreateNegativeFeedbackRemovalAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -555,7 +554,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateUnexpectedProblemResponse</returns>
-        System.Threading.Tasks.Task<CreateUnexpectedProblemResponse> CreateUnexpectedProblemAsync (string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body);
+        System.Threading.Tasks.Task<CreateUnexpectedProblemResponse> CreateUnexpectedProblemAsync(string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body);
 
         /// <summary>
         /// 
@@ -568,7 +567,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateUnexpectedProblemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateUnexpectedProblemResponse>> CreateUnexpectedProblemAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateUnexpectedProblemResponse>> CreateUnexpectedProblemAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -580,7 +579,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateWarrantyResponse</returns>
-        System.Threading.Tasks.Task<CreateWarrantyResponse> CreateWarrantyAsync (string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body);
+        System.Threading.Tasks.Task<CreateWarrantyResponse> CreateWarrantyAsync(string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body);
 
         /// <summary>
         /// 
@@ -593,7 +592,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateWarrantyResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateWarrantyResponse>> CreateWarrantyAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateWarrantyResponse>> CreateWarrantyAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -604,7 +603,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of GetAttributesResponse</returns>
-        System.Threading.Tasks.Task<GetAttributesResponse> GetAttributesAsync (string amazonOrderId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<GetAttributesResponse> GetAttributesAsync(string amazonOrderId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -616,7 +615,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of ApiResponse (GetAttributesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAttributesResponse>> GetAttributesAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<ApiResponse<GetAttributesResponse>> GetAttributesAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -627,7 +626,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available message types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of GetMessagingActionsForOrderResponse</returns>
-        System.Threading.Tasks.Task<GetMessagingActionsForOrderResponse> GetMessagingActionsForOrderAsync (string amazonOrderId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<GetMessagingActionsForOrderResponse> GetMessagingActionsForOrderAsync(string amazonOrderId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -639,7 +638,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available message types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of ApiResponse (GetMessagingActionsForOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetMessagingActionsForOrderResponse>> GetMessagingActionsForOrderAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<ApiResponse<GetMessagingActionsForOrderResponse>> GetMessagingActionsForOrderAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -651,7 +650,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of InvoiceResponse</returns>
-        System.Threading.Tasks.Task<InvoiceResponse> SendInvoiceAsync (string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body);
+        System.Threading.Tasks.Task<InvoiceResponse> SendInvoiceAsync(string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body);
 
         /// <summary>
         /// 
@@ -664,7 +663,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (InvoiceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InvoiceResponse>> SendInvoiceAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body);
+        System.Threading.Tasks.Task<ApiResponse<InvoiceResponse>> SendInvoiceAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -684,7 +683,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public MessagingApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -710,7 +709,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -758,10 +757,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateConfirmCustomizationDetailsResponse</returns>
-        public CreateConfirmCustomizationDetailsResponse ConfirmCustomizationDetails (string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body)
+        public CreateConfirmCustomizationDetailsResponse ConfirmCustomizationDetails(string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body)
         {
-             ApiResponse<CreateConfirmCustomizationDetailsResponse> localVarResponse = ConfirmCustomizationDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateConfirmCustomizationDetailsResponse> localVarResponse = ConfirmCustomizationDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -772,7 +771,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateConfirmCustomizationDetailsResponse</returns>
-        public ApiResponse< CreateConfirmCustomizationDetailsResponse > ConfirmCustomizationDetailsWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body)
+        public ApiResponse<CreateConfirmCustomizationDetailsResponse> ConfirmCustomizationDetailsWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -819,11 +818,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -833,7 +832,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateConfirmCustomizationDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateConfirmCustomizationDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmCustomizationDetailsResponse)));
+                (CreateConfirmCustomizationDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmCustomizationDetailsResponse)));
         }
 
         /// <summary>
@@ -844,10 +843,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateConfirmCustomizationDetailsResponse</returns>
-        public async System.Threading.Tasks.Task<CreateConfirmCustomizationDetailsResponse> ConfirmCustomizationDetailsAsync (string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body)
+        public async System.Threading.Tasks.Task<CreateConfirmCustomizationDetailsResponse> ConfirmCustomizationDetailsAsync(string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body)
         {
-             ApiResponse<CreateConfirmCustomizationDetailsResponse> localVarResponse = await ConfirmCustomizationDetailsAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateConfirmCustomizationDetailsResponse> localVarResponse = await ConfirmCustomizationDetailsAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
 
         }
 
@@ -859,7 +858,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateConfirmCustomizationDetailsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateConfirmCustomizationDetailsResponse>> ConfirmCustomizationDetailsAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateConfirmCustomizationDetailsResponse>> ConfirmCustomizationDetailsAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmCustomizationDetailsRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -906,11 +905,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -920,7 +919,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateConfirmCustomizationDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateConfirmCustomizationDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmCustomizationDetailsResponse)));
+                (CreateConfirmCustomizationDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmCustomizationDetailsResponse)));
         }
 
         /// <summary>
@@ -931,10 +930,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateAmazonMotorsResponse</returns>
-        public CreateAmazonMotorsResponse CreateAmazonMotors (string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body)
+        public CreateAmazonMotorsResponse CreateAmazonMotors(string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body)
         {
-             ApiResponse<CreateAmazonMotorsResponse> localVarResponse = CreateAmazonMotorsWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateAmazonMotorsResponse> localVarResponse = CreateAmazonMotorsWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -945,7 +944,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateAmazonMotorsResponse</returns>
-        public ApiResponse< CreateAmazonMotorsResponse > CreateAmazonMotorsWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body)
+        public ApiResponse<CreateAmazonMotorsResponse> CreateAmazonMotorsWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -992,11 +991,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1006,7 +1005,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateAmazonMotorsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateAmazonMotorsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateAmazonMotorsResponse)));
+                (CreateAmazonMotorsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateAmazonMotorsResponse)));
         }
 
         /// <summary>
@@ -1017,10 +1016,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateAmazonMotorsResponse</returns>
-        public async System.Threading.Tasks.Task<CreateAmazonMotorsResponse> CreateAmazonMotorsAsync (string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body)
+        public async System.Threading.Tasks.Task<CreateAmazonMotorsResponse> CreateAmazonMotorsAsync(string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body)
         {
-             ApiResponse<CreateAmazonMotorsResponse> localVarResponse = await CreateAmazonMotorsAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateAmazonMotorsResponse> localVarResponse = await CreateAmazonMotorsAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
 
         }
 
@@ -1032,7 +1031,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateAmazonMotorsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateAmazonMotorsResponse>> CreateAmazonMotorsAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateAmazonMotorsResponse>> CreateAmazonMotorsAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateAmazonMotorsRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1079,11 +1078,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1093,7 +1092,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateAmazonMotorsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateAmazonMotorsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateAmazonMotorsResponse)));
+                (CreateAmazonMotorsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateAmazonMotorsResponse)));
         }
 
         /// <summary>
@@ -1104,10 +1103,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateConfirmDeliveryDetailsResponse</returns>
-        public CreateConfirmDeliveryDetailsResponse CreateConfirmDeliveryDetails (string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body)
+        public CreateConfirmDeliveryDetailsResponse CreateConfirmDeliveryDetails(string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body)
         {
-             ApiResponse<CreateConfirmDeliveryDetailsResponse> localVarResponse = CreateConfirmDeliveryDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateConfirmDeliveryDetailsResponse> localVarResponse = CreateConfirmDeliveryDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1118,7 +1117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateConfirmDeliveryDetailsResponse</returns>
-        public ApiResponse< CreateConfirmDeliveryDetailsResponse > CreateConfirmDeliveryDetailsWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body)
+        public ApiResponse<CreateConfirmDeliveryDetailsResponse> CreateConfirmDeliveryDetailsWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1165,11 +1164,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1179,7 +1178,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateConfirmDeliveryDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateConfirmDeliveryDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmDeliveryDetailsResponse)));
+                (CreateConfirmDeliveryDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmDeliveryDetailsResponse)));
         }
 
         /// <summary>
@@ -1190,10 +1189,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateConfirmDeliveryDetailsResponse</returns>
-        public async System.Threading.Tasks.Task<CreateConfirmDeliveryDetailsResponse> CreateConfirmDeliveryDetailsAsync (string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body)
+        public async System.Threading.Tasks.Task<CreateConfirmDeliveryDetailsResponse> CreateConfirmDeliveryDetailsAsync(string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body)
         {
-             ApiResponse<CreateConfirmDeliveryDetailsResponse> localVarResponse = await CreateConfirmDeliveryDetailsAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateConfirmDeliveryDetailsResponse> localVarResponse = await CreateConfirmDeliveryDetailsAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
 
         }
 
@@ -1205,7 +1204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateConfirmDeliveryDetailsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateConfirmDeliveryDetailsResponse>> CreateConfirmDeliveryDetailsAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateConfirmDeliveryDetailsResponse>> CreateConfirmDeliveryDetailsAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmDeliveryDetailsRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1252,11 +1251,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1266,7 +1265,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateConfirmDeliveryDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateConfirmDeliveryDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmDeliveryDetailsResponse)));
+                (CreateConfirmDeliveryDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmDeliveryDetailsResponse)));
         }
 
         /// <summary>
@@ -1277,10 +1276,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateConfirmOrderDetailsResponse</returns>
-        public CreateConfirmOrderDetailsResponse CreateConfirmOrderDetails (string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body)
+        public CreateConfirmOrderDetailsResponse CreateConfirmOrderDetails(string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body)
         {
-             ApiResponse<CreateConfirmOrderDetailsResponse> localVarResponse = CreateConfirmOrderDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateConfirmOrderDetailsResponse> localVarResponse = CreateConfirmOrderDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1291,7 +1290,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateConfirmOrderDetailsResponse</returns>
-        public ApiResponse< CreateConfirmOrderDetailsResponse > CreateConfirmOrderDetailsWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body)
+        public ApiResponse<CreateConfirmOrderDetailsResponse> CreateConfirmOrderDetailsWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1338,11 +1337,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1352,7 +1351,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateConfirmOrderDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateConfirmOrderDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmOrderDetailsResponse)));
+                (CreateConfirmOrderDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmOrderDetailsResponse)));
         }
 
         /// <summary>
@@ -1363,10 +1362,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateConfirmOrderDetailsResponse</returns>
-        public async System.Threading.Tasks.Task<CreateConfirmOrderDetailsResponse> CreateConfirmOrderDetailsAsync (string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body)
+        public async System.Threading.Tasks.Task<CreateConfirmOrderDetailsResponse> CreateConfirmOrderDetailsAsync(string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body)
         {
-             ApiResponse<CreateConfirmOrderDetailsResponse> localVarResponse = await CreateConfirmOrderDetailsAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateConfirmOrderDetailsResponse> localVarResponse = await CreateConfirmOrderDetailsAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
 
         }
 
@@ -1378,7 +1377,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateConfirmOrderDetailsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateConfirmOrderDetailsResponse>> CreateConfirmOrderDetailsAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateConfirmOrderDetailsResponse>> CreateConfirmOrderDetailsAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmOrderDetailsRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1425,11 +1424,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1439,7 +1438,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateConfirmOrderDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateConfirmOrderDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmOrderDetailsResponse)));
+                (CreateConfirmOrderDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmOrderDetailsResponse)));
         }
 
         /// <summary>
@@ -1450,10 +1449,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateConfirmServiceDetailsResponse</returns>
-        public CreateConfirmServiceDetailsResponse CreateConfirmServiceDetails (string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body)
+        public CreateConfirmServiceDetailsResponse CreateConfirmServiceDetails(string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body)
         {
-             ApiResponse<CreateConfirmServiceDetailsResponse> localVarResponse = CreateConfirmServiceDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateConfirmServiceDetailsResponse> localVarResponse = CreateConfirmServiceDetailsWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1464,7 +1463,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateConfirmServiceDetailsResponse</returns>
-        public ApiResponse< CreateConfirmServiceDetailsResponse > CreateConfirmServiceDetailsWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body)
+        public ApiResponse<CreateConfirmServiceDetailsResponse> CreateConfirmServiceDetailsWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1511,11 +1510,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1525,7 +1524,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateConfirmServiceDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateConfirmServiceDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmServiceDetailsResponse)));
+                (CreateConfirmServiceDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmServiceDetailsResponse)));
         }
 
         /// <summary>
@@ -1536,10 +1535,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateConfirmServiceDetailsResponse</returns>
-        public async System.Threading.Tasks.Task<CreateConfirmServiceDetailsResponse> CreateConfirmServiceDetailsAsync (string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body)
+        public async System.Threading.Tasks.Task<CreateConfirmServiceDetailsResponse> CreateConfirmServiceDetailsAsync(string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body)
         {
-             ApiResponse<CreateConfirmServiceDetailsResponse> localVarResponse = await CreateConfirmServiceDetailsAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateConfirmServiceDetailsResponse> localVarResponse = await CreateConfirmServiceDetailsAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
 
         }
 
@@ -1551,7 +1550,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateConfirmServiceDetailsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateConfirmServiceDetailsResponse>> CreateConfirmServiceDetailsAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateConfirmServiceDetailsResponse>> CreateConfirmServiceDetailsAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateConfirmServiceDetailsRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1598,11 +1597,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1612,7 +1611,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateConfirmServiceDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateConfirmServiceDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmServiceDetailsResponse)));
+                (CreateConfirmServiceDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateConfirmServiceDetailsResponse)));
         }
 
         /// <summary>
@@ -1623,10 +1622,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateDigitalAccessKeyResponse</returns>
-        public CreateDigitalAccessKeyResponse CreateDigitalAccessKey (string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body)
+        public CreateDigitalAccessKeyResponse CreateDigitalAccessKey(string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body)
         {
-             ApiResponse<CreateDigitalAccessKeyResponse> localVarResponse = CreateDigitalAccessKeyWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateDigitalAccessKeyResponse> localVarResponse = CreateDigitalAccessKeyWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1637,7 +1636,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateDigitalAccessKeyResponse</returns>
-        public ApiResponse< CreateDigitalAccessKeyResponse > CreateDigitalAccessKeyWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body)
+        public ApiResponse<CreateDigitalAccessKeyResponse> CreateDigitalAccessKeyWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1684,11 +1683,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1698,7 +1697,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateDigitalAccessKeyResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateDigitalAccessKeyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateDigitalAccessKeyResponse)));
+                (CreateDigitalAccessKeyResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateDigitalAccessKeyResponse)));
         }
 
         /// <summary>
@@ -1709,10 +1708,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateDigitalAccessKeyResponse</returns>
-        public async System.Threading.Tasks.Task<CreateDigitalAccessKeyResponse> CreateDigitalAccessKeyAsync (string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body)
+        public async System.Threading.Tasks.Task<CreateDigitalAccessKeyResponse> CreateDigitalAccessKeyAsync(string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body)
         {
-             ApiResponse<CreateDigitalAccessKeyResponse> localVarResponse = await CreateDigitalAccessKeyAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateDigitalAccessKeyResponse> localVarResponse = await CreateDigitalAccessKeyAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
 
         }
 
@@ -1724,7 +1723,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateDigitalAccessKeyResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateDigitalAccessKeyResponse>> CreateDigitalAccessKeyAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateDigitalAccessKeyResponse>> CreateDigitalAccessKeyAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateDigitalAccessKeyRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1771,11 +1770,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1785,7 +1784,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateDigitalAccessKeyResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateDigitalAccessKeyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateDigitalAccessKeyResponse)));
+                (CreateDigitalAccessKeyResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateDigitalAccessKeyResponse)));
         }
 
         /// <summary>
@@ -1796,10 +1795,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateLegalDisclosureResponse</returns>
-        public CreateLegalDisclosureResponse CreateLegalDisclosure (string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body)
+        public CreateLegalDisclosureResponse CreateLegalDisclosure(string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body)
         {
-             ApiResponse<CreateLegalDisclosureResponse> localVarResponse = CreateLegalDisclosureWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateLegalDisclosureResponse> localVarResponse = CreateLegalDisclosureWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1810,7 +1809,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateLegalDisclosureResponse</returns>
-        public ApiResponse< CreateLegalDisclosureResponse > CreateLegalDisclosureWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body)
+        public ApiResponse<CreateLegalDisclosureResponse> CreateLegalDisclosureWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1857,11 +1856,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1871,7 +1870,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateLegalDisclosureResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateLegalDisclosureResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateLegalDisclosureResponse)));
+                (CreateLegalDisclosureResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateLegalDisclosureResponse)));
         }
 
         /// <summary>
@@ -1882,10 +1881,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateLegalDisclosureResponse</returns>
-        public async System.Threading.Tasks.Task<CreateLegalDisclosureResponse> CreateLegalDisclosureAsync (string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body)
+        public async System.Threading.Tasks.Task<CreateLegalDisclosureResponse> CreateLegalDisclosureAsync(string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body)
         {
-             ApiResponse<CreateLegalDisclosureResponse> localVarResponse = await CreateLegalDisclosureAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateLegalDisclosureResponse> localVarResponse = await CreateLegalDisclosureAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
 
         }
 
@@ -1897,7 +1896,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateLegalDisclosureResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateLegalDisclosureResponse>> CreateLegalDisclosureAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateLegalDisclosureResponse>> CreateLegalDisclosureAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateLegalDisclosureRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -1944,11 +1943,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1958,7 +1957,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateLegalDisclosureResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateLegalDisclosureResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateLegalDisclosureResponse)));
+                (CreateLegalDisclosureResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateLegalDisclosureResponse)));
         }
 
         /// <summary>
@@ -1968,10 +1967,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>CreateNegativeFeedbackRemovalResponse</returns>
-        public CreateNegativeFeedbackRemovalResponse CreateNegativeFeedbackRemoval (string amazonOrderId, List<string> marketplaceIds)
+        public CreateNegativeFeedbackRemovalResponse CreateNegativeFeedbackRemoval(string amazonOrderId, List<string> marketplaceIds)
         {
-             ApiResponse<CreateNegativeFeedbackRemovalResponse> localVarResponse = CreateNegativeFeedbackRemovalWithHttpInfo(amazonOrderId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<CreateNegativeFeedbackRemovalResponse> localVarResponse = CreateNegativeFeedbackRemovalWithHttpInfo(amazonOrderId, marketplaceIds);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1981,7 +1980,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>ApiResponse of CreateNegativeFeedbackRemovalResponse</returns>
-        public ApiResponse< CreateNegativeFeedbackRemovalResponse > CreateNegativeFeedbackRemovalWithHttpInfo (string amazonOrderId, List<string> marketplaceIds)
+        public ApiResponse<CreateNegativeFeedbackRemovalResponse> CreateNegativeFeedbackRemovalWithHttpInfo(string amazonOrderId, List<string> marketplaceIds)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2017,11 +2016,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2031,7 +2030,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateNegativeFeedbackRemovalResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateNegativeFeedbackRemovalResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateNegativeFeedbackRemovalResponse)));
+                (CreateNegativeFeedbackRemovalResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateNegativeFeedbackRemovalResponse)));
         }
 
         /// <summary>
@@ -2041,10 +2040,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of CreateNegativeFeedbackRemovalResponse</returns>
-        public async System.Threading.Tasks.Task<CreateNegativeFeedbackRemovalResponse> CreateNegativeFeedbackRemovalAsync (string amazonOrderId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<CreateNegativeFeedbackRemovalResponse> CreateNegativeFeedbackRemovalAsync(string amazonOrderId, List<string> marketplaceIds)
         {
-             ApiResponse<CreateNegativeFeedbackRemovalResponse> localVarResponse = await CreateNegativeFeedbackRemovalAsyncWithHttpInfo(amazonOrderId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<CreateNegativeFeedbackRemovalResponse> localVarResponse = await CreateNegativeFeedbackRemovalAsyncWithHttpInfo(amazonOrderId, marketplaceIds);
+            return localVarResponse.Data;
 
         }
 
@@ -2055,7 +2054,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of ApiResponse (CreateNegativeFeedbackRemovalResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateNegativeFeedbackRemovalResponse>> CreateNegativeFeedbackRemovalAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateNegativeFeedbackRemovalResponse>> CreateNegativeFeedbackRemovalAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2091,11 +2090,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2105,7 +2104,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateNegativeFeedbackRemovalResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateNegativeFeedbackRemovalResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateNegativeFeedbackRemovalResponse)));
+                (CreateNegativeFeedbackRemovalResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateNegativeFeedbackRemovalResponse)));
         }
 
         /// <summary>
@@ -2116,10 +2115,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateUnexpectedProblemResponse</returns>
-        public CreateUnexpectedProblemResponse CreateUnexpectedProblem (string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body)
+        public CreateUnexpectedProblemResponse CreateUnexpectedProblem(string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body)
         {
-             ApiResponse<CreateUnexpectedProblemResponse> localVarResponse = CreateUnexpectedProblemWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateUnexpectedProblemResponse> localVarResponse = CreateUnexpectedProblemWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2130,7 +2129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateUnexpectedProblemResponse</returns>
-        public ApiResponse< CreateUnexpectedProblemResponse > CreateUnexpectedProblemWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body)
+        public ApiResponse<CreateUnexpectedProblemResponse> CreateUnexpectedProblemWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2177,11 +2176,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2191,7 +2190,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateUnexpectedProblemResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateUnexpectedProblemResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUnexpectedProblemResponse)));
+                (CreateUnexpectedProblemResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUnexpectedProblemResponse)));
         }
 
         /// <summary>
@@ -2202,10 +2201,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateUnexpectedProblemResponse</returns>
-        public async System.Threading.Tasks.Task<CreateUnexpectedProblemResponse> CreateUnexpectedProblemAsync (string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body)
+        public async System.Threading.Tasks.Task<CreateUnexpectedProblemResponse> CreateUnexpectedProblemAsync(string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body)
         {
-             ApiResponse<CreateUnexpectedProblemResponse> localVarResponse = await CreateUnexpectedProblemAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateUnexpectedProblemResponse> localVarResponse = await CreateUnexpectedProblemAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
 
         }
 
@@ -2217,7 +2216,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateUnexpectedProblemResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateUnexpectedProblemResponse>> CreateUnexpectedProblemAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateUnexpectedProblemResponse>> CreateUnexpectedProblemAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateUnexpectedProblemRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2264,11 +2263,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2278,7 +2277,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateUnexpectedProblemResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateUnexpectedProblemResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUnexpectedProblemResponse)));
+                (CreateUnexpectedProblemResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateUnexpectedProblemResponse)));
         }
 
         /// <summary>
@@ -2289,10 +2288,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>CreateWarrantyResponse</returns>
-        public CreateWarrantyResponse CreateWarranty (string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body)
+        public CreateWarrantyResponse CreateWarranty(string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body)
         {
-             ApiResponse<CreateWarrantyResponse> localVarResponse = CreateWarrantyWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateWarrantyResponse> localVarResponse = CreateWarrantyWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2303,7 +2302,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of CreateWarrantyResponse</returns>
-        public ApiResponse< CreateWarrantyResponse > CreateWarrantyWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body)
+        public ApiResponse<CreateWarrantyResponse> CreateWarrantyWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2350,11 +2349,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2364,7 +2363,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateWarrantyResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateWarrantyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateWarrantyResponse)));
+                (CreateWarrantyResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateWarrantyResponse)));
         }
 
         /// <summary>
@@ -2375,10 +2374,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of CreateWarrantyResponse</returns>
-        public async System.Threading.Tasks.Task<CreateWarrantyResponse> CreateWarrantyAsync (string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body)
+        public async System.Threading.Tasks.Task<CreateWarrantyResponse> CreateWarrantyAsync(string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body)
         {
-             ApiResponse<CreateWarrantyResponse> localVarResponse = await CreateWarrantyAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<CreateWarrantyResponse> localVarResponse = await CreateWarrantyAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
 
         }
 
@@ -2390,7 +2389,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (CreateWarrantyResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateWarrantyResponse>> CreateWarrantyAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateWarrantyResponse>> CreateWarrantyAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, CreateWarrantyRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2437,11 +2436,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2451,7 +2450,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateWarrantyResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateWarrantyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateWarrantyResponse)));
+                (CreateWarrantyResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateWarrantyResponse)));
         }
 
         /// <summary>
@@ -2461,10 +2460,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>GetAttributesResponse</returns>
-        public GetAttributesResponse GetAttributes (string amazonOrderId, List<string> marketplaceIds)
+        public GetAttributesResponse GetAttributes(string amazonOrderId, List<string> marketplaceIds)
         {
-             ApiResponse<GetAttributesResponse> localVarResponse = GetAttributesWithHttpInfo(amazonOrderId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<GetAttributesResponse> localVarResponse = GetAttributesWithHttpInfo(amazonOrderId, marketplaceIds);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2474,7 +2473,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>ApiResponse of GetAttributesResponse</returns>
-        public ApiResponse< GetAttributesResponse > GetAttributesWithHttpInfo (string amazonOrderId, List<string> marketplaceIds)
+        public ApiResponse<GetAttributesResponse> GetAttributesWithHttpInfo(string amazonOrderId, List<string> marketplaceIds)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2510,11 +2509,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2524,7 +2523,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetAttributesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetAttributesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAttributesResponse)));
+                (GetAttributesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAttributesResponse)));
         }
 
         /// <summary>
@@ -2534,10 +2533,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of GetAttributesResponse</returns>
-        public async System.Threading.Tasks.Task<GetAttributesResponse> GetAttributesAsync (string amazonOrderId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<GetAttributesResponse> GetAttributesAsync(string amazonOrderId, List<string> marketplaceIds)
         {
-             ApiResponse<GetAttributesResponse> localVarResponse = await GetAttributesAsyncWithHttpInfo(amazonOrderId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<GetAttributesResponse> localVarResponse = await GetAttributesAsyncWithHttpInfo(amazonOrderId, marketplaceIds);
+            return localVarResponse.Data;
 
         }
 
@@ -2548,7 +2547,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This identifies the order for which a message is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of ApiResponse (GetAttributesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetAttributesResponse>> GetAttributesAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<ApiResponse<GetAttributesResponse>> GetAttributesAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2584,11 +2583,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2598,7 +2597,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetAttributesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetAttributesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAttributesResponse)));
+                (GetAttributesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAttributesResponse)));
         }
 
         /// <summary>
@@ -2608,10 +2607,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available message types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>GetMessagingActionsForOrderResponse</returns>
-        public GetMessagingActionsForOrderResponse GetMessagingActionsForOrder (string amazonOrderId, List<string> marketplaceIds)
+        public GetMessagingActionsForOrderResponse GetMessagingActionsForOrder(string amazonOrderId, List<string> marketplaceIds)
         {
-             ApiResponse<GetMessagingActionsForOrderResponse> localVarResponse = GetMessagingActionsForOrderWithHttpInfo(amazonOrderId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<GetMessagingActionsForOrderResponse> localVarResponse = GetMessagingActionsForOrderWithHttpInfo(amazonOrderId, marketplaceIds);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2621,7 +2620,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available message types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>ApiResponse of GetMessagingActionsForOrderResponse</returns>
-        public ApiResponse< GetMessagingActionsForOrderResponse > GetMessagingActionsForOrderWithHttpInfo (string amazonOrderId, List<string> marketplaceIds)
+        public ApiResponse<GetMessagingActionsForOrderResponse> GetMessagingActionsForOrderWithHttpInfo(string amazonOrderId, List<string> marketplaceIds)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2657,11 +2656,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2671,7 +2670,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetMessagingActionsForOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetMessagingActionsForOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMessagingActionsForOrderResponse)));
+                (GetMessagingActionsForOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMessagingActionsForOrderResponse)));
         }
 
         /// <summary>
@@ -2681,10 +2680,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available message types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of GetMessagingActionsForOrderResponse</returns>
-        public async System.Threading.Tasks.Task<GetMessagingActionsForOrderResponse> GetMessagingActionsForOrderAsync (string amazonOrderId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<GetMessagingActionsForOrderResponse> GetMessagingActionsForOrderAsync(string amazonOrderId, List<string> marketplaceIds)
         {
-             ApiResponse<GetMessagingActionsForOrderResponse> localVarResponse = await GetMessagingActionsForOrderAsyncWithHttpInfo(amazonOrderId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<GetMessagingActionsForOrderResponse> localVarResponse = await GetMessagingActionsForOrderAsyncWithHttpInfo(amazonOrderId, marketplaceIds);
+            return localVarResponse.Data;
 
         }
 
@@ -2695,7 +2694,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available message types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <returns>Task of ApiResponse (GetMessagingActionsForOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetMessagingActionsForOrderResponse>> GetMessagingActionsForOrderAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<ApiResponse<GetMessagingActionsForOrderResponse>> GetMessagingActionsForOrderAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2731,11 +2730,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2745,7 +2744,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetMessagingActionsForOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetMessagingActionsForOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMessagingActionsForOrderResponse)));
+                (GetMessagingActionsForOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetMessagingActionsForOrderResponse)));
         }
 
         /// <summary>
@@ -2756,10 +2755,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>InvoiceResponse</returns>
-        public InvoiceResponse SendInvoice (string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body)
+        public InvoiceResponse SendInvoice(string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body)
         {
-             ApiResponse<InvoiceResponse> localVarResponse = SendInvoiceWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<InvoiceResponse> localVarResponse = SendInvoiceWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2770,7 +2769,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>ApiResponse of InvoiceResponse</returns>
-        public ApiResponse< InvoiceResponse > SendInvoiceWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body)
+        public ApiResponse<InvoiceResponse> SendInvoiceWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2817,11 +2816,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2831,7 +2830,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<InvoiceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InvoiceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InvoiceResponse)));
+                (InvoiceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InvoiceResponse)));
         }
 
         /// <summary>
@@ -2842,10 +2841,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of InvoiceResponse</returns>
-        public async System.Threading.Tasks.Task<InvoiceResponse> SendInvoiceAsync (string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body)
+        public async System.Threading.Tasks.Task<InvoiceResponse> SendInvoiceAsync(string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body)
         {
-             ApiResponse<InvoiceResponse> localVarResponse = await SendInvoiceAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
-             return localVarResponse.Data;
+            ApiResponse<InvoiceResponse> localVarResponse = await SendInvoiceAsyncWithHttpInfo(amazonOrderId, marketplaceIds, body);
+            return localVarResponse.Data;
 
         }
 
@@ -2857,7 +2856,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.</param>
         /// <param name="body">This contains the message body for a message.</param>
         /// <returns>Task of ApiResponse (InvoiceResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InvoiceResponse>> SendInvoiceAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<InvoiceResponse>> SendInvoiceAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds, InvoiceRequest body)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -2904,11 +2903,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2918,7 +2917,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<InvoiceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InvoiceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InvoiceResponse)));
+                (InvoiceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InvoiceResponse)));
         }
 
 
@@ -2932,17 +2931,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public MessagingApi Build() 
+            public MessagingApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

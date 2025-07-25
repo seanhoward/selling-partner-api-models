@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Label details as part of the transport label response
     /// </summary>
     [DataContract]
-    public partial class LabelData :  IEquatable<LabelData>, IValidatableObject
+    public partial class LabelData : IEquatable<LabelData>, IValidatableObject
     {
         /// <summary>
         /// The format of the label.
@@ -37,7 +31,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LabelFormatEnum
         {
-            
+
             /// <summary>
             /// Enum PDF for value: PDF
             /// </summary>
@@ -49,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// The format of the label.
         /// </summary>
         /// <value>The format of the label.</value>
-        [DataMember(Name="labelFormat", EmitDefaultValue=false)]
+        [DataMember(Name = "labelFormat", EmitDefaultValue = false)]
         public LabelFormatEnum? LabelFormat { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelData" /> class.
@@ -67,12 +61,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.TrackingId = trackingId;
             this.Label = label;
         }
-        
+
         /// <summary>
         /// A sequential number assigned to each label within a shipment.
         /// </summary>
         /// <value>A sequential number assigned to each label within a shipment.</value>
-        [DataMember(Name="labelSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "labelSequenceNumber", EmitDefaultValue = false)]
         public int? LabelSequenceNumber { get; set; }
 
 
@@ -80,21 +74,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// Unique identification of the carrier.
         /// </summary>
         /// <value>Unique identification of the carrier.</value>
-        [DataMember(Name="carrierCode", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierCode", EmitDefaultValue = false)]
         public string CarrierCode { get; set; }
 
         /// <summary>
         /// Tracking Id for the transportation.
         /// </summary>
         /// <value>Tracking Id for the transportation.</value>
-        [DataMember(Name="trackingId", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingId", EmitDefaultValue = false)]
         public string TrackingId { get; set; }
 
         /// <summary>
         /// The base-64 encoded string that represents the shipment label.
         /// </summary>
         /// <value>The base-64 encoded string that represents the shipment label.</value>
-        [DataMember(Name="label", EmitDefaultValue=false)]
+        [DataMember(Name = "label", EmitDefaultValue = false)]
         public string Label { get; set; }
 
         /// <summary>
@@ -113,7 +107,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -143,27 +137,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.LabelSequenceNumber == input.LabelSequenceNumber ||
                     (this.LabelSequenceNumber != null &&
                     this.LabelSequenceNumber.Equals(input.LabelSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.LabelFormat == input.LabelFormat ||
                     (this.LabelFormat != null &&
                     this.LabelFormat.Equals(input.LabelFormat))
-                ) && 
+                ) &&
                 (
                     this.CarrierCode == input.CarrierCode ||
                     (this.CarrierCode != null &&
                     this.CarrierCode.Equals(input.CarrierCode))
-                ) && 
+                ) &&
                 (
                     this.TrackingId == input.TrackingId ||
                     (this.TrackingId != null &&
                     this.TrackingId.Equals(input.TrackingId))
-                ) && 
+                ) &&
                 (
                     this.Label == input.Label ||
                     (this.Label != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
     /// A property group represents a logical grouping of schema properties that can be used for display or informational purposes.
     /// </summary>
     [DataContract]
-    public partial class PropertyGroup :  IEquatable<PropertyGroup>, IValidatableObject
+    public partial class PropertyGroup : IEquatable<PropertyGroup>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PropertyGroup" /> class.
@@ -42,26 +36,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             this.Description = description;
             this.PropertyNames = propertyNames;
         }
-        
+
         /// <summary>
         /// The display label of the property group.
         /// </summary>
         /// <value>The display label of the property group.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// The description of the property group.
         /// </summary>
         /// <value>The description of the property group.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// The names of the schema properties for the property group.
         /// </summary>
         /// <value>The names of the schema properties for the property group.</value>
-        [DataMember(Name="propertyNames", EmitDefaultValue=false)]
+        [DataMember(Name = "propertyNames", EmitDefaultValue = false)]
         public List<string> PropertyNames { get; set; }
 
         /// <summary>
@@ -78,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +102,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.PropertyNames == input.PropertyNames ||
                     this.PropertyNames != null &&

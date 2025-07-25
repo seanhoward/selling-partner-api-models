@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// Use these parameters to paginate through the response.
     /// </summary>
     [DataContract]
-    public partial class PaginationResponse :  IEquatable<PaginationResponse>, IValidatableObject
+    public partial class PaginationResponse : IEquatable<PaginationResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaginationResponse" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         {
             this.TotalResults = totalResults;
         }
-        
+
         /// <summary>
         /// Total number of results matching the given filter criteria.
         /// </summary>
         /// <value>Total number of results matching the given filter criteria.</value>
-        [DataMember(Name="totalResults", EmitDefaultValue=false)]
+        [DataMember(Name = "totalResults", EmitDefaultValue = false)]
         public long? TotalResults { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TotalResults == input.TotalResults ||
                     (this.TotalResults != null &&
@@ -119,9 +112,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // TotalResults (long?) minimum
-            if(this.TotalResults < (long?)0)
+            if (this.TotalResults < (long?)0)
             {
-                yield return new ValidationResult("Invalid value for TotalResults, must be a value greater than or equal to 0.", new [] { "TotalResults" });
+                yield return new ValidationResult("Invalid value for TotalResults, must be a value greater than or equal to 0.", new[] { "TotalResults" });
             }
 
             yield break;

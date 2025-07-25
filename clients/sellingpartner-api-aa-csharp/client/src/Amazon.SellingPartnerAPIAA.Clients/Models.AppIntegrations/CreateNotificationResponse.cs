@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
     /// The response for the &#x60;createNotification&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class CreateNotificationResponse :  IEquatable<CreateNotificationResponse>, IValidatableObject
+    public partial class CreateNotificationResponse : IEquatable<CreateNotificationResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateNotificationResponse" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         {
             this.NotificationId = notificationId;
         }
-        
+
         /// <summary>
         /// The unique identifier assigned to each notification.
         /// </summary>
         /// <value>The unique identifier assigned to each notification.</value>
-        [DataMember(Name="notificationId", EmitDefaultValue=false)]
+        [DataMember(Name = "notificationId", EmitDefaultValue = false)]
         public string NotificationId { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.NotificationId == input.NotificationId ||
                     (this.NotificationId != null &&

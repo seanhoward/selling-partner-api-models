@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// The details of the container label.
     /// </summary>
     [DataContract]
-    public partial class ContainerLabel :  IEquatable<ContainerLabel>, IValidatableObject
+    public partial class ContainerLabel : IEquatable<ContainerLabel>, IValidatableObject
     {
         /// <summary>
         /// The format of the container label.
         /// </summary>
         /// <value>The format of the container label.</value>
-        [DataMember(Name="format", EmitDefaultValue=false)]
+        [DataMember(Name = "format", EmitDefaultValue = false)]
         public ContainerLabelFormat Format { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerLabel" /> class.
@@ -45,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// Initializes a new instance of the <see cref="ContainerLabel" /> class.
         /// </summary>
         /// <param name="containerTrackingNumber">The container (pallet) tracking identifier from the shipping carrier..</param>
-        /// <param name="content">The &#x60;Base64encoded&#x60; string of the container label content. (required).</param>
+        /// <param name="content">The container label content encoded into a Base64 string. (required).</param>
         /// <param name="format">The format of the container label. (required).</param>
         public ContainerLabel(string containerTrackingNumber = default, string content = default, ContainerLabelFormat format = default)
         {
@@ -69,19 +63,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             }
             this.ContainerTrackingNumber = containerTrackingNumber;
         }
-        
+
         /// <summary>
         /// The container (pallet) tracking identifier from the shipping carrier.
         /// </summary>
         /// <value>The container (pallet) tracking identifier from the shipping carrier.</value>
-        [DataMember(Name="containerTrackingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "containerTrackingNumber", EmitDefaultValue = false)]
         public string ContainerTrackingNumber { get; set; }
 
         /// <summary>
-        /// The &#x60;Base64encoded&#x60; string of the container label content.
+        /// The container label content encoded into a Base64 string.
         /// </summary>
-        /// <value>The &#x60;Base64encoded&#x60; string of the container label content.</value>
-        [DataMember(Name="content", EmitDefaultValue=false)]
+        /// <value>The container label content encoded into a Base64 string.</value>
+        [DataMember(Name = "content", EmitDefaultValue = false)]
         public string Content { get; set; }
 
 
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContainerTrackingNumber == input.ContainerTrackingNumber ||
                     (this.ContainerTrackingNumber != null &&
                     this.ContainerTrackingNumber.Equals(input.ContainerTrackingNumber))
-                ) && 
+                ) &&
                 (
                     this.Content == input.Content ||
                     (this.Content != null &&
                     this.Content.Equals(input.Content))
-                ) && 
+                ) &&
                 (
                     this.Format == input.Format ||
                     (this.Format != null &&

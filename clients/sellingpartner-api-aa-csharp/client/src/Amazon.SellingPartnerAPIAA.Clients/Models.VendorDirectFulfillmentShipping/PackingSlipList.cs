@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// A list of packing slips.
     /// </summary>
     [DataContract]
-    public partial class PackingSlipList :  IEquatable<PackingSlipList>, IValidatableObject
+    public partial class PackingSlipList : IEquatable<PackingSlipList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PackingSlipList" /> class.
@@ -40,19 +34,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             this.Pagination = pagination;
             this.PackingSlips = packingSlips;
         }
-        
+
         /// <summary>
         /// The pagination elements required to retrieve the remaining data.
         /// </summary>
         /// <value>The pagination elements required to retrieve the remaining data.</value>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
         public Pagination Pagination { get; set; }
 
         /// <summary>
         /// An array of packing slip objects.
         /// </summary>
         /// <value>An array of packing slip objects.</value>
-        [DataMember(Name="packingSlips", EmitDefaultValue=false)]
+        [DataMember(Name = "packingSlips", EmitDefaultValue = false)]
         public List<PackingSlip> PackingSlips { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Pagination == input.Pagination ||
                     (this.Pagination != null &&
                     this.Pagination.Equals(input.Pagination))
-                ) && 
+                ) &&
                 (
                     this.PackingSlips == input.PackingSlips ||
                     this.PackingSlips != null &&

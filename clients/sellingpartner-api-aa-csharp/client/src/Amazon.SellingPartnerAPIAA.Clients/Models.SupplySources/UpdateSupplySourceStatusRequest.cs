@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,12 +21,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// A request to update the status of a supply source.
     /// </summary>
     [DataContract]
-    public partial class UpdateSupplySourceStatusRequest :  IEquatable<UpdateSupplySourceStatusRequest>, IValidatableObject
+    public partial class UpdateSupplySourceStatusRequest : IEquatable<UpdateSupplySourceStatusRequest>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public SupplySourceStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateSupplySourceStatusRequest" /> class.
@@ -43,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         {
             this.Status = status;
         }
-        
+
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&

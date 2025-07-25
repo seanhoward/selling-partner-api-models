@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// A request to update the configuration and capabilities of a supply source.
     /// </summary>
     [DataContract]
-    public partial class UpdateSupplySourceRequest :  IEquatable<UpdateSupplySourceRequest>, IValidatableObject
+    public partial class UpdateSupplySourceRequest : IEquatable<UpdateSupplySourceRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateSupplySourceRequest" /> class.
@@ -42,23 +35,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.Configuration = configuration;
             this.Capabilities = capabilities;
         }
-        
+
         /// <summary>
         /// Gets or Sets Alias
         /// </summary>
-        [DataMember(Name="alias", EmitDefaultValue=false)]
+        [DataMember(Name = "alias", EmitDefaultValue = false)]
         public string Alias { get; set; }
 
         /// <summary>
         /// Gets or Sets Configuration
         /// </summary>
-        [DataMember(Name="configuration", EmitDefaultValue=false)]
+        [DataMember(Name = "configuration", EmitDefaultValue = false)]
         public SupplySourceConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Gets or Sets Capabilities
         /// </summary>
-        [DataMember(Name="capabilities", EmitDefaultValue=false)]
+        [DataMember(Name = "capabilities", EmitDefaultValue = false)]
         public SupplySourceCapabilities Capabilities { get; set; }
 
         /// <summary>
@@ -75,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -105,17 +98,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Alias == input.Alias ||
                     (this.Alias != null &&
                     this.Alias.Equals(input.Alias))
-                ) && 
+                ) &&
                 (
                     this.Configuration == input.Configuration ||
                     (this.Configuration != null &&
                     this.Configuration.Equals(input.Configuration))
-                ) && 
+                ) &&
                 (
                     this.Capabilities == input.Capabilities ||
                     (this.Capabilities != null &&

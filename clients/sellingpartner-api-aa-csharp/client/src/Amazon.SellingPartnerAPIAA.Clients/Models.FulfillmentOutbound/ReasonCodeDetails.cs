@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// A return reason code, a description, and an optional description translation.
     /// </summary>
     [DataContract]
-    public partial class ReasonCodeDetails :  IEquatable<ReasonCodeDetails>, IValidatableObject
+    public partial class ReasonCodeDetails : IEquatable<ReasonCodeDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasonCodeDetails" /> class.
@@ -63,26 +57,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             }
             this.TranslatedDescription = translatedDescription;
         }
-        
+
         /// <summary>
         /// A code that indicates a valid return reason.
         /// </summary>
         /// <value>A code that indicates a valid return reason.</value>
-        [DataMember(Name="returnReasonCode", EmitDefaultValue=false)]
+        [DataMember(Name = "returnReasonCode", EmitDefaultValue = false)]
         public string ReturnReasonCode { get; set; }
 
         /// <summary>
         /// A human readable description of the return reason code.
         /// </summary>
         /// <value>A human readable description of the return reason code.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// A translation of the description. The translation is in the language specified in the Language request parameter.
         /// </summary>
         /// <value>A translation of the description. The translation is in the language specified in the Language request parameter.</value>
-        [DataMember(Name="translatedDescription", EmitDefaultValue=false)]
+        [DataMember(Name = "translatedDescription", EmitDefaultValue = false)]
         public string TranslatedDescription { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReturnReasonCode == input.ReturnReasonCode ||
                     (this.ReturnReasonCode != null &&
                     this.ReturnReasonCode.Equals(input.ReturnReasonCode))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.TranslatedDescription == input.TranslatedDescription ||
                     (this.TranslatedDescription != null &&

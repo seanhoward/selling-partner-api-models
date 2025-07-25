@@ -134,7 +134,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsMessageSchema
     public partial class Patches
     {
         /// <summary>
-        /// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See https://tools.ietf.org/html/rfc6902.
+        /// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, merge, and delete. See https://tools.ietf.org/html/rfc6902.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("op", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
@@ -192,8 +192,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsMessageSchema
         Replace = 1,
 
 
+        [System.Runtime.Serialization.EnumMember(Value = @"merge")]
+        Merge = 2,
+
+
         [System.Runtime.Serialization.EnumMember(Value = @"delete")]
-        Delete = 2,
+        Delete = 3,
 
 
     }

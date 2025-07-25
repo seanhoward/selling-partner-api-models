@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,12 +21,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// The label format details and whether to include a packing slip.
     /// </summary>
     [DataContract]
-    public partial class LabelFormatOption :  IEquatable<LabelFormatOption>, IValidatableObject
+    public partial class LabelFormatOption : IEquatable<LabelFormatOption>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets LabelFormat
         /// </summary>
-        [DataMember(Name="LabelFormat", EmitDefaultValue=false)]
+        [DataMember(Name = "LabelFormat", EmitDefaultValue = false)]
         public LabelFormat? LabelFormat { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelFormatOption" /> class.
@@ -45,12 +38,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.IncludePackingSlipWithLabel = includePackingSlipWithLabel;
             this.LabelFormat = labelFormat;
         }
-        
+
         /// <summary>
         /// When true, include a packing slip with the label.
         /// </summary>
         /// <value>When true, include a packing slip with the label.</value>
-        [DataMember(Name="IncludePackingSlipWithLabel", EmitDefaultValue=false)]
+        [DataMember(Name = "IncludePackingSlipWithLabel", EmitDefaultValue = false)]
         public bool? IncludePackingSlipWithLabel { get; set; }
 
 
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IncludePackingSlipWithLabel == input.IncludePackingSlipWithLabel ||
                     (this.IncludePackingSlipWithLabel != null &&
                     this.IncludePackingSlipWithLabel.Equals(input.IncludePackingSlipWithLabel))
-                ) && 
+                ) &&
                 (
                     this.LabelFormat == input.LabelFormat ||
                     (this.LabelFormat != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// The request schema for the submitAcknowledgment operation.
     /// </summary>
     [DataContract]
-    public partial class SubmitAcknowledgementRequest :  IEquatable<SubmitAcknowledgementRequest>, IValidatableObject
+    public partial class SubmitAcknowledgementRequest : IEquatable<SubmitAcknowledgementRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitAcknowledgementRequest" /> class.
@@ -38,12 +32,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         {
             this.Acknowledgements = acknowledgements;
         }
-        
+
         /// <summary>
         /// An array of order acknowledgements to be submitted.
         /// </summary>
         /// <value>An array of order acknowledgements to be submitted.</value>
-        [DataMember(Name="acknowledgements", EmitDefaultValue=false)]
+        [DataMember(Name = "acknowledgements", EmitDefaultValue = false)]
         public List<OrderAcknowledgement> Acknowledgements { get; set; }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Acknowledgements == input.Acknowledgements ||
                     this.Acknowledgements != null &&

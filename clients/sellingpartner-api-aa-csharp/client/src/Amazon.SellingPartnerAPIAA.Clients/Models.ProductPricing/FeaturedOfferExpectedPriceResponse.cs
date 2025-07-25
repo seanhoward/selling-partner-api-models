@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// Schema for an individual FOEP response.
     /// </summary>
     [DataContract]
-    public partial class FeaturedOfferExpectedPriceResponse : BatchResponse,  IEquatable<FeaturedOfferExpectedPriceResponse>, IValidatableObject
+    public partial class FeaturedOfferExpectedPriceResponse : BatchResponse, IEquatable<FeaturedOfferExpectedPriceResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPriceResponse" /> class.
@@ -53,18 +47,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             }
             this.Body = body;
         }
-        
+
         /// <summary>
         /// Use these request parameters to map the response back to the request.
         /// </summary>
         /// <value>Use these request parameters to map the response back to the request.</value>
-        [DataMember(Name="request", EmitDefaultValue=false)]
+        [DataMember(Name = "request", EmitDefaultValue = false)]
         public FeaturedOfferExpectedPriceRequestParams Request { get; set; }
 
         /// <summary>
         /// Gets or Sets Body
         /// </summary>
-        [DataMember(Name="body", EmitDefaultValue=false)]
+        [DataMember(Name = "body", EmitDefaultValue = false)]
         public FeaturedOfferExpectedPriceResponseBody Body { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return base.Equals(input) &&
                 (
                     this.Request == input.Request ||
                     (this.Request != null &&
                     this.Request.Equals(input.Request))
-                ) && base.Equals(input) && 
+                ) && base.Equals(input) &&
                 (
                     this.Body == input.Body ||
                     (this.Body != null &&

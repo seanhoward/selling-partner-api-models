@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Information about an item associated with the service job.
     /// </summary>
     [DataContract]
-    public partial class AssociatedItem :  IEquatable<AssociatedItem>, IValidatableObject
+    public partial class AssociatedItem : IEquatable<AssociatedItem>, IValidatableObject
     {
         /// <summary>
         /// The status of the item.
@@ -37,25 +31,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ItemStatusEnum
         {
-            
+
             /// <summary>
             /// Enum ACTIVE for value: ACTIVE
             /// </summary>
             [EnumMember(Value = "ACTIVE")]
             ACTIVE = 1,
-            
+
             /// <summary>
             /// Enum CANCELLED for value: CANCELLED
             /// </summary>
             [EnumMember(Value = "CANCELLED")]
             CANCELLED = 2,
-            
+
             /// <summary>
             /// Enum SHIPPED for value: SHIPPED
             /// </summary>
             [EnumMember(Value = "SHIPPED")]
             SHIPPED = 3,
-            
+
             /// <summary>
             /// Enum DELIVERED for value: DELIVERED
             /// </summary>
@@ -67,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The status of the item.
         /// </summary>
         /// <value>The status of the item.</value>
-        [DataMember(Name="itemStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "itemStatus", EmitDefaultValue = false)]
         public ItemStatusEnum? ItemStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AssociatedItem" /> class.
@@ -89,33 +83,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.BrandName = brandName;
             this.ItemDelivery = itemDelivery;
         }
-        
+
         /// <summary>
         /// The Amazon Standard Identification Number (ASIN) of the item.
         /// </summary>
         /// <value>The Amazon Standard Identification Number (ASIN) of the item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// The title of the item.
         /// </summary>
         /// <value>The title of the item.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// The total number of items included in the order.
         /// </summary>
         /// <value>The total number of items included in the order.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// The Amazon-defined identifier for an order placed by the buyer in 3-7-7 format.
         /// </summary>
         /// <value>The Amazon-defined identifier for an order placed by the buyer in 3-7-7 format.</value>
-        [DataMember(Name="orderId", EmitDefaultValue=false)]
+        [DataMember(Name = "orderId", EmitDefaultValue = false)]
         public string OrderId { get; set; }
 
 
@@ -123,14 +117,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The brand name of the item.
         /// </summary>
         /// <value>The brand name of the item.</value>
-        [DataMember(Name="brandName", EmitDefaultValue=false)]
+        [DataMember(Name = "brandName", EmitDefaultValue = false)]
         public string BrandName { get; set; }
 
         /// <summary>
         /// Delivery information for the item.
         /// </summary>
         /// <value>Delivery information for the item.</value>
-        [DataMember(Name="itemDelivery", EmitDefaultValue=false)]
+        [DataMember(Name = "itemDelivery", EmitDefaultValue = false)]
         public ItemDelivery ItemDelivery { get; set; }
 
         /// <summary>
@@ -151,7 +145,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -181,37 +175,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.OrderId == input.OrderId ||
                     (this.OrderId != null &&
                     this.OrderId.Equals(input.OrderId))
-                ) && 
+                ) &&
                 (
                     this.ItemStatus == input.ItemStatus ||
                     (this.ItemStatus != null &&
                     this.ItemStatus.Equals(input.ItemStatus))
-                ) && 
+                ) &&
                 (
                     this.BrandName == input.BrandName ||
                     (this.BrandName != null &&
                     this.BrandName.Equals(input.BrandName))
-                ) && 
+                ) &&
                 (
                     this.ItemDelivery == input.ItemDelivery ||
                     (this.ItemDelivery != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandboxData
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
     /// A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return.
     /// </summary>
     [DataContract]
-    public partial class Pagination :  IEquatable<Pagination>, IValidatableObject
+    public partial class Pagination : IEquatable<Pagination>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Pagination" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         {
             this.NextToken = nextToken;
         }
-        
+
         /// <summary>
         /// A generated token to be passed in the next request to retrieve the next set of results.
         /// </summary>
         /// <value>A generated token to be passed in the next request to retrieve the next set of results.</value>
-        [DataMember(Name="nextToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextToken", EmitDefaultValue = false)]
         public string NextToken { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.NextToken == input.NextToken ||
                     (this.NextToken != null &&

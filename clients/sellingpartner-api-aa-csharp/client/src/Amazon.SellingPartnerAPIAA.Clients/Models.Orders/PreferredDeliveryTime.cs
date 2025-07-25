@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The time window when the delivery is preferred.
     /// </summary>
     [DataContract]
-    public partial class PreferredDeliveryTime :  IEquatable<PreferredDeliveryTime>, IValidatableObject
+    public partial class PreferredDeliveryTime : IEquatable<PreferredDeliveryTime>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PreferredDeliveryTime" /> class.
@@ -40,19 +34,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.BusinessHours = businessHours;
             this.ExceptionDates = exceptionDates;
         }
-        
+
         /// <summary>
         /// Business hours when the business is open for deliveries.
         /// </summary>
         /// <value>Business hours when the business is open for deliveries.</value>
-        [DataMember(Name="BusinessHours", EmitDefaultValue=false)]
+        [DataMember(Name = "BusinessHours", EmitDefaultValue = false)]
         public List<BusinessHours> BusinessHours { get; set; }
 
         /// <summary>
         /// Dates when the business is closed during the next 30 days.
         /// </summary>
         /// <value>Dates when the business is closed during the next 30 days.</value>
-        [DataMember(Name="ExceptionDates", EmitDefaultValue=false)]
+        [DataMember(Name = "ExceptionDates", EmitDefaultValue = false)]
         public List<ExceptionDates> ExceptionDates { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BusinessHours == input.BusinessHours ||
                     this.BusinessHours != null &&
                     this.BusinessHours.SequenceEqual(input.BusinessHours)
-                ) && 
+                ) &&
                 (
                     this.ExceptionDates == input.ExceptionDates ||
                     this.ExceptionDates != null &&

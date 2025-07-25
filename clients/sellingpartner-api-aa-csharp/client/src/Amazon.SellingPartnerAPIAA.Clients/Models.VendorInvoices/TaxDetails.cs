@@ -1,5 +1,5 @@
 /* 
- * Vendor Invoices v1
+ * Selling Partner API for Retail Procurement Payments
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
     /// Details of tax amount applied.
     /// </summary>
     [DataContract]
-    public partial class TaxDetails :  IEquatable<TaxDetails>, IValidatableObject
+    public partial class TaxDetails : IEquatable<TaxDetails>, IValidatableObject
     {
         /// <summary>
         /// Type of the tax applied.
@@ -37,85 +32,85 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TaxTypeEnum
         {
-            
+
             /// <summary>
             /// Enum CGST for value: CGST
             /// </summary>
             [EnumMember(Value = "CGST")]
             CGST = 1,
-            
+
             /// <summary>
             /// Enum SGST for value: SGST
             /// </summary>
             [EnumMember(Value = "SGST")]
             SGST = 2,
-            
+
             /// <summary>
             /// Enum CESS for value: CESS
             /// </summary>
             [EnumMember(Value = "CESS")]
             CESS = 3,
-            
+
             /// <summary>
             /// Enum UTGST for value: UTGST
             /// </summary>
             [EnumMember(Value = "UTGST")]
             UTGST = 4,
-            
+
             /// <summary>
             /// Enum IGST for value: IGST
             /// </summary>
             [EnumMember(Value = "IGST")]
             IGST = 5,
-            
+
             /// <summary>
             /// Enum MwSt for value: MwSt.
             /// </summary>
             [EnumMember(Value = "MwSt.")]
             MwSt = 6,
-            
+
             /// <summary>
             /// Enum PST for value: PST
             /// </summary>
             [EnumMember(Value = "PST")]
             PST = 7,
-            
+
             /// <summary>
             /// Enum TVA for value: TVA
             /// </summary>
             [EnumMember(Value = "TVA")]
             TVA = 8,
-            
+
             /// <summary>
             /// Enum VAT for value: VAT
             /// </summary>
             [EnumMember(Value = "VAT")]
             VAT = 9,
-            
+
             /// <summary>
             /// Enum GST for value: GST
             /// </summary>
             [EnumMember(Value = "GST")]
             GST = 10,
-            
+
             /// <summary>
             /// Enum ST for value: ST
             /// </summary>
             [EnumMember(Value = "ST")]
             ST = 11,
-            
+
             /// <summary>
             /// Enum Consumption for value: Consumption
             /// </summary>
             [EnumMember(Value = "Consumption")]
             Consumption = 12,
-            
+
             /// <summary>
             /// Enum MutuallyDefined for value: MutuallyDefined
             /// </summary>
             [EnumMember(Value = "MutuallyDefined")]
             MutuallyDefined = 13,
-            
+
             /// <summary>
             /// Enum DomesticVAT for value: DomesticVAT
             /// </summary>
@@ -127,7 +122,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// Type of the tax applied.
         /// </summary>
         /// <value>Type of the tax applied.</value>
-        [DataMember(Name="taxType", EmitDefaultValue=false)]
+        [DataMember(Name = "taxType", EmitDefaultValue = false)]
         public TaxTypeEnum TaxType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxDetails" /> class.
@@ -164,27 +159,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             this.TaxRate = taxRate;
             this.TaxableAmount = taxableAmount;
         }
-        
+
 
         /// <summary>
         /// Tax percentage applied. Percentage must be expressed in decimal.
         /// </summary>
         /// <value>Tax percentage applied. Percentage must be expressed in decimal.</value>
-        [DataMember(Name="taxRate", EmitDefaultValue=false)]
+        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
         public string TaxRate { get; set; }
 
         /// <summary>
         /// Total tax amount applied on invoice total or an item total.
         /// </summary>
         /// <value>Total tax amount applied on invoice total or an item total.</value>
-        [DataMember(Name="taxAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "taxAmount", EmitDefaultValue = false)]
         public Money TaxAmount { get; set; }
 
         /// <summary>
         /// The invoice amount that is taxable at the rate specified in the tax rate field.
         /// </summary>
         /// <value>The invoice amount that is taxable at the rate specified in the tax rate field.</value>
-        [DataMember(Name="taxableAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "taxableAmount", EmitDefaultValue = false)]
         public Money TaxableAmount { get; set; }
 
         /// <summary>
@@ -202,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -232,22 +227,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TaxType == input.TaxType ||
                     (this.TaxType != null &&
                     this.TaxType.Equals(input.TaxType))
-                ) && 
+                ) &&
                 (
                     this.TaxRate == input.TaxRate ||
                     (this.TaxRate != null &&
                     this.TaxRate.Equals(input.TaxRate))
-                ) && 
+                ) &&
                 (
                     this.TaxAmount == input.TaxAmount ||
                     (this.TaxAmount != null &&
                     this.TaxAmount.Equals(input.TaxAmount))
-                ) && 
+                ) &&
                 (
                     this.TaxableAmount == input.TaxableAmount ||
                     (this.TaxableAmount != null &&

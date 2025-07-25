@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayments
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
     /// Monetary and tax details of the charge.
     /// </summary>
     [DataContract]
-    public partial class ChargeDetails :  IEquatable<ChargeDetails>, IValidatableObject
+    public partial class ChargeDetails : IEquatable<ChargeDetails>, IValidatableObject
     {
         /// <summary>
         /// Type of charge applied.
@@ -37,43 +33,43 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
-            
+
             /// <summary>
             /// Enum GIFTWRAP for value: GIFTWRAP
             /// </summary>
             [EnumMember(Value = "GIFTWRAP")]
             GIFTWRAP = 1,
-            
+
             /// <summary>
             /// Enum FULFILLMENT for value: FULFILLMENT
             /// </summary>
             [EnumMember(Value = "FULFILLMENT")]
             FULFILLMENT = 2,
-            
+
             /// <summary>
             /// Enum MARKETINGINSERT for value: MARKETINGINSERT
             /// </summary>
             [EnumMember(Value = "MARKETINGINSERT")]
             MARKETINGINSERT = 3,
-            
+
             /// <summary>
             /// Enum PACKAGING for value: PACKAGING
             /// </summary>
             [EnumMember(Value = "PACKAGING")]
             PACKAGING = 4,
-            
+
             /// <summary>
             /// Enum LOADING for value: LOADING
             /// </summary>
             [EnumMember(Value = "LOADING")]
             LOADING = 5,
-            
+
             /// <summary>
             /// Enum FREIGHTOUT for value: FREIGHTOUT
             /// </summary>
             [EnumMember(Value = "FREIGHTOUT")]
             FREIGHTOUT = 6,
-            
+
             /// <summary>
             /// Enum TAXCOLLECTEDATSOURCE for value: TAX_COLLECTED_AT_SOURCE
             /// </summary>
@@ -85,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
         /// Type of charge applied.
         /// </summary>
         /// <value>Type of charge applied.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeDetails" /> class.
@@ -120,19 +116,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             }
             this.TaxDetails = taxDetails;
         }
-        
+
 
         /// <summary>
         /// Gets or Sets ChargeAmount
         /// </summary>
-        [DataMember(Name="chargeAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "chargeAmount", EmitDefaultValue = false)]
         public Money ChargeAmount { get; set; }
 
         /// <summary>
         /// Individual tax details per line item.
         /// </summary>
         /// <value>Individual tax details per line item.</value>
-        [DataMember(Name="taxDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "taxDetails", EmitDefaultValue = false)]
         public List<TaxDetail> TaxDetails { get; set; }
 
         /// <summary>
@@ -149,7 +145,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -179,17 +175,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     this.ChargeAmount == input.ChargeAmount ||
                     (this.ChargeAmount != null &&
                     this.ChargeAmount.Equals(input.ChargeAmount))
-                ) && 
+                ) &&
                 (
                     this.TaxDetails == input.TaxDetails ||
                     this.TaxDetails != null &&

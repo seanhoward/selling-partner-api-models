@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Information about the location of the service job.
     /// </summary>
     [DataContract]
-    public partial class ServiceLocation :  IEquatable<ServiceLocation>, IValidatableObject
+    public partial class ServiceLocation : IEquatable<ServiceLocation>, IValidatableObject
     {
         /// <summary>
         /// The location of the service job.
@@ -37,19 +31,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ServiceLocationTypeEnum
         {
-            
+
             /// <summary>
             /// Enum INHOME for value: IN_HOME
             /// </summary>
             [EnumMember(Value = "IN_HOME")]
             INHOME = 1,
-            
+
             /// <summary>
             /// Enum INSTORE for value: IN_STORE
             /// </summary>
             [EnumMember(Value = "IN_STORE")]
             INSTORE = 2,
-            
+
             /// <summary>
             /// Enum ONLINE for value: ONLINE
             /// </summary>
@@ -61,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The location of the service job.
         /// </summary>
         /// <value>The location of the service job.</value>
-        [DataMember(Name="serviceLocationType", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceLocationType", EmitDefaultValue = false)]
         public ServiceLocationTypeEnum? ServiceLocationType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceLocation" /> class.
@@ -73,13 +67,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.ServiceLocationType = serviceLocationType;
             this.Address = address;
         }
-        
+
 
         /// <summary>
         /// The shipping address for the service job.
         /// </summary>
         /// <value>The shipping address for the service job.</value>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
         /// <summary>
@@ -95,7 +89,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -125,12 +119,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ServiceLocationType == input.ServiceLocationType ||
                     (this.ServiceLocationType != null &&
                     this.ServiceLocationType.Equals(input.ServiceLocationType))
-                ) && 
+                ) &&
                 (
                     this.Address == input.Address ||
                     (this.Address != null &&

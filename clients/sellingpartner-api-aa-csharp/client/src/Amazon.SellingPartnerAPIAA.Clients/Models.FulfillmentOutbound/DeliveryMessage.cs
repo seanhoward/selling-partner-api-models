@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Localized messaging for a delivery offering.
     /// </summary>
     [DataContract]
-    public partial class DeliveryMessage :  IEquatable<DeliveryMessage>, IValidatableObject
+    public partial class DeliveryMessage : IEquatable<DeliveryMessage>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryMessage" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.Text = text;
             this.Locale = locale;
         }
-        
+
         /// <summary>
         /// The message content for a delivery offering.
         /// </summary>
         /// <value>The message content for a delivery offering.</value>
-        [DataMember(Name="text", EmitDefaultValue=false)]
+        [DataMember(Name = "text", EmitDefaultValue = false)]
         public string Text { get; set; }
 
         /// <summary>
         /// The locale for the message (for example, en_US).
         /// </summary>
         /// <value>The locale for the message (for example, en_US).</value>
-        [DataMember(Name="locale", EmitDefaultValue=false)]
+        [DataMember(Name = "locale", EmitDefaultValue = false)]
         public string Locale { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Text == input.Text ||
                     (this.Text != null &&
                     this.Text.Equals(input.Text))
-                ) && 
+                ) &&
                 (
                     this.Locale == input.Locale ||
                     (this.Locale != null &&

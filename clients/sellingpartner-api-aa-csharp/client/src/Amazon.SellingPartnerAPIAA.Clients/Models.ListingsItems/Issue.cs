@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// An issue with a listings item.
     /// </summary>
     [DataContract]
-    public partial class Issue :  IEquatable<Issue>, IValidatableObject
+    public partial class Issue : IEquatable<Issue>, IValidatableObject
     {
         /// <summary>
         /// The severity of the issue.
@@ -37,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SeverityEnum
         {
-            
+
             /// <summary>
             /// Enum ERROR for value: ERROR
             /// </summary>
             [EnumMember(Value = "ERROR")]
             ERROR = 1,
-            
+
             /// <summary>
             /// Enum WARNING for value: WARNING
             /// </summary>
             [EnumMember(Value = "WARNING")]
             WARNING = 2,
-            
+
             /// <summary>
             /// Enum INFO for value: INFO
             /// </summary>
@@ -61,7 +57,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// The severity of the issue.
         /// </summary>
         /// <value>The severity of the issue.</value>
-        [DataMember(Name="severity", EmitDefaultValue=false)]
+        [DataMember(Name = "severity", EmitDefaultValue = false)]
         public SeverityEnum Severity { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Issue" /> class.
@@ -75,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <param name="message">A message that describes the issue. (required).</param>
         /// <param name="severity">The severity of the issue. (required).</param>
         /// <param name="attributeNames">The names of the attributes associated with the issue, if applicable..</param>
-        /// <param name="categories">List of issue categories.   Possible vales:   * &#x60;INVALID_ATTRIBUTE&#x60; - Indicating an invalid attribute in the listing.   * &#x60;MISSING_ATTRIBUTE&#x60; - Highlighting a missing attribute in the listing.   * &#x60;INVALID_IMAGE&#x60; - Signifying an invalid image in the listing.   * &#x60;MISSING_IMAGE&#x60; - Noting the absence of an image in the listing.   * &#x60;INVALID_PRICE&#x60; - Pertaining to issues with the listing&#39;s price-related attributes.   * &#x60;MISSING_PRICE&#x60; - Pointing out the absence of a price attribute in the listing.   * &#x60;DUPLICATE&#x60; - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.   * &#x60;QUALIFICATION_REQUIRED&#x60; - Indicating that the listing requires qualification-related approval. (required).</param>
+        /// <param name="categories">List of issue categories.   Possible values:   * &#39;INVALID_ATTRIBUTE&#39; - Indicating an invalid attribute in the listing.   * &#39;MISSING_ATTRIBUTE&#39; - Highlighting a missing attribute in the listing.   * &#39;INVALID_IMAGE&#39; - Signifying an invalid image in the listing.   * &#39;MISSING_IMAGE&#39; - Noting the absence of an image in the listing.   * &#39;INVALID_PRICE&#39; - Pertaining to issues with the listing&#39;s price-related attributes.   * &#39;MISSING_PRICE&#39; - Pointing out the absence of a price attribute in the listing.   * &#39;DUPLICATE&#39; - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.   * &#39;QUALIFICATION_REQUIRED&#39; - Indicating that the listing requires qualification-related approval. (required).</param>
         /// <param name="enforcements">This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions..</param>
         public Issue(string code = default, string message = default, SeverityEnum severity = default, List<string> attributeNames = default, List<string> categories = default, IssueEnforcements enforcements = default)
         {
@@ -118,19 +114,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             this.AttributeNames = attributeNames;
             this.Enforcements = enforcements;
         }
-        
+
         /// <summary>
         /// An issue code that identifies the type of issue.
         /// </summary>
         /// <value>An issue code that identifies the type of issue.</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// A message that describes the issue.
         /// </summary>
         /// <value>A message that describes the issue.</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
 
@@ -138,21 +134,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// The names of the attributes associated with the issue, if applicable.
         /// </summary>
         /// <value>The names of the attributes associated with the issue, if applicable.</value>
-        [DataMember(Name="attributeNames", EmitDefaultValue=false)]
+        [DataMember(Name = "attributeNames", EmitDefaultValue = false)]
         public List<string> AttributeNames { get; set; }
 
         /// <summary>
-        /// List of issue categories.   Possible vales:   * &#x60;INVALID_ATTRIBUTE&#x60; - Indicating an invalid attribute in the listing.   * &#x60;MISSING_ATTRIBUTE&#x60; - Highlighting a missing attribute in the listing.   * &#x60;INVALID_IMAGE&#x60; - Signifying an invalid image in the listing.   * &#x60;MISSING_IMAGE&#x60; - Noting the absence of an image in the listing.   * &#x60;INVALID_PRICE&#x60; - Pertaining to issues with the listing&#39;s price-related attributes.   * &#x60;MISSING_PRICE&#x60; - Pointing out the absence of a price attribute in the listing.   * &#x60;DUPLICATE&#x60; - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.   * &#x60;QUALIFICATION_REQUIRED&#x60; - Indicating that the listing requires qualification-related approval.
+        /// List of issue categories.   Possible values:   * &#39;INVALID_ATTRIBUTE&#39; - Indicating an invalid attribute in the listing.   * &#39;MISSING_ATTRIBUTE&#39; - Highlighting a missing attribute in the listing.   * &#39;INVALID_IMAGE&#39; - Signifying an invalid image in the listing.   * &#39;MISSING_IMAGE&#39; - Noting the absence of an image in the listing.   * &#39;INVALID_PRICE&#39; - Pertaining to issues with the listing&#39;s price-related attributes.   * &#39;MISSING_PRICE&#39; - Pointing out the absence of a price attribute in the listing.   * &#39;DUPLICATE&#39; - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.   * &#39;QUALIFICATION_REQUIRED&#39; - Indicating that the listing requires qualification-related approval.
         /// </summary>
-        /// <value>List of issue categories.   Possible vales:   * &#x60;INVALID_ATTRIBUTE&#x60; - Indicating an invalid attribute in the listing.   * &#x60;MISSING_ATTRIBUTE&#x60; - Highlighting a missing attribute in the listing.   * &#x60;INVALID_IMAGE&#x60; - Signifying an invalid image in the listing.   * &#x60;MISSING_IMAGE&#x60; - Noting the absence of an image in the listing.   * &#x60;INVALID_PRICE&#x60; - Pertaining to issues with the listing&#39;s price-related attributes.   * &#x60;MISSING_PRICE&#x60; - Pointing out the absence of a price attribute in the listing.   * &#x60;DUPLICATE&#x60; - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.   * &#x60;QUALIFICATION_REQUIRED&#x60; - Indicating that the listing requires qualification-related approval.</value>
-        [DataMember(Name="categories", EmitDefaultValue=false)]
+        /// <value>List of issue categories.   Possible values:   * &#39;INVALID_ATTRIBUTE&#39; - Indicating an invalid attribute in the listing.   * &#39;MISSING_ATTRIBUTE&#39; - Highlighting a missing attribute in the listing.   * &#39;INVALID_IMAGE&#39; - Signifying an invalid image in the listing.   * &#39;MISSING_IMAGE&#39; - Noting the absence of an image in the listing.   * &#39;INVALID_PRICE&#39; - Pertaining to issues with the listing&#39;s price-related attributes.   * &#39;MISSING_PRICE&#39; - Pointing out the absence of a price attribute in the listing.   * &#39;DUPLICATE&#39; - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.   * &#39;QUALIFICATION_REQUIRED&#39; - Indicating that the listing requires qualification-related approval.</value>
+        [DataMember(Name = "categories", EmitDefaultValue = false)]
         public List<string> Categories { get; set; }
 
         /// <summary>
         /// This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.
         /// </summary>
         /// <value>This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.</value>
-        [DataMember(Name="enforcements", EmitDefaultValue=false)]
+        [DataMember(Name = "enforcements", EmitDefaultValue = false)]
         public IssueEnforcements Enforcements { get; set; }
 
         /// <summary>
@@ -172,7 +168,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -202,32 +198,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.Severity == input.Severity ||
                     (this.Severity != null &&
                     this.Severity.Equals(input.Severity))
-                ) && 
+                ) &&
                 (
                     this.AttributeNames == input.AttributeNames ||
                     this.AttributeNames != null &&
                     this.AttributeNames.SequenceEqual(input.AttributeNames)
-                ) && 
+                ) &&
                 (
                     this.Categories == input.Categories ||
                     this.Categories != null &&
                     this.Categories.SequenceEqual(input.Categories)
-                ) && 
+                ) &&
                 (
                     this.Enforcements == input.Enforcements ||
                     (this.Enforcements != null &&

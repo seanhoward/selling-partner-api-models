@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,12 +23,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// An MSKU and its related prep details.
     /// </summary>
     [DataContract]
-    public partial class MskuPrepDetailInput :  IEquatable<MskuPrepDetailInput>, IValidatableObject
+    public partial class MskuPrepDetailInput : IEquatable<MskuPrepDetailInput>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets PrepCategory
         /// </summary>
-        [DataMember(Name="prepCategory", EmitDefaultValue=false)]
+        [DataMember(Name = "prepCategory", EmitDefaultValue = false)]
         public PrepCategory PrepCategory { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="MskuPrepDetailInput" /> class.
@@ -76,12 +71,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.PrepTypes = prepTypes;
             }
         }
-        
+
         /// <summary>
         /// The merchant SKU, a merchant-supplied identifier for a specific SKU.
         /// </summary>
         /// <value>The merchant SKU, a merchant-supplied identifier for a specific SKU.</value>
-        [DataMember(Name="msku", EmitDefaultValue=false)]
+        [DataMember(Name = "msku", EmitDefaultValue = false)]
         public string Msku { get; set; }
 
 
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// A list of preparation types associated with a preparation category.
         /// </summary>
         /// <value>A list of preparation types associated with a preparation category.</value>
-        [DataMember(Name="prepTypes", EmitDefaultValue=false)]
+        [DataMember(Name = "prepTypes", EmitDefaultValue = false)]
         public List<PrepType> PrepTypes { get; set; }
 
         /// <summary>
@@ -106,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -136,17 +131,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Msku == input.Msku ||
                     (this.Msku != null &&
                     this.Msku.Equals(input.Msku))
-                ) && 
+                ) &&
                 (
                     this.PrepCategory == input.PrepCategory ||
                     (this.PrepCategory != null &&
                     this.PrepCategory.Equals(input.PrepCategory))
-                ) && 
+                ) &&
                 (
                     this.PrepTypes == input.PrepTypes ||
                     this.PrepTypes != null &&
@@ -181,15 +176,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Msku (string) maxLength
-            if(this.Msku != null && this.Msku.Length > 40)
+            if (this.Msku != null && this.Msku.Length > 40)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new[] { "Msku" });
             }
 
             // Msku (string) minLength
-            if(this.Msku != null && this.Msku.Length < 1)
+            if (this.Msku != null && this.Msku.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new[] { "Msku" });
             }
 
             yield break;

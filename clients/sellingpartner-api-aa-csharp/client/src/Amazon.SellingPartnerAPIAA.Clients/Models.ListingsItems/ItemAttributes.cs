@@ -9,19 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -29,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// A JSON object containing structured listings item attribute data keyed by attribute name.
     /// </summary>
     [DataContract]
-    public partial class ItemAttributes : Dictionary<string, JArray>,  IEquatable<ItemAttributes>, IValidatableObject
+    public partial class ItemAttributes : Dictionary<string, JArray>, IEquatable<ItemAttributes>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemAttributes" /> class.
@@ -38,7 +31,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         public ItemAttributes() : base()
         {
         }
-        
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -51,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

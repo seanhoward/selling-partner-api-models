@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
     /// Model of a restricted resource.
     /// </summary>
     [DataContract]
-    public partial class RestrictedResource :  IEquatable<RestrictedResource>, IValidatableObject
+    public partial class RestrictedResource : IEquatable<RestrictedResource>, IValidatableObject
     {
         /// <summary>
         /// The HTTP method in the restricted resource.
@@ -37,25 +33,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MethodEnum
         {
-            
+
             /// <summary>
             /// Enum GET for value: GET
             /// </summary>
             [EnumMember(Value = "GET")]
             GET = 1,
-            
+
             /// <summary>
             /// Enum PUT for value: PUT
             /// </summary>
             [EnumMember(Value = "PUT")]
             PUT = 2,
-            
+
             /// <summary>
             /// Enum POST for value: POST
             /// </summary>
             [EnumMember(Value = "POST")]
             POST = 3,
-            
+
             /// <summary>
             /// Enum DELETE for value: DELETE
             /// </summary>
@@ -67,7 +63,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
         /// The HTTP method in the restricted resource.
         /// </summary>
         /// <value>The HTTP method in the restricted resource.</value>
-        [DataMember(Name="method", EmitDefaultValue=false)]
+        [DataMember(Name = "method", EmitDefaultValue = false)]
         public MethodEnum Method { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="RestrictedResource" /> class.
@@ -102,20 +98,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
             }
             this.DataElements = dataElements;
         }
-        
+
 
         /// <summary>
         /// The path in the restricted resource. Here are some path examples: - &#x60;&#x60;&#x60;/orders/v0/orders&#x60;&#x60;&#x60;. For getting an RDT for the getOrders operation of the Orders API. For bulk orders. - &#x60;&#x60;&#x60;/orders/v0/orders/123-1234567-1234567&#x60;&#x60;&#x60;. For getting an RDT for the getOrder operation of the Orders API. For a specific order. - &#x60;&#x60;&#x60;/orders/v0/orders/123-1234567-1234567/orderItems&#x60;&#x60;&#x60;. For getting an RDT for the getOrderItems operation of the Orders API. For the order items in a specific order. - &#x60;&#x60;&#x60;/mfn/v0/shipments/FBA1234ABC5D&#x60;&#x60;&#x60;. For getting an RDT for the getShipment operation of the Shipping API. For a specific shipment. - &#x60;&#x60;&#x60;/mfn/v0/shipments/{shipmentId}&#x60;&#x60;&#x60;. For getting an RDT for the getShipment operation of the Shipping API. For any of a selling partner&#39;s shipments that you specify when you call the getShipment operation.
         /// </summary>
         /// <value>The path in the restricted resource. Here are some path examples: - &#x60;&#x60;&#x60;/orders/v0/orders&#x60;&#x60;&#x60;. For getting an RDT for the getOrders operation of the Orders API. For bulk orders. - &#x60;&#x60;&#x60;/orders/v0/orders/123-1234567-1234567&#x60;&#x60;&#x60;. For getting an RDT for the getOrder operation of the Orders API. For a specific order. - &#x60;&#x60;&#x60;/orders/v0/orders/123-1234567-1234567/orderItems&#x60;&#x60;&#x60;. For getting an RDT for the getOrderItems operation of the Orders API. For the order items in a specific order. - &#x60;&#x60;&#x60;/mfn/v0/shipments/FBA1234ABC5D&#x60;&#x60;&#x60;. For getting an RDT for the getShipment operation of the Shipping API. For a specific shipment. - &#x60;&#x60;&#x60;/mfn/v0/shipments/{shipmentId}&#x60;&#x60;&#x60;. For getting an RDT for the getShipment operation of the Shipping API. For any of a selling partner&#39;s shipments that you specify when you call the getShipment operation.</value>
-        [DataMember(Name="path", EmitDefaultValue=false)]
+        [DataMember(Name = "path", EmitDefaultValue = false)]
         public string Path { get; set; }
 
         /// <summary>
         /// Indicates the type of Personally Identifiable Information requested. This parameter is required only when getting an RDT for use with the getOrder, getOrders, or getOrderItems operation of the Orders API. For more information, see the [Tokens API Use Case Guide](doc:tokens-api-use-case-guide). Possible values include: - **buyerInfo**. On the order level this includes general identifying information about the buyer and tax-related information. On the order item level this includes gift wrap information and custom order information, if available. - **shippingAddress**. This includes information for fulfilling orders. - **buyerTaxInformation**. This includes information for issuing tax invoices.
         /// </summary>
         /// <value>Indicates the type of Personally Identifiable Information requested. This parameter is required only when getting an RDT for use with the getOrder, getOrders, or getOrderItems operation of the Orders API. For more information, see the [Tokens API Use Case Guide](doc:tokens-api-use-case-guide). Possible values include: - **buyerInfo**. On the order level this includes general identifying information about the buyer and tax-related information. On the order item level this includes gift wrap information and custom order information, if available. - **shippingAddress**. This includes information for fulfilling orders. - **buyerTaxInformation**. This includes information for issuing tax invoices.</value>
-        [DataMember(Name="dataElements", EmitDefaultValue=false)]
+        [DataMember(Name = "dataElements", EmitDefaultValue = false)]
         public List<string> DataElements { get; set; }
 
         /// <summary>
@@ -132,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -162,17 +158,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Method == input.Method ||
                     (this.Method != null &&
                     this.Method.Equals(input.Method))
-                ) && 
+                ) &&
                 (
                     this.Path == input.Path ||
                     (this.Path != null &&
                     this.Path.Equals(input.Path))
-                ) && 
+                ) &&
                 (
                     this.DataElements == input.DataElements ||
                     this.DataElements != null &&

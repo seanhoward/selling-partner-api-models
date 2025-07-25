@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Transport Request pickup date from Vendor Warehouse by Buyer
     /// </summary>
     [DataContract]
-    public partial class CollectFreightPickupDetails :  IEquatable<CollectFreightPickupDetails>, IValidatableObject
+    public partial class CollectFreightPickupDetails : IEquatable<CollectFreightPickupDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CollectFreightPickupDetails" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.ScheduledPickUp = scheduledPickUp;
             this.CarrierAssignmentDate = carrierAssignmentDate;
         }
-        
+
         /// <summary>
         /// Date on which the items can be picked up from vendor warehouse by Buyer used for WePay/Collect vendors.
         /// </summary>
         /// <value>Date on which the items can be picked up from vendor warehouse by Buyer used for WePay/Collect vendors.</value>
-        [DataMember(Name="requestedPickUp", EmitDefaultValue=false)]
+        [DataMember(Name = "requestedPickUp", EmitDefaultValue = false)]
         public DateTime? RequestedPickUp { get; set; }
 
         /// <summary>
         /// Date on which the items are scheduled to be picked from vendor warehouse by Buyer used for WePay/Collect vendors.
         /// </summary>
         /// <value>Date on which the items are scheduled to be picked from vendor warehouse by Buyer used for WePay/Collect vendors.</value>
-        [DataMember(Name="scheduledPickUp", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduledPickUp", EmitDefaultValue = false)]
         public DateTime? ScheduledPickUp { get; set; }
 
         /// <summary>
         /// Date on which the carrier is being scheduled to pickup items from vendor warehouse by Byer used for WePay/Collect vendors.
         /// </summary>
         /// <value>Date on which the carrier is being scheduled to pickup items from vendor warehouse by Byer used for WePay/Collect vendors.</value>
-        [DataMember(Name="carrierAssignmentDate", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierAssignmentDate", EmitDefaultValue = false)]
         public DateTime? CarrierAssignmentDate { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.RequestedPickUp == input.RequestedPickUp ||
                     (this.RequestedPickUp != null &&
                     this.RequestedPickUp.Equals(input.RequestedPickUp))
-                ) && 
+                ) &&
                 (
                     this.ScheduledPickUp == input.ScheduledPickUp ||
                     (this.ScheduledPickUp != null &&
                     this.ScheduledPickUp.Equals(input.ScheduledPickUp))
-                ) && 
+                ) &&
                 (
                     this.CarrierAssignmentDate == input.CarrierAssignmentDate ||
                     (this.CarrierAssignmentDate != null &&

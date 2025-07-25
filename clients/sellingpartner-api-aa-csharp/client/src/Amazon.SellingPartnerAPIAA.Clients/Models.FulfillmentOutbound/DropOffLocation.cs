@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The preferred location to leave packages at the destination address.
     /// </summary>
     [DataContract]
-    public partial class DropOffLocation :  IEquatable<DropOffLocation>, IValidatableObject
+    public partial class DropOffLocation : IEquatable<DropOffLocation>, IValidatableObject
     {
         /// <summary>
         /// Specifies the preferred location to leave the package at the destination address.
@@ -37,49 +33,49 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
-            
+
             /// <summary>
             /// Enum FRONTDOOR for value: FRONT_DOOR
             /// </summary>
             [EnumMember(Value = "FRONT_DOOR")]
             FRONTDOOR = 1,
-            
+
             /// <summary>
             /// Enum DELIVERYBOX for value: DELIVERY_BOX
             /// </summary>
             [EnumMember(Value = "DELIVERY_BOX")]
             DELIVERYBOX = 2,
-            
+
             /// <summary>
             /// Enum GASMETERBOX for value: GAS_METER_BOX
             /// </summary>
             [EnumMember(Value = "GAS_METER_BOX")]
             GASMETERBOX = 3,
-            
+
             /// <summary>
             /// Enum BICYCLEBASKET for value: BICYCLE_BASKET
             /// </summary>
             [EnumMember(Value = "BICYCLE_BASKET")]
             BICYCLEBASKET = 4,
-            
+
             /// <summary>
             /// Enum GARAGE for value: GARAGE
             /// </summary>
             [EnumMember(Value = "GARAGE")]
             GARAGE = 5,
-            
+
             /// <summary>
             /// Enum RECEPTIONIST for value: RECEPTIONIST
             /// </summary>
             [EnumMember(Value = "RECEPTIONIST")]
             RECEPTIONIST = 6,
-            
+
             /// <summary>
             /// Enum FALLBACKNEIGHBORDELIVERY for value: FALLBACK_NEIGHBOR_DELIVERY
             /// </summary>
             [EnumMember(Value = "FALLBACK_NEIGHBOR_DELIVERY")]
             FALLBACKNEIGHBORDELIVERY = 7,
-            
+
             /// <summary>
             /// Enum DONOTLEAVEUNATTENDED for value: DO_NOT_LEAVE_UNATTENDED
             /// </summary>
@@ -91,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// Specifies the preferred location to leave the package at the destination address.
         /// </summary>
         /// <value>Specifies the preferred location to leave the package at the destination address.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DropOffLocation" /> class.
@@ -116,13 +112,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             }
             this.Attributes = attributes;
         }
-        
+
 
         /// <summary>
         /// Additional information about the drop-off location that can vary depending on the type of drop-off location specified in the &#x60;type&#x60; field. If the &#x60;type&#x60; is set to &#x60;FALLBACK_NEIGHBOR_DELIVERY&#x60;, the &#x60;attributes&#x60; object should include the exact keys &#x60;neighborName&#x60; and &#x60;houseNumber&#x60; to provide the name and house number of the designated neighbor.
         /// </summary>
         /// <value>Additional information about the drop-off location that can vary depending on the type of drop-off location specified in the &#x60;type&#x60; field. If the &#x60;type&#x60; is set to &#x60;FALLBACK_NEIGHBOR_DELIVERY&#x60;, the &#x60;attributes&#x60; object should include the exact keys &#x60;neighborName&#x60; and &#x60;houseNumber&#x60; to provide the name and house number of the designated neighbor.</value>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public Dictionary<string, string> Attributes { get; set; }
 
         /// <summary>
@@ -138,7 +134,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -168,12 +164,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&

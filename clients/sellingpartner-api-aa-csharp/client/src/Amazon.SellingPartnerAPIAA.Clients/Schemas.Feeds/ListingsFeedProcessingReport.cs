@@ -27,11 +27,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsProcessingRep
         public System.Collections.Generic.ICollection<Issues> Issues { get; set; } = new System.Collections.ObjectModel.Collection<Issues>();
 
         /// <summary>
-        /// Aggregate Count of Errors, Warnings, and the status of message submissions.
+        /// Aggregate counts of errors, warnings, and statuses related to the acceptance of feed messages. When requested, Item Summary includes aggregate counts of items, errors, and warnings related to the listing items created or updated by this feed submission.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("summary", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public Summary Summary { get; set; } = new Summary();
+
+        /// <summary>
+        /// A set of listings items and their specific data sets that originates from the feed request’s "includedData" header parameter.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<object> Items { get; set; }
 
 
 
@@ -82,6 +88,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsProcessingRep
         [Newtonsoft.Json.JsonProperty("feedId", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string FeedId { get; set; }
+
+        /// <summary>
+        /// The report information for the feed submission.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("report", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public Report Report { get; set; }
 
 
 
@@ -214,6 +226,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsProcessingRep
         [System.ComponentModel.DataAnnotations.Range(0, int.MaxValue)]
         public int MessagesInvalid { get; set; }
 
+        /// <summary>
+        /// Aggregate counts of items, errors, and warnings related to the listing items created or updated by this feed submission and included in the Items section of this report.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("itemSummary", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public ItemSummary ItemSummary { get; set; }
+
 
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
@@ -241,6 +259,51 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsProcessingRep
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class Report
+    {
+        /// <summary>
+        /// When "includedData" elements are in the feed submission, the processing report that generates for the feed submission includes the listings items output from the Selling Partner Listings Items API with the "includedData" elements from the request. The report includes issues that prevent the acceptance of messages regardless of the "includedData" elements in the feed request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("includedData", Required = Newtonsoft.Json.Required.Always, ItemConverterType = typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.MinLength(1)]
+        public System.Collections.Generic.ICollection<IncludedData> IncludedData { get; set; } = new System.Collections.ObjectModel.Collection<IncludedData>();
+
+        /// <summary>
+        /// The version of the Selling Partner Listings Items API to use to retrieve the listing items.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("apiVersion", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ReportApiVersion ApiVersion { get; set; }
+
+
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+        public string ToJson()
+        {
+
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+        public static Report FromJson(string data)
+        {
+
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Report>(data, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
     public enum IssuesSeverity
     {
 
@@ -254,6 +317,104 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsProcessingRep
 
         [System.Runtime.Serialization.EnumMember(Value = @"INFO")]
         INFO = 2,
+
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class ItemSummary
+    {
+        /// <summary>
+        /// Number of listing items created or updated by this feed submission and included in the Items section of this report.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Range(0, int.MaxValue)]
+        public int Items { get; set; }
+
+        /// <summary>
+        /// Number of errors across all listing items created or updated by this feed submission.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("errors", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Range(0, int.MaxValue)]
+        public int Errors { get; set; }
+
+        /// <summary>
+        /// Number of warnings across all listing items created or updated by this feed submission.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("warnings", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Range(0, int.MaxValue)]
+        public int Warnings { get; set; }
+
+
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+        public string ToJson()
+        {
+
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+        public static ItemSummary FromJson(string data)
+        {
+
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ItemSummary>(data, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public enum IncludedData
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"summaries")]
+        Summaries = 0,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"attributes")]
+        Attributes = 1,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"issues")]
+        Issues = 2,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"offers")]
+        Offers = 3,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"fulfillmentAvailability")]
+        FulfillmentAvailability = 4,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"procurement")]
+        Procurement = 5,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"relationships")]
+        Relationships = 6,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"productTypes")]
+        ProductTypes = 7,
+
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public enum ReportApiVersion
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"2021-08-01")]
+        _20210801 = 0,
 
 
     }

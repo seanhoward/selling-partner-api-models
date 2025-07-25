@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// A container that holds all of the necessary properties to configure the aggregation of notifications.
     /// </summary>
     [DataContract]
-    public partial class AggregationSettings :  IEquatable<AggregationSettings>, IValidatableObject
+    public partial class AggregationSettings : IEquatable<AggregationSettings>, IValidatableObject
     {
         /// <summary>
         /// The supported time period to use to perform marketplace-ASIN level aggregation.
         /// </summary>
         /// <value>The supported time period to use to perform marketplace-ASIN level aggregation.</value>
-        [DataMember(Name="aggregationTimePeriod", EmitDefaultValue=false)]
+        [DataMember(Name = "aggregationTimePeriod", EmitDefaultValue = false)]
         public AggregationTimePeriod AggregationTimePeriod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AggregationSettings" /> class.
@@ -57,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
                 this.AggregationTimePeriod = aggregationTimePeriod;
             }
         }
-        
+
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AggregationTimePeriod == input.AggregationTimePeriod ||
                     (this.AggregationTimePeriod != null &&

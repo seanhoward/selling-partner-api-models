@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The reason that the item is invalid for return.
     /// </summary>
     [DataContract]
-    public partial class InvalidItemReason :  IEquatable<InvalidItemReason>, IValidatableObject
+    public partial class InvalidItemReason : IEquatable<InvalidItemReason>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets InvalidItemReasonCode
         /// </summary>
-        [DataMember(Name="invalidItemReasonCode", EmitDefaultValue=false)]
+        [DataMember(Name = "invalidItemReasonCode", EmitDefaultValue = false)]
         public InvalidItemReasonCode InvalidItemReasonCode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidItemReason" /> class.
@@ -66,13 +60,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.Description = description;
             }
         }
-        
+
 
         /// <summary>
         /// A human readable description of the invalid item reason code.
         /// </summary>
         /// <value>A human readable description of the invalid item reason code.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +112,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.InvalidItemReasonCode == input.InvalidItemReasonCode ||
                     (this.InvalidItemReasonCode != null &&
                     this.InvalidItemReasonCode.Equals(input.InvalidItemReasonCode))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&

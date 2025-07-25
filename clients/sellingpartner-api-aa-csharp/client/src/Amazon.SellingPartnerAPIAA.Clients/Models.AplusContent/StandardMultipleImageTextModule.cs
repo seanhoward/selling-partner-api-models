@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// Standard images with text, presented one at a time. The user clicks on thumbnails to view each block.
     /// </summary>
     [DataContract]
-    public partial class StandardMultipleImageTextModule :  IEquatable<StandardMultipleImageTextModule>, IValidatableObject
+    public partial class StandardMultipleImageTextModule : IEquatable<StandardMultipleImageTextModule>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardMultipleImageTextModule" /> class.
@@ -38,11 +32,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         {
             this.Blocks = blocks;
         }
-        
+
         /// <summary>
         /// Gets or Sets Blocks
         /// </summary>
-        [DataMember(Name="blocks", EmitDefaultValue=false)]
+        [DataMember(Name = "blocks", EmitDefaultValue = false)]
         public List<StandardImageTextCaptionBlock> Blocks { get; set; }
 
         /// <summary>
@@ -57,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Blocks == input.Blocks ||
                     this.Blocks != null &&

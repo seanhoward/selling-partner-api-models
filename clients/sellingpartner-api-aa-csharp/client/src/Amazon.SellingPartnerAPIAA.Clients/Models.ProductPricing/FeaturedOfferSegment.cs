@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// Describes the segment in which the offer is featured.
     /// </summary>
     [DataContract]
-    public partial class FeaturedOfferSegment :  IEquatable<FeaturedOfferSegment>, IValidatableObject
+    public partial class FeaturedOfferSegment : IEquatable<FeaturedOfferSegment>, IValidatableObject
     {
         /// <summary>
         /// The customer membership type that makes up this segment
@@ -37,25 +32,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CustomerMembershipEnum
         {
-            
+
             /// <summary>
             /// Enum PRIME for value: PRIME
             /// </summary>
             [EnumMember(Value = "PRIME")]
             PRIME = 1,
-            
+
             /// <summary>
             /// Enum NONPRIME for value: NON_PRIME
             /// </summary>
             [EnumMember(Value = "NON_PRIME")]
-            NONPRIME = 2
+            NONPRIME = 2,
+
+            /// <summary>
+            /// Enum DEFAULT for value: DEFAULT
+            /// </summary>
+            [EnumMember(Value = "DEFAULT")]
+            DEFAULT = 3
         }
 
         /// <summary>
         /// The customer membership type that makes up this segment
         /// </summary>
         /// <value>The customer membership type that makes up this segment</value>
-        [DataMember(Name="customerMembership", EmitDefaultValue=false)]
+        [DataMember(Name = "customerMembership", EmitDefaultValue = false)]
         public CustomerMembershipEnum CustomerMembership { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferSegment" /> class.
@@ -88,13 +89,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 this.SegmentDetails = segmentDetails;
             }
         }
-        
+
 
         /// <summary>
         /// The details about the segment.
         /// </summary>
         /// <value>The details about the segment.</value>
-        [DataMember(Name="segmentDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "segmentDetails", EmitDefaultValue = false)]
         public SegmentDetails SegmentDetails { get; set; }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -140,12 +141,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CustomerMembership == input.CustomerMembership ||
                     (this.CustomerMembership != null &&
                     this.CustomerMembership.Equals(input.CustomerMembership))
-                ) && 
+                ) &&
                 (
                     this.SegmentDetails == input.SegmentDetails ||
                     (this.SegmentDetails != null &&

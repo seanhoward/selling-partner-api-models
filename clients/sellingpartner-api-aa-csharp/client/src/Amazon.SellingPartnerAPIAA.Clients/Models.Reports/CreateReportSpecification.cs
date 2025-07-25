@@ -1,5 +1,5 @@
 /* 
- * Report v2021-06-30
+ * Selling Partner API for Reports
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
     /// Information required to create the report.
     /// </summary>
     [DataContract]
-    public partial class CreateReportSpecification :  IEquatable<CreateReportSpecification>, IValidatableObject
+    public partial class CreateReportSpecification : IEquatable<CreateReportSpecification>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReportSpecification" /> class.
@@ -67,39 +62,39 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             this.DataStartTime = dataStartTime;
             this.DataEndTime = dataEndTime;
         }
-        
+
         /// <summary>
         /// Gets or Sets ReportOptions
         /// </summary>
-        [DataMember(Name="reportOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "reportOptions", EmitDefaultValue = false)]
         public ReportOptions ReportOptions { get; set; }
 
         /// <summary>
         /// The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
         /// </summary>
         /// <value>The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.</value>
-        [DataMember(Name="reportType", EmitDefaultValue=false)]
+        [DataMember(Name = "reportType", EmitDefaultValue = false)]
         public string ReportType { get; set; }
 
         /// <summary>
         /// The start of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
         /// </summary>
         /// <value>The start of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.</value>
-        [DataMember(Name="dataStartTime", EmitDefaultValue=false)]
+        [DataMember(Name = "dataStartTime", EmitDefaultValue = false)]
         public DateTime? DataStartTime { get; set; }
 
         /// <summary>
         /// The end of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
         /// </summary>
         /// <value>The end of a date and time range, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.</value>
-        [DataMember(Name="dataEndTime", EmitDefaultValue=false)]
+        [DataMember(Name = "dataEndTime", EmitDefaultValue = false)]
         public DateTime? DataEndTime { get; set; }
 
         /// <summary>
         /// A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
         /// </summary>
         /// <value>A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.</value>
-        [DataMember(Name="marketplaceIds", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceIds", EmitDefaultValue = false)]
         public List<string> MarketplaceIds { get; set; }
 
         /// <summary>
@@ -118,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -148,27 +143,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReportOptions == input.ReportOptions ||
                     (this.ReportOptions != null &&
                     this.ReportOptions.Equals(input.ReportOptions))
-                ) && 
+                ) &&
                 (
                     this.ReportType == input.ReportType ||
                     (this.ReportType != null &&
                     this.ReportType.Equals(input.ReportType))
-                ) && 
+                ) &&
                 (
                     this.DataStartTime == input.DataStartTime ||
                     (this.DataStartTime != null &&
                     this.DataStartTime.Equals(input.DataStartTime))
-                ) && 
+                ) &&
                 (
                     this.DataEndTime == input.DataEndTime ||
                     (this.DataEndTime != null &&
                     this.DataEndTime.Equals(input.DataEndTime))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceIds == input.MarketplaceIds ||
                     this.MarketplaceIds != null &&

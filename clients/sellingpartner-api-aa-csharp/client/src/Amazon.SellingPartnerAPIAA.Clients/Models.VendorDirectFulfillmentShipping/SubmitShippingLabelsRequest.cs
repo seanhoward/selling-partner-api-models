@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// The request schema for the &#x60;submitShippingLabelRequest&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class SubmitShippingLabelsRequest :  IEquatable<SubmitShippingLabelsRequest>, IValidatableObject
+    public partial class SubmitShippingLabelsRequest : IEquatable<SubmitShippingLabelsRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitShippingLabelsRequest" /> class.
@@ -38,12 +32,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         {
             this.ShippingLabelRequests = shippingLabelRequests;
         }
-        
+
         /// <summary>
         /// An array of shipping label requests to be processed.
         /// </summary>
         /// <value>An array of shipping label requests to be processed.</value>
-        [DataMember(Name="shippingLabelRequests", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingLabelRequests", EmitDefaultValue = false)]
         public List<ShippingLabelRequest> ShippingLabelRequests { get; set; }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShippingLabelRequests == input.ShippingLabelRequests ||
                     this.ShippingLabelRequests != null &&

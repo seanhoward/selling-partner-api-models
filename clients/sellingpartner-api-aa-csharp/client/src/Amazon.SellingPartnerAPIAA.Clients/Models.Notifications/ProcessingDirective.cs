@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// Additional information passed to the subscription to control the processing of notifications. For example, you can use an &#x60;eventFilter&#x60; to customize your subscription to send notifications for only the specified &#x60;marketplaceId&#x60;s, or select the aggregation time period at which to send notifications (for example: limit to one notification every five minutes for high frequency notifications). The specific features available vary depending on the &#x60;notificationType&#x60;.  This feature is currently only supported by the &#x60;ANY_OFFER_CHANGED&#x60; and &#x60;ORDER_CHANGE&#x60; &#x60;notificationType&#x60;s.
     /// </summary>
     [DataContract]
-    public partial class ProcessingDirective :  IEquatable<ProcessingDirective>, IValidatableObject
+    public partial class ProcessingDirective : IEquatable<ProcessingDirective>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcessingDirective" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         {
             this.EventFilter = eventFilter;
         }
-        
+
         /// <summary>
         /// A &#x60;notificationType&#x60; specific filter.
         /// </summary>
         /// <value>A &#x60;notificationType&#x60; specific filter.</value>
-        [DataMember(Name="eventFilter", EmitDefaultValue=false)]
+        [DataMember(Name = "eventFilter", EmitDefaultValue = false)]
         public EventFilter EventFilter { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.EventFilter == input.EventFilter ||
                     (this.EventFilter != null &&

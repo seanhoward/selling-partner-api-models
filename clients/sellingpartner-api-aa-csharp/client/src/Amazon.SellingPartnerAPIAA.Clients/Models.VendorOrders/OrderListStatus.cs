@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// A list of order statuses.
     /// </summary>
     [DataContract]
-    public partial class OrderListStatus :  IEquatable<OrderListStatus>, IValidatableObject
+    public partial class OrderListStatus : IEquatable<OrderListStatus>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderListStatus" /> class.
@@ -40,18 +34,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.Pagination = pagination;
             this.OrdersStatus = ordersStatus;
         }
-        
+
         /// <summary>
         /// Gets or Sets Pagination
         /// </summary>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
         public Pagination Pagination { get; set; }
 
         /// <summary>
         /// Represents an order status within the OrderListStatus.
         /// </summary>
         /// <value>Represents an order status within the OrderListStatus.</value>
-        [DataMember(Name="ordersStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "ordersStatus", EmitDefaultValue = false)]
         public List<OrderStatus> OrdersStatus { get; set; }
 
         /// <summary>
@@ -67,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Pagination == input.Pagination ||
                     (this.Pagination != null &&
                     this.Pagination.Equals(input.Pagination))
-                ) && 
+                ) &&
                 (
                     this.OrdersStatus == input.OrdersStatus ||
                     this.OrdersStatus != null &&

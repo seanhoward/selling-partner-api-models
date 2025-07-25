@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Contains input information about a pallet to be used in the inbound plan.
     /// </summary>
     [DataContract]
-    public partial class PalletInput :  IEquatable<PalletInput>, IValidatableObject
+    public partial class PalletInput : IEquatable<PalletInput>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Stackability
         /// </summary>
-        [DataMember(Name="stackability", EmitDefaultValue=false)]
+        [DataMember(Name = "stackability", EmitDefaultValue = false)]
         public Stackability? Stackability { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PalletInput" /> class.
@@ -62,25 +56,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.Stackability = stackability;
             this.Weight = weight;
         }
-        
+
         /// <summary>
         /// Gets or Sets Dimensions
         /// </summary>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public Dimensions Dimensions { get; set; }
 
         /// <summary>
         /// The number of containers where all other properties like weight or dimensions are identical.
         /// </summary>
         /// <value>The number of containers where all other properties like weight or dimensions are identical.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
 
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public Weight Weight { get; set; }
 
         /// <summary>
@@ -98,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,22 +122,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.Stackability == input.Stackability ||
                     (this.Stackability != null &&
                     this.Stackability.Equals(input.Stackability))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
@@ -180,15 +174,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Quantity (int?) maximum
-            if(this.Quantity > (int?)10000)
+            if (this.Quantity > (int?)10000)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new[] { "Quantity" });
             }
 
             // Quantity (int?) minimum
-            if(this.Quantity < (int?)1)
+            if (this.Quantity < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new[] { "Quantity" });
             }
 
             yield break;

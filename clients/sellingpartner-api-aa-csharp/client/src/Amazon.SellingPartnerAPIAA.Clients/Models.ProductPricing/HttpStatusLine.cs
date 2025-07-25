@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The HTTP status line associated with the response for an individual request within a batch. For more information, refer to [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
     /// </summary>
     [DataContract]
-    public partial class HttpStatusLine :  IEquatable<HttpStatusLine>, IValidatableObject
+    public partial class HttpStatusLine : IEquatable<HttpStatusLine>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="HttpStatusLine" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             this.StatusCode = statusCode;
             this.ReasonPhrase = reasonPhrase;
         }
-        
+
         /// <summary>
         /// The HTTP response status code.
         /// </summary>
         /// <value>The HTTP response status code.</value>
-        [DataMember(Name="statusCode", EmitDefaultValue=false)]
+        [DataMember(Name = "statusCode", EmitDefaultValue = false)]
         public int? StatusCode { get; set; }
 
         /// <summary>
         /// The HTTP response reason phrase.
         /// </summary>
         /// <value>The HTTP response reason phrase.</value>
-        [DataMember(Name="reasonPhrase", EmitDefaultValue=false)]
+        [DataMember(Name = "reasonPhrase", EmitDefaultValue = false)]
         public string ReasonPhrase { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StatusCode == input.StatusCode ||
                     (this.StatusCode != null &&
                     this.StatusCode.Equals(input.StatusCode))
-                ) && 
+                ) &&
                 (
                     this.ReasonPhrase == input.ReasonPhrase ||
                     (this.ReasonPhrase != null &&
@@ -136,15 +129,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // StatusCode (int?) maximum
-            if(this.StatusCode > (int?)599)
+            if (this.StatusCode > (int?)599)
             {
-                yield return new ValidationResult("Invalid value for StatusCode, must be a value less than or equal to 599.", new [] { "StatusCode" });
+                yield return new ValidationResult("Invalid value for StatusCode, must be a value less than or equal to 599.", new[] { "StatusCode" });
             }
 
             // StatusCode (int?) minimum
-            if(this.StatusCode < (int?)100)
+            if (this.StatusCode < (int?)100)
             {
-                yield return new ValidationResult("Invalid value for StatusCode, must be a value greater than or equal to 100.", new [] { "StatusCode" });
+                yield return new ValidationResult("Invalid value for StatusCode, must be a value greater than or equal to 100.", new[] { "StatusCode" });
             }
 
             yield break;

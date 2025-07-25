@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination.
     /// </summary>
     [DataContract]
-    public partial class DestinationResourceSpecification :  IEquatable<DestinationResourceSpecification>, IValidatableObject
+    public partial class DestinationResourceSpecification : IEquatable<DestinationResourceSpecification>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DestinationResourceSpecification" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             this.Sqs = sqs;
             this.EventBridge = eventBridge;
         }
-        
+
         /// <summary>
         /// The information required to create an Amazon Simple Queue Service (SQS) queue destination.
         /// </summary>
         /// <value>The information required to create an Amazon Simple Queue Service (SQS) queue destination.</value>
-        [DataMember(Name="sqs", EmitDefaultValue=false)]
+        [DataMember(Name = "sqs", EmitDefaultValue = false)]
         public SqsResource Sqs { get; set; }
 
         /// <summary>
         /// The information required to create an Amazon EventBridge destination.
         /// </summary>
         /// <value>The information required to create an Amazon EventBridge destination.</value>
-        [DataMember(Name="eventBridge", EmitDefaultValue=false)]
+        [DataMember(Name = "eventBridge", EmitDefaultValue = false)]
         public EventBridgeResourceSpecification EventBridge { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Sqs == input.Sqs ||
                     (this.Sqs != null &&
                     this.Sqs.Equals(input.Sqs))
-                ) && 
+                ) &&
                 (
                     this.EventBridge == input.EventBridge ||
                     (this.EventBridge != null &&

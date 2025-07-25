@@ -28,7 +28,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CustomerFeedback
         /// <summary>
         /// Initializes a new instance of the <see cref="BrowseNodeReturnTrendsResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected BrowseNodeReturnTrendsResponse() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="BrowseNodeReturnTrendsResponse" /> class.
@@ -249,7 +249,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CustomerFeedback
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

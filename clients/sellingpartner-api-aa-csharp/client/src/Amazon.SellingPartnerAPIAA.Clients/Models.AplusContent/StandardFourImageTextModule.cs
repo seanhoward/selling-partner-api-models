@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// Four standard images with text, presented across a single row.
     /// </summary>
     [DataContract]
-    public partial class StandardFourImageTextModule :  IEquatable<StandardFourImageTextModule>, IValidatableObject
+    public partial class StandardFourImageTextModule : IEquatable<StandardFourImageTextModule>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardFourImageTextModule" /> class.
@@ -46,35 +39,35 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             this.Block3 = block3;
             this.Block4 = block4;
         }
-        
+
         /// <summary>
         /// Gets or Sets Headline
         /// </summary>
-        [DataMember(Name="headline", EmitDefaultValue=false)]
+        [DataMember(Name = "headline", EmitDefaultValue = false)]
         public TextComponent Headline { get; set; }
 
         /// <summary>
         /// Gets or Sets Block1
         /// </summary>
-        [DataMember(Name="block1", EmitDefaultValue=false)]
+        [DataMember(Name = "block1", EmitDefaultValue = false)]
         public StandardImageTextBlock Block1 { get; set; }
 
         /// <summary>
         /// Gets or Sets Block2
         /// </summary>
-        [DataMember(Name="block2", EmitDefaultValue=false)]
+        [DataMember(Name = "block2", EmitDefaultValue = false)]
         public StandardImageTextBlock Block2 { get; set; }
 
         /// <summary>
         /// Gets or Sets Block3
         /// </summary>
-        [DataMember(Name="block3", EmitDefaultValue=false)]
+        [DataMember(Name = "block3", EmitDefaultValue = false)]
         public StandardImageTextBlock Block3 { get; set; }
 
         /// <summary>
         /// Gets or Sets Block4
         /// </summary>
-        [DataMember(Name="block4", EmitDefaultValue=false)]
+        [DataMember(Name = "block4", EmitDefaultValue = false)]
         public StandardImageTextBlock Block4 { get; set; }
 
         /// <summary>
@@ -93,7 +86,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -123,27 +116,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Headline == input.Headline ||
                     (this.Headline != null &&
                     this.Headline.Equals(input.Headline))
-                ) && 
+                ) &&
                 (
                     this.Block1 == input.Block1 ||
                     (this.Block1 != null &&
                     this.Block1.Equals(input.Block1))
-                ) && 
+                ) &&
                 (
                     this.Block2 == input.Block2 ||
                     (this.Block2 != null &&
                     this.Block2.Equals(input.Block2))
-                ) && 
+                ) &&
                 (
                     this.Block3 == input.Block3 ||
                     (this.Block3 != null &&
                     this.Block3.Equals(input.Block3))
-                ) && 
+                ) &&
                 (
                     this.Block4 == input.Block4 ||
                     (this.Block4 != null &&

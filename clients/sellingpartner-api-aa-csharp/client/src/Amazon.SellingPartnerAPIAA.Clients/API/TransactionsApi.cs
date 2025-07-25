@@ -30,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -55,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Find a transaction by the Amazon transaction identifier.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The ID of the Amazon Seller Wallet transaction.</param>
         /// <returns>Transaction</returns>
         Transaction GetTransaction(string transactionId);
@@ -66,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Find a transaction by the Amazon transaction identifier.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The ID of the Amazon Seller Wallet transaction.</param>
         /// <returns>ApiResponse of Transaction</returns>
         ApiResponse<Transaction> GetTransactionWithHttpInfo(string transactionId);
@@ -76,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>TransactionListing</returns>
@@ -88,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>ApiResponse of TransactionListing</returns>
@@ -101,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -114,7 +114,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -126,7 +126,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Find a transaction by the Amazon transaction identifier.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The ID of the Amazon Seller Wallet transaction.</param>
         /// <returns>Task of Transaction</returns>
         System.Threading.Tasks.Task<Transaction> GetTransactionAsync(string transactionId);
@@ -137,7 +137,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Find a transaction by the Amazon transaction identifier.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The ID of the Amazon Seller Wallet transaction.</param>
         /// <returns>Task of ApiResponse (Transaction)</returns>
         System.Threading.Tasks.Task<ApiResponse<Transaction>> GetTransactionAsyncWithHttpInfo(string transactionId);
@@ -147,7 +147,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of TransactionListing</returns>
@@ -159,7 +159,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of ApiResponse (TransactionListing)</returns>
@@ -172,7 +172,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     /// </summary>
     public partial class TransactionsApi : ITransactionsApi
     {
-        private Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionsApi"/> class
@@ -180,10 +180,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public TransactionsApi(Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration)
+        public TransactionsApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -209,12 +209,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -252,7 +252,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Create a transaction request from Amazon Seller Wallet account to another customer-provided account Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -266,7 +266,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Create a transaction request from Amazon Seller Wallet account to another customer-provided account Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -338,7 +338,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Create a transaction request from Amazon Seller Wallet account to another customer-provided account Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -353,7 +353,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Create a transaction request from Amazon Seller Wallet account to another customer-provided account Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -425,7 +425,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account transaction by Amazon transaction identifier Find a transaction by the Amazon transaction identifier.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The ID of the Amazon Seller Wallet transaction.</param>
         /// <returns>Transaction</returns>
         public Transaction GetTransaction(string transactionId)
@@ -437,7 +437,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account transaction by Amazon transaction identifier Find a transaction by the Amazon transaction identifier.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The ID of the Amazon Seller Wallet transaction.</param>
         /// <returns>ApiResponse of Transaction</returns>
         public ApiResponse<Transaction> GetTransactionWithHttpInfo(string transactionId)
@@ -492,7 +492,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account transaction by Amazon transaction identifier Find a transaction by the Amazon transaction identifier.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The ID of the Amazon Seller Wallet transaction.</param>
         /// <returns>Task of Transaction</returns>
         public async System.Threading.Tasks.Task<Transaction> GetTransactionAsync(string transactionId)
@@ -505,7 +505,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account transaction by Amazon transaction identifier Find a transaction by the Amazon transaction identifier.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transactionId">The ID of the Amazon Seller Wallet transaction.</param>
         /// <returns>Task of ApiResponse (Transaction)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Transaction>> GetTransactionAsyncWithHttpInfo(string transactionId)
@@ -560,7 +560,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// The API will return all the transactions for a given Amazon Seller Wallet account sorted by the transaction request date Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>TransactionListing</returns>
@@ -573,7 +573,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// The API will return all the transactions for a given Amazon Seller Wallet account sorted by the transaction request date Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>ApiResponse of TransactionListing</returns>
@@ -630,7 +630,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// The API will return all the transactions for a given Amazon Seller Wallet account sorted by the transaction request date Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of TransactionListing</returns>
@@ -644,7 +644,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// The API will return all the transactions for a given Amazon Seller Wallet account sorted by the transaction request date Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of ApiResponse (TransactionListing)</returns>
@@ -725,7 +725,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 }
 
 
-                Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration = new Amazon.SellingPartnerAPIAA.Clients.Client.Configuration
+                Configuration configuration = new Configuration
                 {
                     AuthorizationCredentials = lwaAuthorizationCredentials,
                     RateLimitConfig = rateLimitConfiguration,

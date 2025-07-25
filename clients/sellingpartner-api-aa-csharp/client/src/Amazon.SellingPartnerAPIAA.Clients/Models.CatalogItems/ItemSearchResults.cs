@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,26 +9,21 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Items in the Amazon catalog and search related metadata.
+    /// Items in the Amazon catalog and search-related metadata.
     /// </summary>
     [DataContract]
-    public partial class ItemSearchResults :  IEquatable<ItemSearchResults>, IValidatableObject
+    public partial class ItemSearchResults : IEquatable<ItemSearchResults>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSearchResults" /> class.
@@ -38,9 +33,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSearchResults" /> class.
         /// </summary>
-        /// <param name="numberOfResults">For &#x60;identifiers&#x60;-based searches, the total number of Amazon catalog items found. For &#x60;keywords&#x60;-based searches, the estimated total number of Amazon catalog items matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).  Note: The maximum number of items (ASINs) that can be returned and paged through is 1000. (required).</param>
-        /// <param name="pagination">If available, the &#x60;nextToken&#x60; and/or &#x60;previousToken&#x60; values required to return paginated results. (required).</param>
-        /// <param name="refinements">Search refinements for &#x60;keywords&#x60;-based searches. (required).</param>
+        /// <param name="numberOfResults">For searches that are based on &#x60;identifiers&#x60;, &#x60;numberOfResults&#x60; is the total number of Amazon catalog items found. For searches that are based on &#x60;keywords&#x60;, &#x60;numberOfResults&#x60; is the estimated total number of Amazon catalog items that are matched by the search query. Only results up to the page count limit are returned per request regardless of the number found.  **Note:** The maximum number of items (ASINs) that can be returned and paged through is 1,000. (required).</param>
+        /// <param name="pagination">The &#x60;nextToken&#x60; and &#x60;previousToken&#x60; values that are required to retrieve paginated results. (required).</param>
+        /// <param name="refinements">Search refinements for searches that are based on &#x60;keywords&#x60;. (required).</param>
         /// <param name="items">A list of items from the Amazon catalog. (required).</param>
         public ItemSearchResults(int? numberOfResults = default, Pagination pagination = default, Refinements refinements = default, List<Item> items = default)
         {
@@ -81,33 +76,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
                 this.Items = items;
             }
         }
-        
+
         /// <summary>
-        /// For &#x60;identifiers&#x60;-based searches, the total number of Amazon catalog items found. For &#x60;keywords&#x60;-based searches, the estimated total number of Amazon catalog items matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).  Note: The maximum number of items (ASINs) that can be returned and paged through is 1000.
+        /// For searches that are based on &#x60;identifiers&#x60;, &#x60;numberOfResults&#x60; is the total number of Amazon catalog items found. For searches that are based on &#x60;keywords&#x60;, &#x60;numberOfResults&#x60; is the estimated total number of Amazon catalog items that are matched by the search query. Only results up to the page count limit are returned per request regardless of the number found.  **Note:** The maximum number of items (ASINs) that can be returned and paged through is 1,000.
         /// </summary>
-        /// <value>For &#x60;identifiers&#x60;-based searches, the total number of Amazon catalog items found. For &#x60;keywords&#x60;-based searches, the estimated total number of Amazon catalog items matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).  Note: The maximum number of items (ASINs) that can be returned and paged through is 1000.</value>
-        [DataMember(Name="numberOfResults", EmitDefaultValue=false)]
+        /// <value>For searches that are based on &#x60;identifiers&#x60;, &#x60;numberOfResults&#x60; is the total number of Amazon catalog items found. For searches that are based on &#x60;keywords&#x60;, &#x60;numberOfResults&#x60; is the estimated total number of Amazon catalog items that are matched by the search query. Only results up to the page count limit are returned per request regardless of the number found.  **Note:** The maximum number of items (ASINs) that can be returned and paged through is 1,000.</value>
+        [DataMember(Name = "numberOfResults", EmitDefaultValue = false)]
         public int? NumberOfResults { get; set; }
 
         /// <summary>
-        /// If available, the &#x60;nextToken&#x60; and/or &#x60;previousToken&#x60; values required to return paginated results.
+        /// The &#x60;nextToken&#x60; and &#x60;previousToken&#x60; values that are required to retrieve paginated results.
         /// </summary>
-        /// <value>If available, the &#x60;nextToken&#x60; and/or &#x60;previousToken&#x60; values required to return paginated results.</value>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
+        /// <value>The &#x60;nextToken&#x60; and &#x60;previousToken&#x60; values that are required to retrieve paginated results.</value>
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
         public Pagination Pagination { get; set; }
 
         /// <summary>
-        /// Search refinements for &#x60;keywords&#x60;-based searches.
+        /// Search refinements for searches that are based on &#x60;keywords&#x60;.
         /// </summary>
-        /// <value>Search refinements for &#x60;keywords&#x60;-based searches.</value>
-        [DataMember(Name="refinements", EmitDefaultValue=false)]
+        /// <value>Search refinements for searches that are based on &#x60;keywords&#x60;.</value>
+        [DataMember(Name = "refinements", EmitDefaultValue = false)]
         public Refinements Refinements { get; set; }
 
         /// <summary>
         /// A list of items from the Amazon catalog.
         /// </summary>
         /// <value>A list of items from the Amazon catalog.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<Item> Items { get; set; }
 
         /// <summary>
@@ -125,7 +120,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -155,22 +150,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.NumberOfResults == input.NumberOfResults ||
                     (this.NumberOfResults != null &&
                     this.NumberOfResults.Equals(input.NumberOfResults))
-                ) && 
+                ) &&
                 (
                     this.Pagination == input.Pagination ||
                     (this.Pagination != null &&
                     this.Pagination.Equals(input.Pagination))
-                ) && 
+                ) &&
                 (
                     this.Refinements == input.Refinements ||
                     (this.Refinements != null &&
                     this.Refinements.Equals(input.Refinements))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

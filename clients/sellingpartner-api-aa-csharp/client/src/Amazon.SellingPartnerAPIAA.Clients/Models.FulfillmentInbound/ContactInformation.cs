@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The seller&#39;s contact information.
     /// </summary>
     [DataContract]
-    public partial class ContactInformation :  IEquatable<ContactInformation>, IValidatableObject
+    public partial class ContactInformation : IEquatable<ContactInformation>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactInformation" /> class.
@@ -63,26 +57,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
             this.Email = email;
         }
-        
+
         /// <summary>
         /// The email address.
         /// </summary>
         /// <value>The email address.</value>
-        [DataMember(Name="email", EmitDefaultValue=false)]
+        [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// The contact&#39;s name.
         /// </summary>
         /// <value>The contact&#39;s name.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The phone number.
         /// </summary>
         /// <value>The phone number.</value>
-        [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.PhoneNumber == input.PhoneNumber ||
                     (this.PhoneNumber != null &&
@@ -174,39 +168,39 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Email (string) maxLength
-            if(this.Email != null && this.Email.Length > 1024)
+            if (this.Email != null && this.Email.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Email, length must be less than 1024.", new [] { "Email" });
+                yield return new ValidationResult("Invalid value for Email, length must be less than 1024.", new[] { "Email" });
             }
 
             // Email (string) minLength
-            if(this.Email != null && this.Email.Length < 1)
+            if (this.Email != null && this.Email.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Email, length must be greater than 1.", new [] { "Email" });
+                yield return new ValidationResult("Invalid value for Email, length must be greater than 1.", new[] { "Email" });
             }
 
             // Name (string) maxLength
-            if(this.Name != null && this.Name.Length > 50)
+            if (this.Name != null && this.Name.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 50.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 50.", new[] { "Name" });
             }
 
             // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
+            if (this.Name != null && this.Name.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new[] { "Name" });
             }
 
             // PhoneNumber (string) maxLength
-            if(this.PhoneNumber != null && this.PhoneNumber.Length > 20)
+            if (this.PhoneNumber != null && this.PhoneNumber.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for PhoneNumber, length must be less than 20.", new [] { "PhoneNumber" });
+                yield return new ValidationResult("Invalid value for PhoneNumber, length must be less than 20.", new[] { "PhoneNumber" });
             }
 
             // PhoneNumber (string) minLength
-            if(this.PhoneNumber != null && this.PhoneNumber.Length < 1)
+            if (this.PhoneNumber != null && this.PhoneNumber.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for PhoneNumber, length must be greater than 1.", new [] { "PhoneNumber" });
+                yield return new ValidationResult("Invalid value for PhoneNumber, length must be greater than 1.", new[] { "PhoneNumber" });
             }
 
             yield break;

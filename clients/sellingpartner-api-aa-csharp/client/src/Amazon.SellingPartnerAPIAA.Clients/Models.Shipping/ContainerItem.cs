@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// Item in the container.
     /// </summary>
     [DataContract]
-    public partial class ContainerItem :  IEquatable<ContainerItem>, IValidatableObject
+    public partial class ContainerItem : IEquatable<ContainerItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerItem" /> class.
@@ -39,8 +33,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// Initializes a new instance of the <see cref="ContainerItem" /> class.
         /// </summary>
         /// <param name="quantity">The quantity of the items of this type in the container. (required).</param>
-        /// <param name="unitPrice">The unit price of an item of this type (the total value of this item type in the container is unitPrice * quantity). (required).</param>
-        /// <param name="unitWeight">The unit weight of an item of this type (the total weight of this item type in the container is unitWeight * quantity). (required).</param>
+        /// <param name="unitPrice">The unit price of an item of this type (the total value of this item type in the container is unitPrice x quantity). (required).</param>
+        /// <param name="unitWeight">The unit weight of an item of this type (the total weight of this item type in the container is unitWeight x quantity). (required).</param>
         /// <param name="title">A descriptive title of the item. (required).</param>
         public ContainerItem(decimal? quantity = default, Currency unitPrice = default, Weight unitWeight = default, string title = default)
         {
@@ -81,33 +75,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
                 this.Title = title;
             }
         }
-        
+
         /// <summary>
         /// The quantity of the items of this type in the container.
         /// </summary>
         /// <value>The quantity of the items of this type in the container.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public decimal? Quantity { get; set; }
 
         /// <summary>
-        /// The unit price of an item of this type (the total value of this item type in the container is unitPrice * quantity).
+        /// The unit price of an item of this type (the total value of this item type in the container is unitPrice x quantity).
         /// </summary>
-        /// <value>The unit price of an item of this type (the total value of this item type in the container is unitPrice * quantity).</value>
-        [DataMember(Name="unitPrice", EmitDefaultValue=false)]
+        /// <value>The unit price of an item of this type (the total value of this item type in the container is unitPrice x quantity).</value>
+        [DataMember(Name = "unitPrice", EmitDefaultValue = false)]
         public Currency UnitPrice { get; set; }
 
         /// <summary>
-        /// The unit weight of an item of this type (the total weight of this item type in the container is unitWeight * quantity).
+        /// The unit weight of an item of this type (the total weight of this item type in the container is unitWeight x quantity).
         /// </summary>
-        /// <value>The unit weight of an item of this type (the total weight of this item type in the container is unitWeight * quantity).</value>
-        [DataMember(Name="unitWeight", EmitDefaultValue=false)]
+        /// <value>The unit weight of an item of this type (the total weight of this item type in the container is unitWeight x quantity).</value>
+        [DataMember(Name = "unitWeight", EmitDefaultValue = false)]
         public Weight UnitWeight { get; set; }
 
         /// <summary>
         /// A descriptive title of the item.
         /// </summary>
         /// <value>A descriptive title of the item.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
@@ -125,7 +119,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -155,22 +149,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.UnitPrice == input.UnitPrice ||
                     (this.UnitPrice != null &&
                     this.UnitPrice.Equals(input.UnitPrice))
-                ) && 
+                ) &&
                 (
                     this.UnitWeight == input.UnitWeight ||
                     (this.UnitWeight != null &&
                     this.UnitWeight.Equals(input.UnitWeight))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
@@ -207,9 +201,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Title (string) maxLength
-            if(this.Title != null && this.Title.Length > 30)
+            if (this.Title != null && this.Title.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for Title, length must be less than 30.", new [] { "Title" });
+                yield return new ValidationResult("Invalid value for Title, length must be less than 30.", new[] { "Title" });
             }
 
             yield break;

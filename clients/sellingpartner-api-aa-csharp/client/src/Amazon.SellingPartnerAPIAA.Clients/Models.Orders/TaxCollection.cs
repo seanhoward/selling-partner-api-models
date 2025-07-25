@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Information about withheld taxes.
     /// </summary>
     [DataContract]
-    public partial class TaxCollection :  IEquatable<TaxCollection>, IValidatableObject
+    public partial class TaxCollection : IEquatable<TaxCollection>, IValidatableObject
     {
         /// <summary>
         /// The tax collection model applied to the item.
@@ -37,7 +31,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ModelEnum
         {
-            
+
             /// <summary>
             /// Enum MarketplaceFacilitator for value: MarketplaceFacilitator
             /// </summary>
@@ -49,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// The tax collection model applied to the item.
         /// </summary>
         /// <value>The tax collection model applied to the item.</value>
-        [DataMember(Name="Model", EmitDefaultValue=false)]
+        [DataMember(Name = "Model", EmitDefaultValue = false)]
         public ModelEnum? Model { get; set; }
         /// <summary>
         /// The party responsible for withholding the taxes and remitting them to the taxing authority.
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ResponsiblePartyEnum
         {
-            
+
             /// <summary>
             /// Enum AmazonServicesInc for value: Amazon Services, Inc.
             /// </summary>
@@ -70,7 +64,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// The party responsible for withholding the taxes and remitting them to the taxing authority.
         /// </summary>
         /// <value>The party responsible for withholding the taxes and remitting them to the taxing authority.</value>
-        [DataMember(Name="ResponsibleParty", EmitDefaultValue=false)]
+        [DataMember(Name = "ResponsibleParty", EmitDefaultValue = false)]
         public ResponsiblePartyEnum? ResponsibleParty { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxCollection" /> class.
@@ -82,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.Model = model;
             this.ResponsibleParty = responsibleParty;
         }
-        
+
 
 
         /// <summary>
@@ -98,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,12 +122,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Model == input.Model ||
                     (this.Model != null &&
                     this.Model.Equals(input.Model))
-                ) && 
+                ) &&
                 (
                     this.ResponsibleParty == input.ResponsibleParty ||
                     (this.ResponsibleParty != null &&

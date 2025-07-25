@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Represents the volume of the package with a unit of measurement.
     /// </summary>
     [DataContract]
-    public partial class PackageVolume :  IEquatable<PackageVolume>, IValidatableObject
+    public partial class PackageVolume : IEquatable<PackageVolume>, IValidatableObject
     {
         /// <summary>
         /// Unit of measurement for the package volume.
         /// </summary>
         /// <value>Unit of measurement for the package volume.</value>
-        [DataMember(Name="unitOfMeasurement", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasurement", EmitDefaultValue = false)]
         public VolumeUnitOfMeasurement UnitOfMeasurement { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageVolume" /> class.
@@ -67,13 +61,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 this.Volume = volume;
             }
         }
-        
+
 
         /// <summary>
         /// The package volume value.
         /// </summary>
         /// <value>The package volume value.</value>
-        [DataMember(Name="volume", EmitDefaultValue=false)]
+        [DataMember(Name = "volume", EmitDefaultValue = false)]
         public double? Volume { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UnitOfMeasurement == input.UnitOfMeasurement ||
                     (this.UnitOfMeasurement != null &&
                     this.UnitOfMeasurement.Equals(input.UnitOfMeasurement))
-                ) && 
+                ) &&
                 (
                     this.Volume == input.Volume ||
                     (this.Volume != null &&

@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.
     /// </summary>
     [DataContract]
-    public partial class IssueEnforcements :  IEquatable<IssueEnforcements>, IValidatableObject
+    public partial class IssueEnforcements : IEquatable<IssueEnforcements>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IssueEnforcements" /> class.
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
                 this.Exemption = exemption;
             }
         }
-        
+
         /// <summary>
         /// List of enforcement actions taken by Amazon that affect the publishing or status of a listing.
         /// </summary>
         /// <value>List of enforcement actions taken by Amazon that affect the publishing or status of a listing.</value>
-        [DataMember(Name="actions", EmitDefaultValue=false)]
+        [DataMember(Name = "actions", EmitDefaultValue = false)]
         public List<IssueEnforcementAction> Actions { get; set; }
 
         /// <summary>
         /// The \&quot;exemption\&quot; field serves to convey the status of enforcement actions by Amazon.
         /// </summary>
         /// <value>The \&quot;exemption\&quot; field serves to convey the status of enforcement actions by Amazon.</value>
-        [DataMember(Name="exemption", EmitDefaultValue=false)]
+        [DataMember(Name = "exemption", EmitDefaultValue = false)]
         public IssueExemption Exemption { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Actions == input.Actions ||
                     this.Actions != null &&
                     this.Actions.SequenceEqual(input.Actions)
-                ) && 
+                ) &&
                 (
                     this.Exemption == input.Exemption ||
                     (this.Exemption != null &&

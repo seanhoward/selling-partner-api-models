@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// A list of orders returned as response.
     /// </summary>
     [DataContract]
-    public partial class OrderList :  IEquatable<OrderList>, IValidatableObject
+    public partial class OrderList : IEquatable<OrderList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderList" /> class.
@@ -40,18 +34,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.Pagination = pagination;
             this.Orders = orders;
         }
-        
+
         /// <summary>
         /// Gets or Sets Pagination
         /// </summary>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
         public Pagination Pagination { get; set; }
 
         /// <summary>
         /// Represents an individual order within the OrderList.
         /// </summary>
         /// <value>Represents an individual order within the OrderList.</value>
-        [DataMember(Name="orders", EmitDefaultValue=false)]
+        [DataMember(Name = "orders", EmitDefaultValue = false)]
         public List<Order> Orders { get; set; }
 
         /// <summary>
@@ -67,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Pagination == input.Pagination ||
                     (this.Pagination != null &&
                     this.Pagination.Equals(input.Pagination))
-                ) && 
+                ) &&
                 (
                     this.Orders == input.Orders ||
                     this.Orders != null &&

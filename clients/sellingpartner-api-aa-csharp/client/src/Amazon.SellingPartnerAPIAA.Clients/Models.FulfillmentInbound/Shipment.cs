@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Contains information pertaining to a shipment in an inbound plan.
     /// </summary>
     [DataContract]
-    public partial class Shipment :  IEquatable<Shipment>, IValidatableObject
+    public partial class Shipment : IEquatable<Shipment>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Shipment" /> class.
@@ -103,103 +99,103 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.Status = status;
             this.TrackingDetails = trackingDetails;
         }
-        
+
         /// <summary>
         /// A unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment.
         /// </summary>
         /// <value>A unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment.</value>
-        [DataMember(Name="amazonReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonReferenceId", EmitDefaultValue = false)]
         public string AmazonReferenceId { get; set; }
 
         /// <summary>
         /// Gets or Sets ContactInformation
         /// </summary>
-        [DataMember(Name="contactInformation", EmitDefaultValue=false)]
+        [DataMember(Name = "contactInformation", EmitDefaultValue = false)]
         public ContactInformation ContactInformation { get; set; }
 
         /// <summary>
         /// Gets or Sets Dates
         /// </summary>
-        [DataMember(Name="dates", EmitDefaultValue=false)]
+        [DataMember(Name = "dates", EmitDefaultValue = false)]
         public Dates Dates { get; set; }
 
         /// <summary>
         /// Gets or Sets Destination
         /// </summary>
-        [DataMember(Name="destination", EmitDefaultValue=false)]
+        [DataMember(Name = "destination", EmitDefaultValue = false)]
         public ShipmentDestination Destination { get; set; }
 
         /// <summary>
         /// Gets or Sets FreightInformation
         /// </summary>
-        [DataMember(Name="freightInformation", EmitDefaultValue=false)]
+        [DataMember(Name = "freightInformation", EmitDefaultValue = false)]
         public FreightInformation FreightInformation { get; set; }
 
         /// <summary>
         /// The name of the shipment.
         /// </summary>
         /// <value>The name of the shipment.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
         /// </summary>
         /// <value>The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.</value>
-        [DataMember(Name="placementOptionId", EmitDefaultValue=false)]
+        [DataMember(Name = "placementOptionId", EmitDefaultValue = false)]
         public string PlacementOptionId { get; set; }
 
         /// <summary>
         /// Gets or Sets SelectedDeliveryWindow
         /// </summary>
-        [DataMember(Name="selectedDeliveryWindow", EmitDefaultValue=false)]
+        [DataMember(Name = "selectedDeliveryWindow", EmitDefaultValue = false)]
         public SelectedDeliveryWindow SelectedDeliveryWindow { get; set; }
 
         /// <summary>
         /// Identifier of a transportation option. A transportation option represent one option for how to send a shipment.
         /// </summary>
         /// <value>Identifier of a transportation option. A transportation option represent one option for how to send a shipment.</value>
-        [DataMember(Name="selectedTransportationOptionId", EmitDefaultValue=false)]
+        [DataMember(Name = "selectedTransportationOptionId", EmitDefaultValue = false)]
         public string SelectedTransportationOptionId { get; set; }
 
         /// <summary>
         /// List of self ship appointment details.
         /// </summary>
         /// <value>List of self ship appointment details.</value>
-        [DataMember(Name="selfShipAppointmentDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "selfShipAppointmentDetails", EmitDefaultValue = false)]
         public List<SelfShipAppointmentDetails> SelfShipAppointmentDetails { get; set; }
 
         /// <summary>
         /// The confirmed shipment ID which shows up on labels (for example, &#x60;FBA1234ABCD&#x60;).
         /// </summary>
         /// <value>The confirmed shipment ID which shows up on labels (for example, &#x60;FBA1234ABCD&#x60;).</value>
-        [DataMember(Name="shipmentConfirmationId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentConfirmationId", EmitDefaultValue = false)]
         public string ShipmentConfirmationId { get; set; }
 
         /// <summary>
         /// Identifier of a shipment. A shipment contains the boxes and units being inbounded.
         /// </summary>
         /// <value>Identifier of a shipment. A shipment contains the boxes and units being inbounded.</value>
-        [DataMember(Name="shipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentId", EmitDefaultValue = false)]
         public string ShipmentId { get; set; }
 
         /// <summary>
         /// Gets or Sets Source
         /// </summary>
-        [DataMember(Name="source", EmitDefaultValue=false)]
+        [DataMember(Name = "source", EmitDefaultValue = false)]
         public ShipmentSource Source { get; set; }
 
         /// <summary>
         /// The status of a shipment. The state of the shipment will typically start as &#x60;UNCONFIRMED&#x60;, then transition to &#x60;WORKING&#x60; after a placement option has been confirmed, and then to &#x60;READY_TO_SHIP&#x60; once labels are generated.  Possible values: &#x60;ABANDONED&#x60;, &#x60;CANCELLED&#x60;, &#x60;CHECKED_IN&#x60;, &#x60;CLOSED&#x60;, &#x60;DELETED&#x60;, &#x60;DELIVERED&#x60;, &#x60;IN_TRANSIT&#x60;, &#x60;MIXED&#x60;, &#x60;READY_TO_SHIP&#x60;, &#x60;RECEIVING&#x60;, &#x60;SHIPPED&#x60;, &#x60;UNCONFIRMED&#x60;, &#x60;WORKING&#x60;
         /// </summary>
         /// <value>The status of a shipment. The state of the shipment will typically start as &#x60;UNCONFIRMED&#x60;, then transition to &#x60;WORKING&#x60; after a placement option has been confirmed, and then to &#x60;READY_TO_SHIP&#x60; once labels are generated.  Possible values: &#x60;ABANDONED&#x60;, &#x60;CANCELLED&#x60;, &#x60;CHECKED_IN&#x60;, &#x60;CLOSED&#x60;, &#x60;DELETED&#x60;, &#x60;DELIVERED&#x60;, &#x60;IN_TRANSIT&#x60;, &#x60;MIXED&#x60;, &#x60;READY_TO_SHIP&#x60;, &#x60;RECEIVING&#x60;, &#x60;SHIPPED&#x60;, &#x60;UNCONFIRMED&#x60;, &#x60;WORKING&#x60;</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets TrackingDetails
         /// </summary>
-        [DataMember(Name="trackingDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingDetails", EmitDefaultValue = false)]
         public TrackingDetails TrackingDetails { get; set; }
 
         /// <summary>
@@ -228,7 +224,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -258,77 +254,77 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AmazonReferenceId == input.AmazonReferenceId ||
                     (this.AmazonReferenceId != null &&
                     this.AmazonReferenceId.Equals(input.AmazonReferenceId))
-                ) && 
+                ) &&
                 (
                     this.ContactInformation == input.ContactInformation ||
                     (this.ContactInformation != null &&
                     this.ContactInformation.Equals(input.ContactInformation))
-                ) && 
+                ) &&
                 (
                     this.Dates == input.Dates ||
                     (this.Dates != null &&
                     this.Dates.Equals(input.Dates))
-                ) && 
+                ) &&
                 (
                     this.Destination == input.Destination ||
                     (this.Destination != null &&
                     this.Destination.Equals(input.Destination))
-                ) && 
+                ) &&
                 (
                     this.FreightInformation == input.FreightInformation ||
                     (this.FreightInformation != null &&
                     this.FreightInformation.Equals(input.FreightInformation))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.PlacementOptionId == input.PlacementOptionId ||
                     (this.PlacementOptionId != null &&
                     this.PlacementOptionId.Equals(input.PlacementOptionId))
-                ) && 
+                ) &&
                 (
                     this.SelectedDeliveryWindow == input.SelectedDeliveryWindow ||
                     (this.SelectedDeliveryWindow != null &&
                     this.SelectedDeliveryWindow.Equals(input.SelectedDeliveryWindow))
-                ) && 
+                ) &&
                 (
                     this.SelectedTransportationOptionId == input.SelectedTransportationOptionId ||
                     (this.SelectedTransportationOptionId != null &&
                     this.SelectedTransportationOptionId.Equals(input.SelectedTransportationOptionId))
-                ) && 
+                ) &&
                 (
                     this.SelfShipAppointmentDetails == input.SelfShipAppointmentDetails ||
                     this.SelfShipAppointmentDetails != null &&
                     this.SelfShipAppointmentDetails.SequenceEqual(input.SelfShipAppointmentDetails)
-                ) && 
+                ) &&
                 (
                     this.ShipmentConfirmationId == input.ShipmentConfirmationId ||
                     (this.ShipmentConfirmationId != null &&
                     this.ShipmentConfirmationId.Equals(input.ShipmentConfirmationId))
-                ) && 
+                ) &&
                 (
                     this.ShipmentId == input.ShipmentId ||
                     (this.ShipmentId != null &&
                     this.ShipmentId.Equals(input.ShipmentId))
-                ) && 
+                ) &&
                 (
                     this.Source == input.Source ||
                     (this.Source != null &&
                     this.Source.Equals(input.Source))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.TrackingDetails == input.TrackingDetails ||
                     (this.TrackingDetails != null &&
@@ -387,96 +383,96 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AmazonReferenceId (string) maxLength
-            if(this.AmazonReferenceId != null && this.AmazonReferenceId.Length > 1024)
+            if (this.AmazonReferenceId != null && this.AmazonReferenceId.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for AmazonReferenceId, length must be less than 1024.", new [] { "AmazonReferenceId" });
+                yield return new ValidationResult("Invalid value for AmazonReferenceId, length must be less than 1024.", new[] { "AmazonReferenceId" });
             }
 
             // AmazonReferenceId (string) minLength
-            if(this.AmazonReferenceId != null && this.AmazonReferenceId.Length < 1)
+            if (this.AmazonReferenceId != null && this.AmazonReferenceId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for AmazonReferenceId, length must be greater than 1.", new [] { "AmazonReferenceId" });
+                yield return new ValidationResult("Invalid value for AmazonReferenceId, length must be greater than 1.", new[] { "AmazonReferenceId" });
             }
 
             // PlacementOptionId (string) maxLength
-            if(this.PlacementOptionId != null && this.PlacementOptionId.Length > 38)
+            if (this.PlacementOptionId != null && this.PlacementOptionId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be less than 38.", new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be less than 38.", new[] { "PlacementOptionId" });
             }
 
             // PlacementOptionId (string) minLength
-            if(this.PlacementOptionId != null && this.PlacementOptionId.Length < 38)
+            if (this.PlacementOptionId != null && this.PlacementOptionId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be greater than 38.", new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be greater than 38.", new[] { "PlacementOptionId" });
             }
 
             // PlacementOptionId (string) pattern
             Regex regexPlacementOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPlacementOptionId.Match(this.PlacementOptionId).Success)
             {
-                yield return new ValidationResult("Invalid value for PlacementOptionId, must match a pattern of " + regexPlacementOptionId, new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, must match a pattern of " + regexPlacementOptionId, new[] { "PlacementOptionId" });
             }
 
             // SelectedTransportationOptionId (string) maxLength
-            if(this.SelectedTransportationOptionId != null && this.SelectedTransportationOptionId.Length > 38)
+            if (this.SelectedTransportationOptionId != null && this.SelectedTransportationOptionId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for SelectedTransportationOptionId, length must be less than 38.", new [] { "SelectedTransportationOptionId" });
+                yield return new ValidationResult("Invalid value for SelectedTransportationOptionId, length must be less than 38.", new[] { "SelectedTransportationOptionId" });
             }
 
             // SelectedTransportationOptionId (string) minLength
-            if(this.SelectedTransportationOptionId != null && this.SelectedTransportationOptionId.Length < 38)
+            if (this.SelectedTransportationOptionId != null && this.SelectedTransportationOptionId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for SelectedTransportationOptionId, length must be greater than 38.", new [] { "SelectedTransportationOptionId" });
+                yield return new ValidationResult("Invalid value for SelectedTransportationOptionId, length must be greater than 38.", new[] { "SelectedTransportationOptionId" });
             }
 
             // SelectedTransportationOptionId (string) pattern
             Regex regexSelectedTransportationOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexSelectedTransportationOptionId.Match(this.SelectedTransportationOptionId).Success)
             {
-                yield return new ValidationResult("Invalid value for SelectedTransportationOptionId, must match a pattern of " + regexSelectedTransportationOptionId, new [] { "SelectedTransportationOptionId" });
+                yield return new ValidationResult("Invalid value for SelectedTransportationOptionId, must match a pattern of " + regexSelectedTransportationOptionId, new[] { "SelectedTransportationOptionId" });
             }
 
             // ShipmentConfirmationId (string) maxLength
-            if(this.ShipmentConfirmationId != null && this.ShipmentConfirmationId.Length > 1024)
+            if (this.ShipmentConfirmationId != null && this.ShipmentConfirmationId.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for ShipmentConfirmationId, length must be less than 1024.", new [] { "ShipmentConfirmationId" });
+                yield return new ValidationResult("Invalid value for ShipmentConfirmationId, length must be less than 1024.", new[] { "ShipmentConfirmationId" });
             }
 
             // ShipmentConfirmationId (string) minLength
-            if(this.ShipmentConfirmationId != null && this.ShipmentConfirmationId.Length < 1)
+            if (this.ShipmentConfirmationId != null && this.ShipmentConfirmationId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for ShipmentConfirmationId, length must be greater than 1.", new [] { "ShipmentConfirmationId" });
+                yield return new ValidationResult("Invalid value for ShipmentConfirmationId, length must be greater than 1.", new[] { "ShipmentConfirmationId" });
             }
 
             // ShipmentId (string) maxLength
-            if(this.ShipmentId != null && this.ShipmentId.Length > 38)
+            if (this.ShipmentId != null && this.ShipmentId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new[] { "ShipmentId" });
             }
 
             // ShipmentId (string) minLength
-            if(this.ShipmentId != null && this.ShipmentId.Length < 38)
+            if (this.ShipmentId != null && this.ShipmentId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new[] { "ShipmentId" });
             }
 
             // ShipmentId (string) pattern
             Regex regexShipmentId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexShipmentId.Match(this.ShipmentId).Success)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new[] { "ShipmentId" });
             }
 
             // Status (string) maxLength
-            if(this.Status != null && this.Status.Length > 1024)
+            if (this.Status != null && this.Status.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new[] { "Status" });
             }
 
             // Status (string) minLength
-            if(this.Status != null && this.Status.Length < 1)
+            if (this.Status != null && this.Status.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new[] { "Status" });
             }
 
             yield break;

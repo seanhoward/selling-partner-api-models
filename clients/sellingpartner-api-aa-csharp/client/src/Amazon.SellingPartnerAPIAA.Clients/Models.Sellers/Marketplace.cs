@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Sellers
  *
- * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
+ * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
  *
  * OpenAPI spec version: v1
  * 
@@ -9,26 +9,21 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
 {
     /// <summary>
-    /// Detailed information about an Amazon market where a seller can list items for sale and customers can view and purchase items.
+    /// Information about an Amazon marketplace where a seller can list items and customers can view and purchase items.
     /// </summary>
     [DataContract]
-    public partial class Marketplace :  IEquatable<Marketplace>, IValidatableObject
+    public partial class Marketplace : IEquatable<Marketplace>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Marketplace" /> class.
@@ -39,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// Initializes a new instance of the <see cref="Marketplace" /> class.
         /// </summary>
         /// <param name="id">The encrypted marketplace value. (required).</param>
-        /// <param name="name">Marketplace name. (required).</param>
+        /// <param name="name">The marketplace name. (required).</param>
         /// <param name="countryCode">The ISO 3166-1 alpha-2 format country code of the marketplace. (required).</param>
         /// <param name="defaultCurrencyCode">The ISO 4217 format currency code of the marketplace. (required).</param>
         /// <param name="defaultLanguageCode">The ISO 639-1 format language code of the marketplace. (required).</param>
@@ -101,47 +96,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
                 this.DomainName = domainName;
             }
         }
-        
+
         /// <summary>
         /// The encrypted marketplace value.
         /// </summary>
         /// <value>The encrypted marketplace value.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Marketplace name.
+        /// The marketplace name.
         /// </summary>
-        /// <value>Marketplace name.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        /// <value>The marketplace name.</value>
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The ISO 3166-1 alpha-2 format country code of the marketplace.
         /// </summary>
         /// <value>The ISO 3166-1 alpha-2 format country code of the marketplace.</value>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
         /// The ISO 4217 format currency code of the marketplace.
         /// </summary>
         /// <value>The ISO 4217 format currency code of the marketplace.</value>
-        [DataMember(Name="defaultCurrencyCode", EmitDefaultValue=false)]
+        [DataMember(Name = "defaultCurrencyCode", EmitDefaultValue = false)]
         public string DefaultCurrencyCode { get; set; }
 
         /// <summary>
         /// The ISO 639-1 format language code of the marketplace.
         /// </summary>
         /// <value>The ISO 639-1 format language code of the marketplace.</value>
-        [DataMember(Name="defaultLanguageCode", EmitDefaultValue=false)]
+        [DataMember(Name = "defaultLanguageCode", EmitDefaultValue = false)]
         public string DefaultLanguageCode { get; set; }
 
         /// <summary>
         /// The domain name of the marketplace.
         /// </summary>
         /// <value>The domain name of the marketplace.</value>
-        [DataMember(Name="domainName", EmitDefaultValue=false)]
+        [DataMember(Name = "domainName", EmitDefaultValue = false)]
         public string DomainName { get; set; }
 
         /// <summary>
@@ -161,7 +156,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -191,32 +186,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.CountryCode == input.CountryCode ||
                     (this.CountryCode != null &&
                     this.CountryCode.Equals(input.CountryCode))
-                ) && 
+                ) &&
                 (
                     this.DefaultCurrencyCode == input.DefaultCurrencyCode ||
                     (this.DefaultCurrencyCode != null &&
                     this.DefaultCurrencyCode.Equals(input.DefaultCurrencyCode))
-                ) && 
+                ) &&
                 (
                     this.DefaultLanguageCode == input.DefaultLanguageCode ||
                     (this.DefaultLanguageCode != null &&
                     this.DefaultLanguageCode.Equals(input.DefaultLanguageCode))
-                ) && 
+                ) &&
                 (
                     this.DomainName == input.DomainName ||
                     (this.DomainName != null &&
@@ -260,7 +255,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             Regex regexCountryCode = new Regex(@"^([A-Z]{2})$", RegexOptions.CultureInvariant);
             if (false == regexCountryCode.Match(this.CountryCode).Success)
             {
-                yield return new ValidationResult("Invalid value for CountryCode, must match a pattern of " + regexCountryCode, new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, must match a pattern of " + regexCountryCode, new[] { "CountryCode" });
             }
 
             yield break;

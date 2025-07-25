@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Contains a start and end DateTime representing a time range.
     /// </summary>
     [DataContract]
-    public partial class Window :  IEquatable<Window>, IValidatableObject
+    public partial class Window : IEquatable<Window>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Window" /> class.
@@ -63,26 +57,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
             this.EditableUntil = editableUntil;
         }
-        
+
         /// <summary>
         /// The timestamp at which this Window can no longer be edited.
         /// </summary>
         /// <value>The timestamp at which this Window can no longer be edited.</value>
-        [DataMember(Name="editableUntil", EmitDefaultValue=false)]
+        [DataMember(Name = "editableUntil", EmitDefaultValue = false)]
         public DateTime? EditableUntil { get; set; }
 
         /// <summary>
         /// The end timestamp of the window.
         /// </summary>
         /// <value>The end timestamp of the window.</value>
-        [DataMember(Name="end", EmitDefaultValue=false)]
+        [DataMember(Name = "end", EmitDefaultValue = false)]
         public DateTime? End { get; set; }
 
         /// <summary>
         /// The start timestamp of the window.
         /// </summary>
         /// <value>The start timestamp of the window.</value>
-        [DataMember(Name="start", EmitDefaultValue=false)]
+        [DataMember(Name = "start", EmitDefaultValue = false)]
         public DateTime? Start { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.EditableUntil == input.EditableUntil ||
                     (this.EditableUntil != null &&
                     this.EditableUntil.Equals(input.EditableUntil))
-                ) && 
+                ) &&
                 (
                     this.End == input.End ||
                     (this.End != null &&
                     this.End.Equals(input.End))
-                ) && 
+                ) &&
                 (
                     this.Start == input.Start ||
                     (this.Start != null &&

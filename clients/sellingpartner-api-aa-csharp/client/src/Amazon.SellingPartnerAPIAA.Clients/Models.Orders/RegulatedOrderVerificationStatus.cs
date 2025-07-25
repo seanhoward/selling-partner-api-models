@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,13 +23,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The verification status of the order, along with associated approval or rejection metadata.
     /// </summary>
     [DataContract]
-    public partial class RegulatedOrderVerificationStatus :  IEquatable<RegulatedOrderVerificationStatus>, IValidatableObject
+    public partial class RegulatedOrderVerificationStatus : IEquatable<RegulatedOrderVerificationStatus>, IValidatableObject
     {
         /// <summary>
         /// The verification status of the order.
         /// </summary>
         /// <value>The verification status of the order.</value>
-        [DataMember(Name="Status", EmitDefaultValue=false)]
+        [DataMember(Name = "Status", EmitDefaultValue = false)]
         public VerificationStatus Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="RegulatedOrderVerificationStatus" /> class.
@@ -85,48 +80,48 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.ExternalReviewerId = externalReviewerId;
             this.ValidVerificationDetails = validVerificationDetails;
         }
-        
+
 
         /// <summary>
         /// When true, the regulated information provided in the order requires a review by the merchant.
         /// </summary>
         /// <value>When true, the regulated information provided in the order requires a review by the merchant.</value>
-        [DataMember(Name="RequiresMerchantAction", EmitDefaultValue=false)]
+        [DataMember(Name = "RequiresMerchantAction", EmitDefaultValue = false)]
         public bool? RequiresMerchantAction { get; set; }
 
         /// <summary>
         /// A list of valid rejection reasons that may be used to reject the order&#39;s regulated information.
         /// </summary>
         /// <value>A list of valid rejection reasons that may be used to reject the order&#39;s regulated information.</value>
-        [DataMember(Name="ValidRejectionReasons", EmitDefaultValue=false)]
+        [DataMember(Name = "ValidRejectionReasons", EmitDefaultValue = false)]
         public List<RejectionReason> ValidRejectionReasons { get; set; }
 
         /// <summary>
         /// The reason for rejecting the order&#39;s regulated information. Not present if the order isn&#39;t rejected.
         /// </summary>
         /// <value>The reason for rejecting the order&#39;s regulated information. Not present if the order isn&#39;t rejected.</value>
-        [DataMember(Name="RejectionReason", EmitDefaultValue=false)]
+        [DataMember(Name = "RejectionReason", EmitDefaultValue = false)]
         public RejectionReason RejectionReason { get; set; }
 
         /// <summary>
         /// The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
         /// </summary>
         /// <value>The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.</value>
-        [DataMember(Name="ReviewDate", EmitDefaultValue=false)]
+        [DataMember(Name = "ReviewDate", EmitDefaultValue = false)]
         public string ReviewDate { get; set; }
 
         /// <summary>
         /// The identifier for the order&#39;s regulated information reviewer.
         /// </summary>
         /// <value>The identifier for the order&#39;s regulated information reviewer.</value>
-        [DataMember(Name="ExternalReviewerId", EmitDefaultValue=false)]
+        [DataMember(Name = "ExternalReviewerId", EmitDefaultValue = false)]
         public string ExternalReviewerId { get; set; }
 
         /// <summary>
         /// A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.
         /// </summary>
         /// <value>A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.</value>
-        [DataMember(Name="ValidVerificationDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "ValidVerificationDetails", EmitDefaultValue = false)]
         public List<ValidVerificationDetail> ValidVerificationDetails { get; set; }
 
         /// <summary>
@@ -147,7 +142,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -177,37 +172,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.RequiresMerchantAction == input.RequiresMerchantAction ||
                     (this.RequiresMerchantAction != null &&
                     this.RequiresMerchantAction.Equals(input.RequiresMerchantAction))
-                ) && 
+                ) &&
                 (
                     this.ValidRejectionReasons == input.ValidRejectionReasons ||
                     this.ValidRejectionReasons != null &&
                     this.ValidRejectionReasons.SequenceEqual(input.ValidRejectionReasons)
-                ) && 
+                ) &&
                 (
                     this.RejectionReason == input.RejectionReason ||
                     (this.RejectionReason != null &&
                     this.RejectionReason.Equals(input.RejectionReason))
-                ) && 
+                ) &&
                 (
                     this.ReviewDate == input.ReviewDate ||
                     (this.ReviewDate != null &&
                     this.ReviewDate.Equals(input.ReviewDate))
-                ) && 
+                ) &&
                 (
                     this.ExternalReviewerId == input.ExternalReviewerId ||
                     (this.ExternalReviewerId != null &&
                     this.ExternalReviewerId.Equals(input.ExternalReviewerId))
-                ) && 
+                ) &&
                 (
                     this.ValidVerificationDetails == input.ValidVerificationDetails ||
                     this.ValidVerificationDetails != null &&

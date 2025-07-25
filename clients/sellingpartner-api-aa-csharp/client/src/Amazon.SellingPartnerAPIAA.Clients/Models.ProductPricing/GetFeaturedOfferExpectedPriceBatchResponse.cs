@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The response schema for the &#x60;getFeaturedOfferExpectedPriceBatch&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class GetFeaturedOfferExpectedPriceBatchResponse :  IEquatable<GetFeaturedOfferExpectedPriceBatchResponse>, IValidatableObject
+    public partial class GetFeaturedOfferExpectedPriceBatchResponse : IEquatable<GetFeaturedOfferExpectedPriceBatchResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeaturedOfferExpectedPriceBatchResponse" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         {
             this.Responses = responses;
         }
-        
+
         /// <summary>
         /// Gets or Sets Responses
         /// </summary>
-        [DataMember(Name="responses", EmitDefaultValue=false)]
+        [DataMember(Name = "responses", EmitDefaultValue = false)]
         public FeaturedOfferExpectedPriceResponseList Responses { get; set; }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Responses == input.Responses ||
                     (this.Responses != null &&

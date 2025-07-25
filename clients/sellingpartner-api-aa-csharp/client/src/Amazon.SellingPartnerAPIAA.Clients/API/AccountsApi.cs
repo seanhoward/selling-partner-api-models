@@ -30,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>BankAccount</returns>
         BankAccount GetAccount(string accountId);
@@ -41,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>ApiResponse of BankAccount</returns>
         ApiResponse<BankAccount> GetAccountWithHttpInfo(string accountId);
@@ -51,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the balance in a given Amazon Seller Wallet bank account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>BalanceListing</returns>
         BalanceListing ListAccountBalances(string accountId);
@@ -62,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the balance in a given Amazon Seller Wallet bank account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>ApiResponse of BalanceListing</returns>
         ApiResponse<BalanceListing> ListAccountBalancesWithHttpInfo(string accountId);
@@ -72,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Get all Seller Wallet accounts for a given seller.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>BankAccountListing</returns>
         BankAccountListing ListAccounts(string marketplaceId);
@@ -83,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Get all Seller Wallet accounts for a given seller.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>ApiResponse of BankAccountListing</returns>
         ApiResponse<BankAccountListing> ListAccountsWithHttpInfo(string marketplaceId);
@@ -95,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>Task of BankAccount</returns>
         System.Threading.Tasks.Task<BankAccount> GetAccountAsync(string accountId);
@@ -106,7 +106,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>Task of ApiResponse (BankAccount)</returns>
         System.Threading.Tasks.Task<ApiResponse<BankAccount>> GetAccountAsyncWithHttpInfo(string accountId);
@@ -116,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the balance in a given Amazon Seller Wallet bank account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>Task of BalanceListing</returns>
         System.Threading.Tasks.Task<BalanceListing> ListAccountBalancesAsync(string accountId);
@@ -127,7 +127,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the balance in a given Amazon Seller Wallet bank account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>Task of ApiResponse (BalanceListing)</returns>
         System.Threading.Tasks.Task<ApiResponse<BalanceListing>> ListAccountBalancesAsyncWithHttpInfo(string accountId);
@@ -137,7 +137,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Get all Seller Wallet accounts for a given seller.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of BankAccountListing</returns>
         System.Threading.Tasks.Task<BankAccountListing> ListAccountsAsync(string marketplaceId);
@@ -148,7 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Get all Seller Wallet accounts for a given seller.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of ApiResponse (BankAccountListing)</returns>
         System.Threading.Tasks.Task<ApiResponse<BankAccountListing>> ListAccountsAsyncWithHttpInfo(string marketplaceId);
@@ -160,7 +160,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     /// </summary>
     public partial class AccountsApi : IAccountsApi
     {
-        private Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountsApi"/> class
@@ -168,10 +168,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public AccountsApi(Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration)
+        public AccountsApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -197,12 +197,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -240,7 +240,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account by Amazon account identifier Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>BankAccount</returns>
         public BankAccount GetAccount(string accountId)
@@ -252,7 +252,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account by Amazon account identifier Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>ApiResponse of BankAccount</returns>
         public ApiResponse<BankAccount> GetAccountWithHttpInfo(string accountId)
@@ -307,7 +307,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account by Amazon account identifier Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>Task of BankAccount</returns>
         public async System.Threading.Tasks.Task<BankAccount> GetAccountAsync(string accountId)
@@ -320,7 +320,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account by Amazon account identifier Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>Task of ApiResponse (BankAccount)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<BankAccount>> GetAccountAsyncWithHttpInfo(string accountId)
@@ -375,7 +375,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find balance in particular Amazon Seller Wallet account by Amazon account identifier Retrieve the balance in a given Amazon Seller Wallet bank account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>BalanceListing</returns>
         public BalanceListing ListAccountBalances(string accountId)
@@ -387,7 +387,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find balance in particular Amazon Seller Wallet account by Amazon account identifier Retrieve the balance in a given Amazon Seller Wallet bank account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>ApiResponse of BalanceListing</returns>
         public ApiResponse<BalanceListing> ListAccountBalancesWithHttpInfo(string accountId)
@@ -442,7 +442,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find balance in particular Amazon Seller Wallet account by Amazon account identifier Retrieve the balance in a given Amazon Seller Wallet bank account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>Task of BalanceListing</returns>
         public async System.Threading.Tasks.Task<BalanceListing> ListAccountBalancesAsync(string accountId)
@@ -455,7 +455,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find balance in particular Amazon Seller Wallet account by Amazon account identifier Retrieve the balance in a given Amazon Seller Wallet bank account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <returns>Task of ApiResponse (BalanceListing)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<BalanceListing>> ListAccountBalancesAsyncWithHttpInfo(string accountId)
@@ -510,7 +510,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Get all Amazon Seller Wallet accounts for the seller Get all Seller Wallet accounts for a given seller.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>BankAccountListing</returns>
         public BankAccountListing ListAccounts(string marketplaceId)
@@ -522,7 +522,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Get all Amazon Seller Wallet accounts for the seller Get all Seller Wallet accounts for a given seller.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>ApiResponse of BankAccountListing</returns>
         public ApiResponse<BankAccountListing> ListAccountsWithHttpInfo(string marketplaceId)
@@ -577,7 +577,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Get all Amazon Seller Wallet accounts for the seller Get all Seller Wallet accounts for a given seller.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of BankAccountListing</returns>
         public async System.Threading.Tasks.Task<BankAccountListing> ListAccountsAsync(string marketplaceId)
@@ -590,7 +590,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Get all Amazon Seller Wallet accounts for the seller Get all Seller Wallet accounts for a given seller.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of ApiResponse (BankAccountListing)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<BankAccountListing>> ListAccountsAsyncWithHttpInfo(string marketplaceId)
@@ -669,7 +669,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 }
 
 
-                Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration = new Amazon.SellingPartnerAPIAA.Clients.Client.Configuration
+                Configuration configuration = new Configuration
                 {
                     AuthorizationCredentials = lwaAuthorizationCredentials,
                     RateLimitConfig = rateLimitConfiguration,

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandboxData
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
     /// A GUID assigned by Amazon to identify this transaction.
     /// </summary>
     [DataContract]
-    public partial class TransactionReference :  IEquatable<TransactionReference>, IValidatableObject
+    public partial class TransactionReference : IEquatable<TransactionReference>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionReference" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         {
             this.TransactionId = transactionId;
         }
-        
+
         /// <summary>
         /// A GUID (Globally Unique Identifier) assigned by Amazon to uniquely identify the transaction.
         /// </summary>
         /// <value>A GUID (Globally Unique Identifier) assigned by Amazon to uniquely identify the transaction.</value>
-        [DataMember(Name="transactionId", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string TransactionId { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TransactionId == input.TransactionId ||
                     (this.TransactionId != null &&

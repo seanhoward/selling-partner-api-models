@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,13 +24,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The offer data of a product.
     /// </summary>
     [DataContract]
-    public partial class Offer :  IEquatable<Offer>, IValidatableObject
+    public partial class Offer : IEquatable<Offer>, IValidatableObject
     {
         /// <summary>
         /// Item Condition.
         /// </summary>
         /// <value>Item Condition.</value>
-        [DataMember(Name="condition", EmitDefaultValue=false)]
+        [DataMember(Name = "condition", EmitDefaultValue = false)]
         public Condition Condition { get; set; }
         /// <summary>
         /// The item subcondition of the offer.
@@ -43,79 +39,79 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SubConditionEnum
         {
-            
+
             /// <summary>
             /// Enum New for value: New
             /// </summary>
             [EnumMember(Value = "New")]
             New = 1,
-            
+
             /// <summary>
             /// Enum Mint for value: Mint
             /// </summary>
             [EnumMember(Value = "Mint")]
             Mint = 2,
-            
+
             /// <summary>
             /// Enum VeryGood for value: VeryGood
             /// </summary>
             [EnumMember(Value = "VeryGood")]
             VeryGood = 3,
-            
+
             /// <summary>
             /// Enum Good for value: Good
             /// </summary>
             [EnumMember(Value = "Good")]
             Good = 4,
-            
+
             /// <summary>
             /// Enum Acceptable for value: Acceptable
             /// </summary>
             [EnumMember(Value = "Acceptable")]
             Acceptable = 5,
-            
+
             /// <summary>
             /// Enum Poor for value: Poor
             /// </summary>
             [EnumMember(Value = "Poor")]
             Poor = 6,
-            
+
             /// <summary>
             /// Enum Club for value: Club
             /// </summary>
             [EnumMember(Value = "Club")]
             Club = 7,
-            
+
             /// <summary>
             /// Enum OEM for value: OEM
             /// </summary>
             [EnumMember(Value = "OEM")]
             OEM = 8,
-            
+
             /// <summary>
             /// Enum Warranty for value: Warranty
             /// </summary>
             [EnumMember(Value = "Warranty")]
             Warranty = 9,
-            
+
             /// <summary>
             /// Enum RefurbishedWarranty for value: RefurbishedWarranty
             /// </summary>
             [EnumMember(Value = "RefurbishedWarranty")]
             RefurbishedWarranty = 10,
-            
+
             /// <summary>
             /// Enum Refurbished for value: Refurbished
             /// </summary>
             [EnumMember(Value = "Refurbished")]
             Refurbished = 11,
-            
+
             /// <summary>
             /// Enum OpenBox for value: OpenBox
             /// </summary>
             [EnumMember(Value = "OpenBox")]
             OpenBox = 12,
-            
+
             /// <summary>
             /// Enum Other for value: Other
             /// </summary>
@@ -127,13 +123,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// The item subcondition of the offer.
         /// </summary>
         /// <value>The item subcondition of the offer.</value>
-        [DataMember(Name="subCondition", EmitDefaultValue=false)]
+        [DataMember(Name = "subCondition", EmitDefaultValue = false)]
         public SubConditionEnum? SubCondition { get; set; }
         /// <summary>
         /// The fulfillment type for the offer. Possible values are &#x60;AFN&#x60; (Amazon Fulfillment Network) and &#x60;MFN&#x60; (Merchant Fulfillment Network).
         /// </summary>
         /// <value>The fulfillment type for the offer. Possible values are &#x60;AFN&#x60; (Amazon Fulfillment Network) and &#x60;MFN&#x60; (Merchant Fulfillment Network).</value>
-        [DataMember(Name="fulfillmentType", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentType", EmitDefaultValue = false)]
         public FulfillmentType FulfillmentType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Offer" /> class.
@@ -194,12 +190,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             this.Points = points;
             this.PrimeDetails = primeDetails;
         }
-        
+
         /// <summary>
         /// The seller identifier for the offer.
         /// </summary>
         /// <value>The seller identifier for the offer.</value>
-        [DataMember(Name="sellerId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerId", EmitDefaultValue = false)]
         public string SellerId { get; set; }
 
 
@@ -209,28 +205,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// The offer buying price. This doesn&#39;t include shipping, points, or applicable promotions.
         /// </summary>
         /// <value>The offer buying price. This doesn&#39;t include shipping, points, or applicable promotions.</value>
-        [DataMember(Name="listingPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "listingPrice", EmitDefaultValue = false)]
         public MoneyType ListingPrice { get; set; }
 
         /// <summary>
         /// A list of shipping options associated with this offer
         /// </summary>
         /// <value>A list of shipping options associated with this offer</value>
-        [DataMember(Name="shippingOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingOptions", EmitDefaultValue = false)]
         public List<ShippingOption> ShippingOptions { get; set; }
 
         /// <summary>
         /// The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points. Note that the Points element is only returned in Japan (JP).
         /// </summary>
         /// <value>The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points. Note that the Points element is only returned in Japan (JP).</value>
-        [DataMember(Name="points", EmitDefaultValue=false)]
+        [DataMember(Name = "points", EmitDefaultValue = false)]
         public Points Points { get; set; }
 
         /// <summary>
         /// Amazon Prime details.
         /// </summary>
         /// <value>Amazon Prime details.</value>
-        [DataMember(Name="primeDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "primeDetails", EmitDefaultValue = false)]
         public PrimeDetails PrimeDetails { get; set; }
 
         /// <summary>
@@ -252,7 +248,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -282,42 +278,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerId == input.SellerId ||
                     (this.SellerId != null &&
                     this.SellerId.Equals(input.SellerId))
-                ) && 
+                ) &&
                 (
                     this.Condition == input.Condition ||
                     (this.Condition != null &&
                     this.Condition.Equals(input.Condition))
-                ) && 
+                ) &&
                 (
                     this.SubCondition == input.SubCondition ||
                     (this.SubCondition != null &&
                     this.SubCondition.Equals(input.SubCondition))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentType == input.FulfillmentType ||
                     (this.FulfillmentType != null &&
                     this.FulfillmentType.Equals(input.FulfillmentType))
-                ) && 
+                ) &&
                 (
                     this.ListingPrice == input.ListingPrice ||
                     (this.ListingPrice != null &&
                     this.ListingPrice.Equals(input.ListingPrice))
-                ) && 
+                ) &&
                 (
                     this.ShippingOptions == input.ShippingOptions ||
                     this.ShippingOptions != null &&
                     this.ShippingOptions.SequenceEqual(input.ShippingOptions)
-                ) && 
+                ) &&
                 (
                     this.Points == input.Points ||
                     (this.Points != null &&
                     this.Points.Equals(input.Points))
-                ) && 
+                ) &&
                 (
                     this.PrimeDetails == input.PrimeDetails ||
                     (this.PrimeDetails != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The delivery preferences applied to the destination address. These preferences are applied when possible and are best effort. This feature is currently supported only in the JP marketplace and not applicable for other marketplaces. For eligible orders, the default delivery preference will be to deliver the package unattended at the front door, unless you specify otherwise.
     /// </summary>
     [DataContract]
-    public partial class DeliveryPreferences :  IEquatable<DeliveryPreferences>, IValidatableObject
+    public partial class DeliveryPreferences : IEquatable<DeliveryPreferences>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryPreferences" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.DeliveryInstructions = deliveryInstructions;
             this.DropOffLocation = dropOffLocation;
         }
-        
+
         /// <summary>
         /// Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, &#39;Beware of dogs&#39;, etc.
         /// </summary>
         /// <value>Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, &#39;Beware of dogs&#39;, etc.</value>
-        [DataMember(Name="deliveryInstructions", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryInstructions", EmitDefaultValue = false)]
         public string DeliveryInstructions { get; set; }
 
         /// <summary>
         /// The preferred location to leave packages at the destination address.
         /// </summary>
         /// <value>The preferred location to leave packages at the destination address.</value>
-        [DataMember(Name="dropOffLocation", EmitDefaultValue=false)]
+        [DataMember(Name = "dropOffLocation", EmitDefaultValue = false)]
         public DropOffLocation DropOffLocation { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeliveryInstructions == input.DeliveryInstructions ||
                     (this.DeliveryInstructions != null &&
                     this.DeliveryInstructions.Equals(input.DeliveryInstructions))
-                ) && 
+                ) &&
                 (
                     this.DropOffLocation == input.DropOffLocation ||
                     (this.DropOffLocation != null &&
@@ -136,9 +129,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DeliveryInstructions (string) maxLength
-            if(this.DeliveryInstructions != null && this.DeliveryInstructions.Length > 250)
+            if (this.DeliveryInstructions != null && this.DeliveryInstructions.Length > 250)
             {
-                yield return new ValidationResult("Invalid value for DeliveryInstructions, length must be less than 250.", new [] { "DeliveryInstructions" });
+                yield return new ValidationResult("Invalid value for DeliveryInstructions, length must be less than 250.", new[] { "DeliveryInstructions" });
             }
 
             yield break;

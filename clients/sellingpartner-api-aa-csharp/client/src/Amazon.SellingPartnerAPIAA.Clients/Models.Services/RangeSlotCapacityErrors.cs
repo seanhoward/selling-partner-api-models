@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// The error response schema for the &#x60;getRangeSlotCapacity&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class RangeSlotCapacityErrors :  IEquatable<RangeSlotCapacityErrors>, IValidatableObject
+    public partial class RangeSlotCapacityErrors : IEquatable<RangeSlotCapacityErrors>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RangeSlotCapacityErrors" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         {
             this.Errors = errors;
         }
-        
+
         /// <summary>
         /// Errors encountered during the &#x60;getRangeSlotCapacity&#x60; operation.
         /// </summary>
         /// <value>Errors encountered during the &#x60;getRangeSlotCapacity&#x60; operation.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Errors == input.Errors ||
                     (this.Errors != null &&

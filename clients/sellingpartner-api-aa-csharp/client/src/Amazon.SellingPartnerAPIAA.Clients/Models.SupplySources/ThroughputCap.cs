@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,12 +21,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The throughput capacity
     /// </summary>
     [DataContract]
-    public partial class ThroughputCap :  IEquatable<ThroughputCap>, IValidatableObject
+    public partial class ThroughputCap : IEquatable<ThroughputCap>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets TimeUnit
         /// </summary>
-        [DataMember(Name="timeUnit", EmitDefaultValue=false)]
+        [DataMember(Name = "timeUnit", EmitDefaultValue = false)]
         public TimeUnit? TimeUnit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ThroughputCap" /> class.
@@ -45,11 +38,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.Value = value;
             this.TimeUnit = timeUnit;
         }
-        
+
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public int? Value { get; set; }
 
 
@@ -66,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -96,12 +89,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
+                ) &&
                 (
                     this.TimeUnit == input.TimeUnit ||
                     (this.TimeUnit != null &&

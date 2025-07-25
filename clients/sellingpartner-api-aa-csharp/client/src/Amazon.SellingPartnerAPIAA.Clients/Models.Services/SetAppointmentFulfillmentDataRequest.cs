@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,40 +21,49 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Input for set appointment fulfillment data operation.
     /// </summary>
     [DataContract]
-    public partial class SetAppointmentFulfillmentDataRequest :  IEquatable<SetAppointmentFulfillmentDataRequest>, IValidatableObject
+    public partial class SetAppointmentFulfillmentDataRequest : IEquatable<SetAppointmentFulfillmentDataRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SetAppointmentFulfillmentDataRequest" /> class.
         /// </summary>
+        /// <param name="estimatedArrivalTime">The range of time when the technician is expected to arrive at the fulfillment location..</param>
         /// <param name="fulfillmentTime">Input appointment time details..</param>
         /// <param name="appointmentResources">Resources involved in appointment fulfillment..</param>
         /// <param name="fulfillmentDocuments">Documents specific to appointment fulfillment..</param>
-        public SetAppointmentFulfillmentDataRequest(FulfillmentTime fulfillmentTime = default, AppointmentResources appointmentResources = default, FulfillmentDocuments fulfillmentDocuments = default)
+        public SetAppointmentFulfillmentDataRequest(DateTimeRange estimatedArrivalTime = default, FulfillmentTime fulfillmentTime = default, AppointmentResources appointmentResources = default, FulfillmentDocuments fulfillmentDocuments = default)
         {
+            this.EstimatedArrivalTime = estimatedArrivalTime;
             this.FulfillmentTime = fulfillmentTime;
             this.AppointmentResources = appointmentResources;
             this.FulfillmentDocuments = fulfillmentDocuments;
         }
-        
+
+        /// <summary>
+        /// The range of time when the technician is expected to arrive at the fulfillment location.
+        /// </summary>
+        /// <value>The range of time when the technician is expected to arrive at the fulfillment location.</value>
+        [DataMember(Name = "estimatedArrivalTime", EmitDefaultValue = false)]
+        public DateTimeRange EstimatedArrivalTime { get; set; }
+
         /// <summary>
         /// Input appointment time details.
         /// </summary>
         /// <value>Input appointment time details.</value>
-        [DataMember(Name="fulfillmentTime", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentTime", EmitDefaultValue = false)]
         public FulfillmentTime FulfillmentTime { get; set; }
 
         /// <summary>
         /// Resources involved in appointment fulfillment.
         /// </summary>
         /// <value>Resources involved in appointment fulfillment.</value>
-        [DataMember(Name="appointmentResources", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentResources", EmitDefaultValue = false)]
         public AppointmentResources AppointmentResources { get; set; }
 
         /// <summary>
         /// Documents specific to appointment fulfillment.
         /// </summary>
         /// <value>Documents specific to appointment fulfillment.</value>
-        [DataMember(Name="fulfillmentDocuments", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentDocuments", EmitDefaultValue = false)]
         public FulfillmentDocuments FulfillmentDocuments { get; set; }
 
         /// <summary>
@@ -72,13 +74,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         {
             var sb = new StringBuilder();
             sb.Append("class SetAppointmentFulfillmentDataRequest {\n");
+            sb.Append("  EstimatedArrivalTime: ").Append(EstimatedArrivalTime).Append("\n");
             sb.Append("  FulfillmentTime: ").Append(FulfillmentTime).Append("\n");
             sb.Append("  AppointmentResources: ").Append(AppointmentResources).Append("\n");
             sb.Append("  FulfillmentDocuments: ").Append(FulfillmentDocuments).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +111,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
+                (
+                    this.EstimatedArrivalTime == input.EstimatedArrivalTime ||
+                    (this.EstimatedArrivalTime != null &&
+                    this.EstimatedArrivalTime.Equals(input.EstimatedArrivalTime))
+                ) &&
                 (
                     this.FulfillmentTime == input.FulfillmentTime ||
                     (this.FulfillmentTime != null &&
                     this.FulfillmentTime.Equals(input.FulfillmentTime))
-                ) && 
+                ) &&
                 (
                     this.AppointmentResources == input.AppointmentResources ||
                     (this.AppointmentResources != null &&
                     this.AppointmentResources.Equals(input.AppointmentResources))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentDocuments == input.FulfillmentDocuments ||
                     (this.FulfillmentDocuments != null &&
@@ -135,6 +143,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.EstimatedArrivalTime != null)
+                    hashCode = hashCode * 59 + this.EstimatedArrivalTime.GetHashCode();
                 if (this.FulfillmentTime != null)
                     hashCode = hashCode * 59 + this.FulfillmentTime.GetHashCode();
                 if (this.AppointmentResources != null)

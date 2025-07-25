@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,27 +23,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// General information about a fulfillment order, including its status.
     /// </summary>
     [DataContract]
-    public partial class FulfillmentOrder :  IEquatable<FulfillmentOrder>, IValidatableObject
+    public partial class FulfillmentOrder : IEquatable<FulfillmentOrder>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ShippingSpeedCategory
         /// </summary>
-        [DataMember(Name="shippingSpeedCategory", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingSpeedCategory", EmitDefaultValue = false)]
         public ShippingSpeedCategory ShippingSpeedCategory { get; set; }
         /// <summary>
         /// Gets or Sets FulfillmentAction
         /// </summary>
-        [DataMember(Name="fulfillmentAction", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentAction", EmitDefaultValue = false)]
         public FulfillmentAction? FulfillmentAction { get; set; }
         /// <summary>
         /// Gets or Sets FulfillmentPolicy
         /// </summary>
-        [DataMember(Name="fulfillmentPolicy", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentPolicy", EmitDefaultValue = false)]
         public FulfillmentPolicy? FulfillmentPolicy { get; set; }
         /// <summary>
         /// Gets or Sets FulfillmentOrderStatus
         /// </summary>
-        [DataMember(Name="fulfillmentOrderStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentOrderStatus", EmitDefaultValue = false)]
         public FulfillmentOrderStatus FulfillmentOrderStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentOrder" /> class.
@@ -173,54 +168,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.NotificationEmails = notificationEmails;
             this.FeatureConstraints = featureConstraints;
         }
-        
+
         /// <summary>
         /// The fulfillment order identifier submitted with the &#x60;createFulfillmentOrder&#x60; operation.
         /// </summary>
         /// <value>The fulfillment order identifier submitted with the &#x60;createFulfillmentOrder&#x60; operation.</value>
-        [DataMember(Name="sellerFulfillmentOrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerFulfillmentOrderId", EmitDefaultValue = false)]
         public string SellerFulfillmentOrderId { get; set; }
 
         /// <summary>
         /// The identifier for the marketplace the fulfillment order is placed against.
         /// </summary>
         /// <value>The identifier for the marketplace the fulfillment order is placed against.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// A fulfillment order identifier submitted with the &#x60;createFulfillmentOrder&#x60; operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
         /// </summary>
         /// <value>A fulfillment order identifier submitted with the &#x60;createFulfillmentOrder&#x60; operation. Displays as the order identifier in recipient-facing materials such as the packing slip.</value>
-        [DataMember(Name="displayableOrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "displayableOrderId", EmitDefaultValue = false)]
         public string DisplayableOrderId { get; set; }
 
         /// <summary>
         /// A date and time submitted with the &#x60;createFulfillmentOrder&#x60; operation. Displays as the order date in recipient-facing materials such as the packing slip.
         /// </summary>
         /// <value>A date and time submitted with the &#x60;createFulfillmentOrder&#x60; operation. Displays as the order date in recipient-facing materials such as the packing slip.</value>
-        [DataMember(Name="displayableOrderDate", EmitDefaultValue=false)]
+        [DataMember(Name = "displayableOrderDate", EmitDefaultValue = false)]
         public DateTime? DisplayableOrderDate { get; set; }
 
         /// <summary>
         /// A text block submitted with the &#x60;createFulfillmentOrder&#x60; operation. Displays in recipient-facing materials such as the packing slip.
         /// </summary>
         /// <value>A text block submitted with the &#x60;createFulfillmentOrder&#x60; operation. Displays in recipient-facing materials such as the packing slip.</value>
-        [DataMember(Name="displayableOrderComment", EmitDefaultValue=false)]
+        [DataMember(Name = "displayableOrderComment", EmitDefaultValue = false)]
         public string DisplayableOrderComment { get; set; }
 
 
         /// <summary>
         /// Gets or Sets DeliveryWindow
         /// </summary>
-        [DataMember(Name="deliveryWindow", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryWindow", EmitDefaultValue = false)]
         public DeliveryWindow DeliveryWindow { get; set; }
 
         /// <summary>
         /// The destination address submitted with the &#x60;createFulfillmentOrder&#x60; operation.
         /// </summary>
         /// <value>The destination address submitted with the &#x60;createFulfillmentOrder&#x60; operation.</value>
-        [DataMember(Name="destinationAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "destinationAddress", EmitDefaultValue = false)]
         public Address DestinationAddress { get; set; }
 
 
@@ -228,14 +223,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Gets or Sets CodSettings
         /// </summary>
-        [DataMember(Name="codSettings", EmitDefaultValue=false)]
+        [DataMember(Name = "codSettings", EmitDefaultValue = false)]
         public CODSettings CodSettings { get; set; }
 
         /// <summary>
         /// The date and time that the fulfillment order was received by an Amazon fulfillment center.
         /// </summary>
         /// <value>The date and time that the fulfillment order was received by an Amazon fulfillment center.</value>
-        [DataMember(Name="receivedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "receivedDate", EmitDefaultValue = false)]
         public DateTime? ReceivedDate { get; set; }
 
 
@@ -243,20 +238,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// The date and time that the status of the fulfillment order last changed. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
         /// </summary>
         /// <value>The date and time that the status of the fulfillment order last changed. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
-        [DataMember(Name="statusUpdatedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "statusUpdatedDate", EmitDefaultValue = false)]
         public DateTime? StatusUpdatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets NotificationEmails
         /// </summary>
-        [DataMember(Name="notificationEmails", EmitDefaultValue=false)]
+        [DataMember(Name = "notificationEmails", EmitDefaultValue = false)]
         public NotificationEmailList NotificationEmails { get; set; }
 
         /// <summary>
         /// A list of features and their fulfillment policies to apply to the order.
         /// </summary>
         /// <value>A list of features and their fulfillment policies to apply to the order.</value>
-        [DataMember(Name="featureConstraints", EmitDefaultValue=false)]
+        [DataMember(Name = "featureConstraints", EmitDefaultValue = false)]
         public List<FeatureSettings> FeatureConstraints { get; set; }
 
         /// <summary>
@@ -286,7 +281,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -316,82 +311,82 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerFulfillmentOrderId == input.SellerFulfillmentOrderId ||
                     (this.SellerFulfillmentOrderId != null &&
                     this.SellerFulfillmentOrderId.Equals(input.SellerFulfillmentOrderId))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.DisplayableOrderId == input.DisplayableOrderId ||
                     (this.DisplayableOrderId != null &&
                     this.DisplayableOrderId.Equals(input.DisplayableOrderId))
-                ) && 
+                ) &&
                 (
                     this.DisplayableOrderDate == input.DisplayableOrderDate ||
                     (this.DisplayableOrderDate != null &&
                     this.DisplayableOrderDate.Equals(input.DisplayableOrderDate))
-                ) && 
+                ) &&
                 (
                     this.DisplayableOrderComment == input.DisplayableOrderComment ||
                     (this.DisplayableOrderComment != null &&
                     this.DisplayableOrderComment.Equals(input.DisplayableOrderComment))
-                ) && 
+                ) &&
                 (
                     this.ShippingSpeedCategory == input.ShippingSpeedCategory ||
                     (this.ShippingSpeedCategory != null &&
                     this.ShippingSpeedCategory.Equals(input.ShippingSpeedCategory))
-                ) && 
+                ) &&
                 (
                     this.DeliveryWindow == input.DeliveryWindow ||
                     (this.DeliveryWindow != null &&
                     this.DeliveryWindow.Equals(input.DeliveryWindow))
-                ) && 
+                ) &&
                 (
                     this.DestinationAddress == input.DestinationAddress ||
                     (this.DestinationAddress != null &&
                     this.DestinationAddress.Equals(input.DestinationAddress))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentAction == input.FulfillmentAction ||
                     (this.FulfillmentAction != null &&
                     this.FulfillmentAction.Equals(input.FulfillmentAction))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentPolicy == input.FulfillmentPolicy ||
                     (this.FulfillmentPolicy != null &&
                     this.FulfillmentPolicy.Equals(input.FulfillmentPolicy))
-                ) && 
+                ) &&
                 (
                     this.CodSettings == input.CodSettings ||
                     (this.CodSettings != null &&
                     this.CodSettings.Equals(input.CodSettings))
-                ) && 
+                ) &&
                 (
                     this.ReceivedDate == input.ReceivedDate ||
                     (this.ReceivedDate != null &&
                     this.ReceivedDate.Equals(input.ReceivedDate))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentOrderStatus == input.FulfillmentOrderStatus ||
                     (this.FulfillmentOrderStatus != null &&
                     this.FulfillmentOrderStatus.Equals(input.FulfillmentOrderStatus))
-                ) && 
+                ) &&
                 (
                     this.StatusUpdatedDate == input.StatusUpdatedDate ||
                     (this.StatusUpdatedDate != null &&
                     this.StatusUpdatedDate.Equals(input.StatusUpdatedDate))
-                ) && 
+                ) &&
                 (
                     this.NotificationEmails == input.NotificationEmails ||
                     (this.NotificationEmails != null &&
                     this.NotificationEmails.Equals(input.NotificationEmails))
-                ) && 
+                ) &&
                 (
                     this.FeatureConstraints == input.FeatureConstraints ||
                     this.FeatureConstraints != null &&

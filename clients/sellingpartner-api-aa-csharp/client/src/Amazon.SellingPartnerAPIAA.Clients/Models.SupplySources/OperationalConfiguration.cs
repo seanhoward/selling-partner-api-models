@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The operational configuration of &#x60;supplySources&#x60;.
     /// </summary>
     [DataContract]
-    public partial class OperationalConfiguration :  IEquatable<OperationalConfiguration>, IValidatableObject
+    public partial class OperationalConfiguration : IEquatable<OperationalConfiguration>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OperationalConfiguration" /> class.
@@ -44,29 +37,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.OperatingHoursByDay = operatingHoursByDay;
             this.HandlingTime = handlingTime;
         }
-        
+
         /// <summary>
         /// Gets or Sets ContactDetails
         /// </summary>
-        [DataMember(Name="contactDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "contactDetails", EmitDefaultValue = false)]
         public ContactDetails ContactDetails { get; set; }
 
         /// <summary>
         /// Gets or Sets ThroughputConfig
         /// </summary>
-        [DataMember(Name="throughputConfig", EmitDefaultValue=false)]
+        [DataMember(Name = "throughputConfig", EmitDefaultValue = false)]
         public ThroughputConfig ThroughputConfig { get; set; }
 
         /// <summary>
         /// Gets or Sets OperatingHoursByDay
         /// </summary>
-        [DataMember(Name="operatingHoursByDay", EmitDefaultValue=false)]
+        [DataMember(Name = "operatingHoursByDay", EmitDefaultValue = false)]
         public OperatingHoursByDay OperatingHoursByDay { get; set; }
 
         /// <summary>
         /// Gets or Sets HandlingTime
         /// </summary>
-        [DataMember(Name="handlingTime", EmitDefaultValue=false)]
+        [DataMember(Name = "handlingTime", EmitDefaultValue = false)]
         public Duration HandlingTime { get; set; }
 
         /// <summary>
@@ -84,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -114,22 +107,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContactDetails == input.ContactDetails ||
                     (this.ContactDetails != null &&
                     this.ContactDetails.Equals(input.ContactDetails))
-                ) && 
+                ) &&
                 (
                     this.ThroughputConfig == input.ThroughputConfig ||
                     (this.ThroughputConfig != null &&
                     this.ThroughputConfig.Equals(input.ThroughputConfig))
-                ) && 
+                ) &&
                 (
                     this.OperatingHoursByDay == input.OperatingHoursByDay ||
                     (this.OperatingHoursByDay != null &&
                     this.OperatingHoursByDay.Equals(input.OperatingHoursByDay))
-                ) && 
+                ) &&
                 (
                     this.HandlingTime == input.HandlingTime ||
                     (this.HandlingTime != null &&

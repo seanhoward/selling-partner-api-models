@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Transportation details for the shipment.
     /// </summary>
     [DataContract]
-    public partial class TransportationDetails :  IEquatable<TransportationDetails>, IValidatableObject
+    public partial class TransportationDetails : IEquatable<TransportationDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportationDetails" /> class.
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 this.TrackingDetails = trackingDetails;
             }
         }
-        
+
         /// <summary>
         /// Tracking details for the shipment. If using SPD transportation, this can be for each case. If not using SPD transportation, this is a single tracking entry for the entire shipment.
         /// </summary>
         /// <value>Tracking details for the shipment. If using SPD transportation, this can be for each case. If not using SPD transportation, this is a single tracking entry for the entire shipment.</value>
-        [DataMember(Name="trackingDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingDetails", EmitDefaultValue = false)]
         public List<TrackingDetails> TrackingDetails { get; set; }
 
         /// <summary>
@@ -71,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TrackingDetails == input.TrackingDetails ||
                     this.TrackingDetails != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The delivery information for the package. This information is available after the package is delivered.
     /// </summary>
     [DataContract]
-    public partial class DeliveryInformation :  IEquatable<DeliveryInformation>, IValidatableObject
+    public partial class DeliveryInformation : IEquatable<DeliveryInformation>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryInformation" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.DeliveryDocumentList = deliveryDocumentList;
             this.DropOffLocation = dropOffLocation;
         }
-        
+
         /// <summary>
         /// All of the delivery documents for a package.
         /// </summary>
         /// <value>All of the delivery documents for a package.</value>
-        [DataMember(Name="deliveryDocumentList", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryDocumentList", EmitDefaultValue = false)]
         public DeliveryDocumentList DeliveryDocumentList { get; set; }
 
         /// <summary>
         /// The drop off location for a package.
         /// </summary>
         /// <value>The drop off location for a package.</value>
-        [DataMember(Name="dropOffLocation", EmitDefaultValue=false)]
+        [DataMember(Name = "dropOffLocation", EmitDefaultValue = false)]
         public DropOffLocation DropOffLocation { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeliveryDocumentList == input.DeliveryDocumentList ||
                     (this.DeliveryDocumentList != null &&
                     this.DeliveryDocumentList.Equals(input.DeliveryDocumentList))
-                ) && 
+                ) &&
                 (
                     this.DropOffLocation == input.DropOffLocation ||
                     (this.DropOffLocation != null &&

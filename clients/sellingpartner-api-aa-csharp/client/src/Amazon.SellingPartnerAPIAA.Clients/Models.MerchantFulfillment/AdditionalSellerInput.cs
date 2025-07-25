@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Additional information required to purchase shipping.
     /// </summary>
     [DataContract]
-    public partial class AdditionalSellerInput :  IEquatable<AdditionalSellerInput>, IValidatableObject
+    public partial class AdditionalSellerInput : IEquatable<AdditionalSellerInput>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalSellerInput" /> class.
@@ -54,64 +47,64 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.ValueAsDimension = valueAsDimension;
             this.ValueAsCurrency = valueAsCurrency;
         }
-        
+
         /// <summary>
         /// The data type of the additional information.
         /// </summary>
         /// <value>The data type of the additional information.</value>
-        [DataMember(Name="DataType", EmitDefaultValue=false)]
+        [DataMember(Name = "DataType", EmitDefaultValue = false)]
         public string DataType { get; set; }
 
         /// <summary>
         /// The value when the data type is string.
         /// </summary>
         /// <value>The value when the data type is string.</value>
-        [DataMember(Name="ValueAsString", EmitDefaultValue=false)]
+        [DataMember(Name = "ValueAsString", EmitDefaultValue = false)]
         public string ValueAsString { get; set; }
 
         /// <summary>
         /// The value when the data type is boolean.
         /// </summary>
         /// <value>The value when the data type is boolean.</value>
-        [DataMember(Name="ValueAsBoolean", EmitDefaultValue=false)]
+        [DataMember(Name = "ValueAsBoolean", EmitDefaultValue = false)]
         public bool? ValueAsBoolean { get; set; }
 
         /// <summary>
         /// The value when the data type is integer.
         /// </summary>
         /// <value>The value when the data type is integer.</value>
-        [DataMember(Name="ValueAsInteger", EmitDefaultValue=false)]
+        [DataMember(Name = "ValueAsInteger", EmitDefaultValue = false)]
         public int? ValueAsInteger { get; set; }
 
         /// <summary>
         /// The value when the data type is a date-time formatted string.
         /// </summary>
         /// <value>The value when the data type is a date-time formatted string.</value>
-        [DataMember(Name="ValueAsTimestamp", EmitDefaultValue=false)]
+        [DataMember(Name = "ValueAsTimestamp", EmitDefaultValue = false)]
         public DateTime? ValueAsTimestamp { get; set; }
 
         /// <summary>
         /// Gets or Sets ValueAsAddress
         /// </summary>
-        [DataMember(Name="ValueAsAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "ValueAsAddress", EmitDefaultValue = false)]
         public Address ValueAsAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets ValueAsWeight
         /// </summary>
-        [DataMember(Name="ValueAsWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "ValueAsWeight", EmitDefaultValue = false)]
         public Weight ValueAsWeight { get; set; }
 
         /// <summary>
         /// Gets or Sets ValueAsDimension
         /// </summary>
-        [DataMember(Name="ValueAsDimension", EmitDefaultValue=false)]
+        [DataMember(Name = "ValueAsDimension", EmitDefaultValue = false)]
         public Length ValueAsDimension { get; set; }
 
         /// <summary>
         /// Gets or Sets ValueAsCurrency
         /// </summary>
-        [DataMember(Name="ValueAsCurrency", EmitDefaultValue=false)]
+        [DataMember(Name = "ValueAsCurrency", EmitDefaultValue = false)]
         public CurrencyAmount ValueAsCurrency { get; set; }
 
         /// <summary>
@@ -134,7 +127,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -164,47 +157,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DataType == input.DataType ||
                     (this.DataType != null &&
                     this.DataType.Equals(input.DataType))
-                ) && 
+                ) &&
                 (
                     this.ValueAsString == input.ValueAsString ||
                     (this.ValueAsString != null &&
                     this.ValueAsString.Equals(input.ValueAsString))
-                ) && 
+                ) &&
                 (
                     this.ValueAsBoolean == input.ValueAsBoolean ||
                     (this.ValueAsBoolean != null &&
                     this.ValueAsBoolean.Equals(input.ValueAsBoolean))
-                ) && 
+                ) &&
                 (
                     this.ValueAsInteger == input.ValueAsInteger ||
                     (this.ValueAsInteger != null &&
                     this.ValueAsInteger.Equals(input.ValueAsInteger))
-                ) && 
+                ) &&
                 (
                     this.ValueAsTimestamp == input.ValueAsTimestamp ||
                     (this.ValueAsTimestamp != null &&
                     this.ValueAsTimestamp.Equals(input.ValueAsTimestamp))
-                ) && 
+                ) &&
                 (
                     this.ValueAsAddress == input.ValueAsAddress ||
                     (this.ValueAsAddress != null &&
                     this.ValueAsAddress.Equals(input.ValueAsAddress))
-                ) && 
+                ) &&
                 (
                     this.ValueAsWeight == input.ValueAsWeight ||
                     (this.ValueAsWeight != null &&
                     this.ValueAsWeight.Equals(input.ValueAsWeight))
-                ) && 
+                ) &&
                 (
                     this.ValueAsDimension == input.ValueAsDimension ||
                     (this.ValueAsDimension != null &&
                     this.ValueAsDimension.Equals(input.ValueAsDimension))
-                ) && 
+                ) &&
                 (
                     this.ValueAsCurrency == input.ValueAsCurrency ||
                     (this.ValueAsCurrency != null &&

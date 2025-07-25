@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,12 +23,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Represents the eligibility status of the inbound packages.
     /// </summary>
     [DataContract]
-    public partial class InboundEligibility :  IEquatable<InboundEligibility>, IValidatableObject
+    public partial class InboundEligibility : IEquatable<InboundEligibility>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public InboundEligibilityStatus Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundEligibility" /> class.
@@ -78,26 +73,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             }
             this.IneligibilityReasons = ineligibilityReasons;
         }
-        
+
         /// <summary>
         /// If there are order level eligibility issues, then this list will contain those error codes and descriptions.
         /// </summary>
         /// <value>If there are order level eligibility issues, then this list will contain those error codes and descriptions.</value>
-        [DataMember(Name="ineligibilityReasons", EmitDefaultValue=false)]
+        [DataMember(Name = "ineligibilityReasons", EmitDefaultValue = false)]
         public List<OrderIneligibilityReason> IneligibilityReasons { get; set; }
 
         /// <summary>
         /// Details on SKU eligibility for each inbound package.
         /// </summary>
         /// <value>Details on SKU eligibility for each inbound package.</value>
-        [DataMember(Name="packagesToInbound", EmitDefaultValue=false)]
+        [DataMember(Name = "packagesToInbound", EmitDefaultValue = false)]
         public List<SkuEligibility> PackagesToInbound { get; set; }
 
         /// <summary>
         /// Timestamp when the eligibility check is performed.
         /// </summary>
         /// <value>Timestamp when the eligibility check is performed.</value>
-        [DataMember(Name="previewedAt", EmitDefaultValue=false)]
+        [DataMember(Name = "previewedAt", EmitDefaultValue = false)]
         public DateTime? PreviewedAt { get; set; }
 
 
@@ -116,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -146,22 +141,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IneligibilityReasons == input.IneligibilityReasons ||
                     this.IneligibilityReasons != null &&
                     this.IneligibilityReasons.SequenceEqual(input.IneligibilityReasons)
-                ) && 
+                ) &&
                 (
                     this.PackagesToInbound == input.PackagesToInbound ||
                     this.PackagesToInbound != null &&
                     this.PackagesToInbound.SequenceEqual(input.PackagesToInbound)
-                ) && 
+                ) &&
                 (
                     this.PreviewedAt == input.PreviewedAt ||
                     (this.PreviewedAt != null &&
                     this.PreviewedAt.Equals(input.PreviewedAt))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&

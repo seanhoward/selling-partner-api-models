@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,26 +9,21 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Relationship details for the Amazon catalog item for the indicated Amazon marketplace.
+    /// Relationship details for the Amazon catalog item for the specified Amazon &#x60;marketplaceId&#x60;.
     /// </summary>
     [DataContract]
-    public partial class ItemRelationshipsByMarketplace :  IEquatable<ItemRelationshipsByMarketplace>, IValidatableObject
+    public partial class ItemRelationshipsByMarketplace : IEquatable<ItemRelationshipsByMarketplace>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemRelationshipsByMarketplace" /> class.
@@ -38,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemRelationshipsByMarketplace" /> class.
         /// </summary>
-        /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
+        /// <param name="marketplaceId">Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required).</param>
         /// <param name="relationships">Relationships for the item. (required).</param>
         public ItemRelationshipsByMarketplace(string marketplaceId = default, List<ItemRelationship> relationships = default)
         {
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
                 this.Relationships = relationships;
             }
         }
-        
+
         /// <summary>
-        /// Amazon marketplace identifier.
+        /// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
-        /// <value>Amazon marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        /// <value>Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// Relationships for the item.
         /// </summary>
         /// <value>Relationships for the item.</value>
-        [DataMember(Name="relationships", EmitDefaultValue=false)]
+        [DataMember(Name = "relationships", EmitDefaultValue = false)]
         public List<ItemRelationship> Relationships { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Relationships == input.Relationships ||
                     this.Relationships != null &&

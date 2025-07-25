@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Business days and hours when the destination is open for deliveries.
     /// </summary>
     [DataContract]
-    public partial class BusinessHours :  IEquatable<BusinessHours>, IValidatableObject
+    public partial class BusinessHours : IEquatable<BusinessHours>, IValidatableObject
     {
         /// <summary>
         /// Day of the week.
@@ -37,43 +32,43 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DayOfWeekEnum
         {
-            
+
             /// <summary>
             /// Enum SUN for value: SUN
             /// </summary>
             [EnumMember(Value = "SUN")]
             SUN = 1,
-            
+
             /// <summary>
             /// Enum MON for value: MON
             /// </summary>
             [EnumMember(Value = "MON")]
             MON = 2,
-            
+
             /// <summary>
             /// Enum TUE for value: TUE
             /// </summary>
             [EnumMember(Value = "TUE")]
             TUE = 3,
-            
+
             /// <summary>
             /// Enum WED for value: WED
             /// </summary>
             [EnumMember(Value = "WED")]
             WED = 4,
-            
+
             /// <summary>
             /// Enum THU for value: THU
             /// </summary>
             [EnumMember(Value = "THU")]
             THU = 5,
-            
+
             /// <summary>
             /// Enum FRI for value: FRI
             /// </summary>
             [EnumMember(Value = "FRI")]
             FRI = 6,
-            
+
             /// <summary>
             /// Enum SAT for value: SAT
             /// </summary>
@@ -85,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// Day of the week.
         /// </summary>
         /// <value>Day of the week.</value>
-        [DataMember(Name="DayOfWeek", EmitDefaultValue=false)]
+        [DataMember(Name = "DayOfWeek", EmitDefaultValue = false)]
         public DayOfWeekEnum? DayOfWeek { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BusinessHours" /> class.
@@ -97,13 +92,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.DayOfWeek = dayOfWeek;
             this.OpenIntervals = openIntervals;
         }
-        
+
 
         /// <summary>
         /// Time window during the day when the business is open.
         /// </summary>
         /// <value>Time window during the day when the business is open.</value>
-        [DataMember(Name="OpenIntervals", EmitDefaultValue=false)]
+        [DataMember(Name = "OpenIntervals", EmitDefaultValue = false)]
         public List<OpenInterval> OpenIntervals { get; set; }
 
         /// <summary>
@@ -119,7 +114,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -149,12 +144,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DayOfWeek == input.DayOfWeek ||
                     (this.DayOfWeek != null &&
                     this.DayOfWeek.Equals(input.DayOfWeek))
-                ) && 
+                ) &&
                 (
                     this.OpenIntervals == input.OpenIntervals ||
                     this.OpenIntervals != null &&

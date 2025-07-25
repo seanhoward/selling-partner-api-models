@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Amazon Warehousing and Distribution
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * OpenAPI spec version: 2024-05-09
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,46 +22,46 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// The preparation details for a product. This contains the prep category, prep owner, and label owner. Prep instructions are generated based on the specified category.
     /// </summary>
     [DataContract]
-    public partial class PrepDetails :  IEquatable<PrepDetails>, IValidatableObject
+    public partial class PrepDetails : IEquatable<PrepDetails>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets LabelOwner
         /// </summary>
-        [DataMember(Name="labelOwner", EmitDefaultValue=false)]
+        [DataMember(Name = "labelOwner", EmitDefaultValue = false)]
         public LabelOwner? LabelOwner { get; set; }
+        /// <summary>
+        /// The preparation category for shipping an item to Amazon&#39;s fulfillment network.
+        /// </summary>
+        /// <value>The preparation category for shipping an item to Amazon&#39;s fulfillment network.</value>
+        [DataMember(Name = "prepCategory", EmitDefaultValue = false)]
+        public PrepCategory? PrepCategory { get; set; }
         /// <summary>
         /// Gets or Sets PrepOwner
         /// </summary>
-        [DataMember(Name="prepOwner", EmitDefaultValue=false)]
+        [DataMember(Name = "prepOwner", EmitDefaultValue = false)]
         public PrepOwner? PrepOwner { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PrepDetails" /> class.
         /// </summary>
         /// <param name="labelOwner">labelOwner.</param>
         /// <param name="prepCategory">The preparation category for shipping an item to Amazon&#39;s fulfillment network..</param>
-        /// <param name="prepInstructions">Information that pertains to the preparation of inbound products. This is generated based on the specified category..</param>
+        /// <param name="prepInstructions">Contains information about the preparation of the inbound products. The system auto-generates this field with the use of the &#x60;prepCategory&#x60;, and if you attempt to pass a value for this field, the system will ignore it..</param>
         /// <param name="prepOwner">prepOwner.</param>
-        public PrepDetails(LabelOwner? labelOwner = default, string prepCategory = default, List<PrepInstruction> prepInstructions = default, PrepOwner? prepOwner = default)
+        public PrepDetails(LabelOwner? labelOwner = default, PrepCategory? prepCategory = default, List<PrepInstruction> prepInstructions = default, PrepOwner? prepOwner = default)
         {
             this.LabelOwner = labelOwner;
             this.PrepCategory = prepCategory;
             this.PrepInstructions = prepInstructions;
             this.PrepOwner = prepOwner;
         }
-        
+
+
 
         /// <summary>
-        /// The preparation category for shipping an item to Amazon&#39;s fulfillment network.
+        /// Contains information about the preparation of the inbound products. The system auto-generates this field with the use of the &#x60;prepCategory&#x60;, and if you attempt to pass a value for this field, the system will ignore it.
         /// </summary>
-        /// <value>The preparation category for shipping an item to Amazon&#39;s fulfillment network.</value>
-        [DataMember(Name="prepCategory", EmitDefaultValue=false)]
-        public string PrepCategory { get; set; }
-
-        /// <summary>
-        /// Information that pertains to the preparation of inbound products. This is generated based on the specified category.
-        /// </summary>
-        /// <value>Information that pertains to the preparation of inbound products. This is generated based on the specified category.</value>
-        [DataMember(Name="prepInstructions", EmitDefaultValue=false)]
+        /// <value>Contains information about the preparation of the inbound products. The system auto-generates this field with the use of the &#x60;prepCategory&#x60;, and if you attempt to pass a value for this field, the system will ignore it.</value>
+        [DataMember(Name = "prepInstructions", EmitDefaultValue = false)]
         public List<PrepInstruction> PrepInstructions { get; set; }
 
 
@@ -86,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -116,22 +110,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.LabelOwner == input.LabelOwner ||
                     (this.LabelOwner != null &&
                     this.LabelOwner.Equals(input.LabelOwner))
-                ) && 
+                ) &&
                 (
                     this.PrepCategory == input.PrepCategory ||
                     (this.PrepCategory != null &&
                     this.PrepCategory.Equals(input.PrepCategory))
-                ) && 
+                ) &&
                 (
                     this.PrepInstructions == input.PrepInstructions ||
                     this.PrepInstructions != null &&
                     this.PrepInstructions.SequenceEqual(input.PrepInstructions)
-                ) && 
+                ) &&
                 (
                     this.PrepOwner == input.PrepOwner ||
                     (this.PrepOwner != null &&

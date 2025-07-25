@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Information about the service job provider.
     /// </summary>
     [DataContract]
-    public partial class ServiceJobProvider :  IEquatable<ServiceJobProvider>, IValidatableObject
+    public partial class ServiceJobProvider : IEquatable<ServiceJobProvider>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceJobProvider" /> class.
@@ -38,12 +32,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         {
             this.ServiceJobProviderId = serviceJobProviderId;
         }
-        
+
         /// <summary>
         /// The identifier of the service job provider.
         /// </summary>
         /// <value>The identifier of the service job provider.</value>
-        [DataMember(Name="serviceJobProviderId", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceJobProviderId", EmitDefaultValue = false)]
         public string ServiceJobProviderId { get; set; }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ServiceJobProviderId == input.ServiceJobProviderId ||
                     (this.ServiceJobProviderId != null &&
@@ -122,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             Regex regexServiceJobProviderId = new Regex(@"^[A-Z0-9]*$", RegexOptions.CultureInvariant);
             if (false == regexServiceJobProviderId.Match(this.ServiceJobProviderId).Success)
             {
-                yield return new ValidationResult("Invalid value for ServiceJobProviderId, must match a pattern of " + regexServiceJobProviderId, new [] { "ServiceJobProviderId" });
+                yield return new ValidationResult("Invalid value for ServiceJobProviderId, must match a pattern of " + regexServiceJobProviderId, new[] { "ServiceJobProviderId" });
             }
 
             yield break;

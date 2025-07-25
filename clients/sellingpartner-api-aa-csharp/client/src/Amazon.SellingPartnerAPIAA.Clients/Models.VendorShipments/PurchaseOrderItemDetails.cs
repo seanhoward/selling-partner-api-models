@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.
     /// </summary>
     [DataContract]
-    public partial class PurchaseOrderItemDetails :  IEquatable<PurchaseOrderItemDetails>, IValidatableObject
+    public partial class PurchaseOrderItemDetails : IEquatable<PurchaseOrderItemDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PurchaseOrderItemDetails" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         {
             this.MaximumRetailPrice = maximumRetailPrice;
         }
-        
+
         /// <summary>
         /// Maximum retail price of the item being shipped.
         /// </summary>
         /// <value>Maximum retail price of the item being shipped.</value>
-        [DataMember(Name="maximumRetailPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "maximumRetailPrice", EmitDefaultValue = false)]
         public Money MaximumRetailPrice { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MaximumRetailPrice == input.MaximumRetailPrice ||
                     (this.MaximumRetailPrice != null &&

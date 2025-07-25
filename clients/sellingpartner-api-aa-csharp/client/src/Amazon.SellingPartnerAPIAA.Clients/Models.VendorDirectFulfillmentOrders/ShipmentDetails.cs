@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
     /// Shipment details required for the shipment.
     /// </summary>
     [DataContract]
-    public partial class ShipmentDetails :  IEquatable<ShipmentDetails>, IValidatableObject
+    public partial class ShipmentDetails : IEquatable<ShipmentDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDetails" /> class.
@@ -95,53 +89,53 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             this.IsScheduledDeliveryShipment = isScheduledDeliveryShipment;
             this.IsGift = isGift;
         }
-        
+
         /// <summary>
         /// When true, this is a priority shipment.
         /// </summary>
         /// <value>When true, this is a priority shipment.</value>
-        [DataMember(Name="isPriorityShipment", EmitDefaultValue=false)]
+        [DataMember(Name = "isPriorityShipment", EmitDefaultValue = false)]
         public bool? IsPriorityShipment { get; set; }
 
         /// <summary>
         /// When true, this order is part of a scheduled delivery program.
         /// </summary>
         /// <value>When true, this order is part of a scheduled delivery program.</value>
-        [DataMember(Name="isScheduledDeliveryShipment", EmitDefaultValue=false)]
+        [DataMember(Name = "isScheduledDeliveryShipment", EmitDefaultValue = false)]
         public bool? IsScheduledDeliveryShipment { get; set; }
 
         /// <summary>
         /// When true, a packing slip is required to be sent to the customer.
         /// </summary>
         /// <value>When true, a packing slip is required to be sent to the customer.</value>
-        [DataMember(Name="isPslipRequired", EmitDefaultValue=false)]
+        [DataMember(Name = "isPslipRequired", EmitDefaultValue = false)]
         public bool? IsPslipRequired { get; set; }
 
         /// <summary>
         /// When true, the order contain a gift. Include the gift message and gift wrap information.
         /// </summary>
         /// <value>When true, the order contain a gift. Include the gift message and gift wrap information.</value>
-        [DataMember(Name="isGift", EmitDefaultValue=false)]
+        [DataMember(Name = "isGift", EmitDefaultValue = false)]
         public bool? IsGift { get; set; }
 
         /// <summary>
         /// Ship method to be used for shipping the order. Amazon defines ship method codes indicating the shipping carrier and shipment service level. To see the full list of ship methods in use, including both the code and the friendly name, search the &#39;Help&#39; section on Vendor Central for &#39;ship methods&#39;.
         /// </summary>
         /// <value>Ship method to be used for shipping the order. Amazon defines ship method codes indicating the shipping carrier and shipment service level. To see the full list of ship methods in use, including both the code and the friendly name, search the &#39;Help&#39; section on Vendor Central for &#39;ship methods&#39;.</value>
-        [DataMember(Name="shipMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "shipMethod", EmitDefaultValue = false)]
         public string ShipMethod { get; set; }
 
         /// <summary>
         /// Gets or Sets ShipmentDates
         /// </summary>
-        [DataMember(Name="shipmentDates", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentDates", EmitDefaultValue = false)]
         public ShipmentDates ShipmentDates { get; set; }
 
         /// <summary>
         /// Message to customer for order status.
         /// </summary>
         /// <value>Message to customer for order status.</value>
-        [DataMember(Name="messageToCustomer", EmitDefaultValue=false)]
+        [DataMember(Name = "messageToCustomer", EmitDefaultValue = false)]
         public string MessageToCustomer { get; set; }
 
         /// <summary>
@@ -162,7 +156,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -192,37 +186,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IsPriorityShipment == input.IsPriorityShipment ||
                     (this.IsPriorityShipment != null &&
                     this.IsPriorityShipment.Equals(input.IsPriorityShipment))
-                ) && 
+                ) &&
                 (
                     this.IsScheduledDeliveryShipment == input.IsScheduledDeliveryShipment ||
                     (this.IsScheduledDeliveryShipment != null &&
                     this.IsScheduledDeliveryShipment.Equals(input.IsScheduledDeliveryShipment))
-                ) && 
+                ) &&
                 (
                     this.IsPslipRequired == input.IsPslipRequired ||
                     (this.IsPslipRequired != null &&
                     this.IsPslipRequired.Equals(input.IsPslipRequired))
-                ) && 
+                ) &&
                 (
                     this.IsGift == input.IsGift ||
                     (this.IsGift != null &&
                     this.IsGift.Equals(input.IsGift))
-                ) && 
+                ) &&
                 (
                     this.ShipMethod == input.ShipMethod ||
                     (this.ShipMethod != null &&
                     this.ShipMethod.Equals(input.ShipMethod))
-                ) && 
+                ) &&
                 (
                     this.ShipmentDates == input.ShipmentDates ||
                     (this.ShipmentDates != null &&
                     this.ShipmentDates.Equals(input.ShipmentDates))
-                ) && 
+                ) &&
                 (
                     this.MessageToCustomer == input.MessageToCustomer ||
                     (this.MessageToCustomer != null &&

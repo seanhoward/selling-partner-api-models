@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The response list for the &#x60;competitiveSummaryBatch&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class CompetitiveSummaryResponseList : List<CompetitiveSummaryResponse>,  IEquatable<CompetitiveSummaryResponseList>, IValidatableObject
+    public partial class CompetitiveSummaryResponseList : List<CompetitiveSummaryResponse>, IEquatable<CompetitiveSummaryResponseList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryResponseList" /> class.
@@ -37,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         public CompetitiveSummaryResponseList() : base()
         {
         }
-        
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -50,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

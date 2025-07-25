@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
     /// The response schema for the &#x60;getPaymentMethods&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class GetPaymentMethodsResponse :  IEquatable<GetPaymentMethodsResponse>, IValidatableObject
+    public partial class GetPaymentMethodsResponse : IEquatable<GetPaymentMethodsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetPaymentMethodsResponse" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
         {
             this.PaymentMethods = paymentMethods;
         }
-        
+
         /// <summary>
         /// Gets or Sets PaymentMethods
         /// </summary>
-        [DataMember(Name="paymentMethods", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentMethods", EmitDefaultValue = false)]
         public PaymentMethodList PaymentMethods { get; set; }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PaymentMethods == input.PaymentMethods ||
                     (this.PaymentMethods != null &&

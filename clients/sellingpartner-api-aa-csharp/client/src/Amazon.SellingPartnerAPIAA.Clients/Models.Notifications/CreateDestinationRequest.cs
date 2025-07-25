@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// The request schema for the &#x60;createDestination&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class CreateDestinationRequest :  IEquatable<CreateDestinationRequest>, IValidatableObject
+    public partial class CreateDestinationRequest : IEquatable<CreateDestinationRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDestinationRequest" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
                 this.Name = name;
             }
         }
-        
+
         /// <summary>
         /// The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination.
         /// </summary>
         /// <value>The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination.</value>
-        [DataMember(Name="resourceSpecification", EmitDefaultValue=false)]
+        [DataMember(Name = "resourceSpecification", EmitDefaultValue = false)]
         public DestinationResourceSpecification ResourceSpecification { get; set; }
 
         /// <summary>
         /// A developer-defined name to help identify this destination.
         /// </summary>
         /// <value>A developer-defined name to help identify this destination.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ResourceSpecification == input.ResourceSpecification ||
                     (this.ResourceSpecification != null &&
                     this.ResourceSpecification.Equals(input.ResourceSpecification))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&

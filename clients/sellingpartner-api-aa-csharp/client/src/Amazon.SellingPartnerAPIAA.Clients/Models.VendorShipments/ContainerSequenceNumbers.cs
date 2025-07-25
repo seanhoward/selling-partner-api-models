@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Container sequence numbers that are involved in this shipment.
     /// </summary>
     [DataContract]
-    public partial class ContainerSequenceNumbers :  IEquatable<ContainerSequenceNumbers>, IValidatableObject
+    public partial class ContainerSequenceNumbers : IEquatable<ContainerSequenceNumbers>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerSequenceNumbers" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         {
             this.ContainerSequenceNumber = containerSequenceNumber;
         }
-        
+
         /// <summary>
         /// A list of containers shipped
         /// </summary>
         /// <value>A list of containers shipped</value>
-        [DataMember(Name="containerSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "containerSequenceNumber", EmitDefaultValue = false)]
         public string ContainerSequenceNumber { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContainerSequenceNumber == input.ContainerSequenceNumber ||
                     (this.ContainerSequenceNumber != null &&

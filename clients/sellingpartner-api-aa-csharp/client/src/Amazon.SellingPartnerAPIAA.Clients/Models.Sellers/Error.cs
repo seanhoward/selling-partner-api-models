@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Sellers
  *
- * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
+ * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
  *
  * OpenAPI spec version: v1
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
     /// Error response returned when the request is unsuccessful.
     /// </summary>
     [DataContract]
-    public partial class Error :  IEquatable<Error>, IValidatableObject
+    public partial class Error : IEquatable<Error>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
@@ -40,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// </summary>
         /// <param name="code">An error code that identifies the type of error that occurred. (required).</param>
         /// <param name="message">A message that describes the error condition in a human-readable form. (required).</param>
-        /// <param name="details">Additional details that can help the caller understand or fix the issue..</param>
+        /// <param name="details">Additional details that can help you understand or fix the issue..</param>
         public Error(string code = default, string message = default, string details = default)
         {
             // to ensure "code" is required (not null)
@@ -63,26 +57,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             }
             this.Details = details;
         }
-        
+
         /// <summary>
         /// An error code that identifies the type of error that occurred.
         /// </summary>
         /// <value>An error code that identifies the type of error that occurred.</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// A message that describes the error condition in a human-readable form.
         /// </summary>
         /// <value>A message that describes the error condition in a human-readable form.</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
         /// <summary>
-        /// Additional details that can help the caller understand or fix the issue.
+        /// Additional details that can help you understand or fix the issue.
         /// </summary>
-        /// <value>Additional details that can help the caller understand or fix the issue.</value>
-        [DataMember(Name="details", EmitDefaultValue=false)]
+        /// <value>Additional details that can help you understand or fix the issue.</value>
+        [DataMember(Name = "details", EmitDefaultValue = false)]
         public string Details { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.Details == input.Details ||
                     (this.Details != null &&

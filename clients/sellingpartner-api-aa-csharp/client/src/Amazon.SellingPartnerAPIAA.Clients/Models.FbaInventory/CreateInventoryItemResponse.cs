@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// The response schema for the CreateInventoryItem operation.
     /// </summary>
     [DataContract]
-    public partial class CreateInventoryItemResponse :  IEquatable<CreateInventoryItemResponse>, IValidatableObject
+    public partial class CreateInventoryItemResponse : IEquatable<CreateInventoryItemResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInventoryItemResponse" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         {
             this.Errors = errors;
         }
-        
+
         /// <summary>
         /// One or more unexpected errors occurred during the CreateInventoryItem operation.
         /// </summary>
         /// <value>One or more unexpected errors occurred during the CreateInventoryItem operation.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Errors == input.Errors ||
                     (this.Errors != null &&

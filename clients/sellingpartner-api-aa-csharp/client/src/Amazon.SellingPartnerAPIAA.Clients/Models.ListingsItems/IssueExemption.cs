@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// Conveying the status of the listed enforcement actions and, if applicable, provides information about the exemption&#39;s expiry date.
     /// </summary>
     [DataContract]
-    public partial class IssueExemption :  IEquatable<IssueExemption>, IValidatableObject
+    public partial class IssueExemption : IEquatable<IssueExemption>, IValidatableObject
     {
         /// <summary>
         /// This field indicates the current exemption status for the listed enforcement actions. It can take values such as &#x60;EXEMPT&#x60;, signifying permanent exemption, &#x60;EXEMPT_UNTIL_EXPIRY_DATE&#x60; indicating temporary exemption until a specified date, or &#x60;NOT_EXEMPT&#x60; signifying no exemptions, and enforcement actions were already applied.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
-            
+
             /// <summary>
             /// Enum EXEMPT for value: EXEMPT
             /// </summary>
             [EnumMember(Value = "EXEMPT")]
             EXEMPT = 1,
-            
+
             /// <summary>
             /// Enum EXEMPTUNTILEXPIRYDATE for value: EXEMPT_UNTIL_EXPIRY_DATE
             /// </summary>
             [EnumMember(Value = "EXEMPT_UNTIL_EXPIRY_DATE")]
             EXEMPTUNTILEXPIRYDATE = 2,
-            
+
             /// <summary>
             /// Enum NOTEXEMPT for value: NOT_EXEMPT
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// This field indicates the current exemption status for the listed enforcement actions. It can take values such as &#x60;EXEMPT&#x60;, signifying permanent exemption, &#x60;EXEMPT_UNTIL_EXPIRY_DATE&#x60; indicating temporary exemption until a specified date, or &#x60;NOT_EXEMPT&#x60; signifying no exemptions, and enforcement actions were already applied.
         /// </summary>
         /// <value>This field indicates the current exemption status for the listed enforcement actions. It can take values such as &#x60;EXEMPT&#x60;, signifying permanent exemption, &#x60;EXEMPT_UNTIL_EXPIRY_DATE&#x60; indicating temporary exemption until a specified date, or &#x60;NOT_EXEMPT&#x60; signifying no exemptions, and enforcement actions were already applied.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="IssueExemption" /> class.
@@ -72,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// Initializes a new instance of the <see cref="IssueExemption" /> class.
         /// </summary>
         /// <param name="status">This field indicates the current exemption status for the listed enforcement actions. It can take values such as &#x60;EXEMPT&#x60;, signifying permanent exemption, &#x60;EXEMPT_UNTIL_EXPIRY_DATE&#x60; indicating temporary exemption until a specified date, or &#x60;NOT_EXEMPT&#x60; signifying no exemptions, and enforcement actions were already applied. (required).</param>
-        /// <param name="expiryDate">This field represents the timestamp, following the ISO 8601 format, which specifies the date when temporary exemptions, if applicable, will expire, and Amazon will begin enforcing the listed actions..</param>
+        /// <param name="expiryDate">Represents the timestamp, in ISO 8601 format, that specifies the date when the temporary exemptions expires, and Amazon begins enforcing the listed actions..</param>
         public IssueExemption(StatusEnum status = default, DateTime? expiryDate = default)
         {
             // to ensure "status" is required (not null)
@@ -86,13 +81,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             }
             this.ExpiryDate = expiryDate;
         }
-        
+
 
         /// <summary>
-        /// This field represents the timestamp, following the ISO 8601 format, which specifies the date when temporary exemptions, if applicable, will expire, and Amazon will begin enforcing the listed actions.
+        /// Represents the timestamp, in ISO 8601 format, that specifies the date when the temporary exemptions expires, and Amazon begins enforcing the listed actions.
         /// </summary>
-        /// <value>This field represents the timestamp, following the ISO 8601 format, which specifies the date when temporary exemptions, if applicable, will expire, and Amazon will begin enforcing the listed actions.</value>
-        [DataMember(Name="expiryDate", EmitDefaultValue=false)]
+        /// <value>Represents the timestamp, in ISO 8601 format, that specifies the date when the temporary exemptions expires, and Amazon begins enforcing the listed actions.</value>
+        [DataMember(Name = "expiryDate", EmitDefaultValue = false)]
         public DateTime? ExpiryDate { get; set; }
 
         /// <summary>
@@ -108,7 +103,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -138,12 +133,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.ExpiryDate == input.ExpiryDate ||
                     (this.ExpiryDate != null &&

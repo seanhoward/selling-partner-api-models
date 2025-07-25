@@ -9,18 +9,14 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// The job details of a service.
     /// </summary>
     [DataContract]
-    public partial class ServiceJob :  IEquatable<ServiceJob>, IValidatableObject
+    public partial class ServiceJob : IEquatable<ServiceJob>, IValidatableObject
     {
         /// <summary>
         /// The status of the service job.
@@ -37,43 +33,43 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ServiceJobStatusEnum
         {
-            
+
             /// <summary>
             /// Enum NOTSERVICED for value: NOT_SERVICED
             /// </summary>
             [EnumMember(Value = "NOT_SERVICED")]
             NOTSERVICED = 1,
-            
+
             /// <summary>
             /// Enum CANCELLED for value: CANCELLED
             /// </summary>
             [EnumMember(Value = "CANCELLED")]
             CANCELLED = 2,
-            
+
             /// <summary>
             /// Enum COMPLETED for value: COMPLETED
             /// </summary>
             [EnumMember(Value = "COMPLETED")]
             COMPLETED = 3,
-            
+
             /// <summary>
             /// Enum PENDINGSCHEDULE for value: PENDING_SCHEDULE
             /// </summary>
             [EnumMember(Value = "PENDING_SCHEDULE")]
             PENDINGSCHEDULE = 4,
-            
+
             /// <summary>
             /// Enum NOTFULFILLABLE for value: NOT_FULFILLABLE
             /// </summary>
             [EnumMember(Value = "NOT_FULFILLABLE")]
             NOTFULFILLABLE = 5,
-            
+
             /// <summary>
             /// Enum HOLD for value: HOLD
             /// </summary>
             [EnumMember(Value = "HOLD")]
             HOLD = 6,
-            
+
             /// <summary>
             /// Enum PAYMENTDECLINED for value: PAYMENT_DECLINED
             /// </summary>
@@ -85,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The status of the service job.
         /// </summary>
         /// <value>The status of the service job.</value>
-        [DataMember(Name="serviceJobStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceJobStatus", EmitDefaultValue = false)]
         public ServiceJobStatusEnum? ServiceJobStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceJob" /> class.
@@ -121,19 +117,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.AssociatedItems = associatedItems;
             this.ServiceLocation = serviceLocation;
         }
-        
+
         /// <summary>
         /// The date and time of the creation of the job in ISO 8601 format.
         /// </summary>
         /// <value>The date and time of the creation of the job in ISO 8601 format.</value>
-        [DataMember(Name="createTime", EmitDefaultValue=false)]
+        [DataMember(Name = "createTime", EmitDefaultValue = false)]
         public DateTime? CreateTime { get; set; }
 
         /// <summary>
         /// The service job identifier.
         /// </summary>
         /// <value>The service job identifier.</value>
-        [DataMember(Name="serviceJobId", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceJobId", EmitDefaultValue = false)]
         public string ServiceJobId { get; set; }
 
 
@@ -141,77 +137,77 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The scope of work for the order.
         /// </summary>
         /// <value>The scope of work for the order.</value>
-        [DataMember(Name="scopeOfWork", EmitDefaultValue=false)]
+        [DataMember(Name = "scopeOfWork", EmitDefaultValue = false)]
         public ScopeOfWork ScopeOfWork { get; set; }
 
         /// <summary>
         /// Information about the seller of the service job.
         /// </summary>
         /// <value>Information about the seller of the service job.</value>
-        [DataMember(Name="seller", EmitDefaultValue=false)]
+        [DataMember(Name = "seller", EmitDefaultValue = false)]
         public Seller Seller { get; set; }
 
         /// <summary>
         /// Information about the service job provider.
         /// </summary>
         /// <value>Information about the service job provider.</value>
-        [DataMember(Name="serviceJobProvider", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceJobProvider", EmitDefaultValue = false)]
         public ServiceJobProvider ServiceJobProvider { get; set; }
 
         /// <summary>
         /// A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.
         /// </summary>
         /// <value>A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.</value>
-        [DataMember(Name="preferredAppointmentTimes", EmitDefaultValue=false)]
+        [DataMember(Name = "preferredAppointmentTimes", EmitDefaultValue = false)]
         public List<AppointmentTime> PreferredAppointmentTimes { get; set; }
 
         /// <summary>
         /// A list of appointments.
         /// </summary>
         /// <value>A list of appointments.</value>
-        [DataMember(Name="appointments", EmitDefaultValue=false)]
+        [DataMember(Name = "appointments", EmitDefaultValue = false)]
         public List<Appointment> Appointments { get; set; }
 
         /// <summary>
         /// The Amazon-defined identifier for an order placed by the buyer in 3-7-7 format.
         /// </summary>
         /// <value>The Amazon-defined identifier for an order placed by the buyer in 3-7-7 format.</value>
-        [DataMember(Name="serviceOrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceOrderId", EmitDefaultValue = false)]
         public string ServiceOrderId { get; set; }
 
         /// <summary>
         /// The marketplace identifier.
         /// </summary>
         /// <value>The marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The Amazon-defined identifier for the region scope.
         /// </summary>
         /// <value>The Amazon-defined identifier for the region scope.</value>
-        [DataMember(Name="storeId", EmitDefaultValue=false)]
+        [DataMember(Name = "storeId", EmitDefaultValue = false)]
         public string StoreId { get; set; }
 
         /// <summary>
         /// Information about the buyer.
         /// </summary>
         /// <value>Information about the buyer.</value>
-        [DataMember(Name="buyer", EmitDefaultValue=false)]
+        [DataMember(Name = "buyer", EmitDefaultValue = false)]
         public Buyer Buyer { get; set; }
 
         /// <summary>
         /// A list of items associated with the service job.
         /// </summary>
         /// <value>A list of items associated with the service job.</value>
-        [DataMember(Name="associatedItems", EmitDefaultValue=false)]
+        [DataMember(Name = "associatedItems", EmitDefaultValue = false)]
         public List<AssociatedItem> AssociatedItems { get; set; }
 
         /// <summary>
         /// Information about the location of the service job.
         /// </summary>
         /// <value>Information about the location of the service job.</value>
-        [DataMember(Name="serviceLocation", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceLocation", EmitDefaultValue = false)]
         public ServiceLocation ServiceLocation { get; set; }
 
         /// <summary>
@@ -239,7 +235,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -269,72 +265,72 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CreateTime == input.CreateTime ||
                     (this.CreateTime != null &&
                     this.CreateTime.Equals(input.CreateTime))
-                ) && 
+                ) &&
                 (
                     this.ServiceJobId == input.ServiceJobId ||
                     (this.ServiceJobId != null &&
                     this.ServiceJobId.Equals(input.ServiceJobId))
-                ) && 
+                ) &&
                 (
                     this.ServiceJobStatus == input.ServiceJobStatus ||
                     (this.ServiceJobStatus != null &&
                     this.ServiceJobStatus.Equals(input.ServiceJobStatus))
-                ) && 
+                ) &&
                 (
                     this.ScopeOfWork == input.ScopeOfWork ||
                     (this.ScopeOfWork != null &&
                     this.ScopeOfWork.Equals(input.ScopeOfWork))
-                ) && 
+                ) &&
                 (
                     this.Seller == input.Seller ||
                     (this.Seller != null &&
                     this.Seller.Equals(input.Seller))
-                ) && 
+                ) &&
                 (
                     this.ServiceJobProvider == input.ServiceJobProvider ||
                     (this.ServiceJobProvider != null &&
                     this.ServiceJobProvider.Equals(input.ServiceJobProvider))
-                ) && 
+                ) &&
                 (
                     this.PreferredAppointmentTimes == input.PreferredAppointmentTimes ||
                     this.PreferredAppointmentTimes != null &&
                     this.PreferredAppointmentTimes.SequenceEqual(input.PreferredAppointmentTimes)
-                ) && 
+                ) &&
                 (
                     this.Appointments == input.Appointments ||
                     this.Appointments != null &&
                     this.Appointments.SequenceEqual(input.Appointments)
-                ) && 
+                ) &&
                 (
                     this.ServiceOrderId == input.ServiceOrderId ||
                     (this.ServiceOrderId != null &&
                     this.ServiceOrderId.Equals(input.ServiceOrderId))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.StoreId == input.StoreId ||
                     (this.StoreId != null &&
                     this.StoreId.Equals(input.StoreId))
-                ) && 
+                ) &&
                 (
                     this.Buyer == input.Buyer ||
                     (this.Buyer != null &&
                     this.Buyer.Equals(input.Buyer))
-                ) && 
+                ) &&
                 (
                     this.AssociatedItems == input.AssociatedItems ||
                     this.AssociatedItems != null &&
                     this.AssociatedItems.SequenceEqual(input.AssociatedItems)
-                ) && 
+                ) &&
                 (
                     this.ServiceLocation == input.ServiceLocation ||
                     (this.ServiceLocation != null &&
@@ -394,19 +390,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             Regex regexMarketplaceId = new Regex(@"^[A-Z0-9]*$", RegexOptions.CultureInvariant);
             if (false == regexMarketplaceId.Match(this.MarketplaceId).Success)
             {
-                yield return new ValidationResult("Invalid value for MarketplaceId, must match a pattern of " + regexMarketplaceId, new [] { "MarketplaceId" });
+                yield return new ValidationResult("Invalid value for MarketplaceId, must match a pattern of " + regexMarketplaceId, new[] { "MarketplaceId" });
             }
 
             // StoreId (string) maxLength
-            if(this.StoreId != null && this.StoreId.Length > 100)
+            if (this.StoreId != null && this.StoreId.Length > 100)
             {
-                yield return new ValidationResult("Invalid value for StoreId, length must be less than 100.", new [] { "StoreId" });
+                yield return new ValidationResult("Invalid value for StoreId, length must be less than 100.", new[] { "StoreId" });
             }
 
             // StoreId (string) minLength
-            if(this.StoreId != null && this.StoreId.Length < 1)
+            if (this.StoreId != null && this.StoreId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for StoreId, length must be greater than 1.", new [] { "StoreId" });
+                yield return new ValidationResult("Invalid value for StoreId, length must be greater than 1.", new[] { "StoreId" });
             }
 
             yield break;

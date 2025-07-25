@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Liquid volume.
     /// </summary>
     [DataContract]
-    public partial class LiquidVolume :  IEquatable<LiquidVolume>, IValidatableObject
+    public partial class LiquidVolume : IEquatable<LiquidVolume>, IValidatableObject
     {
         /// <summary>
         /// The unit of measurement.
@@ -37,43 +32,43 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitEnum
         {
-            
+
             /// <summary>
             /// Enum ML for value: ML
             /// </summary>
             [EnumMember(Value = "ML")]
             ML = 1,
-            
+
             /// <summary>
             /// Enum L for value: L
             /// </summary>
             [EnumMember(Value = "L")]
             L = 2,
-            
+
             /// <summary>
             /// Enum FLOZ for value: FL_OZ
             /// </summary>
             [EnumMember(Value = "FL_OZ")]
             FLOZ = 3,
-            
+
             /// <summary>
             /// Enum GAL for value: GAL
             /// </summary>
             [EnumMember(Value = "GAL")]
             GAL = 4,
-            
+
             /// <summary>
             /// Enum PT for value: PT
             /// </summary>
             [EnumMember(Value = "PT")]
             PT = 5,
-            
+
             /// <summary>
             /// Enum QT for value: QT
             /// </summary>
             [EnumMember(Value = "QT")]
             QT = 6,
-            
+
             /// <summary>
             /// Enum C for value: C
             /// </summary>
@@ -85,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// The unit of measurement.
         /// </summary>
         /// <value>The unit of measurement.</value>
-        [DataMember(Name="Unit", EmitDefaultValue=false)]
+        [DataMember(Name = "Unit", EmitDefaultValue = false)]
         public UnitEnum Unit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LiquidVolume" /> class.
@@ -118,13 +113,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                 this.Value = value;
             }
         }
-        
+
 
         /// <summary>
         /// The measurement value.
         /// </summary>
         /// <value>The measurement value.</value>
-        [DataMember(Name="Value", EmitDefaultValue=false)]
+        [DataMember(Name = "Value", EmitDefaultValue = false)]
         public decimal? Value { get; set; }
 
         /// <summary>
@@ -140,7 +135,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -170,12 +165,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Unit == input.Unit ||
                     (this.Unit != null &&
                     this.Unit.Equals(input.Unit))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&

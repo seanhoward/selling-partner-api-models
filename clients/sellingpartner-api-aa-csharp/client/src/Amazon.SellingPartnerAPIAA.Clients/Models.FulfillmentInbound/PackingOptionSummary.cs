@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Summary information about a packing option.
     /// </summary>
     [DataContract]
-    public partial class PackingOptionSummary :  IEquatable<PackingOptionSummary>, IValidatableObject
+    public partial class PackingOptionSummary : IEquatable<PackingOptionSummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PackingOptionSummary" /> class.
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.Status = status;
             }
         }
-        
+
         /// <summary>
         /// Identifier of a packing option.
         /// </summary>
         /// <value>Identifier of a packing option.</value>
-        [DataMember(Name="packingOptionId", EmitDefaultValue=false)]
+        [DataMember(Name = "packingOptionId", EmitDefaultValue = false)]
         public string PackingOptionId { get; set; }
 
         /// <summary>
         /// The status of a packing option. Possible values: &#39;OFFERED&#39;, &#39;ACCEPTED&#39;, &#39;EXPIRED&#39;.
         /// </summary>
         /// <value>The status of a packing option. Possible values: &#39;OFFERED&#39;, &#39;ACCEPTED&#39;, &#39;EXPIRED&#39;.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PackingOptionId == input.PackingOptionId ||
                     (this.PackingOptionId != null &&
                     this.PackingOptionId.Equals(input.PackingOptionId))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
@@ -157,34 +152,34 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PackingOptionId (string) maxLength
-            if(this.PackingOptionId != null && this.PackingOptionId.Length > 38)
+            if (this.PackingOptionId != null && this.PackingOptionId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for PackingOptionId, length must be less than 38.", new [] { "PackingOptionId" });
+                yield return new ValidationResult("Invalid value for PackingOptionId, length must be less than 38.", new[] { "PackingOptionId" });
             }
 
             // PackingOptionId (string) minLength
-            if(this.PackingOptionId != null && this.PackingOptionId.Length < 38)
+            if (this.PackingOptionId != null && this.PackingOptionId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for PackingOptionId, length must be greater than 38.", new [] { "PackingOptionId" });
+                yield return new ValidationResult("Invalid value for PackingOptionId, length must be greater than 38.", new[] { "PackingOptionId" });
             }
 
             // PackingOptionId (string) pattern
             Regex regexPackingOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPackingOptionId.Match(this.PackingOptionId).Success)
             {
-                yield return new ValidationResult("Invalid value for PackingOptionId, must match a pattern of " + regexPackingOptionId, new [] { "PackingOptionId" });
+                yield return new ValidationResult("Invalid value for PackingOptionId, must match a pattern of " + regexPackingOptionId, new[] { "PackingOptionId" });
             }
 
             // Status (string) maxLength
-            if(this.Status != null && this.Status.Length > 1024)
+            if (this.Status != null && this.Status.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new[] { "Status" });
             }
 
             // Status (string) minLength
-            if(this.Status != null && this.Status.Length < 1)
+            if (this.Status != null && this.Status.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new[] { "Status" });
             }
 
             yield break;

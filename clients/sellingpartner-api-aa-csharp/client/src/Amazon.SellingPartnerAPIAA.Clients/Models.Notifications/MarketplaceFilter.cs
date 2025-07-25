@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// An event filter to customize your subscription to send notifications for only the specified &#x60;marketplaceId&#x60;s.
     /// </summary>
     [DataContract]
-    public partial class MarketplaceFilter :  IEquatable<MarketplaceFilter>, IValidatableObject
+    public partial class MarketplaceFilter : IEquatable<MarketplaceFilter>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MarketplaceFilter" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         {
             this.MarketplaceIds = marketplaceIds;
         }
-        
+
         /// <summary>
         /// Gets or Sets MarketplaceIds
         /// </summary>
-        [DataMember(Name="marketplaceIds", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceIds", EmitDefaultValue = false)]
         public MarketplaceIds MarketplaceIds { get; set; }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceIds == input.MarketplaceIds ||
                     (this.MarketplaceIds != null &&

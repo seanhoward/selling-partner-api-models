@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// A single order item.
     /// </summary>
     [DataContract]
-    public partial class OrderItem :  IEquatable<OrderItem>, IValidatableObject
+    public partial class OrderItem : IEquatable<OrderItem>, IValidatableObject
     {
         /// <summary>
         /// The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
@@ -37,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DeemedResellerCategoryEnum
         {
-            
+
             /// <summary>
             /// Enum IOSS for value: IOSS
             /// </summary>
             [EnumMember(Value = "IOSS")]
             IOSS = 1,
-            
+
             /// <summary>
             /// Enum UOSS for value: UOSS
             /// </summary>
@@ -55,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
         /// </summary>
         /// <value>The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.</value>
-        [DataMember(Name="DeemedResellerCategory", EmitDefaultValue=false)]
+        [DataMember(Name = "DeemedResellerCategory", EmitDefaultValue = false)]
         public DeemedResellerCategoryEnum? DeemedResellerCategory { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItem" /> class.
@@ -172,228 +168,228 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.ShippingConstraints = shippingConstraints;
             this.AmazonPrograms = amazonPrograms;
         }
-        
+
         /// <summary>
         /// The item&#39;s Amazon Standard Identification Number (ASIN).
         /// </summary>
         /// <value>The item&#39;s Amazon Standard Identification Number (ASIN).</value>
-        [DataMember(Name="ASIN", EmitDefaultValue=false)]
+        [DataMember(Name = "ASIN", EmitDefaultValue = false)]
         public string ASIN { get; set; }
 
         /// <summary>
         /// The item&#39;s seller stock keeping unit (SKU).
         /// </summary>
         /// <value>The item&#39;s seller stock keeping unit (SKU).</value>
-        [DataMember(Name="SellerSKU", EmitDefaultValue=false)]
+        [DataMember(Name = "SellerSKU", EmitDefaultValue = false)]
         public string SellerSKU { get; set; }
 
         /// <summary>
         /// An Amazon-defined order item identifier.
         /// </summary>
         /// <value>An Amazon-defined order item identifier.</value>
-        [DataMember(Name="OrderItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "OrderItemId", EmitDefaultValue = false)]
         public string OrderItemId { get; set; }
 
         /// <summary>
         /// A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
         /// </summary>
         /// <value>A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.</value>
-        [DataMember(Name="AssociatedItems", EmitDefaultValue=false)]
+        [DataMember(Name = "AssociatedItems", EmitDefaultValue = false)]
         public List<AssociatedItem> AssociatedItems { get; set; }
 
         /// <summary>
         /// The item&#39;s name.
         /// </summary>
         /// <value>The item&#39;s name.</value>
-        [DataMember(Name="Title", EmitDefaultValue=false)]
+        [DataMember(Name = "Title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// The number of items in the order. 
         /// </summary>
         /// <value>The number of items in the order. </value>
-        [DataMember(Name="QuantityOrdered", EmitDefaultValue=false)]
+        [DataMember(Name = "QuantityOrdered", EmitDefaultValue = false)]
         public int? QuantityOrdered { get; set; }
 
         /// <summary>
         /// The number of items shipped.
         /// </summary>
         /// <value>The number of items shipped.</value>
-        [DataMember(Name="QuantityShipped", EmitDefaultValue=false)]
+        [DataMember(Name = "QuantityShipped", EmitDefaultValue = false)]
         public int? QuantityShipped { get; set; }
 
         /// <summary>
         /// The item&#39;s product information.
         /// </summary>
         /// <value>The item&#39;s product information.</value>
-        [DataMember(Name="ProductInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "ProductInfo", EmitDefaultValue = false)]
         public ProductInfoDetail ProductInfo { get; set; }
 
         /// <summary>
         /// The number and value of Amazon Points granted with the purchase of an item.
         /// </summary>
         /// <value>The number and value of Amazon Points granted with the purchase of an item.</value>
-        [DataMember(Name="PointsGranted", EmitDefaultValue=false)]
+        [DataMember(Name = "PointsGranted", EmitDefaultValue = false)]
         public PointsGrantedDetail PointsGranted { get; set; }
 
         /// <summary>
         /// The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of &#x60;ItemPrice&#x60; is equal to the selling price of the item multiplied by the quantity ordered. &#x60;ItemPrice&#x60; excludes &#x60;ShippingPrice&#x60; and GiftWrapPrice.
         /// </summary>
         /// <value>The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of &#x60;ItemPrice&#x60; is equal to the selling price of the item multiplied by the quantity ordered. &#x60;ItemPrice&#x60; excludes &#x60;ShippingPrice&#x60; and GiftWrapPrice.</value>
-        [DataMember(Name="ItemPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "ItemPrice", EmitDefaultValue = false)]
         public Money ItemPrice { get; set; }
 
         /// <summary>
         /// The item&#39;s shipping price.
         /// </summary>
         /// <value>The item&#39;s shipping price.</value>
-        [DataMember(Name="ShippingPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingPrice", EmitDefaultValue = false)]
         public Money ShippingPrice { get; set; }
 
         /// <summary>
         /// The tax on the item price.
         /// </summary>
         /// <value>The tax on the item price.</value>
-        [DataMember(Name="ItemTax", EmitDefaultValue=false)]
+        [DataMember(Name = "ItemTax", EmitDefaultValue = false)]
         public Money ItemTax { get; set; }
 
         /// <summary>
         /// The tax on the shipping price.
         /// </summary>
         /// <value>The tax on the shipping price.</value>
-        [DataMember(Name="ShippingTax", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingTax", EmitDefaultValue = false)]
         public Money ShippingTax { get; set; }
 
         /// <summary>
         /// The discount on the shipping price.
         /// </summary>
         /// <value>The discount on the shipping price.</value>
-        [DataMember(Name="ShippingDiscount", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingDiscount", EmitDefaultValue = false)]
         public Money ShippingDiscount { get; set; }
 
         /// <summary>
         /// The tax on the discount on the shipping price.
         /// </summary>
         /// <value>The tax on the discount on the shipping price.</value>
-        [DataMember(Name="ShippingDiscountTax", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingDiscountTax", EmitDefaultValue = false)]
         public Money ShippingDiscountTax { get; set; }
 
         /// <summary>
         /// The total of all promotional discounts in the offer.
         /// </summary>
         /// <value>The total of all promotional discounts in the offer.</value>
-        [DataMember(Name="PromotionDiscount", EmitDefaultValue=false)]
+        [DataMember(Name = "PromotionDiscount", EmitDefaultValue = false)]
         public Money PromotionDiscount { get; set; }
 
         /// <summary>
         /// The tax on the total of all promotional discounts in the offer.
         /// </summary>
         /// <value>The tax on the total of all promotional discounts in the offer.</value>
-        [DataMember(Name="PromotionDiscountTax", EmitDefaultValue=false)]
+        [DataMember(Name = "PromotionDiscountTax", EmitDefaultValue = false)]
         public Money PromotionDiscountTax { get; set; }
 
         /// <summary>
         /// Gets or Sets PromotionIds
         /// </summary>
-        [DataMember(Name="PromotionIds", EmitDefaultValue=false)]
+        [DataMember(Name = "PromotionIds", EmitDefaultValue = false)]
         public PromotionIdList PromotionIds { get; set; }
 
         /// <summary>
         /// The fee charged for COD service.
         /// </summary>
         /// <value>The fee charged for COD service.</value>
-        [DataMember(Name="CODFee", EmitDefaultValue=false)]
+        [DataMember(Name = "CODFee", EmitDefaultValue = false)]
         public Money CODFee { get; set; }
 
         /// <summary>
         /// The discount on the COD fee.
         /// </summary>
         /// <value>The discount on the COD fee.</value>
-        [DataMember(Name="CODFeeDiscount", EmitDefaultValue=false)]
+        [DataMember(Name = "CODFeeDiscount", EmitDefaultValue = false)]
         public Money CODFeeDiscount { get; set; }
 
         /// <summary>
         /// Indicates whether the item is a gift.  **Possible values**: &#x60;true&#x60; and &#x60;false&#x60;.
         /// </summary>
         /// <value>Indicates whether the item is a gift.  **Possible values**: &#x60;true&#x60; and &#x60;false&#x60;.</value>
-        [DataMember(Name="IsGift", EmitDefaultValue=false)]
+        [DataMember(Name = "IsGift", EmitDefaultValue = false)]
         public string IsGift { get; set; }
 
         /// <summary>
         /// The condition of the item, as described by the seller.
         /// </summary>
         /// <value>The condition of the item, as described by the seller.</value>
-        [DataMember(Name="ConditionNote", EmitDefaultValue=false)]
+        [DataMember(Name = "ConditionNote", EmitDefaultValue = false)]
         public string ConditionNote { get; set; }
 
         /// <summary>
         /// The condition of the item.  **Possible values**: &#x60;New&#x60;, &#x60;Used&#x60;, &#x60;Collectible&#x60;, &#x60;Refurbished&#x60;, &#x60;Preorder&#x60;, and &#x60;Club&#x60;.
         /// </summary>
         /// <value>The condition of the item.  **Possible values**: &#x60;New&#x60;, &#x60;Used&#x60;, &#x60;Collectible&#x60;, &#x60;Refurbished&#x60;, &#x60;Preorder&#x60;, and &#x60;Club&#x60;.</value>
-        [DataMember(Name="ConditionId", EmitDefaultValue=false)]
+        [DataMember(Name = "ConditionId", EmitDefaultValue = false)]
         public string ConditionId { get; set; }
 
         /// <summary>
         /// The subcondition of the item.  **Possible values**: &#x60;New&#x60;, &#x60;Mint&#x60;, &#x60;Very Good&#x60;, &#x60;Good&#x60;, &#x60;Acceptable&#x60;, &#x60;Poor&#x60;, &#x60;Club&#x60;, &#x60;OEM&#x60;, &#x60;Warranty&#x60;, &#x60;Refurbished Warranty&#x60;, &#x60;Refurbished&#x60;, &#x60;Open Box&#x60;, &#x60;Any&#x60;, and &#x60;Other&#x60;.
         /// </summary>
         /// <value>The subcondition of the item.  **Possible values**: &#x60;New&#x60;, &#x60;Mint&#x60;, &#x60;Very Good&#x60;, &#x60;Good&#x60;, &#x60;Acceptable&#x60;, &#x60;Poor&#x60;, &#x60;Club&#x60;, &#x60;OEM&#x60;, &#x60;Warranty&#x60;, &#x60;Refurbished Warranty&#x60;, &#x60;Refurbished&#x60;, &#x60;Open Box&#x60;, &#x60;Any&#x60;, and &#x60;Other&#x60;.</value>
-        [DataMember(Name="ConditionSubtypeId", EmitDefaultValue=false)]
+        [DataMember(Name = "ConditionSubtypeId", EmitDefaultValue = false)]
         public string ConditionSubtypeId { get; set; }
 
         /// <summary>
         /// The start date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
         /// </summary>
         /// <value>The start date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.</value>
-        [DataMember(Name="ScheduledDeliveryStartDate", EmitDefaultValue=false)]
+        [DataMember(Name = "ScheduledDeliveryStartDate", EmitDefaultValue = false)]
         public string ScheduledDeliveryStartDate { get; set; }
 
         /// <summary>
         /// The end date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
         /// </summary>
         /// <value>The end date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.</value>
-        [DataMember(Name="ScheduledDeliveryEndDate", EmitDefaultValue=false)]
+        [DataMember(Name = "ScheduledDeliveryEndDate", EmitDefaultValue = false)]
         public string ScheduledDeliveryEndDate { get; set; }
 
         /// <summary>
         /// Indicates that the selling price is a special price that is only available for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   **Possible values**: &#x60;BusinessPrice&#x60;
         /// </summary>
         /// <value>Indicates that the selling price is a special price that is only available for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   **Possible values**: &#x60;BusinessPrice&#x60;</value>
-        [DataMember(Name="PriceDesignation", EmitDefaultValue=false)]
+        [DataMember(Name = "PriceDesignation", EmitDefaultValue = false)]
         public string PriceDesignation { get; set; }
 
         /// <summary>
         /// Information about withheld taxes.
         /// </summary>
         /// <value>Information about withheld taxes.</value>
-        [DataMember(Name="TaxCollection", EmitDefaultValue=false)]
+        [DataMember(Name = "TaxCollection", EmitDefaultValue = false)]
         public TaxCollection TaxCollection { get; set; }
 
         /// <summary>
         /// When true, the product type for this item has a serial number.   Only returned for Amazon Easy Ship orders.
         /// </summary>
         /// <value>When true, the product type for this item has a serial number.   Only returned for Amazon Easy Ship orders.</value>
-        [DataMember(Name="SerialNumberRequired", EmitDefaultValue=false)]
+        [DataMember(Name = "SerialNumberRequired", EmitDefaultValue = false)]
         public bool? SerialNumberRequired { get; set; }
 
         /// <summary>
         /// When true, the ASIN is enrolled in Transparency. The Transparency serial number that you must submit is determined by:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number is applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.
         /// </summary>
         /// <value>When true, the ASIN is enrolled in Transparency. The Transparency serial number that you must submit is determined by:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number is applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.</value>
-        [DataMember(Name="IsTransparency", EmitDefaultValue=false)]
+        [DataMember(Name = "IsTransparency", EmitDefaultValue = false)]
         public bool? IsTransparency { get; set; }
 
         /// <summary>
         /// The IOSS number of the marketplace. Sellers shipping to the EU from outside the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
         /// </summary>
         /// <value>The IOSS number of the marketplace. Sellers shipping to the EU from outside the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.</value>
-        [DataMember(Name="IossNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "IossNumber", EmitDefaultValue = false)]
         public string IossNumber { get; set; }
 
         /// <summary>
         /// The store chain store identifier. Linked to a specific store in a store chain.
         /// </summary>
         /// <value>The store chain store identifier. Linked to a specific store in a store chain.</value>
-        [DataMember(Name="StoreChainStoreId", EmitDefaultValue=false)]
+        [DataMember(Name = "StoreChainStoreId", EmitDefaultValue = false)]
         public string StoreChainStoreId { get; set; }
 
 
@@ -401,49 +397,49 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// A single item&#39;s buyer information.  **Note**: The &#x60;BuyerInfo&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;BuyerInfo&#x60;. For example, &#x60;BuyerCustomizedInfo&#x60; and &#x60;GiftMessageText&#x60;.
         /// </summary>
         /// <value>A single item&#39;s buyer information.  **Note**: The &#x60;BuyerInfo&#x60; contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in &#x60;BuyerInfo&#x60;. For example, &#x60;BuyerCustomizedInfo&#x60; and &#x60;GiftMessageText&#x60;.</value>
-        [DataMember(Name="BuyerInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerInfo", EmitDefaultValue = false)]
         public ItemBuyerInfo BuyerInfo { get; set; }
 
         /// <summary>
         /// Information about whether or not a buyer requested cancellation.
         /// </summary>
         /// <value>Information about whether or not a buyer requested cancellation.</value>
-        [DataMember(Name="BuyerRequestedCancel", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerRequestedCancel", EmitDefaultValue = false)]
         public BuyerRequestedCancel BuyerRequestedCancel { get; set; }
 
         /// <summary>
         /// A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.
         /// </summary>
         /// <value>A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.</value>
-        [DataMember(Name="SerialNumbers", EmitDefaultValue=false)]
+        [DataMember(Name = "SerialNumbers", EmitDefaultValue = false)]
         public List<string> SerialNumbers { get; set; }
 
         /// <summary>
         /// Substitution preferences for the order item. This is an optional field that is only present if a seller supports substitutions, as is the case with some grocery sellers.
         /// </summary>
         /// <value>Substitution preferences for the order item. This is an optional field that is only present if a seller supports substitutions, as is the case with some grocery sellers.</value>
-        [DataMember(Name="SubstitutionPreferences", EmitDefaultValue=false)]
+        [DataMember(Name = "SubstitutionPreferences", EmitDefaultValue = false)]
         public SubstitutionPreferences SubstitutionPreferences { get; set; }
 
         /// <summary>
         /// Measurement information for the order item.
         /// </summary>
         /// <value>Measurement information for the order item.</value>
-        [DataMember(Name="Measurement", EmitDefaultValue=false)]
+        [DataMember(Name = "Measurement", EmitDefaultValue = false)]
         public Measurement Measurement { get; set; }
 
         /// <summary>
         /// Shipping constraints applicable to this order.
         /// </summary>
         /// <value>Shipping constraints applicable to this order.</value>
-        [DataMember(Name="ShippingConstraints", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingConstraints", EmitDefaultValue = false)]
         public ShippingConstraints ShippingConstraints { get; set; }
 
         /// <summary>
         /// Contains the list of programs that are associated with an item.
         /// </summary>
         /// <value>Contains the list of programs that are associated with an item.</value>
-        [DataMember(Name="AmazonPrograms", EmitDefaultValue=false)]
+        [DataMember(Name = "AmazonPrograms", EmitDefaultValue = false)]
         public AmazonPrograms AmazonPrograms { get; set; }
 
         /// <summary>
@@ -497,7 +493,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -527,202 +523,202 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ASIN == input.ASIN ||
                     (this.ASIN != null &&
                     this.ASIN.Equals(input.ASIN))
-                ) && 
+                ) &&
                 (
                     this.SellerSKU == input.SellerSKU ||
                     (this.SellerSKU != null &&
                     this.SellerSKU.Equals(input.SellerSKU))
-                ) && 
+                ) &&
                 (
                     this.OrderItemId == input.OrderItemId ||
                     (this.OrderItemId != null &&
                     this.OrderItemId.Equals(input.OrderItemId))
-                ) && 
+                ) &&
                 (
                     this.AssociatedItems == input.AssociatedItems ||
                     this.AssociatedItems != null &&
                     this.AssociatedItems.SequenceEqual(input.AssociatedItems)
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.QuantityOrdered == input.QuantityOrdered ||
                     (this.QuantityOrdered != null &&
                     this.QuantityOrdered.Equals(input.QuantityOrdered))
-                ) && 
+                ) &&
                 (
                     this.QuantityShipped == input.QuantityShipped ||
                     (this.QuantityShipped != null &&
                     this.QuantityShipped.Equals(input.QuantityShipped))
-                ) && 
+                ) &&
                 (
                     this.ProductInfo == input.ProductInfo ||
                     (this.ProductInfo != null &&
                     this.ProductInfo.Equals(input.ProductInfo))
-                ) && 
+                ) &&
                 (
                     this.PointsGranted == input.PointsGranted ||
                     (this.PointsGranted != null &&
                     this.PointsGranted.Equals(input.PointsGranted))
-                ) && 
+                ) &&
                 (
                     this.ItemPrice == input.ItemPrice ||
                     (this.ItemPrice != null &&
                     this.ItemPrice.Equals(input.ItemPrice))
-                ) && 
+                ) &&
                 (
                     this.ShippingPrice == input.ShippingPrice ||
                     (this.ShippingPrice != null &&
                     this.ShippingPrice.Equals(input.ShippingPrice))
-                ) && 
+                ) &&
                 (
                     this.ItemTax == input.ItemTax ||
                     (this.ItemTax != null &&
                     this.ItemTax.Equals(input.ItemTax))
-                ) && 
+                ) &&
                 (
                     this.ShippingTax == input.ShippingTax ||
                     (this.ShippingTax != null &&
                     this.ShippingTax.Equals(input.ShippingTax))
-                ) && 
+                ) &&
                 (
                     this.ShippingDiscount == input.ShippingDiscount ||
                     (this.ShippingDiscount != null &&
                     this.ShippingDiscount.Equals(input.ShippingDiscount))
-                ) && 
+                ) &&
                 (
                     this.ShippingDiscountTax == input.ShippingDiscountTax ||
                     (this.ShippingDiscountTax != null &&
                     this.ShippingDiscountTax.Equals(input.ShippingDiscountTax))
-                ) && 
+                ) &&
                 (
                     this.PromotionDiscount == input.PromotionDiscount ||
                     (this.PromotionDiscount != null &&
                     this.PromotionDiscount.Equals(input.PromotionDiscount))
-                ) && 
+                ) &&
                 (
                     this.PromotionDiscountTax == input.PromotionDiscountTax ||
                     (this.PromotionDiscountTax != null &&
                     this.PromotionDiscountTax.Equals(input.PromotionDiscountTax))
-                ) && 
+                ) &&
                 (
                     this.PromotionIds == input.PromotionIds ||
                     (this.PromotionIds != null &&
                     this.PromotionIds.Equals(input.PromotionIds))
-                ) && 
+                ) &&
                 (
                     this.CODFee == input.CODFee ||
                     (this.CODFee != null &&
                     this.CODFee.Equals(input.CODFee))
-                ) && 
+                ) &&
                 (
                     this.CODFeeDiscount == input.CODFeeDiscount ||
                     (this.CODFeeDiscount != null &&
                     this.CODFeeDiscount.Equals(input.CODFeeDiscount))
-                ) && 
+                ) &&
                 (
                     this.IsGift == input.IsGift ||
                     (this.IsGift != null &&
                     this.IsGift.Equals(input.IsGift))
-                ) && 
+                ) &&
                 (
                     this.ConditionNote == input.ConditionNote ||
                     (this.ConditionNote != null &&
                     this.ConditionNote.Equals(input.ConditionNote))
-                ) && 
+                ) &&
                 (
                     this.ConditionId == input.ConditionId ||
                     (this.ConditionId != null &&
                     this.ConditionId.Equals(input.ConditionId))
-                ) && 
+                ) &&
                 (
                     this.ConditionSubtypeId == input.ConditionSubtypeId ||
                     (this.ConditionSubtypeId != null &&
                     this.ConditionSubtypeId.Equals(input.ConditionSubtypeId))
-                ) && 
+                ) &&
                 (
                     this.ScheduledDeliveryStartDate == input.ScheduledDeliveryStartDate ||
                     (this.ScheduledDeliveryStartDate != null &&
                     this.ScheduledDeliveryStartDate.Equals(input.ScheduledDeliveryStartDate))
-                ) && 
+                ) &&
                 (
                     this.ScheduledDeliveryEndDate == input.ScheduledDeliveryEndDate ||
                     (this.ScheduledDeliveryEndDate != null &&
                     this.ScheduledDeliveryEndDate.Equals(input.ScheduledDeliveryEndDate))
-                ) && 
+                ) &&
                 (
                     this.PriceDesignation == input.PriceDesignation ||
                     (this.PriceDesignation != null &&
                     this.PriceDesignation.Equals(input.PriceDesignation))
-                ) && 
+                ) &&
                 (
                     this.TaxCollection == input.TaxCollection ||
                     (this.TaxCollection != null &&
                     this.TaxCollection.Equals(input.TaxCollection))
-                ) && 
+                ) &&
                 (
                     this.SerialNumberRequired == input.SerialNumberRequired ||
                     (this.SerialNumberRequired != null &&
                     this.SerialNumberRequired.Equals(input.SerialNumberRequired))
-                ) && 
+                ) &&
                 (
                     this.IsTransparency == input.IsTransparency ||
                     (this.IsTransparency != null &&
                     this.IsTransparency.Equals(input.IsTransparency))
-                ) && 
+                ) &&
                 (
                     this.IossNumber == input.IossNumber ||
                     (this.IossNumber != null &&
                     this.IossNumber.Equals(input.IossNumber))
-                ) && 
+                ) &&
                 (
                     this.StoreChainStoreId == input.StoreChainStoreId ||
                     (this.StoreChainStoreId != null &&
                     this.StoreChainStoreId.Equals(input.StoreChainStoreId))
-                ) && 
+                ) &&
                 (
                     this.DeemedResellerCategory == input.DeemedResellerCategory ||
                     (this.DeemedResellerCategory != null &&
                     this.DeemedResellerCategory.Equals(input.DeemedResellerCategory))
-                ) && 
+                ) &&
                 (
                     this.BuyerInfo == input.BuyerInfo ||
                     (this.BuyerInfo != null &&
                     this.BuyerInfo.Equals(input.BuyerInfo))
-                ) && 
+                ) &&
                 (
                     this.BuyerRequestedCancel == input.BuyerRequestedCancel ||
                     (this.BuyerRequestedCancel != null &&
                     this.BuyerRequestedCancel.Equals(input.BuyerRequestedCancel))
-                ) && 
+                ) &&
                 (
                     this.SerialNumbers == input.SerialNumbers ||
                     this.SerialNumbers != null &&
                     this.SerialNumbers.SequenceEqual(input.SerialNumbers)
-                ) && 
+                ) &&
                 (
                     this.SubstitutionPreferences == input.SubstitutionPreferences ||
                     (this.SubstitutionPreferences != null &&
                     this.SubstitutionPreferences.Equals(input.SubstitutionPreferences))
-                ) && 
+                ) &&
                 (
                     this.Measurement == input.Measurement ||
                     (this.Measurement != null &&
                     this.Measurement.Equals(input.Measurement))
-                ) && 
+                ) &&
                 (
                     this.ShippingConstraints == input.ShippingConstraints ||
                     (this.ShippingConstraints != null &&
                     this.ShippingConstraints.Equals(input.ShippingConstraints))
-                ) && 
+                ) &&
                 (
                     this.AmazonPrograms == input.AmazonPrograms ||
                     (this.AmazonPrograms != null &&

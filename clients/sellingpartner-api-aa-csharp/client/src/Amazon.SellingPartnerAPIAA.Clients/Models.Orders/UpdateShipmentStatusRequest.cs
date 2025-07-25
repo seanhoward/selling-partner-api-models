@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The request body for the &#x60;updateShipmentStatus&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class UpdateShipmentStatusRequest :  IEquatable<UpdateShipmentStatusRequest>, IValidatableObject
+    public partial class UpdateShipmentStatusRequest : IEquatable<UpdateShipmentStatusRequest>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ShipmentStatus
         /// </summary>
-        [DataMember(Name="shipmentStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentStatus", EmitDefaultValue = false)]
         public ShipmentStatus ShipmentStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateShipmentStatusRequest" /> class.
@@ -68,18 +62,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             }
             this.OrderItems = orderItems;
         }
-        
+
         /// <summary>
         /// Gets or Sets MarketplaceId
         /// </summary>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
 
         /// <summary>
         /// Gets or Sets OrderItems
         /// </summary>
-        [DataMember(Name="orderItems", EmitDefaultValue=false)]
+        [DataMember(Name = "orderItems", EmitDefaultValue = false)]
         public OrderItems OrderItems { get; set; }
 
         /// <summary>
@@ -96,7 +90,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -126,17 +120,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.ShipmentStatus == input.ShipmentStatus ||
                     (this.ShipmentStatus != null &&
                     this.ShipmentStatus.Equals(input.ShipmentStatus))
-                ) && 
+                ) &&
                 (
                     this.OrderItems == input.OrderItems ||
                     (this.OrderItems != null &&

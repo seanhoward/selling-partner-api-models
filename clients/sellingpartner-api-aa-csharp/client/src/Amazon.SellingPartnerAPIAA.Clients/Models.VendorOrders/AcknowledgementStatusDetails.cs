@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Details of item quantity ordered
     /// </summary>
     [DataContract]
-    public partial class AcknowledgementStatusDetails :  IEquatable<AcknowledgementStatusDetails>, IValidatableObject
+    public partial class AcknowledgementStatusDetails : IEquatable<AcknowledgementStatusDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AcknowledgementStatusDetails" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.AcceptedQuantity = acceptedQuantity;
             this.RejectedQuantity = rejectedQuantity;
         }
-        
+
         /// <summary>
         /// The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
         /// </summary>
         /// <value>The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.</value>
-        [DataMember(Name="acknowledgementDate", EmitDefaultValue=false)]
+        [DataMember(Name = "acknowledgementDate", EmitDefaultValue = false)]
         public DateTime? AcknowledgementDate { get; set; }
 
         /// <summary>
         /// Item quantity accepted by vendor to be shipped.
         /// </summary>
         /// <value>Item quantity accepted by vendor to be shipped.</value>
-        [DataMember(Name="acceptedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "acceptedQuantity", EmitDefaultValue = false)]
         public ItemQuantity AcceptedQuantity { get; set; }
 
         /// <summary>
         /// Item quantity rejected by vendor.
         /// </summary>
         /// <value>Item quantity rejected by vendor.</value>
-        [DataMember(Name="rejectedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "rejectedQuantity", EmitDefaultValue = false)]
         public ItemQuantity RejectedQuantity { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AcknowledgementDate == input.AcknowledgementDate ||
                     (this.AcknowledgementDate != null &&
                     this.AcknowledgementDate.Equals(input.AcknowledgementDate))
-                ) && 
+                ) &&
                 (
                     this.AcceptedQuantity == input.AcceptedQuantity ||
                     (this.AcceptedQuantity != null &&
                     this.AcceptedQuantity.Equals(input.AcceptedQuantity))
-                ) && 
+                ) &&
                 (
                     this.RejectedQuantity == input.RejectedQuantity ||
                     (this.RejectedQuantity != null &&

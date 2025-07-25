@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Item information for a fulfillment order preview.
     /// </summary>
     [DataContract]
-    public partial class GetFulfillmentPreviewItem :  IEquatable<GetFulfillmentPreviewItem>, IValidatableObject
+    public partial class GetFulfillmentPreviewItem : IEquatable<GetFulfillmentPreviewItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFulfillmentPreviewItem" /> class.
@@ -73,32 +67,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             }
             this.PerUnitDeclaredValue = perUnitDeclaredValue;
         }
-        
+
         /// <summary>
         /// The seller SKU of the item.
         /// </summary>
         /// <value>The seller SKU of the item.</value>
-        [DataMember(Name="sellerSku", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerSku", EmitDefaultValue = false)]
         public string SellerSku { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
         /// </summary>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// The monetary value assigned by the seller to this item. This is a required field if this order is an export order or an India MCF order.
         /// </summary>
         /// <value>The monetary value assigned by the seller to this item. This is a required field if this order is an export order or an India MCF order.</value>
-        [DataMember(Name="perUnitDeclaredValue", EmitDefaultValue=false)]
+        [DataMember(Name = "perUnitDeclaredValue", EmitDefaultValue = false)]
         public Money PerUnitDeclaredValue { get; set; }
 
         /// <summary>
         /// A fulfillment order item identifier that the seller creates to track items in the fulfillment preview.
         /// </summary>
         /// <value>A fulfillment order item identifier that the seller creates to track items in the fulfillment preview.</value>
-        [DataMember(Name="sellerFulfillmentOrderItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerFulfillmentOrderItemId", EmitDefaultValue = false)]
         public string SellerFulfillmentOrderItemId { get; set; }
 
         /// <summary>
@@ -116,7 +110,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -146,22 +140,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerSku == input.SellerSku ||
                     (this.SellerSku != null &&
                     this.SellerSku.Equals(input.SellerSku))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.PerUnitDeclaredValue == input.PerUnitDeclaredValue ||
                     (this.PerUnitDeclaredValue != null &&
                     this.PerUnitDeclaredValue.Equals(input.PerUnitDeclaredValue))
-                ) && 
+                ) &&
                 (
                     this.SellerFulfillmentOrderItemId == input.SellerFulfillmentOrderItemId ||
                     (this.SellerFulfillmentOrderItemId != null &&
@@ -198,15 +192,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // SellerSku (string) maxLength
-            if(this.SellerSku != null && this.SellerSku.Length > 50)
+            if (this.SellerSku != null && this.SellerSku.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for SellerSku, length must be less than 50.", new [] { "SellerSku" });
+                yield return new ValidationResult("Invalid value for SellerSku, length must be less than 50.", new[] { "SellerSku" });
             }
 
             // SellerFulfillmentOrderItemId (string) maxLength
-            if(this.SellerFulfillmentOrderItemId != null && this.SellerFulfillmentOrderItemId.Length > 50)
+            if (this.SellerFulfillmentOrderItemId != null && this.SellerFulfillmentOrderItemId.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for SellerFulfillmentOrderItemId, length must be less than 50.", new [] { "SellerFulfillmentOrderItemId" });
+                yield return new ValidationResult("Invalid value for SellerFulfillmentOrderItemId, length must be less than 50.", new[] { "SellerFulfillmentOrderItemId" });
             }
 
             yield break;

@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The shipping address for the order.
     /// </summary>
     [DataContract]
-    public partial class OrderAddress :  IEquatable<OrderAddress>, IValidatableObject
+    public partial class OrderAddress : IEquatable<OrderAddress>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderAddress" /> class.
@@ -57,32 +51,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.ShippingAddress = shippingAddress;
             this.DeliveryPreferences = deliveryPreferences;
         }
-        
+
         /// <summary>
         /// An Amazon-defined order identifier, in 3-7-7 format.
         /// </summary>
         /// <value>An Amazon-defined order identifier, in 3-7-7 format.</value>
-        [DataMember(Name="AmazonOrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "AmazonOrderId", EmitDefaultValue = false)]
         public string AmazonOrderId { get; set; }
 
         /// <summary>
         /// The company name of the contact buyer. For IBA orders, the buyer company must be Amazon entities.
         /// </summary>
         /// <value>The company name of the contact buyer. For IBA orders, the buyer company must be Amazon entities.</value>
-        [DataMember(Name="BuyerCompanyName", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerCompanyName", EmitDefaultValue = false)]
         public string BuyerCompanyName { get; set; }
 
         /// <summary>
         /// The shipping address for the order.  **Note**: &#x60;ShippingAddress&#x60; is only available for orders with the following status values: &#x60;Unshipped&#x60;, &#x60;PartiallyShipped&#x60;, &#x60;Shipped&#x60;, and &#x60;InvoiceUnconfirmed&#x60;.
         /// </summary>
         /// <value>The shipping address for the order.  **Note**: &#x60;ShippingAddress&#x60; is only available for orders with the following status values: &#x60;Unshipped&#x60;, &#x60;PartiallyShipped&#x60;, &#x60;Shipped&#x60;, and &#x60;InvoiceUnconfirmed&#x60;.</value>
-        [DataMember(Name="ShippingAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingAddress", EmitDefaultValue = false)]
         public Address ShippingAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets DeliveryPreferences
         /// </summary>
-        [DataMember(Name="DeliveryPreferences", EmitDefaultValue=false)]
+        [DataMember(Name = "DeliveryPreferences", EmitDefaultValue = false)]
         public DeliveryPreferences DeliveryPreferences { get; set; }
 
         /// <summary>
@@ -100,7 +94,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -130,22 +124,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AmazonOrderId == input.AmazonOrderId ||
                     (this.AmazonOrderId != null &&
                     this.AmazonOrderId.Equals(input.AmazonOrderId))
-                ) && 
+                ) &&
                 (
                     this.BuyerCompanyName == input.BuyerCompanyName ||
                     (this.BuyerCompanyName != null &&
                     this.BuyerCompanyName.Equals(input.BuyerCompanyName))
-                ) && 
+                ) &&
                 (
                     this.ShippingAddress == input.ShippingAddress ||
                     (this.ShippingAddress != null &&
                     this.ShippingAddress.Equals(input.ShippingAddress))
-                ) && 
+                ) &&
                 (
                     this.DeliveryPreferences == input.DeliveryPreferences ||
                     (this.DeliveryPreferences != null &&

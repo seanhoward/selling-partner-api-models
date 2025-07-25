@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,24 +22,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Extra services provided by a carrier.
     /// </summary>
     [DataContract]
-    public partial class ShippingServiceOptions :  IEquatable<ShippingServiceOptions>, IValidatableObject
+    public partial class ShippingServiceOptions : IEquatable<ShippingServiceOptions>, IValidatableObject
     {
         /// <summary>
         /// The delivery confirmation level.
         /// </summary>
         /// <value>The delivery confirmation level.</value>
-        [DataMember(Name="DeliveryExperience", EmitDefaultValue=false)]
+        [DataMember(Name = "DeliveryExperience", EmitDefaultValue = false)]
         public DeliveryExperienceType DeliveryExperience { get; set; }
         /// <summary>
         /// Gets or Sets CarrierWillPickUpOption
         /// </summary>
-        [DataMember(Name="CarrierWillPickUpOption", EmitDefaultValue=false)]
+        [DataMember(Name = "CarrierWillPickUpOption", EmitDefaultValue = false)]
         public CarrierWillPickUpOption? CarrierWillPickUpOption { get; set; }
         /// <summary>
         /// The seller&#39;s preferred label format.
         /// </summary>
         /// <value>The seller&#39;s preferred label format.</value>
-        [DataMember(Name="LabelFormat", EmitDefaultValue=false)]
+        [DataMember(Name = "LabelFormat", EmitDefaultValue = false)]
         public LabelFormat? LabelFormat { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingServiceOptions" /> class.
@@ -84,20 +78,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.CarrierWillPickUpOption = carrierWillPickUpOption;
             this.LabelFormat = labelFormat;
         }
-        
+
 
         /// <summary>
         /// The declared value of the shipment. The carrier uses this value to determine the amount to use to insure the shipment. If &#x60;DeclaredValue&#x60; is greater than the carrier&#39;s minimum insurance amount, the seller is charged for the additional insurance, as determined by the carrier. For information about optional insurance coverage, refer to Seller Central Help: [UK](https://sellercentral.amazon.co.uk/gp/help/200204080), [US](https://sellercentral.amazon.com/gp/help/200204080).
         /// </summary>
         /// <value>The declared value of the shipment. The carrier uses this value to determine the amount to use to insure the shipment. If &#x60;DeclaredValue&#x60; is greater than the carrier&#39;s minimum insurance amount, the seller is charged for the additional insurance, as determined by the carrier. For information about optional insurance coverage, refer to Seller Central Help: [UK](https://sellercentral.amazon.co.uk/gp/help/200204080), [US](https://sellercentral.amazon.com/gp/help/200204080).</value>
-        [DataMember(Name="DeclaredValue", EmitDefaultValue=false)]
+        [DataMember(Name = "DeclaredValue", EmitDefaultValue = false)]
         public CurrencyAmount DeclaredValue { get; set; }
 
         /// <summary>
         /// When true, the carrier will pick up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
         /// </summary>
         /// <value>When true, the carrier will pick up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).</value>
-        [DataMember(Name="CarrierWillPickUp", EmitDefaultValue=false)]
+        [DataMember(Name = "CarrierWillPickUp", EmitDefaultValue = false)]
         public bool? CarrierWillPickUp { get; set; }
 
 
@@ -118,7 +112,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -148,27 +142,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeliveryExperience == input.DeliveryExperience ||
                     (this.DeliveryExperience != null &&
                     this.DeliveryExperience.Equals(input.DeliveryExperience))
-                ) && 
+                ) &&
                 (
                     this.DeclaredValue == input.DeclaredValue ||
                     (this.DeclaredValue != null &&
                     this.DeclaredValue.Equals(input.DeclaredValue))
-                ) && 
+                ) &&
                 (
                     this.CarrierWillPickUp == input.CarrierWillPickUp ||
                     (this.CarrierWillPickUp != null &&
                     this.CarrierWillPickUp.Equals(input.CarrierWillPickUp))
-                ) && 
+                ) &&
                 (
                     this.CarrierWillPickUpOption == input.CarrierWillPickUpOption ||
                     (this.CarrierWillPickUpOption != null &&
                     this.CarrierWillPickUpOption.Equals(input.CarrierWillPickUpOption))
-                ) && 
+                ) &&
                 (
                     this.LabelFormat == input.LabelFormat ||
                     (this.LabelFormat != null &&

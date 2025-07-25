@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Representation of a location used within the inbounding experience.
     /// </summary>
     [DataContract]
-    public partial class Region :  IEquatable<Region>, IValidatableObject
+    public partial class Region : IEquatable<Region>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Region" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.State = state;
             this.WarehouseId = warehouseId;
         }
-        
+
         /// <summary>
         /// ISO 3166 standard alpha-2 country code.
         /// </summary>
         /// <value>ISO 3166 standard alpha-2 country code.</value>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
         /// State.
         /// </summary>
         /// <value>State.</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
         /// <summary>
         /// An identifier for a warehouse, such as a FC, IXD, upstream storage.
         /// </summary>
         /// <value>An identifier for a warehouse, such as a FC, IXD, upstream storage.</value>
-        [DataMember(Name="warehouseId", EmitDefaultValue=false)]
+        [DataMember(Name = "warehouseId", EmitDefaultValue = false)]
         public string WarehouseId { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CountryCode == input.CountryCode ||
                     (this.CountryCode != null &&
                     this.CountryCode.Equals(input.CountryCode))
-                ) && 
+                ) &&
                 (
                     this.State == input.State ||
                     (this.State != null &&
                     this.State.Equals(input.State))
-                ) && 
+                ) &&
                 (
                     this.WarehouseId == input.WarehouseId ||
                     (this.WarehouseId != null &&
@@ -153,39 +146,39 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // CountryCode (string) maxLength
-            if(this.CountryCode != null && this.CountryCode.Length > 1024)
+            if (this.CountryCode != null && this.CountryCode.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for CountryCode, length must be less than 1024.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be less than 1024.", new[] { "CountryCode" });
             }
 
             // CountryCode (string) minLength
-            if(this.CountryCode != null && this.CountryCode.Length < 1)
+            if (this.CountryCode != null && this.CountryCode.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for CountryCode, length must be greater than 1.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be greater than 1.", new[] { "CountryCode" });
             }
 
             // State (string) maxLength
-            if(this.State != null && this.State.Length > 1024)
+            if (this.State != null && this.State.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for State, length must be less than 1024.", new [] { "State" });
+                yield return new ValidationResult("Invalid value for State, length must be less than 1024.", new[] { "State" });
             }
 
             // State (string) minLength
-            if(this.State != null && this.State.Length < 1)
+            if (this.State != null && this.State.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for State, length must be greater than 1.", new [] { "State" });
+                yield return new ValidationResult("Invalid value for State, length must be greater than 1.", new[] { "State" });
             }
 
             // WarehouseId (string) maxLength
-            if(this.WarehouseId != null && this.WarehouseId.Length > 1024)
+            if (this.WarehouseId != null && this.WarehouseId.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for WarehouseId, length must be less than 1024.", new [] { "WarehouseId" });
+                yield return new ValidationResult("Invalid value for WarehouseId, length must be less than 1024.", new[] { "WarehouseId" });
             }
 
             // WarehouseId (string) minLength
-            if(this.WarehouseId != null && this.WarehouseId.Length < 1)
+            if (this.WarehouseId != null && this.WarehouseId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for WarehouseId, length must be greater than 1.", new [] { "WarehouseId" });
+                yield return new ValidationResult("Invalid value for WarehouseId, length must be greater than 1.", new[] { "WarehouseId" });
             }
 
             yield break;

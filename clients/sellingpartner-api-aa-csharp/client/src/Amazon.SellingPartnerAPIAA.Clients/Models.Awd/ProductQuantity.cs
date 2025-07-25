@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Amazon Warehousing and Distribution
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * OpenAPI spec version: 2024-05-09
  * 
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Represents a product with the SKU details and the corresponding quantity.
     /// </summary>
     [DataContract]
-    public partial class ProductQuantity :  IEquatable<ProductQuantity>, IValidatableObject
+    public partial class ProductQuantity : IEquatable<ProductQuantity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductQuantity" /> class.
@@ -38,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductQuantity" /> class.
         /// </summary>
-        /// <param name="attributes">Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU..</param>
+        /// <param name="attributes">Contains attributes for this instance of the product. For example, item color, or other attributes that distinguish the product beyond the SKU. This is metadata for the product and Amazon does not process this data..</param>
         /// <param name="quantity">Product quantity. (required).</param>
         /// <param name="sku">The seller or merchant SKU. (required).</param>
         /// <param name="expiration">The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format..</param>
@@ -67,40 +62,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             this.Expiration = expiration;
             this.PrepDetails = prepDetails;
         }
-        
+
         /// <summary>
-        /// Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.
+        /// Contains attributes for this instance of the product. For example, item color, or other attributes that distinguish the product beyond the SKU. This is metadata for the product and Amazon does not process this data.
         /// </summary>
-        /// <value>Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.</value>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        /// <value>Contains attributes for this instance of the product. For example, item color, or other attributes that distinguish the product beyond the SKU. This is metadata for the product and Amazon does not process this data.</value>
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public List<ProductAttribute> Attributes { get; set; }
 
         /// <summary>
         /// Product quantity.
         /// </summary>
         /// <value>Product quantity.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// The seller or merchant SKU.
         /// </summary>
         /// <value>The seller or merchant SKU.</value>
-        [DataMember(Name="sku", EmitDefaultValue=false)]
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
         /// <summary>
         /// The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
         /// </summary>
         /// <value>The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.</value>
-        [DataMember(Name="expiration", EmitDefaultValue=false)]
+        [DataMember(Name = "expiration", EmitDefaultValue = false)]
         public DateTime? Expiration { get; set; }
 
         /// <summary>
         /// Preparation details of a product which contains the prep category, prep owner and the label owner. If not passed while creating an inbound order, NO_PREP will be used on the product by-default. Prep instructions will be generated based on the category passed
         /// </summary>
         /// <value>Preparation details of a product which contains the prep category, prep owner and the label owner. If not passed while creating an inbound order, NO_PREP will be used on the product by-default. Prep instructions will be generated based on the category passed</value>
-        [DataMember(Name="prepDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "prepDetails", EmitDefaultValue = false)]
         public PrepDetails PrepDetails { get; set; }
 
         /// <summary>
@@ -119,7 +114,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -149,27 +144,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.Sku == input.Sku ||
                     (this.Sku != null &&
                     this.Sku.Equals(input.Sku))
-                ) && 
+                ) &&
                 (
                     this.Expiration == input.Expiration ||
                     (this.Expiration != null &&
                     this.Expiration.Equals(input.Expiration))
-                ) && 
+                ) &&
                 (
                     this.PrepDetails == input.PrepDetails ||
                     (this.PrepDetails != null &&

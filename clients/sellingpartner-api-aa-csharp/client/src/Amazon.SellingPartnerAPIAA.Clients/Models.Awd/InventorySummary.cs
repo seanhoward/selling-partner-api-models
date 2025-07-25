@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Summary of inventory per SKU.
     /// </summary>
     [DataContract]
-    public partial class InventorySummary :  IEquatable<InventorySummary>, IValidatableObject
+    public partial class InventorySummary : IEquatable<InventorySummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InventorySummary" /> class.
@@ -59,39 +54,39 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             this.TotalInboundQuantity = totalInboundQuantity;
             this.TotalOnhandQuantity = totalOnhandQuantity;
         }
-        
+
         /// <summary>
         /// The expiration details of the inventory. This object will only appear if the &#x60;details&#x60; parameter in the request is set to &#x60;SHOW&#x60;.
         /// </summary>
         /// <value>The expiration details of the inventory. This object will only appear if the &#x60;details&#x60; parameter in the request is set to &#x60;SHOW&#x60;.</value>
-        [DataMember(Name="expirationDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "expirationDetails", EmitDefaultValue = false)]
         public List<ExpirationDetails> ExpirationDetails { get; set; }
 
         /// <summary>
         /// Gets or Sets InventoryDetails
         /// </summary>
-        [DataMember(Name="inventoryDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "inventoryDetails", EmitDefaultValue = false)]
         public InventoryDetails InventoryDetails { get; set; }
 
         /// <summary>
         /// The seller or merchant SKU.
         /// </summary>
         /// <value>The seller or merchant SKU.</value>
-        [DataMember(Name="sku", EmitDefaultValue=false)]
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
         /// <summary>
         /// Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center
         /// </summary>
         /// <value>Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center</value>
-        [DataMember(Name="totalInboundQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "totalInboundQuantity", EmitDefaultValue = false)]
         public long? TotalInboundQuantity { get; set; }
 
         /// <summary>
         /// Total quantity that is present in AWD distribution centers.
         /// </summary>
         /// <value>Total quantity that is present in AWD distribution centers.</value>
-        [DataMember(Name="totalOnhandQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "totalOnhandQuantity", EmitDefaultValue = false)]
         public long? TotalOnhandQuantity { get; set; }
 
         /// <summary>
@@ -110,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -140,27 +135,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ExpirationDetails == input.ExpirationDetails ||
                     this.ExpirationDetails != null &&
                     this.ExpirationDetails.SequenceEqual(input.ExpirationDetails)
-                ) && 
+                ) &&
                 (
                     this.InventoryDetails == input.InventoryDetails ||
                     (this.InventoryDetails != null &&
                     this.InventoryDetails.Equals(input.InventoryDetails))
-                ) && 
+                ) &&
                 (
                     this.Sku == input.Sku ||
                     (this.Sku != null &&
                     this.Sku.Equals(input.Sku))
-                ) && 
+                ) &&
                 (
                     this.TotalInboundQuantity == input.TotalInboundQuantity ||
                     (this.TotalInboundQuantity != null &&
                     this.TotalInboundQuantity.Equals(input.TotalInboundQuantity))
-                ) && 
+                ) &&
                 (
                     this.TotalOnhandQuantity == input.TotalOnhandQuantity ||
                     (this.TotalOnhandQuantity != null &&

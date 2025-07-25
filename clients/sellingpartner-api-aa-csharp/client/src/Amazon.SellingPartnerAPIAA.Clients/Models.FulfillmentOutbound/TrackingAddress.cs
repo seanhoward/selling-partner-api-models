@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Address information for tracking the package.
     /// </summary>
     [DataContract]
-    public partial class TrackingAddress :  IEquatable<TrackingAddress>, IValidatableObject
+    public partial class TrackingAddress : IEquatable<TrackingAddress>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingAddress" /> class.
@@ -71,26 +65,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.Country = country;
             }
         }
-        
+
         /// <summary>
         /// The city.
         /// </summary>
         /// <value>The city.</value>
-        [DataMember(Name="city", EmitDefaultValue=false)]
+        [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// The state.
         /// </summary>
         /// <value>The state.</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
         /// <summary>
         /// The country.
         /// </summary>
         /// <value>The country.</value>
-        [DataMember(Name="country", EmitDefaultValue=false)]
+        [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +131,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.City == input.City ||
                     (this.City != null &&
                     this.City.Equals(input.City))
-                ) && 
+                ) &&
                 (
                     this.State == input.State ||
                     (this.State != null &&
                     this.State.Equals(input.State))
-                ) && 
+                ) &&
                 (
                     this.Country == input.Country ||
                     (this.Country != null &&
@@ -182,21 +176,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // City (string) maxLength
-            if(this.City != null && this.City.Length > 150)
+            if (this.City != null && this.City.Length > 150)
             {
-                yield return new ValidationResult("Invalid value for City, length must be less than 150.", new [] { "City" });
+                yield return new ValidationResult("Invalid value for City, length must be less than 150.", new[] { "City" });
             }
 
             // State (string) maxLength
-            if(this.State != null && this.State.Length > 150)
+            if (this.State != null && this.State.Length > 150)
             {
-                yield return new ValidationResult("Invalid value for State, length must be less than 150.", new [] { "State" });
+                yield return new ValidationResult("Invalid value for State, length must be less than 150.", new[] { "State" });
             }
 
             // Country (string) maxLength
-            if(this.Country != null && this.Country.Length > 6)
+            if (this.Country != null && this.Country.Length > 6)
             {
-                yield return new ValidationResult("Invalid value for Country, length must be less than 6.", new [] { "Country" });
+                yield return new ValidationResult("Invalid value for Country, length must be less than 6.", new[] { "Country" });
             }
 
             yield break;

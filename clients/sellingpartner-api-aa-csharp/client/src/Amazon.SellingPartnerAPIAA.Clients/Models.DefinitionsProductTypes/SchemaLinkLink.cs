@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
     /// Link to retrieve the schema.
     /// </summary>
     [DataContract]
-    public partial class SchemaLinkLink :  IEquatable<SchemaLinkLink>, IValidatableObject
+    public partial class SchemaLinkLink : IEquatable<SchemaLinkLink>, IValidatableObject
     {
         /// <summary>
         /// HTTP method for the link operation.
@@ -37,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerbEnum
         {
-            
+
             /// <summary>
             /// Enum GET for value: GET
             /// </summary>
@@ -49,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
         /// HTTP method for the link operation.
         /// </summary>
         /// <value>HTTP method for the link operation.</value>
-        [DataMember(Name="verb", EmitDefaultValue=false)]
+        [DataMember(Name = "verb", EmitDefaultValue = false)]
         public VerbEnum Verb { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SchemaLinkLink" /> class.
@@ -82,12 +77,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
                 this.Verb = verb;
             }
         }
-        
+
         /// <summary>
         /// URI resource for the link.
         /// </summary>
         /// <value>URI resource for the link.</value>
-        [DataMember(Name="resource", EmitDefaultValue=false)]
+        [DataMember(Name = "resource", EmitDefaultValue = false)]
         public string Resource { get; set; }
 
 
@@ -104,7 +99,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -134,12 +129,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Resource == input.Resource ||
                     (this.Resource != null &&
                     this.Resource.Equals(input.Resource))
-                ) && 
+                ) &&
                 (
                     this.Verb == input.Verb ||
                     (this.Verb != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// The information required to create an Amazon EventBridge destination.
     /// </summary>
     [DataContract]
-    public partial class EventBridgeResourceSpecification :  IEquatable<EventBridgeResourceSpecification>, IValidatableObject
+    public partial class EventBridgeResourceSpecification : IEquatable<EventBridgeResourceSpecification>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EventBridgeResourceSpecification" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
                 this.AccountId = accountId;
             }
         }
-        
+
         /// <summary>
         /// The AWS region in which you will be receiving the notifications.
         /// </summary>
         /// <value>The AWS region in which you will be receiving the notifications.</value>
-        [DataMember(Name="region", EmitDefaultValue=false)]
+        [DataMember(Name = "region", EmitDefaultValue = false)]
         public string Region { get; set; }
 
         /// <summary>
         /// The identifier for the AWS account that is responsible for charges related to receiving notifications.
         /// </summary>
         /// <value>The identifier for the AWS account that is responsible for charges related to receiving notifications.</value>
-        [DataMember(Name="accountId", EmitDefaultValue=false)]
+        [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Region == input.Region ||
                     (this.Region != null &&
                     this.Region.Equals(input.Region))
-                ) && 
+                ) &&
                 (
                     this.AccountId == input.AccountId ||
                     (this.AccountId != null &&

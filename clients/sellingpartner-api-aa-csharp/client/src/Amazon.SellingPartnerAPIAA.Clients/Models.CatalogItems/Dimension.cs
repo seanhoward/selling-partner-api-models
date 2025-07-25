@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,50 +9,43 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Individual dimension value of an Amazon catalog item or item package.
+    /// The value of an individual dimension for an Amazon catalog item or item package.
     /// </summary>
     [DataContract]
-    public partial class Dimension :  IEquatable<Dimension>, IValidatableObject
+    public partial class Dimension : IEquatable<Dimension>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Dimension" /> class.
         /// </summary>
-        /// <param name="unit">Measurement unit of the dimension value..</param>
-        /// <param name="value">Numeric dimension value..</param>
+        /// <param name="unit">Unit of measurement for the dimension value..</param>
+        /// <param name="value">Numeric value of the dimension..</param>
         public Dimension(string unit = default, decimal? value = default)
         {
             this.Unit = unit;
             this.Value = value;
         }
-        
+
         /// <summary>
-        /// Measurement unit of the dimension value.
+        /// Unit of measurement for the dimension value.
         /// </summary>
-        /// <value>Measurement unit of the dimension value.</value>
-        [DataMember(Name="unit", EmitDefaultValue=false)]
+        /// <value>Unit of measurement for the dimension value.</value>
+        [DataMember(Name = "unit", EmitDefaultValue = false)]
         public string Unit { get; set; }
 
         /// <summary>
-        /// Numeric dimension value.
+        /// Numeric value of the dimension.
         /// </summary>
-        /// <value>Numeric dimension value.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        /// <value>Numeric value of the dimension.</value>
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public decimal? Value { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Unit == input.Unit ||
                     (this.Unit != null &&
                     this.Unit.Equals(input.Unit))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&

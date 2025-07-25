@@ -22,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
     /// A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
     /// </summary>
     [DataContract]
-    public partial class ItemAttributes : Dictionary<string, JArray>,  IEquatable<ItemAttributes>, IValidatableObject
+    public partial class ItemAttributes : Dictionary<string, JArray>, IEquatable<ItemAttributes>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemAttributes" /> class.
@@ -31,7 +31,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         public ItemAttributes() : base()
         {
         }
-        
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

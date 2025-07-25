@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Indicates the carrier details and their contact informations
     /// </summary>
     [DataContract]
-    public partial class CarrierDetails :  IEquatable<CarrierDetails>, IValidatableObject
+    public partial class CarrierDetails : IEquatable<CarrierDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CarrierDetails" /> class.
@@ -46,40 +39,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.Email = email;
             this.ShipmentReferenceNumber = shipmentReferenceNumber;
         }
-        
+
         /// <summary>
         /// The field is used to represent the carrier used for performing the shipment.
         /// </summary>
         /// <value>The field is used to represent the carrier used for performing the shipment.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association).
         /// </summary>
         /// <value>Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association).</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// The field is used to represent the Carrier contact number.
         /// </summary>
         /// <value>The field is used to represent the Carrier contact number.</value>
-        [DataMember(Name="phone", EmitDefaultValue=false)]
+        [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
         /// <summary>
         /// The field is used to represent the carrier Email id.
         /// </summary>
         /// <value>The field is used to represent the carrier Email id.</value>
-        [DataMember(Name="email", EmitDefaultValue=false)]
+        [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// The field is also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for US, CA, MX shipment confirmations.
         /// </summary>
         /// <value>The field is also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for US, CA, MX shipment confirmations.</value>
-        [DataMember(Name="shipmentReferenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentReferenceNumber", EmitDefaultValue = false)]
         public string ShipmentReferenceNumber { get; set; }
 
         /// <summary>
@@ -98,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,27 +121,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     this.Phone == input.Phone ||
                     (this.Phone != null &&
                     this.Phone.Equals(input.Phone))
-                ) && 
+                ) &&
                 (
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
-                ) && 
+                ) &&
                 (
                     this.ShipmentReferenceNumber == input.ShipmentReferenceNumber ||
                     (this.ShipmentReferenceNumber != null &&

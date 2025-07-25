@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
     /// Image for an item in the Amazon catalog.
     /// </summary>
     [DataContract]
-    public partial class ItemImage :  IEquatable<ItemImage>, IValidatableObject
+    public partial class ItemImage : IEquatable<ItemImage>, IValidatableObject
     {
         /// <summary>
         /// Variant of the image, such as &#x60;MAIN&#x60; or &#x60;PT01&#x60;.
@@ -37,61 +32,61 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VariantEnum
         {
-            
+
             /// <summary>
             /// Enum MAIN for value: MAIN
             /// </summary>
             [EnumMember(Value = "MAIN")]
             MAIN = 1,
-            
+
             /// <summary>
             /// Enum PT01 for value: PT01
             /// </summary>
             [EnumMember(Value = "PT01")]
             PT01 = 2,
-            
+
             /// <summary>
             /// Enum PT02 for value: PT02
             /// </summary>
             [EnumMember(Value = "PT02")]
             PT02 = 3,
-            
+
             /// <summary>
             /// Enum PT03 for value: PT03
             /// </summary>
             [EnumMember(Value = "PT03")]
             PT03 = 4,
-            
+
             /// <summary>
             /// Enum PT04 for value: PT04
             /// </summary>
             [EnumMember(Value = "PT04")]
             PT04 = 5,
-            
+
             /// <summary>
             /// Enum PT05 for value: PT05
             /// </summary>
             [EnumMember(Value = "PT05")]
             PT05 = 6,
-            
+
             /// <summary>
             /// Enum PT06 for value: PT06
             /// </summary>
             [EnumMember(Value = "PT06")]
             PT06 = 7,
-            
+
             /// <summary>
             /// Enum PT07 for value: PT07
             /// </summary>
             [EnumMember(Value = "PT07")]
             PT07 = 8,
-            
+
             /// <summary>
             /// Enum PT08 for value: PT08
             /// </summary>
             [EnumMember(Value = "PT08")]
             PT08 = 9,
-            
+
             /// <summary>
             /// Enum SWCH for value: SWCH
             /// </summary>
@@ -103,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// Variant of the image, such as &#x60;MAIN&#x60; or &#x60;PT01&#x60;.
         /// </summary>
         /// <value>Variant of the image, such as &#x60;MAIN&#x60; or &#x60;PT01&#x60;.</value>
-        [DataMember(Name="variant", EmitDefaultValue=false)]
+        [DataMember(Name = "variant", EmitDefaultValue = false)]
         public VariantEnum Variant { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemImage" /> class.
@@ -114,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// Initializes a new instance of the <see cref="ItemImage" /> class.
         /// </summary>
         /// <param name="variant">Variant of the image, such as &#x60;MAIN&#x60; or &#x60;PT01&#x60;. (required).</param>
-        /// <param name="link">Link, or URL, for the image. (required).</param>
+        /// <param name="link">URL for the image. (required).</param>
         /// <param name="height">Height of the image in pixels. (required).</param>
         /// <param name="width">Width of the image in pixels. (required).</param>
         public ItemImage(VariantEnum variant = default, string link = default, int? height = default, int? width = default)
@@ -156,27 +151,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
                 this.Width = width;
             }
         }
-        
+
 
         /// <summary>
-        /// Link, or URL, for the image.
+        /// URL for the image.
         /// </summary>
-        /// <value>Link, or URL, for the image.</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
+        /// <value>URL for the image.</value>
+        [DataMember(Name = "link", EmitDefaultValue = false)]
         public string Link { get; set; }
 
         /// <summary>
         /// Height of the image in pixels.
         /// </summary>
         /// <value>Height of the image in pixels.</value>
-        [DataMember(Name="height", EmitDefaultValue=false)]
+        [DataMember(Name = "height", EmitDefaultValue = false)]
         public int? Height { get; set; }
 
         /// <summary>
         /// Width of the image in pixels.
         /// </summary>
         /// <value>Width of the image in pixels.</value>
-        [DataMember(Name="width", EmitDefaultValue=false)]
+        [DataMember(Name = "width", EmitDefaultValue = false)]
         public int? Width { get; set; }
 
         /// <summary>
@@ -194,7 +189,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -224,22 +219,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Variant == input.Variant ||
                     (this.Variant != null &&
                     this.Variant.Equals(input.Variant))
-                ) && 
+                ) &&
                 (
                     this.Link == input.Link ||
                     (this.Link != null &&
                     this.Link.Equals(input.Link))
-                ) && 
+                ) &&
                 (
                     this.Height == input.Height ||
                     (this.Height != null &&
                     this.Height.Equals(input.Height))
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&

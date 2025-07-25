@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
     /// The total estimated fees for an item and a list of details.
     /// </summary>
     [DataContract]
-    public partial class FeesEstimate :  IEquatable<FeesEstimate>, IValidatableObject
+    public partial class FeesEstimate : IEquatable<FeesEstimate>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimate" /> class.
@@ -55,25 +49,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             this.TotalFeesEstimate = totalFeesEstimate;
             this.FeeDetailList = feeDetailList;
         }
-        
+
         /// <summary>
         /// The time at which the fees were estimated. This defaults to the time the request is made.
         /// </summary>
         /// <value>The time at which the fees were estimated. This defaults to the time the request is made.</value>
-        [DataMember(Name="TimeOfFeesEstimation", EmitDefaultValue=false)]
+        [DataMember(Name = "TimeOfFeesEstimation", EmitDefaultValue = false)]
         public DateTime? TimeOfFeesEstimation { get; set; }
 
         /// <summary>
         /// Total estimated fees for a given item, price, and fulfillment channel.
         /// </summary>
         /// <value>Total estimated fees for a given item, price, and fulfillment channel.</value>
-        [DataMember(Name="TotalFeesEstimate", EmitDefaultValue=false)]
+        [DataMember(Name = "TotalFeesEstimate", EmitDefaultValue = false)]
         public MoneyType TotalFeesEstimate { get; set; }
 
         /// <summary>
         /// Gets or Sets FeeDetailList
         /// </summary>
-        [DataMember(Name="FeeDetailList", EmitDefaultValue=false)]
+        [DataMember(Name = "FeeDetailList", EmitDefaultValue = false)]
         public FeeDetailList FeeDetailList { get; set; }
 
         /// <summary>
@@ -90,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -120,17 +114,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TimeOfFeesEstimation == input.TimeOfFeesEstimation ||
                     (this.TimeOfFeesEstimation != null &&
                     this.TimeOfFeesEstimation.Equals(input.TimeOfFeesEstimation))
-                ) && 
+                ) &&
                 (
                     this.TotalFeesEstimate == input.TotalFeesEstimate ||
                     (this.TotalFeesEstimate != null &&
                     this.TotalFeesEstimate.Equals(input.TotalFeesEstimate))
-                ) && 
+                ) &&
                 (
                     this.FeeDetailList == input.FeeDetailList ||
                     (this.FeeDetailList != null &&

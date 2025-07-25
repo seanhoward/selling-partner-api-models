@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The &#x60;createMarketplaceItemLabels&#x60; response.
     /// </summary>
     [DataContract]
-    public partial class CreateMarketplaceItemLabelsResponse :  IEquatable<CreateMarketplaceItemLabelsResponse>, IValidatableObject
+    public partial class CreateMarketplaceItemLabelsResponse : IEquatable<CreateMarketplaceItemLabelsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateMarketplaceItemLabelsResponse" /> class.
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.DocumentDownloads = documentDownloads;
             }
         }
-        
+
         /// <summary>
         /// Resources to download the requested document.
         /// </summary>
         /// <value>Resources to download the requested document.</value>
-        [DataMember(Name="documentDownloads", EmitDefaultValue=false)]
+        [DataMember(Name = "documentDownloads", EmitDefaultValue = false)]
         public List<DocumentDownload> DocumentDownloads { get; set; }
 
         /// <summary>
@@ -71,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DocumentDownloads == input.DocumentDownloads ||
                     this.DocumentDownloads != null &&

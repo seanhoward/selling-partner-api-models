@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Represents an acknowledgement for an order, including the purchase order number, selling party details, acknowledgement date, and a list of acknowledged items.
     /// </summary>
     [DataContract]
-    public partial class OrderAcknowledgement :  IEquatable<OrderAcknowledgement>, IValidatableObject
+    public partial class OrderAcknowledgement : IEquatable<OrderAcknowledgement>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderAcknowledgement" /> class.
@@ -81,33 +76,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
                 this.Items = items;
             }
         }
-        
+
         /// <summary>
         /// The purchase order number. Formatting Notes: 8-character alpha-numeric code.
         /// </summary>
         /// <value>The purchase order number. Formatting Notes: 8-character alpha-numeric code.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
         /// Name, address and tax details of the party receiving a shipment of products.
         /// </summary>
         /// <value>Name, address and tax details of the party receiving a shipment of products.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
         /// </summary>
         /// <value>The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.</value>
-        [DataMember(Name="acknowledgementDate", EmitDefaultValue=false)]
+        [DataMember(Name = "acknowledgementDate", EmitDefaultValue = false)]
         public DateTime? AcknowledgementDate { get; set; }
 
         /// <summary>
         /// A list of the items being acknowledged with associated details.
         /// </summary>
         /// <value>A list of the items being acknowledged with associated details.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<OrderAcknowledgementItem> Items { get; set; }
 
         /// <summary>
@@ -125,7 +120,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -155,22 +150,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.AcknowledgementDate == input.AcknowledgementDate ||
                     (this.AcknowledgementDate != null &&
                     this.AcknowledgementDate.Equals(input.AcknowledgementDate))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

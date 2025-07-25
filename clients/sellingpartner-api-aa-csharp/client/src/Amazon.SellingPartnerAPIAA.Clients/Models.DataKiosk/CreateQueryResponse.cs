@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
     /// The response for the &#x60;createQuery&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class CreateQueryResponse :  IEquatable<CreateQueryResponse>, IValidatableObject
+    public partial class CreateQueryResponse : IEquatable<CreateQueryResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateQueryResponse" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
                 this.QueryId = queryId;
             }
         }
-        
+
         /// <summary>
         /// The identifier for the query. This identifier is unique only in combination with a selling partner account ID.
         /// </summary>
         /// <value>The identifier for the query. This identifier is unique only in combination with a selling partner account ID.</value>
-        [DataMember(Name="queryId", EmitDefaultValue=false)]
+        [DataMember(Name = "queryId", EmitDefaultValue = false)]
         public string QueryId { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.QueryId == input.QueryId ||
                     (this.QueryId != null &&

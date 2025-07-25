@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The regulated information collected during purchase and used to verify the order.
     /// </summary>
     [DataContract]
-    public partial class RegulatedInformation :  IEquatable<RegulatedInformation>, IValidatableObject
+    public partial class RegulatedInformation : IEquatable<RegulatedInformation>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RegulatedInformation" /> class.
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                 this.Fields = fields;
             }
         }
-        
+
         /// <summary>
         /// A list of regulated information fields as collected from the regulatory form.
         /// </summary>
         /// <value>A list of regulated information fields as collected from the regulatory form.</value>
-        [DataMember(Name="Fields", EmitDefaultValue=false)]
+        [DataMember(Name = "Fields", EmitDefaultValue = false)]
         public List<RegulatedInformationField> Fields { get; set; }
 
         /// <summary>
@@ -71,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Fields == input.Fields ||
                     this.Fields != null &&

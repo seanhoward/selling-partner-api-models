@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,17 +21,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Filter for use when requesting eligible shipping services.
     /// </summary>
     [DataContract]
-    public partial class ShippingOfferingFilter :  IEquatable<ShippingOfferingFilter>, IValidatableObject
+    public partial class ShippingOfferingFilter : IEquatable<ShippingOfferingFilter>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets CarrierWillPickUp
         /// </summary>
-        [DataMember(Name="CarrierWillPickUp", EmitDefaultValue=false)]
+        [DataMember(Name = "CarrierWillPickUp", EmitDefaultValue = false)]
         public CarrierWillPickUpOption? CarrierWillPickUp { get; set; }
         /// <summary>
         /// Gets or Sets DeliveryExperience
         /// </summary>
-        [DataMember(Name="DeliveryExperience", EmitDefaultValue=false)]
+        [DataMember(Name = "DeliveryExperience", EmitDefaultValue = false)]
         public DeliveryExperienceOption? DeliveryExperience { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingOfferingFilter" /> class.
@@ -54,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.CarrierWillPickUp = carrierWillPickUp;
             this.DeliveryExperience = deliveryExperience;
         }
-        
+
         /// <summary>
         /// When true, include a packing slip with the label.
         /// </summary>
         /// <value>When true, include a packing slip with the label.</value>
-        [DataMember(Name="IncludePackingSlipWithLabel", EmitDefaultValue=false)]
+        [DataMember(Name = "IncludePackingSlipWithLabel", EmitDefaultValue = false)]
         public bool? IncludePackingSlipWithLabel { get; set; }
 
         /// <summary>
         /// When true, include complex shipping options.
         /// </summary>
         /// <value>When true, include complex shipping options.</value>
-        [DataMember(Name="IncludeComplexShippingOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "IncludeComplexShippingOptions", EmitDefaultValue = false)]
         public bool? IncludeComplexShippingOptions { get; set; }
 
 
@@ -86,7 +79,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -116,22 +109,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IncludePackingSlipWithLabel == input.IncludePackingSlipWithLabel ||
                     (this.IncludePackingSlipWithLabel != null &&
                     this.IncludePackingSlipWithLabel.Equals(input.IncludePackingSlipWithLabel))
-                ) && 
+                ) &&
                 (
                     this.IncludeComplexShippingOptions == input.IncludeComplexShippingOptions ||
                     (this.IncludeComplexShippingOptions != null &&
                     this.IncludeComplexShippingOptions.Equals(input.IncludeComplexShippingOptions))
-                ) && 
+                ) &&
                 (
                     this.CarrierWillPickUp == input.CarrierWillPickUp ||
                     (this.CarrierWillPickUp != null &&
                     this.CarrierWillPickUp.Equals(input.CarrierWillPickUp))
-                ) && 
+                ) &&
                 (
                     this.DeliveryExperience == input.DeliveryExperience ||
                     (this.DeliveryExperience != null &&

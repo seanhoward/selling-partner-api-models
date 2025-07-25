@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The request for the getFulfillmentOrder operation.
     /// </summary>
     [DataContract]
-    public partial class GetFulfillmentOrderResult :  IEquatable<GetFulfillmentOrderResult>, IValidatableObject
+    public partial class GetFulfillmentOrderResult : IEquatable<GetFulfillmentOrderResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFulfillmentOrderResult" /> class.
@@ -85,41 +79,41 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.FulfillmentShipments = fulfillmentShipments;
             this.PaymentInformation = paymentInformation;
         }
-        
+
         /// <summary>
         /// Gets or Sets FulfillmentOrder
         /// </summary>
-        [DataMember(Name="fulfillmentOrder", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentOrder", EmitDefaultValue = false)]
         public FulfillmentOrder FulfillmentOrder { get; set; }
 
         /// <summary>
         /// Gets or Sets FulfillmentOrderItems
         /// </summary>
-        [DataMember(Name="fulfillmentOrderItems", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentOrderItems", EmitDefaultValue = false)]
         public FulfillmentOrderItemList FulfillmentOrderItems { get; set; }
 
         /// <summary>
         /// Gets or Sets FulfillmentShipments
         /// </summary>
-        [DataMember(Name="fulfillmentShipments", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentShipments", EmitDefaultValue = false)]
         public FulfillmentShipmentList FulfillmentShipments { get; set; }
 
         /// <summary>
         /// Gets or Sets ReturnItems
         /// </summary>
-        [DataMember(Name="returnItems", EmitDefaultValue=false)]
+        [DataMember(Name = "returnItems", EmitDefaultValue = false)]
         public ReturnItemList ReturnItems { get; set; }
 
         /// <summary>
         /// Gets or Sets ReturnAuthorizations
         /// </summary>
-        [DataMember(Name="returnAuthorizations", EmitDefaultValue=false)]
+        [DataMember(Name = "returnAuthorizations", EmitDefaultValue = false)]
         public ReturnAuthorizationList ReturnAuthorizations { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentInformation
         /// </summary>
-        [DataMember(Name="paymentInformation", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentInformation", EmitDefaultValue = false)]
         public PaymentInformationList PaymentInformation { get; set; }
 
         /// <summary>
@@ -139,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -169,32 +163,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FulfillmentOrder == input.FulfillmentOrder ||
                     (this.FulfillmentOrder != null &&
                     this.FulfillmentOrder.Equals(input.FulfillmentOrder))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentOrderItems == input.FulfillmentOrderItems ||
                     (this.FulfillmentOrderItems != null &&
                     this.FulfillmentOrderItems.Equals(input.FulfillmentOrderItems))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentShipments == input.FulfillmentShipments ||
                     (this.FulfillmentShipments != null &&
                     this.FulfillmentShipments.Equals(input.FulfillmentShipments))
-                ) && 
+                ) &&
                 (
                     this.ReturnItems == input.ReturnItems ||
                     (this.ReturnItems != null &&
                     this.ReturnItems.Equals(input.ReturnItems))
-                ) && 
+                ) &&
                 (
                     this.ReturnAuthorizations == input.ReturnAuthorizations ||
                     (this.ReturnAuthorizations != null &&
                     this.ReturnAuthorizations.Equals(input.ReturnAuthorizations))
-                ) && 
+                ) &&
                 (
                     this.PaymentInformation == input.PaymentInformation ||
                     (this.PaymentInformation != null &&

@@ -8952,6 +8952,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Definitions.ABIS_MUSIC
         Dts_es = 83,
 
 
+        //[System.Runtime.Serialization.EnumMember(Value = @"dts_6.1_es")]
+        //Dts_6_1_es = 84,
+
+
         [System.Runtime.Serialization.EnumMember(Value = @"dts_5_1_ex")]
         Dts_5_1_ex = 85,
 

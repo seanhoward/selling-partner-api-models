@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
     /// The response schema for the &#x60;initiatePayout&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class InitiatePayoutResponse :  IEquatable<InitiatePayoutResponse>, IValidatableObject
+    public partial class InitiatePayoutResponse : IEquatable<InitiatePayoutResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InitiatePayoutResponse" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
                 this.PayoutReferenceId = payoutReferenceId;
             }
         }
-        
+
         /// <summary>
         /// The financial event group ID for a successfully initiated payout. You can use this ID to track payout information.
         /// </summary>
         /// <value>The financial event group ID for a successfully initiated payout. You can use this ID to track payout information.</value>
-        [DataMember(Name="payoutReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "payoutReferenceId", EmitDefaultValue = false)]
         public string PayoutReferenceId { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PayoutReferenceId == input.PayoutReferenceId ||
                     (this.PayoutReferenceId != null &&

@@ -1,5 +1,5 @@
 /* 
- * Feeds v2021-06-30
+ * Selling Partner API for Feeds
  *
  * The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
     /// Response schema.
     /// </summary>
     [DataContract]
-    public partial class GetFeedsResponse :  IEquatable<GetFeedsResponse>, IValidatableObject
+    public partial class GetFeedsResponse : IEquatable<GetFeedsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeedsResponse" /> class.
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             }
             this.NextToken = nextToken;
         }
-        
+
         /// <summary>
         /// The feeds.
         /// </summary>
         /// <value>The feeds.</value>
-        [DataMember(Name="feeds", EmitDefaultValue=false)]
+        [DataMember(Name = "feeds", EmitDefaultValue = false)]
         public FeedList Feeds { get; set; }
 
         /// <summary>
         /// Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter.
         /// </summary>
         /// <value>Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter.</value>
-        [DataMember(Name="nextToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextToken", EmitDefaultValue = false)]
         public string NextToken { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Feeds == input.Feeds ||
                     (this.Feeds != null &&
                     this.Feeds.Equals(input.Feeds))
-                ) && 
+                ) &&
                 (
                     this.NextToken == input.NextToken ||
                     (this.NextToken != null &&

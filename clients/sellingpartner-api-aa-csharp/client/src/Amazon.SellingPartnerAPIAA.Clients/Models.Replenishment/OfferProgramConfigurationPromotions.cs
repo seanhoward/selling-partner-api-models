@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// An object which represents all promotions applied to an offer.
     /// </summary>
     [DataContract]
-    public partial class OfferProgramConfigurationPromotions :  IEquatable<OfferProgramConfigurationPromotions>, IValidatableObject
+    public partial class OfferProgramConfigurationPromotions : IEquatable<OfferProgramConfigurationPromotions>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OfferProgramConfigurationPromotions" /> class.
@@ -44,33 +37,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             this.AmazonFundedBaseDiscount = amazonFundedBaseDiscount;
             this.AmazonFundedTieredDiscount = amazonFundedTieredDiscount;
         }
-        
+
         /// <summary>
         /// A base discount set by the selling partner on the offer.
         /// </summary>
         /// <value>A base discount set by the selling partner on the offer.</value>
-        [DataMember(Name="sellingPartnerFundedBaseDiscount", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingPartnerFundedBaseDiscount", EmitDefaultValue = false)]
         public OfferProgramConfigurationPromotionsDiscountFunding SellingPartnerFundedBaseDiscount { get; set; }
 
         /// <summary>
         /// A tiered discount set by the selling partner on the offer.
         /// </summary>
         /// <value>A tiered discount set by the selling partner on the offer.</value>
-        [DataMember(Name="sellingPartnerFundedTieredDiscount", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingPartnerFundedTieredDiscount", EmitDefaultValue = false)]
         public OfferProgramConfigurationPromotionsDiscountFunding SellingPartnerFundedTieredDiscount { get; set; }
 
         /// <summary>
         /// A base discount set by Amazon on the offer.
         /// </summary>
         /// <value>A base discount set by Amazon on the offer.</value>
-        [DataMember(Name="amazonFundedBaseDiscount", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonFundedBaseDiscount", EmitDefaultValue = false)]
         public OfferProgramConfigurationPromotionsDiscountFunding AmazonFundedBaseDiscount { get; set; }
 
         /// <summary>
         /// A tiered discount set by Amazon on the offer.
         /// </summary>
         /// <value>A tiered discount set by Amazon on the offer.</value>
-        [DataMember(Name="amazonFundedTieredDiscount", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonFundedTieredDiscount", EmitDefaultValue = false)]
         public OfferProgramConfigurationPromotionsDiscountFunding AmazonFundedTieredDiscount { get; set; }
 
         /// <summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +111,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellingPartnerFundedBaseDiscount == input.SellingPartnerFundedBaseDiscount ||
                     (this.SellingPartnerFundedBaseDiscount != null &&
                     this.SellingPartnerFundedBaseDiscount.Equals(input.SellingPartnerFundedBaseDiscount))
-                ) && 
+                ) &&
                 (
                     this.SellingPartnerFundedTieredDiscount == input.SellingPartnerFundedTieredDiscount ||
                     (this.SellingPartnerFundedTieredDiscount != null &&
                     this.SellingPartnerFundedTieredDiscount.Equals(input.SellingPartnerFundedTieredDiscount))
-                ) && 
+                ) &&
                 (
                     this.AmazonFundedBaseDiscount == input.AmazonFundedBaseDiscount ||
                     (this.AmazonFundedBaseDiscount != null &&
                     this.AmazonFundedBaseDiscount.Equals(input.AmazonFundedBaseDiscount))
-                ) && 
+                ) &&
                 (
                     this.AmazonFundedTieredDiscount == input.AmazonFundedTieredDiscount ||
                     (this.AmazonFundedTieredDiscount != null &&

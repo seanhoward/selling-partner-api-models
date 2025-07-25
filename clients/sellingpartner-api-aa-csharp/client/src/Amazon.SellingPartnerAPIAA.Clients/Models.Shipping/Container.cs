@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// Container in the shipment.
     /// </summary>
     [DataContract]
-    public partial class Container :  IEquatable<Container>, IValidatableObject
+    public partial class Container : IEquatable<Container>, IValidatableObject
     {
         /// <summary>
         /// The type of physical container being used. (always &#39;PACKAGE&#39;)
@@ -37,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ContainerTypeEnum
         {
-            
+
             /// <summary>
             /// Enum PACKAGE for value: PACKAGE
             /// </summary>
@@ -49,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// The type of physical container being used. (always &#39;PACKAGE&#39;)
         /// </summary>
         /// <value>The type of physical container being used. (always &#39;PACKAGE&#39;)</value>
-        [DataMember(Name="containerType", EmitDefaultValue=false)]
+        [DataMember(Name = "containerType", EmitDefaultValue = false)]
         public ContainerTypeEnum? ContainerType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Container" /> class.
@@ -114,40 +110,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             }
             this.ContainerType = containerType;
         }
-        
+
 
         /// <summary>
         /// Gets or Sets ContainerReferenceId
         /// </summary>
-        [DataMember(Name="containerReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "containerReferenceId", EmitDefaultValue = false)]
         public string ContainerReferenceId { get; set; }
 
         /// <summary>
         /// The total value of all items in the container.
         /// </summary>
         /// <value>The total value of all items in the container.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public Currency Value { get; set; }
 
         /// <summary>
         /// The length, width, height, and weight of the container.
         /// </summary>
         /// <value>The length, width, height, and weight of the container.</value>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public Dimensions Dimensions { get; set; }
 
         /// <summary>
         /// A list of the items in the container.
         /// </summary>
         /// <value>A list of the items in the container.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<ContainerItem> Items { get; set; }
 
         /// <summary>
         /// The weight of the container.
         /// </summary>
         /// <value>The weight of the container.</value>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public Weight Weight { get; set; }
 
         /// <summary>
@@ -167,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -197,32 +193,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContainerType == input.ContainerType ||
                     (this.ContainerType != null &&
                     this.ContainerType.Equals(input.ContainerType))
-                ) && 
+                ) &&
                 (
                     this.ContainerReferenceId == input.ContainerReferenceId ||
                     (this.ContainerReferenceId != null &&
                     this.ContainerReferenceId.Equals(input.ContainerReferenceId))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
+                ) &&
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&
                     this.Items.SequenceEqual(input.Items)
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&

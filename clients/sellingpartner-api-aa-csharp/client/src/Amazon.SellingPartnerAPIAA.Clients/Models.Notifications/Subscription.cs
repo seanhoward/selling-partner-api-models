@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// Information about the subscription.
     /// </summary>
     [DataContract]
-    public partial class Subscription :  IEquatable<Subscription>, IValidatableObject
+    public partial class Subscription : IEquatable<Subscription>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Subscription" /> class.
@@ -73,32 +67,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             }
             this.ProcessingDirective = processingDirective;
         }
-        
+
         /// <summary>
         /// The subscription identifier generated when the subscription is created.
         /// </summary>
         /// <value>The subscription identifier generated when the subscription is created.</value>
-        [DataMember(Name="subscriptionId", EmitDefaultValue=false)]
+        [DataMember(Name = "subscriptionId", EmitDefaultValue = false)]
         public string SubscriptionId { get; set; }
 
         /// <summary>
         /// The version of the payload object to be used in the notification.
         /// </summary>
         /// <value>The version of the payload object to be used in the notification.</value>
-        [DataMember(Name="payloadVersion", EmitDefaultValue=false)]
+        [DataMember(Name = "payloadVersion", EmitDefaultValue = false)]
         public string PayloadVersion { get; set; }
 
         /// <summary>
         /// The identifier for the destination where notifications will be delivered.
         /// </summary>
         /// <value>The identifier for the destination where notifications will be delivered.</value>
-        [DataMember(Name="destinationId", EmitDefaultValue=false)]
+        [DataMember(Name = "destinationId", EmitDefaultValue = false)]
         public string DestinationId { get; set; }
 
         /// <summary>
         /// Gets or Sets ProcessingDirective
         /// </summary>
-        [DataMember(Name="processingDirective", EmitDefaultValue=false)]
+        [DataMember(Name = "processingDirective", EmitDefaultValue = false)]
         public ProcessingDirective ProcessingDirective { get; set; }
 
         /// <summary>
@@ -116,7 +110,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -146,22 +140,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SubscriptionId == input.SubscriptionId ||
                     (this.SubscriptionId != null &&
                     this.SubscriptionId.Equals(input.SubscriptionId))
-                ) && 
+                ) &&
                 (
                     this.PayloadVersion == input.PayloadVersion ||
                     (this.PayloadVersion != null &&
                     this.PayloadVersion.Equals(input.PayloadVersion))
-                ) && 
+                ) &&
                 (
                     this.DestinationId == input.DestinationId ||
                     (this.DestinationId != null &&
                     this.DestinationId.Equals(input.DestinationId))
-                ) && 
+                ) &&
                 (
                     this.ProcessingDirective == input.ProcessingDirective ||
                     (this.ProcessingDirective != null &&

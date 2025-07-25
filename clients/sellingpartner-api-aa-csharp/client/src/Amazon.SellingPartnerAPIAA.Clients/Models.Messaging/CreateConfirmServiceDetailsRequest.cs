@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
     /// The request schema for the createConfirmServiceDetails operation.
     /// </summary>
     [DataContract]
-    public partial class CreateConfirmServiceDetailsRequest :  IEquatable<CreateConfirmServiceDetailsRequest>, IValidatableObject
+    public partial class CreateConfirmServiceDetailsRequest : IEquatable<CreateConfirmServiceDetailsRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConfirmServiceDetailsRequest" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         {
             this.Text = text;
         }
-        
+
         /// <summary>
         /// The text to be sent to the buyer. Only links related to Home Service calls are allowed. Do not include HTML or email addresses. The text must be written in the buyer&#39;s language of preference, which can be retrieved from the GetAttributes operation.
         /// </summary>
         /// <value>The text to be sent to the buyer. Only links related to Home Service calls are allowed. Do not include HTML or email addresses. The text must be written in the buyer&#39;s language of preference, which can be retrieved from the GetAttributes operation.</value>
-        [DataMember(Name="text", EmitDefaultValue=false)]
+        [DataMember(Name = "text", EmitDefaultValue = false)]
         public string Text { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Text == input.Text ||
                     (this.Text != null &&
@@ -119,15 +112,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Text (string) maxLength
-            if(this.Text != null && this.Text.Length > 2000)
+            if (this.Text != null && this.Text.Length > 2000)
             {
-                yield return new ValidationResult("Invalid value for Text, length must be less than 2000.", new [] { "Text" });
+                yield return new ValidationResult("Invalid value for Text, length must be less than 2000.", new[] { "Text" });
             }
 
             // Text (string) minLength
-            if(this.Text != null && this.Text.Length < 1)
+            if (this.Text != null && this.Text.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Text, length must be greater than 1.", new [] { "Text" });
+                yield return new ValidationResult("Invalid value for Text, length must be greater than 1.", new[] { "Text" });
             }
 
             yield break;

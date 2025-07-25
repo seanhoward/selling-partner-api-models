@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The time range within which something (for example, a delivery) will occur.
     /// </summary>
     [DataContract]
-    public partial class DateRange :  IEquatable<DateRange>, IValidatableObject
+    public partial class DateRange : IEquatable<DateRange>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DateRange" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.Latest = latest;
             }
         }
-        
+
         /// <summary>
         /// The earliest point in a date range.
         /// </summary>
         /// <value>The earliest point in a date range.</value>
-        [DataMember(Name="earliest", EmitDefaultValue=false)]
+        [DataMember(Name = "earliest", EmitDefaultValue = false)]
         public DateTime? Earliest { get; set; }
 
         /// <summary>
         /// The latest point in a date range.
         /// </summary>
         /// <value>The latest point in a date range.</value>
-        [DataMember(Name="latest", EmitDefaultValue=false)]
+        [DataMember(Name = "latest", EmitDefaultValue = false)]
         public DateTime? Latest { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Earliest == input.Earliest ||
                     (this.Earliest != null &&
                     this.Earliest.Equals(input.Earliest))
-                ) && 
+                ) &&
                 (
                     this.Latest == input.Latest ||
                     (this.Latest != null &&

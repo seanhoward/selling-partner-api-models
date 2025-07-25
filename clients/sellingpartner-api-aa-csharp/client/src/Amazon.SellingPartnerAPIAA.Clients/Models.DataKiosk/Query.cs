@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
     /// Detailed information about the query.
     /// </summary>
     [DataContract]
-    public partial class Query :  IEquatable<Query>, IValidatableObject
+    public partial class Query : IEquatable<Query>, IValidatableObject
     {
         /// <summary>
         /// The processing status of the query.
@@ -37,31 +32,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ProcessingStatusEnum
         {
-            
+
             /// <summary>
             /// Enum CANCELLED for value: CANCELLED
             /// </summary>
             [EnumMember(Value = "CANCELLED")]
             CANCELLED = 1,
-            
+
             /// <summary>
             /// Enum DONE for value: DONE
             /// </summary>
             [EnumMember(Value = "DONE")]
             DONE = 2,
-            
+
             /// <summary>
             /// Enum FATAL for value: FATAL
             /// </summary>
             [EnumMember(Value = "FATAL")]
             FATAL = 3,
-            
+
             /// <summary>
             /// Enum INPROGRESS for value: IN_PROGRESS
             /// </summary>
             [EnumMember(Value = "IN_PROGRESS")]
             INPROGRESS = 4,
-            
+
             /// <summary>
             /// Enum INQUEUE for value: IN_QUEUE
             /// </summary>
@@ -73,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// The processing status of the query.
         /// </summary>
         /// <value>The processing status of the query.</value>
-        [DataMember(Name="processingStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "processingStatus", EmitDefaultValue = false)]
         public ProcessingStatusEnum ProcessingStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Query" /> class.
@@ -136,26 +131,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             this.ErrorDocumentId = errorDocumentId;
             this.Pagination = pagination;
         }
-        
+
         /// <summary>
         /// The query identifier. This identifier is unique only in combination with a selling partner account ID.
         /// </summary>
         /// <value>The query identifier. This identifier is unique only in combination with a selling partner account ID.</value>
-        [DataMember(Name="queryId", EmitDefaultValue=false)]
+        [DataMember(Name = "queryId", EmitDefaultValue = false)]
         public string QueryId { get; set; }
 
         /// <summary>
         /// The submitted query.
         /// </summary>
         /// <value>The submitted query.</value>
-        [DataMember(Name="query", EmitDefaultValue=false)]
+        [DataMember(Name = "query", EmitDefaultValue = false)]
         public string _Query { get; set; }
 
         /// <summary>
         /// The date and time when the query was created, in ISO 8601 date time format.
         /// </summary>
         /// <value>The date and time when the query was created, in ISO 8601 date time format.</value>
-        [DataMember(Name="createdTime", EmitDefaultValue=false)]
+        [DataMember(Name = "createdTime", EmitDefaultValue = false)]
         public DateTime? CreatedTime { get; set; }
 
 
@@ -163,34 +158,34 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
         /// The date and time when the query processing started, in ISO 8601 date time format.
         /// </summary>
         /// <value>The date and time when the query processing started, in ISO 8601 date time format.</value>
-        [DataMember(Name="processingStartTime", EmitDefaultValue=false)]
+        [DataMember(Name = "processingStartTime", EmitDefaultValue = false)]
         public DateTime? ProcessingStartTime { get; set; }
 
         /// <summary>
         /// The date and time when the query processing completed, in ISO 8601 date time format.
         /// </summary>
         /// <value>The date and time when the query processing completed, in ISO 8601 date time format.</value>
-        [DataMember(Name="processingEndTime", EmitDefaultValue=false)]
+        [DataMember(Name = "processingEndTime", EmitDefaultValue = false)]
         public DateTime? ProcessingEndTime { get; set; }
 
         /// <summary>
         /// The data document identifier. This identifier is only present when there is data available as a result of the query. This identifier is unique only in combination with a selling partner account ID. Pass this identifier into the &#x60;getDocument&#x60; operation to get the information required to retrieve the data document&#39;s contents.
         /// </summary>
         /// <value>The data document identifier. This identifier is only present when there is data available as a result of the query. This identifier is unique only in combination with a selling partner account ID. Pass this identifier into the &#x60;getDocument&#x60; operation to get the information required to retrieve the data document&#39;s contents.</value>
-        [DataMember(Name="dataDocumentId", EmitDefaultValue=false)]
+        [DataMember(Name = "dataDocumentId", EmitDefaultValue = false)]
         public string DataDocumentId { get; set; }
 
         /// <summary>
         /// The error document identifier. This identifier is only present when an error occurs during query processing. This identifier is unique only in combination with a selling partner account ID. Pass this identifier into the &#x60;getDocument&#x60; operation to get the information required to retrieve the error document&#39;s contents.
         /// </summary>
         /// <value>The error document identifier. This identifier is only present when an error occurs during query processing. This identifier is unique only in combination with a selling partner account ID. Pass this identifier into the &#x60;getDocument&#x60; operation to get the information required to retrieve the error document&#39;s contents.</value>
-        [DataMember(Name="errorDocumentId", EmitDefaultValue=false)]
+        [DataMember(Name = "errorDocumentId", EmitDefaultValue = false)]
         public string ErrorDocumentId { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
         /// </summary>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
         public QueryPagination Pagination { get; set; }
 
         /// <summary>
@@ -213,7 +208,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -243,47 +238,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.QueryId == input.QueryId ||
                     (this.QueryId != null &&
                     this.QueryId.Equals(input.QueryId))
-                ) && 
+                ) &&
                 (
                     this._Query == input._Query ||
                     (this._Query != null &&
                     this._Query.Equals(input._Query))
-                ) && 
+                ) &&
                 (
                     this.CreatedTime == input.CreatedTime ||
                     (this.CreatedTime != null &&
                     this.CreatedTime.Equals(input.CreatedTime))
-                ) && 
+                ) &&
                 (
                     this.ProcessingStatus == input.ProcessingStatus ||
                     (this.ProcessingStatus != null &&
                     this.ProcessingStatus.Equals(input.ProcessingStatus))
-                ) && 
+                ) &&
                 (
                     this.ProcessingStartTime == input.ProcessingStartTime ||
                     (this.ProcessingStartTime != null &&
                     this.ProcessingStartTime.Equals(input.ProcessingStartTime))
-                ) && 
+                ) &&
                 (
                     this.ProcessingEndTime == input.ProcessingEndTime ||
                     (this.ProcessingEndTime != null &&
                     this.ProcessingEndTime.Equals(input.ProcessingEndTime))
-                ) && 
+                ) &&
                 (
                     this.DataDocumentId == input.DataDocumentId ||
                     (this.DataDocumentId != null &&
                     this.DataDocumentId.Equals(input.DataDocumentId))
-                ) && 
+                ) &&
                 (
                     this.ErrorDocumentId == input.ErrorDocumentId ||
                     (this.ErrorDocumentId != null &&
                     this.ErrorDocumentId.Equals(input.ErrorDocumentId))
-                ) && 
+                ) &&
                 (
                     this.Pagination == input.Pagination ||
                     (this.Pagination != null &&

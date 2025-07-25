@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The specific rate for a shipping service, or null if no service available.
     /// </summary>
     [DataContract]
-    public partial class ServiceRate :  IEquatable<ServiceRate>, IValidatableObject
+    public partial class ServiceRate : IEquatable<ServiceRate>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ServiceType
         /// </summary>
-        [DataMember(Name="serviceType", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceType", EmitDefaultValue = false)]
         public ServiceType ServiceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceRate" /> class.
@@ -86,26 +80,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
                 this.Promise = promise;
             }
         }
-        
+
         /// <summary>
         /// The total charge that will be billed for the rate.
         /// </summary>
         /// <value>The total charge that will be billed for the rate.</value>
-        [DataMember(Name="totalCharge", EmitDefaultValue=false)]
+        [DataMember(Name = "totalCharge", EmitDefaultValue = false)]
         public Currency TotalCharge { get; set; }
 
         /// <summary>
         /// The weight that was used to calculate the totalCharge.
         /// </summary>
         /// <value>The weight that was used to calculate the totalCharge.</value>
-        [DataMember(Name="billableWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "billableWeight", EmitDefaultValue = false)]
         public Weight BillableWeight { get; set; }
 
 
         /// <summary>
         /// Gets or Sets Promise
         /// </summary>
-        [DataMember(Name="promise", EmitDefaultValue=false)]
+        [DataMember(Name = "promise", EmitDefaultValue = false)]
         public ShippingPromiseSet Promise { get; set; }
 
         /// <summary>
@@ -123,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -153,22 +147,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TotalCharge == input.TotalCharge ||
                     (this.TotalCharge != null &&
                     this.TotalCharge.Equals(input.TotalCharge))
-                ) && 
+                ) &&
                 (
                     this.BillableWeight == input.BillableWeight ||
                     (this.BillableWeight != null &&
                     this.BillableWeight.Equals(input.BillableWeight))
-                ) && 
+                ) &&
                 (
                     this.ServiceType == input.ServiceType ||
                     (this.ServiceType != null &&
                     this.ServiceType.Equals(input.ServiceType))
-                ) && 
+                ) &&
                 (
                     this.Promise == input.Promise ||
                     (this.Promise != null &&

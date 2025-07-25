@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// The total weight of units that are sold by weight in a shipment.
     /// </summary>
     [DataContract]
-    public partial class TotalWeight :  IEquatable<TotalWeight>, IValidatableObject
+    public partial class TotalWeight : IEquatable<TotalWeight>, IValidatableObject
     {
         /// <summary>
         /// The unit of measure for the weight of items that are ordered by cases and support pricing by weight.
@@ -37,25 +32,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitOfMeasureEnum
         {
-            
+
             /// <summary>
             /// Enum POUNDS for value: POUNDS
             /// </summary>
             [EnumMember(Value = "POUNDS")]
             POUNDS = 1,
-            
+
             /// <summary>
             /// Enum OUNCES for value: OUNCES
             /// </summary>
             [EnumMember(Value = "OUNCES")]
             OUNCES = 2,
-            
+
             /// <summary>
             /// Enum GRAMS for value: GRAMS
             /// </summary>
             [EnumMember(Value = "GRAMS")]
             GRAMS = 3,
-            
+
             /// <summary>
             /// Enum KILOGRAMS for value: KILOGRAMS
             /// </summary>
@@ -67,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// The unit of measure for the weight of items that are ordered by cases and support pricing by weight.
         /// </summary>
         /// <value>The unit of measure for the weight of items that are ordered by cases and support pricing by weight.</value>
-        [DataMember(Name="unitOfMeasure", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasure", EmitDefaultValue = false)]
         public UnitOfMeasureEnum UnitOfMeasure { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TotalWeight" /> class.
@@ -100,12 +95,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
                 this.Amount = amount;
             }
         }
-        
+
 
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public string Amount { get; set; }
 
         /// <summary>
@@ -121,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -151,12 +146,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UnitOfMeasure == input.UnitOfMeasure ||
                     (this.UnitOfMeasure != null &&
                     this.UnitOfMeasure.Equals(input.UnitOfMeasure))
-                ) && 
+                ) &&
                 (
                     this.Amount == input.Amount ||
                     (this.Amount != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Represents the contents inside a package, which can be products or a nested package.
     /// </summary>
     [DataContract]
-    public partial class DistributionPackageContents :  IEquatable<DistributionPackageContents>, IValidatableObject
+    public partial class DistributionPackageContents : IEquatable<DistributionPackageContents>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DistributionPackageContents" /> class.
@@ -40,19 +34,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             this.Packages = packages;
             this.Products = products;
         }
-        
+
         /// <summary>
         /// This is required only when &#x60;DistributionPackageType&#x3D;PALLET&#x60;.
         /// </summary>
         /// <value>This is required only when &#x60;DistributionPackageType&#x3D;PALLET&#x60;.</value>
-        [DataMember(Name="packages", EmitDefaultValue=false)]
+        [DataMember(Name = "packages", EmitDefaultValue = false)]
         public List<DistributionPackageQuantity> Packages { get; set; }
 
         /// <summary>
         /// This is required only when &#x60;DistributionPackageType&#x3D;CASE&#x60;.
         /// </summary>
         /// <value>This is required only when &#x60;DistributionPackageType&#x3D;CASE&#x60;.</value>
-        [DataMember(Name="products", EmitDefaultValue=false)]
+        [DataMember(Name = "products", EmitDefaultValue = false)]
         public List<ProductQuantity> Products { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Packages == input.Packages ||
                     this.Packages != null &&
                     this.Packages.SequenceEqual(input.Packages)
-                ) && 
+                ) &&
                 (
                     this.Products == input.Products ||
                     this.Products != null &&

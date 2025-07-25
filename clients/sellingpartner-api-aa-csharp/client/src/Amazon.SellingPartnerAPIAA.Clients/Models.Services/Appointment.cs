@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// The details of an appointment.
     /// </summary>
     [DataContract]
-    public partial class Appointment :  IEquatable<Appointment>, IValidatableObject
+    public partial class Appointment : IEquatable<Appointment>, IValidatableObject
     {
         /// <summary>
         /// The status of the appointment.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AppointmentStatusEnum
         {
-            
+
             /// <summary>
             /// Enum ACTIVE for value: ACTIVE
             /// </summary>
             [EnumMember(Value = "ACTIVE")]
             ACTIVE = 1,
-            
+
             /// <summary>
             /// Enum CANCELLED for value: CANCELLED
             /// </summary>
             [EnumMember(Value = "CANCELLED")]
             CANCELLED = 2,
-            
+
             /// <summary>
             /// Enum COMPLETED for value: COMPLETED
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The status of the appointment.
         /// </summary>
         /// <value>The status of the appointment.</value>
-        [DataMember(Name="appointmentStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentStatus", EmitDefaultValue = false)]
         public AppointmentStatusEnum? AppointmentStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Appointment" /> class.
@@ -81,12 +76,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.RescheduledAppointmentId = rescheduledAppointmentId;
             this.Poa = poa;
         }
-        
+
         /// <summary>
         /// The appointment identifier.
         /// </summary>
         /// <value>The appointment identifier.</value>
-        [DataMember(Name="appointmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentId", EmitDefaultValue = false)]
         public string AppointmentId { get; set; }
 
 
@@ -94,28 +89,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The time of the appointment window.
         /// </summary>
         /// <value>The time of the appointment window.</value>
-        [DataMember(Name="appointmentTime", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentTime", EmitDefaultValue = false)]
         public AppointmentTime AppointmentTime { get; set; }
 
         /// <summary>
         /// A list of technicians assigned to the service job.
         /// </summary>
         /// <value>A list of technicians assigned to the service job.</value>
-        [DataMember(Name="assignedTechnicians", EmitDefaultValue=false)]
+        [DataMember(Name = "assignedTechnicians", EmitDefaultValue = false)]
         public List<Technician> AssignedTechnicians { get; set; }
 
         /// <summary>
         /// The identifier of a rescheduled appointment.
         /// </summary>
         /// <value>The identifier of a rescheduled appointment.</value>
-        [DataMember(Name="rescheduledAppointmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "rescheduledAppointmentId", EmitDefaultValue = false)]
         public string RescheduledAppointmentId { get; set; }
 
         /// <summary>
         /// Proof of Appointment (POA) details.
         /// </summary>
         /// <value>Proof of Appointment (POA) details.</value>
-        [DataMember(Name="poa", EmitDefaultValue=false)]
+        [DataMember(Name = "poa", EmitDefaultValue = false)]
         public Poa Poa { get; set; }
 
         /// <summary>
@@ -135,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -165,32 +160,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AppointmentId == input.AppointmentId ||
                     (this.AppointmentId != null &&
                     this.AppointmentId.Equals(input.AppointmentId))
-                ) && 
+                ) &&
                 (
                     this.AppointmentStatus == input.AppointmentStatus ||
                     (this.AppointmentStatus != null &&
                     this.AppointmentStatus.Equals(input.AppointmentStatus))
-                ) && 
+                ) &&
                 (
                     this.AppointmentTime == input.AppointmentTime ||
                     (this.AppointmentTime != null &&
                     this.AppointmentTime.Equals(input.AppointmentTime))
-                ) && 
+                ) &&
                 (
                     this.AssignedTechnicians == input.AssignedTechnicians ||
                     this.AssignedTechnicians != null &&
                     this.AssignedTechnicians.SequenceEqual(input.AssignedTechnicians)
-                ) && 
+                ) &&
                 (
                     this.RescheduledAppointmentId == input.RescheduledAppointmentId ||
                     (this.RescheduledAppointmentId != null &&
                     this.RescheduledAppointmentId.Equals(input.RescheduledAppointmentId))
-                ) && 
+                ) &&
                 (
                     this.Poa == input.Poa ||
                     (this.Poa != null &&

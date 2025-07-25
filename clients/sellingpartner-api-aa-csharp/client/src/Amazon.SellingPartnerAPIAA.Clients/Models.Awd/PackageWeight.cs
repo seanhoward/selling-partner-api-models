@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Represents the weight of the package with a unit of measurement.
     /// </summary>
     [DataContract]
-    public partial class PackageWeight :  IEquatable<PackageWeight>, IValidatableObject
+    public partial class PackageWeight : IEquatable<PackageWeight>, IValidatableObject
     {
         /// <summary>
         /// Unit of measurement for the package weight.
         /// </summary>
         /// <value>Unit of measurement for the package weight.</value>
-        [DataMember(Name="unitOfMeasurement", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasurement", EmitDefaultValue = false)]
         public WeightUnitOfMeasurement UnitOfMeasurement { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageWeight" /> class.
@@ -67,13 +61,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 this.Weight = weight;
             }
         }
-        
+
 
         /// <summary>
         /// The package weight value.
         /// </summary>
         /// <value>The package weight value.</value>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public double? Weight { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UnitOfMeasurement == input.UnitOfMeasurement ||
                     (this.UnitOfMeasurement != null &&
                     this.UnitOfMeasurement.Equals(input.UnitOfMeasurement))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&

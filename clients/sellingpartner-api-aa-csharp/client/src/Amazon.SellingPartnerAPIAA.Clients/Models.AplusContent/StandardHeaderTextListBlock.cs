@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,26 +9,19 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
     /// <summary>
-    /// The A+ standard fixed-length list of text, with a related headline.
+    /// The A+ standard fixed-length list of text and a related headline.
     /// </summary>
     [DataContract]
-    public partial class StandardHeaderTextListBlock :  IEquatable<StandardHeaderTextListBlock>, IValidatableObject
+    public partial class StandardHeaderTextListBlock : IEquatable<StandardHeaderTextListBlock>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardHeaderTextListBlock" /> class.
@@ -40,17 +33,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             this.Headline = headline;
             this.Block = block;
         }
-        
+
         /// <summary>
         /// Gets or Sets Headline
         /// </summary>
-        [DataMember(Name="headline", EmitDefaultValue=false)]
+        [DataMember(Name = "headline", EmitDefaultValue = false)]
         public TextComponent Headline { get; set; }
 
         /// <summary>
         /// Gets or Sets Block
         /// </summary>
-        [DataMember(Name="block", EmitDefaultValue=false)]
+        [DataMember(Name = "block", EmitDefaultValue = false)]
         public StandardTextListBlock Block { get; set; }
 
         /// <summary>
@@ -66,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -96,12 +89,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Headline == input.Headline ||
                     (this.Headline != null &&
                     this.Headline.Equals(input.Headline))
-                ) && 
+                ) &&
                 (
                     this.Block == input.Block ||
                     (this.Block != null &&

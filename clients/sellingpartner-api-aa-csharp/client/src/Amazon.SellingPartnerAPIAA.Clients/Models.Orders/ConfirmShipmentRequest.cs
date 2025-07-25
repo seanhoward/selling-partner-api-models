@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The request schema for an shipment confirmation.
     /// </summary>
     [DataContract]
-    public partial class ConfirmShipmentRequest :  IEquatable<ConfirmShipmentRequest>, IValidatableObject
+    public partial class ConfirmShipmentRequest : IEquatable<ConfirmShipmentRequest>, IValidatableObject
     {
         /// <summary>
         /// The COD collection method (only supported in the JP marketplace).
@@ -37,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CodCollectionMethodEnum
         {
-            
+
             /// <summary>
             /// Enum DirectPayment for value: DirectPayment
             /// </summary>
@@ -49,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// The COD collection method (only supported in the JP marketplace).
         /// </summary>
         /// <value>The COD collection method (only supported in the JP marketplace).</value>
-        [DataMember(Name="codCollectionMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "codCollectionMethod", EmitDefaultValue = false)]
         public CodCollectionMethodEnum? CodCollectionMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfirmShipmentRequest" /> class.
@@ -84,18 +79,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             }
             this.CodCollectionMethod = codCollectionMethod;
         }
-        
+
         /// <summary>
         /// Gets or Sets PackageDetail
         /// </summary>
-        [DataMember(Name="packageDetail", EmitDefaultValue=false)]
+        [DataMember(Name = "packageDetail", EmitDefaultValue = false)]
         public PackageDetail PackageDetail { get; set; }
 
 
         /// <summary>
         /// Gets or Sets MarketplaceId
         /// </summary>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
@@ -112,7 +107,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -142,17 +137,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PackageDetail == input.PackageDetail ||
                     (this.PackageDetail != null &&
                     this.PackageDetail.Equals(input.PackageDetail))
-                ) && 
+                ) &&
                 (
                     this.CodCollectionMethod == input.CodCollectionMethod ||
                     (this.CodCollectionMethod != null &&
                     this.CodCollectionMethod.Equals(input.CodCollectionMethod))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&

@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// A standard background image with a floating text box.
     /// </summary>
     [DataContract]
-    public partial class StandardImageTextOverlayModule :  IEquatable<StandardImageTextOverlayModule>, IValidatableObject
+    public partial class StandardImageTextOverlayModule : IEquatable<StandardImageTextOverlayModule>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets OverlayColorType
         /// </summary>
-        [DataMember(Name="overlayColorType", EmitDefaultValue=false)]
+        [DataMember(Name = "overlayColorType", EmitDefaultValue = false)]
         public ColorType OverlayColorType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardImageTextOverlayModule" /> class.
@@ -58,12 +52,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             }
             this.Block = block;
         }
-        
+
 
         /// <summary>
         /// Gets or Sets Block
         /// </summary>
-        [DataMember(Name="block", EmitDefaultValue=false)]
+        [DataMember(Name = "block", EmitDefaultValue = false)]
         public StandardImageTextBlock Block { get; set; }
 
         /// <summary>
@@ -79,7 +73,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -109,12 +103,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.OverlayColorType == input.OverlayColorType ||
                     (this.OverlayColorType != null &&
                     this.OverlayColorType.Equals(input.OverlayColorType))
-                ) && 
+                ) &&
                 (
                     this.Block == input.Block ||
                     (this.Block != null &&

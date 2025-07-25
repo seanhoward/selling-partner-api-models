@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The shipment related data.
     /// </summary>
     [DataContract]
-    public partial class Shipment :  IEquatable<Shipment>, IValidatableObject
+    public partial class Shipment : IEquatable<Shipment>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Shipment" /> class.
@@ -95,47 +89,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             this.AcceptedRate = acceptedRate;
             this.Shipper = shipper;
         }
-        
+
         /// <summary>
         /// Gets or Sets ShipmentId
         /// </summary>
-        [DataMember(Name="shipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentId", EmitDefaultValue = false)]
         public string ShipmentId { get; set; }
 
         /// <summary>
         /// Gets or Sets ClientReferenceId
         /// </summary>
-        [DataMember(Name="clientReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "clientReferenceId", EmitDefaultValue = false)]
         public string ClientReferenceId { get; set; }
 
         /// <summary>
         /// Gets or Sets ShipFrom
         /// </summary>
-        [DataMember(Name="shipFrom", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFrom", EmitDefaultValue = false)]
         public Address ShipFrom { get; set; }
 
         /// <summary>
         /// Gets or Sets ShipTo
         /// </summary>
-        [DataMember(Name="shipTo", EmitDefaultValue=false)]
+        [DataMember(Name = "shipTo", EmitDefaultValue = false)]
         public Address ShipTo { get; set; }
 
         /// <summary>
         /// Gets or Sets AcceptedRate
         /// </summary>
-        [DataMember(Name="acceptedRate", EmitDefaultValue=false)]
+        [DataMember(Name = "acceptedRate", EmitDefaultValue = false)]
         public AcceptedRate AcceptedRate { get; set; }
 
         /// <summary>
         /// Gets or Sets Shipper
         /// </summary>
-        [DataMember(Name="shipper", EmitDefaultValue=false)]
+        [DataMember(Name = "shipper", EmitDefaultValue = false)]
         public Party Shipper { get; set; }
 
         /// <summary>
         /// Gets or Sets Containers
         /// </summary>
-        [DataMember(Name="containers", EmitDefaultValue=false)]
+        [DataMember(Name = "containers", EmitDefaultValue = false)]
         public ContainerList Containers { get; set; }
 
         /// <summary>
@@ -156,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -186,37 +180,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShipmentId == input.ShipmentId ||
                     (this.ShipmentId != null &&
                     this.ShipmentId.Equals(input.ShipmentId))
-                ) && 
+                ) &&
                 (
                     this.ClientReferenceId == input.ClientReferenceId ||
                     (this.ClientReferenceId != null &&
                     this.ClientReferenceId.Equals(input.ClientReferenceId))
-                ) && 
+                ) &&
                 (
                     this.ShipFrom == input.ShipFrom ||
                     (this.ShipFrom != null &&
                     this.ShipFrom.Equals(input.ShipFrom))
-                ) && 
+                ) &&
                 (
                     this.ShipTo == input.ShipTo ||
                     (this.ShipTo != null &&
                     this.ShipTo.Equals(input.ShipTo))
-                ) && 
+                ) &&
                 (
                     this.AcceptedRate == input.AcceptedRate ||
                     (this.AcceptedRate != null &&
                     this.AcceptedRate.Equals(input.AcceptedRate))
-                ) && 
+                ) &&
                 (
                     this.Shipper == input.Shipper ||
                     (this.Shipper != null &&
                     this.Shipper.Equals(input.Shipper))
-                ) && 
+                ) &&
                 (
                     this.Containers == input.Containers ||
                     (this.Containers != null &&

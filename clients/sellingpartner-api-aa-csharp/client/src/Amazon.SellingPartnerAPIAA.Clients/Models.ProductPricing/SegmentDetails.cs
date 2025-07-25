@@ -9,42 +9,44 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
     /// <summary>
-    /// The details about the segment.
+    /// The details about the segment. The FeaturedOfferExpectedPrice API uses only the sampleLocation portion as input.
     /// </summary>
     [DataContract]
-    public partial class SegmentDetails :  IEquatable<SegmentDetails>, IValidatableObject
+    public partial class SegmentDetails : IEquatable<SegmentDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SegmentDetails" /> class.
         /// </summary>
         /// <param name="glanceViewWeightPercentage">The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer..</param>
-        public SegmentDetails(decimal? glanceViewWeightPercentage = default)
+        /// <param name="sampleLocation">The representative location that features the offer for the segment..</param>
+        public SegmentDetails(decimal? glanceViewWeightPercentage = default, SampleLocation sampleLocation = default)
         {
             this.GlanceViewWeightPercentage = glanceViewWeightPercentage;
+            this.SampleLocation = sampleLocation;
         }
-        
+
         /// <summary>
         /// The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer.
         /// </summary>
         /// <value>The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer.</value>
-        [DataMember(Name="glanceViewWeightPercentage", EmitDefaultValue=false)]
+        [DataMember(Name = "glanceViewWeightPercentage", EmitDefaultValue = false)]
         public decimal? GlanceViewWeightPercentage { get; set; }
+
+        /// <summary>
+        /// The representative location that features the offer for the segment.
+        /// </summary>
+        /// <value>The representative location that features the offer for the segment.</value>
+        [DataMember(Name = "sampleLocation", EmitDefaultValue = false)]
+        public SampleLocation SampleLocation { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -55,10 +57,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             var sb = new StringBuilder();
             sb.Append("class SegmentDetails {\n");
             sb.Append("  GlanceViewWeightPercentage: ").Append(GlanceViewWeightPercentage).Append("\n");
+            sb.Append("  SampleLocation: ").Append(SampleLocation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,11 +91,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.GlanceViewWeightPercentage == input.GlanceViewWeightPercentage ||
                     (this.GlanceViewWeightPercentage != null &&
                     this.GlanceViewWeightPercentage.Equals(input.GlanceViewWeightPercentage))
+                ) &&
+                (
+                    this.SampleLocation == input.SampleLocation ||
+                    (this.SampleLocation != null &&
+                    this.SampleLocation.Equals(input.SampleLocation))
                 );
         }
 
@@ -107,6 +115,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 int hashCode = 41;
                 if (this.GlanceViewWeightPercentage != null)
                     hashCode = hashCode * 59 + this.GlanceViewWeightPercentage.GetHashCode();
+                if (this.SampleLocation != null)
+                    hashCode = hashCode * 59 + this.SampleLocation.GetHashCode();
                 return hashCode;
             }
         }

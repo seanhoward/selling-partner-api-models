@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The throughput configuration.
     /// </summary>
     [DataContract]
-    public partial class ThroughputConfig :  IEquatable<ThroughputConfig>, IValidatableObject
+    public partial class ThroughputConfig : IEquatable<ThroughputConfig>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ThroughputUnit
         /// </summary>
-        [DataMember(Name="throughputUnit", EmitDefaultValue=false)]
+        [DataMember(Name = "throughputUnit", EmitDefaultValue = false)]
         public ThroughputUnit ThroughputUnit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ThroughputConfig" /> class.
@@ -58,11 +52,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             }
             this.ThroughputCap = throughputCap;
         }
-        
+
         /// <summary>
         /// Gets or Sets ThroughputCap
         /// </summary>
-        [DataMember(Name="throughputCap", EmitDefaultValue=false)]
+        [DataMember(Name = "throughputCap", EmitDefaultValue = false)]
         public ThroughputCap ThroughputCap { get; set; }
 
 
@@ -79,7 +73,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -109,12 +103,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ThroughputCap == input.ThroughputCap ||
                     (this.ThroughputCap != null &&
                     this.ThroughputCap.Equals(input.ThroughputCap))
-                ) && 
+                ) &&
                 (
                     this.ThroughputUnit == input.ThroughputUnit ||
                     (this.ThroughputUnit != null &&

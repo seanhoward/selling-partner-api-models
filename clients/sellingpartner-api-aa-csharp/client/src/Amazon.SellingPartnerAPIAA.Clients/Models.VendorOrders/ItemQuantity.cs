@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Details of quantity ordered.
     /// </summary>
     [DataContract]
-    public partial class ItemQuantity :  IEquatable<ItemQuantity>, IValidatableObject
+    public partial class ItemQuantity : IEquatable<ItemQuantity>, IValidatableObject
     {
         /// <summary>
         /// Unit of measure for the acknowledged quantity.
@@ -37,13 +31,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitOfMeasureEnum
         {
-            
+
             /// <summary>
             /// Enum Cases for value: Cases
             /// </summary>
             [EnumMember(Value = "Cases")]
             Cases = 1,
-            
+
             /// <summary>
             /// Enum Eaches for value: Eaches
             /// </summary>
@@ -55,7 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// Unit of measure for the acknowledged quantity.
         /// </summary>
         /// <value>Unit of measure for the acknowledged quantity.</value>
-        [DataMember(Name="unitOfMeasure", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasure", EmitDefaultValue = false)]
         public UnitOfMeasureEnum? UnitOfMeasure { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemQuantity" /> class.
@@ -69,12 +63,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.UnitOfMeasure = unitOfMeasure;
             this.UnitSize = unitSize;
         }
-        
+
         /// <summary>
         /// Acknowledged quantity. This value should not be zero.
         /// </summary>
         /// <value>Acknowledged quantity. This value should not be zero.</value>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int? Amount { get; set; }
 
 
@@ -82,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// The case size, in the event that we ordered using cases.
         /// </summary>
         /// <value>The case size, in the event that we ordered using cases.</value>
-        [DataMember(Name="unitSize", EmitDefaultValue=false)]
+        [DataMember(Name = "unitSize", EmitDefaultValue = false)]
         public int? UnitSize { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Amount == input.Amount ||
                     (this.Amount != null &&
                     this.Amount.Equals(input.Amount))
-                ) && 
+                ) &&
                 (
                     this.UnitOfMeasure == input.UnitOfMeasure ||
                     (this.UnitOfMeasure != null &&
                     this.UnitOfMeasure.Equals(input.UnitOfMeasure))
-                ) && 
+                ) &&
                 (
                     this.UnitSize == input.UnitSize ||
                     (this.UnitSize != null &&

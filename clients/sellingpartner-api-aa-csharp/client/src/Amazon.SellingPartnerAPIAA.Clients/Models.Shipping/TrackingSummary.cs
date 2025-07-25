@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The tracking summary.
     /// </summary>
     [DataContract]
-    public partial class TrackingSummary :  IEquatable<TrackingSummary>, IValidatableObject
+    public partial class TrackingSummary : IEquatable<TrackingSummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingSummary" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         {
             this.Status = status;
         }
-        
+
         /// <summary>
         /// The derived status based on the events in the eventHistory.
         /// </summary>
         /// <value>The derived status based on the events in the eventHistory.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
@@ -119,15 +112,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Status (string) maxLength
-            if(this.Status != null && this.Status.Length > 60)
+            if (this.Status != null && this.Status.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for Status, length must be less than 60.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be less than 60.", new[] { "Status" });
             }
 
             // Status (string) minLength
-            if(this.Status != null && this.Status.Length < 1)
+            if (this.Status != null && this.Status.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new[] { "Status" });
             }
 
             yield break;

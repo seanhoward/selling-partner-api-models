@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Contains the business invoice tax information. Available only in the TR marketplace.
     /// </summary>
     [DataContract]
-    public partial class BuyerTaxInformation :  IEquatable<BuyerTaxInformation>, IValidatableObject
+    public partial class BuyerTaxInformation : IEquatable<BuyerTaxInformation>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuyerTaxInformation" /> class.
@@ -44,33 +37,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.BuyerTaxRegistrationId = buyerTaxRegistrationId;
             this.BuyerTaxOffice = buyerTaxOffice;
         }
-        
+
         /// <summary>
         /// Business buyer&#39;s company legal name.
         /// </summary>
         /// <value>Business buyer&#39;s company legal name.</value>
-        [DataMember(Name="BuyerLegalCompanyName", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerLegalCompanyName", EmitDefaultValue = false)]
         public string BuyerLegalCompanyName { get; set; }
 
         /// <summary>
         /// Business buyer&#39;s address.
         /// </summary>
         /// <value>Business buyer&#39;s address.</value>
-        [DataMember(Name="BuyerBusinessAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerBusinessAddress", EmitDefaultValue = false)]
         public string BuyerBusinessAddress { get; set; }
 
         /// <summary>
         /// Business buyer&#39;s tax registration ID.
         /// </summary>
         /// <value>Business buyer&#39;s tax registration ID.</value>
-        [DataMember(Name="BuyerTaxRegistrationId", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerTaxRegistrationId", EmitDefaultValue = false)]
         public string BuyerTaxRegistrationId { get; set; }
 
         /// <summary>
         /// Business buyer&#39;s tax office.
         /// </summary>
         /// <value>Business buyer&#39;s tax office.</value>
-        [DataMember(Name="BuyerTaxOffice", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerTaxOffice", EmitDefaultValue = false)]
         public string BuyerTaxOffice { get; set; }
 
         /// <summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +111,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BuyerLegalCompanyName == input.BuyerLegalCompanyName ||
                     (this.BuyerLegalCompanyName != null &&
                     this.BuyerLegalCompanyName.Equals(input.BuyerLegalCompanyName))
-                ) && 
+                ) &&
                 (
                     this.BuyerBusinessAddress == input.BuyerBusinessAddress ||
                     (this.BuyerBusinessAddress != null &&
                     this.BuyerBusinessAddress.Equals(input.BuyerBusinessAddress))
-                ) && 
+                ) &&
                 (
                     this.BuyerTaxRegistrationId == input.BuyerTaxRegistrationId ||
                     (this.BuyerTaxRegistrationId != null &&
                     this.BuyerTaxRegistrationId.Equals(input.BuyerTaxRegistrationId))
-                ) && 
+                ) &&
                 (
                     this.BuyerTaxOffice == input.BuyerTaxOffice ||
                     (this.BuyerTaxOffice != null &&

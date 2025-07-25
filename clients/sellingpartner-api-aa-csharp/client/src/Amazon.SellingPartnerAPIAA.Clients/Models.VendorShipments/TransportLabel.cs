@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// A list of one or more ShipmentLabels.
     /// </summary>
     [DataContract]
-    public partial class TransportLabel :  IEquatable<TransportLabel>, IValidatableObject
+    public partial class TransportLabel : IEquatable<TransportLabel>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportLabel" /> class.
@@ -42,26 +36,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.ShipmentInformation = shipmentInformation;
             this.LabelData = labelData;
         }
-        
+
         /// <summary>
         /// Date on which label is created.
         /// </summary>
         /// <value>Date on which label is created.</value>
-        [DataMember(Name="labelCreateDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "labelCreateDateTime", EmitDefaultValue = false)]
         public DateTime? LabelCreateDateTime { get; set; }
 
         /// <summary>
         /// Indicates the shipment Information details like warehouse and business reference details like ARN, Selling Party detail and Vendor Warehouse details
         /// </summary>
         /// <value>Indicates the shipment Information details like warehouse and business reference details like ARN, Selling Party detail and Vendor Warehouse details</value>
-        [DataMember(Name="shipmentInformation", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentInformation", EmitDefaultValue = false)]
         public ShipmentInformation ShipmentInformation { get; set; }
 
         /// <summary>
         /// Indicates the label data,format and type associated .
         /// </summary>
         /// <value>Indicates the label data,format and type associated .</value>
-        [DataMember(Name="labelData", EmitDefaultValue=false)]
+        [DataMember(Name = "labelData", EmitDefaultValue = false)]
         public List<LabelData> LabelData { get; set; }
 
         /// <summary>
@@ -78,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +102,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.LabelCreateDateTime == input.LabelCreateDateTime ||
                     (this.LabelCreateDateTime != null &&
                     this.LabelCreateDateTime.Equals(input.LabelCreateDateTime))
-                ) && 
+                ) &&
                 (
                     this.ShipmentInformation == input.ShipmentInformation ||
                     (this.ShipmentInformation != null &&
                     this.ShipmentInformation.Equals(input.ShipmentInformation))
-                ) && 
+                ) &&
                 (
                     this.LabelData == input.LabelData ||
                     this.LabelData != null &&

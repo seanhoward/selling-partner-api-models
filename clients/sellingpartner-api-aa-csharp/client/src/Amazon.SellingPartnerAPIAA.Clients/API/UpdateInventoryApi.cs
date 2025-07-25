@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInventory;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -35,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">The request body containing the inventory update data to submit.</param>
         /// <param name="warehouseId">Identifier for the warehouse for which to update inventory.</param>
         /// <returns>SubmitInventoryUpdateResponse</returns>
-        SubmitInventoryUpdateResponse SubmitInventoryUpdate (SubmitInventoryUpdateRequest body, string warehouseId);
+        SubmitInventoryUpdateResponse SubmitInventoryUpdate(SubmitInventoryUpdateRequest body, string warehouseId);
 
         /// <summary>
         /// 
@@ -47,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">The request body containing the inventory update data to submit.</param>
         /// <param name="warehouseId">Identifier for the warehouse for which to update inventory.</param>
         /// <returns>ApiResponse of SubmitInventoryUpdateResponse</returns>
-        ApiResponse<SubmitInventoryUpdateResponse> SubmitInventoryUpdateWithHttpInfo (SubmitInventoryUpdateRequest body, string warehouseId);
+        ApiResponse<SubmitInventoryUpdateResponse> SubmitInventoryUpdateWithHttpInfo(SubmitInventoryUpdateRequest body, string warehouseId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -60,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">The request body containing the inventory update data to submit.</param>
         /// <param name="warehouseId">Identifier for the warehouse for which to update inventory.</param>
         /// <returns>Task of SubmitInventoryUpdateResponse</returns>
-        System.Threading.Tasks.Task<SubmitInventoryUpdateResponse> SubmitInventoryUpdateAsync (SubmitInventoryUpdateRequest body, string warehouseId);
+        System.Threading.Tasks.Task<SubmitInventoryUpdateResponse> SubmitInventoryUpdateAsync(SubmitInventoryUpdateRequest body, string warehouseId);
 
         /// <summary>
         /// 
@@ -72,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">The request body containing the inventory update data to submit.</param>
         /// <param name="warehouseId">Identifier for the warehouse for which to update inventory.</param>
         /// <returns>Task of ApiResponse (SubmitInventoryUpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubmitInventoryUpdateResponse>> SubmitInventoryUpdateAsyncWithHttpInfo (SubmitInventoryUpdateRequest body, string warehouseId);
+        System.Threading.Tasks.Task<ApiResponse<SubmitInventoryUpdateResponse>> SubmitInventoryUpdateAsyncWithHttpInfo(SubmitInventoryUpdateRequest body, string warehouseId);
         #endregion Asynchronous Operations
     }
 
@@ -92,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public UpdateInventoryApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -118,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -165,10 +164,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">The request body containing the inventory update data to submit.</param>
         /// <param name="warehouseId">Identifier for the warehouse for which to update inventory.</param>
         /// <returns>SubmitInventoryUpdateResponse</returns>
-        public SubmitInventoryUpdateResponse SubmitInventoryUpdate (SubmitInventoryUpdateRequest body, string warehouseId)
+        public SubmitInventoryUpdateResponse SubmitInventoryUpdate(SubmitInventoryUpdateRequest body, string warehouseId)
         {
-             ApiResponse<SubmitInventoryUpdateResponse> localVarResponse = SubmitInventoryUpdateWithHttpInfo(body, warehouseId);
-             return localVarResponse.Data;
+            ApiResponse<SubmitInventoryUpdateResponse> localVarResponse = SubmitInventoryUpdateWithHttpInfo(body, warehouseId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -178,7 +177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">The request body containing the inventory update data to submit.</param>
         /// <param name="warehouseId">Identifier for the warehouse for which to update inventory.</param>
         /// <returns>ApiResponse of SubmitInventoryUpdateResponse</returns>
-        public ApiResponse< SubmitInventoryUpdateResponse > SubmitInventoryUpdateWithHttpInfo (SubmitInventoryUpdateRequest body, string warehouseId)
+        public ApiResponse<SubmitInventoryUpdateResponse> SubmitInventoryUpdateWithHttpInfo(SubmitInventoryUpdateRequest body, string warehouseId)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -221,11 +220,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -235,7 +234,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitInventoryUpdateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitInventoryUpdateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInventoryUpdateResponse)));
+                (SubmitInventoryUpdateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInventoryUpdateResponse)));
         }
 
         /// <summary>
@@ -245,10 +244,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">The request body containing the inventory update data to submit.</param>
         /// <param name="warehouseId">Identifier for the warehouse for which to update inventory.</param>
         /// <returns>Task of SubmitInventoryUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<SubmitInventoryUpdateResponse> SubmitInventoryUpdateAsync (SubmitInventoryUpdateRequest body, string warehouseId)
+        public async System.Threading.Tasks.Task<SubmitInventoryUpdateResponse> SubmitInventoryUpdateAsync(SubmitInventoryUpdateRequest body, string warehouseId)
         {
-             ApiResponse<SubmitInventoryUpdateResponse> localVarResponse = await SubmitInventoryUpdateAsyncWithHttpInfo(body, warehouseId);
-             return localVarResponse.Data;
+            ApiResponse<SubmitInventoryUpdateResponse> localVarResponse = await SubmitInventoryUpdateAsyncWithHttpInfo(body, warehouseId);
+            return localVarResponse.Data;
 
         }
 
@@ -259,7 +258,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">The request body containing the inventory update data to submit.</param>
         /// <param name="warehouseId">Identifier for the warehouse for which to update inventory.</param>
         /// <returns>Task of ApiResponse (SubmitInventoryUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SubmitInventoryUpdateResponse>> SubmitInventoryUpdateAsyncWithHttpInfo (SubmitInventoryUpdateRequest body, string warehouseId)
+        public async System.Threading.Tasks.Task<ApiResponse<SubmitInventoryUpdateResponse>> SubmitInventoryUpdateAsyncWithHttpInfo(SubmitInventoryUpdateRequest body, string warehouseId)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -302,11 +301,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -316,7 +315,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitInventoryUpdateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitInventoryUpdateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInventoryUpdateResponse)));
+                (SubmitInventoryUpdateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInventoryUpdateResponse)));
         }
 
 
@@ -330,17 +329,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public UpdateInventoryApi Build() 
+            public UpdateInventoryApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Dimensions of the package.
     /// </summary>
     [DataContract]
-    public partial class PackageDimensions :  IEquatable<PackageDimensions>, IValidatableObject
+    public partial class PackageDimensions : IEquatable<PackageDimensions>, IValidatableObject
     {
         /// <summary>
         /// Unit of measurement for package dimensions.
         /// </summary>
         /// <value>Unit of measurement for package dimensions.</value>
-        [DataMember(Name="unitOfMeasurement", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasurement", EmitDefaultValue = false)]
         public DimensionUnitOfMeasurement UnitOfMeasurement { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageDimensions" /> class.
@@ -87,19 +81,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 this.Width = width;
             }
         }
-        
+
         /// <summary>
         /// Height of the package.
         /// </summary>
         /// <value>Height of the package.</value>
-        [DataMember(Name="height", EmitDefaultValue=false)]
+        [DataMember(Name = "height", EmitDefaultValue = false)]
         public double? Height { get; set; }
 
         /// <summary>
         /// Length of the package.
         /// </summary>
         /// <value>Length of the package.</value>
-        [DataMember(Name="length", EmitDefaultValue=false)]
+        [DataMember(Name = "length", EmitDefaultValue = false)]
         public double? Length { get; set; }
 
 
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// Width of the package.
         /// </summary>
         /// <value>Width of the package.</value>
-        [DataMember(Name="width", EmitDefaultValue=false)]
+        [DataMember(Name = "width", EmitDefaultValue = false)]
         public double? Width { get; set; }
 
         /// <summary>
@@ -125,7 +119,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -155,22 +149,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Height == input.Height ||
                     (this.Height != null &&
                     this.Height.Equals(input.Height))
-                ) && 
+                ) &&
                 (
                     this.Length == input.Length ||
                     (this.Length != null &&
                     this.Length.Equals(input.Length))
-                ) && 
+                ) &&
                 (
                     this.UnitOfMeasurement == input.UnitOfMeasurement ||
                     (this.UnitOfMeasurement != null &&
                     this.UnitOfMeasurement.Equals(input.UnitOfMeasurement))
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&

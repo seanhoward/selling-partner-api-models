@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Transport Request pickup date
     /// </summary>
     [DataContract]
-    public partial class PurchaseOrders :  IEquatable<PurchaseOrders>, IValidatableObject
+    public partial class PurchaseOrders : IEquatable<PurchaseOrders>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PurchaseOrders" /> class.
@@ -44,33 +38,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.ShipWindow = shipWindow;
             this.Items = items;
         }
-        
+
         /// <summary>
         /// Purchase order numbers involved in this shipment, list all the PO that are involved as part of this shipment.
         /// </summary>
         /// <value>Purchase order numbers involved in this shipment, list all the PO that are involved as part of this shipment.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
         /// Purchase order numbers involved in this shipment, list all the PO that are involved as part of this shipment.
         /// </summary>
         /// <value>Purchase order numbers involved in this shipment, list all the PO that are involved as part of this shipment.</value>
-        [DataMember(Name="purchaseOrderDate", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderDate", EmitDefaultValue = false)]
         public DateTime? PurchaseOrderDate { get; set; }
 
         /// <summary>
         /// Date range in which shipment is expected for these purchase orders.
         /// </summary>
         /// <value>Date range in which shipment is expected for these purchase orders.</value>
-        [DataMember(Name="shipWindow", EmitDefaultValue=false)]
+        [DataMember(Name = "shipWindow", EmitDefaultValue = false)]
         public string ShipWindow { get; set; }
 
         /// <summary>
         /// A list of the items that are associated to the PO in this transport and their associated details.
         /// </summary>
         /// <value>A list of the items that are associated to the PO in this transport and their associated details.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<PurchaseOrderItems> Items { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +112,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.PurchaseOrderDate == input.PurchaseOrderDate ||
                     (this.PurchaseOrderDate != null &&
                     this.PurchaseOrderDate.Equals(input.PurchaseOrderDate))
-                ) && 
+                ) &&
                 (
                     this.ShipWindow == input.ShipWindow ||
                     (this.ShipWindow != null &&
                     this.ShipWindow.Equals(input.ShipWindow))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

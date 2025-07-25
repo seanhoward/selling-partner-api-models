@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The &#x60;updateItemComplianceDetails&#x60; response.
     /// </summary>
     [DataContract]
-    public partial class UpdateItemComplianceDetailsResponse :  IEquatable<UpdateItemComplianceDetailsResponse>, IValidatableObject
+    public partial class UpdateItemComplianceDetailsResponse : IEquatable<UpdateItemComplianceDetailsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateItemComplianceDetailsResponse" /> class.
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.OperationId = operationId;
             }
         }
-        
+
         /// <summary>
         /// UUID for the given operation.
         /// </summary>
         /// <value>UUID for the given operation.</value>
-        [DataMember(Name="operationId", EmitDefaultValue=false)]
+        [DataMember(Name = "operationId", EmitDefaultValue = false)]
         public string OperationId { get; set; }
 
         /// <summary>
@@ -71,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.OperationId == input.OperationId ||
                     (this.OperationId != null &&
@@ -132,22 +127,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // OperationId (string) maxLength
-            if(this.OperationId != null && this.OperationId.Length > 38)
+            if (this.OperationId != null && this.OperationId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for OperationId, length must be less than 38.", new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, length must be less than 38.", new[] { "OperationId" });
             }
 
             // OperationId (string) minLength
-            if(this.OperationId != null && this.OperationId.Length < 36)
+            if (this.OperationId != null && this.OperationId.Length < 36)
             {
-                yield return new ValidationResult("Invalid value for OperationId, length must be greater than 36.", new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, length must be greater than 36.", new[] { "OperationId" });
             }
 
             // OperationId (string) pattern
             Regex regexOperationId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexOperationId.Match(this.OperationId).Success)
             {
-                yield return new ValidationResult("Invalid value for OperationId, must match a pattern of " + regexOperationId, new [] { "OperationId" });
+                yield return new ValidationResult("Invalid value for OperationId, must match a pattern of " + regexOperationId, new[] { "OperationId" });
             }
 
             yield break;

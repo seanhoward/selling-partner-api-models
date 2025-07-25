@@ -1,5 +1,5 @@
 /* 
- * Vendor Invoices v1
+ * Selling Partner API for Retail Procurement Payments
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
     /// Details of quantity.
     /// </summary>
     [DataContract]
-    public partial class ItemQuantity :  IEquatable<ItemQuantity>, IValidatableObject
+    public partial class ItemQuantity : IEquatable<ItemQuantity>, IValidatableObject
     {
         /// <summary>
         /// Unit of measure for the quantity.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitOfMeasureEnum
         {
-            
+
             /// <summary>
             /// Enum Cases for value: Cases
             /// </summary>
             [EnumMember(Value = "Cases")]
             Cases = 1,
-            
+
             /// <summary>
             /// Enum Eaches for value: Eaches
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// Unit of measure for the quantity.
         /// </summary>
         /// <value>Unit of measure for the quantity.</value>
-        [DataMember(Name="unitOfMeasure", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasure", EmitDefaultValue = false)]
         public UnitOfMeasureEnum UnitOfMeasure { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemQuantity" /> class.
@@ -92,12 +87,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             this.UnitSize = unitSize;
             this.TotalWeight = totalWeight;
         }
-        
+
         /// <summary>
         /// Quantity of an item. This value should not be zero.
         /// </summary>
         /// <value>Quantity of an item. This value should not be zero.</value>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int? Amount { get; set; }
 
 
@@ -105,13 +100,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// The case size, if the unit of measure value is Cases.
         /// </summary>
         /// <value>The case size, if the unit of measure value is Cases.</value>
-        [DataMember(Name="unitSize", EmitDefaultValue=false)]
+        [DataMember(Name = "unitSize", EmitDefaultValue = false)]
         public int? UnitSize { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalWeight
         /// </summary>
-        [DataMember(Name="totalWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "totalWeight", EmitDefaultValue = false)]
         public TotalWeight TotalWeight { get; set; }
 
         /// <summary>
@@ -129,7 +124,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -159,22 +154,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Amount == input.Amount ||
                     (this.Amount != null &&
                     this.Amount.Equals(input.Amount))
-                ) && 
+                ) &&
                 (
                     this.UnitOfMeasure == input.UnitOfMeasure ||
                     (this.UnitOfMeasure != null &&
                     this.UnitOfMeasure.Equals(input.UnitOfMeasure))
-                ) && 
+                ) &&
                 (
                     this.UnitSize == input.UnitSize ||
                     (this.UnitSize != null &&
                     this.UnitSize.Equals(input.UnitSize))
-                ) && 
+                ) &&
                 (
                     this.TotalWeight == input.TotalWeight ||
                     (this.TotalWeight != null &&

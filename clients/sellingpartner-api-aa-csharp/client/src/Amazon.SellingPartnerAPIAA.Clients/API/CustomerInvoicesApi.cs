@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">Purchase order number of the shipment for which to return the invoice.</param>
         /// <returns>CustomerInvoice</returns>
-        CustomerInvoice GetCustomerInvoice (string purchaseOrderNumber);
+        CustomerInvoice GetCustomerInvoice(string purchaseOrderNumber);
 
         /// <summary>
         /// getCustomerInvoice
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">Purchase order number of the shipment for which to return the invoice.</param>
         /// <returns>ApiResponse of CustomerInvoice</returns>
-        ApiResponse<CustomerInvoice> GetCustomerInvoiceWithHttpInfo (string purchaseOrderNumber);
+        ApiResponse<CustomerInvoice> GetCustomerInvoiceWithHttpInfo(string purchaseOrderNumber);
         /// <summary>
         /// getCustomerInvoices
         /// </summary>
@@ -60,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional)</param>
         /// <param name="nextToken">Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>CustomerInvoiceList</returns>
-        CustomerInvoiceList GetCustomerInvoices (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
+        CustomerInvoiceList GetCustomerInvoices(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
 
         /// <summary>
         /// getCustomerInvoices
@@ -76,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional)</param>
         /// <param name="nextToken">Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>ApiResponse of CustomerInvoiceList</returns>
-        ApiResponse<CustomerInvoiceList> GetCustomerInvoicesWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
+        ApiResponse<CustomerInvoiceList> GetCustomerInvoicesWithHttpInfo(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -88,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">Purchase order number of the shipment for which to return the invoice.</param>
         /// <returns>Task of CustomerInvoice</returns>
-        System.Threading.Tasks.Task<CustomerInvoice> GetCustomerInvoiceAsync (string purchaseOrderNumber);
+        System.Threading.Tasks.Task<CustomerInvoice> GetCustomerInvoiceAsync(string purchaseOrderNumber);
 
         /// <summary>
         /// getCustomerInvoice
@@ -99,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">Purchase order number of the shipment for which to return the invoice.</param>
         /// <returns>Task of ApiResponse (CustomerInvoice)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerInvoice>> GetCustomerInvoiceAsyncWithHttpInfo (string purchaseOrderNumber);
+        System.Threading.Tasks.Task<ApiResponse<CustomerInvoice>> GetCustomerInvoiceAsyncWithHttpInfo(string purchaseOrderNumber);
         /// <summary>
         /// getCustomerInvoices
         /// </summary>
@@ -114,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional)</param>
         /// <param name="nextToken">Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of CustomerInvoiceList</returns>
-        System.Threading.Tasks.Task<CustomerInvoiceList> GetCustomerInvoicesAsync (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
+        System.Threading.Tasks.Task<CustomerInvoiceList> GetCustomerInvoicesAsync(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
 
         /// <summary>
         /// getCustomerInvoices
@@ -130,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional)</param>
         /// <param name="nextToken">Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of ApiResponse (CustomerInvoiceList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomerInvoiceList>> GetCustomerInvoicesAsyncWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
+        System.Threading.Tasks.Task<ApiResponse<CustomerInvoiceList>> GetCustomerInvoicesAsyncWithHttpInfo(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
         #endregion Asynchronous Operations
     }
 
@@ -150,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public CustomerInvoicesApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -176,7 +175,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -222,10 +221,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">Purchase order number of the shipment for which to return the invoice.</param>
         /// <returns>CustomerInvoice</returns>
-        public CustomerInvoice GetCustomerInvoice (string purchaseOrderNumber)
+        public CustomerInvoice GetCustomerInvoice(string purchaseOrderNumber)
         {
-             ApiResponse<CustomerInvoice> localVarResponse = GetCustomerInvoiceWithHttpInfo(purchaseOrderNumber);
-             return localVarResponse.Data;
+            ApiResponse<CustomerInvoice> localVarResponse = GetCustomerInvoiceWithHttpInfo(purchaseOrderNumber);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -234,7 +233,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">Purchase order number of the shipment for which to return the invoice.</param>
         /// <returns>ApiResponse of CustomerInvoice</returns>
-        public ApiResponse< CustomerInvoice > GetCustomerInvoiceWithHttpInfo (string purchaseOrderNumber)
+        public ApiResponse<CustomerInvoice> GetCustomerInvoiceWithHttpInfo(string purchaseOrderNumber)
         {
             // verify the required parameter 'purchaseOrderNumber' is set
             if (purchaseOrderNumber == null)
@@ -266,11 +265,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -280,7 +279,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CustomerInvoice>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CustomerInvoice) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomerInvoice)));
+                (CustomerInvoice)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomerInvoice)));
         }
 
         /// <summary>
@@ -289,10 +288,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">Purchase order number of the shipment for which to return the invoice.</param>
         /// <returns>Task of CustomerInvoice</returns>
-        public async System.Threading.Tasks.Task<CustomerInvoice> GetCustomerInvoiceAsync (string purchaseOrderNumber)
+        public async System.Threading.Tasks.Task<CustomerInvoice> GetCustomerInvoiceAsync(string purchaseOrderNumber)
         {
-             ApiResponse<CustomerInvoice> localVarResponse = await GetCustomerInvoiceAsyncWithHttpInfo(purchaseOrderNumber);
-             return localVarResponse.Data;
+            ApiResponse<CustomerInvoice> localVarResponse = await GetCustomerInvoiceAsyncWithHttpInfo(purchaseOrderNumber);
+            return localVarResponse.Data;
 
         }
 
@@ -302,7 +301,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">Purchase order number of the shipment for which to return the invoice.</param>
         /// <returns>Task of ApiResponse (CustomerInvoice)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CustomerInvoice>> GetCustomerInvoiceAsyncWithHttpInfo (string purchaseOrderNumber)
+        public async System.Threading.Tasks.Task<ApiResponse<CustomerInvoice>> GetCustomerInvoiceAsyncWithHttpInfo(string purchaseOrderNumber)
         {
             // verify the required parameter 'purchaseOrderNumber' is set
             if (purchaseOrderNumber == null)
@@ -334,11 +333,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -348,7 +347,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CustomerInvoice>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CustomerInvoice) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomerInvoice)));
+                (CustomerInvoice)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomerInvoice)));
         }
 
         /// <summary>
@@ -362,10 +361,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional)</param>
         /// <param name="nextToken">Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>CustomerInvoiceList</returns>
-        public CustomerInvoiceList GetCustomerInvoices (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
+        public CustomerInvoiceList GetCustomerInvoices(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
         {
-             ApiResponse<CustomerInvoiceList> localVarResponse = GetCustomerInvoicesWithHttpInfo(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<CustomerInvoiceList> localVarResponse = GetCustomerInvoicesWithHttpInfo(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -379,7 +378,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional)</param>
         /// <param name="nextToken">Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>ApiResponse of CustomerInvoiceList</returns>
-        public ApiResponse< CustomerInvoiceList > GetCustomerInvoicesWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
+        public ApiResponse<CustomerInvoiceList> GetCustomerInvoicesWithHttpInfo(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
         {
             // verify the required parameter 'createdAfter' is set
             if (createdAfter == null)
@@ -419,11 +418,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -433,7 +432,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CustomerInvoiceList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CustomerInvoiceList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomerInvoiceList)));
+                (CustomerInvoiceList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomerInvoiceList)));
         }
 
         /// <summary>
@@ -447,10 +446,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional)</param>
         /// <param name="nextToken">Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of CustomerInvoiceList</returns>
-        public async System.Threading.Tasks.Task<CustomerInvoiceList> GetCustomerInvoicesAsync (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
+        public async System.Threading.Tasks.Task<CustomerInvoiceList> GetCustomerInvoicesAsync(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
         {
-             ApiResponse<CustomerInvoiceList> localVarResponse = await GetCustomerInvoicesAsyncWithHttpInfo(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<CustomerInvoiceList> localVarResponse = await GetCustomerInvoicesAsyncWithHttpInfo(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken);
+            return localVarResponse.Data;
 
         }
 
@@ -465,7 +464,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">Sort ASC or DESC by order creation date. (optional)</param>
         /// <param name="nextToken">Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of ApiResponse (CustomerInvoiceList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CustomerInvoiceList>> GetCustomerInvoicesAsyncWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CustomerInvoiceList>> GetCustomerInvoicesAsyncWithHttpInfo(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
         {
             // verify the required parameter 'createdAfter' is set
             if (createdAfter == null)
@@ -505,11 +504,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -519,7 +518,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CustomerInvoiceList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CustomerInvoiceList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomerInvoiceList)));
+                (CustomerInvoiceList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomerInvoiceList)));
         }
 
 
@@ -533,17 +532,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public CustomerInvoicesApi Build() 
+            public CustomerInvoicesApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

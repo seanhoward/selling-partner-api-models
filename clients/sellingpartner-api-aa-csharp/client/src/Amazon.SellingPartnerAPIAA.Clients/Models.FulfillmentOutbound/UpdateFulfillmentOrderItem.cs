@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Item information for updating a fulfillment order.
     /// </summary>
     [DataContract]
-    public partial class UpdateFulfillmentOrderItem :  IEquatable<UpdateFulfillmentOrderItem>, IValidatableObject
+    public partial class UpdateFulfillmentOrderItem : IEquatable<UpdateFulfillmentOrderItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateFulfillmentOrderItem" /> class.
@@ -39,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// Initializes a new instance of the <see cref="UpdateFulfillmentOrderItem" /> class.
         /// </summary>
         /// <param name="sellerSku">The seller SKU of the item..</param>
-        /// <param name="sellerFulfillmentOrderItemId">Identifies the fulfillment order item to update. Created with a previous call to the &#x60;createFulfillmentOrder&#x60; operation. (required).</param>
+        /// <param name="sellerFulfillmentOrderItemId">Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation. (required).</param>
         /// <param name="quantity">quantity (required).</param>
         /// <param name="giftMessage">A message to the gift recipient, if applicable..</param>
         /// <param name="displayableComment">Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip..</param>
@@ -77,74 +71,74 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.PerUnitPrice = perUnitPrice;
             this.PerUnitTax = perUnitTax;
         }
-        
+
         /// <summary>
         /// The seller SKU of the item.
         /// </summary>
         /// <value>The seller SKU of the item.</value>
-        [DataMember(Name="sellerSku", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerSku", EmitDefaultValue = false)]
         public string SellerSku { get; set; }
 
         /// <summary>
-        /// Identifies the fulfillment order item to update. Created with a previous call to the &#x60;createFulfillmentOrder&#x60; operation.
+        /// Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.
         /// </summary>
-        /// <value>Identifies the fulfillment order item to update. Created with a previous call to the &#x60;createFulfillmentOrder&#x60; operation.</value>
-        [DataMember(Name="sellerFulfillmentOrderItemId", EmitDefaultValue=false)]
+        /// <value>Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.</value>
+        [DataMember(Name = "sellerFulfillmentOrderItemId", EmitDefaultValue = false)]
         public string SellerFulfillmentOrderItemId { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
         /// </summary>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// A message to the gift recipient, if applicable.
         /// </summary>
         /// <value>A message to the gift recipient, if applicable.</value>
-        [DataMember(Name="giftMessage", EmitDefaultValue=false)]
+        [DataMember(Name = "giftMessage", EmitDefaultValue = false)]
         public string GiftMessage { get; set; }
 
         /// <summary>
         /// Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.
         /// </summary>
         /// <value>Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.</value>
-        [DataMember(Name="displayableComment", EmitDefaultValue=false)]
+        [DataMember(Name = "displayableComment", EmitDefaultValue = false)]
         public string DisplayableComment { get; set; }
 
         /// <summary>
         /// Amazon&#39;s fulfillment network SKU of the item.
         /// </summary>
         /// <value>Amazon&#39;s fulfillment network SKU of the item.</value>
-        [DataMember(Name="fulfillmentNetworkSku", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentNetworkSku", EmitDefaultValue = false)]
         public string FulfillmentNetworkSku { get; set; }
 
         /// <summary>
         /// Indicates whether the item is sellable or unsellable.
         /// </summary>
         /// <value>Indicates whether the item is sellable or unsellable.</value>
-        [DataMember(Name="orderItemDisposition", EmitDefaultValue=false)]
+        [DataMember(Name = "orderItemDisposition", EmitDefaultValue = false)]
         public string OrderItemDisposition { get; set; }
 
         /// <summary>
         /// The monetary value assigned by the seller to this item. This is a required field for India MCF orders.
         /// </summary>
         /// <value>The monetary value assigned by the seller to this item. This is a required field for India MCF orders.</value>
-        [DataMember(Name="perUnitDeclaredValue", EmitDefaultValue=false)]
+        [DataMember(Name = "perUnitDeclaredValue", EmitDefaultValue = false)]
         public Money PerUnitDeclaredValue { get; set; }
 
         /// <summary>
         /// The amount to be collected from the recipient for this item in a COD (Cash On Delivery) order.
         /// </summary>
         /// <value>The amount to be collected from the recipient for this item in a COD (Cash On Delivery) order.</value>
-        [DataMember(Name="perUnitPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "perUnitPrice", EmitDefaultValue = false)]
         public Money PerUnitPrice { get; set; }
 
         /// <summary>
         /// The tax on the amount to be collected from the recipient for this item in a COD (Cash On Delivery) order.
         /// </summary>
         /// <value>The tax on the amount to be collected from the recipient for this item in a COD (Cash On Delivery) order.</value>
-        [DataMember(Name="perUnitTax", EmitDefaultValue=false)]
+        [DataMember(Name = "perUnitTax", EmitDefaultValue = false)]
         public Money PerUnitTax { get; set; }
 
         /// <summary>
@@ -168,7 +162,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -198,52 +192,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerSku == input.SellerSku ||
                     (this.SellerSku != null &&
                     this.SellerSku.Equals(input.SellerSku))
-                ) && 
+                ) &&
                 (
                     this.SellerFulfillmentOrderItemId == input.SellerFulfillmentOrderItemId ||
                     (this.SellerFulfillmentOrderItemId != null &&
                     this.SellerFulfillmentOrderItemId.Equals(input.SellerFulfillmentOrderItemId))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.GiftMessage == input.GiftMessage ||
                     (this.GiftMessage != null &&
                     this.GiftMessage.Equals(input.GiftMessage))
-                ) && 
+                ) &&
                 (
                     this.DisplayableComment == input.DisplayableComment ||
                     (this.DisplayableComment != null &&
                     this.DisplayableComment.Equals(input.DisplayableComment))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentNetworkSku == input.FulfillmentNetworkSku ||
                     (this.FulfillmentNetworkSku != null &&
                     this.FulfillmentNetworkSku.Equals(input.FulfillmentNetworkSku))
-                ) && 
+                ) &&
                 (
                     this.OrderItemDisposition == input.OrderItemDisposition ||
                     (this.OrderItemDisposition != null &&
                     this.OrderItemDisposition.Equals(input.OrderItemDisposition))
-                ) && 
+                ) &&
                 (
                     this.PerUnitDeclaredValue == input.PerUnitDeclaredValue ||
                     (this.PerUnitDeclaredValue != null &&
                     this.PerUnitDeclaredValue.Equals(input.PerUnitDeclaredValue))
-                ) && 
+                ) &&
                 (
                     this.PerUnitPrice == input.PerUnitPrice ||
                     (this.PerUnitPrice != null &&
                     this.PerUnitPrice.Equals(input.PerUnitPrice))
-                ) && 
+                ) &&
                 (
                     this.PerUnitTax == input.PerUnitTax ||
                     (this.PerUnitTax != null &&
@@ -292,21 +286,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // SellerFulfillmentOrderItemId (string) maxLength
-            if(this.SellerFulfillmentOrderItemId != null && this.SellerFulfillmentOrderItemId.Length > 50)
+            if (this.SellerFulfillmentOrderItemId != null && this.SellerFulfillmentOrderItemId.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for SellerFulfillmentOrderItemId, length must be less than 50.", new [] { "SellerFulfillmentOrderItemId" });
+                yield return new ValidationResult("Invalid value for SellerFulfillmentOrderItemId, length must be less than 50.", new[] { "SellerFulfillmentOrderItemId" });
             }
 
             // GiftMessage (string) maxLength
-            if(this.GiftMessage != null && this.GiftMessage.Length > 512)
+            if (this.GiftMessage != null && this.GiftMessage.Length > 512)
             {
-                yield return new ValidationResult("Invalid value for GiftMessage, length must be less than 512.", new [] { "GiftMessage" });
+                yield return new ValidationResult("Invalid value for GiftMessage, length must be less than 512.", new[] { "GiftMessage" });
             }
 
             // DisplayableComment (string) maxLength
-            if(this.DisplayableComment != null && this.DisplayableComment.Length > 250)
+            if (this.DisplayableComment != null && this.DisplayableComment.Length > 250)
             {
-                yield return new ValidationResult("Invalid value for DisplayableComment, length must be less than 250.", new [] { "DisplayableComment" });
+                yield return new ValidationResult("Invalid value for DisplayableComment, length must be less than 250.", new[] { "DisplayableComment" });
             }
 
             yield break;

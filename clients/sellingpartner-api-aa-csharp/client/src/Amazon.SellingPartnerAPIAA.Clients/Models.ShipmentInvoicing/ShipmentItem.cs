@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
     /// The shipment item information required by a seller to issue a shipment invoice.
     /// </summary>
     [DataContract]
-    public partial class ShipmentItem :  IEquatable<ShipmentItem>, IValidatableObject
+    public partial class ShipmentItem : IEquatable<ShipmentItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentItem" /> class.
@@ -58,82 +51,82 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             this.PromotionDiscount = promotionDiscount;
             this.SerialNumbers = serialNumbers;
         }
-        
+
         /// <summary>
         /// The Amazon Standard Identification Number (ASIN) of the item.
         /// </summary>
         /// <value>The Amazon Standard Identification Number (ASIN) of the item.</value>
-        [DataMember(Name="ASIN", EmitDefaultValue=false)]
+        [DataMember(Name = "ASIN", EmitDefaultValue = false)]
         public string ASIN { get; set; }
 
         /// <summary>
         /// The seller SKU of the item.
         /// </summary>
         /// <value>The seller SKU of the item.</value>
-        [DataMember(Name="SellerSKU", EmitDefaultValue=false)]
+        [DataMember(Name = "SellerSKU", EmitDefaultValue = false)]
         public string SellerSKU { get; set; }
 
         /// <summary>
         /// The Amazon-defined identifier for the order item.
         /// </summary>
         /// <value>The Amazon-defined identifier for the order item.</value>
-        [DataMember(Name="OrderItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "OrderItemId", EmitDefaultValue = false)]
         public string OrderItemId { get; set; }
 
         /// <summary>
         /// The name of the item.
         /// </summary>
         /// <value>The name of the item.</value>
-        [DataMember(Name="Title", EmitDefaultValue=false)]
+        [DataMember(Name = "Title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// The number of items ordered.
         /// </summary>
         /// <value>The number of items ordered.</value>
-        [DataMember(Name="QuantityOrdered", EmitDefaultValue=false)]
+        [DataMember(Name = "QuantityOrdered", EmitDefaultValue = false)]
         public decimal? QuantityOrdered { get; set; }
 
         /// <summary>
         /// The selling price of the item multiplied by the quantity ordered. Note that ItemPrice excludes ShippingPrice and GiftWrapPrice.
         /// </summary>
         /// <value>The selling price of the item multiplied by the quantity ordered. Note that ItemPrice excludes ShippingPrice and GiftWrapPrice.</value>
-        [DataMember(Name="ItemPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "ItemPrice", EmitDefaultValue = false)]
         public Money ItemPrice { get; set; }
 
         /// <summary>
         /// The shipping price of the item.
         /// </summary>
         /// <value>The shipping price of the item.</value>
-        [DataMember(Name="ShippingPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingPrice", EmitDefaultValue = false)]
         public Money ShippingPrice { get; set; }
 
         /// <summary>
         /// The gift wrap price of the item.
         /// </summary>
         /// <value>The gift wrap price of the item.</value>
-        [DataMember(Name="GiftWrapPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "GiftWrapPrice", EmitDefaultValue = false)]
         public Money GiftWrapPrice { get; set; }
 
         /// <summary>
         /// The discount on the shipping price.
         /// </summary>
         /// <value>The discount on the shipping price.</value>
-        [DataMember(Name="ShippingDiscount", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingDiscount", EmitDefaultValue = false)]
         public Money ShippingDiscount { get; set; }
 
         /// <summary>
         /// The total of all promotional discounts in the offer.
         /// </summary>
         /// <value>The total of all promotional discounts in the offer.</value>
-        [DataMember(Name="PromotionDiscount", EmitDefaultValue=false)]
+        [DataMember(Name = "PromotionDiscount", EmitDefaultValue = false)]
         public Money PromotionDiscount { get; set; }
 
         /// <summary>
         /// The list of serial numbers.
         /// </summary>
         /// <value>The list of serial numbers.</value>
-        [DataMember(Name="SerialNumbers", EmitDefaultValue=false)]
+        [DataMember(Name = "SerialNumbers", EmitDefaultValue = false)]
         public SerialNumbersList SerialNumbers { get; set; }
 
         /// <summary>
@@ -158,7 +151,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -188,57 +181,57 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ASIN == input.ASIN ||
                     (this.ASIN != null &&
                     this.ASIN.Equals(input.ASIN))
-                ) && 
+                ) &&
                 (
                     this.SellerSKU == input.SellerSKU ||
                     (this.SellerSKU != null &&
                     this.SellerSKU.Equals(input.SellerSKU))
-                ) && 
+                ) &&
                 (
                     this.OrderItemId == input.OrderItemId ||
                     (this.OrderItemId != null &&
                     this.OrderItemId.Equals(input.OrderItemId))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.QuantityOrdered == input.QuantityOrdered ||
                     (this.QuantityOrdered != null &&
                     this.QuantityOrdered.Equals(input.QuantityOrdered))
-                ) && 
+                ) &&
                 (
                     this.ItemPrice == input.ItemPrice ||
                     (this.ItemPrice != null &&
                     this.ItemPrice.Equals(input.ItemPrice))
-                ) && 
+                ) &&
                 (
                     this.ShippingPrice == input.ShippingPrice ||
                     (this.ShippingPrice != null &&
                     this.ShippingPrice.Equals(input.ShippingPrice))
-                ) && 
+                ) &&
                 (
                     this.GiftWrapPrice == input.GiftWrapPrice ||
                     (this.GiftWrapPrice != null &&
                     this.GiftWrapPrice.Equals(input.GiftWrapPrice))
-                ) && 
+                ) &&
                 (
                     this.ShippingDiscount == input.ShippingDiscount ||
                     (this.ShippingDiscount != null &&
                     this.ShippingDiscount.Equals(input.ShippingDiscount))
-                ) && 
+                ) &&
                 (
                     this.PromotionDiscount == input.PromotionDiscount ||
                     (this.PromotionDiscount != null &&
                     this.PromotionDiscount.Equals(input.PromotionDiscount))
-                ) && 
+                ) &&
                 (
                     this.SerialNumbers == input.SerialNumbers ||
                     (this.SerialNumbers != null &&

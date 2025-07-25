@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// A listings item.
     /// </summary>
     [DataContract]
-    public partial class Item :  IEquatable<Item>, IValidatableObject
+    public partial class Item : IEquatable<Item>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -67,62 +62,62 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             this.Relationships = relationships;
             this.ProductTypes = productTypes;
         }
-        
+
         /// <summary>
         /// A selling partner provided identifier for an Amazon listing.
         /// </summary>
         /// <value>A selling partner provided identifier for an Amazon listing.</value>
-        [DataMember(Name="sku", EmitDefaultValue=false)]
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
         /// <summary>
         /// Gets or Sets Summaries
         /// </summary>
-        [DataMember(Name="summaries", EmitDefaultValue=false)]
+        [DataMember(Name = "summaries", EmitDefaultValue = false)]
         public ItemSummaries Summaries { get; set; }
 
         /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public Newtonsoft.Json.Linq.JObject Attributes { get; set; }
 
         /// <summary>
         /// Gets or Sets Issues
         /// </summary>
-        [DataMember(Name="issues", EmitDefaultValue=false)]
+        [DataMember(Name = "issues", EmitDefaultValue = false)]
         public ItemIssues Issues { get; set; }
 
         /// <summary>
         /// Gets or Sets Offers
         /// </summary>
-        [DataMember(Name="offers", EmitDefaultValue=false)]
+        [DataMember(Name = "offers", EmitDefaultValue = false)]
         public ItemOffers Offers { get; set; }
 
         /// <summary>
         /// The fulfillment availability for the listings item.
         /// </summary>
         /// <value>The fulfillment availability for the listings item.</value>
-        [DataMember(Name="fulfillmentAvailability", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentAvailability", EmitDefaultValue = false)]
         public List<FulfillmentAvailability> FulfillmentAvailability { get; set; }
 
         /// <summary>
         /// The vendor procurement information for the listings item.
         /// </summary>
         /// <value>The vendor procurement information for the listings item.</value>
-        [DataMember(Name="procurement", EmitDefaultValue=false)]
+        [DataMember(Name = "procurement", EmitDefaultValue = false)]
         public List<ItemProcurement> Procurement { get; set; }
 
         /// <summary>
         /// Gets or Sets Relationships
         /// </summary>
-        [DataMember(Name="relationships", EmitDefaultValue=false)]
+        [DataMember(Name = "relationships", EmitDefaultValue = false)]
         public ItemRelationships Relationships { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductTypes
         /// </summary>
-        [DataMember(Name="productTypes", EmitDefaultValue=false)]
+        [DataMember(Name = "productTypes", EmitDefaultValue = false)]
         public ItemProductTypes ProductTypes { get; set; }
 
         /// <summary>
@@ -145,7 +140,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -175,47 +170,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Sku == input.Sku ||
                     (this.Sku != null &&
                     this.Sku.Equals(input.Sku))
-                ) && 
+                ) &&
                 (
                     this.Summaries == input.Summaries ||
                     (this.Summaries != null &&
                     this.Summaries.Equals(input.Summaries))
-                ) && 
+                ) &&
                 (
                     this.Attributes == input.Attributes ||
                     (this.Attributes != null &&
                     this.Attributes.Equals(input.Attributes))
-                ) && 
+                ) &&
                 (
                     this.Issues == input.Issues ||
                     (this.Issues != null &&
                     this.Issues.Equals(input.Issues))
-                ) && 
+                ) &&
                 (
                     this.Offers == input.Offers ||
                     (this.Offers != null &&
                     this.Offers.Equals(input.Offers))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentAvailability == input.FulfillmentAvailability ||
                     this.FulfillmentAvailability != null &&
                     this.FulfillmentAvailability.SequenceEqual(input.FulfillmentAvailability)
-                ) && 
+                ) &&
                 (
                     this.Procurement == input.Procurement ||
                     this.Procurement != null &&
                     this.Procurement.SequenceEqual(input.Procurement)
-                ) && 
+                ) &&
                 (
                     this.Relationships == input.Relationships ||
                     (this.Relationships != null &&
                     this.Relationships.Equals(input.Relationships))
-                ) && 
+                ) &&
                 (
                     this.ProductTypes == input.ProductTypes ||
                     (this.ProductTypes != null &&

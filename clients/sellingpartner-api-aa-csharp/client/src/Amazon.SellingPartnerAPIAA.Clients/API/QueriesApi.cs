@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The identifier for the query. This identifier is unique only in combination with a selling partner account ID.</param>
         /// <returns></returns>
-        void CancelQuery (string queryId);
+        void CancelQuery(string queryId);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The identifier for the query. This identifier is unique only in combination with a selling partner account ID.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CancelQueryWithHttpInfo (string queryId);
+        ApiResponse<Object> CancelQueryWithHttpInfo(string queryId);
         /// <summary>
         /// 
         /// </summary>
@@ -55,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The body of the request.</param>
         /// <returns>CreateQueryResponse</returns>
-        CreateQueryResponse CreateQuery (CreateQuerySpecification body);
+        CreateQueryResponse CreateQuery(CreateQuerySpecification body);
 
         /// <summary>
         /// 
@@ -66,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The body of the request.</param>
         /// <returns>ApiResponse of CreateQueryResponse</returns>
-        ApiResponse<CreateQueryResponse> CreateQueryWithHttpInfo (CreateQuerySpecification body);
+        ApiResponse<CreateQueryResponse> CreateQueryWithHttpInfo(CreateQuerySpecification body);
         /// <summary>
         /// 
         /// </summary>
@@ -76,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">The identifier for the Data Kiosk document.</param>
         /// <returns>GetDocumentResponse</returns>
-        GetDocumentResponse GetDocument (string documentId);
+        GetDocumentResponse GetDocument(string documentId);
 
         /// <summary>
         /// 
@@ -87,7 +86,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">The identifier for the Data Kiosk document.</param>
         /// <returns>ApiResponse of GetDocumentResponse</returns>
-        ApiResponse<GetDocumentResponse> GetDocumentWithHttpInfo (string documentId);
+        ApiResponse<GetDocumentResponse> GetDocumentWithHttpInfo(string documentId);
         /// <summary>
         /// 
         /// </summary>
@@ -101,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="createdUntil">The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request. (optional)</param>
         /// <param name="paginationToken">A token to fetch a certain page of results when there are multiple pages of results available. The value of this token is fetched from the &#x60;pagination.nextToken&#x60; field returned in the &#x60;GetQueriesResponse&#x60; object. All other parameters must be provided with the same values that were provided with the request that generated this token, with the exception of &#x60;pageSize&#x60; which can be modified between calls to &#x60;getQueries&#x60;. In the absence of this token value, &#x60;getQueries&#x60; returns the first page of results. (optional)</param>
         /// <returns>GetQueriesResponse</returns>
-        GetQueriesResponse GetQueries (List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null);
+        GetQueriesResponse GetQueries(List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null);
 
         /// <summary>
         /// 
@@ -116,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="createdUntil">The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request. (optional)</param>
         /// <param name="paginationToken">A token to fetch a certain page of results when there are multiple pages of results available. The value of this token is fetched from the &#x60;pagination.nextToken&#x60; field returned in the &#x60;GetQueriesResponse&#x60; object. All other parameters must be provided with the same values that were provided with the request that generated this token, with the exception of &#x60;pageSize&#x60; which can be modified between calls to &#x60;getQueries&#x60;. In the absence of this token value, &#x60;getQueries&#x60; returns the first page of results. (optional)</param>
         /// <returns>ApiResponse of GetQueriesResponse</returns>
-        ApiResponse<GetQueriesResponse> GetQueriesWithHttpInfo (List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null);
+        ApiResponse<GetQueriesResponse> GetQueriesWithHttpInfo(List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null);
         /// <summary>
         /// 
         /// </summary>
@@ -126,7 +125,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The query identifier.</param>
         /// <returns>Query</returns>
-        Query GetQuery (string queryId);
+        Query GetQuery(string queryId);
 
         /// <summary>
         /// 
@@ -137,7 +136,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The query identifier.</param>
         /// <returns>ApiResponse of Query</returns>
-        ApiResponse<Query> GetQueryWithHttpInfo (string queryId);
+        ApiResponse<Query> GetQueryWithHttpInfo(string queryId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -149,7 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The identifier for the query. This identifier is unique only in combination with a selling partner account ID.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CancelQueryAsync (string queryId);
+        System.Threading.Tasks.Task CancelQueryAsync(string queryId);
 
         /// <summary>
         /// 
@@ -160,7 +159,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The identifier for the query. This identifier is unique only in combination with a selling partner account ID.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CancelQueryAsyncWithHttpInfo (string queryId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> CancelQueryAsyncWithHttpInfo(string queryId);
         /// <summary>
         /// 
         /// </summary>
@@ -170,7 +169,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The body of the request.</param>
         /// <returns>Task of CreateQueryResponse</returns>
-        System.Threading.Tasks.Task<CreateQueryResponse> CreateQueryAsync (CreateQuerySpecification body);
+        System.Threading.Tasks.Task<CreateQueryResponse> CreateQueryAsync(CreateQuerySpecification body);
 
         /// <summary>
         /// 
@@ -181,7 +180,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The body of the request.</param>
         /// <returns>Task of ApiResponse (CreateQueryResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateQueryResponse>> CreateQueryAsyncWithHttpInfo (CreateQuerySpecification body);
+        System.Threading.Tasks.Task<ApiResponse<CreateQueryResponse>> CreateQueryAsyncWithHttpInfo(CreateQuerySpecification body);
         /// <summary>
         /// 
         /// </summary>
@@ -191,7 +190,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">The identifier for the Data Kiosk document.</param>
         /// <returns>Task of GetDocumentResponse</returns>
-        System.Threading.Tasks.Task<GetDocumentResponse> GetDocumentAsync (string documentId);
+        System.Threading.Tasks.Task<GetDocumentResponse> GetDocumentAsync(string documentId);
 
         /// <summary>
         /// 
@@ -202,7 +201,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">The identifier for the Data Kiosk document.</param>
         /// <returns>Task of ApiResponse (GetDocumentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetDocumentResponse>> GetDocumentAsyncWithHttpInfo (string documentId);
+        System.Threading.Tasks.Task<ApiResponse<GetDocumentResponse>> GetDocumentAsyncWithHttpInfo(string documentId);
         /// <summary>
         /// 
         /// </summary>
@@ -216,7 +215,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="createdUntil">The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request. (optional)</param>
         /// <param name="paginationToken">A token to fetch a certain page of results when there are multiple pages of results available. The value of this token is fetched from the &#x60;pagination.nextToken&#x60; field returned in the &#x60;GetQueriesResponse&#x60; object. All other parameters must be provided with the same values that were provided with the request that generated this token, with the exception of &#x60;pageSize&#x60; which can be modified between calls to &#x60;getQueries&#x60;. In the absence of this token value, &#x60;getQueries&#x60; returns the first page of results. (optional)</param>
         /// <returns>Task of GetQueriesResponse</returns>
-        System.Threading.Tasks.Task<GetQueriesResponse> GetQueriesAsync (List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null);
+        System.Threading.Tasks.Task<GetQueriesResponse> GetQueriesAsync(List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null);
 
         /// <summary>
         /// 
@@ -231,7 +230,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="createdUntil">The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request. (optional)</param>
         /// <param name="paginationToken">A token to fetch a certain page of results when there are multiple pages of results available. The value of this token is fetched from the &#x60;pagination.nextToken&#x60; field returned in the &#x60;GetQueriesResponse&#x60; object. All other parameters must be provided with the same values that were provided with the request that generated this token, with the exception of &#x60;pageSize&#x60; which can be modified between calls to &#x60;getQueries&#x60;. In the absence of this token value, &#x60;getQueries&#x60; returns the first page of results. (optional)</param>
         /// <returns>Task of ApiResponse (GetQueriesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetQueriesResponse>> GetQueriesAsyncWithHttpInfo (List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null);
+        System.Threading.Tasks.Task<ApiResponse<GetQueriesResponse>> GetQueriesAsyncWithHttpInfo(List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null);
         /// <summary>
         /// 
         /// </summary>
@@ -241,7 +240,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The query identifier.</param>
         /// <returns>Task of Query</returns>
-        System.Threading.Tasks.Task<Query> GetQueryAsync (string queryId);
+        System.Threading.Tasks.Task<Query> GetQueryAsync(string queryId);
 
         /// <summary>
         /// 
@@ -252,7 +251,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The query identifier.</param>
         /// <returns>Task of ApiResponse (Query)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Query>> GetQueryAsyncWithHttpInfo (string queryId);
+        System.Threading.Tasks.Task<ApiResponse<Query>> GetQueryAsyncWithHttpInfo(string queryId);
         #endregion Asynchronous Operations
     }
 
@@ -272,7 +271,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public QueriesApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -298,7 +297,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -344,9 +343,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The identifier for the query. This identifier is unique only in combination with a selling partner account ID.</param>
         /// <returns></returns>
-        public void CancelQuery (string queryId)
+        public void CancelQuery(string queryId)
         {
-             CancelQueryWithHttpInfo(queryId);
+            CancelQueryWithHttpInfo(queryId);
         }
 
         /// <summary>
@@ -355,7 +354,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The identifier for the query. This identifier is unique only in combination with a selling partner account ID.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> CancelQueryWithHttpInfo (string queryId)
+        public ApiResponse<Object> CancelQueryWithHttpInfo(string queryId)
         {
             // verify the required parameter 'queryId' is set
             if (queryId == null)
@@ -387,11 +386,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -410,9 +409,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The identifier for the query. This identifier is unique only in combination with a selling partner account ID.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CancelQueryAsync (string queryId)
+        public async System.Threading.Tasks.Task CancelQueryAsync(string queryId)
         {
-             await CancelQueryAsyncWithHttpInfo(queryId);
+            await CancelQueryAsyncWithHttpInfo(queryId);
 
         }
 
@@ -422,7 +421,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The identifier for the query. This identifier is unique only in combination with a selling partner account ID.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> CancelQueryAsyncWithHttpInfo (string queryId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> CancelQueryAsyncWithHttpInfo(string queryId)
         {
             // verify the required parameter 'queryId' is set
             if (queryId == null)
@@ -454,11 +453,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -477,10 +476,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The body of the request.</param>
         /// <returns>CreateQueryResponse</returns>
-        public CreateQueryResponse CreateQuery (CreateQuerySpecification body)
+        public CreateQueryResponse CreateQuery(CreateQuerySpecification body)
         {
-             ApiResponse<CreateQueryResponse> localVarResponse = CreateQueryWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateQueryResponse> localVarResponse = CreateQueryWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -489,7 +488,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The body of the request.</param>
         /// <returns>ApiResponse of CreateQueryResponse</returns>
-        public ApiResponse< CreateQueryResponse > CreateQueryWithHttpInfo (CreateQuerySpecification body)
+        public ApiResponse<CreateQueryResponse> CreateQueryWithHttpInfo(CreateQuerySpecification body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -528,11 +527,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -542,7 +541,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateQueryResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateQueryResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateQueryResponse)));
+                (CreateQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateQueryResponse)));
         }
 
         /// <summary>
@@ -551,10 +550,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The body of the request.</param>
         /// <returns>Task of CreateQueryResponse</returns>
-        public async System.Threading.Tasks.Task<CreateQueryResponse> CreateQueryAsync (CreateQuerySpecification body)
+        public async System.Threading.Tasks.Task<CreateQueryResponse> CreateQueryAsync(CreateQuerySpecification body)
         {
-             ApiResponse<CreateQueryResponse> localVarResponse = await CreateQueryAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateQueryResponse> localVarResponse = await CreateQueryAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -564,7 +563,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The body of the request.</param>
         /// <returns>Task of ApiResponse (CreateQueryResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateQueryResponse>> CreateQueryAsyncWithHttpInfo (CreateQuerySpecification body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateQueryResponse>> CreateQueryAsyncWithHttpInfo(CreateQuerySpecification body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -603,11 +602,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -617,7 +616,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateQueryResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateQueryResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateQueryResponse)));
+                (CreateQueryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateQueryResponse)));
         }
 
         /// <summary>
@@ -626,10 +625,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">The identifier for the Data Kiosk document.</param>
         /// <returns>GetDocumentResponse</returns>
-        public GetDocumentResponse GetDocument (string documentId)
+        public GetDocumentResponse GetDocument(string documentId)
         {
-             ApiResponse<GetDocumentResponse> localVarResponse = GetDocumentWithHttpInfo(documentId);
-             return localVarResponse.Data;
+            ApiResponse<GetDocumentResponse> localVarResponse = GetDocumentWithHttpInfo(documentId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -638,7 +637,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">The identifier for the Data Kiosk document.</param>
         /// <returns>ApiResponse of GetDocumentResponse</returns>
-        public ApiResponse< GetDocumentResponse > GetDocumentWithHttpInfo (string documentId)
+        public ApiResponse<GetDocumentResponse> GetDocumentWithHttpInfo(string documentId)
         {
             // verify the required parameter 'documentId' is set
             if (documentId == null)
@@ -670,11 +669,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -684,7 +683,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetDocumentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetDocumentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDocumentResponse)));
+                (GetDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDocumentResponse)));
         }
 
         /// <summary>
@@ -693,10 +692,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">The identifier for the Data Kiosk document.</param>
         /// <returns>Task of GetDocumentResponse</returns>
-        public async System.Threading.Tasks.Task<GetDocumentResponse> GetDocumentAsync (string documentId)
+        public async System.Threading.Tasks.Task<GetDocumentResponse> GetDocumentAsync(string documentId)
         {
-             ApiResponse<GetDocumentResponse> localVarResponse = await GetDocumentAsyncWithHttpInfo(documentId);
-             return localVarResponse.Data;
+            ApiResponse<GetDocumentResponse> localVarResponse = await GetDocumentAsyncWithHttpInfo(documentId);
+            return localVarResponse.Data;
 
         }
 
@@ -706,7 +705,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">The identifier for the Data Kiosk document.</param>
         /// <returns>Task of ApiResponse (GetDocumentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetDocumentResponse>> GetDocumentAsyncWithHttpInfo (string documentId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetDocumentResponse>> GetDocumentAsyncWithHttpInfo(string documentId)
         {
             // verify the required parameter 'documentId' is set
             if (documentId == null)
@@ -738,11 +737,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -752,7 +751,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetDocumentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetDocumentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDocumentResponse)));
+                (GetDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDocumentResponse)));
         }
 
         /// <summary>
@@ -765,10 +764,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="createdUntil">The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request. (optional)</param>
         /// <param name="paginationToken">A token to fetch a certain page of results when there are multiple pages of results available. The value of this token is fetched from the &#x60;pagination.nextToken&#x60; field returned in the &#x60;GetQueriesResponse&#x60; object. All other parameters must be provided with the same values that were provided with the request that generated this token, with the exception of &#x60;pageSize&#x60; which can be modified between calls to &#x60;getQueries&#x60;. In the absence of this token value, &#x60;getQueries&#x60; returns the first page of results. (optional)</param>
         /// <returns>GetQueriesResponse</returns>
-        public GetQueriesResponse GetQueries (List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null)
+        public GetQueriesResponse GetQueries(List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null)
         {
-             ApiResponse<GetQueriesResponse> localVarResponse = GetQueriesWithHttpInfo(processingStatuses, pageSize, createdSince, createdUntil, paginationToken);
-             return localVarResponse.Data;
+            ApiResponse<GetQueriesResponse> localVarResponse = GetQueriesWithHttpInfo(processingStatuses, pageSize, createdSince, createdUntil, paginationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -781,7 +780,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="createdUntil">The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request. (optional)</param>
         /// <param name="paginationToken">A token to fetch a certain page of results when there are multiple pages of results available. The value of this token is fetched from the &#x60;pagination.nextToken&#x60; field returned in the &#x60;GetQueriesResponse&#x60; object. All other parameters must be provided with the same values that were provided with the request that generated this token, with the exception of &#x60;pageSize&#x60; which can be modified between calls to &#x60;getQueries&#x60;. In the absence of this token value, &#x60;getQueries&#x60; returns the first page of results. (optional)</param>
         /// <returns>ApiResponse of GetQueriesResponse</returns>
-        public ApiResponse< GetQueriesResponse > GetQueriesWithHttpInfo (List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null)
+        public ApiResponse<GetQueriesResponse> GetQueriesWithHttpInfo(List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null)
         {
 
             var localVarPath = "/dataKiosk/2023-11-15/queries";
@@ -814,11 +813,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -828,7 +827,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetQueriesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetQueriesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetQueriesResponse)));
+                (GetQueriesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetQueriesResponse)));
         }
 
         /// <summary>
@@ -841,10 +840,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="createdUntil">The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request. (optional)</param>
         /// <param name="paginationToken">A token to fetch a certain page of results when there are multiple pages of results available. The value of this token is fetched from the &#x60;pagination.nextToken&#x60; field returned in the &#x60;GetQueriesResponse&#x60; object. All other parameters must be provided with the same values that were provided with the request that generated this token, with the exception of &#x60;pageSize&#x60; which can be modified between calls to &#x60;getQueries&#x60;. In the absence of this token value, &#x60;getQueries&#x60; returns the first page of results. (optional)</param>
         /// <returns>Task of GetQueriesResponse</returns>
-        public async System.Threading.Tasks.Task<GetQueriesResponse> GetQueriesAsync (List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null)
+        public async System.Threading.Tasks.Task<GetQueriesResponse> GetQueriesAsync(List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null)
         {
-             ApiResponse<GetQueriesResponse> localVarResponse = await GetQueriesAsyncWithHttpInfo(processingStatuses, pageSize, createdSince, createdUntil, paginationToken);
-             return localVarResponse.Data;
+            ApiResponse<GetQueriesResponse> localVarResponse = await GetQueriesAsyncWithHttpInfo(processingStatuses, pageSize, createdSince, createdUntil, paginationToken);
+            return localVarResponse.Data;
 
         }
 
@@ -858,7 +857,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="createdUntil">The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request. (optional)</param>
         /// <param name="paginationToken">A token to fetch a certain page of results when there are multiple pages of results available. The value of this token is fetched from the &#x60;pagination.nextToken&#x60; field returned in the &#x60;GetQueriesResponse&#x60; object. All other parameters must be provided with the same values that were provided with the request that generated this token, with the exception of &#x60;pageSize&#x60; which can be modified between calls to &#x60;getQueries&#x60;. In the absence of this token value, &#x60;getQueries&#x60; returns the first page of results. (optional)</param>
         /// <returns>Task of ApiResponse (GetQueriesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetQueriesResponse>> GetQueriesAsyncWithHttpInfo (List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetQueriesResponse>> GetQueriesAsyncWithHttpInfo(List<string> processingStatuses = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string paginationToken = null)
         {
 
             var localVarPath = "/dataKiosk/2023-11-15/queries";
@@ -891,11 +890,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -905,7 +904,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetQueriesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetQueriesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetQueriesResponse)));
+                (GetQueriesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetQueriesResponse)));
         }
 
         /// <summary>
@@ -914,10 +913,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The query identifier.</param>
         /// <returns>Query</returns>
-        public Query GetQuery (string queryId)
+        public Query GetQuery(string queryId)
         {
-             ApiResponse<Query> localVarResponse = GetQueryWithHttpInfo(queryId);
-             return localVarResponse.Data;
+            ApiResponse<Query> localVarResponse = GetQueryWithHttpInfo(queryId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -926,7 +925,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The query identifier.</param>
         /// <returns>ApiResponse of Query</returns>
-        public ApiResponse< Query > GetQueryWithHttpInfo (string queryId)
+        public ApiResponse<Query> GetQueryWithHttpInfo(string queryId)
         {
             // verify the required parameter 'queryId' is set
             if (queryId == null)
@@ -958,11 +957,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -972,7 +971,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Query>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Query) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Query)));
+                (Query)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Query)));
         }
 
         /// <summary>
@@ -981,10 +980,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The query identifier.</param>
         /// <returns>Task of Query</returns>
-        public async System.Threading.Tasks.Task<Query> GetQueryAsync (string queryId)
+        public async System.Threading.Tasks.Task<Query> GetQueryAsync(string queryId)
         {
-             ApiResponse<Query> localVarResponse = await GetQueryAsyncWithHttpInfo(queryId);
-             return localVarResponse.Data;
+            ApiResponse<Query> localVarResponse = await GetQueryAsyncWithHttpInfo(queryId);
+            return localVarResponse.Data;
 
         }
 
@@ -994,7 +993,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryId">The query identifier.</param>
         /// <returns>Task of ApiResponse (Query)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Query>> GetQueryAsyncWithHttpInfo (string queryId)
+        public async System.Threading.Tasks.Task<ApiResponse<Query>> GetQueryAsyncWithHttpInfo(string queryId)
         {
             // verify the required parameter 'queryId' is set
             if (queryId == null)
@@ -1026,11 +1025,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1040,7 +1039,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Query>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Query) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Query)));
+                (Query)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Query)));
         }
 
 
@@ -1054,17 +1053,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public QueriesApi Build() 
+            public QueriesApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

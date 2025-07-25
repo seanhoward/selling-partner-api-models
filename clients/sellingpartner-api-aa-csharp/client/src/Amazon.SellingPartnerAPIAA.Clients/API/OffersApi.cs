@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOfferMetrics&#x60; operation. (optional)</param>
         /// <returns>ListOfferMetricsResponse</returns>
-        ListOfferMetricsResponse ListOfferMetrics (ListOfferMetricsRequest body = null);
+        ListOfferMetricsResponse ListOfferMetrics(ListOfferMetricsRequest body = null);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOfferMetrics&#x60; operation. (optional)</param>
         /// <returns>ApiResponse of ListOfferMetricsResponse</returns>
-        ApiResponse<ListOfferMetricsResponse> ListOfferMetricsWithHttpInfo (ListOfferMetricsRequest body = null);
+        ApiResponse<ListOfferMetricsResponse> ListOfferMetricsWithHttpInfo(ListOfferMetricsRequest body = null);
         /// <summary>
         /// 
         /// </summary>
@@ -55,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOffers&#x60; operation. (optional)</param>
         /// <returns>ListOffersResponse</returns>
-        ListOffersResponse ListOffers (ListOffersRequest body = null);
+        ListOffersResponse ListOffers(ListOffersRequest body = null);
 
         /// <summary>
         /// 
@@ -66,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOffers&#x60; operation. (optional)</param>
         /// <returns>ApiResponse of ListOffersResponse</returns>
-        ApiResponse<ListOffersResponse> ListOffersWithHttpInfo (ListOffersRequest body = null);
+        ApiResponse<ListOffersResponse> ListOffersWithHttpInfo(ListOffersRequest body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -78,7 +77,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOfferMetrics&#x60; operation. (optional)</param>
         /// <returns>Task of ListOfferMetricsResponse</returns>
-        System.Threading.Tasks.Task<ListOfferMetricsResponse> ListOfferMetricsAsync (ListOfferMetricsRequest body = null);
+        System.Threading.Tasks.Task<ListOfferMetricsResponse> ListOfferMetricsAsync(ListOfferMetricsRequest body = null);
 
         /// <summary>
         /// 
@@ -89,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOfferMetrics&#x60; operation. (optional)</param>
         /// <returns>Task of ApiResponse (ListOfferMetricsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListOfferMetricsResponse>> ListOfferMetricsAsyncWithHttpInfo (ListOfferMetricsRequest body = null);
+        System.Threading.Tasks.Task<ApiResponse<ListOfferMetricsResponse>> ListOfferMetricsAsyncWithHttpInfo(ListOfferMetricsRequest body = null);
         /// <summary>
         /// 
         /// </summary>
@@ -99,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOffers&#x60; operation. (optional)</param>
         /// <returns>Task of ListOffersResponse</returns>
-        System.Threading.Tasks.Task<ListOffersResponse> ListOffersAsync (ListOffersRequest body = null);
+        System.Threading.Tasks.Task<ListOffersResponse> ListOffersAsync(ListOffersRequest body = null);
 
         /// <summary>
         /// 
@@ -110,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOffers&#x60; operation. (optional)</param>
         /// <returns>Task of ApiResponse (ListOffersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListOffersResponse>> ListOffersAsyncWithHttpInfo (ListOffersRequest body = null);
+        System.Threading.Tasks.Task<ApiResponse<ListOffersResponse>> ListOffersAsyncWithHttpInfo(ListOffersRequest body = null);
         #endregion Asynchronous Operations
     }
 
@@ -130,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public OffersApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -156,7 +155,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -202,10 +201,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOfferMetrics&#x60; operation. (optional)</param>
         /// <returns>ListOfferMetricsResponse</returns>
-        public ListOfferMetricsResponse ListOfferMetrics (ListOfferMetricsRequest body = null)
+        public ListOfferMetricsResponse ListOfferMetrics(ListOfferMetricsRequest body = null)
         {
-             ApiResponse<ListOfferMetricsResponse> localVarResponse = ListOfferMetricsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<ListOfferMetricsResponse> localVarResponse = ListOfferMetricsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -214,7 +213,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOfferMetrics&#x60; operation. (optional)</param>
         /// <returns>ApiResponse of ListOfferMetricsResponse</returns>
-        public ApiResponse< ListOfferMetricsResponse > ListOfferMetricsWithHttpInfo (ListOfferMetricsRequest body = null)
+        public ApiResponse<ListOfferMetricsResponse> ListOfferMetricsWithHttpInfo(ListOfferMetricsRequest body = null)
         {
 
             var localVarPath = "/replenishment/2022-11-07/offers/metrics/search";
@@ -250,11 +249,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -264,7 +263,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListOfferMetricsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListOfferMetricsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListOfferMetricsResponse)));
+                (ListOfferMetricsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListOfferMetricsResponse)));
         }
 
         /// <summary>
@@ -273,10 +272,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOfferMetrics&#x60; operation. (optional)</param>
         /// <returns>Task of ListOfferMetricsResponse</returns>
-        public async System.Threading.Tasks.Task<ListOfferMetricsResponse> ListOfferMetricsAsync (ListOfferMetricsRequest body = null)
+        public async System.Threading.Tasks.Task<ListOfferMetricsResponse> ListOfferMetricsAsync(ListOfferMetricsRequest body = null)
         {
-             ApiResponse<ListOfferMetricsResponse> localVarResponse = await ListOfferMetricsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<ListOfferMetricsResponse> localVarResponse = await ListOfferMetricsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -286,7 +285,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOfferMetrics&#x60; operation. (optional)</param>
         /// <returns>Task of ApiResponse (ListOfferMetricsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListOfferMetricsResponse>> ListOfferMetricsAsyncWithHttpInfo (ListOfferMetricsRequest body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListOfferMetricsResponse>> ListOfferMetricsAsyncWithHttpInfo(ListOfferMetricsRequest body = null)
         {
 
             var localVarPath = "/replenishment/2022-11-07/offers/metrics/search";
@@ -322,11 +321,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -336,7 +335,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListOfferMetricsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListOfferMetricsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListOfferMetricsResponse)));
+                (ListOfferMetricsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListOfferMetricsResponse)));
         }
 
         /// <summary>
@@ -345,10 +344,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOffers&#x60; operation. (optional)</param>
         /// <returns>ListOffersResponse</returns>
-        public ListOffersResponse ListOffers (ListOffersRequest body = null)
+        public ListOffersResponse ListOffers(ListOffersRequest body = null)
         {
-             ApiResponse<ListOffersResponse> localVarResponse = ListOffersWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<ListOffersResponse> localVarResponse = ListOffersWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -357,7 +356,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOffers&#x60; operation. (optional)</param>
         /// <returns>ApiResponse of ListOffersResponse</returns>
-        public ApiResponse< ListOffersResponse > ListOffersWithHttpInfo (ListOffersRequest body = null)
+        public ApiResponse<ListOffersResponse> ListOffersWithHttpInfo(ListOffersRequest body = null)
         {
 
             var localVarPath = "/replenishment/2022-11-07/offers/search";
@@ -393,11 +392,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -407,7 +406,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListOffersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListOffersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListOffersResponse)));
+                (ListOffersResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListOffersResponse)));
         }
 
         /// <summary>
@@ -416,10 +415,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOffers&#x60; operation. (optional)</param>
         /// <returns>Task of ListOffersResponse</returns>
-        public async System.Threading.Tasks.Task<ListOffersResponse> ListOffersAsync (ListOffersRequest body = null)
+        public async System.Threading.Tasks.Task<ListOffersResponse> ListOffersAsync(ListOffersRequest body = null)
         {
-             ApiResponse<ListOffersResponse> localVarResponse = await ListOffersAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<ListOffersResponse> localVarResponse = await ListOffersAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -429,7 +428,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;listOffers&#x60; operation. (optional)</param>
         /// <returns>Task of ApiResponse (ListOffersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListOffersResponse>> ListOffersAsyncWithHttpInfo (ListOffersRequest body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListOffersResponse>> ListOffersAsyncWithHttpInfo(ListOffersRequest body = null)
         {
 
             var localVarPath = "/replenishment/2022-11-07/offers/search";
@@ -465,11 +464,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -479,7 +478,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListOffersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListOffersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListOffersResponse)));
+                (ListOffersResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListOffersResponse)));
         }
 
 
@@ -493,17 +492,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public OffersApi Build() 
+            public OffersApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

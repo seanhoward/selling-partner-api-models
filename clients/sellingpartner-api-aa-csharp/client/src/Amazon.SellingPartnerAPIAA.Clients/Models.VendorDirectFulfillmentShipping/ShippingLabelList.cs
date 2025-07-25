@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Response payload with the list of shipping labels.
     /// </summary>
     [DataContract]
-    public partial class ShippingLabelList :  IEquatable<ShippingLabelList>, IValidatableObject
+    public partial class ShippingLabelList : IEquatable<ShippingLabelList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingLabelList" /> class.
@@ -40,18 +34,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             this.Pagination = pagination;
             this.ShippingLabels = shippingLabels;
         }
-        
+
         /// <summary>
         /// Gets or Sets Pagination
         /// </summary>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
         public Pagination Pagination { get; set; }
 
         /// <summary>
         /// An array containing the details of the generated shipping labels.
         /// </summary>
         /// <value>An array containing the details of the generated shipping labels.</value>
-        [DataMember(Name="shippingLabels", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingLabels", EmitDefaultValue = false)]
         public List<ShippingLabel> ShippingLabels { get; set; }
 
         /// <summary>
@@ -67,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Pagination == input.Pagination ||
                     (this.Pagination != null &&
                     this.Pagination.Equals(input.Pagination))
-                ) && 
+                ) &&
                 (
                     this.ShippingLabels == input.ShippingLabels ||
                     this.ShippingLabels != null &&

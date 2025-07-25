@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,12 +21,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The request body schema for the &#x60;submitFulfillmentOrderStatusUpdate&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class SubmitFulfillmentOrderStatusUpdateRequest :  IEquatable<SubmitFulfillmentOrderStatusUpdateRequest>, IValidatableObject
+    public partial class SubmitFulfillmentOrderStatusUpdateRequest : IEquatable<SubmitFulfillmentOrderStatusUpdateRequest>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets FulfillmentOrderStatus
         /// </summary>
-        [DataMember(Name="fulfillmentOrderStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentOrderStatus", EmitDefaultValue = false)]
         public FulfillmentOrderStatus? FulfillmentOrderStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitFulfillmentOrderStatusUpdateRequest" /> class.
@@ -43,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         {
             this.FulfillmentOrderStatus = fulfillmentOrderStatus;
         }
-        
+
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FulfillmentOrderStatus == input.FulfillmentOrderStatus ||
                     (this.FulfillmentOrderStatus != null &&

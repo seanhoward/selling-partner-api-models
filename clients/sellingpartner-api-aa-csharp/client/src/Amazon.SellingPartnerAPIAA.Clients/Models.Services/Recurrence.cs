@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Repeated occurrence of an event in a time range.
     /// </summary>
     [DataContract]
-    public partial class Recurrence :  IEquatable<Recurrence>, IValidatableObject
+    public partial class Recurrence : IEquatable<Recurrence>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Recurrence" /> class.
@@ -55,26 +50,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.DaysOfWeek = daysOfWeek;
             this.DaysOfMonth = daysOfMonth;
         }
-        
+
         /// <summary>
         /// End time of the recurrence.
         /// </summary>
         /// <value>End time of the recurrence.</value>
-        [DataMember(Name="endTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endTime", EmitDefaultValue = false)]
         public DateTime? EndTime { get; set; }
 
         /// <summary>
         /// Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain &#x60;MONDAY&#x60; in the list.
         /// </summary>
         /// <value>Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain &#x60;MONDAY&#x60; in the list.</value>
-        [DataMember(Name="daysOfWeek", EmitDefaultValue=false)]
+        [DataMember(Name = "daysOfWeek", EmitDefaultValue = false)]
         public List<DayOfWeek> DaysOfWeek { get; set; }
 
         /// <summary>
         /// Days of the month when recurrence is valid.
         /// </summary>
         /// <value>Days of the month when recurrence is valid.</value>
-        [DataMember(Name="daysOfMonth", EmitDefaultValue=false)]
+        [DataMember(Name = "daysOfMonth", EmitDefaultValue = false)]
         public List<int?> DaysOfMonth { get; set; }
 
         /// <summary>
@@ -91,7 +86,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +116,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.EndTime == input.EndTime ||
                     (this.EndTime != null &&
                     this.EndTime.Equals(input.EndTime))
-                ) && 
+                ) &&
                 (
                     this.DaysOfWeek == input.DaysOfWeek ||
                     this.DaysOfWeek != null &&
                     this.DaysOfWeek.SequenceEqual(input.DaysOfWeek)
-                ) && 
+                ) &&
                 (
                     this.DaysOfMonth == input.DaysOfMonth ||
                     this.DaysOfMonth != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,13 +21,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Identifies the carrier that will deliver the shipment.
     /// </summary>
     [DataContract]
-    public partial class CarrierCode :  IEquatable<CarrierCode>, IValidatableObject
+    public partial class CarrierCode : IEquatable<CarrierCode>, IValidatableObject
     {
         /// <summary>
         /// Denotes the carrier type.
         /// </summary>
         /// <value>Denotes the carrier type.</value>
-        [DataMember(Name="carrierCodeType", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierCodeType", EmitDefaultValue = false)]
         public CarrierCodeType? CarrierCodeType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CarrierCode" /> class.
@@ -46,13 +39,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             this.CarrierCodeType = carrierCodeType;
             this.CarrierCodeValue = carrierCodeValue;
         }
-        
+
 
         /// <summary>
         /// Value of the carrier code.
         /// </summary>
         /// <value>Value of the carrier code.</value>
-        [DataMember(Name="carrierCodeValue", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierCodeValue", EmitDefaultValue = false)]
         public string CarrierCodeValue { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CarrierCodeType == input.CarrierCodeType ||
                     (this.CarrierCodeType != null &&
                     this.CarrierCodeType.Equals(input.CarrierCodeType))
-                ) && 
+                ) &&
                 (
                     this.CarrierCodeValue == input.CarrierCodeValue ||
                     (this.CarrierCodeValue != null &&

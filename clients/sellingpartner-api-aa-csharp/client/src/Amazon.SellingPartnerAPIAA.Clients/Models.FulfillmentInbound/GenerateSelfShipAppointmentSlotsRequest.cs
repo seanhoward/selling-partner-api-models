@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The &#x60;generateSelfShipAppointmentSlots&#x60; request.
     /// </summary>
     [DataContract]
-    public partial class GenerateSelfShipAppointmentSlotsRequest :  IEquatable<GenerateSelfShipAppointmentSlotsRequest>, IValidatableObject
+    public partial class GenerateSelfShipAppointmentSlotsRequest : IEquatable<GenerateSelfShipAppointmentSlotsRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateSelfShipAppointmentSlotsRequest" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.DesiredEndDate = desiredEndDate;
             this.DesiredStartDate = desiredStartDate;
         }
-        
+
         /// <summary>
         /// The desired end date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
         /// </summary>
         /// <value>The desired end date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.</value>
-        [DataMember(Name="desiredEndDate", EmitDefaultValue=false)]
+        [DataMember(Name = "desiredEndDate", EmitDefaultValue = false)]
         public DateTime? DesiredEndDate { get; set; }
 
         /// <summary>
         /// The desired start date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
         /// </summary>
         /// <value>The desired start date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.</value>
-        [DataMember(Name="desiredStartDate", EmitDefaultValue=false)]
+        [DataMember(Name = "desiredStartDate", EmitDefaultValue = false)]
         public DateTime? DesiredStartDate { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DesiredEndDate == input.DesiredEndDate ||
                     (this.DesiredEndDate != null &&
                     this.DesiredEndDate.Equals(input.DesiredEndDate))
-                ) && 
+                ) &&
                 (
                     this.DesiredStartDate == input.DesiredStartDate ||
                     (this.DesiredStartDate != null &&

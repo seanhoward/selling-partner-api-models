@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Shipping address that represents the origin or destination location.
     /// </summary>
     [DataContract]
-    public partial class Address :  IEquatable<Address>, IValidatableObject
+    public partial class Address : IEquatable<Address>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -95,82 +89,82 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             this.PhoneNumber = phoneNumber;
             this.PostalCode = postalCode;
         }
-        
+
         /// <summary>
         /// First line of the address text.
         /// </summary>
         /// <value>First line of the address text.</value>
-        [DataMember(Name="addressLine1", EmitDefaultValue=false)]
+        [DataMember(Name = "addressLine1", EmitDefaultValue = false)]
         public string AddressLine1 { get; set; }
 
         /// <summary>
         /// Optional second line of the address text.
         /// </summary>
         /// <value>Optional second line of the address text.</value>
-        [DataMember(Name="addressLine2", EmitDefaultValue=false)]
+        [DataMember(Name = "addressLine2", EmitDefaultValue = false)]
         public string AddressLine2 { get; set; }
 
         /// <summary>
         /// Optional third line of the address text.
         /// </summary>
         /// <value>Optional third line of the address text.</value>
-        [DataMember(Name="addressLine3", EmitDefaultValue=false)]
+        [DataMember(Name = "addressLine3", EmitDefaultValue = false)]
         public string AddressLine3 { get; set; }
 
         /// <summary>
         /// Optional city where this address is located.
         /// </summary>
         /// <value>Optional city where this address is located.</value>
-        [DataMember(Name="city", EmitDefaultValue=false)]
+        [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// Two-digit, ISO 3166-1 alpha-2 formatted country code where this address is located.
         /// </summary>
         /// <value>Two-digit, ISO 3166-1 alpha-2 formatted country code where this address is located.</value>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
         /// Optional county where this address is located.
         /// </summary>
         /// <value>Optional county where this address is located.</value>
-        [DataMember(Name="county", EmitDefaultValue=false)]
+        [DataMember(Name = "county", EmitDefaultValue = false)]
         public string County { get; set; }
 
         /// <summary>
         /// Optional district where this address is located.
         /// </summary>
         /// <value>Optional district where this address is located.</value>
-        [DataMember(Name="district", EmitDefaultValue=false)]
+        [DataMember(Name = "district", EmitDefaultValue = false)]
         public string District { get; set; }
 
         /// <summary>
         /// Name of the person, business, or institution at this address.
         /// </summary>
         /// <value>Name of the person, business, or institution at this address.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Optional E.164-formatted phone number for an available contact at this address.
         /// </summary>
         /// <value>Optional E.164-formatted phone number for an available contact at this address.</value>
-        [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Optional postal code where this address is located.
         /// </summary>
         /// <value>Optional postal code where this address is located.</value>
-        [DataMember(Name="postalCode", EmitDefaultValue=false)]
+        [DataMember(Name = "postalCode", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// State or region where this address is located. Note that this is contextual to the specified country code.
         /// </summary>
         /// <value>State or region where this address is located. Note that this is contextual to the specified country code.</value>
-        [DataMember(Name="stateOrRegion", EmitDefaultValue=false)]
+        [DataMember(Name = "stateOrRegion", EmitDefaultValue = false)]
         public string StateOrRegion { get; set; }
 
         /// <summary>
@@ -195,7 +189,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -225,57 +219,57 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AddressLine1 == input.AddressLine1 ||
                     (this.AddressLine1 != null &&
                     this.AddressLine1.Equals(input.AddressLine1))
-                ) && 
+                ) &&
                 (
                     this.AddressLine2 == input.AddressLine2 ||
                     (this.AddressLine2 != null &&
                     this.AddressLine2.Equals(input.AddressLine2))
-                ) && 
+                ) &&
                 (
                     this.AddressLine3 == input.AddressLine3 ||
                     (this.AddressLine3 != null &&
                     this.AddressLine3.Equals(input.AddressLine3))
-                ) && 
+                ) &&
                 (
                     this.City == input.City ||
                     (this.City != null &&
                     this.City.Equals(input.City))
-                ) && 
+                ) &&
                 (
                     this.CountryCode == input.CountryCode ||
                     (this.CountryCode != null &&
                     this.CountryCode.Equals(input.CountryCode))
-                ) && 
+                ) &&
                 (
                     this.County == input.County ||
                     (this.County != null &&
                     this.County.Equals(input.County))
-                ) && 
+                ) &&
                 (
                     this.District == input.District ||
                     (this.District != null &&
                     this.District.Equals(input.District))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.PhoneNumber == input.PhoneNumber ||
                     (this.PhoneNumber != null &&
                     this.PhoneNumber.Equals(input.PhoneNumber))
-                ) && 
+                ) &&
                 (
                     this.PostalCode == input.PostalCode ||
                     (this.PostalCode != null &&
                     this.PostalCode.Equals(input.PostalCode))
-                ) && 
+                ) &&
                 (
                     this.StateOrRegion == input.StateOrRegion ||
                     (this.StateOrRegion != null &&

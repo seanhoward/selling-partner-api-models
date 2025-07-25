@@ -11,6 +11,10 @@
     "Finances": {
       "commandName": "Project",
       "commandLineArgs": "-f $(SolutionDir)..\\..\\models\\finances-api-model\\finances_2024-06-19.json\r\n-j C:\\swagger-codegen\\swagger-codegen-cli.jar \r\n-r $(SolutionDir)src\\Amazon.SellingPartnerAPIAA\\resources \r\n-o Output"
+    },
+    "Listings Items": {
+      "commandName": "Project",
+      "commandLineArgs": "-f $(SolutionDir)..\\..\\models\\listings-items-api-model\\listingsItems_2021-08-01.json\r\n-j C:\\swagger-codegen\\swagger-codegen-cli.jar \r\n-r $(SolutionDir)src\\Amazon.SellingPartnerAPIAA\\resources \r\n-o Output"
     }
   }
 }

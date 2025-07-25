@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// Identifies an offer from a particular seller for a specified ASIN.
     /// </summary>
     [DataContract]
-    public partial class OfferIdentifier :  IEquatable<OfferIdentifier>, IValidatableObject
+    public partial class OfferIdentifier : IEquatable<OfferIdentifier>, IValidatableObject
     {
         /// <summary>
         /// The fulfillment type for the offer.
         /// </summary>
         /// <value>The fulfillment type for the offer.</value>
-        [DataMember(Name="fulfillmentType", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentType", EmitDefaultValue = false)]
         public FulfillmentType? FulfillmentType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OfferIdentifier" /> class.
@@ -73,33 +67,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             this.Sku = sku;
             this.FulfillmentType = fulfillmentType;
         }
-        
+
         /// <summary>
         /// A marketplace identifier.
         /// </summary>
         /// <value>A marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The seller identifier for the offer.
         /// </summary>
         /// <value>The seller identifier for the offer.</value>
-        [DataMember(Name="sellerId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerId", EmitDefaultValue = false)]
         public string SellerId { get; set; }
 
         /// <summary>
         /// The seller SKU of the item. This will only be present for the target offer, which belongs to the requesting seller.
         /// </summary>
         /// <value>The seller SKU of the item. This will only be present for the target offer, which belongs to the requesting seller.</value>
-        [DataMember(Name="sku", EmitDefaultValue=false)]
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
         /// <summary>
         /// The Amazon identifier for the item.
         /// </summary>
         /// <value>The Amazon identifier for the item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
 
@@ -119,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -149,27 +143,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.SellerId == input.SellerId ||
                     (this.SellerId != null &&
                     this.SellerId.Equals(input.SellerId))
-                ) && 
+                ) &&
                 (
                     this.Sku == input.Sku ||
                     (this.Sku != null &&
                     this.Sku.Equals(input.Sku))
-                ) && 
+                ) &&
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentType == input.FulfillmentType ||
                     (this.FulfillmentType != null &&

@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,12 +24,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Input information for updating a box
     /// </summary>
     [DataContract]
-    public partial class BoxUpdateInput :  IEquatable<BoxUpdateInput>, IValidatableObject
+    public partial class BoxUpdateInput : IEquatable<BoxUpdateInput>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ContentInformationSource
         /// </summary>
-        [DataMember(Name="contentInformationSource", EmitDefaultValue=false)]
+        [DataMember(Name = "contentInformationSource", EmitDefaultValue = false)]
         public BoxContentInformationSource ContentInformationSource { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BoxUpdateInput" /> class.
@@ -90,39 +86,39 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.Items = items;
             this.PackageId = packageId;
         }
-        
+
 
         /// <summary>
         /// Gets or Sets Dimensions
         /// </summary>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public Dimensions Dimensions { get; set; }
 
         /// <summary>
         /// The items and their quantity in the box. This must be empty if the box &#x60;contentInformationSource&#x60; is &#x60;BARCODE_2D&#x60; or &#x60;MANUAL_PROCESS&#x60;.
         /// </summary>
         /// <value>The items and their quantity in the box. This must be empty if the box &#x60;contentInformationSource&#x60; is &#x60;BARCODE_2D&#x60; or &#x60;MANUAL_PROCESS&#x60;.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<ItemInput> Items { get; set; }
 
         /// <summary>
         /// Primary key to uniquely identify a Box Package. PackageId must be provided if the intent is to update an existing box. Adding a new box will not require providing this value. Any existing PackageIds not provided will be treated as to-be-removed
         /// </summary>
         /// <value>Primary key to uniquely identify a Box Package. PackageId must be provided if the intent is to update an existing box. Adding a new box will not require providing this value. Any existing PackageIds not provided will be treated as to-be-removed</value>
-        [DataMember(Name="packageId", EmitDefaultValue=false)]
+        [DataMember(Name = "packageId", EmitDefaultValue = false)]
         public string PackageId { get; set; }
 
         /// <summary>
         /// The number of containers where all other properties like weight or dimensions are identical.
         /// </summary>
         /// <value>The number of containers where all other properties like weight or dimensions are identical.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public Weight Weight { get; set; }
 
         /// <summary>
@@ -142,7 +138,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -172,32 +168,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContentInformationSource == input.ContentInformationSource ||
                     (this.ContentInformationSource != null &&
                     this.ContentInformationSource.Equals(input.ContentInformationSource))
-                ) && 
+                ) &&
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&
                     this.Items.SequenceEqual(input.Items)
-                ) && 
+                ) &&
                 (
                     this.PackageId == input.PackageId ||
                     (this.PackageId != null &&
                     this.PackageId.Equals(input.PackageId))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
@@ -238,34 +234,34 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PackageId (string) maxLength
-            if(this.PackageId != null && this.PackageId.Length > 38)
+            if (this.PackageId != null && this.PackageId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for PackageId, length must be less than 38.", new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, length must be less than 38.", new[] { "PackageId" });
             }
 
             // PackageId (string) minLength
-            if(this.PackageId != null && this.PackageId.Length < 38)
+            if (this.PackageId != null && this.PackageId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for PackageId, length must be greater than 38.", new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, length must be greater than 38.", new[] { "PackageId" });
             }
 
             // PackageId (string) pattern
             Regex regexPackageId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPackageId.Match(this.PackageId).Success)
             {
-                yield return new ValidationResult("Invalid value for PackageId, must match a pattern of " + regexPackageId, new [] { "PackageId" });
+                yield return new ValidationResult("Invalid value for PackageId, must match a pattern of " + regexPackageId, new[] { "PackageId" });
             }
 
             // Quantity (int?) maximum
-            if(this.Quantity > (int?)10000)
+            if (this.Quantity > (int?)10000)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new[] { "Quantity" });
             }
 
             // Quantity (int?) minimum
-            if(this.Quantity < (int?)1)
+            if (this.Quantity < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new[] { "Quantity" });
             }
 
             yield break;

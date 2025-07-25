@@ -1,5 +1,5 @@
 /* 
- * Report v2021-06-30
+ * Selling Partner API for Reports
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
     /// The response for the &#x60;getReports&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class GetReportsResponse :  IEquatable<GetReportsResponse>, IValidatableObject
+    public partial class GetReportsResponse : IEquatable<GetReportsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetReportsResponse" /> class.
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             }
             this.NextToken = nextToken;
         }
-        
+
         /// <summary>
         /// The reports.
         /// </summary>
         /// <value>The reports.</value>
-        [DataMember(Name="reports", EmitDefaultValue=false)]
+        [DataMember(Name = "reports", EmitDefaultValue = false)]
         public ReportList Reports { get; set; }
 
         /// <summary>
         /// Returned when the number of results exceeds &#x60;pageSize&#x60;. To get the next page of results, call &#x60;getReports&#x60; with this token as the only parameter.
         /// </summary>
         /// <value>Returned when the number of results exceeds &#x60;pageSize&#x60;. To get the next page of results, call &#x60;getReports&#x60; with this token as the only parameter.</value>
-        [DataMember(Name="nextToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextToken", EmitDefaultValue = false)]
         public string NextToken { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Reports == input.Reports ||
                     (this.Reports != null &&
                     this.Reports.Equals(input.Reports))
-                ) && 
+                ) &&
                 (
                     this.NextToken == input.NextToken ||
                     (this.NextToken != null &&

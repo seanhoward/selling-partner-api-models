@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Item receive status at the buyer&#39;s warehouse.
     /// </summary>
     [DataContract]
-    public partial class OrderItemStatusReceivingStatus :  IEquatable<OrderItemStatusReceivingStatus>, IValidatableObject
+    public partial class OrderItemStatusReceivingStatus : IEquatable<OrderItemStatusReceivingStatus>, IValidatableObject
     {
         /// <summary>
         /// Receive status of the line item.
@@ -37,19 +31,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ReceiveStatusEnum
         {
-            
+
             /// <summary>
             /// Enum NOTRECEIVED for value: NOT_RECEIVED
             /// </summary>
             [EnumMember(Value = "NOT_RECEIVED")]
             NOTRECEIVED = 1,
-            
+
             /// <summary>
             /// Enum PARTIALLYRECEIVED for value: PARTIALLY_RECEIVED
             /// </summary>
             [EnumMember(Value = "PARTIALLY_RECEIVED")]
             PARTIALLYRECEIVED = 2,
-            
+
             /// <summary>
             /// Enum RECEIVED for value: RECEIVED
             /// </summary>
@@ -61,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// Receive status of the line item.
         /// </summary>
         /// <value>Receive status of the line item.</value>
-        [DataMember(Name="receiveStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "receiveStatus", EmitDefaultValue = false)]
         public ReceiveStatusEnum? ReceiveStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemStatusReceivingStatus" /> class.
@@ -75,20 +69,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.ReceivedQuantity = receivedQuantity;
             this.LastReceiveDate = lastReceiveDate;
         }
-        
+
 
         /// <summary>
         /// The total item quantity received by the buyer so far.
         /// </summary>
         /// <value>The total item quantity received by the buyer so far.</value>
-        [DataMember(Name="receivedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "receivedQuantity", EmitDefaultValue = false)]
         public ItemQuantity ReceivedQuantity { get; set; }
 
         /// <summary>
         /// The date when the most recent item was received at the buyer&#39;s warehouse. Must be in ISO-8601 date/time format.
         /// </summary>
         /// <value>The date when the most recent item was received at the buyer&#39;s warehouse. Must be in ISO-8601 date/time format.</value>
-        [DataMember(Name="lastReceiveDate", EmitDefaultValue=false)]
+        [DataMember(Name = "lastReceiveDate", EmitDefaultValue = false)]
         public DateTime? LastReceiveDate { get; set; }
 
         /// <summary>
@@ -105,7 +99,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -135,17 +129,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReceiveStatus == input.ReceiveStatus ||
                     (this.ReceiveStatus != null &&
                     this.ReceiveStatus.Equals(input.ReceiveStatus))
-                ) && 
+                ) &&
                 (
                     this.ReceivedQuantity == input.ReceivedQuantity ||
                     (this.ReceivedQuantity != null &&
                     this.ReceivedQuantity.Equals(input.ReceivedQuantity))
-                ) && 
+                ) &&
                 (
                     this.LastReceiveDate == input.LastReceiveDate ||
                     (this.LastReceiveDate != null &&

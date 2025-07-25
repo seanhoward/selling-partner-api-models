@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The destination for the delivery offer.
     /// </summary>
     [DataContract]
-    public partial class Destination :  IEquatable<Destination>, IValidatableObject
+    public partial class Destination : IEquatable<Destination>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Destination" /> class.
@@ -40,18 +33,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.DeliveryAddress = deliveryAddress;
             this.IpAddress = ipAddress;
         }
-        
+
         /// <summary>
         /// Gets or Sets DeliveryAddress
         /// </summary>
-        [DataMember(Name="deliveryAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryAddress", EmitDefaultValue = false)]
         public VariablePrecisionAddress DeliveryAddress { get; set; }
 
         /// <summary>
         /// The IP address of the customer.
         /// </summary>
         /// <value>The IP address of the customer.</value>
-        [DataMember(Name="ipAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
         public string IpAddress { get; set; }
 
         /// <summary>
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeliveryAddress == input.DeliveryAddress ||
                     (this.DeliveryAddress != null &&
                     this.DeliveryAddress.Equals(input.DeliveryAddress))
-                ) && 
+                ) &&
                 (
                     this.IpAddress == input.IpAddress ||
                     (this.IpAddress != null &&

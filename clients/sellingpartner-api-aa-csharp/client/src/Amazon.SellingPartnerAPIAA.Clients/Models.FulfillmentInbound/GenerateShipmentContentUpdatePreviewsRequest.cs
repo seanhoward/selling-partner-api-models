@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The &#x60;GenerateShipmentContentUpdatePreviews&#x60; request.
     /// </summary>
     [DataContract]
-    public partial class GenerateShipmentContentUpdatePreviewsRequest :  IEquatable<GenerateShipmentContentUpdatePreviewsRequest>, IValidatableObject
+    public partial class GenerateShipmentContentUpdatePreviewsRequest : IEquatable<GenerateShipmentContentUpdatePreviewsRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateShipmentContentUpdatePreviewsRequest" /> class.
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.Items = items;
             }
         }
-        
+
         /// <summary>
         /// A list of boxes that will be present in the shipment after the update.
         /// </summary>
         /// <value>A list of boxes that will be present in the shipment after the update.</value>
-        [DataMember(Name="boxes", EmitDefaultValue=false)]
+        [DataMember(Name = "boxes", EmitDefaultValue = false)]
         public List<BoxUpdateInput> Boxes { get; set; }
 
         /// <summary>
         /// A list of all items that will be present in the shipment after the update.
         /// </summary>
         /// <value>A list of all items that will be present in the shipment after the update.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<ItemInput> Items { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Boxes == input.Boxes ||
                     this.Boxes != null &&
                     this.Boxes.SequenceEqual(input.Boxes)
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

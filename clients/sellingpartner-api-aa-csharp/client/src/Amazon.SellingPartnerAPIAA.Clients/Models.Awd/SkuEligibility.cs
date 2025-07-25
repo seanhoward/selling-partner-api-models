@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,12 +23,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Represents eligibility of one SKU.
     /// </summary>
     [DataContract]
-    public partial class SkuEligibility :  IEquatable<SkuEligibility>, IValidatableObject
+    public partial class SkuEligibility : IEquatable<SkuEligibility>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public InboundEligibilityStatus Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SkuEligibility" /> class.
@@ -68,18 +63,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             }
             this.IneligibilityReasons = ineligibilityReasons;
         }
-        
+
         /// <summary>
         /// If not eligible, these are list of error codes and descriptions.
         /// </summary>
         /// <value>If not eligible, these are list of error codes and descriptions.</value>
-        [DataMember(Name="ineligibilityReasons", EmitDefaultValue=false)]
+        [DataMember(Name = "ineligibilityReasons", EmitDefaultValue = false)]
         public List<SkuIneligibilityReason> IneligibilityReasons { get; set; }
 
         /// <summary>
         /// Gets or Sets PackageQuantity
         /// </summary>
-        [DataMember(Name="packageQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "packageQuantity", EmitDefaultValue = false)]
         public DistributionPackageQuantity PackageQuantity { get; set; }
 
 
@@ -97,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -127,17 +122,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IneligibilityReasons == input.IneligibilityReasons ||
                     this.IneligibilityReasons != null &&
                     this.IneligibilityReasons.SequenceEqual(input.IneligibilityReasons)
-                ) && 
+                ) &&
                 (
                     this.PackageQuantity == input.PackageQuantity ||
                     (this.PackageQuantity != null &&
                     this.PackageQuantity.Equals(input.PackageQuantity))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&

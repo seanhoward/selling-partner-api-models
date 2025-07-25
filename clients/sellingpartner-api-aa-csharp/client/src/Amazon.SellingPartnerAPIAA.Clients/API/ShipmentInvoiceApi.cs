@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The shipment identifier for the shipment.</param>
         /// <returns>GetInvoiceStatusResponse</returns>
-        GetInvoiceStatusResponse GetInvoiceStatus (string shipmentId);
+        GetInvoiceStatusResponse GetInvoiceStatus(string shipmentId);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The shipment identifier for the shipment.</param>
         /// <returns>ApiResponse of GetInvoiceStatusResponse</returns>
-        ApiResponse<GetInvoiceStatusResponse> GetInvoiceStatusWithHttpInfo (string shipmentId);
+        ApiResponse<GetInvoiceStatusResponse> GetInvoiceStatusWithHttpInfo(string shipmentId);
         /// <summary>
         /// 
         /// </summary>
@@ -55,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).</param>
         /// <returns>GetShipmentDetailsResponse</returns>
-        GetShipmentDetailsResponse GetShipmentDetails (string shipmentId);
+        GetShipmentDetailsResponse GetShipmentDetails(string shipmentId);
 
         /// <summary>
         /// 
@@ -66,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).</param>
         /// <returns>ApiResponse of GetShipmentDetailsResponse</returns>
-        ApiResponse<GetShipmentDetailsResponse> GetShipmentDetailsWithHttpInfo (string shipmentId);
+        ApiResponse<GetShipmentDetailsResponse> GetShipmentDetailsWithHttpInfo(string shipmentId);
         /// <summary>
         /// 
         /// </summary>
@@ -77,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="shipmentId">The identifier for the shipment.</param>
         /// <param name="body"></param>
         /// <returns>SubmitInvoiceResponse</returns>
-        SubmitInvoiceResponse SubmitInvoice (string shipmentId, SubmitInvoiceRequest body);
+        SubmitInvoiceResponse SubmitInvoice(string shipmentId, SubmitInvoiceRequest body);
 
         /// <summary>
         /// 
@@ -89,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="shipmentId">The identifier for the shipment.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of SubmitInvoiceResponse</returns>
-        ApiResponse<SubmitInvoiceResponse> SubmitInvoiceWithHttpInfo (string shipmentId, SubmitInvoiceRequest body);
+        ApiResponse<SubmitInvoiceResponse> SubmitInvoiceWithHttpInfo(string shipmentId, SubmitInvoiceRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -101,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The shipment identifier for the shipment.</param>
         /// <returns>Task of GetInvoiceStatusResponse</returns>
-        System.Threading.Tasks.Task<GetInvoiceStatusResponse> GetInvoiceStatusAsync (string shipmentId);
+        System.Threading.Tasks.Task<GetInvoiceStatusResponse> GetInvoiceStatusAsync(string shipmentId);
 
         /// <summary>
         /// 
@@ -112,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The shipment identifier for the shipment.</param>
         /// <returns>Task of ApiResponse (GetInvoiceStatusResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetInvoiceStatusResponse>> GetInvoiceStatusAsyncWithHttpInfo (string shipmentId);
+        System.Threading.Tasks.Task<ApiResponse<GetInvoiceStatusResponse>> GetInvoiceStatusAsyncWithHttpInfo(string shipmentId);
         /// <summary>
         /// 
         /// </summary>
@@ -122,7 +121,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).</param>
         /// <returns>Task of GetShipmentDetailsResponse</returns>
-        System.Threading.Tasks.Task<GetShipmentDetailsResponse> GetShipmentDetailsAsync (string shipmentId);
+        System.Threading.Tasks.Task<GetShipmentDetailsResponse> GetShipmentDetailsAsync(string shipmentId);
 
         /// <summary>
         /// 
@@ -133,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).</param>
         /// <returns>Task of ApiResponse (GetShipmentDetailsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetShipmentDetailsResponse>> GetShipmentDetailsAsyncWithHttpInfo (string shipmentId);
+        System.Threading.Tasks.Task<ApiResponse<GetShipmentDetailsResponse>> GetShipmentDetailsAsyncWithHttpInfo(string shipmentId);
         /// <summary>
         /// 
         /// </summary>
@@ -144,7 +143,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="shipmentId">The identifier for the shipment.</param>
         /// <param name="body"></param>
         /// <returns>Task of SubmitInvoiceResponse</returns>
-        System.Threading.Tasks.Task<SubmitInvoiceResponse> SubmitInvoiceAsync (string shipmentId, SubmitInvoiceRequest body);
+        System.Threading.Tasks.Task<SubmitInvoiceResponse> SubmitInvoiceAsync(string shipmentId, SubmitInvoiceRequest body);
 
         /// <summary>
         /// 
@@ -156,7 +155,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="shipmentId">The identifier for the shipment.</param>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (SubmitInvoiceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubmitInvoiceResponse>> SubmitInvoiceAsyncWithHttpInfo (string shipmentId, SubmitInvoiceRequest body);
+        System.Threading.Tasks.Task<ApiResponse<SubmitInvoiceResponse>> SubmitInvoiceAsyncWithHttpInfo(string shipmentId, SubmitInvoiceRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -176,7 +175,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public ShipmentInvoiceApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -202,7 +201,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -248,10 +247,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The shipment identifier for the shipment.</param>
         /// <returns>GetInvoiceStatusResponse</returns>
-        public GetInvoiceStatusResponse GetInvoiceStatus (string shipmentId)
+        public GetInvoiceStatusResponse GetInvoiceStatus(string shipmentId)
         {
-             ApiResponse<GetInvoiceStatusResponse> localVarResponse = GetInvoiceStatusWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoiceStatusResponse> localVarResponse = GetInvoiceStatusWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -260,7 +259,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The shipment identifier for the shipment.</param>
         /// <returns>ApiResponse of GetInvoiceStatusResponse</returns>
-        public ApiResponse< GetInvoiceStatusResponse > GetInvoiceStatusWithHttpInfo (string shipmentId)
+        public ApiResponse<GetInvoiceStatusResponse> GetInvoiceStatusWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -292,11 +291,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -306,7 +305,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoiceStatusResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoiceStatusResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoiceStatusResponse)));
+                (GetInvoiceStatusResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoiceStatusResponse)));
         }
 
         /// <summary>
@@ -315,10 +314,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The shipment identifier for the shipment.</param>
         /// <returns>Task of GetInvoiceStatusResponse</returns>
-        public async System.Threading.Tasks.Task<GetInvoiceStatusResponse> GetInvoiceStatusAsync (string shipmentId)
+        public async System.Threading.Tasks.Task<GetInvoiceStatusResponse> GetInvoiceStatusAsync(string shipmentId)
         {
-             ApiResponse<GetInvoiceStatusResponse> localVarResponse = await GetInvoiceStatusAsyncWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoiceStatusResponse> localVarResponse = await GetInvoiceStatusAsyncWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
 
         }
 
@@ -328,7 +327,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The shipment identifier for the shipment.</param>
         /// <returns>Task of ApiResponse (GetInvoiceStatusResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetInvoiceStatusResponse>> GetInvoiceStatusAsyncWithHttpInfo (string shipmentId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetInvoiceStatusResponse>> GetInvoiceStatusAsyncWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -360,11 +359,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -374,7 +373,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoiceStatusResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoiceStatusResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoiceStatusResponse)));
+                (GetInvoiceStatusResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoiceStatusResponse)));
         }
 
         /// <summary>
@@ -383,10 +382,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).</param>
         /// <returns>GetShipmentDetailsResponse</returns>
-        public GetShipmentDetailsResponse GetShipmentDetails (string shipmentId)
+        public GetShipmentDetailsResponse GetShipmentDetails(string shipmentId)
         {
-             ApiResponse<GetShipmentDetailsResponse> localVarResponse = GetShipmentDetailsWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<GetShipmentDetailsResponse> localVarResponse = GetShipmentDetailsWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -395,7 +394,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).</param>
         /// <returns>ApiResponse of GetShipmentDetailsResponse</returns>
-        public ApiResponse< GetShipmentDetailsResponse > GetShipmentDetailsWithHttpInfo (string shipmentId)
+        public ApiResponse<GetShipmentDetailsResponse> GetShipmentDetailsWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -427,11 +426,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -441,7 +440,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetShipmentDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetShipmentDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentDetailsResponse)));
+                (GetShipmentDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentDetailsResponse)));
         }
 
         /// <summary>
@@ -450,10 +449,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).</param>
         /// <returns>Task of GetShipmentDetailsResponse</returns>
-        public async System.Threading.Tasks.Task<GetShipmentDetailsResponse> GetShipmentDetailsAsync (string shipmentId)
+        public async System.Threading.Tasks.Task<GetShipmentDetailsResponse> GetShipmentDetailsAsync(string shipmentId)
         {
-             ApiResponse<GetShipmentDetailsResponse> localVarResponse = await GetShipmentDetailsAsyncWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<GetShipmentDetailsResponse> localVarResponse = await GetShipmentDetailsAsyncWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
 
         }
 
@@ -463,7 +462,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).</param>
         /// <returns>Task of ApiResponse (GetShipmentDetailsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetShipmentDetailsResponse>> GetShipmentDetailsAsyncWithHttpInfo (string shipmentId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetShipmentDetailsResponse>> GetShipmentDetailsAsyncWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -495,11 +494,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -509,7 +508,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetShipmentDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetShipmentDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentDetailsResponse)));
+                (GetShipmentDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentDetailsResponse)));
         }
 
         /// <summary>
@@ -519,10 +518,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="shipmentId">The identifier for the shipment.</param>
         /// <param name="body"></param>
         /// <returns>SubmitInvoiceResponse</returns>
-        public SubmitInvoiceResponse SubmitInvoice (string shipmentId, SubmitInvoiceRequest body)
+        public SubmitInvoiceResponse SubmitInvoice(string shipmentId, SubmitInvoiceRequest body)
         {
-             ApiResponse<SubmitInvoiceResponse> localVarResponse = SubmitInvoiceWithHttpInfo(shipmentId, body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitInvoiceResponse> localVarResponse = SubmitInvoiceWithHttpInfo(shipmentId, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -532,7 +531,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="shipmentId">The identifier for the shipment.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of SubmitInvoiceResponse</returns>
-        public ApiResponse< SubmitInvoiceResponse > SubmitInvoiceWithHttpInfo (string shipmentId, SubmitInvoiceRequest body)
+        public ApiResponse<SubmitInvoiceResponse> SubmitInvoiceWithHttpInfo(string shipmentId, SubmitInvoiceRequest body)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -575,11 +574,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -589,7 +588,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitInvoiceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitInvoiceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInvoiceResponse)));
+                (SubmitInvoiceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInvoiceResponse)));
         }
 
         /// <summary>
@@ -599,10 +598,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="shipmentId">The identifier for the shipment.</param>
         /// <param name="body"></param>
         /// <returns>Task of SubmitInvoiceResponse</returns>
-        public async System.Threading.Tasks.Task<SubmitInvoiceResponse> SubmitInvoiceAsync (string shipmentId, SubmitInvoiceRequest body)
+        public async System.Threading.Tasks.Task<SubmitInvoiceResponse> SubmitInvoiceAsync(string shipmentId, SubmitInvoiceRequest body)
         {
-             ApiResponse<SubmitInvoiceResponse> localVarResponse = await SubmitInvoiceAsyncWithHttpInfo(shipmentId, body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitInvoiceResponse> localVarResponse = await SubmitInvoiceAsyncWithHttpInfo(shipmentId, body);
+            return localVarResponse.Data;
 
         }
 
@@ -613,7 +612,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="shipmentId">The identifier for the shipment.</param>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (SubmitInvoiceResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SubmitInvoiceResponse>> SubmitInvoiceAsyncWithHttpInfo (string shipmentId, SubmitInvoiceRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<SubmitInvoiceResponse>> SubmitInvoiceAsyncWithHttpInfo(string shipmentId, SubmitInvoiceRequest body)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -656,11 +655,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -670,7 +669,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitInvoiceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitInvoiceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInvoiceResponse)));
+                (SubmitInvoiceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInvoiceResponse)));
         }
 
 
@@ -684,17 +683,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public ShipmentInvoiceApi Build() 
+            public ShipmentInvoiceApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

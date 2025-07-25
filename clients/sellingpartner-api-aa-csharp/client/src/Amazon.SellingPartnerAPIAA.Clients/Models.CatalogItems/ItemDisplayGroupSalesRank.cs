@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,26 +9,20 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Sales rank of an Amazon catalog item by website display group.
+    /// Sales rank of an Amazon catalog item, grouped by website display group.
     /// </summary>
     [DataContract]
-    public partial class ItemDisplayGroupSalesRank :  IEquatable<ItemDisplayGroupSalesRank>, IValidatableObject
+    public partial class ItemDisplayGroupSalesRank : IEquatable<ItemDisplayGroupSalesRank>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDisplayGroupSalesRank" /> class.
@@ -38,10 +32,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDisplayGroupSalesRank" /> class.
         /// </summary>
-        /// <param name="websiteDisplayGroup">Name of the website display group associated with the sales rank (required).</param>
-        /// <param name="title">Title, or name, of the sales rank. (required).</param>
-        /// <param name="link">Corresponding Amazon retail website link, or URL, for the sales rank..</param>
-        /// <param name="rank">Sales rank value. (required).</param>
+        /// <param name="websiteDisplayGroup">Name of the website display group that is associated with the sales rank (required).</param>
+        /// <param name="title">Name of the sales rank. (required).</param>
+        /// <param name="link">Corresponding Amazon retail website URL for the sales rank..</param>
+        /// <param name="rank">Sales rank. (required).</param>
         public ItemDisplayGroupSalesRank(string websiteDisplayGroup = default, string title = default, string link = default, int? rank = default)
         {
             // to ensure "websiteDisplayGroup" is required (not null)
@@ -73,33 +67,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             }
             this.Link = link;
         }
-        
+
         /// <summary>
-        /// Name of the website display group associated with the sales rank
+        /// Name of the website display group that is associated with the sales rank
         /// </summary>
-        /// <value>Name of the website display group associated with the sales rank</value>
-        [DataMember(Name="websiteDisplayGroup", EmitDefaultValue=false)]
+        /// <value>Name of the website display group that is associated with the sales rank</value>
+        [DataMember(Name = "websiteDisplayGroup", EmitDefaultValue = false)]
         public string WebsiteDisplayGroup { get; set; }
 
         /// <summary>
-        /// Title, or name, of the sales rank.
+        /// Name of the sales rank.
         /// </summary>
-        /// <value>Title, or name, of the sales rank.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        /// <value>Name of the sales rank.</value>
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
-        /// Corresponding Amazon retail website link, or URL, for the sales rank.
+        /// Corresponding Amazon retail website URL for the sales rank.
         /// </summary>
-        /// <value>Corresponding Amazon retail website link, or URL, for the sales rank.</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
+        /// <value>Corresponding Amazon retail website URL for the sales rank.</value>
+        [DataMember(Name = "link", EmitDefaultValue = false)]
         public string Link { get; set; }
 
         /// <summary>
-        /// Sales rank value.
+        /// Sales rank.
         /// </summary>
-        /// <value>Sales rank value.</value>
-        [DataMember(Name="rank", EmitDefaultValue=false)]
+        /// <value>Sales rank.</value>
+        [DataMember(Name = "rank", EmitDefaultValue = false)]
         public int? Rank { get; set; }
 
         /// <summary>
@@ -117,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -147,22 +141,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.WebsiteDisplayGroup == input.WebsiteDisplayGroup ||
                     (this.WebsiteDisplayGroup != null &&
                     this.WebsiteDisplayGroup.Equals(input.WebsiteDisplayGroup))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.Link == input.Link ||
                     (this.Link != null &&
                     this.Link.Equals(input.Link))
-                ) && 
+                ) &&
                 (
                     this.Rank == input.Rank ||
                     (this.Rank != null &&

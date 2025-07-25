@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Details of the shipment label.
     /// </summary>
     [DataContract]
-    public partial class LabelData :  IEquatable<LabelData>, IValidatableObject
+    public partial class LabelData : IEquatable<LabelData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelData" /> class.
@@ -42,7 +36,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="trackingNumber">Package tracking identifier from the shipping carrier..</param>
         /// <param name="shipMethod">Ship method to be used for shipping the order. Amazon defines Ship Method Codes indicating shipping carrier and shipment service level. Ship Method Codes are case and format sensitive. The same ship method code should returned on the shipment confirmation. Note that the Ship Method Codes are vendor specific and will be provided to each vendor during the implementation..</param>
         /// <param name="shipMethodName">Shipping method name for internal reference..</param>
-        /// <param name="content">This field will contain the Base64encoded string of the shipment label content. (required).</param>
+        /// <param name="content">This field will contain the Base64 string of the shipment label content. (required).</param>
         public LabelData(string packageIdentifier = default, string trackingNumber = default, string shipMethod = default, string shipMethodName = default, string content = default)
         {
             // to ensure "content" is required (not null)
@@ -59,40 +53,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             this.ShipMethod = shipMethod;
             this.ShipMethodName = shipMethodName;
         }
-        
+
         /// <summary>
         /// Identifier for the package. The first package will be 001, the second 002, and so on. This number is used as a reference to refer to this package from the pallet level.
         /// </summary>
         /// <value>Identifier for the package. The first package will be 001, the second 002, and so on. This number is used as a reference to refer to this package from the pallet level.</value>
-        [DataMember(Name="packageIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "packageIdentifier", EmitDefaultValue = false)]
         public string PackageIdentifier { get; set; }
 
         /// <summary>
         /// Package tracking identifier from the shipping carrier.
         /// </summary>
         /// <value>Package tracking identifier from the shipping carrier.</value>
-        [DataMember(Name="trackingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingNumber", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
         /// <summary>
         /// Ship method to be used for shipping the order. Amazon defines Ship Method Codes indicating shipping carrier and shipment service level. Ship Method Codes are case and format sensitive. The same ship method code should returned on the shipment confirmation. Note that the Ship Method Codes are vendor specific and will be provided to each vendor during the implementation.
         /// </summary>
         /// <value>Ship method to be used for shipping the order. Amazon defines Ship Method Codes indicating shipping carrier and shipment service level. Ship Method Codes are case and format sensitive. The same ship method code should returned on the shipment confirmation. Note that the Ship Method Codes are vendor specific and will be provided to each vendor during the implementation.</value>
-        [DataMember(Name="shipMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "shipMethod", EmitDefaultValue = false)]
         public string ShipMethod { get; set; }
 
         /// <summary>
         /// Shipping method name for internal reference.
         /// </summary>
         /// <value>Shipping method name for internal reference.</value>
-        [DataMember(Name="shipMethodName", EmitDefaultValue=false)]
+        [DataMember(Name = "shipMethodName", EmitDefaultValue = false)]
         public string ShipMethodName { get; set; }
 
         /// <summary>
-        /// This field will contain the Base64encoded string of the shipment label content.
+        /// This field will contain the Base64 string of the shipment label content.
         /// </summary>
-        /// <value>This field will contain the Base64encoded string of the shipment label content.</value>
-        [DataMember(Name="content", EmitDefaultValue=false)]
+        /// <value>This field will contain the Base64 string of the shipment label content.</value>
+        [DataMember(Name = "content", EmitDefaultValue = false)]
         public string Content { get; set; }
 
         /// <summary>
@@ -111,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -141,27 +135,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PackageIdentifier == input.PackageIdentifier ||
                     (this.PackageIdentifier != null &&
                     this.PackageIdentifier.Equals(input.PackageIdentifier))
-                ) && 
+                ) &&
                 (
                     this.TrackingNumber == input.TrackingNumber ||
                     (this.TrackingNumber != null &&
                     this.TrackingNumber.Equals(input.TrackingNumber))
-                ) && 
+                ) &&
                 (
                     this.ShipMethod == input.ShipMethod ||
                     (this.ShipMethod != null &&
                     this.ShipMethod.Equals(input.ShipMethod))
-                ) && 
+                ) &&
                 (
                     this.ShipMethodName == input.ShipMethodName ||
                     (this.ShipMethodName != null &&
                     this.ShipMethodName.Equals(input.ShipMethodName))
-                ) && 
+                ) &&
                 (
                     this.Content == input.Content ||
                     (this.Content != null &&

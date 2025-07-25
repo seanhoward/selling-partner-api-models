@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,26 +9,20 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
     /// <summary>
-    /// The A+ Content ASIN with additional metadata for content management. If you don&#39;t include the &#x60;includedDataSet&#x60; parameter in a call to the listContentDocumentAsinRelations operation, the related ASINs are returned without metadata.
+    /// The A+ Content ASIN with additional metadata for content management. If you don&#39;t include the &#x60;includedDataSet&#x60; parameter in a call to the &#x60;listContentDocumentAsinRelations&#x60; operation, the related ASINs are returned without metadata.
     /// </summary>
     [DataContract]
-    public partial class AsinMetadata :  IEquatable<AsinMetadata>, IValidatableObject
+    public partial class AsinMetadata : IEquatable<AsinMetadata>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AsinMetadata" /> class.
@@ -61,43 +55,43 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             this.ImageUrl = imageUrl;
             this.ContentReferenceKeySet = contentReferenceKeySet;
         }
-        
+
         /// <summary>
         /// Gets or Sets Asin
         /// </summary>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// Gets or Sets BadgeSet
         /// </summary>
-        [DataMember(Name="badgeSet", EmitDefaultValue=false)]
+        [DataMember(Name = "badgeSet", EmitDefaultValue = false)]
         public AsinBadgeSet BadgeSet { get; set; }
 
         /// <summary>
         /// Gets or Sets Parent
         /// </summary>
-        [DataMember(Name="parent", EmitDefaultValue=false)]
+        [DataMember(Name = "parent", EmitDefaultValue = false)]
         public string Parent { get; set; }
 
         /// <summary>
         /// The title for the ASIN in the Amazon catalog.
         /// </summary>
         /// <value>The title for the ASIN in the Amazon catalog.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// The default image for the ASIN in the Amazon catalog.
         /// </summary>
         /// <value>The default image for the ASIN in the Amazon catalog.</value>
-        [DataMember(Name="imageUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "imageUrl", EmitDefaultValue = false)]
         public string ImageUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets ContentReferenceKeySet
         /// </summary>
-        [DataMember(Name="contentReferenceKeySet", EmitDefaultValue=false)]
+        [DataMember(Name = "contentReferenceKeySet", EmitDefaultValue = false)]
         public ContentReferenceKeySet ContentReferenceKeySet { get; set; }
 
         /// <summary>
@@ -117,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -147,32 +141,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.BadgeSet == input.BadgeSet ||
                     (this.BadgeSet != null &&
                     this.BadgeSet.Equals(input.BadgeSet))
-                ) && 
+                ) &&
                 (
                     this.Parent == input.Parent ||
                     (this.Parent != null &&
                     this.Parent.Equals(input.Parent))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.ImageUrl == input.ImageUrl ||
                     (this.ImageUrl != null &&
                     this.ImageUrl.Equals(input.ImageUrl))
-                ) && 
+                ) &&
                 (
                     this.ContentReferenceKeySet == input.ContentReferenceKeySet ||
                     (this.ContentReferenceKeySet != null &&
@@ -213,15 +207,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Title (string) minLength
-            if(this.Title != null && this.Title.Length < 1)
+            if (this.Title != null && this.Title.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Title, length must be greater than 1.", new [] { "Title" });
+                yield return new ValidationResult("Invalid value for Title, length must be greater than 1.", new[] { "Title" });
             }
 
             // ImageUrl (string) minLength
-            if(this.ImageUrl != null && this.ImageUrl.Length < 1)
+            if (this.ImageUrl != null && this.ImageUrl.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for ImageUrl, length must be greater than 1.", new [] { "ImageUrl" });
+                yield return new ValidationResult("Invalid value for ImageUrl, length must be greater than 1.", new[] { "ImageUrl" });
             }
 
             yield break;

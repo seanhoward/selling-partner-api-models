@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// The request body for the &#x60;listOffers&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class ListOffersRequest :  IEquatable<ListOffersRequest>, IValidatableObject
+    public partial class ListOffersRequest : IEquatable<ListOffersRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOffersRequest" /> class.
@@ -63,26 +57,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             }
             this.Sort = sort;
         }
-        
+
         /// <summary>
         /// Use these parameters to paginate through the response.
         /// </summary>
         /// <value>Use these parameters to paginate through the response.</value>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
         public ListOffersRequestPagination Pagination { get; set; }
 
         /// <summary>
         /// Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
         /// </summary>
         /// <value>Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.</value>
-        [DataMember(Name="filters", EmitDefaultValue=false)]
+        [DataMember(Name = "filters", EmitDefaultValue = false)]
         public ListOffersRequestFilters Filters { get; set; }
 
         /// <summary>
         /// Use these parameters to sort the response.
         /// </summary>
         /// <value>Use these parameters to sort the response.</value>
-        [DataMember(Name="sort", EmitDefaultValue=false)]
+        [DataMember(Name = "sort", EmitDefaultValue = false)]
         public ListOffersRequestSort Sort { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Pagination == input.Pagination ||
                     (this.Pagination != null &&
                     this.Pagination.Equals(input.Pagination))
-                ) && 
+                ) &&
                 (
                     this.Filters == input.Filters ||
                     (this.Filters != null &&
                     this.Filters.Equals(input.Filters))
-                ) && 
+                ) &&
                 (
                     this.Sort == input.Sort ||
                     (this.Sort != null &&

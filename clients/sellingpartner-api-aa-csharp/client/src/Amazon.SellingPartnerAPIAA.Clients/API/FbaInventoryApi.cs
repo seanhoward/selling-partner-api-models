@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -35,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="xAmznIdempotencyToken">A unique token/requestId provided with each call to ensure idempotency.</param>
         /// <param name="addInventoryRequestBody">List of items to add to Sandbox inventory.</param>
         /// <returns>AddInventoryResponse</returns>
-        AddInventoryResponse AddInventory (string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody);
+        AddInventoryResponse AddInventory(string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody);
 
         /// <summary>
         /// 
@@ -47,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="xAmznIdempotencyToken">A unique token/requestId provided with each call to ensure idempotency.</param>
         /// <param name="addInventoryRequestBody">List of items to add to Sandbox inventory.</param>
         /// <returns>ApiResponse of AddInventoryResponse</returns>
-        ApiResponse<AddInventoryResponse> AddInventoryWithHttpInfo (string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody);
+        ApiResponse<AddInventoryResponse> AddInventoryWithHttpInfo(string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody);
         /// <summary>
         /// 
         /// </summary>
@@ -57,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInventoryItemRequestBody">CreateInventoryItem Request Body Parameter.</param>
         /// <returns>CreateInventoryItemResponse</returns>
-        CreateInventoryItemResponse CreateInventoryItem (CreateInventoryItemRequest createInventoryItemRequestBody);
+        CreateInventoryItemResponse CreateInventoryItem(CreateInventoryItemRequest createInventoryItemRequestBody);
 
         /// <summary>
         /// 
@@ -68,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInventoryItemRequestBody">CreateInventoryItem Request Body Parameter.</param>
         /// <returns>ApiResponse of CreateInventoryItemResponse</returns>
-        ApiResponse<CreateInventoryItemResponse> CreateInventoryItemWithHttpInfo (CreateInventoryItemRequest createInventoryItemRequestBody);
+        ApiResponse<CreateInventoryItemResponse> CreateInventoryItemWithHttpInfo(CreateInventoryItemRequest createInventoryItemRequestBody);
         /// <summary>
         /// 
         /// </summary>
@@ -79,7 +78,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries.</param>
         /// <param name="marketplaceId">The marketplace ID for the marketplace for which the sellerSku is to be deleted.</param>
         /// <returns>DeleteInventoryItemResponse</returns>
-        DeleteInventoryItemResponse DeleteInventoryItem (string sellerSku, string marketplaceId);
+        DeleteInventoryItemResponse DeleteInventoryItem(string sellerSku, string marketplaceId);
 
         /// <summary>
         /// 
@@ -91,7 +90,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries.</param>
         /// <param name="marketplaceId">The marketplace ID for the marketplace for which the sellerSku is to be deleted.</param>
         /// <returns>ApiResponse of DeleteInventoryItemResponse</returns>
-        ApiResponse<DeleteInventoryItemResponse> DeleteInventoryItemWithHttpInfo (string sellerSku, string marketplaceId);
+        ApiResponse<DeleteInventoryItemResponse> DeleteInventoryItemWithHttpInfo(string sellerSku, string marketplaceId);
         /// <summary>
         /// 
         /// </summary>
@@ -108,7 +107,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)</param>
         /// <param name="nextToken">String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)</param>
         /// <returns>GetInventorySummariesResponse</returns>
-        GetInventorySummariesResponse GetInventorySummaries (string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null);
+        GetInventorySummariesResponse GetInventorySummaries(string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null);
 
         /// <summary>
         /// 
@@ -126,7 +125,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)</param>
         /// <param name="nextToken">String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)</param>
         /// <returns>ApiResponse of GetInventorySummariesResponse</returns>
-        ApiResponse<GetInventorySummariesResponse> GetInventorySummariesWithHttpInfo (string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null);
+        ApiResponse<GetInventorySummariesResponse> GetInventorySummariesWithHttpInfo(string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -139,7 +138,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="xAmznIdempotencyToken">A unique token/requestId provided with each call to ensure idempotency.</param>
         /// <param name="addInventoryRequestBody">List of items to add to Sandbox inventory.</param>
         /// <returns>Task of AddInventoryResponse</returns>
-        System.Threading.Tasks.Task<AddInventoryResponse> AddInventoryAsync (string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody);
+        System.Threading.Tasks.Task<AddInventoryResponse> AddInventoryAsync(string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody);
 
         /// <summary>
         /// 
@@ -151,7 +150,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="xAmznIdempotencyToken">A unique token/requestId provided with each call to ensure idempotency.</param>
         /// <param name="addInventoryRequestBody">List of items to add to Sandbox inventory.</param>
         /// <returns>Task of ApiResponse (AddInventoryResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddInventoryResponse>> AddInventoryAsyncWithHttpInfo (string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody);
+        System.Threading.Tasks.Task<ApiResponse<AddInventoryResponse>> AddInventoryAsyncWithHttpInfo(string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody);
         /// <summary>
         /// 
         /// </summary>
@@ -161,7 +160,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInventoryItemRequestBody">CreateInventoryItem Request Body Parameter.</param>
         /// <returns>Task of CreateInventoryItemResponse</returns>
-        System.Threading.Tasks.Task<CreateInventoryItemResponse> CreateInventoryItemAsync (CreateInventoryItemRequest createInventoryItemRequestBody);
+        System.Threading.Tasks.Task<CreateInventoryItemResponse> CreateInventoryItemAsync(CreateInventoryItemRequest createInventoryItemRequestBody);
 
         /// <summary>
         /// 
@@ -172,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInventoryItemRequestBody">CreateInventoryItem Request Body Parameter.</param>
         /// <returns>Task of ApiResponse (CreateInventoryItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateInventoryItemResponse>> CreateInventoryItemAsyncWithHttpInfo (CreateInventoryItemRequest createInventoryItemRequestBody);
+        System.Threading.Tasks.Task<ApiResponse<CreateInventoryItemResponse>> CreateInventoryItemAsyncWithHttpInfo(CreateInventoryItemRequest createInventoryItemRequestBody);
         /// <summary>
         /// 
         /// </summary>
@@ -183,7 +182,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries.</param>
         /// <param name="marketplaceId">The marketplace ID for the marketplace for which the sellerSku is to be deleted.</param>
         /// <returns>Task of DeleteInventoryItemResponse</returns>
-        System.Threading.Tasks.Task<DeleteInventoryItemResponse> DeleteInventoryItemAsync (string sellerSku, string marketplaceId);
+        System.Threading.Tasks.Task<DeleteInventoryItemResponse> DeleteInventoryItemAsync(string sellerSku, string marketplaceId);
 
         /// <summary>
         /// 
@@ -195,7 +194,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries.</param>
         /// <param name="marketplaceId">The marketplace ID for the marketplace for which the sellerSku is to be deleted.</param>
         /// <returns>Task of ApiResponse (DeleteInventoryItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteInventoryItemResponse>> DeleteInventoryItemAsyncWithHttpInfo (string sellerSku, string marketplaceId);
+        System.Threading.Tasks.Task<ApiResponse<DeleteInventoryItemResponse>> DeleteInventoryItemAsyncWithHttpInfo(string sellerSku, string marketplaceId);
         /// <summary>
         /// 
         /// </summary>
@@ -212,7 +211,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)</param>
         /// <param name="nextToken">String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)</param>
         /// <returns>Task of GetInventorySummariesResponse</returns>
-        System.Threading.Tasks.Task<GetInventorySummariesResponse> GetInventorySummariesAsync (string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null);
+        System.Threading.Tasks.Task<GetInventorySummariesResponse> GetInventorySummariesAsync(string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null);
 
         /// <summary>
         /// 
@@ -230,7 +229,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)</param>
         /// <param name="nextToken">String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)</param>
         /// <returns>Task of ApiResponse (GetInventorySummariesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetInventorySummariesResponse>> GetInventorySummariesAsyncWithHttpInfo (string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null);
+        System.Threading.Tasks.Task<ApiResponse<GetInventorySummariesResponse>> GetInventorySummariesAsyncWithHttpInfo(string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null);
         #endregion Asynchronous Operations
     }
 
@@ -250,7 +249,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public FbaInventoryApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -276,7 +275,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -323,10 +322,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="xAmznIdempotencyToken">A unique token/requestId provided with each call to ensure idempotency.</param>
         /// <param name="addInventoryRequestBody">List of items to add to Sandbox inventory.</param>
         /// <returns>AddInventoryResponse</returns>
-        public AddInventoryResponse AddInventory (string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody)
+        public AddInventoryResponse AddInventory(string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody)
         {
-             ApiResponse<AddInventoryResponse> localVarResponse = AddInventoryWithHttpInfo(xAmznIdempotencyToken, addInventoryRequestBody);
-             return localVarResponse.Data;
+            ApiResponse<AddInventoryResponse> localVarResponse = AddInventoryWithHttpInfo(xAmznIdempotencyToken, addInventoryRequestBody);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -336,7 +335,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="xAmznIdempotencyToken">A unique token/requestId provided with each call to ensure idempotency.</param>
         /// <param name="addInventoryRequestBody">List of items to add to Sandbox inventory.</param>
         /// <returns>ApiResponse of AddInventoryResponse</returns>
-        public ApiResponse< AddInventoryResponse > AddInventoryWithHttpInfo (string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody)
+        public ApiResponse<AddInventoryResponse> AddInventoryWithHttpInfo(string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody)
         {
             // verify the required parameter 'xAmznIdempotencyToken' is set
             if (xAmznIdempotencyToken == null)
@@ -379,11 +378,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -393,7 +392,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<AddInventoryResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AddInventoryResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AddInventoryResponse)));
+                (AddInventoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AddInventoryResponse)));
         }
 
         /// <summary>
@@ -403,10 +402,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="xAmznIdempotencyToken">A unique token/requestId provided with each call to ensure idempotency.</param>
         /// <param name="addInventoryRequestBody">List of items to add to Sandbox inventory.</param>
         /// <returns>Task of AddInventoryResponse</returns>
-        public async System.Threading.Tasks.Task<AddInventoryResponse> AddInventoryAsync (string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody)
+        public async System.Threading.Tasks.Task<AddInventoryResponse> AddInventoryAsync(string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody)
         {
-             ApiResponse<AddInventoryResponse> localVarResponse = await AddInventoryAsyncWithHttpInfo(xAmznIdempotencyToken, addInventoryRequestBody);
-             return localVarResponse.Data;
+            ApiResponse<AddInventoryResponse> localVarResponse = await AddInventoryAsyncWithHttpInfo(xAmznIdempotencyToken, addInventoryRequestBody);
+            return localVarResponse.Data;
 
         }
 
@@ -417,7 +416,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="xAmznIdempotencyToken">A unique token/requestId provided with each call to ensure idempotency.</param>
         /// <param name="addInventoryRequestBody">List of items to add to Sandbox inventory.</param>
         /// <returns>Task of ApiResponse (AddInventoryResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AddInventoryResponse>> AddInventoryAsyncWithHttpInfo (string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody)
+        public async System.Threading.Tasks.Task<ApiResponse<AddInventoryResponse>> AddInventoryAsyncWithHttpInfo(string xAmznIdempotencyToken, AddInventoryRequest addInventoryRequestBody)
         {
             // verify the required parameter 'xAmznIdempotencyToken' is set
             if (xAmznIdempotencyToken == null)
@@ -460,11 +459,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -474,7 +473,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<AddInventoryResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AddInventoryResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AddInventoryResponse)));
+                (AddInventoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AddInventoryResponse)));
         }
 
         /// <summary>
@@ -483,10 +482,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInventoryItemRequestBody">CreateInventoryItem Request Body Parameter.</param>
         /// <returns>CreateInventoryItemResponse</returns>
-        public CreateInventoryItemResponse CreateInventoryItem (CreateInventoryItemRequest createInventoryItemRequestBody)
+        public CreateInventoryItemResponse CreateInventoryItem(CreateInventoryItemRequest createInventoryItemRequestBody)
         {
-             ApiResponse<CreateInventoryItemResponse> localVarResponse = CreateInventoryItemWithHttpInfo(createInventoryItemRequestBody);
-             return localVarResponse.Data;
+            ApiResponse<CreateInventoryItemResponse> localVarResponse = CreateInventoryItemWithHttpInfo(createInventoryItemRequestBody);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -495,7 +494,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInventoryItemRequestBody">CreateInventoryItem Request Body Parameter.</param>
         /// <returns>ApiResponse of CreateInventoryItemResponse</returns>
-        public ApiResponse< CreateInventoryItemResponse > CreateInventoryItemWithHttpInfo (CreateInventoryItemRequest createInventoryItemRequestBody)
+        public ApiResponse<CreateInventoryItemResponse> CreateInventoryItemWithHttpInfo(CreateInventoryItemRequest createInventoryItemRequestBody)
         {
             // verify the required parameter 'createInventoryItemRequestBody' is set
             if (createInventoryItemRequestBody == null)
@@ -534,11 +533,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -548,7 +547,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateInventoryItemResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateInventoryItemResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateInventoryItemResponse)));
+                (CreateInventoryItemResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateInventoryItemResponse)));
         }
 
         /// <summary>
@@ -557,10 +556,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInventoryItemRequestBody">CreateInventoryItem Request Body Parameter.</param>
         /// <returns>Task of CreateInventoryItemResponse</returns>
-        public async System.Threading.Tasks.Task<CreateInventoryItemResponse> CreateInventoryItemAsync (CreateInventoryItemRequest createInventoryItemRequestBody)
+        public async System.Threading.Tasks.Task<CreateInventoryItemResponse> CreateInventoryItemAsync(CreateInventoryItemRequest createInventoryItemRequestBody)
         {
-             ApiResponse<CreateInventoryItemResponse> localVarResponse = await CreateInventoryItemAsyncWithHttpInfo(createInventoryItemRequestBody);
-             return localVarResponse.Data;
+            ApiResponse<CreateInventoryItemResponse> localVarResponse = await CreateInventoryItemAsyncWithHttpInfo(createInventoryItemRequestBody);
+            return localVarResponse.Data;
 
         }
 
@@ -570,7 +569,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInventoryItemRequestBody">CreateInventoryItem Request Body Parameter.</param>
         /// <returns>Task of ApiResponse (CreateInventoryItemResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateInventoryItemResponse>> CreateInventoryItemAsyncWithHttpInfo (CreateInventoryItemRequest createInventoryItemRequestBody)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateInventoryItemResponse>> CreateInventoryItemAsyncWithHttpInfo(CreateInventoryItemRequest createInventoryItemRequestBody)
         {
             // verify the required parameter 'createInventoryItemRequestBody' is set
             if (createInventoryItemRequestBody == null)
@@ -609,11 +608,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -623,7 +622,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateInventoryItemResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateInventoryItemResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateInventoryItemResponse)));
+                (CreateInventoryItemResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateInventoryItemResponse)));
         }
 
         /// <summary>
@@ -633,10 +632,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries.</param>
         /// <param name="marketplaceId">The marketplace ID for the marketplace for which the sellerSku is to be deleted.</param>
         /// <returns>DeleteInventoryItemResponse</returns>
-        public DeleteInventoryItemResponse DeleteInventoryItem (string sellerSku, string marketplaceId)
+        public DeleteInventoryItemResponse DeleteInventoryItem(string sellerSku, string marketplaceId)
         {
-             ApiResponse<DeleteInventoryItemResponse> localVarResponse = DeleteInventoryItemWithHttpInfo(sellerSku, marketplaceId);
-             return localVarResponse.Data;
+            ApiResponse<DeleteInventoryItemResponse> localVarResponse = DeleteInventoryItemWithHttpInfo(sellerSku, marketplaceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -646,7 +645,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries.</param>
         /// <param name="marketplaceId">The marketplace ID for the marketplace for which the sellerSku is to be deleted.</param>
         /// <returns>ApiResponse of DeleteInventoryItemResponse</returns>
-        public ApiResponse< DeleteInventoryItemResponse > DeleteInventoryItemWithHttpInfo (string sellerSku, string marketplaceId)
+        public ApiResponse<DeleteInventoryItemResponse> DeleteInventoryItemWithHttpInfo(string sellerSku, string marketplaceId)
         {
             // verify the required parameter 'sellerSku' is set
             if (sellerSku == null)
@@ -682,11 +681,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -696,7 +695,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<DeleteInventoryItemResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeleteInventoryItemResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteInventoryItemResponse)));
+                (DeleteInventoryItemResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteInventoryItemResponse)));
         }
 
         /// <summary>
@@ -706,10 +705,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries.</param>
         /// <param name="marketplaceId">The marketplace ID for the marketplace for which the sellerSku is to be deleted.</param>
         /// <returns>Task of DeleteInventoryItemResponse</returns>
-        public async System.Threading.Tasks.Task<DeleteInventoryItemResponse> DeleteInventoryItemAsync (string sellerSku, string marketplaceId)
+        public async System.Threading.Tasks.Task<DeleteInventoryItemResponse> DeleteInventoryItemAsync(string sellerSku, string marketplaceId)
         {
-             ApiResponse<DeleteInventoryItemResponse> localVarResponse = await DeleteInventoryItemAsyncWithHttpInfo(sellerSku, marketplaceId);
-             return localVarResponse.Data;
+            ApiResponse<DeleteInventoryItemResponse> localVarResponse = await DeleteInventoryItemAsyncWithHttpInfo(sellerSku, marketplaceId);
+            return localVarResponse.Data;
 
         }
 
@@ -720,7 +719,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries.</param>
         /// <param name="marketplaceId">The marketplace ID for the marketplace for which the sellerSku is to be deleted.</param>
         /// <returns>Task of ApiResponse (DeleteInventoryItemResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DeleteInventoryItemResponse>> DeleteInventoryItemAsyncWithHttpInfo (string sellerSku, string marketplaceId)
+        public async System.Threading.Tasks.Task<ApiResponse<DeleteInventoryItemResponse>> DeleteInventoryItemAsyncWithHttpInfo(string sellerSku, string marketplaceId)
         {
             // verify the required parameter 'sellerSku' is set
             if (sellerSku == null)
@@ -756,11 +755,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -770,7 +769,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<DeleteInventoryItemResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeleteInventoryItemResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteInventoryItemResponse)));
+                (DeleteInventoryItemResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeleteInventoryItemResponse)));
         }
 
         /// <summary>
@@ -786,10 +785,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)</param>
         /// <param name="nextToken">String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)</param>
         /// <returns>GetInventorySummariesResponse</returns>
-        public GetInventorySummariesResponse GetInventorySummaries (string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null)
+        public GetInventorySummariesResponse GetInventorySummaries(string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null)
         {
-             ApiResponse<GetInventorySummariesResponse> localVarResponse = GetInventorySummariesWithHttpInfo(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, sellerSku, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<GetInventorySummariesResponse> localVarResponse = GetInventorySummariesWithHttpInfo(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, sellerSku, nextToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -805,7 +804,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)</param>
         /// <param name="nextToken">String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)</param>
         /// <returns>ApiResponse of GetInventorySummariesResponse</returns>
-        public ApiResponse< GetInventorySummariesResponse > GetInventorySummariesWithHttpInfo (string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null)
+        public ApiResponse<GetInventorySummariesResponse> GetInventorySummariesWithHttpInfo(string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null)
         {
             // verify the required parameter 'granularityType' is set
             if (granularityType == null)
@@ -850,11 +849,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -864,7 +863,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInventorySummariesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInventorySummariesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInventorySummariesResponse)));
+                (GetInventorySummariesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInventorySummariesResponse)));
         }
 
         /// <summary>
@@ -880,10 +879,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)</param>
         /// <param name="nextToken">String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)</param>
         /// <returns>Task of GetInventorySummariesResponse</returns>
-        public async System.Threading.Tasks.Task<GetInventorySummariesResponse> GetInventorySummariesAsync (string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null)
+        public async System.Threading.Tasks.Task<GetInventorySummariesResponse> GetInventorySummariesAsync(string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null)
         {
-             ApiResponse<GetInventorySummariesResponse> localVarResponse = await GetInventorySummariesAsyncWithHttpInfo(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, sellerSku, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<GetInventorySummariesResponse> localVarResponse = await GetInventorySummariesAsyncWithHttpInfo(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, sellerSku, nextToken);
+            return localVarResponse.Data;
 
         }
 
@@ -900,7 +899,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerSku">A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)</param>
         /// <param name="nextToken">String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)</param>
         /// <returns>Task of ApiResponse (GetInventorySummariesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetInventorySummariesResponse>> GetInventorySummariesAsyncWithHttpInfo (string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetInventorySummariesResponse>> GetInventorySummariesAsyncWithHttpInfo(string granularityType, string granularityId, List<string> marketplaceIds, bool? details = null, DateTime? startDateTime = null, List<string> sellerSkus = null, string sellerSku = null, string nextToken = null)
         {
             // verify the required parameter 'granularityType' is set
             if (granularityType == null)
@@ -945,11 +944,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -959,7 +958,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInventorySummariesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInventorySummariesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInventorySummariesResponse)));
+                (GetInventorySummariesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInventorySummariesResponse)));
         }
 
 
@@ -973,17 +972,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public FbaInventoryApi Build() 
+            public FbaInventoryApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

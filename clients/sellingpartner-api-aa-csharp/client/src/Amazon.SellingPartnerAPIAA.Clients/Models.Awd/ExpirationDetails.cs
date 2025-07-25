@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// The expiration details of the inventory. This object will only appear if the details parameter in the request is set to &#x60;SHOW&#x60;.
     /// </summary>
     [DataContract]
-    public partial class ExpirationDetails :  IEquatable<ExpirationDetails>, IValidatableObject
+    public partial class ExpirationDetails : IEquatable<ExpirationDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExpirationDetails" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             this.Expiration = expiration;
             this.OnhandQuantity = onhandQuantity;
         }
-        
+
         /// <summary>
         /// The expiration date of the SKU.
         /// </summary>
         /// <value>The expiration date of the SKU.</value>
-        [DataMember(Name="expiration", EmitDefaultValue=false)]
+        [DataMember(Name = "expiration", EmitDefaultValue = false)]
         public DateTime? Expiration { get; set; }
 
         /// <summary>
         /// The quantity that is present in AWD.
         /// </summary>
         /// <value>The quantity that is present in AWD.</value>
-        [DataMember(Name="onhandQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "onhandQuantity", EmitDefaultValue = false)]
         public long? OnhandQuantity { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Expiration == input.Expiration ||
                     (this.Expiration != null &&
                     this.Expiration.Equals(input.Expiration))
-                ) && 
+                ) &&
                 (
                     this.OnhandQuantity == input.OnhandQuantity ||
                     (this.OnhandQuantity != null &&

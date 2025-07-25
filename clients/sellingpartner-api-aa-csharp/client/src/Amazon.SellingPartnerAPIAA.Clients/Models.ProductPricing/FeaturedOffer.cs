@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// Schema for &#x60;currentFeaturedOffer&#x60; or &#x60;competingFeaturedOffer&#x60;.
     /// </summary>
     [DataContract]
-    public partial class FeaturedOffer :  IEquatable<FeaturedOffer>, IValidatableObject
+    public partial class FeaturedOffer : IEquatable<FeaturedOffer>, IValidatableObject
     {
         /// <summary>
         /// The item condition.
         /// </summary>
         /// <value>The item condition.</value>
-        [DataMember(Name="condition", EmitDefaultValue=false)]
+        [DataMember(Name = "condition", EmitDefaultValue = false)]
         public Condition? Condition { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOffer" /> class.
@@ -61,12 +55,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             this.Condition = condition;
             this.Price = price;
         }
-        
+
         /// <summary>
         /// An offer identifier used to identify the merchant of the featured offer. Since this may not belong to the requester, the SKU field is omitted.
         /// </summary>
         /// <value>An offer identifier used to identify the merchant of the featured offer. Since this may not belong to the requester, the SKU field is omitted.</value>
-        [DataMember(Name="offerIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "offerIdentifier", EmitDefaultValue = false)]
         public OfferIdentifier OfferIdentifier { get; set; }
 
 
@@ -74,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// The current active price of the offer.
         /// </summary>
         /// <value>The current active price of the offer.</value>
-        [DataMember(Name="price", EmitDefaultValue=false)]
+        [DataMember(Name = "price", EmitDefaultValue = false)]
         public Price Price { get; set; }
 
         /// <summary>
@@ -91,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +115,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.OfferIdentifier == input.OfferIdentifier ||
                     (this.OfferIdentifier != null &&
                     this.OfferIdentifier.Equals(input.OfferIdentifier))
-                ) && 
+                ) &&
                 (
                     this.Condition == input.Condition ||
                     (this.Condition != null &&
                     this.Condition.Equals(input.Condition))
-                ) && 
+                ) &&
                 (
                     this.Price == input.Price ||
                     (this.Price != null &&

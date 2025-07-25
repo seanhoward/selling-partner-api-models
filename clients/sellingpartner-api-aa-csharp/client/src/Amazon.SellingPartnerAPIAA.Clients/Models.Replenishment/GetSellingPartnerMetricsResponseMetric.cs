@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// An object which contains metric data for a selling partner.
     /// </summary>
     [DataContract]
-    public partial class GetSellingPartnerMetricsResponseMetric :  IEquatable<GetSellingPartnerMetricsResponseMetric>, IValidatableObject
+    public partial class GetSellingPartnerMetricsResponseMetric : IEquatable<GetSellingPartnerMetricsResponseMetric>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSellingPartnerMetricsResponseMetric" /> class.
@@ -80,159 +73,159 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             this.TimeInterval = timeInterval;
             this.CurrencyCode = currencyCode;
         }
-        
+
         /// <summary>
         /// The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="notDeliveredDueToOOS", EmitDefaultValue=false)]
+        [DataMember(Name = "notDeliveredDueToOOS", EmitDefaultValue = false)]
         public double? NotDeliveredDueToOOS { get; set; }
 
         /// <summary>
         /// The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
         /// </summary>
         /// <value>The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.</value>
-        [DataMember(Name="totalSubscriptionsRevenue", EmitDefaultValue=false)]
+        [DataMember(Name = "totalSubscriptionsRevenue", EmitDefaultValue = false)]
         public double? TotalSubscriptionsRevenue { get; set; }
 
         /// <summary>
         /// The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
         /// </summary>
         /// <value>The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.</value>
-        [DataMember(Name="shippedSubscriptionUnits", EmitDefaultValue=false)]
+        [DataMember(Name = "shippedSubscriptionUnits", EmitDefaultValue = false)]
         public decimal? ShippedSubscriptionUnits { get; set; }
 
         /// <summary>
         /// The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="activeSubscriptions", EmitDefaultValue=false)]
+        [DataMember(Name = "activeSubscriptions", EmitDefaultValue = false)]
         public decimal? ActiveSubscriptions { get; set; }
 
         /// <summary>
         /// The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="subscriberAverageRevenue", EmitDefaultValue=false)]
+        [DataMember(Name = "subscriberAverageRevenue", EmitDefaultValue = false)]
         public double? SubscriberAverageRevenue { get; set; }
 
         /// <summary>
         /// The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="nonSubscriberAverageRevenue", EmitDefaultValue=false)]
+        [DataMember(Name = "nonSubscriberAverageRevenue", EmitDefaultValue = false)]
         public double? NonSubscriberAverageRevenue { get; set; }
 
         /// <summary>
         /// The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="lostRevenueDueToOOS", EmitDefaultValue=false)]
+        [DataMember(Name = "lostRevenueDueToOOS", EmitDefaultValue = false)]
         public double? LostRevenueDueToOOS { get; set; }
 
         /// <summary>
         /// The average reorders per subscriber of the program over a period of 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The average reorders per subscriber of the program over a period of 12 months. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="subscriberAverageReorders", EmitDefaultValue=false)]
+        [DataMember(Name = "subscriberAverageReorders", EmitDefaultValue = false)]
         public double? SubscriberAverageReorders { get; set; }
 
         /// <summary>
         /// The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="nonSubscriberAverageReorders", EmitDefaultValue=false)]
+        [DataMember(Name = "nonSubscriberAverageReorders", EmitDefaultValue = false)]
         public double? NonSubscriberAverageReorders { get; set; }
 
         /// <summary>
         /// The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="couponsRevenuePenetration", EmitDefaultValue=false)]
+        [DataMember(Name = "couponsRevenuePenetration", EmitDefaultValue = false)]
         public double? CouponsRevenuePenetration { get; set; }
 
         /// <summary>
         /// The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="revenueFromSubscriptionsWithMultipleDeliveries", EmitDefaultValue=false)]
+        [DataMember(Name = "revenueFromSubscriptionsWithMultipleDeliveries", EmitDefaultValue = false)]
         public double? RevenueFromSubscriptionsWithMultipleDeliveries { get; set; }
 
         /// <summary>
         /// The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="revenueFromActiveSubscriptionsWithSingleDelivery", EmitDefaultValue=false)]
+        [DataMember(Name = "revenueFromActiveSubscriptionsWithSingleDelivery", EmitDefaultValue = false)]
         public double? RevenueFromActiveSubscriptionsWithSingleDelivery { get; set; }
 
         /// <summary>
         /// The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="revenueFromCancelledSubscriptionsAfterSingleDelivery", EmitDefaultValue=false)]
+        [DataMember(Name = "revenueFromCancelledSubscriptionsAfterSingleDelivery", EmitDefaultValue = false)]
         public double? RevenueFromCancelledSubscriptionsAfterSingleDelivery { get; set; }
 
         /// <summary>
         /// The percentage of subscriptions retained after 30 days of subscription creation. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The percentage of subscriptions retained after 30 days of subscription creation. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="subscriberRetentionFor30Days", EmitDefaultValue=false)]
+        [DataMember(Name = "subscriberRetentionFor30Days", EmitDefaultValue = false)]
         public double? SubscriberRetentionFor30Days { get; set; }
 
         /// <summary>
         /// The percentage of subscriptions retained after 90 days of subscription creation. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The percentage of subscriptions retained after 90 days of subscription creation. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="subscriberRetentionFor90Days", EmitDefaultValue=false)]
+        [DataMember(Name = "subscriberRetentionFor90Days", EmitDefaultValue = false)]
         public double? SubscriberRetentionFor90Days { get; set; }
 
         /// <summary>
         /// The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="revenuePenetrationFor0PercentSellerFunding", EmitDefaultValue=false)]
+        [DataMember(Name = "revenuePenetrationFor0PercentSellerFunding", EmitDefaultValue = false)]
         public double? RevenuePenetrationFor0PercentSellerFunding { get; set; }
 
         /// <summary>
         /// [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>[Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="revenuePenetrationFor5PercentSellerFunding", EmitDefaultValue=false)]
+        [DataMember(Name = "revenuePenetrationFor5PercentSellerFunding", EmitDefaultValue = false)]
         public double? RevenuePenetrationFor5PercentSellerFunding { get; set; }
 
         /// <summary>
         /// [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>[Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="revenuePenetrationFor10PercentSellerFunding", EmitDefaultValue=false)]
+        [DataMember(Name = "revenuePenetrationFor10PercentSellerFunding", EmitDefaultValue = false)]
         public double? RevenuePenetrationFor10PercentSellerFunding { get; set; }
 
         /// <summary>
         /// [Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>[Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="revenuePenetrationFor5PlusPercentSellerFunding", EmitDefaultValue=false)]
+        [DataMember(Name = "revenuePenetrationFor5PlusPercentSellerFunding", EmitDefaultValue = false)]
         public double? RevenuePenetrationFor5PlusPercentSellerFunding { get; set; }
 
         /// <summary>
         /// The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.
         /// </summary>
         /// <value>The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.</value>
-        [DataMember(Name="shareOfCouponSubscriptions", EmitDefaultValue=false)]
+        [DataMember(Name = "shareOfCouponSubscriptions", EmitDefaultValue = false)]
         public double? ShareOfCouponSubscriptions { get; set; }
 
         /// <summary>
         /// A time interval used to compute metrics.
         /// </summary>
         /// <value>A time interval used to compute metrics.</value>
-        [DataMember(Name="timeInterval", EmitDefaultValue=false)]
+        [DataMember(Name = "timeInterval", EmitDefaultValue = false)]
         public TimeInterval TimeInterval { get; set; }
 
         /// <summary>
         /// The currency code in ISO 4217 format.
         /// </summary>
         /// <value>The currency code in ISO 4217 format.</value>
-        [DataMember(Name="currencyCode", EmitDefaultValue=false)]
+        [DataMember(Name = "currencyCode", EmitDefaultValue = false)]
         public string CurrencyCode { get; set; }
 
         /// <summary>
@@ -268,7 +261,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -298,112 +291,112 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.NotDeliveredDueToOOS == input.NotDeliveredDueToOOS ||
                     (this.NotDeliveredDueToOOS != null &&
                     this.NotDeliveredDueToOOS.Equals(input.NotDeliveredDueToOOS))
-                ) && 
+                ) &&
                 (
                     this.TotalSubscriptionsRevenue == input.TotalSubscriptionsRevenue ||
                     (this.TotalSubscriptionsRevenue != null &&
                     this.TotalSubscriptionsRevenue.Equals(input.TotalSubscriptionsRevenue))
-                ) && 
+                ) &&
                 (
                     this.ShippedSubscriptionUnits == input.ShippedSubscriptionUnits ||
                     (this.ShippedSubscriptionUnits != null &&
                     this.ShippedSubscriptionUnits.Equals(input.ShippedSubscriptionUnits))
-                ) && 
+                ) &&
                 (
                     this.ActiveSubscriptions == input.ActiveSubscriptions ||
                     (this.ActiveSubscriptions != null &&
                     this.ActiveSubscriptions.Equals(input.ActiveSubscriptions))
-                ) && 
+                ) &&
                 (
                     this.SubscriberAverageRevenue == input.SubscriberAverageRevenue ||
                     (this.SubscriberAverageRevenue != null &&
                     this.SubscriberAverageRevenue.Equals(input.SubscriberAverageRevenue))
-                ) && 
+                ) &&
                 (
                     this.NonSubscriberAverageRevenue == input.NonSubscriberAverageRevenue ||
                     (this.NonSubscriberAverageRevenue != null &&
                     this.NonSubscriberAverageRevenue.Equals(input.NonSubscriberAverageRevenue))
-                ) && 
+                ) &&
                 (
                     this.LostRevenueDueToOOS == input.LostRevenueDueToOOS ||
                     (this.LostRevenueDueToOOS != null &&
                     this.LostRevenueDueToOOS.Equals(input.LostRevenueDueToOOS))
-                ) && 
+                ) &&
                 (
                     this.SubscriberAverageReorders == input.SubscriberAverageReorders ||
                     (this.SubscriberAverageReorders != null &&
                     this.SubscriberAverageReorders.Equals(input.SubscriberAverageReorders))
-                ) && 
+                ) &&
                 (
                     this.NonSubscriberAverageReorders == input.NonSubscriberAverageReorders ||
                     (this.NonSubscriberAverageReorders != null &&
                     this.NonSubscriberAverageReorders.Equals(input.NonSubscriberAverageReorders))
-                ) && 
+                ) &&
                 (
                     this.CouponsRevenuePenetration == input.CouponsRevenuePenetration ||
                     (this.CouponsRevenuePenetration != null &&
                     this.CouponsRevenuePenetration.Equals(input.CouponsRevenuePenetration))
-                ) && 
+                ) &&
                 (
                     this.RevenueFromSubscriptionsWithMultipleDeliveries == input.RevenueFromSubscriptionsWithMultipleDeliveries ||
                     (this.RevenueFromSubscriptionsWithMultipleDeliveries != null &&
                     this.RevenueFromSubscriptionsWithMultipleDeliveries.Equals(input.RevenueFromSubscriptionsWithMultipleDeliveries))
-                ) && 
+                ) &&
                 (
                     this.RevenueFromActiveSubscriptionsWithSingleDelivery == input.RevenueFromActiveSubscriptionsWithSingleDelivery ||
                     (this.RevenueFromActiveSubscriptionsWithSingleDelivery != null &&
                     this.RevenueFromActiveSubscriptionsWithSingleDelivery.Equals(input.RevenueFromActiveSubscriptionsWithSingleDelivery))
-                ) && 
+                ) &&
                 (
                     this.RevenueFromCancelledSubscriptionsAfterSingleDelivery == input.RevenueFromCancelledSubscriptionsAfterSingleDelivery ||
                     (this.RevenueFromCancelledSubscriptionsAfterSingleDelivery != null &&
                     this.RevenueFromCancelledSubscriptionsAfterSingleDelivery.Equals(input.RevenueFromCancelledSubscriptionsAfterSingleDelivery))
-                ) && 
+                ) &&
                 (
                     this.SubscriberRetentionFor30Days == input.SubscriberRetentionFor30Days ||
                     (this.SubscriberRetentionFor30Days != null &&
                     this.SubscriberRetentionFor30Days.Equals(input.SubscriberRetentionFor30Days))
-                ) && 
+                ) &&
                 (
                     this.SubscriberRetentionFor90Days == input.SubscriberRetentionFor90Days ||
                     (this.SubscriberRetentionFor90Days != null &&
                     this.SubscriberRetentionFor90Days.Equals(input.SubscriberRetentionFor90Days))
-                ) && 
+                ) &&
                 (
                     this.RevenuePenetrationFor0PercentSellerFunding == input.RevenuePenetrationFor0PercentSellerFunding ||
                     (this.RevenuePenetrationFor0PercentSellerFunding != null &&
                     this.RevenuePenetrationFor0PercentSellerFunding.Equals(input.RevenuePenetrationFor0PercentSellerFunding))
-                ) && 
+                ) &&
                 (
                     this.RevenuePenetrationFor5PercentSellerFunding == input.RevenuePenetrationFor5PercentSellerFunding ||
                     (this.RevenuePenetrationFor5PercentSellerFunding != null &&
                     this.RevenuePenetrationFor5PercentSellerFunding.Equals(input.RevenuePenetrationFor5PercentSellerFunding))
-                ) && 
+                ) &&
                 (
                     this.RevenuePenetrationFor10PercentSellerFunding == input.RevenuePenetrationFor10PercentSellerFunding ||
                     (this.RevenuePenetrationFor10PercentSellerFunding != null &&
                     this.RevenuePenetrationFor10PercentSellerFunding.Equals(input.RevenuePenetrationFor10PercentSellerFunding))
-                ) && 
+                ) &&
                 (
                     this.RevenuePenetrationFor5PlusPercentSellerFunding == input.RevenuePenetrationFor5PlusPercentSellerFunding ||
                     (this.RevenuePenetrationFor5PlusPercentSellerFunding != null &&
                     this.RevenuePenetrationFor5PlusPercentSellerFunding.Equals(input.RevenuePenetrationFor5PlusPercentSellerFunding))
-                ) && 
+                ) &&
                 (
                     this.ShareOfCouponSubscriptions == input.ShareOfCouponSubscriptions ||
                     (this.ShareOfCouponSubscriptions != null &&
                     this.ShareOfCouponSubscriptions.Equals(input.ShareOfCouponSubscriptions))
-                ) && 
+                ) &&
                 (
                     this.TimeInterval == input.TimeInterval ||
                     (this.TimeInterval != null &&
                     this.TimeInterval.Equals(input.TimeInterval))
-                ) && 
+                ) &&
                 (
                     this.CurrencyCode == input.CurrencyCode ||
                     (this.CurrencyCode != null &&
@@ -476,177 +469,177 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // NotDeliveredDueToOOS (double?) maximum
-            if(this.NotDeliveredDueToOOS > (double?)100)
+            if (this.NotDeliveredDueToOOS > (double?)100)
             {
-                yield return new ValidationResult("Invalid value for NotDeliveredDueToOOS, must be a value less than or equal to 100.", new [] { "NotDeliveredDueToOOS" });
+                yield return new ValidationResult("Invalid value for NotDeliveredDueToOOS, must be a value less than or equal to 100.", new[] { "NotDeliveredDueToOOS" });
             }
 
             // NotDeliveredDueToOOS (double?) minimum
-            if(this.NotDeliveredDueToOOS < (double?)0)
+            if (this.NotDeliveredDueToOOS < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for NotDeliveredDueToOOS, must be a value greater than or equal to 0.", new [] { "NotDeliveredDueToOOS" });
+                yield return new ValidationResult("Invalid value for NotDeliveredDueToOOS, must be a value greater than or equal to 0.", new[] { "NotDeliveredDueToOOS" });
             }
 
             // TotalSubscriptionsRevenue (double?) minimum
-            if(this.TotalSubscriptionsRevenue < (double?)0)
+            if (this.TotalSubscriptionsRevenue < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for TotalSubscriptionsRevenue, must be a value greater than or equal to 0.", new [] { "TotalSubscriptionsRevenue" });
+                yield return new ValidationResult("Invalid value for TotalSubscriptionsRevenue, must be a value greater than or equal to 0.", new[] { "TotalSubscriptionsRevenue" });
             }
 
             // ShippedSubscriptionUnits (decimal?) minimum
-            if(this.ShippedSubscriptionUnits < (decimal?)0)
+            if (this.ShippedSubscriptionUnits < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for ShippedSubscriptionUnits, must be a value greater than or equal to 0.", new [] { "ShippedSubscriptionUnits" });
+                yield return new ValidationResult("Invalid value for ShippedSubscriptionUnits, must be a value greater than or equal to 0.", new[] { "ShippedSubscriptionUnits" });
             }
 
             // ActiveSubscriptions (decimal?) minimum
-            if(this.ActiveSubscriptions < (decimal?)0)
+            if (this.ActiveSubscriptions < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for ActiveSubscriptions, must be a value greater than or equal to 0.", new [] { "ActiveSubscriptions" });
+                yield return new ValidationResult("Invalid value for ActiveSubscriptions, must be a value greater than or equal to 0.", new[] { "ActiveSubscriptions" });
             }
 
             // SubscriberAverageRevenue (double?) minimum
-            if(this.SubscriberAverageRevenue < (double?)0)
+            if (this.SubscriberAverageRevenue < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for SubscriberAverageRevenue, must be a value greater than or equal to 0.", new [] { "SubscriberAverageRevenue" });
+                yield return new ValidationResult("Invalid value for SubscriberAverageRevenue, must be a value greater than or equal to 0.", new[] { "SubscriberAverageRevenue" });
             }
 
             // NonSubscriberAverageRevenue (double?) minimum
-            if(this.NonSubscriberAverageRevenue < (double?)0)
+            if (this.NonSubscriberAverageRevenue < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for NonSubscriberAverageRevenue, must be a value greater than or equal to 0.", new [] { "NonSubscriberAverageRevenue" });
+                yield return new ValidationResult("Invalid value for NonSubscriberAverageRevenue, must be a value greater than or equal to 0.", new[] { "NonSubscriberAverageRevenue" });
             }
 
             // LostRevenueDueToOOS (double?) minimum
-            if(this.LostRevenueDueToOOS < (double?)0)
+            if (this.LostRevenueDueToOOS < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for LostRevenueDueToOOS, must be a value greater than or equal to 0.", new [] { "LostRevenueDueToOOS" });
+                yield return new ValidationResult("Invalid value for LostRevenueDueToOOS, must be a value greater than or equal to 0.", new[] { "LostRevenueDueToOOS" });
             }
 
             // SubscriberAverageReorders (double?) minimum
-            if(this.SubscriberAverageReorders < (double?)0)
+            if (this.SubscriberAverageReorders < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for SubscriberAverageReorders, must be a value greater than or equal to 0.", new [] { "SubscriberAverageReorders" });
+                yield return new ValidationResult("Invalid value for SubscriberAverageReorders, must be a value greater than or equal to 0.", new[] { "SubscriberAverageReorders" });
             }
 
             // NonSubscriberAverageReorders (double?) minimum
-            if(this.NonSubscriberAverageReorders < (double?)0)
+            if (this.NonSubscriberAverageReorders < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for NonSubscriberAverageReorders, must be a value greater than or equal to 0.", new [] { "NonSubscriberAverageReorders" });
+                yield return new ValidationResult("Invalid value for NonSubscriberAverageReorders, must be a value greater than or equal to 0.", new[] { "NonSubscriberAverageReorders" });
             }
 
             // CouponsRevenuePenetration (double?) maximum
-            if(this.CouponsRevenuePenetration > (double?)100)
+            if (this.CouponsRevenuePenetration > (double?)100)
             {
-                yield return new ValidationResult("Invalid value for CouponsRevenuePenetration, must be a value less than or equal to 100.", new [] { "CouponsRevenuePenetration" });
+                yield return new ValidationResult("Invalid value for CouponsRevenuePenetration, must be a value less than or equal to 100.", new[] { "CouponsRevenuePenetration" });
             }
 
             // CouponsRevenuePenetration (double?) minimum
-            if(this.CouponsRevenuePenetration < (double?)0)
+            if (this.CouponsRevenuePenetration < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for CouponsRevenuePenetration, must be a value greater than or equal to 0.", new [] { "CouponsRevenuePenetration" });
+                yield return new ValidationResult("Invalid value for CouponsRevenuePenetration, must be a value greater than or equal to 0.", new[] { "CouponsRevenuePenetration" });
             }
 
             // RevenueFromSubscriptionsWithMultipleDeliveries (double?) minimum
-            if(this.RevenueFromSubscriptionsWithMultipleDeliveries < (double?)0)
+            if (this.RevenueFromSubscriptionsWithMultipleDeliveries < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for RevenueFromSubscriptionsWithMultipleDeliveries, must be a value greater than or equal to 0.", new [] { "RevenueFromSubscriptionsWithMultipleDeliveries" });
+                yield return new ValidationResult("Invalid value for RevenueFromSubscriptionsWithMultipleDeliveries, must be a value greater than or equal to 0.", new[] { "RevenueFromSubscriptionsWithMultipleDeliveries" });
             }
 
             // RevenueFromActiveSubscriptionsWithSingleDelivery (double?) minimum
-            if(this.RevenueFromActiveSubscriptionsWithSingleDelivery < (double?)0)
+            if (this.RevenueFromActiveSubscriptionsWithSingleDelivery < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for RevenueFromActiveSubscriptionsWithSingleDelivery, must be a value greater than or equal to 0.", new [] { "RevenueFromActiveSubscriptionsWithSingleDelivery" });
+                yield return new ValidationResult("Invalid value for RevenueFromActiveSubscriptionsWithSingleDelivery, must be a value greater than or equal to 0.", new[] { "RevenueFromActiveSubscriptionsWithSingleDelivery" });
             }
 
             // RevenueFromCancelledSubscriptionsAfterSingleDelivery (double?) minimum
-            if(this.RevenueFromCancelledSubscriptionsAfterSingleDelivery < (double?)0)
+            if (this.RevenueFromCancelledSubscriptionsAfterSingleDelivery < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for RevenueFromCancelledSubscriptionsAfterSingleDelivery, must be a value greater than or equal to 0.", new [] { "RevenueFromCancelledSubscriptionsAfterSingleDelivery" });
+                yield return new ValidationResult("Invalid value for RevenueFromCancelledSubscriptionsAfterSingleDelivery, must be a value greater than or equal to 0.", new[] { "RevenueFromCancelledSubscriptionsAfterSingleDelivery" });
             }
 
             // SubscriberRetentionFor30Days (double?) maximum
-            if(this.SubscriberRetentionFor30Days > (double?)100)
+            if (this.SubscriberRetentionFor30Days > (double?)100)
             {
-                yield return new ValidationResult("Invalid value for SubscriberRetentionFor30Days, must be a value less than or equal to 100.", new [] { "SubscriberRetentionFor30Days" });
+                yield return new ValidationResult("Invalid value for SubscriberRetentionFor30Days, must be a value less than or equal to 100.", new[] { "SubscriberRetentionFor30Days" });
             }
 
             // SubscriberRetentionFor30Days (double?) minimum
-            if(this.SubscriberRetentionFor30Days < (double?)0)
+            if (this.SubscriberRetentionFor30Days < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for SubscriberRetentionFor30Days, must be a value greater than or equal to 0.", new [] { "SubscriberRetentionFor30Days" });
+                yield return new ValidationResult("Invalid value for SubscriberRetentionFor30Days, must be a value greater than or equal to 0.", new[] { "SubscriberRetentionFor30Days" });
             }
 
             // SubscriberRetentionFor90Days (double?) maximum
-            if(this.SubscriberRetentionFor90Days > (double?)100)
+            if (this.SubscriberRetentionFor90Days > (double?)100)
             {
-                yield return new ValidationResult("Invalid value for SubscriberRetentionFor90Days, must be a value less than or equal to 100.", new [] { "SubscriberRetentionFor90Days" });
+                yield return new ValidationResult("Invalid value for SubscriberRetentionFor90Days, must be a value less than or equal to 100.", new[] { "SubscriberRetentionFor90Days" });
             }
 
             // SubscriberRetentionFor90Days (double?) minimum
-            if(this.SubscriberRetentionFor90Days < (double?)0)
+            if (this.SubscriberRetentionFor90Days < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for SubscriberRetentionFor90Days, must be a value greater than or equal to 0.", new [] { "SubscriberRetentionFor90Days" });
+                yield return new ValidationResult("Invalid value for SubscriberRetentionFor90Days, must be a value greater than or equal to 0.", new[] { "SubscriberRetentionFor90Days" });
             }
 
             // RevenuePenetrationFor0PercentSellerFunding (double?) maximum
-            if(this.RevenuePenetrationFor0PercentSellerFunding > (double?)100)
+            if (this.RevenuePenetrationFor0PercentSellerFunding > (double?)100)
             {
-                yield return new ValidationResult("Invalid value for RevenuePenetrationFor0PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor0PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor0PercentSellerFunding, must be a value less than or equal to 100.", new[] { "RevenuePenetrationFor0PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor0PercentSellerFunding (double?) minimum
-            if(this.RevenuePenetrationFor0PercentSellerFunding < (double?)0)
+            if (this.RevenuePenetrationFor0PercentSellerFunding < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for RevenuePenetrationFor0PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor0PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor0PercentSellerFunding, must be a value greater than or equal to 0.", new[] { "RevenuePenetrationFor0PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor5PercentSellerFunding (double?) maximum
-            if(this.RevenuePenetrationFor5PercentSellerFunding > (double?)100)
+            if (this.RevenuePenetrationFor5PercentSellerFunding > (double?)100)
             {
-                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor5PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PercentSellerFunding, must be a value less than or equal to 100.", new[] { "RevenuePenetrationFor5PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor5PercentSellerFunding (double?) minimum
-            if(this.RevenuePenetrationFor5PercentSellerFunding < (double?)0)
+            if (this.RevenuePenetrationFor5PercentSellerFunding < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor5PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PercentSellerFunding, must be a value greater than or equal to 0.", new[] { "RevenuePenetrationFor5PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor10PercentSellerFunding (double?) maximum
-            if(this.RevenuePenetrationFor10PercentSellerFunding > (double?)100)
+            if (this.RevenuePenetrationFor10PercentSellerFunding > (double?)100)
             {
-                yield return new ValidationResult("Invalid value for RevenuePenetrationFor10PercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor10PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor10PercentSellerFunding, must be a value less than or equal to 100.", new[] { "RevenuePenetrationFor10PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor10PercentSellerFunding (double?) minimum
-            if(this.RevenuePenetrationFor10PercentSellerFunding < (double?)0)
+            if (this.RevenuePenetrationFor10PercentSellerFunding < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for RevenuePenetrationFor10PercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor10PercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor10PercentSellerFunding, must be a value greater than or equal to 0.", new[] { "RevenuePenetrationFor10PercentSellerFunding" });
             }
 
             // RevenuePenetrationFor5PlusPercentSellerFunding (double?) maximum
-            if(this.RevenuePenetrationFor5PlusPercentSellerFunding > (double?)100)
+            if (this.RevenuePenetrationFor5PlusPercentSellerFunding > (double?)100)
             {
-                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PlusPercentSellerFunding, must be a value less than or equal to 100.", new [] { "RevenuePenetrationFor5PlusPercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PlusPercentSellerFunding, must be a value less than or equal to 100.", new[] { "RevenuePenetrationFor5PlusPercentSellerFunding" });
             }
 
             // RevenuePenetrationFor5PlusPercentSellerFunding (double?) minimum
-            if(this.RevenuePenetrationFor5PlusPercentSellerFunding < (double?)0)
+            if (this.RevenuePenetrationFor5PlusPercentSellerFunding < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PlusPercentSellerFunding, must be a value greater than or equal to 0.", new [] { "RevenuePenetrationFor5PlusPercentSellerFunding" });
+                yield return new ValidationResult("Invalid value for RevenuePenetrationFor5PlusPercentSellerFunding, must be a value greater than or equal to 0.", new[] { "RevenuePenetrationFor5PlusPercentSellerFunding" });
             }
 
             // ShareOfCouponSubscriptions (double?) maximum
-            if(this.ShareOfCouponSubscriptions > (double?)100)
+            if (this.ShareOfCouponSubscriptions > (double?)100)
             {
-                yield return new ValidationResult("Invalid value for ShareOfCouponSubscriptions, must be a value less than or equal to 100.", new [] { "ShareOfCouponSubscriptions" });
+                yield return new ValidationResult("Invalid value for ShareOfCouponSubscriptions, must be a value less than or equal to 100.", new[] { "ShareOfCouponSubscriptions" });
             }
 
             // ShareOfCouponSubscriptions (double?) minimum
-            if(this.ShareOfCouponSubscriptions < (double?)0)
+            if (this.ShareOfCouponSubscriptions < (double?)0)
             {
-                yield return new ValidationResult("Invalid value for ShareOfCouponSubscriptions, must be a value greater than or equal to 0.", new [] { "ShareOfCouponSubscriptions" });
+                yield return new ValidationResult("Invalid value for ShareOfCouponSubscriptions, must be a value greater than or equal to 0.", new[] { "ShareOfCouponSubscriptions" });
             }
 
             yield break;

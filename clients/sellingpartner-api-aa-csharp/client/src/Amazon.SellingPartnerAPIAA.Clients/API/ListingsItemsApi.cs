@@ -1,5 +1,5 @@
 /* 
- * Listings Items v2021-08-01
+ * Selling Partner API for Listings Items
  *
  * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -26,7 +25,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     {
         #region Synchronous Operations
         /// <summary>
-        /// deleteListingsItem
+        /// 
         /// </summary>
         /// <remarks>
         /// Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -37,10 +36,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ListingsItemSubmissionResponse</returns>
-        ListingsItemSubmissionResponse DeleteListingsItem (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null);
+        ListingsItemSubmissionResponse DeleteListingsItem(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null);
 
         /// <summary>
-        /// deleteListingsItem
+        /// 
         /// </summary>
         /// <remarks>
         /// Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -51,12 +50,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ApiResponse of ListingsItemSubmissionResponse</returns>
-        ApiResponse<ListingsItemSubmissionResponse> DeleteListingsItemWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null);
+        ApiResponse<ListingsItemSubmissionResponse> DeleteListingsItemWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null);
         /// <summary>
-        /// getListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns details about a listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -65,13 +64,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
         /// <returns>Item</returns>
-        Item GetListingsItem (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null);
+        Item GetListingsItem(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null);
 
         /// <summary>
-        /// getListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns details about a listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -80,12 +79,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
         /// <returns>ApiResponse of Item</returns>
-        ApiResponse<Item> GetListingsItemWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null);
+        ApiResponse<Item> GetListingsItemWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null);
         /// <summary>
-        /// patchListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -96,13 +95,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ListingsItemSubmissionResponse</returns>
-        ListingsItemSubmissionResponse PatchListingsItem (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
+        ListingsItemSubmissionResponse PatchListingsItem(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
 
         /// <summary>
-        /// patchListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -113,12 +112,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ApiResponse of ListingsItemSubmissionResponse</returns>
-        ApiResponse<ListingsItemSubmissionResponse> PatchListingsItemWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
+        ApiResponse<ListingsItemSubmissionResponse> PatchListingsItemWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
         /// <summary>
-        /// putListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -129,13 +128,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ListingsItemSubmissionResponse</returns>
-        ListingsItemSubmissionResponse PutListingsItem (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
+        ListingsItemSubmissionResponse PutListingsItem(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
 
         /// <summary>
-        /// putListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -146,11 +145,68 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ApiResponse of ListingsItemSubmissionResponse</returns>
-        ApiResponse<ListingsItemSubmissionResponse> PutListingsItemWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
+        ApiResponse<ListingsItemSubmissionResponse> PutListingsItemWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Search for and return a list of selling partner listings items and their respective details.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
+        /// <param name="issueLocale">A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)</param>
+        /// <param name="identifiersType">A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)</param>
+        /// <param name="variationParentSku">Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)</param>
+        /// <param name="packageHierarchySku">Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)</param>
+        /// <param name="createdAfter">A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="createdBefore">A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedAfter">A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedBefore">A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="withIssueSeverity">Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)</param>
+        /// <param name="withStatus">Filter results to include only listing items that have the specified status. (optional)</param>
+        /// <param name="withoutStatus">Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)</param>
+        /// <param name="sortBy">An attribute by which to sort the returned listing items. (optional, default to lastUpdatedDate)</param>
+        /// <param name="sortOrder">The order in which to sort the result items. (optional, default to DESC)</param>
+        /// <param name="pageSize">The number of results that you want to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <returns>ItemSearchResults</returns>
+        ItemSearchResults SearchListingsItems(string sellerId, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null, List<string> identifiers = null, string identifiersType = null, string variationParentSku = null, string packageHierarchySku = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? lastUpdatedAfter = null, DateTime? lastUpdatedBefore = null, List<string> withIssueSeverity = null, List<string> withStatus = null, List<string> withoutStatus = null, string sortBy = null, string sortOrder = null, int? pageSize = null, string pageToken = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Search for and return a list of selling partner listings items and their respective details.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
+        /// <param name="issueLocale">A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)</param>
+        /// <param name="identifiersType">A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)</param>
+        /// <param name="variationParentSku">Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)</param>
+        /// <param name="packageHierarchySku">Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)</param>
+        /// <param name="createdAfter">A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="createdBefore">A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedAfter">A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedBefore">A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="withIssueSeverity">Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)</param>
+        /// <param name="withStatus">Filter results to include only listing items that have the specified status. (optional)</param>
+        /// <param name="withoutStatus">Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)</param>
+        /// <param name="sortBy">An attribute by which to sort the returned listing items. (optional, default to lastUpdatedDate)</param>
+        /// <param name="sortOrder">The order in which to sort the result items. (optional, default to DESC)</param>
+        /// <param name="pageSize">The number of results that you want to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <returns>ApiResponse of ItemSearchResults</returns>
+        ApiResponse<ItemSearchResults> SearchListingsItemsWithHttpInfo(string sellerId, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null, List<string> identifiers = null, string identifiersType = null, string variationParentSku = null, string packageHierarchySku = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? lastUpdatedAfter = null, DateTime? lastUpdatedBefore = null, List<string> withIssueSeverity = null, List<string> withStatus = null, List<string> withoutStatus = null, string sortBy = null, string sortOrder = null, int? pageSize = null, string pageToken = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// deleteListingsItem
+        /// 
         /// </summary>
         /// <remarks>
         /// Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -161,10 +217,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ListingsItemSubmissionResponse</returns>
-        System.Threading.Tasks.Task<ListingsItemSubmissionResponse> DeleteListingsItemAsync (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null);
+        System.Threading.Tasks.Task<ListingsItemSubmissionResponse> DeleteListingsItemAsync(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null);
 
         /// <summary>
-        /// deleteListingsItem
+        /// 
         /// </summary>
         /// <remarks>
         /// Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -175,12 +231,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ApiResponse (ListingsItemSubmissionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> DeleteListingsItemAsyncWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null);
+        System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> DeleteListingsItemAsyncWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null);
         /// <summary>
-        /// getListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns details about a listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -189,13 +245,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
         /// <returns>Task of Item</returns>
-        System.Threading.Tasks.Task<Item> GetListingsItemAsync (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null);
+        System.Threading.Tasks.Task<Item> GetListingsItemAsync(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null);
 
         /// <summary>
-        /// getListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns details about a listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -204,12 +260,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
         /// <returns>Task of ApiResponse (Item)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Item>> GetListingsItemAsyncWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null);
+        System.Threading.Tasks.Task<ApiResponse<Item>> GetListingsItemAsyncWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null);
         /// <summary>
-        /// patchListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -220,13 +276,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ListingsItemSubmissionResponse</returns>
-        System.Threading.Tasks.Task<ListingsItemSubmissionResponse> PatchListingsItemAsync (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
+        System.Threading.Tasks.Task<ListingsItemSubmissionResponse> PatchListingsItemAsync(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
 
         /// <summary>
-        /// patchListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -237,12 +293,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ApiResponse (ListingsItemSubmissionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> PatchListingsItemAsyncWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
+        System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> PatchListingsItemAsyncWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
         /// <summary>
-        /// putListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -253,13 +309,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ListingsItemSubmissionResponse</returns>
-        System.Threading.Tasks.Task<ListingsItemSubmissionResponse> PutListingsItemAsync (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
+        System.Threading.Tasks.Task<ListingsItemSubmissionResponse> PutListingsItemAsync(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
 
         /// <summary>
-        /// putListingsItem
+        /// 
         /// </summary>
         /// <remarks>
-        /// Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -270,7 +326,64 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ApiResponse (ListingsItemSubmissionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> PutListingsItemAsyncWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
+        System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> PutListingsItemAsyncWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Search for and return a list of selling partner listings items and their respective details.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
+        /// <param name="issueLocale">A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)</param>
+        /// <param name="identifiersType">A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)</param>
+        /// <param name="variationParentSku">Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)</param>
+        /// <param name="packageHierarchySku">Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)</param>
+        /// <param name="createdAfter">A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="createdBefore">A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedAfter">A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedBefore">A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="withIssueSeverity">Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)</param>
+        /// <param name="withStatus">Filter results to include only listing items that have the specified status. (optional)</param>
+        /// <param name="withoutStatus">Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)</param>
+        /// <param name="sortBy">An attribute by which to sort the returned listing items. (optional, default to lastUpdatedDate)</param>
+        /// <param name="sortOrder">The order in which to sort the result items. (optional, default to DESC)</param>
+        /// <param name="pageSize">The number of results that you want to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <returns>Task of ItemSearchResults</returns>
+        System.Threading.Tasks.Task<ItemSearchResults> SearchListingsItemsAsync(string sellerId, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null, List<string> identifiers = null, string identifiersType = null, string variationParentSku = null, string packageHierarchySku = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? lastUpdatedAfter = null, DateTime? lastUpdatedBefore = null, List<string> withIssueSeverity = null, List<string> withStatus = null, List<string> withoutStatus = null, string sortBy = null, string sortOrder = null, int? pageSize = null, string pageToken = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Search for and return a list of selling partner listings items and their respective details.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
+        /// <param name="issueLocale">A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)</param>
+        /// <param name="identifiersType">A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)</param>
+        /// <param name="variationParentSku">Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)</param>
+        /// <param name="packageHierarchySku">Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)</param>
+        /// <param name="createdAfter">A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="createdBefore">A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedAfter">A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedBefore">A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="withIssueSeverity">Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)</param>
+        /// <param name="withStatus">Filter results to include only listing items that have the specified status. (optional)</param>
+        /// <param name="withoutStatus">Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)</param>
+        /// <param name="sortBy">An attribute by which to sort the returned listing items. (optional, default to lastUpdatedDate)</param>
+        /// <param name="sortOrder">The order in which to sort the result items. (optional, default to DESC)</param>
+        /// <param name="pageSize">The number of results that you want to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <returns>Task of ApiResponse (ItemSearchResults)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ItemSearchResults>> SearchListingsItemsAsyncWithHttpInfo(string sellerId, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null, List<string> identifiers = null, string identifiersType = null, string variationParentSku = null, string packageHierarchySku = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? lastUpdatedAfter = null, DateTime? lastUpdatedBefore = null, List<string> withIssueSeverity = null, List<string> withStatus = null, List<string> withoutStatus = null, string sortBy = null, string sortOrder = null, int? pageSize = null, string pageToken = null);
         #endregion Asynchronous Operations
     }
 
@@ -316,7 +429,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -357,7 +470,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        /// deleteListingsItem Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -365,14 +478,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ListingsItemSubmissionResponse</returns>
-        public ListingsItemSubmissionResponse DeleteListingsItem (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null)
+        public ListingsItemSubmissionResponse DeleteListingsItem(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null)
         {
-             ApiResponse<ListingsItemSubmissionResponse> localVarResponse = DeleteListingsItemWithHttpInfo(sellerId, sku, marketplaceIds, issueLocale);
-             return localVarResponse.Data;
+            ApiResponse<ListingsItemSubmissionResponse> localVarResponse = DeleteListingsItemWithHttpInfo(sellerId, sku, marketplaceIds, issueLocale);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// deleteListingsItem Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -380,17 +493,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ApiResponse of ListingsItemSubmissionResponse</returns>
-        public ApiResponse< ListingsItemSubmissionResponse > DeleteListingsItemWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null)
+        public ApiResponse<ListingsItemSubmissionResponse> DeleteListingsItemWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null)
         {
             // verify the required parameter 'sellerId' is set
             if (sellerId == null)
-                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsItemsApi->DeleteListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsApi->DeleteListingsItem");
             // verify the required parameter 'sku' is set
             if (sku == null)
-                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsItemsApi->DeleteListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsApi->DeleteListingsItem");
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsItemsApi->DeleteListingsItem");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsApi->DeleteListingsItem");
 
             var localVarPath = "/listings/2021-08-01/items/{sellerId}/{sku}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -421,11 +534,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -435,11 +548,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListingsItemSubmissionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListingsItemSubmissionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
+                (ListingsItemSubmissionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
         }
 
         /// <summary>
-        /// deleteListingsItem Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -447,15 +560,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ListingsItemSubmissionResponse</returns>
-        public async System.Threading.Tasks.Task<ListingsItemSubmissionResponse> DeleteListingsItemAsync (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null)
+        public async System.Threading.Tasks.Task<ListingsItemSubmissionResponse> DeleteListingsItemAsync(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null)
         {
-             ApiResponse<ListingsItemSubmissionResponse> localVarResponse = await DeleteListingsItemAsyncWithHttpInfo(sellerId, sku, marketplaceIds, issueLocale);
-             return localVarResponse.Data;
+            ApiResponse<ListingsItemSubmissionResponse> localVarResponse = await DeleteListingsItemAsyncWithHttpInfo(sellerId, sku, marketplaceIds, issueLocale);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// deleteListingsItem Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -463,17 +576,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ApiResponse (ListingsItemSubmissionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> DeleteListingsItemAsyncWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> DeleteListingsItemAsyncWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null)
         {
             // verify the required parameter 'sellerId' is set
             if (sellerId == null)
-                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsItemsApi->DeleteListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsApi->DeleteListingsItem");
             // verify the required parameter 'sku' is set
             if (sku == null)
-                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsItemsApi->DeleteListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsApi->DeleteListingsItem");
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsItemsApi->DeleteListingsItem");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsApi->DeleteListingsItem");
 
             var localVarPath = "/listings/2021-08-01/items/{sellerId}/{sku}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -504,11 +617,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -518,11 +631,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListingsItemSubmissionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListingsItemSubmissionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
+                (ListingsItemSubmissionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
         }
 
         /// <summary>
-        /// getListingsItem Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns details about a listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -531,14 +644,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
         /// <returns>Item</returns>
-        public Item GetListingsItem (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null)
+        public Item GetListingsItem(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null)
         {
-             ApiResponse<Item> localVarResponse = GetListingsItemWithHttpInfo(sellerId, sku, marketplaceIds, issueLocale, includedData);
-             return localVarResponse.Data;
+            ApiResponse<Item> localVarResponse = GetListingsItemWithHttpInfo(sellerId, sku, marketplaceIds, issueLocale, includedData);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// getListingsItem Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns details about a listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -547,17 +660,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
         /// <returns>ApiResponse of Item</returns>
-        public ApiResponse< Item > GetListingsItemWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null)
+        public ApiResponse<Item> GetListingsItemWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null)
         {
             // verify the required parameter 'sellerId' is set
             if (sellerId == null)
-                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsItemsApi->GetListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsApi->GetListingsItem");
             // verify the required parameter 'sku' is set
             if (sku == null)
-                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsItemsApi->GetListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsApi->GetListingsItem");
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsItemsApi->GetListingsItem");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsApi->GetListingsItem");
 
             var localVarPath = "/listings/2021-08-01/items/{sellerId}/{sku}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -589,11 +702,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -603,11 +716,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Item>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Item) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Item)));
+                (Item)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Item)));
         }
 
         /// <summary>
-        /// getListingsItem Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns details about a listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -616,15 +729,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
         /// <returns>Task of Item</returns>
-        public async System.Threading.Tasks.Task<Item> GetListingsItemAsync (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null)
+        public async System.Threading.Tasks.Task<Item> GetListingsItemAsync(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null)
         {
-             ApiResponse<Item> localVarResponse = await GetListingsItemAsyncWithHttpInfo(sellerId, sku, marketplaceIds, issueLocale, includedData);
-             return localVarResponse.Data;
+            ApiResponse<Item> localVarResponse = await GetListingsItemAsyncWithHttpInfo(sellerId, sku, marketplaceIds, issueLocale, includedData);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// getListingsItem Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns details about a listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -633,17 +746,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <param name="includedData">A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
         /// <returns>Task of ApiResponse (Item)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Item>> GetListingsItemAsyncWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Item>> GetListingsItemAsyncWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null)
         {
             // verify the required parameter 'sellerId' is set
             if (sellerId == null)
-                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsItemsApi->GetListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsApi->GetListingsItem");
             // verify the required parameter 'sku' is set
             if (sku == null)
-                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsItemsApi->GetListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsApi->GetListingsItem");
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsItemsApi->GetListingsItem");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsApi->GetListingsItem");
 
             var localVarPath = "/listings/2021-08-01/items/{sellerId}/{sku}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -675,11 +788,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -689,11 +802,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<Item>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Item) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Item)));
+                (Item)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Item)));
         }
 
         /// <summary>
-        /// patchListingsItem Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -704,14 +817,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ListingsItemSubmissionResponse</returns>
-        public ListingsItemSubmissionResponse PatchListingsItem (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
+        public ListingsItemSubmissionResponse PatchListingsItem(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
         {
-             ApiResponse<ListingsItemSubmissionResponse> localVarResponse = PatchListingsItemWithHttpInfo(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale);
-             return localVarResponse.Data;
+            ApiResponse<ListingsItemSubmissionResponse> localVarResponse = PatchListingsItemWithHttpInfo(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// patchListingsItem Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -722,20 +835,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ApiResponse of ListingsItemSubmissionResponse</returns>
-        public ApiResponse< ListingsItemSubmissionResponse > PatchListingsItemWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
+        public ApiResponse<ListingsItemSubmissionResponse> PatchListingsItemWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
         {
             // verify the required parameter 'sellerId' is set
             if (sellerId == null)
-                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsItemsApi->PatchListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsApi->PatchListingsItem");
             // verify the required parameter 'sku' is set
             if (sku == null)
-                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsItemsApi->PatchListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsApi->PatchListingsItem");
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsItemsApi->PatchListingsItem");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsApi->PatchListingsItem");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ListingsItemsApi->PatchListingsItem");
+                throw new ApiException(400, "Missing required parameter 'body' when calling ListingsApi->PatchListingsItem");
 
             var localVarPath = "/listings/2021-08-01/items/{sellerId}/{sku}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -776,11 +889,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -790,11 +903,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListingsItemSubmissionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListingsItemSubmissionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
+                (ListingsItemSubmissionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
         }
 
         /// <summary>
-        /// patchListingsItem Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -805,15 +918,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ListingsItemSubmissionResponse</returns>
-        public async System.Threading.Tasks.Task<ListingsItemSubmissionResponse> PatchListingsItemAsync (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
+        public async System.Threading.Tasks.Task<ListingsItemSubmissionResponse> PatchListingsItemAsync(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
         {
-             ApiResponse<ListingsItemSubmissionResponse> localVarResponse = await PatchListingsItemAsyncWithHttpInfo(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale);
-             return localVarResponse.Data;
+            ApiResponse<ListingsItemSubmissionResponse> localVarResponse = await PatchListingsItemAsyncWithHttpInfo(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// patchListingsItem Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -824,20 +937,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ApiResponse (ListingsItemSubmissionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> PatchListingsItemAsyncWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> PatchListingsItemAsyncWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPatchRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
         {
             // verify the required parameter 'sellerId' is set
             if (sellerId == null)
-                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsItemsApi->PatchListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsApi->PatchListingsItem");
             // verify the required parameter 'sku' is set
             if (sku == null)
-                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsItemsApi->PatchListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsApi->PatchListingsItem");
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsItemsApi->PatchListingsItem");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsApi->PatchListingsItem");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ListingsItemsApi->PatchListingsItem");
+                throw new ApiException(400, "Missing required parameter 'body' when calling ListingsApi->PatchListingsItem");
 
             var localVarPath = "/listings/2021-08-01/items/{sellerId}/{sku}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -878,11 +991,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -892,11 +1005,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListingsItemSubmissionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListingsItemSubmissionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
+                (ListingsItemSubmissionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
         }
 
         /// <summary>
-        /// putListingsItem Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -907,14 +1020,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ListingsItemSubmissionResponse</returns>
-        public ListingsItemSubmissionResponse PutListingsItem (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
+        public ListingsItemSubmissionResponse PutListingsItem(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
         {
-             ApiResponse<ListingsItemSubmissionResponse> localVarResponse = PutListingsItemWithHttpInfo(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale);
-             return localVarResponse.Data;
+            ApiResponse<ListingsItemSubmissionResponse> localVarResponse = PutListingsItemWithHttpInfo(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// putListingsItem Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -925,20 +1038,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ApiResponse of ListingsItemSubmissionResponse</returns>
-        public ApiResponse< ListingsItemSubmissionResponse > PutListingsItemWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
+        public ApiResponse<ListingsItemSubmissionResponse> PutListingsItemWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
         {
             // verify the required parameter 'sellerId' is set
             if (sellerId == null)
-                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsItemsApi->PutListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsApi->PutListingsItem");
             // verify the required parameter 'sku' is set
             if (sku == null)
-                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsItemsApi->PutListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsApi->PutListingsItem");
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsItemsApi->PutListingsItem");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsApi->PutListingsItem");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ListingsItemsApi->PutListingsItem");
+                throw new ApiException(400, "Missing required parameter 'body' when calling ListingsApi->PutListingsItem");
 
             var localVarPath = "/listings/2021-08-01/items/{sellerId}/{sku}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -979,11 +1092,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -993,11 +1106,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListingsItemSubmissionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListingsItemSubmissionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
+                (ListingsItemSubmissionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
         }
 
         /// <summary>
-        /// putListingsItem Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -1008,15 +1121,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ListingsItemSubmissionResponse</returns>
-        public async System.Threading.Tasks.Task<ListingsItemSubmissionResponse> PutListingsItemAsync (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
+        public async System.Threading.Tasks.Task<ListingsItemSubmissionResponse> PutListingsItemAsync(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
         {
-             ApiResponse<ListingsItemSubmissionResponse> localVarResponse = await PutListingsItemAsyncWithHttpInfo(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale);
-             return localVarResponse.Data;
+            ApiResponse<ListingsItemSubmissionResponse> localVarResponse = await PutListingsItemAsyncWithHttpInfo(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// putListingsItem Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when &#x60;mode&#x60; is &#x60;VALIDATION_PREVIEW&#x60;.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
@@ -1027,20 +1140,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="mode">The mode of operation for the request. (optional)</param>
         /// <param name="issueLocale">A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ApiResponse (ListingsItemSubmissionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> PutListingsItemAsyncWithHttpInfo (string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListingsItemSubmissionResponse>> PutListingsItemAsyncWithHttpInfo(string sellerId, string sku, List<string> marketplaceIds, ListingsItemPutRequest body, List<string> includedData = null, string mode = null, string issueLocale = null)
         {
             // verify the required parameter 'sellerId' is set
             if (sellerId == null)
-                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsItemsApi->PutListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsApi->PutListingsItem");
             // verify the required parameter 'sku' is set
             if (sku == null)
-                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsItemsApi->PutListingsItem");
+                throw new ApiException(400, "Missing required parameter 'sku' when calling ListingsApi->PutListingsItem");
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsItemsApi->PutListingsItem");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsApi->PutListingsItem");
             // verify the required parameter 'body' is set
             if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling ListingsItemsApi->PutListingsItem");
+                throw new ApiException(400, "Missing required parameter 'body' when calling ListingsApi->PutListingsItem");
 
             var localVarPath = "/listings/2021-08-01/items/{sellerId}/{sku}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1081,11 +1194,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1095,7 +1208,256 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListingsItemSubmissionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListingsItemSubmissionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
+                (ListingsItemSubmissionResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListingsItemSubmissionResponse)));
+        }
+
+        /// <summary>
+        ///  Search for and return a list of selling partner listings items and their respective details.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
+        /// <param name="issueLocale">A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)</param>
+        /// <param name="identifiersType">A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)</param>
+        /// <param name="variationParentSku">Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)</param>
+        /// <param name="packageHierarchySku">Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)</param>
+        /// <param name="createdAfter">A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="createdBefore">A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedAfter">A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedBefore">A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="withIssueSeverity">Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)</param>
+        /// <param name="withStatus">Filter results to include only listing items that have the specified status. (optional)</param>
+        /// <param name="withoutStatus">Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)</param>
+        /// <param name="sortBy">An attribute by which to sort the returned listing items. (optional, default to lastUpdatedDate)</param>
+        /// <param name="sortOrder">The order in which to sort the result items. (optional, default to DESC)</param>
+        /// <param name="pageSize">The number of results that you want to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <returns>ItemSearchResults</returns>
+        public ItemSearchResults SearchListingsItems(string sellerId, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null, List<string> identifiers = null, string identifiersType = null, string variationParentSku = null, string packageHierarchySku = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? lastUpdatedAfter = null, DateTime? lastUpdatedBefore = null, List<string> withIssueSeverity = null, List<string> withStatus = null, List<string> withoutStatus = null, string sortBy = null, string sortOrder = null, int? pageSize = null, string pageToken = null)
+        {
+            ApiResponse<ItemSearchResults> localVarResponse = SearchListingsItemsWithHttpInfo(sellerId, marketplaceIds, issueLocale, includedData, identifiers, identifiersType, variationParentSku, packageHierarchySku, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, withIssueSeverity, withStatus, withoutStatus, sortBy, sortOrder, pageSize, pageToken);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Search for and return a list of selling partner listings items and their respective details.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
+        /// <param name="issueLocale">A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)</param>
+        /// <param name="identifiersType">A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)</param>
+        /// <param name="variationParentSku">Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)</param>
+        /// <param name="packageHierarchySku">Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)</param>
+        /// <param name="createdAfter">A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="createdBefore">A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedAfter">A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedBefore">A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="withIssueSeverity">Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)</param>
+        /// <param name="withStatus">Filter results to include only listing items that have the specified status. (optional)</param>
+        /// <param name="withoutStatus">Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)</param>
+        /// <param name="sortBy">An attribute by which to sort the returned listing items. (optional, default to lastUpdatedDate)</param>
+        /// <param name="sortOrder">The order in which to sort the result items. (optional, default to DESC)</param>
+        /// <param name="pageSize">The number of results that you want to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <returns>ApiResponse of ItemSearchResults</returns>
+        public ApiResponse<ItemSearchResults> SearchListingsItemsWithHttpInfo(string sellerId, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null, List<string> identifiers = null, string identifiersType = null, string variationParentSku = null, string packageHierarchySku = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? lastUpdatedAfter = null, DateTime? lastUpdatedBefore = null, List<string> withIssueSeverity = null, List<string> withStatus = null, List<string> withoutStatus = null, string sortBy = null, string sortOrder = null, int? pageSize = null, string pageToken = null)
+        {
+            // verify the required parameter 'sellerId' is set
+            if (sellerId == null)
+                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsApi->SearchListingsItems");
+            // verify the required parameter 'marketplaceIds' is set
+            if (marketplaceIds == null)
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsApi->SearchListingsItems");
+
+            var localVarPath = "/listings/2021-08-01/items/{sellerId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sellerId != null) localVarPathParams.Add("sellerId", this.Configuration.ApiClient.ParameterToString(sellerId)); // path parameter
+            if (marketplaceIds != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "marketplaceIds", marketplaceIds)); // query parameter
+            if (issueLocale != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "issueLocale", issueLocale)); // query parameter
+            if (includedData != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "includedData", includedData)); // query parameter
+            if (identifiers != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "identifiers", identifiers)); // query parameter
+            if (identifiersType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "identifiersType", identifiersType)); // query parameter
+            if (variationParentSku != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "variationParentSku", variationParentSku)); // query parameter
+            if (packageHierarchySku != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "packageHierarchySku", packageHierarchySku)); // query parameter
+            if (createdAfter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "createdAfter", createdAfter)); // query parameter
+            if (createdBefore != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "createdBefore", createdBefore)); // query parameter
+            if (lastUpdatedAfter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "lastUpdatedAfter", lastUpdatedAfter)); // query parameter
+            if (lastUpdatedBefore != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "lastUpdatedBefore", lastUpdatedBefore)); // query parameter
+            if (withIssueSeverity != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "withIssueSeverity", withIssueSeverity)); // query parameter
+            if (withStatus != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "withStatus", withStatus)); // query parameter
+            if (withoutStatus != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "withoutStatus", withoutStatus)); // query parameter
+            if (sortBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sortBy", sortBy)); // query parameter
+            if (sortOrder != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sortOrder", sortOrder)); // query parameter
+            if (pageSize != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pageSize", pageSize)); // query parameter
+            if (pageToken != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pageToken", pageToken)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchListingsItems", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ItemSearchResults>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ItemSearchResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemSearchResults)));
+        }
+
+        /// <summary>
+        ///  Search for and return a list of selling partner listings items and their respective details.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
+        /// <param name="issueLocale">A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)</param>
+        /// <param name="identifiersType">A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)</param>
+        /// <param name="variationParentSku">Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)</param>
+        /// <param name="packageHierarchySku">Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)</param>
+        /// <param name="createdAfter">A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="createdBefore">A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedAfter">A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedBefore">A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="withIssueSeverity">Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)</param>
+        /// <param name="withStatus">Filter results to include only listing items that have the specified status. (optional)</param>
+        /// <param name="withoutStatus">Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)</param>
+        /// <param name="sortBy">An attribute by which to sort the returned listing items. (optional, default to lastUpdatedDate)</param>
+        /// <param name="sortOrder">The order in which to sort the result items. (optional, default to DESC)</param>
+        /// <param name="pageSize">The number of results that you want to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <returns>Task of ItemSearchResults</returns>
+        public async System.Threading.Tasks.Task<ItemSearchResults> SearchListingsItemsAsync(string sellerId, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null, List<string> identifiers = null, string identifiersType = null, string variationParentSku = null, string packageHierarchySku = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? lastUpdatedAfter = null, DateTime? lastUpdatedBefore = null, List<string> withIssueSeverity = null, List<string> withStatus = null, List<string> withoutStatus = null, string sortBy = null, string sortOrder = null, int? pageSize = null, string pageToken = null)
+        {
+            ApiResponse<ItemSearchResults> localVarResponse = await SearchListingsItemsAsyncWithHttpInfo(sellerId, marketplaceIds, issueLocale, includedData, identifiers, identifiersType, variationParentSku, packageHierarchySku, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, withIssueSeverity, withStatus, withoutStatus, sortBy, sortOrder, pageSize, pageToken);
+            return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  Search for and return a list of selling partner listings items and their respective details.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 5 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellerId">A selling partner identifier, such as a merchant account or vendor code.</param>
+        /// <param name="marketplaceIds">A comma-delimited list of Amazon marketplace identifiers for the request.</param>
+        /// <param name="issueLocale">A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)</param>
+        /// <param name="includedData">A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional, default to [&quot;summaries&quot;])</param>
+        /// <param name="identifiers">A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)</param>
+        /// <param name="identifiersType">A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)</param>
+        /// <param name="variationParentSku">Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)</param>
+        /// <param name="packageHierarchySku">Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)</param>
+        /// <param name="createdAfter">A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="createdBefore">A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedAfter">A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="lastUpdatedBefore">A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)</param>
+        /// <param name="withIssueSeverity">Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)</param>
+        /// <param name="withStatus">Filter results to include only listing items that have the specified status. (optional)</param>
+        /// <param name="withoutStatus">Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)</param>
+        /// <param name="sortBy">An attribute by which to sort the returned listing items. (optional, default to lastUpdatedDate)</param>
+        /// <param name="sortOrder">The order in which to sort the result items. (optional, default to DESC)</param>
+        /// <param name="pageSize">The number of results that you want to include on each page. (optional, default to 10)</param>
+        /// <param name="pageToken">A token that you can use to fetch a specific page when there are multiple pages of results. (optional)</param>
+        /// <returns>Task of ApiResponse (ItemSearchResults)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ItemSearchResults>> SearchListingsItemsAsyncWithHttpInfo(string sellerId, List<string> marketplaceIds, string issueLocale = null, List<string> includedData = null, List<string> identifiers = null, string identifiersType = null, string variationParentSku = null, string packageHierarchySku = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? lastUpdatedAfter = null, DateTime? lastUpdatedBefore = null, List<string> withIssueSeverity = null, List<string> withStatus = null, List<string> withoutStatus = null, string sortBy = null, string sortOrder = null, int? pageSize = null, string pageToken = null)
+        {
+            // verify the required parameter 'sellerId' is set
+            if (sellerId == null)
+                throw new ApiException(400, "Missing required parameter 'sellerId' when calling ListingsApi->SearchListingsItems");
+            // verify the required parameter 'marketplaceIds' is set
+            if (marketplaceIds == null)
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling ListingsApi->SearchListingsItems");
+
+            var localVarPath = "/listings/2021-08-01/items/{sellerId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sellerId != null) localVarPathParams.Add("sellerId", this.Configuration.ApiClient.ParameterToString(sellerId)); // path parameter
+            if (marketplaceIds != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "marketplaceIds", marketplaceIds)); // query parameter
+            if (issueLocale != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "issueLocale", issueLocale)); // query parameter
+            if (includedData != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "includedData", includedData)); // query parameter
+            if (identifiers != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "identifiers", identifiers)); // query parameter
+            if (identifiersType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "identifiersType", identifiersType)); // query parameter
+            if (variationParentSku != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "variationParentSku", variationParentSku)); // query parameter
+            if (packageHierarchySku != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "packageHierarchySku", packageHierarchySku)); // query parameter
+            if (createdAfter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "createdAfter", createdAfter)); // query parameter
+            if (createdBefore != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "createdBefore", createdBefore)); // query parameter
+            if (lastUpdatedAfter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "lastUpdatedAfter", lastUpdatedAfter)); // query parameter
+            if (lastUpdatedBefore != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "lastUpdatedBefore", lastUpdatedBefore)); // query parameter
+            if (withIssueSeverity != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "withIssueSeverity", withIssueSeverity)); // query parameter
+            if (withStatus != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "withStatus", withStatus)); // query parameter
+            if (withoutStatus != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "withoutStatus", withoutStatus)); // query parameter
+            if (sortBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sortBy", sortBy)); // query parameter
+            if (sortOrder != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sortOrder", sortOrder)); // query parameter
+            if (pageSize != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pageSize", pageSize)); // query parameter
+            if (pageToken != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pageToken", pageToken)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchListingsItems", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ItemSearchResults>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ItemSearchResults)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemSearchResults)));
         }
 
 
@@ -1109,17 +1471,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public ListingsItemsApi Build() 
+            public ListingsItemsApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

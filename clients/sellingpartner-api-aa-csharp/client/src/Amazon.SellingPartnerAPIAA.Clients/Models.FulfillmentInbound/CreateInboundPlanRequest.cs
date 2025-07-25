@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The &#x60;createInboundPlan&#x60; request.
     /// </summary>
     [DataContract]
-    public partial class CreateInboundPlanRequest :  IEquatable<CreateInboundPlanRequest>, IValidatableObject
+    public partial class CreateInboundPlanRequest : IEquatable<CreateInboundPlanRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInboundPlanRequest" /> class.
@@ -73,32 +68,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
             this.Name = name;
         }
-        
+
         /// <summary>
         /// Marketplaces where the items need to be shipped to. Currently only one marketplace can be selected in this request.
         /// </summary>
         /// <value>Marketplaces where the items need to be shipped to. Currently only one marketplace can be selected in this request.</value>
-        [DataMember(Name="destinationMarketplaces", EmitDefaultValue=false)]
+        [DataMember(Name = "destinationMarketplaces", EmitDefaultValue = false)]
         public List<string> DestinationMarketplaces { get; set; }
 
         /// <summary>
         /// Items included in this plan.
         /// </summary>
         /// <value>Items included in this plan.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<ItemInput> Items { get; set; }
 
         /// <summary>
         /// Name for the Inbound Plan. If one isn&#39;t provided, a default name will be provided.
         /// </summary>
         /// <value>Name for the Inbound Plan. If one isn&#39;t provided, a default name will be provided.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets SourceAddress
         /// </summary>
-        [DataMember(Name="sourceAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "sourceAddress", EmitDefaultValue = false)]
         public AddressInput SourceAddress { get; set; }
 
         /// <summary>
@@ -116,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -146,22 +141,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DestinationMarketplaces == input.DestinationMarketplaces ||
                     this.DestinationMarketplaces != null &&
                     this.DestinationMarketplaces.SequenceEqual(input.DestinationMarketplaces)
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&
                     this.Items.SequenceEqual(input.Items)
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.SourceAddress == input.SourceAddress ||
                     (this.SourceAddress != null &&
@@ -198,15 +193,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
-            if(this.Name != null && this.Name.Length > 40)
+            if (this.Name != null && this.Name.Length > 40)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 40.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 40.", new[] { "Name" });
             }
 
             // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
+            if (this.Name != null && this.Name.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new[] { "Name" });
             }
 
             yield break;

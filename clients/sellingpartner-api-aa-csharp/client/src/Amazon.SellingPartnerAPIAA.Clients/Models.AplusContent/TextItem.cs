@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,26 +9,20 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
     /// <summary>
-    /// Rich positional text, usually presented as a collection of bullet points.
+    /// Rich positional text that is usually presented as a collection of bullet points.
     /// </summary>
     [DataContract]
-    public partial class TextItem :  IEquatable<TextItem>, IValidatableObject
+    public partial class TextItem : IEquatable<TextItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TextItem" /> class.
@@ -61,18 +55,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
                 this.Text = text;
             }
         }
-        
+
         /// <summary>
         /// The rank or index of this text item within the collection. Different items cannot occupy the same position within a single collection.
         /// </summary>
         /// <value>The rank or index of this text item within the collection. Different items cannot occupy the same position within a single collection.</value>
-        [DataMember(Name="position", EmitDefaultValue=false)]
+        [DataMember(Name = "position", EmitDefaultValue = false)]
         public int? Position { get; set; }
 
         /// <summary>
         /// Gets or Sets Text
         /// </summary>
-        [DataMember(Name="text", EmitDefaultValue=false)]
+        [DataMember(Name = "text", EmitDefaultValue = false)]
         public TextComponent Text { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +112,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Position == input.Position ||
                     (this.Position != null &&
                     this.Position.Equals(input.Position))
-                ) && 
+                ) &&
                 (
                     this.Text == input.Text ||
                     (this.Text != null &&
@@ -156,15 +150,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Position (int?) maximum
-            if(this.Position > (int?)100)
+            if (this.Position > (int?)100)
             {
-                yield return new ValidationResult("Invalid value for Position, must be a value less than or equal to 100.", new [] { "Position" });
+                yield return new ValidationResult("Invalid value for Position, must be a value less than or equal to 100.", new[] { "Position" });
             }
 
             // Position (int?) minimum
-            if(this.Position < (int?)1)
+            if (this.Position < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for Position, must be a value greater than or equal to 1.", new [] { "Position" });
+                yield return new ValidationResult("Invalid value for Position, must be a value greater than or equal to 1.", new[] { "Position" });
             }
 
             yield break;

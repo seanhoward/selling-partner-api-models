@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The response schema for the &#x60;competitiveSummaryBatch&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class CompetitiveSummaryBatchResponse :  IEquatable<CompetitiveSummaryBatchResponse>, IValidatableObject
+    public partial class CompetitiveSummaryBatchResponse : IEquatable<CompetitiveSummaryBatchResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryBatchResponse" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 this.Responses = responses;
             }
         }
-        
+
         /// <summary>
         /// The response list for the &#x60;competitiveSummaryBatch&#x60; operation.
         /// </summary>
         /// <value>The response list for the &#x60;competitiveSummaryBatch&#x60; operation.</value>
-        [DataMember(Name="responses", EmitDefaultValue=false)]
+        [DataMember(Name = "responses", EmitDefaultValue = false)]
         public CompetitiveSummaryResponseList Responses { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Responses == input.Responses ||
                     (this.Responses != null &&

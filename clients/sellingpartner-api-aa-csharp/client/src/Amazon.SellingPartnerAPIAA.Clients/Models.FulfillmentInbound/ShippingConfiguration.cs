@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The shipping configurations supported for the packing option. Available modes are ground small parcel, freight less-than-truckload (LTL), freight full-truckload (FTL) palletized, freight FTL non-palletized, ocean less-than-container-load (LCL), ocean full-container load (FCL), air small parcel, and air small parcel express.
     /// </summary>
     [DataContract]
-    public partial class ShippingConfiguration :  IEquatable<ShippingConfiguration>, IValidatableObject
+    public partial class ShippingConfiguration : IEquatable<ShippingConfiguration>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingConfiguration" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.ShippingMode = shippingMode;
             this.ShippingSolution = shippingSolution;
         }
-        
+
         /// <summary>
         /// Mode of shipment transportation that this option will provide.  Possible values: &#x60;GROUND_SMALL_PARCEL&#x60;, &#x60;FREIGHT_LTL&#x60;, &#x60;FREIGHT_FTL_PALLET&#x60;, &#x60;FREIGHT_FTL_NONPALLET&#x60;, &#x60;OCEAN_LCL&#x60;, &#x60;OCEAN_FCL&#x60;, &#x60;AIR_SMALL_PARCEL&#x60;, &#x60;AIR_SMALL_PARCEL_EXPRESS&#x60;.
         /// </summary>
         /// <value>Mode of shipment transportation that this option will provide.  Possible values: &#x60;GROUND_SMALL_PARCEL&#x60;, &#x60;FREIGHT_LTL&#x60;, &#x60;FREIGHT_FTL_PALLET&#x60;, &#x60;FREIGHT_FTL_NONPALLET&#x60;, &#x60;OCEAN_LCL&#x60;, &#x60;OCEAN_FCL&#x60;, &#x60;AIR_SMALL_PARCEL&#x60;, &#x60;AIR_SMALL_PARCEL_EXPRESS&#x60;.</value>
-        [DataMember(Name="shippingMode", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingMode", EmitDefaultValue = false)]
         public string ShippingMode { get; set; }
 
         /// <summary>
         /// Shipping program for the option. Possible values: &#x60;AMAZON_PARTNERED_CARRIER&#x60;, &#x60;USE_YOUR_OWN_CARRIER&#x60;.
         /// </summary>
         /// <value>Shipping program for the option. Possible values: &#x60;AMAZON_PARTNERED_CARRIER&#x60;, &#x60;USE_YOUR_OWN_CARRIER&#x60;.</value>
-        [DataMember(Name="shippingSolution", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingSolution", EmitDefaultValue = false)]
         public string ShippingSolution { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShippingMode == input.ShippingMode ||
                     (this.ShippingMode != null &&
                     this.ShippingMode.Equals(input.ShippingMode))
-                ) && 
+                ) &&
                 (
                     this.ShippingSolution == input.ShippingSolution ||
                     (this.ShippingSolution != null &&
@@ -136,27 +129,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ShippingMode (string) maxLength
-            if(this.ShippingMode != null && this.ShippingMode.Length > 1024)
+            if (this.ShippingMode != null && this.ShippingMode.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for ShippingMode, length must be less than 1024.", new [] { "ShippingMode" });
+                yield return new ValidationResult("Invalid value for ShippingMode, length must be less than 1024.", new[] { "ShippingMode" });
             }
 
             // ShippingMode (string) minLength
-            if(this.ShippingMode != null && this.ShippingMode.Length < 1)
+            if (this.ShippingMode != null && this.ShippingMode.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for ShippingMode, length must be greater than 1.", new [] { "ShippingMode" });
+                yield return new ValidationResult("Invalid value for ShippingMode, length must be greater than 1.", new[] { "ShippingMode" });
             }
 
             // ShippingSolution (string) maxLength
-            if(this.ShippingSolution != null && this.ShippingSolution.Length > 1024)
+            if (this.ShippingSolution != null && this.ShippingSolution.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for ShippingSolution, length must be less than 1024.", new [] { "ShippingSolution" });
+                yield return new ValidationResult("Invalid value for ShippingSolution, length must be less than 1024.", new[] { "ShippingSolution" });
             }
 
             // ShippingSolution (string) minLength
-            if(this.ShippingSolution != null && this.ShippingSolution.Length < 1)
+            if (this.ShippingSolution != null && this.ShippingSolution.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for ShippingSolution, length must be greater than 1.", new [] { "ShippingSolution" });
+                yield return new ValidationResult("Invalid value for ShippingSolution, length must be greater than 1.", new[] { "ShippingSolution" });
             }
 
             yield break;

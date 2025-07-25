@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Sellers
  *
- * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
+ * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
  *
  * OpenAPI spec version: v1
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
     /// Represents an address
     /// </summary>
     [DataContract]
-    public partial class Address :  IEquatable<Address>, IValidatableObject
+    public partial class Address : IEquatable<Address>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -69,47 +63,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             this.City = city;
             this.PostalCode = postalCode;
         }
-        
+
         /// <summary>
         /// Street address information.
         /// </summary>
         /// <value>Street address information.</value>
-        [DataMember(Name="addressLine1", EmitDefaultValue=false)]
+        [DataMember(Name = "addressLine1", EmitDefaultValue = false)]
         public string AddressLine1 { get; set; }
 
         /// <summary>
         /// Additional street address information.
         /// </summary>
         /// <value>Additional street address information.</value>
-        [DataMember(Name="addressLine2", EmitDefaultValue=false)]
+        [DataMember(Name = "addressLine2", EmitDefaultValue = false)]
         public string AddressLine2 { get; set; }
 
         /// <summary>
         /// The country code in two-character ISO 3166-1 alpha-2 format.
         /// </summary>
         /// <value>The country code in two-character ISO 3166-1 alpha-2 format.</value>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
         /// The state or province code.
         /// </summary>
         /// <value>The state or province code.</value>
-        [DataMember(Name="stateOrProvinceCode", EmitDefaultValue=false)]
+        [DataMember(Name = "stateOrProvinceCode", EmitDefaultValue = false)]
         public string StateOrProvinceCode { get; set; }
 
         /// <summary>
         /// The city.
         /// </summary>
         /// <value>The city.</value>
-        [DataMember(Name="city", EmitDefaultValue=false)]
+        [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// The postal code.
         /// </summary>
         /// <value>The postal code.</value>
-        [DataMember(Name="postalCode", EmitDefaultValue=false)]
+        [DataMember(Name = "postalCode", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
         /// <summary>
@@ -129,7 +123,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -159,32 +153,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AddressLine1 == input.AddressLine1 ||
                     (this.AddressLine1 != null &&
                     this.AddressLine1.Equals(input.AddressLine1))
-                ) && 
+                ) &&
                 (
                     this.AddressLine2 == input.AddressLine2 ||
                     (this.AddressLine2 != null &&
                     this.AddressLine2.Equals(input.AddressLine2))
-                ) && 
+                ) &&
                 (
                     this.CountryCode == input.CountryCode ||
                     (this.CountryCode != null &&
                     this.CountryCode.Equals(input.CountryCode))
-                ) && 
+                ) &&
                 (
                     this.StateOrProvinceCode == input.StateOrProvinceCode ||
                     (this.StateOrProvinceCode != null &&
                     this.StateOrProvinceCode.Equals(input.StateOrProvinceCode))
-                ) && 
+                ) &&
                 (
                     this.City == input.City ||
                     (this.City != null &&
                     this.City.Equals(input.City))
-                ) && 
+                ) &&
                 (
                     this.PostalCode == input.PostalCode ||
                     (this.PostalCode != null &&

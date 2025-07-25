@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Information used to determine the tax compliance.
     /// </summary>
     [DataContract]
-    public partial class TaxDetails :  IEquatable<TaxDetails>, IValidatableObject
+    public partial class TaxDetails : IEquatable<TaxDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxDetails" /> class.
@@ -42,25 +36,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.HsnCode = hsnCode;
             this.TaxRates = taxRates;
         }
-        
+
         /// <summary>
         /// Gets or Sets DeclaredValue
         /// </summary>
-        [DataMember(Name="declaredValue", EmitDefaultValue=false)]
+        [DataMember(Name = "declaredValue", EmitDefaultValue = false)]
         public Currency DeclaredValue { get; set; }
 
         /// <summary>
         /// Harmonized System of Nomenclature code.
         /// </summary>
         /// <value>Harmonized System of Nomenclature code.</value>
-        [DataMember(Name="hsnCode", EmitDefaultValue=false)]
+        [DataMember(Name = "hsnCode", EmitDefaultValue = false)]
         public string HsnCode { get; set; }
 
         /// <summary>
         /// List of tax rates.
         /// </summary>
         /// <value>List of tax rates.</value>
-        [DataMember(Name="taxRates", EmitDefaultValue=false)]
+        [DataMember(Name = "taxRates", EmitDefaultValue = false)]
         public List<TaxRate> TaxRates { get; set; }
 
         /// <summary>
@@ -77,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -107,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeclaredValue == input.DeclaredValue ||
                     (this.DeclaredValue != null &&
                     this.DeclaredValue.Equals(input.DeclaredValue))
-                ) && 
+                ) &&
                 (
                     this.HsnCode == input.HsnCode ||
                     (this.HsnCode != null &&
                     this.HsnCode.Equals(input.HsnCode))
-                ) && 
+                ) &&
                 (
                     this.TaxRates == input.TaxRates ||
                     this.TaxRates != null &&
@@ -152,15 +146,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // HsnCode (string) maxLength
-            if(this.HsnCode != null && this.HsnCode.Length > 1024)
+            if (this.HsnCode != null && this.HsnCode.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for HsnCode, length must be less than 1024.", new [] { "HsnCode" });
+                yield return new ValidationResult("Invalid value for HsnCode, length must be less than 1024.", new[] { "HsnCode" });
             }
 
             // HsnCode (string) minLength
-            if(this.HsnCode != null && this.HsnCode.Length < 1)
+            if (this.HsnCode != null && this.HsnCode.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for HsnCode, length must be greater than 1.", new [] { "HsnCode" });
+                yield return new ValidationResult("Invalid value for HsnCode, length must be greater than 1.", new[] { "HsnCode" });
             }
 
             yield break;

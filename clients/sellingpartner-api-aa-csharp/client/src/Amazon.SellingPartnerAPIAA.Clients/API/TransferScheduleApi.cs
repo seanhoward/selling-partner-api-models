@@ -30,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -43,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -55,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">A unique reference ID for a scheduled transfer.</param>
         /// <returns>DeleteTransferSchedule</returns>
         DeleteTransferSchedule DeleteScheduleTransaction(string transferScheduleId);
@@ -66,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">A unique reference ID for a scheduled transfer.</param>
         /// <returns>ApiResponse of DeleteTransferSchedule</returns>
         ApiResponse<DeleteTransferSchedule> DeleteScheduleTransactionWithHttpInfo(string transferScheduleId);
@@ -76,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Find a particular Amazon Seller Wallet account transfer schedule.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">The schedule ID of the Amazon Seller Wallet transfer.</param>
         /// <returns>TransferSchedule</returns>
         TransferSchedule GetTransferSchedule(string transferScheduleId);
@@ -87,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Find a particular Amazon Seller Wallet account transfer schedule.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">The schedule ID of the Amazon Seller Wallet transfer.</param>
         /// <returns>ApiResponse of TransferSchedule</returns>
         ApiResponse<TransferSchedule> GetTransferScheduleWithHttpInfo(string transferScheduleId);
@@ -97,7 +97,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>TransferScheduleListing</returns>
@@ -109,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>ApiResponse of TransferScheduleListing</returns>
@@ -120,7 +120,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the scheduled transfer request that is to be updated.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -133,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the scheduled transfer request that is to be updated.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -147,7 +147,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -160,7 +160,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -172,7 +172,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">A unique reference ID for a scheduled transfer.</param>
         /// <returns>Task of DeleteTransferSchedule</returns>
         System.Threading.Tasks.Task<DeleteTransferSchedule> DeleteScheduleTransactionAsync(string transferScheduleId);
@@ -183,7 +183,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">A unique reference ID for a scheduled transfer.</param>
         /// <returns>Task of ApiResponse (DeleteTransferSchedule)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteTransferSchedule>> DeleteScheduleTransactionAsyncWithHttpInfo(string transferScheduleId);
@@ -193,7 +193,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Find a particular Amazon Seller Wallet account transfer schedule.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">The schedule ID of the Amazon Seller Wallet transfer.</param>
         /// <returns>Task of TransferSchedule</returns>
         System.Threading.Tasks.Task<TransferSchedule> GetTransferScheduleAsync(string transferScheduleId);
@@ -204,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Find a particular Amazon Seller Wallet account transfer schedule.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">The schedule ID of the Amazon Seller Wallet transfer.</param>
         /// <returns>Task of ApiResponse (TransferSchedule)</returns>
         System.Threading.Tasks.Task<ApiResponse<TransferSchedule>> GetTransferScheduleAsyncWithHttpInfo(string transferScheduleId);
@@ -214,7 +214,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of TransferScheduleListing</returns>
@@ -226,7 +226,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of ApiResponse (TransferScheduleListing)</returns>
@@ -237,7 +237,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the scheduled transfer request that is to be updated.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -250,7 +250,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the scheduled transfer request that is to be updated.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -264,7 +264,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     /// </summary>
     public partial class TransferScheduleApi : ITransferScheduleApi
     {
-        private Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferScheduleApi"/> class
@@ -272,10 +272,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public TransferScheduleApi(Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration)
+        public TransferScheduleApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -301,12 +301,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -344,7 +344,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Create a transfer schedule request from Amazon Seller Wallet account to another customer-provided account Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -358,7 +358,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Create a transfer schedule request from Amazon Seller Wallet account to another customer-provided account Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -430,7 +430,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Create a transfer schedule request from Amazon Seller Wallet account to another customer-provided account Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -445,7 +445,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Create a transfer schedule request from Amazon Seller Wallet account to another customer-provided account Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the request.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -517,7 +517,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">A unique reference ID for a scheduled transfer.</param>
         /// <returns>DeleteTransferSchedule</returns>
         public DeleteTransferSchedule DeleteScheduleTransaction(string transferScheduleId)
@@ -529,7 +529,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">A unique reference ID for a scheduled transfer.</param>
         /// <returns>ApiResponse of DeleteTransferSchedule</returns>
         public ApiResponse<DeleteTransferSchedule> DeleteScheduleTransactionWithHttpInfo(string transferScheduleId)
@@ -584,7 +584,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">A unique reference ID for a scheduled transfer.</param>
         /// <returns>Task of DeleteTransferSchedule</returns>
         public async System.Threading.Tasks.Task<DeleteTransferSchedule> DeleteScheduleTransactionAsync(string transferScheduleId)
@@ -597,7 +597,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">A unique reference ID for a scheduled transfer.</param>
         /// <returns>Task of ApiResponse (DeleteTransferSchedule)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<DeleteTransferSchedule>> DeleteScheduleTransactionAsyncWithHttpInfo(string transferScheduleId)
@@ -652,7 +652,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier Find a particular Amazon Seller Wallet account transfer schedule.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">The schedule ID of the Amazon Seller Wallet transfer.</param>
         /// <returns>TransferSchedule</returns>
         public TransferSchedule GetTransferSchedule(string transferScheduleId)
@@ -664,7 +664,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier Find a particular Amazon Seller Wallet account transfer schedule.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">The schedule ID of the Amazon Seller Wallet transfer.</param>
         /// <returns>ApiResponse of TransferSchedule</returns>
         public ApiResponse<TransferSchedule> GetTransferScheduleWithHttpInfo(string transferScheduleId)
@@ -719,7 +719,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier Find a particular Amazon Seller Wallet account transfer schedule.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">The schedule ID of the Amazon Seller Wallet transfer.</param>
         /// <returns>Task of TransferSchedule</returns>
         public async System.Threading.Tasks.Task<TransferSchedule> GetTransferScheduleAsync(string transferScheduleId)
@@ -732,7 +732,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier Find a particular Amazon Seller Wallet account transfer schedule.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferScheduleId">The schedule ID of the Amazon Seller Wallet transfer.</param>
         /// <returns>Task of ApiResponse (TransferSchedule)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<TransferSchedule>> GetTransferScheduleAsyncWithHttpInfo(string transferScheduleId)
@@ -787,7 +787,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// The API will return all the transfer schedules for a given Amazon Seller Wallet account Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>TransferScheduleListing</returns>
@@ -800,7 +800,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// The API will return all the transfer schedules for a given Amazon Seller Wallet account Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>ApiResponse of TransferScheduleListing</returns>
@@ -857,7 +857,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// The API will return all the transfer schedules for a given Amazon Seller Wallet account Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of TransferScheduleListing</returns>
@@ -871,7 +871,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// The API will return all the transfer schedules for a given Amazon Seller Wallet account Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the Amazon Seller Wallet account.</param>
         /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <returns>Task of ApiResponse (TransferScheduleListing)</returns>
@@ -928,7 +928,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated. Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the scheduled transfer request that is to be updated.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -942,7 +942,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated. Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the scheduled transfer request that is to be updated.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -1014,7 +1014,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated. Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the scheduled transfer request that is to be updated.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -1029,7 +1029,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         /// Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated. Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The payload of the scheduled transfer request that is to be updated.</param>
         /// <param name="destAccountDigitalSignature">Digital signature for the destination bank account details.</param>
         /// <param name="amountDigitalSignature">Digital signature for the source currency transaction amount.</param>
@@ -1125,7 +1125,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 }
 
 
-                Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration = new Amazon.SellingPartnerAPIAA.Clients.Client.Configuration
+                Configuration configuration = new Configuration
                 {
                     AuthorizationCredentials = lwaAuthorizationCredentials,
                     RateLimitConfig = rateLimitConfiguration,

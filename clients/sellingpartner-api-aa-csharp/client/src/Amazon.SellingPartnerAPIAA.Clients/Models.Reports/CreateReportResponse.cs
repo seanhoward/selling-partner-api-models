@@ -1,5 +1,5 @@
 /* 
- * Report v2021-06-30
+ * Selling Partner API for Reports
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
     /// The response schema.
     /// </summary>
     [DataContract]
-    public partial class CreateReportResponse :  IEquatable<CreateReportResponse>, IValidatableObject
+    public partial class CreateReportResponse : IEquatable<CreateReportResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateReportResponse" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
                 this.ReportId = reportId;
             }
         }
-        
+
         /// <summary>
         /// The identifier for the report. This identifier is unique only in combination with a seller ID.
         /// </summary>
         /// <value>The identifier for the report. This identifier is unique only in combination with a seller ID.</value>
-        [DataMember(Name="reportId", EmitDefaultValue=false)]
+        [DataMember(Name = "reportId", EmitDefaultValue = false)]
         public string ReportId { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReportId == input.ReportId ||
                     (this.ReportId != null &&

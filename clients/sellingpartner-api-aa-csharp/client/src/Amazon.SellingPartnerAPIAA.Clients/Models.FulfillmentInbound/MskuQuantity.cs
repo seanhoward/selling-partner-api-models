@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Represents an MSKU and the related quantity.
     /// </summary>
     [DataContract]
-    public partial class MskuQuantity :  IEquatable<MskuQuantity>, IValidatableObject
+    public partial class MskuQuantity : IEquatable<MskuQuantity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MskuQuantity" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.Quantity = quantity;
             }
         }
-        
+
         /// <summary>
         /// The merchant SKU, a merchant-supplied identifier for a specific SKU.
         /// </summary>
         /// <value>The merchant SKU, a merchant-supplied identifier for a specific SKU.</value>
-        [DataMember(Name="msku", EmitDefaultValue=false)]
+        [DataMember(Name = "msku", EmitDefaultValue = false)]
         public string Msku { get; set; }
 
         /// <summary>
         /// A positive integer.
         /// </summary>
         /// <value>A positive integer.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Msku == input.Msku ||
                     (this.Msku != null &&
                     this.Msku.Equals(input.Msku))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
@@ -157,27 +151,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Msku (string) maxLength
-            if(this.Msku != null && this.Msku.Length > 40)
+            if (this.Msku != null && this.Msku.Length > 40)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new[] { "Msku" });
             }
 
             // Msku (string) minLength
-            if(this.Msku != null && this.Msku.Length < 1)
+            if (this.Msku != null && this.Msku.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new[] { "Msku" });
             }
 
             // Quantity (int?) maximum
-            if(this.Quantity > (int?)10000)
+            if (this.Quantity > (int?)10000)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new[] { "Quantity" });
             }
 
             // Quantity (int?) minimum
-            if(this.Quantity < (int?)1)
+            if (this.Quantity < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new[] { "Quantity" });
             }
 
             yield break;

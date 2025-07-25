@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
     /// Information required to create the query.
     /// </summary>
     [DataContract]
-    public partial class CreateQuerySpecification :  IEquatable<CreateQuerySpecification>, IValidatableObject
+    public partial class CreateQuerySpecification : IEquatable<CreateQuerySpecification>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateQuerySpecification" /> class.
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             }
             this.PaginationToken = paginationToken;
         }
-        
+
         /// <summary>
         /// The GraphQL query to submit. A query must be at most 8000 characters after unnecessary whitespace is removed.
         /// </summary>
         /// <value>The GraphQL query to submit. A query must be at most 8000 characters after unnecessary whitespace is removed.</value>
-        [DataMember(Name="query", EmitDefaultValue=false)]
+        [DataMember(Name = "query", EmitDefaultValue = false)]
         public string Query { get; set; }
 
         /// <summary>
         /// A token to fetch a certain page of query results when there are multiple pages of query results available. The value of this token must be fetched from the &#x60;pagination.nextToken&#x60; field of the &#x60;Query&#x60; object, and the &#x60;query&#x60; field for this object must also be set to the &#x60;query&#x60; field of the same &#x60;Query&#x60; object. A &#x60;Query&#x60; object can be retrieved from either the &#x60;getQueries&#x60; or &#x60;getQuery&#x60; operation. In the absence of this token value, the first page of query results will be requested.
         /// </summary>
         /// <value>A token to fetch a certain page of query results when there are multiple pages of query results available. The value of this token must be fetched from the &#x60;pagination.nextToken&#x60; field of the &#x60;Query&#x60; object, and the &#x60;query&#x60; field for this object must also be set to the &#x60;query&#x60; field of the same &#x60;Query&#x60; object. A &#x60;Query&#x60; object can be retrieved from either the &#x60;getQueries&#x60; or &#x60;getQuery&#x60; operation. In the absence of this token value, the first page of query results will be requested.</value>
-        [DataMember(Name="paginationToken", EmitDefaultValue=false)]
+        [DataMember(Name = "paginationToken", EmitDefaultValue = false)]
         public string PaginationToken { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DataKiosk
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Query == input.Query ||
                     (this.Query != null &&
                     this.Query.Equals(input.Query))
-                ) && 
+                ) &&
                 (
                     this.PaginationToken == input.PaginationToken ||
                     (this.PaginationToken != null &&

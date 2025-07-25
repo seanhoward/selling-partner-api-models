@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Request schema for the &#x60;getRangeSlotCapacity&#x60; operation. This schema is used to define the time range and capacity types that are being queried.
     /// </summary>
     [DataContract]
-    public partial class RangeSlotCapacityQuery :  IEquatable<RangeSlotCapacityQuery>, IValidatableObject
+    public partial class RangeSlotCapacityQuery : IEquatable<RangeSlotCapacityQuery>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RangeSlotCapacityQuery" /> class.
@@ -63,26 +58,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             }
             this.CapacityTypes = capacityTypes;
         }
-        
+
         /// <summary>
         /// An array of capacity types which are being requested. Default value is &#x60;[SCHEDULED_CAPACITY]&#x60;.
         /// </summary>
         /// <value>An array of capacity types which are being requested. Default value is &#x60;[SCHEDULED_CAPACITY]&#x60;.</value>
-        [DataMember(Name="capacityTypes", EmitDefaultValue=false)]
+        [DataMember(Name = "capacityTypes", EmitDefaultValue = false)]
         public List<CapacityType> CapacityTypes { get; set; }
 
         /// <summary>
         /// Start date time from which the capacity slots are being requested in ISO 8601 format.
         /// </summary>
         /// <value>Start date time from which the capacity slots are being requested in ISO 8601 format.</value>
-        [DataMember(Name="startDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
         public DateTime? StartDateTime { get; set; }
 
         /// <summary>
         /// End date time up to which the capacity slots are being requested in ISO 8601 format.
         /// </summary>
         /// <value>End date time up to which the capacity slots are being requested in ISO 8601 format.</value>
-        [DataMember(Name="endDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endDateTime", EmitDefaultValue = false)]
         public DateTime? EndDateTime { get; set; }
 
         /// <summary>
@@ -99,7 +94,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +124,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CapacityTypes == input.CapacityTypes ||
                     this.CapacityTypes != null &&
                     this.CapacityTypes.SequenceEqual(input.CapacityTypes)
-                ) && 
+                ) &&
                 (
                     this.StartDateTime == input.StartDateTime ||
                     (this.StartDateTime != null &&
                     this.StartDateTime.Equals(input.StartDateTime))
-                ) && 
+                ) &&
                 (
                     this.EndDateTime == input.EndDateTime ||
                     (this.EndDateTime != null &&

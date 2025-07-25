@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInventory
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
     /// The request body for the submitInventoryUpdate operation.
     /// </summary>
     [DataContract]
-    public partial class SubmitInventoryUpdateRequest :  IEquatable<SubmitInventoryUpdateRequest>, IValidatableObject
+    public partial class SubmitInventoryUpdateRequest : IEquatable<SubmitInventoryUpdateRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitInventoryUpdateRequest" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
         {
             this.Inventory = inventory;
         }
-        
+
         /// <summary>
         /// Inventory details required to update some or all items for the requested warehouse.
         /// </summary>
         /// <value>Inventory details required to update some or all items for the requested warehouse.</value>
-        [DataMember(Name="inventory", EmitDefaultValue=false)]
+        [DataMember(Name = "inventory", EmitDefaultValue = false)]
         public InventoryUpdate Inventory { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Inventory == input.Inventory ||
                     (this.Inventory != null &&

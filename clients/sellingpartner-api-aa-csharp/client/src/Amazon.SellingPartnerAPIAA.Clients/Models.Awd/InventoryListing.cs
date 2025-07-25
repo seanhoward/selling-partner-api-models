@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// AWD inventory payload.
     /// </summary>
     [DataContract]
-    public partial class InventoryListing :  IEquatable<InventoryListing>, IValidatableObject
+    public partial class InventoryListing : IEquatable<InventoryListing>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryListing" /> class.
@@ -53,19 +48,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             }
             this.NextToken = nextToken;
         }
-        
+
         /// <summary>
         /// List of inventory summaries.
         /// </summary>
         /// <value>List of inventory summaries.</value>
-        [DataMember(Name="inventory", EmitDefaultValue=false)]
+        [DataMember(Name = "inventory", EmitDefaultValue = false)]
         public List<InventorySummary> Inventory { get; set; }
 
         /// <summary>
         /// A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
         /// </summary>
         /// <value>A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.</value>
-        [DataMember(Name="nextToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextToken", EmitDefaultValue = false)]
         public string NextToken { get; set; }
 
         /// <summary>
@@ -81,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +106,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Inventory == input.Inventory ||
                     this.Inventory != null &&
                     this.Inventory.SequenceEqual(input.Inventory)
-                ) && 
+                ) &&
                 (
                     this.NextToken == input.NextToken ||
                     (this.NextToken != null &&

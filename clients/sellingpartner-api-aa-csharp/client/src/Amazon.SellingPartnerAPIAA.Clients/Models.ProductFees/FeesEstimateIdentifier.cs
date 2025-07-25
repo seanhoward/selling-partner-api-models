@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
@@ -28,17 +21,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
     /// An item identifier, marketplace, time of request, and other details that identify an estimate.
     /// </summary>
     [DataContract]
-    public partial class FeesEstimateIdentifier :  IEquatable<FeesEstimateIdentifier>, IValidatableObject
+    public partial class FeesEstimateIdentifier : IEquatable<FeesEstimateIdentifier>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets IdType
         /// </summary>
-        [DataMember(Name="IdType", EmitDefaultValue=false)]
+        [DataMember(Name = "IdType", EmitDefaultValue = false)]
         public IdType? IdType { get; set; }
         /// <summary>
         /// Gets or Sets OptionalFulfillmentProgram
         /// </summary>
-        [DataMember(Name="OptionalFulfillmentProgram", EmitDefaultValue=false)]
+        [DataMember(Name = "OptionalFulfillmentProgram", EmitDefaultValue = false)]
         public OptionalFulfillmentProgram? OptionalFulfillmentProgram { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimateIdentifier" /> class.
@@ -62,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             this.SellerInputIdentifier = sellerInputIdentifier;
             this.OptionalFulfillmentProgram = optionalFulfillmentProgram;
         }
-        
+
         /// <summary>
         /// A marketplace identifier.
         /// </summary>
         /// <value>A marketplace identifier.</value>
-        [DataMember(Name="MarketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "MarketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The seller identifier.
         /// </summary>
         /// <value>The seller identifier.</value>
-        [DataMember(Name="SellerId", EmitDefaultValue=false)]
+        [DataMember(Name = "SellerId", EmitDefaultValue = false)]
         public string SellerId { get; set; }
 
 
@@ -82,28 +75,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// The item identifier.
         /// </summary>
         /// <value>The item identifier.</value>
-        [DataMember(Name="IdValue", EmitDefaultValue=false)]
+        [DataMember(Name = "IdValue", EmitDefaultValue = false)]
         public string IdValue { get; set; }
 
         /// <summary>
         /// When true, the offer is fulfilled by Amazon.
         /// </summary>
         /// <value>When true, the offer is fulfilled by Amazon.</value>
-        [DataMember(Name="IsAmazonFulfilled", EmitDefaultValue=false)]
+        [DataMember(Name = "IsAmazonFulfilled", EmitDefaultValue = false)]
         public bool? IsAmazonFulfilled { get; set; }
 
         /// <summary>
         /// The item price on which the fee estimate is based.
         /// </summary>
         /// <value>The item price on which the fee estimate is based.</value>
-        [DataMember(Name="PriceToEstimateFees", EmitDefaultValue=false)]
+        [DataMember(Name = "PriceToEstimateFees", EmitDefaultValue = false)]
         public PriceToEstimateFees PriceToEstimateFees { get; set; }
 
         /// <summary>
         /// A unique identifier provided by the caller to track this request.
         /// </summary>
         /// <value>A unique identifier provided by the caller to track this request.</value>
-        [DataMember(Name="SellerInputIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "SellerInputIdentifier", EmitDefaultValue = false)]
         public string SellerInputIdentifier { get; set; }
 
 
@@ -126,7 +119,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -156,42 +149,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.SellerId == input.SellerId ||
                     (this.SellerId != null &&
                     this.SellerId.Equals(input.SellerId))
-                ) && 
+                ) &&
                 (
                     this.IdType == input.IdType ||
                     (this.IdType != null &&
                     this.IdType.Equals(input.IdType))
-                ) && 
+                ) &&
                 (
                     this.IdValue == input.IdValue ||
                     (this.IdValue != null &&
                     this.IdValue.Equals(input.IdValue))
-                ) && 
+                ) &&
                 (
                     this.IsAmazonFulfilled == input.IsAmazonFulfilled ||
                     (this.IsAmazonFulfilled != null &&
                     this.IsAmazonFulfilled.Equals(input.IsAmazonFulfilled))
-                ) && 
+                ) &&
                 (
                     this.PriceToEstimateFees == input.PriceToEstimateFees ||
                     (this.PriceToEstimateFees != null &&
                     this.PriceToEstimateFees.Equals(input.PriceToEstimateFees))
-                ) && 
+                ) &&
                 (
                     this.SellerInputIdentifier == input.SellerInputIdentifier ||
                     (this.SellerInputIdentifier != null &&
                     this.SellerInputIdentifier.Equals(input.SellerInputIdentifier))
-                ) && 
+                ) &&
                 (
                     this.OptionalFulfillmentProgram == input.OptionalFulfillmentProgram ||
                     (this.OptionalFulfillmentProgram != null &&

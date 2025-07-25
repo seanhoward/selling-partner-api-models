@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,39 +9,32 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
     /// <summary>
-    /// A decorator applied to a content string value in order to create rich text.
+    /// A decorator that is applied to a content string value in order to create rich text.
     /// </summary>
     [DataContract]
-    public partial class Decorator :  IEquatable<Decorator>, IValidatableObject
+    public partial class Decorator : IEquatable<Decorator>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public DecoratorType? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Decorator" /> class.
         /// </summary>
         /// <param name="type">type.</param>
-        /// <param name="offset">The starting character of this decorator within the content string. Use zero for the first character..</param>
-        /// <param name="length">The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters..</param>
-        /// <param name="depth">The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths..</param>
+        /// <param name="offset">The starting value of this decorator within the content string. Use zero (&#x60;0&#x60;) for the first value..</param>
+        /// <param name="length">The number of content characters to alter with this decorator. Decorators, such as line breaks, can have zero length and fit between characters..</param>
+        /// <param name="depth">The relative intensity or variation of this decorator. Decorators, such as bullet-points, can have multiple indentation depths..</param>
         public Decorator(DecoratorType? type = default, int? offset = default, int? length = default, int? depth = default)
         {
             this.Type = type;
@@ -49,27 +42,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             this.Length = length;
             this.Depth = depth;
         }
-        
+
 
         /// <summary>
-        /// The starting character of this decorator within the content string. Use zero for the first character.
+        /// The starting value of this decorator within the content string. Use zero (&#x60;0&#x60;) for the first value.
         /// </summary>
-        /// <value>The starting character of this decorator within the content string. Use zero for the first character.</value>
-        [DataMember(Name="offset", EmitDefaultValue=false)]
+        /// <value>The starting value of this decorator within the content string. Use zero (&#x60;0&#x60;) for the first value.</value>
+        [DataMember(Name = "offset", EmitDefaultValue = false)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters.
+        /// The number of content characters to alter with this decorator. Decorators, such as line breaks, can have zero length and fit between characters.
         /// </summary>
-        /// <value>The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters.</value>
-        [DataMember(Name="length", EmitDefaultValue=false)]
+        /// <value>The number of content characters to alter with this decorator. Decorators, such as line breaks, can have zero length and fit between characters.</value>
+        [DataMember(Name = "length", EmitDefaultValue = false)]
         public int? Length { get; set; }
 
         /// <summary>
-        /// The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths.
+        /// The relative intensity or variation of this decorator. Decorators, such as bullet-points, can have multiple indentation depths.
         /// </summary>
-        /// <value>The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths.</value>
-        [DataMember(Name="depth", EmitDefaultValue=false)]
+        /// <value>The relative intensity or variation of this decorator. Decorators, such as bullet-points, can have multiple indentation depths.</value>
+        [DataMember(Name = "depth", EmitDefaultValue = false)]
         public int? Depth { get; set; }
 
         /// <summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -117,22 +110,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     this.Offset == input.Offset ||
                     (this.Offset != null &&
                     this.Offset.Equals(input.Offset))
-                ) && 
+                ) &&
                 (
                     this.Length == input.Length ||
                     (this.Length != null &&
                     this.Length.Equals(input.Length))
-                ) && 
+                ) &&
                 (
                     this.Depth == input.Depth ||
                     (this.Depth != null &&
@@ -169,39 +162,39 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Offset (int?) maximum
-            if(this.Offset > (int?)10000)
+            if (this.Offset > (int?)10000)
             {
-                yield return new ValidationResult("Invalid value for Offset, must be a value less than or equal to 10000.", new [] { "Offset" });
+                yield return new ValidationResult("Invalid value for Offset, must be a value less than or equal to 10000.", new[] { "Offset" });
             }
 
             // Offset (int?) minimum
-            if(this.Offset < (int?)0)
+            if (this.Offset < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for Offset, must be a value greater than or equal to 0.", new [] { "Offset" });
+                yield return new ValidationResult("Invalid value for Offset, must be a value greater than or equal to 0.", new[] { "Offset" });
             }
 
             // Length (int?) maximum
-            if(this.Length > (int?)10000)
+            if (this.Length > (int?)10000)
             {
-                yield return new ValidationResult("Invalid value for Length, must be a value less than or equal to 10000.", new [] { "Length" });
+                yield return new ValidationResult("Invalid value for Length, must be a value less than or equal to 10000.", new[] { "Length" });
             }
 
             // Length (int?) minimum
-            if(this.Length < (int?)0)
+            if (this.Length < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for Length, must be a value greater than or equal to 0.", new [] { "Length" });
+                yield return new ValidationResult("Invalid value for Length, must be a value greater than or equal to 0.", new[] { "Length" });
             }
 
             // Depth (int?) maximum
-            if(this.Depth > (int?)100)
+            if (this.Depth > (int?)100)
             {
-                yield return new ValidationResult("Invalid value for Depth, must be a value less than or equal to 100.", new [] { "Depth" });
+                yield return new ValidationResult("Invalid value for Depth, must be a value less than or equal to 100.", new[] { "Depth" });
             }
 
             // Depth (int?) minimum
-            if(this.Depth < (int?)0)
+            if (this.Depth < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for Depth, must be a value greater than or equal to 0.", new [] { "Depth" });
+                yield return new ValidationResult("Invalid value for Depth, must be a value greater than or equal to 0.", new[] { "Depth" });
             }
 
             yield break;

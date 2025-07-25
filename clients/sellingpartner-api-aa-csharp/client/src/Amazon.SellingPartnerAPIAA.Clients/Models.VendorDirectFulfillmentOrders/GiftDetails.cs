@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
     /// Gift details for the item.
     /// </summary>
     [DataContract]
-    public partial class GiftDetails :  IEquatable<GiftDetails>, IValidatableObject
+    public partial class GiftDetails : IEquatable<GiftDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GiftDetails" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             this.GiftMessage = giftMessage;
             this.GiftWrapId = giftWrapId;
         }
-        
+
         /// <summary>
         /// Gift message to be printed in shipment.
         /// </summary>
         /// <value>Gift message to be printed in shipment.</value>
-        [DataMember(Name="giftMessage", EmitDefaultValue=false)]
+        [DataMember(Name = "giftMessage", EmitDefaultValue = false)]
         public string GiftMessage { get; set; }
 
         /// <summary>
         /// Gift wrap identifier for the gift wrapping, if any.
         /// </summary>
         /// <value>Gift wrap identifier for the gift wrapping, if any.</value>
-        [DataMember(Name="giftWrapId", EmitDefaultValue=false)]
+        [DataMember(Name = "giftWrapId", EmitDefaultValue = false)]
         public string GiftWrapId { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.GiftMessage == input.GiftMessage ||
                     (this.GiftMessage != null &&
                     this.GiftMessage.Equals(input.GiftMessage))
-                ) && 
+                ) &&
                 (
                     this.GiftWrapId == input.GiftWrapId ||
                     (this.GiftWrapId != null &&

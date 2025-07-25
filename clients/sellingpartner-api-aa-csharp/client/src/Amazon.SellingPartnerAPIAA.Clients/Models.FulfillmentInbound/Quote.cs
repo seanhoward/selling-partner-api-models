@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The estimated shipping cost associated with the transportation option.
     /// </summary>
     [DataContract]
-    public partial class Quote :  IEquatable<Quote>, IValidatableObject
+    public partial class Quote : IEquatable<Quote>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Quote" /> class.
@@ -55,25 +49,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.Expiration = expiration;
             this.VoidableUntil = voidableUntil;
         }
-        
+
         /// <summary>
         /// Gets or Sets Cost
         /// </summary>
-        [DataMember(Name="cost", EmitDefaultValue=false)]
+        [DataMember(Name = "cost", EmitDefaultValue = false)]
         public Currency Cost { get; set; }
 
         /// <summary>
         /// The time at which this transportation option quote expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;.
         /// </summary>
         /// <value>The time at which this transportation option quote expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;.</value>
-        [DataMember(Name="expiration", EmitDefaultValue=false)]
+        [DataMember(Name = "expiration", EmitDefaultValue = false)]
         public DateTime? Expiration { get; set; }
 
         /// <summary>
         /// Voidable until timestamp.
         /// </summary>
         /// <value>Voidable until timestamp.</value>
-        [DataMember(Name="voidableUntil", EmitDefaultValue=false)]
+        [DataMember(Name = "voidableUntil", EmitDefaultValue = false)]
         public DateTime? VoidableUntil { get; set; }
 
         /// <summary>
@@ -90,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -120,17 +114,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Cost == input.Cost ||
                     (this.Cost != null &&
                     this.Cost.Equals(input.Cost))
-                ) && 
+                ) &&
                 (
                     this.Expiration == input.Expiration ||
                     (this.Expiration != null &&
                     this.Expiration.Equals(input.Expiration))
-                ) && 
+                ) &&
                 (
                     this.VoidableUntil == input.VoidableUntil ||
                     (this.VoidableUntil != null &&

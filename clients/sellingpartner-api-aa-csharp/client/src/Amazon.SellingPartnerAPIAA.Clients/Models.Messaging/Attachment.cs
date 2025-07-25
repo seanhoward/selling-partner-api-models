@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
     /// Represents a file that was uploaded to a destination that was created by the Uploads API [&#x60;createUploadDestinationForResource&#x60;](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation.
     /// </summary>
     [DataContract]
-    public partial class Attachment :  IEquatable<Attachment>, IValidatableObject
+    public partial class Attachment : IEquatable<Attachment>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Attachment" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
                 this.FileName = fileName;
             }
         }
-        
+
         /// <summary>
         /// The identifier for the upload destination. To retrieve this value, call the Uploads API [&#x60;createUploadDestinationForResource&#x60;](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation.
         /// </summary>
         /// <value>The identifier for the upload destination. To retrieve this value, call the Uploads API [&#x60;createUploadDestinationForResource&#x60;](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation.</value>
-        [DataMember(Name="uploadDestinationId", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadDestinationId", EmitDefaultValue = false)]
         public string UploadDestinationId { get; set; }
 
         /// <summary>
         /// The name of the file, including the extension. This is the file name that will appear in the message. This does not need to match the file name of the file that you uploaded.
         /// </summary>
         /// <value>The name of the file, including the extension. This is the file name that will appear in the message. This does not need to match the file name of the file that you uploaded.</value>
-        [DataMember(Name="fileName", EmitDefaultValue=false)]
+        [DataMember(Name = "fileName", EmitDefaultValue = false)]
         public string FileName { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UploadDestinationId == input.UploadDestinationId ||
                     (this.UploadDestinationId != null &&
                     this.UploadDestinationId.Equals(input.UploadDestinationId))
-                ) && 
+                ) &&
                 (
                     this.FileName == input.FileName ||
                     (this.FileName != null &&

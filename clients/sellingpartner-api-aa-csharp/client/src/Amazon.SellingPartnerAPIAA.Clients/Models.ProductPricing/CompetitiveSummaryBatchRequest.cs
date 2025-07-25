@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The &#x60;competitiveSummary&#x60; batch request data.
     /// </summary>
     [DataContract]
-    public partial class CompetitiveSummaryBatchRequest :  IEquatable<CompetitiveSummaryBatchRequest>, IValidatableObject
+    public partial class CompetitiveSummaryBatchRequest : IEquatable<CompetitiveSummaryBatchRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryBatchRequest" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 this.Requests = requests;
             }
         }
-        
+
         /// <summary>
         /// A batched list of &#x60;competitiveSummary&#x60; requests.
         /// </summary>
         /// <value>A batched list of &#x60;competitiveSummary&#x60; requests.</value>
-        [DataMember(Name="requests", EmitDefaultValue=false)]
+        [DataMember(Name = "requests", EmitDefaultValue = false)]
         public CompetitiveSummaryRequestList Requests { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Requests == input.Requests ||
                     (this.Requests != null &&

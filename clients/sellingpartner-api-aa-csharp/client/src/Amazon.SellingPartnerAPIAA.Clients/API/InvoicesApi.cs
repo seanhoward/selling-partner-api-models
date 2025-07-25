@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Information required to create the export request.</param>
         /// <returns>ExportInvoicesResponse</returns>
-        ExportInvoicesResponse CreateInvoicesExport (ExportInvoicesRequest body);
+        ExportInvoicesResponse CreateInvoicesExport(ExportInvoicesRequest body);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Information required to create the export request.</param>
         /// <returns>ApiResponse of ExportInvoicesResponse</returns>
-        ApiResponse<ExportInvoicesResponse> CreateInvoicesExportWithHttpInfo (ExportInvoicesRequest body);
+        ApiResponse<ExportInvoicesResponse> CreateInvoicesExportWithHttpInfo(ExportInvoicesRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -56,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The marketplace from which you want the invoice.</param>
         /// <param name="invoiceId">The invoice identifier.</param>
         /// <returns>GetInvoiceResponse</returns>
-        GetInvoiceResponse GetInvoice (string marketplaceId, string invoiceId);
+        GetInvoiceResponse GetInvoice(string marketplaceId, string invoiceId);
 
         /// <summary>
         /// 
@@ -68,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The marketplace from which you want the invoice.</param>
         /// <param name="invoiceId">The invoice identifier.</param>
         /// <returns>ApiResponse of GetInvoiceResponse</returns>
-        ApiResponse<GetInvoiceResponse> GetInvoiceWithHttpInfo (string marketplaceId, string invoiceId);
+        ApiResponse<GetInvoiceResponse> GetInvoiceWithHttpInfo(string marketplaceId, string invoiceId);
         /// <summary>
         /// 
         /// </summary>
@@ -91,7 +90,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="externalInvoiceId">Return invoices that match this external ID. This is typically the Government Invoice ID. (optional)</param>
         /// <param name="sortBy">The attribute by which you want to sort the invoices in the response. (optional)</param>
         /// <returns>GetInvoicesResponse</returns>
-        GetInvoicesResponse GetInvoices (string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null);
+        GetInvoicesResponse GetInvoices(string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null);
 
         /// <summary>
         /// 
@@ -115,7 +114,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="externalInvoiceId">Return invoices that match this external ID. This is typically the Government Invoice ID. (optional)</param>
         /// <param name="sortBy">The attribute by which you want to sort the invoices in the response. (optional)</param>
         /// <returns>ApiResponse of GetInvoicesResponse</returns>
-        ApiResponse<GetInvoicesResponse> GetInvoicesWithHttpInfo (string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null);
+        ApiResponse<GetInvoicesResponse> GetInvoicesWithHttpInfo(string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null);
         /// <summary>
         /// 
         /// </summary>
@@ -125,7 +124,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace identifier.</param>
         /// <returns>GetInvoicesAttributesResponse</returns>
-        GetInvoicesAttributesResponse GetInvoicesAttributes (string marketplaceId);
+        GetInvoicesAttributesResponse GetInvoicesAttributes(string marketplaceId);
 
         /// <summary>
         /// 
@@ -136,7 +135,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace identifier.</param>
         /// <returns>ApiResponse of GetInvoicesAttributesResponse</returns>
-        ApiResponse<GetInvoicesAttributesResponse> GetInvoicesAttributesWithHttpInfo (string marketplaceId);
+        ApiResponse<GetInvoicesAttributesResponse> GetInvoicesAttributesWithHttpInfo(string marketplaceId);
         /// <summary>
         /// 
         /// </summary>
@@ -146,7 +145,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoicesDocumentId">The export document identifier.</param>
         /// <returns>GetInvoicesDocumentResponse</returns>
-        GetInvoicesDocumentResponse GetInvoicesDocument (string invoicesDocumentId);
+        GetInvoicesDocumentResponse GetInvoicesDocument(string invoicesDocumentId);
 
         /// <summary>
         /// 
@@ -157,7 +156,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoicesDocumentId">The export document identifier.</param>
         /// <returns>ApiResponse of GetInvoicesDocumentResponse</returns>
-        ApiResponse<GetInvoicesDocumentResponse> GetInvoicesDocumentWithHttpInfo (string invoicesDocumentId);
+        ApiResponse<GetInvoicesDocumentResponse> GetInvoicesDocumentWithHttpInfo(string invoicesDocumentId);
         /// <summary>
         /// 
         /// </summary>
@@ -167,7 +166,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exportId">The unique identifier for the export.</param>
         /// <returns>GetInvoicesExportResponse</returns>
-        GetInvoicesExportResponse GetInvoicesExport (string exportId);
+        GetInvoicesExportResponse GetInvoicesExport(string exportId);
 
         /// <summary>
         /// 
@@ -178,7 +177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exportId">The unique identifier for the export.</param>
         /// <returns>ApiResponse of GetInvoicesExportResponse</returns>
-        ApiResponse<GetInvoicesExportResponse> GetInvoicesExportWithHttpInfo (string exportId);
+        ApiResponse<GetInvoicesExportResponse> GetInvoicesExportWithHttpInfo(string exportId);
         /// <summary>
         /// 
         /// </summary>
@@ -193,7 +192,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="dateEnd">The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request. (optional)</param>
         /// <param name="status">Return exports matching the status specified.  (optional)</param>
         /// <returns>GetInvoicesExportsResponse</returns>
-        GetInvoicesExportsResponse GetInvoicesExports (string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null);
+        GetInvoicesExportsResponse GetInvoicesExports(string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null);
 
         /// <summary>
         /// 
@@ -209,7 +208,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="dateEnd">The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request. (optional)</param>
         /// <param name="status">Return exports matching the status specified.  (optional)</param>
         /// <returns>ApiResponse of GetInvoicesExportsResponse</returns>
-        ApiResponse<GetInvoicesExportsResponse> GetInvoicesExportsWithHttpInfo (string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null);
+        ApiResponse<GetInvoicesExportsResponse> GetInvoicesExportsWithHttpInfo(string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -221,7 +220,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Information required to create the export request.</param>
         /// <returns>Task of ExportInvoicesResponse</returns>
-        System.Threading.Tasks.Task<ExportInvoicesResponse> CreateInvoicesExportAsync (ExportInvoicesRequest body);
+        System.Threading.Tasks.Task<ExportInvoicesResponse> CreateInvoicesExportAsync(ExportInvoicesRequest body);
 
         /// <summary>
         /// 
@@ -232,7 +231,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Information required to create the export request.</param>
         /// <returns>Task of ApiResponse (ExportInvoicesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExportInvoicesResponse>> CreateInvoicesExportAsyncWithHttpInfo (ExportInvoicesRequest body);
+        System.Threading.Tasks.Task<ApiResponse<ExportInvoicesResponse>> CreateInvoicesExportAsyncWithHttpInfo(ExportInvoicesRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -243,7 +242,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The marketplace from which you want the invoice.</param>
         /// <param name="invoiceId">The invoice identifier.</param>
         /// <returns>Task of GetInvoiceResponse</returns>
-        System.Threading.Tasks.Task<GetInvoiceResponse> GetInvoiceAsync (string marketplaceId, string invoiceId);
+        System.Threading.Tasks.Task<GetInvoiceResponse> GetInvoiceAsync(string marketplaceId, string invoiceId);
 
         /// <summary>
         /// 
@@ -255,7 +254,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The marketplace from which you want the invoice.</param>
         /// <param name="invoiceId">The invoice identifier.</param>
         /// <returns>Task of ApiResponse (GetInvoiceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetInvoiceResponse>> GetInvoiceAsyncWithHttpInfo (string marketplaceId, string invoiceId);
+        System.Threading.Tasks.Task<ApiResponse<GetInvoiceResponse>> GetInvoiceAsyncWithHttpInfo(string marketplaceId, string invoiceId);
         /// <summary>
         /// 
         /// </summary>
@@ -278,7 +277,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="externalInvoiceId">Return invoices that match this external ID. This is typically the Government Invoice ID. (optional)</param>
         /// <param name="sortBy">The attribute by which you want to sort the invoices in the response. (optional)</param>
         /// <returns>Task of GetInvoicesResponse</returns>
-        System.Threading.Tasks.Task<GetInvoicesResponse> GetInvoicesAsync (string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null);
+        System.Threading.Tasks.Task<GetInvoicesResponse> GetInvoicesAsync(string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null);
 
         /// <summary>
         /// 
@@ -302,7 +301,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="externalInvoiceId">Return invoices that match this external ID. This is typically the Government Invoice ID. (optional)</param>
         /// <param name="sortBy">The attribute by which you want to sort the invoices in the response. (optional)</param>
         /// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetInvoicesResponse>> GetInvoicesAsyncWithHttpInfo (string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null);
+        System.Threading.Tasks.Task<ApiResponse<GetInvoicesResponse>> GetInvoicesAsyncWithHttpInfo(string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null);
         /// <summary>
         /// 
         /// </summary>
@@ -312,7 +311,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace identifier.</param>
         /// <returns>Task of GetInvoicesAttributesResponse</returns>
-        System.Threading.Tasks.Task<GetInvoicesAttributesResponse> GetInvoicesAttributesAsync (string marketplaceId);
+        System.Threading.Tasks.Task<GetInvoicesAttributesResponse> GetInvoicesAttributesAsync(string marketplaceId);
 
         /// <summary>
         /// 
@@ -323,7 +322,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace identifier.</param>
         /// <returns>Task of ApiResponse (GetInvoicesAttributesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetInvoicesAttributesResponse>> GetInvoicesAttributesAsyncWithHttpInfo (string marketplaceId);
+        System.Threading.Tasks.Task<ApiResponse<GetInvoicesAttributesResponse>> GetInvoicesAttributesAsyncWithHttpInfo(string marketplaceId);
         /// <summary>
         /// 
         /// </summary>
@@ -333,7 +332,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoicesDocumentId">The export document identifier.</param>
         /// <returns>Task of GetInvoicesDocumentResponse</returns>
-        System.Threading.Tasks.Task<GetInvoicesDocumentResponse> GetInvoicesDocumentAsync (string invoicesDocumentId);
+        System.Threading.Tasks.Task<GetInvoicesDocumentResponse> GetInvoicesDocumentAsync(string invoicesDocumentId);
 
         /// <summary>
         /// 
@@ -344,7 +343,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoicesDocumentId">The export document identifier.</param>
         /// <returns>Task of ApiResponse (GetInvoicesDocumentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetInvoicesDocumentResponse>> GetInvoicesDocumentAsyncWithHttpInfo (string invoicesDocumentId);
+        System.Threading.Tasks.Task<ApiResponse<GetInvoicesDocumentResponse>> GetInvoicesDocumentAsyncWithHttpInfo(string invoicesDocumentId);
         /// <summary>
         /// 
         /// </summary>
@@ -354,7 +353,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exportId">The unique identifier for the export.</param>
         /// <returns>Task of GetInvoicesExportResponse</returns>
-        System.Threading.Tasks.Task<GetInvoicesExportResponse> GetInvoicesExportAsync (string exportId);
+        System.Threading.Tasks.Task<GetInvoicesExportResponse> GetInvoicesExportAsync(string exportId);
 
         /// <summary>
         /// 
@@ -365,7 +364,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exportId">The unique identifier for the export.</param>
         /// <returns>Task of ApiResponse (GetInvoicesExportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetInvoicesExportResponse>> GetInvoicesExportAsyncWithHttpInfo (string exportId);
+        System.Threading.Tasks.Task<ApiResponse<GetInvoicesExportResponse>> GetInvoicesExportAsyncWithHttpInfo(string exportId);
         /// <summary>
         /// 
         /// </summary>
@@ -380,7 +379,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="dateEnd">The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request. (optional)</param>
         /// <param name="status">Return exports matching the status specified.  (optional)</param>
         /// <returns>Task of GetInvoicesExportsResponse</returns>
-        System.Threading.Tasks.Task<GetInvoicesExportsResponse> GetInvoicesExportsAsync (string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null);
+        System.Threading.Tasks.Task<GetInvoicesExportsResponse> GetInvoicesExportsAsync(string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null);
 
         /// <summary>
         /// 
@@ -396,7 +395,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="dateEnd">The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request. (optional)</param>
         /// <param name="status">Return exports matching the status specified.  (optional)</param>
         /// <returns>Task of ApiResponse (GetInvoicesExportsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetInvoicesExportsResponse>> GetInvoicesExportsAsyncWithHttpInfo (string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null);
+        System.Threading.Tasks.Task<ApiResponse<GetInvoicesExportsResponse>> GetInvoicesExportsAsyncWithHttpInfo(string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null);
         #endregion Asynchronous Operations
     }
 
@@ -416,7 +415,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public InvoicesApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -442,7 +441,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -488,10 +487,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Information required to create the export request.</param>
         /// <returns>ExportInvoicesResponse</returns>
-        public ExportInvoicesResponse CreateInvoicesExport (ExportInvoicesRequest body)
+        public ExportInvoicesResponse CreateInvoicesExport(ExportInvoicesRequest body)
         {
-             ApiResponse<ExportInvoicesResponse> localVarResponse = CreateInvoicesExportWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<ExportInvoicesResponse> localVarResponse = CreateInvoicesExportWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -500,7 +499,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Information required to create the export request.</param>
         /// <returns>ApiResponse of ExportInvoicesResponse</returns>
-        public ApiResponse< ExportInvoicesResponse > CreateInvoicesExportWithHttpInfo (ExportInvoicesRequest body)
+        public ApiResponse<ExportInvoicesResponse> CreateInvoicesExportWithHttpInfo(ExportInvoicesRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -539,11 +538,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -553,7 +552,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ExportInvoicesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ExportInvoicesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportInvoicesResponse)));
+                (ExportInvoicesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportInvoicesResponse)));
         }
 
         /// <summary>
@@ -562,10 +561,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Information required to create the export request.</param>
         /// <returns>Task of ExportInvoicesResponse</returns>
-        public async System.Threading.Tasks.Task<ExportInvoicesResponse> CreateInvoicesExportAsync (ExportInvoicesRequest body)
+        public async System.Threading.Tasks.Task<ExportInvoicesResponse> CreateInvoicesExportAsync(ExportInvoicesRequest body)
         {
-             ApiResponse<ExportInvoicesResponse> localVarResponse = await CreateInvoicesExportAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<ExportInvoicesResponse> localVarResponse = await CreateInvoicesExportAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -575,7 +574,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Information required to create the export request.</param>
         /// <returns>Task of ApiResponse (ExportInvoicesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExportInvoicesResponse>> CreateInvoicesExportAsyncWithHttpInfo (ExportInvoicesRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<ExportInvoicesResponse>> CreateInvoicesExportAsyncWithHttpInfo(ExportInvoicesRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -614,11 +613,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -628,7 +627,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ExportInvoicesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ExportInvoicesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportInvoicesResponse)));
+                (ExportInvoicesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExportInvoicesResponse)));
         }
 
         /// <summary>
@@ -638,10 +637,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The marketplace from which you want the invoice.</param>
         /// <param name="invoiceId">The invoice identifier.</param>
         /// <returns>GetInvoiceResponse</returns>
-        public GetInvoiceResponse GetInvoice (string marketplaceId, string invoiceId)
+        public GetInvoiceResponse GetInvoice(string marketplaceId, string invoiceId)
         {
-             ApiResponse<GetInvoiceResponse> localVarResponse = GetInvoiceWithHttpInfo(marketplaceId, invoiceId);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoiceResponse> localVarResponse = GetInvoiceWithHttpInfo(marketplaceId, invoiceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -651,7 +650,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The marketplace from which you want the invoice.</param>
         /// <param name="invoiceId">The invoice identifier.</param>
         /// <returns>ApiResponse of GetInvoiceResponse</returns>
-        public ApiResponse< GetInvoiceResponse > GetInvoiceWithHttpInfo (string marketplaceId, string invoiceId)
+        public ApiResponse<GetInvoiceResponse> GetInvoiceWithHttpInfo(string marketplaceId, string invoiceId)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -687,11 +686,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -701,7 +700,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoiceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoiceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoiceResponse)));
+                (GetInvoiceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoiceResponse)));
         }
 
         /// <summary>
@@ -711,10 +710,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The marketplace from which you want the invoice.</param>
         /// <param name="invoiceId">The invoice identifier.</param>
         /// <returns>Task of GetInvoiceResponse</returns>
-        public async System.Threading.Tasks.Task<GetInvoiceResponse> GetInvoiceAsync (string marketplaceId, string invoiceId)
+        public async System.Threading.Tasks.Task<GetInvoiceResponse> GetInvoiceAsync(string marketplaceId, string invoiceId)
         {
-             ApiResponse<GetInvoiceResponse> localVarResponse = await GetInvoiceAsyncWithHttpInfo(marketplaceId, invoiceId);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoiceResponse> localVarResponse = await GetInvoiceAsyncWithHttpInfo(marketplaceId, invoiceId);
+            return localVarResponse.Data;
 
         }
 
@@ -725,7 +724,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The marketplace from which you want the invoice.</param>
         /// <param name="invoiceId">The invoice identifier.</param>
         /// <returns>Task of ApiResponse (GetInvoiceResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetInvoiceResponse>> GetInvoiceAsyncWithHttpInfo (string marketplaceId, string invoiceId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetInvoiceResponse>> GetInvoiceAsyncWithHttpInfo(string marketplaceId, string invoiceId)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -761,11 +760,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -775,7 +774,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoiceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoiceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoiceResponse)));
+                (GetInvoiceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoiceResponse)));
         }
 
         /// <summary>
@@ -797,10 +796,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="externalInvoiceId">Return invoices that match this external ID. This is typically the Government Invoice ID. (optional)</param>
         /// <param name="sortBy">The attribute by which you want to sort the invoices in the response. (optional)</param>
         /// <returns>GetInvoicesResponse</returns>
-        public GetInvoicesResponse GetInvoices (string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null)
+        public GetInvoicesResponse GetInvoices(string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null)
         {
-             ApiResponse<GetInvoicesResponse> localVarResponse = GetInvoicesWithHttpInfo(marketplaceId, transactionIdentifierName, pageSize, dateEnd, transactionType, transactionIdentifierId, dateStart, series, nextToken, sortOrder, invoiceType, statuses, externalInvoiceId, sortBy);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoicesResponse> localVarResponse = GetInvoicesWithHttpInfo(marketplaceId, transactionIdentifierName, pageSize, dateEnd, transactionType, transactionIdentifierId, dateStart, series, nextToken, sortOrder, invoiceType, statuses, externalInvoiceId, sortBy);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -822,7 +821,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="externalInvoiceId">Return invoices that match this external ID. This is typically the Government Invoice ID. (optional)</param>
         /// <param name="sortBy">The attribute by which you want to sort the invoices in the response. (optional)</param>
         /// <returns>ApiResponse of GetInvoicesResponse</returns>
-        public ApiResponse< GetInvoicesResponse > GetInvoicesWithHttpInfo (string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null)
+        public ApiResponse<GetInvoicesResponse> GetInvoicesWithHttpInfo(string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -867,11 +866,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -881,7 +880,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoicesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoicesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
+                (GetInvoicesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
         }
 
         /// <summary>
@@ -903,10 +902,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="externalInvoiceId">Return invoices that match this external ID. This is typically the Government Invoice ID. (optional)</param>
         /// <param name="sortBy">The attribute by which you want to sort the invoices in the response. (optional)</param>
         /// <returns>Task of GetInvoicesResponse</returns>
-        public async System.Threading.Tasks.Task<GetInvoicesResponse> GetInvoicesAsync (string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null)
+        public async System.Threading.Tasks.Task<GetInvoicesResponse> GetInvoicesAsync(string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null)
         {
-             ApiResponse<GetInvoicesResponse> localVarResponse = await GetInvoicesAsyncWithHttpInfo(marketplaceId, transactionIdentifierName, pageSize, dateEnd, transactionType, transactionIdentifierId, dateStart, series, nextToken, sortOrder, invoiceType, statuses, externalInvoiceId, sortBy);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoicesResponse> localVarResponse = await GetInvoicesAsyncWithHttpInfo(marketplaceId, transactionIdentifierName, pageSize, dateEnd, transactionType, transactionIdentifierId, dateStart, series, nextToken, sortOrder, invoiceType, statuses, externalInvoiceId, sortBy);
+            return localVarResponse.Data;
 
         }
 
@@ -929,7 +928,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="externalInvoiceId">Return invoices that match this external ID. This is typically the Government Invoice ID. (optional)</param>
         /// <param name="sortBy">The attribute by which you want to sort the invoices in the response. (optional)</param>
         /// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetInvoicesResponse>> GetInvoicesAsyncWithHttpInfo (string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetInvoicesResponse>> GetInvoicesAsyncWithHttpInfo(string marketplaceId, string transactionIdentifierName = null, int? pageSize = null, DateTime? dateEnd = null, string transactionType = null, string transactionIdentifierId = null, DateTime? dateStart = null, string series = null, string nextToken = null, string sortOrder = null, string invoiceType = null, List<string> statuses = null, string externalInvoiceId = null, string sortBy = null)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -974,11 +973,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -988,7 +987,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoicesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoicesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
+                (GetInvoicesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
         }
 
         /// <summary>
@@ -997,10 +996,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace identifier.</param>
         /// <returns>GetInvoicesAttributesResponse</returns>
-        public GetInvoicesAttributesResponse GetInvoicesAttributes (string marketplaceId)
+        public GetInvoicesAttributesResponse GetInvoicesAttributes(string marketplaceId)
         {
-             ApiResponse<GetInvoicesAttributesResponse> localVarResponse = GetInvoicesAttributesWithHttpInfo(marketplaceId);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoicesAttributesResponse> localVarResponse = GetInvoicesAttributesWithHttpInfo(marketplaceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1009,7 +1008,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace identifier.</param>
         /// <returns>ApiResponse of GetInvoicesAttributesResponse</returns>
-        public ApiResponse< GetInvoicesAttributesResponse > GetInvoicesAttributesWithHttpInfo (string marketplaceId)
+        public ApiResponse<GetInvoicesAttributesResponse> GetInvoicesAttributesWithHttpInfo(string marketplaceId)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -1041,11 +1040,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1055,7 +1054,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoicesAttributesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoicesAttributesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesAttributesResponse)));
+                (GetInvoicesAttributesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesAttributesResponse)));
         }
 
         /// <summary>
@@ -1064,10 +1063,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace identifier.</param>
         /// <returns>Task of GetInvoicesAttributesResponse</returns>
-        public async System.Threading.Tasks.Task<GetInvoicesAttributesResponse> GetInvoicesAttributesAsync (string marketplaceId)
+        public async System.Threading.Tasks.Task<GetInvoicesAttributesResponse> GetInvoicesAttributesAsync(string marketplaceId)
         {
-             ApiResponse<GetInvoicesAttributesResponse> localVarResponse = await GetInvoicesAttributesAsyncWithHttpInfo(marketplaceId);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoicesAttributesResponse> localVarResponse = await GetInvoicesAttributesAsyncWithHttpInfo(marketplaceId);
+            return localVarResponse.Data;
 
         }
 
@@ -1077,7 +1076,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace identifier.</param>
         /// <returns>Task of ApiResponse (GetInvoicesAttributesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetInvoicesAttributesResponse>> GetInvoicesAttributesAsyncWithHttpInfo (string marketplaceId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetInvoicesAttributesResponse>> GetInvoicesAttributesAsyncWithHttpInfo(string marketplaceId)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -1109,11 +1108,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1123,7 +1122,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoicesAttributesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoicesAttributesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesAttributesResponse)));
+                (GetInvoicesAttributesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesAttributesResponse)));
         }
 
         /// <summary>
@@ -1132,10 +1131,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoicesDocumentId">The export document identifier.</param>
         /// <returns>GetInvoicesDocumentResponse</returns>
-        public GetInvoicesDocumentResponse GetInvoicesDocument (string invoicesDocumentId)
+        public GetInvoicesDocumentResponse GetInvoicesDocument(string invoicesDocumentId)
         {
-             ApiResponse<GetInvoicesDocumentResponse> localVarResponse = GetInvoicesDocumentWithHttpInfo(invoicesDocumentId);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoicesDocumentResponse> localVarResponse = GetInvoicesDocumentWithHttpInfo(invoicesDocumentId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1144,7 +1143,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoicesDocumentId">The export document identifier.</param>
         /// <returns>ApiResponse of GetInvoicesDocumentResponse</returns>
-        public ApiResponse< GetInvoicesDocumentResponse > GetInvoicesDocumentWithHttpInfo (string invoicesDocumentId)
+        public ApiResponse<GetInvoicesDocumentResponse> GetInvoicesDocumentWithHttpInfo(string invoicesDocumentId)
         {
             // verify the required parameter 'invoicesDocumentId' is set
             if (invoicesDocumentId == null)
@@ -1176,11 +1175,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1190,7 +1189,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoicesDocumentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoicesDocumentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesDocumentResponse)));
+                (GetInvoicesDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesDocumentResponse)));
         }
 
         /// <summary>
@@ -1199,10 +1198,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoicesDocumentId">The export document identifier.</param>
         /// <returns>Task of GetInvoicesDocumentResponse</returns>
-        public async System.Threading.Tasks.Task<GetInvoicesDocumentResponse> GetInvoicesDocumentAsync (string invoicesDocumentId)
+        public async System.Threading.Tasks.Task<GetInvoicesDocumentResponse> GetInvoicesDocumentAsync(string invoicesDocumentId)
         {
-             ApiResponse<GetInvoicesDocumentResponse> localVarResponse = await GetInvoicesDocumentAsyncWithHttpInfo(invoicesDocumentId);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoicesDocumentResponse> localVarResponse = await GetInvoicesDocumentAsyncWithHttpInfo(invoicesDocumentId);
+            return localVarResponse.Data;
 
         }
 
@@ -1212,7 +1211,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoicesDocumentId">The export document identifier.</param>
         /// <returns>Task of ApiResponse (GetInvoicesDocumentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetInvoicesDocumentResponse>> GetInvoicesDocumentAsyncWithHttpInfo (string invoicesDocumentId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetInvoicesDocumentResponse>> GetInvoicesDocumentAsyncWithHttpInfo(string invoicesDocumentId)
         {
             // verify the required parameter 'invoicesDocumentId' is set
             if (invoicesDocumentId == null)
@@ -1244,11 +1243,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1258,7 +1257,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoicesDocumentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoicesDocumentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesDocumentResponse)));
+                (GetInvoicesDocumentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesDocumentResponse)));
         }
 
         /// <summary>
@@ -1267,10 +1266,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exportId">The unique identifier for the export.</param>
         /// <returns>GetInvoicesExportResponse</returns>
-        public GetInvoicesExportResponse GetInvoicesExport (string exportId)
+        public GetInvoicesExportResponse GetInvoicesExport(string exportId)
         {
-             ApiResponse<GetInvoicesExportResponse> localVarResponse = GetInvoicesExportWithHttpInfo(exportId);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoicesExportResponse> localVarResponse = GetInvoicesExportWithHttpInfo(exportId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1279,7 +1278,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exportId">The unique identifier for the export.</param>
         /// <returns>ApiResponse of GetInvoicesExportResponse</returns>
-        public ApiResponse< GetInvoicesExportResponse > GetInvoicesExportWithHttpInfo (string exportId)
+        public ApiResponse<GetInvoicesExportResponse> GetInvoicesExportWithHttpInfo(string exportId)
         {
             // verify the required parameter 'exportId' is set
             if (exportId == null)
@@ -1311,11 +1310,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1325,7 +1324,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoicesExportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoicesExportResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesExportResponse)));
+                (GetInvoicesExportResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesExportResponse)));
         }
 
         /// <summary>
@@ -1334,10 +1333,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exportId">The unique identifier for the export.</param>
         /// <returns>Task of GetInvoicesExportResponse</returns>
-        public async System.Threading.Tasks.Task<GetInvoicesExportResponse> GetInvoicesExportAsync (string exportId)
+        public async System.Threading.Tasks.Task<GetInvoicesExportResponse> GetInvoicesExportAsync(string exportId)
         {
-             ApiResponse<GetInvoicesExportResponse> localVarResponse = await GetInvoicesExportAsyncWithHttpInfo(exportId);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoicesExportResponse> localVarResponse = await GetInvoicesExportAsyncWithHttpInfo(exportId);
+            return localVarResponse.Data;
 
         }
 
@@ -1347,7 +1346,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exportId">The unique identifier for the export.</param>
         /// <returns>Task of ApiResponse (GetInvoicesExportResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetInvoicesExportResponse>> GetInvoicesExportAsyncWithHttpInfo (string exportId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetInvoicesExportResponse>> GetInvoicesExportAsyncWithHttpInfo(string exportId)
         {
             // verify the required parameter 'exportId' is set
             if (exportId == null)
@@ -1379,11 +1378,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1393,7 +1392,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoicesExportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoicesExportResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesExportResponse)));
+                (GetInvoicesExportResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesExportResponse)));
         }
 
         /// <summary>
@@ -1407,10 +1406,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="dateEnd">The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request. (optional)</param>
         /// <param name="status">Return exports matching the status specified.  (optional)</param>
         /// <returns>GetInvoicesExportsResponse</returns>
-        public GetInvoicesExportsResponse GetInvoicesExports (string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null)
+        public GetInvoicesExportsResponse GetInvoicesExports(string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null)
         {
-             ApiResponse<GetInvoicesExportsResponse> localVarResponse = GetInvoicesExportsWithHttpInfo(marketplaceId, dateStart, nextToken, pageSize, dateEnd, status);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoicesExportsResponse> localVarResponse = GetInvoicesExportsWithHttpInfo(marketplaceId, dateStart, nextToken, pageSize, dateEnd, status);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1424,7 +1423,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="dateEnd">The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request. (optional)</param>
         /// <param name="status">Return exports matching the status specified.  (optional)</param>
         /// <returns>ApiResponse of GetInvoicesExportsResponse</returns>
-        public ApiResponse< GetInvoicesExportsResponse > GetInvoicesExportsWithHttpInfo (string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null)
+        public ApiResponse<GetInvoicesExportsResponse> GetInvoicesExportsWithHttpInfo(string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -1461,11 +1460,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1475,7 +1474,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoicesExportsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoicesExportsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesExportsResponse)));
+                (GetInvoicesExportsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesExportsResponse)));
         }
 
         /// <summary>
@@ -1489,10 +1488,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="dateEnd">The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request. (optional)</param>
         /// <param name="status">Return exports matching the status specified.  (optional)</param>
         /// <returns>Task of GetInvoicesExportsResponse</returns>
-        public async System.Threading.Tasks.Task<GetInvoicesExportsResponse> GetInvoicesExportsAsync (string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null)
+        public async System.Threading.Tasks.Task<GetInvoicesExportsResponse> GetInvoicesExportsAsync(string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null)
         {
-             ApiResponse<GetInvoicesExportsResponse> localVarResponse = await GetInvoicesExportsAsyncWithHttpInfo(marketplaceId, dateStart, nextToken, pageSize, dateEnd, status);
-             return localVarResponse.Data;
+            ApiResponse<GetInvoicesExportsResponse> localVarResponse = await GetInvoicesExportsAsyncWithHttpInfo(marketplaceId, dateStart, nextToken, pageSize, dateEnd, status);
+            return localVarResponse.Data;
 
         }
 
@@ -1507,7 +1506,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="dateEnd">The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request. (optional)</param>
         /// <param name="status">Return exports matching the status specified.  (optional)</param>
         /// <returns>Task of ApiResponse (GetInvoicesExportsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetInvoicesExportsResponse>> GetInvoicesExportsAsyncWithHttpInfo (string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetInvoicesExportsResponse>> GetInvoicesExportsAsyncWithHttpInfo(string marketplaceId, DateTime? dateStart = null, string nextToken = null, int? pageSize = null, DateTime? dateEnd = null, string status = null)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -1544,11 +1543,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1558,7 +1557,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetInvoicesExportsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetInvoicesExportsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesExportsResponse)));
+                (GetInvoicesExportsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesExportsResponse)));
         }
 
 
@@ -1572,17 +1571,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public InvoicesApi Build() 
+            public InvoicesApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

@@ -152,7 +152,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Reports.EndUserData
     }
 
     /// <summary>
-    /// Provides end user (customer) data to DE, FR, IT, ES, NL, PL, SE and BE (EU-8) Selling Partners. This data contains customer personal data, including contact information, page view (glance view), and order data for customers who have elected to share this data with specific sellers. This data is accessible across various reporting periods, including DAY, WEEK and MONTH. Developers can choose to define start and end dates, along with the desired reporting period for data retrieval and aggregation. Please note that the report will not generate any data if no customers have elected to share their data.
+    /// Provides end user (customer) data to IE, ES, FR, BE, NL, DE, IT, SE, and PL selling partners. The data contains customer personal data that includes contact information, page view (glance view), and order data for customers that elect to share this data with specific sellers. The customer data is accessible across various reporting periods (DAY, WEEK, and MONTH). Developers can choose start and end dates and the reporting period for data retrieval and aggregation. If the customer does not elect to share their data, the report does not generate data.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
     public partial class EndUserDataReport

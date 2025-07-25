@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The weight of a package.
     /// </summary>
     [DataContract]
-    public partial class Weight :  IEquatable<Weight>, IValidatableObject
+    public partial class Weight : IEquatable<Weight>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Unit
         /// </summary>
-        [DataMember(Name="unit", EmitDefaultValue=false)]
+        [DataMember(Name = "unit", EmitDefaultValue = false)]
         public UnitOfWeight Unit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Weight" /> class.
@@ -66,13 +60,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.Value = value;
             }
         }
-        
+
 
         /// <summary>
         /// Value of a weight.
         /// </summary>
         /// <value>Value of a weight.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public decimal? Value { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +112,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Unit == input.Unit ||
                     (this.Unit != null &&
                     this.Unit.Equals(input.Unit))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
@@ -156,15 +150,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Value (decimal?) maximum
-            if(this.Value > (decimal?)100000)
+            if (this.Value > (decimal?)100000)
             {
-                yield return new ValidationResult("Invalid value for Value, must be a value less than or equal to 100000.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, must be a value less than or equal to 100000.", new[] { "Value" });
             }
 
             // Value (decimal?) minimum
-            if(this.Value < (decimal?)0)
+            if (this.Value < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for Value, must be a value greater than or equal to 0.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, must be a value greater than or equal to 0.", new[] { "Value" });
             }
 
             yield break;

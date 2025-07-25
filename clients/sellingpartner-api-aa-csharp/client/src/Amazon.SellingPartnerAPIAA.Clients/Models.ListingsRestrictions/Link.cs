@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
     /// A link to resources related to a listing restriction.
     /// </summary>
     [DataContract]
-    public partial class Link :  IEquatable<Link>, IValidatableObject
+    public partial class Link : IEquatable<Link>, IValidatableObject
     {
         /// <summary>
         /// The HTTP verb used to interact with the related resource.
@@ -37,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerbEnum
         {
-            
+
             /// <summary>
             /// Enum GET for value: GET
             /// </summary>
@@ -49,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// The HTTP verb used to interact with the related resource.
         /// </summary>
         /// <value>The HTTP verb used to interact with the related resource.</value>
-        [DataMember(Name="verb", EmitDefaultValue=false)]
+        [DataMember(Name = "verb", EmitDefaultValue = false)]
         public VerbEnum Verb { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Link" /> class.
@@ -86,12 +81,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             this.Title = title;
             this.Type = type;
         }
-        
+
         /// <summary>
         /// The URI of the related resource.
         /// </summary>
         /// <value>The URI of the related resource.</value>
-        [DataMember(Name="resource", EmitDefaultValue=false)]
+        [DataMember(Name = "resource", EmitDefaultValue = false)]
         public string Resource { get; set; }
 
 
@@ -99,14 +94,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// The title of the related resource.
         /// </summary>
         /// <value>The title of the related resource.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// The media type of the related resource.
         /// </summary>
         /// <value>The media type of the related resource.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
@@ -124,7 +119,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -154,22 +149,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Resource == input.Resource ||
                     (this.Resource != null &&
                     this.Resource.Equals(input.Resource))
-                ) && 
+                ) &&
                 (
                     this.Verb == input.Verb ||
                     (this.Verb != null &&
                     this.Verb.Equals(input.Verb))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&

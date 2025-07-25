@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
     /// Request schema.
     /// </summary>
     [DataContract]
-    public partial class GetMyFeesEstimateRequest :  IEquatable<GetMyFeesEstimateRequest>, IValidatableObject
+    public partial class GetMyFeesEstimateRequest : IEquatable<GetMyFeesEstimateRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetMyFeesEstimateRequest" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         {
             this.FeesEstimateRequest = feesEstimateRequest;
         }
-        
+
         /// <summary>
         /// Gets or Sets FeesEstimateRequest
         /// </summary>
-        [DataMember(Name="FeesEstimateRequest", EmitDefaultValue=false)]
+        [DataMember(Name = "FeesEstimateRequest", EmitDefaultValue = false)]
         public FeesEstimateRequest FeesEstimateRequest { get; set; }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FeesEstimateRequest == input.FeesEstimateRequest ||
                     (this.FeesEstimateRequest != null &&

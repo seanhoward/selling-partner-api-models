@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Details of item quantity.
     /// </summary>
     [DataContract]
-    public partial class PackedQuantity :  IEquatable<PackedQuantity>, IValidatableObject
+    public partial class PackedQuantity : IEquatable<PackedQuantity>, IValidatableObject
     {
         /// <summary>
         /// Unit of measure for the shipped quantity.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitOfMeasureEnum
         {
-            
+
             /// <summary>
             /// Enum Cases for value: Cases
             /// </summary>
             [EnumMember(Value = "Cases")]
             Cases = 1,
-            
+
             /// <summary>
             /// Enum Eaches for value: Eaches
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// Unit of measure for the shipped quantity.
         /// </summary>
         /// <value>Unit of measure for the shipped quantity.</value>
-        [DataMember(Name="unitOfMeasure", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasure", EmitDefaultValue = false)]
         public UnitOfMeasureEnum UnitOfMeasure { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackedQuantity" /> class.
@@ -90,12 +85,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             }
             this.UnitSize = unitSize;
         }
-        
+
         /// <summary>
         /// Amount of units shipped for a specific item at a shipment level. If the item is present only in certain cartons or pallets within the shipment, please provide this at the appropriate carton or pallet level.
         /// </summary>
         /// <value>Amount of units shipped for a specific item at a shipment level. If the item is present only in certain cartons or pallets within the shipment, please provide this at the appropriate carton or pallet level.</value>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int? Amount { get; set; }
 
 
@@ -103,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// The case size, in the event that we ordered using cases. Otherwise, 1.
         /// </summary>
         /// <value>The case size, in the event that we ordered using cases. Otherwise, 1.</value>
-        [DataMember(Name="unitSize", EmitDefaultValue=false)]
+        [DataMember(Name = "unitSize", EmitDefaultValue = false)]
         public int? UnitSize { get; set; }
 
         /// <summary>
@@ -120,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -150,17 +145,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Amount == input.Amount ||
                     (this.Amount != null &&
                     this.Amount.Equals(input.Amount))
-                ) && 
+                ) &&
                 (
                     this.UnitOfMeasure == input.UnitOfMeasure ||
                     (this.UnitOfMeasure != null &&
                     this.UnitOfMeasure.Equals(input.UnitOfMeasure))
-                ) && 
+                ) &&
                 (
                     this.UnitSize == input.UnitSize ||
                     (this.UnitSize != null &&

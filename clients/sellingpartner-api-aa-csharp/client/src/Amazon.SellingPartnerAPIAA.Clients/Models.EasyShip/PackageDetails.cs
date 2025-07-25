@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Easy Ship
  *
- * The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders.  Your Easy Ship applications can:  * Get available time slots for packages to be scheduled for delivery.  * Schedule, reschedule, and cancel Easy Ship orders.  * Print labels, invoices, and warranties.  See the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
+ * Use the Selling Partner API for Easy Ship to build applications for sellers to manage and ship Amazon Easy Ship orders. With this API, you can get available time slots, schedule and reschedule Easy Ship orders, and print shipping labels, invoices, and warranties. To review the differences in Easy Ship operations by marketplace, refer to [Marketplace support](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support).
  *
  * OpenAPI spec version: 2022-03-23
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
     /// Package details. Includes &#x60;packageItems&#x60;, &#x60;packageTimeSlot&#x60;, and &#x60;packageIdentifier&#x60;.
     /// </summary>
     [DataContract]
-    public partial class PackageDetails :  IEquatable<PackageDetails>, IValidatableObject
+    public partial class PackageDetails : IEquatable<PackageDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageDetails" /> class.
@@ -55,23 +49,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             this.PackageItems = packageItems;
             this.PackageIdentifier = packageIdentifier;
         }
-        
+
         /// <summary>
         /// Gets or Sets PackageItems
         /// </summary>
-        [DataMember(Name="packageItems", EmitDefaultValue=false)]
+        [DataMember(Name = "packageItems", EmitDefaultValue = false)]
         public Items PackageItems { get; set; }
 
         /// <summary>
         /// Gets or Sets PackageTimeSlot
         /// </summary>
-        [DataMember(Name="packageTimeSlot", EmitDefaultValue=false)]
+        [DataMember(Name = "packageTimeSlot", EmitDefaultValue = false)]
         public TimeSlot PackageTimeSlot { get; set; }
 
         /// <summary>
         /// Gets or Sets PackageIdentifier
         /// </summary>
-        [DataMember(Name="packageIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "packageIdentifier", EmitDefaultValue = false)]
         public string PackageIdentifier { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,17 +112,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PackageItems == input.PackageItems ||
                     (this.PackageItems != null &&
                     this.PackageItems.Equals(input.PackageItems))
-                ) && 
+                ) &&
                 (
                     this.PackageTimeSlot == input.PackageTimeSlot ||
                     (this.PackageTimeSlot != null &&
                     this.PackageTimeSlot.Equals(input.PackageTimeSlot))
-                ) && 
+                ) &&
                 (
                     this.PackageIdentifier == input.PackageIdentifier ||
                     (this.PackageIdentifier != null &&

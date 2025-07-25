@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// Summarized inventory details. This object will not appear if the details parameter in the request is false.
     /// </summary>
     [DataContract]
-    public partial class InventoryDetails :  IEquatable<InventoryDetails>, IValidatableObject
+    public partial class InventoryDetails : IEquatable<InventoryDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryDetails" /> class.
@@ -50,51 +43,51 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             this.ResearchingQuantity = researchingQuantity;
             this.UnfulfillableQuantity = unfulfillableQuantity;
         }
-        
+
         /// <summary>
         /// The item quantity that can be picked, packed, and shipped.
         /// </summary>
         /// <value>The item quantity that can be picked, packed, and shipped.</value>
-        [DataMember(Name="fulfillableQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillableQuantity", EmitDefaultValue = false)]
         public int? FulfillableQuantity { get; set; }
 
         /// <summary>
         /// The number of units in an inbound shipment for which you have notified Amazon.
         /// </summary>
         /// <value>The number of units in an inbound shipment for which you have notified Amazon.</value>
-        [DataMember(Name="inboundWorkingQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "inboundWorkingQuantity", EmitDefaultValue = false)]
         public int? InboundWorkingQuantity { get; set; }
 
         /// <summary>
         /// The number of units in an inbound shipment that you have notified Amazon about and have provided a tracking number.
         /// </summary>
         /// <value>The number of units in an inbound shipment that you have notified Amazon about and have provided a tracking number.</value>
-        [DataMember(Name="inboundShippedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "inboundShippedQuantity", EmitDefaultValue = false)]
         public int? InboundShippedQuantity { get; set; }
 
         /// <summary>
         /// The number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed.
         /// </summary>
         /// <value>The number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed.</value>
-        [DataMember(Name="inboundReceivingQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "inboundReceivingQuantity", EmitDefaultValue = false)]
         public int? InboundReceivingQuantity { get; set; }
 
         /// <summary>
         /// Gets or Sets ReservedQuantity
         /// </summary>
-        [DataMember(Name="reservedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "reservedQuantity", EmitDefaultValue = false)]
         public ReservedQuantity ReservedQuantity { get; set; }
 
         /// <summary>
         /// Gets or Sets ResearchingQuantity
         /// </summary>
-        [DataMember(Name="researchingQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "researchingQuantity", EmitDefaultValue = false)]
         public ResearchingQuantity ResearchingQuantity { get; set; }
 
         /// <summary>
         /// Gets or Sets UnfulfillableQuantity
         /// </summary>
-        [DataMember(Name="unfulfillableQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "unfulfillableQuantity", EmitDefaultValue = false)]
         public UnfulfillableQuantity UnfulfillableQuantity { get; set; }
 
         /// <summary>
@@ -115,7 +108,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -145,37 +138,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FulfillableQuantity == input.FulfillableQuantity ||
                     (this.FulfillableQuantity != null &&
                     this.FulfillableQuantity.Equals(input.FulfillableQuantity))
-                ) && 
+                ) &&
                 (
                     this.InboundWorkingQuantity == input.InboundWorkingQuantity ||
                     (this.InboundWorkingQuantity != null &&
                     this.InboundWorkingQuantity.Equals(input.InboundWorkingQuantity))
-                ) && 
+                ) &&
                 (
                     this.InboundShippedQuantity == input.InboundShippedQuantity ||
                     (this.InboundShippedQuantity != null &&
                     this.InboundShippedQuantity.Equals(input.InboundShippedQuantity))
-                ) && 
+                ) &&
                 (
                     this.InboundReceivingQuantity == input.InboundReceivingQuantity ||
                     (this.InboundReceivingQuantity != null &&
                     this.InboundReceivingQuantity.Equals(input.InboundReceivingQuantity))
-                ) && 
+                ) &&
                 (
                     this.ReservedQuantity == input.ReservedQuantity ||
                     (this.ReservedQuantity != null &&
                     this.ReservedQuantity.Equals(input.ReservedQuantity))
-                ) && 
+                ) &&
                 (
                     this.ResearchingQuantity == input.ResearchingQuantity ||
                     (this.ResearchingQuantity != null &&
                     this.ResearchingQuantity.Equals(input.ResearchingQuantity))
-                ) && 
+                ) &&
                 (
                     this.UnfulfillableQuantity == input.UnfulfillableQuantity ||
                     (this.UnfulfillableQuantity != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// The response schema for the &#x60;createContainerLabel&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class CreateContainerLabelResponse :  IEquatable<CreateContainerLabelResponse>, IValidatableObject
+    public partial class CreateContainerLabelResponse : IEquatable<CreateContainerLabelResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerLabelResponse" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
                 this.ContainerLabel = containerLabel;
             }
         }
-        
+
         /// <summary>
         /// The label data for the container label.
         /// </summary>
         /// <value>The label data for the container label.</value>
-        [DataMember(Name="containerLabel", EmitDefaultValue=false)]
+        [DataMember(Name = "containerLabel", EmitDefaultValue = false)]
         public ContainerLabel ContainerLabel { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContainerLabel == input.ContainerLabel ||
                     (this.ContainerLabel != null &&

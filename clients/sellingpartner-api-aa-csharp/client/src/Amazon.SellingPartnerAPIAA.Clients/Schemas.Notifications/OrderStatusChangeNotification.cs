@@ -22,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Notifications.OrderStatusCh
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string NotificationVersion { get; set; } = "";
 
-        /// <summary>s
+        /// <summary>
         /// An explanation about the purpose of this instance.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("NotificationType", Required = Newtonsoft.Json.Required.Always)]

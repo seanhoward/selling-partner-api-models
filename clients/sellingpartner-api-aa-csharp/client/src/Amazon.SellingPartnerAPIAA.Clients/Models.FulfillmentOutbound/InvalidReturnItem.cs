@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// An item that is invalid for return.
     /// </summary>
     [DataContract]
-    public partial class InvalidReturnItem :  IEquatable<InvalidReturnItem>, IValidatableObject
+    public partial class InvalidReturnItem : IEquatable<InvalidReturnItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidReturnItem" /> class.
@@ -71,25 +65,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.InvalidItemReason = invalidItemReason;
             }
         }
-        
+
         /// <summary>
         /// An identifier assigned by the seller to the return item.
         /// </summary>
         /// <value>An identifier assigned by the seller to the return item.</value>
-        [DataMember(Name="sellerReturnItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerReturnItemId", EmitDefaultValue = false)]
         public string SellerReturnItemId { get; set; }
 
         /// <summary>
         /// The identifier assigned to the item by the seller when the fulfillment order was created.
         /// </summary>
         /// <value>The identifier assigned to the item by the seller when the fulfillment order was created.</value>
-        [DataMember(Name="sellerFulfillmentOrderItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerFulfillmentOrderItemId", EmitDefaultValue = false)]
         public string SellerFulfillmentOrderItemId { get; set; }
 
         /// <summary>
         /// Gets or Sets InvalidItemReason
         /// </summary>
-        [DataMember(Name="invalidItemReason", EmitDefaultValue=false)]
+        [DataMember(Name = "invalidItemReason", EmitDefaultValue = false)]
         public InvalidItemReason InvalidItemReason { get; set; }
 
         /// <summary>
@@ -106,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -136,17 +130,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerReturnItemId == input.SellerReturnItemId ||
                     (this.SellerReturnItemId != null &&
                     this.SellerReturnItemId.Equals(input.SellerReturnItemId))
-                ) && 
+                ) &&
                 (
                     this.SellerFulfillmentOrderItemId == input.SellerFulfillmentOrderItemId ||
                     (this.SellerFulfillmentOrderItemId != null &&
                     this.SellerFulfillmentOrderItemId.Equals(input.SellerFulfillmentOrderItemId))
-                ) && 
+                ) &&
                 (
                     this.InvalidItemReason == input.InvalidItemReason ||
                     (this.InvalidItemReason != null &&

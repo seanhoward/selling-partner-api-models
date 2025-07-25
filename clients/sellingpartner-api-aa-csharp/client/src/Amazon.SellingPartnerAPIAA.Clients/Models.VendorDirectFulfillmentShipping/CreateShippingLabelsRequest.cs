@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// The request body for the createShippingLabels operation.
     /// </summary>
     [DataContract]
-    public partial class CreateShippingLabelsRequest :  IEquatable<CreateShippingLabelsRequest>, IValidatableObject
+    public partial class CreateShippingLabelsRequest : IEquatable<CreateShippingLabelsRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShippingLabelsRequest" /> class.
@@ -63,26 +58,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             }
             this.Containers = containers;
         }
-        
+
         /// <summary>
         /// ID of the selling party or vendor.
         /// </summary>
         /// <value>ID of the selling party or vendor.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// Warehouse code of vendor.
         /// </summary>
         /// <value>Warehouse code of vendor.</value>
-        [DataMember(Name="shipFromParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFromParty", EmitDefaultValue = false)]
         public PartyIdentification ShipFromParty { get; set; }
 
         /// <summary>
         /// A list of the packages in this shipment.
         /// </summary>
         /// <value>A list of the packages in this shipment.</value>
-        [DataMember(Name="containers", EmitDefaultValue=false)]
+        [DataMember(Name = "containers", EmitDefaultValue = false)]
         public List<Container> Containers { get; set; }
 
         /// <summary>
@@ -99,7 +94,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +124,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.ShipFromParty == input.ShipFromParty ||
                     (this.ShipFromParty != null &&
                     this.ShipFromParty.Equals(input.ShipFromParty))
-                ) && 
+                ) &&
                 (
                     this.Containers == input.Containers ||
                     this.Containers != null &&

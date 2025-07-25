@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Amazon Warehousing and Distribution
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * OpenAPI spec version: 2024-05-09
  * 
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,13 +23,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Represents an AWD inbound shipment.
     /// </summary>
     [DataContract]
-    public partial class InboundShipment :  IEquatable<InboundShipment>, IValidatableObject
+    public partial class InboundShipment : IEquatable<InboundShipment>, IValidatableObject
     {
         /// <summary>
         /// Current status of this shipment.
         /// </summary>
         /// <value>Current status of this shipment.</value>
-        [DataMember(Name="shipmentStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentStatus", EmitDefaultValue = false)]
         public InboundShipmentStatus ShipmentStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundShipment" /> class.
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// <param name="shipmentContainerQuantities">Packages that are part of this shipment. (required).</param>
         /// <param name="shipmentId">Unique shipment ID. (required).</param>
         /// <param name="shipmentSkuQuantities">Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW..</param>
-        /// <param name="destinationRegion">Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east].</param>
+        /// <param name="destinationRegion">Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast].</param>
         /// <param name="shipmentStatus">Current status of this shipment. (required).</param>
         /// <param name="trackingId">Carrier-unique tracking ID for this shipment..</param>
         /// <param name="updatedAt">Timestamp when the shipment was updated. The date is returned in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format..</param>
@@ -127,89 +122,89 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             this.UpdatedAt = updatedAt;
             this.WarehouseReferenceId = warehouseReferenceId;
         }
-        
+
         /// <summary>
         /// The shipment carrier code.
         /// </summary>
         /// <value>The shipment carrier code.</value>
-        [DataMember(Name="carrierCode", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierCode", EmitDefaultValue = false)]
         public CarrierCode CarrierCode { get; set; }
 
         /// <summary>
         /// Timestamp when the shipment was created. The date is returned in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
         /// </summary>
         /// <value>Timestamp when the shipment was created. The date is returned in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
-        [DataMember(Name="createdAt", EmitDefaultValue=false)]
+        [DataMember(Name = "createdAt", EmitDefaultValue = false)]
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Destination address for this shipment.
         /// </summary>
         /// <value>Destination address for this shipment.</value>
-        [DataMember(Name="destinationAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "destinationAddress", EmitDefaultValue = false)]
         public Address DestinationAddress { get; set; }
 
         /// <summary>
         /// Client-provided reference ID that can correlate this shipment to client resources. For example, to map this shipment to an internal bookkeeping order record.
         /// </summary>
         /// <value>Client-provided reference ID that can correlate this shipment to client resources. For example, to map this shipment to an internal bookkeeping order record.</value>
-        [DataMember(Name="externalReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalReferenceId", EmitDefaultValue = false)]
         public string ExternalReferenceId { get; set; }
 
         /// <summary>
         /// The AWD inbound order ID that this inbound shipment belongs to.
         /// </summary>
         /// <value>The AWD inbound order ID that this inbound shipment belongs to.</value>
-        [DataMember(Name="orderId", EmitDefaultValue=false)]
+        [DataMember(Name = "orderId", EmitDefaultValue = false)]
         public string OrderId { get; set; }
 
         /// <summary>
         /// Origin address for this shipment.
         /// </summary>
         /// <value>Origin address for this shipment.</value>
-        [DataMember(Name="originAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "originAddress", EmitDefaultValue = false)]
         public Address OriginAddress { get; set; }
 
         /// <summary>
         /// Quantity received (at the receiving end) as part of this shipment.
         /// </summary>
         /// <value>Quantity received (at the receiving end) as part of this shipment.</value>
-        [DataMember(Name="receivedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "receivedQuantity", EmitDefaultValue = false)]
         public List<InventoryQuantity> ReceivedQuantity { get; set; }
 
         /// <summary>
         /// Timestamp when the shipment will be shipped.
         /// </summary>
         /// <value>Timestamp when the shipment will be shipped.</value>
-        [DataMember(Name="shipBy", EmitDefaultValue=false)]
+        [DataMember(Name = "shipBy", EmitDefaultValue = false)]
         public DateTime? ShipBy { get; set; }
 
         /// <summary>
         /// Packages that are part of this shipment.
         /// </summary>
         /// <value>Packages that are part of this shipment.</value>
-        [DataMember(Name="shipmentContainerQuantities", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentContainerQuantities", EmitDefaultValue = false)]
         public List<DistributionPackageQuantity> ShipmentContainerQuantities { get; set; }
 
         /// <summary>
         /// Unique shipment ID.
         /// </summary>
         /// <value>Unique shipment ID.</value>
-        [DataMember(Name="shipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentId", EmitDefaultValue = false)]
         public string ShipmentId { get; set; }
 
         /// <summary>
         /// Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW.
         /// </summary>
         /// <value>Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW.</value>
-        [DataMember(Name="shipmentSkuQuantities", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentSkuQuantities", EmitDefaultValue = false)]
         public List<SkuQuantity> ShipmentSkuQuantities { get; set; }
 
         /// <summary>
-        /// Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east]
+        /// Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]
         /// </summary>
-        /// <value>Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east]</value>
-        [DataMember(Name="destinationRegion", EmitDefaultValue=false)]
+        /// <value>Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]</value>
+        [DataMember(Name = "destinationRegion", EmitDefaultValue = false)]
         public string DestinationRegion { get; set; }
 
 
@@ -217,21 +212,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// Carrier-unique tracking ID for this shipment.
         /// </summary>
         /// <value>Carrier-unique tracking ID for this shipment.</value>
-        [DataMember(Name="trackingId", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingId", EmitDefaultValue = false)]
         public string TrackingId { get; set; }
 
         /// <summary>
         /// Timestamp when the shipment was updated. The date is returned in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
         /// </summary>
         /// <value>Timestamp when the shipment was updated. The date is returned in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
-        [DataMember(Name="updatedAt", EmitDefaultValue=false)]
+        [DataMember(Name = "updatedAt", EmitDefaultValue = false)]
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// An AWD-provided reference ID that you can use to interact with the warehouse. For example, a carrier appointment booking.
         /// </summary>
         /// <value>An AWD-provided reference ID that you can use to interact with the warehouse. For example, a carrier appointment booking.</value>
-        [DataMember(Name="warehouseReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "warehouseReferenceId", EmitDefaultValue = false)]
         public string WarehouseReferenceId { get; set; }
 
         /// <summary>
@@ -261,7 +256,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -291,82 +286,82 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CarrierCode == input.CarrierCode ||
                     (this.CarrierCode != null &&
                     this.CarrierCode.Equals(input.CarrierCode))
-                ) && 
+                ) &&
                 (
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
+                ) &&
                 (
                     this.DestinationAddress == input.DestinationAddress ||
                     (this.DestinationAddress != null &&
                     this.DestinationAddress.Equals(input.DestinationAddress))
-                ) && 
+                ) &&
                 (
                     this.ExternalReferenceId == input.ExternalReferenceId ||
                     (this.ExternalReferenceId != null &&
                     this.ExternalReferenceId.Equals(input.ExternalReferenceId))
-                ) && 
+                ) &&
                 (
                     this.OrderId == input.OrderId ||
                     (this.OrderId != null &&
                     this.OrderId.Equals(input.OrderId))
-                ) && 
+                ) &&
                 (
                     this.OriginAddress == input.OriginAddress ||
                     (this.OriginAddress != null &&
                     this.OriginAddress.Equals(input.OriginAddress))
-                ) && 
+                ) &&
                 (
                     this.ReceivedQuantity == input.ReceivedQuantity ||
                     this.ReceivedQuantity != null &&
                     this.ReceivedQuantity.SequenceEqual(input.ReceivedQuantity)
-                ) && 
+                ) &&
                 (
                     this.ShipBy == input.ShipBy ||
                     (this.ShipBy != null &&
                     this.ShipBy.Equals(input.ShipBy))
-                ) && 
+                ) &&
                 (
                     this.ShipmentContainerQuantities == input.ShipmentContainerQuantities ||
                     this.ShipmentContainerQuantities != null &&
                     this.ShipmentContainerQuantities.SequenceEqual(input.ShipmentContainerQuantities)
-                ) && 
+                ) &&
                 (
                     this.ShipmentId == input.ShipmentId ||
                     (this.ShipmentId != null &&
                     this.ShipmentId.Equals(input.ShipmentId))
-                ) && 
+                ) &&
                 (
                     this.ShipmentSkuQuantities == input.ShipmentSkuQuantities ||
                     this.ShipmentSkuQuantities != null &&
                     this.ShipmentSkuQuantities.SequenceEqual(input.ShipmentSkuQuantities)
-                ) && 
+                ) &&
                 (
                     this.DestinationRegion == input.DestinationRegion ||
                     (this.DestinationRegion != null &&
                     this.DestinationRegion.Equals(input.DestinationRegion))
-                ) && 
+                ) &&
                 (
                     this.ShipmentStatus == input.ShipmentStatus ||
                     (this.ShipmentStatus != null &&
                     this.ShipmentStatus.Equals(input.ShipmentStatus))
-                ) && 
+                ) &&
                 (
                     this.TrackingId == input.TrackingId ||
                     (this.TrackingId != null &&
                     this.TrackingId.Equals(input.TrackingId))
-                ) && 
+                ) &&
                 (
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
+                ) &&
                 (
                     this.WarehouseReferenceId == input.WarehouseReferenceId ||
                     (this.WarehouseReferenceId != null &&
@@ -427,21 +422,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // OrderId (string) minLength
-            if(this.OrderId != null && this.OrderId.Length < 1)
+            if (this.OrderId != null && this.OrderId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for OrderId, length must be greater than 1.", new [] { "OrderId" });
+                yield return new ValidationResult("Invalid value for OrderId, length must be greater than 1.", new[] { "OrderId" });
             }
 
             // ShipmentId (string) minLength
-            if(this.ShipmentId != null && this.ShipmentId.Length < 1)
+            if (this.ShipmentId != null && this.ShipmentId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 1.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 1.", new[] { "ShipmentId" });
             }
 
             // TrackingId (string) minLength
-            if(this.TrackingId != null && this.TrackingId.Length < 1)
+            if (this.TrackingId != null && this.TrackingId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for TrackingId, length must be greater than 1.", new [] { "TrackingId" });
+                yield return new ValidationResult("Invalid value for TrackingId, length must be greater than 1.", new[] { "TrackingId" });
             }
 
             yield break;

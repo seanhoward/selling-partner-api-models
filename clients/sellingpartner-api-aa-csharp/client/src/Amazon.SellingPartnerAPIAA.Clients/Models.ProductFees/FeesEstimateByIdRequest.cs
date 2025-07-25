@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
     /// A product, marketplace, and proposed price used to request estimated fees.
     /// </summary>
     [DataContract]
-    public partial class FeesEstimateByIdRequest :  IEquatable<FeesEstimateByIdRequest>, IValidatableObject
+    public partial class FeesEstimateByIdRequest : IEquatable<FeesEstimateByIdRequest>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets IdType
         /// </summary>
-        [DataMember(Name="IdType", EmitDefaultValue=false)]
+        [DataMember(Name = "IdType", EmitDefaultValue = false)]
         public IdType IdType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimateByIdRequest" /> class.
@@ -68,11 +62,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             }
             this.FeesEstimateRequest = feesEstimateRequest;
         }
-        
+
         /// <summary>
         /// Gets or Sets FeesEstimateRequest
         /// </summary>
-        [DataMember(Name="FeesEstimateRequest", EmitDefaultValue=false)]
+        [DataMember(Name = "FeesEstimateRequest", EmitDefaultValue = false)]
         public FeesEstimateRequest FeesEstimateRequest { get; set; }
 
 
@@ -80,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// The item identifier.
         /// </summary>
         /// <value>The item identifier.</value>
-        [DataMember(Name="IdValue", EmitDefaultValue=false)]
+        [DataMember(Name = "IdValue", EmitDefaultValue = false)]
         public string IdValue { get; set; }
 
         /// <summary>
@@ -97,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -127,17 +121,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FeesEstimateRequest == input.FeesEstimateRequest ||
                     (this.FeesEstimateRequest != null &&
                     this.FeesEstimateRequest.Equals(input.FeesEstimateRequest))
-                ) && 
+                ) &&
                 (
                     this.IdType == input.IdType ||
                     (this.IdType != null &&
                     this.IdType.Equals(input.IdType))
-                ) && 
+                ) &&
                 (
                     this.IdValue == input.IdValue ||
                     (this.IdValue != null &&

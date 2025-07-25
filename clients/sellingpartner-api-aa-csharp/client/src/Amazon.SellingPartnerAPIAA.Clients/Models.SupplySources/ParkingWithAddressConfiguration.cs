@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The parking configuration with the address.
     /// </summary>
     [DataContract]
-    public partial class ParkingWithAddressConfiguration : ParkingConfiguration,  IEquatable<ParkingWithAddressConfiguration>, IValidatableObject
+    public partial class ParkingWithAddressConfiguration : ParkingConfiguration, IEquatable<ParkingWithAddressConfiguration>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ParkingWithAddressConfiguration" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         {
             this.Address = address;
         }
-        
+
         /// <summary>
         /// The address of the parking location.
         /// </summary>
         /// <value>The address of the parking location.</value>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
         /// <summary>
@@ -59,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -89,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return base.Equals(input) &&
                 (
                     this.Address == input.Address ||
                     (this.Address != null &&

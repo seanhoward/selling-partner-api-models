@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// The number of misplaced or warehouse damaged units that are actively being confirmed at our fulfillment centers.
     /// </summary>
     [DataContract]
-    public partial class ResearchingQuantity :  IEquatable<ResearchingQuantity>, IValidatableObject
+    public partial class ResearchingQuantity : IEquatable<ResearchingQuantity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ResearchingQuantity" /> class.
@@ -40,19 +34,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             this.TotalResearchingQuantity = totalResearchingQuantity;
             this.ResearchingQuantityBreakdown = researchingQuantityBreakdown;
         }
-        
+
         /// <summary>
         /// The total number of units currently being researched in Amazon&#39;s fulfillment network.
         /// </summary>
         /// <value>The total number of units currently being researched in Amazon&#39;s fulfillment network.</value>
-        [DataMember(Name="totalResearchingQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "totalResearchingQuantity", EmitDefaultValue = false)]
         public int? TotalResearchingQuantity { get; set; }
 
         /// <summary>
         /// A list of quantity details for items currently being researched.
         /// </summary>
         /// <value>A list of quantity details for items currently being researched.</value>
-        [DataMember(Name="researchingQuantityBreakdown", EmitDefaultValue=false)]
+        [DataMember(Name = "researchingQuantityBreakdown", EmitDefaultValue = false)]
         public List<ResearchingQuantityEntry> ResearchingQuantityBreakdown { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TotalResearchingQuantity == input.TotalResearchingQuantity ||
                     (this.TotalResearchingQuantity != null &&
                     this.TotalResearchingQuantity.Equals(input.TotalResearchingQuantity))
-                ) && 
+                ) &&
                 (
                     this.ResearchingQuantityBreakdown == input.ResearchingQuantityBreakdown ||
                     this.ResearchingQuantityBreakdown != null &&

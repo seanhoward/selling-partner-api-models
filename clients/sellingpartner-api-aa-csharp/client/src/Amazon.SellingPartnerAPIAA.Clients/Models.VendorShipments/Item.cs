@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Details of the item being shipped.
     /// </summary>
     [DataContract]
-    public partial class Item :  IEquatable<Item>, IValidatableObject
+    public partial class Item : IEquatable<Item>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -67,39 +61,39 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.VendorProductIdentifier = vendorProductIdentifier;
             this.ItemDetails = itemDetails;
         }
-        
+
         /// <summary>
         /// Item sequence number for the item. The first item will be 001, the second 002, and so on. This number is used as a reference to refer to this item from the carton or pallet level.
         /// </summary>
         /// <value>Item sequence number for the item. The first item will be 001, the second 002, and so on. This number is used as a reference to refer to this item from the carton or pallet level.</value>
-        [DataMember(Name="itemSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "itemSequenceNumber", EmitDefaultValue = false)]
         public string ItemSequenceNumber { get; set; }
 
         /// <summary>
         /// Buyer Standard Identification Number (ASIN) of an item.
         /// </summary>
         /// <value>Buyer Standard Identification Number (ASIN) of an item.</value>
-        [DataMember(Name="amazonProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonProductIdentifier", EmitDefaultValue = false)]
         public string AmazonProductIdentifier { get; set; }
 
         /// <summary>
         /// The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
         /// </summary>
         /// <value>The vendor selected product identification of the item. Should be the same as was sent in the purchase order.</value>
-        [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorProductIdentifier", EmitDefaultValue = false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
         /// Total item quantity shipped in this shipment.
         /// </summary>
         /// <value>Total item quantity shipped in this shipment.</value>
-        [DataMember(Name="shippedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "shippedQuantity", EmitDefaultValue = false)]
         public ItemQuantity ShippedQuantity { get; set; }
 
         /// <summary>
         /// Gets or Sets ItemDetails
         /// </summary>
-        [DataMember(Name="itemDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "itemDetails", EmitDefaultValue = false)]
         public ItemDetails ItemDetails { get; set; }
 
         /// <summary>
@@ -118,7 +112,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -148,27 +142,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemSequenceNumber == input.ItemSequenceNumber ||
                     (this.ItemSequenceNumber != null &&
                     this.ItemSequenceNumber.Equals(input.ItemSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.AmazonProductIdentifier == input.AmazonProductIdentifier ||
                     (this.AmazonProductIdentifier != null &&
                     this.AmazonProductIdentifier.Equals(input.AmazonProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.VendorProductIdentifier == input.VendorProductIdentifier ||
                     (this.VendorProductIdentifier != null &&
                     this.VendorProductIdentifier.Equals(input.VendorProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.ShippedQuantity == input.ShippedQuantity ||
                     (this.ShippedQuantity != null &&
                     this.ShippedQuantity.Equals(input.ShippedQuantity))
-                ) && 
+                ) &&
                 (
                     this.ItemDetails == input.ItemDetails ||
                     (this.ItemDetails != null &&

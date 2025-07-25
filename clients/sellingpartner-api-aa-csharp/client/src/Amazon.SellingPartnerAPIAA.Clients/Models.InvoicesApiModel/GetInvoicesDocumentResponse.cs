@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
     /// Success.
     /// </summary>
     [DataContract]
-    public partial class GetInvoicesDocumentResponse :  IEquatable<GetInvoicesDocumentResponse>, IValidatableObject
+    public partial class GetInvoicesDocumentResponse : IEquatable<GetInvoicesDocumentResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetInvoicesDocumentResponse" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         {
             this.InvoicesDocument = invoicesDocument;
         }
-        
+
         /// <summary>
         /// Gets or Sets InvoicesDocument
         /// </summary>
-        [DataMember(Name="invoicesDocument", EmitDefaultValue=false)]
+        [DataMember(Name = "invoicesDocument", EmitDefaultValue = false)]
         public InvoicesDocument InvoicesDocument { get; set; }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.InvoicesDocument == input.InvoicesDocument ||
                     (this.InvoicesDocument != null &&

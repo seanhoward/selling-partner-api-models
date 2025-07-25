@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The shipping address for the order.
     /// </summary>
     [DataContract]
-    public partial class Address :  IEquatable<Address>, IValidatableObject
+    public partial class Address : IEquatable<Address>, IValidatableObject
     {
         /// <summary>
         /// The address type of the shipping address.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AddressTypeEnum
         {
-            
+
             /// <summary>
             /// Enum Residential for value: Residential
             /// </summary>
             [EnumMember(Value = "Residential")]
             Residential = 1,
-            
+
             /// <summary>
             /// Enum Commercial for value: Commercial
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// The address type of the shipping address.
         /// </summary>
         /// <value>The address type of the shipping address.</value>
-        [DataMember(Name="AddressType", EmitDefaultValue=false)]
+        [DataMember(Name = "AddressType", EmitDefaultValue = false)]
         public AddressTypeEnum? AddressType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -106,103 +101,103 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.ExtendedFields = extendedFields;
             this.AddressType = addressType;
         }
-        
+
         /// <summary>
         /// The name.
         /// </summary>
         /// <value>The name.</value>
-        [DataMember(Name="Name", EmitDefaultValue=false)]
+        [DataMember(Name = "Name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The company name of the recipient.  **Note**: This attribute is only available for shipping address.
         /// </summary>
         /// <value>The company name of the recipient.  **Note**: This attribute is only available for shipping address.</value>
-        [DataMember(Name="CompanyName", EmitDefaultValue=false)]
+        [DataMember(Name = "CompanyName", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// The street address.
         /// </summary>
         /// <value>The street address.</value>
-        [DataMember(Name="AddressLine1", EmitDefaultValue=false)]
+        [DataMember(Name = "AddressLine1", EmitDefaultValue = false)]
         public string AddressLine1 { get; set; }
 
         /// <summary>
         /// Additional street address information, if required.
         /// </summary>
         /// <value>Additional street address information, if required.</value>
-        [DataMember(Name="AddressLine2", EmitDefaultValue=false)]
+        [DataMember(Name = "AddressLine2", EmitDefaultValue = false)]
         public string AddressLine2 { get; set; }
 
         /// <summary>
         /// Additional street address information, if required.
         /// </summary>
         /// <value>Additional street address information, if required.</value>
-        [DataMember(Name="AddressLine3", EmitDefaultValue=false)]
+        [DataMember(Name = "AddressLine3", EmitDefaultValue = false)]
         public string AddressLine3 { get; set; }
 
         /// <summary>
         /// The city.
         /// </summary>
         /// <value>The city.</value>
-        [DataMember(Name="City", EmitDefaultValue=false)]
+        [DataMember(Name = "City", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// The county.
         /// </summary>
         /// <value>The county.</value>
-        [DataMember(Name="County", EmitDefaultValue=false)]
+        [DataMember(Name = "County", EmitDefaultValue = false)]
         public string County { get; set; }
 
         /// <summary>
         /// The district.
         /// </summary>
         /// <value>The district.</value>
-        [DataMember(Name="District", EmitDefaultValue=false)]
+        [DataMember(Name = "District", EmitDefaultValue = false)]
         public string District { get; set; }
 
         /// <summary>
         /// The state or region.
         /// </summary>
         /// <value>The state or region.</value>
-        [DataMember(Name="StateOrRegion", EmitDefaultValue=false)]
+        [DataMember(Name = "StateOrRegion", EmitDefaultValue = false)]
         public string StateOrRegion { get; set; }
 
         /// <summary>
         /// The municipality.
         /// </summary>
         /// <value>The municipality.</value>
-        [DataMember(Name="Municipality", EmitDefaultValue=false)]
+        [DataMember(Name = "Municipality", EmitDefaultValue = false)]
         public string Municipality { get; set; }
 
         /// <summary>
         /// The postal code.
         /// </summary>
         /// <value>The postal code.</value>
-        [DataMember(Name="PostalCode", EmitDefaultValue=false)]
+        [DataMember(Name = "PostalCode", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
         /// </summary>
         /// <value>The country code. A two-character country code, in ISO 3166-1 alpha-2 format.</value>
-        [DataMember(Name="CountryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "CountryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
         /// The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. In some cases, the buyer phone number is suppressed:  a. Phone is suppressed for all &#x60;AFN&#x60; (fulfilled by Amazon) orders. b. Phone is suppressed for the shipped &#x60;MFN&#x60; (fulfilled by seller) order when the current date is past the Latest Delivery Date.
         /// </summary>
         /// <value>The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. In some cases, the buyer phone number is suppressed:  a. Phone is suppressed for all &#x60;AFN&#x60; (fulfilled by Amazon) orders. b. Phone is suppressed for the shipped &#x60;MFN&#x60; (fulfilled by seller) order when the current date is past the Latest Delivery Date.</value>
-        [DataMember(Name="Phone", EmitDefaultValue=false)]
+        [DataMember(Name = "Phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
         /// <summary>
         /// The container for address extended fields. For example, street name or street number.   **Note**: This attribute is currently only available with Brazil shipping addresses.
         /// </summary>
         /// <value>The container for address extended fields. For example, street name or street number.   **Note**: This attribute is currently only available with Brazil shipping addresses.</value>
-        [DataMember(Name="ExtendedFields", EmitDefaultValue=false)]
+        [DataMember(Name = "ExtendedFields", EmitDefaultValue = false)]
         public AddressExtendedFields ExtendedFields { get; set; }
 
 
@@ -232,7 +227,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -262,77 +257,77 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.CompanyName == input.CompanyName ||
                     (this.CompanyName != null &&
                     this.CompanyName.Equals(input.CompanyName))
-                ) && 
+                ) &&
                 (
                     this.AddressLine1 == input.AddressLine1 ||
                     (this.AddressLine1 != null &&
                     this.AddressLine1.Equals(input.AddressLine1))
-                ) && 
+                ) &&
                 (
                     this.AddressLine2 == input.AddressLine2 ||
                     (this.AddressLine2 != null &&
                     this.AddressLine2.Equals(input.AddressLine2))
-                ) && 
+                ) &&
                 (
                     this.AddressLine3 == input.AddressLine3 ||
                     (this.AddressLine3 != null &&
                     this.AddressLine3.Equals(input.AddressLine3))
-                ) && 
+                ) &&
                 (
                     this.City == input.City ||
                     (this.City != null &&
                     this.City.Equals(input.City))
-                ) && 
+                ) &&
                 (
                     this.County == input.County ||
                     (this.County != null &&
                     this.County.Equals(input.County))
-                ) && 
+                ) &&
                 (
                     this.District == input.District ||
                     (this.District != null &&
                     this.District.Equals(input.District))
-                ) && 
+                ) &&
                 (
                     this.StateOrRegion == input.StateOrRegion ||
                     (this.StateOrRegion != null &&
                     this.StateOrRegion.Equals(input.StateOrRegion))
-                ) && 
+                ) &&
                 (
                     this.Municipality == input.Municipality ||
                     (this.Municipality != null &&
                     this.Municipality.Equals(input.Municipality))
-                ) && 
+                ) &&
                 (
                     this.PostalCode == input.PostalCode ||
                     (this.PostalCode != null &&
                     this.PostalCode.Equals(input.PostalCode))
-                ) && 
+                ) &&
                 (
                     this.CountryCode == input.CountryCode ||
                     (this.CountryCode != null &&
                     this.CountryCode.Equals(input.CountryCode))
-                ) && 
+                ) &&
                 (
                     this.Phone == input.Phone ||
                     (this.Phone != null &&
                     this.Phone.Equals(input.Phone))
-                ) && 
+                ) &&
                 (
                     this.ExtendedFields == input.ExtendedFields ||
                     (this.ExtendedFields != null &&
                     this.ExtendedFields.Equals(input.ExtendedFields))
-                ) && 
+                ) &&
                 (
                     this.AddressType == input.AddressType ||
                     (this.AddressType != null &&

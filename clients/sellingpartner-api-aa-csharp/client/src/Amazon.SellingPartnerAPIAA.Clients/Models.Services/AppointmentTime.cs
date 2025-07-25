@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// The time of the appointment window.
     /// </summary>
     [DataContract]
-    public partial class AppointmentTime :  IEquatable<AppointmentTime>, IValidatableObject
+    public partial class AppointmentTime : IEquatable<AppointmentTime>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentTime" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
                 this.DurationInMinutes = durationInMinutes;
             }
         }
-        
+
         /// <summary>
         /// The date and time of the start of the appointment window in ISO 8601 format.
         /// </summary>
         /// <value>The date and time of the start of the appointment window in ISO 8601 format.</value>
-        [DataMember(Name="startTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startTime", EmitDefaultValue = false)]
         public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// The duration of the appointment window, in minutes.
         /// </summary>
         /// <value>The duration of the appointment window, in minutes.</value>
-        [DataMember(Name="durationInMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "durationInMinutes", EmitDefaultValue = false)]
         public int? DurationInMinutes { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StartTime == input.StartTime ||
                     (this.StartTime != null &&
                     this.StartTime.Equals(input.StartTime))
-                ) && 
+                ) &&
                 (
                     this.DurationInMinutes == input.DurationInMinutes ||
                     (this.DurationInMinutes != null &&
@@ -157,9 +151,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DurationInMinutes (int?) minimum
-            if(this.DurationInMinutes < (int?)1)
+            if (this.DurationInMinutes < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for DurationInMinutes, must be a value greater than or equal to 1.", new [] { "DurationInMinutes" });
+                yield return new ValidationResult("Invalid value for DurationInMinutes, must be a value greater than or equal to 1.", new[] { "DurationInMinutes" });
             }
 
             yield break;

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// A list of fulfillment order previews, including estimated shipping weights, estimated shipping fees, and estimated ship dates and arrival dates.
     /// </summary>
     [DataContract]
-    public partial class GetFulfillmentPreviewResult :  IEquatable<GetFulfillmentPreviewResult>, IValidatableObject
+    public partial class GetFulfillmentPreviewResult : IEquatable<GetFulfillmentPreviewResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFulfillmentPreviewResult" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         {
             this.FulfillmentPreviews = fulfillmentPreviews;
         }
-        
+
         /// <summary>
         /// Gets or Sets FulfillmentPreviews
         /// </summary>
-        [DataMember(Name="fulfillmentPreviews", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentPreviews", EmitDefaultValue = false)]
         public FulfillmentPreviewList FulfillmentPreviews { get; set; }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FulfillmentPreviews == input.FulfillmentPreviews ||
                     (this.FulfillmentPreviews != null &&

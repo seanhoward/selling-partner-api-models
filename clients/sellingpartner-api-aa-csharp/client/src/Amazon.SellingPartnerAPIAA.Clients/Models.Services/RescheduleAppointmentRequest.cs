@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Input for rescheduled appointment operation.
     /// </summary>
     [DataContract]
-    public partial class RescheduleAppointmentRequest :  IEquatable<RescheduleAppointmentRequest>, IValidatableObject
+    public partial class RescheduleAppointmentRequest : IEquatable<RescheduleAppointmentRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RescheduleAppointmentRequest" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
                 this.RescheduleReasonCode = rescheduleReasonCode;
             }
         }
-        
+
         /// <summary>
         /// Input appointment time details.
         /// </summary>
         /// <value>Input appointment time details.</value>
-        [DataMember(Name="appointmentTime", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentTime", EmitDefaultValue = false)]
         public AppointmentTimeInput AppointmentTime { get; set; }
 
         /// <summary>
         /// Input appointment reschedule reason.
         /// </summary>
         /// <value>Input appointment reschedule reason.</value>
-        [DataMember(Name="rescheduleReasonCode", EmitDefaultValue=false)]
+        [DataMember(Name = "rescheduleReasonCode", EmitDefaultValue = false)]
         public string RescheduleReasonCode { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AppointmentTime == input.AppointmentTime ||
                     (this.AppointmentTime != null &&
                     this.AppointmentTime.Equals(input.AppointmentTime))
-                ) && 
+                ) &&
                 (
                     this.RescheduleReasonCode == input.RescheduleReasonCode ||
                     (this.RescheduleReasonCode != null &&

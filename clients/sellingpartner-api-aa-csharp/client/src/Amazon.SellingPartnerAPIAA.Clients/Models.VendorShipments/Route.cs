@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// This is used only for direct import shipment confirmations.
     /// </summary>
     [DataContract]
-    public partial class Route :  IEquatable<Route>, IValidatableObject
+    public partial class Route : IEquatable<Route>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Route" /> class.
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
                 this.Stops = stops;
             }
         }
-        
+
         /// <summary>
         /// The port or location involved in transporting the cargo, as specified in transportation contracts or operational plans.
         /// </summary>
         /// <value>The port or location involved in transporting the cargo, as specified in transportation contracts or operational plans.</value>
-        [DataMember(Name="stops", EmitDefaultValue=false)]
+        [DataMember(Name = "stops", EmitDefaultValue = false)]
         public List<Stop> Stops { get; set; }
 
         /// <summary>
@@ -71,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Stops == input.Stops ||
                     this.Stops != null &&

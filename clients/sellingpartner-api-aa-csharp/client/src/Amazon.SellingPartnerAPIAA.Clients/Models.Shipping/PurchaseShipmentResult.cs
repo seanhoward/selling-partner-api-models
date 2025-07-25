@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The payload schema for the purchaseShipment operation.
     /// </summary>
     [DataContract]
-    public partial class PurchaseShipmentResult :  IEquatable<PurchaseShipmentResult>, IValidatableObject
+    public partial class PurchaseShipmentResult : IEquatable<PurchaseShipmentResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PurchaseShipmentResult" /> class.
@@ -71,23 +65,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
                 this.LabelResults = labelResults;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets ShipmentId
         /// </summary>
-        [DataMember(Name="shipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentId", EmitDefaultValue = false)]
         public string ShipmentId { get; set; }
 
         /// <summary>
         /// Gets or Sets ServiceRate
         /// </summary>
-        [DataMember(Name="serviceRate", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceRate", EmitDefaultValue = false)]
         public ServiceRate ServiceRate { get; set; }
 
         /// <summary>
         /// Gets or Sets LabelResults
         /// </summary>
-        [DataMember(Name="labelResults", EmitDefaultValue=false)]
+        [DataMember(Name = "labelResults", EmitDefaultValue = false)]
         public LabelResultList LabelResults { get; set; }
 
         /// <summary>
@@ -104,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -134,17 +128,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShipmentId == input.ShipmentId ||
                     (this.ShipmentId != null &&
                     this.ShipmentId.Equals(input.ShipmentId))
-                ) && 
+                ) &&
                 (
                     this.ServiceRate == input.ServiceRate ||
                     (this.ServiceRate != null &&
                     this.ServiceRate.Equals(input.ServiceRate))
-                ) && 
+                ) &&
                 (
                     this.LabelResults == input.LabelResults ||
                     (this.LabelResults != null &&

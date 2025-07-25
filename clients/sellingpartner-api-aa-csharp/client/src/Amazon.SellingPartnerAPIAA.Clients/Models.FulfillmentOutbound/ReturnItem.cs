@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,18 +22,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// An item that Amazon accepted for return.
     /// </summary>
     [DataContract]
-    public partial class ReturnItem :  IEquatable<ReturnItem>, IValidatableObject
+    public partial class ReturnItem : IEquatable<ReturnItem>, IValidatableObject
     {
         /// <summary>
         /// Indicates if the return item has been processed by an Amazon fulfillment center.
         /// </summary>
         /// <value>Indicates if the return item has been processed by an Amazon fulfillment center.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public FulfillmentReturnItemStatus Status { get; set; }
         /// <summary>
         /// Gets or Sets ReturnReceivedCondition
         /// </summary>
-        [DataMember(Name="returnReceivedCondition", EmitDefaultValue=false)]
+        [DataMember(Name = "returnReceivedCondition", EmitDefaultValue = false)]
         public ReturnItemDisposition? ReturnReceivedCondition { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ReturnItem" /> class.
@@ -122,47 +116,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.ReturnReceivedCondition = returnReceivedCondition;
             this.FulfillmentCenterId = fulfillmentCenterId;
         }
-        
+
         /// <summary>
         /// An identifier assigned by the seller to the return item.
         /// </summary>
         /// <value>An identifier assigned by the seller to the return item.</value>
-        [DataMember(Name="sellerReturnItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerReturnItemId", EmitDefaultValue = false)]
         public string SellerReturnItemId { get; set; }
 
         /// <summary>
         /// The identifier assigned to the item by the seller when the fulfillment order was created.
         /// </summary>
         /// <value>The identifier assigned to the item by the seller when the fulfillment order was created.</value>
-        [DataMember(Name="sellerFulfillmentOrderItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerFulfillmentOrderItemId", EmitDefaultValue = false)]
         public string SellerFulfillmentOrderItemId { get; set; }
 
         /// <summary>
         /// The identifier for the shipment that is associated with the return item.
         /// </summary>
         /// <value>The identifier for the shipment that is associated with the return item.</value>
-        [DataMember(Name="amazonShipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonShipmentId", EmitDefaultValue = false)]
         public string AmazonShipmentId { get; set; }
 
         /// <summary>
         /// The return reason code assigned to the return item by the seller.
         /// </summary>
         /// <value>The return reason code assigned to the return item by the seller.</value>
-        [DataMember(Name="sellerReturnReasonCode", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerReturnReasonCode", EmitDefaultValue = false)]
         public string SellerReturnReasonCode { get; set; }
 
         /// <summary>
         /// An optional comment about the return item.
         /// </summary>
         /// <value>An optional comment about the return item.</value>
-        [DataMember(Name="returnComment", EmitDefaultValue=false)]
+        [DataMember(Name = "returnComment", EmitDefaultValue = false)]
         public string ReturnComment { get; set; }
 
         /// <summary>
         /// The return reason code that the Amazon fulfillment center assigned to the return item.
         /// </summary>
         /// <value>The return reason code that the Amazon fulfillment center assigned to the return item.</value>
-        [DataMember(Name="amazonReturnReasonCode", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonReturnReasonCode", EmitDefaultValue = false)]
         public string AmazonReturnReasonCode { get; set; }
 
 
@@ -170,14 +164,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// Indicates when the status last changed.
         /// </summary>
         /// <value>Indicates when the status last changed.</value>
-        [DataMember(Name="statusChangedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "statusChangedDate", EmitDefaultValue = false)]
         public DateTime? StatusChangedDate { get; set; }
 
         /// <summary>
         /// Identifies the return authorization used to return this item. Refer to &#x60;ReturnAuthorization&#x60;.
         /// </summary>
         /// <value>Identifies the return authorization used to return this item. Refer to &#x60;ReturnAuthorization&#x60;.</value>
-        [DataMember(Name="returnAuthorizationId", EmitDefaultValue=false)]
+        [DataMember(Name = "returnAuthorizationId", EmitDefaultValue = false)]
         public string ReturnAuthorizationId { get; set; }
 
 
@@ -185,7 +179,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// The identifier for the Amazon fulfillment center that processed the return item.
         /// </summary>
         /// <value>The identifier for the Amazon fulfillment center that processed the return item.</value>
-        [DataMember(Name="fulfillmentCenterId", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentCenterId", EmitDefaultValue = false)]
         public string FulfillmentCenterId { get; set; }
 
         /// <summary>
@@ -210,7 +204,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -240,57 +234,57 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerReturnItemId == input.SellerReturnItemId ||
                     (this.SellerReturnItemId != null &&
                     this.SellerReturnItemId.Equals(input.SellerReturnItemId))
-                ) && 
+                ) &&
                 (
                     this.SellerFulfillmentOrderItemId == input.SellerFulfillmentOrderItemId ||
                     (this.SellerFulfillmentOrderItemId != null &&
                     this.SellerFulfillmentOrderItemId.Equals(input.SellerFulfillmentOrderItemId))
-                ) && 
+                ) &&
                 (
                     this.AmazonShipmentId == input.AmazonShipmentId ||
                     (this.AmazonShipmentId != null &&
                     this.AmazonShipmentId.Equals(input.AmazonShipmentId))
-                ) && 
+                ) &&
                 (
                     this.SellerReturnReasonCode == input.SellerReturnReasonCode ||
                     (this.SellerReturnReasonCode != null &&
                     this.SellerReturnReasonCode.Equals(input.SellerReturnReasonCode))
-                ) && 
+                ) &&
                 (
                     this.ReturnComment == input.ReturnComment ||
                     (this.ReturnComment != null &&
                     this.ReturnComment.Equals(input.ReturnComment))
-                ) && 
+                ) &&
                 (
                     this.AmazonReturnReasonCode == input.AmazonReturnReasonCode ||
                     (this.AmazonReturnReasonCode != null &&
                     this.AmazonReturnReasonCode.Equals(input.AmazonReturnReasonCode))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.StatusChangedDate == input.StatusChangedDate ||
                     (this.StatusChangedDate != null &&
                     this.StatusChangedDate.Equals(input.StatusChangedDate))
-                ) && 
+                ) &&
                 (
                     this.ReturnAuthorizationId == input.ReturnAuthorizationId ||
                     (this.ReturnAuthorizationId != null &&
                     this.ReturnAuthorizationId.Equals(input.ReturnAuthorizationId))
-                ) && 
+                ) &&
                 (
                     this.ReturnReceivedCondition == input.ReturnReceivedCondition ||
                     (this.ReturnReceivedCondition != null &&
                     this.ReturnReceivedCondition.Equals(input.ReturnReceivedCondition))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentCenterId == input.FulfillmentCenterId ||
                     (this.FulfillmentCenterId != null &&

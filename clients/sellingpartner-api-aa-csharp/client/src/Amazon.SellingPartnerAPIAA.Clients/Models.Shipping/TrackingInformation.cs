@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The payload schema for the getTrackingInformation operation.
     /// </summary>
     [DataContract]
-    public partial class TrackingInformation :  IEquatable<TrackingInformation>, IValidatableObject
+    public partial class TrackingInformation : IEquatable<TrackingInformation>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingInformation" /> class.
@@ -81,29 +75,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
                 this.EventHistory = eventHistory;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets TrackingId
         /// </summary>
-        [DataMember(Name="trackingId", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingId", EmitDefaultValue = false)]
         public string TrackingId { get; set; }
 
         /// <summary>
         /// Gets or Sets Summary
         /// </summary>
-        [DataMember(Name="summary", EmitDefaultValue=false)]
+        [DataMember(Name = "summary", EmitDefaultValue = false)]
         public TrackingSummary Summary { get; set; }
 
         /// <summary>
         /// Gets or Sets PromisedDeliveryDate
         /// </summary>
-        [DataMember(Name="promisedDeliveryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "promisedDeliveryDate", EmitDefaultValue = false)]
         public DateTime? PromisedDeliveryDate { get; set; }
 
         /// <summary>
         /// Gets or Sets EventHistory
         /// </summary>
-        [DataMember(Name="eventHistory", EmitDefaultValue=false)]
+        [DataMember(Name = "eventHistory", EmitDefaultValue = false)]
         public EventList EventHistory { get; set; }
 
         /// <summary>
@@ -121,7 +115,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -151,22 +145,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TrackingId == input.TrackingId ||
                     (this.TrackingId != null &&
                     this.TrackingId.Equals(input.TrackingId))
-                ) && 
+                ) &&
                 (
                     this.Summary == input.Summary ||
                     (this.Summary != null &&
                     this.Summary.Equals(input.Summary))
-                ) && 
+                ) &&
                 (
                     this.PromisedDeliveryDate == input.PromisedDeliveryDate ||
                     (this.PromisedDeliveryDate != null &&
                     this.PromisedDeliveryDate.Equals(input.PromisedDeliveryDate))
-                ) && 
+                ) &&
                 (
                     this.EventHistory == input.EventHistory ||
                     (this.EventHistory != null &&

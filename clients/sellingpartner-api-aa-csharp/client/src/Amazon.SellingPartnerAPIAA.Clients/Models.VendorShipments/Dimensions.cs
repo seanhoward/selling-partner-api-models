@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Physical dimensional measurements of a container.
     /// </summary>
     [DataContract]
-    public partial class Dimensions :  IEquatable<Dimensions>, IValidatableObject
+    public partial class Dimensions : IEquatable<Dimensions>, IValidatableObject
     {
         /// <summary>
         /// The unit of measure for dimensions.
@@ -37,25 +32,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitOfMeasureEnum
         {
-            
+
             /// <summary>
             /// Enum In for value: In
             /// </summary>
             [EnumMember(Value = "In")]
             In = 1,
-            
+
             /// <summary>
             /// Enum Ft for value: Ft
             /// </summary>
             [EnumMember(Value = "Ft")]
             Ft = 2,
-            
+
             /// <summary>
             /// Enum Meter for value: Meter
             /// </summary>
             [EnumMember(Value = "Meter")]
             Meter = 3,
-            
+
             /// <summary>
             /// Enum Yard for value: Yard
             /// </summary>
@@ -67,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// The unit of measure for dimensions.
         /// </summary>
         /// <value>The unit of measure for dimensions.</value>
-        [DataMember(Name="unitOfMeasure", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasure", EmitDefaultValue = false)]
         public UnitOfMeasureEnum UnitOfMeasure { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Dimensions" /> class.
@@ -120,26 +115,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
                 this.UnitOfMeasure = unitOfMeasure;
             }
         }
-        
+
         /// <summary>
         /// The length of the container.
         /// </summary>
         /// <value>The length of the container.</value>
-        [DataMember(Name="length", EmitDefaultValue=false)]
+        [DataMember(Name = "length", EmitDefaultValue = false)]
         public string Length { get; set; }
 
         /// <summary>
         /// The width of the container.
         /// </summary>
         /// <value>The width of the container.</value>
-        [DataMember(Name="width", EmitDefaultValue=false)]
+        [DataMember(Name = "width", EmitDefaultValue = false)]
         public string Width { get; set; }
 
         /// <summary>
         /// The height of the container.
         /// </summary>
         /// <value>The height of the container.</value>
-        [DataMember(Name="height", EmitDefaultValue=false)]
+        [DataMember(Name = "height", EmitDefaultValue = false)]
         public string Height { get; set; }
 
 
@@ -158,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -188,22 +183,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Length == input.Length ||
                     (this.Length != null &&
                     this.Length.Equals(input.Length))
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&
                     this.Width.Equals(input.Width))
-                ) && 
+                ) &&
                 (
                     this.Height == input.Height ||
                     (this.Height != null &&
                     this.Height.Equals(input.Height))
-                ) && 
+                ) &&
                 (
                     this.UnitOfMeasure == input.UnitOfMeasure ||
                     (this.UnitOfMeasure != null &&

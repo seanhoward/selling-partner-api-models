@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// Summary details of a listings item for an Amazon marketplace.
     /// </summary>
     [DataContract]
-    public partial class ItemSummaryByMarketplace :  IEquatable<ItemSummaryByMarketplace>, IValidatableObject
+    public partial class ItemSummaryByMarketplace : IEquatable<ItemSummaryByMarketplace>, IValidatableObject
     {
         /// <summary>
         /// Identifies the condition of the listings item.
@@ -37,79 +33,79 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ConditionTypeEnum
         {
-            
+
             /// <summary>
             /// Enum Newnew for value: new_new
             /// </summary>
             [EnumMember(Value = "new_new")]
             Newnew = 1,
-            
+
             /// <summary>
             /// Enum Newopenbox for value: new_open_box
             /// </summary>
             [EnumMember(Value = "new_open_box")]
             Newopenbox = 2,
-            
+
             /// <summary>
             /// Enum Newoem for value: new_oem
             /// </summary>
             [EnumMember(Value = "new_oem")]
             Newoem = 3,
-            
+
             /// <summary>
             /// Enum Refurbishedrefurbished for value: refurbished_refurbished
             /// </summary>
             [EnumMember(Value = "refurbished_refurbished")]
             Refurbishedrefurbished = 4,
-            
+
             /// <summary>
             /// Enum Usedlikenew for value: used_like_new
             /// </summary>
             [EnumMember(Value = "used_like_new")]
             Usedlikenew = 5,
-            
+
             /// <summary>
             /// Enum Usedverygood for value: used_very_good
             /// </summary>
             [EnumMember(Value = "used_very_good")]
             Usedverygood = 6,
-            
+
             /// <summary>
             /// Enum Usedgood for value: used_good
             /// </summary>
             [EnumMember(Value = "used_good")]
             Usedgood = 7,
-            
+
             /// <summary>
             /// Enum Usedacceptable for value: used_acceptable
             /// </summary>
             [EnumMember(Value = "used_acceptable")]
             Usedacceptable = 8,
-            
+
             /// <summary>
             /// Enum Collectiblelikenew for value: collectible_like_new
             /// </summary>
             [EnumMember(Value = "collectible_like_new")]
             Collectiblelikenew = 9,
-            
+
             /// <summary>
             /// Enum Collectibleverygood for value: collectible_very_good
             /// </summary>
             [EnumMember(Value = "collectible_very_good")]
             Collectibleverygood = 10,
-            
+
             /// <summary>
             /// Enum Collectiblegood for value: collectible_good
             /// </summary>
             [EnumMember(Value = "collectible_good")]
             Collectiblegood = 11,
-            
+
             /// <summary>
             /// Enum Collectibleacceptable for value: collectible_acceptable
             /// </summary>
             [EnumMember(Value = "collectible_acceptable")]
             Collectibleacceptable = 12,
-            
+
             /// <summary>
             /// Enum Clubclub for value: club_club
             /// </summary>
@@ -121,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// Identifies the condition of the listings item.
         /// </summary>
         /// <value>Identifies the condition of the listings item.</value>
-        [DataMember(Name="conditionType", EmitDefaultValue=false)]
+        [DataMember(Name = "conditionType", EmitDefaultValue = false)]
         public ConditionTypeEnum? ConditionType { get; set; }
         /// <summary>
         /// Defines Status
@@ -129,13 +125,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
-            
+
             /// <summary>
             /// Enum BUYABLE for value: BUYABLE
             /// </summary>
             [EnumMember(Value = "BUYABLE")]
             BUYABLE = 1,
-            
+
             /// <summary>
             /// Enum DISCOVERABLE for value: DISCOVERABLE
             /// </summary>
@@ -148,7 +144,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// Statuses that apply to the listings item.
         /// </summary>
         /// <value>Statuses that apply to the listings item.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSummaryByMarketplace" /> class.
@@ -221,26 +217,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             this.ItemName = itemName;
             this.MainImage = mainImage;
         }
-        
+
         /// <summary>
         /// A marketplace identifier. Identifies the Amazon marketplace for the listings item.
         /// </summary>
         /// <value>A marketplace identifier. Identifies the Amazon marketplace for the listings item.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// Amazon Standard Identification Number (ASIN) of the listings item.
         /// </summary>
         /// <value>Amazon Standard Identification Number (ASIN) of the listings item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// The Amazon product type of the listings item.
         /// </summary>
         /// <value>The Amazon product type of the listings item.</value>
-        [DataMember(Name="productType", EmitDefaultValue=false)]
+        [DataMember(Name = "productType", EmitDefaultValue = false)]
         public string ProductType { get; set; }
 
 
@@ -249,35 +245,35 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// The fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
         /// </summary>
         /// <value>The fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.</value>
-        [DataMember(Name="fnSku", EmitDefaultValue=false)]
+        [DataMember(Name = "fnSku", EmitDefaultValue = false)]
         public string FnSku { get; set; }
 
         /// <summary>
         /// The name or title associated with an Amazon catalog item.
         /// </summary>
         /// <value>The name or title associated with an Amazon catalog item.</value>
-        [DataMember(Name="itemName", EmitDefaultValue=false)]
+        [DataMember(Name = "itemName", EmitDefaultValue = false)]
         public string ItemName { get; set; }
 
         /// <summary>
         /// The date the listings item was created in ISO 8601 format.
         /// </summary>
         /// <value>The date the listings item was created in ISO 8601 format.</value>
-        [DataMember(Name="createdDate", EmitDefaultValue=false)]
+        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// The date the listings item was last updated in ISO 8601 format.
         /// </summary>
         /// <value>The date the listings item was last updated in ISO 8601 format.</value>
-        [DataMember(Name="lastUpdatedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "lastUpdatedDate", EmitDefaultValue = false)]
         public DateTime? LastUpdatedDate { get; set; }
 
         /// <summary>
         /// The main image for the listings item.
         /// </summary>
         /// <value>The main image for the listings item.</value>
-        [DataMember(Name="mainImage", EmitDefaultValue=false)]
+        [DataMember(Name = "mainImage", EmitDefaultValue = false)]
         public ItemImage MainImage { get; set; }
 
         /// <summary>
@@ -301,7 +297,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -331,52 +327,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.ProductType == input.ProductType ||
                     (this.ProductType != null &&
                     this.ProductType.Equals(input.ProductType))
-                ) && 
+                ) &&
                 (
                     this.ConditionType == input.ConditionType ||
                     (this.ConditionType != null &&
                     this.ConditionType.Equals(input.ConditionType))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     this.Status != null &&
                     this.Status.SequenceEqual(input.Status)
-                ) && 
+                ) &&
                 (
                     this.FnSku == input.FnSku ||
                     (this.FnSku != null &&
                     this.FnSku.Equals(input.FnSku))
-                ) && 
+                ) &&
                 (
                     this.ItemName == input.ItemName ||
                     (this.ItemName != null &&
                     this.ItemName.Equals(input.ItemName))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.LastUpdatedDate == input.LastUpdatedDate ||
                     (this.LastUpdatedDate != null &&
                     this.LastUpdatedDate.Equals(input.LastUpdatedDate))
-                ) && 
+                ) &&
                 (
                     this.MainImage == input.MainImage ||
                     (this.MainImage != null &&

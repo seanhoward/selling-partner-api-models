@@ -1,5 +1,5 @@
 /* 
- * Feeds v2021-06-30
+ * Selling Partner API for Feeds
  *
  * The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
     /// Information required to upload a feed document&#39;s contents.
     /// </summary>
     [DataContract]
-    public partial class CreateFeedDocumentResponse :  IEquatable<CreateFeedDocumentResponse>, IValidatableObject
+    public partial class CreateFeedDocumentResponse : IEquatable<CreateFeedDocumentResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFeedDocumentResponse" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
                 this.Url = url;
             }
         }
-        
+
         /// <summary>
         /// The identifier of the feed document.
         /// </summary>
         /// <value>The identifier of the feed document.</value>
-        [DataMember(Name="feedDocumentId", EmitDefaultValue=false)]
+        [DataMember(Name = "feedDocumentId", EmitDefaultValue = false)]
         public string FeedDocumentId { get; set; }
 
         /// <summary>
         /// The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
         /// </summary>
         /// <value>The presigned URL for uploading the feed contents. This URL expires after 5 minutes.</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Feeds
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FeedDocumentId == input.FeedDocumentId ||
                     (this.FeedDocumentId != null &&
                     this.FeedDocumentId.Equals(input.FeedDocumentId))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&

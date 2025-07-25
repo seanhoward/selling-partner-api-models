@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Request body containing the container label data.</param>
         /// <returns>CreateContainerLabelResponse</returns>
-        CreateContainerLabelResponse CreateContainerLabel (CreateContainerLabelRequest body);
+        CreateContainerLabelResponse CreateContainerLabel(CreateContainerLabelRequest body);
 
         /// <summary>
         /// createContainerLabel
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Request body containing the container label data.</param>
         /// <returns>ApiResponse of CreateContainerLabelResponse</returns>
-        ApiResponse<CreateContainerLabelResponse> CreateContainerLabelWithHttpInfo (CreateContainerLabelRequest body);
+        ApiResponse<CreateContainerLabelResponse> CreateContainerLabelWithHttpInfo(CreateContainerLabelRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -57,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Request body containing the container label data.</param>
         /// <returns>Task of CreateContainerLabelResponse</returns>
-        System.Threading.Tasks.Task<CreateContainerLabelResponse> CreateContainerLabelAsync (CreateContainerLabelRequest body);
+        System.Threading.Tasks.Task<CreateContainerLabelResponse> CreateContainerLabelAsync(CreateContainerLabelRequest body);
 
         /// <summary>
         /// createContainerLabel
@@ -68,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Request body containing the container label data.</param>
         /// <returns>Task of ApiResponse (CreateContainerLabelResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateContainerLabelResponse>> CreateContainerLabelAsyncWithHttpInfo (CreateContainerLabelRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateContainerLabelResponse>> CreateContainerLabelAsyncWithHttpInfo(CreateContainerLabelRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -88,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public CreateContainerLabelApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -114,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -160,10 +159,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Request body containing the container label data.</param>
         /// <returns>CreateContainerLabelResponse</returns>
-        public CreateContainerLabelResponse CreateContainerLabel (CreateContainerLabelRequest body)
+        public CreateContainerLabelResponse CreateContainerLabel(CreateContainerLabelRequest body)
         {
-             ApiResponse<CreateContainerLabelResponse> localVarResponse = CreateContainerLabelWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateContainerLabelResponse> localVarResponse = CreateContainerLabelWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -172,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Request body containing the container label data.</param>
         /// <returns>ApiResponse of CreateContainerLabelResponse</returns>
-        public ApiResponse< CreateContainerLabelResponse > CreateContainerLabelWithHttpInfo (CreateContainerLabelRequest body)
+        public ApiResponse<CreateContainerLabelResponse> CreateContainerLabelWithHttpInfo(CreateContainerLabelRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -211,11 +210,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -225,7 +224,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateContainerLabelResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateContainerLabelResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateContainerLabelResponse)));
+                (CreateContainerLabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateContainerLabelResponse)));
         }
 
         /// <summary>
@@ -234,10 +233,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Request body containing the container label data.</param>
         /// <returns>Task of CreateContainerLabelResponse</returns>
-        public async System.Threading.Tasks.Task<CreateContainerLabelResponse> CreateContainerLabelAsync (CreateContainerLabelRequest body)
+        public async System.Threading.Tasks.Task<CreateContainerLabelResponse> CreateContainerLabelAsync(CreateContainerLabelRequest body)
         {
-             ApiResponse<CreateContainerLabelResponse> localVarResponse = await CreateContainerLabelAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateContainerLabelResponse> localVarResponse = await CreateContainerLabelAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -247,7 +246,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Request body containing the container label data.</param>
         /// <returns>Task of ApiResponse (CreateContainerLabelResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateContainerLabelResponse>> CreateContainerLabelAsyncWithHttpInfo (CreateContainerLabelRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateContainerLabelResponse>> CreateContainerLabelAsyncWithHttpInfo(CreateContainerLabelRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -286,11 +285,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -300,7 +299,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateContainerLabelResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateContainerLabelResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateContainerLabelResponse)));
+                (CreateContainerLabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateContainerLabelResponse)));
         }
 
 
@@ -314,17 +313,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public CreateContainerLabelApi Build() 
+            public CreateContainerLabelApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

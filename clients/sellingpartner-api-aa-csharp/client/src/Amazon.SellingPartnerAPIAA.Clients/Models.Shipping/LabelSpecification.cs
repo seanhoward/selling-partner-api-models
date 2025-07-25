@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The label specification info.
     /// </summary>
     [DataContract]
-    public partial class LabelSpecification :  IEquatable<LabelSpecification>, IValidatableObject
+    public partial class LabelSpecification : IEquatable<LabelSpecification>, IValidatableObject
     {
         /// <summary>
         /// The format of the label. Enum of PNG only for now.
@@ -37,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LabelFormatEnum
         {
-            
+
             /// <summary>
             /// Enum PNG for value: PNG
             /// </summary>
@@ -49,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// The format of the label. Enum of PNG only for now.
         /// </summary>
         /// <value>The format of the label. Enum of PNG only for now.</value>
-        [DataMember(Name="labelFormat", EmitDefaultValue=false)]
+        [DataMember(Name = "labelFormat", EmitDefaultValue = false)]
         public LabelFormatEnum LabelFormat { get; set; }
         /// <summary>
         /// The label stock size specification in length and height. Enum of 4x6 only for now.
@@ -58,7 +53,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LabelStockSizeEnum
         {
-            
+
             /// <summary>
             /// Enum _4x6 for value: 4x6
             /// </summary>
@@ -70,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         /// The label stock size specification in length and height. Enum of 4x6 only for now.
         /// </summary>
         /// <value>The label stock size specification in length and height. Enum of 4x6 only for now.</value>
-        [DataMember(Name="labelStockSize", EmitDefaultValue=false)]
+        [DataMember(Name = "labelStockSize", EmitDefaultValue = false)]
         public LabelStockSizeEnum LabelStockSize { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelSpecification" /> class.
@@ -103,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
                 this.LabelStockSize = labelStockSize;
             }
         }
-        
+
 
 
         /// <summary>
@@ -119,7 +114,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -149,12 +144,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.LabelFormat == input.LabelFormat ||
                     (this.LabelFormat != null &&
                     this.LabelFormat.Equals(input.LabelFormat))
-                ) && 
+                ) &&
                 (
                     this.LabelStockSize == input.LabelStockSize ||
                     (this.LabelStockSize != null &&

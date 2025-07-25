@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// The request body schema for the &#x60;patchListingsItem&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class ListingsItemPatchRequest :  IEquatable<ListingsItemPatchRequest>, IValidatableObject
+    public partial class ListingsItemPatchRequest : IEquatable<ListingsItemPatchRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ListingsItemPatchRequest" /> class.
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
                 this.Patches = patches;
             }
         }
-        
+
         /// <summary>
         /// The Amazon product type of the listings item.
         /// </summary>
         /// <value>The Amazon product type of the listings item.</value>
-        [DataMember(Name="productType", EmitDefaultValue=false)]
+        [DataMember(Name = "productType", EmitDefaultValue = false)]
         public string ProductType { get; set; }
 
         /// <summary>
         /// One or more JSON Patch operations to perform on the listings item.
         /// </summary>
         /// <value>One or more JSON Patch operations to perform on the listings item.</value>
-        [DataMember(Name="patches", EmitDefaultValue=false)]
+        [DataMember(Name = "patches", EmitDefaultValue = false)]
         public List<PatchOperation> Patches { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ProductType == input.ProductType ||
                     (this.ProductType != null &&
                     this.ProductType.Equals(input.ProductType))
-                ) && 
+                ) &&
                 (
                     this.Patches == input.Patches ||
                     this.Patches != null &&

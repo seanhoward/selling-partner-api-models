@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// The information required to create an Amazon Simple Queue Service (Amazon SQS) queue destination.
     /// </summary>
     [DataContract]
-    public partial class SqsResource :  IEquatable<SqsResource>, IValidatableObject
+    public partial class SqsResource : IEquatable<SqsResource>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SqsResource" /> class.
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
                 this.Arn = arn;
             }
         }
-        
+
         /// <summary>
         /// The Amazon Resource Name (ARN) associated with the SQS queue.
         /// </summary>
         /// <value>The Amazon Resource Name (ARN) associated with the SQS queue.</value>
-        [DataMember(Name="arn", EmitDefaultValue=false)]
+        [DataMember(Name = "arn", EmitDefaultValue = false)]
         public string Arn { get; set; }
 
         /// <summary>
@@ -71,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Arn == input.Arn ||
                     (this.Arn != null &&
@@ -132,16 +127,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Arn (string) maxLength
-            if(this.Arn != null && this.Arn.Length > 1000)
+            if (this.Arn != null && this.Arn.Length > 1000)
             {
-                yield return new ValidationResult("Invalid value for Arn, length must be less than 1000.", new [] { "Arn" });
+                yield return new ValidationResult("Invalid value for Arn, length must be less than 1000.", new[] { "Arn" });
             }
 
             // Arn (string) pattern
             Regex regexArn = new Regex(@"^arn:aws:sqs:\\S+:\\S+:\\S+", RegexOptions.CultureInvariant);
             if (false == regexArn.Match(this.Arn).Success)
             {
-                yield return new ValidationResult("Invalid value for Arn, must match a pattern of " + regexArn, new [] { "Arn" });
+                yield return new ValidationResult("Invalid value for Arn, must match a pattern of " + regexArn, new[] { "Arn" });
             }
 
             yield break;

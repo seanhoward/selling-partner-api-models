@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ErrorList</returns>
-        ErrorList ArchiveSupplySource (string supplySourceId);
+        ErrorList ArchiveSupplySource(string supplySourceId);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ApiResponse of ErrorList</returns>
-        ApiResponse<ErrorList> ArchiveSupplySourceWithHttpInfo (string supplySourceId);
+        ApiResponse<ErrorList> ArchiveSupplySourceWithHttpInfo(string supplySourceId);
         /// <summary>
         /// 
         /// </summary>
@@ -55,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>CreateSupplySourceResponse</returns>
-        CreateSupplySourceResponse CreateSupplySource (CreateSupplySourceRequest payload);
+        CreateSupplySourceResponse CreateSupplySource(CreateSupplySourceRequest payload);
 
         /// <summary>
         /// 
@@ -66,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>ApiResponse of CreateSupplySourceResponse</returns>
-        ApiResponse<CreateSupplySourceResponse> CreateSupplySourceWithHttpInfo (CreateSupplySourceRequest payload);
+        ApiResponse<CreateSupplySourceResponse> CreateSupplySourceWithHttpInfo(CreateSupplySourceRequest payload);
         /// <summary>
         /// 
         /// </summary>
@@ -76,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>SupplySource</returns>
-        SupplySource GetSupplySource (string supplySourceId);
+        SupplySource GetSupplySource(string supplySourceId);
 
         /// <summary>
         /// 
@@ -87,7 +86,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ApiResponse of SupplySource</returns>
-        ApiResponse<SupplySource> GetSupplySourceWithHttpInfo (string supplySourceId);
+        ApiResponse<SupplySource> GetSupplySourceWithHttpInfo(string supplySourceId);
         /// <summary>
         /// 
         /// </summary>
@@ -98,7 +97,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>GetSupplySourcesResponse</returns>
-        GetSupplySourcesResponse GetSupplySources (string nextPageToken = null, decimal? pageSize = null);
+        GetSupplySourcesResponse GetSupplySources(string nextPageToken = null, decimal? pageSize = null);
 
         /// <summary>
         /// 
@@ -110,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>ApiResponse of GetSupplySourcesResponse</returns>
-        ApiResponse<GetSupplySourcesResponse> GetSupplySourcesWithHttpInfo (string nextPageToken = null, decimal? pageSize = null);
+        ApiResponse<GetSupplySourcesResponse> GetSupplySourcesWithHttpInfo(string nextPageToken = null, decimal? pageSize = null);
         /// <summary>
         /// 
         /// </summary>
@@ -121,7 +120,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ErrorList</returns>
-        ErrorList UpdateSupplySource (string supplySourceId, UpdateSupplySourceRequest payload = null);
+        ErrorList UpdateSupplySource(string supplySourceId, UpdateSupplySourceRequest payload = null);
 
         /// <summary>
         /// 
@@ -133,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ApiResponse of ErrorList</returns>
-        ApiResponse<ErrorList> UpdateSupplySourceWithHttpInfo (string supplySourceId, UpdateSupplySourceRequest payload = null);
+        ApiResponse<ErrorList> UpdateSupplySourceWithHttpInfo(string supplySourceId, UpdateSupplySourceRequest payload = null);
         /// <summary>
         /// 
         /// </summary>
@@ -144,7 +143,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ErrorList</returns>
-        ErrorList UpdateSupplySourceStatus (string supplySourceId, UpdateSupplySourceStatusRequest payload = null);
+        ErrorList UpdateSupplySourceStatus(string supplySourceId, UpdateSupplySourceStatusRequest payload = null);
 
         /// <summary>
         /// 
@@ -156,7 +155,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ApiResponse of ErrorList</returns>
-        ApiResponse<ErrorList> UpdateSupplySourceStatusWithHttpInfo (string supplySourceId, UpdateSupplySourceStatusRequest payload = null);
+        ApiResponse<ErrorList> UpdateSupplySourceStatusWithHttpInfo(string supplySourceId, UpdateSupplySourceStatusRequest payload = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -168,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ErrorList</returns>
-        System.Threading.Tasks.Task<ErrorList> ArchiveSupplySourceAsync (string supplySourceId);
+        System.Threading.Tasks.Task<ErrorList> ArchiveSupplySourceAsync(string supplySourceId);
 
         /// <summary>
         /// 
@@ -179,7 +178,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ErrorList>> ArchiveSupplySourceAsyncWithHttpInfo (string supplySourceId);
+        System.Threading.Tasks.Task<ApiResponse<ErrorList>> ArchiveSupplySourceAsyncWithHttpInfo(string supplySourceId);
         /// <summary>
         /// 
         /// </summary>
@@ -189,7 +188,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>Task of CreateSupplySourceResponse</returns>
-        System.Threading.Tasks.Task<CreateSupplySourceResponse> CreateSupplySourceAsync (CreateSupplySourceRequest payload);
+        System.Threading.Tasks.Task<CreateSupplySourceResponse> CreateSupplySourceAsync(CreateSupplySourceRequest payload);
 
         /// <summary>
         /// 
@@ -200,7 +199,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>Task of ApiResponse (CreateSupplySourceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateSupplySourceResponse>> CreateSupplySourceAsyncWithHttpInfo (CreateSupplySourceRequest payload);
+        System.Threading.Tasks.Task<ApiResponse<CreateSupplySourceResponse>> CreateSupplySourceAsyncWithHttpInfo(CreateSupplySourceRequest payload);
         /// <summary>
         /// 
         /// </summary>
@@ -210,7 +209,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of SupplySource</returns>
-        System.Threading.Tasks.Task<SupplySource> GetSupplySourceAsync (string supplySourceId);
+        System.Threading.Tasks.Task<SupplySource> GetSupplySourceAsync(string supplySourceId);
 
         /// <summary>
         /// 
@@ -221,7 +220,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ApiResponse (SupplySource)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SupplySource>> GetSupplySourceAsyncWithHttpInfo (string supplySourceId);
+        System.Threading.Tasks.Task<ApiResponse<SupplySource>> GetSupplySourceAsyncWithHttpInfo(string supplySourceId);
         /// <summary>
         /// 
         /// </summary>
@@ -232,7 +231,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>Task of GetSupplySourcesResponse</returns>
-        System.Threading.Tasks.Task<GetSupplySourcesResponse> GetSupplySourcesAsync (string nextPageToken = null, decimal? pageSize = null);
+        System.Threading.Tasks.Task<GetSupplySourcesResponse> GetSupplySourcesAsync(string nextPageToken = null, decimal? pageSize = null);
 
         /// <summary>
         /// 
@@ -244,7 +243,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (GetSupplySourcesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetSupplySourcesResponse>> GetSupplySourcesAsyncWithHttpInfo (string nextPageToken = null, decimal? pageSize = null);
+        System.Threading.Tasks.Task<ApiResponse<GetSupplySourcesResponse>> GetSupplySourcesAsyncWithHttpInfo(string nextPageToken = null, decimal? pageSize = null);
         /// <summary>
         /// 
         /// </summary>
@@ -255,7 +254,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ErrorList</returns>
-        System.Threading.Tasks.Task<ErrorList> UpdateSupplySourceAsync (string supplySourceId, UpdateSupplySourceRequest payload = null);
+        System.Threading.Tasks.Task<ErrorList> UpdateSupplySourceAsync(string supplySourceId, UpdateSupplySourceRequest payload = null);
 
         /// <summary>
         /// 
@@ -267,7 +266,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ErrorList>> UpdateSupplySourceAsyncWithHttpInfo (string supplySourceId, UpdateSupplySourceRequest payload = null);
+        System.Threading.Tasks.Task<ApiResponse<ErrorList>> UpdateSupplySourceAsyncWithHttpInfo(string supplySourceId, UpdateSupplySourceRequest payload = null);
         /// <summary>
         /// 
         /// </summary>
@@ -278,7 +277,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ErrorList</returns>
-        System.Threading.Tasks.Task<ErrorList> UpdateSupplySourceStatusAsync (string supplySourceId, UpdateSupplySourceStatusRequest payload = null);
+        System.Threading.Tasks.Task<ErrorList> UpdateSupplySourceStatusAsync(string supplySourceId, UpdateSupplySourceStatusRequest payload = null);
 
         /// <summary>
         /// 
@@ -290,7 +289,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ErrorList>> UpdateSupplySourceStatusAsyncWithHttpInfo (string supplySourceId, UpdateSupplySourceStatusRequest payload = null);
+        System.Threading.Tasks.Task<ApiResponse<ErrorList>> UpdateSupplySourceStatusAsyncWithHttpInfo(string supplySourceId, UpdateSupplySourceStatusRequest payload = null);
         #endregion Asynchronous Operations
     }
 
@@ -310,7 +309,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public SupplySourcesApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -336,7 +335,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -382,10 +381,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ErrorList</returns>
-        public ErrorList ArchiveSupplySource (string supplySourceId)
+        public ErrorList ArchiveSupplySource(string supplySourceId)
         {
-             ApiResponse<ErrorList> localVarResponse = ArchiveSupplySourceWithHttpInfo(supplySourceId);
-             return localVarResponse.Data;
+            ApiResponse<ErrorList> localVarResponse = ArchiveSupplySourceWithHttpInfo(supplySourceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -394,7 +393,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ApiResponse of ErrorList</returns>
-        public ApiResponse< ErrorList > ArchiveSupplySourceWithHttpInfo (string supplySourceId)
+        public ApiResponse<ErrorList> ArchiveSupplySourceWithHttpInfo(string supplySourceId)
         {
             // verify the required parameter 'supplySourceId' is set
             if (supplySourceId == null)
@@ -426,11 +425,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -440,7 +439,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ErrorList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ErrorList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
+                (ErrorList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
         }
 
         /// <summary>
@@ -449,10 +448,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ErrorList</returns>
-        public async System.Threading.Tasks.Task<ErrorList> ArchiveSupplySourceAsync (string supplySourceId)
+        public async System.Threading.Tasks.Task<ErrorList> ArchiveSupplySourceAsync(string supplySourceId)
         {
-             ApiResponse<ErrorList> localVarResponse = await ArchiveSupplySourceAsyncWithHttpInfo(supplySourceId);
-             return localVarResponse.Data;
+            ApiResponse<ErrorList> localVarResponse = await ArchiveSupplySourceAsyncWithHttpInfo(supplySourceId);
+            return localVarResponse.Data;
 
         }
 
@@ -462,7 +461,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ErrorList>> ArchiveSupplySourceAsyncWithHttpInfo (string supplySourceId)
+        public async System.Threading.Tasks.Task<ApiResponse<ErrorList>> ArchiveSupplySourceAsyncWithHttpInfo(string supplySourceId)
         {
             // verify the required parameter 'supplySourceId' is set
             if (supplySourceId == null)
@@ -494,11 +493,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -508,7 +507,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ErrorList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ErrorList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
+                (ErrorList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
         }
 
         /// <summary>
@@ -517,10 +516,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>CreateSupplySourceResponse</returns>
-        public CreateSupplySourceResponse CreateSupplySource (CreateSupplySourceRequest payload)
+        public CreateSupplySourceResponse CreateSupplySource(CreateSupplySourceRequest payload)
         {
-             ApiResponse<CreateSupplySourceResponse> localVarResponse = CreateSupplySourceWithHttpInfo(payload);
-             return localVarResponse.Data;
+            ApiResponse<CreateSupplySourceResponse> localVarResponse = CreateSupplySourceWithHttpInfo(payload);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -529,7 +528,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>ApiResponse of CreateSupplySourceResponse</returns>
-        public ApiResponse< CreateSupplySourceResponse > CreateSupplySourceWithHttpInfo (CreateSupplySourceRequest payload)
+        public ApiResponse<CreateSupplySourceResponse> CreateSupplySourceWithHttpInfo(CreateSupplySourceRequest payload)
         {
             // verify the required parameter 'payload' is set
             if (payload == null)
@@ -568,11 +567,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -582,7 +581,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateSupplySourceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateSupplySourceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateSupplySourceResponse)));
+                (CreateSupplySourceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateSupplySourceResponse)));
         }
 
         /// <summary>
@@ -591,10 +590,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>Task of CreateSupplySourceResponse</returns>
-        public async System.Threading.Tasks.Task<CreateSupplySourceResponse> CreateSupplySourceAsync (CreateSupplySourceRequest payload)
+        public async System.Threading.Tasks.Task<CreateSupplySourceResponse> CreateSupplySourceAsync(CreateSupplySourceRequest payload)
         {
-             ApiResponse<CreateSupplySourceResponse> localVarResponse = await CreateSupplySourceAsyncWithHttpInfo(payload);
-             return localVarResponse.Data;
+            ApiResponse<CreateSupplySourceResponse> localVarResponse = await CreateSupplySourceAsyncWithHttpInfo(payload);
+            return localVarResponse.Data;
 
         }
 
@@ -604,7 +603,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="payload">A request to create a supply source.</param>
         /// <returns>Task of ApiResponse (CreateSupplySourceResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateSupplySourceResponse>> CreateSupplySourceAsyncWithHttpInfo (CreateSupplySourceRequest payload)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateSupplySourceResponse>> CreateSupplySourceAsyncWithHttpInfo(CreateSupplySourceRequest payload)
         {
             // verify the required parameter 'payload' is set
             if (payload == null)
@@ -643,11 +642,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -657,7 +656,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateSupplySourceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateSupplySourceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateSupplySourceResponse)));
+                (CreateSupplySourceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateSupplySourceResponse)));
         }
 
         /// <summary>
@@ -666,10 +665,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>SupplySource</returns>
-        public SupplySource GetSupplySource (string supplySourceId)
+        public SupplySource GetSupplySource(string supplySourceId)
         {
-             ApiResponse<SupplySource> localVarResponse = GetSupplySourceWithHttpInfo(supplySourceId);
-             return localVarResponse.Data;
+            ApiResponse<SupplySource> localVarResponse = GetSupplySourceWithHttpInfo(supplySourceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -678,7 +677,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>ApiResponse of SupplySource</returns>
-        public ApiResponse< SupplySource > GetSupplySourceWithHttpInfo (string supplySourceId)
+        public ApiResponse<SupplySource> GetSupplySourceWithHttpInfo(string supplySourceId)
         {
             // verify the required parameter 'supplySourceId' is set
             if (supplySourceId == null)
@@ -710,11 +709,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -724,7 +723,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SupplySource>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SupplySource) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SupplySource)));
+                (SupplySource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SupplySource)));
         }
 
         /// <summary>
@@ -733,10 +732,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of SupplySource</returns>
-        public async System.Threading.Tasks.Task<SupplySource> GetSupplySourceAsync (string supplySourceId)
+        public async System.Threading.Tasks.Task<SupplySource> GetSupplySourceAsync(string supplySourceId)
         {
-             ApiResponse<SupplySource> localVarResponse = await GetSupplySourceAsyncWithHttpInfo(supplySourceId);
-             return localVarResponse.Data;
+            ApiResponse<SupplySource> localVarResponse = await GetSupplySourceAsyncWithHttpInfo(supplySourceId);
+            return localVarResponse.Data;
 
         }
 
@@ -746,7 +745,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <returns>Task of ApiResponse (SupplySource)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SupplySource>> GetSupplySourceAsyncWithHttpInfo (string supplySourceId)
+        public async System.Threading.Tasks.Task<ApiResponse<SupplySource>> GetSupplySourceAsyncWithHttpInfo(string supplySourceId)
         {
             // verify the required parameter 'supplySourceId' is set
             if (supplySourceId == null)
@@ -778,11 +777,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -792,7 +791,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SupplySource>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SupplySource) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SupplySource)));
+                (SupplySource)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SupplySource)));
         }
 
         /// <summary>
@@ -802,10 +801,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>GetSupplySourcesResponse</returns>
-        public GetSupplySourcesResponse GetSupplySources (string nextPageToken = null, decimal? pageSize = null)
+        public GetSupplySourcesResponse GetSupplySources(string nextPageToken = null, decimal? pageSize = null)
         {
-             ApiResponse<GetSupplySourcesResponse> localVarResponse = GetSupplySourcesWithHttpInfo(nextPageToken, pageSize);
-             return localVarResponse.Data;
+            ApiResponse<GetSupplySourcesResponse> localVarResponse = GetSupplySourcesWithHttpInfo(nextPageToken, pageSize);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -815,7 +814,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>ApiResponse of GetSupplySourcesResponse</returns>
-        public ApiResponse< GetSupplySourcesResponse > GetSupplySourcesWithHttpInfo (string nextPageToken = null, decimal? pageSize = null)
+        public ApiResponse<GetSupplySourcesResponse> GetSupplySourcesWithHttpInfo(string nextPageToken = null, decimal? pageSize = null)
         {
 
             var localVarPath = "/supplySources/2020-07-01/supplySources";
@@ -845,11 +844,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -859,7 +858,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetSupplySourcesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetSupplySourcesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSupplySourcesResponse)));
+                (GetSupplySourcesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSupplySourcesResponse)));
         }
 
         /// <summary>
@@ -869,10 +868,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>Task of GetSupplySourcesResponse</returns>
-        public async System.Threading.Tasks.Task<GetSupplySourcesResponse> GetSupplySourcesAsync (string nextPageToken = null, decimal? pageSize = null)
+        public async System.Threading.Tasks.Task<GetSupplySourcesResponse> GetSupplySourcesAsync(string nextPageToken = null, decimal? pageSize = null)
         {
-             ApiResponse<GetSupplySourcesResponse> localVarResponse = await GetSupplySourcesAsyncWithHttpInfo(nextPageToken, pageSize);
-             return localVarResponse.Data;
+            ApiResponse<GetSupplySourcesResponse> localVarResponse = await GetSupplySourcesAsyncWithHttpInfo(nextPageToken, pageSize);
+            return localVarResponse.Data;
 
         }
 
@@ -883,7 +882,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextPageToken">The pagination token to retrieve a specific page of results. (optional)</param>
         /// <param name="pageSize">The number of supply sources to return per paginated request. (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (GetSupplySourcesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetSupplySourcesResponse>> GetSupplySourcesAsyncWithHttpInfo (string nextPageToken = null, decimal? pageSize = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetSupplySourcesResponse>> GetSupplySourcesAsyncWithHttpInfo(string nextPageToken = null, decimal? pageSize = null)
         {
 
             var localVarPath = "/supplySources/2020-07-01/supplySources";
@@ -913,11 +912,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -927,7 +926,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetSupplySourcesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetSupplySourcesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSupplySourcesResponse)));
+                (GetSupplySourcesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSupplySourcesResponse)));
         }
 
         /// <summary>
@@ -937,10 +936,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ErrorList</returns>
-        public ErrorList UpdateSupplySource (string supplySourceId, UpdateSupplySourceRequest payload = null)
+        public ErrorList UpdateSupplySource(string supplySourceId, UpdateSupplySourceRequest payload = null)
         {
-             ApiResponse<ErrorList> localVarResponse = UpdateSupplySourceWithHttpInfo(supplySourceId, payload);
-             return localVarResponse.Data;
+            ApiResponse<ErrorList> localVarResponse = UpdateSupplySourceWithHttpInfo(supplySourceId, payload);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -950,7 +949,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ApiResponse of ErrorList</returns>
-        public ApiResponse< ErrorList > UpdateSupplySourceWithHttpInfo (string supplySourceId, UpdateSupplySourceRequest payload = null)
+        public ApiResponse<ErrorList> UpdateSupplySourceWithHttpInfo(string supplySourceId, UpdateSupplySourceRequest payload = null)
         {
             // verify the required parameter 'supplySourceId' is set
             if (supplySourceId == null)
@@ -990,11 +989,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1004,7 +1003,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ErrorList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ErrorList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
+                (ErrorList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
         }
 
         /// <summary>
@@ -1014,10 +1013,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ErrorList</returns>
-        public async System.Threading.Tasks.Task<ErrorList> UpdateSupplySourceAsync (string supplySourceId, UpdateSupplySourceRequest payload = null)
+        public async System.Threading.Tasks.Task<ErrorList> UpdateSupplySourceAsync(string supplySourceId, UpdateSupplySourceRequest payload = null)
         {
-             ApiResponse<ErrorList> localVarResponse = await UpdateSupplySourceAsyncWithHttpInfo(supplySourceId, payload);
-             return localVarResponse.Data;
+            ApiResponse<ErrorList> localVarResponse = await UpdateSupplySourceAsyncWithHttpInfo(supplySourceId, payload);
+            return localVarResponse.Data;
 
         }
 
@@ -1028,7 +1027,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identitier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ErrorList>> UpdateSupplySourceAsyncWithHttpInfo (string supplySourceId, UpdateSupplySourceRequest payload = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ErrorList>> UpdateSupplySourceAsyncWithHttpInfo(string supplySourceId, UpdateSupplySourceRequest payload = null)
         {
             // verify the required parameter 'supplySourceId' is set
             if (supplySourceId == null)
@@ -1068,11 +1067,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1082,7 +1081,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ErrorList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ErrorList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
+                (ErrorList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
         }
 
         /// <summary>
@@ -1092,10 +1091,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ErrorList</returns>
-        public ErrorList UpdateSupplySourceStatus (string supplySourceId, UpdateSupplySourceStatusRequest payload = null)
+        public ErrorList UpdateSupplySourceStatus(string supplySourceId, UpdateSupplySourceStatusRequest payload = null)
         {
-             ApiResponse<ErrorList> localVarResponse = UpdateSupplySourceStatusWithHttpInfo(supplySourceId, payload);
-             return localVarResponse.Data;
+            ApiResponse<ErrorList> localVarResponse = UpdateSupplySourceStatusWithHttpInfo(supplySourceId, payload);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1105,7 +1104,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>ApiResponse of ErrorList</returns>
-        public ApiResponse< ErrorList > UpdateSupplySourceStatusWithHttpInfo (string supplySourceId, UpdateSupplySourceStatusRequest payload = null)
+        public ApiResponse<ErrorList> UpdateSupplySourceStatusWithHttpInfo(string supplySourceId, UpdateSupplySourceStatusRequest payload = null)
         {
             // verify the required parameter 'supplySourceId' is set
             if (supplySourceId == null)
@@ -1145,11 +1144,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1159,7 +1158,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ErrorList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ErrorList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
+                (ErrorList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
         }
 
         /// <summary>
@@ -1169,10 +1168,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ErrorList</returns>
-        public async System.Threading.Tasks.Task<ErrorList> UpdateSupplySourceStatusAsync (string supplySourceId, UpdateSupplySourceStatusRequest payload = null)
+        public async System.Threading.Tasks.Task<ErrorList> UpdateSupplySourceStatusAsync(string supplySourceId, UpdateSupplySourceStatusRequest payload = null)
         {
-             ApiResponse<ErrorList> localVarResponse = await UpdateSupplySourceStatusAsyncWithHttpInfo(supplySourceId, payload);
-             return localVarResponse.Data;
+            ApiResponse<ErrorList> localVarResponse = await UpdateSupplySourceStatusAsyncWithHttpInfo(supplySourceId, payload);
+            return localVarResponse.Data;
 
         }
 
@@ -1183,7 +1182,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="supplySourceId">The unique identifier of a supply source.</param>
         /// <param name="payload"> (optional)</param>
         /// <returns>Task of ApiResponse (ErrorList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ErrorList>> UpdateSupplySourceStatusAsyncWithHttpInfo (string supplySourceId, UpdateSupplySourceStatusRequest payload = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ErrorList>> UpdateSupplySourceStatusAsyncWithHttpInfo(string supplySourceId, UpdateSupplySourceStatusRequest payload = null)
         {
             // verify the required parameter 'supplySourceId' is set
             if (supplySourceId == null)
@@ -1223,11 +1222,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1237,7 +1236,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ErrorList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ErrorList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
+                (ErrorList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ErrorList)));
         }
 
 
@@ -1251,17 +1250,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public SupplySourcesApi Build() 
+            public SupplySourcesApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

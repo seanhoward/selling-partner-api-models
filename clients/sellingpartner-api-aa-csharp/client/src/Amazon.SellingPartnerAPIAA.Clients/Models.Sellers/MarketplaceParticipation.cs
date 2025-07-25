@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Sellers
  *
- * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
+ * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
  *
  * OpenAPI spec version: v1
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
     /// MarketplaceParticipation
     /// </summary>
     [DataContract]
-    public partial class MarketplaceParticipation :  IEquatable<MarketplaceParticipation>, IValidatableObject
+    public partial class MarketplaceParticipation : IEquatable<MarketplaceParticipation>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MarketplaceParticipation" /> class.
@@ -71,24 +65,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
                 this.StoreName = storeName;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets Marketplace
         /// </summary>
-        [DataMember(Name="marketplace", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplace", EmitDefaultValue = false)]
         public Marketplace Marketplace { get; set; }
 
         /// <summary>
         /// Gets or Sets Participation
         /// </summary>
-        [DataMember(Name="participation", EmitDefaultValue=false)]
+        [DataMember(Name = "participation", EmitDefaultValue = false)]
         public Participation Participation { get; set; }
 
         /// <summary>
         /// The name of the seller&#39;s store as displayed in the marketplace.
         /// </summary>
         /// <value>The name of the seller&#39;s store as displayed in the marketplace.</value>
-        [DataMember(Name="storeName", EmitDefaultValue=false)]
+        [DataMember(Name = "storeName", EmitDefaultValue = false)]
         public string StoreName { get; set; }
 
         /// <summary>
@@ -105,7 +99,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -135,17 +129,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Marketplace == input.Marketplace ||
                     (this.Marketplace != null &&
                     this.Marketplace.Equals(input.Marketplace))
-                ) && 
+                ) &&
                 (
                     this.Participation == input.Participation ||
                     (this.Participation != null &&
                     this.Participation.Equals(input.Participation))
-                ) && 
+                ) &&
                 (
                     this.StoreName == input.StoreName ||
                     (this.StoreName != null &&

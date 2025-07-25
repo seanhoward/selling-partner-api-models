@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Encryption details for required client-side encryption and decryption of document contents.
     /// </summary>
     [DataContract]
-    public partial class EncryptionDetails :  IEquatable<EncryptionDetails>, IValidatableObject
+    public partial class EncryptionDetails : IEquatable<EncryptionDetails>, IValidatableObject
     {
         /// <summary>
         /// The encryption standard required to encrypt or decrypt the document contents.
@@ -37,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StandardEnum
         {
-            
+
             /// <summary>
             /// Enum AES for value: AES
             /// </summary>
@@ -49,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The encryption standard required to encrypt or decrypt the document contents.
         /// </summary>
         /// <value>The encryption standard required to encrypt or decrypt the document contents.</value>
-        [DataMember(Name="standard", EmitDefaultValue=false)]
+        [DataMember(Name = "standard", EmitDefaultValue = false)]
         public StandardEnum Standard { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EncryptionDetails" /> class.
@@ -92,20 +87,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
                 this.Key = key;
             }
         }
-        
+
 
         /// <summary>
         /// The vector to encrypt or decrypt the document contents using Cipher Block Chaining (CBC).
         /// </summary>
         /// <value>The vector to encrypt or decrypt the document contents using Cipher Block Chaining (CBC).</value>
-        [DataMember(Name="initializationVector", EmitDefaultValue=false)]
+        [DataMember(Name = "initializationVector", EmitDefaultValue = false)]
         public string InitializationVector { get; set; }
 
         /// <summary>
         /// The encryption key used to encrypt or decrypt the document contents.
         /// </summary>
         /// <value>The encryption key used to encrypt or decrypt the document contents.</value>
-        [DataMember(Name="key", EmitDefaultValue=false)]
+        [DataMember(Name = "key", EmitDefaultValue = false)]
         public string Key { get; set; }
 
         /// <summary>
@@ -122,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -152,17 +147,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Standard == input.Standard ||
                     (this.Standard != null &&
                     this.Standard.Equals(input.Standard))
-                ) && 
+                ) &&
                 (
                     this.InitializationVector == input.InitializationVector ||
                     (this.InitializationVector != null &&
                     this.InitializationVector.Equals(input.InitializationVector))
-                ) && 
+                ) &&
                 (
                     this.Key == input.Key ||
                     (this.Key != null &&

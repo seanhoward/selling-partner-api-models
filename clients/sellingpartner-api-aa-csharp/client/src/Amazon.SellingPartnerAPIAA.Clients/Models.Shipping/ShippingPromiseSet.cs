@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The promised delivery time and pickup time.
     /// </summary>
     [DataContract]
-    public partial class ShippingPromiseSet :  IEquatable<ShippingPromiseSet>, IValidatableObject
+    public partial class ShippingPromiseSet : IEquatable<ShippingPromiseSet>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingPromiseSet" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             this.DeliveryWindow = deliveryWindow;
             this.ReceiveWindow = receiveWindow;
         }
-        
+
         /// <summary>
         /// The time window in which the shipment will be delivered.
         /// </summary>
         /// <value>The time window in which the shipment will be delivered.</value>
-        [DataMember(Name="deliveryWindow", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryWindow", EmitDefaultValue = false)]
         public TimeRange DeliveryWindow { get; set; }
 
         /// <summary>
         /// The time window in which Amazon Shipping will pick up the shipment.
         /// </summary>
         /// <value>The time window in which Amazon Shipping will pick up the shipment.</value>
-        [DataMember(Name="receiveWindow", EmitDefaultValue=false)]
+        [DataMember(Name = "receiveWindow", EmitDefaultValue = false)]
         public TimeRange ReceiveWindow { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeliveryWindow == input.DeliveryWindow ||
                     (this.DeliveryWindow != null &&
                     this.DeliveryWindow.Equals(input.DeliveryWindow))
-                ) && 
+                ) &&
                 (
                     this.ReceiveWindow == input.ReceiveWindow ||
                     (this.ReceiveWindow != null &&

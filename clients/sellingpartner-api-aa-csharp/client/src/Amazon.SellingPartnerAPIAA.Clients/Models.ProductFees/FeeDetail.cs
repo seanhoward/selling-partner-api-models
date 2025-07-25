@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
     /// The type of fee, fee amount, and other details.
     /// </summary>
     [DataContract]
-    public partial class FeeDetail :  IEquatable<FeeDetail>, IValidatableObject
+    public partial class FeeDetail : IEquatable<FeeDetail>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeeDetail" /> class.
@@ -77,46 +71,46 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             this.TaxAmount = taxAmount;
             this.IncludedFeeDetailList = includedFeeDetailList;
         }
-        
+
         /// <summary>
         /// The type of fee charged to a seller.
         /// </summary>
         /// <value>The type of fee charged to a seller.</value>
-        [DataMember(Name="FeeType", EmitDefaultValue=false)]
+        [DataMember(Name = "FeeType", EmitDefaultValue = false)]
         public string FeeType { get; set; }
 
         /// <summary>
         /// The amount charged for a given fee.
         /// </summary>
         /// <value>The amount charged for a given fee.</value>
-        [DataMember(Name="FeeAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "FeeAmount", EmitDefaultValue = false)]
         public MoneyType FeeAmount { get; set; }
 
         /// <summary>
         /// The promotion amount for a given fee.
         /// </summary>
         /// <value>The promotion amount for a given fee.</value>
-        [DataMember(Name="FeePromotion", EmitDefaultValue=false)]
+        [DataMember(Name = "FeePromotion", EmitDefaultValue = false)]
         public MoneyType FeePromotion { get; set; }
 
         /// <summary>
         /// The tax amount for a given fee.
         /// </summary>
         /// <value>The tax amount for a given fee.</value>
-        [DataMember(Name="TaxAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "TaxAmount", EmitDefaultValue = false)]
         public MoneyType TaxAmount { get; set; }
 
         /// <summary>
         /// The final fee amount for a given fee.
         /// </summary>
         /// <value>The final fee amount for a given fee.</value>
-        [DataMember(Name="FinalFee", EmitDefaultValue=false)]
+        [DataMember(Name = "FinalFee", EmitDefaultValue = false)]
         public MoneyType FinalFee { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludedFeeDetailList
         /// </summary>
-        [DataMember(Name="IncludedFeeDetailList", EmitDefaultValue=false)]
+        [DataMember(Name = "IncludedFeeDetailList", EmitDefaultValue = false)]
         public IncludedFeeDetailList IncludedFeeDetailList { get; set; }
 
         /// <summary>
@@ -136,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -166,32 +160,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FeeType == input.FeeType ||
                     (this.FeeType != null &&
                     this.FeeType.Equals(input.FeeType))
-                ) && 
+                ) &&
                 (
                     this.FeeAmount == input.FeeAmount ||
                     (this.FeeAmount != null &&
                     this.FeeAmount.Equals(input.FeeAmount))
-                ) && 
+                ) &&
                 (
                     this.FeePromotion == input.FeePromotion ||
                     (this.FeePromotion != null &&
                     this.FeePromotion.Equals(input.FeePromotion))
-                ) && 
+                ) &&
                 (
                     this.TaxAmount == input.TaxAmount ||
                     (this.TaxAmount != null &&
                     this.TaxAmount.Equals(input.TaxAmount))
-                ) && 
+                ) &&
                 (
                     this.FinalFee == input.FinalFee ||
                     (this.FinalFee != null &&
                     this.FinalFee.Equals(input.FinalFee))
-                ) && 
+                ) &&
                 (
                     this.IncludedFeeDetailList == input.IncludedFeeDetailList ||
                     (this.IncludedFeeDetailList != null &&

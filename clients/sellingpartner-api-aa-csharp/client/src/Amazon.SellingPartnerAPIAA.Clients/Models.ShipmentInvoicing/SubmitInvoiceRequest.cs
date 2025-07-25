@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
     /// The request schema for the submitInvoice operation.
     /// </summary>
     [DataContract]
-    public partial class SubmitInvoiceRequest :  IEquatable<SubmitInvoiceRequest>, IValidatableObject
+    public partial class SubmitInvoiceRequest : IEquatable<SubmitInvoiceRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitInvoiceRequest" /> class.
@@ -63,25 +57,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             }
             this.MarketplaceId = marketplaceId;
         }
-        
+
         /// <summary>
         /// Gets or Sets InvoiceContent
         /// </summary>
-        [DataMember(Name="InvoiceContent", EmitDefaultValue=false)]
+        [DataMember(Name = "InvoiceContent", EmitDefaultValue = false)]
         public byte[] InvoiceContent { get; set; }
 
         /// <summary>
         /// An Amazon marketplace identifier.
         /// </summary>
         /// <value>An Amazon marketplace identifier.</value>
-        [DataMember(Name="MarketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "MarketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html).
         /// </summary>
         /// <value>MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html).</value>
-        [DataMember(Name="ContentMD5Value", EmitDefaultValue=false)]
+        [DataMember(Name = "ContentMD5Value", EmitDefaultValue = false)]
         public string ContentMD5Value { get; set; }
 
         /// <summary>
@@ -98,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,17 +122,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.InvoiceContent == input.InvoiceContent ||
                     (this.InvoiceContent != null &&
                     this.InvoiceContent.Equals(input.InvoiceContent))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.ContentMD5Value == input.ContentMD5Value ||
                     (this.ContentMD5Value != null &&

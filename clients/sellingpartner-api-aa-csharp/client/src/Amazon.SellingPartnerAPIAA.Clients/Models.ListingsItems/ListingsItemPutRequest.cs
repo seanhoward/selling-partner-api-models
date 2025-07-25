@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// The request body schema for the &#x60;putListingsItem&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class ListingsItemPutRequest :  IEquatable<ListingsItemPutRequest>, IValidatableObject
+    public partial class ListingsItemPutRequest : IEquatable<ListingsItemPutRequest>, IValidatableObject
     {
         /// <summary>
         /// The name of the requirements set for the provided data.
@@ -37,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RequirementsEnum
         {
-            
+
             /// <summary>
             /// Enum LISTING for value: LISTING
             /// </summary>
             [EnumMember(Value = "LISTING")]
             LISTING = 1,
-            
+
             /// <summary>
             /// Enum LISTINGPRODUCTONLY for value: LISTING_PRODUCT_ONLY
             /// </summary>
             [EnumMember(Value = "LISTING_PRODUCT_ONLY")]
             LISTINGPRODUCTONLY = 2,
-            
+
             /// <summary>
             /// Enum LISTINGOFFERONLY for value: LISTING_OFFER_ONLY
             /// </summary>
@@ -61,7 +57,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// The name of the requirements set for the provided data.
         /// </summary>
         /// <value>The name of the requirements set for the provided data.</value>
-        [DataMember(Name="requirements", EmitDefaultValue=false)]
+        [DataMember(Name = "requirements", EmitDefaultValue = false)]
         public RequirementsEnum? Requirements { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListingsItemPutRequest" /> class.
@@ -96,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             }
             this.Requirements = requirements;
         }
-        
+
         /// <summary>
         /// The Amazon product type of the listings item.
         /// </summary>
         /// <value>The Amazon product type of the listings item.</value>
-        [DataMember(Name="productType", EmitDefaultValue=false)]
+        [DataMember(Name = "productType", EmitDefaultValue = false)]
         public string ProductType { get; set; }
 
 
@@ -109,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// A JSON object containing structured listings item attribute data keyed by attribute name.
         /// </summary>
         /// <value>A JSON object containing structured listings item attribute data keyed by attribute name.</value>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public Dictionary<string, object> Attributes { get; set; }
 
         /// <summary>
@@ -126,7 +122,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -156,17 +152,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ProductType == input.ProductType ||
                     (this.ProductType != null &&
                     this.ProductType.Equals(input.ProductType))
-                ) && 
+                ) &&
                 (
                     this.Requirements == input.Requirements ||
                     (this.Requirements != null &&
                     this.Requirements.Equals(input.Requirements))
-                ) && 
+                ) &&
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&

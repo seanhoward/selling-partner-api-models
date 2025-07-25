@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Contains only a starting DateTime.
     /// </summary>
     [DataContract]
-    public partial class WindowInput :  IEquatable<WindowInput>, IValidatableObject
+    public partial class WindowInput : IEquatable<WindowInput>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WindowInput" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.Start = start;
             }
         }
-        
+
         /// <summary>
         /// The start date of the window. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with minute precision. Supports patterns &#x60;yyyy-MM-ddTHH:mmZ&#x60;, &#x60;yyyy-MM-ddTHH:mm:ssZ&#x60;, or &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;. Note that non-zero second and millisecond components are removed.
         /// </summary>
         /// <value>The start date of the window. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with minute precision. Supports patterns &#x60;yyyy-MM-ddTHH:mmZ&#x60;, &#x60;yyyy-MM-ddTHH:mm:ssZ&#x60;, or &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;. Note that non-zero second and millisecond components are removed.</value>
-        [DataMember(Name="start", EmitDefaultValue=false)]
+        [DataMember(Name = "start", EmitDefaultValue = false)]
         public DateTime? Start { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Start == input.Start ||
                     (this.Start != null &&

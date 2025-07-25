@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The paginated list of supply sources.
     /// </summary>
     [DataContract]
-    public partial class GetSupplySourcesResponse :  IEquatable<GetSupplySourcesResponse>, IValidatableObject
+    public partial class GetSupplySourcesResponse : IEquatable<GetSupplySourcesResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSupplySourcesResponse" /> class.
@@ -40,18 +33,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.SupplySources = supplySources;
             this.NextPageToken = nextPageToken;
         }
-        
+
         /// <summary>
         /// Gets or Sets SupplySources
         /// </summary>
-        [DataMember(Name="supplySources", EmitDefaultValue=false)]
+        [DataMember(Name = "supplySources", EmitDefaultValue = false)]
         public SupplySourceList SupplySources { get; set; }
 
         /// <summary>
         /// If present, use this pagination token to retrieve the next page of supply sources.
         /// </summary>
         /// <value>If present, use this pagination token to retrieve the next page of supply sources.</value>
-        [DataMember(Name="nextPageToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextPageToken", EmitDefaultValue = false)]
         public string NextPageToken { get; set; }
 
         /// <summary>
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SupplySources == input.SupplySources ||
                     (this.SupplySources != null &&
                     this.SupplySources.Equals(input.SupplySources))
-                ) && 
+                ) &&
                 (
                     this.NextPageToken == input.NextPageToken ||
                     (this.NextPageToken != null &&

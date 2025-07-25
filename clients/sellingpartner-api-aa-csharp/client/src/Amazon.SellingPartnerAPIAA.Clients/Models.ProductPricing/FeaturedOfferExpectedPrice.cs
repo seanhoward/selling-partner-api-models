@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The item price at or below which the target offer may be featured.
     /// </summary>
     [DataContract]
-    public partial class FeaturedOfferExpectedPrice :  IEquatable<FeaturedOfferExpectedPrice>, IValidatableObject
+    public partial class FeaturedOfferExpectedPrice : IEquatable<FeaturedOfferExpectedPrice>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPrice" /> class.
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             }
             this.Points = points;
         }
-        
+
         /// <summary>
         /// A computed listing price at or below which a seller can expect to become the featured offer (before applicable promotions).
         /// </summary>
         /// <value>A computed listing price at or below which a seller can expect to become the featured offer (before applicable promotions).</value>
-        [DataMember(Name="listingPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "listingPrice", EmitDefaultValue = false)]
         public MoneyType ListingPrice { get; set; }
 
         /// <summary>
         /// The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.
         /// </summary>
         /// <value>The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.</value>
-        [DataMember(Name="points", EmitDefaultValue=false)]
+        [DataMember(Name = "points", EmitDefaultValue = false)]
         public Points Points { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ListingPrice == input.ListingPrice ||
                     (this.ListingPrice != null &&
                     this.ListingPrice.Equals(input.ListingPrice))
-                ) && 
+                ) &&
                 (
                     this.Points == input.Points ||
                     (this.Points != null &&

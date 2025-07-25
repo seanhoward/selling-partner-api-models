@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Information about the prescription that is used to verify a regulated product. This must be provided once per order and reflect the seller’s own records. Only approved orders can have prescriptions.
     /// </summary>
     [DataContract]
-    public partial class PrescriptionDetail :  IEquatable<PrescriptionDetail>, IValidatableObject
+    public partial class PrescriptionDetail : IEquatable<PrescriptionDetail>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PrescriptionDetail" /> class.
@@ -111,54 +105,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                 this.UsageInstructions = usageInstructions;
             }
         }
-        
+
         /// <summary>
         /// The identifier for the prescription used to verify the regulated product.
         /// </summary>
         /// <value>The identifier for the prescription used to verify the regulated product.</value>
-        [DataMember(Name="prescriptionId", EmitDefaultValue=false)]
+        [DataMember(Name = "prescriptionId", EmitDefaultValue = false)]
         public string PrescriptionId { get; set; }
 
         /// <summary>
         /// The expiration date of the prescription used to verify the regulated product, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
         /// </summary>
         /// <value>The expiration date of the prescription used to verify the regulated product, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.</value>
-        [DataMember(Name="expirationDate", EmitDefaultValue=false)]
+        [DataMember(Name = "expirationDate", EmitDefaultValue = false)]
         public DateTime? ExpirationDate { get; set; }
 
         /// <summary>
         /// The number of units in each fill as provided in the prescription.
         /// </summary>
         /// <value>The number of units in each fill as provided in the prescription.</value>
-        [DataMember(Name="writtenQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "writtenQuantity", EmitDefaultValue = false)]
         public int? WrittenQuantity { get; set; }
 
         /// <summary>
         /// The total number of refills written in the original prescription used to verify the regulated product. If a prescription originally had no refills, this value must be 0.
         /// </summary>
         /// <value>The total number of refills written in the original prescription used to verify the regulated product. If a prescription originally had no refills, this value must be 0.</value>
-        [DataMember(Name="totalRefillsAuthorized", EmitDefaultValue=false)]
+        [DataMember(Name = "totalRefillsAuthorized", EmitDefaultValue = false)]
         public int? TotalRefillsAuthorized { get; set; }
 
         /// <summary>
         /// The number of refills remaining for the prescription used to verify the regulated product. If a prescription originally had 10 total refills, this value must be &#x60;10&#x60; for the first order, &#x60;9&#x60; for the second order, and &#x60;0&#x60; for the eleventh order. If a prescription originally had no refills, this value must be 0.
         /// </summary>
         /// <value>The number of refills remaining for the prescription used to verify the regulated product. If a prescription originally had 10 total refills, this value must be &#x60;10&#x60; for the first order, &#x60;9&#x60; for the second order, and &#x60;0&#x60; for the eleventh order. If a prescription originally had no refills, this value must be 0.</value>
-        [DataMember(Name="refillsRemaining", EmitDefaultValue=false)]
+        [DataMember(Name = "refillsRemaining", EmitDefaultValue = false)]
         public int? RefillsRemaining { get; set; }
 
         /// <summary>
         /// The identifier for the clinic which provided the prescription used to verify the regulated product.
         /// </summary>
         /// <value>The identifier for the clinic which provided the prescription used to verify the regulated product.</value>
-        [DataMember(Name="clinicId", EmitDefaultValue=false)]
+        [DataMember(Name = "clinicId", EmitDefaultValue = false)]
         public string ClinicId { get; set; }
 
         /// <summary>
         /// The instructions for the prescription as provided by the approver of the regulated product.
         /// </summary>
         /// <value>The instructions for the prescription as provided by the approver of the regulated product.</value>
-        [DataMember(Name="usageInstructions", EmitDefaultValue=false)]
+        [DataMember(Name = "usageInstructions", EmitDefaultValue = false)]
         public string UsageInstructions { get; set; }
 
         /// <summary>
@@ -179,7 +173,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -209,37 +203,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PrescriptionId == input.PrescriptionId ||
                     (this.PrescriptionId != null &&
                     this.PrescriptionId.Equals(input.PrescriptionId))
-                ) && 
+                ) &&
                 (
                     this.ExpirationDate == input.ExpirationDate ||
                     (this.ExpirationDate != null &&
                     this.ExpirationDate.Equals(input.ExpirationDate))
-                ) && 
+                ) &&
                 (
                     this.WrittenQuantity == input.WrittenQuantity ||
                     (this.WrittenQuantity != null &&
                     this.WrittenQuantity.Equals(input.WrittenQuantity))
-                ) && 
+                ) &&
                 (
                     this.TotalRefillsAuthorized == input.TotalRefillsAuthorized ||
                     (this.TotalRefillsAuthorized != null &&
                     this.TotalRefillsAuthorized.Equals(input.TotalRefillsAuthorized))
-                ) && 
+                ) &&
                 (
                     this.RefillsRemaining == input.RefillsRemaining ||
                     (this.RefillsRemaining != null &&
                     this.RefillsRemaining.Equals(input.RefillsRemaining))
-                ) && 
+                ) &&
                 (
                     this.ClinicId == input.ClinicId ||
                     (this.ClinicId != null &&
                     this.ClinicId.Equals(input.ClinicId))
-                ) && 
+                ) &&
                 (
                     this.UsageInstructions == input.UsageInstructions ||
                     (this.UsageInstructions != null &&
@@ -282,21 +276,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // WrittenQuantity (int?) minimum
-            if(this.WrittenQuantity < (int?)1)
+            if (this.WrittenQuantity < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for WrittenQuantity, must be a value greater than or equal to 1.", new [] { "WrittenQuantity" });
+                yield return new ValidationResult("Invalid value for WrittenQuantity, must be a value greater than or equal to 1.", new[] { "WrittenQuantity" });
             }
 
             // TotalRefillsAuthorized (int?) minimum
-            if(this.TotalRefillsAuthorized < (int?)0)
+            if (this.TotalRefillsAuthorized < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for TotalRefillsAuthorized, must be a value greater than or equal to 0.", new [] { "TotalRefillsAuthorized" });
+                yield return new ValidationResult("Invalid value for TotalRefillsAuthorized, must be a value greater than or equal to 0.", new[] { "TotalRefillsAuthorized" });
             }
 
             // RefillsRemaining (int?) minimum
-            if(this.RefillsRemaining < (int?)0)
+            if (this.RefillsRemaining < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for RefillsRemaining, must be a value greater than or equal to 0.", new [] { "RefillsRemaining" });
+                yield return new ValidationResult("Invalid value for RefillsRemaining, must be a value greater than or equal to 0.", new[] { "RefillsRemaining" });
             }
 
             yield break;

@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Information associated with a single SKU in the seller&#39;s catalog.
     /// </summary>
     [DataContract]
-    public partial class Item :  IEquatable<Item>, IValidatableObject
+    public partial class Item : IEquatable<Item>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -105,61 +101,61 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.Expiration = expiration;
             this.ManufacturingLotCode = manufacturingLotCode;
         }
-        
+
         /// <summary>
         /// The Amazon Standard Identification Number (ASIN) of the item.
         /// </summary>
         /// <value>The Amazon Standard Identification Number (ASIN) of the item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern&#x60;YYYY-MM-DD&#x60;. The same MSKU with different expiration dates cannot go into the same box.
         /// </summary>
         /// <value>The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern&#x60;YYYY-MM-DD&#x60;. The same MSKU with different expiration dates cannot go into the same box.</value>
-        [DataMember(Name="expiration", EmitDefaultValue=false)]
+        [DataMember(Name = "expiration", EmitDefaultValue = false)]
         public string Expiration { get; set; }
 
         /// <summary>
         /// A unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center.
         /// </summary>
         /// <value>A unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center.</value>
-        [DataMember(Name="fnsku", EmitDefaultValue=false)]
+        [DataMember(Name = "fnsku", EmitDefaultValue = false)]
         public string Fnsku { get; set; }
 
         /// <summary>
         /// Specifies who will label the items. Options include &#x60;AMAZON&#x60;, &#x60;SELLER&#x60;, and &#x60;NONE&#x60;.
         /// </summary>
         /// <value>Specifies who will label the items. Options include &#x60;AMAZON&#x60;, &#x60;SELLER&#x60;, and &#x60;NONE&#x60;.</value>
-        [DataMember(Name="labelOwner", EmitDefaultValue=false)]
+        [DataMember(Name = "labelOwner", EmitDefaultValue = false)]
         public string LabelOwner { get; set; }
 
         /// <summary>
         /// The manufacturing lot code.
         /// </summary>
         /// <value>The manufacturing lot code.</value>
-        [DataMember(Name="manufacturingLotCode", EmitDefaultValue=false)]
+        [DataMember(Name = "manufacturingLotCode", EmitDefaultValue = false)]
         public string ManufacturingLotCode { get; set; }
 
         /// <summary>
         /// The merchant SKU, a merchant-supplied identifier of a specific SKU.
         /// </summary>
         /// <value>The merchant SKU, a merchant-supplied identifier of a specific SKU.</value>
-        [DataMember(Name="msku", EmitDefaultValue=false)]
+        [DataMember(Name = "msku", EmitDefaultValue = false)]
         public string Msku { get; set; }
 
         /// <summary>
         /// Special preparations that are required for an item.
         /// </summary>
         /// <value>Special preparations that are required for an item.</value>
-        [DataMember(Name="prepInstructions", EmitDefaultValue=false)]
+        [DataMember(Name = "prepInstructions", EmitDefaultValue = false)]
         public List<PrepInstruction> PrepInstructions { get; set; }
 
         /// <summary>
         /// The number of the specified MSKU.
         /// </summary>
         /// <value>The number of the specified MSKU.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
@@ -181,7 +177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -211,42 +207,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.Expiration == input.Expiration ||
                     (this.Expiration != null &&
                     this.Expiration.Equals(input.Expiration))
-                ) && 
+                ) &&
                 (
                     this.Fnsku == input.Fnsku ||
                     (this.Fnsku != null &&
                     this.Fnsku.Equals(input.Fnsku))
-                ) && 
+                ) &&
                 (
                     this.LabelOwner == input.LabelOwner ||
                     (this.LabelOwner != null &&
                     this.LabelOwner.Equals(input.LabelOwner))
-                ) && 
+                ) &&
                 (
                     this.ManufacturingLotCode == input.ManufacturingLotCode ||
                     (this.ManufacturingLotCode != null &&
                     this.ManufacturingLotCode.Equals(input.ManufacturingLotCode))
-                ) && 
+                ) &&
                 (
                     this.Msku == input.Msku ||
                     (this.Msku != null &&
                     this.Msku.Equals(input.Msku))
-                ) && 
+                ) &&
                 (
                     this.PrepInstructions == input.PrepInstructions ||
                     this.PrepInstructions != null &&
                     this.PrepInstructions.SequenceEqual(input.PrepInstructions)
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
@@ -291,82 +287,82 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Asin (string) maxLength
-            if(this.Asin != null && this.Asin.Length > 10)
+            if (this.Asin != null && this.Asin.Length > 10)
             {
-                yield return new ValidationResult("Invalid value for Asin, length must be less than 10.", new [] { "Asin" });
+                yield return new ValidationResult("Invalid value for Asin, length must be less than 10.", new[] { "Asin" });
             }
 
             // Asin (string) minLength
-            if(this.Asin != null && this.Asin.Length < 1)
+            if (this.Asin != null && this.Asin.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Asin, length must be greater than 1.", new [] { "Asin" });
+                yield return new ValidationResult("Invalid value for Asin, length must be greater than 1.", new[] { "Asin" });
             }
 
             // Expiration (string) pattern
             Regex regexExpiration = new Regex(@"^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$", RegexOptions.CultureInvariant);
             if (false == regexExpiration.Match(this.Expiration).Success)
             {
-                yield return new ValidationResult("Invalid value for Expiration, must match a pattern of " + regexExpiration, new [] { "Expiration" });
+                yield return new ValidationResult("Invalid value for Expiration, must match a pattern of " + regexExpiration, new[] { "Expiration" });
             }
 
             // Fnsku (string) maxLength
-            if(this.Fnsku != null && this.Fnsku.Length > 10)
+            if (this.Fnsku != null && this.Fnsku.Length > 10)
             {
-                yield return new ValidationResult("Invalid value for Fnsku, length must be less than 10.", new [] { "Fnsku" });
+                yield return new ValidationResult("Invalid value for Fnsku, length must be less than 10.", new[] { "Fnsku" });
             }
 
             // Fnsku (string) minLength
-            if(this.Fnsku != null && this.Fnsku.Length < 1)
+            if (this.Fnsku != null && this.Fnsku.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Fnsku, length must be greater than 1.", new [] { "Fnsku" });
+                yield return new ValidationResult("Invalid value for Fnsku, length must be greater than 1.", new[] { "Fnsku" });
             }
 
             // LabelOwner (string) maxLength
-            if(this.LabelOwner != null && this.LabelOwner.Length > 1024)
+            if (this.LabelOwner != null && this.LabelOwner.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for LabelOwner, length must be less than 1024.", new [] { "LabelOwner" });
+                yield return new ValidationResult("Invalid value for LabelOwner, length must be less than 1024.", new[] { "LabelOwner" });
             }
 
             // LabelOwner (string) minLength
-            if(this.LabelOwner != null && this.LabelOwner.Length < 1)
+            if (this.LabelOwner != null && this.LabelOwner.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for LabelOwner, length must be greater than 1.", new [] { "LabelOwner" });
+                yield return new ValidationResult("Invalid value for LabelOwner, length must be greater than 1.", new[] { "LabelOwner" });
             }
 
             // ManufacturingLotCode (string) maxLength
-            if(this.ManufacturingLotCode != null && this.ManufacturingLotCode.Length > 256)
+            if (this.ManufacturingLotCode != null && this.ManufacturingLotCode.Length > 256)
             {
-                yield return new ValidationResult("Invalid value for ManufacturingLotCode, length must be less than 256.", new [] { "ManufacturingLotCode" });
+                yield return new ValidationResult("Invalid value for ManufacturingLotCode, length must be less than 256.", new[] { "ManufacturingLotCode" });
             }
 
             // ManufacturingLotCode (string) minLength
-            if(this.ManufacturingLotCode != null && this.ManufacturingLotCode.Length < 1)
+            if (this.ManufacturingLotCode != null && this.ManufacturingLotCode.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for ManufacturingLotCode, length must be greater than 1.", new [] { "ManufacturingLotCode" });
+                yield return new ValidationResult("Invalid value for ManufacturingLotCode, length must be greater than 1.", new[] { "ManufacturingLotCode" });
             }
 
             // Msku (string) maxLength
-            if(this.Msku != null && this.Msku.Length > 40)
+            if (this.Msku != null && this.Msku.Length > 40)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new[] { "Msku" });
             }
 
             // Msku (string) minLength
-            if(this.Msku != null && this.Msku.Length < 1)
+            if (this.Msku != null && this.Msku.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new[] { "Msku" });
             }
 
             // Quantity (int?) maximum
-            if(this.Quantity > (int?)10000)
+            if (this.Quantity > (int?)10000)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new[] { "Quantity" });
             }
 
             // Quantity (int?) minimum
-            if(this.Quantity < (int?)1)
+            if (this.Quantity < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new[] { "Quantity" });
             }
 
             yield break;

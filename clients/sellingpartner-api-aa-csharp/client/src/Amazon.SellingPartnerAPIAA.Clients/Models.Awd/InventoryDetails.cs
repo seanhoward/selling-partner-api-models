@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Amazon Warehousing and Distribution
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * OpenAPI spec version: 2024-05-09
  * 
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,31 +21,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Additional inventory details. This object is only displayed if the details parameter in the request is set to &#x60;SHOW&#x60;.
     /// </summary>
     [DataContract]
-    public partial class InventoryDetails :  IEquatable<InventoryDetails>, IValidatableObject
+    public partial class InventoryDetails : IEquatable<InventoryDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryDetails" /> class.
         /// </summary>
         /// <param name="availableDistributableQuantity">Quantity that is available for downstream channel replenishment..</param>
+        /// <param name="replenishmentQuantity">Quantity that is in transit from AWD and has not yet been received at FBA..</param>
         /// <param name="reservedDistributableQuantity">Quantity that is reserved for a downstream channel replenishment order that is being prepared for shipment..</param>
-        public InventoryDetails(long? availableDistributableQuantity = default, long? reservedDistributableQuantity = default)
+        public InventoryDetails(long? availableDistributableQuantity = default, long? replenishmentQuantity = default, long? reservedDistributableQuantity = default)
         {
             this.AvailableDistributableQuantity = availableDistributableQuantity;
+            this.ReplenishmentQuantity = replenishmentQuantity;
             this.ReservedDistributableQuantity = reservedDistributableQuantity;
         }
-        
+
         /// <summary>
         /// Quantity that is available for downstream channel replenishment.
         /// </summary>
         /// <value>Quantity that is available for downstream channel replenishment.</value>
-        [DataMember(Name="availableDistributableQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "availableDistributableQuantity", EmitDefaultValue = false)]
         public long? AvailableDistributableQuantity { get; set; }
+
+        /// <summary>
+        /// Quantity that is in transit from AWD and has not yet been received at FBA.
+        /// </summary>
+        /// <value>Quantity that is in transit from AWD and has not yet been received at FBA.</value>
+        [DataMember(Name = "replenishmentQuantity", EmitDefaultValue = false)]
+        public long? ReplenishmentQuantity { get; set; }
 
         /// <summary>
         /// Quantity that is reserved for a downstream channel replenishment order that is being prepared for shipment.
         /// </summary>
         /// <value>Quantity that is reserved for a downstream channel replenishment order that is being prepared for shipment.</value>
-        [DataMember(Name="reservedDistributableQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "reservedDistributableQuantity", EmitDefaultValue = false)]
         public long? ReservedDistributableQuantity { get; set; }
 
         /// <summary>
@@ -64,11 +66,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             var sb = new StringBuilder();
             sb.Append("class InventoryDetails {\n");
             sb.Append("  AvailableDistributableQuantity: ").Append(AvailableDistributableQuantity).Append("\n");
+            sb.Append("  ReplenishmentQuantity: ").Append(ReplenishmentQuantity).Append("\n");
             sb.Append("  ReservedDistributableQuantity: ").Append(ReservedDistributableQuantity).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AvailableDistributableQuantity == input.AvailableDistributableQuantity ||
                     (this.AvailableDistributableQuantity != null &&
                     this.AvailableDistributableQuantity.Equals(input.AvailableDistributableQuantity))
-                ) && 
+                ) &&
+                (
+                    this.ReplenishmentQuantity == input.ReplenishmentQuantity ||
+                    (this.ReplenishmentQuantity != null &&
+                    this.ReplenishmentQuantity.Equals(input.ReplenishmentQuantity))
+                ) &&
                 (
                     this.ReservedDistributableQuantity == input.ReservedDistributableQuantity ||
                     (this.ReservedDistributableQuantity != null &&
@@ -122,6 +130,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 int hashCode = 41;
                 if (this.AvailableDistributableQuantity != null)
                     hashCode = hashCode * 59 + this.AvailableDistributableQuantity.GetHashCode();
+                if (this.ReplenishmentQuantity != null)
+                    hashCode = hashCode * 59 + this.ReplenishmentQuantity.GetHashCode();
                 if (this.ReservedDistributableQuantity != null)
                     hashCode = hashCode * 59 + this.ReservedDistributableQuantity.GetHashCode();
                 return hashCode;

@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Current status of a purchase order.
     /// </summary>
     [DataContract]
-    public partial class OrderStatus :  IEquatable<OrderStatus>, IValidatableObject
+    public partial class OrderStatus : IEquatable<OrderStatus>, IValidatableObject
     {
         /// <summary>
         /// The status of the buyer&#39;s purchase order for this order.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PurchaseOrderStatusEnum
         {
-            
+
             /// <summary>
             /// Enum OPEN for value: OPEN
             /// </summary>
             [EnumMember(Value = "OPEN")]
             OPEN = 1,
-            
+
             /// <summary>
             /// Enum CLOSED for value: CLOSED
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// The status of the buyer&#39;s purchase order for this order.
         /// </summary>
         /// <value>The status of the buyer&#39;s purchase order for this order.</value>
-        [DataMember(Name="purchaseOrderStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderStatus", EmitDefaultValue = false)]
         public PurchaseOrderStatusEnum PurchaseOrderStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderStatus" /> class.
@@ -130,12 +125,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             }
             this.LastUpdatedDate = lastUpdatedDate;
         }
-        
+
         /// <summary>
         /// The buyer&#39;s purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
         /// </summary>
         /// <value>The buyer&#39;s purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
 
@@ -143,35 +138,35 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// The date the purchase order was placed. Must be in ISO-8601 date/time format.
         /// </summary>
         /// <value>The date the purchase order was placed. Must be in ISO-8601 date/time format.</value>
-        [DataMember(Name="purchaseOrderDate", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderDate", EmitDefaultValue = false)]
         public DateTime? PurchaseOrderDate { get; set; }
 
         /// <summary>
         /// The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
         /// </summary>
         /// <value>The date when the purchase order was last updated. Must be in ISO-8601 date/time format.</value>
-        [DataMember(Name="lastUpdatedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "lastUpdatedDate", EmitDefaultValue = false)]
         public DateTime? LastUpdatedDate { get; set; }
 
         /// <summary>
         /// Name/Address and tax details of the selling party.
         /// </summary>
         /// <value>Name/Address and tax details of the selling party.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6).
         /// </summary>
         /// <value>Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6).</value>
-        [DataMember(Name="shipToParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipToParty", EmitDefaultValue = false)]
         public PartyIdentification ShipToParty { get; set; }
 
         /// <summary>
         /// Detailed order status.
         /// </summary>
         /// <value>Detailed order status.</value>
-        [DataMember(Name="itemStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "itemStatus", EmitDefaultValue = false)]
         public ItemStatus ItemStatus { get; set; }
 
         /// <summary>
@@ -192,7 +187,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -222,37 +217,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.PurchaseOrderStatus == input.PurchaseOrderStatus ||
                     (this.PurchaseOrderStatus != null &&
                     this.PurchaseOrderStatus.Equals(input.PurchaseOrderStatus))
-                ) && 
+                ) &&
                 (
                     this.PurchaseOrderDate == input.PurchaseOrderDate ||
                     (this.PurchaseOrderDate != null &&
                     this.PurchaseOrderDate.Equals(input.PurchaseOrderDate))
-                ) && 
+                ) &&
                 (
                     this.LastUpdatedDate == input.LastUpdatedDate ||
                     (this.LastUpdatedDate != null &&
                     this.LastUpdatedDate.Equals(input.LastUpdatedDate))
-                ) && 
+                ) &&
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.ShipToParty == input.ShipToParty ||
                     (this.ShipToParty != null &&
                     this.ShipToParty.Equals(input.ShipToParty))
-                ) && 
+                ) &&
                 (
                     this.ItemStatus == input.ItemStatus ||
                     (this.ItemStatus != null &&

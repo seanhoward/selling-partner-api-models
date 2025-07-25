@@ -1,5 +1,5 @@
 /* 
- * Report v2021-06-30
+ * Selling Partner API for Reports
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
     /// A list of report schedules.
     /// </summary>
     [DataContract]
-    public partial class ReportScheduleList :  IEquatable<ReportScheduleList>, IValidatableObject
+    public partial class ReportScheduleList : IEquatable<ReportScheduleList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportScheduleList" /> class.
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
                 this.ReportSchedules = reportSchedules;
             }
         }
-        
+
         /// <summary>
         /// Detailed information about a report schedule.
         /// </summary>
         /// <value>Detailed information about a report schedule.</value>
-        [DataMember(Name="reportSchedules", EmitDefaultValue=false)]
+        [DataMember(Name = "reportSchedules", EmitDefaultValue = false)]
         public List<ReportSchedule> ReportSchedules { get; set; }
 
         /// <summary>
@@ -71,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReportSchedules == input.ReportSchedules ||
                     this.ReportSchedules != null &&

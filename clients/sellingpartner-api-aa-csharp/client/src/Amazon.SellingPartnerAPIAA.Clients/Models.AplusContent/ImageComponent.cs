@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// A reference to an image, hosted in the A+ Content media library.
     /// </summary>
     [DataContract]
-    public partial class ImageComponent :  IEquatable<ImageComponent>, IValidatableObject
+    public partial class ImageComponent : IEquatable<ImageComponent>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageComponent" /> class.
@@ -38,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageComponent" /> class.
         /// </summary>
-        /// <param name="uploadDestinationId">This identifier is provided by the Selling Partner API for Uploads. (required).</param>
+        /// <param name="uploadDestinationId">This identifier is provided by the [Uploads API](https://developer-docs.amazon.com/sp-api/reference/welcome-to-api-references). (required).</param>
         /// <param name="imageCropSpecification">imageCropSpecification (required).</param>
         /// <param name="altText">The alternative text for the image. (required).</param>
         public ImageComponent(string uploadDestinationId = default, ImageCropSpecification imageCropSpecification = default, string altText = default)
@@ -71,25 +65,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
                 this.AltText = altText;
             }
         }
-        
+
         /// <summary>
-        /// This identifier is provided by the Selling Partner API for Uploads.
+        /// This identifier is provided by the [Uploads API](https://developer-docs.amazon.com/sp-api/reference/welcome-to-api-references).
         /// </summary>
-        /// <value>This identifier is provided by the Selling Partner API for Uploads.</value>
-        [DataMember(Name="uploadDestinationId", EmitDefaultValue=false)]
+        /// <value>This identifier is provided by the [Uploads API](https://developer-docs.amazon.com/sp-api/reference/welcome-to-api-references).</value>
+        [DataMember(Name = "uploadDestinationId", EmitDefaultValue = false)]
         public string UploadDestinationId { get; set; }
 
         /// <summary>
         /// Gets or Sets ImageCropSpecification
         /// </summary>
-        [DataMember(Name="imageCropSpecification", EmitDefaultValue=false)]
+        [DataMember(Name = "imageCropSpecification", EmitDefaultValue = false)]
         public ImageCropSpecification ImageCropSpecification { get; set; }
 
         /// <summary>
         /// The alternative text for the image.
         /// </summary>
         /// <value>The alternative text for the image.</value>
-        [DataMember(Name="altText", EmitDefaultValue=false)]
+        [DataMember(Name = "altText", EmitDefaultValue = false)]
         public string AltText { get; set; }
 
         /// <summary>
@@ -106,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -136,17 +130,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UploadDestinationId == input.UploadDestinationId ||
                     (this.UploadDestinationId != null &&
                     this.UploadDestinationId.Equals(input.UploadDestinationId))
-                ) && 
+                ) &&
                 (
                     this.ImageCropSpecification == input.ImageCropSpecification ||
                     (this.ImageCropSpecification != null &&
                     this.ImageCropSpecification.Equals(input.ImageCropSpecification))
-                ) && 
+                ) &&
                 (
                     this.AltText == input.AltText ||
                     (this.AltText != null &&
@@ -181,21 +175,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // UploadDestinationId (string) minLength
-            if(this.UploadDestinationId != null && this.UploadDestinationId.Length < 1)
+            if (this.UploadDestinationId != null && this.UploadDestinationId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for UploadDestinationId, length must be greater than 1.", new [] { "UploadDestinationId" });
+                yield return new ValidationResult("Invalid value for UploadDestinationId, length must be greater than 1.", new[] { "UploadDestinationId" });
             }
 
             // AltText (string) maxLength
-            if(this.AltText != null && this.AltText.Length > 100)
+            if (this.AltText != null && this.AltText.Length > 100)
             {
-                yield return new ValidationResult("Invalid value for AltText, length must be less than 100.", new [] { "AltText" });
+                yield return new ValidationResult("Invalid value for AltText, length must be less than 100.", new[] { "AltText" });
             }
 
             // AltText (string) minLength
-            if(this.AltText != null && this.AltText.Length < 1)
+            if (this.AltText != null && this.AltText.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for AltText, length must be greater than 1.", new [] { "AltText" });
+                yield return new ValidationResult("Invalid value for AltText, length must be greater than 1.", new[] { "AltText" });
             }
 
             yield break;

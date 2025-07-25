@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Represents a distribution package with its respective quantity.
     /// </summary>
     [DataContract]
-    public partial class DistributionPackageQuantity :  IEquatable<DistributionPackageQuantity>, IValidatableObject
+    public partial class DistributionPackageQuantity : IEquatable<DistributionPackageQuantity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DistributionPackageQuantity" /> class.
@@ -61,18 +55,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 this.DistributionPackage = distributionPackage;
             }
         }
-        
+
         /// <summary>
         /// Number of cases or pallets with the same package configuration.
         /// </summary>
         /// <value>Number of cases or pallets with the same package configuration.</value>
-        [DataMember(Name="count", EmitDefaultValue=false)]
+        [DataMember(Name = "count", EmitDefaultValue = false)]
         public int? Count { get; set; }
 
         /// <summary>
         /// Gets or Sets DistributionPackage
         /// </summary>
-        [DataMember(Name="distributionPackage", EmitDefaultValue=false)]
+        [DataMember(Name = "distributionPackage", EmitDefaultValue = false)]
         public DistributionPackage DistributionPackage { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +112,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Count == input.Count ||
                     (this.Count != null &&
                     this.Count.Equals(input.Count))
-                ) && 
+                ) &&
                 (
                     this.DistributionPackage == input.DistributionPackage ||
                     (this.DistributionPackage != null &&

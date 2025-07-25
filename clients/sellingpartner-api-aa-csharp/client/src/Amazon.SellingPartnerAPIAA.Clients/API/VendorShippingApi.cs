@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -57,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="buyerWarehouseCode">Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)</param>
         /// <returns>GetShipmentDetailsResponse</returns>
-        GetShipmentDetailsResponse GetShipmentDetails (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null);
+        GetShipmentDetailsResponse GetShipmentDetails(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null);
 
         /// <summary>
         /// GetShipmentDetails
@@ -91,7 +90,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="buyerWarehouseCode">Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)</param>
         /// <returns>ApiResponse of GetShipmentDetailsResponse</returns>
-        ApiResponse<GetShipmentDetailsResponse> GetShipmentDetailsWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null);
+        ApiResponse<GetShipmentDetailsResponse> GetShipmentDetailsWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null);
         /// <summary>
         /// 
         /// </summary>
@@ -101,14 +100,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The limit to the number of records returned. Default value is 50 records. (optional)</param>
         /// <param name="sortOrder">Sort the list by shipment label creation date in ascending or descending order. (optional)</param>
-        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <param name="nextToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="labelCreatedAfter">Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="labelCreatedBefore">Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="buyerReferenceNumber">Get Shipment labels by passing buyer reference number. (optional)</param>
         /// <param name="vendorShipmentIdentifier">Get Shipment labels by passing vendor shipment identifier. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)</param>
         /// <returns>GetShipmentLabels</returns>
-        GetShipmentLabels GetShipmentLabels (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null);
+        GetShipmentLabels GetShipmentLabels(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null);
 
         /// <summary>
         /// 
@@ -119,14 +118,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The limit to the number of records returned. Default value is 50 records. (optional)</param>
         /// <param name="sortOrder">Sort the list by shipment label creation date in ascending or descending order. (optional)</param>
-        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <param name="nextToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="labelCreatedAfter">Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="labelCreatedBefore">Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="buyerReferenceNumber">Get Shipment labels by passing buyer reference number. (optional)</param>
         /// <param name="vendorShipmentIdentifier">Get Shipment labels by passing vendor shipment identifier. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)</param>
         /// <returns>ApiResponse of GetShipmentLabels</returns>
-        ApiResponse<GetShipmentLabels> GetShipmentLabelsWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null);
+        ApiResponse<GetShipmentLabels> GetShipmentLabelsWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null);
         /// <summary>
         /// SubmitShipmentConfirmations
         /// </summary>
@@ -136,7 +135,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment confirmation.</param>
         /// <returns>SubmitShipmentConfirmationsResponse</returns>
-        SubmitShipmentConfirmationsResponse SubmitShipmentConfirmations (SubmitShipmentConfirmationsRequest body);
+        SubmitShipmentConfirmationsResponse SubmitShipmentConfirmations(SubmitShipmentConfirmationsRequest body);
 
         /// <summary>
         /// SubmitShipmentConfirmations
@@ -147,7 +146,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment confirmation.</param>
         /// <returns>ApiResponse of SubmitShipmentConfirmationsResponse</returns>
-        ApiResponse<SubmitShipmentConfirmationsResponse> SubmitShipmentConfirmationsWithHttpInfo (SubmitShipmentConfirmationsRequest body);
+        ApiResponse<SubmitShipmentConfirmationsResponse> SubmitShipmentConfirmationsWithHttpInfo(SubmitShipmentConfirmationsRequest body);
         /// <summary>
         /// SubmitShipments
         /// </summary>
@@ -157,7 +156,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment request.</param>
         /// <returns>SubmitShipmentConfirmationsResponse</returns>
-        SubmitShipmentConfirmationsResponse SubmitShipments (SubmitShipments body);
+        SubmitShipmentConfirmationsResponse SubmitShipments(SubmitShipments body);
 
         /// <summary>
         /// SubmitShipments
@@ -168,7 +167,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment request.</param>
         /// <returns>ApiResponse of SubmitShipmentConfirmationsResponse</returns>
-        ApiResponse<SubmitShipmentConfirmationsResponse> SubmitShipmentsWithHttpInfo (SubmitShipments body);
+        ApiResponse<SubmitShipmentConfirmationsResponse> SubmitShipmentsWithHttpInfo(SubmitShipments body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -203,7 +202,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="buyerWarehouseCode">Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)</param>
         /// <returns>Task of GetShipmentDetailsResponse</returns>
-        System.Threading.Tasks.Task<GetShipmentDetailsResponse> GetShipmentDetailsAsync (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null);
+        System.Threading.Tasks.Task<GetShipmentDetailsResponse> GetShipmentDetailsAsync(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null);
 
         /// <summary>
         /// GetShipmentDetails
@@ -237,7 +236,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="buyerWarehouseCode">Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)</param>
         /// <returns>Task of ApiResponse (GetShipmentDetailsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetShipmentDetailsResponse>> GetShipmentDetailsAsyncWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null);
+        System.Threading.Tasks.Task<ApiResponse<GetShipmentDetailsResponse>> GetShipmentDetailsAsyncWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null);
         /// <summary>
         /// 
         /// </summary>
@@ -247,14 +246,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The limit to the number of records returned. Default value is 50 records. (optional)</param>
         /// <param name="sortOrder">Sort the list by shipment label creation date in ascending or descending order. (optional)</param>
-        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <param name="nextToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="labelCreatedAfter">Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="labelCreatedBefore">Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="buyerReferenceNumber">Get Shipment labels by passing buyer reference number. (optional)</param>
         /// <param name="vendorShipmentIdentifier">Get Shipment labels by passing vendor shipment identifier. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)</param>
         /// <returns>Task of GetShipmentLabels</returns>
-        System.Threading.Tasks.Task<GetShipmentLabels> GetShipmentLabelsAsync (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null);
+        System.Threading.Tasks.Task<GetShipmentLabels> GetShipmentLabelsAsync(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null);
 
         /// <summary>
         /// 
@@ -265,14 +264,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The limit to the number of records returned. Default value is 50 records. (optional)</param>
         /// <param name="sortOrder">Sort the list by shipment label creation date in ascending or descending order. (optional)</param>
-        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <param name="nextToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="labelCreatedAfter">Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="labelCreatedBefore">Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="buyerReferenceNumber">Get Shipment labels by passing buyer reference number. (optional)</param>
         /// <param name="vendorShipmentIdentifier">Get Shipment labels by passing vendor shipment identifier. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)</param>
         /// <returns>Task of ApiResponse (GetShipmentLabels)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetShipmentLabels>> GetShipmentLabelsAsyncWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null);
+        System.Threading.Tasks.Task<ApiResponse<GetShipmentLabels>> GetShipmentLabelsAsyncWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null);
         /// <summary>
         /// SubmitShipmentConfirmations
         /// </summary>
@@ -282,7 +281,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment confirmation.</param>
         /// <returns>Task of SubmitShipmentConfirmationsResponse</returns>
-        System.Threading.Tasks.Task<SubmitShipmentConfirmationsResponse> SubmitShipmentConfirmationsAsync (SubmitShipmentConfirmationsRequest body);
+        System.Threading.Tasks.Task<SubmitShipmentConfirmationsResponse> SubmitShipmentConfirmationsAsync(SubmitShipmentConfirmationsRequest body);
 
         /// <summary>
         /// SubmitShipmentConfirmations
@@ -293,7 +292,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment confirmation.</param>
         /// <returns>Task of ApiResponse (SubmitShipmentConfirmationsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubmitShipmentConfirmationsResponse>> SubmitShipmentConfirmationsAsyncWithHttpInfo (SubmitShipmentConfirmationsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<SubmitShipmentConfirmationsResponse>> SubmitShipmentConfirmationsAsyncWithHttpInfo(SubmitShipmentConfirmationsRequest body);
         /// <summary>
         /// SubmitShipments
         /// </summary>
@@ -303,7 +302,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment request.</param>
         /// <returns>Task of SubmitShipmentConfirmationsResponse</returns>
-        System.Threading.Tasks.Task<SubmitShipmentConfirmationsResponse> SubmitShipmentsAsync (SubmitShipments body);
+        System.Threading.Tasks.Task<SubmitShipmentConfirmationsResponse> SubmitShipmentsAsync(SubmitShipments body);
 
         /// <summary>
         /// SubmitShipments
@@ -314,7 +313,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment request.</param>
         /// <returns>Task of ApiResponse (SubmitShipmentConfirmationsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubmitShipmentConfirmationsResponse>> SubmitShipmentsAsyncWithHttpInfo (SubmitShipments body);
+        System.Threading.Tasks.Task<ApiResponse<SubmitShipmentConfirmationsResponse>> SubmitShipmentsAsyncWithHttpInfo(SubmitShipments body);
         #endregion Asynchronous Operations
     }
 
@@ -334,7 +333,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public VendorShippingApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -360,7 +359,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -429,10 +428,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="buyerWarehouseCode">Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)</param>
         /// <returns>GetShipmentDetailsResponse</returns>
-        public GetShipmentDetailsResponse GetShipmentDetails (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null)
+        public GetShipmentDetailsResponse GetShipmentDetails(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null)
         {
-             ApiResponse<GetShipmentDetailsResponse> localVarResponse = GetShipmentDetailsWithHttpInfo(limit, sortOrder, nextToken, createdAfter, createdBefore, shipmentConfirmedBefore, shipmentConfirmedAfter, packageLabelCreatedBefore, packageLabelCreatedAfter, shippedBefore, shippedAfter, estimatedDeliveryBefore, estimatedDeliveryAfter, shipmentDeliveryBefore, shipmentDeliveryAfter, requestedPickUpBefore, requestedPickUpAfter, scheduledPickUpBefore, scheduledPickUpAfter, currentShipmentStatus, vendorShipmentIdentifier, buyerReferenceNumber, buyerWarehouseCode, sellerWarehouseCode);
-             return localVarResponse.Data;
+            ApiResponse<GetShipmentDetailsResponse> localVarResponse = GetShipmentDetailsWithHttpInfo(limit, sortOrder, nextToken, createdAfter, createdBefore, shipmentConfirmedBefore, shipmentConfirmedAfter, packageLabelCreatedBefore, packageLabelCreatedAfter, shippedBefore, shippedAfter, estimatedDeliveryBefore, estimatedDeliveryAfter, shipmentDeliveryBefore, shipmentDeliveryAfter, requestedPickUpBefore, requestedPickUpAfter, scheduledPickUpBefore, scheduledPickUpAfter, currentShipmentStatus, vendorShipmentIdentifier, buyerReferenceNumber, buyerWarehouseCode, sellerWarehouseCode);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -464,7 +463,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="buyerWarehouseCode">Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)</param>
         /// <returns>ApiResponse of GetShipmentDetailsResponse</returns>
-        public ApiResponse< GetShipmentDetailsResponse > GetShipmentDetailsWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null)
+        public ApiResponse<GetShipmentDetailsResponse> GetShipmentDetailsWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null)
         {
 
             var localVarPath = "/vendor/shipping/v1/shipments";
@@ -516,11 +515,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -530,7 +529,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetShipmentDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetShipmentDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentDetailsResponse)));
+                (GetShipmentDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentDetailsResponse)));
         }
 
         /// <summary>
@@ -562,10 +561,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="buyerWarehouseCode">Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)</param>
         /// <returns>Task of GetShipmentDetailsResponse</returns>
-        public async System.Threading.Tasks.Task<GetShipmentDetailsResponse> GetShipmentDetailsAsync (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null)
+        public async System.Threading.Tasks.Task<GetShipmentDetailsResponse> GetShipmentDetailsAsync(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null)
         {
-             ApiResponse<GetShipmentDetailsResponse> localVarResponse = await GetShipmentDetailsAsyncWithHttpInfo(limit, sortOrder, nextToken, createdAfter, createdBefore, shipmentConfirmedBefore, shipmentConfirmedAfter, packageLabelCreatedBefore, packageLabelCreatedAfter, shippedBefore, shippedAfter, estimatedDeliveryBefore, estimatedDeliveryAfter, shipmentDeliveryBefore, shipmentDeliveryAfter, requestedPickUpBefore, requestedPickUpAfter, scheduledPickUpBefore, scheduledPickUpAfter, currentShipmentStatus, vendorShipmentIdentifier, buyerReferenceNumber, buyerWarehouseCode, sellerWarehouseCode);
-             return localVarResponse.Data;
+            ApiResponse<GetShipmentDetailsResponse> localVarResponse = await GetShipmentDetailsAsyncWithHttpInfo(limit, sortOrder, nextToken, createdAfter, createdBefore, shipmentConfirmedBefore, shipmentConfirmedAfter, packageLabelCreatedBefore, packageLabelCreatedAfter, shippedBefore, shippedAfter, estimatedDeliveryBefore, estimatedDeliveryAfter, shipmentDeliveryBefore, shipmentDeliveryAfter, requestedPickUpBefore, requestedPickUpAfter, scheduledPickUpBefore, scheduledPickUpAfter, currentShipmentStatus, vendorShipmentIdentifier, buyerReferenceNumber, buyerWarehouseCode, sellerWarehouseCode);
+            return localVarResponse.Data;
 
         }
 
@@ -598,7 +597,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="buyerWarehouseCode">Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)</param>
         /// <returns>Task of ApiResponse (GetShipmentDetailsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetShipmentDetailsResponse>> GetShipmentDetailsAsyncWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetShipmentDetailsResponse>> GetShipmentDetailsAsyncWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? shipmentConfirmedBefore = null, DateTime? shipmentConfirmedAfter = null, DateTime? packageLabelCreatedBefore = null, DateTime? packageLabelCreatedAfter = null, DateTime? shippedBefore = null, DateTime? shippedAfter = null, DateTime? estimatedDeliveryBefore = null, DateTime? estimatedDeliveryAfter = null, DateTime? shipmentDeliveryBefore = null, DateTime? shipmentDeliveryAfter = null, DateTime? requestedPickUpBefore = null, DateTime? requestedPickUpAfter = null, DateTime? scheduledPickUpBefore = null, DateTime? scheduledPickUpAfter = null, string currentShipmentStatus = null, string vendorShipmentIdentifier = null, string buyerReferenceNumber = null, string buyerWarehouseCode = null, string sellerWarehouseCode = null)
         {
 
             var localVarPath = "/vendor/shipping/v1/shipments";
@@ -650,11 +649,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -664,7 +663,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetShipmentDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetShipmentDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentDetailsResponse)));
+                (GetShipmentDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentDetailsResponse)));
         }
 
         /// <summary>
@@ -673,17 +672,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The limit to the number of records returned. Default value is 50 records. (optional)</param>
         /// <param name="sortOrder">Sort the list by shipment label creation date in ascending or descending order. (optional)</param>
-        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <param name="nextToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="labelCreatedAfter">Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="labelCreatedBefore">Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="buyerReferenceNumber">Get Shipment labels by passing buyer reference number. (optional)</param>
         /// <param name="vendorShipmentIdentifier">Get Shipment labels by passing vendor shipment identifier. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)</param>
         /// <returns>GetShipmentLabels</returns>
-        public GetShipmentLabels GetShipmentLabels (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null)
+        public GetShipmentLabels GetShipmentLabels(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null)
         {
-             ApiResponse<GetShipmentLabels> localVarResponse = GetShipmentLabelsWithHttpInfo(limit, sortOrder, nextToken, labelCreatedAfter, labelCreatedBefore, buyerReferenceNumber, vendorShipmentIdentifier, sellerWarehouseCode);
-             return localVarResponse.Data;
+            ApiResponse<GetShipmentLabels> localVarResponse = GetShipmentLabelsWithHttpInfo(limit, sortOrder, nextToken, labelCreatedAfter, labelCreatedBefore, buyerReferenceNumber, vendorShipmentIdentifier, sellerWarehouseCode);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -692,14 +691,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The limit to the number of records returned. Default value is 50 records. (optional)</param>
         /// <param name="sortOrder">Sort the list by shipment label creation date in ascending or descending order. (optional)</param>
-        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <param name="nextToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="labelCreatedAfter">Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="labelCreatedBefore">Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="buyerReferenceNumber">Get Shipment labels by passing buyer reference number. (optional)</param>
         /// <param name="vendorShipmentIdentifier">Get Shipment labels by passing vendor shipment identifier. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)</param>
         /// <returns>ApiResponse of GetShipmentLabels</returns>
-        public ApiResponse< GetShipmentLabels > GetShipmentLabelsWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null)
+        public ApiResponse<GetShipmentLabels> GetShipmentLabelsWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null)
         {
 
             var localVarPath = "/vendor/shipping/v1/transportLabels";
@@ -735,11 +734,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -749,7 +748,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetShipmentLabels>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetShipmentLabels) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentLabels)));
+                (GetShipmentLabels)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentLabels)));
         }
 
         /// <summary>
@@ -758,17 +757,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The limit to the number of records returned. Default value is 50 records. (optional)</param>
         /// <param name="sortOrder">Sort the list by shipment label creation date in ascending or descending order. (optional)</param>
-        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <param name="nextToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="labelCreatedAfter">Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="labelCreatedBefore">Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="buyerReferenceNumber">Get Shipment labels by passing buyer reference number. (optional)</param>
         /// <param name="vendorShipmentIdentifier">Get Shipment labels by passing vendor shipment identifier. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)</param>
         /// <returns>Task of GetShipmentLabels</returns>
-        public async System.Threading.Tasks.Task<GetShipmentLabels> GetShipmentLabelsAsync (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null)
+        public async System.Threading.Tasks.Task<GetShipmentLabels> GetShipmentLabelsAsync(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null)
         {
-             ApiResponse<GetShipmentLabels> localVarResponse = await GetShipmentLabelsAsyncWithHttpInfo(limit, sortOrder, nextToken, labelCreatedAfter, labelCreatedBefore, buyerReferenceNumber, vendorShipmentIdentifier, sellerWarehouseCode);
-             return localVarResponse.Data;
+            ApiResponse<GetShipmentLabels> localVarResponse = await GetShipmentLabelsAsyncWithHttpInfo(limit, sortOrder, nextToken, labelCreatedAfter, labelCreatedBefore, buyerReferenceNumber, vendorShipmentIdentifier, sellerWarehouseCode);
+            return localVarResponse.Data;
 
         }
 
@@ -778,14 +777,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The limit to the number of records returned. Default value is 50 records. (optional)</param>
         /// <param name="sortOrder">Sort the list by shipment label creation date in ascending or descending order. (optional)</param>
-        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <param name="nextToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
         /// <param name="labelCreatedAfter">Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="labelCreatedBefore">Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)</param>
         /// <param name="buyerReferenceNumber">Get Shipment labels by passing buyer reference number. (optional)</param>
         /// <param name="vendorShipmentIdentifier">Get Shipment labels by passing vendor shipment identifier. (optional)</param>
         /// <param name="sellerWarehouseCode">Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)</param>
         /// <returns>Task of ApiResponse (GetShipmentLabels)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetShipmentLabels>> GetShipmentLabelsAsyncWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetShipmentLabels>> GetShipmentLabelsAsyncWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? labelCreatedAfter = null, DateTime? labelCreatedBefore = null, string buyerReferenceNumber = null, string vendorShipmentIdentifier = null, string sellerWarehouseCode = null)
         {
 
             var localVarPath = "/vendor/shipping/v1/transportLabels";
@@ -821,11 +820,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -835,7 +834,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetShipmentLabels>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetShipmentLabels) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentLabels)));
+                (GetShipmentLabels)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentLabels)));
         }
 
         /// <summary>
@@ -844,10 +843,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment confirmation.</param>
         /// <returns>SubmitShipmentConfirmationsResponse</returns>
-        public SubmitShipmentConfirmationsResponse SubmitShipmentConfirmations (SubmitShipmentConfirmationsRequest body)
+        public SubmitShipmentConfirmationsResponse SubmitShipmentConfirmations(SubmitShipmentConfirmationsRequest body)
         {
-             ApiResponse<SubmitShipmentConfirmationsResponse> localVarResponse = SubmitShipmentConfirmationsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitShipmentConfirmationsResponse> localVarResponse = SubmitShipmentConfirmationsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -856,7 +855,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment confirmation.</param>
         /// <returns>ApiResponse of SubmitShipmentConfirmationsResponse</returns>
-        public ApiResponse< SubmitShipmentConfirmationsResponse > SubmitShipmentConfirmationsWithHttpInfo (SubmitShipmentConfirmationsRequest body)
+        public ApiResponse<SubmitShipmentConfirmationsResponse> SubmitShipmentConfirmationsWithHttpInfo(SubmitShipmentConfirmationsRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -895,11 +894,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -909,7 +908,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitShipmentConfirmationsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitShipmentConfirmationsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitShipmentConfirmationsResponse)));
+                (SubmitShipmentConfirmationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitShipmentConfirmationsResponse)));
         }
 
         /// <summary>
@@ -918,10 +917,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment confirmation.</param>
         /// <returns>Task of SubmitShipmentConfirmationsResponse</returns>
-        public async System.Threading.Tasks.Task<SubmitShipmentConfirmationsResponse> SubmitShipmentConfirmationsAsync (SubmitShipmentConfirmationsRequest body)
+        public async System.Threading.Tasks.Task<SubmitShipmentConfirmationsResponse> SubmitShipmentConfirmationsAsync(SubmitShipmentConfirmationsRequest body)
         {
-             ApiResponse<SubmitShipmentConfirmationsResponse> localVarResponse = await SubmitShipmentConfirmationsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitShipmentConfirmationsResponse> localVarResponse = await SubmitShipmentConfirmationsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -931,7 +930,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment confirmation.</param>
         /// <returns>Task of ApiResponse (SubmitShipmentConfirmationsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SubmitShipmentConfirmationsResponse>> SubmitShipmentConfirmationsAsyncWithHttpInfo (SubmitShipmentConfirmationsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<SubmitShipmentConfirmationsResponse>> SubmitShipmentConfirmationsAsyncWithHttpInfo(SubmitShipmentConfirmationsRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -970,11 +969,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -984,7 +983,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitShipmentConfirmationsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitShipmentConfirmationsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitShipmentConfirmationsResponse)));
+                (SubmitShipmentConfirmationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitShipmentConfirmationsResponse)));
         }
 
         /// <summary>
@@ -993,10 +992,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment request.</param>
         /// <returns>SubmitShipmentConfirmationsResponse</returns>
-        public SubmitShipmentConfirmationsResponse SubmitShipments (SubmitShipments body)
+        public SubmitShipmentConfirmationsResponse SubmitShipments(SubmitShipments body)
         {
-             ApiResponse<SubmitShipmentConfirmationsResponse> localVarResponse = SubmitShipmentsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitShipmentConfirmationsResponse> localVarResponse = SubmitShipmentsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1005,7 +1004,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment request.</param>
         /// <returns>ApiResponse of SubmitShipmentConfirmationsResponse</returns>
-        public ApiResponse< SubmitShipmentConfirmationsResponse > SubmitShipmentsWithHttpInfo (SubmitShipments body)
+        public ApiResponse<SubmitShipmentConfirmationsResponse> SubmitShipmentsWithHttpInfo(SubmitShipments body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1044,11 +1043,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1058,7 +1057,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitShipmentConfirmationsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitShipmentConfirmationsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitShipmentConfirmationsResponse)));
+                (SubmitShipmentConfirmationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitShipmentConfirmationsResponse)));
         }
 
         /// <summary>
@@ -1067,10 +1066,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment request.</param>
         /// <returns>Task of SubmitShipmentConfirmationsResponse</returns>
-        public async System.Threading.Tasks.Task<SubmitShipmentConfirmationsResponse> SubmitShipmentsAsync (SubmitShipments body)
+        public async System.Threading.Tasks.Task<SubmitShipmentConfirmationsResponse> SubmitShipmentsAsync(SubmitShipments body)
         {
-             ApiResponse<SubmitShipmentConfirmationsResponse> localVarResponse = await SubmitShipmentsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitShipmentConfirmationsResponse> localVarResponse = await SubmitShipmentsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -1080,7 +1079,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">A request to submit shipment request.</param>
         /// <returns>Task of ApiResponse (SubmitShipmentConfirmationsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SubmitShipmentConfirmationsResponse>> SubmitShipmentsAsyncWithHttpInfo (SubmitShipments body)
+        public async System.Threading.Tasks.Task<ApiResponse<SubmitShipmentConfirmationsResponse>> SubmitShipmentsAsyncWithHttpInfo(SubmitShipments body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1119,11 +1118,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1133,7 +1132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitShipmentConfirmationsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitShipmentConfirmationsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitShipmentConfirmationsResponse)));
+                (SubmitShipmentConfirmationsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitShipmentConfirmationsResponse)));
         }
 
 
@@ -1147,17 +1146,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public VendorShippingApi Build() 
+            public VendorShippingApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

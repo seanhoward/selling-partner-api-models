@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// Includes configuration and timezone of a supply source.
     /// </summary>
     [DataContract]
-    public partial class SupplySourceConfiguration :  IEquatable<SupplySourceConfiguration>, IValidatableObject
+    public partial class SupplySourceConfiguration : IEquatable<SupplySourceConfiguration>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SupplySourceConfiguration" /> class.
@@ -40,18 +33,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.OperationalConfiguration = operationalConfiguration;
             this.Timezone = timezone;
         }
-        
+
         /// <summary>
         /// Gets or Sets OperationalConfiguration
         /// </summary>
-        [DataMember(Name="operationalConfiguration", EmitDefaultValue=false)]
+        [DataMember(Name = "operationalConfiguration", EmitDefaultValue = false)]
         public OperationalConfiguration OperationalConfiguration { get; set; }
 
         /// <summary>
         /// Please see RFC 6557, should be a canonical time zone ID as listed here: https://www.joda.org/joda-time/timezones.html.
         /// </summary>
         /// <value>Please see RFC 6557, should be a canonical time zone ID as listed here: https://www.joda.org/joda-time/timezones.html.</value>
-        [DataMember(Name="timezone", EmitDefaultValue=false)]
+        [DataMember(Name = "timezone", EmitDefaultValue = false)]
         public string Timezone { get; set; }
 
         /// <summary>
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.OperationalConfiguration == input.OperationalConfiguration ||
                     (this.OperationalConfiguration != null &&
                     this.OperationalConfiguration.Equals(input.OperationalConfiguration))
-                ) && 
+                ) &&
                 (
                     this.Timezone == input.Timezone ||
                     (this.Timezone != null &&

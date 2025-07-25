@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Easy Ship
  *
- * The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders.  Your Easy Ship applications can:  * Get available time slots for packages to be scheduled for delivery.  * Schedule, reschedule, and cancel Easy Ship orders.  * Print labels, invoices, and warranties.  See the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
+ * Use the Selling Partner API for Easy Ship to build applications for sellers to manage and ship Amazon Easy Ship orders. With this API, you can get available time slots, schedule and reschedule Easy Ship orders, and print shipping labels, invoices, and warranties. To review the differences in Easy Ship operations by marketplace, refer to [Marketplace support](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support).
  *
  * OpenAPI spec version: 2022-03-23
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
     /// This object allows users to specify an order to be scheduled. Only the amazonOrderId is required. 
     /// </summary>
     [DataContract]
-    public partial class OrderScheduleDetails :  IEquatable<OrderScheduleDetails>, IValidatableObject
+    public partial class OrderScheduleDetails : IEquatable<OrderScheduleDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderScheduleDetails" /> class.
@@ -53,17 +47,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             }
             this.PackageDetails = packageDetails;
         }
-        
+
         /// <summary>
         /// Gets or Sets AmazonOrderId
         /// </summary>
-        [DataMember(Name="amazonOrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonOrderId", EmitDefaultValue = false)]
         public string AmazonOrderId { get; set; }
 
         /// <summary>
         /// Gets or Sets PackageDetails
         /// </summary>
-        [DataMember(Name="packageDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "packageDetails", EmitDefaultValue = false)]
         public PackageDetails PackageDetails { get; set; }
 
         /// <summary>
@@ -79,7 +73,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -109,12 +103,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AmazonOrderId == input.AmazonOrderId ||
                     (this.AmazonOrderId != null &&
                     this.AmazonOrderId.Equals(input.AmazonOrderId))
-                ) && 
+                ) &&
                 (
                     this.PackageDetails == input.PackageDetails ||
                     (this.PackageDetails != null &&

@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Small Parcel Delivery (SPD) tracking items input information.
     /// </summary>
     [DataContract]
-    public partial class SpdTrackingItemInput :  IEquatable<SpdTrackingItemInput>, IValidatableObject
+    public partial class SpdTrackingItemInput : IEquatable<SpdTrackingItemInput>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SpdTrackingItemInput" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.TrackingId = trackingId;
             }
         }
-        
+
         /// <summary>
         /// The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box.
         /// </summary>
         /// <value>The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box.</value>
-        [DataMember(Name="boxId", EmitDefaultValue=false)]
+        [DataMember(Name = "boxId", EmitDefaultValue = false)]
         public string BoxId { get; set; }
 
         /// <summary>
         /// The tracking Id associated with each box in a non-Amazon partnered Small Parcel Delivery (SPD) shipment. The seller must provide this information.
         /// </summary>
         /// <value>The tracking Id associated with each box in a non-Amazon partnered Small Parcel Delivery (SPD) shipment. The seller must provide this information.</value>
-        [DataMember(Name="trackingId", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingId", EmitDefaultValue = false)]
         public string TrackingId { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BoxId == input.BoxId ||
                     (this.BoxId != null &&
                     this.BoxId.Equals(input.BoxId))
-                ) && 
+                ) &&
                 (
                     this.TrackingId == input.TrackingId ||
                     (this.TrackingId != null &&
@@ -157,27 +151,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // BoxId (string) maxLength
-            if(this.BoxId != null && this.BoxId.Length > 1024)
+            if (this.BoxId != null && this.BoxId.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for BoxId, length must be less than 1024.", new [] { "BoxId" });
+                yield return new ValidationResult("Invalid value for BoxId, length must be less than 1024.", new[] { "BoxId" });
             }
 
             // BoxId (string) minLength
-            if(this.BoxId != null && this.BoxId.Length < 1)
+            if (this.BoxId != null && this.BoxId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for BoxId, length must be greater than 1.", new [] { "BoxId" });
+                yield return new ValidationResult("Invalid value for BoxId, length must be greater than 1.", new[] { "BoxId" });
             }
 
             // TrackingId (string) maxLength
-            if(this.TrackingId != null && this.TrackingId.Length > 1024)
+            if (this.TrackingId != null && this.TrackingId.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for TrackingId, length must be less than 1024.", new [] { "TrackingId" });
+                yield return new ValidationResult("Invalid value for TrackingId, length must be less than 1024.", new[] { "TrackingId" });
             }
 
             // TrackingId (string) minLength
-            if(this.TrackingId != null && this.TrackingId.Length < 1)
+            if (this.TrackingId != null && this.TrackingId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for TrackingId, length must be greater than 1.", new [] { "TrackingId" });
+                yield return new ValidationResult("Invalid value for TrackingId, length must be greater than 1.", new[] { "TrackingId" });
             }
 
             yield break;

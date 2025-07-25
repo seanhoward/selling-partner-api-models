@@ -1,5 +1,5 @@
 /* 
- * Vendor Invoices v1
+ * Selling Partner API for Retail Procurement Payments
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
 {
@@ -28,13 +23,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
     /// Details of the item being invoiced.
     /// </summary>
     [DataContract]
-    public partial class InvoiceItem :  IEquatable<InvoiceItem>, IValidatableObject
+    public partial class InvoiceItem : IEquatable<InvoiceItem>, IValidatableObject
     {
         /// <summary>
         /// This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.
         /// </summary>
         /// <value>This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.</value>
-        [DataMember(Name="netCostUnitOfMeasure", EmitDefaultValue=false)]
+        [DataMember(Name = "netCostUnitOfMeasure", EmitDefaultValue = false)]
         public NetCostUnitOfMeasure? NetCostUnitOfMeasure { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceItem" /> class.
@@ -95,40 +90,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             this.ChargeDetails = chargeDetails;
             this.AllowanceDetails = allowanceDetails;
         }
-        
+
         /// <summary>
         /// Unique number related to this line item.
         /// </summary>
         /// <value>Unique number related to this line item.</value>
-        [DataMember(Name="itemSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "itemSequenceNumber", EmitDefaultValue = false)]
         public int? ItemSequenceNumber { get; set; }
 
         /// <summary>
         /// Amazon Standard Identification Number (ASIN) of an item.
         /// </summary>
         /// <value>Amazon Standard Identification Number (ASIN) of an item.</value>
-        [DataMember(Name="amazonProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonProductIdentifier", EmitDefaultValue = false)]
         public string AmazonProductIdentifier { get; set; }
 
         /// <summary>
         /// The vendor selected product identifier of the item. Should be the same as was provided in the purchase order.
         /// </summary>
         /// <value>The vendor selected product identifier of the item. Should be the same as was provided in the purchase order.</value>
-        [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorProductIdentifier", EmitDefaultValue = false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
         /// Invoiced quantity of this item. Quantity must be greater than zero.
         /// </summary>
         /// <value>Invoiced quantity of this item. Quantity must be greater than zero.</value>
-        [DataMember(Name="invoicedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "invoicedQuantity", EmitDefaultValue = false)]
         public ItemQuantity InvoicedQuantity { get; set; }
 
         /// <summary>
         /// The item cost to Amazon, which should match the cost on the order. Price information should not be zero or negative. It indicates net unit price. Net cost means VAT is not included in cost. If items are priced by weight, this cost need to be considered in conjunction with netCostUnitOfMeasure. E.g.: $5/LB
         /// </summary>
         /// <value>The item cost to Amazon, which should match the cost on the order. Price information should not be zero or negative. It indicates net unit price. Net cost means VAT is not included in cost. If items are priced by weight, this cost need to be considered in conjunction with netCostUnitOfMeasure. E.g.: $5/LB</value>
-        [DataMember(Name="netCost", EmitDefaultValue=false)]
+        [DataMember(Name = "netCost", EmitDefaultValue = false)]
         public Money NetCost { get; set; }
 
 
@@ -136,42 +131,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
         /// </summary>
         /// <value>The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
         /// HSN Tax code. The HSN number cannot contain alphabets.
         /// </summary>
         /// <value>HSN Tax code. The HSN number cannot contain alphabets.</value>
-        [DataMember(Name="hsnCode", EmitDefaultValue=false)]
+        [DataMember(Name = "hsnCode", EmitDefaultValue = false)]
         public string HsnCode { get; set; }
 
         /// <summary>
         /// Details required in order to process a credit note. This information is required only if invoiceType is CreditNote.
         /// </summary>
         /// <value>Details required in order to process a credit note. This information is required only if invoiceType is CreditNote.</value>
-        [DataMember(Name="creditNoteDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "creditNoteDetails", EmitDefaultValue = false)]
         public CreditNoteDetails CreditNoteDetails { get; set; }
 
         /// <summary>
         /// Individual tax details per line item.
         /// </summary>
         /// <value>Individual tax details per line item.</value>
-        [DataMember(Name="taxDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "taxDetails", EmitDefaultValue = false)]
         public List<TaxDetails> TaxDetails { get; set; }
 
         /// <summary>
         /// Individual charge details per line item.
         /// </summary>
         /// <value>Individual charge details per line item.</value>
-        [DataMember(Name="chargeDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "chargeDetails", EmitDefaultValue = false)]
         public List<ChargeDetails> ChargeDetails { get; set; }
 
         /// <summary>
         /// Individual allowance details per line item.
         /// </summary>
         /// <value>Individual allowance details per line item.</value>
-        [DataMember(Name="allowanceDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "allowanceDetails", EmitDefaultValue = false)]
         public List<AllowanceDetails> AllowanceDetails { get; set; }
 
         /// <summary>
@@ -197,7 +192,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -227,62 +222,62 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemSequenceNumber == input.ItemSequenceNumber ||
                     (this.ItemSequenceNumber != null &&
                     this.ItemSequenceNumber.Equals(input.ItemSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.AmazonProductIdentifier == input.AmazonProductIdentifier ||
                     (this.AmazonProductIdentifier != null &&
                     this.AmazonProductIdentifier.Equals(input.AmazonProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.VendorProductIdentifier == input.VendorProductIdentifier ||
                     (this.VendorProductIdentifier != null &&
                     this.VendorProductIdentifier.Equals(input.VendorProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.InvoicedQuantity == input.InvoicedQuantity ||
                     (this.InvoicedQuantity != null &&
                     this.InvoicedQuantity.Equals(input.InvoicedQuantity))
-                ) && 
+                ) &&
                 (
                     this.NetCost == input.NetCost ||
                     (this.NetCost != null &&
                     this.NetCost.Equals(input.NetCost))
-                ) && 
+                ) &&
                 (
                     this.NetCostUnitOfMeasure == input.NetCostUnitOfMeasure ||
                     (this.NetCostUnitOfMeasure != null &&
                     this.NetCostUnitOfMeasure.Equals(input.NetCostUnitOfMeasure))
-                ) && 
+                ) &&
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.HsnCode == input.HsnCode ||
                     (this.HsnCode != null &&
                     this.HsnCode.Equals(input.HsnCode))
-                ) && 
+                ) &&
                 (
                     this.CreditNoteDetails == input.CreditNoteDetails ||
                     (this.CreditNoteDetails != null &&
                     this.CreditNoteDetails.Equals(input.CreditNoteDetails))
-                ) && 
+                ) &&
                 (
                     this.TaxDetails == input.TaxDetails ||
                     this.TaxDetails != null &&
                     this.TaxDetails.SequenceEqual(input.TaxDetails)
-                ) && 
+                ) &&
                 (
                     this.ChargeDetails == input.ChargeDetails ||
                     this.ChargeDetails != null &&
                     this.ChargeDetails.SequenceEqual(input.ChargeDetails)
-                ) && 
+                ) &&
                 (
                     this.AllowanceDetails == input.AllowanceDetails ||
                     this.AllowanceDetails != null &&

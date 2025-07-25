@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The attributes related to the payment made from customer to seller for this order.
     /// </summary>
     [DataContract]
-    public partial class PaymentInformation :  IEquatable<PaymentInformation>, IValidatableObject
+    public partial class PaymentInformation : IEquatable<PaymentInformation>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentInformation" /> class.
@@ -71,26 +65,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.PaymentDate = paymentDate;
             }
         }
-        
+
         /// <summary>
         /// The transaction identifier of this payment.
         /// </summary>
         /// <value>The transaction identifier of this payment.</value>
-        [DataMember(Name="paymentTransactionId", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentTransactionId", EmitDefaultValue = false)]
         public string PaymentTransactionId { get; set; }
 
         /// <summary>
         /// The transaction mode of this payment.
         /// </summary>
         /// <value>The transaction mode of this payment.</value>
-        [DataMember(Name="paymentMode", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentMode", EmitDefaultValue = false)]
         public string PaymentMode { get; set; }
 
         /// <summary>
         /// The transaction date of this payment.
         /// </summary>
         /// <value>The transaction date of this payment.</value>
-        [DataMember(Name="paymentDate", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentDate", EmitDefaultValue = false)]
         public DateTime? PaymentDate { get; set; }
 
         /// <summary>
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +131,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PaymentTransactionId == input.PaymentTransactionId ||
                     (this.PaymentTransactionId != null &&
                     this.PaymentTransactionId.Equals(input.PaymentTransactionId))
-                ) && 
+                ) &&
                 (
                     this.PaymentMode == input.PaymentMode ||
                     (this.PaymentMode != null &&
                     this.PaymentMode.Equals(input.PaymentMode))
-                ) && 
+                ) &&
                 (
                     this.PaymentDate == input.PaymentDate ||
                     (this.PaymentDate != null &&

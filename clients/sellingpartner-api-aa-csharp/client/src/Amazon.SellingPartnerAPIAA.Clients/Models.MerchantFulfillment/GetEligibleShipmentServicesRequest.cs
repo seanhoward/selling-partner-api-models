@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Request schema.
     /// </summary>
     [DataContract]
-    public partial class GetEligibleShipmentServicesRequest :  IEquatable<GetEligibleShipmentServicesRequest>, IValidatableObject
+    public partial class GetEligibleShipmentServicesRequest : IEquatable<GetEligibleShipmentServicesRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetEligibleShipmentServicesRequest" /> class.
@@ -53,18 +47,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             }
             this.ShippingOfferingFilter = shippingOfferingFilter;
         }
-        
+
         /// <summary>
         /// Shipment information required for requesting shipping service offers.
         /// </summary>
         /// <value>Shipment information required for requesting shipping service offers.</value>
-        [DataMember(Name="ShipmentRequestDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "ShipmentRequestDetails", EmitDefaultValue = false)]
         public ShipmentRequestDetails ShipmentRequestDetails { get; set; }
 
         /// <summary>
         /// Gets or Sets ShippingOfferingFilter
         /// </summary>
-        [DataMember(Name="ShippingOfferingFilter", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingOfferingFilter", EmitDefaultValue = false)]
         public ShippingOfferingFilter ShippingOfferingFilter { get; set; }
 
         /// <summary>
@@ -80,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -110,12 +104,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShipmentRequestDetails == input.ShipmentRequestDetails ||
                     (this.ShipmentRequestDetails != null &&
                     this.ShipmentRequestDetails.Equals(input.ShipmentRequestDetails))
-                ) && 
+                ) &&
                 (
                     this.ShippingOfferingFilter == input.ShippingOfferingFilter ||
                     (this.ShippingOfferingFilter != null &&

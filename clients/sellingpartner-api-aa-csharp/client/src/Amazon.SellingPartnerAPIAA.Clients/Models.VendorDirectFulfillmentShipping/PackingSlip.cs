@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Packing slip information.
     /// </summary>
     [DataContract]
-    public partial class PackingSlip :  IEquatable<PackingSlip>, IValidatableObject
+    public partial class PackingSlip : IEquatable<PackingSlip>, IValidatableObject
     {
         /// <summary>
         /// The format of the file such as PDF, JPEG etc.
@@ -37,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ContentTypeEnum
         {
-            
+
             /// <summary>
             /// Enum ApplicationPdf for value: application/pdf
             /// </summary>
@@ -49,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// The format of the file such as PDF, JPEG etc.
         /// </summary>
         /// <value>The format of the file such as PDF, JPEG etc.</value>
-        [DataMember(Name="contentType", EmitDefaultValue=false)]
+        [DataMember(Name = "contentType", EmitDefaultValue = false)]
         public ContentTypeEnum? ContentType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackingSlip" /> class.
@@ -60,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// Initializes a new instance of the <see cref="PackingSlip" /> class.
         /// </summary>
         /// <param name="purchaseOrderNumber">Purchase order number of the shipment that the packing slip is for. (required).</param>
-        /// <param name="content">A Base64encoded string of the packing slip PDF. (required).</param>
+        /// <param name="content">A Base64 string of the packing slip PDF. (required).</param>
         /// <param name="contentType">The format of the file such as PDF, JPEG etc..</param>
         public PackingSlip(string purchaseOrderNumber = default, string content = default, ContentTypeEnum? contentType = default)
         {
@@ -84,19 +80,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             }
             this.ContentType = contentType;
         }
-        
+
         /// <summary>
         /// Purchase order number of the shipment that the packing slip is for.
         /// </summary>
         /// <value>Purchase order number of the shipment that the packing slip is for.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
-        /// A Base64encoded string of the packing slip PDF.
+        /// A Base64 string of the packing slip PDF.
         /// </summary>
-        /// <value>A Base64encoded string of the packing slip PDF.</value>
-        [DataMember(Name="content", EmitDefaultValue=false)]
+        /// <value>A Base64 string of the packing slip PDF.</value>
+        [DataMember(Name = "content", EmitDefaultValue = false)]
         public string Content { get; set; }
 
 
@@ -114,7 +110,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -144,17 +140,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.Content == input.Content ||
                     (this.Content != null &&
                     this.Content.Equals(input.Content))
-                ) && 
+                ) &&
                 (
                     this.ContentType == input.ContentType ||
                     (this.ContentType != null &&
@@ -192,7 +188,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             Regex regexPurchaseOrderNumber = new Regex(@"^[a-zA-Z0-9]+$", RegexOptions.CultureInvariant);
             if (false == regexPurchaseOrderNumber.Match(this.PurchaseOrderNumber).Success)
             {
-                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new [] { "PurchaseOrderNumber" });
+                yield return new ValidationResult("Invalid value for PurchaseOrderNumber, must match a pattern of " + regexPurchaseOrderNumber, new[] { "PurchaseOrderNumber" });
             }
 
             yield break;

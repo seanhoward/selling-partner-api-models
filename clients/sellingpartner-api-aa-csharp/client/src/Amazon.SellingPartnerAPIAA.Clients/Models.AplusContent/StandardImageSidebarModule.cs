@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// Two images, two paragraphs, and two bulleted lists. One image is smaller and displayed in the sidebar.
     /// </summary>
     [DataContract]
-    public partial class StandardImageSidebarModule :  IEquatable<StandardImageSidebarModule>, IValidatableObject
+    public partial class StandardImageSidebarModule : IEquatable<StandardImageSidebarModule>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardImageSidebarModule" /> class.
@@ -48,41 +41,41 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             this.SidebarImageTextBlock = sidebarImageTextBlock;
             this.SidebarListBlock = sidebarListBlock;
         }
-        
+
         /// <summary>
         /// Gets or Sets Headline
         /// </summary>
-        [DataMember(Name="headline", EmitDefaultValue=false)]
+        [DataMember(Name = "headline", EmitDefaultValue = false)]
         public TextComponent Headline { get; set; }
 
         /// <summary>
         /// Gets or Sets ImageCaptionBlock
         /// </summary>
-        [DataMember(Name="imageCaptionBlock", EmitDefaultValue=false)]
+        [DataMember(Name = "imageCaptionBlock", EmitDefaultValue = false)]
         public StandardImageCaptionBlock ImageCaptionBlock { get; set; }
 
         /// <summary>
         /// Gets or Sets DescriptionTextBlock
         /// </summary>
-        [DataMember(Name="descriptionTextBlock", EmitDefaultValue=false)]
+        [DataMember(Name = "descriptionTextBlock", EmitDefaultValue = false)]
         public StandardTextBlock DescriptionTextBlock { get; set; }
 
         /// <summary>
         /// Gets or Sets DescriptionListBlock
         /// </summary>
-        [DataMember(Name="descriptionListBlock", EmitDefaultValue=false)]
+        [DataMember(Name = "descriptionListBlock", EmitDefaultValue = false)]
         public StandardTextListBlock DescriptionListBlock { get; set; }
 
         /// <summary>
         /// Gets or Sets SidebarImageTextBlock
         /// </summary>
-        [DataMember(Name="sidebarImageTextBlock", EmitDefaultValue=false)]
+        [DataMember(Name = "sidebarImageTextBlock", EmitDefaultValue = false)]
         public StandardImageTextBlock SidebarImageTextBlock { get; set; }
 
         /// <summary>
         /// Gets or Sets SidebarListBlock
         /// </summary>
-        [DataMember(Name="sidebarListBlock", EmitDefaultValue=false)]
+        [DataMember(Name = "sidebarListBlock", EmitDefaultValue = false)]
         public StandardTextListBlock SidebarListBlock { get; set; }
 
         /// <summary>
@@ -102,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -132,32 +125,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Headline == input.Headline ||
                     (this.Headline != null &&
                     this.Headline.Equals(input.Headline))
-                ) && 
+                ) &&
                 (
                     this.ImageCaptionBlock == input.ImageCaptionBlock ||
                     (this.ImageCaptionBlock != null &&
                     this.ImageCaptionBlock.Equals(input.ImageCaptionBlock))
-                ) && 
+                ) &&
                 (
                     this.DescriptionTextBlock == input.DescriptionTextBlock ||
                     (this.DescriptionTextBlock != null &&
                     this.DescriptionTextBlock.Equals(input.DescriptionTextBlock))
-                ) && 
+                ) &&
                 (
                     this.DescriptionListBlock == input.DescriptionListBlock ||
                     (this.DescriptionListBlock != null &&
                     this.DescriptionListBlock.Equals(input.DescriptionListBlock))
-                ) && 
+                ) &&
                 (
                     this.SidebarImageTextBlock == input.SidebarImageTextBlock ||
                     (this.SidebarImageTextBlock != null &&
                     this.SidebarImageTextBlock.Equals(input.SidebarImageTextBlock))
-                ) && 
+                ) &&
                 (
                     this.SidebarListBlock == input.SidebarListBlock ||
                     (this.SidebarListBlock != null &&

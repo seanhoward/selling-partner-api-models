@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -35,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which a solicitation is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>CreateProductReviewAndSellerFeedbackSolicitationResponse</returns>
-        CreateProductReviewAndSellerFeedbackSolicitationResponse CreateProductReviewAndSellerFeedbackSolicitation (string amazonOrderId, List<string> marketplaceIds);
+        CreateProductReviewAndSellerFeedbackSolicitationResponse CreateProductReviewAndSellerFeedbackSolicitation(string amazonOrderId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -47,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which a solicitation is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>ApiResponse of CreateProductReviewAndSellerFeedbackSolicitationResponse</returns>
-        ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse> CreateProductReviewAndSellerFeedbackSolicitationWithHttpInfo (string amazonOrderId, List<string> marketplaceIds);
+        ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse> CreateProductReviewAndSellerFeedbackSolicitationWithHttpInfo(string amazonOrderId, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -58,7 +57,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>GetSolicitationActionsForOrderResponse</returns>
-        GetSolicitationActionsForOrderResponse GetSolicitationActionsForOrder (string amazonOrderId, List<string> marketplaceIds);
+        GetSolicitationActionsForOrderResponse GetSolicitationActionsForOrder(string amazonOrderId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -70,7 +69,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>ApiResponse of GetSolicitationActionsForOrderResponse</returns>
-        ApiResponse<GetSolicitationActionsForOrderResponse> GetSolicitationActionsForOrderWithHttpInfo (string amazonOrderId, List<string> marketplaceIds);
+        ApiResponse<GetSolicitationActionsForOrderResponse> GetSolicitationActionsForOrderWithHttpInfo(string amazonOrderId, List<string> marketplaceIds);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -83,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which a solicitation is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>Task of CreateProductReviewAndSellerFeedbackSolicitationResponse</returns>
-        System.Threading.Tasks.Task<CreateProductReviewAndSellerFeedbackSolicitationResponse> CreateProductReviewAndSellerFeedbackSolicitationAsync (string amazonOrderId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<CreateProductReviewAndSellerFeedbackSolicitationResponse> CreateProductReviewAndSellerFeedbackSolicitationAsync(string amazonOrderId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -95,7 +94,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which a solicitation is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>Task of ApiResponse (CreateProductReviewAndSellerFeedbackSolicitationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse>> CreateProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse>> CreateProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -106,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>Task of GetSolicitationActionsForOrderResponse</returns>
-        System.Threading.Tasks.Task<GetSolicitationActionsForOrderResponse> GetSolicitationActionsForOrderAsync (string amazonOrderId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<GetSolicitationActionsForOrderResponse> GetSolicitationActionsForOrderAsync(string amazonOrderId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -118,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>Task of ApiResponse (GetSolicitationActionsForOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetSolicitationActionsForOrderResponse>> GetSolicitationActionsForOrderAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<ApiResponse<GetSolicitationActionsForOrderResponse>> GetSolicitationActionsForOrderAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds);
         #endregion Asynchronous Operations
     }
 
@@ -138,7 +137,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public SolicitationsApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -164,7 +163,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -211,10 +210,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which a solicitation is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>CreateProductReviewAndSellerFeedbackSolicitationResponse</returns>
-        public CreateProductReviewAndSellerFeedbackSolicitationResponse CreateProductReviewAndSellerFeedbackSolicitation (string amazonOrderId, List<string> marketplaceIds)
+        public CreateProductReviewAndSellerFeedbackSolicitationResponse CreateProductReviewAndSellerFeedbackSolicitation(string amazonOrderId, List<string> marketplaceIds)
         {
-             ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse> localVarResponse = CreateProductReviewAndSellerFeedbackSolicitationWithHttpInfo(amazonOrderId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse> localVarResponse = CreateProductReviewAndSellerFeedbackSolicitationWithHttpInfo(amazonOrderId, marketplaceIds);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -224,7 +223,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which a solicitation is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>ApiResponse of CreateProductReviewAndSellerFeedbackSolicitationResponse</returns>
-        public ApiResponse< CreateProductReviewAndSellerFeedbackSolicitationResponse > CreateProductReviewAndSellerFeedbackSolicitationWithHttpInfo (string amazonOrderId, List<string> marketplaceIds)
+        public ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse> CreateProductReviewAndSellerFeedbackSolicitationWithHttpInfo(string amazonOrderId, List<string> marketplaceIds)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -260,11 +259,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -274,7 +273,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateProductReviewAndSellerFeedbackSolicitationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateProductReviewAndSellerFeedbackSolicitationResponse)));
+                (CreateProductReviewAndSellerFeedbackSolicitationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateProductReviewAndSellerFeedbackSolicitationResponse)));
         }
 
         /// <summary>
@@ -284,10 +283,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which a solicitation is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>Task of CreateProductReviewAndSellerFeedbackSolicitationResponse</returns>
-        public async System.Threading.Tasks.Task<CreateProductReviewAndSellerFeedbackSolicitationResponse> CreateProductReviewAndSellerFeedbackSolicitationAsync (string amazonOrderId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<CreateProductReviewAndSellerFeedbackSolicitationResponse> CreateProductReviewAndSellerFeedbackSolicitationAsync(string amazonOrderId, List<string> marketplaceIds)
         {
-             ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse> localVarResponse = await CreateProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo(amazonOrderId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse> localVarResponse = await CreateProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo(amazonOrderId, marketplaceIds);
+            return localVarResponse.Data;
 
         }
 
@@ -298,7 +297,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which a solicitation is sent.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>Task of ApiResponse (CreateProductReviewAndSellerFeedbackSolicitationResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse>> CreateProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse>> CreateProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -334,11 +333,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -348,7 +347,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateProductReviewAndSellerFeedbackSolicitationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateProductReviewAndSellerFeedbackSolicitationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateProductReviewAndSellerFeedbackSolicitationResponse)));
+                (CreateProductReviewAndSellerFeedbackSolicitationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateProductReviewAndSellerFeedbackSolicitationResponse)));
         }
 
         /// <summary>
@@ -358,10 +357,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>GetSolicitationActionsForOrderResponse</returns>
-        public GetSolicitationActionsForOrderResponse GetSolicitationActionsForOrder (string amazonOrderId, List<string> marketplaceIds)
+        public GetSolicitationActionsForOrderResponse GetSolicitationActionsForOrder(string amazonOrderId, List<string> marketplaceIds)
         {
-             ApiResponse<GetSolicitationActionsForOrderResponse> localVarResponse = GetSolicitationActionsForOrderWithHttpInfo(amazonOrderId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<GetSolicitationActionsForOrderResponse> localVarResponse = GetSolicitationActionsForOrderWithHttpInfo(amazonOrderId, marketplaceIds);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -371,7 +370,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>ApiResponse of GetSolicitationActionsForOrderResponse</returns>
-        public ApiResponse< GetSolicitationActionsForOrderResponse > GetSolicitationActionsForOrderWithHttpInfo (string amazonOrderId, List<string> marketplaceIds)
+        public ApiResponse<GetSolicitationActionsForOrderResponse> GetSolicitationActionsForOrderWithHttpInfo(string amazonOrderId, List<string> marketplaceIds)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -407,11 +406,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -421,7 +420,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetSolicitationActionsForOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetSolicitationActionsForOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSolicitationActionsForOrderResponse)));
+                (GetSolicitationActionsForOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSolicitationActionsForOrderResponse)));
         }
 
         /// <summary>
@@ -431,10 +430,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>Task of GetSolicitationActionsForOrderResponse</returns>
-        public async System.Threading.Tasks.Task<GetSolicitationActionsForOrderResponse> GetSolicitationActionsForOrderAsync (string amazonOrderId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<GetSolicitationActionsForOrderResponse> GetSolicitationActionsForOrderAsync(string amazonOrderId, List<string> marketplaceIds)
         {
-             ApiResponse<GetSolicitationActionsForOrderResponse> localVarResponse = await GetSolicitationActionsForOrderAsyncWithHttpInfo(amazonOrderId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<GetSolicitationActionsForOrderResponse> localVarResponse = await GetSolicitationActionsForOrderAsyncWithHttpInfo(amazonOrderId, marketplaceIds);
+            return localVarResponse.Data;
 
         }
 
@@ -445,7 +444,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="amazonOrderId">An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.</param>
         /// <param name="marketplaceIds">A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.</param>
         /// <returns>Task of ApiResponse (GetSolicitationActionsForOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetSolicitationActionsForOrderResponse>> GetSolicitationActionsForOrderAsyncWithHttpInfo (string amazonOrderId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<ApiResponse<GetSolicitationActionsForOrderResponse>> GetSolicitationActionsForOrderAsyncWithHttpInfo(string amazonOrderId, List<string> marketplaceIds)
         {
             // verify the required parameter 'amazonOrderId' is set
             if (amazonOrderId == null)
@@ -481,11 +480,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -495,7 +494,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetSolicitationActionsForOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetSolicitationActionsForOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSolicitationActionsForOrderResponse)));
+                (GetSolicitationActionsForOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetSolicitationActionsForOrderResponse)));
         }
 
 
@@ -509,17 +508,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public SolicitationsApi Build() 
+            public SolicitationsApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

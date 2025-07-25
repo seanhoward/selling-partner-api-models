@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Buyer information.
     /// </summary>
     [DataContract]
-    public partial class BuyerInfo :  IEquatable<BuyerInfo>, IValidatableObject
+    public partial class BuyerInfo : IEquatable<BuyerInfo>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuyerInfo" /> class.
@@ -36,7 +29,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <param name="buyerEmail">The anonymized email address of the buyer..</param>
         /// <param name="buyerName">The buyer name or the recipient name..</param>
         /// <param name="buyerCounty">The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace..</param>
-        /// <param name="buyerTaxInfo">Tax information about the buyer. Sellers can use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces..</param>
+        /// <param name="buyerTaxInfo">Tax information about the buyer. Sellers could use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces..</param>
         /// <param name="purchaseOrderNumber">The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout..</param>
         public BuyerInfo(string buyerEmail = default, string buyerName = default, string buyerCounty = default, BuyerTaxInfo buyerTaxInfo = default, string purchaseOrderNumber = default)
         {
@@ -46,40 +39,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.BuyerTaxInfo = buyerTaxInfo;
             this.PurchaseOrderNumber = purchaseOrderNumber;
         }
-        
+
         /// <summary>
         /// The anonymized email address of the buyer.
         /// </summary>
         /// <value>The anonymized email address of the buyer.</value>
-        [DataMember(Name="BuyerEmail", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerEmail", EmitDefaultValue = false)]
         public string BuyerEmail { get; set; }
 
         /// <summary>
         /// The buyer name or the recipient name.
         /// </summary>
         /// <value>The buyer name or the recipient name.</value>
-        [DataMember(Name="BuyerName", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerName", EmitDefaultValue = false)]
         public string BuyerName { get; set; }
 
         /// <summary>
         /// The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace.
         /// </summary>
         /// <value>The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace.</value>
-        [DataMember(Name="BuyerCounty", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerCounty", EmitDefaultValue = false)]
         public string BuyerCounty { get; set; }
 
         /// <summary>
-        /// Tax information about the buyer. Sellers can use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces.
+        /// Tax information about the buyer. Sellers could use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces.
         /// </summary>
-        /// <value>Tax information about the buyer. Sellers can use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces.</value>
-        [DataMember(Name="BuyerTaxInfo", EmitDefaultValue=false)]
+        /// <value>Tax information about the buyer. Sellers could use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces.</value>
+        [DataMember(Name = "BuyerTaxInfo", EmitDefaultValue = false)]
         public BuyerTaxInfo BuyerTaxInfo { get; set; }
 
         /// <summary>
         /// The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
         /// </summary>
         /// <value>The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.</value>
-        [DataMember(Name="PurchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "PurchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
@@ -98,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,27 +121,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BuyerEmail == input.BuyerEmail ||
                     (this.BuyerEmail != null &&
                     this.BuyerEmail.Equals(input.BuyerEmail))
-                ) && 
+                ) &&
                 (
                     this.BuyerName == input.BuyerName ||
                     (this.BuyerName != null &&
                     this.BuyerName.Equals(input.BuyerName))
-                ) && 
+                ) &&
                 (
                     this.BuyerCounty == input.BuyerCounty ||
                     (this.BuyerCounty != null &&
                     this.BuyerCounty.Equals(input.BuyerCounty))
-                ) && 
+                ) &&
                 (
                     this.BuyerTaxInfo == input.BuyerTaxInfo ||
                     (this.BuyerTaxInfo != null &&
                     this.BuyerTaxInfo.Equals(input.BuyerTaxInfo))
-                ) && 
+                ) &&
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&

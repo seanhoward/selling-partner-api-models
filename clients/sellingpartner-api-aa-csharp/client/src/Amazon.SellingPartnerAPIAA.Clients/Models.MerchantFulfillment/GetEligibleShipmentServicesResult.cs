@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// The payload for the &#x60;getEligibleShipmentServices&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class GetEligibleShipmentServicesResult :  IEquatable<GetEligibleShipmentServicesResult>, IValidatableObject
+    public partial class GetEligibleShipmentServicesResult : IEquatable<GetEligibleShipmentServicesResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetEligibleShipmentServicesResult" /> class.
@@ -57,30 +51,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.TemporarilyUnavailableCarrierList = temporarilyUnavailableCarrierList;
             this.TermsAndConditionsNotAcceptedCarrierList = termsAndConditionsNotAcceptedCarrierList;
         }
-        
+
         /// <summary>
         /// A list of shipping services offers.
         /// </summary>
         /// <value>A list of shipping services offers.</value>
-        [DataMember(Name="ShippingServiceList", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingServiceList", EmitDefaultValue = false)]
         public ShippingServiceList ShippingServiceList { get; set; }
 
         /// <summary>
         /// Gets or Sets RejectedShippingServiceList
         /// </summary>
-        [DataMember(Name="RejectedShippingServiceList", EmitDefaultValue=false)]
+        [DataMember(Name = "RejectedShippingServiceList", EmitDefaultValue = false)]
         public RejectedShippingServiceList RejectedShippingServiceList { get; set; }
 
         /// <summary>
         /// Gets or Sets TemporarilyUnavailableCarrierList
         /// </summary>
-        [DataMember(Name="TemporarilyUnavailableCarrierList", EmitDefaultValue=false)]
+        [DataMember(Name = "TemporarilyUnavailableCarrierList", EmitDefaultValue = false)]
         public TemporarilyUnavailableCarrierList TemporarilyUnavailableCarrierList { get; set; }
 
         /// <summary>
         /// Gets or Sets TermsAndConditionsNotAcceptedCarrierList
         /// </summary>
-        [DataMember(Name="TermsAndConditionsNotAcceptedCarrierList", EmitDefaultValue=false)]
+        [DataMember(Name = "TermsAndConditionsNotAcceptedCarrierList", EmitDefaultValue = false)]
         public TermsAndConditionsNotAcceptedCarrierList TermsAndConditionsNotAcceptedCarrierList { get; set; }
 
         /// <summary>
@@ -98,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,22 +122,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShippingServiceList == input.ShippingServiceList ||
                     (this.ShippingServiceList != null &&
                     this.ShippingServiceList.Equals(input.ShippingServiceList))
-                ) && 
+                ) &&
                 (
                     this.RejectedShippingServiceList == input.RejectedShippingServiceList ||
                     (this.RejectedShippingServiceList != null &&
                     this.RejectedShippingServiceList.Equals(input.RejectedShippingServiceList))
-                ) && 
+                ) &&
                 (
                     this.TemporarilyUnavailableCarrierList == input.TemporarilyUnavailableCarrierList ||
                     (this.TemporarilyUnavailableCarrierList != null &&
                     this.TemporarilyUnavailableCarrierList.Equals(input.TemporarilyUnavailableCarrierList))
-                ) && 
+                ) &&
                 (
                     this.TermsAndConditionsNotAcceptedCarrierList == input.TermsAndConditionsNotAcceptedCarrierList ||
                     (this.TermsAndConditionsNotAcceptedCarrierList != null &&

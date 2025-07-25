@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// Inventory summary for a specific item.
     /// </summary>
     [DataContract]
-    public partial class InventorySummary :  IEquatable<InventorySummary>, IValidatableObject
+    public partial class InventorySummary : IEquatable<InventorySummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InventorySummary" /> class.
@@ -54,67 +48,67 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             this.TotalQuantity = totalQuantity;
             this.Stores = stores;
         }
-        
+
         /// <summary>
         /// The Amazon Standard Identification Number (ASIN) of an item.
         /// </summary>
         /// <value>The Amazon Standard Identification Number (ASIN) of an item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// Amazon&#39;s fulfillment network SKU identifier.
         /// </summary>
         /// <value>Amazon&#39;s fulfillment network SKU identifier.</value>
-        [DataMember(Name="fnSku", EmitDefaultValue=false)]
+        [DataMember(Name = "fnSku", EmitDefaultValue = false)]
         public string FnSku { get; set; }
 
         /// <summary>
         /// The seller SKU of the item.
         /// </summary>
         /// <value>The seller SKU of the item.</value>
-        [DataMember(Name="sellerSku", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerSku", EmitDefaultValue = false)]
         public string SellerSku { get; set; }
 
         /// <summary>
         /// The condition of the item as described by the seller (for example, New Item).
         /// </summary>
         /// <value>The condition of the item as described by the seller (for example, New Item).</value>
-        [DataMember(Name="condition", EmitDefaultValue=false)]
+        [DataMember(Name = "condition", EmitDefaultValue = false)]
         public string Condition { get; set; }
 
         /// <summary>
         /// Gets or Sets InventoryDetails
         /// </summary>
-        [DataMember(Name="inventoryDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "inventoryDetails", EmitDefaultValue = false)]
         public InventoryDetails InventoryDetails { get; set; }
 
         /// <summary>
         /// The date and time that any quantity was last updated.
         /// </summary>
         /// <value>The date and time that any quantity was last updated.</value>
-        [DataMember(Name="lastUpdatedTime", EmitDefaultValue=false)]
+        [DataMember(Name = "lastUpdatedTime", EmitDefaultValue = false)]
         public DateTime? LastUpdatedTime { get; set; }
 
         /// <summary>
         /// The localized language product title of the item within the specific marketplace.
         /// </summary>
         /// <value>The localized language product title of the item within the specific marketplace.</value>
-        [DataMember(Name="productName", EmitDefaultValue=false)]
+        [DataMember(Name = "productName", EmitDefaultValue = false)]
         public string ProductName { get; set; }
 
         /// <summary>
         /// The total number of units in an inbound shipment or in Amazon fulfillment centers.
         /// </summary>
         /// <value>The total number of units in an inbound shipment or in Amazon fulfillment centers.</value>
-        [DataMember(Name="totalQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "totalQuantity", EmitDefaultValue = false)]
         public int? TotalQuantity { get; set; }
 
         /// <summary>
         /// A list of seller-enrolled stores that apply to this seller SKU.
         /// </summary>
         /// <value>A list of seller-enrolled stores that apply to this seller SKU.</value>
-        [DataMember(Name="stores", EmitDefaultValue=false)]
+        [DataMember(Name = "stores", EmitDefaultValue = false)]
         public List<string> Stores { get; set; }
 
         /// <summary>
@@ -137,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -167,47 +161,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.FnSku == input.FnSku ||
                     (this.FnSku != null &&
                     this.FnSku.Equals(input.FnSku))
-                ) && 
+                ) &&
                 (
                     this.SellerSku == input.SellerSku ||
                     (this.SellerSku != null &&
                     this.SellerSku.Equals(input.SellerSku))
-                ) && 
+                ) &&
                 (
                     this.Condition == input.Condition ||
                     (this.Condition != null &&
                     this.Condition.Equals(input.Condition))
-                ) && 
+                ) &&
                 (
                     this.InventoryDetails == input.InventoryDetails ||
                     (this.InventoryDetails != null &&
                     this.InventoryDetails.Equals(input.InventoryDetails))
-                ) && 
+                ) &&
                 (
                     this.LastUpdatedTime == input.LastUpdatedTime ||
                     (this.LastUpdatedTime != null &&
                     this.LastUpdatedTime.Equals(input.LastUpdatedTime))
-                ) && 
+                ) &&
                 (
                     this.ProductName == input.ProductName ||
                     (this.ProductName != null &&
                     this.ProductName.Equals(input.ProductName))
-                ) && 
+                ) &&
                 (
                     this.TotalQuantity == input.TotalQuantity ||
                     (this.TotalQuantity != null &&
                     this.TotalQuantity.Equals(input.TotalQuantity))
-                ) && 
+                ) &&
                 (
                     this.Stores == input.Stores ||
                     this.Stores != null &&

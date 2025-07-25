@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrders
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
     /// Details of an order.
     /// </summary>
     [DataContract]
-    public partial class OrderDetails :  IEquatable<OrderDetails>, IValidatableObject
+    public partial class OrderDetails : IEquatable<OrderDetails>, IValidatableObject
     {
         /// <summary>
         /// Current status of the order.
@@ -37,25 +33,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrderStatusEnum
         {
-            
+
             /// <summary>
             /// Enum NEW for value: NEW
             /// </summary>
             [EnumMember(Value = "NEW")]
             NEW = 1,
-            
+
             /// <summary>
             /// Enum SHIPPED for value: SHIPPED
             /// </summary>
             [EnumMember(Value = "SHIPPED")]
             SHIPPED = 2,
-            
+
             /// <summary>
             /// Enum ACCEPTED for value: ACCEPTED
             /// </summary>
             [EnumMember(Value = "ACCEPTED")]
             ACCEPTED = 3,
-            
+
             /// <summary>
             /// Enum CANCELLED for value: CANCELLED
             /// </summary>
@@ -67,7 +63,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// Current status of the order.
         /// </summary>
         /// <value>Current status of the order.</value>
-        [DataMember(Name="orderStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "orderStatus", EmitDefaultValue = false)]
         public OrderStatusEnum? OrderStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderDetails" /> class.
@@ -164,67 +160,67 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             this.OrderStatus = orderStatus;
             this.TaxTotal = taxTotal;
         }
-        
+
         /// <summary>
         /// The customer order number.
         /// </summary>
         /// <value>The customer order number.</value>
-        [DataMember(Name="customerOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "customerOrderNumber", EmitDefaultValue = false)]
         public string CustomerOrderNumber { get; set; }
 
         /// <summary>
         /// The date the order was placed. This  field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
         /// </summary>
         /// <value>The date the order was placed. This  field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.</value>
-        [DataMember(Name="orderDate", EmitDefaultValue=false)]
+        [DataMember(Name = "orderDate", EmitDefaultValue = false)]
         public DateTime? OrderDate { get; set; }
 
 
         /// <summary>
         /// Gets or Sets ShipmentDetails
         /// </summary>
-        [DataMember(Name="shipmentDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentDetails", EmitDefaultValue = false)]
         public ShipmentDetails ShipmentDetails { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxTotal
         /// </summary>
-        [DataMember(Name="taxTotal", EmitDefaultValue=false)]
+        [DataMember(Name = "taxTotal", EmitDefaultValue = false)]
         public TaxItemDetails TaxTotal { get; set; }
 
         /// <summary>
         /// PartyID of vendor code.
         /// </summary>
         /// <value>PartyID of vendor code.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// PartyID of vendor&#39;s warehouse.
         /// </summary>
         /// <value>PartyID of vendor&#39;s warehouse.</value>
-        [DataMember(Name="shipFromParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFromParty", EmitDefaultValue = false)]
         public PartyIdentification ShipFromParty { get; set; }
 
         /// <summary>
         /// Name/Address and tax details of the ship to party.
         /// </summary>
         /// <value>Name/Address and tax details of the ship to party.</value>
-        [DataMember(Name="shipToParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipToParty", EmitDefaultValue = false)]
         public Address ShipToParty { get; set; }
 
         /// <summary>
         /// Name/Address and tax details of the bill to party.
         /// </summary>
         /// <value>Name/Address and tax details of the bill to party.</value>
-        [DataMember(Name="billToParty", EmitDefaultValue=false)]
+        [DataMember(Name = "billToParty", EmitDefaultValue = false)]
         public PartyIdentification BillToParty { get; set; }
 
         /// <summary>
         /// A list of items in this purchase order.
         /// </summary>
         /// <value>A list of items in this purchase order.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<OrderItem> Items { get; set; }
 
         /// <summary>
@@ -248,7 +244,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -278,52 +274,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CustomerOrderNumber == input.CustomerOrderNumber ||
                     (this.CustomerOrderNumber != null &&
                     this.CustomerOrderNumber.Equals(input.CustomerOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.OrderDate == input.OrderDate ||
                     (this.OrderDate != null &&
                     this.OrderDate.Equals(input.OrderDate))
-                ) && 
+                ) &&
                 (
                     this.OrderStatus == input.OrderStatus ||
                     (this.OrderStatus != null &&
                     this.OrderStatus.Equals(input.OrderStatus))
-                ) && 
+                ) &&
                 (
                     this.ShipmentDetails == input.ShipmentDetails ||
                     (this.ShipmentDetails != null &&
                     this.ShipmentDetails.Equals(input.ShipmentDetails))
-                ) && 
+                ) &&
                 (
                     this.TaxTotal == input.TaxTotal ||
                     (this.TaxTotal != null &&
                     this.TaxTotal.Equals(input.TaxTotal))
-                ) && 
+                ) &&
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.ShipFromParty == input.ShipFromParty ||
                     (this.ShipFromParty != null &&
                     this.ShipFromParty.Equals(input.ShipFromParty))
-                ) && 
+                ) &&
                 (
                     this.ShipToParty == input.ShipToParty ||
                     (this.ShipToParty != null &&
                     this.ShipToParty.Equals(input.ShipToParty))
-                ) && 
+                ) &&
                 (
                     this.BillToParty == input.BillToParty ||
                     (this.BillToParty != null &&
                     this.BillToParty.Equals(input.BillToParty))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

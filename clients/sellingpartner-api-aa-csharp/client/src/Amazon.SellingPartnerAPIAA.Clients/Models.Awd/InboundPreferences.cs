@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Amazon Warehousing and Distribution
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * OpenAPI spec version: 2024-05-09
  * 
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,22 +21,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Preferences that can be passed in context of an inbound order
     /// </summary>
     [DataContract]
-    public partial class InboundPreferences :  IEquatable<InboundPreferences>, IValidatableObject
+    public partial class InboundPreferences : IEquatable<InboundPreferences>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundPreferences" /> class.
         /// </summary>
-        /// <param name="destinationRegion">Pass a preferred region so that the inbound order can be shipped to an AWD warehouse located in that region. This doesn&#39;t guarantee the order to be assigned in the specified destination region as it depends on warehouse capacity availability. AWD currently supports following region IDs: [us-west, us-east].</param>
+        /// <param name="destinationRegion">Pass a preferred region so that the inbound order can be shipped to an AWD warehouse located in that region. This doesn&#39;t guarantee the order to be assigned in the specified destination region as it depends on warehouse capacity availability. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast].</param>
         public InboundPreferences(string destinationRegion = default)
         {
             this.DestinationRegion = destinationRegion;
         }
-        
+
         /// <summary>
-        /// Pass a preferred region so that the inbound order can be shipped to an AWD warehouse located in that region. This doesn&#39;t guarantee the order to be assigned in the specified destination region as it depends on warehouse capacity availability. AWD currently supports following region IDs: [us-west, us-east]
+        /// Pass a preferred region so that the inbound order can be shipped to an AWD warehouse located in that region. This doesn&#39;t guarantee the order to be assigned in the specified destination region as it depends on warehouse capacity availability. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]
         /// </summary>
-        /// <value>Pass a preferred region so that the inbound order can be shipped to an AWD warehouse located in that region. This doesn&#39;t guarantee the order to be assigned in the specified destination region as it depends on warehouse capacity availability. AWD currently supports following region IDs: [us-west, us-east]</value>
-        [DataMember(Name="destinationRegion", EmitDefaultValue=false)]
+        /// <value>Pass a preferred region so that the inbound order can be shipped to an AWD warehouse located in that region. This doesn&#39;t guarantee the order to be assigned in the specified destination region as it depends on warehouse capacity availability. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]</value>
+        [DataMember(Name = "destinationRegion", EmitDefaultValue = false)]
         public string DestinationRegion { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DestinationRegion == input.DestinationRegion ||
                     (this.DestinationRegion != null &&

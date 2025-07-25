@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Details of the Pallet/Tare being shipped.
     /// </summary>
     [DataContract]
-    public partial class Pallet :  IEquatable<Pallet>, IValidatableObject
+    public partial class Pallet : IEquatable<Pallet>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Pallet" /> class.
@@ -63,52 +58,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.CartonReferenceDetails = cartonReferenceDetails;
             this.Items = items;
         }
-        
+
         /// <summary>
         /// A list of pallet identifiers.
         /// </summary>
         /// <value>A list of pallet identifiers.</value>
-        [DataMember(Name="palletIdentifiers", EmitDefaultValue=false)]
+        [DataMember(Name = "palletIdentifiers", EmitDefaultValue = false)]
         public List<ContainerIdentification> PalletIdentifiers { get; set; }
 
         /// <summary>
         /// Number of layers per pallet. Only applicable to container type Pallet.
         /// </summary>
         /// <value>Number of layers per pallet. Only applicable to container type Pallet.</value>
-        [DataMember(Name="tier", EmitDefaultValue=false)]
+        [DataMember(Name = "tier", EmitDefaultValue = false)]
         public int? Tier { get; set; }
 
         /// <summary>
         /// Number of cartons per layer on the pallet. Only applicable to container type Pallet.
         /// </summary>
         /// <value>Number of cartons per layer on the pallet. Only applicable to container type Pallet.</value>
-        [DataMember(Name="block", EmitDefaultValue=false)]
+        [DataMember(Name = "block", EmitDefaultValue = false)]
         public int? Block { get; set; }
 
         /// <summary>
         /// Gets or Sets Dimensions
         /// </summary>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public Dimensions Dimensions { get; set; }
 
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public Weight Weight { get; set; }
 
         /// <summary>
         /// Carton reference details.
         /// </summary>
         /// <value>Carton reference details.</value>
-        [DataMember(Name="cartonReferenceDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "cartonReferenceDetails", EmitDefaultValue = false)]
         public CartonReferenceDetails CartonReferenceDetails { get; set; }
 
         /// <summary>
         /// A list of container item details.
         /// </summary>
         /// <value>A list of container item details.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<ContainerItem> Items { get; set; }
 
         /// <summary>
@@ -129,7 +124,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -159,37 +154,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PalletIdentifiers == input.PalletIdentifiers ||
                     this.PalletIdentifiers != null &&
                     this.PalletIdentifiers.SequenceEqual(input.PalletIdentifiers)
-                ) && 
+                ) &&
                 (
                     this.Tier == input.Tier ||
                     (this.Tier != null &&
                     this.Tier.Equals(input.Tier))
-                ) && 
+                ) &&
                 (
                     this.Block == input.Block ||
                     (this.Block != null &&
                     this.Block.Equals(input.Block))
-                ) && 
+                ) &&
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
                     this.Weight.Equals(input.Weight))
-                ) && 
+                ) &&
                 (
                     this.CartonReferenceDetails == input.CartonReferenceDetails ||
                     (this.CartonReferenceDetails != null &&
                     this.CartonReferenceDetails.Equals(input.CartonReferenceDetails))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

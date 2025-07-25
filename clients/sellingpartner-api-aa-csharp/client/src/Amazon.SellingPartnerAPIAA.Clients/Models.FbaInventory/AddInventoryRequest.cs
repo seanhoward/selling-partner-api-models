@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// The object with the list of Inventory to be added
     /// </summary>
     [DataContract]
-    public partial class AddInventoryRequest :  IEquatable<AddInventoryRequest>, IValidatableObject
+    public partial class AddInventoryRequest : IEquatable<AddInventoryRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AddInventoryRequest" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         {
             this.InventoryItems = inventoryItems;
         }
-        
+
         /// <summary>
         /// Gets or Sets InventoryItems
         /// </summary>
-        [DataMember(Name="inventoryItems", EmitDefaultValue=false)]
+        [DataMember(Name = "inventoryItems", EmitDefaultValue = false)]
         public InventoryItems InventoryItems { get; set; }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.InventoryItems == input.InventoryItems ||
                     (this.InventoryItems != null &&

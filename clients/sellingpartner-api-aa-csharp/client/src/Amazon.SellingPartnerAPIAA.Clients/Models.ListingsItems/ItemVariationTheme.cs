@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// A variation theme that indicates the combination of listing item attributes that define the variation family.
     /// </summary>
     [DataContract]
-    public partial class ItemVariationTheme :  IEquatable<ItemVariationTheme>, IValidatableObject
+    public partial class ItemVariationTheme : IEquatable<ItemVariationTheme>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemVariationTheme" /> class.
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
                 this.Theme = theme;
             }
         }
-        
+
         /// <summary>
         /// The names of the listing item attributes that are associated with the variation theme.
         /// </summary>
         /// <value>The names of the listing item attributes that are associated with the variation theme.</value>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public List<string> Attributes { get; set; }
 
         /// <summary>
         /// The variation theme that indicates the combination of listing item attributes that define the variation family.
         /// </summary>
         /// <value>The variation theme that indicates the combination of listing item attributes that define the variation family.</value>
-        [DataMember(Name="theme", EmitDefaultValue=false)]
+        [DataMember(Name = "theme", EmitDefaultValue = false)]
         public string Theme { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
-                ) && 
+                ) &&
                 (
                     this.Theme == input.Theme ||
                     (this.Theme != null &&

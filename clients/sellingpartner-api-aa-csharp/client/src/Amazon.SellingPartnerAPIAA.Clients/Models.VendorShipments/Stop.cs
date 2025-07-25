@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Contractual or operational port or point relevant to the movement of the cargo.
     /// </summary>
     [DataContract]
-    public partial class Stop :  IEquatable<Stop>, IValidatableObject
+    public partial class Stop : IEquatable<Stop>, IValidatableObject
     {
         /// <summary>
         /// Provide the function code.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FunctionCodeEnum
         {
-            
+
             /// <summary>
             /// Enum PortOfDischarge for value: PortOfDischarge
             /// </summary>
             [EnumMember(Value = "PortOfDischarge")]
             PortOfDischarge = 1,
-            
+
             /// <summary>
             /// Enum FreightPayableAt for value: FreightPayableAt
             /// </summary>
             [EnumMember(Value = "FreightPayableAt")]
             FreightPayableAt = 2,
-            
+
             /// <summary>
             /// Enum PortOfLoading for value: PortOfLoading
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// Provide the function code.
         /// </summary>
         /// <value>Provide the function code.</value>
-        [DataMember(Name="functionCode", EmitDefaultValue=false)]
+        [DataMember(Name = "functionCode", EmitDefaultValue = false)]
         public FunctionCodeEnum FunctionCode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Stop" /> class.
@@ -90,26 +85,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.ArrivalTime = arrivalTime;
             this.DepartureTime = departureTime;
         }
-        
+
 
         /// <summary>
         /// Gets or Sets LocationIdentification
         /// </summary>
-        [DataMember(Name="locationIdentification", EmitDefaultValue=false)]
+        [DataMember(Name = "locationIdentification", EmitDefaultValue = false)]
         public Location LocationIdentification { get; set; }
 
         /// <summary>
         /// Date and time of the arrival of the cargo.
         /// </summary>
         /// <value>Date and time of the arrival of the cargo.</value>
-        [DataMember(Name="arrivalTime", EmitDefaultValue=false)]
+        [DataMember(Name = "arrivalTime", EmitDefaultValue = false)]
         public DateTime? ArrivalTime { get; set; }
 
         /// <summary>
         /// Date and time of the departure of the cargo.
         /// </summary>
         /// <value>Date and time of the departure of the cargo.</value>
-        [DataMember(Name="departureTime", EmitDefaultValue=false)]
+        [DataMember(Name = "departureTime", EmitDefaultValue = false)]
         public DateTime? DepartureTime { get; set; }
 
         /// <summary>
@@ -127,7 +122,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -157,22 +152,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FunctionCode == input.FunctionCode ||
                     (this.FunctionCode != null &&
                     this.FunctionCode.Equals(input.FunctionCode))
-                ) && 
+                ) &&
                 (
                     this.LocationIdentification == input.LocationIdentification ||
                     (this.LocationIdentification != null &&
                     this.LocationIdentification.Equals(input.LocationIdentification))
-                ) && 
+                ) &&
                 (
                     this.ArrivalTime == input.ArrivalTime ||
                     (this.ArrivalTime != null &&
                     this.ArrivalTime.Equals(input.ArrivalTime))
-                ) && 
+                ) &&
                 (
                     this.DepartureTime == input.DepartureTime ||
                     (this.DepartureTime != null &&

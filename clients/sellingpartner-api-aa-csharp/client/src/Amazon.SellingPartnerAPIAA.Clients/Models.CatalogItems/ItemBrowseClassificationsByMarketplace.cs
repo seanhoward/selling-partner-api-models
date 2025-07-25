@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,26 +9,21 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+    /// Classifications (browse nodes) that are associated with the item in the Amazon catalog for the indicated &#x60;marketplaceId&#x60;.
     /// </summary>
     [DataContract]
-    public partial class ItemBrowseClassificationsByMarketplace :  IEquatable<ItemBrowseClassificationsByMarketplace>, IValidatableObject
+    public partial class ItemBrowseClassificationsByMarketplace : IEquatable<ItemBrowseClassificationsByMarketplace>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemBrowseClassificationsByMarketplace" /> class.
@@ -38,8 +33,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemBrowseClassificationsByMarketplace" /> class.
         /// </summary>
-        /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
-        /// <param name="classifications">Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace..</param>
+        /// <param name="marketplaceId">Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required).</param>
+        /// <param name="classifications">Classifications (browse nodes) that are associated with the item in the Amazon catalog..</param>
         public ItemBrowseClassificationsByMarketplace(string marketplaceId = default, List<ItemBrowseClassification> classifications = default)
         {
             // to ensure "marketplaceId" is required (not null)
@@ -53,19 +48,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             }
             this.Classifications = classifications;
         }
-        
+
         /// <summary>
-        /// Amazon marketplace identifier.
+        /// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
-        /// <value>Amazon marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        /// <value>Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
-        /// Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+        /// Classifications (browse nodes) that are associated with the item in the Amazon catalog.
         /// </summary>
-        /// <value>Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace.</value>
-        [DataMember(Name="classifications", EmitDefaultValue=false)]
+        /// <value>Classifications (browse nodes) that are associated with the item in the Amazon catalog.</value>
+        [DataMember(Name = "classifications", EmitDefaultValue = false)]
         public List<ItemBrowseClassification> Classifications { get; set; }
 
         /// <summary>
@@ -81,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +106,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Classifications == input.Classifications ||
                     this.Classifications != null &&

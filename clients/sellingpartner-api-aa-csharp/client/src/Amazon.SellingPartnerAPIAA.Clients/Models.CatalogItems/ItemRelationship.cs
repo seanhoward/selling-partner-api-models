@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
     /// Relationship details for an Amazon catalog item.
     /// </summary>
     [DataContract]
-    public partial class ItemRelationship :  IEquatable<ItemRelationship>, IValidatableObject
+    public partial class ItemRelationship : IEquatable<ItemRelationship>, IValidatableObject
     {
         /// <summary>
         /// Type of relationship.
@@ -37,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
-            
+
             /// <summary>
             /// Enum VARIATION for value: VARIATION
             /// </summary>
             [EnumMember(Value = "VARIATION")]
             VARIATION = 1,
-            
+
             /// <summary>
             /// Enum PACKAGEHIERARCHY for value: PACKAGE_HIERARCHY
             /// </summary>
@@ -55,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// Type of relationship.
         /// </summary>
         /// <value>Type of relationship.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemRelationship" /> class.
@@ -65,9 +61,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemRelationship" /> class.
         /// </summary>
-        /// <param name="childAsins">Identifiers (ASINs) of the related items that are children of this item..</param>
-        /// <param name="parentAsins">Identifiers (ASINs) of the related items that are parents of this item..</param>
-        /// <param name="variationTheme">For \&quot;VARIATION\&quot; relationships, variation theme indicating the combination of Amazon item catalog attributes that define the variation family..</param>
+        /// <param name="childAsins">ASINs of the related items that are children of this item..</param>
+        /// <param name="parentAsins">ASINs of the related items that are parents of this item..</param>
+        /// <param name="variationTheme">For &#x60;VARIATION&#x60; relationships, the variation theme indicates the combination of Amazon catalog item attributes that define the variation family..</param>
         /// <param name="type">Type of relationship. (required).</param>
         public ItemRelationship(List<string> childAsins = default, List<string> parentAsins = default, ItemVariationTheme variationTheme = default, TypeEnum type = default)
         {
@@ -84,26 +80,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             this.ParentAsins = parentAsins;
             this.VariationTheme = variationTheme;
         }
-        
+
         /// <summary>
-        /// Identifiers (ASINs) of the related items that are children of this item.
+        /// ASINs of the related items that are children of this item.
         /// </summary>
-        /// <value>Identifiers (ASINs) of the related items that are children of this item.</value>
-        [DataMember(Name="childAsins", EmitDefaultValue=false)]
+        /// <value>ASINs of the related items that are children of this item.</value>
+        [DataMember(Name = "childAsins", EmitDefaultValue = false)]
         public List<string> ChildAsins { get; set; }
 
         /// <summary>
-        /// Identifiers (ASINs) of the related items that are parents of this item.
+        /// ASINs of the related items that are parents of this item.
         /// </summary>
-        /// <value>Identifiers (ASINs) of the related items that are parents of this item.</value>
-        [DataMember(Name="parentAsins", EmitDefaultValue=false)]
+        /// <value>ASINs of the related items that are parents of this item.</value>
+        [DataMember(Name = "parentAsins", EmitDefaultValue = false)]
         public List<string> ParentAsins { get; set; }
 
         /// <summary>
-        /// For \&quot;VARIATION\&quot; relationships, variation theme indicating the combination of Amazon item catalog attributes that define the variation family.
+        /// For &#x60;VARIATION&#x60; relationships, the variation theme indicates the combination of Amazon catalog item attributes that define the variation family.
         /// </summary>
-        /// <value>For \&quot;VARIATION\&quot; relationships, variation theme indicating the combination of Amazon item catalog attributes that define the variation family.</value>
-        [DataMember(Name="variationTheme", EmitDefaultValue=false)]
+        /// <value>For &#x60;VARIATION&#x60; relationships, the variation theme indicates the combination of Amazon catalog item attributes that define the variation family.</value>
+        [DataMember(Name = "variationTheme", EmitDefaultValue = false)]
         public ItemVariationTheme VariationTheme { get; set; }
 
 
@@ -122,7 +118,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -152,22 +148,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ChildAsins == input.ChildAsins ||
                     this.ChildAsins != null &&
                     this.ChildAsins.SequenceEqual(input.ChildAsins)
-                ) && 
+                ) &&
                 (
                     this.ParentAsins == input.ParentAsins ||
                     this.ParentAsins != null &&
                     this.ParentAsins.SequenceEqual(input.ParentAsins)
-                ) && 
+                ) &&
                 (
                     this.VariationTheme == input.VariationTheme ||
                     (this.VariationTheme != null &&
                     this.VariationTheme.Equals(input.VariationTheme))
-                ) && 
+                ) &&
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&

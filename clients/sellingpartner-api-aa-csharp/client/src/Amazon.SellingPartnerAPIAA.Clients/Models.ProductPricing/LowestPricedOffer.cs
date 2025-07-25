@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// Describes the lowest priced offers for the specified item condition and offer type.
     /// </summary>
     [DataContract]
-    public partial class LowestPricedOffer :  IEquatable<LowestPricedOffer>, IValidatableObject
+    public partial class LowestPricedOffer : IEquatable<LowestPricedOffer>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LowestPricedOffer" /> class.
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 this.Offers = offers;
             }
         }
-        
+
         /// <summary>
         /// The filtering criteria that are used to retrieve the lowest priced offers that correspond to the &#x60;lowestPricedOffersInputs&#x60; request.
         /// </summary>
         /// <value>The filtering criteria that are used to retrieve the lowest priced offers that correspond to the &#x60;lowestPricedOffersInputs&#x60; request.</value>
-        [DataMember(Name="lowestPricedOffersInput", EmitDefaultValue=false)]
+        [DataMember(Name = "lowestPricedOffersInput", EmitDefaultValue = false)]
         public LowestPricedOffersInput LowestPricedOffersInput { get; set; }
 
         /// <summary>
         /// A list of up to 20 lowest priced offers that match the criteria specified in &#x60;lowestPricedOffersInput&#x60;.
         /// </summary>
         /// <value>A list of up to 20 lowest priced offers that match the criteria specified in &#x60;lowestPricedOffersInput&#x60;.</value>
-        [DataMember(Name="offers", EmitDefaultValue=false)]
+        [DataMember(Name = "offers", EmitDefaultValue = false)]
         public List<Offer> Offers { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.LowestPricedOffersInput == input.LowestPricedOffersInput ||
                     (this.LowestPricedOffersInput != null &&
                     this.LowestPricedOffersInput.Equals(input.LowestPricedOffersInput))
-                ) && 
+                ) &&
                 (
                     this.Offers == input.Offers ||
                     this.Offers != null &&

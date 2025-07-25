@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// In this slot format each slot only has the requested capacity types. This slot size is as specified by slot duration.
     /// </summary>
     [DataContract]
-    public partial class FixedSlot :  IEquatable<FixedSlot>, IValidatableObject
+    public partial class FixedSlot : IEquatable<FixedSlot>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FixedSlot" /> class.
@@ -46,40 +39,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.EncumberedCapacity = encumberedCapacity;
             this.ReservedCapacity = reservedCapacity;
         }
-        
+
         /// <summary>
         /// Start date time of slot in ISO 8601 format with precision of seconds.
         /// </summary>
         /// <value>Start date time of slot in ISO 8601 format with precision of seconds.</value>
-        [DataMember(Name="startDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
         public DateTime? StartDateTime { get; set; }
 
         /// <summary>
         /// Scheduled capacity corresponding to the slot. This capacity represents the originally allocated capacity as per resource schedule.
         /// </summary>
         /// <value>Scheduled capacity corresponding to the slot. This capacity represents the originally allocated capacity as per resource schedule.</value>
-        [DataMember(Name="scheduledCapacity", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduledCapacity", EmitDefaultValue = false)]
         public int? ScheduledCapacity { get; set; }
 
         /// <summary>
         /// Available capacity corresponding to the slot. This capacity represents the capacity available for allocation to reservations.
         /// </summary>
         /// <value>Available capacity corresponding to the slot. This capacity represents the capacity available for allocation to reservations.</value>
-        [DataMember(Name="availableCapacity", EmitDefaultValue=false)]
+        [DataMember(Name = "availableCapacity", EmitDefaultValue = false)]
         public int? AvailableCapacity { get; set; }
 
         /// <summary>
         /// Encumbered capacity corresponding to the slot. This capacity represents the capacity allocated for Amazon Jobs/Appointments/Orders.
         /// </summary>
         /// <value>Encumbered capacity corresponding to the slot. This capacity represents the capacity allocated for Amazon Jobs/Appointments/Orders.</value>
-        [DataMember(Name="encumberedCapacity", EmitDefaultValue=false)]
+        [DataMember(Name = "encumberedCapacity", EmitDefaultValue = false)]
         public int? EncumberedCapacity { get; set; }
 
         /// <summary>
         /// Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch.
         /// </summary>
         /// <value>Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch.</value>
-        [DataMember(Name="reservedCapacity", EmitDefaultValue=false)]
+        [DataMember(Name = "reservedCapacity", EmitDefaultValue = false)]
         public int? ReservedCapacity { get; set; }
 
         /// <summary>
@@ -98,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,27 +121,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StartDateTime == input.StartDateTime ||
                     (this.StartDateTime != null &&
                     this.StartDateTime.Equals(input.StartDateTime))
-                ) && 
+                ) &&
                 (
                     this.ScheduledCapacity == input.ScheduledCapacity ||
                     (this.ScheduledCapacity != null &&
                     this.ScheduledCapacity.Equals(input.ScheduledCapacity))
-                ) && 
+                ) &&
                 (
                     this.AvailableCapacity == input.AvailableCapacity ||
                     (this.AvailableCapacity != null &&
                     this.AvailableCapacity.Equals(input.AvailableCapacity))
-                ) && 
+                ) &&
                 (
                     this.EncumberedCapacity == input.EncumberedCapacity ||
                     (this.EncumberedCapacity != null &&
                     this.EncumberedCapacity.Equals(input.EncumberedCapacity))
-                ) && 
+                ) &&
                 (
                     this.ReservedCapacity == input.ReservedCapacity ||
                     (this.ReservedCapacity != null &&

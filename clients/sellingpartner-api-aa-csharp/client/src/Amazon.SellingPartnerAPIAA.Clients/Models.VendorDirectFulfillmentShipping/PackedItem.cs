@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// An item that has been packed into a container for shipping.
     /// </summary>
     [DataContract]
-    public partial class PackedItem :  IEquatable<PackedItem>, IValidatableObject
+    public partial class PackedItem : IEquatable<PackedItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PackedItem" /> class.
@@ -67,40 +61,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             this.PieceNumber = pieceNumber;
             this.VendorProductIdentifier = vendorProductIdentifier;
         }
-        
+
         /// <summary>
         /// The sequence number of the item. The number must be the same as the order number of the item.
         /// </summary>
         /// <value>The sequence number of the item. The number must be the same as the order number of the item.</value>
-        [DataMember(Name="itemSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "itemSequenceNumber", EmitDefaultValue = false)]
         public int? ItemSequenceNumber { get; set; }
 
         /// <summary>
         /// The buyer&#39;s Amazon Standard Identification Number (ASIN) of an item. Either &#x60;buyerProductIdentifier&#x60; or &#x60;vendorProductIdentifier&#x60; is required.
         /// </summary>
         /// <value>The buyer&#39;s Amazon Standard Identification Number (ASIN) of an item. Either &#x60;buyerProductIdentifier&#x60; or &#x60;vendorProductIdentifier&#x60; is required.</value>
-        [DataMember(Name="buyerProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "buyerProductIdentifier", EmitDefaultValue = false)]
         public string BuyerProductIdentifier { get; set; }
 
         /// <summary>
         /// The piece number of the item in this container. This is required when the item is split across different containers.
         /// </summary>
         /// <value>The piece number of the item in this container. This is required when the item is split across different containers.</value>
-        [DataMember(Name="pieceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "pieceNumber", EmitDefaultValue = false)]
         public int? PieceNumber { get; set; }
 
         /// <summary>
         /// An item&#39;s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.
         /// </summary>
         /// <value>An item&#39;s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.</value>
-        [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorProductIdentifier", EmitDefaultValue = false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
         /// The total quantity of items that are packed in the shipment.
         /// </summary>
         /// <value>The total quantity of items that are packed in the shipment.</value>
-        [DataMember(Name="packedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "packedQuantity", EmitDefaultValue = false)]
         public ItemQuantity PackedQuantity { get; set; }
 
         /// <summary>
@@ -119,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -149,27 +143,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemSequenceNumber == input.ItemSequenceNumber ||
                     (this.ItemSequenceNumber != null &&
                     this.ItemSequenceNumber.Equals(input.ItemSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.BuyerProductIdentifier == input.BuyerProductIdentifier ||
                     (this.BuyerProductIdentifier != null &&
                     this.BuyerProductIdentifier.Equals(input.BuyerProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.PieceNumber == input.PieceNumber ||
                     (this.PieceNumber != null &&
                     this.PieceNumber.Equals(input.PieceNumber))
-                ) && 
+                ) &&
                 (
                     this.VendorProductIdentifier == input.VendorProductIdentifier ||
                     (this.VendorProductIdentifier != null &&
                     this.VendorProductIdentifier.Equals(input.VendorProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.PackedQuantity == input.PackedQuantity ||
                     (this.PackedQuantity != null &&

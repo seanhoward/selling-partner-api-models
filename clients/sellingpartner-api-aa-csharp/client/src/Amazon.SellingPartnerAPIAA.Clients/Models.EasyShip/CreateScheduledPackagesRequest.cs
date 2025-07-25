@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Easy Ship
  *
- * The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders.  Your Easy Ship applications can:  * Get available time slots for packages to be scheduled for delivery.  * Schedule, reschedule, and cancel Easy Ship orders.  * Print labels, invoices, and warranties.  See the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
+ * Use the Selling Partner API for Easy Ship to build applications for sellers to manage and ship Amazon Easy Ship orders. With this API, you can get available time slots, schedule and reschedule Easy Ship orders, and print shipping labels, invoices, and warranties. To review the differences in Easy Ship operations by marketplace, refer to [Marketplace support](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support).
  *
  * OpenAPI spec version: 2022-03-23
  * 
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
 {
@@ -28,12 +23,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
     /// The request body for the POST /easyShip/2022-03-23/packages/bulk API.
     /// </summary>
     [DataContract]
-    public partial class CreateScheduledPackagesRequest :  IEquatable<CreateScheduledPackagesRequest>, IValidatableObject
+    public partial class CreateScheduledPackagesRequest : IEquatable<CreateScheduledPackagesRequest>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets LabelFormat
         /// </summary>
-        [DataMember(Name="labelFormat", EmitDefaultValue=false)]
+        [DataMember(Name = "labelFormat", EmitDefaultValue = false)]
         public LabelFormat LabelFormat { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateScheduledPackagesRequest" /> class.
@@ -76,18 +71,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
                 this.LabelFormat = labelFormat;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets MarketplaceId
         /// </summary>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// An array allowing users to specify orders to be scheduled.
         /// </summary>
         /// <value>An array allowing users to specify orders to be scheduled.</value>
-        [DataMember(Name="orderScheduleDetailsList", EmitDefaultValue=false)]
+        [DataMember(Name = "orderScheduleDetailsList", EmitDefaultValue = false)]
         public List<OrderScheduleDetails> OrderScheduleDetailsList { get; set; }
 
 
@@ -105,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -135,17 +130,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.OrderScheduleDetailsList == input.OrderScheduleDetailsList ||
                     this.OrderScheduleDetailsList != null &&
                     this.OrderScheduleDetailsList.SequenceEqual(input.OrderScheduleDetailsList)
-                ) && 
+                ) &&
                 (
                     this.LabelFormat == input.LabelFormat ||
                     (this.LabelFormat != null &&

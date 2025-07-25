@@ -30,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the topics that customers mention when they return items in a browse node.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier for a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>BrowseNodeReturnTopicsResponse</returns>
@@ -42,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the topics that customers mention when they return items in a browse node.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier for a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>ApiResponse of BrowseNodeReturnTopicsResponse</returns>
@@ -53,7 +53,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the trends of topics that customers mention when they return items in a browse node.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>BrowseNodeReturnTrendsResponse</returns>
@@ -65,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the trends of topics that customers mention when they return items in a browse node.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>ApiResponse of BrowseNodeReturnTrendsResponse</returns>
@@ -76,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a browse node&#39;s ten most positive and ten most negative review topics.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">The ID of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort the data in the response.</param>
@@ -89,7 +89,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a browse node&#39;s ten most positive and ten most negative review topics.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">The ID of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort the data in the response.</param>
@@ -101,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the positive and negative review trends of items in a browse node for the past six months.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The marketplace ID is the globally unique identifier of a marketplace. For more information, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>BrowseNodeReviewTrendsResponse</returns>
@@ -113,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the positive and negative review trends of items in a browse node for the past six months.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The marketplace ID is the globally unique identifier of a marketplace. For more information, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>ApiResponse of BrowseNodeReviewTrendsResponse</returns>
@@ -124,7 +124,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// This API returns the associated browse node of the requested ASIN. A browse node is a location in a browse tree that is used for navigation, product classification, and website content on the Amazon retail website.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>BrowseNodeResponse</returns>
@@ -136,7 +136,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// This API returns the associated browse node of the requested ASIN. A browse node is a location in a browse tree that is used for navigation, product classification, and website content on the Amazon retail website.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>ApiResponse of BrowseNodeResponse</returns>
@@ -147,7 +147,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an item&#39;s ten most positive and ten most negative review topics.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. The value must be a child ASIN.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort data in the response.</param>
@@ -160,7 +160,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an item&#39;s ten most positive and ten most negative review topics.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. The value must be a child ASIN.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort data in the response.</param>
@@ -172,7 +172,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an item&#39;s positive and negative review trends for the past six months.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. This API takes child ASIN as an input.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>ItemReviewTrendsResponse</returns>
@@ -184,7 +184,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an item&#39;s positive and negative review trends for the past six months.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. This API takes child ASIN as an input.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>ApiResponse of ItemReviewTrendsResponse</returns>
@@ -197,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the topics that customers mention when they return items in a browse node.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier for a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of BrowseNodeReturnTopicsResponse</returns>
@@ -209,7 +209,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the topics that customers mention when they return items in a browse node.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier for a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of ApiResponse (BrowseNodeReturnTopicsResponse)</returns>
@@ -220,7 +220,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the trends of topics that customers mention when they return items in a browse node.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of BrowseNodeReturnTrendsResponse</returns>
@@ -232,7 +232,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the trends of topics that customers mention when they return items in a browse node.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of ApiResponse (BrowseNodeReturnTrendsResponse)</returns>
@@ -243,7 +243,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a browse node&#39;s ten most positive and ten most negative review topics.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">The ID of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort the data in the response.</param>
@@ -256,7 +256,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve a browse node&#39;s ten most positive and ten most negative review topics.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">The ID of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort the data in the response.</param>
@@ -268,7 +268,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the positive and negative review trends of items in a browse node for the past six months.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The marketplace ID is the globally unique identifier of a marketplace. For more information, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of BrowseNodeReviewTrendsResponse</returns>
@@ -280,7 +280,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve the positive and negative review trends of items in a browse node for the past six months.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The marketplace ID is the globally unique identifier of a marketplace. For more information, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of ApiResponse (BrowseNodeReviewTrendsResponse)</returns>
@@ -291,7 +291,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// This API returns the associated browse node of the requested ASIN. A browse node is a location in a browse tree that is used for navigation, product classification, and website content on the Amazon retail website.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of BrowseNodeResponse</returns>
@@ -303,7 +303,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// This API returns the associated browse node of the requested ASIN. A browse node is a location in a browse tree that is used for navigation, product classification, and website content on the Amazon retail website.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of ApiResponse (BrowseNodeResponse)</returns>
@@ -314,7 +314,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an item&#39;s ten most positive and ten most negative review topics.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. The value must be a child ASIN.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort data in the response.</param>
@@ -327,7 +327,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an item&#39;s ten most positive and ten most negative review topics.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. The value must be a child ASIN.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort data in the response.</param>
@@ -339,7 +339,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an item&#39;s positive and negative review trends for the past six months.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. This API takes child ASIN as an input.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of ItemReviewTrendsResponse</returns>
@@ -351,7 +351,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Retrieve an item&#39;s positive and negative review trends for the past six months.
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. This API takes child ASIN as an input.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of ApiResponse (ItemReviewTrendsResponse)</returns>
@@ -364,7 +364,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     /// </summary>
     public partial class CustomerFeedbackApi : ICustomerFeedbackApi
     {
-        private Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerFeedbackApi"/> class
@@ -372,10 +372,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public CustomerFeedbackApi(Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration)
+        public CustomerFeedbackApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -401,12 +401,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -444,7 +444,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the topics that customers mention when they return items in a browse node.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier for a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>BrowseNodeReturnTopicsResponse</returns>
@@ -457,7 +457,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the topics that customers mention when they return items in a browse node.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier for a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>ApiResponse of BrowseNodeReturnTopicsResponse</returns>
@@ -517,7 +517,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the topics that customers mention when they return items in a browse node.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier for a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of BrowseNodeReturnTopicsResponse</returns>
@@ -531,7 +531,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the topics that customers mention when they return items in a browse node.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier for a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of ApiResponse (BrowseNodeReturnTopicsResponse)</returns>
@@ -591,7 +591,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the trends of topics that customers mention when they return items in a browse node.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>BrowseNodeReturnTrendsResponse</returns>
@@ -604,7 +604,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the trends of topics that customers mention when they return items in a browse node.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>ApiResponse of BrowseNodeReturnTrendsResponse</returns>
@@ -664,7 +664,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the trends of topics that customers mention when they return items in a browse node.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of BrowseNodeReturnTrendsResponse</returns>
@@ -678,7 +678,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the trends of topics that customers mention when they return items in a browse node.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of ApiResponse (BrowseNodeReturnTrendsResponse)</returns>
@@ -738,7 +738,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve a browse node&#39;s ten most positive and ten most negative review topics.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">The ID of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort the data in the response.</param>
@@ -752,7 +752,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve a browse node&#39;s ten most positive and ten most negative review topics.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">The ID of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort the data in the response.</param>
@@ -817,7 +817,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve a browse node&#39;s ten most positive and ten most negative review topics.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">The ID of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort the data in the response.</param>
@@ -832,7 +832,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve a browse node&#39;s ten most positive and ten most negative review topics.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">The ID of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort the data in the response.</param>
@@ -897,7 +897,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the positive and negative review trends of items in a browse node for the past six months.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The marketplace ID is the globally unique identifier of a marketplace. For more information, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>BrowseNodeReviewTrendsResponse</returns>
@@ -910,7 +910,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the positive and negative review trends of items in a browse node for the past six months.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The marketplace ID is the globally unique identifier of a marketplace. For more information, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>ApiResponse of BrowseNodeReviewTrendsResponse</returns>
@@ -970,7 +970,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the positive and negative review trends of items in a browse node for the past six months.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The marketplace ID is the globally unique identifier of a marketplace. For more information, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of BrowseNodeReviewTrendsResponse</returns>
@@ -984,7 +984,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve the positive and negative review trends of items in a browse node for the past six months.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="browseNodeId">A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.</param>
         /// <param name="marketplaceId">The marketplace ID is the globally unique identifier of a marketplace. For more information, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of ApiResponse (BrowseNodeReviewTrendsResponse)</returns>
@@ -1044,7 +1044,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  This API returns the associated browse node of the requested ASIN. A browse node is a location in a browse tree that is used for navigation, product classification, and website content on the Amazon retail website.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>BrowseNodeResponse</returns>
@@ -1057,7 +1057,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  This API returns the associated browse node of the requested ASIN. A browse node is a location in a browse tree that is used for navigation, product classification, and website content on the Amazon retail website.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>ApiResponse of BrowseNodeResponse</returns>
@@ -1117,7 +1117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  This API returns the associated browse node of the requested ASIN. A browse node is a location in a browse tree that is used for navigation, product classification, and website content on the Amazon retail website.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of BrowseNodeResponse</returns>
@@ -1131,7 +1131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  This API returns the associated browse node of the requested ASIN. A browse node is a location in a browse tree that is used for navigation, product classification, and website content on the Amazon retail website.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of ApiResponse (BrowseNodeResponse)</returns>
@@ -1191,7 +1191,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve an item&#39;s ten most positive and ten most negative review topics.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. The value must be a child ASIN.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort data in the response.</param>
@@ -1205,7 +1205,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve an item&#39;s ten most positive and ten most negative review topics.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. The value must be a child ASIN.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort data in the response.</param>
@@ -1270,7 +1270,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve an item&#39;s ten most positive and ten most negative review topics.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. The value must be a child ASIN.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort data in the response.</param>
@@ -1285,7 +1285,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve an item&#39;s ten most positive and ten most negative review topics.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. The value must be a child ASIN.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <param name="sortBy">The metric by which to sort data in the response.</param>
@@ -1350,7 +1350,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve an item&#39;s positive and negative review trends for the past six months.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. This API takes child ASIN as an input.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>ItemReviewTrendsResponse</returns>
@@ -1363,7 +1363,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve an item&#39;s positive and negative review trends for the past six months.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. This API takes child ASIN as an input.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>ApiResponse of ItemReviewTrendsResponse</returns>
@@ -1423,7 +1423,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve an item&#39;s positive and negative review trends for the past six months.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. This API takes child ASIN as an input.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of ItemReviewTrendsResponse</returns>
@@ -1437,7 +1437,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Retrieve an item&#39;s positive and negative review trends for the past six months.
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. This API takes child ASIN as an input.</param>
         /// <param name="marketplaceId">The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.</param>
         /// <returns>Task of ApiResponse (ItemReviewTrendsResponse)</returns>
@@ -1521,7 +1521,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 }
 
 
-                Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration = new Amazon.SellingPartnerAPIAA.Clients.Client.Configuration
+                Configuration configuration = new Configuration
                 {
                     AuthorizationCredentials = lwaAuthorizationCredentials,
                     RateLimitConfig = rateLimitConfiguration,

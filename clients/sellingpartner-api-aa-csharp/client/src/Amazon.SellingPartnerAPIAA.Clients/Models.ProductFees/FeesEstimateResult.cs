@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
     /// An item identifier and the estimated fees for the item.
     /// </summary>
     [DataContract]
-    public partial class FeesEstimateResult :  IEquatable<FeesEstimateResult>, IValidatableObject
+    public partial class FeesEstimateResult : IEquatable<FeesEstimateResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeesEstimateResult" /> class.
@@ -44,33 +37,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             this.FeesEstimate = feesEstimate;
             this.Error = error;
         }
-        
+
         /// <summary>
         /// The status of the fee request. Possible values: Success, ClientError, ServiceError.
         /// </summary>
         /// <value>The status of the fee request. Possible values: Success, ClientError, ServiceError.</value>
-        [DataMember(Name="Status", EmitDefaultValue=false)]
+        [DataMember(Name = "Status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Information used to identify a fees estimate request.
         /// </summary>
         /// <value>Information used to identify a fees estimate request.</value>
-        [DataMember(Name="FeesEstimateIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "FeesEstimateIdentifier", EmitDefaultValue = false)]
         public FeesEstimateIdentifier FeesEstimateIdentifier { get; set; }
 
         /// <summary>
         /// The total estimated fees for an item and a list of details.
         /// </summary>
         /// <value>The total estimated fees for an item and a list of details.</value>
-        [DataMember(Name="FeesEstimate", EmitDefaultValue=false)]
+        [DataMember(Name = "FeesEstimate", EmitDefaultValue = false)]
         public FeesEstimate FeesEstimate { get; set; }
 
         /// <summary>
         /// An error object with a type, code, and message.
         /// </summary>
         /// <value>An error object with a type, code, and message.</value>
-        [DataMember(Name="Error", EmitDefaultValue=false)]
+        [DataMember(Name = "Error", EmitDefaultValue = false)]
         public FeesEstimateError Error { get; set; }
 
         /// <summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +111,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.FeesEstimateIdentifier == input.FeesEstimateIdentifier ||
                     (this.FeesEstimateIdentifier != null &&
                     this.FeesEstimateIdentifier.Equals(input.FeesEstimateIdentifier))
-                ) && 
+                ) &&
                 (
                     this.FeesEstimate == input.FeesEstimate ||
                     (this.FeesEstimate != null &&
                     this.FeesEstimate.Equals(input.FeesEstimate))
-                ) && 
+                ) &&
                 (
                     this.Error == input.Error ||
                     (this.Error != null &&

@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,40 +24,46 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// Individual JSON Patch operation for an HTTP PATCH request.
     /// </summary>
     [DataContract]
-    public partial class PatchOperation :  IEquatable<PatchOperation>, IValidatableObject
+    public partial class PatchOperation : IEquatable<PatchOperation>, IValidatableObject
     {
         /// <summary>
-        /// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
+        /// Type of JSON Patch operation. Supported JSON Patch operations include &#x60;add&#x60;, &#x60;replace&#x60;, &#x60;merge&#x60; and &#x60;delete&#x60;. Refer to &lt;https://tools.ietf.org/html/rfc6902&gt;.
         /// </summary>
-        /// <value>Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.</value>
+        /// <value>Type of JSON Patch operation. Supported JSON Patch operations include &#x60;add&#x60;, &#x60;replace&#x60;, &#x60;merge&#x60; and &#x60;delete&#x60;. Refer to &lt;https://tools.ietf.org/html/rfc6902&gt;.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OpEnum
         {
-            
+
             /// <summary>
             /// Enum Add for value: add
             /// </summary>
             [EnumMember(Value = "add")]
             Add = 1,
-            
+
             /// <summary>
             /// Enum Replace for value: replace
             /// </summary>
             [EnumMember(Value = "replace")]
             Replace = 2,
-            
+
+            /// <summary>
+            /// Enum Merge for value: merge
+            /// </summary>
+            [EnumMember(Value = "merge")]
+            Merge = 3,
+
             /// <summary>
             /// Enum Delete for value: delete
             /// </summary>
             [EnumMember(Value = "delete")]
-            Delete = 3
+            Delete = 4
         }
 
         /// <summary>
-        /// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
+        /// Type of JSON Patch operation. Supported JSON Patch operations include &#x60;add&#x60;, &#x60;replace&#x60;, &#x60;merge&#x60; and &#x60;delete&#x60;. Refer to &lt;https://tools.ietf.org/html/rfc6902&gt;.
         /// </summary>
-        /// <value>Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.</value>
-        [DataMember(Name="op", EmitDefaultValue=false)]
+        /// <value>Type of JSON Patch operation. Supported JSON Patch operations include &#x60;add&#x60;, &#x60;replace&#x60;, &#x60;merge&#x60; and &#x60;delete&#x60;. Refer to &lt;https://tools.ietf.org/html/rfc6902&gt;.</value>
+        [DataMember(Name = "op", EmitDefaultValue = false)]
         public OpEnum Op { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchOperation" /> class.
@@ -71,10 +73,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchOperation" /> class.
         /// </summary>
-        /// <param name="op">Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information. (required).</param>
+        /// <param name="op">Type of JSON Patch operation. Supported JSON Patch operations include &#x60;add&#x60;, &#x60;replace&#x60;, &#x60;merge&#x60; and &#x60;delete&#x60;. Refer to &lt;https://tools.ietf.org/html/rfc6902&gt;. (required).</param>
         /// <param name="path">JSON Pointer path of the element to patch. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information. (required).</param>
-        /// <param name="value">JSON value to add, replace, or delete..</param>
-        public PatchOperation(OpEnum op = default, string path = default, object value = default)
+        /// <param name="value">JSON value to &#x60;add&#x60;, &#x60;replace&#x60;, &#x60;merge&#x60; or &#x60;delete&#x60;..</param>
+        public PatchOperation(OpEnum op = default, string path = default, List<Dictionary<string, object>> value = default)
         {
             // to ensure "op" is required (not null)
             if (op == null)
@@ -96,21 +98,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             }
             this.Value = value;
         }
-        
+
 
         /// <summary>
         /// JSON Pointer path of the element to patch. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
         /// </summary>
         /// <value>JSON Pointer path of the element to patch. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.</value>
-        [DataMember(Name="path", EmitDefaultValue=false)]
+        [DataMember(Name = "path", EmitDefaultValue = false)]
         public string Path { get; set; }
 
         /// <summary>
-        /// JSON value to add, replace, or delete.
+        /// JSON value to &#x60;add&#x60;, &#x60;replace&#x60;, &#x60;merge&#x60; or &#x60;delete&#x60;.
         /// </summary>
-        /// <value>JSON value to add, replace, or delete.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
-        public object Value { get; set; }
+        /// <value>JSON value to &#x60;add&#x60;, &#x60;replace&#x60;, &#x60;merge&#x60; or &#x60;delete&#x60;.</value>
+        [DataMember(Name = "value", EmitDefaultValue = false)]
+        public List<Dictionary<string, object>> Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -126,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -156,21 +158,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Op == input.Op ||
                     (this.Op != null &&
                     this.Op.Equals(input.Op))
-                ) && 
+                ) &&
                 (
                     this.Path == input.Path ||
                     (this.Path != null &&
                     this.Path.Equals(input.Path))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     this.Value != null &&
-                    this.Value.Equals(input.Value)
+                    this.Value.SequenceEqual(input.Value)
                 );
         }
 

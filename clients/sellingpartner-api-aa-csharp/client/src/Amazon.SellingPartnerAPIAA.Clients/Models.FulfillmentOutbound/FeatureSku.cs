@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Information about an SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool.
     /// </summary>
     [DataContract]
-    public partial class FeatureSku :  IEquatable<FeatureSku>, IValidatableObject
+    public partial class FeatureSku : IEquatable<FeatureSku>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeatureSku" /> class.
@@ -46,40 +40,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.SkuCount = skuCount;
             this.OverlappingSkus = overlappingSkus;
         }
-        
+
         /// <summary>
         /// Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.
         /// </summary>
         /// <value>Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.</value>
-        [DataMember(Name="sellerSku", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerSku", EmitDefaultValue = false)]
         public string SellerSku { get; set; }
 
         /// <summary>
         /// The unique SKU used by Amazon&#39;s fulfillment network.
         /// </summary>
         /// <value>The unique SKU used by Amazon&#39;s fulfillment network.</value>
-        [DataMember(Name="fnSku", EmitDefaultValue=false)]
+        [DataMember(Name = "fnSku", EmitDefaultValue = false)]
         public string FnSku { get; set; }
 
         /// <summary>
         /// The Amazon Standard Identification Number (ASIN) of the item.
         /// </summary>
         /// <value>The Amazon Standard Identification Number (ASIN) of the item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// The number of SKUs available for this service.
         /// </summary>
         /// <value>The number of SKUs available for this service.</value>
-        [DataMember(Name="skuCount", EmitDefaultValue=false)]
+        [DataMember(Name = "skuCount", EmitDefaultValue = false)]
         public decimal? SkuCount { get; set; }
 
         /// <summary>
         /// Other seller SKUs that are shared across the same inventory.
         /// </summary>
         /// <value>Other seller SKUs that are shared across the same inventory.</value>
-        [DataMember(Name="overlappingSkus", EmitDefaultValue=false)]
+        [DataMember(Name = "overlappingSkus", EmitDefaultValue = false)]
         public List<string> OverlappingSkus { get; set; }
 
         /// <summary>
@@ -98,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,27 +122,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerSku == input.SellerSku ||
                     (this.SellerSku != null &&
                     this.SellerSku.Equals(input.SellerSku))
-                ) && 
+                ) &&
                 (
                     this.FnSku == input.FnSku ||
                     (this.FnSku != null &&
                     this.FnSku.Equals(input.FnSku))
-                ) && 
+                ) &&
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.SkuCount == input.SkuCount ||
                     (this.SkuCount != null &&
                     this.SkuCount.Equals(input.SkuCount))
-                ) && 
+                ) &&
                 (
                     this.OverlappingSkus == input.OverlappingSkus ||
                     this.OverlappingSkus != null &&

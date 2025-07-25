@@ -1,5 +1,5 @@
 /* 
- * Vendor Invoices v1
+ * Selling Partner API for Retail Procurement Payments
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
     /// Response containing the transaction ID.
     /// </summary>
     [DataContract]
-    public partial class TransactionId :  IEquatable<TransactionId>, IValidatableObject
+    public partial class TransactionId : IEquatable<TransactionId>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionId" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         {
             this._TransactionId = transactionId;
         }
-        
+
         /// <summary>
         /// GUID to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
         /// </summary>
         /// <value>GUID to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.</value>
-        [DataMember(Name="transactionId", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string _TransactionId { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this._TransactionId == input._TransactionId ||
                     (this._TransactionId != null &&

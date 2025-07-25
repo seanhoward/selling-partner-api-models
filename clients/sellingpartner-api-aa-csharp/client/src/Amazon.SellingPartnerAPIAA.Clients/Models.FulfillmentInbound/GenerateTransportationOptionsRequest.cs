@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The &#x60;generateTransportationOptions&#x60; request.
     /// </summary>
     [DataContract]
-    public partial class GenerateTransportationOptionsRequest :  IEquatable<GenerateTransportationOptionsRequest>, IValidatableObject
+    public partial class GenerateTransportationOptionsRequest : IEquatable<GenerateTransportationOptionsRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateTransportationOptionsRequest" /> class.
@@ -61,19 +57,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.ShipmentTransportationConfigurations = shipmentTransportationConfigurations;
             }
         }
-        
+
         /// <summary>
         /// The placement option to generate transportation options for.
         /// </summary>
         /// <value>The placement option to generate transportation options for.</value>
-        [DataMember(Name="placementOptionId", EmitDefaultValue=false)]
+        [DataMember(Name = "placementOptionId", EmitDefaultValue = false)]
         public string PlacementOptionId { get; set; }
 
         /// <summary>
         /// List of shipment transportation configurations.
         /// </summary>
         /// <value>List of shipment transportation configurations.</value>
-        [DataMember(Name="shipmentTransportationConfigurations", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentTransportationConfigurations", EmitDefaultValue = false)]
         public List<ShipmentTransportationConfiguration> ShipmentTransportationConfigurations { get; set; }
 
         /// <summary>
@@ -89,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +115,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PlacementOptionId == input.PlacementOptionId ||
                     (this.PlacementOptionId != null &&
                     this.PlacementOptionId.Equals(input.PlacementOptionId))
-                ) && 
+                ) &&
                 (
                     this.ShipmentTransportationConfigurations == input.ShipmentTransportationConfigurations ||
                     this.ShipmentTransportationConfigurations != null &&
@@ -157,22 +153,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PlacementOptionId (string) maxLength
-            if(this.PlacementOptionId != null && this.PlacementOptionId.Length > 38)
+            if (this.PlacementOptionId != null && this.PlacementOptionId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be less than 38.", new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be less than 38.", new[] { "PlacementOptionId" });
             }
 
             // PlacementOptionId (string) minLength
-            if(this.PlacementOptionId != null && this.PlacementOptionId.Length < 38)
+            if (this.PlacementOptionId != null && this.PlacementOptionId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be greater than 38.", new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, length must be greater than 38.", new[] { "PlacementOptionId" });
             }
 
             // PlacementOptionId (string) pattern
             Regex regexPlacementOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPlacementOptionId.Match(this.PlacementOptionId).Success)
             {
-                yield return new ValidationResult("Invalid value for PlacementOptionId, must match a pattern of " + regexPlacementOptionId, new [] { "PlacementOptionId" });
+                yield return new ValidationResult("Invalid value for PlacementOptionId, must match a pattern of " + regexPlacementOptionId, new[] { "PlacementOptionId" });
             }
 
             yield break;

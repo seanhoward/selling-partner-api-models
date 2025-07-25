@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,18 +21,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// The dimensions of a package contained in a shipment.
     /// </summary>
     [DataContract]
-    public partial class PackageDimensions :  IEquatable<PackageDimensions>, IValidatableObject
+    public partial class PackageDimensions : IEquatable<PackageDimensions>, IValidatableObject
     {
         /// <summary>
         /// The unit of measurement. If you don&#39;t specify &#x60;PredefinedPackageDimensions&#x60;, you must specify the unit.
         /// </summary>
         /// <value>The unit of measurement. If you don&#39;t specify &#x60;PredefinedPackageDimensions&#x60;, you must specify the unit.</value>
-        [DataMember(Name="Unit", EmitDefaultValue=false)]
+        [DataMember(Name = "Unit", EmitDefaultValue = false)]
         public UnitOfLength? Unit { get; set; }
         /// <summary>
         /// Gets or Sets PredefinedPackageDimensions
         /// </summary>
-        [DataMember(Name="PredefinedPackageDimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "PredefinedPackageDimensions", EmitDefaultValue = false)]
         public PredefinedPackageDimensions? PredefinedPackageDimensions { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageDimensions" /> class.
@@ -57,26 +50,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.Unit = unit;
             this.PredefinedPackageDimensions = predefinedPackageDimensions;
         }
-        
+
         /// <summary>
         /// The length dimension. If you don&#39;t specify &#x60;PredefinedPackageDimensions&#x60;, you must specify the length.
         /// </summary>
         /// <value>The length dimension. If you don&#39;t specify &#x60;PredefinedPackageDimensions&#x60;, you must specify the length.</value>
-        [DataMember(Name="Length", EmitDefaultValue=false)]
+        [DataMember(Name = "Length", EmitDefaultValue = false)]
         public double? Length { get; set; }
 
         /// <summary>
         /// The width dimension. If you don&#39;t specify &#x60;PredefinedPackageDimensions&#x60;, you must specify the width.
         /// </summary>
         /// <value>The width dimension. If you don&#39;t specify &#x60;PredefinedPackageDimensions&#x60;, you must specify the width.</value>
-        [DataMember(Name="Width", EmitDefaultValue=false)]
+        [DataMember(Name = "Width", EmitDefaultValue = false)]
         public double? Width { get; set; }
 
         /// <summary>
         /// The height dimension. If you don&#39;t specify &#x60;PredefinedPackageDimensions&#x60;, you must specify the height.
         /// </summary>
         /// <value>The height dimension. If you don&#39;t specify &#x60;PredefinedPackageDimensions&#x60;, you must specify the height.</value>
-        [DataMember(Name="Height", EmitDefaultValue=false)]
+        [DataMember(Name = "Height", EmitDefaultValue = false)]
         public double? Height { get; set; }
 
 
@@ -97,7 +90,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -127,27 +120,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Length == input.Length ||
                     (this.Length != null &&
                     this.Length.Equals(input.Length))
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&
                     this.Width.Equals(input.Width))
-                ) && 
+                ) &&
                 (
                     this.Height == input.Height ||
                     (this.Height != null &&
                     this.Height.Equals(input.Height))
-                ) && 
+                ) &&
                 (
                     this.Unit == input.Unit ||
                     (this.Unit != null &&
                     this.Unit.Equals(input.Unit))
-                ) && 
+                ) &&
                 (
                     this.PredefinedPackageDimensions == input.PredefinedPackageDimensions ||
                     (this.PredefinedPackageDimensions != null &&

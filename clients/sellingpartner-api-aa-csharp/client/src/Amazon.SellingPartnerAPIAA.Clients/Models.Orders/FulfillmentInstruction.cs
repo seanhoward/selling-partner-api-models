@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Contains the instructions about the fulfillment, such as the location from where you want the order filled.
     /// </summary>
     [DataContract]
-    public partial class FulfillmentInstruction :  IEquatable<FulfillmentInstruction>, IValidatableObject
+    public partial class FulfillmentInstruction : IEquatable<FulfillmentInstruction>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentInstruction" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         {
             this.FulfillmentSupplySourceId = fulfillmentSupplySourceId;
         }
-        
+
         /// <summary>
         /// The &#x60;sourceId&#x60; of the location from where you want the order fulfilled.
         /// </summary>
         /// <value>The &#x60;sourceId&#x60; of the location from where you want the order fulfilled.</value>
-        [DataMember(Name="FulfillmentSupplySourceId", EmitDefaultValue=false)]
+        [DataMember(Name = "FulfillmentSupplySourceId", EmitDefaultValue = false)]
         public string FulfillmentSupplySourceId { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FulfillmentSupplySourceId == input.FulfillmentSupplySourceId ||
                     (this.FulfillmentSupplySourceId != null &&

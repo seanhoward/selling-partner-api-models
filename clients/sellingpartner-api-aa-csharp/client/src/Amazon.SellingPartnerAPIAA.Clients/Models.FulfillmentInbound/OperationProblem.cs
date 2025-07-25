@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// A problem with additional properties persisted to an operation.
     /// </summary>
     [DataContract]
-    public partial class OperationProblem :  IEquatable<OperationProblem>, IValidatableObject
+    public partial class OperationProblem : IEquatable<OperationProblem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OperationProblem" /> class.
@@ -73,33 +67,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
             this.Details = details;
         }
-        
+
         /// <summary>
         /// An error code that identifies the type of error that occurred.
         /// </summary>
         /// <value>An error code that identifies the type of error that occurred.</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// Additional details that can help the caller understand or fix the issue.
         /// </summary>
         /// <value>Additional details that can help the caller understand or fix the issue.</value>
-        [DataMember(Name="details", EmitDefaultValue=false)]
+        [DataMember(Name = "details", EmitDefaultValue = false)]
         public string Details { get; set; }
 
         /// <summary>
         /// A message that describes the error condition.
         /// </summary>
         /// <value>A message that describes the error condition.</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
         /// <summary>
         /// The severity of the problem. Possible values: &#x60;WARNING&#x60;, &#x60;ERROR&#x60;.
         /// </summary>
         /// <value>The severity of the problem. Possible values: &#x60;WARNING&#x60;, &#x60;ERROR&#x60;.</value>
-        [DataMember(Name="severity", EmitDefaultValue=false)]
+        [DataMember(Name = "severity", EmitDefaultValue = false)]
         public string Severity { get; set; }
 
         /// <summary>
@@ -117,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -147,22 +141,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     this.Details == input.Details ||
                     (this.Details != null &&
                     this.Details.Equals(input.Details))
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.Severity == input.Severity ||
                     (this.Severity != null &&
@@ -199,51 +193,51 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Code (string) maxLength
-            if(this.Code != null && this.Code.Length > 256)
+            if (this.Code != null && this.Code.Length > 256)
             {
-                yield return new ValidationResult("Invalid value for Code, length must be less than 256.", new [] { "Code" });
+                yield return new ValidationResult("Invalid value for Code, length must be less than 256.", new[] { "Code" });
             }
 
             // Code (string) minLength
-            if(this.Code != null && this.Code.Length < 1)
+            if (this.Code != null && this.Code.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Code, length must be greater than 1.", new [] { "Code" });
+                yield return new ValidationResult("Invalid value for Code, length must be greater than 1.", new[] { "Code" });
             }
 
             // Details (string) maxLength
-            if(this.Details != null && this.Details.Length > 8192)
+            if (this.Details != null && this.Details.Length > 8192)
             {
-                yield return new ValidationResult("Invalid value for Details, length must be less than 8192.", new [] { "Details" });
+                yield return new ValidationResult("Invalid value for Details, length must be less than 8192.", new[] { "Details" });
             }
 
             // Details (string) minLength
-            if(this.Details != null && this.Details.Length < 0)
+            if (this.Details != null && this.Details.Length < 0)
             {
-                yield return new ValidationResult("Invalid value for Details, length must be greater than 0.", new [] { "Details" });
+                yield return new ValidationResult("Invalid value for Details, length must be greater than 0.", new[] { "Details" });
             }
 
             // Message (string) maxLength
-            if(this.Message != null && this.Message.Length > 2048)
+            if (this.Message != null && this.Message.Length > 2048)
             {
-                yield return new ValidationResult("Invalid value for Message, length must be less than 2048.", new [] { "Message" });
+                yield return new ValidationResult("Invalid value for Message, length must be less than 2048.", new[] { "Message" });
             }
 
             // Message (string) minLength
-            if(this.Message != null && this.Message.Length < 1)
+            if (this.Message != null && this.Message.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Message, length must be greater than 1.", new [] { "Message" });
+                yield return new ValidationResult("Invalid value for Message, length must be greater than 1.", new[] { "Message" });
             }
 
             // Severity (string) maxLength
-            if(this.Severity != null && this.Severity.Length > 1024)
+            if (this.Severity != null && this.Severity.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Severity, length must be less than 1024.", new [] { "Severity" });
+                yield return new ValidationResult("Invalid value for Severity, length must be less than 1024.", new[] { "Severity" });
             }
 
             // Severity (string) minLength
-            if(this.Severity != null && this.Severity.Length < 1)
+            if (this.Severity != null && this.Severity.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Severity, length must be greater than 1.", new [] { "Severity" });
+                yield return new ValidationResult("Invalid value for Severity, length must be greater than 1.", new[] { "Severity" });
             }
 
             yield break;

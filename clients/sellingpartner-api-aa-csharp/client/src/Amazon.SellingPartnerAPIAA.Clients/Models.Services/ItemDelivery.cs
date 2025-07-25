@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Delivery information for the item.
     /// </summary>
     [DataContract]
-    public partial class ItemDelivery :  IEquatable<ItemDelivery>, IValidatableObject
+    public partial class ItemDelivery : IEquatable<ItemDelivery>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDelivery" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.EstimatedDeliveryDate = estimatedDeliveryDate;
             this.ItemDeliveryPromise = itemDeliveryPromise;
         }
-        
+
         /// <summary>
         /// The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
         /// </summary>
         /// <value>The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.</value>
-        [DataMember(Name="estimatedDeliveryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "estimatedDeliveryDate", EmitDefaultValue = false)]
         public DateTime? EstimatedDeliveryDate { get; set; }
 
         /// <summary>
         /// Promised delivery information for the item.
         /// </summary>
         /// <value>Promised delivery information for the item.</value>
-        [DataMember(Name="itemDeliveryPromise", EmitDefaultValue=false)]
+        [DataMember(Name = "itemDeliveryPromise", EmitDefaultValue = false)]
         public ItemDeliveryPromise ItemDeliveryPromise { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.EstimatedDeliveryDate == input.EstimatedDeliveryDate ||
                     (this.EstimatedDeliveryDate != null &&
                     this.EstimatedDeliveryDate.Equals(input.EstimatedDeliveryDate))
-                ) && 
+                ) &&
                 (
                     this.ItemDeliveryPromise == input.ItemDeliveryPromise ||
                     (this.ItemDeliveryPromise != null &&

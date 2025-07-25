@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// The fulfillment availability details for the listings item.
     /// </summary>
     [DataContract]
-    public partial class FulfillmentAvailability :  IEquatable<FulfillmentAvailability>, IValidatableObject
+    public partial class FulfillmentAvailability : IEquatable<FulfillmentAvailability>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentAvailability" /> class.
@@ -38,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentAvailability" /> class.
         /// </summary>
-        /// <param name="fulfillmentChannelCode">The code of the fulfillment network that will be used. (required).</param>
+        /// <param name="fulfillmentChannelCode">Designates which fulfillment network is used. (required).</param>
         /// <param name="quantity">The quantity of the item you are making available for sale..</param>
         public FulfillmentAvailability(string fulfillmentChannelCode = default, int? quantity = default)
         {
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             }
             this.Quantity = quantity;
         }
-        
+
         /// <summary>
-        /// The code of the fulfillment network that will be used.
+        /// Designates which fulfillment network is used.
         /// </summary>
-        /// <value>The code of the fulfillment network that will be used.</value>
-        [DataMember(Name="fulfillmentChannelCode", EmitDefaultValue=false)]
+        /// <value>Designates which fulfillment network is used.</value>
+        [DataMember(Name = "fulfillmentChannelCode", EmitDefaultValue = false)]
         public string FulfillmentChannelCode { get; set; }
 
         /// <summary>
         /// The quantity of the item you are making available for sale.
         /// </summary>
         /// <value>The quantity of the item you are making available for sale.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FulfillmentChannelCode == input.FulfillmentChannelCode ||
                     (this.FulfillmentChannelCode != null &&
                     this.FulfillmentChannelCode.Equals(input.FulfillmentChannelCode))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
@@ -149,9 +143,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Quantity (int?) minimum
-            if(this.Quantity < (int?)0)
+            if (this.Quantity < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 0.", new [] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 0.", new[] { "Quantity" });
             }
 
             yield break;

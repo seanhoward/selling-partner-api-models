@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Contains information pertaining to a transportation option and the related carrier.
     /// </summary>
     [DataContract]
-    public partial class TransportationOption :  IEquatable<TransportationOption>, IValidatableObject
+    public partial class TransportationOption : IEquatable<TransportationOption>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportationOption" /> class.
@@ -105,58 +101,58 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.CarrierAppointment = carrierAppointment;
             this.Quote = quote;
         }
-        
+
         /// <summary>
         /// Gets or Sets Carrier
         /// </summary>
-        [DataMember(Name="carrier", EmitDefaultValue=false)]
+        [DataMember(Name = "carrier", EmitDefaultValue = false)]
         public Carrier Carrier { get; set; }
 
         /// <summary>
         /// Gets or Sets CarrierAppointment
         /// </summary>
-        [DataMember(Name="carrierAppointment", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierAppointment", EmitDefaultValue = false)]
         public CarrierAppointment CarrierAppointment { get; set; }
 
         /// <summary>
         /// Identifies a list of preconditions for confirming the transportation option.
         /// </summary>
         /// <value>Identifies a list of preconditions for confirming the transportation option.</value>
-        [DataMember(Name="preconditions", EmitDefaultValue=false)]
+        [DataMember(Name = "preconditions", EmitDefaultValue = false)]
         public List<string> Preconditions { get; set; }
 
         /// <summary>
         /// Gets or Sets Quote
         /// </summary>
-        [DataMember(Name="quote", EmitDefaultValue=false)]
+        [DataMember(Name = "quote", EmitDefaultValue = false)]
         public Quote Quote { get; set; }
 
         /// <summary>
         /// Identifier of a shipment. A shipment contains the boxes and units being inbounded.
         /// </summary>
         /// <value>Identifier of a shipment. A shipment contains the boxes and units being inbounded.</value>
-        [DataMember(Name="shipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentId", EmitDefaultValue = false)]
         public string ShipmentId { get; set; }
 
         /// <summary>
         /// Mode of shipment transportation that this option will provide.  Possible values: &#x60;GROUND_SMALL_PARCEL&#x60;, &#x60;FREIGHT_LTL&#x60;, &#x60;FREIGHT_FTL_PALLET&#x60;, &#x60;FREIGHT_FTL_NONPALLET&#x60;, &#x60;OCEAN_LCL&#x60;, &#x60;OCEAN_FCL&#x60;, &#x60;AIR_SMALL_PARCEL&#x60;, &#x60;AIR_SMALL_PARCEL_EXPRESS&#x60;.
         /// </summary>
         /// <value>Mode of shipment transportation that this option will provide.  Possible values: &#x60;GROUND_SMALL_PARCEL&#x60;, &#x60;FREIGHT_LTL&#x60;, &#x60;FREIGHT_FTL_PALLET&#x60;, &#x60;FREIGHT_FTL_NONPALLET&#x60;, &#x60;OCEAN_LCL&#x60;, &#x60;OCEAN_FCL&#x60;, &#x60;AIR_SMALL_PARCEL&#x60;, &#x60;AIR_SMALL_PARCEL_EXPRESS&#x60;.</value>
-        [DataMember(Name="shippingMode", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingMode", EmitDefaultValue = false)]
         public string ShippingMode { get; set; }
 
         /// <summary>
         /// Shipping program for the option. Possible values: &#x60;AMAZON_PARTNERED_CARRIER&#x60;, &#x60;USE_YOUR_OWN_CARRIER&#x60;.
         /// </summary>
         /// <value>Shipping program for the option. Possible values: &#x60;AMAZON_PARTNERED_CARRIER&#x60;, &#x60;USE_YOUR_OWN_CARRIER&#x60;.</value>
-        [DataMember(Name="shippingSolution", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingSolution", EmitDefaultValue = false)]
         public string ShippingSolution { get; set; }
 
         /// <summary>
         /// Identifier of a transportation option. A transportation option represent one option for how to send a shipment.
         /// </summary>
         /// <value>Identifier of a transportation option. A transportation option represent one option for how to send a shipment.</value>
-        [DataMember(Name="transportationOptionId", EmitDefaultValue=false)]
+        [DataMember(Name = "transportationOptionId", EmitDefaultValue = false)]
         public string TransportationOptionId { get; set; }
 
         /// <summary>
@@ -178,7 +174,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -208,42 +204,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Carrier == input.Carrier ||
                     (this.Carrier != null &&
                     this.Carrier.Equals(input.Carrier))
-                ) && 
+                ) &&
                 (
                     this.CarrierAppointment == input.CarrierAppointment ||
                     (this.CarrierAppointment != null &&
                     this.CarrierAppointment.Equals(input.CarrierAppointment))
-                ) && 
+                ) &&
                 (
                     this.Preconditions == input.Preconditions ||
                     this.Preconditions != null &&
                     this.Preconditions.SequenceEqual(input.Preconditions)
-                ) && 
+                ) &&
                 (
                     this.Quote == input.Quote ||
                     (this.Quote != null &&
                     this.Quote.Equals(input.Quote))
-                ) && 
+                ) &&
                 (
                     this.ShipmentId == input.ShipmentId ||
                     (this.ShipmentId != null &&
                     this.ShipmentId.Equals(input.ShipmentId))
-                ) && 
+                ) &&
                 (
                     this.ShippingMode == input.ShippingMode ||
                     (this.ShippingMode != null &&
                     this.ShippingMode.Equals(input.ShippingMode))
-                ) && 
+                ) &&
                 (
                     this.ShippingSolution == input.ShippingSolution ||
                     (this.ShippingSolution != null &&
                     this.ShippingSolution.Equals(input.ShippingSolution))
-                ) && 
+                ) &&
                 (
                     this.TransportationOptionId == input.TransportationOptionId ||
                     (this.TransportationOptionId != null &&
@@ -288,65 +284,65 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ShipmentId (string) maxLength
-            if(this.ShipmentId != null && this.ShipmentId.Length > 38)
+            if (this.ShipmentId != null && this.ShipmentId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be less than 38.", new[] { "ShipmentId" });
             }
 
             // ShipmentId (string) minLength
-            if(this.ShipmentId != null && this.ShipmentId.Length < 38)
+            if (this.ShipmentId != null && this.ShipmentId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 38.", new[] { "ShipmentId" });
             }
 
             // ShipmentId (string) pattern
             Regex regexShipmentId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexShipmentId.Match(this.ShipmentId).Success)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, must match a pattern of " + regexShipmentId, new[] { "ShipmentId" });
             }
 
             // ShippingMode (string) maxLength
-            if(this.ShippingMode != null && this.ShippingMode.Length > 1024)
+            if (this.ShippingMode != null && this.ShippingMode.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for ShippingMode, length must be less than 1024.", new [] { "ShippingMode" });
+                yield return new ValidationResult("Invalid value for ShippingMode, length must be less than 1024.", new[] { "ShippingMode" });
             }
 
             // ShippingMode (string) minLength
-            if(this.ShippingMode != null && this.ShippingMode.Length < 1)
+            if (this.ShippingMode != null && this.ShippingMode.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for ShippingMode, length must be greater than 1.", new [] { "ShippingMode" });
+                yield return new ValidationResult("Invalid value for ShippingMode, length must be greater than 1.", new[] { "ShippingMode" });
             }
 
             // ShippingSolution (string) maxLength
-            if(this.ShippingSolution != null && this.ShippingSolution.Length > 1024)
+            if (this.ShippingSolution != null && this.ShippingSolution.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for ShippingSolution, length must be less than 1024.", new [] { "ShippingSolution" });
+                yield return new ValidationResult("Invalid value for ShippingSolution, length must be less than 1024.", new[] { "ShippingSolution" });
             }
 
             // ShippingSolution (string) minLength
-            if(this.ShippingSolution != null && this.ShippingSolution.Length < 1)
+            if (this.ShippingSolution != null && this.ShippingSolution.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for ShippingSolution, length must be greater than 1.", new [] { "ShippingSolution" });
+                yield return new ValidationResult("Invalid value for ShippingSolution, length must be greater than 1.", new[] { "ShippingSolution" });
             }
 
             // TransportationOptionId (string) maxLength
-            if(this.TransportationOptionId != null && this.TransportationOptionId.Length > 38)
+            if (this.TransportationOptionId != null && this.TransportationOptionId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for TransportationOptionId, length must be less than 38.", new [] { "TransportationOptionId" });
+                yield return new ValidationResult("Invalid value for TransportationOptionId, length must be less than 38.", new[] { "TransportationOptionId" });
             }
 
             // TransportationOptionId (string) minLength
-            if(this.TransportationOptionId != null && this.TransportationOptionId.Length < 38)
+            if (this.TransportationOptionId != null && this.TransportationOptionId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for TransportationOptionId, length must be greater than 38.", new [] { "TransportationOptionId" });
+                yield return new ValidationResult("Invalid value for TransportationOptionId, length must be greater than 38.", new[] { "TransportationOptionId" });
             }
 
             // TransportationOptionId (string) pattern
             Regex regexTransportationOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexTransportationOptionId.Match(this.TransportationOptionId).Success)
             {
-                yield return new ValidationResult("Invalid value for TransportationOptionId, must match a pattern of " + regexTransportationOptionId, new [] { "TransportationOptionId" });
+                yield return new ValidationResult("Invalid value for TransportationOptionId, must match a pattern of " + regexTransportationOptionId, new[] { "TransportationOptionId" });
             }
 
             yield break;

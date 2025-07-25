@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Quantity of inventory with an associated measurement unit context.
     /// </summary>
     [DataContract]
-    public partial class InventoryQuantity :  IEquatable<InventoryQuantity>, IValidatableObject
+    public partial class InventoryQuantity : IEquatable<InventoryQuantity>, IValidatableObject
     {
         /// <summary>
         /// Unit of measurement for the inventory.
         /// </summary>
         /// <value>Unit of measurement for the inventory.</value>
-        [DataMember(Name="unitOfMeasurement", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasurement", EmitDefaultValue = false)]
         public InventoryUnitOfMeasurement UnitOfMeasurement { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryQuantity" /> class.
@@ -67,12 +61,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 this.UnitOfMeasurement = unitOfMeasurement;
             }
         }
-        
+
         /// <summary>
         /// Quantity of the respective inventory.
         /// </summary>
         /// <value>Quantity of the respective inventory.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public decimal? Quantity { get; set; }
 
 
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.UnitOfMeasurement == input.UnitOfMeasurement ||
                     (this.UnitOfMeasurement != null &&

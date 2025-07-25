@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,12 +21,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Custom text for shipping labels.
     /// </summary>
     [DataContract]
-    public partial class LabelCustomization :  IEquatable<LabelCustomization>, IValidatableObject
+    public partial class LabelCustomization : IEquatable<LabelCustomization>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets StandardIdForLabel
         /// </summary>
-        [DataMember(Name="StandardIdForLabel", EmitDefaultValue=false)]
+        [DataMember(Name = "StandardIdForLabel", EmitDefaultValue = false)]
         public StandardIdForLabel? StandardIdForLabel { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelCustomization" /> class.
@@ -45,11 +38,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.CustomTextForLabel = customTextForLabel;
             this.StandardIdForLabel = standardIdForLabel;
         }
-        
+
         /// <summary>
         /// Gets or Sets CustomTextForLabel
         /// </summary>
-        [DataMember(Name="CustomTextForLabel", EmitDefaultValue=false)]
+        [DataMember(Name = "CustomTextForLabel", EmitDefaultValue = false)]
         public string CustomTextForLabel { get; set; }
 
 
@@ -66,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -96,12 +89,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CustomTextForLabel == input.CustomTextForLabel ||
                     (this.CustomTextForLabel != null &&
                     this.CustomTextForLabel.Equals(input.CustomTextForLabel))
-                ) && 
+                ) &&
                 (
                     this.StandardIdForLabel == input.StandardIdForLabel ||
                     (this.StandardIdForLabel != null &&

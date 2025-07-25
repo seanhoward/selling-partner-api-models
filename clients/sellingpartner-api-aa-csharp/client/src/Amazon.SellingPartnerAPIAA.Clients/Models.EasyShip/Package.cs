@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for Easy Ship
  *
- * The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders.  Your Easy Ship applications can:  * Get available time slots for packages to be scheduled for delivery.  * Schedule, reschedule, and cancel Easy Ship orders.  * Print labels, invoices, and warranties.  See the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
+ * Use the Selling Partner API for Easy Ship to build applications for sellers to manage and ship Amazon Easy Ship orders. With this API, you can get available time slots, schedule and reschedule Easy Ship orders, and print shipping labels, invoices, and warranties. To review the differences in Easy Ship operations by marketplace, refer to [Marketplace support](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support).
  *
  * OpenAPI spec version: 2022-03-23
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
     /// This object contains all the details of the scheduled Easy Ship package.
     /// </summary>
     [DataContract]
-    public partial class Package :  IEquatable<Package>, IValidatableObject
+    public partial class Package : IEquatable<Package>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets PackageStatus
         /// </summary>
-        [DataMember(Name="packageStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "packageStatus", EmitDefaultValue = false)]
         public PackageStatus? PackageStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Package" /> class.
@@ -96,54 +90,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             this.PackageStatus = packageStatus;
             this.TrackingDetails = trackingDetails;
         }
-        
+
         /// <summary>
         /// Gets or Sets ScheduledPackageId
         /// </summary>
-        [DataMember(Name="scheduledPackageId", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduledPackageId", EmitDefaultValue = false)]
         public ScheduledPackageId ScheduledPackageId { get; set; }
 
         /// <summary>
         /// Gets or Sets PackageDimensions
         /// </summary>
-        [DataMember(Name="packageDimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "packageDimensions", EmitDefaultValue = false)]
         public Dimensions PackageDimensions { get; set; }
 
         /// <summary>
         /// Gets or Sets PackageWeight
         /// </summary>
-        [DataMember(Name="packageWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "packageWeight", EmitDefaultValue = false)]
         public Weight PackageWeight { get; set; }
 
         /// <summary>
         /// Gets or Sets PackageItems
         /// </summary>
-        [DataMember(Name="packageItems", EmitDefaultValue=false)]
+        [DataMember(Name = "packageItems", EmitDefaultValue = false)]
         public Items PackageItems { get; set; }
 
         /// <summary>
         /// Gets or Sets PackageTimeSlot
         /// </summary>
-        [DataMember(Name="packageTimeSlot", EmitDefaultValue=false)]
+        [DataMember(Name = "packageTimeSlot", EmitDefaultValue = false)]
         public TimeSlot PackageTimeSlot { get; set; }
 
         /// <summary>
         /// Gets or Sets PackageIdentifier
         /// </summary>
-        [DataMember(Name="packageIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "packageIdentifier", EmitDefaultValue = false)]
         public string PackageIdentifier { get; set; }
 
         /// <summary>
         /// Gets or Sets Invoice
         /// </summary>
-        [DataMember(Name="invoice", EmitDefaultValue=false)]
+        [DataMember(Name = "invoice", EmitDefaultValue = false)]
         public InvoiceData Invoice { get; set; }
 
 
         /// <summary>
         /// Gets or Sets TrackingDetails
         /// </summary>
-        [DataMember(Name="trackingDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingDetails", EmitDefaultValue = false)]
         public TrackingDetails TrackingDetails { get; set; }
 
         /// <summary>
@@ -166,7 +160,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -196,47 +190,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ScheduledPackageId == input.ScheduledPackageId ||
                     (this.ScheduledPackageId != null &&
                     this.ScheduledPackageId.Equals(input.ScheduledPackageId))
-                ) && 
+                ) &&
                 (
                     this.PackageDimensions == input.PackageDimensions ||
                     (this.PackageDimensions != null &&
                     this.PackageDimensions.Equals(input.PackageDimensions))
-                ) && 
+                ) &&
                 (
                     this.PackageWeight == input.PackageWeight ||
                     (this.PackageWeight != null &&
                     this.PackageWeight.Equals(input.PackageWeight))
-                ) && 
+                ) &&
                 (
                     this.PackageItems == input.PackageItems ||
                     (this.PackageItems != null &&
                     this.PackageItems.Equals(input.PackageItems))
-                ) && 
+                ) &&
                 (
                     this.PackageTimeSlot == input.PackageTimeSlot ||
                     (this.PackageTimeSlot != null &&
                     this.PackageTimeSlot.Equals(input.PackageTimeSlot))
-                ) && 
+                ) &&
                 (
                     this.PackageIdentifier == input.PackageIdentifier ||
                     (this.PackageIdentifier != null &&
                     this.PackageIdentifier.Equals(input.PackageIdentifier))
-                ) && 
+                ) &&
                 (
                     this.Invoice == input.Invoice ||
                     (this.Invoice != null &&
                     this.Invoice.Equals(input.Invoice))
-                ) && 
+                ) &&
                 (
                     this.PackageStatus == input.PackageStatus ||
                     (this.PackageStatus != null &&
                     this.PackageStatus.Equals(input.PackageStatus))
-                ) && 
+                ) &&
                 (
                     this.TrackingDetails == input.TrackingDetails ||
                     (this.TrackingDetails != null &&

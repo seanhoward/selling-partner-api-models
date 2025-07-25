@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
     /// The version details for an Amazon product type.
     /// </summary>
     [DataContract]
-    public partial class ProductTypeVersion :  IEquatable<ProductTypeVersion>, IValidatableObject
+    public partial class ProductTypeVersion : IEquatable<ProductTypeVersion>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTypeVersion" /> class.
@@ -63,26 +57,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             }
             this.ReleaseCandidate = releaseCandidate;
         }
-        
+
         /// <summary>
         /// Version identifier.
         /// </summary>
         /// <value>Version identifier.</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public string Version { get; set; }
 
         /// <summary>
         /// When true, the version indicated by the version identifier is the latest available for the Amazon product type.
         /// </summary>
         /// <value>When true, the version indicated by the version identifier is the latest available for the Amazon product type.</value>
-        [DataMember(Name="latest", EmitDefaultValue=false)]
+        [DataMember(Name = "latest", EmitDefaultValue = false)]
         public bool? Latest { get; set; }
 
         /// <summary>
         /// When true, the version indicated by the version identifier is the prerelease (release candidate) for the Amazon product type.
         /// </summary>
         /// <value>When true, the version indicated by the version identifier is the prerelease (release candidate) for the Amazon product type.</value>
-        [DataMember(Name="releaseCandidate", EmitDefaultValue=false)]
+        [DataMember(Name = "releaseCandidate", EmitDefaultValue = false)]
         public bool? ReleaseCandidate { get; set; }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +123,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Version == input.Version ||
                     (this.Version != null &&
                     this.Version.Equals(input.Version))
-                ) && 
+                ) &&
                 (
                     this.Latest == input.Latest ||
                     (this.Latest != null &&
                     this.Latest.Equals(input.Latest))
-                ) && 
+                ) &&
                 (
                     this.ReleaseCandidate == input.ReleaseCandidate ||
                     (this.ReleaseCandidate != null &&

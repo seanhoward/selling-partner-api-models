@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// A single item&#39;s buyer information.
     /// </summary>
     [DataContract]
-    public partial class ItemBuyerInfo :  IEquatable<ItemBuyerInfo>, IValidatableObject
+    public partial class ItemBuyerInfo : IEquatable<ItemBuyerInfo>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemBuyerInfo" /> class.
@@ -46,40 +39,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.GiftMessageText = giftMessageText;
             this.GiftWrapLevel = giftWrapLevel;
         }
-        
+
         /// <summary>
         /// Buyer information for custom orders from the Amazon Custom program.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.
         /// </summary>
         /// <value>Buyer information for custom orders from the Amazon Custom program.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.</value>
-        [DataMember(Name="BuyerCustomizedInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerCustomizedInfo", EmitDefaultValue = false)]
         public BuyerCustomizedInfoDetail BuyerCustomizedInfo { get; set; }
 
         /// <summary>
         /// The gift wrap price of the item.
         /// </summary>
         /// <value>The gift wrap price of the item.</value>
-        [DataMember(Name="GiftWrapPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "GiftWrapPrice", EmitDefaultValue = false)]
         public Money GiftWrapPrice { get; set; }
 
         /// <summary>
         /// The tax on the gift wrap price.
         /// </summary>
         /// <value>The tax on the gift wrap price.</value>
-        [DataMember(Name="GiftWrapTax", EmitDefaultValue=false)]
+        [DataMember(Name = "GiftWrapTax", EmitDefaultValue = false)]
         public Money GiftWrapTax { get; set; }
 
         /// <summary>
         /// A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.
         /// </summary>
         /// <value>A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.</value>
-        [DataMember(Name="GiftMessageText", EmitDefaultValue=false)]
+        [DataMember(Name = "GiftMessageText", EmitDefaultValue = false)]
         public string GiftMessageText { get; set; }
 
         /// <summary>
         /// The gift wrap level specified by the buyer.
         /// </summary>
         /// <value>The gift wrap level specified by the buyer.</value>
-        [DataMember(Name="GiftWrapLevel", EmitDefaultValue=false)]
+        [DataMember(Name = "GiftWrapLevel", EmitDefaultValue = false)]
         public string GiftWrapLevel { get; set; }
 
         /// <summary>
@@ -98,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,27 +121,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BuyerCustomizedInfo == input.BuyerCustomizedInfo ||
                     (this.BuyerCustomizedInfo != null &&
                     this.BuyerCustomizedInfo.Equals(input.BuyerCustomizedInfo))
-                ) && 
+                ) &&
                 (
                     this.GiftWrapPrice == input.GiftWrapPrice ||
                     (this.GiftWrapPrice != null &&
                     this.GiftWrapPrice.Equals(input.GiftWrapPrice))
-                ) && 
+                ) &&
                 (
                     this.GiftWrapTax == input.GiftWrapTax ||
                     (this.GiftWrapTax != null &&
                     this.GiftWrapTax.Equals(input.GiftWrapTax))
-                ) && 
+                ) &&
                 (
                     this.GiftMessageText == input.GiftMessageText ||
                     (this.GiftMessageText != null &&
                     this.GiftMessageText.Equals(input.GiftMessageText))
-                ) && 
+                ) &&
                 (
                     this.GiftWrapLevel == input.GiftWrapLevel ||
                     (this.GiftWrapLevel != null &&

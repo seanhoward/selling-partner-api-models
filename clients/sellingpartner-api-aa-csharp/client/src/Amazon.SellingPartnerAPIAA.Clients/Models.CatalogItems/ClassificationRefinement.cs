@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,26 +9,20 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Description of a classification that can be used to get more fine-grained search results.
+    /// A classification that you can use to refine your search.
     /// </summary>
     [DataContract]
-    public partial class ClassificationRefinement :  IEquatable<ClassificationRefinement>, IValidatableObject
+    public partial class ClassificationRefinement : IEquatable<ClassificationRefinement>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassificationRefinement" /> class.
@@ -38,9 +32,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassificationRefinement" /> class.
         /// </summary>
-        /// <param name="numberOfResults">The estimated number of results that would still be returned if refinement key applied. (required).</param>
+        /// <param name="numberOfResults">The estimated number of results that would be returned if you refine your search by the specified &#x60;classificationId&#x60;. (required).</param>
         /// <param name="displayName">Display name for the classification. (required).</param>
-        /// <param name="classificationId">Identifier for the classification that can be used for search refinement purposes. (required).</param>
+        /// <param name="classificationId">The identifier of the classification that you can use to refine your search. (required).</param>
         public ClassificationRefinement(int? numberOfResults = default, string displayName = default, string classificationId = default)
         {
             // to ensure "numberOfResults" is required (not null)
@@ -71,26 +65,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
                 this.ClassificationId = classificationId;
             }
         }
-        
+
         /// <summary>
-        /// The estimated number of results that would still be returned if refinement key applied.
+        /// The estimated number of results that would be returned if you refine your search by the specified &#x60;classificationId&#x60;.
         /// </summary>
-        /// <value>The estimated number of results that would still be returned if refinement key applied.</value>
-        [DataMember(Name="numberOfResults", EmitDefaultValue=false)]
+        /// <value>The estimated number of results that would be returned if you refine your search by the specified &#x60;classificationId&#x60;.</value>
+        [DataMember(Name = "numberOfResults", EmitDefaultValue = false)]
         public int? NumberOfResults { get; set; }
 
         /// <summary>
         /// Display name for the classification.
         /// </summary>
         /// <value>Display name for the classification.</value>
-        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// Identifier for the classification that can be used for search refinement purposes.
+        /// The identifier of the classification that you can use to refine your search.
         /// </summary>
-        /// <value>Identifier for the classification that can be used for search refinement purposes.</value>
-        [DataMember(Name="classificationId", EmitDefaultValue=false)]
+        /// <value>The identifier of the classification that you can use to refine your search.</value>
+        [DataMember(Name = "classificationId", EmitDefaultValue = false)]
         public string ClassificationId { get; set; }
 
         /// <summary>
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +131,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.NumberOfResults == input.NumberOfResults ||
                     (this.NumberOfResults != null &&
                     this.NumberOfResults.Equals(input.NumberOfResults))
-                ) && 
+                ) &&
                 (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
-                ) && 
+                ) &&
                 (
                     this.ClassificationId == input.ClassificationId ||
                     (this.ClassificationId != null &&

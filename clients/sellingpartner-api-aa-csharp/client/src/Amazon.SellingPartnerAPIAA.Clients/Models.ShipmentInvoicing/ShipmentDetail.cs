@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
     /// The information required by a selling partner to issue a shipment invoice.
     /// </summary>
     [DataContract]
-    public partial class ShipmentDetail :  IEquatable<ShipmentDetail>, IValidatableObject
+    public partial class ShipmentDetail : IEquatable<ShipmentDetail>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDetail" /> class.
@@ -64,98 +57,98 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             this.SellerDisplayName = sellerDisplayName;
             this.ShipmentItems = shipmentItems;
         }
-        
+
         /// <summary>
         /// The Amazon-defined identifier for the warehouse.
         /// </summary>
         /// <value>The Amazon-defined identifier for the warehouse.</value>
-        [DataMember(Name="WarehouseId", EmitDefaultValue=false)]
+        [DataMember(Name = "WarehouseId", EmitDefaultValue = false)]
         public string WarehouseId { get; set; }
 
         /// <summary>
         /// The Amazon-defined identifier for the order.
         /// </summary>
         /// <value>The Amazon-defined identifier for the order.</value>
-        [DataMember(Name="AmazonOrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "AmazonOrderId", EmitDefaultValue = false)]
         public string AmazonOrderId { get; set; }
 
         /// <summary>
         /// The Amazon-defined identifier for the shipment.
         /// </summary>
         /// <value>The Amazon-defined identifier for the shipment.</value>
-        [DataMember(Name="AmazonShipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "AmazonShipmentId", EmitDefaultValue = false)]
         public string AmazonShipmentId { get; set; }
 
         /// <summary>
         /// The date and time when the order was created.
         /// </summary>
         /// <value>The date and time when the order was created.</value>
-        [DataMember(Name="PurchaseDate", EmitDefaultValue=false)]
+        [DataMember(Name = "PurchaseDate", EmitDefaultValue = false)]
         public DateTime? PurchaseDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ShippingAddress
         /// </summary>
-        [DataMember(Name="ShippingAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingAddress", EmitDefaultValue = false)]
         public Address ShippingAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentMethodDetails
         /// </summary>
-        [DataMember(Name="PaymentMethodDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "PaymentMethodDetails", EmitDefaultValue = false)]
         public PaymentMethodDetailItemList PaymentMethodDetails { get; set; }
 
         /// <summary>
         /// The identifier for the marketplace where the order was placed.
         /// </summary>
         /// <value>The identifier for the marketplace where the order was placed.</value>
-        [DataMember(Name="MarketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "MarketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The seller identifier.
         /// </summary>
         /// <value>The seller identifier.</value>
-        [DataMember(Name="SellerId", EmitDefaultValue=false)]
+        [DataMember(Name = "SellerId", EmitDefaultValue = false)]
         public string SellerId { get; set; }
 
         /// <summary>
         /// The name of the buyer.
         /// </summary>
         /// <value>The name of the buyer.</value>
-        [DataMember(Name="BuyerName", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerName", EmitDefaultValue = false)]
         public string BuyerName { get; set; }
 
         /// <summary>
         /// The county of the buyer.
         /// </summary>
         /// <value>The county of the buyer.</value>
-        [DataMember(Name="BuyerCounty", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerCounty", EmitDefaultValue = false)]
         public string BuyerCounty { get; set; }
 
         /// <summary>
         /// Gets or Sets BuyerTaxInfo
         /// </summary>
-        [DataMember(Name="BuyerTaxInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "BuyerTaxInfo", EmitDefaultValue = false)]
         public BuyerTaxInfo BuyerTaxInfo { get; set; }
 
         /// <summary>
         /// Gets or Sets MarketplaceTaxInfo
         /// </summary>
-        [DataMember(Name="MarketplaceTaxInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "MarketplaceTaxInfo", EmitDefaultValue = false)]
         public MarketplaceTaxInfo MarketplaceTaxInfo { get; set; }
 
         /// <summary>
         /// The seller’s friendly name registered in the marketplace.
         /// </summary>
         /// <value>The seller’s friendly name registered in the marketplace.</value>
-        [DataMember(Name="SellerDisplayName", EmitDefaultValue=false)]
+        [DataMember(Name = "SellerDisplayName", EmitDefaultValue = false)]
         public string SellerDisplayName { get; set; }
 
         /// <summary>
         /// Gets or Sets ShipmentItems
         /// </summary>
-        [DataMember(Name="ShipmentItems", EmitDefaultValue=false)]
+        [DataMember(Name = "ShipmentItems", EmitDefaultValue = false)]
         public ShipmentItems ShipmentItems { get; set; }
 
         /// <summary>
@@ -183,7 +176,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -213,72 +206,72 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.WarehouseId == input.WarehouseId ||
                     (this.WarehouseId != null &&
                     this.WarehouseId.Equals(input.WarehouseId))
-                ) && 
+                ) &&
                 (
                     this.AmazonOrderId == input.AmazonOrderId ||
                     (this.AmazonOrderId != null &&
                     this.AmazonOrderId.Equals(input.AmazonOrderId))
-                ) && 
+                ) &&
                 (
                     this.AmazonShipmentId == input.AmazonShipmentId ||
                     (this.AmazonShipmentId != null &&
                     this.AmazonShipmentId.Equals(input.AmazonShipmentId))
-                ) && 
+                ) &&
                 (
                     this.PurchaseDate == input.PurchaseDate ||
                     (this.PurchaseDate != null &&
                     this.PurchaseDate.Equals(input.PurchaseDate))
-                ) && 
+                ) &&
                 (
                     this.ShippingAddress == input.ShippingAddress ||
                     (this.ShippingAddress != null &&
                     this.ShippingAddress.Equals(input.ShippingAddress))
-                ) && 
+                ) &&
                 (
                     this.PaymentMethodDetails == input.PaymentMethodDetails ||
                     (this.PaymentMethodDetails != null &&
                     this.PaymentMethodDetails.Equals(input.PaymentMethodDetails))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.SellerId == input.SellerId ||
                     (this.SellerId != null &&
                     this.SellerId.Equals(input.SellerId))
-                ) && 
+                ) &&
                 (
                     this.BuyerName == input.BuyerName ||
                     (this.BuyerName != null &&
                     this.BuyerName.Equals(input.BuyerName))
-                ) && 
+                ) &&
                 (
                     this.BuyerCounty == input.BuyerCounty ||
                     (this.BuyerCounty != null &&
                     this.BuyerCounty.Equals(input.BuyerCounty))
-                ) && 
+                ) &&
                 (
                     this.BuyerTaxInfo == input.BuyerTaxInfo ||
                     (this.BuyerTaxInfo != null &&
                     this.BuyerTaxInfo.Equals(input.BuyerTaxInfo))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceTaxInfo == input.MarketplaceTaxInfo ||
                     (this.MarketplaceTaxInfo != null &&
                     this.MarketplaceTaxInfo.Equals(input.MarketplaceTaxInfo))
-                ) && 
+                ) &&
                 (
                     this.SellerDisplayName == input.SellerDisplayName ||
                     (this.SellerDisplayName != null &&
                     this.SellerDisplayName.Equals(input.SellerDisplayName))
-                ) && 
+                ) &&
                 (
                     this.ShipmentItems == input.ShipmentItems ||
                     (this.ShipmentItems != null &&

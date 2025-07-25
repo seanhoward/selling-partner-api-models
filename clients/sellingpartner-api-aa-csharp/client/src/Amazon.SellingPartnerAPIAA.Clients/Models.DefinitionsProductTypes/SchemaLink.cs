@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
     /// SchemaLink
     /// </summary>
     [DataContract]
-    public partial class SchemaLink :  IEquatable<SchemaLink>, IValidatableObject
+    public partial class SchemaLink : IEquatable<SchemaLink>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SchemaLink" /> class.
@@ -61,18 +55,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
                 this.Checksum = checksum;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets Link
         /// </summary>
-        [DataMember(Name="link", EmitDefaultValue=false)]
+        [DataMember(Name = "link", EmitDefaultValue = false)]
         public SchemaLinkLink Link { get; set; }
 
         /// <summary>
         /// Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching.
         /// </summary>
         /// <value>Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching.</value>
-        [DataMember(Name="checksum", EmitDefaultValue=false)]
+        [DataMember(Name = "checksum", EmitDefaultValue = false)]
         public string Checksum { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,12 +112,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Link == input.Link ||
                     (this.Link != null &&
                     this.Link.Equals(input.Link))
-                ) && 
+                ) &&
                 (
                     this.Checksum == input.Checksum ||
                     (this.Checksum != null &&

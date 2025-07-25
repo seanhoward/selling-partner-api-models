@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Preview of the changes that will be applied to the shipment.
     /// </summary>
     [DataContract]
-    public partial class ContentUpdatePreview :  IEquatable<ContentUpdatePreview>, IValidatableObject
+    public partial class ContentUpdatePreview : IEquatable<ContentUpdatePreview>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentUpdatePreview" /> class.
@@ -81,31 +76,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.TransportationOption = transportationOption;
             }
         }
-        
+
         /// <summary>
         /// Identifier of a content update preview.
         /// </summary>
         /// <value>Identifier of a content update preview.</value>
-        [DataMember(Name="contentUpdatePreviewId", EmitDefaultValue=false)]
+        [DataMember(Name = "contentUpdatePreviewId", EmitDefaultValue = false)]
         public string ContentUpdatePreviewId { get; set; }
 
         /// <summary>
         /// The time at which the content update expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;.
         /// </summary>
         /// <value>The time at which the content update expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;.</value>
-        [DataMember(Name="expiration", EmitDefaultValue=false)]
+        [DataMember(Name = "expiration", EmitDefaultValue = false)]
         public DateTime? Expiration { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestedUpdates
         /// </summary>
-        [DataMember(Name="requestedUpdates", EmitDefaultValue=false)]
+        [DataMember(Name = "requestedUpdates", EmitDefaultValue = false)]
         public RequestedUpdates RequestedUpdates { get; set; }
 
         /// <summary>
         /// Gets or Sets TransportationOption
         /// </summary>
-        [DataMember(Name="transportationOption", EmitDefaultValue=false)]
+        [DataMember(Name = "transportationOption", EmitDefaultValue = false)]
         public TransportationOption TransportationOption { get; set; }
 
         /// <summary>
@@ -123,7 +118,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -153,22 +148,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContentUpdatePreviewId == input.ContentUpdatePreviewId ||
                     (this.ContentUpdatePreviewId != null &&
                     this.ContentUpdatePreviewId.Equals(input.ContentUpdatePreviewId))
-                ) && 
+                ) &&
                 (
                     this.Expiration == input.Expiration ||
                     (this.Expiration != null &&
                     this.Expiration.Equals(input.Expiration))
-                ) && 
+                ) &&
                 (
                     this.RequestedUpdates == input.RequestedUpdates ||
                     (this.RequestedUpdates != null &&
                     this.RequestedUpdates.Equals(input.RequestedUpdates))
-                ) && 
+                ) &&
                 (
                     this.TransportationOption == input.TransportationOption ||
                     (this.TransportationOption != null &&
@@ -205,22 +200,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ContentUpdatePreviewId (string) maxLength
-            if(this.ContentUpdatePreviewId != null && this.ContentUpdatePreviewId.Length > 38)
+            if (this.ContentUpdatePreviewId != null && this.ContentUpdatePreviewId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for ContentUpdatePreviewId, length must be less than 38.", new [] { "ContentUpdatePreviewId" });
+                yield return new ValidationResult("Invalid value for ContentUpdatePreviewId, length must be less than 38.", new[] { "ContentUpdatePreviewId" });
             }
 
             // ContentUpdatePreviewId (string) minLength
-            if(this.ContentUpdatePreviewId != null && this.ContentUpdatePreviewId.Length < 38)
+            if (this.ContentUpdatePreviewId != null && this.ContentUpdatePreviewId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for ContentUpdatePreviewId, length must be greater than 38.", new [] { "ContentUpdatePreviewId" });
+                yield return new ValidationResult("Invalid value for ContentUpdatePreviewId, length must be greater than 38.", new[] { "ContentUpdatePreviewId" });
             }
 
             // ContentUpdatePreviewId (string) pattern
             Regex regexContentUpdatePreviewId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexContentUpdatePreviewId.Match(this.ContentUpdatePreviewId).Success)
             {
-                yield return new ValidationResult("Invalid value for ContentUpdatePreviewId, must match a pattern of " + regexContentUpdatePreviewId, new [] { "ContentUpdatePreviewId" });
+                yield return new ValidationResult("Invalid value for ContentUpdatePreviewId, must match a pattern of " + regexContentUpdatePreviewId, new[] { "ContentUpdatePreviewId" });
             }
 
             yield break;

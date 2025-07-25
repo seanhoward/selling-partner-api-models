@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.</param>
         /// <returns>GetPurchaseOrderResponse</returns>
-        GetPurchaseOrderResponse GetPurchaseOrder (string purchaseOrderNumber);
+        GetPurchaseOrderResponse GetPurchaseOrder(string purchaseOrderNumber);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.</param>
         /// <returns>ApiResponse of GetPurchaseOrderResponse</returns>
-        ApiResponse<GetPurchaseOrderResponse> GetPurchaseOrderWithHttpInfo (string purchaseOrderNumber);
+        ApiResponse<GetPurchaseOrderResponse> GetPurchaseOrderWithHttpInfo(string purchaseOrderNumber);
         /// <summary>
         /// 
         /// </summary>
@@ -66,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderState">Filters purchase orders based on the purchase order state. (optional)</param>
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)</param>
         /// <returns>GetPurchaseOrdersResponse</returns>
-        GetPurchaseOrdersResponse GetPurchaseOrders (long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null);
+        GetPurchaseOrdersResponse GetPurchaseOrders(long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null);
 
         /// <summary>
         /// 
@@ -88,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderState">Filters purchase orders based on the purchase order state. (optional)</param>
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)</param>
         /// <returns>ApiResponse of GetPurchaseOrdersResponse</returns>
-        ApiResponse<GetPurchaseOrdersResponse> GetPurchaseOrdersWithHttpInfo (long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null);
+        ApiResponse<GetPurchaseOrdersResponse> GetPurchaseOrdersWithHttpInfo(long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null);
         /// <summary>
         /// 
         /// </summary>
@@ -110,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)</param>
         /// <param name="shipToPartyId">Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)</param>
         /// <returns>GetPurchaseOrdersStatusResponse</returns>
-        GetPurchaseOrdersStatusResponse GetPurchaseOrdersStatus (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null);
+        GetPurchaseOrdersStatusResponse GetPurchaseOrdersStatus(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null);
 
         /// <summary>
         /// 
@@ -133,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)</param>
         /// <param name="shipToPartyId">Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)</param>
         /// <returns>ApiResponse of GetPurchaseOrdersStatusResponse</returns>
-        ApiResponse<GetPurchaseOrdersStatusResponse> GetPurchaseOrdersStatusWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null);
+        ApiResponse<GetPurchaseOrdersStatusResponse> GetPurchaseOrdersStatusWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null);
         /// <summary>
         /// 
         /// </summary>
@@ -143,7 +142,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Submits acknowledgements for one or more purchase orders from a vendor.</param>
         /// <returns>SubmitAcknowledgementResponse</returns>
-        SubmitAcknowledgementResponse SubmitAcknowledgement (SubmitAcknowledgementRequest body);
+        SubmitAcknowledgementResponse SubmitAcknowledgement(SubmitAcknowledgementRequest body);
 
         /// <summary>
         /// 
@@ -154,7 +153,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Submits acknowledgements for one or more purchase orders from a vendor.</param>
         /// <returns>ApiResponse of SubmitAcknowledgementResponse</returns>
-        ApiResponse<SubmitAcknowledgementResponse> SubmitAcknowledgementWithHttpInfo (SubmitAcknowledgementRequest body);
+        ApiResponse<SubmitAcknowledgementResponse> SubmitAcknowledgementWithHttpInfo(SubmitAcknowledgementRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -166,7 +165,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.</param>
         /// <returns>Task of GetPurchaseOrderResponse</returns>
-        System.Threading.Tasks.Task<GetPurchaseOrderResponse> GetPurchaseOrderAsync (string purchaseOrderNumber);
+        System.Threading.Tasks.Task<GetPurchaseOrderResponse> GetPurchaseOrderAsync(string purchaseOrderNumber);
 
         /// <summary>
         /// 
@@ -177,7 +176,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.</param>
         /// <returns>Task of ApiResponse (GetPurchaseOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrderResponse>> GetPurchaseOrderAsyncWithHttpInfo (string purchaseOrderNumber);
+        System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrderResponse>> GetPurchaseOrderAsyncWithHttpInfo(string purchaseOrderNumber);
         /// <summary>
         /// 
         /// </summary>
@@ -198,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderState">Filters purchase orders based on the purchase order state. (optional)</param>
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)</param>
         /// <returns>Task of GetPurchaseOrdersResponse</returns>
-        System.Threading.Tasks.Task<GetPurchaseOrdersResponse> GetPurchaseOrdersAsync (long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null);
+        System.Threading.Tasks.Task<GetPurchaseOrdersResponse> GetPurchaseOrdersAsync(long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null);
 
         /// <summary>
         /// 
@@ -220,7 +219,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderState">Filters purchase orders based on the purchase order state. (optional)</param>
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)</param>
         /// <returns>Task of ApiResponse (GetPurchaseOrdersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrdersResponse>> GetPurchaseOrdersAsyncWithHttpInfo (long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null);
+        System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrdersResponse>> GetPurchaseOrdersAsyncWithHttpInfo(long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null);
         /// <summary>
         /// 
         /// </summary>
@@ -242,7 +241,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)</param>
         /// <param name="shipToPartyId">Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)</param>
         /// <returns>Task of GetPurchaseOrdersStatusResponse</returns>
-        System.Threading.Tasks.Task<GetPurchaseOrdersStatusResponse> GetPurchaseOrdersStatusAsync (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null);
+        System.Threading.Tasks.Task<GetPurchaseOrdersStatusResponse> GetPurchaseOrdersStatusAsync(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null);
 
         /// <summary>
         /// 
@@ -265,7 +264,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)</param>
         /// <param name="shipToPartyId">Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)</param>
         /// <returns>Task of ApiResponse (GetPurchaseOrdersStatusResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrdersStatusResponse>> GetPurchaseOrdersStatusAsyncWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null);
+        System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrdersStatusResponse>> GetPurchaseOrdersStatusAsyncWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null);
         /// <summary>
         /// 
         /// </summary>
@@ -275,7 +274,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Submits acknowledgements for one or more purchase orders from a vendor.</param>
         /// <returns>Task of SubmitAcknowledgementResponse</returns>
-        System.Threading.Tasks.Task<SubmitAcknowledgementResponse> SubmitAcknowledgementAsync (SubmitAcknowledgementRequest body);
+        System.Threading.Tasks.Task<SubmitAcknowledgementResponse> SubmitAcknowledgementAsync(SubmitAcknowledgementRequest body);
 
         /// <summary>
         /// 
@@ -286,7 +285,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Submits acknowledgements for one or more purchase orders from a vendor.</param>
         /// <returns>Task of ApiResponse (SubmitAcknowledgementResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubmitAcknowledgementResponse>> SubmitAcknowledgementAsyncWithHttpInfo (SubmitAcknowledgementRequest body);
+        System.Threading.Tasks.Task<ApiResponse<SubmitAcknowledgementResponse>> SubmitAcknowledgementAsyncWithHttpInfo(SubmitAcknowledgementRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -306,7 +305,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public VendorOrdersApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -332,7 +331,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -378,10 +377,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.</param>
         /// <returns>GetPurchaseOrderResponse</returns>
-        public GetPurchaseOrderResponse GetPurchaseOrder (string purchaseOrderNumber)
+        public GetPurchaseOrderResponse GetPurchaseOrder(string purchaseOrderNumber)
         {
-             ApiResponse<GetPurchaseOrderResponse> localVarResponse = GetPurchaseOrderWithHttpInfo(purchaseOrderNumber);
-             return localVarResponse.Data;
+            ApiResponse<GetPurchaseOrderResponse> localVarResponse = GetPurchaseOrderWithHttpInfo(purchaseOrderNumber);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -390,7 +389,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.</param>
         /// <returns>ApiResponse of GetPurchaseOrderResponse</returns>
-        public ApiResponse< GetPurchaseOrderResponse > GetPurchaseOrderWithHttpInfo (string purchaseOrderNumber)
+        public ApiResponse<GetPurchaseOrderResponse> GetPurchaseOrderWithHttpInfo(string purchaseOrderNumber)
         {
             // verify the required parameter 'purchaseOrderNumber' is set
             if (purchaseOrderNumber == null)
@@ -422,11 +421,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -436,7 +435,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetPurchaseOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetPurchaseOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrderResponse)));
+                (GetPurchaseOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrderResponse)));
         }
 
         /// <summary>
@@ -445,10 +444,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.</param>
         /// <returns>Task of GetPurchaseOrderResponse</returns>
-        public async System.Threading.Tasks.Task<GetPurchaseOrderResponse> GetPurchaseOrderAsync (string purchaseOrderNumber)
+        public async System.Threading.Tasks.Task<GetPurchaseOrderResponse> GetPurchaseOrderAsync(string purchaseOrderNumber)
         {
-             ApiResponse<GetPurchaseOrderResponse> localVarResponse = await GetPurchaseOrderAsyncWithHttpInfo(purchaseOrderNumber);
-             return localVarResponse.Data;
+            ApiResponse<GetPurchaseOrderResponse> localVarResponse = await GetPurchaseOrderAsyncWithHttpInfo(purchaseOrderNumber);
+            return localVarResponse.Data;
 
         }
 
@@ -458,7 +457,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.</param>
         /// <returns>Task of ApiResponse (GetPurchaseOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrderResponse>> GetPurchaseOrderAsyncWithHttpInfo (string purchaseOrderNumber)
+        public async System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrderResponse>> GetPurchaseOrderAsyncWithHttpInfo(string purchaseOrderNumber)
         {
             // verify the required parameter 'purchaseOrderNumber' is set
             if (purchaseOrderNumber == null)
@@ -490,11 +489,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -504,7 +503,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetPurchaseOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetPurchaseOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrderResponse)));
+                (GetPurchaseOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrderResponse)));
         }
 
         /// <summary>
@@ -524,10 +523,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderState">Filters purchase orders based on the purchase order state. (optional)</param>
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)</param>
         /// <returns>GetPurchaseOrdersResponse</returns>
-        public GetPurchaseOrdersResponse GetPurchaseOrders (long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null)
+        public GetPurchaseOrdersResponse GetPurchaseOrders(long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null)
         {
-             ApiResponse<GetPurchaseOrdersResponse> localVarResponse = GetPurchaseOrdersWithHttpInfo(limit, createdAfter, createdBefore, sortOrder, nextToken, includeDetails, changedAfter, changedBefore, poItemState, isPOChanged, purchaseOrderState, orderingVendorCode);
-             return localVarResponse.Data;
+            ApiResponse<GetPurchaseOrdersResponse> localVarResponse = GetPurchaseOrdersWithHttpInfo(limit, createdAfter, createdBefore, sortOrder, nextToken, includeDetails, changedAfter, changedBefore, poItemState, isPOChanged, purchaseOrderState, orderingVendorCode);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -547,7 +546,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderState">Filters purchase orders based on the purchase order state. (optional)</param>
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)</param>
         /// <returns>ApiResponse of GetPurchaseOrdersResponse</returns>
-        public ApiResponse< GetPurchaseOrdersResponse > GetPurchaseOrdersWithHttpInfo (long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null)
+        public ApiResponse<GetPurchaseOrdersResponse> GetPurchaseOrdersWithHttpInfo(long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null)
         {
 
             var localVarPath = "/vendor/orders/v1/purchaseOrders";
@@ -587,11 +586,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -601,7 +600,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetPurchaseOrdersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetPurchaseOrdersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrdersResponse)));
+                (GetPurchaseOrdersResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrdersResponse)));
         }
 
         /// <summary>
@@ -621,10 +620,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderState">Filters purchase orders based on the purchase order state. (optional)</param>
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)</param>
         /// <returns>Task of GetPurchaseOrdersResponse</returns>
-        public async System.Threading.Tasks.Task<GetPurchaseOrdersResponse> GetPurchaseOrdersAsync (long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null)
+        public async System.Threading.Tasks.Task<GetPurchaseOrdersResponse> GetPurchaseOrdersAsync(long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null)
         {
-             ApiResponse<GetPurchaseOrdersResponse> localVarResponse = await GetPurchaseOrdersAsyncWithHttpInfo(limit, createdAfter, createdBefore, sortOrder, nextToken, includeDetails, changedAfter, changedBefore, poItemState, isPOChanged, purchaseOrderState, orderingVendorCode);
-             return localVarResponse.Data;
+            ApiResponse<GetPurchaseOrdersResponse> localVarResponse = await GetPurchaseOrdersAsyncWithHttpInfo(limit, createdAfter, createdBefore, sortOrder, nextToken, includeDetails, changedAfter, changedBefore, poItemState, isPOChanged, purchaseOrderState, orderingVendorCode);
+            return localVarResponse.Data;
 
         }
 
@@ -645,7 +644,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderState">Filters purchase orders based on the purchase order state. (optional)</param>
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)</param>
         /// <returns>Task of ApiResponse (GetPurchaseOrdersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrdersResponse>> GetPurchaseOrdersAsyncWithHttpInfo (long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrdersResponse>> GetPurchaseOrdersAsyncWithHttpInfo(long? limit = null, DateTime? createdAfter = null, DateTime? createdBefore = null, string sortOrder = null, string nextToken = null, string includeDetails = null, DateTime? changedAfter = null, DateTime? changedBefore = null, string poItemState = null, string isPOChanged = null, string purchaseOrderState = null, string orderingVendorCode = null)
         {
 
             var localVarPath = "/vendor/orders/v1/purchaseOrders";
@@ -685,11 +684,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -699,7 +698,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetPurchaseOrdersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetPurchaseOrdersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrdersResponse)));
+                (GetPurchaseOrdersResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrdersResponse)));
         }
 
         /// <summary>
@@ -720,10 +719,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)</param>
         /// <param name="shipToPartyId">Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)</param>
         /// <returns>GetPurchaseOrdersStatusResponse</returns>
-        public GetPurchaseOrdersStatusResponse GetPurchaseOrdersStatus (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null)
+        public GetPurchaseOrdersStatusResponse GetPurchaseOrdersStatus(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null)
         {
-             ApiResponse<GetPurchaseOrdersStatusResponse> localVarResponse = GetPurchaseOrdersStatusWithHttpInfo(limit, sortOrder, nextToken, createdAfter, createdBefore, updatedAfter, updatedBefore, purchaseOrderNumber, purchaseOrderStatus, itemConfirmationStatus, itemReceiveStatus, orderingVendorCode, shipToPartyId);
-             return localVarResponse.Data;
+            ApiResponse<GetPurchaseOrdersStatusResponse> localVarResponse = GetPurchaseOrdersStatusWithHttpInfo(limit, sortOrder, nextToken, createdAfter, createdBefore, updatedAfter, updatedBefore, purchaseOrderNumber, purchaseOrderStatus, itemConfirmationStatus, itemReceiveStatus, orderingVendorCode, shipToPartyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -744,7 +743,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)</param>
         /// <param name="shipToPartyId">Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)</param>
         /// <returns>ApiResponse of GetPurchaseOrdersStatusResponse</returns>
-        public ApiResponse< GetPurchaseOrdersStatusResponse > GetPurchaseOrdersStatusWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null)
+        public ApiResponse<GetPurchaseOrdersStatusResponse> GetPurchaseOrdersStatusWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null)
         {
 
             var localVarPath = "/vendor/orders/v1/purchaseOrdersStatus";
@@ -785,11 +784,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -799,7 +798,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetPurchaseOrdersStatusResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetPurchaseOrdersStatusResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrdersStatusResponse)));
+                (GetPurchaseOrdersStatusResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrdersStatusResponse)));
         }
 
         /// <summary>
@@ -820,10 +819,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)</param>
         /// <param name="shipToPartyId">Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)</param>
         /// <returns>Task of GetPurchaseOrdersStatusResponse</returns>
-        public async System.Threading.Tasks.Task<GetPurchaseOrdersStatusResponse> GetPurchaseOrdersStatusAsync (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null)
+        public async System.Threading.Tasks.Task<GetPurchaseOrdersStatusResponse> GetPurchaseOrdersStatusAsync(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null)
         {
-             ApiResponse<GetPurchaseOrdersStatusResponse> localVarResponse = await GetPurchaseOrdersStatusAsyncWithHttpInfo(limit, sortOrder, nextToken, createdAfter, createdBefore, updatedAfter, updatedBefore, purchaseOrderNumber, purchaseOrderStatus, itemConfirmationStatus, itemReceiveStatus, orderingVendorCode, shipToPartyId);
-             return localVarResponse.Data;
+            ApiResponse<GetPurchaseOrdersStatusResponse> localVarResponse = await GetPurchaseOrdersStatusAsyncWithHttpInfo(limit, sortOrder, nextToken, createdAfter, createdBefore, updatedAfter, updatedBefore, purchaseOrderNumber, purchaseOrderStatus, itemConfirmationStatus, itemReceiveStatus, orderingVendorCode, shipToPartyId);
+            return localVarResponse.Data;
 
         }
 
@@ -845,7 +844,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="orderingVendorCode">Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)</param>
         /// <param name="shipToPartyId">Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)</param>
         /// <returns>Task of ApiResponse (GetPurchaseOrdersStatusResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrdersStatusResponse>> GetPurchaseOrdersStatusAsyncWithHttpInfo (long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetPurchaseOrdersStatusResponse>> GetPurchaseOrdersStatusAsyncWithHttpInfo(long? limit = null, string sortOrder = null, string nextToken = null, DateTime? createdAfter = null, DateTime? createdBefore = null, DateTime? updatedAfter = null, DateTime? updatedBefore = null, string purchaseOrderNumber = null, string purchaseOrderStatus = null, string itemConfirmationStatus = null, string itemReceiveStatus = null, string orderingVendorCode = null, string shipToPartyId = null)
         {
 
             var localVarPath = "/vendor/orders/v1/purchaseOrdersStatus";
@@ -886,11 +885,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -900,7 +899,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetPurchaseOrdersStatusResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetPurchaseOrdersStatusResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrdersStatusResponse)));
+                (GetPurchaseOrdersStatusResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPurchaseOrdersStatusResponse)));
         }
 
         /// <summary>
@@ -909,10 +908,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Submits acknowledgements for one or more purchase orders from a vendor.</param>
         /// <returns>SubmitAcknowledgementResponse</returns>
-        public SubmitAcknowledgementResponse SubmitAcknowledgement (SubmitAcknowledgementRequest body)
+        public SubmitAcknowledgementResponse SubmitAcknowledgement(SubmitAcknowledgementRequest body)
         {
-             ApiResponse<SubmitAcknowledgementResponse> localVarResponse = SubmitAcknowledgementWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitAcknowledgementResponse> localVarResponse = SubmitAcknowledgementWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -921,7 +920,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Submits acknowledgements for one or more purchase orders from a vendor.</param>
         /// <returns>ApiResponse of SubmitAcknowledgementResponse</returns>
-        public ApiResponse< SubmitAcknowledgementResponse > SubmitAcknowledgementWithHttpInfo (SubmitAcknowledgementRequest body)
+        public ApiResponse<SubmitAcknowledgementResponse> SubmitAcknowledgementWithHttpInfo(SubmitAcknowledgementRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -960,11 +959,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -974,7 +973,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitAcknowledgementResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitAcknowledgementResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitAcknowledgementResponse)));
+                (SubmitAcknowledgementResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitAcknowledgementResponse)));
         }
 
         /// <summary>
@@ -983,10 +982,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Submits acknowledgements for one or more purchase orders from a vendor.</param>
         /// <returns>Task of SubmitAcknowledgementResponse</returns>
-        public async System.Threading.Tasks.Task<SubmitAcknowledgementResponse> SubmitAcknowledgementAsync (SubmitAcknowledgementRequest body)
+        public async System.Threading.Tasks.Task<SubmitAcknowledgementResponse> SubmitAcknowledgementAsync(SubmitAcknowledgementRequest body)
         {
-             ApiResponse<SubmitAcknowledgementResponse> localVarResponse = await SubmitAcknowledgementAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitAcknowledgementResponse> localVarResponse = await SubmitAcknowledgementAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -996,7 +995,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Submits acknowledgements for one or more purchase orders from a vendor.</param>
         /// <returns>Task of ApiResponse (SubmitAcknowledgementResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SubmitAcknowledgementResponse>> SubmitAcknowledgementAsyncWithHttpInfo (SubmitAcknowledgementRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<SubmitAcknowledgementResponse>> SubmitAcknowledgementAsyncWithHttpInfo(SubmitAcknowledgementRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1035,11 +1034,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1049,7 +1048,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitAcknowledgementResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitAcknowledgementResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitAcknowledgementResponse)));
+                (SubmitAcknowledgementResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitAcknowledgementResponse)));
         }
 
 
@@ -1063,17 +1062,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public VendorOrdersApi Build() 
+            public VendorOrdersApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

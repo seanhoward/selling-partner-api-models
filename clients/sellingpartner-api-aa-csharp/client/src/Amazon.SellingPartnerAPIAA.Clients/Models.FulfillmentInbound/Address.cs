@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Specific details to identify a place.
     /// </summary>
     [DataContract]
-    public partial class Address :  IEquatable<Address>, IValidatableObject
+    public partial class Address : IEquatable<Address>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -101,75 +96,75 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.PhoneNumber = phoneNumber;
             this.StateOrProvinceCode = stateOrProvinceCode;
         }
-        
+
         /// <summary>
         /// Street address information.
         /// </summary>
         /// <value>Street address information.</value>
-        [DataMember(Name="addressLine1", EmitDefaultValue=false)]
+        [DataMember(Name = "addressLine1", EmitDefaultValue = false)]
         public string AddressLine1 { get; set; }
 
         /// <summary>
         /// Additional street address information.
         /// </summary>
         /// <value>Additional street address information.</value>
-        [DataMember(Name="addressLine2", EmitDefaultValue=false)]
+        [DataMember(Name = "addressLine2", EmitDefaultValue = false)]
         public string AddressLine2 { get; set; }
 
         /// <summary>
         /// The city.
         /// </summary>
         /// <value>The city.</value>
-        [DataMember(Name="city", EmitDefaultValue=false)]
+        [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// The name of the business.
         /// </summary>
         /// <value>The name of the business.</value>
-        [DataMember(Name="companyName", EmitDefaultValue=false)]
+        [DataMember(Name = "companyName", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// The country code in two-character ISO 3166-1 alpha-2 format.
         /// </summary>
         /// <value>The country code in two-character ISO 3166-1 alpha-2 format.</value>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
         /// The email address.
         /// </summary>
         /// <value>The email address.</value>
-        [DataMember(Name="email", EmitDefaultValue=false)]
+        [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// The name of the individual who is the primary contact.
         /// </summary>
         /// <value>The name of the individual who is the primary contact.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The phone number.
         /// </summary>
         /// <value>The phone number.</value>
-        [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// The postal code.
         /// </summary>
         /// <value>The postal code.</value>
-        [DataMember(Name="postalCode", EmitDefaultValue=false)]
+        [DataMember(Name = "postalCode", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// The state or province code.
         /// </summary>
         /// <value>The state or province code.</value>
-        [DataMember(Name="stateOrProvinceCode", EmitDefaultValue=false)]
+        [DataMember(Name = "stateOrProvinceCode", EmitDefaultValue = false)]
         public string StateOrProvinceCode { get; set; }
 
         /// <summary>
@@ -193,7 +188,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -223,52 +218,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AddressLine1 == input.AddressLine1 ||
                     (this.AddressLine1 != null &&
                     this.AddressLine1.Equals(input.AddressLine1))
-                ) && 
+                ) &&
                 (
                     this.AddressLine2 == input.AddressLine2 ||
                     (this.AddressLine2 != null &&
                     this.AddressLine2.Equals(input.AddressLine2))
-                ) && 
+                ) &&
                 (
                     this.City == input.City ||
                     (this.City != null &&
                     this.City.Equals(input.City))
-                ) && 
+                ) &&
                 (
                     this.CompanyName == input.CompanyName ||
                     (this.CompanyName != null &&
                     this.CompanyName.Equals(input.CompanyName))
-                ) && 
+                ) &&
                 (
                     this.CountryCode == input.CountryCode ||
                     (this.CountryCode != null &&
                     this.CountryCode.Equals(input.CountryCode))
-                ) && 
+                ) &&
                 (
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.PhoneNumber == input.PhoneNumber ||
                     (this.PhoneNumber != null &&
                     this.PhoneNumber.Equals(input.PhoneNumber))
-                ) && 
+                ) &&
                 (
                     this.PostalCode == input.PostalCode ||
                     (this.PostalCode != null &&
                     this.PostalCode.Equals(input.PostalCode))
-                ) && 
+                ) &&
                 (
                     this.StateOrProvinceCode == input.StateOrProvinceCode ||
                     (this.StateOrProvinceCode != null &&
@@ -317,130 +312,130 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AddressLine1 (string) maxLength
-            if(this.AddressLine1 != null && this.AddressLine1.Length > 180)
+            if (this.AddressLine1 != null && this.AddressLine1.Length > 180)
             {
-                yield return new ValidationResult("Invalid value for AddressLine1, length must be less than 180.", new [] { "AddressLine1" });
+                yield return new ValidationResult("Invalid value for AddressLine1, length must be less than 180.", new[] { "AddressLine1" });
             }
 
             // AddressLine1 (string) minLength
-            if(this.AddressLine1 != null && this.AddressLine1.Length < 1)
+            if (this.AddressLine1 != null && this.AddressLine1.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for AddressLine1, length must be greater than 1.", new [] { "AddressLine1" });
+                yield return new ValidationResult("Invalid value for AddressLine1, length must be greater than 1.", new[] { "AddressLine1" });
             }
 
             // AddressLine2 (string) maxLength
-            if(this.AddressLine2 != null && this.AddressLine2.Length > 60)
+            if (this.AddressLine2 != null && this.AddressLine2.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for AddressLine2, length must be less than 60.", new [] { "AddressLine2" });
+                yield return new ValidationResult("Invalid value for AddressLine2, length must be less than 60.", new[] { "AddressLine2" });
             }
 
             // AddressLine2 (string) minLength
-            if(this.AddressLine2 != null && this.AddressLine2.Length < 1)
+            if (this.AddressLine2 != null && this.AddressLine2.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for AddressLine2, length must be greater than 1.", new [] { "AddressLine2" });
+                yield return new ValidationResult("Invalid value for AddressLine2, length must be greater than 1.", new[] { "AddressLine2" });
             }
 
             // City (string) maxLength
-            if(this.City != null && this.City.Length > 30)
+            if (this.City != null && this.City.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for City, length must be less than 30.", new [] { "City" });
+                yield return new ValidationResult("Invalid value for City, length must be less than 30.", new[] { "City" });
             }
 
             // City (string) minLength
-            if(this.City != null && this.City.Length < 1)
+            if (this.City != null && this.City.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for City, length must be greater than 1.", new [] { "City" });
+                yield return new ValidationResult("Invalid value for City, length must be greater than 1.", new[] { "City" });
             }
 
             // CompanyName (string) maxLength
-            if(this.CompanyName != null && this.CompanyName.Length > 50)
+            if (this.CompanyName != null && this.CompanyName.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for CompanyName, length must be less than 50.", new [] { "CompanyName" });
+                yield return new ValidationResult("Invalid value for CompanyName, length must be less than 50.", new[] { "CompanyName" });
             }
 
             // CompanyName (string) minLength
-            if(this.CompanyName != null && this.CompanyName.Length < 1)
+            if (this.CompanyName != null && this.CompanyName.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for CompanyName, length must be greater than 1.", new [] { "CompanyName" });
+                yield return new ValidationResult("Invalid value for CompanyName, length must be greater than 1.", new[] { "CompanyName" });
             }
 
             // CountryCode (string) maxLength
-            if(this.CountryCode != null && this.CountryCode.Length > 2)
+            if (this.CountryCode != null && this.CountryCode.Length > 2)
             {
-                yield return new ValidationResult("Invalid value for CountryCode, length must be less than 2.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be less than 2.", new[] { "CountryCode" });
             }
 
             // CountryCode (string) minLength
-            if(this.CountryCode != null && this.CountryCode.Length < 2)
+            if (this.CountryCode != null && this.CountryCode.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for CountryCode, length must be greater than 2.", new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, length must be greater than 2.", new[] { "CountryCode" });
             }
 
             // CountryCode (string) pattern
             Regex regexCountryCode = new Regex(@"^[A-Z]{2}$", RegexOptions.CultureInvariant);
             if (false == regexCountryCode.Match(this.CountryCode).Success)
             {
-                yield return new ValidationResult("Invalid value for CountryCode, must match a pattern of " + regexCountryCode, new [] { "CountryCode" });
+                yield return new ValidationResult("Invalid value for CountryCode, must match a pattern of " + regexCountryCode, new[] { "CountryCode" });
             }
 
             // Email (string) maxLength
-            if(this.Email != null && this.Email.Length > 1024)
+            if (this.Email != null && this.Email.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Email, length must be less than 1024.", new [] { "Email" });
+                yield return new ValidationResult("Invalid value for Email, length must be less than 1024.", new[] { "Email" });
             }
 
             // Email (string) minLength
-            if(this.Email != null && this.Email.Length < 1)
+            if (this.Email != null && this.Email.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Email, length must be greater than 1.", new [] { "Email" });
+                yield return new ValidationResult("Invalid value for Email, length must be greater than 1.", new[] { "Email" });
             }
 
             // Name (string) maxLength
-            if(this.Name != null && this.Name.Length > 50)
+            if (this.Name != null && this.Name.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 50.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 50.", new[] { "Name" });
             }
 
             // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
+            if (this.Name != null && this.Name.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new[] { "Name" });
             }
 
             // PhoneNumber (string) maxLength
-            if(this.PhoneNumber != null && this.PhoneNumber.Length > 20)
+            if (this.PhoneNumber != null && this.PhoneNumber.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for PhoneNumber, length must be less than 20.", new [] { "PhoneNumber" });
+                yield return new ValidationResult("Invalid value for PhoneNumber, length must be less than 20.", new[] { "PhoneNumber" });
             }
 
             // PhoneNumber (string) minLength
-            if(this.PhoneNumber != null && this.PhoneNumber.Length < 1)
+            if (this.PhoneNumber != null && this.PhoneNumber.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for PhoneNumber, length must be greater than 1.", new [] { "PhoneNumber" });
+                yield return new ValidationResult("Invalid value for PhoneNumber, length must be greater than 1.", new[] { "PhoneNumber" });
             }
 
             // PostalCode (string) maxLength
-            if(this.PostalCode != null && this.PostalCode.Length > 32)
+            if (this.PostalCode != null && this.PostalCode.Length > 32)
             {
-                yield return new ValidationResult("Invalid value for PostalCode, length must be less than 32.", new [] { "PostalCode" });
+                yield return new ValidationResult("Invalid value for PostalCode, length must be less than 32.", new[] { "PostalCode" });
             }
 
             // PostalCode (string) minLength
-            if(this.PostalCode != null && this.PostalCode.Length < 1)
+            if (this.PostalCode != null && this.PostalCode.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for PostalCode, length must be greater than 1.", new [] { "PostalCode" });
+                yield return new ValidationResult("Invalid value for PostalCode, length must be greater than 1.", new[] { "PostalCode" });
             }
 
             // StateOrProvinceCode (string) maxLength
-            if(this.StateOrProvinceCode != null && this.StateOrProvinceCode.Length > 64)
+            if (this.StateOrProvinceCode != null && this.StateOrProvinceCode.Length > 64)
             {
-                yield return new ValidationResult("Invalid value for StateOrProvinceCode, length must be less than 64.", new [] { "StateOrProvinceCode" });
+                yield return new ValidationResult("Invalid value for StateOrProvinceCode, length must be less than 64.", new[] { "StateOrProvinceCode" });
             }
 
             // StateOrProvinceCode (string) minLength
-            if(this.StateOrProvinceCode != null && this.StateOrProvinceCode.Length < 1)
+            if (this.StateOrProvinceCode != null && this.StateOrProvinceCode.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for StateOrProvinceCode, length must be greater than 1.", new [] { "StateOrProvinceCode" });
+                yield return new ValidationResult("Invalid value for StateOrProvinceCode, length must be greater than 1.", new[] { "StateOrProvinceCode" });
             }
 
             yield break;

@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
     /// The request for the &#x60;recordActionFeedback&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class RecordActionFeedbackRequest :  IEquatable<RecordActionFeedbackRequest>, IValidatableObject
+    public partial class RecordActionFeedbackRequest : IEquatable<RecordActionFeedbackRequest>, IValidatableObject
     {
         /// <summary>
         /// The unique identifier for each notification status.
@@ -37,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FeedbackActionCodeEnum
         {
-            
+
             /// <summary>
             /// Enum SELLERACTIONCOMPLETED for value: SELLER_ACTION_COMPLETED
             /// </summary>
@@ -49,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
         /// The unique identifier for each notification status.
         /// </summary>
         /// <value>The unique identifier for each notification status.</value>
-        [DataMember(Name="feedbackActionCode", EmitDefaultValue=false)]
+        [DataMember(Name = "feedbackActionCode", EmitDefaultValue = false)]
         public FeedbackActionCodeEnum FeedbackActionCode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="RecordActionFeedbackRequest" /> class.
@@ -72,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
                 this.FeedbackActionCode = feedbackActionCode;
             }
         }
-        
+
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -86,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -116,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.FeedbackActionCode == input.FeedbackActionCode ||
                     (this.FeedbackActionCode != null &&

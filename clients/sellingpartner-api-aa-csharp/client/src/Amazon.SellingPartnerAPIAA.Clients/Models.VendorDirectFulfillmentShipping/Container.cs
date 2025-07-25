@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// A container used for shipping and packing items.
     /// </summary>
     [DataContract]
-    public partial class Container :  IEquatable<Container>, IValidatableObject
+    public partial class Container : IEquatable<Container>, IValidatableObject
     {
         /// <summary>
         /// The type of container.
@@ -37,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ContainerTypeEnum
         {
-            
+
             /// <summary>
             /// Enum Carton for value: Carton
             /// </summary>
             [EnumMember(Value = "Carton")]
             Carton = 1,
-            
+
             /// <summary>
             /// Enum Pallet for value: Pallet
             /// </summary>
@@ -55,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// The type of container.
         /// </summary>
         /// <value>The type of container.</value>
-        [DataMember(Name="containerType", EmitDefaultValue=false)]
+        [DataMember(Name = "containerType", EmitDefaultValue = false)]
         public ContainerTypeEnum ContainerType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Container" /> class.
@@ -124,81 +120,81 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             this.ContainerSequenceNumber = containerSequenceNumber;
             this.Dimensions = dimensions;
         }
-        
+
 
         /// <summary>
         /// The container identifier.
         /// </summary>
         /// <value>The container identifier.</value>
-        [DataMember(Name="containerIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "containerIdentifier", EmitDefaultValue = false)]
         public string ContainerIdentifier { get; set; }
 
         /// <summary>
         /// The tracking number.
         /// </summary>
         /// <value>The tracking number.</value>
-        [DataMember(Name="trackingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingNumber", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
         /// <summary>
         /// The manifest identifier.
         /// </summary>
         /// <value>The manifest identifier.</value>
-        [DataMember(Name="manifestId", EmitDefaultValue=false)]
+        [DataMember(Name = "manifestId", EmitDefaultValue = false)]
         public string ManifestId { get; set; }
 
         /// <summary>
         /// The date of the manifest.
         /// </summary>
         /// <value>The date of the manifest.</value>
-        [DataMember(Name="manifestDate", EmitDefaultValue=false)]
+        [DataMember(Name = "manifestDate", EmitDefaultValue = false)]
         public string ManifestDate { get; set; }
 
         /// <summary>
         /// The shipment method. This property is required when calling the &#x60;submitShipmentConfirmations&#x60; operation, and optional otherwise.
         /// </summary>
         /// <value>The shipment method. This property is required when calling the &#x60;submitShipmentConfirmations&#x60; operation, and optional otherwise.</value>
-        [DataMember(Name="shipMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "shipMethod", EmitDefaultValue = false)]
         public string ShipMethod { get; set; }
 
         /// <summary>
         /// SCAC code required for NA VOC vendors only.
         /// </summary>
         /// <value>SCAC code required for NA VOC vendors only.</value>
-        [DataMember(Name="scacCode", EmitDefaultValue=false)]
+        [DataMember(Name = "scacCode", EmitDefaultValue = false)]
         public string ScacCode { get; set; }
 
         /// <summary>
         /// Carrier required for EU VOC vendors only.
         /// </summary>
         /// <value>Carrier required for EU VOC vendors only.</value>
-        [DataMember(Name="carrier", EmitDefaultValue=false)]
+        [DataMember(Name = "carrier", EmitDefaultValue = false)]
         public string Carrier { get; set; }
 
         /// <summary>
         /// An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
         /// </summary>
         /// <value>An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.</value>
-        [DataMember(Name="containerSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "containerSequenceNumber", EmitDefaultValue = false)]
         public int? ContainerSequenceNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets Dimensions
         /// </summary>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public Dimensions Dimensions { get; set; }
 
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public Weight Weight { get; set; }
 
         /// <summary>
         /// A list of packed items.
         /// </summary>
         /// <value>A list of packed items.</value>
-        [DataMember(Name="packedItems", EmitDefaultValue=false)]
+        [DataMember(Name = "packedItems", EmitDefaultValue = false)]
         public List<PackedItem> PackedItems { get; set; }
 
         /// <summary>
@@ -224,7 +220,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -254,62 +250,62 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContainerType == input.ContainerType ||
                     (this.ContainerType != null &&
                     this.ContainerType.Equals(input.ContainerType))
-                ) && 
+                ) &&
                 (
                     this.ContainerIdentifier == input.ContainerIdentifier ||
                     (this.ContainerIdentifier != null &&
                     this.ContainerIdentifier.Equals(input.ContainerIdentifier))
-                ) && 
+                ) &&
                 (
                     this.TrackingNumber == input.TrackingNumber ||
                     (this.TrackingNumber != null &&
                     this.TrackingNumber.Equals(input.TrackingNumber))
-                ) && 
+                ) &&
                 (
                     this.ManifestId == input.ManifestId ||
                     (this.ManifestId != null &&
                     this.ManifestId.Equals(input.ManifestId))
-                ) && 
+                ) &&
                 (
                     this.ManifestDate == input.ManifestDate ||
                     (this.ManifestDate != null &&
                     this.ManifestDate.Equals(input.ManifestDate))
-                ) && 
+                ) &&
                 (
                     this.ShipMethod == input.ShipMethod ||
                     (this.ShipMethod != null &&
                     this.ShipMethod.Equals(input.ShipMethod))
-                ) && 
+                ) &&
                 (
                     this.ScacCode == input.ScacCode ||
                     (this.ScacCode != null &&
                     this.ScacCode.Equals(input.ScacCode))
-                ) && 
+                ) &&
                 (
                     this.Carrier == input.Carrier ||
                     (this.Carrier != null &&
                     this.Carrier.Equals(input.Carrier))
-                ) && 
+                ) &&
                 (
                     this.ContainerSequenceNumber == input.ContainerSequenceNumber ||
                     (this.ContainerSequenceNumber != null &&
                     this.ContainerSequenceNumber.Equals(input.ContainerSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
                     this.Weight.Equals(input.Weight))
-                ) && 
+                ) &&
                 (
                     this.PackedItems == input.PackedItems ||
                     this.PackedItems != null &&

@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -35,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
         /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>ShippingLabel</returns>
-        ShippingLabel CreateShippingLabels (string purchaseOrderNumber, CreateShippingLabelsRequest body);
+        ShippingLabel CreateShippingLabels(string purchaseOrderNumber, CreateShippingLabelsRequest body);
 
         /// <summary>
         /// createShippingLabels
@@ -47,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
         /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>ApiResponse of ShippingLabel</returns>
-        ApiResponse<ShippingLabel> CreateShippingLabelsWithHttpInfo (string purchaseOrderNumber, CreateShippingLabelsRequest body);
+        ApiResponse<ShippingLabel> CreateShippingLabelsWithHttpInfo(string purchaseOrderNumber, CreateShippingLabelsRequest body);
         /// <summary>
         /// getShippingLabel
         /// </summary>
@@ -57,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>ShippingLabel</returns>
-        ShippingLabel GetShippingLabel (string purchaseOrderNumber);
+        ShippingLabel GetShippingLabel(string purchaseOrderNumber);
 
         /// <summary>
         /// getShippingLabel
@@ -68,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>ApiResponse of ShippingLabel</returns>
-        ApiResponse<ShippingLabel> GetShippingLabelWithHttpInfo (string purchaseOrderNumber);
+        ApiResponse<ShippingLabel> GetShippingLabelWithHttpInfo(string purchaseOrderNumber);
         /// <summary>
         /// getShippingLabels
         /// </summary>
@@ -83,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>ShippingLabelList</returns>
-        ShippingLabelList GetShippingLabels (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
+        ShippingLabelList GetShippingLabels(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
 
         /// <summary>
         /// getShippingLabels
@@ -99,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>ApiResponse of ShippingLabelList</returns>
-        ApiResponse<ShippingLabelList> GetShippingLabelsWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
+        ApiResponse<ShippingLabelList> GetShippingLabelsWithHttpInfo(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
         /// <summary>
         /// submitShippingLabelRequest
         /// </summary>
@@ -109,7 +108,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>TransactionReference</returns>
-        TransactionReference SubmitShippingLabelRequest (SubmitShippingLabelsRequest body);
+        TransactionReference SubmitShippingLabelRequest(SubmitShippingLabelsRequest body);
 
         /// <summary>
         /// submitShippingLabelRequest
@@ -120,7 +119,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>ApiResponse of TransactionReference</returns>
-        ApiResponse<TransactionReference> SubmitShippingLabelRequestWithHttpInfo (SubmitShippingLabelsRequest body);
+        ApiResponse<TransactionReference> SubmitShippingLabelRequestWithHttpInfo(SubmitShippingLabelsRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -133,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
         /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>Task of ShippingLabel</returns>
-        System.Threading.Tasks.Task<ShippingLabel> CreateShippingLabelsAsync (string purchaseOrderNumber, CreateShippingLabelsRequest body);
+        System.Threading.Tasks.Task<ShippingLabel> CreateShippingLabelsAsync(string purchaseOrderNumber, CreateShippingLabelsRequest body);
 
         /// <summary>
         /// createShippingLabels
@@ -145,7 +144,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
         /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>Task of ApiResponse (ShippingLabel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> CreateShippingLabelsAsyncWithHttpInfo (string purchaseOrderNumber, CreateShippingLabelsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> CreateShippingLabelsAsyncWithHttpInfo(string purchaseOrderNumber, CreateShippingLabelsRequest body);
         /// <summary>
         /// getShippingLabel
         /// </summary>
@@ -155,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>Task of ShippingLabel</returns>
-        System.Threading.Tasks.Task<ShippingLabel> GetShippingLabelAsync (string purchaseOrderNumber);
+        System.Threading.Tasks.Task<ShippingLabel> GetShippingLabelAsync(string purchaseOrderNumber);
 
         /// <summary>
         /// getShippingLabel
@@ -166,7 +165,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>Task of ApiResponse (ShippingLabel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> GetShippingLabelAsyncWithHttpInfo (string purchaseOrderNumber);
+        System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> GetShippingLabelAsyncWithHttpInfo(string purchaseOrderNumber);
         /// <summary>
         /// getShippingLabels
         /// </summary>
@@ -181,7 +180,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of ShippingLabelList</returns>
-        System.Threading.Tasks.Task<ShippingLabelList> GetShippingLabelsAsync (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
+        System.Threading.Tasks.Task<ShippingLabelList> GetShippingLabelsAsync(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
 
         /// <summary>
         /// getShippingLabels
@@ -197,7 +196,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of ApiResponse (ShippingLabelList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShippingLabelList>> GetShippingLabelsAsyncWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
+        System.Threading.Tasks.Task<ApiResponse<ShippingLabelList>> GetShippingLabelsAsyncWithHttpInfo(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null);
         /// <summary>
         /// submitShippingLabelRequest
         /// </summary>
@@ -207,7 +206,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>Task of TransactionReference</returns>
-        System.Threading.Tasks.Task<TransactionReference> SubmitShippingLabelRequestAsync (SubmitShippingLabelsRequest body);
+        System.Threading.Tasks.Task<TransactionReference> SubmitShippingLabelRequestAsync(SubmitShippingLabelsRequest body);
 
         /// <summary>
         /// submitShippingLabelRequest
@@ -218,7 +217,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>Task of ApiResponse (TransactionReference)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionReference>> SubmitShippingLabelRequestAsyncWithHttpInfo (SubmitShippingLabelsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<TransactionReference>> SubmitShippingLabelRequestAsyncWithHttpInfo(SubmitShippingLabelsRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -238,7 +237,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public VendorShippingLabelsApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -264,7 +263,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -311,10 +310,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
         /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>ShippingLabel</returns>
-        public ShippingLabel CreateShippingLabels (string purchaseOrderNumber, CreateShippingLabelsRequest body)
+        public ShippingLabel CreateShippingLabels(string purchaseOrderNumber, CreateShippingLabelsRequest body)
         {
-             ApiResponse<ShippingLabel> localVarResponse = CreateShippingLabelsWithHttpInfo(purchaseOrderNumber, body);
-             return localVarResponse.Data;
+            ApiResponse<ShippingLabel> localVarResponse = CreateShippingLabelsWithHttpInfo(purchaseOrderNumber, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -324,7 +323,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
         /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>ApiResponse of ShippingLabel</returns>
-        public ApiResponse< ShippingLabel > CreateShippingLabelsWithHttpInfo (string purchaseOrderNumber, CreateShippingLabelsRequest body)
+        public ApiResponse<ShippingLabel> CreateShippingLabelsWithHttpInfo(string purchaseOrderNumber, CreateShippingLabelsRequest body)
         {
             // verify the required parameter 'purchaseOrderNumber' is set
             if (purchaseOrderNumber == null)
@@ -367,11 +366,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -381,7 +380,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ShippingLabel>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ShippingLabel) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabel)));
+                (ShippingLabel)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabel)));
         }
 
         /// <summary>
@@ -391,10 +390,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
         /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>Task of ShippingLabel</returns>
-        public async System.Threading.Tasks.Task<ShippingLabel> CreateShippingLabelsAsync (string purchaseOrderNumber, CreateShippingLabelsRequest body)
+        public async System.Threading.Tasks.Task<ShippingLabel> CreateShippingLabelsAsync(string purchaseOrderNumber, CreateShippingLabelsRequest body)
         {
-             ApiResponse<ShippingLabel> localVarResponse = await CreateShippingLabelsAsyncWithHttpInfo(purchaseOrderNumber, body);
-             return localVarResponse.Data;
+            ApiResponse<ShippingLabel> localVarResponse = await CreateShippingLabelsAsyncWithHttpInfo(purchaseOrderNumber, body);
+            return localVarResponse.Data;
 
         }
 
@@ -405,7 +404,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.</param>
         /// <param name="body">The request payload that contains the parameters for creating shipping labels.</param>
         /// <returns>Task of ApiResponse (ShippingLabel)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> CreateShippingLabelsAsyncWithHttpInfo (string purchaseOrderNumber, CreateShippingLabelsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> CreateShippingLabelsAsyncWithHttpInfo(string purchaseOrderNumber, CreateShippingLabelsRequest body)
         {
             // verify the required parameter 'purchaseOrderNumber' is set
             if (purchaseOrderNumber == null)
@@ -448,11 +447,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -462,7 +461,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ShippingLabel>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ShippingLabel) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabel)));
+                (ShippingLabel)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabel)));
         }
 
         /// <summary>
@@ -471,10 +470,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>ShippingLabel</returns>
-        public ShippingLabel GetShippingLabel (string purchaseOrderNumber)
+        public ShippingLabel GetShippingLabel(string purchaseOrderNumber)
         {
-             ApiResponse<ShippingLabel> localVarResponse = GetShippingLabelWithHttpInfo(purchaseOrderNumber);
-             return localVarResponse.Data;
+            ApiResponse<ShippingLabel> localVarResponse = GetShippingLabelWithHttpInfo(purchaseOrderNumber);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -483,7 +482,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>ApiResponse of ShippingLabel</returns>
-        public ApiResponse< ShippingLabel > GetShippingLabelWithHttpInfo (string purchaseOrderNumber)
+        public ApiResponse<ShippingLabel> GetShippingLabelWithHttpInfo(string purchaseOrderNumber)
         {
             // verify the required parameter 'purchaseOrderNumber' is set
             if (purchaseOrderNumber == null)
@@ -515,11 +514,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -529,7 +528,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ShippingLabel>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ShippingLabel) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabel)));
+                (ShippingLabel)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabel)));
         }
 
         /// <summary>
@@ -538,10 +537,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>Task of ShippingLabel</returns>
-        public async System.Threading.Tasks.Task<ShippingLabel> GetShippingLabelAsync (string purchaseOrderNumber)
+        public async System.Threading.Tasks.Task<ShippingLabel> GetShippingLabelAsync(string purchaseOrderNumber)
         {
-             ApiResponse<ShippingLabel> localVarResponse = await GetShippingLabelAsyncWithHttpInfo(purchaseOrderNumber);
-             return localVarResponse.Data;
+            ApiResponse<ShippingLabel> localVarResponse = await GetShippingLabelAsyncWithHttpInfo(purchaseOrderNumber);
+            return localVarResponse.Data;
 
         }
 
@@ -551,7 +550,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="purchaseOrderNumber">The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.</param>
         /// <returns>Task of ApiResponse (ShippingLabel)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> GetShippingLabelAsyncWithHttpInfo (string purchaseOrderNumber)
+        public async System.Threading.Tasks.Task<ApiResponse<ShippingLabel>> GetShippingLabelAsyncWithHttpInfo(string purchaseOrderNumber)
         {
             // verify the required parameter 'purchaseOrderNumber' is set
             if (purchaseOrderNumber == null)
@@ -583,11 +582,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -597,7 +596,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ShippingLabel>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ShippingLabel) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabel)));
+                (ShippingLabel)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabel)));
         }
 
         /// <summary>
@@ -611,10 +610,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>ShippingLabelList</returns>
-        public ShippingLabelList GetShippingLabels (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
+        public ShippingLabelList GetShippingLabels(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
         {
-             ApiResponse<ShippingLabelList> localVarResponse = GetShippingLabelsWithHttpInfo(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<ShippingLabelList> localVarResponse = GetShippingLabelsWithHttpInfo(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -628,7 +627,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>ApiResponse of ShippingLabelList</returns>
-        public ApiResponse< ShippingLabelList > GetShippingLabelsWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
+        public ApiResponse<ShippingLabelList> GetShippingLabelsWithHttpInfo(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
         {
             // verify the required parameter 'createdAfter' is set
             if (createdAfter == null)
@@ -668,11 +667,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -682,7 +681,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ShippingLabelList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ShippingLabelList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabelList)));
+                (ShippingLabelList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabelList)));
         }
 
         /// <summary>
@@ -696,10 +695,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of ShippingLabelList</returns>
-        public async System.Threading.Tasks.Task<ShippingLabelList> GetShippingLabelsAsync (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
+        public async System.Threading.Tasks.Task<ShippingLabelList> GetShippingLabelsAsync(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
         {
-             ApiResponse<ShippingLabelList> localVarResponse = await GetShippingLabelsAsyncWithHttpInfo(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<ShippingLabelList> localVarResponse = await GetShippingLabelsAsyncWithHttpInfo(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken);
+            return localVarResponse.Data;
 
         }
 
@@ -714,7 +713,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sortOrder">The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order. (optional, default to ASC)</param>
         /// <param name="nextToken">Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)</param>
         /// <returns>Task of ApiResponse (ShippingLabelList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ShippingLabelList>> GetShippingLabelsAsyncWithHttpInfo (DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ShippingLabelList>> GetShippingLabelsAsyncWithHttpInfo(DateTime? createdAfter, DateTime? createdBefore, string shipFromPartyId = null, int? limit = null, string sortOrder = null, string nextToken = null)
         {
             // verify the required parameter 'createdAfter' is set
             if (createdAfter == null)
@@ -754,11 +753,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -768,7 +767,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ShippingLabelList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ShippingLabelList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabelList)));
+                (ShippingLabelList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShippingLabelList)));
         }
 
         /// <summary>
@@ -777,10 +776,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>TransactionReference</returns>
-        public TransactionReference SubmitShippingLabelRequest (SubmitShippingLabelsRequest body)
+        public TransactionReference SubmitShippingLabelRequest(SubmitShippingLabelsRequest body)
         {
-             ApiResponse<TransactionReference> localVarResponse = SubmitShippingLabelRequestWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<TransactionReference> localVarResponse = SubmitShippingLabelRequestWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -789,7 +788,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>ApiResponse of TransactionReference</returns>
-        public ApiResponse< TransactionReference > SubmitShippingLabelRequestWithHttpInfo (SubmitShippingLabelsRequest body)
+        public ApiResponse<TransactionReference> SubmitShippingLabelRequestWithHttpInfo(SubmitShippingLabelsRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -828,11 +827,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -842,7 +841,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<TransactionReference>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TransactionReference) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TransactionReference)));
+                (TransactionReference)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TransactionReference)));
         }
 
         /// <summary>
@@ -851,10 +850,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>Task of TransactionReference</returns>
-        public async System.Threading.Tasks.Task<TransactionReference> SubmitShippingLabelRequestAsync (SubmitShippingLabelsRequest body)
+        public async System.Threading.Tasks.Task<TransactionReference> SubmitShippingLabelRequestAsync(SubmitShippingLabelsRequest body)
         {
-             ApiResponse<TransactionReference> localVarResponse = await SubmitShippingLabelRequestAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<TransactionReference> localVarResponse = await SubmitShippingLabelRequestAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -864,7 +863,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body that contains the shipping labels data.</param>
         /// <returns>Task of ApiResponse (TransactionReference)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TransactionReference>> SubmitShippingLabelRequestAsyncWithHttpInfo (SubmitShippingLabelsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<TransactionReference>> SubmitShippingLabelRequestAsyncWithHttpInfo(SubmitShippingLabelsRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -903,11 +902,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -917,7 +916,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<TransactionReference>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TransactionReference) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TransactionReference)));
+                (TransactionReference)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TransactionReference)));
         }
 
 
@@ -931,17 +930,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public VendorShippingLabelsApi Build() 
+            public VendorShippingLabelsApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

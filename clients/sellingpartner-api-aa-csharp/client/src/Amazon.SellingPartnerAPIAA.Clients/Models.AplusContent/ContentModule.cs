@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,31 +9,25 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
     /// <summary>
-    /// An A+ Content module. An A+ Content document is composed of content modules. The contentModuleType property selects which content module types to use.
+    /// An A+ Content module. An A+ Content document is composed of content modules. The &#x60;contentModuleType&#x60; property selects which content module types to use.
     /// </summary>
     [DataContract]
-    public partial class ContentModule :  IEquatable<ContentModule>, IValidatableObject
+    public partial class ContentModule : IEquatable<ContentModule>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ContentModuleType
         /// </summary>
-        [DataMember(Name="contentModuleType", EmitDefaultValue=false)]
+        [DataMember(Name = "contentModuleType", EmitDefaultValue = false)]
         public ContentModuleType ContentModuleType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentModule" /> class.
@@ -86,96 +80,96 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             this.StandardText = standardText;
             this.StandardThreeImageText = standardThreeImageText;
         }
-        
+
 
         /// <summary>
         /// Gets or Sets StandardCompanyLogo
         /// </summary>
-        [DataMember(Name="standardCompanyLogo", EmitDefaultValue=false)]
+        [DataMember(Name = "standardCompanyLogo", EmitDefaultValue = false)]
         public StandardCompanyLogoModule StandardCompanyLogo { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardComparisonTable
         /// </summary>
-        [DataMember(Name="standardComparisonTable", EmitDefaultValue=false)]
+        [DataMember(Name = "standardComparisonTable", EmitDefaultValue = false)]
         public StandardComparisonTableModule StandardComparisonTable { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardFourImageText
         /// </summary>
-        [DataMember(Name="standardFourImageText", EmitDefaultValue=false)]
+        [DataMember(Name = "standardFourImageText", EmitDefaultValue = false)]
         public StandardFourImageTextModule StandardFourImageText { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardFourImageTextQuadrant
         /// </summary>
-        [DataMember(Name="standardFourImageTextQuadrant", EmitDefaultValue=false)]
+        [DataMember(Name = "standardFourImageTextQuadrant", EmitDefaultValue = false)]
         public StandardFourImageTextQuadrantModule StandardFourImageTextQuadrant { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardHeaderImageText
         /// </summary>
-        [DataMember(Name="standardHeaderImageText", EmitDefaultValue=false)]
+        [DataMember(Name = "standardHeaderImageText", EmitDefaultValue = false)]
         public StandardHeaderImageTextModule StandardHeaderImageText { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardImageSidebar
         /// </summary>
-        [DataMember(Name="standardImageSidebar", EmitDefaultValue=false)]
+        [DataMember(Name = "standardImageSidebar", EmitDefaultValue = false)]
         public StandardImageSidebarModule StandardImageSidebar { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardImageTextOverlay
         /// </summary>
-        [DataMember(Name="standardImageTextOverlay", EmitDefaultValue=false)]
+        [DataMember(Name = "standardImageTextOverlay", EmitDefaultValue = false)]
         public StandardImageTextOverlayModule StandardImageTextOverlay { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardMultipleImageText
         /// </summary>
-        [DataMember(Name="standardMultipleImageText", EmitDefaultValue=false)]
+        [DataMember(Name = "standardMultipleImageText", EmitDefaultValue = false)]
         public StandardMultipleImageTextModule StandardMultipleImageText { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardProductDescription
         /// </summary>
-        [DataMember(Name="standardProductDescription", EmitDefaultValue=false)]
+        [DataMember(Name = "standardProductDescription", EmitDefaultValue = false)]
         public StandardProductDescriptionModule StandardProductDescription { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardSingleImageHighlights
         /// </summary>
-        [DataMember(Name="standardSingleImageHighlights", EmitDefaultValue=false)]
+        [DataMember(Name = "standardSingleImageHighlights", EmitDefaultValue = false)]
         public StandardSingleImageHighlightsModule StandardSingleImageHighlights { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardSingleImageSpecsDetail
         /// </summary>
-        [DataMember(Name="standardSingleImageSpecsDetail", EmitDefaultValue=false)]
+        [DataMember(Name = "standardSingleImageSpecsDetail", EmitDefaultValue = false)]
         public StandardSingleImageSpecsDetailModule StandardSingleImageSpecsDetail { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardSingleSideImage
         /// </summary>
-        [DataMember(Name="standardSingleSideImage", EmitDefaultValue=false)]
+        [DataMember(Name = "standardSingleSideImage", EmitDefaultValue = false)]
         public StandardSingleSideImageModule StandardSingleSideImage { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardTechSpecs
         /// </summary>
-        [DataMember(Name="standardTechSpecs", EmitDefaultValue=false)]
+        [DataMember(Name = "standardTechSpecs", EmitDefaultValue = false)]
         public StandardTechSpecsModule StandardTechSpecs { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardText
         /// </summary>
-        [DataMember(Name="standardText", EmitDefaultValue=false)]
+        [DataMember(Name = "standardText", EmitDefaultValue = false)]
         public StandardTextModule StandardText { get; set; }
 
         /// <summary>
         /// Gets or Sets StandardThreeImageText
         /// </summary>
-        [DataMember(Name="standardThreeImageText", EmitDefaultValue=false)]
+        [DataMember(Name = "standardThreeImageText", EmitDefaultValue = false)]
         public StandardThreeImageTextModule StandardThreeImageText { get; set; }
 
         /// <summary>
@@ -205,7 +199,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -235,82 +229,82 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContentModuleType == input.ContentModuleType ||
                     (this.ContentModuleType != null &&
                     this.ContentModuleType.Equals(input.ContentModuleType))
-                ) && 
+                ) &&
                 (
                     this.StandardCompanyLogo == input.StandardCompanyLogo ||
                     (this.StandardCompanyLogo != null &&
                     this.StandardCompanyLogo.Equals(input.StandardCompanyLogo))
-                ) && 
+                ) &&
                 (
                     this.StandardComparisonTable == input.StandardComparisonTable ||
                     (this.StandardComparisonTable != null &&
                     this.StandardComparisonTable.Equals(input.StandardComparisonTable))
-                ) && 
+                ) &&
                 (
                     this.StandardFourImageText == input.StandardFourImageText ||
                     (this.StandardFourImageText != null &&
                     this.StandardFourImageText.Equals(input.StandardFourImageText))
-                ) && 
+                ) &&
                 (
                     this.StandardFourImageTextQuadrant == input.StandardFourImageTextQuadrant ||
                     (this.StandardFourImageTextQuadrant != null &&
                     this.StandardFourImageTextQuadrant.Equals(input.StandardFourImageTextQuadrant))
-                ) && 
+                ) &&
                 (
                     this.StandardHeaderImageText == input.StandardHeaderImageText ||
                     (this.StandardHeaderImageText != null &&
                     this.StandardHeaderImageText.Equals(input.StandardHeaderImageText))
-                ) && 
+                ) &&
                 (
                     this.StandardImageSidebar == input.StandardImageSidebar ||
                     (this.StandardImageSidebar != null &&
                     this.StandardImageSidebar.Equals(input.StandardImageSidebar))
-                ) && 
+                ) &&
                 (
                     this.StandardImageTextOverlay == input.StandardImageTextOverlay ||
                     (this.StandardImageTextOverlay != null &&
                     this.StandardImageTextOverlay.Equals(input.StandardImageTextOverlay))
-                ) && 
+                ) &&
                 (
                     this.StandardMultipleImageText == input.StandardMultipleImageText ||
                     (this.StandardMultipleImageText != null &&
                     this.StandardMultipleImageText.Equals(input.StandardMultipleImageText))
-                ) && 
+                ) &&
                 (
                     this.StandardProductDescription == input.StandardProductDescription ||
                     (this.StandardProductDescription != null &&
                     this.StandardProductDescription.Equals(input.StandardProductDescription))
-                ) && 
+                ) &&
                 (
                     this.StandardSingleImageHighlights == input.StandardSingleImageHighlights ||
                     (this.StandardSingleImageHighlights != null &&
                     this.StandardSingleImageHighlights.Equals(input.StandardSingleImageHighlights))
-                ) && 
+                ) &&
                 (
                     this.StandardSingleImageSpecsDetail == input.StandardSingleImageSpecsDetail ||
                     (this.StandardSingleImageSpecsDetail != null &&
                     this.StandardSingleImageSpecsDetail.Equals(input.StandardSingleImageSpecsDetail))
-                ) && 
+                ) &&
                 (
                     this.StandardSingleSideImage == input.StandardSingleSideImage ||
                     (this.StandardSingleSideImage != null &&
                     this.StandardSingleSideImage.Equals(input.StandardSingleSideImage))
-                ) && 
+                ) &&
                 (
                     this.StandardTechSpecs == input.StandardTechSpecs ||
                     (this.StandardTechSpecs != null &&
                     this.StandardTechSpecs.Equals(input.StandardTechSpecs))
-                ) && 
+                ) &&
                 (
                     this.StandardText == input.StandardText ||
                     (this.StandardText != null &&
                     this.StandardText.Equals(input.StandardText))
-                ) && 
+                ) &&
                 (
                     this.StandardThreeImageText == input.StandardThreeImageText ||
                     (this.StandardThreeImageText != null &&

@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,13 +23,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// An individual &#x60;competitiveSummary&#x60; request for an ASIN and &#x60;marketplaceId&#x60;.
     /// </summary>
     [DataContract]
-    public partial class CompetitiveSummaryRequest :  IEquatable<CompetitiveSummaryRequest>, IValidatableObject
+    public partial class CompetitiveSummaryRequest : IEquatable<CompetitiveSummaryRequest>, IValidatableObject
     {
         /// <summary>
         /// HTTP method type
         /// </summary>
         /// <value>HTTP method type</value>
-        [DataMember(Name="method", EmitDefaultValue=false)]
+        [DataMember(Name = "method", EmitDefaultValue = false)]
         public HttpMethod Method { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompetitiveSummaryRequest" /> class.
@@ -99,33 +94,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             }
             this.LowestPricedOffersInputs = lowestPricedOffersInputs;
         }
-        
+
         /// <summary>
         /// The Amazon Standard Identification Number for the item.
         /// </summary>
         /// <value>The Amazon Standard Identification Number for the item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// A marketplace identifier.
         /// </summary>
         /// <value>A marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The list of requested competitive pricing data for the product.
         /// </summary>
         /// <value>The list of requested competitive pricing data for the product.</value>
-        [DataMember(Name="includedData", EmitDefaultValue=false)]
+        [DataMember(Name = "includedData", EmitDefaultValue = false)]
         public List<CompetitiveSummaryIncludedData> IncludedData { get; set; }
 
         /// <summary>
         /// The list of &#x60;lowestPricedOffersInput&#x60; parameters that are used to build &#x60;lowestPricedOffers&#x60; in the response. This attribute is only valid if &#x60;lowestPricedOffers&#x60; is requested in &#x60;includedData&#x60;
         /// </summary>
         /// <value>The list of &#x60;lowestPricedOffersInput&#x60; parameters that are used to build &#x60;lowestPricedOffers&#x60; in the response. This attribute is only valid if &#x60;lowestPricedOffers&#x60; is requested in &#x60;includedData&#x60;</value>
-        [DataMember(Name="lowestPricedOffersInputs", EmitDefaultValue=false)]
+        [DataMember(Name = "lowestPricedOffersInputs", EmitDefaultValue = false)]
         public List<LowestPricedOffersInput> LowestPricedOffersInputs { get; set; }
 
 
@@ -133,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// The URI associated with the individual APIs that are called as part of the batch request. For &#x60;getCompetitiveSummary&#x60;, this is &#x60;/products/pricing/2022-05-01/items/competitiveSummary&#x60;.
         /// </summary>
         /// <value>The URI associated with the individual APIs that are called as part of the batch request. For &#x60;getCompetitiveSummary&#x60;, this is &#x60;/products/pricing/2022-05-01/items/competitiveSummary&#x60;.</value>
-        [DataMember(Name="uri", EmitDefaultValue=false)]
+        [DataMember(Name = "uri", EmitDefaultValue = false)]
         public string Uri { get; set; }
 
         /// <summary>
@@ -153,7 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -183,32 +178,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.IncludedData == input.IncludedData ||
                     this.IncludedData != null &&
                     this.IncludedData.SequenceEqual(input.IncludedData)
-                ) && 
+                ) &&
                 (
                     this.LowestPricedOffersInputs == input.LowestPricedOffersInputs ||
                     this.LowestPricedOffersInputs != null &&
                     this.LowestPricedOffersInputs.SequenceEqual(input.LowestPricedOffersInputs)
-                ) && 
+                ) &&
                 (
                     this.Method == input.Method ||
                     (this.Method != null &&
                     this.Method.Equals(input.Method))
-                ) && 
+                ) &&
                 (
                     this.Uri == input.Uri ||
                     (this.Uri != null &&

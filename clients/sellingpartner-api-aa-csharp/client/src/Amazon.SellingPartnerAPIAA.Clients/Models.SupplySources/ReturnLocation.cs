@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The address or reference to another &#x60;supplySourceId&#x60; to act as a return location.
     /// </summary>
     [DataContract]
-    public partial class ReturnLocation :  IEquatable<ReturnLocation>, IValidatableObject
+    public partial class ReturnLocation : IEquatable<ReturnLocation>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReturnLocation" /> class.
@@ -40,18 +33,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.SupplySourceId = supplySourceId;
             this.AddressWithContact = addressWithContact;
         }
-        
+
         /// <summary>
         /// The Amazon provided &#x60;supplySourceId&#x60; where orders can be returned to.
         /// </summary>
         /// <value>The Amazon provided &#x60;supplySourceId&#x60; where orders can be returned to.</value>
-        [DataMember(Name="supplySourceId", EmitDefaultValue=false)]
+        [DataMember(Name = "supplySourceId", EmitDefaultValue = false)]
         public string SupplySourceId { get; set; }
 
         /// <summary>
         /// Gets or Sets AddressWithContact
         /// </summary>
-        [DataMember(Name="addressWithContact", EmitDefaultValue=false)]
+        [DataMember(Name = "addressWithContact", EmitDefaultValue = false)]
         public AddressWithContact AddressWithContact { get; set; }
 
         /// <summary>
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SupplySourceId == input.SupplySourceId ||
                     (this.SupplySourceId != null &&
                     this.SupplySourceId.Equals(input.SupplySourceId))
-                ) && 
+                ) &&
                 (
                     this.AddressWithContact == input.AddressWithContact ||
                     (this.AddressWithContact != null &&

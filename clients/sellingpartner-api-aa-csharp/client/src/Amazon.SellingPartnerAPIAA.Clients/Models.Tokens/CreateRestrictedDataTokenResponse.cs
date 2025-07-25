@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
     /// The response schema for the createRestrictedDataToken operation.
     /// </summary>
     [DataContract]
-    public partial class CreateRestrictedDataTokenResponse :  IEquatable<CreateRestrictedDataTokenResponse>, IValidatableObject
+    public partial class CreateRestrictedDataTokenResponse : IEquatable<CreateRestrictedDataTokenResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateRestrictedDataTokenResponse" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
             this.RestrictedDataToken = restrictedDataToken;
             this.ExpiresIn = expiresIn;
         }
-        
+
         /// <summary>
         /// A Restricted Data Token (RDT). This is a short-lived access token that authorizes calls to restricted operations. Pass this value with the x-amz-access-token header when making subsequent calls to these restricted resources.
         /// </summary>
         /// <value>A Restricted Data Token (RDT). This is a short-lived access token that authorizes calls to restricted operations. Pass this value with the x-amz-access-token header when making subsequent calls to these restricted resources.</value>
-        [DataMember(Name="restrictedDataToken", EmitDefaultValue=false)]
+        [DataMember(Name = "restrictedDataToken", EmitDefaultValue = false)]
         public string RestrictedDataToken { get; set; }
 
         /// <summary>
         /// The lifetime of the Restricted Data Token, in seconds.
         /// </summary>
         /// <value>The lifetime of the Restricted Data Token, in seconds.</value>
-        [DataMember(Name="expiresIn", EmitDefaultValue=false)]
+        [DataMember(Name = "expiresIn", EmitDefaultValue = false)]
         public int? ExpiresIn { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.RestrictedDataToken == input.RestrictedDataToken ||
                     (this.RestrictedDataToken != null &&
                     this.RestrictedDataToken.Equals(input.RestrictedDataToken))
-                ) && 
+                ) &&
                 (
                     this.ExpiresIn == input.ExpiresIn ||
                     (this.ExpiresIn != null &&

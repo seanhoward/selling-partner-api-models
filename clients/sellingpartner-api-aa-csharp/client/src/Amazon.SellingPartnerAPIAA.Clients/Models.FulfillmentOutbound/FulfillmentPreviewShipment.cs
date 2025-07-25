@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Delivery and item information for a shipment in a fulfillment order preview.
     /// </summary>
     [DataContract]
-    public partial class FulfillmentPreviewShipment :  IEquatable<FulfillmentPreviewShipment>, IValidatableObject
+    public partial class FulfillmentPreviewShipment : IEquatable<FulfillmentPreviewShipment>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentPreviewShipment" /> class.
@@ -61,47 +56,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.LatestArrivalDate = latestArrivalDate;
             this.ShippingNotes = shippingNotes;
         }
-        
+
         /// <summary>
         /// The earliest date that the shipment is expected to be sent from the fulfillment center. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
         /// </summary>
         /// <value>The earliest date that the shipment is expected to be sent from the fulfillment center. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
-        [DataMember(Name="earliestShipDate", EmitDefaultValue=false)]
+        [DataMember(Name = "earliestShipDate", EmitDefaultValue = false)]
         public DateTime? EarliestShipDate { get; set; }
 
         /// <summary>
         /// The latest date that the shipment is expected to be sent from the fulfillment center. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
         /// </summary>
         /// <value>The latest date that the shipment is expected to be sent from the fulfillment center. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
-        [DataMember(Name="latestShipDate", EmitDefaultValue=false)]
+        [DataMember(Name = "latestShipDate", EmitDefaultValue = false)]
         public DateTime? LatestShipDate { get; set; }
 
         /// <summary>
         /// The earliest date that the shipment is expected to arrive at its destination.
         /// </summary>
         /// <value>The earliest date that the shipment is expected to arrive at its destination.</value>
-        [DataMember(Name="earliestArrivalDate", EmitDefaultValue=false)]
+        [DataMember(Name = "earliestArrivalDate", EmitDefaultValue = false)]
         public DateTime? EarliestArrivalDate { get; set; }
 
         /// <summary>
         /// The latest date that the shipment is expected to arrive at its destination. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
         /// </summary>
         /// <value>The latest date that the shipment is expected to arrive at its destination. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
-        [DataMember(Name="latestArrivalDate", EmitDefaultValue=false)]
+        [DataMember(Name = "latestArrivalDate", EmitDefaultValue = false)]
         public DateTime? LatestArrivalDate { get; set; }
 
         /// <summary>
         /// Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.
         /// </summary>
         /// <value>Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.</value>
-        [DataMember(Name="shippingNotes", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingNotes", EmitDefaultValue = false)]
         public List<string> ShippingNotes { get; set; }
 
         /// <summary>
         /// Information about the items in the shipment.
         /// </summary>
         /// <value>Information about the items in the shipment.</value>
-        [DataMember(Name="fulfillmentPreviewItems", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentPreviewItems", EmitDefaultValue = false)]
         public FulfillmentPreviewItemList FulfillmentPreviewItems { get; set; }
 
         /// <summary>
@@ -121,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -151,32 +146,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.EarliestShipDate == input.EarliestShipDate ||
                     (this.EarliestShipDate != null &&
                     this.EarliestShipDate.Equals(input.EarliestShipDate))
-                ) && 
+                ) &&
                 (
                     this.LatestShipDate == input.LatestShipDate ||
                     (this.LatestShipDate != null &&
                     this.LatestShipDate.Equals(input.LatestShipDate))
-                ) && 
+                ) &&
                 (
                     this.EarliestArrivalDate == input.EarliestArrivalDate ||
                     (this.EarliestArrivalDate != null &&
                     this.EarliestArrivalDate.Equals(input.EarliestArrivalDate))
-                ) && 
+                ) &&
                 (
                     this.LatestArrivalDate == input.LatestArrivalDate ||
                     (this.LatestArrivalDate != null &&
                     this.LatestArrivalDate.Equals(input.LatestArrivalDate))
-                ) && 
+                ) &&
                 (
                     this.ShippingNotes == input.ShippingNotes ||
                     this.ShippingNotes != null &&
                     this.ShippingNotes.SequenceEqual(input.ShippingNotes)
-                ) && 
+                ) &&
                 (
                     this.FulfillmentPreviewItems == input.FulfillmentPreviewItems ||
                     (this.FulfillmentPreviewItems != null &&

@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Sellers
  *
- * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
+ * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
  *
  * OpenAPI spec version: v1
  * 
@@ -9,26 +9,20 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
 {
     /// <summary>
-    /// Information about the Seller&#39;s business. These fields may be omitted if the Seller is registered as an individual.
+    /// Information about the seller&#39;s business. Certain fields may be omitted depending on the seller&#39;s &#x60;businessType&#x60;.
     /// </summary>
     [DataContract]
-    public partial class Business :  IEquatable<Business>, IValidatableObject
+    public partial class Business : IEquatable<Business>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Business" /> class.
@@ -67,40 +61,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             this.CompanyTaxIdentificationNumber = companyTaxIdentificationNumber;
             this.NonLatinName = nonLatinName;
         }
-        
+
         /// <summary>
         /// The registered business name.
         /// </summary>
         /// <value>The registered business name.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The registered business address.
         /// </summary>
         /// <value>The registered business address.</value>
-        [DataMember(Name="registeredBusinessAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "registeredBusinessAddress", EmitDefaultValue = false)]
         public Address RegisteredBusinessAddress { get; set; }
 
         /// <summary>
         /// The seller&#39;s company registration number, if applicable. This field will be absent for individual sellers and sole proprietorships.
         /// </summary>
         /// <value>The seller&#39;s company registration number, if applicable. This field will be absent for individual sellers and sole proprietorships.</value>
-        [DataMember(Name="companyRegistrationNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "companyRegistrationNumber", EmitDefaultValue = false)]
         public string CompanyRegistrationNumber { get; set; }
 
         /// <summary>
         /// The seller&#39;s company tax identification number, if applicable. This field will be present for certain business types only, such as sole proprietorships.
         /// </summary>
         /// <value>The seller&#39;s company tax identification number, if applicable. This field will be present for certain business types only, such as sole proprietorships.</value>
-        [DataMember(Name="companyTaxIdentificationNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "companyTaxIdentificationNumber", EmitDefaultValue = false)]
         public string CompanyTaxIdentificationNumber { get; set; }
 
         /// <summary>
         /// The non-Latin script version of the registered business name, if applicable.
         /// </summary>
         /// <value>The non-Latin script version of the registered business name, if applicable.</value>
-        [DataMember(Name="nonLatinName", EmitDefaultValue=false)]
+        [DataMember(Name = "nonLatinName", EmitDefaultValue = false)]
         public string NonLatinName { get; set; }
 
         /// <summary>
@@ -119,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -149,27 +143,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.RegisteredBusinessAddress == input.RegisteredBusinessAddress ||
                     (this.RegisteredBusinessAddress != null &&
                     this.RegisteredBusinessAddress.Equals(input.RegisteredBusinessAddress))
-                ) && 
+                ) &&
                 (
                     this.CompanyRegistrationNumber == input.CompanyRegistrationNumber ||
                     (this.CompanyRegistrationNumber != null &&
                     this.CompanyRegistrationNumber.Equals(input.CompanyRegistrationNumber))
-                ) && 
+                ) &&
                 (
                     this.CompanyTaxIdentificationNumber == input.CompanyTaxIdentificationNumber ||
                     (this.CompanyTaxIdentificationNumber != null &&
                     this.CompanyTaxIdentificationNumber.Equals(input.CompanyTaxIdentificationNumber))
-                ) && 
+                ) &&
                 (
                     this.NonLatinName == input.NonLatinName ||
                     (this.NonLatinName != null &&

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
     /// Success.
     /// </summary>
     [DataContract]
-    public partial class GetInvoicesAttributesResponse :  IEquatable<GetInvoicesAttributesResponse>, IValidatableObject
+    public partial class GetInvoicesAttributesResponse : IEquatable<GetInvoicesAttributesResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetInvoicesAttributesResponse" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         {
             this.InvoicesAttributes = invoicesAttributes;
         }
-        
+
         /// <summary>
         /// Gets or Sets InvoicesAttributes
         /// </summary>
-        [DataMember(Name="invoicesAttributes", EmitDefaultValue=false)]
+        [DataMember(Name = "invoicesAttributes", EmitDefaultValue = false)]
         public InvoicesAttributes InvoicesAttributes { get; set; }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.InvoicesAttributes == input.InvoicesAttributes ||
                     (this.InvoicesAttributes != null &&

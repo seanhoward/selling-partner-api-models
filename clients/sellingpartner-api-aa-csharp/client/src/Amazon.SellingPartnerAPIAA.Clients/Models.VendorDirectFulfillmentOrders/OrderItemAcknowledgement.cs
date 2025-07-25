@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
     /// Details of an individual item within the order being acknowledged.
     /// </summary>
     [DataContract]
-    public partial class OrderItemAcknowledgement :  IEquatable<OrderItemAcknowledgement>, IValidatableObject
+    public partial class OrderItemAcknowledgement : IEquatable<OrderItemAcknowledgement>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemAcknowledgement" /> class.
@@ -65,33 +59,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             this.BuyerProductIdentifier = buyerProductIdentifier;
             this.VendorProductIdentifier = vendorProductIdentifier;
         }
-        
+
         /// <summary>
         /// Line item sequence number for the item.
         /// </summary>
         /// <value>Line item sequence number for the item.</value>
-        [DataMember(Name="itemSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "itemSequenceNumber", EmitDefaultValue = false)]
         public string ItemSequenceNumber { get; set; }
 
         /// <summary>
         /// Buyer&#39;s standard identification number (ASIN) of an item.
         /// </summary>
         /// <value>Buyer&#39;s standard identification number (ASIN) of an item.</value>
-        [DataMember(Name="buyerProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "buyerProductIdentifier", EmitDefaultValue = false)]
         public string BuyerProductIdentifier { get; set; }
 
         /// <summary>
         /// The vendor selected product identification of the item. Should be the same as was provided in the purchase order.
         /// </summary>
         /// <value>The vendor selected product identification of the item. Should be the same as was provided in the purchase order.</value>
-        [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorProductIdentifier", EmitDefaultValue = false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
         /// Details of quantity acknowledged with the above acknowledgement code.
         /// </summary>
         /// <value>Details of quantity acknowledged with the above acknowledgement code.</value>
-        [DataMember(Name="acknowledgedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "acknowledgedQuantity", EmitDefaultValue = false)]
         public ItemQuantity AcknowledgedQuantity { get; set; }
 
         /// <summary>
@@ -109,7 +103,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -139,22 +133,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemSequenceNumber == input.ItemSequenceNumber ||
                     (this.ItemSequenceNumber != null &&
                     this.ItemSequenceNumber.Equals(input.ItemSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.BuyerProductIdentifier == input.BuyerProductIdentifier ||
                     (this.BuyerProductIdentifier != null &&
                     this.BuyerProductIdentifier.Equals(input.BuyerProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.VendorProductIdentifier == input.VendorProductIdentifier ||
                     (this.VendorProductIdentifier != null &&
                     this.VendorProductIdentifier.Equals(input.VendorProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.AcknowledgedQuantity == input.AcknowledgedQuantity ||
                     (this.AcknowledgedQuantity != null &&

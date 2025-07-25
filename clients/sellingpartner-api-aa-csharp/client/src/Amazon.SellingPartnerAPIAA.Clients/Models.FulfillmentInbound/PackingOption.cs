@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// A packing option contains a set of pack groups plus additional information about the packing option, such as any discounts or fees if it&#39;s selected.
     /// </summary>
     [DataContract]
-    public partial class PackingOption :  IEquatable<PackingOption>, IValidatableObject
+    public partial class PackingOption : IEquatable<PackingOption>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PackingOption" /> class.
@@ -44,8 +40,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="packingGroups">Packing group IDs. (required).</param>
         /// <param name="packingOptionId">Identifier of a packing option. (required).</param>
         /// <param name="status">The status of the packing option. Possible values: &#x60;OFFERED&#x60;, &#x60;ACCEPTED&#x60;, &#x60;EXPIRED&#x60;. (required).</param>
-        /// <param name="supportedShippingConfigurations">List of supported shipping modes. (required).</param>
-        public PackingOption(List<Incentive> discounts = default, DateTime? expiration = default, List<Incentive> fees = default, List<string> packingGroups = default, string packingOptionId = default, string status = default, List<ShippingConfiguration> supportedShippingConfigurations = default)
+        /// <param name="supportedConfigurations">A list of possible configurations for this option. (required).</param>
+        /// <param name="supportedShippingConfigurations">**This field is deprecated**. Use the &#x60;shippingRequirements&#x60; property under &#x60;supportedConfigurations&#x60; instead. List of supported shipping modes. (required).</param>
+        public PackingOption(List<Incentive> discounts = default, DateTime? expiration = default, List<Incentive> fees = default, List<string> packingGroups = default, string packingOptionId = default, string status = default, List<PackingConfiguration> supportedConfigurations = default, List<ShippingConfiguration> supportedShippingConfigurations = default)
         {
             // to ensure "discounts" is required (not null)
             if (discounts == null)
@@ -92,6 +89,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             {
                 this.Status = status;
             }
+            // to ensure "supportedConfigurations" is required (not null)
+            if (supportedConfigurations == null)
+            {
+                throw new InvalidDataException("supportedConfigurations is a required property for PackingOption and cannot be null");
+            }
+            else
+            {
+                this.SupportedConfigurations = supportedConfigurations;
+            }
             // to ensure "supportedShippingConfigurations" is required (not null)
             if (supportedShippingConfigurations == null)
             {
@@ -103,54 +109,61 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
             this.Expiration = expiration;
         }
-        
+
         /// <summary>
         /// Discount for the offered option.
         /// </summary>
         /// <value>Discount for the offered option.</value>
-        [DataMember(Name="discounts", EmitDefaultValue=false)]
+        [DataMember(Name = "discounts", EmitDefaultValue = false)]
         public List<Incentive> Discounts { get; set; }
 
         /// <summary>
         /// The time at which this packing option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;.
         /// </summary>
         /// <value>The time at which this packing option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60;.</value>
-        [DataMember(Name="expiration", EmitDefaultValue=false)]
+        [DataMember(Name = "expiration", EmitDefaultValue = false)]
         public DateTime? Expiration { get; set; }
 
         /// <summary>
         /// Fee for the offered option.
         /// </summary>
         /// <value>Fee for the offered option.</value>
-        [DataMember(Name="fees", EmitDefaultValue=false)]
+        [DataMember(Name = "fees", EmitDefaultValue = false)]
         public List<Incentive> Fees { get; set; }
 
         /// <summary>
         /// Packing group IDs.
         /// </summary>
         /// <value>Packing group IDs.</value>
-        [DataMember(Name="packingGroups", EmitDefaultValue=false)]
+        [DataMember(Name = "packingGroups", EmitDefaultValue = false)]
         public List<string> PackingGroups { get; set; }
 
         /// <summary>
         /// Identifier of a packing option.
         /// </summary>
         /// <value>Identifier of a packing option.</value>
-        [DataMember(Name="packingOptionId", EmitDefaultValue=false)]
+        [DataMember(Name = "packingOptionId", EmitDefaultValue = false)]
         public string PackingOptionId { get; set; }
 
         /// <summary>
         /// The status of the packing option. Possible values: &#x60;OFFERED&#x60;, &#x60;ACCEPTED&#x60;, &#x60;EXPIRED&#x60;.
         /// </summary>
         /// <value>The status of the packing option. Possible values: &#x60;OFFERED&#x60;, &#x60;ACCEPTED&#x60;, &#x60;EXPIRED&#x60;.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
-        /// List of supported shipping modes.
+        /// A list of possible configurations for this option.
         /// </summary>
-        /// <value>List of supported shipping modes.</value>
-        [DataMember(Name="supportedShippingConfigurations", EmitDefaultValue=false)]
+        /// <value>A list of possible configurations for this option.</value>
+        [DataMember(Name = "supportedConfigurations", EmitDefaultValue = false)]
+        public List<PackingConfiguration> SupportedConfigurations { get; set; }
+
+        /// <summary>
+        /// **This field is deprecated**. Use the &#x60;shippingRequirements&#x60; property under &#x60;supportedConfigurations&#x60; instead. List of supported shipping modes.
+        /// </summary>
+        /// <value>**This field is deprecated**. Use the &#x60;shippingRequirements&#x60; property under &#x60;supportedConfigurations&#x60; instead. List of supported shipping modes.</value>
+        [DataMember(Name = "supportedShippingConfigurations", EmitDefaultValue = false)]
         public List<ShippingConfiguration> SupportedShippingConfigurations { get; set; }
 
         /// <summary>
@@ -167,11 +180,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("  PackingGroups: ").Append(PackingGroups).Append("\n");
             sb.Append("  PackingOptionId: ").Append(PackingOptionId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  SupportedConfigurations: ").Append(SupportedConfigurations).Append("\n");
             sb.Append("  SupportedShippingConfigurations: ").Append(SupportedShippingConfigurations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -201,37 +215,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Discounts == input.Discounts ||
                     this.Discounts != null &&
                     this.Discounts.SequenceEqual(input.Discounts)
-                ) && 
+                ) &&
                 (
                     this.Expiration == input.Expiration ||
                     (this.Expiration != null &&
                     this.Expiration.Equals(input.Expiration))
-                ) && 
+                ) &&
                 (
                     this.Fees == input.Fees ||
                     this.Fees != null &&
                     this.Fees.SequenceEqual(input.Fees)
-                ) && 
+                ) &&
                 (
                     this.PackingGroups == input.PackingGroups ||
                     this.PackingGroups != null &&
                     this.PackingGroups.SequenceEqual(input.PackingGroups)
-                ) && 
+                ) &&
                 (
                     this.PackingOptionId == input.PackingOptionId ||
                     (this.PackingOptionId != null &&
                     this.PackingOptionId.Equals(input.PackingOptionId))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
+                (
+                    this.SupportedConfigurations == input.SupportedConfigurations ||
+                    this.SupportedConfigurations != null &&
+                    this.SupportedConfigurations.SequenceEqual(input.SupportedConfigurations)
+                ) &&
                 (
                     this.SupportedShippingConfigurations == input.SupportedShippingConfigurations ||
                     this.SupportedShippingConfigurations != null &&
@@ -260,6 +279,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                     hashCode = hashCode * 59 + this.PackingOptionId.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.SupportedConfigurations != null)
+                    hashCode = hashCode * 59 + this.SupportedConfigurations.GetHashCode();
                 if (this.SupportedShippingConfigurations != null)
                     hashCode = hashCode * 59 + this.SupportedShippingConfigurations.GetHashCode();
                 return hashCode;
@@ -274,34 +295,34 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PackingOptionId (string) maxLength
-            if(this.PackingOptionId != null && this.PackingOptionId.Length > 38)
+            if (this.PackingOptionId != null && this.PackingOptionId.Length > 38)
             {
-                yield return new ValidationResult("Invalid value for PackingOptionId, length must be less than 38.", new [] { "PackingOptionId" });
+                yield return new ValidationResult("Invalid value for PackingOptionId, length must be less than 38.", new[] { "PackingOptionId" });
             }
 
             // PackingOptionId (string) minLength
-            if(this.PackingOptionId != null && this.PackingOptionId.Length < 38)
+            if (this.PackingOptionId != null && this.PackingOptionId.Length < 38)
             {
-                yield return new ValidationResult("Invalid value for PackingOptionId, length must be greater than 38.", new [] { "PackingOptionId" });
+                yield return new ValidationResult("Invalid value for PackingOptionId, length must be greater than 38.", new[] { "PackingOptionId" });
             }
 
             // PackingOptionId (string) pattern
             Regex regexPackingOptionId = new Regex(@"^[a-zA-Z0-9-]*$", RegexOptions.CultureInvariant);
             if (false == regexPackingOptionId.Match(this.PackingOptionId).Success)
             {
-                yield return new ValidationResult("Invalid value for PackingOptionId, must match a pattern of " + regexPackingOptionId, new [] { "PackingOptionId" });
+                yield return new ValidationResult("Invalid value for PackingOptionId, must match a pattern of " + regexPackingOptionId, new[] { "PackingOptionId" });
             }
 
             // Status (string) maxLength
-            if(this.Status != null && this.Status.Length > 1024)
+            if (this.Status != null && this.Status.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be less than 1024.", new[] { "Status" });
             }
 
             // Status (string) minLength
-            if(this.Status != null && this.Status.Length < 1)
+            if (this.Status != null && this.Status.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new [] { "Status" });
+                yield return new ValidationResult("Invalid value for Status, length must be greater than 1.", new[] { "Status" });
             }
 
             yield break;

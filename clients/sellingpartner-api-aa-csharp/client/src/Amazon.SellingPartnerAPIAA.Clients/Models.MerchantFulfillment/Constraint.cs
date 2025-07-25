@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// A validation constraint.
     /// </summary>
     [DataContract]
-    public partial class Constraint :  IEquatable<Constraint>, IValidatableObject
+    public partial class Constraint : IEquatable<Constraint>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Constraint" /> class.
@@ -53,19 +47,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             }
             this.ValidationRegEx = validationRegEx;
         }
-        
+
         /// <summary>
         /// A regular expression.
         /// </summary>
         /// <value>A regular expression.</value>
-        [DataMember(Name="ValidationRegEx", EmitDefaultValue=false)]
+        [DataMember(Name = "ValidationRegEx", EmitDefaultValue = false)]
         public string ValidationRegEx { get; set; }
 
         /// <summary>
         /// A validation string.
         /// </summary>
         /// <value>A validation string.</value>
-        [DataMember(Name="ValidationString", EmitDefaultValue=false)]
+        [DataMember(Name = "ValidationString", EmitDefaultValue = false)]
         public string ValidationString { get; set; }
 
         /// <summary>
@@ -81,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ValidationRegEx == input.ValidationRegEx ||
                     (this.ValidationRegEx != null &&
                     this.ValidationRegEx.Equals(input.ValidationRegEx))
-                ) && 
+                ) &&
                 (
                     this.ValidationString == input.ValidationString ||
                     (this.ValidationString != null &&

@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -38,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="conditionType">The condition used to filter restrictions. (optional)</param>
         /// <param name="reasonLocale">A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>RestrictionList</returns>
-        RestrictionList GetListingsRestrictions (string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null);
+        RestrictionList GetListingsRestrictions(string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null);
 
         /// <summary>
         /// 
@@ -53,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="conditionType">The condition used to filter restrictions. (optional)</param>
         /// <param name="reasonLocale">A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ApiResponse of RestrictionList</returns>
-        ApiResponse<RestrictionList> GetListingsRestrictionsWithHttpInfo (string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null);
+        ApiResponse<RestrictionList> GetListingsRestrictionsWithHttpInfo(string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -69,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="conditionType">The condition used to filter restrictions. (optional)</param>
         /// <param name="reasonLocale">A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of RestrictionList</returns>
-        System.Threading.Tasks.Task<RestrictionList> GetListingsRestrictionsAsync (string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null);
+        System.Threading.Tasks.Task<RestrictionList> GetListingsRestrictionsAsync(string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null);
 
         /// <summary>
         /// 
@@ -84,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="conditionType">The condition used to filter restrictions. (optional)</param>
         /// <param name="reasonLocale">A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ApiResponse (RestrictionList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RestrictionList>> GetListingsRestrictionsAsyncWithHttpInfo (string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null);
+        System.Threading.Tasks.Task<ApiResponse<RestrictionList>> GetListingsRestrictionsAsyncWithHttpInfo(string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null);
         #endregion Asynchronous Operations
     }
 
@@ -104,7 +103,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public ListingsRestrictionsApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -130,7 +129,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -180,10 +179,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="conditionType">The condition used to filter restrictions. (optional)</param>
         /// <param name="reasonLocale">A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>RestrictionList</returns>
-        public RestrictionList GetListingsRestrictions (string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null)
+        public RestrictionList GetListingsRestrictions(string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null)
         {
-             ApiResponse<RestrictionList> localVarResponse = GetListingsRestrictionsWithHttpInfo(asin, sellerId, marketplaceIds, conditionType, reasonLocale);
-             return localVarResponse.Data;
+            ApiResponse<RestrictionList> localVarResponse = GetListingsRestrictionsWithHttpInfo(asin, sellerId, marketplaceIds, conditionType, reasonLocale);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -196,7 +195,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="conditionType">The condition used to filter restrictions. (optional)</param>
         /// <param name="reasonLocale">A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>ApiResponse of RestrictionList</returns>
-        public ApiResponse< RestrictionList > GetListingsRestrictionsWithHttpInfo (string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null)
+        public ApiResponse<RestrictionList> GetListingsRestrictionsWithHttpInfo(string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null)
         {
             // verify the required parameter 'asin' is set
             if (asin == null)
@@ -238,11 +237,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -252,7 +251,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<RestrictionList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RestrictionList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RestrictionList)));
+                (RestrictionList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RestrictionList)));
         }
 
         /// <summary>
@@ -265,10 +264,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="conditionType">The condition used to filter restrictions. (optional)</param>
         /// <param name="reasonLocale">A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of RestrictionList</returns>
-        public async System.Threading.Tasks.Task<RestrictionList> GetListingsRestrictionsAsync (string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null)
+        public async System.Threading.Tasks.Task<RestrictionList> GetListingsRestrictionsAsync(string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null)
         {
-             ApiResponse<RestrictionList> localVarResponse = await GetListingsRestrictionsAsyncWithHttpInfo(asin, sellerId, marketplaceIds, conditionType, reasonLocale);
-             return localVarResponse.Data;
+            ApiResponse<RestrictionList> localVarResponse = await GetListingsRestrictionsAsyncWithHttpInfo(asin, sellerId, marketplaceIds, conditionType, reasonLocale);
+            return localVarResponse.Data;
 
         }
 
@@ -282,7 +281,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="conditionType">The condition used to filter restrictions. (optional)</param>
         /// <param name="reasonLocale">A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)</param>
         /// <returns>Task of ApiResponse (RestrictionList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RestrictionList>> GetListingsRestrictionsAsyncWithHttpInfo (string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RestrictionList>> GetListingsRestrictionsAsyncWithHttpInfo(string asin, string sellerId, List<string> marketplaceIds, string conditionType = null, string reasonLocale = null)
         {
             // verify the required parameter 'asin' is set
             if (asin == null)
@@ -324,11 +323,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -338,7 +337,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<RestrictionList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RestrictionList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RestrictionList)));
+                (RestrictionList)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RestrictionList)));
         }
 
 
@@ -352,17 +351,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public ListingsRestrictionsApi Build() 
+            public ListingsRestrictionsApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

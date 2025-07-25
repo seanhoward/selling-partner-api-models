@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Duration after manufacturing date during which the product is valid for consumption.
     /// </summary>
     [DataContract]
-    public partial class Duration :  IEquatable<Duration>, IValidatableObject
+    public partial class Duration : IEquatable<Duration>, IValidatableObject
     {
         /// <summary>
         /// Unit for duration.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DurationUnitEnum
         {
-            
+
             /// <summary>
             /// Enum Days for value: Days
             /// </summary>
             [EnumMember(Value = "Days")]
             Days = 1,
-            
+
             /// <summary>
             /// Enum Months for value: Months
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// Unit for duration.
         /// </summary>
         /// <value>Unit for duration.</value>
-        [DataMember(Name="durationUnit", EmitDefaultValue=false)]
+        [DataMember(Name = "durationUnit", EmitDefaultValue = false)]
         public DurationUnitEnum DurationUnit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Duration" /> class.
@@ -88,13 +83,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
                 this.DurationValue = durationValue;
             }
         }
-        
+
 
         /// <summary>
         /// Value for the duration in terms of the durationUnit.
         /// </summary>
         /// <value>Value for the duration in terms of the durationUnit.</value>
-        [DataMember(Name="durationValue", EmitDefaultValue=false)]
+        [DataMember(Name = "durationValue", EmitDefaultValue = false)]
         public int? DurationValue { get; set; }
 
         /// <summary>
@@ -110,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -140,12 +135,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DurationUnit == input.DurationUnit ||
                     (this.DurationUnit != null &&
                     this.DurationUnit.Equals(input.DurationUnit))
-                ) && 
+                ) &&
                 (
                     this.DurationValue == input.DurationValue ||
                     (this.DurationValue != null &&

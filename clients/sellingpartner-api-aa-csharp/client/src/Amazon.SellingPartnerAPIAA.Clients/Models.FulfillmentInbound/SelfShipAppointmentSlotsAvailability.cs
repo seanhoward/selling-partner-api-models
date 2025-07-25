@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The self ship appointment time slots availability and an expiration date for which the slots can be scheduled.
     /// </summary>
     [DataContract]
-    public partial class SelfShipAppointmentSlotsAvailability :  IEquatable<SelfShipAppointmentSlotsAvailability>, IValidatableObject
+    public partial class SelfShipAppointmentSlotsAvailability : IEquatable<SelfShipAppointmentSlotsAvailability>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SelfShipAppointmentSlotsAvailability" /> class.
@@ -40,19 +34,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.ExpiresAt = expiresAt;
             this.Slots = slots;
         }
-        
+
         /// <summary>
         /// The time at which the self ship appointment slot expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
         /// </summary>
         /// <value>The time at which the self ship appointment slot expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.</value>
-        [DataMember(Name="expiresAt", EmitDefaultValue=false)]
+        [DataMember(Name = "expiresAt", EmitDefaultValue = false)]
         public DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// A list of appointment slots.
         /// </summary>
         /// <value>A list of appointment slots.</value>
-        [DataMember(Name="slots", EmitDefaultValue=false)]
+        [DataMember(Name = "slots", EmitDefaultValue = false)]
         public List<AppointmentSlot> Slots { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ExpiresAt == input.ExpiresAt ||
                     (this.ExpiresAt != null &&
                     this.ExpiresAt.Equals(input.ExpiresAt))
-                ) && 
+                ) &&
                 (
                     this.Slots == input.Slots ||
                     this.Slots != null &&

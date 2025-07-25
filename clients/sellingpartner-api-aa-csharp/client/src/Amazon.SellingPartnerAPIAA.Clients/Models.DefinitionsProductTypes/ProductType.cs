@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
     /// An Amazon product type with a definition available.
     /// </summary>
     [DataContract]
-    public partial class ProductType :  IEquatable<ProductType>, IValidatableObject
+    public partial class ProductType : IEquatable<ProductType>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductType" /> class.
@@ -71,26 +66,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
                 this.MarketplaceIds = marketplaceIds;
             }
         }
-        
+
         /// <summary>
         /// The name of the Amazon product type.
         /// </summary>
         /// <value>The name of the Amazon product type.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The human-readable and localized description of the Amazon product type.
         /// </summary>
         /// <value>The human-readable and localized description of the Amazon product type.</value>
-        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// The Amazon marketplace identifiers for which the product type definition is available.
         /// </summary>
         /// <value>The Amazon marketplace identifiers for which the product type definition is available.</value>
-        [DataMember(Name="marketplaceIds", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceIds", EmitDefaultValue = false)]
         public List<string> MarketplaceIds { get; set; }
 
         /// <summary>
@@ -107,7 +102,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +132,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceIds == input.MarketplaceIds ||
                     this.MarketplaceIds != null &&

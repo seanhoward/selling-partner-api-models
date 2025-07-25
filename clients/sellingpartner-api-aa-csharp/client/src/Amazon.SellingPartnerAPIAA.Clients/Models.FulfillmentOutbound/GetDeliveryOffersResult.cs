@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// A list of delivery offers, including offer expiration, earliest and latest date and time range, and the delivery offer policy.
     /// </summary>
     [DataContract]
-    public partial class GetDeliveryOffersResult :  IEquatable<GetDeliveryOffersResult>, IValidatableObject
+    public partial class GetDeliveryOffersResult : IEquatable<GetDeliveryOffersResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDeliveryOffersResult" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         {
             this.DeliveryOffers = deliveryOffers;
         }
-        
+
         /// <summary>
         /// An array of delivery offers.
         /// </summary>
         /// <value>An array of delivery offers.</value>
-        [DataMember(Name="deliveryOffers", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryOffers", EmitDefaultValue = false)]
         public DeliveryOffersList DeliveryOffers { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeliveryOffers == input.DeliveryOffers ||
                     (this.DeliveryOffers != null &&

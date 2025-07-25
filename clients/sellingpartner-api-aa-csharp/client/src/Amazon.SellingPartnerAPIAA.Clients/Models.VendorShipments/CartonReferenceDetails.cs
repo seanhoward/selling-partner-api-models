@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Carton reference details.
     /// </summary>
     [DataContract]
-    public partial class CartonReferenceDetails :  IEquatable<CartonReferenceDetails>, IValidatableObject
+    public partial class CartonReferenceDetails : IEquatable<CartonReferenceDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CartonReferenceDetails" /> class.
@@ -53,19 +48,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             }
             this.CartonCount = cartonCount;
         }
-        
+
         /// <summary>
         /// Pallet level carton count is mandatory for single item pallet and optional for mixed item pallet.
         /// </summary>
         /// <value>Pallet level carton count is mandatory for single item pallet and optional for mixed item pallet.</value>
-        [DataMember(Name="cartonCount", EmitDefaultValue=false)]
+        [DataMember(Name = "cartonCount", EmitDefaultValue = false)]
         public int? CartonCount { get; set; }
 
         /// <summary>
         /// Array of reference numbers for the carton that are part of this pallet/shipment. Please provide the cartonSequenceNumber from the &#39;cartons&#39; segment to refer to that carton&#39;s details here.
         /// </summary>
         /// <value>Array of reference numbers for the carton that are part of this pallet/shipment. Please provide the cartonSequenceNumber from the &#39;cartons&#39; segment to refer to that carton&#39;s details here.</value>
-        [DataMember(Name="cartonReferenceNumbers", EmitDefaultValue=false)]
+        [DataMember(Name = "cartonReferenceNumbers", EmitDefaultValue = false)]
         public List<string> CartonReferenceNumbers { get; set; }
 
         /// <summary>
@@ -81,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +106,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CartonCount == input.CartonCount ||
                     (this.CartonCount != null &&
                     this.CartonCount.Equals(input.CartonCount))
-                ) && 
+                ) &&
                 (
                     this.CartonReferenceNumbers == input.CartonReferenceNumbers ||
                     this.CartonReferenceNumbers != null &&

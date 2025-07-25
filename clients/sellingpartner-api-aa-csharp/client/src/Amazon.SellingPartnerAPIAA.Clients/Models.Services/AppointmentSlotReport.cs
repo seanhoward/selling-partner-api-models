@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Availability information as per the service context queried.
     /// </summary>
     [DataContract]
-    public partial class AppointmentSlotReport :  IEquatable<AppointmentSlotReport>, IValidatableObject
+    public partial class AppointmentSlotReport : IEquatable<AppointmentSlotReport>, IValidatableObject
     {
         /// <summary>
         /// Defines the type of slots.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SchedulingTypeEnum
         {
-            
+
             /// <summary>
             /// Enum REALTIMESCHEDULING for value: REAL_TIME_SCHEDULING
             /// </summary>
             [EnumMember(Value = "REAL_TIME_SCHEDULING")]
             REALTIMESCHEDULING = 1,
-            
+
             /// <summary>
             /// Enum NONREALTIMESCHEDULING for value: NON_REAL_TIME_SCHEDULING
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// Defines the type of slots.
         /// </summary>
         /// <value>Defines the type of slots.</value>
-        [DataMember(Name="schedulingType", EmitDefaultValue=false)]
+        [DataMember(Name = "schedulingType", EmitDefaultValue = false)]
         public SchedulingTypeEnum? SchedulingType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentSlotReport" /> class.
@@ -71,27 +66,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.EndTime = endTime;
             this.AppointmentSlots = appointmentSlots;
         }
-        
+
 
         /// <summary>
         /// Start Time from which the appointment slots are generated in ISO 8601 format.
         /// </summary>
         /// <value>Start Time from which the appointment slots are generated in ISO 8601 format.</value>
-        [DataMember(Name="startTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startTime", EmitDefaultValue = false)]
         public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// End Time up to which the appointment slots are generated in ISO 8601 format.
         /// </summary>
         /// <value>End Time up to which the appointment slots are generated in ISO 8601 format.</value>
-        [DataMember(Name="endTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endTime", EmitDefaultValue = false)]
         public DateTime? EndTime { get; set; }
 
         /// <summary>
         /// A list of time windows along with associated capacity in which the service can be performed.
         /// </summary>
         /// <value>A list of time windows along with associated capacity in which the service can be performed.</value>
-        [DataMember(Name="appointmentSlots", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentSlots", EmitDefaultValue = false)]
         public List<AppointmentSlot> AppointmentSlots { get; set; }
 
         /// <summary>
@@ -109,7 +104,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -139,22 +134,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SchedulingType == input.SchedulingType ||
                     (this.SchedulingType != null &&
                     this.SchedulingType.Equals(input.SchedulingType))
-                ) && 
+                ) &&
                 (
                     this.StartTime == input.StartTime ||
                     (this.StartTime != null &&
                     this.StartTime.Equals(input.StartTime))
-                ) && 
+                ) &&
                 (
                     this.EndTime == input.EndTime ||
                     (this.EndTime != null &&
                     this.EndTime.Equals(input.EndTime))
-                ) && 
+                ) &&
                 (
                     this.AppointmentSlots == input.AppointmentSlots ||
                     this.AppointmentSlots != null &&

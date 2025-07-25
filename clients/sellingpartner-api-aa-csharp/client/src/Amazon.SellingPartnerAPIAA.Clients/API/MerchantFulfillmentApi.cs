@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment to cancel.</param>
         /// <returns>CancelShipmentResponse</returns>
-        CancelShipmentResponse CancelShipment (string shipmentId);
+        CancelShipmentResponse CancelShipment(string shipmentId);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment to cancel.</param>
         /// <returns>ApiResponse of CancelShipmentResponse</returns>
-        ApiResponse<CancelShipmentResponse> CancelShipmentWithHttpInfo (string shipmentId);
+        ApiResponse<CancelShipmentResponse> CancelShipmentWithHttpInfo(string shipmentId);
         /// <summary>
         /// 
         /// </summary>
@@ -55,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;CreateShipment&#x60; operation.</param>
         /// <returns>CreateShipmentResponse</returns>
-        CreateShipmentResponse CreateShipment (CreateShipmentRequest body);
+        CreateShipmentResponse CreateShipment(CreateShipmentRequest body);
 
         /// <summary>
         /// 
@@ -66,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;CreateShipment&#x60; operation.</param>
         /// <returns>ApiResponse of CreateShipmentResponse</returns>
-        ApiResponse<CreateShipmentResponse> CreateShipmentWithHttpInfo (CreateShipmentRequest body);
+        ApiResponse<CreateShipmentResponse> CreateShipmentWithHttpInfo(CreateShipmentRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -76,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation.</param>
         /// <returns>GetAdditionalSellerInputsResponse</returns>
-        GetAdditionalSellerInputsResponse GetAdditionalSellerInputs (GetAdditionalSellerInputsRequest body);
+        GetAdditionalSellerInputsResponse GetAdditionalSellerInputs(GetAdditionalSellerInputsRequest body);
 
         /// <summary>
         /// 
@@ -87,7 +86,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation.</param>
         /// <returns>ApiResponse of GetAdditionalSellerInputsResponse</returns>
-        ApiResponse<GetAdditionalSellerInputsResponse> GetAdditionalSellerInputsWithHttpInfo (GetAdditionalSellerInputsRequest body);
+        ApiResponse<GetAdditionalSellerInputsResponse> GetAdditionalSellerInputsWithHttpInfo(GetAdditionalSellerInputsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -97,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation.</param>
         /// <returns>GetEligibleShipmentServicesResponse</returns>
-        GetEligibleShipmentServicesResponse GetEligibleShipmentServices (GetEligibleShipmentServicesRequest body);
+        GetEligibleShipmentServicesResponse GetEligibleShipmentServices(GetEligibleShipmentServicesRequest body);
 
         /// <summary>
         /// 
@@ -108,7 +107,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation.</param>
         /// <returns>ApiResponse of GetEligibleShipmentServicesResponse</returns>
-        ApiResponse<GetEligibleShipmentServicesResponse> GetEligibleShipmentServicesWithHttpInfo (GetEligibleShipmentServicesRequest body);
+        ApiResponse<GetEligibleShipmentServicesResponse> GetEligibleShipmentServicesWithHttpInfo(GetEligibleShipmentServicesRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -118,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment.</param>
         /// <returns>GetShipmentResponse</returns>
-        GetShipmentResponse GetShipment (string shipmentId);
+        GetShipmentResponse GetShipment(string shipmentId);
 
         /// <summary>
         /// 
@@ -129,7 +128,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment.</param>
         /// <returns>ApiResponse of GetShipmentResponse</returns>
-        ApiResponse<GetShipmentResponse> GetShipmentWithHttpInfo (string shipmentId);
+        ApiResponse<GetShipmentResponse> GetShipmentWithHttpInfo(string shipmentId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -141,7 +140,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment to cancel.</param>
         /// <returns>Task of CancelShipmentResponse</returns>
-        System.Threading.Tasks.Task<CancelShipmentResponse> CancelShipmentAsync (string shipmentId);
+        System.Threading.Tasks.Task<CancelShipmentResponse> CancelShipmentAsync(string shipmentId);
 
         /// <summary>
         /// 
@@ -152,7 +151,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment to cancel.</param>
         /// <returns>Task of ApiResponse (CancelShipmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CancelShipmentResponse>> CancelShipmentAsyncWithHttpInfo (string shipmentId);
+        System.Threading.Tasks.Task<ApiResponse<CancelShipmentResponse>> CancelShipmentAsyncWithHttpInfo(string shipmentId);
         /// <summary>
         /// 
         /// </summary>
@@ -162,7 +161,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;CreateShipment&#x60; operation.</param>
         /// <returns>Task of CreateShipmentResponse</returns>
-        System.Threading.Tasks.Task<CreateShipmentResponse> CreateShipmentAsync (CreateShipmentRequest body);
+        System.Threading.Tasks.Task<CreateShipmentResponse> CreateShipmentAsync(CreateShipmentRequest body);
 
         /// <summary>
         /// 
@@ -173,7 +172,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;CreateShipment&#x60; operation.</param>
         /// <returns>Task of ApiResponse (CreateShipmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateShipmentResponse>> CreateShipmentAsyncWithHttpInfo (CreateShipmentRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateShipmentResponse>> CreateShipmentAsyncWithHttpInfo(CreateShipmentRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -183,7 +182,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation.</param>
         /// <returns>Task of GetAdditionalSellerInputsResponse</returns>
-        System.Threading.Tasks.Task<GetAdditionalSellerInputsResponse> GetAdditionalSellerInputsAsync (GetAdditionalSellerInputsRequest body);
+        System.Threading.Tasks.Task<GetAdditionalSellerInputsResponse> GetAdditionalSellerInputsAsync(GetAdditionalSellerInputsRequest body);
 
         /// <summary>
         /// 
@@ -194,7 +193,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation.</param>
         /// <returns>Task of ApiResponse (GetAdditionalSellerInputsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAdditionalSellerInputsResponse>> GetAdditionalSellerInputsAsyncWithHttpInfo (GetAdditionalSellerInputsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<GetAdditionalSellerInputsResponse>> GetAdditionalSellerInputsAsyncWithHttpInfo(GetAdditionalSellerInputsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -204,7 +203,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation.</param>
         /// <returns>Task of GetEligibleShipmentServicesResponse</returns>
-        System.Threading.Tasks.Task<GetEligibleShipmentServicesResponse> GetEligibleShipmentServicesAsync (GetEligibleShipmentServicesRequest body);
+        System.Threading.Tasks.Task<GetEligibleShipmentServicesResponse> GetEligibleShipmentServicesAsync(GetEligibleShipmentServicesRequest body);
 
         /// <summary>
         /// 
@@ -215,7 +214,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation.</param>
         /// <returns>Task of ApiResponse (GetEligibleShipmentServicesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetEligibleShipmentServicesResponse>> GetEligibleShipmentServicesAsyncWithHttpInfo (GetEligibleShipmentServicesRequest body);
+        System.Threading.Tasks.Task<ApiResponse<GetEligibleShipmentServicesResponse>> GetEligibleShipmentServicesAsyncWithHttpInfo(GetEligibleShipmentServicesRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -225,7 +224,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment.</param>
         /// <returns>Task of GetShipmentResponse</returns>
-        System.Threading.Tasks.Task<GetShipmentResponse> GetShipmentAsync (string shipmentId);
+        System.Threading.Tasks.Task<GetShipmentResponse> GetShipmentAsync(string shipmentId);
 
         /// <summary>
         /// 
@@ -236,7 +235,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment.</param>
         /// <returns>Task of ApiResponse (GetShipmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetShipmentResponse>> GetShipmentAsyncWithHttpInfo (string shipmentId);
+        System.Threading.Tasks.Task<ApiResponse<GetShipmentResponse>> GetShipmentAsyncWithHttpInfo(string shipmentId);
         #endregion Asynchronous Operations
     }
 
@@ -256,7 +255,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public MerchantFulfillmentApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -282,7 +281,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -328,10 +327,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment to cancel.</param>
         /// <returns>CancelShipmentResponse</returns>
-        public CancelShipmentResponse CancelShipment (string shipmentId)
+        public CancelShipmentResponse CancelShipment(string shipmentId)
         {
-             ApiResponse<CancelShipmentResponse> localVarResponse = CancelShipmentWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<CancelShipmentResponse> localVarResponse = CancelShipmentWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -340,7 +339,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment to cancel.</param>
         /// <returns>ApiResponse of CancelShipmentResponse</returns>
-        public ApiResponse< CancelShipmentResponse > CancelShipmentWithHttpInfo (string shipmentId)
+        public ApiResponse<CancelShipmentResponse> CancelShipmentWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -372,11 +371,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -386,7 +385,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CancelShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CancelShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelShipmentResponse)));
+                (CancelShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelShipmentResponse)));
         }
 
         /// <summary>
@@ -395,10 +394,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment to cancel.</param>
         /// <returns>Task of CancelShipmentResponse</returns>
-        public async System.Threading.Tasks.Task<CancelShipmentResponse> CancelShipmentAsync (string shipmentId)
+        public async System.Threading.Tasks.Task<CancelShipmentResponse> CancelShipmentAsync(string shipmentId)
         {
-             ApiResponse<CancelShipmentResponse> localVarResponse = await CancelShipmentAsyncWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<CancelShipmentResponse> localVarResponse = await CancelShipmentAsyncWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
 
         }
 
@@ -408,7 +407,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment to cancel.</param>
         /// <returns>Task of ApiResponse (CancelShipmentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CancelShipmentResponse>> CancelShipmentAsyncWithHttpInfo (string shipmentId)
+        public async System.Threading.Tasks.Task<ApiResponse<CancelShipmentResponse>> CancelShipmentAsyncWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -440,11 +439,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -454,7 +453,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CancelShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CancelShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelShipmentResponse)));
+                (CancelShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelShipmentResponse)));
         }
 
         /// <summary>
@@ -463,10 +462,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;CreateShipment&#x60; operation.</param>
         /// <returns>CreateShipmentResponse</returns>
-        public CreateShipmentResponse CreateShipment (CreateShipmentRequest body)
+        public CreateShipmentResponse CreateShipment(CreateShipmentRequest body)
         {
-             ApiResponse<CreateShipmentResponse> localVarResponse = CreateShipmentWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateShipmentResponse> localVarResponse = CreateShipmentWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -475,7 +474,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;CreateShipment&#x60; operation.</param>
         /// <returns>ApiResponse of CreateShipmentResponse</returns>
-        public ApiResponse< CreateShipmentResponse > CreateShipmentWithHttpInfo (CreateShipmentRequest body)
+        public ApiResponse<CreateShipmentResponse> CreateShipmentWithHttpInfo(CreateShipmentRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -514,11 +513,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -528,7 +527,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateShipmentResponse)));
+                (CreateShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateShipmentResponse)));
         }
 
         /// <summary>
@@ -537,10 +536,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;CreateShipment&#x60; operation.</param>
         /// <returns>Task of CreateShipmentResponse</returns>
-        public async System.Threading.Tasks.Task<CreateShipmentResponse> CreateShipmentAsync (CreateShipmentRequest body)
+        public async System.Threading.Tasks.Task<CreateShipmentResponse> CreateShipmentAsync(CreateShipmentRequest body)
         {
-             ApiResponse<CreateShipmentResponse> localVarResponse = await CreateShipmentAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateShipmentResponse> localVarResponse = await CreateShipmentAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -550,7 +549,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;CreateShipment&#x60; operation.</param>
         /// <returns>Task of ApiResponse (CreateShipmentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateShipmentResponse>> CreateShipmentAsyncWithHttpInfo (CreateShipmentRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateShipmentResponse>> CreateShipmentAsyncWithHttpInfo(CreateShipmentRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -589,11 +588,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -603,7 +602,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateShipmentResponse)));
+                (CreateShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateShipmentResponse)));
         }
 
         /// <summary>
@@ -612,10 +611,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation.</param>
         /// <returns>GetAdditionalSellerInputsResponse</returns>
-        public GetAdditionalSellerInputsResponse GetAdditionalSellerInputs (GetAdditionalSellerInputsRequest body)
+        public GetAdditionalSellerInputsResponse GetAdditionalSellerInputs(GetAdditionalSellerInputsRequest body)
         {
-             ApiResponse<GetAdditionalSellerInputsResponse> localVarResponse = GetAdditionalSellerInputsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetAdditionalSellerInputsResponse> localVarResponse = GetAdditionalSellerInputsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -624,7 +623,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation.</param>
         /// <returns>ApiResponse of GetAdditionalSellerInputsResponse</returns>
-        public ApiResponse< GetAdditionalSellerInputsResponse > GetAdditionalSellerInputsWithHttpInfo (GetAdditionalSellerInputsRequest body)
+        public ApiResponse<GetAdditionalSellerInputsResponse> GetAdditionalSellerInputsWithHttpInfo(GetAdditionalSellerInputsRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -663,11 +662,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -677,7 +676,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetAdditionalSellerInputsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetAdditionalSellerInputsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAdditionalSellerInputsResponse)));
+                (GetAdditionalSellerInputsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAdditionalSellerInputsResponse)));
         }
 
         /// <summary>
@@ -686,10 +685,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation.</param>
         /// <returns>Task of GetAdditionalSellerInputsResponse</returns>
-        public async System.Threading.Tasks.Task<GetAdditionalSellerInputsResponse> GetAdditionalSellerInputsAsync (GetAdditionalSellerInputsRequest body)
+        public async System.Threading.Tasks.Task<GetAdditionalSellerInputsResponse> GetAdditionalSellerInputsAsync(GetAdditionalSellerInputsRequest body)
         {
-             ApiResponse<GetAdditionalSellerInputsResponse> localVarResponse = await GetAdditionalSellerInputsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetAdditionalSellerInputsResponse> localVarResponse = await GetAdditionalSellerInputsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -699,7 +698,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation.</param>
         /// <returns>Task of ApiResponse (GetAdditionalSellerInputsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetAdditionalSellerInputsResponse>> GetAdditionalSellerInputsAsyncWithHttpInfo (GetAdditionalSellerInputsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<GetAdditionalSellerInputsResponse>> GetAdditionalSellerInputsAsyncWithHttpInfo(GetAdditionalSellerInputsRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -738,11 +737,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -752,7 +751,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetAdditionalSellerInputsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetAdditionalSellerInputsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAdditionalSellerInputsResponse)));
+                (GetAdditionalSellerInputsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAdditionalSellerInputsResponse)));
         }
 
         /// <summary>
@@ -761,10 +760,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation.</param>
         /// <returns>GetEligibleShipmentServicesResponse</returns>
-        public GetEligibleShipmentServicesResponse GetEligibleShipmentServices (GetEligibleShipmentServicesRequest body)
+        public GetEligibleShipmentServicesResponse GetEligibleShipmentServices(GetEligibleShipmentServicesRequest body)
         {
-             ApiResponse<GetEligibleShipmentServicesResponse> localVarResponse = GetEligibleShipmentServicesWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetEligibleShipmentServicesResponse> localVarResponse = GetEligibleShipmentServicesWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -773,7 +772,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation.</param>
         /// <returns>ApiResponse of GetEligibleShipmentServicesResponse</returns>
-        public ApiResponse< GetEligibleShipmentServicesResponse > GetEligibleShipmentServicesWithHttpInfo (GetEligibleShipmentServicesRequest body)
+        public ApiResponse<GetEligibleShipmentServicesResponse> GetEligibleShipmentServicesWithHttpInfo(GetEligibleShipmentServicesRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -812,11 +811,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -826,7 +825,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetEligibleShipmentServicesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetEligibleShipmentServicesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetEligibleShipmentServicesResponse)));
+                (GetEligibleShipmentServicesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetEligibleShipmentServicesResponse)));
         }
 
         /// <summary>
@@ -835,10 +834,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation.</param>
         /// <returns>Task of GetEligibleShipmentServicesResponse</returns>
-        public async System.Threading.Tasks.Task<GetEligibleShipmentServicesResponse> GetEligibleShipmentServicesAsync (GetEligibleShipmentServicesRequest body)
+        public async System.Threading.Tasks.Task<GetEligibleShipmentServicesResponse> GetEligibleShipmentServicesAsync(GetEligibleShipmentServicesRequest body)
         {
-             ApiResponse<GetEligibleShipmentServicesResponse> localVarResponse = await GetEligibleShipmentServicesAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetEligibleShipmentServicesResponse> localVarResponse = await GetEligibleShipmentServicesAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -848,7 +847,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation.</param>
         /// <returns>Task of ApiResponse (GetEligibleShipmentServicesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetEligibleShipmentServicesResponse>> GetEligibleShipmentServicesAsyncWithHttpInfo (GetEligibleShipmentServicesRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<GetEligibleShipmentServicesResponse>> GetEligibleShipmentServicesAsyncWithHttpInfo(GetEligibleShipmentServicesRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -887,11 +886,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -901,7 +900,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetEligibleShipmentServicesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetEligibleShipmentServicesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetEligibleShipmentServicesResponse)));
+                (GetEligibleShipmentServicesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetEligibleShipmentServicesResponse)));
         }
 
         /// <summary>
@@ -910,10 +909,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment.</param>
         /// <returns>GetShipmentResponse</returns>
-        public GetShipmentResponse GetShipment (string shipmentId)
+        public GetShipmentResponse GetShipment(string shipmentId)
         {
-             ApiResponse<GetShipmentResponse> localVarResponse = GetShipmentWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<GetShipmentResponse> localVarResponse = GetShipmentWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -922,7 +921,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment.</param>
         /// <returns>ApiResponse of GetShipmentResponse</returns>
-        public ApiResponse< GetShipmentResponse > GetShipmentWithHttpInfo (string shipmentId)
+        public ApiResponse<GetShipmentResponse> GetShipmentWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -954,11 +953,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -968,7 +967,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentResponse)));
+                (GetShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentResponse)));
         }
 
         /// <summary>
@@ -977,10 +976,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment.</param>
         /// <returns>Task of GetShipmentResponse</returns>
-        public async System.Threading.Tasks.Task<GetShipmentResponse> GetShipmentAsync (string shipmentId)
+        public async System.Threading.Tasks.Task<GetShipmentResponse> GetShipmentAsync(string shipmentId)
         {
-             ApiResponse<GetShipmentResponse> localVarResponse = await GetShipmentAsyncWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<GetShipmentResponse> localVarResponse = await GetShipmentAsyncWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
 
         }
 
@@ -990,7 +989,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentId">The Amazon-defined shipment identifier for the shipment.</param>
         /// <returns>Task of ApiResponse (GetShipmentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetShipmentResponse>> GetShipmentAsyncWithHttpInfo (string shipmentId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetShipmentResponse>> GetShipmentAsyncWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -1022,11 +1021,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1036,7 +1035,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentResponse)));
+                (GetShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentResponse)));
         }
 
 
@@ -1050,17 +1049,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public MerchantFulfillmentApi Build() 
+            public MerchantFulfillmentApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

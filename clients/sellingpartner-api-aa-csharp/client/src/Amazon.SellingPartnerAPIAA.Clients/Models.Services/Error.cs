@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Error response returned when the request is unsuccessful.
     /// </summary>
     [DataContract]
-    public partial class Error :  IEquatable<Error>, IValidatableObject
+    public partial class Error : IEquatable<Error>, IValidatableObject
     {
         /// <summary>
         /// The type of error.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ErrorLevelEnum
         {
-            
+
             /// <summary>
             /// Enum ERROR for value: ERROR
             /// </summary>
             [EnumMember(Value = "ERROR")]
             ERROR = 1,
-            
+
             /// <summary>
             /// Enum WARNING for value: WARNING
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The type of error.
         /// </summary>
         /// <value>The type of error.</value>
-        [DataMember(Name="errorLevel", EmitDefaultValue=false)]
+        [DataMember(Name = "errorLevel", EmitDefaultValue = false)]
         public ErrorLevelEnum? ErrorLevel { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
@@ -66,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
         /// <param name="code">An error code that identifies the type of error that occurred. (required).</param>
-        /// <param name="message">A message that describes the error condition in a human-readable form. (required).</param>
+        /// <param name="message">A message that describes the error condition. (required).</param>
         /// <param name="details">Additional details that can help the caller understand or fix the issue..</param>
         /// <param name="errorLevel">The type of error..</param>
         public Error(string code = default, string message = default, string details = default, ErrorLevelEnum? errorLevel = default)
@@ -92,26 +87,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.Details = details;
             this.ErrorLevel = errorLevel;
         }
-        
+
         /// <summary>
         /// An error code that identifies the type of error that occurred.
         /// </summary>
         /// <value>An error code that identifies the type of error that occurred.</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
-        /// A message that describes the error condition in a human-readable form.
+        /// A message that describes the error condition.
         /// </summary>
-        /// <value>A message that describes the error condition in a human-readable form.</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        /// <value>A message that describes the error condition.</value>
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
         /// <summary>
         /// Additional details that can help the caller understand or fix the issue.
         /// </summary>
         /// <value>Additional details that can help the caller understand or fix the issue.</value>
-        [DataMember(Name="details", EmitDefaultValue=false)]
+        [DataMember(Name = "details", EmitDefaultValue = false)]
         public string Details { get; set; }
 
 
@@ -130,7 +125,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -160,22 +155,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.Details == input.Details ||
                     (this.Details != null &&
                     this.Details.Equals(input.Details))
-                ) && 
+                ) &&
                 (
                     this.ErrorLevel == input.ErrorLevel ||
                     (this.ErrorLevel != null &&

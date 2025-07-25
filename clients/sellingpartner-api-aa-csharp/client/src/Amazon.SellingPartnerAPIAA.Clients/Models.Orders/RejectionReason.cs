@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The reason for rejecting the order&#39;s regulated information. This is only present if the order is rejected.
     /// </summary>
     [DataContract]
-    public partial class RejectionReason :  IEquatable<RejectionReason>, IValidatableObject
+    public partial class RejectionReason : IEquatable<RejectionReason>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RejectionReason" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                 this.RejectionReasonDescription = rejectionReasonDescription;
             }
         }
-        
+
         /// <summary>
         /// The unique identifier for the rejection reason.
         /// </summary>
         /// <value>The unique identifier for the rejection reason.</value>
-        [DataMember(Name="RejectionReasonId", EmitDefaultValue=false)]
+        [DataMember(Name = "RejectionReasonId", EmitDefaultValue = false)]
         public string RejectionReasonId { get; set; }
 
         /// <summary>
         /// The description of this rejection reason.
         /// </summary>
         /// <value>The description of this rejection reason.</value>
-        [DataMember(Name="RejectionReasonDescription", EmitDefaultValue=false)]
+        [DataMember(Name = "RejectionReasonDescription", EmitDefaultValue = false)]
         public string RejectionReasonDescription { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.RejectionReasonId == input.RejectionReasonId ||
                     (this.RejectionReasonId != null &&
                     this.RejectionReasonId.Equals(input.RejectionReasonId))
-                ) && 
+                ) &&
                 (
                     this.RejectionReasonDescription == input.RejectionReasonDescription ||
                     (this.RejectionReasonDescription != null &&

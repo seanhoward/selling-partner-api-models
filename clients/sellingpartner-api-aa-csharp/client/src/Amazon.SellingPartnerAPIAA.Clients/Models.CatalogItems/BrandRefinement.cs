@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,26 +9,20 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Description of a brand that can be used to get more fine-grained search results.
+    /// A brand that you can use to refine your search.
     /// </summary>
     [DataContract]
-    public partial class BrandRefinement :  IEquatable<BrandRefinement>, IValidatableObject
+    public partial class BrandRefinement : IEquatable<BrandRefinement>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandRefinement" /> class.
@@ -38,8 +32,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandRefinement" /> class.
         /// </summary>
-        /// <param name="numberOfResults">The estimated number of results that would still be returned if refinement key applied. (required).</param>
-        /// <param name="brandName">Brand name. For display and can be used as a search refinement. (required).</param>
+        /// <param name="numberOfResults">The estimated number of results that would be returned if you refine your search by the specified &#x60;brandName&#x60;. (required).</param>
+        /// <param name="brandName">The brand name that you can use to refine your search. (required).</param>
         public BrandRefinement(int? numberOfResults = default, string brandName = default)
         {
             // to ensure "numberOfResults" is required (not null)
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
                 this.BrandName = brandName;
             }
         }
-        
+
         /// <summary>
-        /// The estimated number of results that would still be returned if refinement key applied.
+        /// The estimated number of results that would be returned if you refine your search by the specified &#x60;brandName&#x60;.
         /// </summary>
-        /// <value>The estimated number of results that would still be returned if refinement key applied.</value>
-        [DataMember(Name="numberOfResults", EmitDefaultValue=false)]
+        /// <value>The estimated number of results that would be returned if you refine your search by the specified &#x60;brandName&#x60;.</value>
+        [DataMember(Name = "numberOfResults", EmitDefaultValue = false)]
         public int? NumberOfResults { get; set; }
 
         /// <summary>
-        /// Brand name. For display and can be used as a search refinement.
+        /// The brand name that you can use to refine your search.
         /// </summary>
-        /// <value>Brand name. For display and can be used as a search refinement.</value>
-        [DataMember(Name="brandName", EmitDefaultValue=false)]
+        /// <value>The brand name that you can use to refine your search.</value>
+        [DataMember(Name = "brandName", EmitDefaultValue = false)]
         public string BrandName { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.NumberOfResults == input.NumberOfResults ||
                     (this.NumberOfResults != null &&
                     this.NumberOfResults.Equals(input.NumberOfResults))
-                ) && 
+                ) &&
                 (
                     this.BrandName == input.BrandName ||
                     (this.BrandName != null &&

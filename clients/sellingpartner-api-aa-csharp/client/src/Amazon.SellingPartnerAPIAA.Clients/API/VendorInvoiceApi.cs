@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayments;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body containing one or more invoices for vendor orders.</param>
         /// <returns>SubmitInvoiceResponse</returns>
-        SubmitInvoiceResponse SubmitInvoice (SubmitInvoiceRequest body);
+        SubmitInvoiceResponse SubmitInvoice(SubmitInvoiceRequest body);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body containing one or more invoices for vendor orders.</param>
         /// <returns>ApiResponse of SubmitInvoiceResponse</returns>
-        ApiResponse<SubmitInvoiceResponse> SubmitInvoiceWithHttpInfo (SubmitInvoiceRequest body);
+        ApiResponse<SubmitInvoiceResponse> SubmitInvoiceWithHttpInfo(SubmitInvoiceRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -57,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body containing one or more invoices for vendor orders.</param>
         /// <returns>Task of SubmitInvoiceResponse</returns>
-        System.Threading.Tasks.Task<SubmitInvoiceResponse> SubmitInvoiceAsync (SubmitInvoiceRequest body);
+        System.Threading.Tasks.Task<SubmitInvoiceResponse> SubmitInvoiceAsync(SubmitInvoiceRequest body);
 
         /// <summary>
         /// 
@@ -68,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body containing one or more invoices for vendor orders.</param>
         /// <returns>Task of ApiResponse (SubmitInvoiceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubmitInvoiceResponse>> SubmitInvoiceAsyncWithHttpInfo (SubmitInvoiceRequest body);
+        System.Threading.Tasks.Task<ApiResponse<SubmitInvoiceResponse>> SubmitInvoiceAsyncWithHttpInfo(SubmitInvoiceRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -88,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public VendorInvoiceApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -114,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -160,10 +159,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body containing one or more invoices for vendor orders.</param>
         /// <returns>SubmitInvoiceResponse</returns>
-        public SubmitInvoiceResponse SubmitInvoice (SubmitInvoiceRequest body)
+        public SubmitInvoiceResponse SubmitInvoice(SubmitInvoiceRequest body)
         {
-             ApiResponse<SubmitInvoiceResponse> localVarResponse = SubmitInvoiceWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitInvoiceResponse> localVarResponse = SubmitInvoiceWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -172,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body containing one or more invoices for vendor orders.</param>
         /// <returns>ApiResponse of SubmitInvoiceResponse</returns>
-        public ApiResponse< SubmitInvoiceResponse > SubmitInvoiceWithHttpInfo (SubmitInvoiceRequest body)
+        public ApiResponse<SubmitInvoiceResponse> SubmitInvoiceWithHttpInfo(SubmitInvoiceRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -211,11 +210,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -225,7 +224,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitInvoiceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitInvoiceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInvoiceResponse)));
+                (SubmitInvoiceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInvoiceResponse)));
         }
 
         /// <summary>
@@ -234,10 +233,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body containing one or more invoices for vendor orders.</param>
         /// <returns>Task of SubmitInvoiceResponse</returns>
-        public async System.Threading.Tasks.Task<SubmitInvoiceResponse> SubmitInvoiceAsync (SubmitInvoiceRequest body)
+        public async System.Threading.Tasks.Task<SubmitInvoiceResponse> SubmitInvoiceAsync(SubmitInvoiceRequest body)
         {
-             ApiResponse<SubmitInvoiceResponse> localVarResponse = await SubmitInvoiceAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitInvoiceResponse> localVarResponse = await SubmitInvoiceAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -247,7 +246,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body containing one or more invoices for vendor orders.</param>
         /// <returns>Task of ApiResponse (SubmitInvoiceResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SubmitInvoiceResponse>> SubmitInvoiceAsyncWithHttpInfo (SubmitInvoiceRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<SubmitInvoiceResponse>> SubmitInvoiceAsyncWithHttpInfo(SubmitInvoiceRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -286,11 +285,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -300,7 +299,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitInvoiceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitInvoiceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInvoiceResponse)));
+                (SubmitInvoiceResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitInvoiceResponse)));
         }
 
 
@@ -314,17 +313,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public VendorInvoiceApi Build() 
+            public VendorInvoiceApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

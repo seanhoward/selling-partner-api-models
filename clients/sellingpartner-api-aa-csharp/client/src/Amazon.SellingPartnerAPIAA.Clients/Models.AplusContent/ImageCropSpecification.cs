@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,26 +9,20 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
     /// <summary>
-    /// The instructions for optionally cropping an image. If no cropping is desired, set the dimensions to the original image size. If the image is cropped and no offset values are provided, then the coordinates of the top left corner of the cropped image, relative to the original image, are defaulted to (0,0).
+    /// The instructions for optionally cropping an image. If you don&#39;t want to crop the image, set the dimensions to the original image size. If the image is cropped and you don&#39;t include offset values, the coordinates of the top left corner of the cropped image are set to (0,0) by default.
     /// </summary>
     [DataContract]
-    public partial class ImageCropSpecification :  IEquatable<ImageCropSpecification>, IValidatableObject
+    public partial class ImageCropSpecification : IEquatable<ImageCropSpecification>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageCropSpecification" /> class.
@@ -53,17 +47,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             }
             this.Offset = offset;
         }
-        
+
         /// <summary>
         /// Gets or Sets Size
         /// </summary>
-        [DataMember(Name="size", EmitDefaultValue=false)]
+        [DataMember(Name = "size", EmitDefaultValue = false)]
         public ImageDimensions Size { get; set; }
 
         /// <summary>
         /// Gets or Sets Offset
         /// </summary>
-        [DataMember(Name="offset", EmitDefaultValue=false)]
+        [DataMember(Name = "offset", EmitDefaultValue = false)]
         public ImageOffsets Offset { get; set; }
 
         /// <summary>
@@ -79,7 +73,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -109,12 +103,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Size == input.Size ||
                     (this.Size != null &&
                     this.Size.Equals(input.Size))
-                ) && 
+                ) &&
                 (
                     this.Offset == input.Offset ||
                     (this.Offset != null &&

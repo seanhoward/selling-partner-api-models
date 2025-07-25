@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Shipping;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -32,9 +31,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment Id to cancel a shipment</param>
         /// <returns>CancelShipmentResponse</returns>
-        CancelShipmentResponse CancelShipment (string shipmentId);
+        CancelShipmentResponse CancelShipment(string shipmentId);
 
         /// <summary>
         /// 
@@ -43,9 +42,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment Id to cancel a shipment</param>
         /// <returns>ApiResponse of CancelShipmentResponse</returns>
-        ApiResponse<CancelShipmentResponse> CancelShipmentWithHttpInfo (string shipmentId);
+        ApiResponse<CancelShipmentResponse> CancelShipmentWithHttpInfo(string shipmentId);
         /// <summary>
         /// 
         /// </summary>
@@ -53,9 +52,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">CreateShipmentRequest Body</param>
         /// <returns>CreateShipmentResponse</returns>
-        CreateShipmentResponse CreateShipment (CreateShipmentRequest body);
+        CreateShipmentResponse CreateShipment(CreateShipmentRequest body);
 
         /// <summary>
         /// 
@@ -64,9 +63,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">CreateShipmentRequest Body</param>
         /// <returns>ApiResponse of CreateShipmentResponse</returns>
-        ApiResponse<CreateShipmentResponse> CreateShipmentWithHttpInfo (CreateShipmentRequest body);
+        ApiResponse<CreateShipmentResponse> CreateShipmentWithHttpInfo(CreateShipmentRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -75,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>GetAccountResponse</returns>
-        GetAccountResponse GetAccount ();
+        GetAccountResponse GetAccount();
 
         /// <summary>
         /// 
@@ -85,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of GetAccountResponse</returns>
-        ApiResponse<GetAccountResponse> GetAccountWithHttpInfo ();
+        ApiResponse<GetAccountResponse> GetAccountWithHttpInfo();
         /// <summary>
         /// 
         /// </summary>
@@ -93,9 +92,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">GetRatesRequest body</param>
         /// <returns>GetRatesResponse</returns>
-        GetRatesResponse GetRates (GetRatesRequest body);
+        GetRatesResponse GetRates(GetRatesRequest body);
 
         /// <summary>
         /// 
@@ -104,9 +103,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">GetRatesRequest body</param>
         /// <returns>ApiResponse of GetRatesResponse</returns>
-        ApiResponse<GetRatesResponse> GetRatesWithHttpInfo (GetRatesRequest body);
+        ApiResponse<GetRatesResponse> GetRatesWithHttpInfo(GetRatesRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -114,9 +113,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment id to return the entire shipment object</param>
         /// <returns>GetShipmentResponse</returns>
-        GetShipmentResponse GetShipment (string shipmentId);
+        GetShipmentResponse GetShipment(string shipmentId);
 
         /// <summary>
         /// 
@@ -125,9 +124,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment id to return the entire shipment object</param>
         /// <returns>ApiResponse of GetShipmentResponse</returns>
-        ApiResponse<GetShipmentResponse> GetShipmentWithHttpInfo (string shipmentId);
+        ApiResponse<GetShipmentResponse> GetShipmentWithHttpInfo(string shipmentId);
         /// <summary>
         /// 
         /// </summary>
@@ -135,9 +134,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="trackingId"></param>
+        /// <param name="trackingId">Tracking Id</param>
         /// <returns>GetTrackingInformationResponse</returns>
-        GetTrackingInformationResponse GetTrackingInformation (string trackingId);
+        GetTrackingInformationResponse GetTrackingInformation(string trackingId);
 
         /// <summary>
         /// 
@@ -146,9 +145,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="trackingId"></param>
+        /// <param name="trackingId">Tracking Id</param>
         /// <returns>ApiResponse of GetTrackingInformationResponse</returns>
-        ApiResponse<GetTrackingInformationResponse> GetTrackingInformationWithHttpInfo (string trackingId);
+        ApiResponse<GetTrackingInformationResponse> GetTrackingInformationWithHttpInfo(string trackingId);
         /// <summary>
         /// 
         /// </summary>
@@ -156,10 +155,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment id for purchase shipping label</param>
+        /// <param name="body">PurchaseShippingLabelRequest body</param>
         /// <returns>PurchaseLabelsResponse</returns>
-        PurchaseLabelsResponse PurchaseLabels (string shipmentId, PurchaseLabelsRequest body);
+        PurchaseLabelsResponse PurchaseLabels(string shipmentId, PurchaseLabelsRequest body);
 
         /// <summary>
         /// 
@@ -168,10 +167,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment id for purchase shipping label</param>
+        /// <param name="body">PurchaseShippingLabelRequest body</param>
         /// <returns>ApiResponse of PurchaseLabelsResponse</returns>
-        ApiResponse<PurchaseLabelsResponse> PurchaseLabelsWithHttpInfo (string shipmentId, PurchaseLabelsRequest body);
+        ApiResponse<PurchaseLabelsResponse> PurchaseLabelsWithHttpInfo(string shipmentId, PurchaseLabelsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -179,9 +178,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">PurchaseShipmentRequest body</param>
         /// <returns>PurchaseShipmentResponse</returns>
-        PurchaseShipmentResponse PurchaseShipment (PurchaseShipmentRequest body);
+        PurchaseShipmentResponse PurchaseShipment(PurchaseShipmentRequest body);
 
         /// <summary>
         /// 
@@ -190,9 +189,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">PurchaseShipmentRequest body</param>
         /// <returns>ApiResponse of PurchaseShipmentResponse</returns>
-        ApiResponse<PurchaseShipmentResponse> PurchaseShipmentWithHttpInfo (PurchaseShipmentRequest body);
+        ApiResponse<PurchaseShipmentResponse> PurchaseShipmentWithHttpInfo(PurchaseShipmentRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -200,11 +199,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="trackingId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment Id to retreive label</param>
+        /// <param name="trackingId">Tracking Id</param>
+        /// <param name="body">RetrieveShippingLabelRequest body</param>
         /// <returns>RetrieveShippingLabelResponse</returns>
-        RetrieveShippingLabelResponse RetrieveShippingLabel (string shipmentId, string trackingId, RetrieveShippingLabelRequest body);
+        RetrieveShippingLabelResponse RetrieveShippingLabel(string shipmentId, string trackingId, RetrieveShippingLabelRequest body);
 
         /// <summary>
         /// 
@@ -213,11 +212,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="trackingId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment Id to retreive label</param>
+        /// <param name="trackingId">Tracking Id</param>
+        /// <param name="body">RetrieveShippingLabelRequest body</param>
         /// <returns>ApiResponse of RetrieveShippingLabelResponse</returns>
-        ApiResponse<RetrieveShippingLabelResponse> RetrieveShippingLabelWithHttpInfo (string shipmentId, string trackingId, RetrieveShippingLabelRequest body);
+        ApiResponse<RetrieveShippingLabelResponse> RetrieveShippingLabelWithHttpInfo(string shipmentId, string trackingId, RetrieveShippingLabelRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -227,9 +226,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment Id to cancel a shipment</param>
         /// <returns>Task of CancelShipmentResponse</returns>
-        System.Threading.Tasks.Task<CancelShipmentResponse> CancelShipmentAsync (string shipmentId);
+        System.Threading.Tasks.Task<CancelShipmentResponse> CancelShipmentAsync(string shipmentId);
 
         /// <summary>
         /// 
@@ -238,9 +237,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment Id to cancel a shipment</param>
         /// <returns>Task of ApiResponse (CancelShipmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CancelShipmentResponse>> CancelShipmentAsyncWithHttpInfo (string shipmentId);
+        System.Threading.Tasks.Task<ApiResponse<CancelShipmentResponse>> CancelShipmentAsyncWithHttpInfo(string shipmentId);
         /// <summary>
         /// 
         /// </summary>
@@ -248,9 +247,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">CreateShipmentRequest Body</param>
         /// <returns>Task of CreateShipmentResponse</returns>
-        System.Threading.Tasks.Task<CreateShipmentResponse> CreateShipmentAsync (CreateShipmentRequest body);
+        System.Threading.Tasks.Task<CreateShipmentResponse> CreateShipmentAsync(CreateShipmentRequest body);
 
         /// <summary>
         /// 
@@ -259,9 +258,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">CreateShipmentRequest Body</param>
         /// <returns>Task of ApiResponse (CreateShipmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateShipmentResponse>> CreateShipmentAsyncWithHttpInfo (CreateShipmentRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateShipmentResponse>> CreateShipmentAsyncWithHttpInfo(CreateShipmentRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -270,7 +269,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of GetAccountResponse</returns>
-        System.Threading.Tasks.Task<GetAccountResponse> GetAccountAsync ();
+        System.Threading.Tasks.Task<GetAccountResponse> GetAccountAsync();
 
         /// <summary>
         /// 
@@ -280,7 +279,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (GetAccountResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAccountResponse>> GetAccountAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<GetAccountResponse>> GetAccountAsyncWithHttpInfo();
         /// <summary>
         /// 
         /// </summary>
@@ -288,9 +287,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">GetRatesRequest body</param>
         /// <returns>Task of GetRatesResponse</returns>
-        System.Threading.Tasks.Task<GetRatesResponse> GetRatesAsync (GetRatesRequest body);
+        System.Threading.Tasks.Task<GetRatesResponse> GetRatesAsync(GetRatesRequest body);
 
         /// <summary>
         /// 
@@ -299,9 +298,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">GetRatesRequest body</param>
         /// <returns>Task of ApiResponse (GetRatesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetRatesResponse>> GetRatesAsyncWithHttpInfo (GetRatesRequest body);
+        System.Threading.Tasks.Task<ApiResponse<GetRatesResponse>> GetRatesAsyncWithHttpInfo(GetRatesRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -309,9 +308,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment id to return the entire shipment object</param>
         /// <returns>Task of GetShipmentResponse</returns>
-        System.Threading.Tasks.Task<GetShipmentResponse> GetShipmentAsync (string shipmentId);
+        System.Threading.Tasks.Task<GetShipmentResponse> GetShipmentAsync(string shipmentId);
 
         /// <summary>
         /// 
@@ -320,9 +319,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment id to return the entire shipment object</param>
         /// <returns>Task of ApiResponse (GetShipmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetShipmentResponse>> GetShipmentAsyncWithHttpInfo (string shipmentId);
+        System.Threading.Tasks.Task<ApiResponse<GetShipmentResponse>> GetShipmentAsyncWithHttpInfo(string shipmentId);
         /// <summary>
         /// 
         /// </summary>
@@ -330,9 +329,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="trackingId"></param>
+        /// <param name="trackingId">Tracking Id</param>
         /// <returns>Task of GetTrackingInformationResponse</returns>
-        System.Threading.Tasks.Task<GetTrackingInformationResponse> GetTrackingInformationAsync (string trackingId);
+        System.Threading.Tasks.Task<GetTrackingInformationResponse> GetTrackingInformationAsync(string trackingId);
 
         /// <summary>
         /// 
@@ -341,9 +340,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="trackingId"></param>
+        /// <param name="trackingId">Tracking Id</param>
         /// <returns>Task of ApiResponse (GetTrackingInformationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetTrackingInformationResponse>> GetTrackingInformationAsyncWithHttpInfo (string trackingId);
+        System.Threading.Tasks.Task<ApiResponse<GetTrackingInformationResponse>> GetTrackingInformationAsyncWithHttpInfo(string trackingId);
         /// <summary>
         /// 
         /// </summary>
@@ -351,10 +350,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment id for purchase shipping label</param>
+        /// <param name="body">PurchaseShippingLabelRequest body</param>
         /// <returns>Task of PurchaseLabelsResponse</returns>
-        System.Threading.Tasks.Task<PurchaseLabelsResponse> PurchaseLabelsAsync (string shipmentId, PurchaseLabelsRequest body);
+        System.Threading.Tasks.Task<PurchaseLabelsResponse> PurchaseLabelsAsync(string shipmentId, PurchaseLabelsRequest body);
 
         /// <summary>
         /// 
@@ -363,10 +362,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment id for purchase shipping label</param>
+        /// <param name="body">PurchaseShippingLabelRequest body</param>
         /// <returns>Task of ApiResponse (PurchaseLabelsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PurchaseLabelsResponse>> PurchaseLabelsAsyncWithHttpInfo (string shipmentId, PurchaseLabelsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<PurchaseLabelsResponse>> PurchaseLabelsAsyncWithHttpInfo(string shipmentId, PurchaseLabelsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -374,9 +373,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">PurchaseShipmentRequest body</param>
         /// <returns>Task of PurchaseShipmentResponse</returns>
-        System.Threading.Tasks.Task<PurchaseShipmentResponse> PurchaseShipmentAsync (PurchaseShipmentRequest body);
+        System.Threading.Tasks.Task<PurchaseShipmentResponse> PurchaseShipmentAsync(PurchaseShipmentRequest body);
 
         /// <summary>
         /// 
@@ -385,9 +384,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">PurchaseShipmentRequest body</param>
         /// <returns>Task of ApiResponse (PurchaseShipmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PurchaseShipmentResponse>> PurchaseShipmentAsyncWithHttpInfo (PurchaseShipmentRequest body);
+        System.Threading.Tasks.Task<ApiResponse<PurchaseShipmentResponse>> PurchaseShipmentAsyncWithHttpInfo(PurchaseShipmentRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -395,11 +394,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="trackingId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment Id to retreive label</param>
+        /// <param name="trackingId">Tracking Id</param>
+        /// <param name="body">RetrieveShippingLabelRequest body</param>
         /// <returns>Task of RetrieveShippingLabelResponse</returns>
-        System.Threading.Tasks.Task<RetrieveShippingLabelResponse> RetrieveShippingLabelAsync (string shipmentId, string trackingId, RetrieveShippingLabelRequest body);
+        System.Threading.Tasks.Task<RetrieveShippingLabelResponse> RetrieveShippingLabelAsync(string shipmentId, string trackingId, RetrieveShippingLabelRequest body);
 
         /// <summary>
         /// 
@@ -408,11 +407,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="trackingId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment Id to retreive label</param>
+        /// <param name="trackingId">Tracking Id</param>
+        /// <param name="body">RetrieveShippingLabelRequest body</param>
         /// <returns>Task of ApiResponse (RetrieveShippingLabelResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RetrieveShippingLabelResponse>> RetrieveShippingLabelAsyncWithHttpInfo (string shipmentId, string trackingId, RetrieveShippingLabelRequest body);
+        System.Threading.Tasks.Task<ApiResponse<RetrieveShippingLabelResponse>> RetrieveShippingLabelAsyncWithHttpInfo(string shipmentId, string trackingId, RetrieveShippingLabelRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -432,7 +431,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public ShippingApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -458,7 +457,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -502,21 +501,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment Id to cancel a shipment</param>
         /// <returns>CancelShipmentResponse</returns>
-        public CancelShipmentResponse CancelShipment (string shipmentId)
+        public CancelShipmentResponse CancelShipment(string shipmentId)
         {
-             ApiResponse<CancelShipmentResponse> localVarResponse = CancelShipmentWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<CancelShipmentResponse> localVarResponse = CancelShipmentWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment Id to cancel a shipment</param>
         /// <returns>ApiResponse of CancelShipmentResponse</returns>
-        public ApiResponse< CancelShipmentResponse > CancelShipmentWithHttpInfo (string shipmentId)
+        public ApiResponse<CancelShipmentResponse> CancelShipmentWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -548,11 +547,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -562,19 +561,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CancelShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CancelShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelShipmentResponse)));
+                (CancelShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelShipmentResponse)));
         }
 
         /// <summary>
         ///  Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment Id to cancel a shipment</param>
         /// <returns>Task of CancelShipmentResponse</returns>
-        public async System.Threading.Tasks.Task<CancelShipmentResponse> CancelShipmentAsync (string shipmentId)
+        public async System.Threading.Tasks.Task<CancelShipmentResponse> CancelShipmentAsync(string shipmentId)
         {
-             ApiResponse<CancelShipmentResponse> localVarResponse = await CancelShipmentAsyncWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<CancelShipmentResponse> localVarResponse = await CancelShipmentAsyncWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
 
         }
 
@@ -582,9 +581,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment Id to cancel a shipment</param>
         /// <returns>Task of ApiResponse (CancelShipmentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CancelShipmentResponse>> CancelShipmentAsyncWithHttpInfo (string shipmentId)
+        public async System.Threading.Tasks.Task<ApiResponse<CancelShipmentResponse>> CancelShipmentAsyncWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -616,11 +615,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -630,28 +629,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CancelShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CancelShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelShipmentResponse)));
+                (CancelShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelShipmentResponse)));
         }
 
         /// <summary>
         ///  Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">CreateShipmentRequest Body</param>
         /// <returns>CreateShipmentResponse</returns>
-        public CreateShipmentResponse CreateShipment (CreateShipmentRequest body)
+        public CreateShipmentResponse CreateShipment(CreateShipmentRequest body)
         {
-             ApiResponse<CreateShipmentResponse> localVarResponse = CreateShipmentWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateShipmentResponse> localVarResponse = CreateShipmentWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">CreateShipmentRequest Body</param>
         /// <returns>ApiResponse of CreateShipmentResponse</returns>
-        public ApiResponse< CreateShipmentResponse > CreateShipmentWithHttpInfo (CreateShipmentRequest body)
+        public ApiResponse<CreateShipmentResponse> CreateShipmentWithHttpInfo(CreateShipmentRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -690,11 +689,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -704,19 +703,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateShipmentResponse)));
+                (CreateShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateShipmentResponse)));
         }
 
         /// <summary>
         ///  Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">CreateShipmentRequest Body</param>
         /// <returns>Task of CreateShipmentResponse</returns>
-        public async System.Threading.Tasks.Task<CreateShipmentResponse> CreateShipmentAsync (CreateShipmentRequest body)
+        public async System.Threading.Tasks.Task<CreateShipmentResponse> CreateShipmentAsync(CreateShipmentRequest body)
         {
-             ApiResponse<CreateShipmentResponse> localVarResponse = await CreateShipmentAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateShipmentResponse> localVarResponse = await CreateShipmentAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -724,9 +723,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">CreateShipmentRequest Body</param>
         /// <returns>Task of ApiResponse (CreateShipmentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateShipmentResponse>> CreateShipmentAsyncWithHttpInfo (CreateShipmentRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateShipmentResponse>> CreateShipmentAsyncWithHttpInfo(CreateShipmentRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -765,11 +764,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -779,7 +778,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateShipmentResponse)));
+                (CreateShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateShipmentResponse)));
         }
 
         /// <summary>
@@ -787,10 +786,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>GetAccountResponse</returns>
-        public GetAccountResponse GetAccount ()
+        public GetAccountResponse GetAccount()
         {
-             ApiResponse<GetAccountResponse> localVarResponse = GetAccountWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<GetAccountResponse> localVarResponse = GetAccountWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -798,7 +797,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of GetAccountResponse</returns>
-        public ApiResponse< GetAccountResponse > GetAccountWithHttpInfo ()
+        public ApiResponse<GetAccountResponse> GetAccountWithHttpInfo()
         {
 
             var localVarPath = "/shipping/v1/account";
@@ -826,11 +825,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -840,7 +839,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetAccountResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetAccountResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAccountResponse)));
+                (GetAccountResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAccountResponse)));
         }
 
         /// <summary>
@@ -848,10 +847,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of GetAccountResponse</returns>
-        public async System.Threading.Tasks.Task<GetAccountResponse> GetAccountAsync ()
+        public async System.Threading.Tasks.Task<GetAccountResponse> GetAccountAsync()
         {
-             ApiResponse<GetAccountResponse> localVarResponse = await GetAccountAsyncWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<GetAccountResponse> localVarResponse = await GetAccountAsyncWithHttpInfo();
+            return localVarResponse.Data;
 
         }
 
@@ -860,7 +859,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (GetAccountResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetAccountResponse>> GetAccountAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<GetAccountResponse>> GetAccountAsyncWithHttpInfo()
         {
 
             var localVarPath = "/shipping/v1/account";
@@ -888,11 +887,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -902,28 +901,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetAccountResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetAccountResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAccountResponse)));
+                (GetAccountResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAccountResponse)));
         }
 
         /// <summary>
         ///  Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">GetRatesRequest body</param>
         /// <returns>GetRatesResponse</returns>
-        public GetRatesResponse GetRates (GetRatesRequest body)
+        public GetRatesResponse GetRates(GetRatesRequest body)
         {
-             ApiResponse<GetRatesResponse> localVarResponse = GetRatesWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetRatesResponse> localVarResponse = GetRatesWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">GetRatesRequest body</param>
         /// <returns>ApiResponse of GetRatesResponse</returns>
-        public ApiResponse< GetRatesResponse > GetRatesWithHttpInfo (GetRatesRequest body)
+        public ApiResponse<GetRatesResponse> GetRatesWithHttpInfo(GetRatesRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -962,11 +961,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -976,19 +975,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetRatesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetRatesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetRatesResponse)));
+                (GetRatesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetRatesResponse)));
         }
 
         /// <summary>
         ///  Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">GetRatesRequest body</param>
         /// <returns>Task of GetRatesResponse</returns>
-        public async System.Threading.Tasks.Task<GetRatesResponse> GetRatesAsync (GetRatesRequest body)
+        public async System.Threading.Tasks.Task<GetRatesResponse> GetRatesAsync(GetRatesRequest body)
         {
-             ApiResponse<GetRatesResponse> localVarResponse = await GetRatesAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetRatesResponse> localVarResponse = await GetRatesAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -996,9 +995,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">GetRatesRequest body</param>
         /// <returns>Task of ApiResponse (GetRatesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetRatesResponse>> GetRatesAsyncWithHttpInfo (GetRatesRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<GetRatesResponse>> GetRatesAsyncWithHttpInfo(GetRatesRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1037,11 +1036,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1051,28 +1050,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetRatesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetRatesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetRatesResponse)));
+                (GetRatesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetRatesResponse)));
         }
 
         /// <summary>
         ///  Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment id to return the entire shipment object</param>
         /// <returns>GetShipmentResponse</returns>
-        public GetShipmentResponse GetShipment (string shipmentId)
+        public GetShipmentResponse GetShipment(string shipmentId)
         {
-             ApiResponse<GetShipmentResponse> localVarResponse = GetShipmentWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<GetShipmentResponse> localVarResponse = GetShipmentWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment id to return the entire shipment object</param>
         /// <returns>ApiResponse of GetShipmentResponse</returns>
-        public ApiResponse< GetShipmentResponse > GetShipmentWithHttpInfo (string shipmentId)
+        public ApiResponse<GetShipmentResponse> GetShipmentWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -1104,11 +1103,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1118,19 +1117,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentResponse)));
+                (GetShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentResponse)));
         }
 
         /// <summary>
         ///  Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment id to return the entire shipment object</param>
         /// <returns>Task of GetShipmentResponse</returns>
-        public async System.Threading.Tasks.Task<GetShipmentResponse> GetShipmentAsync (string shipmentId)
+        public async System.Threading.Tasks.Task<GetShipmentResponse> GetShipmentAsync(string shipmentId)
         {
-             ApiResponse<GetShipmentResponse> localVarResponse = await GetShipmentAsyncWithHttpInfo(shipmentId);
-             return localVarResponse.Data;
+            ApiResponse<GetShipmentResponse> localVarResponse = await GetShipmentAsyncWithHttpInfo(shipmentId);
+            return localVarResponse.Data;
 
         }
 
@@ -1138,9 +1137,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
+        /// <param name="shipmentId">Shipment id to return the entire shipment object</param>
         /// <returns>Task of ApiResponse (GetShipmentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetShipmentResponse>> GetShipmentAsyncWithHttpInfo (string shipmentId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetShipmentResponse>> GetShipmentAsyncWithHttpInfo(string shipmentId)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -1172,11 +1171,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1186,28 +1185,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentResponse)));
+                (GetShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetShipmentResponse)));
         }
 
         /// <summary>
         ///  Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="trackingId"></param>
+        /// <param name="trackingId">Tracking Id</param>
         /// <returns>GetTrackingInformationResponse</returns>
-        public GetTrackingInformationResponse GetTrackingInformation (string trackingId)
+        public GetTrackingInformationResponse GetTrackingInformation(string trackingId)
         {
-             ApiResponse<GetTrackingInformationResponse> localVarResponse = GetTrackingInformationWithHttpInfo(trackingId);
-             return localVarResponse.Data;
+            ApiResponse<GetTrackingInformationResponse> localVarResponse = GetTrackingInformationWithHttpInfo(trackingId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="trackingId"></param>
+        /// <param name="trackingId">Tracking Id</param>
         /// <returns>ApiResponse of GetTrackingInformationResponse</returns>
-        public ApiResponse< GetTrackingInformationResponse > GetTrackingInformationWithHttpInfo (string trackingId)
+        public ApiResponse<GetTrackingInformationResponse> GetTrackingInformationWithHttpInfo(string trackingId)
         {
             // verify the required parameter 'trackingId' is set
             if (trackingId == null)
@@ -1239,11 +1238,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1253,19 +1252,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetTrackingInformationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetTrackingInformationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTrackingInformationResponse)));
+                (GetTrackingInformationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTrackingInformationResponse)));
         }
 
         /// <summary>
         ///  Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="trackingId"></param>
+        /// <param name="trackingId">Tracking Id</param>
         /// <returns>Task of GetTrackingInformationResponse</returns>
-        public async System.Threading.Tasks.Task<GetTrackingInformationResponse> GetTrackingInformationAsync (string trackingId)
+        public async System.Threading.Tasks.Task<GetTrackingInformationResponse> GetTrackingInformationAsync(string trackingId)
         {
-             ApiResponse<GetTrackingInformationResponse> localVarResponse = await GetTrackingInformationAsyncWithHttpInfo(trackingId);
-             return localVarResponse.Data;
+            ApiResponse<GetTrackingInformationResponse> localVarResponse = await GetTrackingInformationAsyncWithHttpInfo(trackingId);
+            return localVarResponse.Data;
 
         }
 
@@ -1273,9 +1272,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="trackingId"></param>
+        /// <param name="trackingId">Tracking Id</param>
         /// <returns>Task of ApiResponse (GetTrackingInformationResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetTrackingInformationResponse>> GetTrackingInformationAsyncWithHttpInfo (string trackingId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetTrackingInformationResponse>> GetTrackingInformationAsyncWithHttpInfo(string trackingId)
         {
             // verify the required parameter 'trackingId' is set
             if (trackingId == null)
@@ -1307,11 +1306,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1321,30 +1320,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetTrackingInformationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetTrackingInformationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTrackingInformationResponse)));
+                (GetTrackingInformationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetTrackingInformationResponse)));
         }
 
         /// <summary>
         ///  Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment id for purchase shipping label</param>
+        /// <param name="body">PurchaseShippingLabelRequest body</param>
         /// <returns>PurchaseLabelsResponse</returns>
-        public PurchaseLabelsResponse PurchaseLabels (string shipmentId, PurchaseLabelsRequest body)
+        public PurchaseLabelsResponse PurchaseLabels(string shipmentId, PurchaseLabelsRequest body)
         {
-             ApiResponse<PurchaseLabelsResponse> localVarResponse = PurchaseLabelsWithHttpInfo(shipmentId, body);
-             return localVarResponse.Data;
+            ApiResponse<PurchaseLabelsResponse> localVarResponse = PurchaseLabelsWithHttpInfo(shipmentId, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment id for purchase shipping label</param>
+        /// <param name="body">PurchaseShippingLabelRequest body</param>
         /// <returns>ApiResponse of PurchaseLabelsResponse</returns>
-        public ApiResponse< PurchaseLabelsResponse > PurchaseLabelsWithHttpInfo (string shipmentId, PurchaseLabelsRequest body)
+        public ApiResponse<PurchaseLabelsResponse> PurchaseLabelsWithHttpInfo(string shipmentId, PurchaseLabelsRequest body)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -1387,11 +1386,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1401,20 +1400,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<PurchaseLabelsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PurchaseLabelsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PurchaseLabelsResponse)));
+                (PurchaseLabelsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PurchaseLabelsResponse)));
         }
 
         /// <summary>
         ///  Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment id for purchase shipping label</param>
+        /// <param name="body">PurchaseShippingLabelRequest body</param>
         /// <returns>Task of PurchaseLabelsResponse</returns>
-        public async System.Threading.Tasks.Task<PurchaseLabelsResponse> PurchaseLabelsAsync (string shipmentId, PurchaseLabelsRequest body)
+        public async System.Threading.Tasks.Task<PurchaseLabelsResponse> PurchaseLabelsAsync(string shipmentId, PurchaseLabelsRequest body)
         {
-             ApiResponse<PurchaseLabelsResponse> localVarResponse = await PurchaseLabelsAsyncWithHttpInfo(shipmentId, body);
-             return localVarResponse.Data;
+            ApiResponse<PurchaseLabelsResponse> localVarResponse = await PurchaseLabelsAsyncWithHttpInfo(shipmentId, body);
+            return localVarResponse.Data;
 
         }
 
@@ -1422,10 +1421,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment id for purchase shipping label</param>
+        /// <param name="body">PurchaseShippingLabelRequest body</param>
         /// <returns>Task of ApiResponse (PurchaseLabelsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PurchaseLabelsResponse>> PurchaseLabelsAsyncWithHttpInfo (string shipmentId, PurchaseLabelsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<PurchaseLabelsResponse>> PurchaseLabelsAsyncWithHttpInfo(string shipmentId, PurchaseLabelsRequest body)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -1468,11 +1467,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1482,28 +1481,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<PurchaseLabelsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PurchaseLabelsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PurchaseLabelsResponse)));
+                (PurchaseLabelsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PurchaseLabelsResponse)));
         }
 
         /// <summary>
         ///  Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">PurchaseShipmentRequest body</param>
         /// <returns>PurchaseShipmentResponse</returns>
-        public PurchaseShipmentResponse PurchaseShipment (PurchaseShipmentRequest body)
+        public PurchaseShipmentResponse PurchaseShipment(PurchaseShipmentRequest body)
         {
-             ApiResponse<PurchaseShipmentResponse> localVarResponse = PurchaseShipmentWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<PurchaseShipmentResponse> localVarResponse = PurchaseShipmentWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">PurchaseShipmentRequest body</param>
         /// <returns>ApiResponse of PurchaseShipmentResponse</returns>
-        public ApiResponse< PurchaseShipmentResponse > PurchaseShipmentWithHttpInfo (PurchaseShipmentRequest body)
+        public ApiResponse<PurchaseShipmentResponse> PurchaseShipmentWithHttpInfo(PurchaseShipmentRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1542,11 +1541,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1556,19 +1555,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<PurchaseShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PurchaseShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PurchaseShipmentResponse)));
+                (PurchaseShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PurchaseShipmentResponse)));
         }
 
         /// <summary>
         ///  Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">PurchaseShipmentRequest body</param>
         /// <returns>Task of PurchaseShipmentResponse</returns>
-        public async System.Threading.Tasks.Task<PurchaseShipmentResponse> PurchaseShipmentAsync (PurchaseShipmentRequest body)
+        public async System.Threading.Tasks.Task<PurchaseShipmentResponse> PurchaseShipmentAsync(PurchaseShipmentRequest body)
         {
-             ApiResponse<PurchaseShipmentResponse> localVarResponse = await PurchaseShipmentAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<PurchaseShipmentResponse> localVarResponse = await PurchaseShipmentAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -1576,9 +1575,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
+        /// <param name="body">PurchaseShipmentRequest body</param>
         /// <returns>Task of ApiResponse (PurchaseShipmentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PurchaseShipmentResponse>> PurchaseShipmentAsyncWithHttpInfo (PurchaseShipmentRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<PurchaseShipmentResponse>> PurchaseShipmentAsyncWithHttpInfo(PurchaseShipmentRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1617,11 +1616,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1631,32 +1630,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<PurchaseShipmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PurchaseShipmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PurchaseShipmentResponse)));
+                (PurchaseShipmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PurchaseShipmentResponse)));
         }
 
         /// <summary>
         ///  Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="trackingId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment Id to retreive label</param>
+        /// <param name="trackingId">Tracking Id</param>
+        /// <param name="body">RetrieveShippingLabelRequest body</param>
         /// <returns>RetrieveShippingLabelResponse</returns>
-        public RetrieveShippingLabelResponse RetrieveShippingLabel (string shipmentId, string trackingId, RetrieveShippingLabelRequest body)
+        public RetrieveShippingLabelResponse RetrieveShippingLabel(string shipmentId, string trackingId, RetrieveShippingLabelRequest body)
         {
-             ApiResponse<RetrieveShippingLabelResponse> localVarResponse = RetrieveShippingLabelWithHttpInfo(shipmentId, trackingId, body);
-             return localVarResponse.Data;
+            ApiResponse<RetrieveShippingLabelResponse> localVarResponse = RetrieveShippingLabelWithHttpInfo(shipmentId, trackingId, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="trackingId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment Id to retreive label</param>
+        /// <param name="trackingId">Tracking Id</param>
+        /// <param name="body">RetrieveShippingLabelRequest body</param>
         /// <returns>ApiResponse of RetrieveShippingLabelResponse</returns>
-        public ApiResponse< RetrieveShippingLabelResponse > RetrieveShippingLabelWithHttpInfo (string shipmentId, string trackingId, RetrieveShippingLabelRequest body)
+        public ApiResponse<RetrieveShippingLabelResponse> RetrieveShippingLabelWithHttpInfo(string shipmentId, string trackingId, RetrieveShippingLabelRequest body)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -1703,11 +1702,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1717,21 +1716,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<RetrieveShippingLabelResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RetrieveShippingLabelResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveShippingLabelResponse)));
+                (RetrieveShippingLabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveShippingLabelResponse)));
         }
 
         /// <summary>
         ///  Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="trackingId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment Id to retreive label</param>
+        /// <param name="trackingId">Tracking Id</param>
+        /// <param name="body">RetrieveShippingLabelRequest body</param>
         /// <returns>Task of RetrieveShippingLabelResponse</returns>
-        public async System.Threading.Tasks.Task<RetrieveShippingLabelResponse> RetrieveShippingLabelAsync (string shipmentId, string trackingId, RetrieveShippingLabelRequest body)
+        public async System.Threading.Tasks.Task<RetrieveShippingLabelResponse> RetrieveShippingLabelAsync(string shipmentId, string trackingId, RetrieveShippingLabelRequest body)
         {
-             ApiResponse<RetrieveShippingLabelResponse> localVarResponse = await RetrieveShippingLabelAsyncWithHttpInfo(shipmentId, trackingId, body);
-             return localVarResponse.Data;
+            ApiResponse<RetrieveShippingLabelResponse> localVarResponse = await RetrieveShippingLabelAsyncWithHttpInfo(shipmentId, trackingId, body);
+            return localVarResponse.Data;
 
         }
 
@@ -1739,11 +1738,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="shipmentId"></param>
-        /// <param name="trackingId"></param>
-        /// <param name="body"></param>
+        /// <param name="shipmentId">Shipment Id to retreive label</param>
+        /// <param name="trackingId">Tracking Id</param>
+        /// <param name="body">RetrieveShippingLabelRequest body</param>
         /// <returns>Task of ApiResponse (RetrieveShippingLabelResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RetrieveShippingLabelResponse>> RetrieveShippingLabelAsyncWithHttpInfo (string shipmentId, string trackingId, RetrieveShippingLabelRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<RetrieveShippingLabelResponse>> RetrieveShippingLabelAsyncWithHttpInfo(string shipmentId, string trackingId, RetrieveShippingLabelRequest body)
         {
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
@@ -1790,11 +1789,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1804,7 +1803,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<RetrieveShippingLabelResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RetrieveShippingLabelResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveShippingLabelResponse)));
+                (RetrieveShippingLabelResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RetrieveShippingLabelResponse)));
         }
 
 
@@ -1818,17 +1817,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public ShippingApi Build() 
+            public ShippingApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

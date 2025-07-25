@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Uploads
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Uploads
     /// Information about an upload destination.
     /// </summary>
     [DataContract]
-    public partial class UploadDestination :  IEquatable<UploadDestination>, IValidatableObject
+    public partial class UploadDestination : IEquatable<UploadDestination>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadDestination" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Uploads
             this.Url = url;
             this.Headers = headers;
         }
-        
+
         /// <summary>
         /// The unique identifier for the upload destination.
         /// </summary>
         /// <value>The unique identifier for the upload destination.</value>
-        [DataMember(Name="uploadDestinationId", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadDestinationId", EmitDefaultValue = false)]
         public string UploadDestinationId { get; set; }
 
         /// <summary>
         /// The URL for the upload destination.
         /// </summary>
         /// <value>The URL for the upload destination.</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
         /// The headers to include in the upload request.
         /// </summary>
         /// <value>The headers to include in the upload request.</value>
-        [DataMember(Name="headers", EmitDefaultValue=false)]
+        [DataMember(Name = "headers", EmitDefaultValue = false)]
         public Object Headers { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Uploads
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Uploads
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UploadDestinationId == input.UploadDestinationId ||
                     (this.UploadDestinationId != null &&
                     this.UploadDestinationId.Equals(input.UploadDestinationId))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.Headers == input.Headers ||
                     (this.Headers != null &&

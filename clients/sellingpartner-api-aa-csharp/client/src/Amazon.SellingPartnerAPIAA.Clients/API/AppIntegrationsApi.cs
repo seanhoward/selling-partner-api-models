@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.AppIntegrations;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;createNotification&#x60; operation.</param>
         /// <returns>CreateNotificationResponse</returns>
-        CreateNotificationResponse CreateNotification (CreateNotificationRequest body);
+        CreateNotificationResponse CreateNotification(CreateNotificationRequest body);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;createNotification&#x60; operation.</param>
         /// <returns>ApiResponse of CreateNotificationResponse</returns>
-        ApiResponse<CreateNotificationResponse> CreateNotificationWithHttpInfo (CreateNotificationRequest body);
+        ApiResponse<CreateNotificationResponse> CreateNotificationWithHttpInfo(CreateNotificationRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -55,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;deleteNotifications&#x60; operation.</param>
         /// <returns></returns>
-        void DeleteNotifications (DeleteNotificationsRequest body);
+        void DeleteNotifications(DeleteNotificationsRequest body);
 
         /// <summary>
         /// 
@@ -66,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;deleteNotifications&#x60; operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteNotificationsWithHttpInfo (DeleteNotificationsRequest body);
+        ApiResponse<Object> DeleteNotificationsWithHttpInfo(DeleteNotificationsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -77,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationId">A &#x60;notificationId&#x60; uniquely identifies a notification.</param>
         /// <param name="body">The request body for the &#x60;recordActionFeedback&#x60; operation.</param>
         /// <returns></returns>
-        void RecordActionFeedback (string notificationId, RecordActionFeedbackRequest body);
+        void RecordActionFeedback(string notificationId, RecordActionFeedbackRequest body);
 
         /// <summary>
         /// 
@@ -89,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationId">A &#x60;notificationId&#x60; uniquely identifies a notification.</param>
         /// <param name="body">The request body for the &#x60;recordActionFeedback&#x60; operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RecordActionFeedbackWithHttpInfo (string notificationId, RecordActionFeedbackRequest body);
+        ApiResponse<Object> RecordActionFeedbackWithHttpInfo(string notificationId, RecordActionFeedbackRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -101,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;createNotification&#x60; operation.</param>
         /// <returns>Task of CreateNotificationResponse</returns>
-        System.Threading.Tasks.Task<CreateNotificationResponse> CreateNotificationAsync (CreateNotificationRequest body);
+        System.Threading.Tasks.Task<CreateNotificationResponse> CreateNotificationAsync(CreateNotificationRequest body);
 
         /// <summary>
         /// 
@@ -112,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;createNotification&#x60; operation.</param>
         /// <returns>Task of ApiResponse (CreateNotificationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateNotificationResponse>> CreateNotificationAsyncWithHttpInfo (CreateNotificationRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateNotificationResponse>> CreateNotificationAsyncWithHttpInfo(CreateNotificationRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -122,7 +121,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;deleteNotifications&#x60; operation.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteNotificationsAsync (DeleteNotificationsRequest body);
+        System.Threading.Tasks.Task DeleteNotificationsAsync(DeleteNotificationsRequest body);
 
         /// <summary>
         /// 
@@ -133,7 +132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;deleteNotifications&#x60; operation.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNotificationsAsyncWithHttpInfo (DeleteNotificationsRequest body);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNotificationsAsyncWithHttpInfo(DeleteNotificationsRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -144,7 +143,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationId">A &#x60;notificationId&#x60; uniquely identifies a notification.</param>
         /// <param name="body">The request body for the &#x60;recordActionFeedback&#x60; operation.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RecordActionFeedbackAsync (string notificationId, RecordActionFeedbackRequest body);
+        System.Threading.Tasks.Task RecordActionFeedbackAsync(string notificationId, RecordActionFeedbackRequest body);
 
         /// <summary>
         /// 
@@ -156,7 +155,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationId">A &#x60;notificationId&#x60; uniquely identifies a notification.</param>
         /// <param name="body">The request body for the &#x60;recordActionFeedback&#x60; operation.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RecordActionFeedbackAsyncWithHttpInfo (string notificationId, RecordActionFeedbackRequest body);
+        System.Threading.Tasks.Task<ApiResponse<Object>> RecordActionFeedbackAsyncWithHttpInfo(string notificationId, RecordActionFeedbackRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -176,7 +175,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public AppIntegrationsApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -202,7 +201,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -248,10 +247,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;createNotification&#x60; operation.</param>
         /// <returns>CreateNotificationResponse</returns>
-        public CreateNotificationResponse CreateNotification (CreateNotificationRequest body)
+        public CreateNotificationResponse CreateNotification(CreateNotificationRequest body)
         {
-             ApiResponse<CreateNotificationResponse> localVarResponse = CreateNotificationWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateNotificationResponse> localVarResponse = CreateNotificationWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -260,7 +259,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;createNotification&#x60; operation.</param>
         /// <returns>ApiResponse of CreateNotificationResponse</returns>
-        public ApiResponse< CreateNotificationResponse > CreateNotificationWithHttpInfo (CreateNotificationRequest body)
+        public ApiResponse<CreateNotificationResponse> CreateNotificationWithHttpInfo(CreateNotificationRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -299,11 +298,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -313,7 +312,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateNotificationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateNotificationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateNotificationResponse)));
+                (CreateNotificationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateNotificationResponse)));
         }
 
         /// <summary>
@@ -322,10 +321,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;createNotification&#x60; operation.</param>
         /// <returns>Task of CreateNotificationResponse</returns>
-        public async System.Threading.Tasks.Task<CreateNotificationResponse> CreateNotificationAsync (CreateNotificationRequest body)
+        public async System.Threading.Tasks.Task<CreateNotificationResponse> CreateNotificationAsync(CreateNotificationRequest body)
         {
-             ApiResponse<CreateNotificationResponse> localVarResponse = await CreateNotificationAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateNotificationResponse> localVarResponse = await CreateNotificationAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -335,7 +334,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;createNotification&#x60; operation.</param>
         /// <returns>Task of ApiResponse (CreateNotificationResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateNotificationResponse>> CreateNotificationAsyncWithHttpInfo (CreateNotificationRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateNotificationResponse>> CreateNotificationAsyncWithHttpInfo(CreateNotificationRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -374,11 +373,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -388,7 +387,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateNotificationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateNotificationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateNotificationResponse)));
+                (CreateNotificationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateNotificationResponse)));
         }
 
         /// <summary>
@@ -397,9 +396,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;deleteNotifications&#x60; operation.</param>
         /// <returns></returns>
-        public void DeleteNotifications (DeleteNotificationsRequest body)
+        public void DeleteNotifications(DeleteNotificationsRequest body)
         {
-             DeleteNotificationsWithHttpInfo(body);
+            DeleteNotificationsWithHttpInfo(body);
         }
 
         /// <summary>
@@ -408,7 +407,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;deleteNotifications&#x60; operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteNotificationsWithHttpInfo (DeleteNotificationsRequest body)
+        public ApiResponse<Object> DeleteNotificationsWithHttpInfo(DeleteNotificationsRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -447,11 +446,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -470,9 +469,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;deleteNotifications&#x60; operation.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteNotificationsAsync (DeleteNotificationsRequest body)
+        public async System.Threading.Tasks.Task DeleteNotificationsAsync(DeleteNotificationsRequest body)
         {
-             await DeleteNotificationsAsyncWithHttpInfo(body);
+            await DeleteNotificationsAsyncWithHttpInfo(body);
 
         }
 
@@ -482,7 +481,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;deleteNotifications&#x60; operation.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNotificationsAsyncWithHttpInfo (DeleteNotificationsRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNotificationsAsyncWithHttpInfo(DeleteNotificationsRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -521,11 +520,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -545,9 +544,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationId">A &#x60;notificationId&#x60; uniquely identifies a notification.</param>
         /// <param name="body">The request body for the &#x60;recordActionFeedback&#x60; operation.</param>
         /// <returns></returns>
-        public void RecordActionFeedback (string notificationId, RecordActionFeedbackRequest body)
+        public void RecordActionFeedback(string notificationId, RecordActionFeedbackRequest body)
         {
-             RecordActionFeedbackWithHttpInfo(notificationId, body);
+            RecordActionFeedbackWithHttpInfo(notificationId, body);
         }
 
         /// <summary>
@@ -557,7 +556,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationId">A &#x60;notificationId&#x60; uniquely identifies a notification.</param>
         /// <param name="body">The request body for the &#x60;recordActionFeedback&#x60; operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> RecordActionFeedbackWithHttpInfo (string notificationId, RecordActionFeedbackRequest body)
+        public ApiResponse<Object> RecordActionFeedbackWithHttpInfo(string notificationId, RecordActionFeedbackRequest body)
         {
             // verify the required parameter 'notificationId' is set
             if (notificationId == null)
@@ -600,11 +599,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -624,9 +623,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationId">A &#x60;notificationId&#x60; uniquely identifies a notification.</param>
         /// <param name="body">The request body for the &#x60;recordActionFeedback&#x60; operation.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RecordActionFeedbackAsync (string notificationId, RecordActionFeedbackRequest body)
+        public async System.Threading.Tasks.Task RecordActionFeedbackAsync(string notificationId, RecordActionFeedbackRequest body)
         {
-             await RecordActionFeedbackAsyncWithHttpInfo(notificationId, body);
+            await RecordActionFeedbackAsyncWithHttpInfo(notificationId, body);
 
         }
 
@@ -637,7 +636,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="notificationId">A &#x60;notificationId&#x60; uniquely identifies a notification.</param>
         /// <param name="body">The request body for the &#x60;recordActionFeedback&#x60; operation.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> RecordActionFeedbackAsyncWithHttpInfo (string notificationId, RecordActionFeedbackRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RecordActionFeedbackAsyncWithHttpInfo(string notificationId, RecordActionFeedbackRequest body)
         {
             // verify the required parameter 'notificationId' is set
             if (notificationId == null)
@@ -680,11 +679,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -708,17 +707,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public AppIntegrationsApi Build() 
+            public AppIntegrationsApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

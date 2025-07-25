@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
     /// </summary>
     [DataContract]
-    public partial class Money :  IEquatable<Money>, IValidatableObject
+    public partial class Money : IEquatable<Money>, IValidatableObject
     {
         /// <summary>
         /// The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches.
@@ -37,25 +31,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnitOfMeasureEnum
         {
-            
+
             /// <summary>
             /// Enum POUNDS for value: POUNDS
             /// </summary>
             [EnumMember(Value = "POUNDS")]
             POUNDS = 1,
-            
+
             /// <summary>
             /// Enum OUNCES for value: OUNCES
             /// </summary>
             [EnumMember(Value = "OUNCES")]
             OUNCES = 2,
-            
+
             /// <summary>
             /// Enum GRAMS for value: GRAMS
             /// </summary>
             [EnumMember(Value = "GRAMS")]
             GRAMS = 3,
-            
+
             /// <summary>
             /// Enum KILOGRAMS for value: KILOGRAMS
             /// </summary>
@@ -67,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches.
         /// </summary>
         /// <value>The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches.</value>
-        [DataMember(Name="unitOfMeasure", EmitDefaultValue=false)]
+        [DataMember(Name = "unitOfMeasure", EmitDefaultValue = false)]
         public UnitOfMeasureEnum? UnitOfMeasure { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Money" /> class.
@@ -81,18 +75,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.Amount = amount;
             this.UnitOfMeasure = unitOfMeasure;
         }
-        
+
         /// <summary>
         /// Three digit currency code in ISO 4217 format. String of length 3.
         /// </summary>
         /// <value>Three digit currency code in ISO 4217 format. String of length 3.</value>
-        [DataMember(Name="currencyCode", EmitDefaultValue=false)]
+        [DataMember(Name = "currencyCode", EmitDefaultValue = false)]
         public string CurrencyCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public string Amount { get; set; }
 
 
@@ -110,7 +104,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -140,17 +134,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CurrencyCode == input.CurrencyCode ||
                     (this.CurrencyCode != null &&
                     this.CurrencyCode.Equals(input.CurrencyCode))
-                ) && 
+                ) &&
                 (
                     this.Amount == input.Amount ||
                     (this.Amount != null &&
                     this.Amount.Equals(input.Amount))
-                ) && 
+                ) &&
                 (
                     this.UnitOfMeasure == input.UnitOfMeasure ||
                     (this.UnitOfMeasure != null &&
@@ -185,9 +179,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // CurrencyCode (string) maxLength
-            if(this.CurrencyCode != null && this.CurrencyCode.Length > 3)
+            if (this.CurrencyCode != null && this.CurrencyCode.Length > 3)
             {
-                yield return new ValidationResult("Invalid value for CurrencyCode, length must be less than 3.", new [] { "CurrencyCode" });
+                yield return new ValidationResult("Invalid value for CurrencyCode, length must be less than 3.", new[] { "CurrencyCode" });
             }
 
             yield break;

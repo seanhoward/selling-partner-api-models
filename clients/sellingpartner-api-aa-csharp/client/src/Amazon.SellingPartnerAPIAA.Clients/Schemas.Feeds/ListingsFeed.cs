@@ -77,6 +77,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsSchema
         [Newtonsoft.Json.JsonProperty("issueLocale", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string IssueLocale { get; set; }
 
+        /// <summary>
+        /// The report information for the feed submission.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("report", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public Report Report { get; set; }
+
 
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
@@ -185,6 +191,51 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsSchema
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class Report
+    {
+        /// <summary>
+        /// When "includedData" elements are in the feed submission, the processing report that generates for the feed submission includes the listings items output from the Selling Partner Listings Items API with the "includedData" elements from the request. The report includes issues that prevent the acceptance of messages regardless of the "includedData" elements in the feed request.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("includedData", Required = Newtonsoft.Json.Required.Always, ItemConverterType = typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.MinLength(1)]
+        public System.Collections.Generic.ICollection<IncludedData> IncludedData { get; set; } = new System.Collections.ObjectModel.Collection<IncludedData>();
+
+        /// <summary>
+        /// The version of the Selling Partner Listings Items API to use to retrieve the listing items.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("apiVersion", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public ReportApiVersion ApiVersion { get; set; }
+
+
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+        public string ToJson()
+        {
+
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+        public static Report FromJson(string data)
+        {
+
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Report>(data, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
     public enum MessagesOperationType
     {
 
@@ -231,7 +282,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsSchema
     public partial class Patches
     {
         /// <summary>
-        /// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See https://tools.ietf.org/html/rfc6902.
+        /// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, merge, and delete. See https://tools.ietf.org/html/rfc6902.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("op", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
@@ -278,6 +329,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsSchema
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public enum IncludedData
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"summaries")]
+        Summaries = 0,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"attributes")]
+        Attributes = 1,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"issues")]
+        Issues = 2,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"offers")]
+        Offers = 3,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"fulfillmentAvailability")]
+        FulfillmentAvailability = 4,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"procurement")]
+        Procurement = 5,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"relationships")]
+        Relationships = 6,
+
+
+        [System.Runtime.Serialization.EnumMember(Value = @"productTypes")]
+        ProductTypes = 7,
+
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public enum ReportApiVersion
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"2021-08-01")]
+        _20210801 = 0,
+
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
     public enum PatchesOp
     {
 
@@ -289,8 +388,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Schemas.Feeds.ListingsSchema
         Replace = 1,
 
 
+        [System.Runtime.Serialization.EnumMember(Value = @"merge")]
+        Merge = 2,
+
+
         [System.Runtime.Serialization.EnumMember(Value = @"delete")]
-        Delete = 2,
+        Delete = 3,
 
 
     }

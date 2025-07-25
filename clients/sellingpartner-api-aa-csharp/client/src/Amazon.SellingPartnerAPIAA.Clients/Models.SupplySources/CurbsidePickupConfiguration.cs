@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The curbside pickup configuration of a supply source.
     /// </summary>
     [DataContract]
-    public partial class CurbsidePickupConfiguration :  IEquatable<CurbsidePickupConfiguration>, IValidatableObject
+    public partial class CurbsidePickupConfiguration : IEquatable<CurbsidePickupConfiguration>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CurbsidePickupConfiguration" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.OperationalConfiguration = operationalConfiguration;
             this.ParkingWithAddressConfiguration = parkingWithAddressConfiguration;
         }
-        
+
         /// <summary>
         /// When true, curbside pickup is supported by the supply source.
         /// </summary>
         /// <value>When true, curbside pickup is supported by the supply source.</value>
-        [DataMember(Name="isSupported", EmitDefaultValue=false)]
+        [DataMember(Name = "isSupported", EmitDefaultValue = false)]
         public bool? IsSupported { get; set; }
 
         /// <summary>
         /// The operational configuration for the curbside pickup configuration.
         /// </summary>
         /// <value>The operational configuration for the curbside pickup configuration.</value>
-        [DataMember(Name="operationalConfiguration", EmitDefaultValue=false)]
+        [DataMember(Name = "operationalConfiguration", EmitDefaultValue = false)]
         public OperationalConfiguration OperationalConfiguration { get; set; }
 
         /// <summary>
         /// The parking configuration for curbside pickup with address for customers to use.
         /// </summary>
         /// <value>The parking configuration for curbside pickup with address for customers to use.</value>
-        [DataMember(Name="parkingWithAddressConfiguration", EmitDefaultValue=false)]
+        [DataMember(Name = "parkingWithAddressConfiguration", EmitDefaultValue = false)]
         public ParkingWithAddressConfiguration ParkingWithAddressConfiguration { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IsSupported == input.IsSupported ||
                     (this.IsSupported != null &&
                     this.IsSupported.Equals(input.IsSupported))
-                ) && 
+                ) &&
                 (
                     this.OperationalConfiguration == input.OperationalConfiguration ||
                     (this.OperationalConfiguration != null &&
                     this.OperationalConfiguration.Equals(input.OperationalConfiguration))
-                ) && 
+                ) &&
                 (
                     this.ParkingWithAddressConfiguration == input.ParkingWithAddressConfiguration ||
                     (this.ParkingWithAddressConfiguration != null &&

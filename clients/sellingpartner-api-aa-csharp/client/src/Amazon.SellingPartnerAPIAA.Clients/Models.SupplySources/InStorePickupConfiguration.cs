@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The in-store pickup configuration of a supply source.
     /// </summary>
     [DataContract]
-    public partial class InStorePickupConfiguration :  IEquatable<InStorePickupConfiguration>, IValidatableObject
+    public partial class InStorePickupConfiguration : IEquatable<InStorePickupConfiguration>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InStorePickupConfiguration" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.IsSupported = isSupported;
             this.ParkingConfiguration = parkingConfiguration;
         }
-        
+
         /// <summary>
         /// When true, in-store pickup is supported by the supply source (default: &#x60;isSupported&#x60; value in &#x60;PickupChannel&#x60;).
         /// </summary>
         /// <value>When true, in-store pickup is supported by the supply source (default: &#x60;isSupported&#x60; value in &#x60;PickupChannel&#x60;).</value>
-        [DataMember(Name="isSupported", EmitDefaultValue=false)]
+        [DataMember(Name = "isSupported", EmitDefaultValue = false)]
         public bool? IsSupported { get; set; }
 
         /// <summary>
         /// The parking configuration for in-store pickup.
         /// </summary>
         /// <value>The parking configuration for in-store pickup.</value>
-        [DataMember(Name="parkingConfiguration", EmitDefaultValue=false)]
+        [DataMember(Name = "parkingConfiguration", EmitDefaultValue = false)]
         public ParkingConfiguration ParkingConfiguration { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IsSupported == input.IsSupported ||
                     (this.IsSupported != null &&
                     this.IsSupported.Equals(input.IsSupported))
-                ) && 
+                ) &&
                 (
                     this.ParkingConfiguration == input.ParkingConfiguration ||
                     (this.ParkingConfiguration != null &&

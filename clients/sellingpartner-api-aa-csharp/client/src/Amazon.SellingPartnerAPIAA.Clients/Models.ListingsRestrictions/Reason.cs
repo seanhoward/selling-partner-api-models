@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
     /// A reason for the restriction, including path forward links that may allow Selling Partners to remove the restriction, if available.
     /// </summary>
     [DataContract]
-    public partial class Reason :  IEquatable<Reason>, IValidatableObject
+    public partial class Reason : IEquatable<Reason>, IValidatableObject
     {
         /// <summary>
         /// A code indicating why the listing is restricted.
@@ -37,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ReasonCodeEnum
         {
-            
+
             /// <summary>
             /// Enum APPROVALREQUIRED for value: APPROVAL_REQUIRED
             /// </summary>
             [EnumMember(Value = "APPROVAL_REQUIRED")]
             APPROVALREQUIRED = 1,
-            
+
             /// <summary>
             /// Enum ASINNOTFOUND for value: ASIN_NOT_FOUND
             /// </summary>
             [EnumMember(Value = "ASIN_NOT_FOUND")]
             ASINNOTFOUND = 2,
-            
+
             /// <summary>
             /// Enum NOTELIGIBLE for value: NOT_ELIGIBLE
             /// </summary>
@@ -61,7 +57,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// A code indicating why the listing is restricted.
         /// </summary>
         /// <value>A code indicating why the listing is restricted.</value>
-        [DataMember(Name="reasonCode", EmitDefaultValue=false)]
+        [DataMember(Name = "reasonCode", EmitDefaultValue = false)]
         public ReasonCodeEnum? ReasonCode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Reason" /> class.
@@ -88,12 +84,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             this.ReasonCode = reasonCode;
             this.Links = links;
         }
-        
+
         /// <summary>
         /// A message describing the reason for the restriction.
         /// </summary>
         /// <value>A message describing the reason for the restriction.</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
 
@@ -101,7 +97,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
         /// A list of path forward links that may allow Selling Partners to remove the restriction.
         /// </summary>
         /// <value>A list of path forward links that may allow Selling Partners to remove the restriction.</value>
-        [DataMember(Name="links", EmitDefaultValue=false)]
+        [DataMember(Name = "links", EmitDefaultValue = false)]
         public List<Link> Links { get; set; }
 
         /// <summary>
@@ -118,7 +114,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -148,17 +144,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsRestrictions
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.ReasonCode == input.ReasonCode ||
                     (this.ReasonCode != null &&
                     this.ReasonCode.Equals(input.ReasonCode))
-                ) && 
+                ) &&
                 (
                     this.Links == input.Links ||
                     this.Links != null &&

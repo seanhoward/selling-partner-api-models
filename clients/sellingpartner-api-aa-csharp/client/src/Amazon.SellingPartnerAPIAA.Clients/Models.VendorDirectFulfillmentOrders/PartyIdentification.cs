@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
     /// Name, address and tax details of a party.
     /// </summary>
     [DataContract]
-    public partial class PartyIdentification :  IEquatable<PartyIdentification>, IValidatableObject
+    public partial class PartyIdentification : IEquatable<PartyIdentification>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PartyIdentification" /> class.
@@ -55,26 +49,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             this.Address = address;
             this.TaxInfo = taxInfo;
         }
-        
+
         /// <summary>
         /// Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
         /// </summary>
         /// <value>Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.</value>
-        [DataMember(Name="partyId", EmitDefaultValue=false)]
+        [DataMember(Name = "partyId", EmitDefaultValue = false)]
         public string PartyId { get; set; }
 
         /// <summary>
         /// Address details of the party.
         /// </summary>
         /// <value>Address details of the party.</value>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
         /// <summary>
         /// Tax registration details of the entity.
         /// </summary>
         /// <value>Tax registration details of the entity.</value>
-        [DataMember(Name="taxInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "taxInfo", EmitDefaultValue = false)]
         public TaxRegistrationDetails TaxInfo { get; set; }
 
         /// <summary>
@@ -91,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +115,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PartyId == input.PartyId ||
                     (this.PartyId != null &&
                     this.PartyId.Equals(input.PartyId))
-                ) && 
+                ) &&
                 (
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
-                ) && 
+                ) &&
                 (
                     this.TaxInfo == input.TaxInfo ||
                     (this.TaxInfo != null &&

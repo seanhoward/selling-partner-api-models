@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Information for tracking package deliveries.
     /// </summary>
     [DataContract]
-    public partial class TrackingEvent :  IEquatable<TrackingEvent>, IValidatableObject
+    public partial class TrackingEvent : IEquatable<TrackingEvent>, IValidatableObject
     {
         /// <summary>
         /// The event code for the delivery event.
         /// </summary>
         /// <value>The event code for the delivery event.</value>
-        [DataMember(Name="eventCode", EmitDefaultValue=false)]
+        [DataMember(Name = "eventCode", EmitDefaultValue = false)]
         public EventCode EventCode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingEvent" /> class.
@@ -87,19 +81,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.EventDescription = eventDescription;
             }
         }
-        
+
         /// <summary>
         /// The date and time that the delivery event took place. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
         /// </summary>
         /// <value>The date and time that the delivery event took place. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
-        [DataMember(Name="eventDate", EmitDefaultValue=false)]
+        [DataMember(Name = "eventDate", EmitDefaultValue = false)]
         public DateTime? EventDate { get; set; }
 
         /// <summary>
         /// The city where the delivery event took place.
         /// </summary>
         /// <value>The city where the delivery event took place.</value>
-        [DataMember(Name="eventAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "eventAddress", EmitDefaultValue = false)]
         public TrackingAddress EventAddress { get; set; }
 
 
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// A description for the corresponding event code.
         /// </summary>
         /// <value>A description for the corresponding event code.</value>
-        [DataMember(Name="eventDescription", EmitDefaultValue=false)]
+        [DataMember(Name = "eventDescription", EmitDefaultValue = false)]
         public string EventDescription { get; set; }
 
         /// <summary>
@@ -125,7 +119,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -155,22 +149,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.EventDate == input.EventDate ||
                     (this.EventDate != null &&
                     this.EventDate.Equals(input.EventDate))
-                ) && 
+                ) &&
                 (
                     this.EventAddress == input.EventAddress ||
                     (this.EventAddress != null &&
                     this.EventAddress.Equals(input.EventAddress))
-                ) && 
+                ) &&
                 (
                     this.EventCode == input.EventCode ||
                     (this.EventCode != null &&
                     this.EventCode.Equals(input.EventCode))
-                ) && 
+                ) &&
                 (
                     this.EventDescription == input.EventDescription ||
                     (this.EventDescription != null &&

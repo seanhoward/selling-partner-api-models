@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// A list of the items in this transportation and their associated inner container details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.
     /// </summary>
     [DataContract]
-    public partial class Containers :  IEquatable<Containers>, IValidatableObject
+    public partial class Containers : IEquatable<Containers>, IValidatableObject
     {
         /// <summary>
         /// The type of container.
@@ -37,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ContainerTypeEnum
         {
-            
+
             /// <summary>
             /// Enum Carton for value: carton
             /// </summary>
             [EnumMember(Value = "carton")]
             Carton = 1,
-            
+
             /// <summary>
             /// Enum Pallet for value: pallet
             /// </summary>
@@ -55,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// The type of container.
         /// </summary>
         /// <value>The type of container.</value>
-        [DataMember(Name="containerType", EmitDefaultValue=false)]
+        [DataMember(Name = "containerType", EmitDefaultValue = false)]
         public ContainerTypeEnum ContainerType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Containers" /> class.
@@ -104,66 +100,66 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.InnerContainersDetails = innerContainersDetails;
             this.PackedItems = packedItems;
         }
-        
+
 
         /// <summary>
         /// An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
         /// </summary>
         /// <value>An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.</value>
-        [DataMember(Name="containerSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "containerSequenceNumber", EmitDefaultValue = false)]
         public string ContainerSequenceNumber { get; set; }
 
         /// <summary>
         /// A list of carton identifiers.
         /// </summary>
         /// <value>A list of carton identifiers.</value>
-        [DataMember(Name="containerIdentifiers", EmitDefaultValue=false)]
+        [DataMember(Name = "containerIdentifiers", EmitDefaultValue = false)]
         public List<ContainerIdentification> ContainerIdentifiers { get; set; }
 
         /// <summary>
         /// The tracking number used for identifying the shipment.
         /// </summary>
         /// <value>The tracking number used for identifying the shipment.</value>
-        [DataMember(Name="trackingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingNumber", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets Dimensions
         /// </summary>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public Dimensions Dimensions { get; set; }
 
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
-        [DataMember(Name="weight", EmitDefaultValue=false)]
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
         public Weight Weight { get; set; }
 
         /// <summary>
         /// Number of layers per pallet.
         /// </summary>
         /// <value>Number of layers per pallet.</value>
-        [DataMember(Name="tier", EmitDefaultValue=false)]
+        [DataMember(Name = "tier", EmitDefaultValue = false)]
         public int? Tier { get; set; }
 
         /// <summary>
         /// Number of cartons per layer on the pallet.
         /// </summary>
         /// <value>Number of cartons per layer on the pallet.</value>
-        [DataMember(Name="block", EmitDefaultValue=false)]
+        [DataMember(Name = "block", EmitDefaultValue = false)]
         public int? Block { get; set; }
 
         /// <summary>
         /// Gets or Sets InnerContainersDetails
         /// </summary>
-        [DataMember(Name="innerContainersDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "innerContainersDetails", EmitDefaultValue = false)]
         public InnerContainersDetails InnerContainersDetails { get; set; }
 
         /// <summary>
         /// A list of packed items.
         /// </summary>
         /// <value>A list of packed items.</value>
-        [DataMember(Name="packedItems", EmitDefaultValue=false)]
+        [DataMember(Name = "packedItems", EmitDefaultValue = false)]
         public List<PackedItems> PackedItems { get; set; }
 
         /// <summary>
@@ -187,7 +183,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -217,52 +213,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContainerType == input.ContainerType ||
                     (this.ContainerType != null &&
                     this.ContainerType.Equals(input.ContainerType))
-                ) && 
+                ) &&
                 (
                     this.ContainerSequenceNumber == input.ContainerSequenceNumber ||
                     (this.ContainerSequenceNumber != null &&
                     this.ContainerSequenceNumber.Equals(input.ContainerSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.ContainerIdentifiers == input.ContainerIdentifiers ||
                     this.ContainerIdentifiers != null &&
                     this.ContainerIdentifiers.SequenceEqual(input.ContainerIdentifiers)
-                ) && 
+                ) &&
                 (
                     this.TrackingNumber == input.TrackingNumber ||
                     (this.TrackingNumber != null &&
                     this.TrackingNumber.Equals(input.TrackingNumber))
-                ) && 
+                ) &&
                 (
                     this.Dimensions == input.Dimensions ||
                     (this.Dimensions != null &&
                     this.Dimensions.Equals(input.Dimensions))
-                ) && 
+                ) &&
                 (
                     this.Weight == input.Weight ||
                     (this.Weight != null &&
                     this.Weight.Equals(input.Weight))
-                ) && 
+                ) &&
                 (
                     this.Tier == input.Tier ||
                     (this.Tier != null &&
                     this.Tier.Equals(input.Tier))
-                ) && 
+                ) &&
                 (
                     this.Block == input.Block ||
                     (this.Block != null &&
                     this.Block.Equals(input.Block))
-                ) && 
+                ) &&
                 (
                     this.InnerContainersDetails == input.InnerContainersDetails ||
                     (this.InnerContainersDetails != null &&
                     this.InnerContainersDetails.Equals(input.InnerContainersDetails))
-                ) && 
+                ) &&
                 (
                     this.PackedItems == input.PackedItems ||
                     this.PackedItems != null &&

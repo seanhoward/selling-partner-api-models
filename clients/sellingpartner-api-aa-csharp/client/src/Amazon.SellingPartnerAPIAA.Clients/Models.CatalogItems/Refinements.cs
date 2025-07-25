@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,26 +9,21 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Search refinements.
+    /// Optional fields that you can use to refine your search results.
     /// </summary>
     [DataContract]
-    public partial class Refinements :  IEquatable<Refinements>, IValidatableObject
+    public partial class Refinements : IEquatable<Refinements>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Refinements" /> class.
@@ -38,8 +33,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="Refinements" /> class.
         /// </summary>
-        /// <param name="brands">Brand search refinements. (required).</param>
-        /// <param name="classifications">Classification search refinements. (required).</param>
+        /// <param name="brands">A list of brands you can use to refine your search. (required).</param>
+        /// <param name="classifications">A list of classifications you can use to refine your search. (required).</param>
         public Refinements(List<BrandRefinement> brands = default, List<ClassificationRefinement> classifications = default)
         {
             // to ensure "brands" is required (not null)
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
                 this.Classifications = classifications;
             }
         }
-        
+
         /// <summary>
-        /// Brand search refinements.
+        /// A list of brands you can use to refine your search.
         /// </summary>
-        /// <value>Brand search refinements.</value>
-        [DataMember(Name="brands", EmitDefaultValue=false)]
+        /// <value>A list of brands you can use to refine your search.</value>
+        [DataMember(Name = "brands", EmitDefaultValue = false)]
         public List<BrandRefinement> Brands { get; set; }
 
         /// <summary>
-        /// Classification search refinements.
+        /// A list of classifications you can use to refine your search.
         /// </summary>
-        /// <value>Classification search refinements.</value>
-        [DataMember(Name="classifications", EmitDefaultValue=false)]
+        /// <value>A list of classifications you can use to refine your search.</value>
+        [DataMember(Name = "classifications", EmitDefaultValue = false)]
         public List<ClassificationRefinement> Classifications { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Brands == input.Brands ||
                     this.Brands != null &&
                     this.Brands.SequenceEqual(input.Brands)
-                ) && 
+                ) &&
                 (
                     this.Classifications == input.Classifications ||
                     this.Classifications != null &&

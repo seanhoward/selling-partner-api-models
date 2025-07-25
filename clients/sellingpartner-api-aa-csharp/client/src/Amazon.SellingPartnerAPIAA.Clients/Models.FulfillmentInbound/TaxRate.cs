@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Contains the type and rate of tax.
     /// </summary>
     [DataContract]
-    public partial class TaxRate :  IEquatable<TaxRate>, IValidatableObject
+    public partial class TaxRate : IEquatable<TaxRate>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRate" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.GstRate = gstRate;
             this.TaxType = taxType;
         }
-        
+
         /// <summary>
         /// Rate of cess tax.
         /// </summary>
         /// <value>Rate of cess tax.</value>
-        [DataMember(Name="cessRate", EmitDefaultValue=false)]
+        [DataMember(Name = "cessRate", EmitDefaultValue = false)]
         public decimal? CessRate { get; set; }
 
         /// <summary>
         /// Rate of gst tax.
         /// </summary>
         /// <value>Rate of gst tax.</value>
-        [DataMember(Name="gstRate", EmitDefaultValue=false)]
+        [DataMember(Name = "gstRate", EmitDefaultValue = false)]
         public decimal? GstRate { get; set; }
 
         /// <summary>
         /// Type of tax. Possible values: &#x60;CGST&#x60;, &#x60;SGST&#x60;, &#x60;IGST&#x60;, &#x60;TOTAL_TAX&#x60;.
         /// </summary>
         /// <value>Type of tax. Possible values: &#x60;CGST&#x60;, &#x60;SGST&#x60;, &#x60;IGST&#x60;, &#x60;TOTAL_TAX&#x60;.</value>
-        [DataMember(Name="taxType", EmitDefaultValue=false)]
+        [DataMember(Name = "taxType", EmitDefaultValue = false)]
         public string TaxType { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CessRate == input.CessRate ||
                     (this.CessRate != null &&
                     this.CessRate.Equals(input.CessRate))
-                ) && 
+                ) &&
                 (
                     this.GstRate == input.GstRate ||
                     (this.GstRate != null &&
                     this.GstRate.Equals(input.GstRate))
-                ) && 
+                ) &&
                 (
                     this.TaxType == input.TaxType ||
                     (this.TaxType != null &&
@@ -153,15 +146,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // TaxType (string) maxLength
-            if(this.TaxType != null && this.TaxType.Length > 1024)
+            if (this.TaxType != null && this.TaxType.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for TaxType, length must be less than 1024.", new [] { "TaxType" });
+                yield return new ValidationResult("Invalid value for TaxType, length must be less than 1024.", new[] { "TaxType" });
             }
 
             // TaxType (string) minLength
-            if(this.TaxType != null && this.TaxType.Length < 1)
+            if (this.TaxType != null && this.TaxType.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for TaxType, length must be greater than 1.", new [] { "TaxType" });
+                yield return new ValidationResult("Invalid value for TaxType, length must be greater than 1.", new[] { "TaxType" });
             }
 
             yield break;

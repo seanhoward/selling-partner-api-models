@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The common properties for responses to individual requests within a batch.
     /// </summary>
     [DataContract]
-    public partial class BatchResponse :  IEquatable<BatchResponse>, IValidatableObject
+    public partial class BatchResponse : IEquatable<BatchResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchResponse" /> class.
@@ -61,17 +55,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 this.Status = status;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets Headers
         /// </summary>
-        [DataMember(Name="headers", EmitDefaultValue=false)]
+        [DataMember(Name = "headers", EmitDefaultValue = false)]
         public HttpHeaders Headers { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public HttpStatusLine Status { get; set; }
 
         /// <summary>
@@ -87,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -117,12 +111,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Headers == input.Headers ||
                     (this.Headers != null &&
                     this.Headers.Equals(input.Headers))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&

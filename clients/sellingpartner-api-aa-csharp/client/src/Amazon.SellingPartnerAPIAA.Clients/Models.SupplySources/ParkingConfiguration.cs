@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,19 +21,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The parking configuration.
     /// </summary>
     [DataContract]
-    public partial class ParkingConfiguration :  IEquatable<ParkingConfiguration>, IValidatableObject
+    public partial class ParkingConfiguration : IEquatable<ParkingConfiguration>, IValidatableObject
     {
         /// <summary>
         /// The type of cost at parking location.
         /// </summary>
         /// <value>The type of cost at parking location.</value>
-        [DataMember(Name="parkingCostType", EmitDefaultValue=false)]
+        [DataMember(Name = "parkingCostType", EmitDefaultValue = false)]
         public ParkingCostType? ParkingCostType { get; set; }
         /// <summary>
         /// The type of parking spot identification used at parking location.
         /// </summary>
         /// <value>The type of parking spot identification used at parking location.</value>
-        [DataMember(Name="parkingSpotIdentificationType", EmitDefaultValue=false)]
+        [DataMember(Name = "parkingSpotIdentificationType", EmitDefaultValue = false)]
         public ParkingSpotIdentificationType? ParkingSpotIdentificationType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ParkingConfiguration" /> class.
@@ -54,14 +47,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.ParkingSpotIdentificationType = parkingSpotIdentificationType;
             this.NumberOfParkingSpots = numberOfParkingSpots;
         }
-        
+
 
 
         /// <summary>
         /// The number of parking spots.
         /// </summary>
         /// <value>The number of parking spots.</value>
-        [DataMember(Name="numberOfParkingSpots", EmitDefaultValue=false)]
+        [DataMember(Name = "numberOfParkingSpots", EmitDefaultValue = false)]
         public int? NumberOfParkingSpots { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ParkingCostType == input.ParkingCostType ||
                     (this.ParkingCostType != null &&
                     this.ParkingCostType.Equals(input.ParkingCostType))
-                ) && 
+                ) &&
                 (
                     this.ParkingSpotIdentificationType == input.ParkingSpotIdentificationType ||
                     (this.ParkingSpotIdentificationType != null &&
                     this.ParkingSpotIdentificationType.Equals(input.ParkingSpotIdentificationType))
-                ) && 
+                ) &&
                 (
                     this.NumberOfParkingSpots == input.NumberOfParkingSpots ||
                     (this.NumberOfParkingSpots != null &&

@@ -9,17 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
@@ -28,12 +24,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
     /// The information required to create the export request.
     /// </summary>
     [DataContract]
-    public partial class ExportInvoicesRequest :  IEquatable<ExportInvoicesRequest>, IValidatableObject
+    public partial class ExportInvoicesRequest : IEquatable<ExportInvoicesRequest>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets FileFormat
         /// </summary>
-        [DataMember(Name="fileFormat", EmitDefaultValue=false)]
+        [DataMember(Name = "fileFormat", EmitDefaultValue = false)]
         public FileFormat? FileFormat { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ExportInvoicesRequest" /> class.
@@ -74,12 +70,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             this.TransactionIdentifier = transactionIdentifier;
             this.TransactionType = transactionType;
         }
-        
+
         /// <summary>
         /// The latest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is the time of the request.
         /// </summary>
         /// <value>The latest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is the time of the request.</value>
-        [DataMember(Name="dateEnd", EmitDefaultValue=false)]
+        [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
         [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? DateEnd { get; set; }
 
@@ -87,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// The earliest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 24 hours prior to the time of the request.
         /// </summary>
         /// <value>The earliest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 24 hours prior to the time of the request.</value>
-        [DataMember(Name="dateStart", EmitDefaultValue=false)]
+        [DataMember(Name = "dateStart", EmitDefaultValue = false)]
         [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? DateStart { get; set; }
 
@@ -95,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// The external ID of the invoices you want included in the response.
         /// </summary>
         /// <value>The external ID of the invoices you want included in the response.</value>
-        [DataMember(Name="externalInvoiceId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalInvoiceId", EmitDefaultValue = false)]
         public string ExternalInvoiceId { get; set; }
 
 
@@ -103,41 +99,41 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
         /// The marketplace-specific classification of the invoice type. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;invoiceType&#x60; options.
         /// </summary>
         /// <value>The marketplace-specific classification of the invoice type. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;invoiceType&#x60; options.</value>
-        [DataMember(Name="invoiceType", EmitDefaultValue=false)]
+        [DataMember(Name = "invoiceType", EmitDefaultValue = false)]
         public string InvoiceType { get; set; }
 
         /// <summary>
         /// The ID of the marketplace from which you want the invoices.
         /// </summary>
         /// <value>The ID of the marketplace from which you want the invoices.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The series number of the invoices you want included in the response.
         /// </summary>
         /// <value>The series number of the invoices you want included in the response.</value>
-        [DataMember(Name="series", EmitDefaultValue=false)]
+        [DataMember(Name = "series", EmitDefaultValue = false)]
         public string Series { get; set; }
 
         /// <summary>
         /// A list of statuses that you can use to filter invoices. Use the &#x60;getInvoicesAttributes&#x60; operation to check invoice status options.  Min count: 1
         /// </summary>
         /// <value>A list of statuses that you can use to filter invoices. Use the &#x60;getInvoicesAttributes&#x60; operation to check invoice status options.  Min count: 1</value>
-        [DataMember(Name="statuses", EmitDefaultValue=false)]
+        [DataMember(Name = "statuses", EmitDefaultValue = false)]
         public List<string> Statuses { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionIdentifier
         /// </summary>
-        [DataMember(Name="transactionIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionIdentifier", EmitDefaultValue = false)]
         public TransactionIdentifier TransactionIdentifier { get; set; }
 
         /// <summary>
         /// The marketplace-specific classification of the transaction type for which the invoice was created. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionType&#x60; options
         /// </summary>
         /// <value>The marketplace-specific classification of the transaction type for which the invoice was created. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionType&#x60; options</value>
-        [DataMember(Name="transactionType", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionType", EmitDefaultValue = false)]
         public string TransactionType { get; set; }
 
         /// <summary>
@@ -161,7 +157,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -191,52 +187,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.InvoicesApiModel
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DateEnd == input.DateEnd ||
                     (this.DateEnd != null &&
                     this.DateEnd.Equals(input.DateEnd))
-                ) && 
+                ) &&
                 (
                     this.DateStart == input.DateStart ||
                     (this.DateStart != null &&
                     this.DateStart.Equals(input.DateStart))
-                ) && 
+                ) &&
                 (
                     this.ExternalInvoiceId == input.ExternalInvoiceId ||
                     (this.ExternalInvoiceId != null &&
                     this.ExternalInvoiceId.Equals(input.ExternalInvoiceId))
-                ) && 
+                ) &&
                 (
                     this.FileFormat == input.FileFormat ||
                     (this.FileFormat != null &&
                     this.FileFormat.Equals(input.FileFormat))
-                ) && 
+                ) &&
                 (
                     this.InvoiceType == input.InvoiceType ||
                     (this.InvoiceType != null &&
                     this.InvoiceType.Equals(input.InvoiceType))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Series == input.Series ||
                     (this.Series != null &&
                     this.Series.Equals(input.Series))
-                ) && 
+                ) &&
                 (
                     this.Statuses == input.Statuses ||
                     this.Statuses != null &&
                     this.Statuses.SequenceEqual(input.Statuses)
-                ) && 
+                ) &&
                 (
                     this.TransactionIdentifier == input.TransactionIdentifier ||
                     (this.TransactionIdentifier != null &&
                     this.TransactionIdentifier.Equals(input.TransactionIdentifier))
-                ) && 
+                ) &&
                 (
                     this.TransactionType == input.TransactionType ||
                     (this.TransactionType != null &&

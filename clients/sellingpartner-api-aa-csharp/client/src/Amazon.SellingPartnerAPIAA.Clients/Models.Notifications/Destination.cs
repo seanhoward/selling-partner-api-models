@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// Information about the destination created when you call the &#x60;createDestination&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class Destination :  IEquatable<Destination>, IValidatableObject
+    public partial class Destination : IEquatable<Destination>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Destination" /> class.
@@ -71,26 +65,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
                 this.Resource = resource;
             }
         }
-        
+
         /// <summary>
         /// The developer-defined name for this destination.
         /// </summary>
         /// <value>The developer-defined name for this destination.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The destination identifier generated when you created the destination.
         /// </summary>
         /// <value>The destination identifier generated when you created the destination.</value>
-        [DataMember(Name="destinationId", EmitDefaultValue=false)]
+        [DataMember(Name = "destinationId", EmitDefaultValue = false)]
         public string DestinationId { get; set; }
 
         /// <summary>
         /// The resource that will receive notifications associated with this destination.
         /// </summary>
         /// <value>The resource that will receive notifications associated with this destination.</value>
-        [DataMember(Name="resource", EmitDefaultValue=false)]
+        [DataMember(Name = "resource", EmitDefaultValue = false)]
         public DestinationResource Resource { get; set; }
 
         /// <summary>
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +131,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.DestinationId == input.DestinationId ||
                     (this.DestinationId != null &&
                     this.DestinationId.Equals(input.DestinationId))
-                ) && 
+                ) &&
                 (
                     this.Resource == input.Resource ||
                     (this.Resource != null &&
@@ -182,9 +176,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
-            if(this.Name != null && this.Name.Length > 256)
+            if (this.Name != null && this.Name.Length > 256)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 256.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 256.", new[] { "Name" });
             }
 
             yield break;

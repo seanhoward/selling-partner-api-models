@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Product identifier input that locates a product for MCF.
     /// </summary>
     [DataContract]
-    public partial class ProductIdentifier :  IEquatable<ProductIdentifier>, IValidatableObject
+    public partial class ProductIdentifier : IEquatable<ProductIdentifier>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductIdentifier" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.MerchantSku = merchantSku;
             }
         }
-        
+
         /// <summary>
         /// The merchant SKU for the product.
         /// </summary>
         /// <value>The merchant SKU for the product.</value>
-        [DataMember(Name="merchantSku", EmitDefaultValue=false)]
+        [DataMember(Name = "merchantSku", EmitDefaultValue = false)]
         public string MerchantSku { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MerchantSku == input.MerchantSku ||
                     (this.MerchantSku != null &&
@@ -132,9 +126,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // MerchantSku (string) maxLength
-            if(this.MerchantSku != null && this.MerchantSku.Length > 50)
+            if (this.MerchantSku != null && this.MerchantSku.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for MerchantSku, length must be less than 50.", new [] { "MerchantSku" });
+                yield return new ValidationResult("Invalid value for MerchantSku, length must be less than 50.", new[] { "MerchantSku" });
             }
 
             yield break;

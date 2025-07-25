@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Details of item quantity ordered.
     /// </summary>
     [DataContract]
-    public partial class OrderedQuantityDetails :  IEquatable<OrderedQuantityDetails>, IValidatableObject
+    public partial class OrderedQuantityDetails : IEquatable<OrderedQuantityDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderedQuantityDetails" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.OrderedQuantity = orderedQuantity;
             this.CancelledQuantity = cancelledQuantity;
         }
-        
+
         /// <summary>
         /// The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
         /// </summary>
         /// <value>The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.</value>
-        [DataMember(Name="updatedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "updatedDate", EmitDefaultValue = false)]
         public DateTime? UpdatedDate { get; set; }
 
         /// <summary>
         /// Item quantity ordered.
         /// </summary>
         /// <value>Item quantity ordered.</value>
-        [DataMember(Name="orderedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "orderedQuantity", EmitDefaultValue = false)]
         public ItemQuantity OrderedQuantity { get; set; }
 
         /// <summary>
         /// Item quantity ordered.
         /// </summary>
         /// <value>Item quantity ordered.</value>
-        [DataMember(Name="cancelledQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "cancelledQuantity", EmitDefaultValue = false)]
         public ItemQuantity CancelledQuantity { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UpdatedDate == input.UpdatedDate ||
                     (this.UpdatedDate != null &&
                     this.UpdatedDate.Equals(input.UpdatedDate))
-                ) && 
+                ) &&
                 (
                     this.OrderedQuantity == input.OrderedQuantity ||
                     (this.OrderedQuantity != null &&
                     this.OrderedQuantity.Equals(input.OrderedQuantity))
-                ) && 
+                ) &&
                 (
                     this.CancelledQuantity == input.CancelledQuantity ||
                     (this.CancelledQuantity != null &&

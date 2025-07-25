@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,31 +9,25 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
     /// <summary>
-    /// The metadata of an A+ Content document.
+    /// The A+ Content document&#39;s metadata.
     /// </summary>
     [DataContract]
-    public partial class ContentMetadata :  IEquatable<ContentMetadata>, IValidatableObject
+    public partial class ContentMetadata : IEquatable<ContentMetadata>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public ContentStatus Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentMetadata" /> class.
@@ -43,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentMetadata" /> class.
         /// </summary>
-        /// <param name="name">The A+ Content document name. (required).</param>
+        /// <param name="name">The A+ Content document&#39;s name. (required).</param>
         /// <param name="marketplaceId">marketplaceId (required).</param>
         /// <param name="status">status (required).</param>
         /// <param name="badgeSet">badgeSet (required).</param>
@@ -96,32 +90,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
                 this.UpdateTime = updateTime;
             }
         }
-        
+
         /// <summary>
-        /// The A+ Content document name.
+        /// The A+ Content document&#39;s name.
         /// </summary>
-        /// <value>The A+ Content document name.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        /// <value>The A+ Content document&#39;s name.</value>
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets MarketplaceId
         /// </summary>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
 
         /// <summary>
         /// Gets or Sets BadgeSet
         /// </summary>
-        [DataMember(Name="badgeSet", EmitDefaultValue=false)]
+        [DataMember(Name = "badgeSet", EmitDefaultValue = false)]
         public ContentBadgeSet BadgeSet { get; set; }
 
         /// <summary>
         /// The approximate age of the A+ Content document and metadata.
         /// </summary>
         /// <value>The approximate age of the A+ Content document and metadata.</value>
-        [DataMember(Name="updateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "updateTime", EmitDefaultValue = false)]
         public DateTime? UpdateTime { get; set; }
 
         /// <summary>
@@ -140,7 +134,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -170,27 +164,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.BadgeSet == input.BadgeSet ||
                     (this.BadgeSet != null &&
                     this.BadgeSet.Equals(input.BadgeSet))
-                ) && 
+                ) &&
                 (
                     this.UpdateTime == input.UpdateTime ||
                     (this.UpdateTime != null &&
@@ -229,15 +223,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
-            if(this.Name != null && this.Name.Length > 100)
+            if (this.Name != null && this.Name.Length > 100)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 100.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 100.", new[] { "Name" });
             }
 
             // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 1)
+            if (this.Name != null && this.Name.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new[] { "Name" });
             }
 
             yield break;

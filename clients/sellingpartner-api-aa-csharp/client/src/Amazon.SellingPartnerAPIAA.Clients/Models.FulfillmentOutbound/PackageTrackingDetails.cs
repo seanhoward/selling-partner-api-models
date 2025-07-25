@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,17 +22,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Tracking details of package
     /// </summary>
     [DataContract]
-    public partial class PackageTrackingDetails :  IEquatable<PackageTrackingDetails>, IValidatableObject
+    public partial class PackageTrackingDetails : IEquatable<PackageTrackingDetails>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets CurrentStatus
         /// </summary>
-        [DataMember(Name="currentStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "currentStatus", EmitDefaultValue = false)]
         public CurrentStatus? CurrentStatus { get; set; }
         /// <summary>
         /// Gets or Sets AdditionalLocationInfo
         /// </summary>
-        [DataMember(Name="additionalLocationInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "additionalLocationInfo", EmitDefaultValue = false)]
         public AdditionalLocationInfo? AdditionalLocationInfo { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageTrackingDetails" /> class.
@@ -58,11 +52,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="estimatedArrivalDate">The estimated arrival date..</param>
         /// <param name="shipToAddress">The destination city for the package..</param>
         /// <param name="currentStatus">currentStatus.</param>
-        /// <param name="currentStatusDescription">Description corresponding to the &#x60;CurrentStatus&#x60; value..</param>
+        /// <param name="currentStatusDescription">Description corresponding to the CurrentStatus value..</param>
+        /// <param name="deliveryWindow">The delivery window for the package. This is available after the package reaches its destination delivery station..</param>
         /// <param name="signedForBy">The name of the person who signed for the package..</param>
         /// <param name="additionalLocationInfo">additionalLocationInfo.</param>
         /// <param name="trackingEvents">trackingEvents.</param>
-        public PackageTrackingDetails(int? packageNumber = default, string trackingNumber = default, string customerTrackingLink = default, string carrierCode = default, string carrierPhoneNumber = default, string carrierURL = default, DateTime? shipDate = default, DateTime? estimatedArrivalDate = default, TrackingAddress shipToAddress = default, CurrentStatus? currentStatus = default, string currentStatusDescription = default, string signedForBy = default, AdditionalLocationInfo? additionalLocationInfo = default, TrackingEventList trackingEvents = default)
+        public PackageTrackingDetails(int? packageNumber = default, string trackingNumber = default, string customerTrackingLink = default, string carrierCode = default, string carrierPhoneNumber = default, string carrierURL = default, DateTime? shipDate = default, DateTime? estimatedArrivalDate = default, TrackingAddress shipToAddress = default, CurrentStatus? currentStatus = default, string currentStatusDescription = default, DateRange deliveryWindow = default, string signedForBy = default, AdditionalLocationInfo? additionalLocationInfo = default, TrackingEventList trackingEvents = default)
         {
             // to ensure "packageNumber" is required (not null)
             if (packageNumber == null)
@@ -83,94 +78,102 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.ShipToAddress = shipToAddress;
             this.CurrentStatus = currentStatus;
             this.CurrentStatusDescription = currentStatusDescription;
+            this.DeliveryWindow = deliveryWindow;
             this.SignedForBy = signedForBy;
             this.AdditionalLocationInfo = additionalLocationInfo;
             this.TrackingEvents = trackingEvents;
         }
-        
+
         /// <summary>
         /// The package identifier.
         /// </summary>
         /// <value>The package identifier.</value>
-        [DataMember(Name="packageNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "packageNumber", EmitDefaultValue = false)]
         public int? PackageNumber { get; set; }
 
         /// <summary>
         /// The tracking number for the package.
         /// </summary>
         /// <value>The tracking number for the package.</value>
-        [DataMember(Name="trackingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingNumber", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
         /// <summary>
         /// Link on swiship.com that allows customers to track the package.
         /// </summary>
         /// <value>Link on swiship.com that allows customers to track the package.</value>
-        [DataMember(Name="customerTrackingLink", EmitDefaultValue=false)]
+        [DataMember(Name = "customerTrackingLink", EmitDefaultValue = false)]
         public string CustomerTrackingLink { get; set; }
 
         /// <summary>
         /// The name of the carrier.
         /// </summary>
         /// <value>The name of the carrier.</value>
-        [DataMember(Name="carrierCode", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierCode", EmitDefaultValue = false)]
         public string CarrierCode { get; set; }
 
         /// <summary>
         /// The phone number of the carrier.
         /// </summary>
         /// <value>The phone number of the carrier.</value>
-        [DataMember(Name="carrierPhoneNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierPhoneNumber", EmitDefaultValue = false)]
         public string CarrierPhoneNumber { get; set; }
 
         /// <summary>
         /// The URL of the carrier&#39;s website.
         /// </summary>
         /// <value>The URL of the carrier&#39;s website.</value>
-        [DataMember(Name="carrierURL", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierURL", EmitDefaultValue = false)]
         public string CarrierURL { get; set; }
 
         /// <summary>
         /// The shipping date for the package.
         /// </summary>
         /// <value>The shipping date for the package.</value>
-        [DataMember(Name="shipDate", EmitDefaultValue=false)]
+        [DataMember(Name = "shipDate", EmitDefaultValue = false)]
         public DateTime? ShipDate { get; set; }
 
         /// <summary>
         /// The estimated arrival date.
         /// </summary>
         /// <value>The estimated arrival date.</value>
-        [DataMember(Name="estimatedArrivalDate", EmitDefaultValue=false)]
+        [DataMember(Name = "estimatedArrivalDate", EmitDefaultValue = false)]
         public DateTime? EstimatedArrivalDate { get; set; }
 
         /// <summary>
         /// The destination city for the package.
         /// </summary>
         /// <value>The destination city for the package.</value>
-        [DataMember(Name="shipToAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "shipToAddress", EmitDefaultValue = false)]
         public TrackingAddress ShipToAddress { get; set; }
 
 
         /// <summary>
-        /// Description corresponding to the &#x60;CurrentStatus&#x60; value.
+        /// Description corresponding to the CurrentStatus value.
         /// </summary>
-        /// <value>Description corresponding to the &#x60;CurrentStatus&#x60; value.</value>
-        [DataMember(Name="currentStatusDescription", EmitDefaultValue=false)]
+        /// <value>Description corresponding to the CurrentStatus value.</value>
+        [DataMember(Name = "currentStatusDescription", EmitDefaultValue = false)]
         public string CurrentStatusDescription { get; set; }
+
+        /// <summary>
+        /// The delivery window for the package. This is available after the package reaches its destination delivery station.
+        /// </summary>
+        /// <value>The delivery window for the package. This is available after the package reaches its destination delivery station.</value>
+        [DataMember(Name = "deliveryWindow", EmitDefaultValue = false)]
+        public DateRange DeliveryWindow { get; set; }
 
         /// <summary>
         /// The name of the person who signed for the package.
         /// </summary>
         /// <value>The name of the person who signed for the package.</value>
-        [DataMember(Name="signedForBy", EmitDefaultValue=false)]
+        [DataMember(Name = "signedForBy", EmitDefaultValue = false)]
         public string SignedForBy { get; set; }
 
 
         /// <summary>
         /// Gets or Sets TrackingEvents
         /// </summary>
-        [DataMember(Name="trackingEvents", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingEvents", EmitDefaultValue = false)]
         public TrackingEventList TrackingEvents { get; set; }
 
         /// <summary>
@@ -192,13 +195,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("  ShipToAddress: ").Append(ShipToAddress).Append("\n");
             sb.Append("  CurrentStatus: ").Append(CurrentStatus).Append("\n");
             sb.Append("  CurrentStatusDescription: ").Append(CurrentStatusDescription).Append("\n");
+            sb.Append("  DeliveryWindow: ").Append(DeliveryWindow).Append("\n");
             sb.Append("  SignedForBy: ").Append(SignedForBy).Append("\n");
             sb.Append("  AdditionalLocationInfo: ").Append(AdditionalLocationInfo).Append("\n");
             sb.Append("  TrackingEvents: ").Append(TrackingEvents).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -228,72 +232,77 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PackageNumber == input.PackageNumber ||
                     (this.PackageNumber != null &&
                     this.PackageNumber.Equals(input.PackageNumber))
-                ) && 
+                ) &&
                 (
                     this.TrackingNumber == input.TrackingNumber ||
                     (this.TrackingNumber != null &&
                     this.TrackingNumber.Equals(input.TrackingNumber))
-                ) && 
+                ) &&
                 (
                     this.CustomerTrackingLink == input.CustomerTrackingLink ||
                     (this.CustomerTrackingLink != null &&
                     this.CustomerTrackingLink.Equals(input.CustomerTrackingLink))
-                ) && 
+                ) &&
                 (
                     this.CarrierCode == input.CarrierCode ||
                     (this.CarrierCode != null &&
                     this.CarrierCode.Equals(input.CarrierCode))
-                ) && 
+                ) &&
                 (
                     this.CarrierPhoneNumber == input.CarrierPhoneNumber ||
                     (this.CarrierPhoneNumber != null &&
                     this.CarrierPhoneNumber.Equals(input.CarrierPhoneNumber))
-                ) && 
+                ) &&
                 (
                     this.CarrierURL == input.CarrierURL ||
                     (this.CarrierURL != null &&
                     this.CarrierURL.Equals(input.CarrierURL))
-                ) && 
+                ) &&
                 (
                     this.ShipDate == input.ShipDate ||
                     (this.ShipDate != null &&
                     this.ShipDate.Equals(input.ShipDate))
-                ) && 
+                ) &&
                 (
                     this.EstimatedArrivalDate == input.EstimatedArrivalDate ||
                     (this.EstimatedArrivalDate != null &&
                     this.EstimatedArrivalDate.Equals(input.EstimatedArrivalDate))
-                ) && 
+                ) &&
                 (
                     this.ShipToAddress == input.ShipToAddress ||
                     (this.ShipToAddress != null &&
                     this.ShipToAddress.Equals(input.ShipToAddress))
-                ) && 
+                ) &&
                 (
                     this.CurrentStatus == input.CurrentStatus ||
                     (this.CurrentStatus != null &&
                     this.CurrentStatus.Equals(input.CurrentStatus))
-                ) && 
+                ) &&
                 (
                     this.CurrentStatusDescription == input.CurrentStatusDescription ||
                     (this.CurrentStatusDescription != null &&
                     this.CurrentStatusDescription.Equals(input.CurrentStatusDescription))
-                ) && 
+                ) &&
+                (
+                    this.DeliveryWindow == input.DeliveryWindow ||
+                    (this.DeliveryWindow != null &&
+                    this.DeliveryWindow.Equals(input.DeliveryWindow))
+                ) &&
                 (
                     this.SignedForBy == input.SignedForBy ||
                     (this.SignedForBy != null &&
                     this.SignedForBy.Equals(input.SignedForBy))
-                ) && 
+                ) &&
                 (
                     this.AdditionalLocationInfo == input.AdditionalLocationInfo ||
                     (this.AdditionalLocationInfo != null &&
                     this.AdditionalLocationInfo.Equals(input.AdditionalLocationInfo))
-                ) && 
+                ) &&
                 (
                     this.TrackingEvents == input.TrackingEvents ||
                     (this.TrackingEvents != null &&
@@ -332,6 +341,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                     hashCode = hashCode * 59 + this.CurrentStatus.GetHashCode();
                 if (this.CurrentStatusDescription != null)
                     hashCode = hashCode * 59 + this.CurrentStatusDescription.GetHashCode();
+                if (this.DeliveryWindow != null)
+                    hashCode = hashCode * 59 + this.DeliveryWindow.GetHashCode();
                 if (this.SignedForBy != null)
                     hashCode = hashCode * 59 + this.SignedForBy.GetHashCode();
                 if (this.AdditionalLocationInfo != null)

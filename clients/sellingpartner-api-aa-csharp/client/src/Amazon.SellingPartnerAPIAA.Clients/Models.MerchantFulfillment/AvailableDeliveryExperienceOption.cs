@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// The available delivery confirmation options, and the fee charged, if any.
     /// </summary>
     [DataContract]
-    public partial class AvailableDeliveryExperienceOption :  IEquatable<AvailableDeliveryExperienceOption>, IValidatableObject
+    public partial class AvailableDeliveryExperienceOption : IEquatable<AvailableDeliveryExperienceOption>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets DeliveryExperienceOption
         /// </summary>
-        [DataMember(Name="DeliveryExperienceOption", EmitDefaultValue=false)]
+        [DataMember(Name = "DeliveryExperienceOption", EmitDefaultValue = false)]
         public DeliveryExperienceOption DeliveryExperienceOption { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableDeliveryExperienceOption" /> class.
@@ -66,12 +60,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                 this.Charge = charge;
             }
         }
-        
+
 
         /// <summary>
         /// Gets or Sets Charge
         /// </summary>
-        [DataMember(Name="Charge", EmitDefaultValue=false)]
+        [DataMember(Name = "Charge", EmitDefaultValue = false)]
         public CurrencyAmount Charge { get; set; }
 
         /// <summary>
@@ -87,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -117,12 +111,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeliveryExperienceOption == input.DeliveryExperienceOption ||
                     (this.DeliveryExperienceOption != null &&
                     this.DeliveryExperienceOption.Equals(input.DeliveryExperienceOption))
-                ) && 
+                ) &&
                 (
                     this.Charge == input.Charge ||
                     (this.Charge != null &&

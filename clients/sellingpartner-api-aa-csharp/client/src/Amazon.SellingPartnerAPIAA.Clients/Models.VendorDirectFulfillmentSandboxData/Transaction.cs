@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandboxData
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
     /// The transaction details including the status. If the transaction was successful, also includes the requested test order data.
     /// </summary>
     [DataContract]
-    public partial class Transaction :  IEquatable<Transaction>, IValidatableObject
+    public partial class Transaction : IEquatable<Transaction>, IValidatableObject
     {
         /// <summary>
         /// The current processing status of the transaction.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
-            
+
             /// <summary>
             /// Enum FAILURE for value: FAILURE
             /// </summary>
             [EnumMember(Value = "FAILURE")]
             FAILURE = 1,
-            
+
             /// <summary>
             /// Enum PROCESSING for value: PROCESSING
             /// </summary>
             [EnumMember(Value = "PROCESSING")]
             PROCESSING = 2,
-            
+
             /// <summary>
             /// Enum SUCCESS for value: SUCCESS
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// The current processing status of the transaction.
         /// </summary>
         /// <value>The current processing status of the transaction.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Transaction" /> class.
@@ -96,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             }
             this.TestCaseData = testCaseData;
         }
-        
+
         /// <summary>
         /// The unique identifier returned in the response to the generateOrderScenarios request.
         /// </summary>
         /// <value>The unique identifier returned in the response to the generateOrderScenarios request.</value>
-        [DataMember(Name="transactionId", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string TransactionId { get; set; }
 
 
@@ -109,7 +104,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
         /// Test case data for the transaction. Only available when the transaction status is SUCCESS.
         /// </summary>
         /// <value>Test case data for the transaction. Only available when the transaction status is SUCCESS.</value>
-        [DataMember(Name="testCaseData", EmitDefaultValue=false)]
+        [DataMember(Name = "testCaseData", EmitDefaultValue = false)]
         public TestCaseData TestCaseData { get; set; }
 
         /// <summary>
@@ -126,7 +121,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -156,17 +151,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TransactionId == input.TransactionId ||
                     (this.TransactionId != null &&
                     this.TransactionId.Equals(input.TransactionId))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.TestCaseData == input.TestCaseData ||
                     (this.TestCaseData != null &&

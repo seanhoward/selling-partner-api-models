@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Amazon Warehousing and Distribution
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * OpenAPI spec version: 2024-05-09
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Tracking details for the shipment. If using SPD transportation, this can be for each case. If not using SPD transportation, this is a single tracking entry for the entire shipment.
     /// </summary>
     [DataContract]
-    public partial class TrackingDetails :  IEquatable<TrackingDetails>, IValidatableObject
+    public partial class TrackingDetails : IEquatable<TrackingDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingDetails" /> class.
@@ -39,42 +33,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// Initializes a new instance of the <see cref="TrackingDetails" /> class.
         /// </summary>
         /// <param name="carrierCode">Unique or identifying code for the carrier..</param>
-        /// <param name="shipBy">Timestamp denoting when the shipment will be shipped Date should be in ISO 8601 format as defined by date-time. (required).</param>
-        /// <param name="bookingId">The identifier that is received from transportation to uniquely identify a booking..</param>
-        public TrackingDetails(CarrierCode carrierCode = default, DateTime? shipBy = default, string bookingId = default)
+        /// <param name="bookingId">The identifier that is received from transportation to uniquely identify a booking. (required).</param>
+        public TrackingDetails(CarrierCode carrierCode = default, string bookingId = default)
         {
-            // to ensure "shipBy" is required (not null)
-            if (shipBy == null)
+            // to ensure "bookingId" is required (not null)
+            if (bookingId == null)
             {
-                throw new InvalidDataException("shipBy is a required property for TrackingDetails and cannot be null");
+                throw new InvalidDataException("bookingId is a required property for TrackingDetails and cannot be null");
             }
             else
             {
-                this.ShipBy = shipBy;
+                this.BookingId = bookingId;
             }
             this.CarrierCode = carrierCode;
-            this.BookingId = bookingId;
         }
-        
+
         /// <summary>
         /// Unique or identifying code for the carrier.
         /// </summary>
         /// <value>Unique or identifying code for the carrier.</value>
-        [DataMember(Name="carrierCode", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierCode", EmitDefaultValue = false)]
         public CarrierCode CarrierCode { get; set; }
-
-        /// <summary>
-        /// Timestamp denoting when the shipment will be shipped Date should be in ISO 8601 format as defined by date-time.
-        /// </summary>
-        /// <value>Timestamp denoting when the shipment will be shipped Date should be in ISO 8601 format as defined by date-time.</value>
-        [DataMember(Name="shipBy", EmitDefaultValue=false)]
-        public DateTime? ShipBy { get; set; }
 
         /// <summary>
         /// The identifier that is received from transportation to uniquely identify a booking.
         /// </summary>
         /// <value>The identifier that is received from transportation to uniquely identify a booking.</value>
-        [DataMember(Name="bookingId", EmitDefaultValue=false)]
+        [DataMember(Name = "bookingId", EmitDefaultValue = false)]
         public string BookingId { get; set; }
 
         /// <summary>
@@ -86,12 +71,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             var sb = new StringBuilder();
             sb.Append("class TrackingDetails {\n");
             sb.Append("  CarrierCode: ").Append(CarrierCode).Append("\n");
-            sb.Append("  ShipBy: ").Append(ShipBy).Append("\n");
             sb.Append("  BookingId: ").Append(BookingId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +105,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CarrierCode == input.CarrierCode ||
                     (this.CarrierCode != null &&
                     this.CarrierCode.Equals(input.CarrierCode))
-                ) && 
-                (
-                    this.ShipBy == input.ShipBy ||
-                    (this.ShipBy != null &&
-                    this.ShipBy.Equals(input.ShipBy))
-                ) && 
+                ) &&
                 (
                     this.BookingId == input.BookingId ||
                     (this.BookingId != null &&
@@ -150,8 +129,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
                 int hashCode = 41;
                 if (this.CarrierCode != null)
                     hashCode = hashCode * 59 + this.CarrierCode.GetHashCode();
-                if (this.ShipBy != null)
-                    hashCode = hashCode * 59 + this.ShipBy.GetHashCode();
                 if (this.BookingId != null)
                     hashCode = hashCode * 59 + this.BookingId.GetHashCode();
                 return hashCode;
@@ -166,9 +143,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // BookingId (string) minLength
-            if(this.BookingId != null && this.BookingId.Length < 1)
+            if (this.BookingId != null && this.BookingId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for BookingId, length must be greater than 1.", new [] { "BookingId" });
+                yield return new ValidationResult("Invalid value for BookingId, length must be greater than 1.", new[] { "BookingId" });
             }
 
             yield break;

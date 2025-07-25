@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Document that captured during service appointment fulfillment that portrays proof of completion
     /// </summary>
     [DataContract]
-    public partial class FulfillmentDocument :  IEquatable<FulfillmentDocument>, IValidatableObject
+    public partial class FulfillmentDocument : IEquatable<FulfillmentDocument>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentDocument" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.UploadDestinationId = uploadDestinationId;
             this.ContentSha256 = contentSha256;
         }
-        
+
         /// <summary>
         /// The identifier of the upload destination. Get this value by calling the &#x60;createServiceDocumentUploadDestination&#x60; operation of the Services API.
         /// </summary>
         /// <value>The identifier of the upload destination. Get this value by calling the &#x60;createServiceDocumentUploadDestination&#x60; operation of the Services API.</value>
-        [DataMember(Name="uploadDestinationId", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadDestinationId", EmitDefaultValue = false)]
         public string UploadDestinationId { get; set; }
 
         /// <summary>
         /// Sha256 hash of the file content. This value is used to determine if the file has been corrupted or tampered with during transit.
         /// </summary>
         /// <value>Sha256 hash of the file content. This value is used to determine if the file has been corrupted or tampered with during transit.</value>
-        [DataMember(Name="contentSha256", EmitDefaultValue=false)]
+        [DataMember(Name = "contentSha256", EmitDefaultValue = false)]
         public string ContentSha256 { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.UploadDestinationId == input.UploadDestinationId ||
                     (this.UploadDestinationId != null &&
                     this.UploadDestinationId.Equals(input.UploadDestinationId))
-                ) && 
+                ) &&
                 (
                     this.ContentSha256 == input.ContentSha256 ||
                     (this.ContentSha256 != null &&

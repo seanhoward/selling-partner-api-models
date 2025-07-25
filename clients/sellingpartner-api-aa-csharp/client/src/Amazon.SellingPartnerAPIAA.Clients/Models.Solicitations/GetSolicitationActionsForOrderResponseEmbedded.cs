@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
     /// GetSolicitationActionsForOrderResponseEmbedded
     /// </summary>
     [DataContract]
-    public partial class GetSolicitationActionsForOrderResponseEmbedded :  IEquatable<GetSolicitationActionsForOrderResponseEmbedded>, IValidatableObject
+    public partial class GetSolicitationActionsForOrderResponseEmbedded : IEquatable<GetSolicitationActionsForOrderResponseEmbedded>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSolicitationActionsForOrderResponseEmbedded" /> class.
@@ -51,11 +46,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
                 this.Actions = actions;
             }
         }
-        
+
         /// <summary>
         /// Gets or Sets Actions
         /// </summary>
-        [DataMember(Name="actions", EmitDefaultValue=false)]
+        [DataMember(Name = "actions", EmitDefaultValue = false)]
         public List<GetSolicitationActionResponse> Actions { get; set; }
 
         /// <summary>
@@ -70,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -100,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Solicitations
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Actions == input.Actions ||
                     this.Actions != null &&

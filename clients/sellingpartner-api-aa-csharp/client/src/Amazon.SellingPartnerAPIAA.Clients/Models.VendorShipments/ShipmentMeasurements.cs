@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Shipment measurement details.
     /// </summary>
     [DataContract]
-    public partial class ShipmentMeasurements :  IEquatable<ShipmentMeasurements>, IValidatableObject
+    public partial class ShipmentMeasurements : IEquatable<ShipmentMeasurements>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentMeasurements" /> class.
@@ -44,33 +37,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.CartonCount = cartonCount;
             this.PalletCount = palletCount;
         }
-        
+
         /// <summary>
         /// Gross weight of the shipment.
         /// </summary>
         /// <value>Gross weight of the shipment.</value>
-        [DataMember(Name="grossShipmentWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "grossShipmentWeight", EmitDefaultValue = false)]
         public Weight GrossShipmentWeight { get; set; }
 
         /// <summary>
         /// Gross Volume of the shipment.
         /// </summary>
         /// <value>Gross Volume of the shipment.</value>
-        [DataMember(Name="shipmentVolume", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentVolume", EmitDefaultValue = false)]
         public Volume ShipmentVolume { get; set; }
 
         /// <summary>
         /// Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.
         /// </summary>
         /// <value>Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.</value>
-        [DataMember(Name="cartonCount", EmitDefaultValue=false)]
+        [DataMember(Name = "cartonCount", EmitDefaultValue = false)]
         public int? CartonCount { get; set; }
 
         /// <summary>
         /// Number of pallets present in the shipment. Provide the palletCount only for palletized shipments.
         /// </summary>
         /// <value>Number of pallets present in the shipment. Provide the palletCount only for palletized shipments.</value>
-        [DataMember(Name="palletCount", EmitDefaultValue=false)]
+        [DataMember(Name = "palletCount", EmitDefaultValue = false)]
         public int? PalletCount { get; set; }
 
         /// <summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +111,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.GrossShipmentWeight == input.GrossShipmentWeight ||
                     (this.GrossShipmentWeight != null &&
                     this.GrossShipmentWeight.Equals(input.GrossShipmentWeight))
-                ) && 
+                ) &&
                 (
                     this.ShipmentVolume == input.ShipmentVolume ||
                     (this.ShipmentVolume != null &&
                     this.ShipmentVolume.Equals(input.ShipmentVolume))
-                ) && 
+                ) &&
                 (
                     this.CartonCount == input.CartonCount ||
                     (this.CartonCount != null &&
                     this.CartonCount.Equals(input.CartonCount))
-                ) && 
+                ) &&
                 (
                     this.PalletCount == input.PalletCount ||
                     (this.PalletCount != null &&

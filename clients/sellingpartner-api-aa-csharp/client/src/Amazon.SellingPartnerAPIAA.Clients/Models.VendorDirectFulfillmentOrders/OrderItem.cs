@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
     /// An item within an order
     /// </summary>
     [DataContract]
-    public partial class OrderItem :  IEquatable<OrderItem>, IValidatableObject
+    public partial class OrderItem : IEquatable<OrderItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItem" /> class.
@@ -87,82 +81,82 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             this.TotalPrice = totalPrice;
             this.BuyerCustomizedInfo = buyerCustomizedInfo;
         }
-        
+
         /// <summary>
         /// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
         /// </summary>
         /// <value>Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.</value>
-        [DataMember(Name="itemSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "itemSequenceNumber", EmitDefaultValue = false)]
         public string ItemSequenceNumber { get; set; }
 
         /// <summary>
         /// Buyer&#39;s standard identification number (ASIN) of an item.
         /// </summary>
         /// <value>Buyer&#39;s standard identification number (ASIN) of an item.</value>
-        [DataMember(Name="buyerProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "buyerProductIdentifier", EmitDefaultValue = false)]
         public string BuyerProductIdentifier { get; set; }
 
         /// <summary>
         /// The vendor selected product identification of the item.
         /// </summary>
         /// <value>The vendor selected product identification of the item.</value>
-        [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorProductIdentifier", EmitDefaultValue = false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
         /// Title for the item.
         /// </summary>
         /// <value>Title for the item.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// Item quantity ordered.
         /// </summary>
         /// <value>Item quantity ordered.</value>
-        [DataMember(Name="orderedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "orderedQuantity", EmitDefaultValue = false)]
         public ItemQuantity OrderedQuantity { get; set; }
 
         /// <summary>
         /// Details for the scheduled delivery shipment.
         /// </summary>
         /// <value>Details for the scheduled delivery shipment.</value>
-        [DataMember(Name="scheduledDeliveryShipment", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduledDeliveryShipment", EmitDefaultValue = false)]
         public ScheduledDeliveryShipment ScheduledDeliveryShipment { get; set; }
 
         /// <summary>
         /// Gift message and wrapId details.
         /// </summary>
         /// <value>Gift message and wrapId details.</value>
-        [DataMember(Name="giftDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "giftDetails", EmitDefaultValue = false)]
         public GiftDetails GiftDetails { get; set; }
 
         /// <summary>
         /// Net price (before tax) to vendor with currency details.
         /// </summary>
         /// <value>Net price (before tax) to vendor with currency details.</value>
-        [DataMember(Name="netPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "netPrice", EmitDefaultValue = false)]
         public Money NetPrice { get; set; }
 
         /// <summary>
         /// Total tax details for the line item.
         /// </summary>
         /// <value>Total tax details for the line item.</value>
-        [DataMember(Name="taxDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "taxDetails", EmitDefaultValue = false)]
         public TaxItemDetails TaxDetails { get; set; }
 
         /// <summary>
         /// The price to Amazon each (cost).
         /// </summary>
         /// <value>The price to Amazon each (cost).</value>
-        [DataMember(Name="totalPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "totalPrice", EmitDefaultValue = false)]
         public Money TotalPrice { get; set; }
 
         /// <summary>
         /// The buyer information for products the vendor has configured as customizable, specifying the types of customizations or configurations along with types and ranges for their product. This provides the ability for buyers to customize multiple aspects of the products according to what the vendor allows.
         /// </summary>
         /// <value>The buyer information for products the vendor has configured as customizable, specifying the types of customizations or configurations along with types and ranges for their product. This provides the ability for buyers to customize multiple aspects of the products according to what the vendor allows.</value>
-        [DataMember(Name="buyerCustomizedInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "buyerCustomizedInfo", EmitDefaultValue = false)]
         public BuyerCustomizedInfoDetail BuyerCustomizedInfo { get; set; }
 
         /// <summary>
@@ -187,7 +181,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -217,57 +211,57 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemSequenceNumber == input.ItemSequenceNumber ||
                     (this.ItemSequenceNumber != null &&
                     this.ItemSequenceNumber.Equals(input.ItemSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.BuyerProductIdentifier == input.BuyerProductIdentifier ||
                     (this.BuyerProductIdentifier != null &&
                     this.BuyerProductIdentifier.Equals(input.BuyerProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.VendorProductIdentifier == input.VendorProductIdentifier ||
                     (this.VendorProductIdentifier != null &&
                     this.VendorProductIdentifier.Equals(input.VendorProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.OrderedQuantity == input.OrderedQuantity ||
                     (this.OrderedQuantity != null &&
                     this.OrderedQuantity.Equals(input.OrderedQuantity))
-                ) && 
+                ) &&
                 (
                     this.ScheduledDeliveryShipment == input.ScheduledDeliveryShipment ||
                     (this.ScheduledDeliveryShipment != null &&
                     this.ScheduledDeliveryShipment.Equals(input.ScheduledDeliveryShipment))
-                ) && 
+                ) &&
                 (
                     this.GiftDetails == input.GiftDetails ||
                     (this.GiftDetails != null &&
                     this.GiftDetails.Equals(input.GiftDetails))
-                ) && 
+                ) &&
                 (
                     this.NetPrice == input.NetPrice ||
                     (this.NetPrice != null &&
                     this.NetPrice.Equals(input.NetPrice))
-                ) && 
+                ) &&
                 (
                     this.TaxDetails == input.TaxDetails ||
                     (this.TaxDetails != null &&
                     this.TaxDetails.Equals(input.TaxDetails))
-                ) && 
+                ) &&
                 (
                     this.TotalPrice == input.TotalPrice ||
                     (this.TotalPrice != null &&
                     this.TotalPrice.Equals(input.TotalPrice))
-                ) && 
+                ) &&
                 (
                     this.BuyerCustomizedInfo == input.BuyerCustomizedInfo ||
                     (this.BuyerCustomizedInfo != null &&

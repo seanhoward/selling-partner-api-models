@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// The request body schema for the &#x60;createContainerLabel&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class CreateContainerLabelRequest :  IEquatable<CreateContainerLabelRequest>, IValidatableObject
+    public partial class CreateContainerLabelRequest : IEquatable<CreateContainerLabelRequest>, IValidatableObject
     {
         /// <summary>
         /// The container (pallet) label&#39;s carrier.
         /// </summary>
         /// <value>The container (pallet) label&#39;s carrier.</value>
-        [DataMember(Name="carrierId", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierId", EmitDefaultValue = false)]
         public CarrierId CarrierId { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerLabelRequest" /> class.
@@ -48,7 +42,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// <param name="shipFromParty">The warehouse code of the vendor. (required).</param>
         /// <param name="carrierId">The container (pallet) label&#39;s carrier. (required).</param>
         /// <param name="vendorContainerId">The vendor&#39;s unique identifier for the container. (required).</param>
-        /// <param name="packages">An array of package objects that associates shipment packages with a container. (required).</param>
+        /// <param name="packages">An array of package objects that associate shipment packages with a container. (required).</param>
         public CreateContainerLabelRequest(PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, CarrierId carrierId = default, string vendorContainerId = default, Packages packages = default)
         {
             // to ensure "sellingParty" is required (not null)
@@ -97,19 +91,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
                 this.Packages = packages;
             }
         }
-        
+
         /// <summary>
         /// The ID of the selling party or vendor.
         /// </summary>
         /// <value>The ID of the selling party or vendor.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// The warehouse code of the vendor.
         /// </summary>
         /// <value>The warehouse code of the vendor.</value>
-        [DataMember(Name="shipFromParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFromParty", EmitDefaultValue = false)]
         public PartyIdentification ShipFromParty { get; set; }
 
 
@@ -117,14 +111,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// The vendor&#39;s unique identifier for the container.
         /// </summary>
         /// <value>The vendor&#39;s unique identifier for the container.</value>
-        [DataMember(Name="vendorContainerId", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorContainerId", EmitDefaultValue = false)]
         public string VendorContainerId { get; set; }
 
         /// <summary>
-        /// An array of package objects that associates shipment packages with a container.
+        /// An array of package objects that associate shipment packages with a container.
         /// </summary>
-        /// <value>An array of package objects that associates shipment packages with a container.</value>
-        [DataMember(Name="packages", EmitDefaultValue=false)]
+        /// <value>An array of package objects that associate shipment packages with a container.</value>
+        [DataMember(Name = "packages", EmitDefaultValue = false)]
         public Packages Packages { get; set; }
 
         /// <summary>
@@ -143,7 +137,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -173,27 +167,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.ShipFromParty == input.ShipFromParty ||
                     (this.ShipFromParty != null &&
                     this.ShipFromParty.Equals(input.ShipFromParty))
-                ) && 
+                ) &&
                 (
                     this.CarrierId == input.CarrierId ||
                     (this.CarrierId != null &&
                     this.CarrierId.Equals(input.CarrierId))
-                ) && 
+                ) &&
                 (
                     this.VendorContainerId == input.VendorContainerId ||
                     (this.VendorContainerId != null &&
                     this.VendorContainerId.Equals(input.VendorContainerId))
-                ) && 
+                ) &&
                 (
                     this.Packages == input.Packages ||
                     (this.Packages != null &&

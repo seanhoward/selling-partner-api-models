@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
     /// The list of attributes related to the buyer.
     /// </summary>
     [DataContract]
-    public partial class GetAttributesResponseBuyer :  IEquatable<GetAttributesResponseBuyer>, IValidatableObject
+    public partial class GetAttributesResponseBuyer : IEquatable<GetAttributesResponseBuyer>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAttributesResponseBuyer" /> class.
@@ -38,12 +31,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
         {
             this.Locale = locale;
         }
-        
+
         /// <summary>
         /// The buyer&#39;s language of preference, indicated with a locale-specific language tag. Examples: \&quot;en-US\&quot;, \&quot;zh-CN\&quot;, and \&quot;en-GB\&quot;.
         /// </summary>
         /// <value>The buyer&#39;s language of preference, indicated with a locale-specific language tag. Examples: \&quot;en-US\&quot;, \&quot;zh-CN\&quot;, and \&quot;en-GB\&quot;.</value>
-        [DataMember(Name="locale", EmitDefaultValue=false)]
+        [DataMember(Name = "locale", EmitDefaultValue = false)]
         public string Locale { get; set; }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Messaging
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Locale == input.Locale ||
                     (this.Locale != null &&

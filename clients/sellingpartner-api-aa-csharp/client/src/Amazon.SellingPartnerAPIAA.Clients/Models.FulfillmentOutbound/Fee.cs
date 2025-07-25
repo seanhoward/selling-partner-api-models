@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Fee type and cost.
     /// </summary>
     [DataContract]
-    public partial class Fee :  IEquatable<Fee>, IValidatableObject
+    public partial class Fee : IEquatable<Fee>, IValidatableObject
     {
         /// <summary>
         /// The type of fee.
@@ -37,25 +32,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         [JsonConverter(typeof(StringEnumConverter))]
         public enum NameEnum
         {
-            
+
             /// <summary>
             /// Enum FBAPerUnitFulfillmentFee for value: FBAPerUnitFulfillmentFee
             /// </summary>
             [EnumMember(Value = "FBAPerUnitFulfillmentFee")]
             FBAPerUnitFulfillmentFee = 1,
-            
+
             /// <summary>
             /// Enum FBAPerOrderFulfillmentFee for value: FBAPerOrderFulfillmentFee
             /// </summary>
             [EnumMember(Value = "FBAPerOrderFulfillmentFee")]
             FBAPerOrderFulfillmentFee = 2,
-            
+
             /// <summary>
             /// Enum FBATransportationFee for value: FBATransportationFee
             /// </summary>
             [EnumMember(Value = "FBATransportationFee")]
             FBATransportationFee = 3,
-            
+
             /// <summary>
             /// Enum FBAFulfillmentCODFee for value: FBAFulfillmentCODFee
             /// </summary>
@@ -67,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// The type of fee.
         /// </summary>
         /// <value>The type of fee.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public NameEnum Name { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Fee" /> class.
@@ -100,13 +95,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.Amount = amount;
             }
         }
-        
+
 
         /// <summary>
         /// The amount of the fee.
         /// </summary>
         /// <value>The amount of the fee.</value>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public Money Amount { get; set; }
 
         /// <summary>
@@ -122,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -152,12 +147,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Amount == input.Amount ||
                     (this.Amount != null &&

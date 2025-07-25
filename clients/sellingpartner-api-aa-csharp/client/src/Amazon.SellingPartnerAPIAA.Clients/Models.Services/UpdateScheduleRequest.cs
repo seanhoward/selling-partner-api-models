@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Request schema for the &#x60;updateSchedule&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class UpdateScheduleRequest :  IEquatable<UpdateScheduleRequest>, IValidatableObject
+    public partial class UpdateScheduleRequest : IEquatable<UpdateScheduleRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateScheduleRequest" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
                 this.Schedules = schedules;
             }
         }
-        
+
         /// <summary>
         /// List of schedule objects to define the normal working hours of a resource.
         /// </summary>
         /// <value>List of schedule objects to define the normal working hours of a resource.</value>
-        [DataMember(Name="schedules", EmitDefaultValue=false)]
+        [DataMember(Name = "schedules", EmitDefaultValue = false)]
         public AvailabilityRecords Schedules { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Schedules == input.Schedules ||
                     (this.Schedules != null &&

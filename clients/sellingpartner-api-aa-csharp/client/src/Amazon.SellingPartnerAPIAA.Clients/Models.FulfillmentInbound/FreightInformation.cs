@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Freight information describes the skus being transported. Freight carrier options and quotes will only be returned if the freight information is provided.
     /// </summary>
     [DataContract]
-    public partial class FreightInformation :  IEquatable<FreightInformation>, IValidatableObject
+    public partial class FreightInformation : IEquatable<FreightInformation>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FreightInformation" /> class.
@@ -40,18 +33,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.DeclaredValue = declaredValue;
             this.FreightClass = freightClass;
         }
-        
+
         /// <summary>
         /// Gets or Sets DeclaredValue
         /// </summary>
-        [DataMember(Name="declaredValue", EmitDefaultValue=false)]
+        [DataMember(Name = "declaredValue", EmitDefaultValue = false)]
         public Currency DeclaredValue { get; set; }
 
         /// <summary>
         /// Freight class.  Possible values: &#x60;NONE&#x60;, &#x60;FC_50&#x60;, &#x60;FC_55&#x60;, &#x60;FC_60&#x60;, &#x60;FC_65&#x60;, &#x60;FC_70&#x60;, &#x60;FC_77_5&#x60;, &#x60;FC_85&#x60;, &#x60;FC_92_5&#x60;, &#x60;FC_100&#x60;, &#x60;FC_110&#x60;, &#x60;FC_125&#x60;, &#x60;FC_150&#x60;, &#x60;FC_175&#x60;, &#x60;FC_200&#x60;, &#x60;FC_250&#x60;, &#x60;FC_300&#x60;, &#x60;FC_400&#x60;, &#x60;FC_500&#x60;.
         /// </summary>
         /// <value>Freight class.  Possible values: &#x60;NONE&#x60;, &#x60;FC_50&#x60;, &#x60;FC_55&#x60;, &#x60;FC_60&#x60;, &#x60;FC_65&#x60;, &#x60;FC_70&#x60;, &#x60;FC_77_5&#x60;, &#x60;FC_85&#x60;, &#x60;FC_92_5&#x60;, &#x60;FC_100&#x60;, &#x60;FC_110&#x60;, &#x60;FC_125&#x60;, &#x60;FC_150&#x60;, &#x60;FC_175&#x60;, &#x60;FC_200&#x60;, &#x60;FC_250&#x60;, &#x60;FC_300&#x60;, &#x60;FC_400&#x60;, &#x60;FC_500&#x60;.</value>
-        [DataMember(Name="freightClass", EmitDefaultValue=false)]
+        [DataMember(Name = "freightClass", EmitDefaultValue = false)]
         public string FreightClass { get; set; }
 
         /// <summary>
@@ -67,7 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,12 +90,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeclaredValue == input.DeclaredValue ||
                     (this.DeclaredValue != null &&
                     this.DeclaredValue.Equals(input.DeclaredValue))
-                ) && 
+                ) &&
                 (
                     this.FreightClass == input.FreightClass ||
                     (this.FreightClass != null &&
@@ -135,15 +128,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // FreightClass (string) maxLength
-            if(this.FreightClass != null && this.FreightClass.Length > 1024)
+            if (this.FreightClass != null && this.FreightClass.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for FreightClass, length must be less than 1024.", new [] { "FreightClass" });
+                yield return new ValidationResult("Invalid value for FreightClass, length must be less than 1024.", new[] { "FreightClass" });
             }
 
             // FreightClass (string) minLength
-            if(this.FreightClass != null && this.FreightClass.Length < 1)
+            if (this.FreightClass != null && this.FreightClass.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for FreightClass, length must be greater than 1.", new [] { "FreightClass" });
+                yield return new ValidationResult("Invalid value for FreightClass, length must be greater than 1.", new[] { "FreightClass" });
             }
 
             yield break;

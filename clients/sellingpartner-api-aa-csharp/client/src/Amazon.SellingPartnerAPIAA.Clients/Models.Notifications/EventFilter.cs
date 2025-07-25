@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
     /// A &#x60;notificationType&#x60; specific filter. This object contains all of the currently available filters and properties that you can use to define a &#x60;notificationType&#x60; specific filter.
     /// </summary>
     [DataContract]
-    public partial class EventFilter : AggregationFilter,  IEquatable<EventFilter>, IValidatableObject
+    public partial class EventFilter : AggregationFilter, IEquatable<EventFilter>, IValidatableObject
     {
         /// <summary>
         /// An &#x60;eventFilterType&#x60; value that is supported by the specific &#x60;notificationType&#x60;. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an &#x60;eventFilterType&#x60; is supported.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         [JsonConverter(typeof(StringEnumConverter))]
         public enum EventFilterTypeEnum
         {
-            
+
             /// <summary>
             /// Enum ANYOFFERCHANGED for value: ANY_OFFER_CHANGED
             /// </summary>
             [EnumMember(Value = "ANY_OFFER_CHANGED")]
             ANYOFFERCHANGED = 1,
-            
+
             /// <summary>
             /// Enum ORDERCHANGE for value: ORDER_CHANGE
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
         /// An &#x60;eventFilterType&#x60; value that is supported by the specific &#x60;notificationType&#x60;. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an &#x60;eventFilterType&#x60; is supported.
         /// </summary>
         /// <value>An &#x60;eventFilterType&#x60; value that is supported by the specific &#x60;notificationType&#x60;. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an &#x60;eventFilterType&#x60; is supported.</value>
-        [DataMember(Name="eventFilterType", EmitDefaultValue=false)]
+        [DataMember(Name = "eventFilterType", EmitDefaultValue = false)]
         public EventFilterTypeEnum EventFilterType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EventFilter" /> class.
@@ -82,17 +77,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             this.MarketplaceIds = marketplaceIds;
             this.OrderChangeTypes = orderChangeTypes;
         }
-        
+
         /// <summary>
         /// Gets or Sets MarketplaceIds
         /// </summary>
-        [DataMember(Name="marketplaceIds", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceIds", EmitDefaultValue = false)]
         public MarketplaceIds MarketplaceIds { get; set; }
 
         /// <summary>
         /// Gets or Sets OrderChangeTypes
         /// </summary>
-        [DataMember(Name="orderChangeTypes", EmitDefaultValue=false)]
+        [DataMember(Name = "orderChangeTypes", EmitDefaultValue = false)]
         public OrderChangeTypes OrderChangeTypes { get; set; }
 
 
@@ -111,7 +106,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -141,17 +136,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Notifications
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return base.Equals(input) &&
                 (
                     this.MarketplaceIds == input.MarketplaceIds ||
                     (this.MarketplaceIds != null &&
                     this.MarketplaceIds.Equals(input.MarketplaceIds))
-                ) && base.Equals(input) && 
+                ) && base.Equals(input) &&
                 (
                     this.OrderChangeTypes == input.OrderChangeTypes ||
                     (this.OrderChangeTypes != null &&
                     this.OrderChangeTypes.Equals(input.OrderChangeTypes))
-                ) && base.Equals(input) && 
+                ) && base.Equals(input) &&
                 (
                     this.EventFilterType == input.EventFilterType ||
                     (this.EventFilterType != null &&

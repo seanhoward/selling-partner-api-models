@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Properties of packages
     /// </summary>
     [DataContract]
-    public partial class PackageDetail :  IEquatable<PackageDetail>, IValidatableObject
+    public partial class PackageDetail : IEquatable<PackageDetail>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageDetail" /> class.
@@ -40,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// </summary>
         /// <param name="packageReferenceId">packageReferenceId (required).</param>
         /// <param name="carrierCode">Identifies the carrier that will deliver the package. This field is required for all marketplaces. For more information, refer to the [&#x60;CarrierCode&#x60; announcement](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces). (required).</param>
-        /// <param name="carrierName">Carrier Name that will deliver the package. Required when &#x60;carrierCode&#x60; is \&quot;Others\&quot; .</param>
+        /// <param name="carrierName">Carrier name that will deliver the package. Required when &#x60;carrierCode&#x60; is \&quot;Other\&quot; .</param>
         /// <param name="shippingMethod">Ship method to be used for shipping the order..</param>
         /// <param name="trackingNumber">The tracking number used to obtain tracking and delivery information. (required).</param>
         /// <param name="shipDate">The shipping date for the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required).</param>
@@ -97,60 +91,60 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.ShippingMethod = shippingMethod;
             this.ShipFromSupplySourceId = shipFromSupplySourceId;
         }
-        
+
         /// <summary>
         /// Gets or Sets PackageReferenceId
         /// </summary>
-        [DataMember(Name="packageReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "packageReferenceId", EmitDefaultValue = false)]
         public string PackageReferenceId { get; set; }
 
         /// <summary>
         /// Identifies the carrier that will deliver the package. This field is required for all marketplaces. For more information, refer to the [&#x60;CarrierCode&#x60; announcement](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces).
         /// </summary>
         /// <value>Identifies the carrier that will deliver the package. This field is required for all marketplaces. For more information, refer to the [&#x60;CarrierCode&#x60; announcement](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces).</value>
-        [DataMember(Name="carrierCode", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierCode", EmitDefaultValue = false)]
         public string CarrierCode { get; set; }
 
         /// <summary>
-        /// Carrier Name that will deliver the package. Required when &#x60;carrierCode&#x60; is \&quot;Others\&quot; 
+        /// Carrier name that will deliver the package. Required when &#x60;carrierCode&#x60; is \&quot;Other\&quot; 
         /// </summary>
-        /// <value>Carrier Name that will deliver the package. Required when &#x60;carrierCode&#x60; is \&quot;Others\&quot; </value>
-        [DataMember(Name="carrierName", EmitDefaultValue=false)]
+        /// <value>Carrier name that will deliver the package. Required when &#x60;carrierCode&#x60; is \&quot;Other\&quot; </value>
+        [DataMember(Name = "carrierName", EmitDefaultValue = false)]
         public string CarrierName { get; set; }
 
         /// <summary>
         /// Ship method to be used for shipping the order.
         /// </summary>
         /// <value>Ship method to be used for shipping the order.</value>
-        [DataMember(Name="shippingMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingMethod", EmitDefaultValue = false)]
         public string ShippingMethod { get; set; }
 
         /// <summary>
         /// The tracking number used to obtain tracking and delivery information.
         /// </summary>
         /// <value>The tracking number used to obtain tracking and delivery information.</value>
-        [DataMember(Name="trackingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingNumber", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
         /// <summary>
         /// The shipping date for the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format.
         /// </summary>
         /// <value>The shipping date for the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format.</value>
-        [DataMember(Name="shipDate", EmitDefaultValue=false)]
+        [DataMember(Name = "shipDate", EmitDefaultValue = false)]
         public DateTime? ShipDate { get; set; }
 
         /// <summary>
         /// The unique identifier for the supply source.
         /// </summary>
         /// <value>The unique identifier for the supply source.</value>
-        [DataMember(Name="shipFromSupplySourceId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipFromSupplySourceId", EmitDefaultValue = false)]
         public string ShipFromSupplySourceId { get; set; }
 
         /// <summary>
         /// The list of order items and quantities to be updated.
         /// </summary>
         /// <value>The list of order items and quantities to be updated.</value>
-        [DataMember(Name="orderItems", EmitDefaultValue=false)]
+        [DataMember(Name = "orderItems", EmitDefaultValue = false)]
         public ConfirmShipmentOrderItemsList OrderItems { get; set; }
 
         /// <summary>
@@ -172,7 +166,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -202,42 +196,42 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PackageReferenceId == input.PackageReferenceId ||
                     (this.PackageReferenceId != null &&
                     this.PackageReferenceId.Equals(input.PackageReferenceId))
-                ) && 
+                ) &&
                 (
                     this.CarrierCode == input.CarrierCode ||
                     (this.CarrierCode != null &&
                     this.CarrierCode.Equals(input.CarrierCode))
-                ) && 
+                ) &&
                 (
                     this.CarrierName == input.CarrierName ||
                     (this.CarrierName != null &&
                     this.CarrierName.Equals(input.CarrierName))
-                ) && 
+                ) &&
                 (
                     this.ShippingMethod == input.ShippingMethod ||
                     (this.ShippingMethod != null &&
                     this.ShippingMethod.Equals(input.ShippingMethod))
-                ) && 
+                ) &&
                 (
                     this.TrackingNumber == input.TrackingNumber ||
                     (this.TrackingNumber != null &&
                     this.TrackingNumber.Equals(input.TrackingNumber))
-                ) && 
+                ) &&
                 (
                     this.ShipDate == input.ShipDate ||
                     (this.ShipDate != null &&
                     this.ShipDate.Equals(input.ShipDate))
-                ) && 
+                ) &&
                 (
                     this.ShipFromSupplySourceId == input.ShipFromSupplySourceId ||
                     (this.ShipFromSupplySourceId != null &&
                     this.ShipFromSupplySourceId.Equals(input.ShipFromSupplySourceId))
-                ) && 
+                ) &&
                 (
                     this.OrderItems == input.OrderItems ||
                     (this.OrderItems != null &&

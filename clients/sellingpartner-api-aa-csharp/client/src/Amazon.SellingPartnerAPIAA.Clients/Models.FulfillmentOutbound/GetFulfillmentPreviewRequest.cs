@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The request body schema for the &#x60;getFulfillmentPreview&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class GetFulfillmentPreviewRequest :  IEquatable<GetFulfillmentPreviewRequest>, IValidatableObject
+    public partial class GetFulfillmentPreviewRequest : IEquatable<GetFulfillmentPreviewRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFulfillmentPreviewRequest" /> class.
@@ -71,54 +66,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.IncludeDeliveryWindows = includeDeliveryWindows;
             this.FeatureConstraints = featureConstraints;
         }
-        
+
         /// <summary>
         /// The marketplace the fulfillment order is placed against.
         /// </summary>
         /// <value>The marketplace the fulfillment order is placed against.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The destination address for the fulfillment order preview.
         /// </summary>
         /// <value>The destination address for the fulfillment order preview.</value>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
         /// <summary>
         /// Identifying information and quantity information for the items in the fulfillment order preview. Maximum of 100 line items with a maximum of 250 units per order. 
         /// </summary>
         /// <value>Identifying information and quantity information for the items in the fulfillment order preview. Maximum of 100 line items with a maximum of 250 units per order. </value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public GetFulfillmentPreviewItemList Items { get; set; }
 
         /// <summary>
         /// A list of shipping methods used for creating fulfillment order previews.  Possible values:  * &#x60;Standard&#x60; - Standard shipping method. * &#x60;Expedited&#x60; - Expedited shipping method. * &#x60;Priority&#x60; - Priority shipping method. * &#x60;ScheduledDelivery&#x60; - Scheduled Delivery shipping method. Note: Shipping method service level agreements vary by marketplace. Sellers should refer to the Seller Central website in their marketplace for shipping method service level agreements and fulfillment fees.
         /// </summary>
         /// <value>A list of shipping methods used for creating fulfillment order previews.  Possible values:  * &#x60;Standard&#x60; - Standard shipping method. * &#x60;Expedited&#x60; - Expedited shipping method. * &#x60;Priority&#x60; - Priority shipping method. * &#x60;ScheduledDelivery&#x60; - Scheduled Delivery shipping method. Note: Shipping method service level agreements vary by marketplace. Sellers should refer to the Seller Central website in their marketplace for shipping method service level agreements and fulfillment fees.</value>
-        [DataMember(Name="shippingSpeedCategories", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingSpeedCategories", EmitDefaultValue = false)]
         public ShippingSpeedCategoryList ShippingSpeedCategories { get; set; }
 
         /// <summary>
         /// When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
         /// </summary>
         /// <value>When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.</value>
-        [DataMember(Name="includeCODFulfillmentPreview", EmitDefaultValue=false)]
+        [DataMember(Name = "includeCODFulfillmentPreview", EmitDefaultValue = false)]
         public bool? IncludeCODFulfillmentPreview { get; set; }
 
         /// <summary>
         /// When true, returns the &#x60;ScheduledDeliveryInfo&#x60; response object, which contains the available delivery windows for a Scheduled Delivery. The &#x60;ScheduledDeliveryInfo&#x60; response object can only be returned for fulfillment order previews with &#x60;ShippingSpeedCategories&#x60; &#x3D; &#x60;ScheduledDelivery&#x60;.
         /// </summary>
         /// <value>When true, returns the &#x60;ScheduledDeliveryInfo&#x60; response object, which contains the available delivery windows for a Scheduled Delivery. The &#x60;ScheduledDeliveryInfo&#x60; response object can only be returned for fulfillment order previews with &#x60;ShippingSpeedCategories&#x60; &#x3D; &#x60;ScheduledDelivery&#x60;.</value>
-        [DataMember(Name="includeDeliveryWindows", EmitDefaultValue=false)]
+        [DataMember(Name = "includeDeliveryWindows", EmitDefaultValue = false)]
         public bool? IncludeDeliveryWindows { get; set; }
 
         /// <summary>
         /// A list of features and their fulfillment policies to apply to the order.
         /// </summary>
         /// <value>A list of features and their fulfillment policies to apply to the order.</value>
-        [DataMember(Name="featureConstraints", EmitDefaultValue=false)]
+        [DataMember(Name = "featureConstraints", EmitDefaultValue = false)]
         public List<FeatureSettings> FeatureConstraints { get; set; }
 
         /// <summary>
@@ -139,7 +134,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -169,37 +164,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     (this.Items != null &&
                     this.Items.Equals(input.Items))
-                ) && 
+                ) &&
                 (
                     this.ShippingSpeedCategories == input.ShippingSpeedCategories ||
                     (this.ShippingSpeedCategories != null &&
                     this.ShippingSpeedCategories.Equals(input.ShippingSpeedCategories))
-                ) && 
+                ) &&
                 (
                     this.IncludeCODFulfillmentPreview == input.IncludeCODFulfillmentPreview ||
                     (this.IncludeCODFulfillmentPreview != null &&
                     this.IncludeCODFulfillmentPreview.Equals(input.IncludeCODFulfillmentPreview))
-                ) && 
+                ) &&
                 (
                     this.IncludeDeliveryWindows == input.IncludeDeliveryWindows ||
                     (this.IncludeDeliveryWindows != null &&
                     this.IncludeDeliveryWindows.Equals(input.IncludeDeliveryWindows))
-                ) && 
+                ) &&
                 (
                     this.FeatureConstraints == input.FeatureConstraints ||
                     this.FeatureConstraints != null &&

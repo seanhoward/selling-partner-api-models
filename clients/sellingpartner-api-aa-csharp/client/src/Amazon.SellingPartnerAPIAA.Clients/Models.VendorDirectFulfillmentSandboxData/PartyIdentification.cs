@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandboxData
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
     /// The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details.
     /// </summary>
     [DataContract]
-    public partial class PartyIdentification :  IEquatable<PartyIdentification>, IValidatableObject
+    public partial class PartyIdentification : IEquatable<PartyIdentification>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PartyIdentification" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
                 this.PartyId = partyId;
             }
         }
-        
+
         /// <summary>
         /// Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
         /// </summary>
         /// <value>Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.</value>
-        [DataMember(Name="partyId", EmitDefaultValue=false)]
+        [DataMember(Name = "partyId", EmitDefaultValue = false)]
         public string PartyId { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PartyId == input.PartyId ||
                     (this.PartyId != null &&

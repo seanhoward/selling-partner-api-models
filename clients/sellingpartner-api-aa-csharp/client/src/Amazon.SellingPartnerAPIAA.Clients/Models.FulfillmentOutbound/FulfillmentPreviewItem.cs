@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Item information for a shipment in a fulfillment order preview.
     /// </summary>
     [DataContract]
-    public partial class FulfillmentPreviewItem :  IEquatable<FulfillmentPreviewItem>, IValidatableObject
+    public partial class FulfillmentPreviewItem : IEquatable<FulfillmentPreviewItem>, IValidatableObject
     {
         /// <summary>
         /// The method used to calculate the estimated shipping weight.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ShippingWeightCalculationMethodEnum
         {
-            
+
             /// <summary>
             /// Enum Package for value: Package
             /// </summary>
             [EnumMember(Value = "Package")]
             Package = 1,
-            
+
             /// <summary>
             /// Enum Dimensional for value: Dimensional
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// The method used to calculate the estimated shipping weight.
         /// </summary>
         /// <value>The method used to calculate the estimated shipping weight.</value>
-        [DataMember(Name="shippingWeightCalculationMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingWeightCalculationMethod", EmitDefaultValue = false)]
         public ShippingWeightCalculationMethodEnum? ShippingWeightCalculationMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentPreviewItem" /> class.
@@ -102,33 +97,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.EstimatedShippingWeight = estimatedShippingWeight;
             this.ShippingWeightCalculationMethod = shippingWeightCalculationMethod;
         }
-        
+
         /// <summary>
         /// The seller SKU of the item.
         /// </summary>
         /// <value>The seller SKU of the item.</value>
-        [DataMember(Name="sellerSku", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerSku", EmitDefaultValue = false)]
         public string SellerSku { get; set; }
 
         /// <summary>
         /// The item quantity.
         /// </summary>
         /// <value>The item quantity.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// A fulfillment order item identifier that the seller created with a call to the &#x60;createFulfillmentOrder&#x60; operation.
         /// </summary>
         /// <value>A fulfillment order item identifier that the seller created with a call to the &#x60;createFulfillmentOrder&#x60; operation.</value>
-        [DataMember(Name="sellerFulfillmentOrderItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellerFulfillmentOrderItemId", EmitDefaultValue = false)]
         public string SellerFulfillmentOrderItemId { get; set; }
 
         /// <summary>
         /// The estimated shipping weight of the item quantity for a single item, as identified by &#x60;sellerSku&#x60;, in a shipment.
         /// </summary>
         /// <value>The estimated shipping weight of the item quantity for a single item, as identified by &#x60;sellerSku&#x60;, in a shipment.</value>
-        [DataMember(Name="estimatedShippingWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "estimatedShippingWeight", EmitDefaultValue = false)]
         public Weight EstimatedShippingWeight { get; set; }
 
 
@@ -148,7 +143,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -178,27 +173,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellerSku == input.SellerSku ||
                     (this.SellerSku != null &&
                     this.SellerSku.Equals(input.SellerSku))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.SellerFulfillmentOrderItemId == input.SellerFulfillmentOrderItemId ||
                     (this.SellerFulfillmentOrderItemId != null &&
                     this.SellerFulfillmentOrderItemId.Equals(input.SellerFulfillmentOrderItemId))
-                ) && 
+                ) &&
                 (
                     this.EstimatedShippingWeight == input.EstimatedShippingWeight ||
                     (this.EstimatedShippingWeight != null &&
                     this.EstimatedShippingWeight.Equals(input.EstimatedShippingWeight))
-                ) && 
+                ) &&
                 (
                     this.ShippingWeightCalculationMethod == input.ShippingWeightCalculationMethod ||
                     (this.ShippingWeightCalculationMethod != null &&

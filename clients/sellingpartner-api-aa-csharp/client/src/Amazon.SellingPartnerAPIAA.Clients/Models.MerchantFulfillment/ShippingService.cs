@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// A shipping service offer made by a carrier.
     /// </summary>
     [DataContract]
-    public partial class ShippingService :  IEquatable<ShippingService>, IValidatableObject
+    public partial class ShippingService : IEquatable<ShippingService>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShippingService" /> class.
@@ -133,98 +127,98 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.AvailableFormatOptionsForLabel = availableFormatOptionsForLabel;
             this.Benefits = benefits;
         }
-        
+
         /// <summary>
         /// A plain text representation of a carrier&#39;s shipping service. For example, \&quot;UPS Ground\&quot; or \&quot;FedEx Standard Overnight\&quot;. 
         /// </summary>
         /// <value>A plain text representation of a carrier&#39;s shipping service. For example, \&quot;UPS Ground\&quot; or \&quot;FedEx Standard Overnight\&quot;. </value>
-        [DataMember(Name="ShippingServiceName", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingServiceName", EmitDefaultValue = false)]
         public string ShippingServiceName { get; set; }
 
         /// <summary>
         /// The name of the carrier.
         /// </summary>
         /// <value>The name of the carrier.</value>
-        [DataMember(Name="CarrierName", EmitDefaultValue=false)]
+        [DataMember(Name = "CarrierName", EmitDefaultValue = false)]
         public string CarrierName { get; set; }
 
         /// <summary>
         /// Gets or Sets ShippingServiceId
         /// </summary>
-        [DataMember(Name="ShippingServiceId", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingServiceId", EmitDefaultValue = false)]
         public string ShippingServiceId { get; set; }
 
         /// <summary>
         /// An Amazon-defined shipping service offer identifier.
         /// </summary>
         /// <value>An Amazon-defined shipping service offer identifier.</value>
-        [DataMember(Name="ShippingServiceOfferId", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingServiceOfferId", EmitDefaultValue = false)]
         public string ShippingServiceOfferId { get; set; }
 
         /// <summary>
         /// The date that the carrier will ship the package.
         /// </summary>
         /// <value>The date that the carrier will ship the package.</value>
-        [DataMember(Name="ShipDate", EmitDefaultValue=false)]
+        [DataMember(Name = "ShipDate", EmitDefaultValue = false)]
         public DateTime? ShipDate { get; set; }
 
         /// <summary>
         /// The earliest date by which the shipment will be delivered.
         /// </summary>
         /// <value>The earliest date by which the shipment will be delivered.</value>
-        [DataMember(Name="EarliestEstimatedDeliveryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "EarliestEstimatedDeliveryDate", EmitDefaultValue = false)]
         public DateTime? EarliestEstimatedDeliveryDate { get; set; }
 
         /// <summary>
         /// The latest date by which the shipment will be delivered.
         /// </summary>
         /// <value>The latest date by which the shipment will be delivered.</value>
-        [DataMember(Name="LatestEstimatedDeliveryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "LatestEstimatedDeliveryDate", EmitDefaultValue = false)]
         public DateTime? LatestEstimatedDeliveryDate { get; set; }
 
         /// <summary>
         /// The amount that the carrier will charge for the shipment.
         /// </summary>
         /// <value>The amount that the carrier will charge for the shipment.</value>
-        [DataMember(Name="Rate", EmitDefaultValue=false)]
+        [DataMember(Name = "Rate", EmitDefaultValue = false)]
         public CurrencyAmount Rate { get; set; }
 
         /// <summary>
         /// Extra services offered by the carrier.
         /// </summary>
         /// <value>Extra services offered by the carrier.</value>
-        [DataMember(Name="ShippingServiceOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "ShippingServiceOptions", EmitDefaultValue = false)]
         public ShippingServiceOptions ShippingServiceOptions { get; set; }
 
         /// <summary>
         /// Gets or Sets AvailableShippingServiceOptions
         /// </summary>
-        [DataMember(Name="AvailableShippingServiceOptions", EmitDefaultValue=false)]
+        [DataMember(Name = "AvailableShippingServiceOptions", EmitDefaultValue = false)]
         public AvailableShippingServiceOptions AvailableShippingServiceOptions { get; set; }
 
         /// <summary>
         /// Gets or Sets AvailableLabelFormats
         /// </summary>
-        [DataMember(Name="AvailableLabelFormats", EmitDefaultValue=false)]
+        [DataMember(Name = "AvailableLabelFormats", EmitDefaultValue = false)]
         public LabelFormatList AvailableLabelFormats { get; set; }
 
         /// <summary>
         /// Gets or Sets AvailableFormatOptionsForLabel
         /// </summary>
-        [DataMember(Name="AvailableFormatOptionsForLabel", EmitDefaultValue=false)]
+        [DataMember(Name = "AvailableFormatOptionsForLabel", EmitDefaultValue = false)]
         public AvailableFormatOptionsForLabelList AvailableFormatOptionsForLabel { get; set; }
 
         /// <summary>
         /// When true, additional seller inputs are required.
         /// </summary>
         /// <value>When true, additional seller inputs are required.</value>
-        [DataMember(Name="RequiresAdditionalSellerInputs", EmitDefaultValue=false)]
+        [DataMember(Name = "RequiresAdditionalSellerInputs", EmitDefaultValue = false)]
         public bool? RequiresAdditionalSellerInputs { get; set; }
 
         /// <summary>
         /// Gets or Sets Benefits
         /// </summary>
-        [DataMember(Name="Benefits", EmitDefaultValue=false)]
+        [DataMember(Name = "Benefits", EmitDefaultValue = false)]
         public Benefits Benefits { get; set; }
 
         /// <summary>
@@ -252,7 +246,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -282,72 +276,72 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShippingServiceName == input.ShippingServiceName ||
                     (this.ShippingServiceName != null &&
                     this.ShippingServiceName.Equals(input.ShippingServiceName))
-                ) && 
+                ) &&
                 (
                     this.CarrierName == input.CarrierName ||
                     (this.CarrierName != null &&
                     this.CarrierName.Equals(input.CarrierName))
-                ) && 
+                ) &&
                 (
                     this.ShippingServiceId == input.ShippingServiceId ||
                     (this.ShippingServiceId != null &&
                     this.ShippingServiceId.Equals(input.ShippingServiceId))
-                ) && 
+                ) &&
                 (
                     this.ShippingServiceOfferId == input.ShippingServiceOfferId ||
                     (this.ShippingServiceOfferId != null &&
                     this.ShippingServiceOfferId.Equals(input.ShippingServiceOfferId))
-                ) && 
+                ) &&
                 (
                     this.ShipDate == input.ShipDate ||
                     (this.ShipDate != null &&
                     this.ShipDate.Equals(input.ShipDate))
-                ) && 
+                ) &&
                 (
                     this.EarliestEstimatedDeliveryDate == input.EarliestEstimatedDeliveryDate ||
                     (this.EarliestEstimatedDeliveryDate != null &&
                     this.EarliestEstimatedDeliveryDate.Equals(input.EarliestEstimatedDeliveryDate))
-                ) && 
+                ) &&
                 (
                     this.LatestEstimatedDeliveryDate == input.LatestEstimatedDeliveryDate ||
                     (this.LatestEstimatedDeliveryDate != null &&
                     this.LatestEstimatedDeliveryDate.Equals(input.LatestEstimatedDeliveryDate))
-                ) && 
+                ) &&
                 (
                     this.Rate == input.Rate ||
                     (this.Rate != null &&
                     this.Rate.Equals(input.Rate))
-                ) && 
+                ) &&
                 (
                     this.ShippingServiceOptions == input.ShippingServiceOptions ||
                     (this.ShippingServiceOptions != null &&
                     this.ShippingServiceOptions.Equals(input.ShippingServiceOptions))
-                ) && 
+                ) &&
                 (
                     this.AvailableShippingServiceOptions == input.AvailableShippingServiceOptions ||
                     (this.AvailableShippingServiceOptions != null &&
                     this.AvailableShippingServiceOptions.Equals(input.AvailableShippingServiceOptions))
-                ) && 
+                ) &&
                 (
                     this.AvailableLabelFormats == input.AvailableLabelFormats ||
                     (this.AvailableLabelFormats != null &&
                     this.AvailableLabelFormats.Equals(input.AvailableLabelFormats))
-                ) && 
+                ) &&
                 (
                     this.AvailableFormatOptionsForLabel == input.AvailableFormatOptionsForLabel ||
                     (this.AvailableFormatOptionsForLabel != null &&
                     this.AvailableFormatOptionsForLabel.Equals(input.AvailableFormatOptionsForLabel))
-                ) && 
+                ) &&
                 (
                     this.RequiresAdditionalSellerInputs == input.RequiresAdditionalSellerInputs ||
                     (this.RequiresAdditionalSellerInputs != null &&
                     this.RequiresAdditionalSellerInputs.Equals(input.RequiresAdditionalSellerInputs))
-                ) && 
+                ) &&
                 (
                     this.Benefits == input.Benefits ||
                     (this.Benefits != null &&

@@ -9,26 +9,22 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
     /// <summary>
-    /// the relationship details for a listing item.
+    /// The relationship details for a listing item.
     /// </summary>
     [DataContract]
-    public partial class ItemRelationship :  IEquatable<ItemRelationship>, IValidatableObject
+    public partial class ItemRelationship : IEquatable<ItemRelationship>, IValidatableObject
     {
         /// <summary>
         /// The type of relationship.
@@ -37,13 +33,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
-            
+
             /// <summary>
             /// Enum VARIATION for value: VARIATION
             /// </summary>
             [EnumMember(Value = "VARIATION")]
             VARIATION = 1,
-            
+
             /// <summary>
             /// Enum PACKAGEHIERARCHY for value: PACKAGE_HIERARCHY
             /// </summary>
@@ -55,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// The type of relationship.
         /// </summary>
         /// <value>The type of relationship.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemRelationship" /> class.
@@ -84,26 +80,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             this.ParentSkus = parentSkus;
             this.VariationTheme = variationTheme;
         }
-        
+
         /// <summary>
         /// Identifiers (SKUs) of the related items that are children of this listing item.
         /// </summary>
         /// <value>Identifiers (SKUs) of the related items that are children of this listing item.</value>
-        [DataMember(Name="childSkus", EmitDefaultValue=false)]
+        [DataMember(Name = "childSkus", EmitDefaultValue = false)]
         public List<string> ChildSkus { get; set; }
 
         /// <summary>
         /// Identifiers (SKUs) of the related items that are parents of this listing item.
         /// </summary>
         /// <value>Identifiers (SKUs) of the related items that are parents of this listing item.</value>
-        [DataMember(Name="parentSkus", EmitDefaultValue=false)]
+        [DataMember(Name = "parentSkus", EmitDefaultValue = false)]
         public List<string> ParentSkus { get; set; }
 
         /// <summary>
         /// For &#x60;VARIATION&#x60; relationships, the variation theme is the combination of listing item attributes that define the variation family.
         /// </summary>
         /// <value>For &#x60;VARIATION&#x60; relationships, the variation theme is the combination of listing item attributes that define the variation family.</value>
-        [DataMember(Name="variationTheme", EmitDefaultValue=false)]
+        [DataMember(Name = "variationTheme", EmitDefaultValue = false)]
         public ItemVariationTheme VariationTheme { get; set; }
 
 
@@ -122,7 +118,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -152,22 +148,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ChildSkus == input.ChildSkus ||
                     this.ChildSkus != null &&
                     this.ChildSkus.SequenceEqual(input.ChildSkus)
-                ) && 
+                ) &&
                 (
                     this.ParentSkus == input.ParentSkus ||
                     this.ParentSkus != null &&
                     this.ParentSkus.SequenceEqual(input.ParentSkus)
-                ) && 
+                ) &&
                 (
                     this.VariationTheme == input.VariationTheme ||
                     (this.VariationTheme != null &&
                     this.VariationTheme.Equals(input.VariationTheme))
-                ) && 
+                ) &&
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&

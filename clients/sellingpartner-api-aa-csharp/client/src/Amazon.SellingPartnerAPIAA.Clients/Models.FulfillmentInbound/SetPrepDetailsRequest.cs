@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The &#x60;setPrepDetails&#x60; request.
     /// </summary>
     [DataContract]
-    public partial class SetPrepDetailsRequest :  IEquatable<SetPrepDetailsRequest>, IValidatableObject
+    public partial class SetPrepDetailsRequest : IEquatable<SetPrepDetailsRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SetPrepDetailsRequest" /> class.
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.MskuPrepDetails = mskuPrepDetails;
             }
         }
-        
+
         /// <summary>
         /// The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
         /// <value>The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// A list of MSKUs and related prep details.
         /// </summary>
         /// <value>A list of MSKUs and related prep details.</value>
-        [DataMember(Name="mskuPrepDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "mskuPrepDetails", EmitDefaultValue = false)]
         public List<MskuPrepDetailInput> MskuPrepDetails { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.MskuPrepDetails == input.MskuPrepDetails ||
                     this.MskuPrepDetails != null &&
@@ -157,15 +152,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // MarketplaceId (string) maxLength
-            if(this.MarketplaceId != null && this.MarketplaceId.Length > 20)
+            if (this.MarketplaceId != null && this.MarketplaceId.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for MarketplaceId, length must be less than 20.", new [] { "MarketplaceId" });
+                yield return new ValidationResult("Invalid value for MarketplaceId, length must be less than 20.", new[] { "MarketplaceId" });
             }
 
             // MarketplaceId (string) minLength
-            if(this.MarketplaceId != null && this.MarketplaceId.Length < 1)
+            if (this.MarketplaceId != null && this.MarketplaceId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for MarketplaceId, length must be greater than 1.", new [] { "MarketplaceId" });
+                yield return new ValidationResult("Invalid value for MarketplaceId, length must be greater than 1.", new[] { "MarketplaceId" });
             }
 
             yield break;

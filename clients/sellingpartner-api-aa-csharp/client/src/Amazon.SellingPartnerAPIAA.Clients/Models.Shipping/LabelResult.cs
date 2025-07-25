@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// Label details including label stream, format, size.
     /// </summary>
     [DataContract]
-    public partial class LabelResult :  IEquatable<LabelResult>, IValidatableObject
+    public partial class LabelResult : IEquatable<LabelResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelResult" /> class.
@@ -42,24 +35,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             this.TrackingId = trackingId;
             this.Label = label;
         }
-        
+
         /// <summary>
         /// Gets or Sets ContainerReferenceId
         /// </summary>
-        [DataMember(Name="containerReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "containerReferenceId", EmitDefaultValue = false)]
         public string ContainerReferenceId { get; set; }
 
         /// <summary>
         /// The tracking identifier assigned to the container.
         /// </summary>
         /// <value>The tracking identifier assigned to the container.</value>
-        [DataMember(Name="trackingId", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingId", EmitDefaultValue = false)]
         public string TrackingId { get; set; }
 
         /// <summary>
         /// Gets or Sets Label
         /// </summary>
-        [DataMember(Name="label", EmitDefaultValue=false)]
+        [DataMember(Name = "label", EmitDefaultValue = false)]
         public Label Label { get; set; }
 
         /// <summary>
@@ -76,7 +69,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -106,17 +99,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContainerReferenceId == input.ContainerReferenceId ||
                     (this.ContainerReferenceId != null &&
                     this.ContainerReferenceId.Equals(input.ContainerReferenceId))
-                ) && 
+                ) &&
                 (
                     this.TrackingId == input.TrackingId ||
                     (this.TrackingId != null &&
                     this.TrackingId.Equals(input.TrackingId))
-                ) && 
+                ) &&
                 (
                     this.Label == input.Label ||
                     (this.Label != null &&

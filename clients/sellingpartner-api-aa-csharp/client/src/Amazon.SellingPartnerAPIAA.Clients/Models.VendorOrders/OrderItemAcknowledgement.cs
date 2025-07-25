@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Represents the acknowledgement details for an individual order item, including the acknowledgement code, acknowledged quantity, scheduled ship and delivery dates, and rejection reason (if applicable).
     /// </summary>
     [DataContract]
-    public partial class OrderItemAcknowledgement :  IEquatable<OrderItemAcknowledgement>, IValidatableObject
+    public partial class OrderItemAcknowledgement : IEquatable<OrderItemAcknowledgement>, IValidatableObject
     {
         /// <summary>
         /// This indicates the acknowledgement code.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AcknowledgementCodeEnum
         {
-            
+
             /// <summary>
             /// Enum Accepted for value: Accepted
             /// </summary>
             [EnumMember(Value = "Accepted")]
             Accepted = 1,
-            
+
             /// <summary>
             /// Enum Backordered for value: Backordered
             /// </summary>
             [EnumMember(Value = "Backordered")]
             Backordered = 2,
-            
+
             /// <summary>
             /// Enum Rejected for value: Rejected
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// This indicates the acknowledgement code.
         /// </summary>
         /// <value>This indicates the acknowledgement code.</value>
-        [DataMember(Name="acknowledgementCode", EmitDefaultValue=false)]
+        [DataMember(Name = "acknowledgementCode", EmitDefaultValue = false)]
         public AcknowledgementCodeEnum AcknowledgementCode { get; set; }
         /// <summary>
         /// Indicates the reason for rejection.
@@ -70,19 +65,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RejectionReasonEnum
         {
-            
+
             /// <summary>
             /// Enum TemporarilyUnavailable for value: TemporarilyUnavailable
             /// </summary>
             [EnumMember(Value = "TemporarilyUnavailable")]
             TemporarilyUnavailable = 1,
-            
+
             /// <summary>
             /// Enum InvalidProductIdentifier for value: InvalidProductIdentifier
             /// </summary>
             [EnumMember(Value = "InvalidProductIdentifier")]
             InvalidProductIdentifier = 2,
-            
+
             /// <summary>
             /// Enum ObsoleteProduct for value: ObsoleteProduct
             /// </summary>
@@ -94,7 +89,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// Indicates the reason for rejection.
         /// </summary>
         /// <value>Indicates the reason for rejection.</value>
-        [DataMember(Name="rejectionReason", EmitDefaultValue=false)]
+        [DataMember(Name = "rejectionReason", EmitDefaultValue = false)]
         public RejectionReasonEnum? RejectionReason { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemAcknowledgement" /> class.
@@ -133,27 +128,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.ScheduledDeliveryDate = scheduledDeliveryDate;
             this.RejectionReason = rejectionReason;
         }
-        
+
 
         /// <summary>
         /// Details of quantity acknowledged with the above acknowledgement code.
         /// </summary>
         /// <value>Details of quantity acknowledged with the above acknowledgement code.</value>
-        [DataMember(Name="acknowledgedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "acknowledgedQuantity", EmitDefaultValue = false)]
         public ItemQuantity AcknowledgedQuantity { get; set; }
 
         /// <summary>
         /// Estimated ship date per line item. Must be in ISO-8601 date/time format.
         /// </summary>
         /// <value>Estimated ship date per line item. Must be in ISO-8601 date/time format.</value>
-        [DataMember(Name="scheduledShipDate", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduledShipDate", EmitDefaultValue = false)]
         public DateTime? ScheduledShipDate { get; set; }
 
         /// <summary>
         /// Estimated delivery date per line item. Must be in ISO-8601 date/time format.
         /// </summary>
         /// <value>Estimated delivery date per line item. Must be in ISO-8601 date/time format.</value>
-        [DataMember(Name="scheduledDeliveryDate", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduledDeliveryDate", EmitDefaultValue = false)]
         public DateTime? ScheduledDeliveryDate { get; set; }
 
 
@@ -173,7 +168,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -203,27 +198,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AcknowledgementCode == input.AcknowledgementCode ||
                     (this.AcknowledgementCode != null &&
                     this.AcknowledgementCode.Equals(input.AcknowledgementCode))
-                ) && 
+                ) &&
                 (
                     this.AcknowledgedQuantity == input.AcknowledgedQuantity ||
                     (this.AcknowledgedQuantity != null &&
                     this.AcknowledgedQuantity.Equals(input.AcknowledgedQuantity))
-                ) && 
+                ) &&
                 (
                     this.ScheduledShipDate == input.ScheduledShipDate ||
                     (this.ScheduledShipDate != null &&
                     this.ScheduledShipDate.Equals(input.ScheduledShipDate))
-                ) && 
+                ) &&
                 (
                     this.ScheduledDeliveryDate == input.ScheduledDeliveryDate ||
                     (this.ScheduledDeliveryDate != null &&
                     this.ScheduledDeliveryDate.Equals(input.ScheduledDeliveryDate))
-                ) && 
+                ) &&
                 (
                     this.RejectionReason == input.RejectionReason ||
                     (this.RejectionReason != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// &#x60;AvailabilityRecord&#x60; to represent the capacity of a resource over a time range.
     /// </summary>
     [DataContract]
-    public partial class AvailabilityRecord :  IEquatable<AvailabilityRecord>, IValidatableObject
+    public partial class AvailabilityRecord : IEquatable<AvailabilityRecord>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailabilityRecord" /> class.
@@ -65,33 +59,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.Recurrence = recurrence;
             this.Capacity = capacity;
         }
-        
+
         /// <summary>
         /// Denotes the time from when the resource is available in a day in ISO-8601 format.
         /// </summary>
         /// <value>Denotes the time from when the resource is available in a day in ISO-8601 format.</value>
-        [DataMember(Name="startTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startTime", EmitDefaultValue = false)]
         public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// Denotes the time till when the resource is available in a day in ISO-8601 format.
         /// </summary>
         /// <value>Denotes the time till when the resource is available in a day in ISO-8601 format.</value>
-        [DataMember(Name="endTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endTime", EmitDefaultValue = false)]
         public DateTime? EndTime { get; set; }
 
         /// <summary>
         /// Recurrence object containing the recurrence pattern of schedule.
         /// </summary>
         /// <value>Recurrence object containing the recurrence pattern of schedule.</value>
-        [DataMember(Name="recurrence", EmitDefaultValue=false)]
+        [DataMember(Name = "recurrence", EmitDefaultValue = false)]
         public Recurrence Recurrence { get; set; }
 
         /// <summary>
         /// Signifies the capacity of a resource which is available.
         /// </summary>
         /// <value>Signifies the capacity of a resource which is available.</value>
-        [DataMember(Name="capacity", EmitDefaultValue=false)]
+        [DataMember(Name = "capacity", EmitDefaultValue = false)]
         public int? Capacity { get; set; }
 
         /// <summary>
@@ -109,7 +103,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -139,22 +133,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StartTime == input.StartTime ||
                     (this.StartTime != null &&
                     this.StartTime.Equals(input.StartTime))
-                ) && 
+                ) &&
                 (
                     this.EndTime == input.EndTime ||
                     (this.EndTime != null &&
                     this.EndTime.Equals(input.EndTime))
-                ) && 
+                ) &&
                 (
                     this.Recurrence == input.Recurrence ||
                     (this.Recurrence != null &&
                     this.Recurrence.Equals(input.Recurrence))
-                ) && 
+                ) &&
                 (
                     this.Capacity == input.Capacity ||
                     (this.Capacity != null &&
@@ -191,9 +185,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Capacity (int?) minimum
-            if(this.Capacity < (int?)1)
+            if (this.Capacity < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for Capacity, must be a value greater than or equal to 1.", new [] { "Capacity" });
+                yield return new ValidationResult("Invalid value for Capacity, must be a value greater than or equal to 1.", new[] { "Capacity" });
             }
 
             yield break;

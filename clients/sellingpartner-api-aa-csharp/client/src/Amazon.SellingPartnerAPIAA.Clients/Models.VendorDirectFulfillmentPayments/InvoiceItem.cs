@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayments
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
     /// Provides the details of the items in this invoice.
     /// </summary>
     [DataContract]
-    public partial class InvoiceItem :  IEquatable<InvoiceItem>, IValidatableObject
+    public partial class InvoiceItem : IEquatable<InvoiceItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceItem" /> class.
@@ -93,75 +88,75 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             this.TaxDetails = taxDetails;
             this.ChargeDetails = chargeDetails;
         }
-        
+
         /// <summary>
         /// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
         /// </summary>
         /// <value>Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.</value>
-        [DataMember(Name="itemSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "itemSequenceNumber", EmitDefaultValue = false)]
         public string ItemSequenceNumber { get; set; }
 
         /// <summary>
         /// Buyer&#39;s standard identification number (ASIN) of an item.
         /// </summary>
         /// <value>Buyer&#39;s standard identification number (ASIN) of an item.</value>
-        [DataMember(Name="buyerProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "buyerProductIdentifier", EmitDefaultValue = false)]
         public string BuyerProductIdentifier { get; set; }
 
         /// <summary>
         /// The vendor selected product identification of the item.
         /// </summary>
         /// <value>The vendor selected product identification of the item.</value>
-        [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorProductIdentifier", EmitDefaultValue = false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
         /// Item quantity invoiced.
         /// </summary>
         /// <value>Item quantity invoiced.</value>
-        [DataMember(Name="invoicedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "invoicedQuantity", EmitDefaultValue = false)]
         public ItemQuantity InvoicedQuantity { get; set; }
 
         /// <summary>
         /// Net price (before tax) to vendor with currency details.
         /// </summary>
         /// <value>Net price (before tax) to vendor with currency details.</value>
-        [DataMember(Name="netCost", EmitDefaultValue=false)]
+        [DataMember(Name = "netCost", EmitDefaultValue = false)]
         public Money NetCost { get; set; }
 
         /// <summary>
         /// The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
         /// </summary>
         /// <value>The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.</value>
-        [DataMember(Name="purchaseOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderNumber", EmitDefaultValue = false)]
         public string PurchaseOrderNumber { get; set; }
 
         /// <summary>
         /// The vendor&#39;s order number for this order.
         /// </summary>
         /// <value>The vendor&#39;s order number for this order.</value>
-        [DataMember(Name="vendorOrderNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorOrderNumber", EmitDefaultValue = false)]
         public string VendorOrderNumber { get; set; }
 
         /// <summary>
         /// Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.
         /// </summary>
         /// <value>Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.</value>
-        [DataMember(Name="hsnCode", EmitDefaultValue=false)]
+        [DataMember(Name = "hsnCode", EmitDefaultValue = false)]
         public string HsnCode { get; set; }
 
         /// <summary>
         /// Individual tax details per line item.
         /// </summary>
         /// <value>Individual tax details per line item.</value>
-        [DataMember(Name="taxDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "taxDetails", EmitDefaultValue = false)]
         public List<TaxDetail> TaxDetails { get; set; }
 
         /// <summary>
         /// Individual charge details per line item.
         /// </summary>
         /// <value>Individual charge details per line item.</value>
-        [DataMember(Name="chargeDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "chargeDetails", EmitDefaultValue = false)]
         public List<ChargeDetails> ChargeDetails { get; set; }
 
         /// <summary>
@@ -185,7 +180,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -215,52 +210,52 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentPayme
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemSequenceNumber == input.ItemSequenceNumber ||
                     (this.ItemSequenceNumber != null &&
                     this.ItemSequenceNumber.Equals(input.ItemSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.BuyerProductIdentifier == input.BuyerProductIdentifier ||
                     (this.BuyerProductIdentifier != null &&
                     this.BuyerProductIdentifier.Equals(input.BuyerProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.VendorProductIdentifier == input.VendorProductIdentifier ||
                     (this.VendorProductIdentifier != null &&
                     this.VendorProductIdentifier.Equals(input.VendorProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.InvoicedQuantity == input.InvoicedQuantity ||
                     (this.InvoicedQuantity != null &&
                     this.InvoicedQuantity.Equals(input.InvoicedQuantity))
-                ) && 
+                ) &&
                 (
                     this.NetCost == input.NetCost ||
                     (this.NetCost != null &&
                     this.NetCost.Equals(input.NetCost))
-                ) && 
+                ) &&
                 (
                     this.PurchaseOrderNumber == input.PurchaseOrderNumber ||
                     (this.PurchaseOrderNumber != null &&
                     this.PurchaseOrderNumber.Equals(input.PurchaseOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.VendorOrderNumber == input.VendorOrderNumber ||
                     (this.VendorOrderNumber != null &&
                     this.VendorOrderNumber.Equals(input.VendorOrderNumber))
-                ) && 
+                ) &&
                 (
                     this.HsnCode == input.HsnCode ||
                     (this.HsnCode != null &&
                     this.HsnCode.Equals(input.HsnCode))
-                ) && 
+                ) &&
                 (
                     this.TaxDetails == input.TaxDetails ||
                     this.TaxDetails != null &&
                     this.TaxDetails.SequenceEqual(input.TaxDetails)
-                ) && 
+                ) &&
                 (
                     this.ChargeDetails == input.ChargeDetails ||
                     this.ChargeDetails != null &&

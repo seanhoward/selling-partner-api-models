@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Contains details about cost related modifications to the placement cost.
     /// </summary>
     [DataContract]
-    public partial class Incentive :  IEquatable<Incentive>, IValidatableObject
+    public partial class Incentive : IEquatable<Incentive>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Incentive" /> class.
@@ -81,32 +75,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                 this.Value = value;
             }
         }
-        
+
         /// <summary>
         /// Description of the incentive.
         /// </summary>
         /// <value>Description of the incentive.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Target of the incentive. Possible values: &#39;Placement Services&#39;, &#39;Fulfillment Fee Discount&#39;.
         /// </summary>
         /// <value>Target of the incentive. Possible values: &#39;Placement Services&#39;, &#39;Fulfillment Fee Discount&#39;.</value>
-        [DataMember(Name="target", EmitDefaultValue=false)]
+        [DataMember(Name = "target", EmitDefaultValue = false)]
         public string Target { get; set; }
 
         /// <summary>
         /// Type of incentive. Possible values: &#x60;FEE&#x60;, &#x60;DISCOUNT&#x60;.
         /// </summary>
         /// <value>Type of incentive. Possible values: &#x60;FEE&#x60;, &#x60;DISCOUNT&#x60;.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public Currency Value { get; set; }
 
         /// <summary>
@@ -124,7 +118,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -154,22 +148,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.Target == input.Target ||
                     (this.Target != null &&
                     this.Target.Equals(input.Target))
-                ) && 
+                ) &&
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
@@ -206,39 +200,39 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Description (string) maxLength
-            if(this.Description != null && this.Description.Length > 1024)
+            if (this.Description != null && this.Description.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Description, length must be less than 1024.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be less than 1024.", new[] { "Description" });
             }
 
             // Description (string) minLength
-            if(this.Description != null && this.Description.Length < 1)
+            if (this.Description != null && this.Description.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Description, length must be greater than 1.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be greater than 1.", new[] { "Description" });
             }
 
             // Target (string) maxLength
-            if(this.Target != null && this.Target.Length > 1024)
+            if (this.Target != null && this.Target.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Target, length must be less than 1024.", new [] { "Target" });
+                yield return new ValidationResult("Invalid value for Target, length must be less than 1024.", new[] { "Target" });
             }
 
             // Target (string) minLength
-            if(this.Target != null && this.Target.Length < 1)
+            if (this.Target != null && this.Target.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Target, length must be greater than 1.", new [] { "Target" });
+                yield return new ValidationResult("Invalid value for Target, length must be greater than 1.", new[] { "Target" });
             }
 
             // Type (string) maxLength
-            if(this.Type != null && this.Type.Length > 1024)
+            if (this.Type != null && this.Type.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for Type, length must be less than 1024.", new [] { "Type" });
+                yield return new ValidationResult("Invalid value for Type, length must be less than 1024.", new[] { "Type" });
             }
 
             // Type (string) minLength
-            if(this.Type != null && this.Type.Length < 1)
+            if (this.Type != null && this.Type.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Type, length must be greater than 1.", new [] { "Type" });
+                yield return new ValidationResult("Invalid value for Type, length must be greater than 1.", new[] { "Type" });
             }
 
             yield break;

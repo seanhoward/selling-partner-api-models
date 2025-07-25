@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
     /// Tax information about the marketplace.
     /// </summary>
     [DataContract]
-    public partial class MarketplaceTaxInfo :  IEquatable<MarketplaceTaxInfo>, IValidatableObject
+    public partial class MarketplaceTaxInfo : IEquatable<MarketplaceTaxInfo>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MarketplaceTaxInfo" /> class.
@@ -42,25 +35,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             this.TaxingRegion = taxingRegion;
             this.TaxClassifications = taxClassifications;
         }
-        
+
         /// <summary>
         /// The legal name of the company.
         /// </summary>
         /// <value>The legal name of the company.</value>
-        [DataMember(Name="CompanyLegalName", EmitDefaultValue=false)]
+        [DataMember(Name = "CompanyLegalName", EmitDefaultValue = false)]
         public string CompanyLegalName { get; set; }
 
         /// <summary>
         /// The country or region imposing the tax.
         /// </summary>
         /// <value>The country or region imposing the tax.</value>
-        [DataMember(Name="TaxingRegion", EmitDefaultValue=false)]
+        [DataMember(Name = "TaxingRegion", EmitDefaultValue = false)]
         public string TaxingRegion { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxClassifications
         /// </summary>
-        [DataMember(Name="TaxClassifications", EmitDefaultValue=false)]
+        [DataMember(Name = "TaxClassifications", EmitDefaultValue = false)]
         public TaxClassificationList TaxClassifications { get; set; }
 
         /// <summary>
@@ -77,7 +70,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -107,17 +100,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CompanyLegalName == input.CompanyLegalName ||
                     (this.CompanyLegalName != null &&
                     this.CompanyLegalName.Equals(input.CompanyLegalName))
-                ) && 
+                ) &&
                 (
                     this.TaxingRegion == input.TaxingRegion ||
                     (this.TaxingRegion != null &&
                     this.TaxingRegion.Equals(input.TaxingRegion))
-                ) && 
+                ) &&
                 (
                     this.TaxClassifications == input.TaxClassifications ||
                     (this.TaxClassifications != null &&

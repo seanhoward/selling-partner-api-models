@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// Selling partner listings items and search related metadata.
     /// </summary>
     [DataContract]
-    public partial class ItemSearchResults :  IEquatable<ItemSearchResults>, IValidatableObject
+    public partial class ItemSearchResults : IEquatable<ItemSearchResults>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSearchResults" /> class.
@@ -38,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSearchResults" /> class.
         /// </summary>
-        /// <param name="numberOfResults">The total number of selling partner listings items found for the search criteria (only results up to the page count limit will be returned per request regardless of the number found).  Note: The maximum number of items (SKUs) that can be returned and paged through is 1000. (required).</param>
+        /// <param name="numberOfResults">The total number of selling partner listings items found for the search criteria (only results up to the page count limit is returned per request regardless of the number found).  Note: The maximum number of items (SKUs) that can be returned and paged through is 1000. (required).</param>
         /// <param name="pagination">If available, the &#x60;nextToken&#x60; and/or &#x60;previousToken&#x60; values required to return paginated results..</param>
         /// <param name="items">A list of listings items. (required).</param>
         public ItemSearchResults(int? numberOfResults = default, Pagination pagination = default, List<Item> items = default)
@@ -63,26 +58,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             }
             this.Pagination = pagination;
         }
-        
+
         /// <summary>
-        /// The total number of selling partner listings items found for the search criteria (only results up to the page count limit will be returned per request regardless of the number found).  Note: The maximum number of items (SKUs) that can be returned and paged through is 1000.
+        /// The total number of selling partner listings items found for the search criteria (only results up to the page count limit is returned per request regardless of the number found).  Note: The maximum number of items (SKUs) that can be returned and paged through is 1000.
         /// </summary>
-        /// <value>The total number of selling partner listings items found for the search criteria (only results up to the page count limit will be returned per request regardless of the number found).  Note: The maximum number of items (SKUs) that can be returned and paged through is 1000.</value>
-        [DataMember(Name="numberOfResults", EmitDefaultValue=false)]
+        /// <value>The total number of selling partner listings items found for the search criteria (only results up to the page count limit is returned per request regardless of the number found).  Note: The maximum number of items (SKUs) that can be returned and paged through is 1000.</value>
+        [DataMember(Name = "numberOfResults", EmitDefaultValue = false)]
         public int? NumberOfResults { get; set; }
 
         /// <summary>
         /// If available, the &#x60;nextToken&#x60; and/or &#x60;previousToken&#x60; values required to return paginated results.
         /// </summary>
         /// <value>If available, the &#x60;nextToken&#x60; and/or &#x60;previousToken&#x60; values required to return paginated results.</value>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
         public Pagination Pagination { get; set; }
 
         /// <summary>
         /// A list of listings items.
         /// </summary>
         /// <value>A list of listings items.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<Item> Items { get; set; }
 
         /// <summary>
@@ -99,7 +94,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -129,17 +124,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.NumberOfResults == input.NumberOfResults ||
                     (this.NumberOfResults != null &&
                     this.NumberOfResults.Equals(input.NumberOfResults))
-                ) && 
+                ) &&
                 (
                     this.Pagination == input.Pagination ||
                     (this.Pagination != null &&
                     this.Pagination.Equals(input.Pagination))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

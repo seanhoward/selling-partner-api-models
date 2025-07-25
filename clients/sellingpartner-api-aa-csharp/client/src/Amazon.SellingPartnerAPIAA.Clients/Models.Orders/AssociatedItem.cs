@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,12 +21,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// An item that is associated with an order item. For example, a tire installation service that is purchased with tires.
     /// </summary>
     [DataContract]
-    public partial class AssociatedItem :  IEquatable<AssociatedItem>, IValidatableObject
+    public partial class AssociatedItem : IEquatable<AssociatedItem>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets AssociationType
         /// </summary>
-        [DataMember(Name="AssociationType", EmitDefaultValue=false)]
+        [DataMember(Name = "AssociationType", EmitDefaultValue = false)]
         public AssociationType? AssociationType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AssociatedItem" /> class.
@@ -47,19 +40,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.OrderItemId = orderItemId;
             this.AssociationType = associationType;
         }
-        
+
         /// <summary>
         /// The order item&#39;s order identifier, in 3-7-7 format.
         /// </summary>
         /// <value>The order item&#39;s order identifier, in 3-7-7 format.</value>
-        [DataMember(Name="OrderId", EmitDefaultValue=false)]
+        [DataMember(Name = "OrderId", EmitDefaultValue = false)]
         public string OrderId { get; set; }
 
         /// <summary>
         /// An Amazon-defined item identifier for the associated item.
         /// </summary>
         /// <value>An Amazon-defined item identifier for the associated item.</value>
-        [DataMember(Name="OrderItemId", EmitDefaultValue=false)]
+        [DataMember(Name = "OrderItemId", EmitDefaultValue = false)]
         public string OrderItemId { get; set; }
 
 
@@ -77,7 +70,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -107,17 +100,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.OrderId == input.OrderId ||
                     (this.OrderId != null &&
                     this.OrderId.Equals(input.OrderId))
-                ) && 
+                ) &&
                 (
                     this.OrderItemId == input.OrderItemId ||
                     (this.OrderItemId != null &&
                     this.OrderItemId.Equals(input.OrderItemId))
-                ) && 
+                ) &&
                 (
                     this.AssociationType == input.AssociationType ||
                     (this.AssociationType != null &&

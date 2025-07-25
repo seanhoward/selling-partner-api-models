@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInventory
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
     /// Updated inventory details for an item.
     /// </summary>
     [DataContract]
-    public partial class ItemDetails :  IEquatable<ItemDetails>, IValidatableObject
+    public partial class ItemDetails : IEquatable<ItemDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDetails" /> class.
@@ -57,33 +51,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
             this.VendorProductIdentifier = vendorProductIdentifier;
             this.IsObsolete = isObsolete;
         }
-        
+
         /// <summary>
         /// The buyer selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
         /// </summary>
         /// <value>The buyer selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.</value>
-        [DataMember(Name="buyerProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "buyerProductIdentifier", EmitDefaultValue = false)]
         public string BuyerProductIdentifier { get; set; }
 
         /// <summary>
         /// The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
         /// </summary>
         /// <value>The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.</value>
-        [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorProductIdentifier", EmitDefaultValue = false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
         /// Total item quantity available in the warehouse.
         /// </summary>
         /// <value>Total item quantity available in the warehouse.</value>
-        [DataMember(Name="availableQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "availableQuantity", EmitDefaultValue = false)]
         public ItemQuantity AvailableQuantity { get; set; }
 
         /// <summary>
         /// When true, the item is permanently unavailable.
         /// </summary>
         /// <value>When true, the item is permanently unavailable.</value>
-        [DataMember(Name="isObsolete", EmitDefaultValue=false)]
+        [DataMember(Name = "isObsolete", EmitDefaultValue = false)]
         public bool? IsObsolete { get; set; }
 
         /// <summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -131,22 +125,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentInven
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BuyerProductIdentifier == input.BuyerProductIdentifier ||
                     (this.BuyerProductIdentifier != null &&
                     this.BuyerProductIdentifier.Equals(input.BuyerProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.VendorProductIdentifier == input.VendorProductIdentifier ||
                     (this.VendorProductIdentifier != null &&
                     this.VendorProductIdentifier.Equals(input.VendorProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.AvailableQuantity == input.AvailableQuantity ||
                     (this.AvailableQuantity != null &&
                     this.AvailableQuantity.Equals(input.AvailableQuantity))
-                ) && 
+                ) &&
                 (
                     this.IsObsolete == input.IsObsolete ||
                     (this.IsObsolete != null &&

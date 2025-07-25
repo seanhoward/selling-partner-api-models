@@ -1,5 +1,5 @@
 /* 
- * Report v2021-06-30
+ * Selling Partner API for Reports
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
     /// Detailed information about the report.
     /// </summary>
     [DataContract]
-    public partial class Report :  IEquatable<Report>, IValidatableObject
+    public partial class Report : IEquatable<Report>, IValidatableObject
     {
         /// <summary>
         /// The processing status of the report.
@@ -37,31 +33,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ProcessingStatusEnum
         {
-            
+
             /// <summary>
             /// Enum CANCELLED for value: CANCELLED
             /// </summary>
             [EnumMember(Value = "CANCELLED")]
             CANCELLED = 1,
-            
+
             /// <summary>
             /// Enum DONE for value: DONE
             /// </summary>
             [EnumMember(Value = "DONE")]
             DONE = 2,
-            
+
             /// <summary>
             /// Enum FATAL for value: FATAL
             /// </summary>
             [EnumMember(Value = "FATAL")]
             FATAL = 3,
-            
+
             /// <summary>
             /// Enum INPROGRESS for value: IN_PROGRESS
             /// </summary>
             [EnumMember(Value = "IN_PROGRESS")]
             INPROGRESS = 4,
-            
+
             /// <summary>
             /// Enum INQUEUE for value: IN_QUEUE
             /// </summary>
@@ -73,7 +69,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// The processing status of the report.
         /// </summary>
         /// <value>The processing status of the report.</value>
-        [DataMember(Name="processingStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "processingStatus", EmitDefaultValue = false)]
         public ProcessingStatusEnum ProcessingStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Report" /> class.
@@ -140,54 +136,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             this.ProcessingEndTime = processingEndTime;
             this.ReportDocumentId = reportDocumentId;
         }
-        
+
         /// <summary>
         /// A list of marketplace identifiers for the report.
         /// </summary>
         /// <value>A list of marketplace identifiers for the report.</value>
-        [DataMember(Name="marketplaceIds", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceIds", EmitDefaultValue = false)]
         public List<string> MarketplaceIds { get; set; }
 
         /// <summary>
         /// The identifier for the report. This identifier is unique only in combination with a seller ID.
         /// </summary>
         /// <value>The identifier for the report. This identifier is unique only in combination with a seller ID.</value>
-        [DataMember(Name="reportId", EmitDefaultValue=false)]
+        [DataMember(Name = "reportId", EmitDefaultValue = false)]
         public string ReportId { get; set; }
 
         /// <summary>
         /// The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
         /// </summary>
         /// <value>The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.</value>
-        [DataMember(Name="reportType", EmitDefaultValue=false)]
+        [DataMember(Name = "reportType", EmitDefaultValue = false)]
         public string ReportType { get; set; }
 
         /// <summary>
         /// The start of a date and time range used for selecting the data to report.
         /// </summary>
         /// <value>The start of a date and time range used for selecting the data to report.</value>
-        [DataMember(Name="dataStartTime", EmitDefaultValue=false)]
+        [DataMember(Name = "dataStartTime", EmitDefaultValue = false)]
         public DateTime? DataStartTime { get; set; }
 
         /// <summary>
         /// The end of a date and time range used for selecting the data to report.
         /// </summary>
         /// <value>The end of a date and time range used for selecting the data to report.</value>
-        [DataMember(Name="dataEndTime", EmitDefaultValue=false)]
+        [DataMember(Name = "dataEndTime", EmitDefaultValue = false)]
         public DateTime? DataEndTime { get; set; }
 
         /// <summary>
         /// The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID.
         /// </summary>
         /// <value>The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID.</value>
-        [DataMember(Name="reportScheduleId", EmitDefaultValue=false)]
+        [DataMember(Name = "reportScheduleId", EmitDefaultValue = false)]
         public string ReportScheduleId { get; set; }
 
         /// <summary>
         /// The date and time when the report was created.
         /// </summary>
         /// <value>The date and time when the report was created.</value>
-        [DataMember(Name="createdTime", EmitDefaultValue=false)]
+        [DataMember(Name = "createdTime", EmitDefaultValue = false)]
         public DateTime? CreatedTime { get; set; }
 
 
@@ -195,21 +191,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
         /// The date and time when the report processing started, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
         /// </summary>
         /// <value>The date and time when the report processing started, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
-        [DataMember(Name="processingStartTime", EmitDefaultValue=false)]
+        [DataMember(Name = "processingStartTime", EmitDefaultValue = false)]
         public DateTime? ProcessingStartTime { get; set; }
 
         /// <summary>
         /// The date and time when the report processing completed, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.
         /// </summary>
         /// <value>The date and time when the report processing completed, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format.</value>
-        [DataMember(Name="processingEndTime", EmitDefaultValue=false)]
+        [DataMember(Name = "processingEndTime", EmitDefaultValue = false)]
         public DateTime? ProcessingEndTime { get; set; }
 
         /// <summary>
         /// The identifier for the report document. Pass this into the &#x60;getReportDocument&#x60; operation to get the information you will need to retrieve the report document&#39;s contents.
         /// </summary>
         /// <value>The identifier for the report document. Pass this into the &#x60;getReportDocument&#x60; operation to get the information you will need to retrieve the report document&#39;s contents.</value>
-        [DataMember(Name="reportDocumentId", EmitDefaultValue=false)]
+        [DataMember(Name = "reportDocumentId", EmitDefaultValue = false)]
         public string ReportDocumentId { get; set; }
 
         /// <summary>
@@ -234,7 +230,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -264,57 +260,57 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Reports
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceIds == input.MarketplaceIds ||
                     this.MarketplaceIds != null &&
                     this.MarketplaceIds.SequenceEqual(input.MarketplaceIds)
-                ) && 
+                ) &&
                 (
                     this.ReportId == input.ReportId ||
                     (this.ReportId != null &&
                     this.ReportId.Equals(input.ReportId))
-                ) && 
+                ) &&
                 (
                     this.ReportType == input.ReportType ||
                     (this.ReportType != null &&
                     this.ReportType.Equals(input.ReportType))
-                ) && 
+                ) &&
                 (
                     this.DataStartTime == input.DataStartTime ||
                     (this.DataStartTime != null &&
                     this.DataStartTime.Equals(input.DataStartTime))
-                ) && 
+                ) &&
                 (
                     this.DataEndTime == input.DataEndTime ||
                     (this.DataEndTime != null &&
                     this.DataEndTime.Equals(input.DataEndTime))
-                ) && 
+                ) &&
                 (
                     this.ReportScheduleId == input.ReportScheduleId ||
                     (this.ReportScheduleId != null &&
                     this.ReportScheduleId.Equals(input.ReportScheduleId))
-                ) && 
+                ) &&
                 (
                     this.CreatedTime == input.CreatedTime ||
                     (this.CreatedTime != null &&
                     this.CreatedTime.Equals(input.CreatedTime))
-                ) && 
+                ) &&
                 (
                     this.ProcessingStatus == input.ProcessingStatus ||
                     (this.ProcessingStatus != null &&
                     this.ProcessingStatus.Equals(input.ProcessingStatus))
-                ) && 
+                ) &&
                 (
                     this.ProcessingStartTime == input.ProcessingStartTime ||
                     (this.ProcessingStartTime != null &&
                     this.ProcessingStartTime.Equals(input.ProcessingStartTime))
-                ) && 
+                ) &&
                 (
                     this.ProcessingEndTime == input.ProcessingEndTime ||
                     (this.ProcessingEndTime != null &&
                     this.ProcessingEndTime.Equals(input.ProcessingEndTime))
-                ) && 
+                ) &&
                 (
                     this.ReportDocumentId == input.ReportDocumentId ||
                     (this.ReportDocumentId != null &&

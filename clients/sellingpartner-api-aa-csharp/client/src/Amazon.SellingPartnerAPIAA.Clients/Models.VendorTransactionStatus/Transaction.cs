@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus
     /// The transaction status.
     /// </summary>
     [DataContract]
-    public partial class Transaction :  IEquatable<Transaction>, IValidatableObject
+    public partial class Transaction : IEquatable<Transaction>, IValidatableObject
     {
         /// <summary>
         /// Current processing status of the transaction.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
-            
+
             /// <summary>
             /// Enum Failure for value: Failure
             /// </summary>
             [EnumMember(Value = "Failure")]
             Failure = 1,
-            
+
             /// <summary>
             /// Enum Processing for value: Processing
             /// </summary>
             [EnumMember(Value = "Processing")]
             Processing = 2,
-            
+
             /// <summary>
             /// Enum Success for value: Success
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus
         /// Current processing status of the transaction.
         /// </summary>
         /// <value>Current processing status of the transaction.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Transaction" /> class.
@@ -96,19 +91,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus
             }
             this.Errors = errors;
         }
-        
+
         /// <summary>
         /// The unique identifier returned in the &#39;transactionId&#39; field in response to the post request of a specific transaction.
         /// </summary>
         /// <value>The unique identifier returned in the &#39;transactionId&#39; field in response to the post request of a specific transaction.</value>
-        [DataMember(Name="transactionId", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string TransactionId { get; set; }
 
 
         /// <summary>
         /// Gets or Sets Errors
         /// </summary>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 
         /// <summary>
@@ -125,7 +120,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -155,17 +150,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TransactionId == input.TransactionId ||
                     (this.TransactionId != null &&
                     this.TransactionId.Equals(input.TransactionId))
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.Errors == input.Errors ||
                     (this.Errors != null &&

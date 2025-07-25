@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>CancelFulfillmentOrderResponse</returns>
-        CancelFulfillmentOrderResponse CancelFulfillmentOrder (string sellerFulfillmentOrderId);
+        CancelFulfillmentOrderResponse CancelFulfillmentOrder(string sellerFulfillmentOrderId);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>ApiResponse of CancelFulfillmentOrderResponse</returns>
-        ApiResponse<CancelFulfillmentOrderResponse> CancelFulfillmentOrderWithHttpInfo (string sellerFulfillmentOrderId);
+        ApiResponse<CancelFulfillmentOrderResponse> CancelFulfillmentOrderWithHttpInfo(string sellerFulfillmentOrderId);
         /// <summary>
         /// 
         /// </summary>
@@ -55,7 +54,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">CreateFulfillmentOrderRequest parameter</param>
         /// <returns>CreateFulfillmentOrderResponse</returns>
-        CreateFulfillmentOrderResponse CreateFulfillmentOrder (CreateFulfillmentOrderRequest body);
+        CreateFulfillmentOrderResponse CreateFulfillmentOrder(CreateFulfillmentOrderRequest body);
 
         /// <summary>
         /// 
@@ -66,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">CreateFulfillmentOrderRequest parameter</param>
         /// <returns>ApiResponse of CreateFulfillmentOrderResponse</returns>
-        ApiResponse<CreateFulfillmentOrderResponse> CreateFulfillmentOrderWithHttpInfo (CreateFulfillmentOrderRequest body);
+        ApiResponse<CreateFulfillmentOrderResponse> CreateFulfillmentOrderWithHttpInfo(CreateFulfillmentOrderRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -77,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>CreateFulfillmentReturnResponse</returns>
-        CreateFulfillmentReturnResponse CreateFulfillmentReturn (CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
+        CreateFulfillmentReturnResponse CreateFulfillmentReturn(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
 
         /// <summary>
         /// 
@@ -89,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>ApiResponse of CreateFulfillmentReturnResponse</returns>
-        ApiResponse<CreateFulfillmentReturnResponse> CreateFulfillmentReturnWithHttpInfo (CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
+        ApiResponse<CreateFulfillmentReturnResponse> CreateFulfillmentReturnWithHttpInfo(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
         /// <summary>
         /// 
         /// </summary>
@@ -99,7 +98,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetDeliveryOffersRequest parameter</param>
         /// <returns>GetDeliveryOffersResponse</returns>
-        GetDeliveryOffersResponse DeliveryOffers (GetDeliveryOffersRequest body);
+        GetDeliveryOffersResponse DeliveryOffers(GetDeliveryOffersRequest body);
 
         /// <summary>
         /// 
@@ -110,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetDeliveryOffersRequest parameter</param>
         /// <returns>ApiResponse of GetDeliveryOffersResponse</returns>
-        ApiResponse<GetDeliveryOffersResponse> DeliveryOffersWithHttpInfo (GetDeliveryOffersRequest body);
+        ApiResponse<GetDeliveryOffersResponse> DeliveryOffersWithHttpInfo(GetDeliveryOffersRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -123,7 +122,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
         /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
         /// <returns>GetFeatureInventoryResponse</returns>
-        GetFeatureInventoryResponse GetFeatureInventory (string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
+        GetFeatureInventoryResponse GetFeatureInventory(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
 
         /// <summary>
         /// 
@@ -137,7 +136,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
         /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
         /// <returns>ApiResponse of GetFeatureInventoryResponse</returns>
-        ApiResponse<GetFeatureInventoryResponse> GetFeatureInventoryWithHttpInfo (string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
+        ApiResponse<GetFeatureInventoryResponse> GetFeatureInventoryWithHttpInfo(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
         /// <summary>
         /// 
         /// </summary>
@@ -149,7 +148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="featureName">The name of the feature.</param>
         /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>GetFeatureSkuResponse</returns>
-        GetFeatureSkuResponse GetFeatureSKU (string marketplaceId, string featureName, string sellerSku);
+        GetFeatureSkuResponse GetFeatureSKU(string marketplaceId, string featureName, string sellerSku);
 
         /// <summary>
         /// 
@@ -162,7 +161,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="featureName">The name of the feature.</param>
         /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>ApiResponse of GetFeatureSkuResponse</returns>
-        ApiResponse<GetFeatureSkuResponse> GetFeatureSKUWithHttpInfo (string marketplaceId, string featureName, string sellerSku);
+        ApiResponse<GetFeatureSkuResponse> GetFeatureSKUWithHttpInfo(string marketplaceId, string featureName, string sellerSku);
         /// <summary>
         /// 
         /// </summary>
@@ -172,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the list of features.</param>
         /// <returns>GetFeaturesResponse</returns>
-        GetFeaturesResponse GetFeatures (string marketplaceId);
+        GetFeaturesResponse GetFeatures(string marketplaceId);
 
         /// <summary>
         /// 
@@ -183,7 +182,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the list of features.</param>
         /// <returns>ApiResponse of GetFeaturesResponse</returns>
-        ApiResponse<GetFeaturesResponse> GetFeaturesWithHttpInfo (string marketplaceId);
+        ApiResponse<GetFeaturesResponse> GetFeaturesWithHttpInfo(string marketplaceId);
         /// <summary>
         /// 
         /// </summary>
@@ -193,7 +192,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>GetFulfillmentOrderResponse</returns>
-        GetFulfillmentOrderResponse GetFulfillmentOrder (string sellerFulfillmentOrderId);
+        GetFulfillmentOrderResponse GetFulfillmentOrder(string sellerFulfillmentOrderId);
 
         /// <summary>
         /// 
@@ -204,7 +203,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>ApiResponse of GetFulfillmentOrderResponse</returns>
-        ApiResponse<GetFulfillmentOrderResponse> GetFulfillmentOrderWithHttpInfo (string sellerFulfillmentOrderId);
+        ApiResponse<GetFulfillmentOrderResponse> GetFulfillmentOrderWithHttpInfo(string sellerFulfillmentOrderId);
         /// <summary>
         /// 
         /// </summary>
@@ -214,7 +213,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetFulfillmentPreviewRequest parameter</param>
         /// <returns>GetFulfillmentPreviewResponse</returns>
-        GetFulfillmentPreviewResponse GetFulfillmentPreview (GetFulfillmentPreviewRequest body);
+        GetFulfillmentPreviewResponse GetFulfillmentPreview(GetFulfillmentPreviewRequest body);
 
         /// <summary>
         /// 
@@ -225,7 +224,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetFulfillmentPreviewRequest parameter</param>
         /// <returns>ApiResponse of GetFulfillmentPreviewResponse</returns>
-        ApiResponse<GetFulfillmentPreviewResponse> GetFulfillmentPreviewWithHttpInfo (GetFulfillmentPreviewRequest body);
+        ApiResponse<GetFulfillmentPreviewResponse> GetFulfillmentPreviewWithHttpInfo(GetFulfillmentPreviewRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -235,7 +234,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>GetPackageTrackingDetailsResponse</returns>
-        GetPackageTrackingDetailsResponse GetPackageTrackingDetails (int? packageNumber);
+        GetPackageTrackingDetailsResponse GetPackageTrackingDetails(int? packageNumber);
 
         /// <summary>
         /// 
@@ -246,7 +245,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>ApiResponse of GetPackageTrackingDetailsResponse</returns>
-        ApiResponse<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsWithHttpInfo (int? packageNumber);
+        ApiResponse<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsWithHttpInfo(int? packageNumber);
         /// <summary>
         /// 
         /// </summary>
@@ -257,7 +256,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
         /// <param name="nextToken">A string token returned in the response to your previous request. (optional)</param>
         /// <returns>ListAllFulfillmentOrdersResponse</returns>
-        ListAllFulfillmentOrdersResponse ListAllFulfillmentOrders (DateTime? queryStartDate = null, string nextToken = null);
+        ListAllFulfillmentOrdersResponse ListAllFulfillmentOrders(DateTime? queryStartDate = null, string nextToken = null);
 
         /// <summary>
         /// 
@@ -269,7 +268,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
         /// <param name="nextToken">A string token returned in the response to your previous request. (optional)</param>
         /// <returns>ApiResponse of ListAllFulfillmentOrdersResponse</returns>
-        ApiResponse<ListAllFulfillmentOrdersResponse> ListAllFulfillmentOrdersWithHttpInfo (DateTime? queryStartDate = null, string nextToken = null);
+        ApiResponse<ListAllFulfillmentOrdersResponse> ListAllFulfillmentOrdersWithHttpInfo(DateTime? queryStartDate = null, string nextToken = null);
         /// <summary>
         /// 
         /// </summary>
@@ -282,7 +281,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)</param>
         /// <param name="language">The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)</param>
         /// <returns>ListReturnReasonCodesResponse</returns>
-        ListReturnReasonCodesResponse ListReturnReasonCodes (string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null);
+        ListReturnReasonCodesResponse ListReturnReasonCodes(string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null);
 
         /// <summary>
         /// 
@@ -296,7 +295,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)</param>
         /// <param name="language">The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)</param>
         /// <returns>ApiResponse of ListReturnReasonCodesResponse</returns>
-        ApiResponse<ListReturnReasonCodesResponse> ListReturnReasonCodesWithHttpInfo (string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null);
+        ApiResponse<ListReturnReasonCodesResponse> ListReturnReasonCodesWithHttpInfo(string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null);
         /// <summary>
         /// 
         /// </summary>
@@ -307,7 +306,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <param name="body">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>SubmitFulfillmentOrderStatusUpdateResponse</returns>
-        SubmitFulfillmentOrderStatusUpdateResponse SubmitFulfillmentOrderStatusUpdate (string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body);
+        SubmitFulfillmentOrderStatusUpdateResponse SubmitFulfillmentOrderStatusUpdate(string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body);
 
         /// <summary>
         /// 
@@ -319,7 +318,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <param name="body">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>ApiResponse of SubmitFulfillmentOrderStatusUpdateResponse</returns>
-        ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse> SubmitFulfillmentOrderStatusUpdateWithHttpInfo (string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body);
+        ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse> SubmitFulfillmentOrderStatusUpdateWithHttpInfo(string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -330,7 +329,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>UpdateFulfillmentOrderResponse</returns>
-        UpdateFulfillmentOrderResponse UpdateFulfillmentOrder (UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
+        UpdateFulfillmentOrderResponse UpdateFulfillmentOrder(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
 
         /// <summary>
         /// 
@@ -342,7 +341,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>ApiResponse of UpdateFulfillmentOrderResponse</returns>
-        ApiResponse<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderWithHttpInfo (UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
+        ApiResponse<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderWithHttpInfo(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -354,7 +353,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of CancelFulfillmentOrderResponse</returns>
-        System.Threading.Tasks.Task<CancelFulfillmentOrderResponse> CancelFulfillmentOrderAsync (string sellerFulfillmentOrderId);
+        System.Threading.Tasks.Task<CancelFulfillmentOrderResponse> CancelFulfillmentOrderAsync(string sellerFulfillmentOrderId);
 
         /// <summary>
         /// 
@@ -365,7 +364,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of ApiResponse (CancelFulfillmentOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CancelFulfillmentOrderResponse>> CancelFulfillmentOrderAsyncWithHttpInfo (string sellerFulfillmentOrderId);
+        System.Threading.Tasks.Task<ApiResponse<CancelFulfillmentOrderResponse>> CancelFulfillmentOrderAsyncWithHttpInfo(string sellerFulfillmentOrderId);
         /// <summary>
         /// 
         /// </summary>
@@ -375,7 +374,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">CreateFulfillmentOrderRequest parameter</param>
         /// <returns>Task of CreateFulfillmentOrderResponse</returns>
-        System.Threading.Tasks.Task<CreateFulfillmentOrderResponse> CreateFulfillmentOrderAsync (CreateFulfillmentOrderRequest body);
+        System.Threading.Tasks.Task<CreateFulfillmentOrderResponse> CreateFulfillmentOrderAsync(CreateFulfillmentOrderRequest body);
 
         /// <summary>
         /// 
@@ -386,7 +385,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">CreateFulfillmentOrderRequest parameter</param>
         /// <returns>Task of ApiResponse (CreateFulfillmentOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateFulfillmentOrderResponse>> CreateFulfillmentOrderAsyncWithHttpInfo (CreateFulfillmentOrderRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateFulfillmentOrderResponse>> CreateFulfillmentOrderAsyncWithHttpInfo(CreateFulfillmentOrderRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -397,7 +396,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>Task of CreateFulfillmentReturnResponse</returns>
-        System.Threading.Tasks.Task<CreateFulfillmentReturnResponse> CreateFulfillmentReturnAsync (CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
+        System.Threading.Tasks.Task<CreateFulfillmentReturnResponse> CreateFulfillmentReturnAsync(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
 
         /// <summary>
         /// 
@@ -409,7 +408,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>Task of ApiResponse (CreateFulfillmentReturnResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateFulfillmentReturnResponse>> CreateFulfillmentReturnAsyncWithHttpInfo (CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
+        System.Threading.Tasks.Task<ApiResponse<CreateFulfillmentReturnResponse>> CreateFulfillmentReturnAsyncWithHttpInfo(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
         /// <summary>
         /// 
         /// </summary>
@@ -419,7 +418,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetDeliveryOffersRequest parameter</param>
         /// <returns>Task of GetDeliveryOffersResponse</returns>
-        System.Threading.Tasks.Task<GetDeliveryOffersResponse> DeliveryOffersAsync (GetDeliveryOffersRequest body);
+        System.Threading.Tasks.Task<GetDeliveryOffersResponse> DeliveryOffersAsync(GetDeliveryOffersRequest body);
 
         /// <summary>
         /// 
@@ -430,7 +429,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetDeliveryOffersRequest parameter</param>
         /// <returns>Task of ApiResponse (GetDeliveryOffersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetDeliveryOffersResponse>> DeliveryOffersAsyncWithHttpInfo (GetDeliveryOffersRequest body);
+        System.Threading.Tasks.Task<ApiResponse<GetDeliveryOffersResponse>> DeliveryOffersAsyncWithHttpInfo(GetDeliveryOffersRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -443,7 +442,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
         /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
         /// <returns>Task of GetFeatureInventoryResponse</returns>
-        System.Threading.Tasks.Task<GetFeatureInventoryResponse> GetFeatureInventoryAsync (string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
+        System.Threading.Tasks.Task<GetFeatureInventoryResponse> GetFeatureInventoryAsync(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
 
         /// <summary>
         /// 
@@ -457,7 +456,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
         /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
         /// <returns>Task of ApiResponse (GetFeatureInventoryResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetFeatureInventoryResponse>> GetFeatureInventoryAsyncWithHttpInfo (string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
+        System.Threading.Tasks.Task<ApiResponse<GetFeatureInventoryResponse>> GetFeatureInventoryAsyncWithHttpInfo(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
         /// <summary>
         /// 
         /// </summary>
@@ -469,7 +468,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="featureName">The name of the feature.</param>
         /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>Task of GetFeatureSkuResponse</returns>
-        System.Threading.Tasks.Task<GetFeatureSkuResponse> GetFeatureSKUAsync (string marketplaceId, string featureName, string sellerSku);
+        System.Threading.Tasks.Task<GetFeatureSkuResponse> GetFeatureSKUAsync(string marketplaceId, string featureName, string sellerSku);
 
         /// <summary>
         /// 
@@ -482,7 +481,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="featureName">The name of the feature.</param>
         /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>Task of ApiResponse (GetFeatureSkuResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetFeatureSkuResponse>> GetFeatureSKUAsyncWithHttpInfo (string marketplaceId, string featureName, string sellerSku);
+        System.Threading.Tasks.Task<ApiResponse<GetFeatureSkuResponse>> GetFeatureSKUAsyncWithHttpInfo(string marketplaceId, string featureName, string sellerSku);
         /// <summary>
         /// 
         /// </summary>
@@ -492,7 +491,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the list of features.</param>
         /// <returns>Task of GetFeaturesResponse</returns>
-        System.Threading.Tasks.Task<GetFeaturesResponse> GetFeaturesAsync (string marketplaceId);
+        System.Threading.Tasks.Task<GetFeaturesResponse> GetFeaturesAsync(string marketplaceId);
 
         /// <summary>
         /// 
@@ -503,7 +502,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the list of features.</param>
         /// <returns>Task of ApiResponse (GetFeaturesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetFeaturesResponse>> GetFeaturesAsyncWithHttpInfo (string marketplaceId);
+        System.Threading.Tasks.Task<ApiResponse<GetFeaturesResponse>> GetFeaturesAsyncWithHttpInfo(string marketplaceId);
         /// <summary>
         /// 
         /// </summary>
@@ -513,7 +512,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of GetFulfillmentOrderResponse</returns>
-        System.Threading.Tasks.Task<GetFulfillmentOrderResponse> GetFulfillmentOrderAsync (string sellerFulfillmentOrderId);
+        System.Threading.Tasks.Task<GetFulfillmentOrderResponse> GetFulfillmentOrderAsync(string sellerFulfillmentOrderId);
 
         /// <summary>
         /// 
@@ -524,7 +523,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of ApiResponse (GetFulfillmentOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetFulfillmentOrderResponse>> GetFulfillmentOrderAsyncWithHttpInfo (string sellerFulfillmentOrderId);
+        System.Threading.Tasks.Task<ApiResponse<GetFulfillmentOrderResponse>> GetFulfillmentOrderAsyncWithHttpInfo(string sellerFulfillmentOrderId);
         /// <summary>
         /// 
         /// </summary>
@@ -534,7 +533,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetFulfillmentPreviewRequest parameter</param>
         /// <returns>Task of GetFulfillmentPreviewResponse</returns>
-        System.Threading.Tasks.Task<GetFulfillmentPreviewResponse> GetFulfillmentPreviewAsync (GetFulfillmentPreviewRequest body);
+        System.Threading.Tasks.Task<GetFulfillmentPreviewResponse> GetFulfillmentPreviewAsync(GetFulfillmentPreviewRequest body);
 
         /// <summary>
         /// 
@@ -545,7 +544,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetFulfillmentPreviewRequest parameter</param>
         /// <returns>Task of ApiResponse (GetFulfillmentPreviewResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetFulfillmentPreviewResponse>> GetFulfillmentPreviewAsyncWithHttpInfo (GetFulfillmentPreviewRequest body);
+        System.Threading.Tasks.Task<ApiResponse<GetFulfillmentPreviewResponse>> GetFulfillmentPreviewAsyncWithHttpInfo(GetFulfillmentPreviewRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -555,7 +554,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>Task of GetPackageTrackingDetailsResponse</returns>
-        System.Threading.Tasks.Task<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsAsync (int? packageNumber);
+        System.Threading.Tasks.Task<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsAsync(int? packageNumber);
 
         /// <summary>
         /// 
@@ -566,7 +565,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>Task of ApiResponse (GetPackageTrackingDetailsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPackageTrackingDetailsResponse>> GetPackageTrackingDetailsAsyncWithHttpInfo (int? packageNumber);
+        System.Threading.Tasks.Task<ApiResponse<GetPackageTrackingDetailsResponse>> GetPackageTrackingDetailsAsyncWithHttpInfo(int? packageNumber);
         /// <summary>
         /// 
         /// </summary>
@@ -577,7 +576,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
         /// <param name="nextToken">A string token returned in the response to your previous request. (optional)</param>
         /// <returns>Task of ListAllFulfillmentOrdersResponse</returns>
-        System.Threading.Tasks.Task<ListAllFulfillmentOrdersResponse> ListAllFulfillmentOrdersAsync (DateTime? queryStartDate = null, string nextToken = null);
+        System.Threading.Tasks.Task<ListAllFulfillmentOrdersResponse> ListAllFulfillmentOrdersAsync(DateTime? queryStartDate = null, string nextToken = null);
 
         /// <summary>
         /// 
@@ -589,7 +588,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
         /// <param name="nextToken">A string token returned in the response to your previous request. (optional)</param>
         /// <returns>Task of ApiResponse (ListAllFulfillmentOrdersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListAllFulfillmentOrdersResponse>> ListAllFulfillmentOrdersAsyncWithHttpInfo (DateTime? queryStartDate = null, string nextToken = null);
+        System.Threading.Tasks.Task<ApiResponse<ListAllFulfillmentOrdersResponse>> ListAllFulfillmentOrdersAsyncWithHttpInfo(DateTime? queryStartDate = null, string nextToken = null);
         /// <summary>
         /// 
         /// </summary>
@@ -602,7 +601,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)</param>
         /// <param name="language">The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)</param>
         /// <returns>Task of ListReturnReasonCodesResponse</returns>
-        System.Threading.Tasks.Task<ListReturnReasonCodesResponse> ListReturnReasonCodesAsync (string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null);
+        System.Threading.Tasks.Task<ListReturnReasonCodesResponse> ListReturnReasonCodesAsync(string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null);
 
         /// <summary>
         /// 
@@ -616,7 +615,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)</param>
         /// <param name="language">The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)</param>
         /// <returns>Task of ApiResponse (ListReturnReasonCodesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListReturnReasonCodesResponse>> ListReturnReasonCodesAsyncWithHttpInfo (string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null);
+        System.Threading.Tasks.Task<ApiResponse<ListReturnReasonCodesResponse>> ListReturnReasonCodesAsyncWithHttpInfo(string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null);
         /// <summary>
         /// 
         /// </summary>
@@ -627,7 +626,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <param name="body">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of SubmitFulfillmentOrderStatusUpdateResponse</returns>
-        System.Threading.Tasks.Task<SubmitFulfillmentOrderStatusUpdateResponse> SubmitFulfillmentOrderStatusUpdateAsync (string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body);
+        System.Threading.Tasks.Task<SubmitFulfillmentOrderStatusUpdateResponse> SubmitFulfillmentOrderStatusUpdateAsync(string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body);
 
         /// <summary>
         /// 
@@ -639,7 +638,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <param name="body">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of ApiResponse (SubmitFulfillmentOrderStatusUpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse>> SubmitFulfillmentOrderStatusUpdateAsyncWithHttpInfo (string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body);
+        System.Threading.Tasks.Task<ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse>> SubmitFulfillmentOrderStatusUpdateAsyncWithHttpInfo(string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -650,7 +649,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of UpdateFulfillmentOrderResponse</returns>
-        System.Threading.Tasks.Task<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderAsync (UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
+        System.Threading.Tasks.Task<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderAsync(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
 
         /// <summary>
         /// 
@@ -662,7 +661,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of ApiResponse (UpdateFulfillmentOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateFulfillmentOrderResponse>> UpdateFulfillmentOrderAsyncWithHttpInfo (UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
+        System.Threading.Tasks.Task<ApiResponse<UpdateFulfillmentOrderResponse>> UpdateFulfillmentOrderAsyncWithHttpInfo(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
         #endregion Asynchronous Operations
     }
 
@@ -682,7 +681,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public FbaOutboundApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -708,7 +707,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -754,10 +753,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>CancelFulfillmentOrderResponse</returns>
-        public CancelFulfillmentOrderResponse CancelFulfillmentOrder (string sellerFulfillmentOrderId)
+        public CancelFulfillmentOrderResponse CancelFulfillmentOrder(string sellerFulfillmentOrderId)
         {
-             ApiResponse<CancelFulfillmentOrderResponse> localVarResponse = CancelFulfillmentOrderWithHttpInfo(sellerFulfillmentOrderId);
-             return localVarResponse.Data;
+            ApiResponse<CancelFulfillmentOrderResponse> localVarResponse = CancelFulfillmentOrderWithHttpInfo(sellerFulfillmentOrderId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -766,7 +765,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>ApiResponse of CancelFulfillmentOrderResponse</returns>
-        public ApiResponse< CancelFulfillmentOrderResponse > CancelFulfillmentOrderWithHttpInfo (string sellerFulfillmentOrderId)
+        public ApiResponse<CancelFulfillmentOrderResponse> CancelFulfillmentOrderWithHttpInfo(string sellerFulfillmentOrderId)
         {
             // verify the required parameter 'sellerFulfillmentOrderId' is set
             if (sellerFulfillmentOrderId == null)
@@ -798,11 +797,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -812,7 +811,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CancelFulfillmentOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CancelFulfillmentOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelFulfillmentOrderResponse)));
+                (CancelFulfillmentOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelFulfillmentOrderResponse)));
         }
 
         /// <summary>
@@ -821,10 +820,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of CancelFulfillmentOrderResponse</returns>
-        public async System.Threading.Tasks.Task<CancelFulfillmentOrderResponse> CancelFulfillmentOrderAsync (string sellerFulfillmentOrderId)
+        public async System.Threading.Tasks.Task<CancelFulfillmentOrderResponse> CancelFulfillmentOrderAsync(string sellerFulfillmentOrderId)
         {
-             ApiResponse<CancelFulfillmentOrderResponse> localVarResponse = await CancelFulfillmentOrderAsyncWithHttpInfo(sellerFulfillmentOrderId);
-             return localVarResponse.Data;
+            ApiResponse<CancelFulfillmentOrderResponse> localVarResponse = await CancelFulfillmentOrderAsyncWithHttpInfo(sellerFulfillmentOrderId);
+            return localVarResponse.Data;
 
         }
 
@@ -834,7 +833,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of ApiResponse (CancelFulfillmentOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CancelFulfillmentOrderResponse>> CancelFulfillmentOrderAsyncWithHttpInfo (string sellerFulfillmentOrderId)
+        public async System.Threading.Tasks.Task<ApiResponse<CancelFulfillmentOrderResponse>> CancelFulfillmentOrderAsyncWithHttpInfo(string sellerFulfillmentOrderId)
         {
             // verify the required parameter 'sellerFulfillmentOrderId' is set
             if (sellerFulfillmentOrderId == null)
@@ -866,11 +865,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -880,7 +879,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CancelFulfillmentOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CancelFulfillmentOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelFulfillmentOrderResponse)));
+                (CancelFulfillmentOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelFulfillmentOrderResponse)));
         }
 
         /// <summary>
@@ -889,10 +888,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">CreateFulfillmentOrderRequest parameter</param>
         /// <returns>CreateFulfillmentOrderResponse</returns>
-        public CreateFulfillmentOrderResponse CreateFulfillmentOrder (CreateFulfillmentOrderRequest body)
+        public CreateFulfillmentOrderResponse CreateFulfillmentOrder(CreateFulfillmentOrderRequest body)
         {
-             ApiResponse<CreateFulfillmentOrderResponse> localVarResponse = CreateFulfillmentOrderWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateFulfillmentOrderResponse> localVarResponse = CreateFulfillmentOrderWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -901,7 +900,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">CreateFulfillmentOrderRequest parameter</param>
         /// <returns>ApiResponse of CreateFulfillmentOrderResponse</returns>
-        public ApiResponse< CreateFulfillmentOrderResponse > CreateFulfillmentOrderWithHttpInfo (CreateFulfillmentOrderRequest body)
+        public ApiResponse<CreateFulfillmentOrderResponse> CreateFulfillmentOrderWithHttpInfo(CreateFulfillmentOrderRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -940,11 +939,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -954,7 +953,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateFulfillmentOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateFulfillmentOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateFulfillmentOrderResponse)));
+                (CreateFulfillmentOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateFulfillmentOrderResponse)));
         }
 
         /// <summary>
@@ -963,10 +962,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">CreateFulfillmentOrderRequest parameter</param>
         /// <returns>Task of CreateFulfillmentOrderResponse</returns>
-        public async System.Threading.Tasks.Task<CreateFulfillmentOrderResponse> CreateFulfillmentOrderAsync (CreateFulfillmentOrderRequest body)
+        public async System.Threading.Tasks.Task<CreateFulfillmentOrderResponse> CreateFulfillmentOrderAsync(CreateFulfillmentOrderRequest body)
         {
-             ApiResponse<CreateFulfillmentOrderResponse> localVarResponse = await CreateFulfillmentOrderAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateFulfillmentOrderResponse> localVarResponse = await CreateFulfillmentOrderAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -976,7 +975,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">CreateFulfillmentOrderRequest parameter</param>
         /// <returns>Task of ApiResponse (CreateFulfillmentOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateFulfillmentOrderResponse>> CreateFulfillmentOrderAsyncWithHttpInfo (CreateFulfillmentOrderRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateFulfillmentOrderResponse>> CreateFulfillmentOrderAsyncWithHttpInfo(CreateFulfillmentOrderRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1015,11 +1014,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1029,7 +1028,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateFulfillmentOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateFulfillmentOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateFulfillmentOrderResponse)));
+                (CreateFulfillmentOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateFulfillmentOrderResponse)));
         }
 
         /// <summary>
@@ -1039,10 +1038,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>CreateFulfillmentReturnResponse</returns>
-        public CreateFulfillmentReturnResponse CreateFulfillmentReturn (CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
+        public CreateFulfillmentReturnResponse CreateFulfillmentReturn(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
         {
-             ApiResponse<CreateFulfillmentReturnResponse> localVarResponse = CreateFulfillmentReturnWithHttpInfo(body, sellerFulfillmentOrderId);
-             return localVarResponse.Data;
+            ApiResponse<CreateFulfillmentReturnResponse> localVarResponse = CreateFulfillmentReturnWithHttpInfo(body, sellerFulfillmentOrderId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1052,7 +1051,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>ApiResponse of CreateFulfillmentReturnResponse</returns>
-        public ApiResponse< CreateFulfillmentReturnResponse > CreateFulfillmentReturnWithHttpInfo (CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
+        public ApiResponse<CreateFulfillmentReturnResponse> CreateFulfillmentReturnWithHttpInfo(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1095,11 +1094,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1109,7 +1108,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateFulfillmentReturnResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateFulfillmentReturnResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateFulfillmentReturnResponse)));
+                (CreateFulfillmentReturnResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateFulfillmentReturnResponse)));
         }
 
         /// <summary>
@@ -1119,10 +1118,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>Task of CreateFulfillmentReturnResponse</returns>
-        public async System.Threading.Tasks.Task<CreateFulfillmentReturnResponse> CreateFulfillmentReturnAsync (CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
+        public async System.Threading.Tasks.Task<CreateFulfillmentReturnResponse> CreateFulfillmentReturnAsync(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
         {
-             ApiResponse<CreateFulfillmentReturnResponse> localVarResponse = await CreateFulfillmentReturnAsyncWithHttpInfo(body, sellerFulfillmentOrderId);
-             return localVarResponse.Data;
+            ApiResponse<CreateFulfillmentReturnResponse> localVarResponse = await CreateFulfillmentReturnAsyncWithHttpInfo(body, sellerFulfillmentOrderId);
+            return localVarResponse.Data;
 
         }
 
@@ -1133,7 +1132,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>Task of ApiResponse (CreateFulfillmentReturnResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateFulfillmentReturnResponse>> CreateFulfillmentReturnAsyncWithHttpInfo (CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateFulfillmentReturnResponse>> CreateFulfillmentReturnAsyncWithHttpInfo(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1176,11 +1175,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1190,7 +1189,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateFulfillmentReturnResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateFulfillmentReturnResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateFulfillmentReturnResponse)));
+                (CreateFulfillmentReturnResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateFulfillmentReturnResponse)));
         }
 
         /// <summary>
@@ -1199,10 +1198,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetDeliveryOffersRequest parameter</param>
         /// <returns>GetDeliveryOffersResponse</returns>
-        public GetDeliveryOffersResponse DeliveryOffers (GetDeliveryOffersRequest body)
+        public GetDeliveryOffersResponse DeliveryOffers(GetDeliveryOffersRequest body)
         {
-             ApiResponse<GetDeliveryOffersResponse> localVarResponse = DeliveryOffersWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetDeliveryOffersResponse> localVarResponse = DeliveryOffersWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1211,7 +1210,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetDeliveryOffersRequest parameter</param>
         /// <returns>ApiResponse of GetDeliveryOffersResponse</returns>
-        public ApiResponse< GetDeliveryOffersResponse > DeliveryOffersWithHttpInfo (GetDeliveryOffersRequest body)
+        public ApiResponse<GetDeliveryOffersResponse> DeliveryOffersWithHttpInfo(GetDeliveryOffersRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1250,11 +1249,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1264,7 +1263,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetDeliveryOffersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetDeliveryOffersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDeliveryOffersResponse)));
+                (GetDeliveryOffersResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDeliveryOffersResponse)));
         }
 
         /// <summary>
@@ -1273,10 +1272,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetDeliveryOffersRequest parameter</param>
         /// <returns>Task of GetDeliveryOffersResponse</returns>
-        public async System.Threading.Tasks.Task<GetDeliveryOffersResponse> DeliveryOffersAsync (GetDeliveryOffersRequest body)
+        public async System.Threading.Tasks.Task<GetDeliveryOffersResponse> DeliveryOffersAsync(GetDeliveryOffersRequest body)
         {
-             ApiResponse<GetDeliveryOffersResponse> localVarResponse = await DeliveryOffersAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetDeliveryOffersResponse> localVarResponse = await DeliveryOffersAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -1286,7 +1285,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetDeliveryOffersRequest parameter</param>
         /// <returns>Task of ApiResponse (GetDeliveryOffersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetDeliveryOffersResponse>> DeliveryOffersAsyncWithHttpInfo (GetDeliveryOffersRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<GetDeliveryOffersResponse>> DeliveryOffersAsyncWithHttpInfo(GetDeliveryOffersRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1325,11 +1324,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1339,7 +1338,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetDeliveryOffersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetDeliveryOffersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDeliveryOffersResponse)));
+                (GetDeliveryOffersResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDeliveryOffersResponse)));
         }
 
         /// <summary>
@@ -1351,10 +1350,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
         /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
         /// <returns>GetFeatureInventoryResponse</returns>
-        public GetFeatureInventoryResponse GetFeatureInventory (string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
+        public GetFeatureInventoryResponse GetFeatureInventory(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
         {
-             ApiResponse<GetFeatureInventoryResponse> localVarResponse = GetFeatureInventoryWithHttpInfo(marketplaceId, featureName, nextToken, queryStartDate);
-             return localVarResponse.Data;
+            ApiResponse<GetFeatureInventoryResponse> localVarResponse = GetFeatureInventoryWithHttpInfo(marketplaceId, featureName, nextToken, queryStartDate);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1366,7 +1365,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
         /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
         /// <returns>ApiResponse of GetFeatureInventoryResponse</returns>
-        public ApiResponse< GetFeatureInventoryResponse > GetFeatureInventoryWithHttpInfo (string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
+        public ApiResponse<GetFeatureInventoryResponse> GetFeatureInventoryWithHttpInfo(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -1404,11 +1403,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1418,7 +1417,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFeatureInventoryResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFeatureInventoryResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeatureInventoryResponse)));
+                (GetFeatureInventoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeatureInventoryResponse)));
         }
 
         /// <summary>
@@ -1430,10 +1429,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
         /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
         /// <returns>Task of GetFeatureInventoryResponse</returns>
-        public async System.Threading.Tasks.Task<GetFeatureInventoryResponse> GetFeatureInventoryAsync (string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
+        public async System.Threading.Tasks.Task<GetFeatureInventoryResponse> GetFeatureInventoryAsync(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
         {
-             ApiResponse<GetFeatureInventoryResponse> localVarResponse = await GetFeatureInventoryAsyncWithHttpInfo(marketplaceId, featureName, nextToken, queryStartDate);
-             return localVarResponse.Data;
+            ApiResponse<GetFeatureInventoryResponse> localVarResponse = await GetFeatureInventoryAsyncWithHttpInfo(marketplaceId, featureName, nextToken, queryStartDate);
+            return localVarResponse.Data;
 
         }
 
@@ -1446,7 +1445,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
         /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
         /// <returns>Task of ApiResponse (GetFeatureInventoryResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetFeatureInventoryResponse>> GetFeatureInventoryAsyncWithHttpInfo (string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetFeatureInventoryResponse>> GetFeatureInventoryAsyncWithHttpInfo(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -1484,11 +1483,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1498,7 +1497,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFeatureInventoryResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFeatureInventoryResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeatureInventoryResponse)));
+                (GetFeatureInventoryResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeatureInventoryResponse)));
         }
 
         /// <summary>
@@ -1509,10 +1508,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="featureName">The name of the feature.</param>
         /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>GetFeatureSkuResponse</returns>
-        public GetFeatureSkuResponse GetFeatureSKU (string marketplaceId, string featureName, string sellerSku)
+        public GetFeatureSkuResponse GetFeatureSKU(string marketplaceId, string featureName, string sellerSku)
         {
-             ApiResponse<GetFeatureSkuResponse> localVarResponse = GetFeatureSKUWithHttpInfo(marketplaceId, featureName, sellerSku);
-             return localVarResponse.Data;
+            ApiResponse<GetFeatureSkuResponse> localVarResponse = GetFeatureSKUWithHttpInfo(marketplaceId, featureName, sellerSku);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1523,7 +1522,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="featureName">The name of the feature.</param>
         /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>ApiResponse of GetFeatureSkuResponse</returns>
-        public ApiResponse< GetFeatureSkuResponse > GetFeatureSKUWithHttpInfo (string marketplaceId, string featureName, string sellerSku)
+        public ApiResponse<GetFeatureSkuResponse> GetFeatureSKUWithHttpInfo(string marketplaceId, string featureName, string sellerSku)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -1563,11 +1562,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1577,7 +1576,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFeatureSkuResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFeatureSkuResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeatureSkuResponse)));
+                (GetFeatureSkuResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeatureSkuResponse)));
         }
 
         /// <summary>
@@ -1588,10 +1587,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="featureName">The name of the feature.</param>
         /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>Task of GetFeatureSkuResponse</returns>
-        public async System.Threading.Tasks.Task<GetFeatureSkuResponse> GetFeatureSKUAsync (string marketplaceId, string featureName, string sellerSku)
+        public async System.Threading.Tasks.Task<GetFeatureSkuResponse> GetFeatureSKUAsync(string marketplaceId, string featureName, string sellerSku)
         {
-             ApiResponse<GetFeatureSkuResponse> localVarResponse = await GetFeatureSKUAsyncWithHttpInfo(marketplaceId, featureName, sellerSku);
-             return localVarResponse.Data;
+            ApiResponse<GetFeatureSkuResponse> localVarResponse = await GetFeatureSKUAsyncWithHttpInfo(marketplaceId, featureName, sellerSku);
+            return localVarResponse.Data;
 
         }
 
@@ -1603,7 +1602,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="featureName">The name of the feature.</param>
         /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>Task of ApiResponse (GetFeatureSkuResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetFeatureSkuResponse>> GetFeatureSKUAsyncWithHttpInfo (string marketplaceId, string featureName, string sellerSku)
+        public async System.Threading.Tasks.Task<ApiResponse<GetFeatureSkuResponse>> GetFeatureSKUAsyncWithHttpInfo(string marketplaceId, string featureName, string sellerSku)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -1643,11 +1642,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1657,7 +1656,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFeatureSkuResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFeatureSkuResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeatureSkuResponse)));
+                (GetFeatureSkuResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeatureSkuResponse)));
         }
 
         /// <summary>
@@ -1666,10 +1665,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the list of features.</param>
         /// <returns>GetFeaturesResponse</returns>
-        public GetFeaturesResponse GetFeatures (string marketplaceId)
+        public GetFeaturesResponse GetFeatures(string marketplaceId)
         {
-             ApiResponse<GetFeaturesResponse> localVarResponse = GetFeaturesWithHttpInfo(marketplaceId);
-             return localVarResponse.Data;
+            ApiResponse<GetFeaturesResponse> localVarResponse = GetFeaturesWithHttpInfo(marketplaceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1678,7 +1677,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the list of features.</param>
         /// <returns>ApiResponse of GetFeaturesResponse</returns>
-        public ApiResponse< GetFeaturesResponse > GetFeaturesWithHttpInfo (string marketplaceId)
+        public ApiResponse<GetFeaturesResponse> GetFeaturesWithHttpInfo(string marketplaceId)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -1710,11 +1709,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1724,7 +1723,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFeaturesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFeaturesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeaturesResponse)));
+                (GetFeaturesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeaturesResponse)));
         }
 
         /// <summary>
@@ -1733,10 +1732,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the list of features.</param>
         /// <returns>Task of GetFeaturesResponse</returns>
-        public async System.Threading.Tasks.Task<GetFeaturesResponse> GetFeaturesAsync (string marketplaceId)
+        public async System.Threading.Tasks.Task<GetFeaturesResponse> GetFeaturesAsync(string marketplaceId)
         {
-             ApiResponse<GetFeaturesResponse> localVarResponse = await GetFeaturesAsyncWithHttpInfo(marketplaceId);
-             return localVarResponse.Data;
+            ApiResponse<GetFeaturesResponse> localVarResponse = await GetFeaturesAsyncWithHttpInfo(marketplaceId);
+            return localVarResponse.Data;
 
         }
 
@@ -1746,7 +1745,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the list of features.</param>
         /// <returns>Task of ApiResponse (GetFeaturesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetFeaturesResponse>> GetFeaturesAsyncWithHttpInfo (string marketplaceId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetFeaturesResponse>> GetFeaturesAsyncWithHttpInfo(string marketplaceId)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -1778,11 +1777,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1792,7 +1791,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFeaturesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFeaturesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeaturesResponse)));
+                (GetFeaturesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFeaturesResponse)));
         }
 
         /// <summary>
@@ -1801,10 +1800,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>GetFulfillmentOrderResponse</returns>
-        public GetFulfillmentOrderResponse GetFulfillmentOrder (string sellerFulfillmentOrderId)
+        public GetFulfillmentOrderResponse GetFulfillmentOrder(string sellerFulfillmentOrderId)
         {
-             ApiResponse<GetFulfillmentOrderResponse> localVarResponse = GetFulfillmentOrderWithHttpInfo(sellerFulfillmentOrderId);
-             return localVarResponse.Data;
+            ApiResponse<GetFulfillmentOrderResponse> localVarResponse = GetFulfillmentOrderWithHttpInfo(sellerFulfillmentOrderId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1813,7 +1812,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>ApiResponse of GetFulfillmentOrderResponse</returns>
-        public ApiResponse< GetFulfillmentOrderResponse > GetFulfillmentOrderWithHttpInfo (string sellerFulfillmentOrderId)
+        public ApiResponse<GetFulfillmentOrderResponse> GetFulfillmentOrderWithHttpInfo(string sellerFulfillmentOrderId)
         {
             // verify the required parameter 'sellerFulfillmentOrderId' is set
             if (sellerFulfillmentOrderId == null)
@@ -1845,11 +1844,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1859,7 +1858,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFulfillmentOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFulfillmentOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFulfillmentOrderResponse)));
+                (GetFulfillmentOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFulfillmentOrderResponse)));
         }
 
         /// <summary>
@@ -1868,10 +1867,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of GetFulfillmentOrderResponse</returns>
-        public async System.Threading.Tasks.Task<GetFulfillmentOrderResponse> GetFulfillmentOrderAsync (string sellerFulfillmentOrderId)
+        public async System.Threading.Tasks.Task<GetFulfillmentOrderResponse> GetFulfillmentOrderAsync(string sellerFulfillmentOrderId)
         {
-             ApiResponse<GetFulfillmentOrderResponse> localVarResponse = await GetFulfillmentOrderAsyncWithHttpInfo(sellerFulfillmentOrderId);
-             return localVarResponse.Data;
+            ApiResponse<GetFulfillmentOrderResponse> localVarResponse = await GetFulfillmentOrderAsyncWithHttpInfo(sellerFulfillmentOrderId);
+            return localVarResponse.Data;
 
         }
 
@@ -1881,7 +1880,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of ApiResponse (GetFulfillmentOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetFulfillmentOrderResponse>> GetFulfillmentOrderAsyncWithHttpInfo (string sellerFulfillmentOrderId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetFulfillmentOrderResponse>> GetFulfillmentOrderAsyncWithHttpInfo(string sellerFulfillmentOrderId)
         {
             // verify the required parameter 'sellerFulfillmentOrderId' is set
             if (sellerFulfillmentOrderId == null)
@@ -1913,11 +1912,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1927,7 +1926,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFulfillmentOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFulfillmentOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFulfillmentOrderResponse)));
+                (GetFulfillmentOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFulfillmentOrderResponse)));
         }
 
         /// <summary>
@@ -1936,10 +1935,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetFulfillmentPreviewRequest parameter</param>
         /// <returns>GetFulfillmentPreviewResponse</returns>
-        public GetFulfillmentPreviewResponse GetFulfillmentPreview (GetFulfillmentPreviewRequest body)
+        public GetFulfillmentPreviewResponse GetFulfillmentPreview(GetFulfillmentPreviewRequest body)
         {
-             ApiResponse<GetFulfillmentPreviewResponse> localVarResponse = GetFulfillmentPreviewWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetFulfillmentPreviewResponse> localVarResponse = GetFulfillmentPreviewWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1948,7 +1947,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetFulfillmentPreviewRequest parameter</param>
         /// <returns>ApiResponse of GetFulfillmentPreviewResponse</returns>
-        public ApiResponse< GetFulfillmentPreviewResponse > GetFulfillmentPreviewWithHttpInfo (GetFulfillmentPreviewRequest body)
+        public ApiResponse<GetFulfillmentPreviewResponse> GetFulfillmentPreviewWithHttpInfo(GetFulfillmentPreviewRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1987,11 +1986,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2001,7 +2000,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFulfillmentPreviewResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFulfillmentPreviewResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFulfillmentPreviewResponse)));
+                (GetFulfillmentPreviewResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFulfillmentPreviewResponse)));
         }
 
         /// <summary>
@@ -2010,10 +2009,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetFulfillmentPreviewRequest parameter</param>
         /// <returns>Task of GetFulfillmentPreviewResponse</returns>
-        public async System.Threading.Tasks.Task<GetFulfillmentPreviewResponse> GetFulfillmentPreviewAsync (GetFulfillmentPreviewRequest body)
+        public async System.Threading.Tasks.Task<GetFulfillmentPreviewResponse> GetFulfillmentPreviewAsync(GetFulfillmentPreviewRequest body)
         {
-             ApiResponse<GetFulfillmentPreviewResponse> localVarResponse = await GetFulfillmentPreviewAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<GetFulfillmentPreviewResponse> localVarResponse = await GetFulfillmentPreviewAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -2023,7 +2022,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">GetFulfillmentPreviewRequest parameter</param>
         /// <returns>Task of ApiResponse (GetFulfillmentPreviewResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetFulfillmentPreviewResponse>> GetFulfillmentPreviewAsyncWithHttpInfo (GetFulfillmentPreviewRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<GetFulfillmentPreviewResponse>> GetFulfillmentPreviewAsyncWithHttpInfo(GetFulfillmentPreviewRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2062,11 +2061,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2076,7 +2075,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetFulfillmentPreviewResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetFulfillmentPreviewResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFulfillmentPreviewResponse)));
+                (GetFulfillmentPreviewResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetFulfillmentPreviewResponse)));
         }
 
         /// <summary>
@@ -2085,10 +2084,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>GetPackageTrackingDetailsResponse</returns>
-        public GetPackageTrackingDetailsResponse GetPackageTrackingDetails (int? packageNumber)
+        public GetPackageTrackingDetailsResponse GetPackageTrackingDetails(int? packageNumber)
         {
-             ApiResponse<GetPackageTrackingDetailsResponse> localVarResponse = GetPackageTrackingDetailsWithHttpInfo(packageNumber);
-             return localVarResponse.Data;
+            ApiResponse<GetPackageTrackingDetailsResponse> localVarResponse = GetPackageTrackingDetailsWithHttpInfo(packageNumber);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2097,7 +2096,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>ApiResponse of GetPackageTrackingDetailsResponse</returns>
-        public ApiResponse< GetPackageTrackingDetailsResponse > GetPackageTrackingDetailsWithHttpInfo (int? packageNumber)
+        public ApiResponse<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsWithHttpInfo(int? packageNumber)
         {
             // verify the required parameter 'packageNumber' is set
             if (packageNumber == null)
@@ -2129,11 +2128,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2143,7 +2142,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetPackageTrackingDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetPackageTrackingDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPackageTrackingDetailsResponse)));
+                (GetPackageTrackingDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPackageTrackingDetailsResponse)));
         }
 
         /// <summary>
@@ -2152,10 +2151,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>Task of GetPackageTrackingDetailsResponse</returns>
-        public async System.Threading.Tasks.Task<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsAsync (int? packageNumber)
+        public async System.Threading.Tasks.Task<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsAsync(int? packageNumber)
         {
-             ApiResponse<GetPackageTrackingDetailsResponse> localVarResponse = await GetPackageTrackingDetailsAsyncWithHttpInfo(packageNumber);
-             return localVarResponse.Data;
+            ApiResponse<GetPackageTrackingDetailsResponse> localVarResponse = await GetPackageTrackingDetailsAsyncWithHttpInfo(packageNumber);
+            return localVarResponse.Data;
 
         }
 
@@ -2165,7 +2164,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>Task of ApiResponse (GetPackageTrackingDetailsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetPackageTrackingDetailsResponse>> GetPackageTrackingDetailsAsyncWithHttpInfo (int? packageNumber)
+        public async System.Threading.Tasks.Task<ApiResponse<GetPackageTrackingDetailsResponse>> GetPackageTrackingDetailsAsyncWithHttpInfo(int? packageNumber)
         {
             // verify the required parameter 'packageNumber' is set
             if (packageNumber == null)
@@ -2197,11 +2196,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2211,7 +2210,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetPackageTrackingDetailsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetPackageTrackingDetailsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPackageTrackingDetailsResponse)));
+                (GetPackageTrackingDetailsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPackageTrackingDetailsResponse)));
         }
 
         /// <summary>
@@ -2221,10 +2220,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
         /// <param name="nextToken">A string token returned in the response to your previous request. (optional)</param>
         /// <returns>ListAllFulfillmentOrdersResponse</returns>
-        public ListAllFulfillmentOrdersResponse ListAllFulfillmentOrders (DateTime? queryStartDate = null, string nextToken = null)
+        public ListAllFulfillmentOrdersResponse ListAllFulfillmentOrders(DateTime? queryStartDate = null, string nextToken = null)
         {
-             ApiResponse<ListAllFulfillmentOrdersResponse> localVarResponse = ListAllFulfillmentOrdersWithHttpInfo(queryStartDate, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<ListAllFulfillmentOrdersResponse> localVarResponse = ListAllFulfillmentOrdersWithHttpInfo(queryStartDate, nextToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2234,7 +2233,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
         /// <param name="nextToken">A string token returned in the response to your previous request. (optional)</param>
         /// <returns>ApiResponse of ListAllFulfillmentOrdersResponse</returns>
-        public ApiResponse< ListAllFulfillmentOrdersResponse > ListAllFulfillmentOrdersWithHttpInfo (DateTime? queryStartDate = null, string nextToken = null)
+        public ApiResponse<ListAllFulfillmentOrdersResponse> ListAllFulfillmentOrdersWithHttpInfo(DateTime? queryStartDate = null, string nextToken = null)
         {
 
             var localVarPath = "/fba/outbound/2020-07-01/fulfillmentOrders";
@@ -2264,11 +2263,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2278,7 +2277,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListAllFulfillmentOrdersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListAllFulfillmentOrdersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListAllFulfillmentOrdersResponse)));
+                (ListAllFulfillmentOrdersResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListAllFulfillmentOrdersResponse)));
         }
 
         /// <summary>
@@ -2288,10 +2287,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
         /// <param name="nextToken">A string token returned in the response to your previous request. (optional)</param>
         /// <returns>Task of ListAllFulfillmentOrdersResponse</returns>
-        public async System.Threading.Tasks.Task<ListAllFulfillmentOrdersResponse> ListAllFulfillmentOrdersAsync (DateTime? queryStartDate = null, string nextToken = null)
+        public async System.Threading.Tasks.Task<ListAllFulfillmentOrdersResponse> ListAllFulfillmentOrdersAsync(DateTime? queryStartDate = null, string nextToken = null)
         {
-             ApiResponse<ListAllFulfillmentOrdersResponse> localVarResponse = await ListAllFulfillmentOrdersAsyncWithHttpInfo(queryStartDate, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<ListAllFulfillmentOrdersResponse> localVarResponse = await ListAllFulfillmentOrdersAsyncWithHttpInfo(queryStartDate, nextToken);
+            return localVarResponse.Data;
 
         }
 
@@ -2302,7 +2301,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
         /// <param name="nextToken">A string token returned in the response to your previous request. (optional)</param>
         /// <returns>Task of ApiResponse (ListAllFulfillmentOrdersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListAllFulfillmentOrdersResponse>> ListAllFulfillmentOrdersAsyncWithHttpInfo (DateTime? queryStartDate = null, string nextToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListAllFulfillmentOrdersResponse>> ListAllFulfillmentOrdersAsyncWithHttpInfo(DateTime? queryStartDate = null, string nextToken = null)
         {
 
             var localVarPath = "/fba/outbound/2020-07-01/fulfillmentOrders";
@@ -2332,11 +2331,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2346,7 +2345,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListAllFulfillmentOrdersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListAllFulfillmentOrdersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListAllFulfillmentOrdersResponse)));
+                (ListAllFulfillmentOrdersResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListAllFulfillmentOrdersResponse)));
         }
 
         /// <summary>
@@ -2358,10 +2357,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)</param>
         /// <param name="language">The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)</param>
         /// <returns>ListReturnReasonCodesResponse</returns>
-        public ListReturnReasonCodesResponse ListReturnReasonCodes (string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null)
+        public ListReturnReasonCodesResponse ListReturnReasonCodes(string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null)
         {
-             ApiResponse<ListReturnReasonCodesResponse> localVarResponse = ListReturnReasonCodesWithHttpInfo(sellerSku, marketplaceId, sellerFulfillmentOrderId, language);
-             return localVarResponse.Data;
+            ApiResponse<ListReturnReasonCodesResponse> localVarResponse = ListReturnReasonCodesWithHttpInfo(sellerSku, marketplaceId, sellerFulfillmentOrderId, language);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2373,7 +2372,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)</param>
         /// <param name="language">The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)</param>
         /// <returns>ApiResponse of ListReturnReasonCodesResponse</returns>
-        public ApiResponse< ListReturnReasonCodesResponse > ListReturnReasonCodesWithHttpInfo (string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null)
+        public ApiResponse<ListReturnReasonCodesResponse> ListReturnReasonCodesWithHttpInfo(string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null)
         {
             // verify the required parameter 'sellerSku' is set
             if (sellerSku == null)
@@ -2408,11 +2407,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2422,7 +2421,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListReturnReasonCodesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListReturnReasonCodesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListReturnReasonCodesResponse)));
+                (ListReturnReasonCodesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListReturnReasonCodesResponse)));
         }
 
         /// <summary>
@@ -2434,10 +2433,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)</param>
         /// <param name="language">The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)</param>
         /// <returns>Task of ListReturnReasonCodesResponse</returns>
-        public async System.Threading.Tasks.Task<ListReturnReasonCodesResponse> ListReturnReasonCodesAsync (string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null)
+        public async System.Threading.Tasks.Task<ListReturnReasonCodesResponse> ListReturnReasonCodesAsync(string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null)
         {
-             ApiResponse<ListReturnReasonCodesResponse> localVarResponse = await ListReturnReasonCodesAsyncWithHttpInfo(sellerSku, marketplaceId, sellerFulfillmentOrderId, language);
-             return localVarResponse.Data;
+            ApiResponse<ListReturnReasonCodesResponse> localVarResponse = await ListReturnReasonCodesAsyncWithHttpInfo(sellerSku, marketplaceId, sellerFulfillmentOrderId, language);
+            return localVarResponse.Data;
 
         }
 
@@ -2450,7 +2449,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)</param>
         /// <param name="language">The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)</param>
         /// <returns>Task of ApiResponse (ListReturnReasonCodesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ListReturnReasonCodesResponse>> ListReturnReasonCodesAsyncWithHttpInfo (string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ListReturnReasonCodesResponse>> ListReturnReasonCodesAsyncWithHttpInfo(string sellerSku, string marketplaceId = null, string sellerFulfillmentOrderId = null, string language = null)
         {
             // verify the required parameter 'sellerSku' is set
             if (sellerSku == null)
@@ -2485,11 +2484,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2499,7 +2498,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<ListReturnReasonCodesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ListReturnReasonCodesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListReturnReasonCodesResponse)));
+                (ListReturnReasonCodesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListReturnReasonCodesResponse)));
         }
 
         /// <summary>
@@ -2509,10 +2508,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <param name="body">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>SubmitFulfillmentOrderStatusUpdateResponse</returns>
-        public SubmitFulfillmentOrderStatusUpdateResponse SubmitFulfillmentOrderStatusUpdate (string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body)
+        public SubmitFulfillmentOrderStatusUpdateResponse SubmitFulfillmentOrderStatusUpdate(string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body)
         {
-             ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse> localVarResponse = SubmitFulfillmentOrderStatusUpdateWithHttpInfo(sellerFulfillmentOrderId, body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse> localVarResponse = SubmitFulfillmentOrderStatusUpdateWithHttpInfo(sellerFulfillmentOrderId, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2522,7 +2521,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <param name="body">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>ApiResponse of SubmitFulfillmentOrderStatusUpdateResponse</returns>
-        public ApiResponse< SubmitFulfillmentOrderStatusUpdateResponse > SubmitFulfillmentOrderStatusUpdateWithHttpInfo (string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body)
+        public ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse> SubmitFulfillmentOrderStatusUpdateWithHttpInfo(string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body)
         {
             // verify the required parameter 'sellerFulfillmentOrderId' is set
             if (sellerFulfillmentOrderId == null)
@@ -2565,11 +2564,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2579,7 +2578,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitFulfillmentOrderStatusUpdateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitFulfillmentOrderStatusUpdateResponse)));
+                (SubmitFulfillmentOrderStatusUpdateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitFulfillmentOrderStatusUpdateResponse)));
         }
 
         /// <summary>
@@ -2589,10 +2588,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <param name="body">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of SubmitFulfillmentOrderStatusUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<SubmitFulfillmentOrderStatusUpdateResponse> SubmitFulfillmentOrderStatusUpdateAsync (string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body)
+        public async System.Threading.Tasks.Task<SubmitFulfillmentOrderStatusUpdateResponse> SubmitFulfillmentOrderStatusUpdateAsync(string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body)
         {
-             ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse> localVarResponse = await SubmitFulfillmentOrderStatusUpdateAsyncWithHttpInfo(sellerFulfillmentOrderId, body);
-             return localVarResponse.Data;
+            ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse> localVarResponse = await SubmitFulfillmentOrderStatusUpdateAsyncWithHttpInfo(sellerFulfillmentOrderId, body);
+            return localVarResponse.Data;
 
         }
 
@@ -2603,7 +2602,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <param name="body">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of ApiResponse (SubmitFulfillmentOrderStatusUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse>> SubmitFulfillmentOrderStatusUpdateAsyncWithHttpInfo (string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse>> SubmitFulfillmentOrderStatusUpdateAsyncWithHttpInfo(string sellerFulfillmentOrderId, SubmitFulfillmentOrderStatusUpdateRequest body)
         {
             // verify the required parameter 'sellerFulfillmentOrderId' is set
             if (sellerFulfillmentOrderId == null)
@@ -2646,11 +2645,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2660,7 +2659,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SubmitFulfillmentOrderStatusUpdateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubmitFulfillmentOrderStatusUpdateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitFulfillmentOrderStatusUpdateResponse)));
+                (SubmitFulfillmentOrderStatusUpdateResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubmitFulfillmentOrderStatusUpdateResponse)));
         }
 
         /// <summary>
@@ -2670,10 +2669,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>UpdateFulfillmentOrderResponse</returns>
-        public UpdateFulfillmentOrderResponse UpdateFulfillmentOrder (UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
+        public UpdateFulfillmentOrderResponse UpdateFulfillmentOrder(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
         {
-             ApiResponse<UpdateFulfillmentOrderResponse> localVarResponse = UpdateFulfillmentOrderWithHttpInfo(body, sellerFulfillmentOrderId);
-             return localVarResponse.Data;
+            ApiResponse<UpdateFulfillmentOrderResponse> localVarResponse = UpdateFulfillmentOrderWithHttpInfo(body, sellerFulfillmentOrderId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2683,7 +2682,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>ApiResponse of UpdateFulfillmentOrderResponse</returns>
-        public ApiResponse< UpdateFulfillmentOrderResponse > UpdateFulfillmentOrderWithHttpInfo (UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
+        public ApiResponse<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderWithHttpInfo(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2726,11 +2725,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2740,7 +2739,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<UpdateFulfillmentOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UpdateFulfillmentOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateFulfillmentOrderResponse)));
+                (UpdateFulfillmentOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateFulfillmentOrderResponse)));
         }
 
         /// <summary>
@@ -2750,10 +2749,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of UpdateFulfillmentOrderResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderAsync (UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
+        public async System.Threading.Tasks.Task<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderAsync(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
         {
-             ApiResponse<UpdateFulfillmentOrderResponse> localVarResponse = await UpdateFulfillmentOrderAsyncWithHttpInfo(body, sellerFulfillmentOrderId);
-             return localVarResponse.Data;
+            ApiResponse<UpdateFulfillmentOrderResponse> localVarResponse = await UpdateFulfillmentOrderAsyncWithHttpInfo(body, sellerFulfillmentOrderId);
+            return localVarResponse.Data;
 
         }
 
@@ -2764,7 +2763,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of ApiResponse (UpdateFulfillmentOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UpdateFulfillmentOrderResponse>> UpdateFulfillmentOrderAsyncWithHttpInfo (UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
+        public async System.Threading.Tasks.Task<ApiResponse<UpdateFulfillmentOrderResponse>> UpdateFulfillmentOrderAsyncWithHttpInfo(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2807,11 +2806,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2821,7 +2820,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<UpdateFulfillmentOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UpdateFulfillmentOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateFulfillmentOrderResponse)));
+                (UpdateFulfillmentOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateFulfillmentOrderResponse)));
         }
 
 
@@ -2835,17 +2834,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public FbaOutboundApi Build() 
+            public FbaOutboundApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

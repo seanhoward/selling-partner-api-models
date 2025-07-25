@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,26 +9,21 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
     /// <summary>
-    /// Contains the list of programs that are associated with an item.  Possible programs are:  - **Subscribe and Save**: Offers recurring, scheduled deliveries to Amazon customers and Amazon Business customers for their frequently ordered products.
+    /// Contains the list of programs that Amazon associates with an item.  Possible programs are:  - **Subscribe and Save**: Offers recurring, scheduled deliveries to Amazon customers and Amazon Business customers for their frequently ordered products. - **FBM Ship+**: Unlocks expedited shipping without the extra cost. Helps you to provide accurate and fast delivery dates to Amazon customers. You also receive protection from late deliveries, a discount on expedited shipping rates, and cash back when you ship.
     /// </summary>
     [DataContract]
-    public partial class AmazonPrograms :  IEquatable<AmazonPrograms>, IValidatableObject
+    public partial class AmazonPrograms : IEquatable<AmazonPrograms>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AmazonPrograms" /> class.
@@ -38,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
         /// <summary>
         /// Initializes a new instance of the <see cref="AmazonPrograms" /> class.
         /// </summary>
-        /// <param name="programs">A list of the programs that are associated with the specified order item.  **Possible values**: &#x60;SUBSCRIBE_AND_SAVE&#x60; (required).</param>
+        /// <param name="programs">A list of the programs that Amazon associates with the order item.  **Possible values**: &#x60;SUBSCRIBE_AND_SAVE&#x60;, &#x60;FBM_SHIP_PLUS&#x60; (required).</param>
         public AmazonPrograms(List<string> programs = default)
         {
             // to ensure "programs" is required (not null)
@@ -51,12 +46,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
                 this.Programs = programs;
             }
         }
-        
+
         /// <summary>
-        /// A list of the programs that are associated with the specified order item.  **Possible values**: &#x60;SUBSCRIBE_AND_SAVE&#x60;
+        /// A list of the programs that Amazon associates with the order item.  **Possible values**: &#x60;SUBSCRIBE_AND_SAVE&#x60;, &#x60;FBM_SHIP_PLUS&#x60;
         /// </summary>
-        /// <value>A list of the programs that are associated with the specified order item.  **Possible values**: &#x60;SUBSCRIBE_AND_SAVE&#x60;</value>
-        [DataMember(Name="Programs", EmitDefaultValue=false)]
+        /// <value>A list of the programs that Amazon associates with the order item.  **Possible values**: &#x60;SUBSCRIBE_AND_SAVE&#x60;, &#x60;FBM_SHIP_PLUS&#x60;</value>
+        [DataMember(Name = "Programs", EmitDefaultValue = false)]
         public List<string> Programs { get; set; }
 
         /// <summary>
@@ -71,7 +66,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +96,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Programs == input.Programs ||
                     this.Programs != null &&

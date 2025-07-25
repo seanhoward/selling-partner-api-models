@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Range capacity entity where each entry has a capacity type and corresponding slots.
     /// </summary>
     [DataContract]
-    public partial class RangeCapacity :  IEquatable<RangeCapacity>, IValidatableObject
+    public partial class RangeCapacity : IEquatable<RangeCapacity>, IValidatableObject
     {
         /// <summary>
         /// Capacity type corresponding to the slots.
         /// </summary>
         /// <value>Capacity type corresponding to the slots.</value>
-        [DataMember(Name="capacityType", EmitDefaultValue=false)]
+        [DataMember(Name = "capacityType", EmitDefaultValue = false)]
         public CapacityType? CapacityType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="RangeCapacity" /> class.
@@ -46,13 +40,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.CapacityType = capacityType;
             this.Slots = slots;
         }
-        
+
 
         /// <summary>
         /// Array of capacity slots in range slot format.
         /// </summary>
         /// <value>Array of capacity slots in range slot format.</value>
-        [DataMember(Name="slots", EmitDefaultValue=false)]
+        [DataMember(Name = "slots", EmitDefaultValue = false)]
         public List<RangeSlot> Slots { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CapacityType == input.CapacityType ||
                     (this.CapacityType != null &&
                     this.CapacityType.Equals(input.CapacityType))
-                ) && 
+                ) &&
                 (
                     this.Slots == input.Slots ||
                     this.Slots != null &&

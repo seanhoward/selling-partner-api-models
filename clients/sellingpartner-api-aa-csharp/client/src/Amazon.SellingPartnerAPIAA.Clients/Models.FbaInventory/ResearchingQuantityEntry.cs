@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// The misplaced or warehouse damaged inventory that is actively being confirmed at our fulfillment centers.
     /// </summary>
     [DataContract]
-    public partial class ResearchingQuantityEntry :  IEquatable<ResearchingQuantityEntry>, IValidatableObject
+    public partial class ResearchingQuantityEntry : IEquatable<ResearchingQuantityEntry>, IValidatableObject
     {
         /// <summary>
         /// The duration of the research.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         [JsonConverter(typeof(StringEnumConverter))]
         public enum NameEnum
         {
-            
+
             /// <summary>
             /// Enum ResearchingQuantityInShortTerm for value: researchingQuantityInShortTerm
             /// </summary>
             [EnumMember(Value = "researchingQuantityInShortTerm")]
             ResearchingQuantityInShortTerm = 1,
-            
+
             /// <summary>
             /// Enum ResearchingQuantityInMidTerm for value: researchingQuantityInMidTerm
             /// </summary>
             [EnumMember(Value = "researchingQuantityInMidTerm")]
             ResearchingQuantityInMidTerm = 2,
-            
+
             /// <summary>
             /// Enum ResearchingQuantityInLongTerm for value: researchingQuantityInLongTerm
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
         /// The duration of the research.
         /// </summary>
         /// <value>The duration of the research.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public NameEnum Name { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ResearchingQuantityEntry" /> class.
@@ -94,13 +89,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
                 this.Quantity = quantity;
             }
         }
-        
+
 
         /// <summary>
         /// The number of units.
         /// </summary>
         /// <value>The number of units.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
@@ -116,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -146,12 +141,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&

@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// The Amazon fulfillment center address and warehouse ID.
     /// </summary>
     [DataContract]
-    public partial class ShipmentDestination :  IEquatable<ShipmentDestination>, IValidatableObject
+    public partial class ShipmentDestination : IEquatable<ShipmentDestination>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDestination" /> class.
@@ -55,26 +49,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.Address = address;
             this.WarehouseId = warehouseId;
         }
-        
+
         /// <summary>
         /// The address the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.
         /// </summary>
         /// <value>The address the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.</value>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
         /// <summary>
         /// The type of destination for this shipment. Possible values: &#x60;AMAZON_OPTIMIZED&#x60;, &#x60;AMAZON_WAREHOUSE&#x60;.
         /// </summary>
         /// <value>The type of destination for this shipment. Possible values: &#x60;AMAZON_OPTIMIZED&#x60;, &#x60;AMAZON_WAREHOUSE&#x60;.</value>
-        [DataMember(Name="destinationType", EmitDefaultValue=false)]
+        [DataMember(Name = "destinationType", EmitDefaultValue = false)]
         public string DestinationType { get; set; }
 
         /// <summary>
         /// The warehouse that the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.
         /// </summary>
         /// <value>The warehouse that the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.</value>
-        [DataMember(Name="warehouseId", EmitDefaultValue=false)]
+        [DataMember(Name = "warehouseId", EmitDefaultValue = false)]
         public string WarehouseId { get; set; }
 
         /// <summary>
@@ -91,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +115,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
-                ) && 
+                ) &&
                 (
                     this.DestinationType == input.DestinationType ||
                     (this.DestinationType != null &&
                     this.DestinationType.Equals(input.DestinationType))
-                ) && 
+                ) &&
                 (
                     this.WarehouseId == input.WarehouseId ||
                     (this.WarehouseId != null &&
@@ -166,27 +160,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DestinationType (string) maxLength
-            if(this.DestinationType != null && this.DestinationType.Length > 1024)
+            if (this.DestinationType != null && this.DestinationType.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for DestinationType, length must be less than 1024.", new [] { "DestinationType" });
+                yield return new ValidationResult("Invalid value for DestinationType, length must be less than 1024.", new[] { "DestinationType" });
             }
 
             // DestinationType (string) minLength
-            if(this.DestinationType != null && this.DestinationType.Length < 1)
+            if (this.DestinationType != null && this.DestinationType.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for DestinationType, length must be greater than 1.", new [] { "DestinationType" });
+                yield return new ValidationResult("Invalid value for DestinationType, length must be greater than 1.", new[] { "DestinationType" });
             }
 
             // WarehouseId (string) maxLength
-            if(this.WarehouseId != null && this.WarehouseId.Length > 1024)
+            if (this.WarehouseId != null && this.WarehouseId.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for WarehouseId, length must be less than 1024.", new [] { "WarehouseId" });
+                yield return new ValidationResult("Invalid value for WarehouseId, length must be less than 1024.", new[] { "WarehouseId" });
             }
 
             // WarehouseId (string) minLength
-            if(this.WarehouseId != null && this.WarehouseId.Length < 1)
+            if (this.WarehouseId != null && this.WarehouseId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for WarehouseId, length must be greater than 1.", new [] { "WarehouseId" });
+                yield return new ValidationResult("Invalid value for WarehouseId, length must be greater than 1.", new[] { "WarehouseId" });
             }
 
             yield break;

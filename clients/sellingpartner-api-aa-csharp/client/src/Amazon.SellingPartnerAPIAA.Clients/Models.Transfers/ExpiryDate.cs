@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
     /// The expiration date of the card used for payment. If the payment method is not &#x60;card&#x60;, the expiration date is &#x60;null&#x60;.
     /// </summary>
     [DataContract]
-    public partial class ExpiryDate :  IEquatable<ExpiryDate>, IValidatableObject
+    public partial class ExpiryDate : IEquatable<ExpiryDate>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExpiryDate" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             this.Month = month;
             this.Year = year;
         }
-        
+
         /// <summary>
         /// The month the card expires expressed as a number from &#x60;1&#x60; to &#x60;12&#x60;.
         /// </summary>
         /// <value>The month the card expires expressed as a number from &#x60;1&#x60; to &#x60;12&#x60;.</value>
-        [DataMember(Name="month", EmitDefaultValue=false)]
+        [DataMember(Name = "month", EmitDefaultValue = false)]
         public string Month { get; set; }
 
         /// <summary>
         /// Year
         /// </summary>
         /// <value>Year</value>
-        [DataMember(Name="year", EmitDefaultValue=false)]
+        [DataMember(Name = "year", EmitDefaultValue = false)]
         public string Year { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Transfers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Month == input.Month ||
                     (this.Month != null &&
                     this.Month.Equals(input.Month))
-                ) && 
+                ) &&
                 (
                     this.Year == input.Year ||
                     (this.Year != null &&

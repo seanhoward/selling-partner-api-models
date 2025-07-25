@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Vendor Details as part of Label response.
     /// </summary>
     [DataContract]
-    public partial class VendorDetails :  IEquatable<VendorDetails>, IValidatableObject
+    public partial class VendorDetails : IEquatable<VendorDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="VendorDetails" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.SellingParty = sellingParty;
             this.VendorShipmentIdentifier = vendorShipmentIdentifier;
         }
-        
+
         /// <summary>
         /// Name/Address and tax details of the selling party.
         /// </summary>
         /// <value>Name/Address and tax details of the selling party.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// Unique vendor shipment id which is not used in last 365 days
         /// </summary>
         /// <value>Unique vendor shipment id which is not used in last 365 days</value>
-        [DataMember(Name="vendorShipmentIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorShipmentIdentifier", EmitDefaultValue = false)]
         public string VendorShipmentIdentifier { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.VendorShipmentIdentifier == input.VendorShipmentIdentifier ||
                     (this.VendorShipmentIdentifier != null &&

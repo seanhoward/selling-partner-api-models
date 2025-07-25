@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The outbound capability of a supply source.
     /// </summary>
     [DataContract]
-    public partial class OutboundCapability :  IEquatable<OutboundCapability>, IValidatableObject
+    public partial class OutboundCapability : IEquatable<OutboundCapability>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OutboundCapability" /> class.
@@ -46,35 +39,35 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             this.DeliveryChannel = deliveryChannel;
             this.PickupChannel = pickupChannel;
         }
-        
+
         /// <summary>
         /// Gets or Sets IsSupported
         /// </summary>
-        [DataMember(Name="isSupported", EmitDefaultValue=false)]
+        [DataMember(Name = "isSupported", EmitDefaultValue = false)]
         public bool? IsSupported { get; set; }
 
         /// <summary>
         /// Gets or Sets OperationalConfiguration
         /// </summary>
-        [DataMember(Name="operationalConfiguration", EmitDefaultValue=false)]
+        [DataMember(Name = "operationalConfiguration", EmitDefaultValue = false)]
         public OperationalConfiguration OperationalConfiguration { get; set; }
 
         /// <summary>
         /// Gets or Sets ReturnLocation
         /// </summary>
-        [DataMember(Name="returnLocation", EmitDefaultValue=false)]
+        [DataMember(Name = "returnLocation", EmitDefaultValue = false)]
         public ReturnLocation ReturnLocation { get; set; }
 
         /// <summary>
         /// Gets or Sets DeliveryChannel
         /// </summary>
-        [DataMember(Name="deliveryChannel", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryChannel", EmitDefaultValue = false)]
         public DeliveryChannel DeliveryChannel { get; set; }
 
         /// <summary>
         /// Gets or Sets PickupChannel
         /// </summary>
-        [DataMember(Name="pickupChannel", EmitDefaultValue=false)]
+        [DataMember(Name = "pickupChannel", EmitDefaultValue = false)]
         public PickupChannel PickupChannel { get; set; }
 
         /// <summary>
@@ -93,7 +86,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -123,27 +116,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IsSupported == input.IsSupported ||
                     (this.IsSupported != null &&
                     this.IsSupported.Equals(input.IsSupported))
-                ) && 
+                ) &&
                 (
                     this.OperationalConfiguration == input.OperationalConfiguration ||
                     (this.OperationalConfiguration != null &&
                     this.OperationalConfiguration.Equals(input.OperationalConfiguration))
-                ) && 
+                ) &&
                 (
                     this.ReturnLocation == input.ReturnLocation ||
                     (this.ReturnLocation != null &&
                     this.ReturnLocation.Equals(input.ReturnLocation))
-                ) && 
+                ) &&
                 (
                     this.DeliveryChannel == input.DeliveryChannel ||
                     (this.DeliveryChannel != null &&
                     this.DeliveryChannel.Equals(input.DeliveryChannel))
-                ) && 
+                ) &&
                 (
                     this.PickupChannel == input.PickupChannel ||
                     (this.PickupChannel != null &&

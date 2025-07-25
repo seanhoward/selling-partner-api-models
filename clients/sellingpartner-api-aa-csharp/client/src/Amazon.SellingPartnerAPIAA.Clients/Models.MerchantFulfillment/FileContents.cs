@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// The document data and checksum.
     /// </summary>
     [DataContract]
-    public partial class FileContents :  IEquatable<FileContents>, IValidatableObject
+    public partial class FileContents : IEquatable<FileContents>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets FileType
         /// </summary>
-        [DataMember(Name="FileType", EmitDefaultValue=false)]
+        [DataMember(Name = "FileType", EmitDefaultValue = false)]
         public FileType FileType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FileContents" /> class.
@@ -76,12 +70,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                 this.Checksum = checksum;
             }
         }
-        
+
         /// <summary>
         /// Data for printing labels encoded into a Base64, GZip-compressed string.
         /// </summary>
         /// <value>Data for printing labels encoded into a Base64, GZip-compressed string.</value>
-        [DataMember(Name="Contents", EmitDefaultValue=false)]
+        [DataMember(Name = "Contents", EmitDefaultValue = false)]
         public string Contents { get; set; }
 
 
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// An MD5 hash to validate the PDF document data, in the form of a Base64 string.
         /// </summary>
         /// <value>An MD5 hash to validate the PDF document data, in the form of a Base64 string.</value>
-        [DataMember(Name="Checksum", EmitDefaultValue=false)]
+        [DataMember(Name = "Checksum", EmitDefaultValue = false)]
         public string Checksum { get; set; }
 
         /// <summary>
@@ -106,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -136,17 +130,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Contents == input.Contents ||
                     (this.Contents != null &&
                     this.Contents.Equals(input.Contents))
-                ) && 
+                ) &&
                 (
                     this.FileType == input.FileType ||
                     (this.FileType != null &&
                     this.FileType.Equals(input.FileType))
-                ) && 
+                ) &&
                 (
                     this.Checksum == input.Checksum ||
                     (this.Checksum != null &&

@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The number of Amazon Points offered with the purchase of an item, and their monetary value.
     /// </summary>
     [DataContract]
-    public partial class PointsGrantedDetail :  IEquatable<PointsGrantedDetail>, IValidatableObject
+    public partial class PointsGrantedDetail : IEquatable<PointsGrantedDetail>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PointsGrantedDetail" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.PointsNumber = pointsNumber;
             this.PointsMonetaryValue = pointsMonetaryValue;
         }
-        
+
         /// <summary>
         /// The number of Amazon Points granted with the purchase of an item.
         /// </summary>
         /// <value>The number of Amazon Points granted with the purchase of an item.</value>
-        [DataMember(Name="PointsNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "PointsNumber", EmitDefaultValue = false)]
         public int? PointsNumber { get; set; }
 
         /// <summary>
         /// The monetary value of the Amazon Points granted.
         /// </summary>
         /// <value>The monetary value of the Amazon Points granted.</value>
-        [DataMember(Name="PointsMonetaryValue", EmitDefaultValue=false)]
+        [DataMember(Name = "PointsMonetaryValue", EmitDefaultValue = false)]
         public Money PointsMonetaryValue { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PointsNumber == input.PointsNumber ||
                     (this.PointsNumber != null &&
                     this.PointsNumber.Equals(input.PointsNumber))
-                ) && 
+                ) &&
                 (
                     this.PointsMonetaryValue == input.PointsMonetaryValue ||
                     (this.PointsMonetaryValue != null &&

@@ -1,7 +1,7 @@
 /* 
  * The Selling Partner API for Sellers
  *
- * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
+ * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
  *
  * OpenAPI spec version: v1
  * 
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
     /// The response schema for the &#x60;getAccount&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class Account :  IEquatable<Account>, IValidatableObject
+    public partial class Account : IEquatable<Account>, IValidatableObject
     {
         /// <summary>
         /// The type of business registered for the seller account.
@@ -37,49 +32,49 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BusinessTypeEnum
         {
-            
+
             /// <summary>
             /// Enum CHARITY for value: CHARITY
             /// </summary>
             [EnumMember(Value = "CHARITY")]
             CHARITY = 1,
-            
+
             /// <summary>
             /// Enum CRAFTSMAN for value: CRAFTSMAN
             /// </summary>
             [EnumMember(Value = "CRAFTSMAN")]
             CRAFTSMAN = 2,
-            
+
             /// <summary>
             /// Enum NATURALPERSONCOMPANY for value: NATURAL_PERSON_COMPANY
             /// </summary>
             [EnumMember(Value = "NATURAL_PERSON_COMPANY")]
             NATURALPERSONCOMPANY = 3,
-            
+
             /// <summary>
             /// Enum PUBLICLISTED for value: PUBLIC_LISTED
             /// </summary>
             [EnumMember(Value = "PUBLIC_LISTED")]
             PUBLICLISTED = 4,
-            
+
             /// <summary>
             /// Enum PRIVATELIMITED for value: PRIVATE_LIMITED
             /// </summary>
             [EnumMember(Value = "PRIVATE_LIMITED")]
             PRIVATELIMITED = 5,
-            
+
             /// <summary>
             /// Enum SOLEPROPRIETORSHIP for value: SOLE_PROPRIETORSHIP
             /// </summary>
             [EnumMember(Value = "SOLE_PROPRIETORSHIP")]
             SOLEPROPRIETORSHIP = 6,
-            
+
             /// <summary>
             /// Enum STATEOWNED for value: STATE_OWNED
             /// </summary>
             [EnumMember(Value = "STATE_OWNED")]
             STATEOWNED = 7,
-            
+
             /// <summary>
             /// Enum INDIVIDUAL for value: INDIVIDUAL
             /// </summary>
@@ -91,7 +86,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// The type of business registered for the seller account.
         /// </summary>
         /// <value>The type of business registered for the seller account.</value>
-        [DataMember(Name="businessType", EmitDefaultValue=false)]
+        [DataMember(Name = "businessType", EmitDefaultValue = false)]
         public BusinessTypeEnum BusinessType { get; set; }
         /// <summary>
         /// The selling plan details.
@@ -100,13 +95,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SellingPlanEnum
         {
-            
+
             /// <summary>
             /// Enum PROFESSIONAL for value: PROFESSIONAL
             /// </summary>
             [EnumMember(Value = "PROFESSIONAL")]
             PROFESSIONAL = 1,
-            
+
             /// <summary>
             /// Enum INDIVIDUAL for value: INDIVIDUAL
             /// </summary>
@@ -118,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// The selling plan details.
         /// </summary>
         /// <value>The selling plan details.</value>
-        [DataMember(Name="sellingPlan", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingPlan", EmitDefaultValue = false)]
         public SellingPlanEnum SellingPlan { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Account" /> class.
@@ -165,11 +160,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             this.Business = business;
             this.PrimaryContact = primaryContact;
         }
-        
+
         /// <summary>
         /// Gets or Sets MarketplaceParticipationList
         /// </summary>
-        [DataMember(Name="marketplaceParticipationList", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceParticipationList", EmitDefaultValue = false)]
         public MarketplaceParticipationList MarketplaceParticipationList { get; set; }
 
 
@@ -177,13 +172,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
         /// <summary>
         /// Gets or Sets Business
         /// </summary>
-        [DataMember(Name="business", EmitDefaultValue=false)]
+        [DataMember(Name = "business", EmitDefaultValue = false)]
         public Business Business { get; set; }
 
         /// <summary>
         /// Gets or Sets PrimaryContact
         /// </summary>
-        [DataMember(Name="primaryContact", EmitDefaultValue=false)]
+        [DataMember(Name = "primaryContact", EmitDefaultValue = false)]
         public PrimaryContact PrimaryContact { get; set; }
 
         /// <summary>
@@ -202,7 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -232,27 +227,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Sellers
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceParticipationList == input.MarketplaceParticipationList ||
                     (this.MarketplaceParticipationList != null &&
                     this.MarketplaceParticipationList.Equals(input.MarketplaceParticipationList))
-                ) && 
+                ) &&
                 (
                     this.BusinessType == input.BusinessType ||
                     (this.BusinessType != null &&
                     this.BusinessType.Equals(input.BusinessType))
-                ) && 
+                ) &&
                 (
                     this.SellingPlan == input.SellingPlan ||
                     (this.SellingPlan != null &&
                     this.SellingPlan.Equals(input.SellingPlan))
-                ) && 
+                ) &&
                 (
                     this.Business == input.Business ||
                     (this.Business != null &&
                     this.Business.Equals(input.Business))
-                ) && 
+                ) &&
                 (
                     this.PrimaryContact == input.PrimaryContact ||
                     (this.PrimaryContact != null &&

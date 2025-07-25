@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Input for to be uploaded document.
     /// </summary>
     [DataContract]
-    public partial class ServiceUploadDocument :  IEquatable<ServiceUploadDocument>, IValidatableObject
+    public partial class ServiceUploadDocument : IEquatable<ServiceUploadDocument>, IValidatableObject
     {
         /// <summary>
         /// The content type of the to-be-uploaded file
@@ -37,37 +33,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ContentTypeEnum
         {
-            
+
             /// <summary>
             /// Enum TIFF for value: TIFF
             /// </summary>
             [EnumMember(Value = "TIFF")]
             TIFF = 1,
-            
+
             /// <summary>
             /// Enum JPG for value: JPG
             /// </summary>
             [EnumMember(Value = "JPG")]
             JPG = 2,
-            
+
             /// <summary>
             /// Enum PNG for value: PNG
             /// </summary>
             [EnumMember(Value = "PNG")]
             PNG = 3,
-            
+
             /// <summary>
             /// Enum JPEG for value: JPEG
             /// </summary>
             [EnumMember(Value = "JPEG")]
             JPEG = 4,
-            
+
             /// <summary>
             /// Enum GIF for value: GIF
             /// </summary>
             [EnumMember(Value = "GIF")]
             GIF = 5,
-            
+
             /// <summary>
             /// Enum PDF for value: PDF
             /// </summary>
@@ -79,7 +75,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// The content type of the to-be-uploaded file
         /// </summary>
         /// <value>The content type of the to-be-uploaded file</value>
-        [DataMember(Name="contentType", EmitDefaultValue=false)]
+        [DataMember(Name = "contentType", EmitDefaultValue = false)]
         public ContentTypeEnum ContentType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceUploadDocument" /> class.
@@ -114,20 +110,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             }
             this.ContentMD5 = contentMD5;
         }
-        
+
 
         /// <summary>
         /// The content length of the to-be-uploaded file
         /// </summary>
         /// <value>The content length of the to-be-uploaded file</value>
-        [DataMember(Name="contentLength", EmitDefaultValue=false)]
+        [DataMember(Name = "contentLength", EmitDefaultValue = false)]
         public decimal? ContentLength { get; set; }
 
         /// <summary>
         /// An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
         /// </summary>
         /// <value>An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.</value>
-        [DataMember(Name="contentMD5", EmitDefaultValue=false)]
+        [DataMember(Name = "contentMD5", EmitDefaultValue = false)]
         public string ContentMD5 { get; set; }
 
         /// <summary>
@@ -144,7 +140,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -174,17 +170,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContentType == input.ContentType ||
                     (this.ContentType != null &&
                     this.ContentType.Equals(input.ContentType))
-                ) && 
+                ) &&
                 (
                     this.ContentLength == input.ContentLength ||
                     (this.ContentLength != null &&
                     this.ContentLength.Equals(input.ContentLength))
-                ) && 
+                ) &&
                 (
                     this.ContentMD5 == input.ContentMD5 ||
                     (this.ContentMD5 != null &&
@@ -219,22 +215,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ContentLength (decimal?) maximum
-            if(this.ContentLength > (decimal?)5242880)
+            if (this.ContentLength > (decimal?)5242880)
             {
-                yield return new ValidationResult("Invalid value for ContentLength, must be a value less than or equal to 5242880.", new [] { "ContentLength" });
+                yield return new ValidationResult("Invalid value for ContentLength, must be a value less than or equal to 5242880.", new[] { "ContentLength" });
             }
 
             // ContentLength (decimal?) minimum
-            if(this.ContentLength < (decimal?)1)
+            if (this.ContentLength < (decimal?)1)
             {
-                yield return new ValidationResult("Invalid value for ContentLength, must be a value greater than or equal to 1.", new [] { "ContentLength" });
+                yield return new ValidationResult("Invalid value for ContentLength, must be a value greater than or equal to 1.", new[] { "ContentLength" });
             }
 
             // ContentMD5 (string) pattern
             Regex regexContentMD5 = new Regex(@"^[A-Za-z0-9\\\\+\/]{22}={2}$", RegexOptions.CultureInvariant);
             if (false == regexContentMD5.Match(this.ContentMD5).Success)
             {
-                yield return new ValidationResult("Invalid value for ContentMD5, must match a pattern of " + regexContentMD5, new [] { "ContentMD5" });
+                yield return new ValidationResult("Invalid value for ContentMD5, must match a pattern of " + regexContentMD5, new[] { "ContentMD5" });
             }
 
             yield break;

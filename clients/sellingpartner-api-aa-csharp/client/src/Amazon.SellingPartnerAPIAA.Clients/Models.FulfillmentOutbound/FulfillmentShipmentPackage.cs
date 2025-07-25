@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// Package information for a shipment in a fulfillment order.
     /// </summary>
     [DataContract]
-    public partial class FulfillmentShipmentPackage :  IEquatable<FulfillmentShipmentPackage>, IValidatableObject
+    public partial class FulfillmentShipmentPackage : IEquatable<FulfillmentShipmentPackage>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentShipmentPackage" /> class.
@@ -69,47 +63,47 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.LockerDetails = lockerDetails;
             this.DeliveryInformation = deliveryInformation;
         }
-        
+
         /// <summary>
         /// Identifies a package in a shipment.
         /// </summary>
         /// <value>Identifies a package in a shipment.</value>
-        [DataMember(Name="packageNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "packageNumber", EmitDefaultValue = false)]
         public int? PackageNumber { get; set; }
 
         /// <summary>
         /// Identifies the carrier who will deliver the shipment to the recipient.
         /// </summary>
         /// <value>Identifies the carrier who will deliver the shipment to the recipient.</value>
-        [DataMember(Name="carrierCode", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierCode", EmitDefaultValue = false)]
         public string CarrierCode { get; set; }
 
         /// <summary>
         /// The tracking number, if provided, can be used to obtain tracking and delivery information.
         /// </summary>
         /// <value>The tracking number, if provided, can be used to obtain tracking and delivery information.</value>
-        [DataMember(Name="trackingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingNumber", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
         /// <summary>
         /// The estimated arrival date and time of the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
         /// </summary>
         /// <value>The estimated arrival date and time of the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
-        [DataMember(Name="estimatedArrivalDate", EmitDefaultValue=false)]
+        [DataMember(Name = "estimatedArrivalDate", EmitDefaultValue = false)]
         public DateTime? EstimatedArrivalDate { get; set; }
 
         /// <summary>
         /// The locker details, if provided can be used to access locker delivery box.
         /// </summary>
         /// <value>The locker details, if provided can be used to access locker delivery box.</value>
-        [DataMember(Name="lockerDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "lockerDetails", EmitDefaultValue = false)]
         public LockerDetails LockerDetails { get; set; }
 
         /// <summary>
         /// The delivery information for the package. This information is available after the package is delivered.
         /// </summary>
         /// <value>The delivery information for the package. This information is available after the package is delivered.</value>
-        [DataMember(Name="deliveryInformation", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryInformation", EmitDefaultValue = false)]
         public DeliveryInformation DeliveryInformation { get; set; }
 
         /// <summary>
@@ -129,7 +123,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -159,32 +153,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PackageNumber == input.PackageNumber ||
                     (this.PackageNumber != null &&
                     this.PackageNumber.Equals(input.PackageNumber))
-                ) && 
+                ) &&
                 (
                     this.CarrierCode == input.CarrierCode ||
                     (this.CarrierCode != null &&
                     this.CarrierCode.Equals(input.CarrierCode))
-                ) && 
+                ) &&
                 (
                     this.TrackingNumber == input.TrackingNumber ||
                     (this.TrackingNumber != null &&
                     this.TrackingNumber.Equals(input.TrackingNumber))
-                ) && 
+                ) &&
                 (
                     this.EstimatedArrivalDate == input.EstimatedArrivalDate ||
                     (this.EstimatedArrivalDate != null &&
                     this.EstimatedArrivalDate.Equals(input.EstimatedArrivalDate))
-                ) && 
+                ) &&
                 (
                     this.LockerDetails == input.LockerDetails ||
                     (this.LockerDetails != null &&
                     this.LockerDetails.Equals(input.LockerDetails))
-                ) && 
+                ) &&
                 (
                     this.DeliveryInformation == input.DeliveryInformation ||
                     (this.DeliveryInformation != null &&

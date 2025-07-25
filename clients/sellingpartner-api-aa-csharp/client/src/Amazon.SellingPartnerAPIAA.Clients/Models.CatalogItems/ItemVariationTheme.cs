@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,50 +9,44 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.
+    /// The variation theme is a list of Amazon catalog item attributes that define the variation family.
     /// </summary>
     [DataContract]
-    public partial class ItemVariationTheme :  IEquatable<ItemVariationTheme>, IValidatableObject
+    public partial class ItemVariationTheme : IEquatable<ItemVariationTheme>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemVariationTheme" /> class.
         /// </summary>
-        /// <param name="attributes">Names of the Amazon catalog item attributes associated with the variation theme..</param>
-        /// <param name="theme">Variation theme indicating the combination of Amazon item catalog attributes that define the variation family..</param>
+        /// <param name="attributes">Names of the Amazon catalog item attributes that are associated with the variation theme..</param>
+        /// <param name="theme">Variation theme that indicates the combination of Amazon catalog item attributes that define the variation family..</param>
         public ItemVariationTheme(List<string> attributes = default, string theme = default)
         {
             this.Attributes = attributes;
             this.Theme = theme;
         }
-        
+
         /// <summary>
-        /// Names of the Amazon catalog item attributes associated with the variation theme.
+        /// Names of the Amazon catalog item attributes that are associated with the variation theme.
         /// </summary>
-        /// <value>Names of the Amazon catalog item attributes associated with the variation theme.</value>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        /// <value>Names of the Amazon catalog item attributes that are associated with the variation theme.</value>
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public List<string> Attributes { get; set; }
 
         /// <summary>
-        /// Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.
+        /// Variation theme that indicates the combination of Amazon catalog item attributes that define the variation family.
         /// </summary>
-        /// <value>Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.</value>
-        [DataMember(Name="theme", EmitDefaultValue=false)]
+        /// <value>Variation theme that indicates the combination of Amazon catalog item attributes that define the variation family.</value>
+        [DataMember(Name = "theme", EmitDefaultValue = false)]
         public string Theme { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Attributes == input.Attributes ||
                     this.Attributes != null &&
                     this.Attributes.SequenceEqual(input.Attributes)
-                ) && 
+                ) &&
                 (
                     this.Theme == input.Theme ||
                     (this.Theme != null &&

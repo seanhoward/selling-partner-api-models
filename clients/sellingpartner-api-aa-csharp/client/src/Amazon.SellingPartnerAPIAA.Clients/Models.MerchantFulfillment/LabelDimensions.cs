@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Dimensions for printing a shipping label.
     /// </summary>
     [DataContract]
-    public partial class LabelDimensions :  IEquatable<LabelDimensions>, IValidatableObject
+    public partial class LabelDimensions : IEquatable<LabelDimensions>, IValidatableObject
     {
         /// <summary>
         /// The unit of measurement.
         /// </summary>
         /// <value>The unit of measurement.</value>
-        [DataMember(Name="Unit", EmitDefaultValue=false)]
+        [DataMember(Name = "Unit", EmitDefaultValue = false)]
         public UnitOfLength Unit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelDimensions" /> class.
@@ -77,19 +71,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                 this.Unit = unit;
             }
         }
-        
+
         /// <summary>
         /// The length dimension.
         /// </summary>
         /// <value>The length dimension.</value>
-        [DataMember(Name="Length", EmitDefaultValue=false)]
+        [DataMember(Name = "Length", EmitDefaultValue = false)]
         public decimal? Length { get; set; }
 
         /// <summary>
         /// The width dimension.
         /// </summary>
         /// <value>The width dimension.</value>
-        [DataMember(Name="Width", EmitDefaultValue=false)]
+        [DataMember(Name = "Width", EmitDefaultValue = false)]
         public decimal? Width { get; set; }
 
 
@@ -107,7 +101,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -137,17 +131,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Length == input.Length ||
                     (this.Length != null &&
                     this.Length.Equals(input.Length))
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&
                     this.Width.Equals(input.Width))
-                ) && 
+                ) &&
                 (
                     this.Unit == input.Unit ||
                     (this.Unit != null &&

@@ -30,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Get the latest collection of vehicles
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="vehicleType">An identifier for vehicle type.</param>
         /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
@@ -44,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Get the latest collection of vehicles
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="vehicleType">An identifier for vehicle type.</param>
         /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
@@ -59,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Get the latest collection of vehicles
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="vehicleType">An identifier for vehicle type.</param>
         /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
@@ -73,7 +73,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <remarks>
         /// Get the latest collection of vehicles
         /// </remarks>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="vehicleType">An identifier for vehicle type.</param>
         /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
@@ -88,7 +88,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     /// </summary>
     public partial class AutomotiveApi : IAutomotiveApi
     {
-        private Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AutomotiveApi"/> class
@@ -96,10 +96,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public AutomotiveApi(Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration)
+        public AutomotiveApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -125,12 +125,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Amazon.SellingPartnerAPIAA.Clients.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -168,7 +168,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Get the latest collection of vehicles
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="vehicleType">An identifier for vehicle type.</param>
         /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
@@ -183,7 +183,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Get the latest collection of vehicles
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="vehicleType">An identifier for vehicle type.</param>
         /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
@@ -247,7 +247,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Get the latest collection of vehicles
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="vehicleType">An identifier for vehicle type.</param>
         /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
@@ -263,7 +263,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <summary>
         ///  Get the latest collection of vehicles
         /// </summary>
-        /// <exception cref="Amazon.SellingPartnerAPIAA.Clients.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="vehicleType">An identifier for vehicle type.</param>
         /// <param name="pageToken">A token to fetch a certain page when there are multiple pages worth of results. (optional)</param>
@@ -351,7 +351,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 }
 
 
-                Amazon.SellingPartnerAPIAA.Clients.Client.Configuration configuration = new Amazon.SellingPartnerAPIAA.Clients.Client.Configuration
+                Configuration configuration = new Configuration
                 {
                     AuthorizationCredentials = lwaAuthorizationCredentials,
                     RateLimitConfig = rateLimitConfiguration,

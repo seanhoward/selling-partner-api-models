@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandboxData
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
     /// A scenario test case response returned when the request is successful.
     /// </summary>
     [DataContract]
-    public partial class Scenario :  IEquatable<Scenario>, IValidatableObject
+    public partial class Scenario : IEquatable<Scenario>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Scenario" /> class.
@@ -61,19 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
                 this.Orders = orders;
             }
         }
-        
+
         /// <summary>
         /// An identifier that identifies the type of scenario that user can use for testing.
         /// </summary>
         /// <value>An identifier that identifies the type of scenario that user can use for testing.</value>
-        [DataMember(Name="scenarioId", EmitDefaultValue=false)]
+        [DataMember(Name = "scenarioId", EmitDefaultValue = false)]
         public string ScenarioId { get; set; }
 
         /// <summary>
         /// A list of orders that can be used by the caller to test each life cycle or scenario.
         /// </summary>
         /// <value>A list of orders that can be used by the caller to test each life cycle or scenario.</value>
-        [DataMember(Name="orders", EmitDefaultValue=false)]
+        [DataMember(Name = "orders", EmitDefaultValue = false)]
         public List<TestOrder> Orders { get; set; }
 
         /// <summary>
@@ -89,7 +84,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +114,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentSandb
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ScenarioId == input.ScenarioId ||
                     (this.ScenarioId != null &&
                     this.ScenarioId.Equals(input.ScenarioId))
-                ) && 
+                ) &&
                 (
                     this.Orders == input.Orders ||
                     this.Orders != null &&

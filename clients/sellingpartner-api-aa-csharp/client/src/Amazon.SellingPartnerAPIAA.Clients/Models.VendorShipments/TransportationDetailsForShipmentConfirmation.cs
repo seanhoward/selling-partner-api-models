@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Transportation details for this shipment.
     /// </summary>
     [DataContract]
-    public partial class TransportationDetailsForShipmentConfirmation :  IEquatable<TransportationDetailsForShipmentConfirmation>, IValidatableObject
+    public partial class TransportationDetailsForShipmentConfirmation : IEquatable<TransportationDetailsForShipmentConfirmation>, IValidatableObject
     {
         /// <summary>
         /// The mode of transportation for this shipment.
@@ -37,19 +31,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TransportationModeEnum
         {
-            
+
             /// <summary>
             /// Enum Road for value: Road
             /// </summary>
             [EnumMember(Value = "Road")]
             Road = 1,
-            
+
             /// <summary>
             /// Enum Air for value: Air
             /// </summary>
             [EnumMember(Value = "Air")]
             Air = 2,
-            
+
             /// <summary>
             /// Enum Ocean for value: Ocean
             /// </summary>
@@ -61,7 +55,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// The mode of transportation for this shipment.
         /// </summary>
         /// <value>The mode of transportation for this shipment.</value>
-        [DataMember(Name="transportationMode", EmitDefaultValue=false)]
+        [DataMember(Name = "transportationMode", EmitDefaultValue = false)]
         public TransportationModeEnum? TransportationMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TransportationDetailsForShipmentConfirmation" /> class.
@@ -77,19 +71,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.TransportationMode = transportationMode;
             this.BillOfLadingNumber = billOfLadingNumber;
         }
-        
+
         /// <summary>
         /// Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association). This field is mandatory for US, CA, MX shipment confirmations.
         /// </summary>
         /// <value>Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association). This field is mandatory for US, CA, MX shipment confirmations.</value>
-        [DataMember(Name="carrierScac", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierScac", EmitDefaultValue = false)]
         public string CarrierScac { get; set; }
 
         /// <summary>
         /// The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations.
         /// </summary>
         /// <value>The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations.</value>
-        [DataMember(Name="carrierShipmentReferenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierShipmentReferenceNumber", EmitDefaultValue = false)]
         public string CarrierShipmentReferenceNumber { get; set; }
 
 
@@ -97,7 +91,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
         /// </summary>
         /// <value>The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.</value>
-        [DataMember(Name="billOfLadingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "billOfLadingNumber", EmitDefaultValue = false)]
         public string BillOfLadingNumber { get; set; }
 
         /// <summary>
@@ -115,7 +109,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -145,22 +139,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CarrierScac == input.CarrierScac ||
                     (this.CarrierScac != null &&
                     this.CarrierScac.Equals(input.CarrierScac))
-                ) && 
+                ) &&
                 (
                     this.CarrierShipmentReferenceNumber == input.CarrierShipmentReferenceNumber ||
                     (this.CarrierShipmentReferenceNumber != null &&
                     this.CarrierShipmentReferenceNumber.Equals(input.CarrierShipmentReferenceNumber))
-                ) && 
+                ) &&
                 (
                     this.TransportationMode == input.TransportationMode ||
                     (this.TransportationMode != null &&
                     this.TransportationMode.Equals(input.TransportationMode))
-                ) && 
+                ) &&
                 (
                     this.BillOfLadingNumber == input.BillOfLadingNumber ||
                     (this.BillOfLadingNumber != null &&

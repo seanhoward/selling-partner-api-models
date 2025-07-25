@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// The scope of work for the order.
     /// </summary>
     [DataContract]
-    public partial class ScopeOfWork :  IEquatable<ScopeOfWork>, IValidatableObject
+    public partial class ScopeOfWork : IEquatable<ScopeOfWork>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ScopeOfWork" /> class.
@@ -44,33 +38,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.Quantity = quantity;
             this.RequiredSkills = requiredSkills;
         }
-        
+
         /// <summary>
         /// The Amazon Standard Identification Number (ASIN) of the service job.
         /// </summary>
         /// <value>The Amazon Standard Identification Number (ASIN) of the service job.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// The title of the service job.
         /// </summary>
         /// <value>The title of the service job.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// The number of service jobs.
         /// </summary>
         /// <value>The number of service jobs.</value>
-        [DataMember(Name="quantity", EmitDefaultValue=false)]
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public int? Quantity { get; set; }
 
         /// <summary>
         /// A list of skills required to perform the job.
         /// </summary>
         /// <value>A list of skills required to perform the job.</value>
-        [DataMember(Name="requiredSkills", EmitDefaultValue=false)]
+        [DataMember(Name = "requiredSkills", EmitDefaultValue = false)]
         public List<string> RequiredSkills { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +112,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
+                ) &&
                 (
                     this.RequiredSkills == input.RequiredSkills ||
                     this.RequiredSkills != null &&

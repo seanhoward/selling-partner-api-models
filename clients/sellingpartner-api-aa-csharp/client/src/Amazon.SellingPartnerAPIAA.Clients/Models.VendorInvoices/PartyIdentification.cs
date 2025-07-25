@@ -1,5 +1,5 @@
 /* 
- * Vendor Invoices v1
+ * Selling Partner API for Retail Procurement Payments
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
     /// Name, address and tax details of a party.
     /// </summary>
     [DataContract]
-    public partial class PartyIdentification :  IEquatable<PartyIdentification>, IValidatableObject
+    public partial class PartyIdentification : IEquatable<PartyIdentification>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PartyIdentification" /> class.
@@ -55,26 +50,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             this.Address = address;
             this.TaxRegistrationDetails = taxRegistrationDetails;
         }
-        
+
         /// <summary>
         /// Assigned identification for the party.
         /// </summary>
         /// <value>Assigned identification for the party.</value>
-        [DataMember(Name="partyId", EmitDefaultValue=false)]
+        [DataMember(Name = "partyId", EmitDefaultValue = false)]
         public string PartyId { get; set; }
 
         /// <summary>
         /// Identification of the party by address.
         /// </summary>
         /// <value>Identification of the party by address.</value>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
         /// <summary>
         /// Tax registration details of the party.
         /// </summary>
         /// <value>Tax registration details of the party.</value>
-        [DataMember(Name="taxRegistrationDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "taxRegistrationDetails", EmitDefaultValue = false)]
         public List<TaxRegistrationDetails> TaxRegistrationDetails { get; set; }
 
         /// <summary>
@@ -91,7 +86,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +116,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PartyId == input.PartyId ||
                     (this.PartyId != null &&
                     this.PartyId.Equals(input.PartyId))
-                ) && 
+                ) &&
                 (
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
-                ) && 
+                ) &&
                 (
                     this.TaxRegistrationDetails == input.TaxRegistrationDetails ||
                     this.TaxRegistrationDetails != null &&

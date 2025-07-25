@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
@@ -28,12 +22,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
     /// Summary for an AWD inbound shipment containing the shipment ID, which can be used to retrieve the actual shipment.
     /// </summary>
     [DataContract]
-    public partial class InboundShipmentSummary :  IEquatable<InboundShipmentSummary>, IValidatableObject
+    public partial class InboundShipmentSummary : IEquatable<InboundShipmentSummary>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets ShipmentStatus
         /// </summary>
-        [DataMember(Name="shipmentStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentStatus", EmitDefaultValue = false)]
         public InboundShipmentStatus ShipmentStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InboundShipmentSummary" /> class.
@@ -82,33 +76,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             this.ExternalReferenceId = externalReferenceId;
             this.UpdatedAt = updatedAt;
         }
-        
+
         /// <summary>
         /// Timestamp when the shipment was created.
         /// </summary>
         /// <value>Timestamp when the shipment was created.</value>
-        [DataMember(Name="createdAt", EmitDefaultValue=false)]
+        [DataMember(Name = "createdAt", EmitDefaultValue = false)]
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Optional client-provided reference ID that can be used to correlate this shipment with client resources. For example, to map this shipment to an internal bookkeeping order record.
         /// </summary>
         /// <value>Optional client-provided reference ID that can be used to correlate this shipment with client resources. For example, to map this shipment to an internal bookkeeping order record.</value>
-        [DataMember(Name="externalReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalReferenceId", EmitDefaultValue = false)]
         public string ExternalReferenceId { get; set; }
 
         /// <summary>
         /// The AWD inbound order ID that this inbound shipment belongs to.
         /// </summary>
         /// <value>The AWD inbound order ID that this inbound shipment belongs to.</value>
-        [DataMember(Name="orderId", EmitDefaultValue=false)]
+        [DataMember(Name = "orderId", EmitDefaultValue = false)]
         public string OrderId { get; set; }
 
         /// <summary>
         /// A unique shipment ID.
         /// </summary>
         /// <value>A unique shipment ID.</value>
-        [DataMember(Name="shipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentId", EmitDefaultValue = false)]
         public string ShipmentId { get; set; }
 
 
@@ -116,7 +110,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         /// Timestamp when the shipment was updated.
         /// </summary>
         /// <value>Timestamp when the shipment was updated.</value>
-        [DataMember(Name="updatedAt", EmitDefaultValue=false)]
+        [DataMember(Name = "updatedAt", EmitDefaultValue = false)]
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
@@ -136,7 +130,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -166,32 +160,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
+                ) &&
                 (
                     this.ExternalReferenceId == input.ExternalReferenceId ||
                     (this.ExternalReferenceId != null &&
                     this.ExternalReferenceId.Equals(input.ExternalReferenceId))
-                ) && 
+                ) &&
                 (
                     this.OrderId == input.OrderId ||
                     (this.OrderId != null &&
                     this.OrderId.Equals(input.OrderId))
-                ) && 
+                ) &&
                 (
                     this.ShipmentId == input.ShipmentId ||
                     (this.ShipmentId != null &&
                     this.ShipmentId.Equals(input.ShipmentId))
-                ) && 
+                ) &&
                 (
                     this.ShipmentStatus == input.ShipmentStatus ||
                     (this.ShipmentStatus != null &&
                     this.ShipmentStatus.Equals(input.ShipmentStatus))
-                ) && 
+                ) &&
                 (
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&
@@ -232,15 +226,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // OrderId (string) minLength
-            if(this.OrderId != null && this.OrderId.Length < 1)
+            if (this.OrderId != null && this.OrderId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for OrderId, length must be greater than 1.", new [] { "OrderId" });
+                yield return new ValidationResult("Invalid value for OrderId, length must be greater than 1.", new[] { "OrderId" });
             }
 
             // ShipmentId (string) minLength
-            if(this.ShipmentId != null && this.ShipmentId.Length < 1)
+            if (this.ShipmentId != null && this.ShipmentId.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 1.", new [] { "ShipmentId" });
+                yield return new ValidationResult("Invalid value for ShipmentId, length must be greater than 1.", new[] { "ShipmentId" });
             }
 
             yield break;

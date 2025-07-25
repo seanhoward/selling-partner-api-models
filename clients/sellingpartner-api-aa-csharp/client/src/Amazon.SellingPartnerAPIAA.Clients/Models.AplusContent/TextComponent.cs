@@ -1,7 +1,7 @@
 /* 
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * OpenAPI spec version: 2020-11-01
  * 
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
     /// Rich text content.
     /// </summary>
     [DataContract]
-    public partial class TextComponent :  IEquatable<TextComponent>, IValidatableObject
+    public partial class TextComponent : IEquatable<TextComponent>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TextComponent" /> class.
@@ -53,18 +47,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             }
             this.DecoratorSet = decoratorSet;
         }
-        
+
         /// <summary>
         /// The actual plain text.
         /// </summary>
         /// <value>The actual plain text.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>
         /// Gets or Sets DecoratorSet
         /// </summary>
-        [DataMember(Name="decoratorSet", EmitDefaultValue=false)]
+        [DataMember(Name = "decoratorSet", EmitDefaultValue = false)]
         public DecoratorSet DecoratorSet { get; set; }
 
         /// <summary>
@@ -80,7 +74,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -110,12 +104,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
+                ) &&
                 (
                     this.DecoratorSet == input.DecoratorSet ||
                     (this.DecoratorSet != null &&
@@ -148,15 +142,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.AplusContent
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Value (string) maxLength
-            if(this.Value != null && this.Value.Length > 10000)
+            if (this.Value != null && this.Value.Length > 10000)
             {
-                yield return new ValidationResult("Invalid value for Value, length must be less than 10000.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, length must be less than 10000.", new[] { "Value" });
             }
 
             // Value (string) minLength
-            if(this.Value != null && this.Value.Length < 1)
+            if (this.Value != null && this.Value.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Value, length must be greater than 1.", new [] { "Value" });
+                yield return new ValidationResult("Invalid value for Value, length must be greater than 1.", new[] { "Value" });
             }
 
             yield break;

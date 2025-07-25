@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
     /// The quantity of unfulfillable inventory.
     /// </summary>
     [DataContract]
-    public partial class UnfulfillableQuantity :  IEquatable<UnfulfillableQuantity>, IValidatableObject
+    public partial class UnfulfillableQuantity : IEquatable<UnfulfillableQuantity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UnfulfillableQuantity" /> class.
@@ -50,54 +43,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             this.DefectiveQuantity = defectiveQuantity;
             this.ExpiredQuantity = expiredQuantity;
         }
-        
+
         /// <summary>
         /// The total number of units in Amazon&#39;s fulfillment network in unsellable condition.
         /// </summary>
         /// <value>The total number of units in Amazon&#39;s fulfillment network in unsellable condition.</value>
-        [DataMember(Name="totalUnfulfillableQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "totalUnfulfillableQuantity", EmitDefaultValue = false)]
         public int? TotalUnfulfillableQuantity { get; set; }
 
         /// <summary>
         /// The number of units in customer damaged disposition.
         /// </summary>
         /// <value>The number of units in customer damaged disposition.</value>
-        [DataMember(Name="customerDamagedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "customerDamagedQuantity", EmitDefaultValue = false)]
         public int? CustomerDamagedQuantity { get; set; }
 
         /// <summary>
         /// The number of units in warehouse damaged disposition.
         /// </summary>
         /// <value>The number of units in warehouse damaged disposition.</value>
-        [DataMember(Name="warehouseDamagedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "warehouseDamagedQuantity", EmitDefaultValue = false)]
         public int? WarehouseDamagedQuantity { get; set; }
 
         /// <summary>
         /// The number of units in distributor damaged disposition.
         /// </summary>
         /// <value>The number of units in distributor damaged disposition.</value>
-        [DataMember(Name="distributorDamagedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "distributorDamagedQuantity", EmitDefaultValue = false)]
         public int? DistributorDamagedQuantity { get; set; }
 
         /// <summary>
         /// The number of units in carrier damaged disposition.
         /// </summary>
         /// <value>The number of units in carrier damaged disposition.</value>
-        [DataMember(Name="carrierDamagedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "carrierDamagedQuantity", EmitDefaultValue = false)]
         public int? CarrierDamagedQuantity { get; set; }
 
         /// <summary>
         /// The number of units in defective disposition.
         /// </summary>
         /// <value>The number of units in defective disposition.</value>
-        [DataMember(Name="defectiveQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "defectiveQuantity", EmitDefaultValue = false)]
         public int? DefectiveQuantity { get; set; }
 
         /// <summary>
         /// The number of units in expired disposition.
         /// </summary>
         /// <value>The number of units in expired disposition.</value>
-        [DataMember(Name="expiredQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "expiredQuantity", EmitDefaultValue = false)]
         public int? ExpiredQuantity { get; set; }
 
         /// <summary>
@@ -118,7 +111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -148,37 +141,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInventory
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TotalUnfulfillableQuantity == input.TotalUnfulfillableQuantity ||
                     (this.TotalUnfulfillableQuantity != null &&
                     this.TotalUnfulfillableQuantity.Equals(input.TotalUnfulfillableQuantity))
-                ) && 
+                ) &&
                 (
                     this.CustomerDamagedQuantity == input.CustomerDamagedQuantity ||
                     (this.CustomerDamagedQuantity != null &&
                     this.CustomerDamagedQuantity.Equals(input.CustomerDamagedQuantity))
-                ) && 
+                ) &&
                 (
                     this.WarehouseDamagedQuantity == input.WarehouseDamagedQuantity ||
                     (this.WarehouseDamagedQuantity != null &&
                     this.WarehouseDamagedQuantity.Equals(input.WarehouseDamagedQuantity))
-                ) && 
+                ) &&
                 (
                     this.DistributorDamagedQuantity == input.DistributorDamagedQuantity ||
                     (this.DistributorDamagedQuantity != null &&
                     this.DistributorDamagedQuantity.Equals(input.DistributorDamagedQuantity))
-                ) && 
+                ) &&
                 (
                     this.CarrierDamagedQuantity == input.CarrierDamagedQuantity ||
                     (this.CarrierDamagedQuantity != null &&
                     this.CarrierDamagedQuantity.Equals(input.CarrierDamagedQuantity))
-                ) && 
+                ) &&
                 (
                     this.DefectiveQuantity == input.DefectiveQuantity ||
                     (this.DefectiveQuantity != null &&
                     this.DefectiveQuantity.Equals(input.DefectiveQuantity))
-                ) && 
+                ) &&
                 (
                     this.ExpiredQuantity == input.ExpiredQuantity ||
                     (this.ExpiredQuantity != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Represents an individual item in an order, including item details, quantities, pricing, and backorder information.
     /// </summary>
     [DataContract]
-    public partial class OrderItem :  IEquatable<OrderItem>, IValidatableObject
+    public partial class OrderItem : IEquatable<OrderItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItem" /> class.
@@ -79,54 +73,54 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.NetCost = netCost;
             this.ListPrice = listPrice;
         }
-        
+
         /// <summary>
         /// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
         /// </summary>
         /// <value>Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.</value>
-        [DataMember(Name="itemSequenceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "itemSequenceNumber", EmitDefaultValue = false)]
         public string ItemSequenceNumber { get; set; }
 
         /// <summary>
         /// Amazon Standard Identification Number (ASIN) of an item.
         /// </summary>
         /// <value>Amazon Standard Identification Number (ASIN) of an item.</value>
-        [DataMember(Name="amazonProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "amazonProductIdentifier", EmitDefaultValue = false)]
         public string AmazonProductIdentifier { get; set; }
 
         /// <summary>
         /// The vendor selected product identification of the item.
         /// </summary>
         /// <value>The vendor selected product identification of the item.</value>
-        [DataMember(Name="vendorProductIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "vendorProductIdentifier", EmitDefaultValue = false)]
         public string VendorProductIdentifier { get; set; }
 
         /// <summary>
         /// Item quantity ordered.
         /// </summary>
         /// <value>Item quantity ordered.</value>
-        [DataMember(Name="orderedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "orderedQuantity", EmitDefaultValue = false)]
         public ItemQuantity OrderedQuantity { get; set; }
 
         /// <summary>
         /// When true, we will accept backorder confirmations for this item.
         /// </summary>
         /// <value>When true, we will accept backorder confirmations for this item.</value>
-        [DataMember(Name="isBackOrderAllowed", EmitDefaultValue=false)]
+        [DataMember(Name = "isBackOrderAllowed", EmitDefaultValue = false)]
         public bool? IsBackOrderAllowed { get; set; }
 
         /// <summary>
         /// The net cost of an item per each or weight unit.
         /// </summary>
         /// <value>The net cost of an item per each or weight unit.</value>
-        [DataMember(Name="netCost", EmitDefaultValue=false)]
+        [DataMember(Name = "netCost", EmitDefaultValue = false)]
         public Money NetCost { get; set; }
 
         /// <summary>
         /// The list price of an item per each or weight unit.
         /// </summary>
         /// <value>The list price of an item per each or weight unit.</value>
-        [DataMember(Name="listPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "listPrice", EmitDefaultValue = false)]
         public Money ListPrice { get; set; }
 
         /// <summary>
@@ -147,7 +141,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -177,37 +171,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemSequenceNumber == input.ItemSequenceNumber ||
                     (this.ItemSequenceNumber != null &&
                     this.ItemSequenceNumber.Equals(input.ItemSequenceNumber))
-                ) && 
+                ) &&
                 (
                     this.AmazonProductIdentifier == input.AmazonProductIdentifier ||
                     (this.AmazonProductIdentifier != null &&
                     this.AmazonProductIdentifier.Equals(input.AmazonProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.VendorProductIdentifier == input.VendorProductIdentifier ||
                     (this.VendorProductIdentifier != null &&
                     this.VendorProductIdentifier.Equals(input.VendorProductIdentifier))
-                ) && 
+                ) &&
                 (
                     this.OrderedQuantity == input.OrderedQuantity ||
                     (this.OrderedQuantity != null &&
                     this.OrderedQuantity.Equals(input.OrderedQuantity))
-                ) && 
+                ) &&
                 (
                     this.IsBackOrderAllowed == input.IsBackOrderAllowed ||
                     (this.IsBackOrderAllowed != null &&
                     this.IsBackOrderAllowed.Equals(input.IsBackOrderAllowed))
-                ) && 
+                ) &&
                 (
                     this.NetCost == input.NetCost ||
                     (this.NetCost != null &&
                     this.NetCost.Equals(input.NetCost))
-                ) && 
+                ) &&
                 (
                     this.ListPrice == input.ListPrice ||
                     (this.ListPrice != null &&

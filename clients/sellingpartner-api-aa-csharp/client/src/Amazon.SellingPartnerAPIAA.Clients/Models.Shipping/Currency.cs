@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The total value of all items in the container.
     /// </summary>
     [DataContract]
-    public partial class Currency :  IEquatable<Currency>, IValidatableObject
+    public partial class Currency : IEquatable<Currency>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Currency" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
                 this.Unit = unit;
             }
         }
-        
+
         /// <summary>
         /// The amount of currency.
         /// </summary>
         /// <value>The amount of currency.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public decimal? Value { get; set; }
 
         /// <summary>
         /// A 3-character currency code.
         /// </summary>
         /// <value>A 3-character currency code.</value>
-        [DataMember(Name="unit", EmitDefaultValue=false)]
+        [DataMember(Name = "unit", EmitDefaultValue = false)]
         public string Unit { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
+                ) &&
                 (
                     this.Unit == input.Unit ||
                     (this.Unit != null &&
@@ -157,15 +151,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Unit (string) maxLength
-            if(this.Unit != null && this.Unit.Length > 3)
+            if (this.Unit != null && this.Unit.Length > 3)
             {
-                yield return new ValidationResult("Invalid value for Unit, length must be less than 3.", new [] { "Unit" });
+                yield return new ValidationResult("Invalid value for Unit, length must be less than 3.", new[] { "Unit" });
             }
 
             // Unit (string) minLength
-            if(this.Unit != null && this.Unit.Length < 3)
+            if (this.Unit != null && this.Unit.Length < 3)
             {
-                yield return new ValidationResult("Invalid value for Unit, length must be greater than 3.", new [] { "Unit" });
+                yield return new ValidationResult("Invalid value for Unit, length must be greater than 3.", new[] { "Unit" });
             }
 
             yield break;

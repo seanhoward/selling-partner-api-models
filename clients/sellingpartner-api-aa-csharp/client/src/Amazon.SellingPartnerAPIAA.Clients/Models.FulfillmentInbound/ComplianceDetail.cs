@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Contains item identifiers and related tax information.
     /// </summary>
     [DataContract]
-    public partial class ComplianceDetail :  IEquatable<ComplianceDetail>, IValidatableObject
+    public partial class ComplianceDetail : IEquatable<ComplianceDetail>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ComplianceDetail" /> class.
@@ -44,32 +37,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.Msku = msku;
             this.TaxDetails = taxDetails;
         }
-        
+
         /// <summary>
         /// The Amazon Standard Identification Number, which identifies the detail page identifier.
         /// </summary>
         /// <value>The Amazon Standard Identification Number, which identifies the detail page identifier.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// The Fulfillment Network SKU, which identifies a real fulfillable item with catalog data and condition.
         /// </summary>
         /// <value>The Fulfillment Network SKU, which identifies a real fulfillable item with catalog data and condition.</value>
-        [DataMember(Name="fnsku", EmitDefaultValue=false)]
+        [DataMember(Name = "fnsku", EmitDefaultValue = false)]
         public string Fnsku { get; set; }
 
         /// <summary>
         /// The merchant SKU, a merchant-supplied identifier for a specific SKU.
         /// </summary>
         /// <value>The merchant SKU, a merchant-supplied identifier for a specific SKU.</value>
-        [DataMember(Name="msku", EmitDefaultValue=false)]
+        [DataMember(Name = "msku", EmitDefaultValue = false)]
         public string Msku { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxDetails
         /// </summary>
-        [DataMember(Name="taxDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "taxDetails", EmitDefaultValue = false)]
         public TaxDetails TaxDetails { get; set; }
 
         /// <summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -117,22 +110,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.Fnsku == input.Fnsku ||
                     (this.Fnsku != null &&
                     this.Fnsku.Equals(input.Fnsku))
-                ) && 
+                ) &&
                 (
                     this.Msku == input.Msku ||
                     (this.Msku != null &&
                     this.Msku.Equals(input.Msku))
-                ) && 
+                ) &&
                 (
                     this.TaxDetails == input.TaxDetails ||
                     (this.TaxDetails != null &&
@@ -169,39 +162,39 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Asin (string) maxLength
-            if(this.Asin != null && this.Asin.Length > 10)
+            if (this.Asin != null && this.Asin.Length > 10)
             {
-                yield return new ValidationResult("Invalid value for Asin, length must be less than 10.", new [] { "Asin" });
+                yield return new ValidationResult("Invalid value for Asin, length must be less than 10.", new[] { "Asin" });
             }
 
             // Asin (string) minLength
-            if(this.Asin != null && this.Asin.Length < 1)
+            if (this.Asin != null && this.Asin.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Asin, length must be greater than 1.", new [] { "Asin" });
+                yield return new ValidationResult("Invalid value for Asin, length must be greater than 1.", new[] { "Asin" });
             }
 
             // Fnsku (string) maxLength
-            if(this.Fnsku != null && this.Fnsku.Length > 10)
+            if (this.Fnsku != null && this.Fnsku.Length > 10)
             {
-                yield return new ValidationResult("Invalid value for Fnsku, length must be less than 10.", new [] { "Fnsku" });
+                yield return new ValidationResult("Invalid value for Fnsku, length must be less than 10.", new[] { "Fnsku" });
             }
 
             // Fnsku (string) minLength
-            if(this.Fnsku != null && this.Fnsku.Length < 1)
+            if (this.Fnsku != null && this.Fnsku.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Fnsku, length must be greater than 1.", new [] { "Fnsku" });
+                yield return new ValidationResult("Invalid value for Fnsku, length must be greater than 1.", new[] { "Fnsku" });
             }
 
             // Msku (string) maxLength
-            if(this.Msku != null && this.Msku.Length > 40)
+            if (this.Msku != null && this.Msku.Length > 40)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new[] { "Msku" });
             }
 
             // Msku (string) minLength
-            if(this.Msku != null && this.Msku.Length < 1)
+            if (this.Msku != null && this.Msku.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new [] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be greater than 1.", new[] { "Msku" });
             }
 
             yield break;

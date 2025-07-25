@@ -1,7 +1,7 @@
 /* 
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * OpenAPI spec version: 2022-04-01
  * 
@@ -9,53 +9,50 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
 {
     /// <summary>
-    /// Summary details of an Amazon catalog item for the indicated Amazon marketplace.
+    /// Information about an Amazon catalog item for the indicated &#x60;marketplaceId&#x60;.
     /// </summary>
     [DataContract]
-    public partial class ItemSummaryByMarketplace :  IEquatable<ItemSummaryByMarketplace>, IValidatableObject
+    public partial class ItemSummaryByMarketplace : IEquatable<ItemSummaryByMarketplace>, IValidatableObject
     {
         /// <summary>
-        /// Classification type associated with the Amazon catalog item.
+        /// Classification type that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Classification type associated with the Amazon catalog item.</value>
+        /// <value>Classification type that is associated with the Amazon catalog item.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ItemClassificationEnum
         {
-            
+
             /// <summary>
             /// Enum BASEPRODUCT for value: BASE_PRODUCT
             /// </summary>
             [EnumMember(Value = "BASE_PRODUCT")]
             BASEPRODUCT = 1,
-            
+
             /// <summary>
             /// Enum OTHER for value: OTHER
             /// </summary>
             [EnumMember(Value = "OTHER")]
             OTHER = 2,
-            
+
             /// <summary>
             /// Enum PRODUCTBUNDLE for value: PRODUCT_BUNDLE
             /// </summary>
             [EnumMember(Value = "PRODUCT_BUNDLE")]
             PRODUCTBUNDLE = 3,
-            
+
             /// <summary>
             /// Enum VARIATIONPARENT for value: VARIATION_PARENT
             /// </summary>
@@ -64,10 +61,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         }
 
         /// <summary>
-        /// Classification type associated with the Amazon catalog item.
+        /// Classification type that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Classification type associated with the Amazon catalog item.</value>
-        [DataMember(Name="itemClassification", EmitDefaultValue=false)]
+        /// <value>Classification type that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "itemClassification", EmitDefaultValue = false)]
         public ItemClassificationEnum? ItemClassification { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSummaryByMarketplace" /> class.
@@ -77,26 +74,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemSummaryByMarketplace" /> class.
         /// </summary>
-        /// <param name="marketplaceId">Amazon marketplace identifier. (required).</param>
-        /// <param name="adultProduct">Identifies an Amazon catalog item is intended for an adult audience or is sexual in nature..</param>
-        /// <param name="autographed">Identifies an Amazon catalog item is autographed by a player or celebrity..</param>
-        /// <param name="brand">Name of the brand associated with an Amazon catalog item..</param>
-        /// <param name="browseClassification">Classification (browse node) associated with an Amazon catalog item..</param>
-        /// <param name="color">Name of the color associated with an Amazon catalog item..</param>
-        /// <param name="contributors">Individual contributors to the creation of an item, such as the authors or actors..</param>
-        /// <param name="itemClassification">Classification type associated with the Amazon catalog item..</param>
-        /// <param name="itemName">Name, or title, associated with an Amazon catalog item..</param>
-        /// <param name="manufacturer">Name of the manufacturer associated with an Amazon catalog item..</param>
-        /// <param name="memorabilia">Identifies an Amazon catalog item is memorabilia valued for its connection with historical events, culture, or entertainment..</param>
-        /// <param name="modelNumber">Model number associated with an Amazon catalog item..</param>
-        /// <param name="packageQuantity">Quantity of an Amazon catalog item in one package..</param>
-        /// <param name="partNumber">Part number associated with an Amazon catalog item..</param>
-        /// <param name="releaseDate">First date on which an Amazon catalog item is shippable to customers..</param>
-        /// <param name="size">Name of the size associated with an Amazon catalog item..</param>
-        /// <param name="style">Name of the style associated with an Amazon catalog item..</param>
-        /// <param name="tradeInEligible">Identifies an Amazon catalog item is eligible for trade-in..</param>
-        /// <param name="websiteDisplayGroup">Identifier of the website display group associated with an Amazon catalog item..</param>
-        /// <param name="websiteDisplayGroupName">Display name of the website display group associated with an Amazon catalog item..</param>
+        /// <param name="marketplaceId">Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required).</param>
+        /// <param name="adultProduct">When &#x60;true&#x60;, the Amazon catalog item is intended for an adult audience or is sexual in nature..</param>
+        /// <param name="autographed">When &#x60;true&#x60;, the Amazon catalog item is autographed..</param>
+        /// <param name="brand">Name of the brand that is associated with the Amazon catalog item..</param>
+        /// <param name="browseClassification">Classification (browse node) that is associated with the Amazon catalog item..</param>
+        /// <param name="color">The color that is associated with the Amazon catalog item..</param>
+        /// <param name="contributors">Individual contributors to the creation of the item, such as the authors or actors..</param>
+        /// <param name="itemClassification">Classification type that is associated with the Amazon catalog item..</param>
+        /// <param name="itemName">The name that is associated with the Amazon catalog item..</param>
+        /// <param name="manufacturer">The name of the manufacturer that is associated with the Amazon catalog item..</param>
+        /// <param name="memorabilia">When true, the item is classified as memorabilia..</param>
+        /// <param name="modelNumber">The model number that is associated with the Amazon catalog item..</param>
+        /// <param name="packageQuantity">The quantity of the Amazon catalog item within one package..</param>
+        /// <param name="partNumber">The part number that is associated with the Amazon catalog item..</param>
+        /// <param name="releaseDate">The earliest date on which the Amazon catalog item can be shipped to customers..</param>
+        /// <param name="size">The name of the size of the Amazon catalog item..</param>
+        /// <param name="style">The name of the style that is associated with the Amazon catalog item..</param>
+        /// <param name="tradeInEligible">When true, the Amazon catalog item is eligible for trade-in..</param>
+        /// <param name="websiteDisplayGroup">The identifier of the website display group that is associated with the Amazon catalog item..</param>
+        /// <param name="websiteDisplayGroupName">The display name of the website display group that is associated with the Amazon catalog item..</param>
         public ItemSummaryByMarketplace(string marketplaceId = default, bool? adultProduct = default, bool? autographed = default, string brand = default, ItemBrowseClassification browseClassification = default, string color = default, List<ItemContributor> contributors = default, ItemClassificationEnum? itemClassification = default, string itemName = default, string manufacturer = default, bool? memorabilia = default, string modelNumber = default, int? packageQuantity = default, string partNumber = default, DateTime? releaseDate = default, string size = default, string style = default, bool? tradeInEligible = default, string websiteDisplayGroup = default, string websiteDisplayGroupName = default)
         {
             // to ensure "marketplaceId" is required (not null)
@@ -128,140 +125,140 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             this.WebsiteDisplayGroup = websiteDisplayGroup;
             this.WebsiteDisplayGroupName = websiteDisplayGroupName;
         }
-        
+
         /// <summary>
-        /// Amazon marketplace identifier.
+        /// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
-        /// <value>Amazon marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        /// <value>Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
-        /// Identifies an Amazon catalog item is intended for an adult audience or is sexual in nature.
+        /// When &#x60;true&#x60;, the Amazon catalog item is intended for an adult audience or is sexual in nature.
         /// </summary>
-        /// <value>Identifies an Amazon catalog item is intended for an adult audience or is sexual in nature.</value>
-        [DataMember(Name="adultProduct", EmitDefaultValue=false)]
+        /// <value>When &#x60;true&#x60;, the Amazon catalog item is intended for an adult audience or is sexual in nature.</value>
+        [DataMember(Name = "adultProduct", EmitDefaultValue = false)]
         public bool? AdultProduct { get; set; }
 
         /// <summary>
-        /// Identifies an Amazon catalog item is autographed by a player or celebrity.
+        /// When &#x60;true&#x60;, the Amazon catalog item is autographed.
         /// </summary>
-        /// <value>Identifies an Amazon catalog item is autographed by a player or celebrity.</value>
-        [DataMember(Name="autographed", EmitDefaultValue=false)]
+        /// <value>When &#x60;true&#x60;, the Amazon catalog item is autographed.</value>
+        [DataMember(Name = "autographed", EmitDefaultValue = false)]
         public bool? Autographed { get; set; }
 
         /// <summary>
-        /// Name of the brand associated with an Amazon catalog item.
+        /// Name of the brand that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Name of the brand associated with an Amazon catalog item.</value>
-        [DataMember(Name="brand", EmitDefaultValue=false)]
+        /// <value>Name of the brand that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "brand", EmitDefaultValue = false)]
         public string Brand { get; set; }
 
         /// <summary>
-        /// Classification (browse node) associated with an Amazon catalog item.
+        /// Classification (browse node) that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Classification (browse node) associated with an Amazon catalog item.</value>
-        [DataMember(Name="browseClassification", EmitDefaultValue=false)]
+        /// <value>Classification (browse node) that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "browseClassification", EmitDefaultValue = false)]
         public ItemBrowseClassification BrowseClassification { get; set; }
 
         /// <summary>
-        /// Name of the color associated with an Amazon catalog item.
+        /// The color that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Name of the color associated with an Amazon catalog item.</value>
-        [DataMember(Name="color", EmitDefaultValue=false)]
+        /// <value>The color that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "color", EmitDefaultValue = false)]
         public string Color { get; set; }
 
         /// <summary>
-        /// Individual contributors to the creation of an item, such as the authors or actors.
+        /// Individual contributors to the creation of the item, such as the authors or actors.
         /// </summary>
-        /// <value>Individual contributors to the creation of an item, such as the authors or actors.</value>
-        [DataMember(Name="contributors", EmitDefaultValue=false)]
+        /// <value>Individual contributors to the creation of the item, such as the authors or actors.</value>
+        [DataMember(Name = "contributors", EmitDefaultValue = false)]
         public List<ItemContributor> Contributors { get; set; }
 
 
         /// <summary>
-        /// Name, or title, associated with an Amazon catalog item.
+        /// The name that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Name, or title, associated with an Amazon catalog item.</value>
-        [DataMember(Name="itemName", EmitDefaultValue=false)]
+        /// <value>The name that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "itemName", EmitDefaultValue = false)]
         public string ItemName { get; set; }
 
         /// <summary>
-        /// Name of the manufacturer associated with an Amazon catalog item.
+        /// The name of the manufacturer that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Name of the manufacturer associated with an Amazon catalog item.</value>
-        [DataMember(Name="manufacturer", EmitDefaultValue=false)]
+        /// <value>The name of the manufacturer that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "manufacturer", EmitDefaultValue = false)]
         public string Manufacturer { get; set; }
 
         /// <summary>
-        /// Identifies an Amazon catalog item is memorabilia valued for its connection with historical events, culture, or entertainment.
+        /// When true, the item is classified as memorabilia.
         /// </summary>
-        /// <value>Identifies an Amazon catalog item is memorabilia valued for its connection with historical events, culture, or entertainment.</value>
-        [DataMember(Name="memorabilia", EmitDefaultValue=false)]
+        /// <value>When true, the item is classified as memorabilia.</value>
+        [DataMember(Name = "memorabilia", EmitDefaultValue = false)]
         public bool? Memorabilia { get; set; }
 
         /// <summary>
-        /// Model number associated with an Amazon catalog item.
+        /// The model number that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Model number associated with an Amazon catalog item.</value>
-        [DataMember(Name="modelNumber", EmitDefaultValue=false)]
+        /// <value>The model number that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "modelNumber", EmitDefaultValue = false)]
         public string ModelNumber { get; set; }
 
         /// <summary>
-        /// Quantity of an Amazon catalog item in one package.
+        /// The quantity of the Amazon catalog item within one package.
         /// </summary>
-        /// <value>Quantity of an Amazon catalog item in one package.</value>
-        [DataMember(Name="packageQuantity", EmitDefaultValue=false)]
+        /// <value>The quantity of the Amazon catalog item within one package.</value>
+        [DataMember(Name = "packageQuantity", EmitDefaultValue = false)]
         public int? PackageQuantity { get; set; }
 
         /// <summary>
-        /// Part number associated with an Amazon catalog item.
+        /// The part number that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Part number associated with an Amazon catalog item.</value>
-        [DataMember(Name="partNumber", EmitDefaultValue=false)]
+        /// <value>The part number that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "partNumber", EmitDefaultValue = false)]
         public string PartNumber { get; set; }
 
         /// <summary>
-        /// First date on which an Amazon catalog item is shippable to customers.
+        /// The earliest date on which the Amazon catalog item can be shipped to customers.
         /// </summary>
-        /// <value>First date on which an Amazon catalog item is shippable to customers.</value>
-        [DataMember(Name="releaseDate", EmitDefaultValue=false)]
+        /// <value>The earliest date on which the Amazon catalog item can be shipped to customers.</value>
+        [DataMember(Name = "releaseDate", EmitDefaultValue = false)]
         [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? ReleaseDate { get; set; }
 
         /// <summary>
-        /// Name of the size associated with an Amazon catalog item.
+        /// The name of the size of the Amazon catalog item.
         /// </summary>
-        /// <value>Name of the size associated with an Amazon catalog item.</value>
-        [DataMember(Name="size", EmitDefaultValue=false)]
+        /// <value>The name of the size of the Amazon catalog item.</value>
+        [DataMember(Name = "size", EmitDefaultValue = false)]
         public string Size { get; set; }
 
         /// <summary>
-        /// Name of the style associated with an Amazon catalog item.
+        /// The name of the style that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Name of the style associated with an Amazon catalog item.</value>
-        [DataMember(Name="style", EmitDefaultValue=false)]
+        /// <value>The name of the style that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "style", EmitDefaultValue = false)]
         public string Style { get; set; }
 
         /// <summary>
-        /// Identifies an Amazon catalog item is eligible for trade-in.
+        /// When true, the Amazon catalog item is eligible for trade-in.
         /// </summary>
-        /// <value>Identifies an Amazon catalog item is eligible for trade-in.</value>
-        [DataMember(Name="tradeInEligible", EmitDefaultValue=false)]
+        /// <value>When true, the Amazon catalog item is eligible for trade-in.</value>
+        [DataMember(Name = "tradeInEligible", EmitDefaultValue = false)]
         public bool? TradeInEligible { get; set; }
 
         /// <summary>
-        /// Identifier of the website display group associated with an Amazon catalog item.
+        /// The identifier of the website display group that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Identifier of the website display group associated with an Amazon catalog item.</value>
-        [DataMember(Name="websiteDisplayGroup", EmitDefaultValue=false)]
+        /// <value>The identifier of the website display group that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "websiteDisplayGroup", EmitDefaultValue = false)]
         public string WebsiteDisplayGroup { get; set; }
 
         /// <summary>
-        /// Display name of the website display group associated with an Amazon catalog item.
+        /// The display name of the website display group that is associated with the Amazon catalog item.
         /// </summary>
-        /// <value>Display name of the website display group associated with an Amazon catalog item.</value>
-        [DataMember(Name="websiteDisplayGroupName", EmitDefaultValue=false)]
+        /// <value>The display name of the website display group that is associated with the Amazon catalog item.</value>
+        [DataMember(Name = "websiteDisplayGroupName", EmitDefaultValue = false)]
         public string WebsiteDisplayGroupName { get; set; }
 
         /// <summary>
@@ -295,7 +292,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -325,102 +322,102 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.AdultProduct == input.AdultProduct ||
                     (this.AdultProduct != null &&
                     this.AdultProduct.Equals(input.AdultProduct))
-                ) && 
+                ) &&
                 (
                     this.Autographed == input.Autographed ||
                     (this.Autographed != null &&
                     this.Autographed.Equals(input.Autographed))
-                ) && 
+                ) &&
                 (
                     this.Brand == input.Brand ||
                     (this.Brand != null &&
                     this.Brand.Equals(input.Brand))
-                ) && 
+                ) &&
                 (
                     this.BrowseClassification == input.BrowseClassification ||
                     (this.BrowseClassification != null &&
                     this.BrowseClassification.Equals(input.BrowseClassification))
-                ) && 
+                ) &&
                 (
                     this.Color == input.Color ||
                     (this.Color != null &&
                     this.Color.Equals(input.Color))
-                ) && 
+                ) &&
                 (
                     this.Contributors == input.Contributors ||
                     this.Contributors != null &&
                     this.Contributors.SequenceEqual(input.Contributors)
-                ) && 
+                ) &&
                 (
                     this.ItemClassification == input.ItemClassification ||
                     (this.ItemClassification != null &&
                     this.ItemClassification.Equals(input.ItemClassification))
-                ) && 
+                ) &&
                 (
                     this.ItemName == input.ItemName ||
                     (this.ItemName != null &&
                     this.ItemName.Equals(input.ItemName))
-                ) && 
+                ) &&
                 (
                     this.Manufacturer == input.Manufacturer ||
                     (this.Manufacturer != null &&
                     this.Manufacturer.Equals(input.Manufacturer))
-                ) && 
+                ) &&
                 (
                     this.Memorabilia == input.Memorabilia ||
                     (this.Memorabilia != null &&
                     this.Memorabilia.Equals(input.Memorabilia))
-                ) && 
+                ) &&
                 (
                     this.ModelNumber == input.ModelNumber ||
                     (this.ModelNumber != null &&
                     this.ModelNumber.Equals(input.ModelNumber))
-                ) && 
+                ) &&
                 (
                     this.PackageQuantity == input.PackageQuantity ||
                     (this.PackageQuantity != null &&
                     this.PackageQuantity.Equals(input.PackageQuantity))
-                ) && 
+                ) &&
                 (
                     this.PartNumber == input.PartNumber ||
                     (this.PartNumber != null &&
                     this.PartNumber.Equals(input.PartNumber))
-                ) && 
+                ) &&
                 (
                     this.ReleaseDate == input.ReleaseDate ||
                     (this.ReleaseDate != null &&
                     this.ReleaseDate.Equals(input.ReleaseDate))
-                ) && 
+                ) &&
                 (
                     this.Size == input.Size ||
                     (this.Size != null &&
                     this.Size.Equals(input.Size))
-                ) && 
+                ) &&
                 (
                     this.Style == input.Style ||
                     (this.Style != null &&
                     this.Style.Equals(input.Style))
-                ) && 
+                ) &&
                 (
                     this.TradeInEligible == input.TradeInEligible ||
                     (this.TradeInEligible != null &&
                     this.TradeInEligible.Equals(input.TradeInEligible))
-                ) && 
+                ) &&
                 (
                     this.WebsiteDisplayGroup == input.WebsiteDisplayGroup ||
                     (this.WebsiteDisplayGroup != null &&
                     this.WebsiteDisplayGroup.Equals(input.WebsiteDisplayGroup))
-                ) && 
+                ) &&
                 (
                     this.WebsiteDisplayGroupName == input.WebsiteDisplayGroupName ||
                     (this.WebsiteDisplayGroupName != null &&

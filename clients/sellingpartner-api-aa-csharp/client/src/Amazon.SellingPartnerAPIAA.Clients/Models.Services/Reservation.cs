@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Reservation object reduces the capacity of a resource.
     /// </summary>
     [DataContract]
-    public partial class Reservation :  IEquatable<Reservation>, IValidatableObject
+    public partial class Reservation : IEquatable<Reservation>, IValidatableObject
     {
         /// <summary>
         /// Type of reservation.
@@ -37,31 +32,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
-            
+
             /// <summary>
             /// Enum APPOINTMENT for value: APPOINTMENT
             /// </summary>
             [EnumMember(Value = "APPOINTMENT")]
             APPOINTMENT = 1,
-            
+
             /// <summary>
             /// Enum TRAVEL for value: TRAVEL
             /// </summary>
             [EnumMember(Value = "TRAVEL")]
             TRAVEL = 2,
-            
+
             /// <summary>
             /// Enum VACATION for value: VACATION
             /// </summary>
             [EnumMember(Value = "VACATION")]
             VACATION = 3,
-            
+
             /// <summary>
             /// Enum BREAK for value: BREAK
             /// </summary>
             [EnumMember(Value = "BREAK")]
             BREAK = 4,
-            
+
             /// <summary>
             /// Enum TRAINING for value: TRAINING
             /// </summary>
@@ -73,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// Type of reservation.
         /// </summary>
         /// <value>Type of reservation.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Reservation" /> class.
@@ -108,12 +103,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             }
             this.ReservationId = reservationId;
         }
-        
+
         /// <summary>
         /// Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request.
         /// </summary>
         /// <value>Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request.</value>
-        [DataMember(Name="reservationId", EmitDefaultValue=false)]
+        [DataMember(Name = "reservationId", EmitDefaultValue = false)]
         public string ReservationId { get; set; }
 
 
@@ -121,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
         /// &#x60;AvailabilityRecord&#x60; to represent the capacity of a resource over a time range.
         /// </summary>
         /// <value>&#x60;AvailabilityRecord&#x60; to represent the capacity of a resource over a time range.</value>
-        [DataMember(Name="availability", EmitDefaultValue=false)]
+        [DataMember(Name = "availability", EmitDefaultValue = false)]
         public AvailabilityRecord Availability { get; set; }
 
         /// <summary>
@@ -138,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -168,17 +163,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReservationId == input.ReservationId ||
                     (this.ReservationId != null &&
                     this.ReservationId.Equals(input.ReservationId))
-                ) && 
+                ) &&
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     this.Availability == input.Availability ||
                     (this.Availability != null &&

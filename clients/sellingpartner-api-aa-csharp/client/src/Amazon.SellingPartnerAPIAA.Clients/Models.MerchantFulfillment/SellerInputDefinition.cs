@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
 {
@@ -28,13 +22,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
     /// Specifies characteristics that apply to a seller input.
     /// </summary>
     [DataContract]
-    public partial class SellerInputDefinition :  IEquatable<SellerInputDefinition>, IValidatableObject
+    public partial class SellerInputDefinition : IEquatable<SellerInputDefinition>, IValidatableObject
     {
         /// <summary>
         /// Whether the seller input applies to the item or the shipment.
         /// </summary>
         /// <value>Whether the seller input applies to the item or the shipment.</value>
-        [DataMember(Name="InputTarget", EmitDefaultValue=false)]
+        [DataMember(Name = "InputTarget", EmitDefaultValue = false)]
         public InputTargetType? InputTarget { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SellerInputDefinition" /> class.
@@ -101,45 +95,45 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             this.InputTarget = inputTarget;
             this.RestrictedSetValues = restrictedSetValues;
         }
-        
+
         /// <summary>
         /// When true, the additional input field is required.
         /// </summary>
         /// <value>When true, the additional input field is required.</value>
-        [DataMember(Name="IsRequired", EmitDefaultValue=false)]
+        [DataMember(Name = "IsRequired", EmitDefaultValue = false)]
         public bool? IsRequired { get; set; }
 
         /// <summary>
         /// The data type of the additional input field.
         /// </summary>
         /// <value>The data type of the additional input field.</value>
-        [DataMember(Name="DataType", EmitDefaultValue=false)]
+        [DataMember(Name = "DataType", EmitDefaultValue = false)]
         public string DataType { get; set; }
 
         /// <summary>
         /// Gets or Sets Constraints
         /// </summary>
-        [DataMember(Name="Constraints", EmitDefaultValue=false)]
+        [DataMember(Name = "Constraints", EmitDefaultValue = false)]
         public Constraints Constraints { get; set; }
 
         /// <summary>
         /// The display text for the additional input field.
         /// </summary>
         /// <value>The display text for the additional input field.</value>
-        [DataMember(Name="InputDisplayText", EmitDefaultValue=false)]
+        [DataMember(Name = "InputDisplayText", EmitDefaultValue = false)]
         public string InputDisplayText { get; set; }
 
 
         /// <summary>
         /// Gets or Sets StoredValue
         /// </summary>
-        [DataMember(Name="StoredValue", EmitDefaultValue=false)]
+        [DataMember(Name = "StoredValue", EmitDefaultValue = false)]
         public AdditionalSellerInput StoredValue { get; set; }
 
         /// <summary>
         /// Gets or Sets RestrictedSetValues
         /// </summary>
-        [DataMember(Name="RestrictedSetValues", EmitDefaultValue=false)]
+        [DataMember(Name = "RestrictedSetValues", EmitDefaultValue = false)]
         public RestrictedSetValues RestrictedSetValues { get; set; }
 
         /// <summary>
@@ -160,7 +154,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -190,37 +184,37 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IsRequired == input.IsRequired ||
                     (this.IsRequired != null &&
                     this.IsRequired.Equals(input.IsRequired))
-                ) && 
+                ) &&
                 (
                     this.DataType == input.DataType ||
                     (this.DataType != null &&
                     this.DataType.Equals(input.DataType))
-                ) && 
+                ) &&
                 (
                     this.Constraints == input.Constraints ||
                     (this.Constraints != null &&
                     this.Constraints.Equals(input.Constraints))
-                ) && 
+                ) &&
                 (
                     this.InputDisplayText == input.InputDisplayText ||
                     (this.InputDisplayText != null &&
                     this.InputDisplayText.Equals(input.InputDisplayText))
-                ) && 
+                ) &&
                 (
                     this.InputTarget == input.InputTarget ||
                     (this.InputTarget != null &&
                     this.InputTarget.Equals(input.InputTarget))
-                ) && 
+                ) &&
                 (
                     this.StoredValue == input.StoredValue ||
                     (this.StoredValue != null &&
                     this.StoredValue.Equals(input.StoredValue))
-                ) && 
+                ) &&
                 (
                     this.RestrictedSetValues == input.RestrictedSetValues ||
                     (this.RestrictedSetValues != null &&

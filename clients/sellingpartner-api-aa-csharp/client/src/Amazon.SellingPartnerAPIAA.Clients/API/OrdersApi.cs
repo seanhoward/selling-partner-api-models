@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Orders;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -26,163 +25,163 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     {
         #region Synchronous Operations
         /// <summary>
-        /// confirmShipment
+        /// 
         /// </summary>
         /// <remarks>
-        /// Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="payload">Request body of &#x60;confirmShipment&#x60;.</param>
         /// <returns></returns>
-        void ConfirmShipment (string orderId, ConfirmShipmentRequest payload);
+        void ConfirmShipment(string orderId, ConfirmShipmentRequest payload);
 
         /// <summary>
-        /// confirmShipment
+        /// 
         /// </summary>
         /// <remarks>
-        /// Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="payload">Request body of &#x60;confirmShipment&#x60;.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ConfirmShipmentWithHttpInfo (string orderId, ConfirmShipmentRequest payload);
+        ApiResponse<Object> ConfirmShipmentWithHttpInfo(string orderId, ConfirmShipmentRequest payload);
         /// <summary>
-        /// getOrder
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <returns>GetOrderResponse</returns>
-        GetOrderResponse GetOrder (string orderId);
+        GetOrderResponse GetOrder(string orderId);
 
         /// <summary>
-        /// getOrder
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <returns>ApiResponse of GetOrderResponse</returns>
-        ApiResponse<GetOrderResponse> GetOrderWithHttpInfo (string orderId);
+        ApiResponse<GetOrderResponse> GetOrderWithHttpInfo(string orderId);
         /// <summary>
-        /// getOrderAddress
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>GetOrderAddressResponse</returns>
-        GetOrderAddressResponse GetOrderAddress (string orderId);
+        GetOrderAddressResponse GetOrderAddress(string orderId);
 
         /// <summary>
-        /// getOrderAddress
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>ApiResponse of GetOrderAddressResponse</returns>
-        ApiResponse<GetOrderAddressResponse> GetOrderAddressWithHttpInfo (string orderId);
+        ApiResponse<GetOrderAddressResponse> GetOrderAddressWithHttpInfo(string orderId);
         /// <summary>
-        /// getOrderBuyerInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>GetOrderBuyerInfoResponse</returns>
-        GetOrderBuyerInfoResponse GetOrderBuyerInfo (string orderId);
+        GetOrderBuyerInfoResponse GetOrderBuyerInfo(string orderId);
 
         /// <summary>
-        /// getOrderBuyerInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>ApiResponse of GetOrderBuyerInfoResponse</returns>
-        ApiResponse<GetOrderBuyerInfoResponse> GetOrderBuyerInfoWithHttpInfo (string orderId);
+        ApiResponse<GetOrderBuyerInfoResponse> GetOrderBuyerInfoWithHttpInfo(string orderId);
         /// <summary>
-        /// getOrderItems
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>GetOrderItemsResponse</returns>
-        GetOrderItemsResponse GetOrderItems (string orderId, string nextToken = null);
+        GetOrderItemsResponse GetOrderItems(string orderId, string nextToken = null);
 
         /// <summary>
-        /// getOrderItems
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>ApiResponse of GetOrderItemsResponse</returns>
-        ApiResponse<GetOrderItemsResponse> GetOrderItemsWithHttpInfo (string orderId, string nextToken = null);
+        ApiResponse<GetOrderItemsResponse> GetOrderItemsWithHttpInfo(string orderId, string nextToken = null);
         /// <summary>
-        /// getOrderItemsBuyerInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>GetOrderItemsBuyerInfoResponse</returns>
-        GetOrderItemsBuyerInfoResponse GetOrderItemsBuyerInfo (string orderId, string nextToken = null);
+        GetOrderItemsBuyerInfoResponse GetOrderItemsBuyerInfo(string orderId, string nextToken = null);
 
         /// <summary>
-        /// getOrderItemsBuyerInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>ApiResponse of GetOrderItemsBuyerInfoResponse</returns>
-        ApiResponse<GetOrderItemsBuyerInfoResponse> GetOrderItemsBuyerInfoWithHttpInfo (string orderId, string nextToken = null);
+        ApiResponse<GetOrderItemsBuyerInfoResponse> GetOrderItemsBuyerInfoWithHttpInfo(string orderId, string nextToken = null);
         /// <summary>
-        /// getOrderRegulatedInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>GetOrderRegulatedInfoResponse</returns>
-        GetOrderRegulatedInfoResponse GetOrderRegulatedInfo (string orderId);
+        GetOrderRegulatedInfoResponse GetOrderRegulatedInfo(string orderId);
 
         /// <summary>
-        /// getOrderRegulatedInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>ApiResponse of GetOrderRegulatedInfoResponse</returns>
-        ApiResponse<GetOrderRegulatedInfoResponse> GetOrderRegulatedInfoWithHttpInfo (string orderId);
+        ApiResponse<GetOrderRegulatedInfoResponse> GetOrderRegulatedInfoWithHttpInfo(string orderId);
         /// <summary>
-        /// getOrders
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+        /// Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.</param>
@@ -208,13 +207,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="latestDeliveryDateBefore">Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <param name="latestDeliveryDateAfter">Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <returns>GetOrdersResponse</returns>
-        GetOrdersResponse GetOrders (List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null);
+        GetOrdersResponse GetOrders(List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null);
 
         /// <summary>
-        /// getOrders
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+        /// Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.</param>
@@ -240,213 +239,190 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="latestDeliveryDateBefore">Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <param name="latestDeliveryDateAfter">Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <returns>ApiResponse of GetOrdersResponse</returns>
-        ApiResponse<GetOrdersResponse> GetOrdersWithHttpInfo (List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null);
+        ApiResponse<GetOrdersResponse> GetOrdersWithHttpInfo(List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null);
         /// <summary>
-        /// updateShipmentStatus
+        /// 
         /// </summary>
         /// <remarks>
-        /// Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
-        /// <param name="payload">The request body for the &#x60;updateShipmentStatus&#x60; operation.</param>
-        /// <returns></returns>
-        void UpdateShipmentStatus (string orderId, UpdateShipmentStatusRequest payload);
-
-        /// <summary>
-        /// updateShipmentStatus
-        /// </summary>
-        /// <remarks>
-        /// Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
-        /// <param name="payload">The request body for the &#x60;updateShipmentStatus&#x60; operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateShipmentStatusWithHttpInfo (string orderId, UpdateShipmentStatusRequest payload);
-        /// <summary>
-        /// updateVerificationStatus
-        /// </summary>
-        /// <remarks>
-        /// Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <param name="payload">The request body for the &#x60;updateVerificationStatus&#x60; operation.</param>
         /// <returns></returns>
-        void UpdateVerificationStatus (string orderId, UpdateVerificationStatusRequest payload);
+        void UpdateVerificationStatus(string orderId, UpdateVerificationStatusRequest payload);
 
         /// <summary>
-        /// updateVerificationStatus
+        /// 
         /// </summary>
         /// <remarks>
-        /// Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <param name="payload">The request body for the &#x60;updateVerificationStatus&#x60; operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateVerificationStatusWithHttpInfo (string orderId, UpdateVerificationStatusRequest payload);
+        ApiResponse<Object> UpdateVerificationStatusWithHttpInfo(string orderId, UpdateVerificationStatusRequest payload);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// confirmShipment
+        /// 
         /// </summary>
         /// <remarks>
-        /// Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="payload">Request body of &#x60;confirmShipment&#x60;.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ConfirmShipmentAsync (string orderId, ConfirmShipmentRequest payload);
+        System.Threading.Tasks.Task ConfirmShipmentAsync(string orderId, ConfirmShipmentRequest payload);
 
         /// <summary>
-        /// confirmShipment
+        /// 
         /// </summary>
         /// <remarks>
-        /// Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="payload">Request body of &#x60;confirmShipment&#x60;.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ConfirmShipmentAsyncWithHttpInfo (string orderId, ConfirmShipmentRequest payload);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ConfirmShipmentAsyncWithHttpInfo(string orderId, ConfirmShipmentRequest payload);
         /// <summary>
-        /// getOrder
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <returns>Task of GetOrderResponse</returns>
-        System.Threading.Tasks.Task<GetOrderResponse> GetOrderAsync (string orderId);
+        System.Threading.Tasks.Task<GetOrderResponse> GetOrderAsync(string orderId);
 
         /// <summary>
-        /// getOrder
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <returns>Task of ApiResponse (GetOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrderResponse>> GetOrderAsyncWithHttpInfo (string orderId);
+        System.Threading.Tasks.Task<ApiResponse<GetOrderResponse>> GetOrderAsyncWithHttpInfo(string orderId);
         /// <summary>
-        /// getOrderAddress
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of GetOrderAddressResponse</returns>
-        System.Threading.Tasks.Task<GetOrderAddressResponse> GetOrderAddressAsync (string orderId);
+        System.Threading.Tasks.Task<GetOrderAddressResponse> GetOrderAddressAsync(string orderId);
 
         /// <summary>
-        /// getOrderAddress
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of ApiResponse (GetOrderAddressResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrderAddressResponse>> GetOrderAddressAsyncWithHttpInfo (string orderId);
+        System.Threading.Tasks.Task<ApiResponse<GetOrderAddressResponse>> GetOrderAddressAsyncWithHttpInfo(string orderId);
         /// <summary>
-        /// getOrderBuyerInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of GetOrderBuyerInfoResponse</returns>
-        System.Threading.Tasks.Task<GetOrderBuyerInfoResponse> GetOrderBuyerInfoAsync (string orderId);
+        System.Threading.Tasks.Task<GetOrderBuyerInfoResponse> GetOrderBuyerInfoAsync(string orderId);
 
         /// <summary>
-        /// getOrderBuyerInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of ApiResponse (GetOrderBuyerInfoResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrderBuyerInfoResponse>> GetOrderBuyerInfoAsyncWithHttpInfo (string orderId);
+        System.Threading.Tasks.Task<ApiResponse<GetOrderBuyerInfoResponse>> GetOrderBuyerInfoAsyncWithHttpInfo(string orderId);
         /// <summary>
-        /// getOrderItems
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of GetOrderItemsResponse</returns>
-        System.Threading.Tasks.Task<GetOrderItemsResponse> GetOrderItemsAsync (string orderId, string nextToken = null);
+        System.Threading.Tasks.Task<GetOrderItemsResponse> GetOrderItemsAsync(string orderId, string nextToken = null);
 
         /// <summary>
-        /// getOrderItems
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of ApiResponse (GetOrderItemsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrderItemsResponse>> GetOrderItemsAsyncWithHttpInfo (string orderId, string nextToken = null);
+        System.Threading.Tasks.Task<ApiResponse<GetOrderItemsResponse>> GetOrderItemsAsyncWithHttpInfo(string orderId, string nextToken = null);
         /// <summary>
-        /// getOrderItemsBuyerInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of GetOrderItemsBuyerInfoResponse</returns>
-        System.Threading.Tasks.Task<GetOrderItemsBuyerInfoResponse> GetOrderItemsBuyerInfoAsync (string orderId, string nextToken = null);
+        System.Threading.Tasks.Task<GetOrderItemsBuyerInfoResponse> GetOrderItemsBuyerInfoAsync(string orderId, string nextToken = null);
 
         /// <summary>
-        /// getOrderItemsBuyerInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of ApiResponse (GetOrderItemsBuyerInfoResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrderItemsBuyerInfoResponse>> GetOrderItemsBuyerInfoAsyncWithHttpInfo (string orderId, string nextToken = null);
+        System.Threading.Tasks.Task<ApiResponse<GetOrderItemsBuyerInfoResponse>> GetOrderItemsBuyerInfoAsyncWithHttpInfo(string orderId, string nextToken = null);
         /// <summary>
-        /// getOrderRegulatedInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of GetOrderRegulatedInfoResponse</returns>
-        System.Threading.Tasks.Task<GetOrderRegulatedInfoResponse> GetOrderRegulatedInfoAsync (string orderId);
+        System.Threading.Tasks.Task<GetOrderRegulatedInfoResponse> GetOrderRegulatedInfoAsync(string orderId);
 
         /// <summary>
-        /// getOrderRegulatedInfo
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of ApiResponse (GetOrderRegulatedInfoResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrderRegulatedInfoResponse>> GetOrderRegulatedInfoAsyncWithHttpInfo (string orderId);
+        System.Threading.Tasks.Task<ApiResponse<GetOrderRegulatedInfoResponse>> GetOrderRegulatedInfoAsyncWithHttpInfo(string orderId);
         /// <summary>
-        /// getOrders
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+        /// Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.</param>
@@ -472,13 +448,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="latestDeliveryDateBefore">Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <param name="latestDeliveryDateAfter">Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <returns>Task of GetOrdersResponse</returns>
-        System.Threading.Tasks.Task<GetOrdersResponse> GetOrdersAsync (List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null);
+        System.Threading.Tasks.Task<GetOrdersResponse> GetOrdersAsync(List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null);
 
         /// <summary>
-        /// getOrders
+        /// 
         /// </summary>
         /// <remarks>
-        /// Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+        /// Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.</param>
@@ -504,53 +480,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="latestDeliveryDateBefore">Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <param name="latestDeliveryDateAfter">Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <returns>Task of ApiResponse (GetOrdersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrdersResponse>> GetOrdersAsyncWithHttpInfo (List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null);
+        System.Threading.Tasks.Task<ApiResponse<GetOrdersResponse>> GetOrdersAsyncWithHttpInfo(List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null);
         /// <summary>
-        /// updateShipmentStatus
+        /// 
         /// </summary>
         /// <remarks>
-        /// Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
-        /// <param name="payload">The request body for the &#x60;updateShipmentStatus&#x60; operation.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateShipmentStatusAsync (string orderId, UpdateShipmentStatusRequest payload);
-
-        /// <summary>
-        /// updateShipmentStatus
-        /// </summary>
-        /// <remarks>
-        /// Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
-        /// <param name="payload">The request body for the &#x60;updateShipmentStatus&#x60; operation.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateShipmentStatusAsyncWithHttpInfo (string orderId, UpdateShipmentStatusRequest payload);
-        /// <summary>
-        /// updateVerificationStatus
-        /// </summary>
-        /// <remarks>
-        /// Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <param name="payload">The request body for the &#x60;updateVerificationStatus&#x60; operation.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateVerificationStatusAsync (string orderId, UpdateVerificationStatusRequest payload);
+        System.Threading.Tasks.Task UpdateVerificationStatusAsync(string orderId, UpdateVerificationStatusRequest payload);
 
         /// <summary>
-        /// updateVerificationStatus
+        /// 
         /// </summary>
         /// <remarks>
-        /// Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <param name="payload">The request body for the &#x60;updateVerificationStatus&#x60; operation.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateVerificationStatusAsyncWithHttpInfo (string orderId, UpdateVerificationStatusRequest payload);
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateVerificationStatusAsyncWithHttpInfo(string orderId, UpdateVerificationStatusRequest payload);
         #endregion Asynchronous Operations
     }
 
@@ -596,7 +549,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -637,25 +590,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        /// confirmShipment Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="payload">Request body of &#x60;confirmShipment&#x60;.</param>
         /// <returns></returns>
-        public void ConfirmShipment (string orderId, ConfirmShipmentRequest payload)
+        public void ConfirmShipment(string orderId, ConfirmShipmentRequest payload)
         {
-             ConfirmShipmentWithHttpInfo(orderId, payload);
+            ConfirmShipmentWithHttpInfo(orderId, payload);
         }
 
         /// <summary>
-        /// confirmShipment Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="payload">Request body of &#x60;confirmShipment&#x60;.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ConfirmShipmentWithHttpInfo (string orderId, ConfirmShipmentRequest payload)
+        public ApiResponse<Object> ConfirmShipmentWithHttpInfo(string orderId, ConfirmShipmentRequest payload)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -698,11 +651,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -716,26 +669,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        /// confirmShipment Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="payload">Request body of &#x60;confirmShipment&#x60;.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ConfirmShipmentAsync (string orderId, ConfirmShipmentRequest payload)
+        public async System.Threading.Tasks.Task ConfirmShipmentAsync(string orderId, ConfirmShipmentRequest payload)
         {
-             await ConfirmShipmentAsyncWithHttpInfo(orderId, payload);
+            await ConfirmShipmentAsyncWithHttpInfo(orderId, payload);
 
         }
 
         /// <summary>
-        /// confirmShipment Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 10 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="payload">Request body of &#x60;confirmShipment&#x60;.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ConfirmShipmentAsyncWithHttpInfo (string orderId, ConfirmShipmentRequest payload)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ConfirmShipmentAsyncWithHttpInfo(string orderId, ConfirmShipmentRequest payload)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -778,11 +731,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -796,24 +749,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        /// getOrder Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <returns>GetOrderResponse</returns>
-        public GetOrderResponse GetOrder (string orderId)
+        public GetOrderResponse GetOrder(string orderId)
         {
-             ApiResponse<GetOrderResponse> localVarResponse = GetOrderWithHttpInfo(orderId);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderResponse> localVarResponse = GetOrderWithHttpInfo(orderId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// getOrder Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <returns>ApiResponse of GetOrderResponse</returns>
-        public ApiResponse< GetOrderResponse > GetOrderWithHttpInfo (string orderId)
+        public ApiResponse<GetOrderResponse> GetOrderWithHttpInfo(string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -845,11 +798,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -859,29 +812,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderResponse)));
+                (GetOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderResponse)));
         }
 
         /// <summary>
-        /// getOrder Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <returns>Task of GetOrderResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrderResponse> GetOrderAsync (string orderId)
+        public async System.Threading.Tasks.Task<GetOrderResponse> GetOrderAsync(string orderId)
         {
-             ApiResponse<GetOrderResponse> localVarResponse = await GetOrderAsyncWithHttpInfo(orderId);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderResponse> localVarResponse = await GetOrderAsyncWithHttpInfo(orderId);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// getOrder Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <returns>Task of ApiResponse (GetOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetOrderResponse>> GetOrderAsyncWithHttpInfo (string orderId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetOrderResponse>> GetOrderAsyncWithHttpInfo(string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -913,11 +866,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -927,28 +880,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderResponse)));
+                (GetOrderResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderResponse)));
         }
 
         /// <summary>
-        /// getOrderAddress Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>GetOrderAddressResponse</returns>
-        public GetOrderAddressResponse GetOrderAddress (string orderId)
+        public GetOrderAddressResponse GetOrderAddress(string orderId)
         {
-             ApiResponse<GetOrderAddressResponse> localVarResponse = GetOrderAddressWithHttpInfo(orderId);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderAddressResponse> localVarResponse = GetOrderAddressWithHttpInfo(orderId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// getOrderAddress Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>ApiResponse of GetOrderAddressResponse</returns>
-        public ApiResponse< GetOrderAddressResponse > GetOrderAddressWithHttpInfo (string orderId)
+        public ApiResponse<GetOrderAddressResponse> GetOrderAddressWithHttpInfo(string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -980,11 +933,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -994,29 +947,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderAddressResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderAddressResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderAddressResponse)));
+                (GetOrderAddressResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderAddressResponse)));
         }
 
         /// <summary>
-        /// getOrderAddress Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of GetOrderAddressResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrderAddressResponse> GetOrderAddressAsync (string orderId)
+        public async System.Threading.Tasks.Task<GetOrderAddressResponse> GetOrderAddressAsync(string orderId)
         {
-             ApiResponse<GetOrderAddressResponse> localVarResponse = await GetOrderAddressAsyncWithHttpInfo(orderId);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderAddressResponse> localVarResponse = await GetOrderAddressAsyncWithHttpInfo(orderId);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// getOrderAddress Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of ApiResponse (GetOrderAddressResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetOrderAddressResponse>> GetOrderAddressAsyncWithHttpInfo (string orderId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetOrderAddressResponse>> GetOrderAddressAsyncWithHttpInfo(string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1048,11 +1001,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1062,28 +1015,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderAddressResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderAddressResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderAddressResponse)));
+                (GetOrderAddressResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderAddressResponse)));
         }
 
         /// <summary>
-        /// getOrderBuyerInfo Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>GetOrderBuyerInfoResponse</returns>
-        public GetOrderBuyerInfoResponse GetOrderBuyerInfo (string orderId)
+        public GetOrderBuyerInfoResponse GetOrderBuyerInfo(string orderId)
         {
-             ApiResponse<GetOrderBuyerInfoResponse> localVarResponse = GetOrderBuyerInfoWithHttpInfo(orderId);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderBuyerInfoResponse> localVarResponse = GetOrderBuyerInfoWithHttpInfo(orderId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// getOrderBuyerInfo Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>ApiResponse of GetOrderBuyerInfoResponse</returns>
-        public ApiResponse< GetOrderBuyerInfoResponse > GetOrderBuyerInfoWithHttpInfo (string orderId)
+        public ApiResponse<GetOrderBuyerInfoResponse> GetOrderBuyerInfoWithHttpInfo(string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1115,11 +1068,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1129,29 +1082,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderBuyerInfoResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderBuyerInfoResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderBuyerInfoResponse)));
+                (GetOrderBuyerInfoResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderBuyerInfoResponse)));
         }
 
         /// <summary>
-        /// getOrderBuyerInfo Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of GetOrderBuyerInfoResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrderBuyerInfoResponse> GetOrderBuyerInfoAsync (string orderId)
+        public async System.Threading.Tasks.Task<GetOrderBuyerInfoResponse> GetOrderBuyerInfoAsync(string orderId)
         {
-             ApiResponse<GetOrderBuyerInfoResponse> localVarResponse = await GetOrderBuyerInfoAsyncWithHttpInfo(orderId);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderBuyerInfoResponse> localVarResponse = await GetOrderBuyerInfoAsyncWithHttpInfo(orderId);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// getOrderBuyerInfo Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of ApiResponse (GetOrderBuyerInfoResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetOrderBuyerInfoResponse>> GetOrderBuyerInfoAsyncWithHttpInfo (string orderId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetOrderBuyerInfoResponse>> GetOrderBuyerInfoAsyncWithHttpInfo(string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1183,11 +1136,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1197,30 +1150,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderBuyerInfoResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderBuyerInfoResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderBuyerInfoResponse)));
+                (GetOrderBuyerInfoResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderBuyerInfoResponse)));
         }
 
         /// <summary>
-        /// getOrderItems Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>GetOrderItemsResponse</returns>
-        public GetOrderItemsResponse GetOrderItems (string orderId, string nextToken = null)
+        public GetOrderItemsResponse GetOrderItems(string orderId, string nextToken = null)
         {
-             ApiResponse<GetOrderItemsResponse> localVarResponse = GetOrderItemsWithHttpInfo(orderId, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderItemsResponse> localVarResponse = GetOrderItemsWithHttpInfo(orderId, nextToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// getOrderItems Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>ApiResponse of GetOrderItemsResponse</returns>
-        public ApiResponse< GetOrderItemsResponse > GetOrderItemsWithHttpInfo (string orderId, string nextToken = null)
+        public ApiResponse<GetOrderItemsResponse> GetOrderItemsWithHttpInfo(string orderId, string nextToken = null)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1253,11 +1206,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1267,31 +1220,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderItemsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderItemsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderItemsResponse)));
+                (GetOrderItemsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderItemsResponse)));
         }
 
         /// <summary>
-        /// getOrderItems Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of GetOrderItemsResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrderItemsResponse> GetOrderItemsAsync (string orderId, string nextToken = null)
+        public async System.Threading.Tasks.Task<GetOrderItemsResponse> GetOrderItemsAsync(string orderId, string nextToken = null)
         {
-             ApiResponse<GetOrderItemsResponse> localVarResponse = await GetOrderItemsAsyncWithHttpInfo(orderId, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderItemsResponse> localVarResponse = await GetOrderItemsAsyncWithHttpInfo(orderId, nextToken);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// getOrderItems Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns detailed order item information for the order that you specify. If &#x60;NextToken&#x60; is provided, it&#39;s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of ApiResponse (GetOrderItemsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetOrderItemsResponse>> GetOrderItemsAsyncWithHttpInfo (string orderId, string nextToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetOrderItemsResponse>> GetOrderItemsAsyncWithHttpInfo(string orderId, string nextToken = null)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1324,11 +1277,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1338,30 +1291,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderItemsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderItemsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderItemsResponse)));
+                (GetOrderItemsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderItemsResponse)));
         }
 
         /// <summary>
-        /// getOrderItemsBuyerInfo Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>GetOrderItemsBuyerInfoResponse</returns>
-        public GetOrderItemsBuyerInfoResponse GetOrderItemsBuyerInfo (string orderId, string nextToken = null)
+        public GetOrderItemsBuyerInfoResponse GetOrderItemsBuyerInfo(string orderId, string nextToken = null)
         {
-             ApiResponse<GetOrderItemsBuyerInfoResponse> localVarResponse = GetOrderItemsBuyerInfoWithHttpInfo(orderId, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderItemsBuyerInfoResponse> localVarResponse = GetOrderItemsBuyerInfoWithHttpInfo(orderId, nextToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// getOrderItemsBuyerInfo Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>ApiResponse of GetOrderItemsBuyerInfoResponse</returns>
-        public ApiResponse< GetOrderItemsBuyerInfoResponse > GetOrderItemsBuyerInfoWithHttpInfo (string orderId, string nextToken = null)
+        public ApiResponse<GetOrderItemsBuyerInfoResponse> GetOrderItemsBuyerInfoWithHttpInfo(string orderId, string nextToken = null)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1394,11 +1347,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1408,31 +1361,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderItemsBuyerInfoResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderItemsBuyerInfoResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderItemsBuyerInfoResponse)));
+                (GetOrderItemsBuyerInfoResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderItemsBuyerInfoResponse)));
         }
 
         /// <summary>
-        /// getOrderItemsBuyerInfo Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of GetOrderItemsBuyerInfoResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrderItemsBuyerInfoResponse> GetOrderItemsBuyerInfoAsync (string orderId, string nextToken = null)
+        public async System.Threading.Tasks.Task<GetOrderItemsBuyerInfoResponse> GetOrderItemsBuyerInfoAsync(string orderId, string nextToken = null)
         {
-             ApiResponse<GetOrderItemsBuyerInfoResponse> localVarResponse = await GetOrderItemsBuyerInfoAsyncWithHttpInfo(orderId, nextToken);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderItemsBuyerInfoResponse> localVarResponse = await GetOrderItemsBuyerInfoAsyncWithHttpInfo(orderId, nextToken);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// getOrderItemsBuyerInfo Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
         /// <param name="nextToken">A string token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of ApiResponse (GetOrderItemsBuyerInfoResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetOrderItemsBuyerInfoResponse>> GetOrderItemsBuyerInfoAsyncWithHttpInfo (string orderId, string nextToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetOrderItemsBuyerInfoResponse>> GetOrderItemsBuyerInfoAsyncWithHttpInfo(string orderId, string nextToken = null)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1465,11 +1418,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1479,28 +1432,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderItemsBuyerInfoResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderItemsBuyerInfoResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderItemsBuyerInfoResponse)));
+                (GetOrderItemsBuyerInfoResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderItemsBuyerInfoResponse)));
         }
 
         /// <summary>
-        /// getOrderRegulatedInfo Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>GetOrderRegulatedInfoResponse</returns>
-        public GetOrderRegulatedInfoResponse GetOrderRegulatedInfo (string orderId)
+        public GetOrderRegulatedInfoResponse GetOrderRegulatedInfo(string orderId)
         {
-             ApiResponse<GetOrderRegulatedInfoResponse> localVarResponse = GetOrderRegulatedInfoWithHttpInfo(orderId);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderRegulatedInfoResponse> localVarResponse = GetOrderRegulatedInfoWithHttpInfo(orderId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// getOrderRegulatedInfo Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>ApiResponse of GetOrderRegulatedInfoResponse</returns>
-        public ApiResponse< GetOrderRegulatedInfoResponse > GetOrderRegulatedInfoWithHttpInfo (string orderId)
+        public ApiResponse<GetOrderRegulatedInfoResponse> GetOrderRegulatedInfoWithHttpInfo(string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1532,11 +1485,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1546,29 +1499,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderRegulatedInfoResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderRegulatedInfoResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderRegulatedInfoResponse)));
+                (GetOrderRegulatedInfoResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderRegulatedInfoResponse)));
         }
 
         /// <summary>
-        /// getOrderRegulatedInfo Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of GetOrderRegulatedInfoResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrderRegulatedInfoResponse> GetOrderRegulatedInfoAsync (string orderId)
+        public async System.Threading.Tasks.Task<GetOrderRegulatedInfoResponse> GetOrderRegulatedInfoAsync(string orderId)
         {
-             ApiResponse<GetOrderRegulatedInfoResponse> localVarResponse = await GetOrderRegulatedInfoAsyncWithHttpInfo(orderId);
-             return localVarResponse.Data;
+            ApiResponse<GetOrderRegulatedInfoResponse> localVarResponse = await GetOrderRegulatedInfoAsyncWithHttpInfo(orderId);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// getOrderRegulatedInfo Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <returns>Task of ApiResponse (GetOrderRegulatedInfoResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetOrderRegulatedInfoResponse>> GetOrderRegulatedInfoAsyncWithHttpInfo (string orderId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetOrderRegulatedInfoResponse>> GetOrderRegulatedInfoAsyncWithHttpInfo(string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1600,11 +1553,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1614,11 +1567,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrderRegulatedInfoResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrderRegulatedInfoResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderRegulatedInfoResponse)));
+                (GetOrderRegulatedInfoResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrderRegulatedInfoResponse)));
         }
 
         /// <summary>
-        /// getOrders Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+        ///  Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.</param>
@@ -1644,14 +1597,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="latestDeliveryDateBefore">Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <param name="latestDeliveryDateAfter">Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <returns>GetOrdersResponse</returns>
-        public GetOrdersResponse GetOrders (List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null)
+        public GetOrdersResponse GetOrders(List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null)
         {
-             ApiResponse<GetOrdersResponse> localVarResponse = GetOrdersWithHttpInfo(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter);
-             return localVarResponse.Data;
+            ApiResponse<GetOrdersResponse> localVarResponse = GetOrdersWithHttpInfo(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// getOrders Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+        ///  Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.</param>
@@ -1677,7 +1630,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="latestDeliveryDateBefore">Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <param name="latestDeliveryDateAfter">Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <returns>ApiResponse of GetOrdersResponse</returns>
-        public ApiResponse< GetOrdersResponse > GetOrdersWithHttpInfo (List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null)
+        public ApiResponse<GetOrdersResponse> GetOrdersWithHttpInfo(List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -1730,11 +1683,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1744,11 +1697,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrdersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrdersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrdersResponse)));
+                (GetOrdersResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrdersResponse)));
         }
 
         /// <summary>
-        /// getOrders Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+        ///  Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.</param>
@@ -1774,15 +1727,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="latestDeliveryDateBefore">Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <param name="latestDeliveryDateAfter">Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <returns>Task of GetOrdersResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrdersResponse> GetOrdersAsync (List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null)
+        public async System.Threading.Tasks.Task<GetOrdersResponse> GetOrdersAsync(List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null)
         {
-             ApiResponse<GetOrdersResponse> localVarResponse = await GetOrdersAsyncWithHttpInfo(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter);
-             return localVarResponse.Data;
+            ApiResponse<GetOrdersResponse> localVarResponse = await GetOrdersAsyncWithHttpInfo(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter);
+            return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// getOrders Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+        ///  Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. &#x60;NextToken&#x60; doesn&#39;t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 20 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceIds">A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.</param>
@@ -1808,7 +1761,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="latestDeliveryDateBefore">Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <param name="latestDeliveryDateAfter">Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)</param>
         /// <returns>Task of ApiResponse (GetOrdersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetOrdersResponse>> GetOrdersAsyncWithHttpInfo (List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetOrdersResponse>> GetOrdersAsyncWithHttpInfo(List<string> marketplaceIds, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, List<string> orderStatuses = null, List<string> fulfillmentChannels = null, List<string> paymentMethods = null, string buyerEmail = null, string sellerOrderId = null, int? maxResultsPerPage = null, List<string> easyShipShipmentStatuses = null, List<string> electronicInvoiceStatuses = null, string nextToken = null, List<string> amazonOrderIds = null, string actualFulfillmentSupplySourceId = null, bool? isISPU = null, string storeChainStoreId = null, string earliestDeliveryDateBefore = null, string earliestDeliveryDateAfter = null, string latestDeliveryDateBefore = null, string latestDeliveryDateAfter = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -1861,11 +1814,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1875,188 +1828,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetOrdersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetOrdersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrdersResponse)));
+                (GetOrdersResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetOrdersResponse)));
         }
 
         /// <summary>
-        /// updateShipmentStatus Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
-        /// <param name="payload">The request body for the &#x60;updateShipmentStatus&#x60; operation.</param>
-        /// <returns></returns>
-        public void UpdateShipmentStatus (string orderId, UpdateShipmentStatusRequest payload)
-        {
-             UpdateShipmentStatusWithHttpInfo(orderId, payload);
-        }
-
-        /// <summary>
-        /// updateShipmentStatus Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
-        /// <param name="payload">The request body for the &#x60;updateShipmentStatus&#x60; operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> UpdateShipmentStatusWithHttpInfo (string orderId, UpdateShipmentStatusRequest payload)
-        {
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->UpdateShipmentStatus");
-            // verify the required parameter 'payload' is set
-            if (payload == null)
-                throw new ApiException(400, "Missing required parameter 'payload' when calling OrdersApi->UpdateShipmentStatus");
-
-            var localVarPath = "/orders/v0/orders/{orderId}/shipment";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (orderId != null) localVarPathParams.Add("orderId", this.Configuration.ApiClient.ParameterToString(orderId)); // path parameter
-            if (payload != null && payload.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(payload); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = payload; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateShipmentStatus", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// updateShipmentStatus Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
-        /// <param name="payload">The request body for the &#x60;updateShipmentStatus&#x60; operation.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateShipmentStatusAsync (string orderId, UpdateShipmentStatusRequest payload)
-        {
-             await UpdateShipmentStatusAsyncWithHttpInfo(orderId, payload);
-
-        }
-
-        /// <summary>
-        /// updateShipmentStatus Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 5 | 15 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
-        /// <param name="payload">The request body for the &#x60;updateShipmentStatus&#x60; operation.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateShipmentStatusAsyncWithHttpInfo (string orderId, UpdateShipmentStatusRequest payload)
-        {
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->UpdateShipmentStatus");
-            // verify the required parameter 'payload' is set
-            if (payload == null)
-                throw new ApiException(400, "Missing required parameter 'payload' when calling OrdersApi->UpdateShipmentStatus");
-
-            var localVarPath = "/orders/v0/orders/{orderId}/shipment";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (orderId != null) localVarPathParams.Add("orderId", this.Configuration.ApiClient.ParameterToString(orderId)); // path parameter
-            if (payload != null && payload.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(payload); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = payload; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateShipmentStatus", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// updateVerificationStatus Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <param name="payload">The request body for the &#x60;updateVerificationStatus&#x60; operation.</param>
         /// <returns></returns>
-        public void UpdateVerificationStatus (string orderId, UpdateVerificationStatusRequest payload)
+        public void UpdateVerificationStatus(string orderId, UpdateVerificationStatusRequest payload)
         {
-             UpdateVerificationStatusWithHttpInfo(orderId, payload);
+            UpdateVerificationStatusWithHttpInfo(orderId, payload);
         }
 
         /// <summary>
-        /// updateVerificationStatus Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <param name="payload">The request body for the &#x60;updateVerificationStatus&#x60; operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> UpdateVerificationStatusWithHttpInfo (string orderId, UpdateVerificationStatusRequest payload)
+        public ApiResponse<Object> UpdateVerificationStatusWithHttpInfo(string orderId, UpdateVerificationStatusRequest payload)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -2099,11 +1893,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2117,26 +1911,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        /// updateVerificationStatus Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <param name="payload">The request body for the &#x60;updateVerificationStatus&#x60; operation.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateVerificationStatusAsync (string orderId, UpdateVerificationStatusRequest payload)
+        public async System.Threading.Tasks.Task UpdateVerificationStatusAsync(string orderId, UpdateVerificationStatusRequest payload)
         {
-             await UpdateVerificationStatusAsyncWithHttpInfo(orderId, payload);
+            await UpdateVerificationStatusAsyncWithHttpInfo(orderId, payload);
 
         }
 
         /// <summary>
-        /// updateVerificationStatus Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="orderId">An Amazon-defined order identifier, in 3-7-7 format.</param>
+        /// <param name="orderId">The Amazon order identifier in 3-7-7 format.</param>
         /// <param name="payload">The request body for the &#x60;updateVerificationStatus&#x60; operation.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateVerificationStatusAsyncWithHttpInfo (string orderId, UpdateVerificationStatusRequest payload)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateVerificationStatusAsyncWithHttpInfo(string orderId, UpdateVerificationStatusRequest payload)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -2179,11 +1973,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2207,17 +2001,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public OrdersApi Build() 
+            public OrdersApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

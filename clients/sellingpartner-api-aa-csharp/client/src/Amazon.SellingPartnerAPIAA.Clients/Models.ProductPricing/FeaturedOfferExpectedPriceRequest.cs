@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// An individual FOEP request for a particular SKU.
     /// </summary>
     [DataContract]
-    public partial class FeaturedOfferExpectedPriceRequest : BatchRequest,  IEquatable<FeaturedOfferExpectedPriceRequest>, IValidatableObject
+    public partial class FeaturedOfferExpectedPriceRequest : BatchRequest, IEquatable<FeaturedOfferExpectedPriceRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedOfferExpectedPriceRequest" /> class.
@@ -40,7 +34,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// </summary>
         /// <param name="marketplaceId">marketplaceId (required).</param>
         /// <param name="sku">sku (required).</param>
-        public FeaturedOfferExpectedPriceRequest(string marketplaceId = default, string sku = default, string uri = default, HttpMethod method = default, HttpBody body = default, HttpHeaders headers = default) : base(uri, method, body, headers)
+        /// <param name="segment">segment.</param>
+        public FeaturedOfferExpectedPriceRequest(string marketplaceId = default, string sku = default, Segment segment = default, string uri = default, HttpMethod method = default, HttpBody body = default, HttpHeaders headers = default) : base(uri, method, body, headers)
         {
             // to ensure "marketplaceId" is required (not null)
             if (marketplaceId == null)
@@ -60,19 +55,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             {
                 this.Sku = sku;
             }
+            this.Segment = segment;
         }
-        
+
         /// <summary>
         /// Gets or Sets MarketplaceId
         /// </summary>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// Gets or Sets Sku
         /// </summary>
-        [DataMember(Name="sku", EmitDefaultValue=false)]
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Segment
+        /// </summary>
+        [DataMember(Name = "segment", EmitDefaultValue = false)]
+        public Segment Segment { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -85,10 +87,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  MarketplaceId: ").Append(MarketplaceId).Append("\n");
             sb.Append("  Sku: ").Append(Sku).Append("\n");
+            sb.Append("  Segment: ").Append(Segment).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,16 +121,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return base.Equals(input) && 
+            return base.Equals(input) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && base.Equals(input) && 
+                ) && base.Equals(input) &&
                 (
                     this.Sku == input.Sku ||
                     (this.Sku != null &&
                     this.Sku.Equals(input.Sku))
+                ) && base.Equals(input) &&
+                (
+                    this.Segment == input.Segment ||
+                    (this.Segment != null &&
+                    this.Segment.Equals(input.Segment))
                 );
         }
 
@@ -144,6 +152,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                     hashCode = hashCode * 59 + this.MarketplaceId.GetHashCode();
                 if (this.Sku != null)
                     hashCode = hashCode * 59 + this.Sku.GetHashCode();
+                if (this.Segment != null)
+                    hashCode = hashCode * 59 + this.Segment.GetHashCode();
                 return hashCode;
             }
         }

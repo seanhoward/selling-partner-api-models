@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// Details for the shipment status update given by the vendor for the specific package.
     /// </summary>
     [DataContract]
-    public partial class StatusUpdateDetails :  IEquatable<StatusUpdateDetails>, IValidatableObject
+    public partial class StatusUpdateDetails : IEquatable<StatusUpdateDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StatusUpdateDetails" /> class.
@@ -93,45 +87,45 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             }
             this.ShipmentSchedule = shipmentSchedule;
         }
-        
+
         /// <summary>
         /// The shipment tracking number is required for every package and should match the &#x60;trackingNumber&#x60; sent for the shipment confirmation.
         /// </summary>
         /// <value>The shipment tracking number is required for every package and should match the &#x60;trackingNumber&#x60; sent for the shipment confirmation.</value>
-        [DataMember(Name="trackingNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "trackingNumber", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
 
         /// <summary>
         /// Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
         /// </summary>
         /// <value>Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).</value>
-        [DataMember(Name="statusCode", EmitDefaultValue=false)]
+        [DataMember(Name = "statusCode", EmitDefaultValue = false)]
         public string StatusCode { get; set; }
 
         /// <summary>
         /// Provides a reason code for the status of the package that will provide additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
         /// </summary>
         /// <value>Provides a reason code for the status of the package that will provide additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).</value>
-        [DataMember(Name="reasonCode", EmitDefaultValue=false)]
+        [DataMember(Name = "reasonCode", EmitDefaultValue = false)]
         public string ReasonCode { get; set; }
 
         /// <summary>
         /// The date and time when the shipment status was updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
         /// </summary>
         /// <value>The date and time when the shipment status was updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.</value>
-        [DataMember(Name="statusDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "statusDateTime", EmitDefaultValue = false)]
         public DateTime? StatusDateTime { get; set; }
 
         /// <summary>
         /// Gets or Sets StatusLocationAddress
         /// </summary>
-        [DataMember(Name="statusLocationAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "statusLocationAddress", EmitDefaultValue = false)]
         public Address StatusLocationAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets ShipmentSchedule
         /// </summary>
-        [DataMember(Name="shipmentSchedule", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentSchedule", EmitDefaultValue = false)]
         public ShipmentSchedule ShipmentSchedule { get; set; }
 
         /// <summary>
@@ -151,7 +145,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -181,32 +175,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TrackingNumber == input.TrackingNumber ||
                     (this.TrackingNumber != null &&
                     this.TrackingNumber.Equals(input.TrackingNumber))
-                ) && 
+                ) &&
                 (
                     this.StatusCode == input.StatusCode ||
                     (this.StatusCode != null &&
                     this.StatusCode.Equals(input.StatusCode))
-                ) && 
+                ) &&
                 (
                     this.ReasonCode == input.ReasonCode ||
                     (this.ReasonCode != null &&
                     this.ReasonCode.Equals(input.ReasonCode))
-                ) && 
+                ) &&
                 (
                     this.StatusDateTime == input.StatusDateTime ||
                     (this.StatusDateTime != null &&
                     this.StatusDateTime.Equals(input.StatusDateTime))
-                ) && 
+                ) &&
                 (
                     this.StatusLocationAddress == input.StatusLocationAddress ||
                     (this.StatusLocationAddress != null &&
                     this.StatusLocationAddress.Equals(input.StatusLocationAddress))
-                ) && 
+                ) &&
                 (
                     this.ShipmentSchedule == input.ShipmentSchedule ||
                     (this.ShipmentSchedule != null &&

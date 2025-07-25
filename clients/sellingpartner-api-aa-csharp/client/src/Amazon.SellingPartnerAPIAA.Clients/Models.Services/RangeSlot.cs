@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Capacity slots represented in a format similar to availability rules.
     /// </summary>
     [DataContract]
-    public partial class RangeSlot :  IEquatable<RangeSlot>, IValidatableObject
+    public partial class RangeSlot : IEquatable<RangeSlot>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RangeSlot" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.EndDateTime = endDateTime;
             this.Capacity = capacity;
         }
-        
+
         /// <summary>
         /// Start date time of slot in ISO 8601 format with precision of seconds.
         /// </summary>
         /// <value>Start date time of slot in ISO 8601 format with precision of seconds.</value>
-        [DataMember(Name="startDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
         public DateTime? StartDateTime { get; set; }
 
         /// <summary>
         /// End date time of slot in ISO 8601 format with precision of seconds.
         /// </summary>
         /// <value>End date time of slot in ISO 8601 format with precision of seconds.</value>
-        [DataMember(Name="endDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endDateTime", EmitDefaultValue = false)]
         public DateTime? EndDateTime { get; set; }
 
         /// <summary>
         /// Capacity of the slot.
         /// </summary>
         /// <value>Capacity of the slot.</value>
-        [DataMember(Name="capacity", EmitDefaultValue=false)]
+        [DataMember(Name = "capacity", EmitDefaultValue = false)]
         public int? Capacity { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StartDateTime == input.StartDateTime ||
                     (this.StartDateTime != null &&
                     this.StartDateTime.Equals(input.StartDateTime))
-                ) && 
+                ) &&
                 (
                     this.EndDateTime == input.EndDateTime ||
                     (this.EndDateTime != null &&
                     this.EndDateTime.Equals(input.EndDateTime))
-                ) && 
+                ) &&
                 (
                     this.Capacity == input.Capacity ||
                     (this.Capacity != null &&

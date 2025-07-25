@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// Dates when the business is closed or open with a different time window.
     /// </summary>
     [DataContract]
-    public partial class ExceptionDates :  IEquatable<ExceptionDates>, IValidatableObject
+    public partial class ExceptionDates : IEquatable<ExceptionDates>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExceptionDates" /> class.
@@ -42,26 +36,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.IsOpen = isOpen;
             this.OpenIntervals = openIntervals;
         }
-        
+
         /// <summary>
         /// Date when the business is closed, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date format.
         /// </summary>
         /// <value>Date when the business is closed, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date format.</value>
-        [DataMember(Name="ExceptionDate", EmitDefaultValue=false)]
+        [DataMember(Name = "ExceptionDate", EmitDefaultValue = false)]
         public string ExceptionDate { get; set; }
 
         /// <summary>
         /// Boolean indicating if the business is closed or open on that date.
         /// </summary>
         /// <value>Boolean indicating if the business is closed or open on that date.</value>
-        [DataMember(Name="IsOpen", EmitDefaultValue=false)]
+        [DataMember(Name = "IsOpen", EmitDefaultValue = false)]
         public bool? IsOpen { get; set; }
 
         /// <summary>
         /// Time window during the day when the business is open.
         /// </summary>
         /// <value>Time window during the day when the business is open.</value>
-        [DataMember(Name="OpenIntervals", EmitDefaultValue=false)]
+        [DataMember(Name = "OpenIntervals", EmitDefaultValue = false)]
         public List<OpenInterval> OpenIntervals { get; set; }
 
         /// <summary>
@@ -78,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +102,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ExceptionDate == input.ExceptionDate ||
                     (this.ExceptionDate != null &&
                     this.ExceptionDate.Equals(input.ExceptionDate))
-                ) && 
+                ) &&
                 (
                     this.IsOpen == input.IsOpen ||
                     (this.IsOpen != null &&
                     this.IsOpen.Equals(input.IsOpen))
-                ) && 
+                ) &&
                 (
                     this.OpenIntervals == input.OpenIntervals ||
                     this.OpenIntervals != null &&

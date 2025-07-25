@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Appointment details for carrier pickup or fulfillment center appointments.
     /// </summary>
     [DataContract]
-    public partial class SelfShipAppointmentDetails :  IEquatable<SelfShipAppointmentDetails>, IValidatableObject
+    public partial class SelfShipAppointmentDetails : IEquatable<SelfShipAppointmentDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SelfShipAppointmentDetails" /> class.
@@ -42,25 +35,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.AppointmentSlotTime = appointmentSlotTime;
             this.AppointmentStatus = appointmentStatus;
         }
-        
+
         /// <summary>
         /// Identifier for appointment.
         /// </summary>
         /// <value>Identifier for appointment.</value>
-        [DataMember(Name="appointmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentId", EmitDefaultValue = false)]
         public decimal? AppointmentId { get; set; }
 
         /// <summary>
         /// Gets or Sets AppointmentSlotTime
         /// </summary>
-        [DataMember(Name="appointmentSlotTime", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentSlotTime", EmitDefaultValue = false)]
         public AppointmentSlotTime AppointmentSlotTime { get; set; }
 
         /// <summary>
         /// Status of the appointment.
         /// </summary>
         /// <value>Status of the appointment.</value>
-        [DataMember(Name="appointmentStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "appointmentStatus", EmitDefaultValue = false)]
         public string AppointmentStatus { get; set; }
 
         /// <summary>
@@ -77,7 +70,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -107,17 +100,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AppointmentId == input.AppointmentId ||
                     (this.AppointmentId != null &&
                     this.AppointmentId.Equals(input.AppointmentId))
-                ) && 
+                ) &&
                 (
                     this.AppointmentSlotTime == input.AppointmentSlotTime ||
                     (this.AppointmentSlotTime != null &&
                     this.AppointmentSlotTime.Equals(input.AppointmentSlotTime))
-                ) && 
+                ) &&
                 (
                     this.AppointmentStatus == input.AppointmentStatus ||
                     (this.AppointmentStatus != null &&
@@ -152,15 +145,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // AppointmentStatus (string) maxLength
-            if(this.AppointmentStatus != null && this.AppointmentStatus.Length > 1024)
+            if (this.AppointmentStatus != null && this.AppointmentStatus.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for AppointmentStatus, length must be less than 1024.", new [] { "AppointmentStatus" });
+                yield return new ValidationResult("Invalid value for AppointmentStatus, length must be less than 1024.", new[] { "AppointmentStatus" });
             }
 
             // AppointmentStatus (string) minLength
-            if(this.AppointmentStatus != null && this.AppointmentStatus.Length < 1)
+            if (this.AppointmentStatus != null && this.AppointmentStatus.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for AppointmentStatus, length must be greater than 1.", new [] { "AppointmentStatus" });
+                yield return new ValidationResult("Invalid value for AppointmentStatus, length must be greater than 1.", new[] { "AppointmentStatus" });
             }
 
             yield break;

@@ -1,5 +1,5 @@
 /* 
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  *
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
     /// Information pertaining to the preparation of inbound goods.
     /// </summary>
     [DataContract]
-    public partial class PrepInstruction :  IEquatable<PrepInstruction>, IValidatableObject
+    public partial class PrepInstruction : IEquatable<PrepInstruction>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PrepInstruction" /> class.
@@ -42,25 +35,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             this.PrepOwner = prepOwner;
             this.PrepType = prepType;
         }
-        
+
         /// <summary>
         /// Gets or Sets Fee
         /// </summary>
-        [DataMember(Name="fee", EmitDefaultValue=false)]
+        [DataMember(Name = "fee", EmitDefaultValue = false)]
         public Currency Fee { get; set; }
 
         /// <summary>
         /// In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include &#x60;AMAZON&#x60;, &#x60;SELLER&#x60; or &#x60;NONE&#x60;.
         /// </summary>
         /// <value>In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include &#x60;AMAZON&#x60;, &#x60;SELLER&#x60; or &#x60;NONE&#x60;.</value>
-        [DataMember(Name="prepOwner", EmitDefaultValue=false)]
+        [DataMember(Name = "prepOwner", EmitDefaultValue = false)]
         public string PrepOwner { get; set; }
 
         /// <summary>
         /// Type of preparation that should be done.  Possible values: &#x60;ITEM_LABELING&#x60;, &#x60;ITEM_BUBBLEWRAP&#x60;, &#x60;ITEM_POLYBAGGING&#x60;, &#x60;ITEM_TAPING&#x60;, &#x60;ITEM_BLACK_SHRINKWRAP&#x60;, &#x60;ITEM_HANG_GARMENT&#x60;, &#x60;ITEM_BOXING&#x60;, &#x60;ITEM_SETCREAT&#x60;, &#x60;ITEM_RMOVHANG&#x60;, &#x60;ITEM_SUFFOSTK&#x60;, &#x60;ITEM_CAP_SEALING&#x60;, &#x60;ITEM_DEBUNDLE&#x60;, &#x60;ITEM_SETSTK&#x60;, &#x60;ITEM_SIOC&#x60;, &#x60;ITEM_NO_PREP&#x60;, &#x60;ADULT&#x60;, &#x60;BABY&#x60;, &#x60;TEXTILE&#x60;, &#x60;HANGER&#x60;, &#x60;FRAGILE&#x60;, &#x60;LIQUID&#x60;, &#x60;SHARP&#x60;, &#x60;SMALL&#x60;, &#x60;PERFORATED&#x60;, &#x60;GRANULAR&#x60;, &#x60;SET&#x60;, &#x60;FC_PROVIDED&#x60;, &#x60;UNKNOWN&#x60;, &#x60;NONE&#x60;.
         /// </summary>
         /// <value>Type of preparation that should be done.  Possible values: &#x60;ITEM_LABELING&#x60;, &#x60;ITEM_BUBBLEWRAP&#x60;, &#x60;ITEM_POLYBAGGING&#x60;, &#x60;ITEM_TAPING&#x60;, &#x60;ITEM_BLACK_SHRINKWRAP&#x60;, &#x60;ITEM_HANG_GARMENT&#x60;, &#x60;ITEM_BOXING&#x60;, &#x60;ITEM_SETCREAT&#x60;, &#x60;ITEM_RMOVHANG&#x60;, &#x60;ITEM_SUFFOSTK&#x60;, &#x60;ITEM_CAP_SEALING&#x60;, &#x60;ITEM_DEBUNDLE&#x60;, &#x60;ITEM_SETSTK&#x60;, &#x60;ITEM_SIOC&#x60;, &#x60;ITEM_NO_PREP&#x60;, &#x60;ADULT&#x60;, &#x60;BABY&#x60;, &#x60;TEXTILE&#x60;, &#x60;HANGER&#x60;, &#x60;FRAGILE&#x60;, &#x60;LIQUID&#x60;, &#x60;SHARP&#x60;, &#x60;SMALL&#x60;, &#x60;PERFORATED&#x60;, &#x60;GRANULAR&#x60;, &#x60;SET&#x60;, &#x60;FC_PROVIDED&#x60;, &#x60;UNKNOWN&#x60;, &#x60;NONE&#x60;.</value>
-        [DataMember(Name="prepType", EmitDefaultValue=false)]
+        [DataMember(Name = "prepType", EmitDefaultValue = false)]
         public string PrepType { get; set; }
 
         /// <summary>
@@ -77,7 +70,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -107,17 +100,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Fee == input.Fee ||
                     (this.Fee != null &&
                     this.Fee.Equals(input.Fee))
-                ) && 
+                ) &&
                 (
                     this.PrepOwner == input.PrepOwner ||
                     (this.PrepOwner != null &&
                     this.PrepOwner.Equals(input.PrepOwner))
-                ) && 
+                ) &&
                 (
                     this.PrepType == input.PrepType ||
                     (this.PrepType != null &&
@@ -152,27 +145,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PrepOwner (string) maxLength
-            if(this.PrepOwner != null && this.PrepOwner.Length > 1024)
+            if (this.PrepOwner != null && this.PrepOwner.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for PrepOwner, length must be less than 1024.", new [] { "PrepOwner" });
+                yield return new ValidationResult("Invalid value for PrepOwner, length must be less than 1024.", new[] { "PrepOwner" });
             }
 
             // PrepOwner (string) minLength
-            if(this.PrepOwner != null && this.PrepOwner.Length < 1)
+            if (this.PrepOwner != null && this.PrepOwner.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for PrepOwner, length must be greater than 1.", new [] { "PrepOwner" });
+                yield return new ValidationResult("Invalid value for PrepOwner, length must be greater than 1.", new[] { "PrepOwner" });
             }
 
             // PrepType (string) maxLength
-            if(this.PrepType != null && this.PrepType.Length > 1024)
+            if (this.PrepType != null && this.PrepType.Length > 1024)
             {
-                yield return new ValidationResult("Invalid value for PrepType, length must be less than 1024.", new [] { "PrepType" });
+                yield return new ValidationResult("Invalid value for PrepType, length must be less than 1024.", new[] { "PrepType" });
             }
 
             // PrepType (string) minLength
-            if(this.PrepType != null && this.PrepType.Length < 1)
+            if (this.PrepType != null && this.PrepType.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for PrepType, length must be greater than 1.", new [] { "PrepType" });
+                yield return new ValidationResult("Invalid value for PrepType, length must be greater than 1.", new[] { "PrepType" });
             }
 
             yield break;

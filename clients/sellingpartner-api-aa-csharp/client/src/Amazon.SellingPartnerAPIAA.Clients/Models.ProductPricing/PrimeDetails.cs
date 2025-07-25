@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// Amazon Prime details.
     /// </summary>
     [DataContract]
-    public partial class PrimeDetails :  IEquatable<PrimeDetails>, IValidatableObject
+    public partial class PrimeDetails : IEquatable<PrimeDetails>, IValidatableObject
     {
         /// <summary>
         /// Indicates whether the offer is an Amazon Prime offer.
@@ -37,19 +32,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         [JsonConverter(typeof(StringEnumConverter))]
         public enum EligibilityEnum
         {
-            
+
             /// <summary>
             /// Enum NATIONAL for value: NATIONAL
             /// </summary>
             [EnumMember(Value = "NATIONAL")]
             NATIONAL = 1,
-            
+
             /// <summary>
             /// Enum REGIONAL for value: REGIONAL
             /// </summary>
             [EnumMember(Value = "REGIONAL")]
             REGIONAL = 2,
-            
+
             /// <summary>
             /// Enum NONE for value: NONE
             /// </summary>
@@ -61,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// Indicates whether the offer is an Amazon Prime offer.
         /// </summary>
         /// <value>Indicates whether the offer is an Amazon Prime offer.</value>
-        [DataMember(Name="eligibility", EmitDefaultValue=false)]
+        [DataMember(Name = "eligibility", EmitDefaultValue = false)]
         public EligibilityEnum Eligibility { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PrimeDetails" /> class.
@@ -84,7 +79,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 this.Eligibility = eligibility;
             }
         }
-        
+
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -98,7 +93,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,7 +123,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Eligibility == input.Eligibility ||
                     (this.Eligibility != null &&

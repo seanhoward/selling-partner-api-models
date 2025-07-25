@@ -1,5 +1,5 @@
 /* 
- * Orders v0
+ * Selling Partner API for Orders
  *
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
     /// The time when the business opens or closes.
     /// </summary>
     [DataContract]
-    public partial class OpenTimeInterval :  IEquatable<OpenTimeInterval>, IValidatableObject
+    public partial class OpenTimeInterval : IEquatable<OpenTimeInterval>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OpenTimeInterval" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             this.Hour = hour;
             this.Minute = minute;
         }
-        
+
         /// <summary>
         /// The hour when the business opens or closes.
         /// </summary>
         /// <value>The hour when the business opens or closes.</value>
-        [DataMember(Name="Hour", EmitDefaultValue=false)]
+        [DataMember(Name = "Hour", EmitDefaultValue = false)]
         public int? Hour { get; set; }
 
         /// <summary>
         /// The minute when the business opens or closes.
         /// </summary>
         /// <value>The minute when the business opens or closes.</value>
-        [DataMember(Name="Minute", EmitDefaultValue=false)]
+        [DataMember(Name = "Minute", EmitDefaultValue = false)]
         public int? Minute { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Orders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Hour == input.Hour ||
                     (this.Hour != null &&
                     this.Hour.Equals(input.Hour))
-                ) && 
+                ) &&
                 (
                     this.Minute == input.Minute ||
                     (this.Minute != null &&

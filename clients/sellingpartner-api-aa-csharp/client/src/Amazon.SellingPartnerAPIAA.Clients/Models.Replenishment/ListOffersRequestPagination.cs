@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// Use these parameters to paginate through the response.
     /// </summary>
     [DataContract]
-    public partial class ListOffersRequestPagination :  IEquatable<ListOffersRequestPagination>, IValidatableObject
+    public partial class ListOffersRequestPagination : IEquatable<ListOffersRequestPagination>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ListOffersRequestPagination" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
                 this.Offset = offset;
             }
         }
-        
+
         /// <summary>
         /// The maximum number of results to return in the response.
         /// </summary>
         /// <value>The maximum number of results to return in the response.</value>
-        [DataMember(Name="limit", EmitDefaultValue=false)]
+        [DataMember(Name = "limit", EmitDefaultValue = false)]
         public long? Limit { get; set; }
 
         /// <summary>
         /// The offset from which to retrieve the number of results specified by the &#x60;limit&#x60; value. The first result is at offset 0.
         /// </summary>
         /// <value>The offset from which to retrieve the number of results specified by the &#x60;limit&#x60; value. The first result is at offset 0.</value>
-        [DataMember(Name="offset", EmitDefaultValue=false)]
+        [DataMember(Name = "offset", EmitDefaultValue = false)]
         public long? Offset { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Limit == input.Limit ||
                     (this.Limit != null &&
                     this.Limit.Equals(input.Limit))
-                ) && 
+                ) &&
                 (
                     this.Offset == input.Offset ||
                     (this.Offset != null &&
@@ -157,27 +151,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Limit (long?) maximum
-            if(this.Limit > (long?)100)
+            if (this.Limit > (long?)100)
             {
-                yield return new ValidationResult("Invalid value for Limit, must be a value less than or equal to 100.", new [] { "Limit" });
+                yield return new ValidationResult("Invalid value for Limit, must be a value less than or equal to 100.", new[] { "Limit" });
             }
 
             // Limit (long?) minimum
-            if(this.Limit < (long?)1)
+            if (this.Limit < (long?)1)
             {
-                yield return new ValidationResult("Invalid value for Limit, must be a value greater than or equal to 1.", new [] { "Limit" });
+                yield return new ValidationResult("Invalid value for Limit, must be a value greater than or equal to 1.", new[] { "Limit" });
             }
 
             // Offset (long?) maximum
-            if(this.Offset > (long?)9000)
+            if (this.Offset > (long?)9000)
             {
-                yield return new ValidationResult("Invalid value for Offset, must be a value less than or equal to 9000.", new [] { "Offset" });
+                yield return new ValidationResult("Invalid value for Offset, must be a value less than or equal to 9000.", new[] { "Offset" });
             }
 
             // Offset (long?) minimum
-            if(this.Offset < (long?)0)
+            if (this.Offset < (long?)0)
             {
-                yield return new ValidationResult("Invalid value for Offset, must be a value greater than or equal to 0.", new [] { "Offset" });
+                yield return new ValidationResult("Invalid value for Offset, must be a value greater than or equal to 0.", new[] { "Offset" });
             }
 
             yield break;

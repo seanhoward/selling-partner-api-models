@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// The vendor procurement information for the listings item.
     /// </summary>
     [DataContract]
-    public partial class ItemProcurement :  IEquatable<ItemProcurement>, IValidatableObject
+    public partial class ItemProcurement : IEquatable<ItemProcurement>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemProcurement" /> class.
@@ -51,12 +45,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
                 this.CostPrice = costPrice;
             }
         }
-        
+
         /// <summary>
         /// The price (numeric value) that you want Amazon to pay you for this product.
         /// </summary>
         /// <value>The price (numeric value) that you want Amazon to pay you for this product.</value>
-        [DataMember(Name="costPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "costPrice", EmitDefaultValue = false)]
         public Money CostPrice { get; set; }
 
         /// <summary>
@@ -71,7 +65,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CostPrice == input.CostPrice ||
                     (this.CostPrice != null &&

@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,17 +23,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// The request body for the &#x60;getSellingPartnerMetrics&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class GetSellingPartnerMetricsRequest :  IEquatable<GetSellingPartnerMetricsRequest>, IValidatableObject
+    public partial class GetSellingPartnerMetricsRequest : IEquatable<GetSellingPartnerMetricsRequest>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets AggregationFrequency
         /// </summary>
-        [DataMember(Name="aggregationFrequency", EmitDefaultValue=false)]
+        [DataMember(Name = "aggregationFrequency", EmitDefaultValue = false)]
         public AggregationFrequency? AggregationFrequency { get; set; }
         /// <summary>
         /// Gets or Sets TimePeriodType
         /// </summary>
-        [DataMember(Name="timePeriodType", EmitDefaultValue=false)]
+        [DataMember(Name = "timePeriodType", EmitDefaultValue = false)]
         public TimePeriodType TimePeriodType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSellingPartnerMetricsRequest" /> class.
@@ -95,20 +90,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             this.AggregationFrequency = aggregationFrequency;
             this.Metrics = metrics;
         }
-        
+
 
         /// <summary>
         /// A time interval used to compute metrics.
         /// </summary>
         /// <value>A time interval used to compute metrics.</value>
-        [DataMember(Name="timeInterval", EmitDefaultValue=false)]
+        [DataMember(Name = "timeInterval", EmitDefaultValue = false)]
         public TimeInterval TimeInterval { get; set; }
 
         /// <summary>
         /// The list of metrics requested. If no metric value is provided, data for all of the metrics will be returned.
         /// </summary>
         /// <value>The list of metrics requested. If no metric value is provided, data for all of the metrics will be returned.</value>
-        [DataMember(Name="metrics", EmitDefaultValue=false)]
+        [DataMember(Name = "metrics", EmitDefaultValue = false)]
         public List<Metric> Metrics { get; set; }
 
 
@@ -116,14 +111,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         /// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
         /// </summary>
         /// <value>The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The list of replenishment program types for which to return metrics.
         /// </summary>
         /// <value>The list of replenishment program types for which to return metrics.</value>
-        [DataMember(Name="programTypes", EmitDefaultValue=false)]
+        [DataMember(Name = "programTypes", EmitDefaultValue = false)]
         public ProgramTypes ProgramTypes { get; set; }
 
         /// <summary>
@@ -143,7 +138,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -173,32 +168,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AggregationFrequency == input.AggregationFrequency ||
                     (this.AggregationFrequency != null &&
                     this.AggregationFrequency.Equals(input.AggregationFrequency))
-                ) && 
+                ) &&
                 (
                     this.TimeInterval == input.TimeInterval ||
                     (this.TimeInterval != null &&
                     this.TimeInterval.Equals(input.TimeInterval))
-                ) && 
+                ) &&
                 (
                     this.Metrics == input.Metrics ||
                     this.Metrics != null &&
                     this.Metrics.SequenceEqual(input.Metrics)
-                ) && 
+                ) &&
                 (
                     this.TimePeriodType == input.TimePeriodType ||
                     (this.TimePeriodType != null &&
                     this.TimePeriodType.Equals(input.TimePeriodType))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.ProgramTypes == input.ProgramTypes ||
                     (this.ProgramTypes != null &&

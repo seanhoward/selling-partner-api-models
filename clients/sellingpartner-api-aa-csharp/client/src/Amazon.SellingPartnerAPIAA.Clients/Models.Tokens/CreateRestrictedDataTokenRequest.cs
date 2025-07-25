@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
     /// The request schema for the createRestrictedDataToken operation.
     /// </summary>
     [DataContract]
-    public partial class CreateRestrictedDataTokenRequest :  IEquatable<CreateRestrictedDataTokenRequest>, IValidatableObject
+    public partial class CreateRestrictedDataTokenRequest : IEquatable<CreateRestrictedDataTokenRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateRestrictedDataTokenRequest" /> class.
@@ -53,19 +48,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
             }
             this.TargetApplication = targetApplication;
         }
-        
+
         /// <summary>
         /// The application ID for the target application to which access is being delegated.
         /// </summary>
         /// <value>The application ID for the target application to which access is being delegated.</value>
-        [DataMember(Name="targetApplication", EmitDefaultValue=false)]
+        [DataMember(Name = "targetApplication", EmitDefaultValue = false)]
         public string TargetApplication { get; set; }
 
         /// <summary>
         /// A list of restricted resources. Maximum: 50
         /// </summary>
         /// <value>A list of restricted resources. Maximum: 50</value>
-        [DataMember(Name="restrictedResources", EmitDefaultValue=false)]
+        [DataMember(Name = "restrictedResources", EmitDefaultValue = false)]
         public List<RestrictedResource> RestrictedResources { get; set; }
 
         /// <summary>
@@ -81,7 +76,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -111,12 +106,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Tokens
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.TargetApplication == input.TargetApplication ||
                     (this.TargetApplication != null &&
                     this.TargetApplication.Equals(input.TargetApplication))
-                ) && 
+                ) &&
                 (
                     this.RestrictedResources == input.RestrictedResources ||
                     this.RestrictedResources != null &&

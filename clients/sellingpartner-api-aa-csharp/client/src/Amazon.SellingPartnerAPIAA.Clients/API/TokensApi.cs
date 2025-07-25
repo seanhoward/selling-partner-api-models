@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Tokens;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -34,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The restricted data token request details.</param>
         /// <returns>CreateRestrictedDataTokenResponse</returns>
-        CreateRestrictedDataTokenResponse CreateRestrictedDataToken (CreateRestrictedDataTokenRequest body);
+        CreateRestrictedDataTokenResponse CreateRestrictedDataToken(CreateRestrictedDataTokenRequest body);
 
         /// <summary>
         /// 
@@ -45,7 +44,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The restricted data token request details.</param>
         /// <returns>ApiResponse of CreateRestrictedDataTokenResponse</returns>
-        ApiResponse<CreateRestrictedDataTokenResponse> CreateRestrictedDataTokenWithHttpInfo (CreateRestrictedDataTokenRequest body);
+        ApiResponse<CreateRestrictedDataTokenResponse> CreateRestrictedDataTokenWithHttpInfo(CreateRestrictedDataTokenRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -57,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The restricted data token request details.</param>
         /// <returns>Task of CreateRestrictedDataTokenResponse</returns>
-        System.Threading.Tasks.Task<CreateRestrictedDataTokenResponse> CreateRestrictedDataTokenAsync (CreateRestrictedDataTokenRequest body);
+        System.Threading.Tasks.Task<CreateRestrictedDataTokenResponse> CreateRestrictedDataTokenAsync(CreateRestrictedDataTokenRequest body);
 
         /// <summary>
         /// 
@@ -68,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The restricted data token request details.</param>
         /// <returns>Task of ApiResponse (CreateRestrictedDataTokenResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateRestrictedDataTokenResponse>> CreateRestrictedDataTokenAsyncWithHttpInfo (CreateRestrictedDataTokenRequest body);
+        System.Threading.Tasks.Task<ApiResponse<CreateRestrictedDataTokenResponse>> CreateRestrictedDataTokenAsyncWithHttpInfo(CreateRestrictedDataTokenRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -88,7 +87,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public TokensApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -114,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -160,10 +159,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The restricted data token request details.</param>
         /// <returns>CreateRestrictedDataTokenResponse</returns>
-        public CreateRestrictedDataTokenResponse CreateRestrictedDataToken (CreateRestrictedDataTokenRequest body)
+        public CreateRestrictedDataTokenResponse CreateRestrictedDataToken(CreateRestrictedDataTokenRequest body)
         {
-             ApiResponse<CreateRestrictedDataTokenResponse> localVarResponse = CreateRestrictedDataTokenWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateRestrictedDataTokenResponse> localVarResponse = CreateRestrictedDataTokenWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -172,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The restricted data token request details.</param>
         /// <returns>ApiResponse of CreateRestrictedDataTokenResponse</returns>
-        public ApiResponse< CreateRestrictedDataTokenResponse > CreateRestrictedDataTokenWithHttpInfo (CreateRestrictedDataTokenRequest body)
+        public ApiResponse<CreateRestrictedDataTokenResponse> CreateRestrictedDataTokenWithHttpInfo(CreateRestrictedDataTokenRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -211,11 +210,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -225,7 +224,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateRestrictedDataTokenResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateRestrictedDataTokenResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateRestrictedDataTokenResponse)));
+                (CreateRestrictedDataTokenResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateRestrictedDataTokenResponse)));
         }
 
         /// <summary>
@@ -234,10 +233,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The restricted data token request details.</param>
         /// <returns>Task of CreateRestrictedDataTokenResponse</returns>
-        public async System.Threading.Tasks.Task<CreateRestrictedDataTokenResponse> CreateRestrictedDataTokenAsync (CreateRestrictedDataTokenRequest body)
+        public async System.Threading.Tasks.Task<CreateRestrictedDataTokenResponse> CreateRestrictedDataTokenAsync(CreateRestrictedDataTokenRequest body)
         {
-             ApiResponse<CreateRestrictedDataTokenResponse> localVarResponse = await CreateRestrictedDataTokenAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateRestrictedDataTokenResponse> localVarResponse = await CreateRestrictedDataTokenAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -247,7 +246,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The restricted data token request details.</param>
         /// <returns>Task of ApiResponse (CreateRestrictedDataTokenResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateRestrictedDataTokenResponse>> CreateRestrictedDataTokenAsyncWithHttpInfo (CreateRestrictedDataTokenRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateRestrictedDataTokenResponse>> CreateRestrictedDataTokenAsyncWithHttpInfo(CreateRestrictedDataTokenRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -286,11 +285,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -300,7 +299,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateRestrictedDataTokenResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateRestrictedDataTokenResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateRestrictedDataTokenResponse)));
+                (CreateRestrictedDataTokenResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateRestrictedDataTokenResponse)));
         }
 
 
@@ -314,17 +313,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public TokensApi Build() 
+            public TokensApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

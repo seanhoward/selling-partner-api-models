@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Acknowledgement status information.
     /// </summary>
     [DataContract]
-    public partial class OrderItemStatusAcknowledgementStatus :  IEquatable<OrderItemStatusAcknowledgementStatus>, IValidatableObject
+    public partial class OrderItemStatusAcknowledgementStatus : IEquatable<OrderItemStatusAcknowledgementStatus>, IValidatableObject
     {
         /// <summary>
         /// Confirmation status of line item.
@@ -37,25 +32,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ConfirmationStatusEnum
         {
-            
+
             /// <summary>
             /// Enum ACCEPTED for value: ACCEPTED
             /// </summary>
             [EnumMember(Value = "ACCEPTED")]
             ACCEPTED = 1,
-            
+
             /// <summary>
             /// Enum PARTIALLYACCEPTED for value: PARTIALLY_ACCEPTED
             /// </summary>
             [EnumMember(Value = "PARTIALLY_ACCEPTED")]
             PARTIALLYACCEPTED = 2,
-            
+
             /// <summary>
             /// Enum REJECTED for value: REJECTED
             /// </summary>
             [EnumMember(Value = "REJECTED")]
             REJECTED = 3,
-            
+
             /// <summary>
             /// Enum UNCONFIRMED for value: UNCONFIRMED
             /// </summary>
@@ -67,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// Confirmation status of line item.
         /// </summary>
         /// <value>Confirmation status of line item.</value>
-        [DataMember(Name="confirmationStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "confirmationStatus", EmitDefaultValue = false)]
         public ConfirmationStatusEnum? ConfirmationStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderItemStatusAcknowledgementStatus" /> class.
@@ -83,27 +78,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.RejectedQuantity = rejectedQuantity;
             this.AcknowledgementStatusDetails = acknowledgementStatusDetails;
         }
-        
+
 
         /// <summary>
         /// Item quantities accepted by vendor to be shipped.
         /// </summary>
         /// <value>Item quantities accepted by vendor to be shipped.</value>
-        [DataMember(Name="acceptedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "acceptedQuantity", EmitDefaultValue = false)]
         public ItemQuantity AcceptedQuantity { get; set; }
 
         /// <summary>
         /// Item quantities rejected by vendor.
         /// </summary>
         /// <value>Item quantities rejected by vendor.</value>
-        [DataMember(Name="rejectedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "rejectedQuantity", EmitDefaultValue = false)]
         public ItemQuantity RejectedQuantity { get; set; }
 
         /// <summary>
         /// Details of item quantity confirmed.
         /// </summary>
         /// <value>Details of item quantity confirmed.</value>
-        [DataMember(Name="acknowledgementStatusDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "acknowledgementStatusDetails", EmitDefaultValue = false)]
         public List<AcknowledgementStatusDetails> AcknowledgementStatusDetails { get; set; }
 
         /// <summary>
@@ -121,7 +116,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -151,22 +146,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ConfirmationStatus == input.ConfirmationStatus ||
                     (this.ConfirmationStatus != null &&
                     this.ConfirmationStatus.Equals(input.ConfirmationStatus))
-                ) && 
+                ) &&
                 (
                     this.AcceptedQuantity == input.AcceptedQuantity ||
                     (this.AcceptedQuantity != null &&
                     this.AcceptedQuantity.Equals(input.AcceptedQuantity))
-                ) && 
+                ) &&
                 (
                     this.RejectedQuantity == input.RejectedQuantity ||
                     (this.RejectedQuantity != null &&
                     this.RejectedQuantity.Equals(input.RejectedQuantity))
-                ) && 
+                ) &&
                 (
                     this.AcknowledgementStatusDetails == input.AcknowledgementStatusDetails ||
                     this.AcknowledgementStatusDetails != null &&

@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// Describes a featured buying option, which includes a list of segmented featured offers for a particular item condition.
     /// </summary>
     [DataContract]
-    public partial class FeaturedBuyingOption :  IEquatable<FeaturedBuyingOption>, IValidatableObject
+    public partial class FeaturedBuyingOption : IEquatable<FeaturedBuyingOption>, IValidatableObject
     {
         /// <summary>
         /// The buying option type for the featured offer. &#x60;buyingOptionType&#x60; represents the buying options that a customer receives on the detail page, such as &#x60;B2B&#x60;, &#x60;Fresh&#x60;, and &#x60;Subscribe n Save&#x60;. &#x60;buyingOptionType&#x60; currently supports &#x60;NEW&#x60; as a value.
@@ -37,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BuyingOptionTypeEnum
         {
-            
+
             /// <summary>
             /// Enum New for value: New
             /// </summary>
@@ -49,7 +45,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// The buying option type for the featured offer. &#x60;buyingOptionType&#x60; represents the buying options that a customer receives on the detail page, such as &#x60;B2B&#x60;, &#x60;Fresh&#x60;, and &#x60;Subscribe n Save&#x60;. &#x60;buyingOptionType&#x60; currently supports &#x60;NEW&#x60; as a value.
         /// </summary>
         /// <value>The buying option type for the featured offer. &#x60;buyingOptionType&#x60; represents the buying options that a customer receives on the detail page, such as &#x60;B2B&#x60;, &#x60;Fresh&#x60;, and &#x60;Subscribe n Save&#x60;. &#x60;buyingOptionType&#x60; currently supports &#x60;NEW&#x60; as a value.</value>
-        [DataMember(Name="buyingOptionType", EmitDefaultValue=false)]
+        [DataMember(Name = "buyingOptionType", EmitDefaultValue = false)]
         public BuyingOptionTypeEnum BuyingOptionType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturedBuyingOption" /> class.
@@ -82,13 +78,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
                 this.SegmentedFeaturedOffers = segmentedFeaturedOffers;
             }
         }
-        
+
 
         /// <summary>
         /// A list of segmented featured offers for the current buying option type. A segment can be considered as a group of regional contexts that all have the same featured offer. A regional context is a combination of factors such as customer type, region, or postal code and buying option.
         /// </summary>
         /// <value>A list of segmented featured offers for the current buying option type. A segment can be considered as a group of regional contexts that all have the same featured offer. A regional context is a combination of factors such as customer type, region, or postal code and buying option.</value>
-        [DataMember(Name="segmentedFeaturedOffers", EmitDefaultValue=false)]
+        [DataMember(Name = "segmentedFeaturedOffers", EmitDefaultValue = false)]
         public List<SegmentedFeaturedOffer> SegmentedFeaturedOffers { get; set; }
 
         /// <summary>
@@ -104,7 +100,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -134,12 +130,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BuyingOptionType == input.BuyingOptionType ||
                     (this.BuyingOptionType != null &&
                     this.BuyingOptionType.Equals(input.BuyingOptionType))
-                ) && 
+                ) &&
                 (
                     this.SegmentedFeaturedOffers == input.SegmentedFeaturedOffers ||
                     this.SegmentedFeaturedOffers != null &&

@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
     /// Details of an order.
     /// </summary>
     [DataContract]
-    public partial class OrderDetails :  IEquatable<OrderDetails>, IValidatableObject
+    public partial class OrderDetails : IEquatable<OrderDetails>, IValidatableObject
     {
         /// <summary>
         /// Type of purchase order.
@@ -37,25 +33,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PurchaseOrderTypeEnum
         {
-            
+
             /// <summary>
             /// Enum RegularOrder for value: RegularOrder
             /// </summary>
             [EnumMember(Value = "RegularOrder")]
             RegularOrder = 1,
-            
+
             /// <summary>
             /// Enum ConsignedOrder for value: ConsignedOrder
             /// </summary>
             [EnumMember(Value = "ConsignedOrder")]
             ConsignedOrder = 2,
-            
+
             /// <summary>
             /// Enum NewProductIntroduction for value: NewProductIntroduction
             /// </summary>
             [EnumMember(Value = "NewProductIntroduction")]
             NewProductIntroduction = 3,
-            
+
             /// <summary>
             /// Enum RushOrder for value: RushOrder
             /// </summary>
@@ -67,7 +63,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// Type of purchase order.
         /// </summary>
         /// <value>Type of purchase order.</value>
-        [DataMember(Name="purchaseOrderType", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderType", EmitDefaultValue = false)]
         public PurchaseOrderTypeEnum? PurchaseOrderType { get; set; }
         /// <summary>
         /// Payment method used.
@@ -76,25 +72,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PaymentMethodEnum
         {
-            
+
             /// <summary>
             /// Enum Invoice for value: Invoice
             /// </summary>
             [EnumMember(Value = "Invoice")]
             Invoice = 1,
-            
+
             /// <summary>
             /// Enum Consignment for value: Consignment
             /// </summary>
             [EnumMember(Value = "Consignment")]
             Consignment = 2,
-            
+
             /// <summary>
             /// Enum CreditCard for value: CreditCard
             /// </summary>
             [EnumMember(Value = "CreditCard")]
             CreditCard = 3,
-            
+
             /// <summary>
             /// Enum Prepaid for value: Prepaid
             /// </summary>
@@ -106,7 +102,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// Payment method used.
         /// </summary>
         /// <value>Payment method used.</value>
-        [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentMethod", EmitDefaultValue = false)]
         public PaymentMethodEnum? PaymentMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderDetails" /> class.
@@ -171,26 +167,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             this.ShipWindow = shipWindow;
             this.DeliveryWindow = deliveryWindow;
         }
-        
+
         /// <summary>
         /// The date the purchase order was placed. Must be in ISO-8601 date/time format.
         /// </summary>
         /// <value>The date the purchase order was placed. Must be in ISO-8601 date/time format.</value>
-        [DataMember(Name="purchaseOrderDate", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderDate", EmitDefaultValue = false)]
         public DateTime? PurchaseOrderDate { get; set; }
 
         /// <summary>
         /// The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than &#39;purchaseOrderDate&#39;. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
         /// </summary>
         /// <value>The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than &#39;purchaseOrderDate&#39;. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.</value>
-        [DataMember(Name="purchaseOrderChangedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderChangedDate", EmitDefaultValue = false)]
         public DateTime? PurchaseOrderChangedDate { get; set; }
 
         /// <summary>
         /// The date when current purchase order state was changed. Current purchase order state is available in the field &#39;purchaseOrderState&#39;. Must be in ISO-8601 date/time format.
         /// </summary>
         /// <value>The date when current purchase order state was changed. Current purchase order state is available in the field &#39;purchaseOrderState&#39;. Must be in ISO-8601 date/time format.</value>
-        [DataMember(Name="purchaseOrderStateChangedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseOrderStateChangedDate", EmitDefaultValue = false)]
         public DateTime? PurchaseOrderStateChangedDate { get; set; }
 
 
@@ -198,14 +194,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// If the purchase order is an import order, the details for the import order.
         /// </summary>
         /// <value>If the purchase order is an import order, the details for the import order.</value>
-        [DataMember(Name="importDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "importDetails", EmitDefaultValue = false)]
         public ImportDetails ImportDetails { get; set; }
 
         /// <summary>
         /// If requested by the recipient, this field will contain a promotional/deal number. The discount code line is optional. It is used to obtain a price discount on items on the order.
         /// </summary>
         /// <value>If requested by the recipient, this field will contain a promotional/deal number. The discount code line is optional. It is used to obtain a price discount on items on the order.</value>
-        [DataMember(Name="dealCode", EmitDefaultValue=false)]
+        [DataMember(Name = "dealCode", EmitDefaultValue = false)]
         public string DealCode { get; set; }
 
 
@@ -213,49 +209,49 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
         /// Name/Address and tax details of the buying party.
         /// </summary>
         /// <value>Name/Address and tax details of the buying party.</value>
-        [DataMember(Name="buyingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "buyingParty", EmitDefaultValue = false)]
         public PartyIdentification BuyingParty { get; set; }
 
         /// <summary>
         /// Name/Address and tax details of the selling party.
         /// </summary>
         /// <value>Name/Address and tax details of the selling party.</value>
-        [DataMember(Name="sellingParty", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingParty", EmitDefaultValue = false)]
         public PartyIdentification SellingParty { get; set; }
 
         /// <summary>
         /// Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6).
         /// </summary>
         /// <value>Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6).</value>
-        [DataMember(Name="shipToParty", EmitDefaultValue=false)]
+        [DataMember(Name = "shipToParty", EmitDefaultValue = false)]
         public PartyIdentification ShipToParty { get; set; }
 
         /// <summary>
         /// Name/Address and tax details of the bill to party.
         /// </summary>
         /// <value>Name/Address and tax details of the bill to party.</value>
-        [DataMember(Name="billToParty", EmitDefaultValue=false)]
+        [DataMember(Name = "billToParty", EmitDefaultValue = false)]
         public PartyIdentification BillToParty { get; set; }
 
         /// <summary>
         /// This indicates the ship window. Format is start and end date separated by double hyphen (- -). For example, 2007-03-01T13:00:00Z- -2007-03-11T15:30:00Z.
         /// </summary>
         /// <value>This indicates the ship window. Format is start and end date separated by double hyphen (- -). For example, 2007-03-01T13:00:00Z- -2007-03-11T15:30:00Z.</value>
-        [DataMember(Name="shipWindow", EmitDefaultValue=false)]
+        [DataMember(Name = "shipWindow", EmitDefaultValue = false)]
         public string ShipWindow { get; set; }
 
         /// <summary>
         /// This indicates the delivery window. Format is start and end date separated by double hyphen (- -). For example, 2007-03-01T13:00:00Z- -2007-03-11T15:30:00Z.
         /// </summary>
         /// <value>This indicates the delivery window. Format is start and end date separated by double hyphen (- -). For example, 2007-03-01T13:00:00Z- -2007-03-11T15:30:00Z.</value>
-        [DataMember(Name="deliveryWindow", EmitDefaultValue=false)]
+        [DataMember(Name = "deliveryWindow", EmitDefaultValue = false)]
         public string DeliveryWindow { get; set; }
 
         /// <summary>
         /// A list of items in this purchase order.
         /// </summary>
         /// <value>A list of items in this purchase order.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<OrderItem> Items { get; set; }
 
         /// <summary>
@@ -283,7 +279,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -313,72 +309,72 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorOrders
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PurchaseOrderDate == input.PurchaseOrderDate ||
                     (this.PurchaseOrderDate != null &&
                     this.PurchaseOrderDate.Equals(input.PurchaseOrderDate))
-                ) && 
+                ) &&
                 (
                     this.PurchaseOrderChangedDate == input.PurchaseOrderChangedDate ||
                     (this.PurchaseOrderChangedDate != null &&
                     this.PurchaseOrderChangedDate.Equals(input.PurchaseOrderChangedDate))
-                ) && 
+                ) &&
                 (
                     this.PurchaseOrderStateChangedDate == input.PurchaseOrderStateChangedDate ||
                     (this.PurchaseOrderStateChangedDate != null &&
                     this.PurchaseOrderStateChangedDate.Equals(input.PurchaseOrderStateChangedDate))
-                ) && 
+                ) &&
                 (
                     this.PurchaseOrderType == input.PurchaseOrderType ||
                     (this.PurchaseOrderType != null &&
                     this.PurchaseOrderType.Equals(input.PurchaseOrderType))
-                ) && 
+                ) &&
                 (
                     this.ImportDetails == input.ImportDetails ||
                     (this.ImportDetails != null &&
                     this.ImportDetails.Equals(input.ImportDetails))
-                ) && 
+                ) &&
                 (
                     this.DealCode == input.DealCode ||
                     (this.DealCode != null &&
                     this.DealCode.Equals(input.DealCode))
-                ) && 
+                ) &&
                 (
                     this.PaymentMethod == input.PaymentMethod ||
                     (this.PaymentMethod != null &&
                     this.PaymentMethod.Equals(input.PaymentMethod))
-                ) && 
+                ) &&
                 (
                     this.BuyingParty == input.BuyingParty ||
                     (this.BuyingParty != null &&
                     this.BuyingParty.Equals(input.BuyingParty))
-                ) && 
+                ) &&
                 (
                     this.SellingParty == input.SellingParty ||
                     (this.SellingParty != null &&
                     this.SellingParty.Equals(input.SellingParty))
-                ) && 
+                ) &&
                 (
                     this.ShipToParty == input.ShipToParty ||
                     (this.ShipToParty != null &&
                     this.ShipToParty.Equals(input.ShipToParty))
-                ) && 
+                ) &&
                 (
                     this.BillToParty == input.BillToParty ||
                     (this.BillToParty != null &&
                     this.BillToParty.Equals(input.BillToParty))
-                ) && 
+                ) &&
                 (
                     this.ShipWindow == input.ShipWindow ||
                     (this.ShipWindow != null &&
                     this.ShipWindow.Equals(input.ShipWindow))
-                ) && 
+                ) &&
                 (
                     this.DeliveryWindow == input.DeliveryWindow ||
                     (this.DeliveryWindow != null &&
                     this.DeliveryWindow.Equals(input.DeliveryWindow))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&

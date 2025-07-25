@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Services;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -35,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="body">Add appointment operation input details.</param>
         /// <returns>SetAppointmentResponse</returns>
-        SetAppointmentResponse AddAppointmentForServiceJobByServiceJobId (string serviceJobId, AddAppointmentRequest body);
+        SetAppointmentResponse AddAppointmentForServiceJobByServiceJobId(string serviceJobId, AddAppointmentRequest body);
 
         /// <summary>
         /// 
@@ -47,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="body">Add appointment operation input details.</param>
         /// <returns>ApiResponse of SetAppointmentResponse</returns>
-        ApiResponse<SetAppointmentResponse> AddAppointmentForServiceJobByServiceJobIdWithHttpInfo (string serviceJobId, AddAppointmentRequest body);
+        ApiResponse<SetAppointmentResponse> AddAppointmentForServiceJobByServiceJobIdWithHttpInfo(string serviceJobId, AddAppointmentRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -59,7 +58,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body"></param>
         /// <returns>AssignAppointmentResourcesResponse</returns>
-        AssignAppointmentResourcesResponse AssignAppointmentResources (string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body);
+        AssignAppointmentResourcesResponse AssignAppointmentResources(string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body);
 
         /// <summary>
         /// 
@@ -72,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of AssignAppointmentResourcesResponse</returns>
-        ApiResponse<AssignAppointmentResourcesResponse> AssignAppointmentResourcesWithHttpInfo (string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body);
+        ApiResponse<AssignAppointmentResourcesResponse> AssignAppointmentResourcesWithHttpInfo(string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -83,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="reservationId">Reservation Identifier</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>CancelReservationResponse</returns>
-        CancelReservationResponse CancelReservation (string reservationId, List<string> marketplaceIds);
+        CancelReservationResponse CancelReservation(string reservationId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -95,7 +94,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="reservationId">Reservation Identifier</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>ApiResponse of CancelReservationResponse</returns>
-        ApiResponse<CancelReservationResponse> CancelReservationWithHttpInfo (string reservationId, List<string> marketplaceIds);
+        ApiResponse<CancelReservationResponse> CancelReservationWithHttpInfo(string reservationId, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -106,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="cancellationReasonCode">A cancel reason code that specifies the reason for cancelling a service job.</param>
         /// <returns>CancelServiceJobByServiceJobIdResponse</returns>
-        CancelServiceJobByServiceJobIdResponse CancelServiceJobByServiceJobId (string serviceJobId, string cancellationReasonCode);
+        CancelServiceJobByServiceJobIdResponse CancelServiceJobByServiceJobId(string serviceJobId, string cancellationReasonCode);
 
         /// <summary>
         /// 
@@ -118,7 +117,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="cancellationReasonCode">A cancel reason code that specifies the reason for cancelling a service job.</param>
         /// <returns>ApiResponse of CancelServiceJobByServiceJobIdResponse</returns>
-        ApiResponse<CancelServiceJobByServiceJobIdResponse> CancelServiceJobByServiceJobIdWithHttpInfo (string serviceJobId, string cancellationReasonCode);
+        ApiResponse<CancelServiceJobByServiceJobIdResponse> CancelServiceJobByServiceJobIdWithHttpInfo(string serviceJobId, string cancellationReasonCode);
         /// <summary>
         /// 
         /// </summary>
@@ -128,7 +127,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <returns>CompleteServiceJobByServiceJobIdResponse</returns>
-        CompleteServiceJobByServiceJobIdResponse CompleteServiceJobByServiceJobId (string serviceJobId);
+        CompleteServiceJobByServiceJobIdResponse CompleteServiceJobByServiceJobId(string serviceJobId);
 
         /// <summary>
         /// 
@@ -139,7 +138,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <returns>ApiResponse of CompleteServiceJobByServiceJobIdResponse</returns>
-        ApiResponse<CompleteServiceJobByServiceJobIdResponse> CompleteServiceJobByServiceJobIdWithHttpInfo (string serviceJobId);
+        ApiResponse<CompleteServiceJobByServiceJobIdResponse> CompleteServiceJobByServiceJobIdWithHttpInfo(string serviceJobId);
         /// <summary>
         /// 
         /// </summary>
@@ -150,7 +149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>CreateReservationResponse</returns>
-        CreateReservationResponse CreateReservation (CreateReservationRequest body, List<string> marketplaceIds);
+        CreateReservationResponse CreateReservation(CreateReservationRequest body, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -162,7 +161,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>ApiResponse of CreateReservationResponse</returns>
-        ApiResponse<CreateReservationResponse> CreateReservationWithHttpInfo (CreateReservationRequest body, List<string> marketplaceIds);
+        ApiResponse<CreateReservationResponse> CreateReservationWithHttpInfo(CreateReservationRequest body, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -172,7 +171,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Upload document operation input details.</param>
         /// <returns>CreateServiceDocumentUploadDestination</returns>
-        CreateServiceDocumentUploadDestination CreateServiceDocumentUploadDestination (ServiceUploadDocument body);
+        CreateServiceDocumentUploadDestination CreateServiceDocumentUploadDestination(ServiceUploadDocument body);
 
         /// <summary>
         /// 
@@ -183,7 +182,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Upload document operation input details.</param>
         /// <returns>ApiResponse of CreateServiceDocumentUploadDestination</returns>
-        ApiResponse<CreateServiceDocumentUploadDestination> CreateServiceDocumentUploadDestinationWithHttpInfo (ServiceUploadDocument body);
+        ApiResponse<CreateServiceDocumentUploadDestination> CreateServiceDocumentUploadDestinationWithHttpInfo(ServiceUploadDocument body);
         /// <summary>
         /// 
         /// </summary>
@@ -197,7 +196,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>GetAppointmentSlotsResponse</returns>
-        GetAppointmentSlotsResponse GetAppointmentSlots (string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null);
+        GetAppointmentSlotsResponse GetAppointmentSlots(string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null);
 
         /// <summary>
         /// 
@@ -212,7 +211,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>ApiResponse of GetAppointmentSlotsResponse</returns>
-        ApiResponse<GetAppointmentSlotsResponse> GetAppointmentSlotsWithHttpInfo (string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null);
+        ApiResponse<GetAppointmentSlotsResponse> GetAppointmentSlotsWithHttpInfo(string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null);
         /// <summary>
         /// 
         /// </summary>
@@ -225,7 +224,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>GetAppointmentSlotsResponse</returns>
-        GetAppointmentSlotsResponse GetAppointmmentSlotsByJobId (string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null);
+        GetAppointmentSlotsResponse GetAppointmmentSlotsByJobId(string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null);
 
         /// <summary>
         /// 
@@ -239,7 +238,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>ApiResponse of GetAppointmentSlotsResponse</returns>
-        ApiResponse<GetAppointmentSlotsResponse> GetAppointmmentSlotsByJobIdWithHttpInfo (string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null);
+        ApiResponse<GetAppointmentSlotsResponse> GetAppointmmentSlotsByJobIdWithHttpInfo(string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null);
         /// <summary>
         /// 
         /// </summary>
@@ -252,7 +251,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>FixedSlotCapacity</returns>
-        FixedSlotCapacity GetFixedSlotCapacity (string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
+        FixedSlotCapacity GetFixedSlotCapacity(string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
 
         /// <summary>
         /// 
@@ -266,7 +265,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>ApiResponse of FixedSlotCapacity</returns>
-        ApiResponse<FixedSlotCapacity> GetFixedSlotCapacityWithHttpInfo (string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
+        ApiResponse<FixedSlotCapacity> GetFixedSlotCapacityWithHttpInfo(string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
         /// <summary>
         /// 
         /// </summary>
@@ -279,7 +278,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>RangeSlotCapacity</returns>
-        RangeSlotCapacity GetRangeSlotCapacity (string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
+        RangeSlotCapacity GetRangeSlotCapacity(string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
 
         /// <summary>
         /// 
@@ -293,7 +292,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>ApiResponse of RangeSlotCapacity</returns>
-        ApiResponse<RangeSlotCapacity> GetRangeSlotCapacityWithHttpInfo (string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
+        ApiResponse<RangeSlotCapacity> GetRangeSlotCapacityWithHttpInfo(string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
         /// <summary>
         /// 
         /// </summary>
@@ -303,7 +302,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">A service job identifier.</param>
         /// <returns>GetServiceJobByServiceJobIdResponse</returns>
-        GetServiceJobByServiceJobIdResponse GetServiceJobByServiceJobId (string serviceJobId);
+        GetServiceJobByServiceJobIdResponse GetServiceJobByServiceJobId(string serviceJobId);
 
         /// <summary>
         /// 
@@ -314,7 +313,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">A service job identifier.</param>
         /// <returns>ApiResponse of GetServiceJobByServiceJobIdResponse</returns>
-        ApiResponse<GetServiceJobByServiceJobIdResponse> GetServiceJobByServiceJobIdWithHttpInfo (string serviceJobId);
+        ApiResponse<GetServiceJobByServiceJobIdResponse> GetServiceJobByServiceJobIdWithHttpInfo(string serviceJobId);
         /// <summary>
         /// 
         /// </summary>
@@ -339,7 +338,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requiredSkills">A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)</param>
         /// <param name="storeIds">List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)</param>
         /// <returns>GetServiceJobsResponse</returns>
-        GetServiceJobsResponse GetServiceJobs (List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null);
+        GetServiceJobsResponse GetServiceJobs(List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null);
 
         /// <summary>
         /// 
@@ -365,7 +364,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requiredSkills">A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)</param>
         /// <param name="storeIds">List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)</param>
         /// <returns>ApiResponse of GetServiceJobsResponse</returns>
-        ApiResponse<GetServiceJobsResponse> GetServiceJobsWithHttpInfo (List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null);
+        ApiResponse<GetServiceJobsResponse> GetServiceJobsWithHttpInfo(List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null);
         /// <summary>
         /// 
         /// </summary>
@@ -377,7 +376,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An existing appointment identifier for the Service Job.</param>
         /// <param name="body">Reschedule appointment operation input details.</param>
         /// <returns>SetAppointmentResponse</returns>
-        SetAppointmentResponse RescheduleAppointmentForServiceJobByServiceJobId (string serviceJobId, string appointmentId, RescheduleAppointmentRequest body);
+        SetAppointmentResponse RescheduleAppointmentForServiceJobByServiceJobId(string serviceJobId, string appointmentId, RescheduleAppointmentRequest body);
 
         /// <summary>
         /// 
@@ -390,7 +389,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An existing appointment identifier for the Service Job.</param>
         /// <param name="body">Reschedule appointment operation input details.</param>
         /// <returns>ApiResponse of SetAppointmentResponse</returns>
-        ApiResponse<SetAppointmentResponse> RescheduleAppointmentForServiceJobByServiceJobIdWithHttpInfo (string serviceJobId, string appointmentId, RescheduleAppointmentRequest body);
+        ApiResponse<SetAppointmentResponse> RescheduleAppointmentForServiceJobByServiceJobIdWithHttpInfo(string serviceJobId, string appointmentId, RescheduleAppointmentRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -402,7 +401,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body">Appointment fulfillment data collection details.</param>
         /// <returns>string</returns>
-        string SetAppointmentFulfillmentData (string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body);
+        string SetAppointmentFulfillmentData(string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body);
 
         /// <summary>
         /// 
@@ -415,7 +414,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body">Appointment fulfillment data collection details.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> SetAppointmentFulfillmentDataWithHttpInfo (string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body);
+        ApiResponse<string> SetAppointmentFulfillmentDataWithHttpInfo(string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -427,7 +426,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>UpdateReservationResponse</returns>
-        UpdateReservationResponse UpdateReservation (string reservationId, UpdateReservationRequest body, List<string> marketplaceIds);
+        UpdateReservationResponse UpdateReservation(string reservationId, UpdateReservationRequest body, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -440,7 +439,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>ApiResponse of UpdateReservationResponse</returns>
-        ApiResponse<UpdateReservationResponse> UpdateReservationWithHttpInfo (string reservationId, UpdateReservationRequest body, List<string> marketplaceIds);
+        ApiResponse<UpdateReservationResponse> UpdateReservationWithHttpInfo(string reservationId, UpdateReservationRequest body, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -452,7 +451,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Schedule details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>UpdateScheduleResponse</returns>
-        UpdateScheduleResponse UpdateSchedule (string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds);
+        UpdateScheduleResponse UpdateSchedule(string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -465,7 +464,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Schedule details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>ApiResponse of UpdateScheduleResponse</returns>
-        ApiResponse<UpdateScheduleResponse> UpdateScheduleWithHttpInfo (string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds);
+        ApiResponse<UpdateScheduleResponse> UpdateScheduleWithHttpInfo(string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -478,7 +477,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="body">Add appointment operation input details.</param>
         /// <returns>Task of SetAppointmentResponse</returns>
-        System.Threading.Tasks.Task<SetAppointmentResponse> AddAppointmentForServiceJobByServiceJobIdAsync (string serviceJobId, AddAppointmentRequest body);
+        System.Threading.Tasks.Task<SetAppointmentResponse> AddAppointmentForServiceJobByServiceJobIdAsync(string serviceJobId, AddAppointmentRequest body);
 
         /// <summary>
         /// 
@@ -490,7 +489,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="body">Add appointment operation input details.</param>
         /// <returns>Task of ApiResponse (SetAppointmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SetAppointmentResponse>> AddAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo (string serviceJobId, AddAppointmentRequest body);
+        System.Threading.Tasks.Task<ApiResponse<SetAppointmentResponse>> AddAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo(string serviceJobId, AddAppointmentRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -502,7 +501,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body"></param>
         /// <returns>Task of AssignAppointmentResourcesResponse</returns>
-        System.Threading.Tasks.Task<AssignAppointmentResourcesResponse> AssignAppointmentResourcesAsync (string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body);
+        System.Threading.Tasks.Task<AssignAppointmentResourcesResponse> AssignAppointmentResourcesAsync(string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body);
 
         /// <summary>
         /// 
@@ -515,7 +514,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (AssignAppointmentResourcesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssignAppointmentResourcesResponse>> AssignAppointmentResourcesAsyncWithHttpInfo (string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body);
+        System.Threading.Tasks.Task<ApiResponse<AssignAppointmentResourcesResponse>> AssignAppointmentResourcesAsyncWithHttpInfo(string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -526,7 +525,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="reservationId">Reservation Identifier</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of CancelReservationResponse</returns>
-        System.Threading.Tasks.Task<CancelReservationResponse> CancelReservationAsync (string reservationId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<CancelReservationResponse> CancelReservationAsync(string reservationId, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -538,7 +537,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="reservationId">Reservation Identifier</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of ApiResponse (CancelReservationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CancelReservationResponse>> CancelReservationAsyncWithHttpInfo (string reservationId, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<ApiResponse<CancelReservationResponse>> CancelReservationAsyncWithHttpInfo(string reservationId, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -549,7 +548,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="cancellationReasonCode">A cancel reason code that specifies the reason for cancelling a service job.</param>
         /// <returns>Task of CancelServiceJobByServiceJobIdResponse</returns>
-        System.Threading.Tasks.Task<CancelServiceJobByServiceJobIdResponse> CancelServiceJobByServiceJobIdAsync (string serviceJobId, string cancellationReasonCode);
+        System.Threading.Tasks.Task<CancelServiceJobByServiceJobIdResponse> CancelServiceJobByServiceJobIdAsync(string serviceJobId, string cancellationReasonCode);
 
         /// <summary>
         /// 
@@ -561,7 +560,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="cancellationReasonCode">A cancel reason code that specifies the reason for cancelling a service job.</param>
         /// <returns>Task of ApiResponse (CancelServiceJobByServiceJobIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CancelServiceJobByServiceJobIdResponse>> CancelServiceJobByServiceJobIdAsyncWithHttpInfo (string serviceJobId, string cancellationReasonCode);
+        System.Threading.Tasks.Task<ApiResponse<CancelServiceJobByServiceJobIdResponse>> CancelServiceJobByServiceJobIdAsyncWithHttpInfo(string serviceJobId, string cancellationReasonCode);
         /// <summary>
         /// 
         /// </summary>
@@ -571,7 +570,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <returns>Task of CompleteServiceJobByServiceJobIdResponse</returns>
-        System.Threading.Tasks.Task<CompleteServiceJobByServiceJobIdResponse> CompleteServiceJobByServiceJobIdAsync (string serviceJobId);
+        System.Threading.Tasks.Task<CompleteServiceJobByServiceJobIdResponse> CompleteServiceJobByServiceJobIdAsync(string serviceJobId);
 
         /// <summary>
         /// 
@@ -582,7 +581,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <returns>Task of ApiResponse (CompleteServiceJobByServiceJobIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CompleteServiceJobByServiceJobIdResponse>> CompleteServiceJobByServiceJobIdAsyncWithHttpInfo (string serviceJobId);
+        System.Threading.Tasks.Task<ApiResponse<CompleteServiceJobByServiceJobIdResponse>> CompleteServiceJobByServiceJobIdAsyncWithHttpInfo(string serviceJobId);
         /// <summary>
         /// 
         /// </summary>
@@ -593,7 +592,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of CreateReservationResponse</returns>
-        System.Threading.Tasks.Task<CreateReservationResponse> CreateReservationAsync (CreateReservationRequest body, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<CreateReservationResponse> CreateReservationAsync(CreateReservationRequest body, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -605,7 +604,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of ApiResponse (CreateReservationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateReservationResponse>> CreateReservationAsyncWithHttpInfo (CreateReservationRequest body, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<ApiResponse<CreateReservationResponse>> CreateReservationAsyncWithHttpInfo(CreateReservationRequest body, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -615,7 +614,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Upload document operation input details.</param>
         /// <returns>Task of CreateServiceDocumentUploadDestination</returns>
-        System.Threading.Tasks.Task<CreateServiceDocumentUploadDestination> CreateServiceDocumentUploadDestinationAsync (ServiceUploadDocument body);
+        System.Threading.Tasks.Task<CreateServiceDocumentUploadDestination> CreateServiceDocumentUploadDestinationAsync(ServiceUploadDocument body);
 
         /// <summary>
         /// 
@@ -626,7 +625,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Upload document operation input details.</param>
         /// <returns>Task of ApiResponse (CreateServiceDocumentUploadDestination)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateServiceDocumentUploadDestination>> CreateServiceDocumentUploadDestinationAsyncWithHttpInfo (ServiceUploadDocument body);
+        System.Threading.Tasks.Task<ApiResponse<CreateServiceDocumentUploadDestination>> CreateServiceDocumentUploadDestinationAsyncWithHttpInfo(ServiceUploadDocument body);
         /// <summary>
         /// 
         /// </summary>
@@ -640,7 +639,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>Task of GetAppointmentSlotsResponse</returns>
-        System.Threading.Tasks.Task<GetAppointmentSlotsResponse> GetAppointmentSlotsAsync (string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null);
+        System.Threading.Tasks.Task<GetAppointmentSlotsResponse> GetAppointmentSlotsAsync(string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null);
 
         /// <summary>
         /// 
@@ -655,7 +654,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>Task of ApiResponse (GetAppointmentSlotsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAppointmentSlotsResponse>> GetAppointmentSlotsAsyncWithHttpInfo (string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null);
+        System.Threading.Tasks.Task<ApiResponse<GetAppointmentSlotsResponse>> GetAppointmentSlotsAsyncWithHttpInfo(string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null);
         /// <summary>
         /// 
         /// </summary>
@@ -668,7 +667,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>Task of GetAppointmentSlotsResponse</returns>
-        System.Threading.Tasks.Task<GetAppointmentSlotsResponse> GetAppointmmentSlotsByJobIdAsync (string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null);
+        System.Threading.Tasks.Task<GetAppointmentSlotsResponse> GetAppointmmentSlotsByJobIdAsync(string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null);
 
         /// <summary>
         /// 
@@ -682,7 +681,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>Task of ApiResponse (GetAppointmentSlotsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAppointmentSlotsResponse>> GetAppointmmentSlotsByJobIdAsyncWithHttpInfo (string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null);
+        System.Threading.Tasks.Task<ApiResponse<GetAppointmentSlotsResponse>> GetAppointmmentSlotsByJobIdAsyncWithHttpInfo(string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null);
         /// <summary>
         /// 
         /// </summary>
@@ -695,7 +694,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of FixedSlotCapacity</returns>
-        System.Threading.Tasks.Task<FixedSlotCapacity> GetFixedSlotCapacityAsync (string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
+        System.Threading.Tasks.Task<FixedSlotCapacity> GetFixedSlotCapacityAsync(string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
 
         /// <summary>
         /// 
@@ -709,7 +708,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of ApiResponse (FixedSlotCapacity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FixedSlotCapacity>> GetFixedSlotCapacityAsyncWithHttpInfo (string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
+        System.Threading.Tasks.Task<ApiResponse<FixedSlotCapacity>> GetFixedSlotCapacityAsyncWithHttpInfo(string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
         /// <summary>
         /// 
         /// </summary>
@@ -722,7 +721,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of RangeSlotCapacity</returns>
-        System.Threading.Tasks.Task<RangeSlotCapacity> GetRangeSlotCapacityAsync (string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
+        System.Threading.Tasks.Task<RangeSlotCapacity> GetRangeSlotCapacityAsync(string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
 
         /// <summary>
         /// 
@@ -736,7 +735,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of ApiResponse (RangeSlotCapacity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RangeSlotCapacity>> GetRangeSlotCapacityAsyncWithHttpInfo (string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
+        System.Threading.Tasks.Task<ApiResponse<RangeSlotCapacity>> GetRangeSlotCapacityAsyncWithHttpInfo(string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null);
         /// <summary>
         /// 
         /// </summary>
@@ -746,7 +745,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">A service job identifier.</param>
         /// <returns>Task of GetServiceJobByServiceJobIdResponse</returns>
-        System.Threading.Tasks.Task<GetServiceJobByServiceJobIdResponse> GetServiceJobByServiceJobIdAsync (string serviceJobId);
+        System.Threading.Tasks.Task<GetServiceJobByServiceJobIdResponse> GetServiceJobByServiceJobIdAsync(string serviceJobId);
 
         /// <summary>
         /// 
@@ -757,7 +756,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">A service job identifier.</param>
         /// <returns>Task of ApiResponse (GetServiceJobByServiceJobIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetServiceJobByServiceJobIdResponse>> GetServiceJobByServiceJobIdAsyncWithHttpInfo (string serviceJobId);
+        System.Threading.Tasks.Task<ApiResponse<GetServiceJobByServiceJobIdResponse>> GetServiceJobByServiceJobIdAsyncWithHttpInfo(string serviceJobId);
         /// <summary>
         /// 
         /// </summary>
@@ -782,7 +781,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requiredSkills">A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)</param>
         /// <param name="storeIds">List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)</param>
         /// <returns>Task of GetServiceJobsResponse</returns>
-        System.Threading.Tasks.Task<GetServiceJobsResponse> GetServiceJobsAsync (List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null);
+        System.Threading.Tasks.Task<GetServiceJobsResponse> GetServiceJobsAsync(List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null);
 
         /// <summary>
         /// 
@@ -808,7 +807,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requiredSkills">A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)</param>
         /// <param name="storeIds">List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)</param>
         /// <returns>Task of ApiResponse (GetServiceJobsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetServiceJobsResponse>> GetServiceJobsAsyncWithHttpInfo (List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null);
+        System.Threading.Tasks.Task<ApiResponse<GetServiceJobsResponse>> GetServiceJobsAsyncWithHttpInfo(List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null);
         /// <summary>
         /// 
         /// </summary>
@@ -820,7 +819,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An existing appointment identifier for the Service Job.</param>
         /// <param name="body">Reschedule appointment operation input details.</param>
         /// <returns>Task of SetAppointmentResponse</returns>
-        System.Threading.Tasks.Task<SetAppointmentResponse> RescheduleAppointmentForServiceJobByServiceJobIdAsync (string serviceJobId, string appointmentId, RescheduleAppointmentRequest body);
+        System.Threading.Tasks.Task<SetAppointmentResponse> RescheduleAppointmentForServiceJobByServiceJobIdAsync(string serviceJobId, string appointmentId, RescheduleAppointmentRequest body);
 
         /// <summary>
         /// 
@@ -833,7 +832,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An existing appointment identifier for the Service Job.</param>
         /// <param name="body">Reschedule appointment operation input details.</param>
         /// <returns>Task of ApiResponse (SetAppointmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SetAppointmentResponse>> RescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo (string serviceJobId, string appointmentId, RescheduleAppointmentRequest body);
+        System.Threading.Tasks.Task<ApiResponse<SetAppointmentResponse>> RescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo(string serviceJobId, string appointmentId, RescheduleAppointmentRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -845,7 +844,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body">Appointment fulfillment data collection details.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> SetAppointmentFulfillmentDataAsync (string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body);
+        System.Threading.Tasks.Task<string> SetAppointmentFulfillmentDataAsync(string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body);
 
         /// <summary>
         /// 
@@ -858,7 +857,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body">Appointment fulfillment data collection details.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> SetAppointmentFulfillmentDataAsyncWithHttpInfo (string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body);
+        System.Threading.Tasks.Task<ApiResponse<string>> SetAppointmentFulfillmentDataAsyncWithHttpInfo(string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body);
         /// <summary>
         /// 
         /// </summary>
@@ -870,7 +869,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of UpdateReservationResponse</returns>
-        System.Threading.Tasks.Task<UpdateReservationResponse> UpdateReservationAsync (string reservationId, UpdateReservationRequest body, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<UpdateReservationResponse> UpdateReservationAsync(string reservationId, UpdateReservationRequest body, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -883,7 +882,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of ApiResponse (UpdateReservationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateReservationResponse>> UpdateReservationAsyncWithHttpInfo (string reservationId, UpdateReservationRequest body, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<ApiResponse<UpdateReservationResponse>> UpdateReservationAsyncWithHttpInfo(string reservationId, UpdateReservationRequest body, List<string> marketplaceIds);
         /// <summary>
         /// 
         /// </summary>
@@ -895,7 +894,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Schedule details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of UpdateScheduleResponse</returns>
-        System.Threading.Tasks.Task<UpdateScheduleResponse> UpdateScheduleAsync (string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<UpdateScheduleResponse> UpdateScheduleAsync(string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds);
 
         /// <summary>
         /// 
@@ -908,7 +907,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Schedule details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of ApiResponse (UpdateScheduleResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateScheduleResponse>> UpdateScheduleAsyncWithHttpInfo (string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds);
+        System.Threading.Tasks.Task<ApiResponse<UpdateScheduleResponse>> UpdateScheduleAsyncWithHttpInfo(string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds);
         #endregion Asynchronous Operations
     }
 
@@ -928,7 +927,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public ServiceApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -954,7 +953,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -1001,10 +1000,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="body">Add appointment operation input details.</param>
         /// <returns>SetAppointmentResponse</returns>
-        public SetAppointmentResponse AddAppointmentForServiceJobByServiceJobId (string serviceJobId, AddAppointmentRequest body)
+        public SetAppointmentResponse AddAppointmentForServiceJobByServiceJobId(string serviceJobId, AddAppointmentRequest body)
         {
-             ApiResponse<SetAppointmentResponse> localVarResponse = AddAppointmentForServiceJobByServiceJobIdWithHttpInfo(serviceJobId, body);
-             return localVarResponse.Data;
+            ApiResponse<SetAppointmentResponse> localVarResponse = AddAppointmentForServiceJobByServiceJobIdWithHttpInfo(serviceJobId, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1014,7 +1013,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="body">Add appointment operation input details.</param>
         /// <returns>ApiResponse of SetAppointmentResponse</returns>
-        public ApiResponse< SetAppointmentResponse > AddAppointmentForServiceJobByServiceJobIdWithHttpInfo (string serviceJobId, AddAppointmentRequest body)
+        public ApiResponse<SetAppointmentResponse> AddAppointmentForServiceJobByServiceJobIdWithHttpInfo(string serviceJobId, AddAppointmentRequest body)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -1057,11 +1056,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1071,7 +1070,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SetAppointmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SetAppointmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SetAppointmentResponse)));
+                (SetAppointmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SetAppointmentResponse)));
         }
 
         /// <summary>
@@ -1081,10 +1080,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="body">Add appointment operation input details.</param>
         /// <returns>Task of SetAppointmentResponse</returns>
-        public async System.Threading.Tasks.Task<SetAppointmentResponse> AddAppointmentForServiceJobByServiceJobIdAsync (string serviceJobId, AddAppointmentRequest body)
+        public async System.Threading.Tasks.Task<SetAppointmentResponse> AddAppointmentForServiceJobByServiceJobIdAsync(string serviceJobId, AddAppointmentRequest body)
         {
-             ApiResponse<SetAppointmentResponse> localVarResponse = await AddAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo(serviceJobId, body);
-             return localVarResponse.Data;
+            ApiResponse<SetAppointmentResponse> localVarResponse = await AddAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo(serviceJobId, body);
+            return localVarResponse.Data;
 
         }
 
@@ -1095,7 +1094,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="body">Add appointment operation input details.</param>
         /// <returns>Task of ApiResponse (SetAppointmentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SetAppointmentResponse>> AddAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo (string serviceJobId, AddAppointmentRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<SetAppointmentResponse>> AddAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo(string serviceJobId, AddAppointmentRequest body)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -1138,11 +1137,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1152,7 +1151,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SetAppointmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SetAppointmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SetAppointmentResponse)));
+                (SetAppointmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SetAppointmentResponse)));
         }
 
         /// <summary>
@@ -1163,10 +1162,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body"></param>
         /// <returns>AssignAppointmentResourcesResponse</returns>
-        public AssignAppointmentResourcesResponse AssignAppointmentResources (string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body)
+        public AssignAppointmentResourcesResponse AssignAppointmentResources(string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body)
         {
-             ApiResponse<AssignAppointmentResourcesResponse> localVarResponse = AssignAppointmentResourcesWithHttpInfo(serviceJobId, appointmentId, body);
-             return localVarResponse.Data;
+            ApiResponse<AssignAppointmentResourcesResponse> localVarResponse = AssignAppointmentResourcesWithHttpInfo(serviceJobId, appointmentId, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1177,7 +1176,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of AssignAppointmentResourcesResponse</returns>
-        public ApiResponse< AssignAppointmentResourcesResponse > AssignAppointmentResourcesWithHttpInfo (string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body)
+        public ApiResponse<AssignAppointmentResourcesResponse> AssignAppointmentResourcesWithHttpInfo(string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -1224,11 +1223,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1238,7 +1237,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<AssignAppointmentResourcesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AssignAppointmentResourcesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignAppointmentResourcesResponse)));
+                (AssignAppointmentResourcesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignAppointmentResourcesResponse)));
         }
 
         /// <summary>
@@ -1249,10 +1248,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body"></param>
         /// <returns>Task of AssignAppointmentResourcesResponse</returns>
-        public async System.Threading.Tasks.Task<AssignAppointmentResourcesResponse> AssignAppointmentResourcesAsync (string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body)
+        public async System.Threading.Tasks.Task<AssignAppointmentResourcesResponse> AssignAppointmentResourcesAsync(string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body)
         {
-             ApiResponse<AssignAppointmentResourcesResponse> localVarResponse = await AssignAppointmentResourcesAsyncWithHttpInfo(serviceJobId, appointmentId, body);
-             return localVarResponse.Data;
+            ApiResponse<AssignAppointmentResourcesResponse> localVarResponse = await AssignAppointmentResourcesAsyncWithHttpInfo(serviceJobId, appointmentId, body);
+            return localVarResponse.Data;
 
         }
 
@@ -1264,7 +1263,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (AssignAppointmentResourcesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AssignAppointmentResourcesResponse>> AssignAppointmentResourcesAsyncWithHttpInfo (string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<AssignAppointmentResourcesResponse>> AssignAppointmentResourcesAsyncWithHttpInfo(string serviceJobId, string appointmentId, AssignAppointmentResourcesRequest body)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -1311,11 +1310,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1325,7 +1324,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<AssignAppointmentResourcesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AssignAppointmentResourcesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignAppointmentResourcesResponse)));
+                (AssignAppointmentResourcesResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AssignAppointmentResourcesResponse)));
         }
 
         /// <summary>
@@ -1335,10 +1334,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="reservationId">Reservation Identifier</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>CancelReservationResponse</returns>
-        public CancelReservationResponse CancelReservation (string reservationId, List<string> marketplaceIds)
+        public CancelReservationResponse CancelReservation(string reservationId, List<string> marketplaceIds)
         {
-             ApiResponse<CancelReservationResponse> localVarResponse = CancelReservationWithHttpInfo(reservationId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<CancelReservationResponse> localVarResponse = CancelReservationWithHttpInfo(reservationId, marketplaceIds);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1348,7 +1347,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="reservationId">Reservation Identifier</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>ApiResponse of CancelReservationResponse</returns>
-        public ApiResponse< CancelReservationResponse > CancelReservationWithHttpInfo (string reservationId, List<string> marketplaceIds)
+        public ApiResponse<CancelReservationResponse> CancelReservationWithHttpInfo(string reservationId, List<string> marketplaceIds)
         {
             // verify the required parameter 'reservationId' is set
             if (reservationId == null)
@@ -1384,11 +1383,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1398,7 +1397,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CancelReservationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CancelReservationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelReservationResponse)));
+                (CancelReservationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelReservationResponse)));
         }
 
         /// <summary>
@@ -1408,10 +1407,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="reservationId">Reservation Identifier</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of CancelReservationResponse</returns>
-        public async System.Threading.Tasks.Task<CancelReservationResponse> CancelReservationAsync (string reservationId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<CancelReservationResponse> CancelReservationAsync(string reservationId, List<string> marketplaceIds)
         {
-             ApiResponse<CancelReservationResponse> localVarResponse = await CancelReservationAsyncWithHttpInfo(reservationId, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<CancelReservationResponse> localVarResponse = await CancelReservationAsyncWithHttpInfo(reservationId, marketplaceIds);
+            return localVarResponse.Data;
 
         }
 
@@ -1422,7 +1421,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="reservationId">Reservation Identifier</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of ApiResponse (CancelReservationResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CancelReservationResponse>> CancelReservationAsyncWithHttpInfo (string reservationId, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<ApiResponse<CancelReservationResponse>> CancelReservationAsyncWithHttpInfo(string reservationId, List<string> marketplaceIds)
         {
             // verify the required parameter 'reservationId' is set
             if (reservationId == null)
@@ -1458,11 +1457,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1472,7 +1471,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CancelReservationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CancelReservationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelReservationResponse)));
+                (CancelReservationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelReservationResponse)));
         }
 
         /// <summary>
@@ -1482,10 +1481,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="cancellationReasonCode">A cancel reason code that specifies the reason for cancelling a service job.</param>
         /// <returns>CancelServiceJobByServiceJobIdResponse</returns>
-        public CancelServiceJobByServiceJobIdResponse CancelServiceJobByServiceJobId (string serviceJobId, string cancellationReasonCode)
+        public CancelServiceJobByServiceJobIdResponse CancelServiceJobByServiceJobId(string serviceJobId, string cancellationReasonCode)
         {
-             ApiResponse<CancelServiceJobByServiceJobIdResponse> localVarResponse = CancelServiceJobByServiceJobIdWithHttpInfo(serviceJobId, cancellationReasonCode);
-             return localVarResponse.Data;
+            ApiResponse<CancelServiceJobByServiceJobIdResponse> localVarResponse = CancelServiceJobByServiceJobIdWithHttpInfo(serviceJobId, cancellationReasonCode);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1495,7 +1494,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="cancellationReasonCode">A cancel reason code that specifies the reason for cancelling a service job.</param>
         /// <returns>ApiResponse of CancelServiceJobByServiceJobIdResponse</returns>
-        public ApiResponse< CancelServiceJobByServiceJobIdResponse > CancelServiceJobByServiceJobIdWithHttpInfo (string serviceJobId, string cancellationReasonCode)
+        public ApiResponse<CancelServiceJobByServiceJobIdResponse> CancelServiceJobByServiceJobIdWithHttpInfo(string serviceJobId, string cancellationReasonCode)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -1531,11 +1530,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1545,7 +1544,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CancelServiceJobByServiceJobIdResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CancelServiceJobByServiceJobIdResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelServiceJobByServiceJobIdResponse)));
+                (CancelServiceJobByServiceJobIdResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelServiceJobByServiceJobIdResponse)));
         }
 
         /// <summary>
@@ -1555,10 +1554,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="cancellationReasonCode">A cancel reason code that specifies the reason for cancelling a service job.</param>
         /// <returns>Task of CancelServiceJobByServiceJobIdResponse</returns>
-        public async System.Threading.Tasks.Task<CancelServiceJobByServiceJobIdResponse> CancelServiceJobByServiceJobIdAsync (string serviceJobId, string cancellationReasonCode)
+        public async System.Threading.Tasks.Task<CancelServiceJobByServiceJobIdResponse> CancelServiceJobByServiceJobIdAsync(string serviceJobId, string cancellationReasonCode)
         {
-             ApiResponse<CancelServiceJobByServiceJobIdResponse> localVarResponse = await CancelServiceJobByServiceJobIdAsyncWithHttpInfo(serviceJobId, cancellationReasonCode);
-             return localVarResponse.Data;
+            ApiResponse<CancelServiceJobByServiceJobIdResponse> localVarResponse = await CancelServiceJobByServiceJobIdAsyncWithHttpInfo(serviceJobId, cancellationReasonCode);
+            return localVarResponse.Data;
 
         }
 
@@ -1569,7 +1568,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <param name="cancellationReasonCode">A cancel reason code that specifies the reason for cancelling a service job.</param>
         /// <returns>Task of ApiResponse (CancelServiceJobByServiceJobIdResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CancelServiceJobByServiceJobIdResponse>> CancelServiceJobByServiceJobIdAsyncWithHttpInfo (string serviceJobId, string cancellationReasonCode)
+        public async System.Threading.Tasks.Task<ApiResponse<CancelServiceJobByServiceJobIdResponse>> CancelServiceJobByServiceJobIdAsyncWithHttpInfo(string serviceJobId, string cancellationReasonCode)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -1605,11 +1604,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1619,7 +1618,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CancelServiceJobByServiceJobIdResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CancelServiceJobByServiceJobIdResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelServiceJobByServiceJobIdResponse)));
+                (CancelServiceJobByServiceJobIdResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelServiceJobByServiceJobIdResponse)));
         }
 
         /// <summary>
@@ -1628,10 +1627,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <returns>CompleteServiceJobByServiceJobIdResponse</returns>
-        public CompleteServiceJobByServiceJobIdResponse CompleteServiceJobByServiceJobId (string serviceJobId)
+        public CompleteServiceJobByServiceJobIdResponse CompleteServiceJobByServiceJobId(string serviceJobId)
         {
-             ApiResponse<CompleteServiceJobByServiceJobIdResponse> localVarResponse = CompleteServiceJobByServiceJobIdWithHttpInfo(serviceJobId);
-             return localVarResponse.Data;
+            ApiResponse<CompleteServiceJobByServiceJobIdResponse> localVarResponse = CompleteServiceJobByServiceJobIdWithHttpInfo(serviceJobId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1640,7 +1639,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <returns>ApiResponse of CompleteServiceJobByServiceJobIdResponse</returns>
-        public ApiResponse< CompleteServiceJobByServiceJobIdResponse > CompleteServiceJobByServiceJobIdWithHttpInfo (string serviceJobId)
+        public ApiResponse<CompleteServiceJobByServiceJobIdResponse> CompleteServiceJobByServiceJobIdWithHttpInfo(string serviceJobId)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -1672,11 +1671,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1686,7 +1685,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CompleteServiceJobByServiceJobIdResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CompleteServiceJobByServiceJobIdResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CompleteServiceJobByServiceJobIdResponse)));
+                (CompleteServiceJobByServiceJobIdResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CompleteServiceJobByServiceJobIdResponse)));
         }
 
         /// <summary>
@@ -1695,10 +1694,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <returns>Task of CompleteServiceJobByServiceJobIdResponse</returns>
-        public async System.Threading.Tasks.Task<CompleteServiceJobByServiceJobIdResponse> CompleteServiceJobByServiceJobIdAsync (string serviceJobId)
+        public async System.Threading.Tasks.Task<CompleteServiceJobByServiceJobIdResponse> CompleteServiceJobByServiceJobIdAsync(string serviceJobId)
         {
-             ApiResponse<CompleteServiceJobByServiceJobIdResponse> localVarResponse = await CompleteServiceJobByServiceJobIdAsyncWithHttpInfo(serviceJobId);
-             return localVarResponse.Data;
+            ApiResponse<CompleteServiceJobByServiceJobIdResponse> localVarResponse = await CompleteServiceJobByServiceJobIdAsyncWithHttpInfo(serviceJobId);
+            return localVarResponse.Data;
 
         }
 
@@ -1708,7 +1707,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">An Amazon defined service job identifier.</param>
         /// <returns>Task of ApiResponse (CompleteServiceJobByServiceJobIdResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CompleteServiceJobByServiceJobIdResponse>> CompleteServiceJobByServiceJobIdAsyncWithHttpInfo (string serviceJobId)
+        public async System.Threading.Tasks.Task<ApiResponse<CompleteServiceJobByServiceJobIdResponse>> CompleteServiceJobByServiceJobIdAsyncWithHttpInfo(string serviceJobId)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -1740,11 +1739,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1754,7 +1753,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CompleteServiceJobByServiceJobIdResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CompleteServiceJobByServiceJobIdResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CompleteServiceJobByServiceJobIdResponse)));
+                (CompleteServiceJobByServiceJobIdResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CompleteServiceJobByServiceJobIdResponse)));
         }
 
         /// <summary>
@@ -1764,10 +1763,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>CreateReservationResponse</returns>
-        public CreateReservationResponse CreateReservation (CreateReservationRequest body, List<string> marketplaceIds)
+        public CreateReservationResponse CreateReservation(CreateReservationRequest body, List<string> marketplaceIds)
         {
-             ApiResponse<CreateReservationResponse> localVarResponse = CreateReservationWithHttpInfo(body, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<CreateReservationResponse> localVarResponse = CreateReservationWithHttpInfo(body, marketplaceIds);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1777,7 +1776,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>ApiResponse of CreateReservationResponse</returns>
-        public ApiResponse< CreateReservationResponse > CreateReservationWithHttpInfo (CreateReservationRequest body, List<string> marketplaceIds)
+        public ApiResponse<CreateReservationResponse> CreateReservationWithHttpInfo(CreateReservationRequest body, List<string> marketplaceIds)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1820,11 +1819,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1834,7 +1833,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateReservationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateReservationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateReservationResponse)));
+                (CreateReservationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateReservationResponse)));
         }
 
         /// <summary>
@@ -1844,10 +1843,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of CreateReservationResponse</returns>
-        public async System.Threading.Tasks.Task<CreateReservationResponse> CreateReservationAsync (CreateReservationRequest body, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<CreateReservationResponse> CreateReservationAsync(CreateReservationRequest body, List<string> marketplaceIds)
         {
-             ApiResponse<CreateReservationResponse> localVarResponse = await CreateReservationAsyncWithHttpInfo(body, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<CreateReservationResponse> localVarResponse = await CreateReservationAsyncWithHttpInfo(body, marketplaceIds);
+            return localVarResponse.Data;
 
         }
 
@@ -1858,7 +1857,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of ApiResponse (CreateReservationResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateReservationResponse>> CreateReservationAsyncWithHttpInfo (CreateReservationRequest body, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateReservationResponse>> CreateReservationAsyncWithHttpInfo(CreateReservationRequest body, List<string> marketplaceIds)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1901,11 +1900,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1915,7 +1914,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateReservationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateReservationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateReservationResponse)));
+                (CreateReservationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateReservationResponse)));
         }
 
         /// <summary>
@@ -1924,10 +1923,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Upload document operation input details.</param>
         /// <returns>CreateServiceDocumentUploadDestination</returns>
-        public CreateServiceDocumentUploadDestination CreateServiceDocumentUploadDestination (ServiceUploadDocument body)
+        public CreateServiceDocumentUploadDestination CreateServiceDocumentUploadDestination(ServiceUploadDocument body)
         {
-             ApiResponse<CreateServiceDocumentUploadDestination> localVarResponse = CreateServiceDocumentUploadDestinationWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateServiceDocumentUploadDestination> localVarResponse = CreateServiceDocumentUploadDestinationWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1936,7 +1935,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Upload document operation input details.</param>
         /// <returns>ApiResponse of CreateServiceDocumentUploadDestination</returns>
-        public ApiResponse< CreateServiceDocumentUploadDestination > CreateServiceDocumentUploadDestinationWithHttpInfo (ServiceUploadDocument body)
+        public ApiResponse<CreateServiceDocumentUploadDestination> CreateServiceDocumentUploadDestinationWithHttpInfo(ServiceUploadDocument body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1975,11 +1974,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1989,7 +1988,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateServiceDocumentUploadDestination>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateServiceDocumentUploadDestination) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateServiceDocumentUploadDestination)));
+                (CreateServiceDocumentUploadDestination)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateServiceDocumentUploadDestination)));
         }
 
         /// <summary>
@@ -1998,10 +1997,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Upload document operation input details.</param>
         /// <returns>Task of CreateServiceDocumentUploadDestination</returns>
-        public async System.Threading.Tasks.Task<CreateServiceDocumentUploadDestination> CreateServiceDocumentUploadDestinationAsync (ServiceUploadDocument body)
+        public async System.Threading.Tasks.Task<CreateServiceDocumentUploadDestination> CreateServiceDocumentUploadDestinationAsync(ServiceUploadDocument body)
         {
-             ApiResponse<CreateServiceDocumentUploadDestination> localVarResponse = await CreateServiceDocumentUploadDestinationAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<CreateServiceDocumentUploadDestination> localVarResponse = await CreateServiceDocumentUploadDestinationAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -2011,7 +2010,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Upload document operation input details.</param>
         /// <returns>Task of ApiResponse (CreateServiceDocumentUploadDestination)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreateServiceDocumentUploadDestination>> CreateServiceDocumentUploadDestinationAsyncWithHttpInfo (ServiceUploadDocument body)
+        public async System.Threading.Tasks.Task<ApiResponse<CreateServiceDocumentUploadDestination>> CreateServiceDocumentUploadDestinationAsyncWithHttpInfo(ServiceUploadDocument body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2050,11 +2049,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2064,7 +2063,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<CreateServiceDocumentUploadDestination>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CreateServiceDocumentUploadDestination) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateServiceDocumentUploadDestination)));
+                (CreateServiceDocumentUploadDestination)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateServiceDocumentUploadDestination)));
         }
 
         /// <summary>
@@ -2077,10 +2076,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>GetAppointmentSlotsResponse</returns>
-        public GetAppointmentSlotsResponse GetAppointmentSlots (string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null)
+        public GetAppointmentSlotsResponse GetAppointmentSlots(string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null)
         {
-             ApiResponse<GetAppointmentSlotsResponse> localVarResponse = GetAppointmentSlotsWithHttpInfo(asin, storeId, marketplaceIds, startTime, endTime);
-             return localVarResponse.Data;
+            ApiResponse<GetAppointmentSlotsResponse> localVarResponse = GetAppointmentSlotsWithHttpInfo(asin, storeId, marketplaceIds, startTime, endTime);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2093,7 +2092,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>ApiResponse of GetAppointmentSlotsResponse</returns>
-        public ApiResponse< GetAppointmentSlotsResponse > GetAppointmentSlotsWithHttpInfo (string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null)
+        public ApiResponse<GetAppointmentSlotsResponse> GetAppointmentSlotsWithHttpInfo(string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null)
         {
             // verify the required parameter 'asin' is set
             if (asin == null)
@@ -2135,11 +2134,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2149,7 +2148,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetAppointmentSlotsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetAppointmentSlotsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAppointmentSlotsResponse)));
+                (GetAppointmentSlotsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAppointmentSlotsResponse)));
         }
 
         /// <summary>
@@ -2162,10 +2161,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>Task of GetAppointmentSlotsResponse</returns>
-        public async System.Threading.Tasks.Task<GetAppointmentSlotsResponse> GetAppointmentSlotsAsync (string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null)
+        public async System.Threading.Tasks.Task<GetAppointmentSlotsResponse> GetAppointmentSlotsAsync(string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null)
         {
-             ApiResponse<GetAppointmentSlotsResponse> localVarResponse = await GetAppointmentSlotsAsyncWithHttpInfo(asin, storeId, marketplaceIds, startTime, endTime);
-             return localVarResponse.Data;
+            ApiResponse<GetAppointmentSlotsResponse> localVarResponse = await GetAppointmentSlotsAsyncWithHttpInfo(asin, storeId, marketplaceIds, startTime, endTime);
+            return localVarResponse.Data;
 
         }
 
@@ -2179,7 +2178,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>Task of ApiResponse (GetAppointmentSlotsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetAppointmentSlotsResponse>> GetAppointmentSlotsAsyncWithHttpInfo (string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetAppointmentSlotsResponse>> GetAppointmentSlotsAsyncWithHttpInfo(string asin, string storeId, List<string> marketplaceIds, string startTime = null, string endTime = null)
         {
             // verify the required parameter 'asin' is set
             if (asin == null)
@@ -2221,11 +2220,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2235,7 +2234,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetAppointmentSlotsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetAppointmentSlotsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAppointmentSlotsResponse)));
+                (GetAppointmentSlotsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAppointmentSlotsResponse)));
         }
 
         /// <summary>
@@ -2247,10 +2246,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>GetAppointmentSlotsResponse</returns>
-        public GetAppointmentSlotsResponse GetAppointmmentSlotsByJobId (string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null)
+        public GetAppointmentSlotsResponse GetAppointmmentSlotsByJobId(string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null)
         {
-             ApiResponse<GetAppointmentSlotsResponse> localVarResponse = GetAppointmmentSlotsByJobIdWithHttpInfo(serviceJobId, marketplaceIds, startTime, endTime);
-             return localVarResponse.Data;
+            ApiResponse<GetAppointmentSlotsResponse> localVarResponse = GetAppointmmentSlotsByJobIdWithHttpInfo(serviceJobId, marketplaceIds, startTime, endTime);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2262,7 +2261,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>ApiResponse of GetAppointmentSlotsResponse</returns>
-        public ApiResponse< GetAppointmentSlotsResponse > GetAppointmmentSlotsByJobIdWithHttpInfo (string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null)
+        public ApiResponse<GetAppointmentSlotsResponse> GetAppointmmentSlotsByJobIdWithHttpInfo(string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -2300,11 +2299,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2314,7 +2313,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetAppointmentSlotsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetAppointmentSlotsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAppointmentSlotsResponse)));
+                (GetAppointmentSlotsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAppointmentSlotsResponse)));
         }
 
         /// <summary>
@@ -2326,10 +2325,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>Task of GetAppointmentSlotsResponse</returns>
-        public async System.Threading.Tasks.Task<GetAppointmentSlotsResponse> GetAppointmmentSlotsByJobIdAsync (string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null)
+        public async System.Threading.Tasks.Task<GetAppointmentSlotsResponse> GetAppointmmentSlotsByJobIdAsync(string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null)
         {
-             ApiResponse<GetAppointmentSlotsResponse> localVarResponse = await GetAppointmmentSlotsByJobIdAsyncWithHttpInfo(serviceJobId, marketplaceIds, startTime, endTime);
-             return localVarResponse.Data;
+            ApiResponse<GetAppointmentSlotsResponse> localVarResponse = await GetAppointmmentSlotsByJobIdAsyncWithHttpInfo(serviceJobId, marketplaceIds, startTime, endTime);
+            return localVarResponse.Data;
 
         }
 
@@ -2342,7 +2341,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="startTime">A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)</param>
         /// <param name="endTime">A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)</param>
         /// <returns>Task of ApiResponse (GetAppointmentSlotsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetAppointmentSlotsResponse>> GetAppointmmentSlotsByJobIdAsyncWithHttpInfo (string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetAppointmentSlotsResponse>> GetAppointmmentSlotsByJobIdAsyncWithHttpInfo(string serviceJobId, List<string> marketplaceIds, string startTime = null, string endTime = null)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -2380,11 +2379,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2394,7 +2393,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetAppointmentSlotsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetAppointmentSlotsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAppointmentSlotsResponse)));
+                (GetAppointmentSlotsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAppointmentSlotsResponse)));
         }
 
         /// <summary>
@@ -2406,10 +2405,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>FixedSlotCapacity</returns>
-        public FixedSlotCapacity GetFixedSlotCapacity (string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
+        public FixedSlotCapacity GetFixedSlotCapacity(string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
         {
-             ApiResponse<FixedSlotCapacity> localVarResponse = GetFixedSlotCapacityWithHttpInfo(resourceId, body, marketplaceIds, nextPageToken);
-             return localVarResponse.Data;
+            ApiResponse<FixedSlotCapacity> localVarResponse = GetFixedSlotCapacityWithHttpInfo(resourceId, body, marketplaceIds, nextPageToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2421,7 +2420,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>ApiResponse of FixedSlotCapacity</returns>
-        public ApiResponse< FixedSlotCapacity > GetFixedSlotCapacityWithHttpInfo (string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
+        public ApiResponse<FixedSlotCapacity> GetFixedSlotCapacityWithHttpInfo(string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
         {
             // verify the required parameter 'resourceId' is set
             if (resourceId == null)
@@ -2469,11 +2468,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2483,7 +2482,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<FixedSlotCapacity>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FixedSlotCapacity) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FixedSlotCapacity)));
+                (FixedSlotCapacity)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FixedSlotCapacity)));
         }
 
         /// <summary>
@@ -2495,10 +2494,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of FixedSlotCapacity</returns>
-        public async System.Threading.Tasks.Task<FixedSlotCapacity> GetFixedSlotCapacityAsync (string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
+        public async System.Threading.Tasks.Task<FixedSlotCapacity> GetFixedSlotCapacityAsync(string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
         {
-             ApiResponse<FixedSlotCapacity> localVarResponse = await GetFixedSlotCapacityAsyncWithHttpInfo(resourceId, body, marketplaceIds, nextPageToken);
-             return localVarResponse.Data;
+            ApiResponse<FixedSlotCapacity> localVarResponse = await GetFixedSlotCapacityAsyncWithHttpInfo(resourceId, body, marketplaceIds, nextPageToken);
+            return localVarResponse.Data;
 
         }
 
@@ -2511,7 +2510,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of ApiResponse (FixedSlotCapacity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FixedSlotCapacity>> GetFixedSlotCapacityAsyncWithHttpInfo (string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FixedSlotCapacity>> GetFixedSlotCapacityAsyncWithHttpInfo(string resourceId, FixedSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
         {
             // verify the required parameter 'resourceId' is set
             if (resourceId == null)
@@ -2559,11 +2558,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2573,7 +2572,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<FixedSlotCapacity>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FixedSlotCapacity) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FixedSlotCapacity)));
+                (FixedSlotCapacity)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FixedSlotCapacity)));
         }
 
         /// <summary>
@@ -2585,10 +2584,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>RangeSlotCapacity</returns>
-        public RangeSlotCapacity GetRangeSlotCapacity (string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
+        public RangeSlotCapacity GetRangeSlotCapacity(string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
         {
-             ApiResponse<RangeSlotCapacity> localVarResponse = GetRangeSlotCapacityWithHttpInfo(resourceId, body, marketplaceIds, nextPageToken);
-             return localVarResponse.Data;
+            ApiResponse<RangeSlotCapacity> localVarResponse = GetRangeSlotCapacityWithHttpInfo(resourceId, body, marketplaceIds, nextPageToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2600,7 +2599,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>ApiResponse of RangeSlotCapacity</returns>
-        public ApiResponse< RangeSlotCapacity > GetRangeSlotCapacityWithHttpInfo (string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
+        public ApiResponse<RangeSlotCapacity> GetRangeSlotCapacityWithHttpInfo(string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
         {
             // verify the required parameter 'resourceId' is set
             if (resourceId == null)
@@ -2648,11 +2647,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2662,7 +2661,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<RangeSlotCapacity>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RangeSlotCapacity) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RangeSlotCapacity)));
+                (RangeSlotCapacity)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RangeSlotCapacity)));
         }
 
         /// <summary>
@@ -2674,10 +2673,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of RangeSlotCapacity</returns>
-        public async System.Threading.Tasks.Task<RangeSlotCapacity> GetRangeSlotCapacityAsync (string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
+        public async System.Threading.Tasks.Task<RangeSlotCapacity> GetRangeSlotCapacityAsync(string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
         {
-             ApiResponse<RangeSlotCapacity> localVarResponse = await GetRangeSlotCapacityAsyncWithHttpInfo(resourceId, body, marketplaceIds, nextPageToken);
-             return localVarResponse.Data;
+            ApiResponse<RangeSlotCapacity> localVarResponse = await GetRangeSlotCapacityAsyncWithHttpInfo(resourceId, body, marketplaceIds, nextPageToken);
+            return localVarResponse.Data;
 
         }
 
@@ -2690,7 +2689,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <param name="nextPageToken">Next page token returned in the response of your previous request. (optional)</param>
         /// <returns>Task of ApiResponse (RangeSlotCapacity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RangeSlotCapacity>> GetRangeSlotCapacityAsyncWithHttpInfo (string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RangeSlotCapacity>> GetRangeSlotCapacityAsyncWithHttpInfo(string resourceId, RangeSlotCapacityQuery body, List<string> marketplaceIds, string nextPageToken = null)
         {
             // verify the required parameter 'resourceId' is set
             if (resourceId == null)
@@ -2738,11 +2737,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2752,7 +2751,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<RangeSlotCapacity>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RangeSlotCapacity) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RangeSlotCapacity)));
+                (RangeSlotCapacity)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RangeSlotCapacity)));
         }
 
         /// <summary>
@@ -2761,10 +2760,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">A service job identifier.</param>
         /// <returns>GetServiceJobByServiceJobIdResponse</returns>
-        public GetServiceJobByServiceJobIdResponse GetServiceJobByServiceJobId (string serviceJobId)
+        public GetServiceJobByServiceJobIdResponse GetServiceJobByServiceJobId(string serviceJobId)
         {
-             ApiResponse<GetServiceJobByServiceJobIdResponse> localVarResponse = GetServiceJobByServiceJobIdWithHttpInfo(serviceJobId);
-             return localVarResponse.Data;
+            ApiResponse<GetServiceJobByServiceJobIdResponse> localVarResponse = GetServiceJobByServiceJobIdWithHttpInfo(serviceJobId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2773,7 +2772,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">A service job identifier.</param>
         /// <returns>ApiResponse of GetServiceJobByServiceJobIdResponse</returns>
-        public ApiResponse< GetServiceJobByServiceJobIdResponse > GetServiceJobByServiceJobIdWithHttpInfo (string serviceJobId)
+        public ApiResponse<GetServiceJobByServiceJobIdResponse> GetServiceJobByServiceJobIdWithHttpInfo(string serviceJobId)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -2805,11 +2804,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2819,7 +2818,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetServiceJobByServiceJobIdResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetServiceJobByServiceJobIdResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceJobByServiceJobIdResponse)));
+                (GetServiceJobByServiceJobIdResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceJobByServiceJobIdResponse)));
         }
 
         /// <summary>
@@ -2828,10 +2827,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">A service job identifier.</param>
         /// <returns>Task of GetServiceJobByServiceJobIdResponse</returns>
-        public async System.Threading.Tasks.Task<GetServiceJobByServiceJobIdResponse> GetServiceJobByServiceJobIdAsync (string serviceJobId)
+        public async System.Threading.Tasks.Task<GetServiceJobByServiceJobIdResponse> GetServiceJobByServiceJobIdAsync(string serviceJobId)
         {
-             ApiResponse<GetServiceJobByServiceJobIdResponse> localVarResponse = await GetServiceJobByServiceJobIdAsyncWithHttpInfo(serviceJobId);
-             return localVarResponse.Data;
+            ApiResponse<GetServiceJobByServiceJobIdResponse> localVarResponse = await GetServiceJobByServiceJobIdAsyncWithHttpInfo(serviceJobId);
+            return localVarResponse.Data;
 
         }
 
@@ -2841,7 +2840,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="serviceJobId">A service job identifier.</param>
         /// <returns>Task of ApiResponse (GetServiceJobByServiceJobIdResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetServiceJobByServiceJobIdResponse>> GetServiceJobByServiceJobIdAsyncWithHttpInfo (string serviceJobId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetServiceJobByServiceJobIdResponse>> GetServiceJobByServiceJobIdAsyncWithHttpInfo(string serviceJobId)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -2873,11 +2872,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2887,7 +2886,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetServiceJobByServiceJobIdResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetServiceJobByServiceJobIdResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceJobByServiceJobIdResponse)));
+                (GetServiceJobByServiceJobIdResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceJobByServiceJobIdResponse)));
         }
 
         /// <summary>
@@ -2911,10 +2910,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requiredSkills">A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)</param>
         /// <param name="storeIds">List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)</param>
         /// <returns>GetServiceJobsResponse</returns>
-        public GetServiceJobsResponse GetServiceJobs (List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null)
+        public GetServiceJobsResponse GetServiceJobs(List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null)
         {
-             ApiResponse<GetServiceJobsResponse> localVarResponse = GetServiceJobsWithHttpInfo(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, asins, requiredSkills, storeIds);
-             return localVarResponse.Data;
+            ApiResponse<GetServiceJobsResponse> localVarResponse = GetServiceJobsWithHttpInfo(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, asins, requiredSkills, storeIds);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2938,7 +2937,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requiredSkills">A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)</param>
         /// <param name="storeIds">List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)</param>
         /// <returns>ApiResponse of GetServiceJobsResponse</returns>
-        public ApiResponse< GetServiceJobsResponse > GetServiceJobsWithHttpInfo (List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null)
+        public ApiResponse<GetServiceJobsResponse> GetServiceJobsWithHttpInfo(List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -2985,11 +2984,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2999,7 +2998,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetServiceJobsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetServiceJobsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceJobsResponse)));
+                (GetServiceJobsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceJobsResponse)));
         }
 
         /// <summary>
@@ -3023,10 +3022,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requiredSkills">A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)</param>
         /// <param name="storeIds">List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)</param>
         /// <returns>Task of GetServiceJobsResponse</returns>
-        public async System.Threading.Tasks.Task<GetServiceJobsResponse> GetServiceJobsAsync (List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null)
+        public async System.Threading.Tasks.Task<GetServiceJobsResponse> GetServiceJobsAsync(List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null)
         {
-             ApiResponse<GetServiceJobsResponse> localVarResponse = await GetServiceJobsAsyncWithHttpInfo(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, asins, requiredSkills, storeIds);
-             return localVarResponse.Data;
+            ApiResponse<GetServiceJobsResponse> localVarResponse = await GetServiceJobsAsyncWithHttpInfo(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, asins, requiredSkills, storeIds);
+            return localVarResponse.Data;
 
         }
 
@@ -3051,7 +3050,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="requiredSkills">A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)</param>
         /// <param name="storeIds">List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)</param>
         /// <returns>Task of ApiResponse (GetServiceJobsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetServiceJobsResponse>> GetServiceJobsAsyncWithHttpInfo (List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetServiceJobsResponse>> GetServiceJobsAsyncWithHttpInfo(List<string> marketplaceIds, List<string> serviceOrderIds = null, List<string> serviceJobStatus = null, string pageToken = null, int? pageSize = null, string sortField = null, string sortOrder = null, string createdAfter = null, string createdBefore = null, string lastUpdatedAfter = null, string lastUpdatedBefore = null, string scheduleStartDate = null, string scheduleEndDate = null, List<string> asins = null, List<string> requiredSkills = null, List<string> storeIds = null)
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
@@ -3098,11 +3097,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3112,7 +3111,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetServiceJobsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetServiceJobsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceJobsResponse)));
+                (GetServiceJobsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceJobsResponse)));
         }
 
         /// <summary>
@@ -3123,10 +3122,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An existing appointment identifier for the Service Job.</param>
         /// <param name="body">Reschedule appointment operation input details.</param>
         /// <returns>SetAppointmentResponse</returns>
-        public SetAppointmentResponse RescheduleAppointmentForServiceJobByServiceJobId (string serviceJobId, string appointmentId, RescheduleAppointmentRequest body)
+        public SetAppointmentResponse RescheduleAppointmentForServiceJobByServiceJobId(string serviceJobId, string appointmentId, RescheduleAppointmentRequest body)
         {
-             ApiResponse<SetAppointmentResponse> localVarResponse = RescheduleAppointmentForServiceJobByServiceJobIdWithHttpInfo(serviceJobId, appointmentId, body);
-             return localVarResponse.Data;
+            ApiResponse<SetAppointmentResponse> localVarResponse = RescheduleAppointmentForServiceJobByServiceJobIdWithHttpInfo(serviceJobId, appointmentId, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3137,7 +3136,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An existing appointment identifier for the Service Job.</param>
         /// <param name="body">Reschedule appointment operation input details.</param>
         /// <returns>ApiResponse of SetAppointmentResponse</returns>
-        public ApiResponse< SetAppointmentResponse > RescheduleAppointmentForServiceJobByServiceJobIdWithHttpInfo (string serviceJobId, string appointmentId, RescheduleAppointmentRequest body)
+        public ApiResponse<SetAppointmentResponse> RescheduleAppointmentForServiceJobByServiceJobIdWithHttpInfo(string serviceJobId, string appointmentId, RescheduleAppointmentRequest body)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -3184,11 +3183,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3198,7 +3197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SetAppointmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SetAppointmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SetAppointmentResponse)));
+                (SetAppointmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SetAppointmentResponse)));
         }
 
         /// <summary>
@@ -3209,10 +3208,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An existing appointment identifier for the Service Job.</param>
         /// <param name="body">Reschedule appointment operation input details.</param>
         /// <returns>Task of SetAppointmentResponse</returns>
-        public async System.Threading.Tasks.Task<SetAppointmentResponse> RescheduleAppointmentForServiceJobByServiceJobIdAsync (string serviceJobId, string appointmentId, RescheduleAppointmentRequest body)
+        public async System.Threading.Tasks.Task<SetAppointmentResponse> RescheduleAppointmentForServiceJobByServiceJobIdAsync(string serviceJobId, string appointmentId, RescheduleAppointmentRequest body)
         {
-             ApiResponse<SetAppointmentResponse> localVarResponse = await RescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo(serviceJobId, appointmentId, body);
-             return localVarResponse.Data;
+            ApiResponse<SetAppointmentResponse> localVarResponse = await RescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo(serviceJobId, appointmentId, body);
+            return localVarResponse.Data;
 
         }
 
@@ -3224,7 +3223,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An existing appointment identifier for the Service Job.</param>
         /// <param name="body">Reschedule appointment operation input details.</param>
         /// <returns>Task of ApiResponse (SetAppointmentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SetAppointmentResponse>> RescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo (string serviceJobId, string appointmentId, RescheduleAppointmentRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<SetAppointmentResponse>> RescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo(string serviceJobId, string appointmentId, RescheduleAppointmentRequest body)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -3271,11 +3270,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3285,7 +3284,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<SetAppointmentResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SetAppointmentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SetAppointmentResponse)));
+                (SetAppointmentResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SetAppointmentResponse)));
         }
 
         /// <summary>
@@ -3296,10 +3295,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body">Appointment fulfillment data collection details.</param>
         /// <returns>string</returns>
-        public string SetAppointmentFulfillmentData (string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body)
+        public string SetAppointmentFulfillmentData(string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body)
         {
-             ApiResponse<string> localVarResponse = SetAppointmentFulfillmentDataWithHttpInfo(serviceJobId, appointmentId, body);
-             return localVarResponse.Data;
+            ApiResponse<string> localVarResponse = SetAppointmentFulfillmentDataWithHttpInfo(serviceJobId, appointmentId, body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3310,7 +3309,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body">Appointment fulfillment data collection details.</param>
         /// <returns>ApiResponse of string</returns>
-        public ApiResponse< string > SetAppointmentFulfillmentDataWithHttpInfo (string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body)
+        public ApiResponse<string> SetAppointmentFulfillmentDataWithHttpInfo(string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -3357,11 +3356,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3371,7 +3370,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<string>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
+                (string)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
         /// <summary>
@@ -3382,10 +3381,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body">Appointment fulfillment data collection details.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> SetAppointmentFulfillmentDataAsync (string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body)
+        public async System.Threading.Tasks.Task<string> SetAppointmentFulfillmentDataAsync(string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body)
         {
-             ApiResponse<string> localVarResponse = await SetAppointmentFulfillmentDataAsyncWithHttpInfo(serviceJobId, appointmentId, body);
-             return localVarResponse.Data;
+            ApiResponse<string> localVarResponse = await SetAppointmentFulfillmentDataAsyncWithHttpInfo(serviceJobId, appointmentId, body);
+            return localVarResponse.Data;
 
         }
 
@@ -3397,7 +3396,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="appointmentId">An Amazon-defined identifier of active service job appointment.</param>
         /// <param name="body">Appointment fulfillment data collection details.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<string>> SetAppointmentFulfillmentDataAsyncWithHttpInfo (string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<string>> SetAppointmentFulfillmentDataAsyncWithHttpInfo(string serviceJobId, string appointmentId, SetAppointmentFulfillmentDataRequest body)
         {
             // verify the required parameter 'serviceJobId' is set
             if (serviceJobId == null)
@@ -3444,11 +3443,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3458,7 +3457,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<string>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (string) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
+                (string)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
         }
 
         /// <summary>
@@ -3469,10 +3468,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>UpdateReservationResponse</returns>
-        public UpdateReservationResponse UpdateReservation (string reservationId, UpdateReservationRequest body, List<string> marketplaceIds)
+        public UpdateReservationResponse UpdateReservation(string reservationId, UpdateReservationRequest body, List<string> marketplaceIds)
         {
-             ApiResponse<UpdateReservationResponse> localVarResponse = UpdateReservationWithHttpInfo(reservationId, body, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<UpdateReservationResponse> localVarResponse = UpdateReservationWithHttpInfo(reservationId, body, marketplaceIds);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3483,7 +3482,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>ApiResponse of UpdateReservationResponse</returns>
-        public ApiResponse< UpdateReservationResponse > UpdateReservationWithHttpInfo (string reservationId, UpdateReservationRequest body, List<string> marketplaceIds)
+        public ApiResponse<UpdateReservationResponse> UpdateReservationWithHttpInfo(string reservationId, UpdateReservationRequest body, List<string> marketplaceIds)
         {
             // verify the required parameter 'reservationId' is set
             if (reservationId == null)
@@ -3530,11 +3529,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3544,7 +3543,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<UpdateReservationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UpdateReservationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateReservationResponse)));
+                (UpdateReservationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateReservationResponse)));
         }
 
         /// <summary>
@@ -3555,10 +3554,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of UpdateReservationResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateReservationResponse> UpdateReservationAsync (string reservationId, UpdateReservationRequest body, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<UpdateReservationResponse> UpdateReservationAsync(string reservationId, UpdateReservationRequest body, List<string> marketplaceIds)
         {
-             ApiResponse<UpdateReservationResponse> localVarResponse = await UpdateReservationAsyncWithHttpInfo(reservationId, body, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<UpdateReservationResponse> localVarResponse = await UpdateReservationAsyncWithHttpInfo(reservationId, body, marketplaceIds);
+            return localVarResponse.Data;
 
         }
 
@@ -3570,7 +3569,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Reservation details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of ApiResponse (UpdateReservationResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UpdateReservationResponse>> UpdateReservationAsyncWithHttpInfo (string reservationId, UpdateReservationRequest body, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<ApiResponse<UpdateReservationResponse>> UpdateReservationAsyncWithHttpInfo(string reservationId, UpdateReservationRequest body, List<string> marketplaceIds)
         {
             // verify the required parameter 'reservationId' is set
             if (reservationId == null)
@@ -3617,11 +3616,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3631,7 +3630,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<UpdateReservationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UpdateReservationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateReservationResponse)));
+                (UpdateReservationResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateReservationResponse)));
         }
 
         /// <summary>
@@ -3642,10 +3641,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Schedule details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>UpdateScheduleResponse</returns>
-        public UpdateScheduleResponse UpdateSchedule (string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds)
+        public UpdateScheduleResponse UpdateSchedule(string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds)
         {
-             ApiResponse<UpdateScheduleResponse> localVarResponse = UpdateScheduleWithHttpInfo(resourceId, body, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<UpdateScheduleResponse> localVarResponse = UpdateScheduleWithHttpInfo(resourceId, body, marketplaceIds);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3656,7 +3655,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Schedule details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>ApiResponse of UpdateScheduleResponse</returns>
-        public ApiResponse< UpdateScheduleResponse > UpdateScheduleWithHttpInfo (string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds)
+        public ApiResponse<UpdateScheduleResponse> UpdateScheduleWithHttpInfo(string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds)
         {
             // verify the required parameter 'resourceId' is set
             if (resourceId == null)
@@ -3703,11 +3702,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3717,7 +3716,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<UpdateScheduleResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UpdateScheduleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateScheduleResponse)));
+                (UpdateScheduleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateScheduleResponse)));
         }
 
         /// <summary>
@@ -3728,10 +3727,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Schedule details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of UpdateScheduleResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateScheduleResponse> UpdateScheduleAsync (string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<UpdateScheduleResponse> UpdateScheduleAsync(string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds)
         {
-             ApiResponse<UpdateScheduleResponse> localVarResponse = await UpdateScheduleAsyncWithHttpInfo(resourceId, body, marketplaceIds);
-             return localVarResponse.Data;
+            ApiResponse<UpdateScheduleResponse> localVarResponse = await UpdateScheduleAsyncWithHttpInfo(resourceId, body, marketplaceIds);
+            return localVarResponse.Data;
 
         }
 
@@ -3743,7 +3742,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Schedule details</param>
         /// <param name="marketplaceIds">An identifier for the marketplace in which the resource operates.</param>
         /// <returns>Task of ApiResponse (UpdateScheduleResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UpdateScheduleResponse>> UpdateScheduleAsyncWithHttpInfo (string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds)
+        public async System.Threading.Tasks.Task<ApiResponse<UpdateScheduleResponse>> UpdateScheduleAsyncWithHttpInfo(string resourceId, UpdateScheduleRequest body, List<string> marketplaceIds)
         {
             // verify the required parameter 'resourceId' is set
             if (resourceId == null)
@@ -3790,11 +3789,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3804,7 +3803,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<UpdateScheduleResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UpdateScheduleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateScheduleResponse)));
+                (UpdateScheduleResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateScheduleResponse)));
         }
 
 
@@ -3818,17 +3817,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public ServiceApi Build() 
+            public ServiceApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

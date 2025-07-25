@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The payload for the &#x60;getEligibileInventory&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class GetFeatureInventoryResult :  IEquatable<GetFeatureInventoryResult>, IValidatableObject
+    public partial class GetFeatureInventoryResult : IEquatable<GetFeatureInventoryResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFeatureInventoryResult" /> class.
@@ -65,33 +60,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.NextToken = nextToken;
             this.FeatureSkus = featureSkus;
         }
-        
+
         /// <summary>
         /// The requested marketplace.
         /// </summary>
         /// <value>The requested marketplace.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The name of the feature.
         /// </summary>
         /// <value>The name of the feature.</value>
-        [DataMember(Name="featureName", EmitDefaultValue=false)]
+        [DataMember(Name = "featureName", EmitDefaultValue = false)]
         public string FeatureName { get; set; }
 
         /// <summary>
         /// When present and not empty, pass this string token in the next request to return the next response page.
         /// </summary>
         /// <value>When present and not empty, pass this string token in the next request to return the next response page.</value>
-        [DataMember(Name="nextToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextToken", EmitDefaultValue = false)]
         public string NextToken { get; set; }
 
         /// <summary>
         /// An array of SKUs eligible for this feature and the quantity available.
         /// </summary>
         /// <value>An array of SKUs eligible for this feature and the quantity available.</value>
-        [DataMember(Name="featureSkus", EmitDefaultValue=false)]
+        [DataMember(Name = "featureSkus", EmitDefaultValue = false)]
         public List<FeatureSku> FeatureSkus { get; set; }
 
         /// <summary>
@@ -109,7 +104,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -139,22 +134,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.FeatureName == input.FeatureName ||
                     (this.FeatureName != null &&
                     this.FeatureName.Equals(input.FeatureName))
-                ) && 
+                ) &&
                 (
                     this.NextToken == input.NextToken ||
                     (this.NextToken != null &&
                     this.NextToken.Equals(input.NextToken))
-                ) && 
+                ) &&
                 (
                     this.FeatureSkus == input.FeatureSkus ||
                     this.FeatureSkus != null &&

@@ -11,7 +11,7 @@ namespace RateLimiter
     public class TimeLimiter
     {
         private readonly TokenBucketRateLimiter _tokenBucketRateLimiter;
-        
+
         internal TimeLimiter(TokenBucketRateLimiter tokenBucketRateLimiter)
         {
             _tokenBucketRateLimiter = tokenBucketRateLimiter;

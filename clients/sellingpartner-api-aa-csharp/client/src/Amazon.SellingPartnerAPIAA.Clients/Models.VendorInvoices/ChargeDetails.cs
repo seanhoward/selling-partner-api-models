@@ -1,5 +1,5 @@
 /* 
- * Vendor Invoices v1
+ * Selling Partner API for Retail Procurement Payments
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -9,18 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
 {
@@ -28,7 +24,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
     /// Monetary and tax details of the charge.
     /// </summary>
     [DataContract]
-    public partial class ChargeDetails :  IEquatable<ChargeDetails>, IValidatableObject
+    public partial class ChargeDetails : IEquatable<ChargeDetails>, IValidatableObject
     {
         /// <summary>
         /// Type of the charge applied.
@@ -37,67 +33,67 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
-            
+
             /// <summary>
             /// Enum Freight for value: Freight
             /// </summary>
             [EnumMember(Value = "Freight")]
             Freight = 1,
-            
+
             /// <summary>
             /// Enum Packing for value: Packing
             /// </summary>
             [EnumMember(Value = "Packing")]
             Packing = 2,
-            
+
             /// <summary>
             /// Enum Duty for value: Duty
             /// </summary>
             [EnumMember(Value = "Duty")]
             Duty = 3,
-            
+
             /// <summary>
             /// Enum Service for value: Service
             /// </summary>
             [EnumMember(Value = "Service")]
             Service = 4,
-            
+
             /// <summary>
             /// Enum SmallOrder for value: SmallOrder
             /// </summary>
             [EnumMember(Value = "SmallOrder")]
             SmallOrder = 5,
-            
+
             /// <summary>
             /// Enum InsurancePlacementCost for value: InsurancePlacementCost
             /// </summary>
             [EnumMember(Value = "InsurancePlacementCost")]
             InsurancePlacementCost = 6,
-            
+
             /// <summary>
             /// Enum InsuranceFee for value: InsuranceFee
             /// </summary>
             [EnumMember(Value = "InsuranceFee")]
             InsuranceFee = 7,
-            
+
             /// <summary>
             /// Enum SpecialHandlingService for value: SpecialHandlingService
             /// </summary>
             [EnumMember(Value = "SpecialHandlingService")]
             SpecialHandlingService = 8,
-            
+
             /// <summary>
             /// Enum CollectionAndRecyclingService for value: CollectionAndRecyclingService
             /// </summary>
             [EnumMember(Value = "CollectionAndRecyclingService")]
             CollectionAndRecyclingService = 9,
-            
+
             /// <summary>
             /// Enum EnvironmentalProtectionService for value: EnvironmentalProtectionService
             /// </summary>
             [EnumMember(Value = "EnvironmentalProtectionService")]
             EnvironmentalProtectionService = 10,
-            
+
             /// <summary>
             /// Enum TaxCollectedAtSource for value: TaxCollectedAtSource
             /// </summary>
@@ -109,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
         /// Type of the charge applied.
         /// </summary>
         /// <value>Type of the charge applied.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargeDetails" /> class.
@@ -146,27 +142,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             this.Description = description;
             this.TaxDetails = taxDetails;
         }
-        
+
 
         /// <summary>
         /// Description of the charge.
         /// </summary>
         /// <value>Description of the charge.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Total monetary amount related to this charge.
         /// </summary>
         /// <value>Total monetary amount related to this charge.</value>
-        [DataMember(Name="chargeAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "chargeAmount", EmitDefaultValue = false)]
         public Money ChargeAmount { get; set; }
 
         /// <summary>
         /// Tax amount details applied on this charge.
         /// </summary>
         /// <value>Tax amount details applied on this charge.</value>
-        [DataMember(Name="taxDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "taxDetails", EmitDefaultValue = false)]
         public List<TaxDetails> TaxDetails { get; set; }
 
         /// <summary>
@@ -184,7 +180,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -214,22 +210,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorInvoices
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.ChargeAmount == input.ChargeAmount ||
                     (this.ChargeAmount != null &&
                     this.ChargeAmount.Equals(input.ChargeAmount))
-                ) && 
+                ) &&
                 (
                     this.TaxDetails == input.TaxDetails ||
                     this.TaxDetails != null &&

@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The request body schema for the getDeliveryOffers operation.
     /// </summary>
     [DataContract]
-    public partial class GetDeliveryOffersRequest :  IEquatable<GetDeliveryOffersRequest>, IValidatableObject
+    public partial class GetDeliveryOffersRequest : IEquatable<GetDeliveryOffersRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDeliveryOffersRequest" /> class.
@@ -61,19 +55,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.Terms = terms;
             }
         }
-        
+
         /// <summary>
         /// The product details for the delivery offer.
         /// </summary>
         /// <value>The product details for the delivery offer.</value>
-        [DataMember(Name="product", EmitDefaultValue=false)]
+        [DataMember(Name = "product", EmitDefaultValue = false)]
         public GetDeliveryOffersProduct Product { get; set; }
 
         /// <summary>
         /// The terms for the delivery offer.
         /// </summary>
         /// <value>The terms for the delivery offer.</value>
-        [DataMember(Name="terms", EmitDefaultValue=false)]
+        [DataMember(Name = "terms", EmitDefaultValue = false)]
         public GetDeliveryOffersTerms Terms { get; set; }
 
         /// <summary>
@@ -89,7 +83,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -119,12 +113,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Product == input.Product ||
                     (this.Product != null &&
                     this.Product.Equals(input.Product))
-                ) && 
+                ) &&
                 (
                     this.Terms == input.Terms ||
                     (this.Terms != null &&

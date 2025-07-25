@@ -12,10 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
 using Amazon.SellingPartnerAPIAA.Clients.Models.Transfers;
-using Amazon.SellingPartnerAPIAA;
+using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
 {
@@ -35,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="paymentMethodTypes">A comma-separated list of the payment method types you want to include in the response. (optional)</param>
         /// <returns>GetPaymentMethodsResponse</returns>
-        GetPaymentMethodsResponse GetPaymentMethods (string marketplaceId, List<string> paymentMethodTypes = null);
+        GetPaymentMethodsResponse GetPaymentMethods(string marketplaceId, List<string> paymentMethodTypes = null);
 
         /// <summary>
         /// 
@@ -47,7 +46,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="paymentMethodTypes">A comma-separated list of the payment method types you want to include in the response. (optional)</param>
         /// <returns>ApiResponse of GetPaymentMethodsResponse</returns>
-        ApiResponse<GetPaymentMethodsResponse> GetPaymentMethodsWithHttpInfo (string marketplaceId, List<string> paymentMethodTypes = null);
+        ApiResponse<GetPaymentMethodsResponse> GetPaymentMethodsWithHttpInfo(string marketplaceId, List<string> paymentMethodTypes = null);
         /// <summary>
         /// 
         /// </summary>
@@ -57,7 +56,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;initiatePayout&#x60; operation.</param>
         /// <returns>InitiatePayoutResponse</returns>
-        InitiatePayoutResponse InitiatePayout (InitiatePayoutRequest body);
+        InitiatePayoutResponse InitiatePayout(InitiatePayoutRequest body);
 
         /// <summary>
         /// 
@@ -68,7 +67,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;initiatePayout&#x60; operation.</param>
         /// <returns>ApiResponse of InitiatePayoutResponse</returns>
-        ApiResponse<InitiatePayoutResponse> InitiatePayoutWithHttpInfo (InitiatePayoutRequest body);
+        ApiResponse<InitiatePayoutResponse> InitiatePayoutWithHttpInfo(InitiatePayoutRequest body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -81,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="paymentMethodTypes">A comma-separated list of the payment method types you want to include in the response. (optional)</param>
         /// <returns>Task of GetPaymentMethodsResponse</returns>
-        System.Threading.Tasks.Task<GetPaymentMethodsResponse> GetPaymentMethodsAsync (string marketplaceId, List<string> paymentMethodTypes = null);
+        System.Threading.Tasks.Task<GetPaymentMethodsResponse> GetPaymentMethodsAsync(string marketplaceId, List<string> paymentMethodTypes = null);
 
         /// <summary>
         /// 
@@ -93,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="paymentMethodTypes">A comma-separated list of the payment method types you want to include in the response. (optional)</param>
         /// <returns>Task of ApiResponse (GetPaymentMethodsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPaymentMethodsResponse>> GetPaymentMethodsAsyncWithHttpInfo (string marketplaceId, List<string> paymentMethodTypes = null);
+        System.Threading.Tasks.Task<ApiResponse<GetPaymentMethodsResponse>> GetPaymentMethodsAsyncWithHttpInfo(string marketplaceId, List<string> paymentMethodTypes = null);
         /// <summary>
         /// 
         /// </summary>
@@ -103,7 +102,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;initiatePayout&#x60; operation.</param>
         /// <returns>Task of InitiatePayoutResponse</returns>
-        System.Threading.Tasks.Task<InitiatePayoutResponse> InitiatePayoutAsync (InitiatePayoutRequest body);
+        System.Threading.Tasks.Task<InitiatePayoutResponse> InitiatePayoutAsync(InitiatePayoutRequest body);
 
         /// <summary>
         /// 
@@ -114,7 +113,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;initiatePayout&#x60; operation.</param>
         /// <returns>Task of ApiResponse (InitiatePayoutResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InitiatePayoutResponse>> InitiatePayoutAsyncWithHttpInfo (InitiatePayoutRequest body);
+        System.Threading.Tasks.Task<ApiResponse<InitiatePayoutResponse>> InitiatePayoutAsyncWithHttpInfo(InitiatePayoutRequest body);
         #endregion Asynchronous Operations
     }
 
@@ -134,7 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         public DefaultApi(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -160,7 +159,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -207,10 +206,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="paymentMethodTypes">A comma-separated list of the payment method types you want to include in the response. (optional)</param>
         /// <returns>GetPaymentMethodsResponse</returns>
-        public GetPaymentMethodsResponse GetPaymentMethods (string marketplaceId, List<string> paymentMethodTypes = null)
+        public GetPaymentMethodsResponse GetPaymentMethods(string marketplaceId, List<string> paymentMethodTypes = null)
         {
-             ApiResponse<GetPaymentMethodsResponse> localVarResponse = GetPaymentMethodsWithHttpInfo(marketplaceId, paymentMethodTypes);
-             return localVarResponse.Data;
+            ApiResponse<GetPaymentMethodsResponse> localVarResponse = GetPaymentMethodsWithHttpInfo(marketplaceId, paymentMethodTypes);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -220,7 +219,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="paymentMethodTypes">A comma-separated list of the payment method types you want to include in the response. (optional)</param>
         /// <returns>ApiResponse of GetPaymentMethodsResponse</returns>
-        public ApiResponse< GetPaymentMethodsResponse > GetPaymentMethodsWithHttpInfo (string marketplaceId, List<string> paymentMethodTypes = null)
+        public ApiResponse<GetPaymentMethodsResponse> GetPaymentMethodsWithHttpInfo(string marketplaceId, List<string> paymentMethodTypes = null)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -253,11 +252,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -267,7 +266,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetPaymentMethodsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetPaymentMethodsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPaymentMethodsResponse)));
+                (GetPaymentMethodsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPaymentMethodsResponse)));
         }
 
         /// <summary>
@@ -277,10 +276,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="paymentMethodTypes">A comma-separated list of the payment method types you want to include in the response. (optional)</param>
         /// <returns>Task of GetPaymentMethodsResponse</returns>
-        public async System.Threading.Tasks.Task<GetPaymentMethodsResponse> GetPaymentMethodsAsync (string marketplaceId, List<string> paymentMethodTypes = null)
+        public async System.Threading.Tasks.Task<GetPaymentMethodsResponse> GetPaymentMethodsAsync(string marketplaceId, List<string> paymentMethodTypes = null)
         {
-             ApiResponse<GetPaymentMethodsResponse> localVarResponse = await GetPaymentMethodsAsyncWithHttpInfo(marketplaceId, paymentMethodTypes);
-             return localVarResponse.Data;
+            ApiResponse<GetPaymentMethodsResponse> localVarResponse = await GetPaymentMethodsAsyncWithHttpInfo(marketplaceId, paymentMethodTypes);
+            return localVarResponse.Data;
 
         }
 
@@ -291,7 +290,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="marketplaceId">The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <param name="paymentMethodTypes">A comma-separated list of the payment method types you want to include in the response. (optional)</param>
         /// <returns>Task of ApiResponse (GetPaymentMethodsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetPaymentMethodsResponse>> GetPaymentMethodsAsyncWithHttpInfo (string marketplaceId, List<string> paymentMethodTypes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetPaymentMethodsResponse>> GetPaymentMethodsAsyncWithHttpInfo(string marketplaceId, List<string> paymentMethodTypes = null)
         {
             // verify the required parameter 'marketplaceId' is set
             if (marketplaceId == null)
@@ -324,11 +323,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -338,7 +337,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<GetPaymentMethodsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetPaymentMethodsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPaymentMethodsResponse)));
+                (GetPaymentMethodsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPaymentMethodsResponse)));
         }
 
         /// <summary>
@@ -347,10 +346,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;initiatePayout&#x60; operation.</param>
         /// <returns>InitiatePayoutResponse</returns>
-        public InitiatePayoutResponse InitiatePayout (InitiatePayoutRequest body)
+        public InitiatePayoutResponse InitiatePayout(InitiatePayoutRequest body)
         {
-             ApiResponse<InitiatePayoutResponse> localVarResponse = InitiatePayoutWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<InitiatePayoutResponse> localVarResponse = InitiatePayoutWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -359,7 +358,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;initiatePayout&#x60; operation.</param>
         /// <returns>ApiResponse of InitiatePayoutResponse</returns>
-        public ApiResponse< InitiatePayoutResponse > InitiatePayoutWithHttpInfo (InitiatePayoutRequest body)
+        public ApiResponse<InitiatePayoutResponse> InitiatePayoutWithHttpInfo(InitiatePayoutRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -398,11 +397,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -412,7 +411,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<InitiatePayoutResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InitiatePayoutResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InitiatePayoutResponse)));
+                (InitiatePayoutResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InitiatePayoutResponse)));
         }
 
         /// <summary>
@@ -421,10 +420,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;initiatePayout&#x60; operation.</param>
         /// <returns>Task of InitiatePayoutResponse</returns>
-        public async System.Threading.Tasks.Task<InitiatePayoutResponse> InitiatePayoutAsync (InitiatePayoutRequest body)
+        public async System.Threading.Tasks.Task<InitiatePayoutResponse> InitiatePayoutAsync(InitiatePayoutRequest body)
         {
-             ApiResponse<InitiatePayoutResponse> localVarResponse = await InitiatePayoutAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<InitiatePayoutResponse> localVarResponse = await InitiatePayoutAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -434,7 +433,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The request body for the &#x60;initiatePayout&#x60; operation.</param>
         /// <returns>Task of ApiResponse (InitiatePayoutResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InitiatePayoutResponse>> InitiatePayoutAsyncWithHttpInfo (InitiatePayoutRequest body)
+        public async System.Threading.Tasks.Task<ApiResponse<InitiatePayoutResponse>> InitiatePayoutAsyncWithHttpInfo(InitiatePayoutRequest body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -473,11 +472,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -487,7 +486,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
 
             return new ApiResponse<InitiatePayoutResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InitiatePayoutResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InitiatePayoutResponse)));
+                (InitiatePayoutResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InitiatePayoutResponse)));
         }
 
 
@@ -501,17 +500,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 this.lwaAuthorizationCredentials = lwaAuthorizationCredentials;
                 return this;
             }
-            
-            
+
+
             public Builder SetRateLimitConfiguration(RateLimitConfiguration rateLimitConfiguration)
             {
                 this.rateLimitConfiguration = rateLimitConfiguration;
                 return this;
             }
 
-            public DefaultApi Build() 
+            public DefaultApi Build()
             {
-                if (lwaAuthorizationCredentials == null) 
+                if (lwaAuthorizationCredentials == null)
                 {
                     throw new NullReferenceException("LWAAuthoriztionCredentials not set");
                 }

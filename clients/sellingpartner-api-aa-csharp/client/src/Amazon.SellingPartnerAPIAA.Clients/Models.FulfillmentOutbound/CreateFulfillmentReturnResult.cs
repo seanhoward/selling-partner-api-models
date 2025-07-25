@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The result for the createFulfillmentReturn operation.
     /// </summary>
     [DataContract]
-    public partial class CreateFulfillmentReturnResult :  IEquatable<CreateFulfillmentReturnResult>, IValidatableObject
+    public partial class CreateFulfillmentReturnResult : IEquatable<CreateFulfillmentReturnResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFulfillmentReturnResult" /> class.
@@ -42,23 +35,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.InvalidReturnItems = invalidReturnItems;
             this.ReturnAuthorizations = returnAuthorizations;
         }
-        
+
         /// <summary>
         /// Gets or Sets ReturnItems
         /// </summary>
-        [DataMember(Name="returnItems", EmitDefaultValue=false)]
+        [DataMember(Name = "returnItems", EmitDefaultValue = false)]
         public ReturnItemList ReturnItems { get; set; }
 
         /// <summary>
         /// Gets or Sets InvalidReturnItems
         /// </summary>
-        [DataMember(Name="invalidReturnItems", EmitDefaultValue=false)]
+        [DataMember(Name = "invalidReturnItems", EmitDefaultValue = false)]
         public InvalidReturnItemList InvalidReturnItems { get; set; }
 
         /// <summary>
         /// Gets or Sets ReturnAuthorizations
         /// </summary>
-        [DataMember(Name="returnAuthorizations", EmitDefaultValue=false)]
+        [DataMember(Name = "returnAuthorizations", EmitDefaultValue = false)]
         public ReturnAuthorizationList ReturnAuthorizations { get; set; }
 
         /// <summary>
@@ -75,7 +68,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -105,17 +98,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ReturnItems == input.ReturnItems ||
                     (this.ReturnItems != null &&
                     this.ReturnItems.Equals(input.ReturnItems))
-                ) && 
+                ) &&
                 (
                     this.InvalidReturnItems == input.InvalidReturnItems ||
                     (this.InvalidReturnItems != null &&
                     this.InvalidReturnItems.Equals(input.InvalidReturnItems))
-                ) && 
+                ) &&
                 (
                     this.ReturnAuthorizations == input.ReturnAuthorizations ||
                     (this.ReturnAuthorizations != null &&

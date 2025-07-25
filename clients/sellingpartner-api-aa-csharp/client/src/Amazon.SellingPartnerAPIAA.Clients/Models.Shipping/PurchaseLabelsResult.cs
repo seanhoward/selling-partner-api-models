@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
     /// The payload schema for the purchaseLabels operation.
     /// </summary>
     [DataContract]
-    public partial class PurchaseLabelsResult :  IEquatable<PurchaseLabelsResult>, IValidatableObject
+    public partial class PurchaseLabelsResult : IEquatable<PurchaseLabelsResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PurchaseLabelsResult" /> class.
@@ -73,29 +67,29 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             }
             this.ClientReferenceId = clientReferenceId;
         }
-        
+
         /// <summary>
         /// Gets or Sets ShipmentId
         /// </summary>
-        [DataMember(Name="shipmentId", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentId", EmitDefaultValue = false)]
         public string ShipmentId { get; set; }
 
         /// <summary>
         /// Gets or Sets ClientReferenceId
         /// </summary>
-        [DataMember(Name="clientReferenceId", EmitDefaultValue=false)]
+        [DataMember(Name = "clientReferenceId", EmitDefaultValue = false)]
         public string ClientReferenceId { get; set; }
 
         /// <summary>
         /// Gets or Sets AcceptedRate
         /// </summary>
-        [DataMember(Name="acceptedRate", EmitDefaultValue=false)]
+        [DataMember(Name = "acceptedRate", EmitDefaultValue = false)]
         public AcceptedRate AcceptedRate { get; set; }
 
         /// <summary>
         /// Gets or Sets LabelResults
         /// </summary>
-        [DataMember(Name="labelResults", EmitDefaultValue=false)]
+        [DataMember(Name = "labelResults", EmitDefaultValue = false)]
         public LabelResultList LabelResults { get; set; }
 
         /// <summary>
@@ -113,7 +107,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -143,22 +137,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Shipping
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShipmentId == input.ShipmentId ||
                     (this.ShipmentId != null &&
                     this.ShipmentId.Equals(input.ShipmentId))
-                ) && 
+                ) &&
                 (
                     this.ClientReferenceId == input.ClientReferenceId ||
                     (this.ClientReferenceId != null &&
                     this.ClientReferenceId.Equals(input.ClientReferenceId))
-                ) && 
+                ) &&
                 (
                     this.AcceptedRate == input.AcceptedRate ||
                     (this.AcceptedRate != null &&
                     this.AcceptedRate.Equals(input.AcceptedRate))
-                ) && 
+                ) &&
                 (
                     this.LabelResults == input.LabelResults ||
                     (this.LabelResults != null &&

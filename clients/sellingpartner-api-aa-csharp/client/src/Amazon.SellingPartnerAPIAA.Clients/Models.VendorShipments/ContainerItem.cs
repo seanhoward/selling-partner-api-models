@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Carton/Pallet level details for the item.
     /// </summary>
     [DataContract]
-    public partial class ContainerItem :  IEquatable<ContainerItem>, IValidatableObject
+    public partial class ContainerItem : IEquatable<ContainerItem>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerItem" /> class.
@@ -63,25 +57,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             }
             this.ItemDetails = itemDetails;
         }
-        
+
         /// <summary>
         /// The reference number for the item. Please provide the itemSequenceNumber from the &#39;items&#39; segment to refer to that item&#39;s details here.
         /// </summary>
         /// <value>The reference number for the item. Please provide the itemSequenceNumber from the &#39;items&#39; segment to refer to that item&#39;s details here.</value>
-        [DataMember(Name="itemReference", EmitDefaultValue=false)]
+        [DataMember(Name = "itemReference", EmitDefaultValue = false)]
         public string ItemReference { get; set; }
 
         /// <summary>
         /// Total item quantity shipped in this carton/pallet.
         /// </summary>
         /// <value>Total item quantity shipped in this carton/pallet.</value>
-        [DataMember(Name="shippedQuantity", EmitDefaultValue=false)]
+        [DataMember(Name = "shippedQuantity", EmitDefaultValue = false)]
         public ItemQuantity ShippedQuantity { get; set; }
 
         /// <summary>
         /// Gets or Sets ItemDetails
         /// </summary>
-        [DataMember(Name="itemDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "itemDetails", EmitDefaultValue = false)]
         public ItemDetails ItemDetails { get; set; }
 
         /// <summary>
@@ -98,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,17 +122,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemReference == input.ItemReference ||
                     (this.ItemReference != null &&
                     this.ItemReference.Equals(input.ItemReference))
-                ) && 
+                ) &&
                 (
                     this.ShippedQuantity == input.ShippedQuantity ||
                     (this.ShippedQuantity != null &&
                     this.ShippedQuantity.Equals(input.ShippedQuantity))
-                ) && 
+                ) &&
                 (
                     this.ItemDetails == input.ItemDetails ||
                     (this.ItemDetails != null &&

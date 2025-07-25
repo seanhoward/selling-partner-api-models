@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
     /// The COD (Cash On Delivery) charges that you associate with a COD fulfillment order.
     /// </summary>
     [DataContract]
-    public partial class CODSettings :  IEquatable<CODSettings>, IValidatableObject
+    public partial class CODSettings : IEquatable<CODSettings>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CODSettings" /> class.
@@ -59,40 +53,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             this.ShippingCharge = shippingCharge;
             this.ShippingChargeTax = shippingChargeTax;
         }
-        
+
         /// <summary>
         /// When true, this fulfillment order requires a COD (Cash On Delivery) payment.
         /// </summary>
         /// <value>When true, this fulfillment order requires a COD (Cash On Delivery) payment.</value>
-        [DataMember(Name="isCodRequired", EmitDefaultValue=false)]
+        [DataMember(Name = "isCodRequired", EmitDefaultValue = false)]
         public bool? IsCodRequired { get; set; }
 
         /// <summary>
         /// The amount of the COD charge to be collected from the recipient for a COD order.
         /// </summary>
         /// <value>The amount of the COD charge to be collected from the recipient for a COD order.</value>
-        [DataMember(Name="codCharge", EmitDefaultValue=false)]
+        [DataMember(Name = "codCharge", EmitDefaultValue = false)]
         public Money CodCharge { get; set; }
 
         /// <summary>
         /// The amount of the tax on the COD charge to be collected from the recipient for a COD order.
         /// </summary>
         /// <value>The amount of the tax on the COD charge to be collected from the recipient for a COD order.</value>
-        [DataMember(Name="codChargeTax", EmitDefaultValue=false)]
+        [DataMember(Name = "codChargeTax", EmitDefaultValue = false)]
         public Money CodChargeTax { get; set; }
 
         /// <summary>
         /// The amount of the tax on the COD charge to be collected from the recipient for a COD order.
         /// </summary>
         /// <value>The amount of the tax on the COD charge to be collected from the recipient for a COD order.</value>
-        [DataMember(Name="shippingCharge", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingCharge", EmitDefaultValue = false)]
         public Money ShippingCharge { get; set; }
 
         /// <summary>
         /// The amount of the tax on the shipping charge to be collected from the recipient for a COD order.
         /// </summary>
         /// <value>The amount of the tax on the shipping charge to be collected from the recipient for a COD order.</value>
-        [DataMember(Name="shippingChargeTax", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingChargeTax", EmitDefaultValue = false)]
         public Money ShippingChargeTax { get; set; }
 
         /// <summary>
@@ -111,7 +105,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -141,27 +135,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.IsCodRequired == input.IsCodRequired ||
                     (this.IsCodRequired != null &&
                     this.IsCodRequired.Equals(input.IsCodRequired))
-                ) && 
+                ) &&
                 (
                     this.CodCharge == input.CodCharge ||
                     (this.CodCharge != null &&
                     this.CodCharge.Equals(input.CodCharge))
-                ) && 
+                ) &&
                 (
                     this.CodChargeTax == input.CodChargeTax ||
                     (this.CodChargeTax != null &&
                     this.CodChargeTax.Equals(input.CodChargeTax))
-                ) && 
+                ) &&
                 (
                     this.ShippingCharge == input.ShippingCharge ||
                     (this.ShippingCharge != null &&
                     this.ShippingCharge.Equals(input.ShippingCharge))
-                ) && 
+                ) &&
                 (
                     this.ShippingChargeTax == input.ShippingChargeTax ||
                     (this.ShippingChargeTax != null &&

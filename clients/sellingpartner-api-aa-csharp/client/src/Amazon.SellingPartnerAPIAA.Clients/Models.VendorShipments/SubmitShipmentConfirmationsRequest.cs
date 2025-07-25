@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// The request schema for the SubmitShipmentConfirmations operation.
     /// </summary>
     [DataContract]
-    public partial class SubmitShipmentConfirmationsRequest :  IEquatable<SubmitShipmentConfirmationsRequest>, IValidatableObject
+    public partial class SubmitShipmentConfirmationsRequest : IEquatable<SubmitShipmentConfirmationsRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitShipmentConfirmationsRequest" /> class.
@@ -38,12 +32,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         {
             this.ShipmentConfirmations = shipmentConfirmations;
         }
-        
+
         /// <summary>
         /// A list of one or more shipment confirmations.
         /// </summary>
         /// <value>A list of one or more shipment confirmations.</value>
-        [DataMember(Name="shipmentConfirmations", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentConfirmations", EmitDefaultValue = false)]
         public List<ShipmentConfirmation> ShipmentConfirmations { get; set; }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShipmentConfirmations == input.ShipmentConfirmations ||
                     this.ShipmentConfirmations != null &&

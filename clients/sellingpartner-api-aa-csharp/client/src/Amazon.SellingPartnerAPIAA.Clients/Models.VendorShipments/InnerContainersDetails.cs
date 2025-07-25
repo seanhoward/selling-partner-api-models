@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Details of the innerContainersDetails.
     /// </summary>
     [DataContract]
-    public partial class InnerContainersDetails :  IEquatable<InnerContainersDetails>, IValidatableObject
+    public partial class InnerContainersDetails : IEquatable<InnerContainersDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InnerContainersDetails" /> class.
@@ -40,19 +34,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.ContainerCount = containerCount;
             this.ContainerSequenceNumbers = containerSequenceNumbers;
         }
-        
+
         /// <summary>
         /// Total containers as part of the shipment
         /// </summary>
         /// <value>Total containers as part of the shipment</value>
-        [DataMember(Name="containerCount", EmitDefaultValue=false)]
+        [DataMember(Name = "containerCount", EmitDefaultValue = false)]
         public int? ContainerCount { get; set; }
 
         /// <summary>
         /// Container sequence numbers that are involved in this shipment.
         /// </summary>
         /// <value>Container sequence numbers that are involved in this shipment.</value>
-        [DataMember(Name="containerSequenceNumbers", EmitDefaultValue=false)]
+        [DataMember(Name = "containerSequenceNumbers", EmitDefaultValue = false)]
         public List<ContainerSequenceNumbers> ContainerSequenceNumbers { get; set; }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +92,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ContainerCount == input.ContainerCount ||
                     (this.ContainerCount != null &&
                     this.ContainerCount.Equals(input.ContainerCount))
-                ) && 
+                ) &&
                 (
                     this.ContainerSequenceNumbers == input.ContainerSequenceNumbers ||
                     this.ContainerSequenceNumbers != null &&

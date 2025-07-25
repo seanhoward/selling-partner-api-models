@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
     /// The schema for item&#39;s price information, including listing price, shipping price, and Amazon Points.
     /// </summary>
     [DataContract]
-    public partial class Price :  IEquatable<Price>, IValidatableObject
+    public partial class Price : IEquatable<Price>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Price" /> class.
@@ -55,26 +49,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             this.ShippingPrice = shippingPrice;
             this.Points = points;
         }
-        
+
         /// <summary>
         /// The listing price for the item, excluding any promotions.
         /// </summary>
         /// <value>The listing price for the item, excluding any promotions.</value>
-        [DataMember(Name="listingPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "listingPrice", EmitDefaultValue = false)]
         public MoneyType ListingPrice { get; set; }
 
         /// <summary>
         /// The shipping cost of the product. Note that the shipping cost is not always available.
         /// </summary>
         /// <value>The shipping cost of the product. Note that the shipping cost is not always available.</value>
-        [DataMember(Name="shippingPrice", EmitDefaultValue=false)]
+        [DataMember(Name = "shippingPrice", EmitDefaultValue = false)]
         public MoneyType ShippingPrice { get; set; }
 
         /// <summary>
         /// The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.
         /// </summary>
         /// <value>The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.</value>
-        [DataMember(Name="points", EmitDefaultValue=false)]
+        [DataMember(Name = "points", EmitDefaultValue = false)]
         public Points Points { get; set; }
 
         /// <summary>
@@ -91,7 +85,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -121,17 +115,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ListingPrice == input.ListingPrice ||
                     (this.ListingPrice != null &&
                     this.ListingPrice.Equals(input.ListingPrice))
-                ) && 
+                ) &&
                 (
                     this.ShippingPrice == input.ShippingPrice ||
                     (this.ShippingPrice != null &&
                     this.ShippingPrice.Equals(input.ShippingPrice))
-                ) && 
+                ) &&
                 (
                     this.Points == input.Points ||
                     (this.Points != null &&

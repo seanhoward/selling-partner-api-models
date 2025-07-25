@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     /// Shipment Status details.
     /// </summary>
     [DataContract]
-    public partial class ShipmentStatusDetails :  IEquatable<ShipmentStatusDetails>, IValidatableObject
+    public partial class ShipmentStatusDetails : IEquatable<ShipmentStatusDetails>, IValidatableObject
     {
         /// <summary>
         /// Current status of the shipment on whether it is picked up or scheduled.
@@ -37,25 +31,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ShipmentStatusEnum
         {
-            
+
             /// <summary>
             /// Enum Created for value: Created
             /// </summary>
             [EnumMember(Value = "Created")]
             Created = 1,
-            
+
             /// <summary>
             /// Enum TransportationRequested for value: TransportationRequested
             /// </summary>
             [EnumMember(Value = "TransportationRequested")]
             TransportationRequested = 2,
-            
+
             /// <summary>
             /// Enum CarrierAssigned for value: CarrierAssigned
             /// </summary>
             [EnumMember(Value = "CarrierAssigned")]
             CarrierAssigned = 3,
-            
+
             /// <summary>
             /// Enum Shipped for value: Shipped
             /// </summary>
@@ -67,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// Current status of the shipment on whether it is picked up or scheduled.
         /// </summary>
         /// <value>Current status of the shipment on whether it is picked up or scheduled.</value>
-        [DataMember(Name="shipmentStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentStatus", EmitDefaultValue = false)]
         public ShipmentStatusEnum? ShipmentStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentStatusDetails" /> class.
@@ -79,13 +73,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             this.ShipmentStatus = shipmentStatus;
             this.ShipmentStatusDate = shipmentStatusDate;
         }
-        
+
 
         /// <summary>
         /// Date and time on last status update received for the shipment
         /// </summary>
         /// <value>Date and time on last status update received for the shipment</value>
-        [DataMember(Name="shipmentStatusDate", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentStatusDate", EmitDefaultValue = false)]
         public DateTime? ShipmentStatusDate { get; set; }
 
         /// <summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -131,12 +125,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShipmentStatus == input.ShipmentStatus ||
                     (this.ShipmentStatus != null &&
                     this.ShipmentStatus.Equals(input.ShipmentStatus))
-                ) && 
+                ) &&
                 (
                     this.ShipmentStatusDate == input.ShipmentStatusDate ||
                     (this.ShipmentStatusDate != null &&

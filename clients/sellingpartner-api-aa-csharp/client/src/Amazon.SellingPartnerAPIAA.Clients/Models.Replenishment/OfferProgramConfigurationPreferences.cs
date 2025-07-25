@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
 {
@@ -28,13 +21,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
     /// An object which contains the preferences applied to the offer.
     /// </summary>
     [DataContract]
-    public partial class OfferProgramConfigurationPreferences :  IEquatable<OfferProgramConfigurationPreferences>, IValidatableObject
+    public partial class OfferProgramConfigurationPreferences : IEquatable<OfferProgramConfigurationPreferences>, IValidatableObject
     {
         /// <summary>
         /// The auto-enrollment preference indicates whether the offer is opted-in to or opted-out of Amazon&#39;s auto-enrollment feature.
         /// </summary>
         /// <value>The auto-enrollment preference indicates whether the offer is opted-in to or opted-out of Amazon&#39;s auto-enrollment feature.</value>
-        [DataMember(Name="autoEnrollment", EmitDefaultValue=false)]
+        [DataMember(Name = "autoEnrollment", EmitDefaultValue = false)]
         public AutoEnrollmentPreference? AutoEnrollment { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OfferProgramConfigurationPreferences" /> class.
@@ -44,7 +37,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
         {
             this.AutoEnrollment = autoEnrollment;
         }
-        
+
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -58,7 +51,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Replenishment
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.AutoEnrollment == input.AutoEnrollment ||
                     (this.AutoEnrollment != null &&

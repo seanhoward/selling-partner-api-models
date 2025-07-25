@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
     /// Response schema for the &#x60;getFixedSlotCapacity&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class FixedSlotCapacity :  IEquatable<FixedSlotCapacity>, IValidatableObject
+    public partial class FixedSlotCapacity : IEquatable<FixedSlotCapacity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FixedSlotCapacity" /> class.
@@ -44,33 +38,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             this.Capacities = capacities;
             this.NextPageToken = nextPageToken;
         }
-        
+
         /// <summary>
         /// Resource Identifier.
         /// </summary>
         /// <value>Resource Identifier.</value>
-        [DataMember(Name="resourceId", EmitDefaultValue=false)]
+        [DataMember(Name = "resourceId", EmitDefaultValue = false)]
         public string ResourceId { get; set; }
 
         /// <summary>
         /// The duration of each slot which is returned. This value will be a multiple of 5 and fall in the following range: 5 &lt;&#x3D; &#x60;slotDuration&#x60; &lt;&#x3D; 360.
         /// </summary>
         /// <value>The duration of each slot which is returned. This value will be a multiple of 5 and fall in the following range: 5 &lt;&#x3D; &#x60;slotDuration&#x60; &lt;&#x3D; 360.</value>
-        [DataMember(Name="slotDuration", EmitDefaultValue=false)]
+        [DataMember(Name = "slotDuration", EmitDefaultValue = false)]
         public decimal? SlotDuration { get; set; }
 
         /// <summary>
         /// Array of capacity slots in fixed slot format.
         /// </summary>
         /// <value>Array of capacity slots in fixed slot format.</value>
-        [DataMember(Name="capacities", EmitDefaultValue=false)]
+        [DataMember(Name = "capacities", EmitDefaultValue = false)]
         public List<FixedSlot> Capacities { get; set; }
 
         /// <summary>
         /// Next page token, if there are more pages.
         /// </summary>
         /// <value>Next page token, if there are more pages.</value>
-        [DataMember(Name="nextPageToken", EmitDefaultValue=false)]
+        [DataMember(Name = "nextPageToken", EmitDefaultValue = false)]
         public string NextPageToken { get; set; }
 
         /// <summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +112,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Services
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ResourceId == input.ResourceId ||
                     (this.ResourceId != null &&
                     this.ResourceId.Equals(input.ResourceId))
-                ) && 
+                ) &&
                 (
                     this.SlotDuration == input.SlotDuration ||
                     (this.SlotDuration != null &&
                     this.SlotDuration.Equals(input.SlotDuration))
-                ) && 
+                ) &&
                 (
                     this.Capacities == input.Capacities ||
                     this.Capacities != null &&
                     this.Capacities.SequenceEqual(input.Capacities)
-                ) && 
+                ) &&
                 (
                     this.NextPageToken == input.NextPageToken ||
                     (this.NextPageToken != null &&

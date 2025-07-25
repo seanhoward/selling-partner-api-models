@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
     /// The contact details
     /// </summary>
     [DataContract]
-    public partial class ContactDetails :  IEquatable<ContactDetails>, IValidatableObject
+    public partial class ContactDetails : IEquatable<ContactDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactDetails" /> class.
@@ -38,11 +31,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
         {
             this.Primary = primary;
         }
-        
+
         /// <summary>
         /// Gets or Sets Primary
         /// </summary>
-        [DataMember(Name="primary", EmitDefaultValue=false)]
+        [DataMember(Name = "primary", EmitDefaultValue = false)]
         public ContactDetailsPrimary Primary { get; set; }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -87,7 +80,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SupplySources
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Primary == input.Primary ||
                     (this.Primary != null &&

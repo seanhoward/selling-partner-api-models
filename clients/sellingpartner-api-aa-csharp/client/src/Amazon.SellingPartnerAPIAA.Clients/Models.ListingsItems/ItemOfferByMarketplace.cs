@@ -9,18 +9,13 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
 {
@@ -28,7 +23,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
     /// Offer details of a listings item for an Amazon marketplace.
     /// </summary>
     [DataContract]
-    public partial class ItemOfferByMarketplace :  IEquatable<ItemOfferByMarketplace>, IValidatableObject
+    public partial class ItemOfferByMarketplace : IEquatable<ItemOfferByMarketplace>, IValidatableObject
     {
         /// <summary>
         /// Type of offer for the listings item.
@@ -37,13 +32,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OfferTypeEnum
         {
-            
+
             /// <summary>
             /// Enum B2C for value: B2C
             /// </summary>
             [EnumMember(Value = "B2C")]
             B2C = 1,
-            
+
             /// <summary>
             /// Enum B2B for value: B2B
             /// </summary>
@@ -55,7 +50,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// Type of offer for the listings item.
         /// </summary>
         /// <value>Type of offer for the listings item.</value>
-        [DataMember(Name="offerType", EmitDefaultValue=false)]
+        [DataMember(Name = "offerType", EmitDefaultValue = false)]
         public OfferTypeEnum OfferType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemOfferByMarketplace" /> class.
@@ -102,12 +97,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             this.Points = points;
             this.Audience = audience;
         }
-        
+
         /// <summary>
         /// The Amazon marketplace identifier.
         /// </summary>
         /// <value>The Amazon marketplace identifier.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
 
@@ -115,20 +110,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
         /// The purchase price of the listings item
         /// </summary>
         /// <value>The purchase price of the listings item</value>
-        [DataMember(Name="price", EmitDefaultValue=false)]
+        [DataMember(Name = "price", EmitDefaultValue = false)]
         public Money Price { get; set; }
 
         /// <summary>
         /// Gets or Sets Points
         /// </summary>
-        [DataMember(Name="points", EmitDefaultValue=false)]
+        [DataMember(Name = "points", EmitDefaultValue = false)]
         public Points Points { get; set; }
 
         /// <summary>
         /// Buyer segment or program this offer is applicable to.
         /// </summary>
         /// <value>Buyer segment or program this offer is applicable to.</value>
-        [DataMember(Name="audience", EmitDefaultValue=false)]
+        [DataMember(Name = "audience", EmitDefaultValue = false)]
         public Audience Audience { get; set; }
 
         /// <summary>
@@ -147,7 +142,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -177,27 +172,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.OfferType == input.OfferType ||
                     (this.OfferType != null &&
                     this.OfferType.Equals(input.OfferType))
-                ) && 
+                ) &&
                 (
                     this.Price == input.Price ||
                     (this.Price != null &&
                     this.Price.Equals(input.Price))
-                ) && 
+                ) &&
                 (
                     this.Points == input.Points ||
                     (this.Points != null &&
                     this.Points.Equals(input.Points))
-                ) && 
+                ) &&
                 (
                     this.Audience == input.Audience ||
                     (this.Audience != null &&

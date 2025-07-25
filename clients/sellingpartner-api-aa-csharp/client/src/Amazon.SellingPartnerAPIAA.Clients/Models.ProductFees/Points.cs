@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
     /// Points
     /// </summary>
     [DataContract]
-    public partial class Points :  IEquatable<Points>, IValidatableObject
+    public partial class Points : IEquatable<Points>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Points" /> class.
@@ -40,17 +33,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             this.PointsNumber = pointsNumber;
             this.PointsMonetaryValue = pointsMonetaryValue;
         }
-        
+
         /// <summary>
         /// Gets or Sets PointsNumber
         /// </summary>
-        [DataMember(Name="PointsNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "PointsNumber", EmitDefaultValue = false)]
         public int? PointsNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets PointsMonetaryValue
         /// </summary>
-        [DataMember(Name="PointsMonetaryValue", EmitDefaultValue=false)]
+        [DataMember(Name = "PointsMonetaryValue", EmitDefaultValue = false)]
         public MoneyType PointsMonetaryValue { get; set; }
 
         /// <summary>
@@ -66,7 +59,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -96,12 +89,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PointsNumber == input.PointsNumber ||
                     (this.PointsNumber != null &&
                     this.PointsNumber.Equals(input.PointsNumber))
-                ) && 
+                ) &&
                 (
                     this.PointsMonetaryValue == input.PointsMonetaryValue ||
                     (this.PointsMonetaryValue != null &&
