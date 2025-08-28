@@ -79,7 +79,10 @@ OpenAPI spec version: 2020-09-01
       <Version>7.0.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models.DeliveryShipmentInvoice\" />
+    <Folder Include="Models.ExternalFulfillmentShipments\" />
+  </ItemGroup>
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
