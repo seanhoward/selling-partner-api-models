@@ -289,206 +289,206 @@
                         "value": [
                           "ATVPDKIKX0DER"
                         ]
-                      }
                     }
-                  },
-                  "response": {
-                    "payload": {
-                      "CreatedBefore": "1.569521782042E9",
-                      "Orders": [
-                        {
-                          "AmazonOrderId": "902-1845936-5435065",
-                          "PurchaseDate": "1970-01-19T03:58:30Z",
-                          "LastUpdateDate": "1970-01-19T03:58:32Z",
-                          "OrderStatus": "Unshipped",
-                          "FulfillmentChannel": "MFN",
-                          "SalesChannel": "Amazon.com",
-                          "ShipServiceLevel": "Std US D2D Dom",
-                          "OrderTotal": {
-                            "CurrencyCode": "USD",
-                            "Amount": "11.01"
-                          },
-                          "NumberOfItemsShipped": 0,
-                          "NumberOfItemsUnshipped": 1,
-                          "PaymentMethod": "Other",
-                          "PaymentMethodDetails": [
-                            "Standard"
-                          ],
-                          "IsReplacementOrder": false,
-                          "MarketplaceId": "ATVPDKIKX0DER",
-                          "ShipmentServiceLevelCategory": "Standard",
-                          "OrderType": "StandardOrder",
-                          "EarliestShipDate": "1970-01-19T03:59:27Z",
-                          "LatestShipDate": "1970-01-19T04:05:13Z",
-                          "EarliestDeliveryDate": "1970-01-19T04:06:39Z",
-                          "LatestDeliveryDate": "1970-01-19T04:15:17Z",
-                          "IsBusinessOrder": false,
-                          "IsPrime": false,
-                          "IsGlobalExpressEnabled": false,
-                          "IsPremiumOrder": false,
-                          "IsSoldByAB": false,
-                          "IsIBA": false,
-                          "DefaultShipFromLocationAddress": {
-                            "Name": "MFNIntegrationTestMerchant",
-                            "AddressLine1": "2201 WESTLAKE AVE",
-                            "City": "SEATTLE",
-                            "StateOrRegion": "WA",
-                            "PostalCode": "98121-2778",
-                            "CountryCode": "US",
-                            "Phone": "+1 480-386-0930 ext. 73824",
-                            "AddressType": "Commercial"
-                          },
-                          "FulfillmentInstruction": {
-                            "FulfillmentSupplySourceId": "sampleSupplySourceId"
-                          },
-                          "IsISPU": false,
-                          "IsAccessPointOrder": false,
-                          "AutomatedShippingSettings": {
-                            "HasAutomatedShippingSettings": false
-                          },
-                          "EasyShipShipmentStatus": "PendingPickUp",
-                          "ElectronicInvoiceStatus": "NotRequired"
+                  }
+                },
+                "response": {
+                  "payload": {
+                    "CreatedBefore": "1.569521782042E9",
+                    "Orders": [
+                      {
+                        "AmazonOrderId": "902-1845936-5435065",
+                        "PurchaseDate": "1970-01-19T03:58:30Z",
+                        "LastUpdateDate": "1970-01-19T03:58:32Z",
+                        "OrderStatus": "Unshipped",
+                        "FulfillmentChannel": "MFN",
+                        "SalesChannel": "Amazon.com",
+                        "ShipServiceLevel": "Std US D2D Dom",
+                        "OrderTotal": {
+                          "CurrencyCode": "USD",
+                          "Amount": "11.01"
                         },
-                        {
-                          "AmazonOrderId": "902-8745147-1934268",
-                          "PurchaseDate": "1970-01-19T03:58:30Z",
-                          "LastUpdateDate": "1970-01-19T03:58:32Z",
-                          "OrderStatus": "Unshipped",
-                          "FulfillmentChannel": "MFN",
-                          "SalesChannel": "Amazon.com",
-                          "ShipServiceLevel": "Std US D2D Dom",
-                          "OrderTotal": {
-                            "CurrencyCode": "USD",
-                            "Amount": "11.01"
-                          },
-                          "NumberOfItemsShipped": 0,
-                          "NumberOfItemsUnshipped": 1,
-                          "PaymentMethod": "Other",
-                          "PaymentMethodDetails": [
-                            "Standard"
-                          ],
-                          "IsReplacementOrder": false,
-                          "MarketplaceId": "ATVPDKIKX0DER",
-                          "ShipmentServiceLevelCategory": "Standard",
-                          "OrderType": "StandardOrder",
-                          "EarliestShipDate": "1970-01-19T03:59:27Z",
-                          "LatestShipDate": "1970-01-19T04:05:13Z",
-                          "EarliestDeliveryDate": "1970-01-19T04:06:39Z",
-                          "LatestDeliveryDate": "1970-01-19T04:15:17Z",
-                          "IsBusinessOrder": false,
-                          "IsPrime": false,
-                          "IsAccessPointOrder": false,
-                          "IsGlobalExpressEnabled": false,
-                          "IsPremiumOrder": false,
-                          "IsSoldByAB": false,
-                          "IsIBA": false,
-                          "EasyShipShipmentStatus": "PendingPickUp",
-                          "ElectronicInvoiceStatus": "NotRequired"
-                        }
-                      ]
-                    }
-                  }
-                },
-                {
-                  "request": {
-                    "parameters": {
-                      "CreatedAfter": {
-                        "value": "TEST_CASE_200_NEXT_TOKEN"
+                        "NumberOfItemsShipped": 0,
+                        "NumberOfItemsUnshipped": 1,
+                        "PaymentMethod": "Other",
+                        "PaymentMethodDetails": [
+                          "Standard"
+                        ],
+                        "IsReplacementOrder": false,
+                        "MarketplaceId": "ATVPDKIKX0DER",
+                        "ShipmentServiceLevelCategory": "Standard",
+                        "OrderType": "StandardOrder",
+                        "EarliestShipDate": "1970-01-19T03:59:27Z",
+                        "LatestShipDate": "1970-01-19T04:05:13Z",
+                        "EarliestDeliveryDate": "1970-01-19T04:06:39Z",
+                        "LatestDeliveryDate": "1970-01-19T04:15:17Z",
+                        "IsBusinessOrder": false,
+                        "IsPrime": false,
+                        "IsGlobalExpressEnabled": false,
+                        "IsPremiumOrder": false,
+                        "IsSoldByAB": false,
+                        "IsIBA": false,
+                        "DefaultShipFromLocationAddress": {
+                          "Name": "MFNIntegrationTestMerchant",
+                          "AddressLine1": "2201 WESTLAKE AVE",
+                          "City": "SEATTLE",
+                          "StateOrRegion": "WA",
+                          "PostalCode": "98121-2778",
+                          "CountryCode": "US",
+                          "Phone": "+1 480-386-0930 ext. 73824",
+                          "AddressType": "Commercial"
+                        },
+                        "FulfillmentInstruction": {
+                          "FulfillmentSupplySourceId": "sampleSupplySourceId"
+                        },
+                        "IsISPU": false,
+                        "IsAccessPointOrder": false,
+                        "AutomatedShippingSettings": {
+                          "HasAutomatedShippingSettings": false
+                        },
+                        "EasyShipShipmentStatus": "PendingPickUp",
+                        "ElectronicInvoiceStatus": "NotRequired"
                       },
-                      "MarketplaceIds": {
-                        "value": [
-                          "ATVPDKIKX0DER"
-                        ]
+                      {
+                        "AmazonOrderId": "902-8745147-1934268",
+                        "PurchaseDate": "1970-01-19T03:58:30Z",
+                        "LastUpdateDate": "1970-01-19T03:58:32Z",
+                        "OrderStatus": "Unshipped",
+                        "FulfillmentChannel": "MFN",
+                        "SalesChannel": "Amazon.com",
+                        "ShipServiceLevel": "Std US D2D Dom",
+                        "OrderTotal": {
+                          "CurrencyCode": "USD",
+                          "Amount": "11.01"
+                        },
+                        "NumberOfItemsShipped": 0,
+                        "NumberOfItemsUnshipped": 1,
+                        "PaymentMethod": "Other",
+                        "PaymentMethodDetails": [
+                          "Standard"
+                        ],
+                        "IsReplacementOrder": false,
+                        "MarketplaceId": "ATVPDKIKX0DER",
+                        "ShipmentServiceLevelCategory": "Standard",
+                        "OrderType": "StandardOrder",
+                        "EarliestShipDate": "1970-01-19T03:59:27Z",
+                        "LatestShipDate": "1970-01-19T04:05:13Z",
+                        "EarliestDeliveryDate": "1970-01-19T04:06:39Z",
+                        "LatestDeliveryDate": "1970-01-19T04:15:17Z",
+                        "IsBusinessOrder": false,
+                        "IsPrime": false,
+                        "IsAccessPointOrder": false,
+                        "IsGlobalExpressEnabled": false,
+                        "IsPremiumOrder": false,
+                        "IsSoldByAB": false,
+                        "IsIBA": false,
+                        "EasyShipShipmentStatus": "PendingPickUp",
+                        "ElectronicInvoiceStatus": "NotRequired"
                       }
-                    }
-                  },
-                  "response": {
-                    "payload": {
-                      "NextToken": "2YgYW55IGNhcm5hbCBwbGVhc3VyZS4",
-                      "Orders": [
-                        {
-                          "AmazonOrderId": "902-3159896-1390916",
-                          "PurchaseDate": "2017-01-20T19:49:35Z",
-                          "LastUpdateDate": "2017-01-20T19:49:35Z",
-                          "OrderStatus": "Pending",
-                          "FulfillmentChannel": "SellerFulfilled",
-                          "NumberOfItemsShipped": 0,
-                          "NumberOfItemsUnshipped": 0,
-                          "PaymentMethod": "Other",
-                          "PaymentMethodDetails": [
-                            "CreditCard",
-                            "GiftCerificate"
-                          ],
-                          "MarketplaceId": "ATVPDKIKX0DER",
-                          "ShipmentServiceLevelCategory": "Standard",
-                          "OrderType": "StandardOrder",
-                          "EasyShipShipmentStatus": "PendingPickUp",
-                          "ElectronicInvoiceStatus": "NotRequired",
-                          "EarliestShipDate": "2017-01-20T19:51:16Z",
-                          "LatestShipDate": "2017-01-25T19:49:35Z",
-                          "IsBusinessOrder": false,
-                          "IsPrime": false,
-                          "IsAccessPointOrder": false,
-                          "IsGlobalExpressEnabled": false,
-                          "IsPremiumOrder": false,
-                          "IsSoldByAB": false,
-                          "IsIBA": false
-                        }
-                      ]
-                    }
-                  }
-                },
-                {
-                  "request": {
-                    "parameters": {
-                      "CreatedAfter": {
-                        "value": "TEST_CASE_200_NEXT_TOKEN"
-                      },
-                      "MarketplaceIds": {
-                        "value": [
-                          "ATVPDKIKX0DER"
-                        ]
-                      },
-                      "NextToken": {
-                        "value": "2YgYW55IGNhcm5hbCBwbGVhc3VyZS4"
-                      }
-                    }
-                  },
-                  "response": {
-                    "payload": {
-                      "Orders": [
-                        {
-                          "AmazonOrderId": "902-3159896-1390916",
-                          "PurchaseDate": "2017-01-20T19:49:35Z",
-                          "LastUpdateDate": "2017-01-20T19:49:35Z",
-                          "OrderStatus": "Pending",
-                          "FulfillmentChannel": "SellerFulfilled",
-                          "NumberOfItemsShipped": 0,
-                          "NumberOfItemsUnshipped": 0,
-                          "PaymentMethod": "Other",
-                          "PaymentMethodDetails": [
-                            "CreditCard",
-                            "GiftCerificate"
-                          ],
-                          "MarketplaceId": "ATVPDKIKX0DER",
-                          "ShipmentServiceLevelCategory": "Standard",
-                          "OrderType": "StandardOrder",
-                          "EasyShipShipmentStatus": "PendingPickUp",
-                          "ElectronicInvoiceStatus": "NotRequired",
-                          "EarliestShipDate": "2017-01-20T19:51:16Z",
-                          "LatestShipDate": "2017-01-25T19:49:35Z",
-                          "IsBusinessOrder": false,
-                          "IsPrime": false,
-                          "IsAccessPointOrder": false,
-                          "IsGlobalExpressEnabled": false,
-                          "IsPremiumOrder": false,
-                          "IsSoldByAB": false,
-                          "IsIBA": false
-                        }
-                      ]
-                    }
+                    ]
                   }
                 }
+              },
+              {
+                "request": {
+                  "parameters": {
+                    "CreatedAfter": {
+                      "value": "TEST_CASE_200_NEXT_TOKEN"
+                    },
+                    "MarketplaceIds": {
+                      "value": [
+                        "ATVPDKIKX0DER"
+                      ]
+                    }
+                  }
+                },
+                "response": {
+                  "payload": {
+                    "NextToken": "2YgYW55IGNhcm5hbCBwbGVhc3VyZS4",
+                    "Orders": [
+                      {
+                        "AmazonOrderId": "902-3159896-1390916",
+                        "PurchaseDate": "2017-01-20T19:49:35Z",
+                        "LastUpdateDate": "2017-01-20T19:49:35Z",
+                        "OrderStatus": "Pending",
+                        "FulfillmentChannel": "SellerFulfilled",
+                        "NumberOfItemsShipped": 0,
+                        "NumberOfItemsUnshipped": 0,
+                        "PaymentMethod": "Other",
+                        "PaymentMethodDetails": [
+                          "CreditCard",
+                          "GiftCerificate"
+                        ],
+                        "MarketplaceId": "ATVPDKIKX0DER",
+                        "ShipmentServiceLevelCategory": "Standard",
+                        "OrderType": "StandardOrder",
+                        "EasyShipShipmentStatus": "PendingPickUp",
+                        "ElectronicInvoiceStatus": "NotRequired",
+                        "EarliestShipDate": "2017-01-20T19:51:16Z",
+                        "LatestShipDate": "2017-01-25T19:49:35Z",
+                        "IsBusinessOrder": false,
+                        "IsPrime": false,
+                        "IsAccessPointOrder": false,
+                        "IsGlobalExpressEnabled": false,
+                        "IsPremiumOrder": false,
+                        "IsSoldByAB": false,
+                        "IsIBA": false
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "request": {
+                  "parameters": {
+                    "CreatedAfter": {
+                      "value": "TEST_CASE_200_NEXT_TOKEN"
+                    },
+                    "MarketplaceIds": {
+                      "value": [
+                        "ATVPDKIKX0DER"
+                      ]
+                    },
+                    "NextToken": {
+                      "value": "2YgYW55IGNhcm5hbCBwbGVhc3VyZS4"
+                    }
+                  }
+                },
+                "response": {
+                  "payload": {
+                    "Orders": [
+                      {
+                        "AmazonOrderId": "902-3159896-1390916",
+                        "PurchaseDate": "2017-01-20T19:49:35Z",
+                        "LastUpdateDate": "2017-01-20T19:49:35Z",
+                        "OrderStatus": "Pending",
+                        "FulfillmentChannel": "SellerFulfilled",
+                        "NumberOfItemsShipped": 0,
+                        "NumberOfItemsUnshipped": 0,
+                        "PaymentMethod": "Other",
+                        "PaymentMethodDetails": [
+                          "CreditCard",
+                          "GiftCerificate"
+                        ],
+                        "MarketplaceId": "ATVPDKIKX0DER",
+                        "ShipmentServiceLevelCategory": "Standard",
+                        "OrderType": "StandardOrder",
+                        "EasyShipShipmentStatus": "PendingPickUp",
+                        "ElectronicInvoiceStatus": "NotRequired",
+                        "EarliestShipDate": "2017-01-20T19:51:16Z",
+                        "LatestShipDate": "2017-01-25T19:49:35Z",
+                        "IsBusinessOrder": false,
+                        "IsPrime": false,
+                        "IsAccessPointOrder": false,
+                        "IsGlobalExpressEnabled": false,
+                        "IsPremiumOrder": false,
+                        "IsSoldByAB": false,
+                        "IsIBA": false
+                      }
+                    ]
+                  }
+                }
+              }
               ]
             }
           },
@@ -1168,17 +1168,17 @@
                   },
                   "response": {
                     "payload": {
-                      "AmazonOrderId": "902-1845936-5435065",
-                      "ShippingAddress": {
-                        "Name": "MFNIntegrationTestMerchant",
-                        "AddressLine1": "2201 WESTLAKE AVE",
-                        "City": "SEATTLE",
-                        "StateOrRegion": "WA",
-                        "PostalCode": "98121-2778",
-                        "CountryCode": "US",
-                        "Phone": "+1 480-386-0930 ext. 73824",
-                        "AddressType": "Commercial"
-                      }
+                    "AmazonOrderId": "902-1845936-5435065",
+                    "ShippingAddress": {
+                      "Name": "MFNIntegrationTestMerchant",
+                      "AddressLine1": "2201 WESTLAKE AVE",
+                      "City": "SEATTLE",
+                      "StateOrRegion": "WA",
+                      "PostalCode": "98121-2778",
+                      "CountryCode": "US",
+                      "Phone": "+1 480-386-0930 ext. 73824",
+                      "AddressType": "Commercial"
+                    }
                     }
                   }
                 }
@@ -1372,7 +1372,7 @@
                         "IsBuyerRequestedCancel": "true",
                         "BuyerCancelReason": "Found cheaper somewhere else."
                       },
-                      "SerialNumbers": [ "854" ]
+                      "SerialNumbers": ["854"]
                     },
                     {
                       "ASIN": "BCTU1104UEFB",
@@ -1433,44 +1433,44 @@
                   },
                   "response": {
                     "payload": {
-                      "AmazonOrderId": "902-1845936-5435065",
-                      "OrderItems": [
-                        {
-                          "ASIN": "B00551Q3CS",
-                          "OrderItemId": "05015851154158",
-                          "SellerSKU": "NABetaASINB00551Q3CS",
-                          "Title": "B00551Q3CS [Card Book]",
-                          "QuantityOrdered": 1,
-                          "QuantityShipped": 0,
-                          "ProductInfo": {
-                            "NumberOfItems": "1"
-                          },
-                          "ItemPrice": {
-                            "CurrencyCode": "USD",
-                            "Amount": "10.00"
-                          },
-                          "ItemTax": {
-                            "CurrencyCode": "USD",
-                            "Amount": "1.01"
-                          },
-                          "PromotionDiscount": {
-                            "CurrencyCode": "USD",
-                            "Amount": "0.00"
-                          },
-                          "IsGift": "false",
-                          "ConditionId": "New",
-                          "ConditionSubtypeId": "New",
-                          "IsTransparency": false,
-                          "SerialNumberRequired": false,
-                          "IossNumber": "",
-                          "DeemedResellerCategory": "IOSS",
-                          "StoreChainStoreId": "ISPU_StoreId",
-                          "BuyerRequestedCancel": {
-                            "IsBuyerRequestedCancel": "true",
-                            "BuyerCancelReason": "Found cheaper somewhere else."
-                          }
+                    "AmazonOrderId": "902-1845936-5435065",
+                    "OrderItems": [
+                      {
+                        "ASIN": "B00551Q3CS",
+                        "OrderItemId": "05015851154158",
+                        "SellerSKU": "NABetaASINB00551Q3CS",
+                        "Title": "B00551Q3CS [Card Book]",
+                        "QuantityOrdered": 1,
+                        "QuantityShipped": 0,
+                        "ProductInfo": {
+                          "NumberOfItems": "1"
+                        },
+                        "ItemPrice": {
+                          "CurrencyCode": "USD",
+                          "Amount": "10.00"
+                        },
+                        "ItemTax": {
+                          "CurrencyCode": "USD",
+                          "Amount": "1.01"
+                        },
+                        "PromotionDiscount": {
+                          "CurrencyCode": "USD",
+                          "Amount": "0.00"
+                        },
+                        "IsGift": "false",
+                        "ConditionId": "New",
+                        "ConditionSubtypeId": "New",
+                        "IsTransparency": false,
+                        "SerialNumberRequired": false,
+                        "IossNumber": "",
+                        "DeemedResellerCategory": "IOSS",
+                        "StoreChainStoreId": "ISPU_StoreId",
+                        "BuyerRequestedCancel": {
+                          "IsBuyerRequestedCancel": "true",
+                          "BuyerCancelReason": "Found cheaper somewhere else."
                         }
-                      ]
+                      }
+                    ]
                     }
                   }
                 }
@@ -1648,20 +1648,21 @@
                   },
                   "response": {
                     "payload": {
-                      "AmazonOrderId": "902-1845936-5435065",
-                      "OrderItems": [
-                        {
-                          "BuyerCustomizedInfo": {
-                            "CustomizedURL": "https://zme-caps.amazon.com/t/bR6qHkzSOxuB/J8nbWhze0Bd3DkajkOdY-XQbWkFralegp2sr_QZiKEE/1"
-                          },
-                          "GiftMessageText": "Et toi!",
-                          "GiftWrapPrice": {
-                            "CurrencyCode": "JPY",
-                            "Amount": "1.99"
-                          },
-                          "GiftWrapLevel": "Classic"
-                        }
-                      ]
+                    "AmazonOrderId": "902-1845936-5435065",
+                    "OrderItems": [
+                      {
+                        "OrderItemId": "68828574383266",
+                        "BuyerCustomizedInfo": {
+                          "CustomizedURL": "https://zme-caps.amazon.com/t/bR6qHkzSOxuB/J8nbWhze0Bd3DkajkOdY-XQbWkFralegp2sr_QZiKEE/1"
+                        },
+                        "GiftMessageText": "Et toi!",
+                        "GiftWrapPrice": {
+                          "CurrencyCode": "JPY",
+                          "Amount": "1.99"
+                        },
+                        "GiftWrapLevel": "Classic"
+                      }
+                    ]
                     }
                   }
                 }
@@ -1835,7 +1836,7 @@
                         }
                       }
                     }
-                  },
+                },
                   "response": {
                     "errors": [
                       {
@@ -2155,56 +2156,43 @@
                           {
                             "RejectionReasonId": "pets_rx_sc_incorrect_product",
                             "RejectionReasonDescription": "Canceled order due to veterinarian indicating wrong product ordered"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_no_vcpr",
                             "RejectionReasonDescription": "Canceled order due to veterinarian indicating they do not have you as their client"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_visit_required",
                             "RejectionReasonDescription": "Canceled order due to veterinarian indicating they need to see your pet for an appointment"
-                          },
-                          {
+                          },{
                             "RejectionReasonId": "pets_rx_sc_wrx_required",
                             "RejectionReasonDescription": "Canceled order due to veterinarian policy requiring you pick up a written prescription and mail to pharmacy"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_other",
                             "RejectionReasonDescription": "Canceled order due to prescription denied - contact your vetinarian"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_therapy_change",
                             "RejectionReasonDescription": "Canceled order due to a change in therapy, follow up with your veterinarian"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_wrong_weight",
                             "RejectionReasonDescription": "Canceled order due to incorrect pet weight on file, update weight and replace order or order correct product"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_early_refill",
                             "RejectionReasonDescription": "Canceled due to refilling prescription order too soon"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_wrong_species",
                             "RejectionReasonDescription": "Canceled due to ordering for wrong pet species, replace order for correct product"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_duplicate",
                             "RejectionReasonDescription": "Canceled due to duplicate order identified"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_invalid_rx",
                             "RejectionReasonDescription": "Canceled due to not receiving a valid prescription"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_address_validation_error",
                             "RejectionReasonDescription": "Canceled due to a non-verified address, correct address and replace order"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_no_clinic_match",
                             "RejectionReasonDescription": "Canceled due to no valid clinic match, provide complete and accurate details for vet clinic and replace order"
-                          },
-                          {
+                          }, {
                             "RejectionReasonId": "pets_rx_sc_pharmacist_canceled",
                             "RejectionReasonDescription": "Order canceled by pharmacy"
                           }
@@ -2490,15 +2478,16 @@
                           "regulatedOrderVerificationStatus": {
                             "externalReviewerId": "reviewer1234",
                             "verificationDetails": {
-                              "prescriptionDetail": {
-                                "prescriptionId": "Rx-1234",
-                                "expirationDate": "2024-01-01T00:00:00Z",
-                                "writtenQuantity": 3,
-                                "totalRefillsAuthorized": 10,
-                                "usageInstructions": "Take one per day by mouth with food",
-                                "refillsRemaining": 10,
-                                "clinicId": "ABC-1234"
-                              }
+                              "prescriptionDetail":
+                                {
+                                  "prescriptionId": "Rx-1234",
+                                  "expirationDate": "2024-01-01T00:00:00Z",
+                                  "writtenQuantity": 3,
+                                  "totalRefillsAuthorized": 10,
+                                  "usageInstructions": "Take one per day by mouth with food",
+                                  "refillsRemaining": 10,
+                                  "clinicId": "ABC-1234"
+                                }
                             }
                           }
                         }
@@ -2589,15 +2578,16 @@
                             "status": "Rejected",
                             "rejectionReasonId": "shield_pom_vps_reject_incorrect_weight",
                             "verificationDetails": {
-                              "prescriptionDetail": {
-                                "prescriptionId": "Rx-1234",
-                                "expirationDate": "2024-01-01T00:00:00Z",
-                                "writtenQuantity": 3,
-                                "totalRefillsAuthorized": 10,
-                                "usageInstructions": "Take one per day by mouth with food",
-                                "refillsRemaining": 10,
-                                "clinicId": "ABC-1234"
-                              }
+                              "prescriptionDetail":
+                                {
+                                  "prescriptionId": "Rx-1234",
+                                  "expirationDate": "2024-01-01T00:00:00Z",
+                                  "writtenQuantity": 3,
+                                  "totalRefillsAuthorized": 10,
+                                  "usageInstructions": "Take one per day by mouth with food",
+                                  "refillsRemaining": 10,
+                                  "clinicId": "ABC-1234"
+                                }
                             }
                           }
                         }
@@ -2628,14 +2618,15 @@
                           "regulatedOrderVerificationStatus": {
                             "externalReviewerId": "reviewer1234",
                             "verificationDetails": {
-                              "prescriptionDetail": {
-                                "prescriptionId": "Rx-1234",
-                                "expirationDate": "2024-01-01T00:00:00Z",
-                                "writtenQuantity": 3,
-                                "totalRefillsAuthorized": 10,
-                                "usageInstructions": "Take one per day by mouth with food",
-                                "refillsRemaining": 10
-                              }
+                              "prescriptionDetail":
+                                {
+                                  "prescriptionId": "Rx-1234",
+                                  "expirationDate": "2024-01-01T00:00:00Z",
+                                  "writtenQuantity": 3,
+                                  "totalRefillsAuthorized": 10,
+                                  "usageInstructions": "Take one per day by mouth with food",
+                                  "refillsRemaining": 10
+                                }
                             }
                           }
                         }
@@ -2815,7 +2806,7 @@
                             "trackingNumber": "112345678",
                             "shipDate": "2022-02-11T01:00:00.000Z",
                             "shipFromSupplySourceId": "057d3fcc-b750-419f-bbcd-4d340c60c430",
-                            "orderItems": [
+                            "orderItems":[
                               {
                                 "orderItemId": "79039765272157",
                                 "quantity": 1,
@@ -2869,7 +2860,7 @@
                             "trackingNumber": "112345678",
                             "shipDate": "02/21/2022",
                             "shipFromSupplySourceId": "057d3fcc-b750-419f-bbcd-4d340c60c430",
-                            "orderItems": [
+                            "orderItems":[
                               {
                                 "orderItemId": "79039765272157",
                                 "quantity": 1,
@@ -3865,9 +3856,6 @@
     },
     "Address": {
       "type": "object",
-      "required": [
-        "Name"
-      ],
       "properties": {
         "Name": {
           "type": "string",
@@ -4453,9 +4441,9 @@
           "description": "Measurement information for the order item.",
           "$ref": "#/definitions/Measurement"
         },
-        "ShippingConstraints": {
-          "description": "Shipping constraints applicable to this order.",
-          "$ref": "#/definitions/ShippingConstraints"
+        "ShippingConstraints" : {
+          "description" : "Shipping constraints applicable to this order.",
+          "$ref" : "#/definitions/ShippingConstraints"
         },
         "AmazonPrograms": {
           "description": "Contains the list of programs that are associated with an item.",
@@ -4896,8 +4884,8 @@
           "$ref": "#/definitions/ConstraintType"
         },
         "SignatureConfirmation": {
-          "description": "Indicates that the recipient of the line item must sign to confirm its delivery.",
-          "$ref": "#/definitions/ConstraintType"
+           "description": "Indicates that the recipient of the line item must sign to confirm its delivery.",
+           "$ref": "#/definitions/ConstraintType"
         },
         "RecipientIdentityVerification": {
           "description": "Indicates that the person receiving the line item must be the same as the intended recipient of the order.",
@@ -5140,7 +5128,7 @@
         "codCollectionMethod": {
           "type": "string",
           "description": "The COD collection method (only supported in the JP marketplace).",
-          "enum": [ "DirectPayment" ]
+          "enum":["DirectPayment"]
         },
         "marketplaceId": {
           "$ref": "#/definitions/MarketplaceId"
