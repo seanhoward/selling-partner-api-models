@@ -102,16 +102,9 @@
             }
           },
           {
-            "name": "BuyerEmail",
-            "in": "query",
-            "description": "The email address of a buyer. Used to select orders that contain the specified email address.",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "SellerOrderId",
             "in": "query",
-            "description": "An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, LastUpdatedBefore, and `BuyerEmail` cannot be specified.",
+            "description": "An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, and `LastUpdatedBefore` cannot be specified.",
             "required": false,
             "type": "string"
           },
@@ -184,14 +177,14 @@
           {
             "name": "EarliestDeliveryDateBefore",
             "in": "query",
-            "description": "Use this date to select orders with a earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
+            "description": "Use this date to select orders with an earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
             "required": false,
             "type": "string"
           },
           {
             "name": "EarliestDeliveryDateAfter",
             "in": "query",
-            "description": "Use this date to select orders with a earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
+            "description": "Use this date to select orders with an earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
             "required": false,
             "type": "string"
           },
@@ -226,13 +219,13 @@
                       "PurchaseDate": "2017-01-20T19:49:35Z",
                       "LastUpdateDate": "2017-01-20T19:49:35Z",
                       "OrderStatus": "Pending",
-                      "FulfillmentChannel": "SellerFulfilled",
+                      "FulfillmentChannel": "MFN",
                       "NumberOfItemsShipped": 0,
                       "NumberOfItemsUnshipped": 0,
                       "PaymentMethod": "Other",
                       "PaymentMethodDetails": [
                         "CreditCard",
-                        "GiftCerificate"
+                        "GiftCertificate"
                       ],
                       "MarketplaceId": "ATVPDKIKX0DER",
                       "ShipmentServiceLevelCategory": "Standard",
@@ -255,7 +248,6 @@
                         "CountryCode": "US"
                       },
                       "BuyerInfo": {
-                        "BuyerEmail": "user@example.com",
                         "BuyerName": "John Doe",
                         "BuyerTaxInfo": {
                           "CompanyLegalName": "A Company Name"
@@ -411,13 +403,13 @@
                         "PurchaseDate": "2017-01-20T19:49:35Z",
                         "LastUpdateDate": "2017-01-20T19:49:35Z",
                         "OrderStatus": "Pending",
-                        "FulfillmentChannel": "SellerFulfilled",
+                        "FulfillmentChannel": "MFN",
                         "NumberOfItemsShipped": 0,
                         "NumberOfItemsUnshipped": 0,
                         "PaymentMethod": "Other",
                         "PaymentMethodDetails": [
                           "CreditCard",
-                          "GiftCerificate"
+                          "GiftCertificate"
                         ],
                         "MarketplaceId": "ATVPDKIKX0DER",
                         "ShipmentServiceLevelCategory": "Standard",
@@ -462,13 +454,13 @@
                         "PurchaseDate": "2017-01-20T19:49:35Z",
                         "LastUpdateDate": "2017-01-20T19:49:35Z",
                         "OrderStatus": "Pending",
-                        "FulfillmentChannel": "SellerFulfilled",
+                        "FulfillmentChannel": "MFN",
                         "NumberOfItemsShipped": 0,
                         "NumberOfItemsUnshipped": 0,
                         "PaymentMethod": "Other",
                         "PaymentMethodDetails": [
                           "CreditCard",
-                          "GiftCerificate"
+                          "GiftCertificate"
                         ],
                         "MarketplaceId": "ATVPDKIKX0DER",
                         "ShipmentServiceLevelCategory": "Standard",
@@ -625,13 +617,13 @@
                   "PurchaseDate": "2017-01-20T19:49:35Z",
                   "LastUpdateDate": "2017-01-20T19:49:35Z",
                   "OrderStatus": "Pending",
-                  "FulfillmentChannel": "SellerFulfilled",
+                  "FulfillmentChannel": "MFN",
                   "NumberOfItemsShipped": 0,
                   "NumberOfItemsUnshipped": 0,
                   "PaymentMethod": "Other",
                   "PaymentMethodDetails": [
                     "CreditCard",
-                    "GiftCerificate"
+                    "GiftCertificate"
                   ],
                   "MarketplaceId": "ATVPDKIKX0DER",
                   "ShipmentServiceLevelCategory": "Standard",
@@ -668,7 +660,6 @@
                     "CountryCode": "US"
                   },
                   "BuyerInfo": {
-                    "BuyerEmail": "user@example.com",
                     "BuyerName": "John Doe",
                     "BuyerTaxInfo": {
                       "CompanyLegalName": "A Company Name"
@@ -965,7 +956,6 @@
               "application/json": {
                 "payload": {
                   "AmazonOrderId": "902-3159896-1390916",
-                  "BuyerEmail": "user@example.com",
                   "BuyerName": "John Smith",
                   "BuyerTaxInfo": {
                     "CompanyLegalName": "Company Name"
@@ -997,7 +987,6 @@
                   "response": {
                     "payload": {
                       "AmazonOrderId": "902-1845936-5435065",
-                      "BuyerEmail": "fzyrv6gwkhbb15c@example.com",
                       "BuyerName": "MFNIntegrationTestMerchant"
                     }
                   }
@@ -3547,10 +3536,6 @@
           "type": "string",
           "description": "An Amazon-defined order identifier, in 3-7-7 format."
         },
-        "BuyerEmail": {
-          "type": "string",
-          "description": "The anonymized email address of the buyer."
-        },
         "BuyerName": {
           "type": "string",
           "description": "The buyer name or the recipient name."
@@ -4913,10 +4898,6 @@
     "BuyerInfo": {
       "type": "object",
       "properties": {
-        "BuyerEmail": {
-          "type": "string",
-          "description": "The anonymized email address of the buyer."
-        },
         "BuyerName": {
           "type": "string",
           "description": "The buyer name or the recipient name."
