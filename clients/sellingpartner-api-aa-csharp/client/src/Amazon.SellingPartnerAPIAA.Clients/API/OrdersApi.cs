@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
-using Amazon.SellingPartnerAPIAA.Clients.Models.Orders;
+using Amazon.SellingPartnerAPIAA.Clients.Models.OrdersV0;
 using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API
@@ -21,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IOrdersApi : IApiAccessor
+    public interface IOrdersV0Api : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -510,20 +510,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class OrdersApi : IOrdersApi
+    public partial class OrdersV0Api : IOrdersV0Api
     {
         private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrdersApi"/> class
+        /// Initializes a new instance of the <see cref="OrdersV0Api"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public OrdersApi(Configuration configuration)
+        public OrdersV0Api(Configuration configuration)
         {
             this.Configuration = configuration;
-            ExceptionFactory = Amazon.SellingPartnerAPIAA.Clients.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -612,10 +612,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->ConfirmShipment");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->ConfirmShipment");
             // verify the required parameter 'payload' is set
             if (payload == null)
-                throw new ApiException(400, "Missing required parameter 'payload' when calling OrdersApi->ConfirmShipment");
+                throw new ApiException(400, "Missing required parameter 'payload' when calling OrdersV0Api->ConfirmShipment");
 
             var localVarPath = "/orders/v0/orders/{orderId}/shipmentConfirmation";
             var localVarPathParams = new Dictionary<String, String>();
@@ -692,10 +692,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->ConfirmShipment");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->ConfirmShipment");
             // verify the required parameter 'payload' is set
             if (payload == null)
-                throw new ApiException(400, "Missing required parameter 'payload' when calling OrdersApi->ConfirmShipment");
+                throw new ApiException(400, "Missing required parameter 'payload' when calling OrdersV0Api->ConfirmShipment");
 
             var localVarPath = "/orders/v0/orders/{orderId}/shipmentConfirmation";
             var localVarPathParams = new Dictionary<String, String>();
@@ -770,7 +770,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrder");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrder");
 
             var localVarPath = "/orders/v0/orders/{orderId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -838,7 +838,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrder");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrder");
 
             var localVarPath = "/orders/v0/orders/{orderId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -905,7 +905,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrderAddress");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrderAddress");
 
             var localVarPath = "/orders/v0/orders/{orderId}/address";
             var localVarPathParams = new Dictionary<String, String>();
@@ -973,7 +973,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrderAddress");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrderAddress");
 
             var localVarPath = "/orders/v0/orders/{orderId}/address";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1040,7 +1040,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrderBuyerInfo");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrderBuyerInfo");
 
             var localVarPath = "/orders/v0/orders/{orderId}/buyerInfo";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1108,7 +1108,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrderBuyerInfo");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrderBuyerInfo");
 
             var localVarPath = "/orders/v0/orders/{orderId}/buyerInfo";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1177,7 +1177,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrderItems");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrderItems");
 
             var localVarPath = "/orders/v0/orders/{orderId}/orderItems";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1248,7 +1248,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrderItems");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrderItems");
 
             var localVarPath = "/orders/v0/orders/{orderId}/orderItems";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1318,7 +1318,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrderItemsBuyerInfo");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrderItemsBuyerInfo");
 
             var localVarPath = "/orders/v0/orders/{orderId}/orderItems/buyerInfo";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1389,7 +1389,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrderItemsBuyerInfo");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrderItemsBuyerInfo");
 
             var localVarPath = "/orders/v0/orders/{orderId}/orderItems/buyerInfo";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1457,7 +1457,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrderRegulatedInfo");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrderRegulatedInfo");
 
             var localVarPath = "/orders/v0/orders/{orderId}/regulatedInfo";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1525,7 +1525,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->GetOrderRegulatedInfo");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->GetOrderRegulatedInfo");
 
             var localVarPath = "/orders/v0/orders/{orderId}/regulatedInfo";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1634,7 +1634,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling OrdersApi->GetOrders");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling OrdersV0Api->GetOrders");
 
             var localVarPath = "/orders/v0/orders";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1765,7 +1765,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'marketplaceIds' is set
             if (marketplaceIds == null)
-                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling OrdersApi->GetOrders");
+                throw new ApiException(400, "Missing required parameter 'marketplaceIds' when calling OrdersV0Api->GetOrders");
 
             var localVarPath = "/orders/v0/orders";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1854,10 +1854,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->UpdateVerificationStatus");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->UpdateVerificationStatus");
             // verify the required parameter 'payload' is set
             if (payload == null)
-                throw new ApiException(400, "Missing required parameter 'payload' when calling OrdersApi->UpdateVerificationStatus");
+                throw new ApiException(400, "Missing required parameter 'payload' when calling OrdersV0Api->UpdateVerificationStatus");
 
             var localVarPath = "/orders/v0/orders/{orderId}/regulatedInfo";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1934,10 +1934,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersApi->UpdateVerificationStatus");
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling OrdersV0Api->UpdateVerificationStatus");
             // verify the required parameter 'payload' is set
             if (payload == null)
-                throw new ApiException(400, "Missing required parameter 'payload' when calling OrdersApi->UpdateVerificationStatus");
+                throw new ApiException(400, "Missing required parameter 'payload' when calling OrdersV0Api->UpdateVerificationStatus");
 
             var localVarPath = "/orders/v0/orders/{orderId}/regulatedInfo";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2009,7 +2009,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                 return this;
             }
 
-            public OrdersApi Build()
+            public OrdersV0Api Build()
             {
                 if (lwaAuthorizationCredentials == null)
                 {
@@ -2025,7 +2025,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
                     Timeout = 100000
                 };
 
-                return new OrdersApi(configuration);
+                return new OrdersV0Api(configuration);
             }
         }
     }

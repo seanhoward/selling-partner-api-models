@@ -1,10 +1,10 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.BrandRefinement
+# Amazon.SellingPartnerAPIAA.Clients.Models.CatalogItems.BrandRefinement
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NumberOfResults** | **int?** | The estimated number of results that would still be returned if refinement key applied. | 
-**BrandName** | **string** | Brand name. For display and can be used as a search refinement. | 
+**NumberOfResults** | **int?** | The estimated number of results that would be returned if you refine your search by the specified &#x60;brandName&#x60;. | 
+**BrandName** | **string** | The brand name that you can use to refine your search. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.FeaturedOffer
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.FeaturedOffer
 ## Properties
 
 Name | Type | Description | Notes

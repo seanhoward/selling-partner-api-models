@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.BatchRequest
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.BatchRequest
 ## Properties
 
 Name | Type | Description | Notes

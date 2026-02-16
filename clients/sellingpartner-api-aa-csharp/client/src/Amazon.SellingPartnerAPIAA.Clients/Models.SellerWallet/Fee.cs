@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -19,15 +19,15 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// Details of the fee.
+    /// If the fees is in baseAmount (sourceAccount) currency, effectiveRate &#x3D;  (baseAmount - sum(fees.feeAmount.currencyAmount)) * baseRate) / baseAmount. If the fees is in transferAmount (destinationAccount) currency, effectiveRate &#x3D;  (( baseAmount * baseRate ) -  sum(fees.feeAmount.currencyAmount )) / baseAmount 
     /// </summary>
     [DataContract]
     public partial class Fee : IEquatable<Fee>, IValidatableObject
     {
         /// <summary>
-        /// The type of the fee.
+        /// Displays type of the Fee. 
         /// </summary>
-        /// <value>The type of the fee.</value>
+        /// <value>Displays type of the Fee. </value>
         [DataMember(Name = "feeType", EmitDefaultValue = false)]
         public FeeType FeeType { get; set; }
         /// <summary>
@@ -38,11 +38,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="Fee" /> class.
         /// </summary>
-        /// <param name="feeId">The unique identifier assigned to the fee. (required).</param>
-        /// <param name="feeType">The type of the fee. (required).</param>
+        /// <param name="feeId">Unique identifier assigned to the Fee.  (required).</param>
+        /// <param name="feeType">Displays type of the Fee.  (required).</param>
         /// <param name="feeRateValue">The value of the fee in percentage format. (required).</param>
-        /// <param name="feeAmount">The actual value of the fee in numeric format. (required).</param>
-        public Fee(string feeId = default, FeeType feeType = default, decimal? feeRateValue = default, Currency feeAmount = default)
+        /// <param name="feeAmount">Displays actual value of the fee in numeric format.  (required).</param>
+        public Fee(string feeId = default, FeeType feeType = default, string feeRateValue = default, Currency feeAmount = default)
         {
             // to ensure "feeId" is required (not null)
             if (feeId == null)
@@ -83,9 +83,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         }
 
         /// <summary>
-        /// The unique identifier assigned to the fee.
+        /// Unique identifier assigned to the Fee. 
         /// </summary>
-        /// <value>The unique identifier assigned to the fee.</value>
+        /// <value>Unique identifier assigned to the Fee. </value>
         [DataMember(Name = "feeId", EmitDefaultValue = false)]
         public string FeeId { get; set; }
 
@@ -95,12 +95,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// </summary>
         /// <value>The value of the fee in percentage format.</value>
         [DataMember(Name = "feeRateValue", EmitDefaultValue = false)]
-        public decimal? FeeRateValue { get; set; }
+        public string FeeRateValue { get; set; }
 
         /// <summary>
-        /// The actual value of the fee in numeric format.
+        /// Displays actual value of the fee in numeric format. 
         /// </summary>
-        /// <value>The actual value of the fee in numeric format.</value>
+        /// <value>Displays actual value of the fee in numeric format. </value>
         [DataMember(Name = "feeAmount", EmitDefaultValue = false)]
         public Currency FeeAmount { get; set; }
 

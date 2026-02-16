@@ -25,9 +25,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
     {
 
         /// <summary>
-        /// Enum Cm for value: Cm
+        /// Enum Cm for value: cm
         /// </summary>
-        [EnumMember(Value = "Cm")]
+        [EnumMember(Value = "cm")]
         Cm = 1
     }
 

@@ -1,12 +1,11 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.ItemImage
+# Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems.ItemImage
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Variant** | **string** | Variant of the image, such as &#x60;MAIN&#x60; or &#x60;PT01&#x60;. | 
-**Link** | **string** | Link, or URL, for the image. | 
-**Height** | **int?** | Height of the image in pixels. | 
-**Width** | **int?** | Width of the image in pixels. | 
+**Link** | **string** | The link, or URL, to the image. | 
+**Height** | **int?** | The height of the image in pixels. | 
+**Width** | **int?** | The width of the image in pixels. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

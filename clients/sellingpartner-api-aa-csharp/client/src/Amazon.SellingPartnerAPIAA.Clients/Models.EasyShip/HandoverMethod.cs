@@ -25,16 +25,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.EasyShip
     {
 
         /// <summary>
-        /// Enum Pickup for value: Pickup
+        /// Enum PICKUP for value: PICKUP
         /// </summary>
-        [EnumMember(Value = "Pickup")]
-        Pickup = 1,
+        [EnumMember(Value = "PICKUP")]
+        PICKUP = 1,
 
         /// <summary>
-        /// Enum Dropoff for value: Dropoff
+        /// Enum DROPOFF for value: DROPOFF
         /// </summary>
-        [EnumMember(Value = "Dropoff")]
-        Dropoff = 2
+        [EnumMember(Value = "DROPOFF")]
+        DROPOFF = 2
     }
 
 }

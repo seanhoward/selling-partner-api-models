@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -20,21 +20,21 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// Transfer schedule details and historical details related to it.
+    /// Transfer schedule details and related historical details.
     /// </summary>
     [DataContract]
     public partial class TransferSchedule : IEquatable<TransferSchedule>, IValidatableObject
     {
         /// <summary>
-        /// The type of transfer.
+        /// Type of the transfer 
         /// </summary>
-        /// <value>The type of transfer.</value>
+        /// <value>Type of the transfer </value>
         [DataMember(Name = "transactionType", EmitDefaultValue = false)]
         public TransactionType TransactionType { get; set; }
         /// <summary>
-        /// The type of transfer schedule. This information can be modified when you update a transfer schedule.
+        /// Type of the transfer schedule. This information can be modified when updating a transfer schedule. 
         /// </summary>
-        /// <value>The type of transfer schedule. This information can be modified when you update a transfer schedule.</value>
+        /// <value>Type of the transfer schedule. This information can be modified when updating a transfer schedule. </value>
         [DataMember(Name = "transferScheduleStatus", EmitDefaultValue = false)]
         public TransferScheduleStatus TransferScheduleStatus { get; set; }
         /// <summary>
@@ -45,14 +45,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferSchedule" /> class.
         /// </summary>
-        /// <param name="transferScheduleId">The unique identifier provided by Amazon to the scheduled transfer. (required).</param>
-        /// <param name="transactionType">The type of transfer. (required).</param>
-        /// <param name="transactionSourceAccount">Details of the source bank account in the scheduled transfer..</param>
-        /// <param name="transactionDestinationAccount">Details of the destination bank account in the scheduled transfer. Here &#x60;bankAccountCountryCode&#x60; is a required field. (required).</param>
-        /// <param name="transferScheduleStatus">The type of transfer schedule. This information can be modified when you update a transfer schedule. (required).</param>
-        /// <param name="transferScheduleInformation">The fields required for the scheduled transfer. This information can be modified when you update a transfer schedule. (required).</param>
-        /// <param name="paymentPreference">The payment preference of the scheduled transfer. This information can be modified when you update a transfer schedule..</param>
-        /// <param name="transferScheduleFailures">A list of transfer schedule failures. (required).</param>
+        /// <param name="transferScheduleId">The unique identifier provided by Amazon to the scheduled transfer  (required).</param>
+        /// <param name="transactionType">Type of the transfer  (required).</param>
+        /// <param name="transactionSourceAccount">Source bank account details in the scheduled transfer .</param>
+        /// <param name="transactionDestinationAccount">Destination bank account details in the scheduled transfer. Here bankAccountCountryCode is a MANDATORY field  (required).</param>
+        /// <param name="transferScheduleStatus">Type of the transfer schedule. This information can be modified when updating a transfer schedule.  (required).</param>
+        /// <param name="transferScheduleInformation">Fields required for the scheduled transfer. This information can be modified when updating a transfer schedule.  (required).</param>
+        /// <param name="paymentPreference">Payment preference of the scheduled transfer. This information can be modified when updating a transfer schedule. .</param>
+        /// <param name="transferScheduleFailures">Collection that holds Transfer Schedules that has been cancelled or failed due to certain reasons.  (required).</param>
         public TransferSchedule(string transferScheduleId = default, TransactionType transactionType = default, TransactionAccount transactionSourceAccount = default, TransactionAccount transactionDestinationAccount = default, TransferScheduleStatus transferScheduleStatus = default, TransferScheduleInformation transferScheduleInformation = default, PaymentPreference paymentPreference = default, List<TransferScheduleFailures> transferScheduleFailures = default)
         {
             // to ensure "transferScheduleId" is required (not null)
@@ -114,46 +114,46 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         }
 
         /// <summary>
-        /// The unique identifier provided by Amazon to the scheduled transfer.
+        /// The unique identifier provided by Amazon to the scheduled transfer 
         /// </summary>
-        /// <value>The unique identifier provided by Amazon to the scheduled transfer.</value>
+        /// <value>The unique identifier provided by Amazon to the scheduled transfer </value>
         [DataMember(Name = "transferScheduleId", EmitDefaultValue = false)]
         public string TransferScheduleId { get; set; }
 
 
         /// <summary>
-        /// Details of the source bank account in the scheduled transfer.
+        /// Source bank account details in the scheduled transfer 
         /// </summary>
-        /// <value>Details of the source bank account in the scheduled transfer.</value>
+        /// <value>Source bank account details in the scheduled transfer </value>
         [DataMember(Name = "transactionSourceAccount", EmitDefaultValue = false)]
         public TransactionAccount TransactionSourceAccount { get; set; }
 
         /// <summary>
-        /// Details of the destination bank account in the scheduled transfer. Here &#x60;bankAccountCountryCode&#x60; is a required field.
+        /// Destination bank account details in the scheduled transfer. Here bankAccountCountryCode is a MANDATORY field 
         /// </summary>
-        /// <value>Details of the destination bank account in the scheduled transfer. Here &#x60;bankAccountCountryCode&#x60; is a required field.</value>
+        /// <value>Destination bank account details in the scheduled transfer. Here bankAccountCountryCode is a MANDATORY field </value>
         [DataMember(Name = "transactionDestinationAccount", EmitDefaultValue = false)]
         public TransactionAccount TransactionDestinationAccount { get; set; }
 
 
         /// <summary>
-        /// The fields required for the scheduled transfer. This information can be modified when you update a transfer schedule.
+        /// Fields required for the scheduled transfer. This information can be modified when updating a transfer schedule. 
         /// </summary>
-        /// <value>The fields required for the scheduled transfer. This information can be modified when you update a transfer schedule.</value>
+        /// <value>Fields required for the scheduled transfer. This information can be modified when updating a transfer schedule. </value>
         [DataMember(Name = "transferScheduleInformation", EmitDefaultValue = false)]
         public TransferScheduleInformation TransferScheduleInformation { get; set; }
 
         /// <summary>
-        /// The payment preference of the scheduled transfer. This information can be modified when you update a transfer schedule.
+        /// Payment preference of the scheduled transfer. This information can be modified when updating a transfer schedule. 
         /// </summary>
-        /// <value>The payment preference of the scheduled transfer. This information can be modified when you update a transfer schedule.</value>
+        /// <value>Payment preference of the scheduled transfer. This information can be modified when updating a transfer schedule. </value>
         [DataMember(Name = "paymentPreference", EmitDefaultValue = false)]
         public PaymentPreference PaymentPreference { get; set; }
 
         /// <summary>
-        /// A list of transfer schedule failures.
+        /// Collection that holds Transfer Schedules that has been cancelled or failed due to certain reasons. 
         /// </summary>
-        /// <value>A list of transfer schedule failures.</value>
+        /// <value>Collection that holds Transfer Schedules that has been cancelled or failed due to certain reasons. </value>
         [DataMember(Name = "transferScheduleFailures", EmitDefaultValue = false)]
         public List<TransferScheduleFailures> TransferScheduleFailures { get; set; }
 

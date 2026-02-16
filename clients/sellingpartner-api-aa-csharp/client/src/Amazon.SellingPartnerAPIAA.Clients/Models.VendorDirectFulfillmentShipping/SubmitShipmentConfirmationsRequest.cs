@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipping
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
     /// The request schema for the submitShipmentConfirmations operation.
     /// </summary>
     [DataContract]
-    public partial class SubmitShipmentConfirmationsRequest :  IEquatable<SubmitShipmentConfirmationsRequest>, IValidatableObject
+    public partial class SubmitShipmentConfirmationsRequest : IEquatable<SubmitShipmentConfirmationsRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitShipmentConfirmationsRequest" /> class.
@@ -38,12 +32,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         {
             this.ShipmentConfirmations = shipmentConfirmations;
         }
-        
+
         /// <summary>
         /// Array of &#x60;ShipmentConfirmation&#x60; objects. Each &#x60;ShipmentConfirmation&#x60; object represents the confirmation details for a specific shipment.
         /// </summary>
         /// <value>Array of &#x60;ShipmentConfirmation&#x60; objects. Each &#x60;ShipmentConfirmation&#x60; object represents the confirmation details for a specific shipment.</value>
-        [DataMember(Name="shipmentConfirmations", EmitDefaultValue=false)]
+        [DataMember(Name = "shipmentConfirmations", EmitDefaultValue = false)]
         public List<ShipmentConfirmation> ShipmentConfirmations { get; set; }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -88,7 +82,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ShipmentConfirmations == input.ShipmentConfirmations ||
                     this.ShipmentConfirmations != null &&
@@ -116,7 +110,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentShipp
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

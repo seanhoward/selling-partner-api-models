@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.CompetitiveSummaryIncludedData
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.CompetitiveSummaryIncludedData
 ## Properties
 
 Name | Type | Description | Notes

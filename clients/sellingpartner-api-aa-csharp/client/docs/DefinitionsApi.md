@@ -22,7 +22,7 @@ using System;
 using System.Diagnostics;
 using Amazon.SellingPartnerAPIAA.Clients.API;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
-using Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes;
+using Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes;
 
 namespace Example
 {
@@ -94,7 +94,7 @@ using System;
 using System.Diagnostics;
 using Amazon.SellingPartnerAPIAA.Clients.API;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
-using Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes;
+using Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes;
 
 namespace Example
 {

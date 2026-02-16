@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
     /// <summary>
-    /// The result for the createFulfillmentReturn operation.
+    /// The result for the &#x60;createFulfillmentReturn&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class CreateFulfillmentReturnResult : IEquatable<CreateFulfillmentReturnResult>, IValidatableObject

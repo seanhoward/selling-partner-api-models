@@ -41,8 +41,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="orderItemDisposition">Indicates whether the item is sellable or unsellable..</param>
         /// <param name="cancelledQuantity">The item quantity that was cancelled by the seller. (required).</param>
         /// <param name="unfulfillableQuantity">The item quantity that is unfulfillable. (required).</param>
-        /// <param name="estimatedShipDate">The estimated date and time that the item quantity is scheduled to ship from the fulfillment center. Note that this value can change over time. If the shipment that contains the item quantity has been cancelled, &#x60;estimatedShipDate&#x60; is not returned..</param>
-        /// <param name="estimatedArrivalDate">The estimated arrival date and time of the item quantity. Note that this value can change over time. If the shipment that contains the item quantity has been cancelled, &#x60;estimatedArrivalDate&#x60; is not returned..</param>
+        /// <param name="estimatedShipDate">The estimated date and time that the item quantity is scheduled to ship from the fulfillment center. Note that this value can change over time. If the shipment that contains the item quantity is cancelled, &#x60;estimatedShipDate&#x60; is not returned..</param>
+        /// <param name="estimatedArrivalDate">The estimated arrival date and time of the item quantity. Note that this value can change over time. If the shipment that contains the item quantity is cancelled, &#x60;estimatedArrivalDate&#x60; is not returned..</param>
         /// <param name="perUnitPrice">The amount to be collected from the recipient for this item in a COD (Cash On Delivery) order..</param>
         /// <param name="perUnitTax">The tax on the amount to be collected from the recipient for this item in a COD (Cash On Delivery) order..</param>
         /// <param name="perUnitDeclaredValue">The monetary value assigned by the seller to this item. This is a required field for India MCF orders..</param>
@@ -167,16 +167,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         public int? UnfulfillableQuantity { get; set; }
 
         /// <summary>
-        /// The estimated date and time that the item quantity is scheduled to ship from the fulfillment center. Note that this value can change over time. If the shipment that contains the item quantity has been cancelled, &#x60;estimatedShipDate&#x60; is not returned.
+        /// The estimated date and time that the item quantity is scheduled to ship from the fulfillment center. Note that this value can change over time. If the shipment that contains the item quantity is cancelled, &#x60;estimatedShipDate&#x60; is not returned.
         /// </summary>
-        /// <value>The estimated date and time that the item quantity is scheduled to ship from the fulfillment center. Note that this value can change over time. If the shipment that contains the item quantity has been cancelled, &#x60;estimatedShipDate&#x60; is not returned.</value>
+        /// <value>The estimated date and time that the item quantity is scheduled to ship from the fulfillment center. Note that this value can change over time. If the shipment that contains the item quantity is cancelled, &#x60;estimatedShipDate&#x60; is not returned.</value>
         [DataMember(Name = "estimatedShipDate", EmitDefaultValue = false)]
         public DateTime? EstimatedShipDate { get; set; }
 
         /// <summary>
-        /// The estimated arrival date and time of the item quantity. Note that this value can change over time. If the shipment that contains the item quantity has been cancelled, &#x60;estimatedArrivalDate&#x60; is not returned.
+        /// The estimated arrival date and time of the item quantity. Note that this value can change over time. If the shipment that contains the item quantity is cancelled, &#x60;estimatedArrivalDate&#x60; is not returned.
         /// </summary>
-        /// <value>The estimated arrival date and time of the item quantity. Note that this value can change over time. If the shipment that contains the item quantity has been cancelled, &#x60;estimatedArrivalDate&#x60; is not returned.</value>
+        /// <value>The estimated arrival date and time of the item quantity. Note that this value can change over time. If the shipment that contains the item quantity is cancelled, &#x60;estimatedArrivalDate&#x60; is not returned.</value>
         [DataMember(Name = "estimatedArrivalDate", EmitDefaultValue = false)]
         public DateTime? EstimatedArrivalDate { get; set; }
 

@@ -1,0 +1,8 @@
+# Amazon.SellingPartnerAPIAA.Clients.Models.DeliveryShipmentInvoice022-07-01.InvoiceType
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

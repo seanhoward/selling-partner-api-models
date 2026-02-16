@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// A list of balances in the seller account.
+    /// Struct that holds list of balances on the seller account.
     /// </summary>
     [DataContract]
     public partial class BalanceListing : IEquatable<BalanceListing>, IValidatableObject
@@ -27,16 +27,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="BalanceListing" /> class.
         /// </summary>
-        /// <param name="balances">A list of balances in the seller account..</param>
+        /// <param name="balances">Collection that holds list of balances on the account .</param>
         public BalanceListing(List<Balance> balances = default)
         {
             this.Balances = balances;
         }
 
         /// <summary>
-        /// A list of balances in the seller account.
+        /// Collection that holds list of balances on the account 
         /// </summary>
-        /// <value>A list of balances in the seller account.</value>
+        /// <value>Collection that holds list of balances on the account </value>
         [DataMember(Name = "balances", EmitDefaultValue = false)]
         public List<Balance> Balances { get; set; }
 

@@ -15,9 +15,9 @@ using Newtonsoft.Json.Converters;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
     /// <summary>
-    /// The owner of the preparations, if special preparations are required.
+    /// The owner of the preparations, if special preparations are required. &#x60;AMAZON&#x60; is not an accepted value in the US marketplace.
     /// </summary>
-    /// <value>The owner of the preparations, if special preparations are required.</value>
+    /// <value>The owner of the preparations, if special preparations are required. &#x60;AMAZON&#x60; is not an accepted value in the US marketplace.</value>
 
     [JsonConverter(typeof(StringEnumConverter))]
 

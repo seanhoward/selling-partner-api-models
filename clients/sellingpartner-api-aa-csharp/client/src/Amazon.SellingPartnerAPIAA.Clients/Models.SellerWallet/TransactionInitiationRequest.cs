@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// Request body to initiate a transaction from a Seller Wallet bank account to another customer-defined bank account.
+    /// Request body to initiate a transaction from a SW bank account to another customer defined bank account 
     /// </summary>
     [DataContract]
     public partial class TransactionInitiationRequest : IEquatable<TransactionInitiationRequest>, IValidatableObject
@@ -32,15 +32,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionInitiationRequest" /> class.
         /// </summary>
-        /// <param name="sourceAccountId">The unique identifier of the source Amazon Seller Wallet bank account from which the money is debited. (required).</param>
-        /// <param name="destinationAccountId">The unique identifier of the destination bank account where the money is deposited..</param>
-        /// <param name="description">A description of the transaction. (required).</param>
-        /// <param name="destinationTransactionInstrument">Details of the destination bank account in the transaction request. (required).</param>
-        /// <param name="destinationAccountHolderAddress">The address used to verify the bank account of the payee. This can be a person or business mailing address..</param>
-        /// <param name="sourceAmount">The transaction amount in the source account&#39;s currency format. Requests that use a currency other than source bank account currency will fail. (required).</param>
-        /// <param name="transferRateDetails">The fees and foreign exchange rates applied to the transaction. Transfer Rate Preview is currently optional. This field is required when the third party honors the fees and rates of the Seller Wallet transaction..</param>
-        /// <param name="requestTime">The time at which the transaction was initiated in [ISO 8601 date time format](https://developer-docs.amazon.com/sp-api/docs/iso-8601). (required).</param>
-        public TransactionInitiationRequest(string sourceAccountId = default, string destinationAccountId = default, string description = default, TransactionInstrumentDetails destinationTransactionInstrument = default, AccountHolderAddress destinationAccountHolderAddress = default, Currency sourceAmount = default, TransferRatePreview transferRateDetails = default, DateTime? requestTime = default)
+        /// <param name="sourceAccountId">The unique identifier of the source Amazon SW bank account from where the money needs to be debited  (required).</param>
+        /// <param name="destinationAccountId">Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited .</param>
+        /// <param name="destinationTransactionInstrument">Destination bank account details of the transaction request  (required).</param>
+        /// <param name="transactionDescription">A description of the transaction..</param>
+        /// <param name="customerPaymentReference">If the payment is for VAT (Value-Added-Tax) then enter VAT identification number in this field which will be mandatory. The length constraint is 140 characters and do not allow user to enter any sensitive information other than VAT-ID..</param>
+        /// <param name="payeeContactInformation">The contact information of a payee..</param>
+        /// <param name="sourceAmount">The transaction amount in the source account&#39;s currency format. Requests that use a currency other than the source bank account currency fail. (required).</param>
+        /// <param name="transferRateDetails">The fees and foreign exchange rates that apply to the transaction. Transfer Rate Preview is currently optional. This field is required when the third party honors the fees and rates of the Seller Wallet transaction..</param>
+        /// <param name="requestTime">The transaction initiation request time in date-time format  (required).</param>
+        public TransactionInitiationRequest(string sourceAccountId = default, string destinationAccountId = default, TransactionInstrumentDetails destinationTransactionInstrument = default, string transactionDescription = default, string customerPaymentReference = default, PayeeContactInformation payeeContactInformation = default, Currency sourceAmount = default, TransferRatePreview transferRateDetails = default, DateTime? requestTime = default)
         {
             // to ensure "sourceAccountId" is required (not null)
             if (sourceAccountId == null)
@@ -50,15 +51,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
             else
             {
                 this.SourceAccountId = sourceAccountId;
-            }
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new InvalidDataException("description is a required property for TransactionInitiationRequest and cannot be null");
-            }
-            else
-            {
-                this.Description = description;
             }
             // to ensure "destinationTransactionInstrument" is required (not null)
             if (destinationTransactionInstrument == null)
@@ -88,63 +80,72 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
                 this.RequestTime = requestTime;
             }
             this.DestinationAccountId = destinationAccountId;
-            this.DestinationAccountHolderAddress = destinationAccountHolderAddress;
+            this.TransactionDescription = transactionDescription;
+            this.CustomerPaymentReference = customerPaymentReference;
+            this.PayeeContactInformation = payeeContactInformation;
             this.TransferRateDetails = transferRateDetails;
         }
 
         /// <summary>
-        /// The unique identifier of the source Amazon Seller Wallet bank account from which the money is debited.
+        /// The unique identifier of the source Amazon SW bank account from where the money needs to be debited 
         /// </summary>
-        /// <value>The unique identifier of the source Amazon Seller Wallet bank account from which the money is debited.</value>
+        /// <value>The unique identifier of the source Amazon SW bank account from where the money needs to be debited </value>
         [DataMember(Name = "sourceAccountId", EmitDefaultValue = false)]
         public string SourceAccountId { get; set; }
 
         /// <summary>
-        /// The unique identifier of the destination bank account where the money is deposited.
+        /// Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited 
         /// </summary>
-        /// <value>The unique identifier of the destination bank account where the money is deposited.</value>
+        /// <value>Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited </value>
         [DataMember(Name = "destinationAccountId", EmitDefaultValue = false)]
         public string DestinationAccountId { get; set; }
+
+        /// <summary>
+        /// Destination bank account details of the transaction request 
+        /// </summary>
+        /// <value>Destination bank account details of the transaction request </value>
+        [DataMember(Name = "destinationTransactionInstrument", EmitDefaultValue = false)]
+        public TransactionInstrumentDetails DestinationTransactionInstrument { get; set; }
 
         /// <summary>
         /// A description of the transaction.
         /// </summary>
         /// <value>A description of the transaction.</value>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
-        public string Description { get; set; }
+        [DataMember(Name = "transactionDescription", EmitDefaultValue = false)]
+        public string TransactionDescription { get; set; }
 
         /// <summary>
-        /// Details of the destination bank account in the transaction request.
+        /// If the payment is for VAT (Value-Added-Tax) then enter VAT identification number in this field which will be mandatory. The length constraint is 140 characters and do not allow user to enter any sensitive information other than VAT-ID.
         /// </summary>
-        /// <value>Details of the destination bank account in the transaction request.</value>
-        [DataMember(Name = "destinationTransactionInstrument", EmitDefaultValue = false)]
-        public TransactionInstrumentDetails DestinationTransactionInstrument { get; set; }
+        /// <value>If the payment is for VAT (Value-Added-Tax) then enter VAT identification number in this field which will be mandatory. The length constraint is 140 characters and do not allow user to enter any sensitive information other than VAT-ID.</value>
+        [DataMember(Name = "customerPaymentReference", EmitDefaultValue = false)]
+        public string CustomerPaymentReference { get; set; }
 
         /// <summary>
-        /// The address used to verify the bank account of the payee. This can be a person or business mailing address.
+        /// The contact information of a payee.
         /// </summary>
-        /// <value>The address used to verify the bank account of the payee. This can be a person or business mailing address.</value>
-        [DataMember(Name = "destinationAccountHolderAddress", EmitDefaultValue = false)]
-        public AccountHolderAddress DestinationAccountHolderAddress { get; set; }
+        /// <value>The contact information of a payee.</value>
+        [DataMember(Name = "payeeContactInformation", EmitDefaultValue = false)]
+        public PayeeContactInformation PayeeContactInformation { get; set; }
 
         /// <summary>
-        /// The transaction amount in the source account&#39;s currency format. Requests that use a currency other than source bank account currency will fail.
+        /// The transaction amount in the source account&#39;s currency format. Requests that use a currency other than the source bank account currency fail.
         /// </summary>
-        /// <value>The transaction amount in the source account&#39;s currency format. Requests that use a currency other than source bank account currency will fail.</value>
+        /// <value>The transaction amount in the source account&#39;s currency format. Requests that use a currency other than the source bank account currency fail.</value>
         [DataMember(Name = "sourceAmount", EmitDefaultValue = false)]
         public Currency SourceAmount { get; set; }
 
         /// <summary>
-        /// The fees and foreign exchange rates applied to the transaction. Transfer Rate Preview is currently optional. This field is required when the third party honors the fees and rates of the Seller Wallet transaction.
+        /// The fees and foreign exchange rates that apply to the transaction. Transfer Rate Preview is currently optional. This field is required when the third party honors the fees and rates of the Seller Wallet transaction.
         /// </summary>
-        /// <value>The fees and foreign exchange rates applied to the transaction. Transfer Rate Preview is currently optional. This field is required when the third party honors the fees and rates of the Seller Wallet transaction.</value>
+        /// <value>The fees and foreign exchange rates that apply to the transaction. Transfer Rate Preview is currently optional. This field is required when the third party honors the fees and rates of the Seller Wallet transaction.</value>
         [DataMember(Name = "transferRateDetails", EmitDefaultValue = false)]
         public TransferRatePreview TransferRateDetails { get; set; }
 
         /// <summary>
-        /// The time at which the transaction was initiated in [ISO 8601 date time format](https://developer-docs.amazon.com/sp-api/docs/iso-8601).
+        /// The transaction initiation request time in date-time format 
         /// </summary>
-        /// <value>The time at which the transaction was initiated in [ISO 8601 date time format](https://developer-docs.amazon.com/sp-api/docs/iso-8601).</value>
+        /// <value>The transaction initiation request time in date-time format </value>
         [DataMember(Name = "requestTime", EmitDefaultValue = false)]
         public DateTime? RequestTime { get; set; }
 
@@ -158,9 +159,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
             sb.Append("class TransactionInitiationRequest {\n");
             sb.Append("  SourceAccountId: ").Append(SourceAccountId).Append("\n");
             sb.Append("  DestinationAccountId: ").Append(DestinationAccountId).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  DestinationTransactionInstrument: ").Append(DestinationTransactionInstrument).Append("\n");
-            sb.Append("  DestinationAccountHolderAddress: ").Append(DestinationAccountHolderAddress).Append("\n");
+            sb.Append("  TransactionDescription: ").Append(TransactionDescription).Append("\n");
+            sb.Append("  CustomerPaymentReference: ").Append(CustomerPaymentReference).Append("\n");
+            sb.Append("  PayeeContactInformation: ").Append(PayeeContactInformation).Append("\n");
             sb.Append("  SourceAmount: ").Append(SourceAmount).Append("\n");
             sb.Append("  TransferRateDetails: ").Append(TransferRateDetails).Append("\n");
             sb.Append("  RequestTime: ").Append(RequestTime).Append("\n");
@@ -209,19 +211,24 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
                     this.DestinationAccountId.Equals(input.DestinationAccountId))
                 ) &&
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) &&
-                (
                     this.DestinationTransactionInstrument == input.DestinationTransactionInstrument ||
                     (this.DestinationTransactionInstrument != null &&
                     this.DestinationTransactionInstrument.Equals(input.DestinationTransactionInstrument))
                 ) &&
                 (
-                    this.DestinationAccountHolderAddress == input.DestinationAccountHolderAddress ||
-                    (this.DestinationAccountHolderAddress != null &&
-                    this.DestinationAccountHolderAddress.Equals(input.DestinationAccountHolderAddress))
+                    this.TransactionDescription == input.TransactionDescription ||
+                    (this.TransactionDescription != null &&
+                    this.TransactionDescription.Equals(input.TransactionDescription))
+                ) &&
+                (
+                    this.CustomerPaymentReference == input.CustomerPaymentReference ||
+                    (this.CustomerPaymentReference != null &&
+                    this.CustomerPaymentReference.Equals(input.CustomerPaymentReference))
+                ) &&
+                (
+                    this.PayeeContactInformation == input.PayeeContactInformation ||
+                    (this.PayeeContactInformation != null &&
+                    this.PayeeContactInformation.Equals(input.PayeeContactInformation))
                 ) &&
                 (
                     this.SourceAmount == input.SourceAmount ||
@@ -253,12 +260,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
                     hashCode = hashCode * 59 + this.SourceAccountId.GetHashCode();
                 if (this.DestinationAccountId != null)
                     hashCode = hashCode * 59 + this.DestinationAccountId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.DestinationTransactionInstrument != null)
                     hashCode = hashCode * 59 + this.DestinationTransactionInstrument.GetHashCode();
-                if (this.DestinationAccountHolderAddress != null)
-                    hashCode = hashCode * 59 + this.DestinationAccountHolderAddress.GetHashCode();
+                if (this.TransactionDescription != null)
+                    hashCode = hashCode * 59 + this.TransactionDescription.GetHashCode();
+                if (this.CustomerPaymentReference != null)
+                    hashCode = hashCode * 59 + this.CustomerPaymentReference.GetHashCode();
+                if (this.PayeeContactInformation != null)
+                    hashCode = hashCode * 59 + this.PayeeContactInformation.GetHashCode();
                 if (this.SourceAmount != null)
                     hashCode = hashCode * 59 + this.SourceAmount.GetHashCode();
                 if (this.TransferRateDetails != null)

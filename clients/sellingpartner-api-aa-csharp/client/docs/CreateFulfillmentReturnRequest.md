@@ -1,0 +1,9 @@
+# Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound.CreateFulfillmentReturnRequest
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Items** | [**CreateReturnItemList**](CreateReturnItemList.md) |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

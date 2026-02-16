@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.HttpBody
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.HttpBody
 ## Properties
 
 Name | Type | Description | Notes

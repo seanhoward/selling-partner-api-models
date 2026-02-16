@@ -32,9 +32,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentDestination" /> class.
         /// </summary>
-        /// <param name="address">The address the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;..</param>
+        /// <param name="address">The address the shipment should be sent to. This can be empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;..</param>
         /// <param name="destinationType">The type of destination for this shipment. Possible values: &#x60;AMAZON_OPTIMIZED&#x60;, &#x60;AMAZON_WAREHOUSE&#x60;. (required).</param>
-        /// <param name="warehouseId">The warehouse that the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;..</param>
+        /// <param name="warehouseId">The warehouse that the shipment should be sent to. This can be empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;..</param>
         public ShipmentDestination(Address address = default, string destinationType = default, string warehouseId = default)
         {
             // to ensure "destinationType" is required (not null)
@@ -51,9 +51,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         }
 
         /// <summary>
-        /// The address the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.
+        /// The address the shipment should be sent to. This can be empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.
         /// </summary>
-        /// <value>The address the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.</value>
+        /// <value>The address the shipment should be sent to. This can be empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.</value>
         [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
@@ -65,9 +65,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         public string DestinationType { get; set; }
 
         /// <summary>
-        /// The warehouse that the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.
+        /// The warehouse that the shipment should be sent to. This can be empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.
         /// </summary>
-        /// <value>The warehouse that the shipment should be sent to. Empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.</value>
+        /// <value>The warehouse that the shipment should be sent to. This can be empty if the destination type is &#x60;AMAZON_OPTIMIZED&#x60;.</value>
         [DataMember(Name = "warehouseId", EmitDefaultValue = false)]
         public string WarehouseId { get; set; }
 

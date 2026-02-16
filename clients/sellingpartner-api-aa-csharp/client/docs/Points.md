@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.Points
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.Points
 ## Properties
 
 Name | Type | Description | Notes

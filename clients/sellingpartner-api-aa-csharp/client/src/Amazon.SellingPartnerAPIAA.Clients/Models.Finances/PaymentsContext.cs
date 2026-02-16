@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Additional information related to payments-related transactions.
     /// </summary>
     [DataContract]
-    public partial class PaymentsContext :  IEquatable<PaymentsContext>, IValidatableObject
+    public partial class PaymentsContext : IEquatable<PaymentsContext>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentsContext" /> class.
@@ -44,33 +37,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             this.PaymentReference = paymentReference;
             this.PaymentDate = paymentDate;
         }
-        
+
         /// <summary>
         /// The type of payment.
         /// </summary>
         /// <value>The type of payment.</value>
-        [DataMember(Name="paymentType", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentType", EmitDefaultValue = false)]
         public string PaymentType { get; set; }
 
         /// <summary>
         /// The method of payment.
         /// </summary>
         /// <value>The method of payment.</value>
-        [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentMethod", EmitDefaultValue = false)]
         public string PaymentMethod { get; set; }
 
         /// <summary>
         /// The reference number of the payment.
         /// </summary>
         /// <value>The reference number of the payment.</value>
-        [DataMember(Name="paymentReference", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentReference", EmitDefaultValue = false)]
         public string PaymentReference { get; set; }
 
         /// <summary>
         /// The date of the payment.
         /// </summary>
         /// <value>The date of the payment.</value>
-        [DataMember(Name="paymentDate", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentDate", EmitDefaultValue = false)]
         public DateTime? PaymentDate { get; set; }
 
         /// <summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +111,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.PaymentType == input.PaymentType ||
                     (this.PaymentType != null &&
                     this.PaymentType.Equals(input.PaymentType))
-                ) && 
+                ) &&
                 (
                     this.PaymentMethod == input.PaymentMethod ||
                     (this.PaymentMethod != null &&
                     this.PaymentMethod.Equals(input.PaymentMethod))
-                ) && 
+                ) &&
                 (
                     this.PaymentReference == input.PaymentReference ||
                     (this.PaymentReference != null &&
                     this.PaymentReference.Equals(input.PaymentReference))
-                ) && 
+                ) &&
                 (
                     this.PaymentDate == input.PaymentDate ||
                     (this.PaymentDate != null &&

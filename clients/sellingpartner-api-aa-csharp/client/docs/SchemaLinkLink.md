@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes.SchemaLinkLink
+# Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes.SchemaLinkLink
 ## Properties
 
 Name | Type | Description | Notes

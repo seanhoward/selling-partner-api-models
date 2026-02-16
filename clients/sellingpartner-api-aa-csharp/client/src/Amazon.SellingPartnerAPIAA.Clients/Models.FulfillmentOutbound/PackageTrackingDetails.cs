@@ -52,7 +52,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="estimatedArrivalDate">The estimated arrival date..</param>
         /// <param name="shipToAddress">The destination city for the package..</param>
         /// <param name="currentStatus">currentStatus.</param>
-        /// <param name="currentStatusDescription">Description corresponding to the CurrentStatus value..</param>
+        /// <param name="currentStatusDescription">Description corresponding to the &#x60;CurrentStatus&#x60; value..</param>
         /// <param name="deliveryWindow">The delivery window for the package. This is available after the package reaches its destination delivery station..</param>
         /// <param name="signedForBy">The name of the person who signed for the package..</param>
         /// <param name="additionalLocationInfo">additionalLocationInfo.</param>
@@ -149,9 +149,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 
 
         /// <summary>
-        /// Description corresponding to the CurrentStatus value.
+        /// Description corresponding to the &#x60;CurrentStatus&#x60; value.
         /// </summary>
-        /// <value>Description corresponding to the CurrentStatus value.</value>
+        /// <value>Description corresponding to the &#x60;CurrentStatus&#x60; value.</value>
         [DataMember(Name = "currentStatusDescription", EmitDefaultValue = false)]
         public string CurrentStatusDescription { get; set; }
 

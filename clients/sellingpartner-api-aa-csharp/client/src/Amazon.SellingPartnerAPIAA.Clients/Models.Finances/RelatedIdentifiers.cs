@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Related business identifiers of the transaction.
     /// </summary>
     [DataContract]
-    public partial class RelatedIdentifiers : List<RelatedIdentifier>,  IEquatable<RelatedIdentifiers>, IValidatableObject
+    public partial class RelatedIdentifiers : List<RelatedIdentifier>, IEquatable<RelatedIdentifiers>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RelatedIdentifiers" /> class.
@@ -37,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         public RelatedIdentifiers() : base()
         {
         }
-        
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -50,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

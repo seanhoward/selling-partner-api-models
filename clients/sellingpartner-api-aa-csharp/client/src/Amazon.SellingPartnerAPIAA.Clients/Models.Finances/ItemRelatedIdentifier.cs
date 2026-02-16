@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Related business identifiers of the item.
     /// </summary>
     [DataContract]
-    public partial class ItemRelatedIdentifier :  IEquatable<ItemRelatedIdentifier>, IValidatableObject
+    public partial class ItemRelatedIdentifier : IEquatable<ItemRelatedIdentifier>, IValidatableObject
     {
         /// <summary>
         /// Enumerated set of related item identifier names for the item.
@@ -37,25 +31,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ItemRelatedIdentifierNameEnum
         {
-            
+
             /// <summary>
             /// Enum ORDERADJUSTMENTITEMID for value: ORDER_ADJUSTMENT_ITEM_ID
             /// </summary>
             [EnumMember(Value = "ORDER_ADJUSTMENT_ITEM_ID")]
             ORDERADJUSTMENTITEMID = 1,
-            
+
             /// <summary>
             /// Enum COUPONID for value: COUPON_ID
             /// </summary>
             [EnumMember(Value = "COUPON_ID")]
             COUPONID = 2,
-            
+
             /// <summary>
             /// Enum REMOVALSHIPMENTITEMID for value: REMOVAL_SHIPMENT_ITEM_ID
             /// </summary>
             [EnumMember(Value = "REMOVAL_SHIPMENT_ITEM_ID")]
             REMOVALSHIPMENTITEMID = 3,
-            
+
             /// <summary>
             /// Enum TRANSACTIONID for value: TRANSACTION_ID
             /// </summary>
@@ -67,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// Enumerated set of related item identifier names for the item.
         /// </summary>
         /// <value>Enumerated set of related item identifier names for the item.</value>
-        [DataMember(Name="itemRelatedIdentifierName", EmitDefaultValue=false)]
+        [DataMember(Name = "itemRelatedIdentifierName", EmitDefaultValue = false)]
         public ItemRelatedIdentifierNameEnum? ItemRelatedIdentifierName { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemRelatedIdentifier" /> class.
@@ -79,13 +73,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             this.ItemRelatedIdentifierName = itemRelatedIdentifierName;
             this.ItemRelatedIdentifierValue = itemRelatedIdentifierValue;
         }
-        
+
 
         /// <summary>
         /// Corresponding value to &#x60;ItemRelatedIdentifierName&#x60;.
         /// </summary>
         /// <value>Corresponding value to &#x60;ItemRelatedIdentifierName&#x60;.</value>
-        [DataMember(Name="itemRelatedIdentifierValue", EmitDefaultValue=false)]
+        [DataMember(Name = "itemRelatedIdentifierValue", EmitDefaultValue = false)]
         public string ItemRelatedIdentifierValue { get; set; }
 
         /// <summary>
@@ -101,7 +95,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -131,12 +125,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.ItemRelatedIdentifierName == input.ItemRelatedIdentifierName ||
                     (this.ItemRelatedIdentifierName != null &&
                     this.ItemRelatedIdentifierName.Equals(input.ItemRelatedIdentifierName))
-                ) && 
+                ) &&
                 (
                     this.ItemRelatedIdentifierValue == input.ItemRelatedIdentifierValue ||
                     (this.ItemRelatedIdentifierValue != null &&

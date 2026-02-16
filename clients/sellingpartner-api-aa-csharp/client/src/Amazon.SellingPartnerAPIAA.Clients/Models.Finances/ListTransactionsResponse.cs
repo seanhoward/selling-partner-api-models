@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,31 +21,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// The response schema for the &#x60;listTransactions&#x60; operation.
     /// </summary>
     [DataContract]
-    public partial class ListTransactionsResponse :  IEquatable<ListTransactionsResponse>, IValidatableObject
+    public partial class ListTransactionsResponse : IEquatable<ListTransactionsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ListTransactionsResponse" /> class.
         /// </summary>
-        /// <param name="nextToken">The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages..</param>
-        /// <param name="transactions">transactions.</param>
-        public ListTransactionsResponse(string nextToken = default, Transactions transactions = default)
+        /// <param name="payload">The payload for the &#x60;listTransactions&#x60; operation..</param>
+        public ListTransactionsResponse(TransactionsPayload payload = default)
         {
-            this.NextToken = nextToken;
-            this.Transactions = transactions;
+            this.Payload = payload;
         }
-        
-        /// <summary>
-        /// The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
-        /// </summary>
-        /// <value>The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.</value>
-        [DataMember(Name="nextToken", EmitDefaultValue=false)]
-        public string NextToken { get; set; }
 
         /// <summary>
-        /// Gets or Sets Transactions
+        /// The payload for the &#x60;listTransactions&#x60; operation.
         /// </summary>
-        [DataMember(Name="transactions", EmitDefaultValue=false)]
-        public Transactions Transactions { get; set; }
+        /// <value>The payload for the &#x60;listTransactions&#x60; operation.</value>
+        [DataMember(Name = "payload", EmitDefaultValue = false)]
+        public TransactionsPayload Payload { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,12 +47,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         {
             var sb = new StringBuilder();
             sb.Append("class ListTransactionsResponse {\n");
-            sb.Append("  NextToken: ").Append(NextToken).Append("\n");
-            sb.Append("  Transactions: ").Append(Transactions).Append("\n");
+            sb.Append("  Payload: ").Append(Payload).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,16 +81,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
-                    this.NextToken == input.NextToken ||
-                    (this.NextToken != null &&
-                    this.NextToken.Equals(input.NextToken))
-                ) && 
-                (
-                    this.Transactions == input.Transactions ||
-                    (this.Transactions != null &&
-                    this.Transactions.Equals(input.Transactions))
+                    this.Payload == input.Payload ||
+                    (this.Payload != null &&
+                    this.Payload.Equals(input.Payload))
                 );
         }
 
@@ -119,10 +98,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.NextToken != null)
-                    hashCode = hashCode * 59 + this.NextToken.GetHashCode();
-                if (this.Transactions != null)
-                    hashCode = hashCode * 59 + this.Transactions.GetHashCode();
+                if (this.Payload != null)
+                    hashCode = hashCode * 59 + this.Payload.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -19,15 +19,15 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// The type of payment preference in which the transfer is being scheduled.
+    /// Payment preference type in which transfer is being scheduled 
     /// </summary>
     [DataContract]
     public partial class PaymentPreference : IEquatable<PaymentPreference>, IValidatableObject
     {
         /// <summary>
-        /// The preferred payment type for the scheduled transaction. Can be &#x60;PERCENTAGE&#x60; or &#x60;AMOUNT&#x60;.
+        /// Specifies the preferred payment type for the scheduled transaction eg:PERCENTAGE of certain total amount in account 
         /// </summary>
-        /// <value>The preferred payment type for the scheduled transaction. Can be &#x60;PERCENTAGE&#x60; or &#x60;AMOUNT&#x60;.</value>
+        /// <value>Specifies the preferred payment type for the scheduled transaction eg:PERCENTAGE of certain total amount in account </value>
         [DataMember(Name = "paymentPreferencePaymentType", EmitDefaultValue = false)]
         public PaymentPreferencePaymentType PaymentPreferencePaymentType { get; set; }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentPreference" /> class.
         /// </summary>
-        /// <param name="paymentPreferencePaymentType">The preferred payment type for the scheduled transaction. Can be &#x60;PERCENTAGE&#x60; or &#x60;AMOUNT&#x60;. (required).</param>
+        /// <param name="paymentPreferencePaymentType">Specifies the preferred payment type for the scheduled transaction eg:PERCENTAGE of certain total amount in account  (required).</param>
         /// <param name="value">The value of the payment preference. (required).</param>
         public PaymentPreference(PaymentPreferencePaymentType paymentPreferencePaymentType = default, decimal? value = default)
         {

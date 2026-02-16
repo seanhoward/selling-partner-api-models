@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Additional information about the items in a transaction.
     /// </summary>
     [DataContract]
-    public partial class Item :  IEquatable<Item>, IValidatableObject
+    public partial class Item : IEquatable<Item>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Item" /> class.
@@ -36,9 +30,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="description">A description of the items in a transaction..</param>
         /// <param name="relatedIdentifiers">Related business identifiers of the item..</param>
         /// <param name="totalAmount">The total monetary amount of the item..</param>
-        /// <param name="breakdowns">A list of breakdowns that provide details on how the total amount is calculated for the transaction..</param>
+        /// <param name="breakdowns">A list of breakdowns that detail how the total amount is calculated for the transaction..</param>
         /// <param name="contexts">Additional Information about the item..</param>
-        public Item(string description = default, ItemRelatedIdentifiers relatedIdentifiers = default, Currency totalAmount = default, Breakdowns breakdowns = default, Contexts contexts = default)
+        public Item(string description = default, ItemRelatedIdentifiers relatedIdentifiers = default, Currency totalAmount = default, List<Breakdown> breakdowns = default, Contexts contexts = default)
         {
             this.Description = description;
             this.RelatedIdentifiers = relatedIdentifiers;
@@ -46,40 +40,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             this.Breakdowns = breakdowns;
             this.Contexts = contexts;
         }
-        
+
         /// <summary>
         /// A description of the items in a transaction.
         /// </summary>
         /// <value>A description of the items in a transaction.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Related business identifiers of the item.
         /// </summary>
         /// <value>Related business identifiers of the item.</value>
-        [DataMember(Name="relatedIdentifiers", EmitDefaultValue=false)]
+        [DataMember(Name = "relatedIdentifiers", EmitDefaultValue = false)]
         public ItemRelatedIdentifiers RelatedIdentifiers { get; set; }
 
         /// <summary>
         /// The total monetary amount of the item.
         /// </summary>
         /// <value>The total monetary amount of the item.</value>
-        [DataMember(Name="totalAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "totalAmount", EmitDefaultValue = false)]
         public Currency TotalAmount { get; set; }
 
         /// <summary>
-        /// A list of breakdowns that provide details on how the total amount is calculated for the transaction.
+        /// A list of breakdowns that detail how the total amount is calculated for the transaction.
         /// </summary>
-        /// <value>A list of breakdowns that provide details on how the total amount is calculated for the transaction.</value>
-        [DataMember(Name="breakdowns", EmitDefaultValue=false)]
-        public Breakdowns Breakdowns { get; set; }
+        /// <value>A list of breakdowns that detail how the total amount is calculated for the transaction.</value>
+        [DataMember(Name = "breakdowns", EmitDefaultValue = false)]
+        public List<Breakdown> Breakdowns { get; set; }
 
         /// <summary>
         /// Additional Information about the item.
         /// </summary>
         /// <value>Additional Information about the item.</value>
-        [DataMember(Name="contexts", EmitDefaultValue=false)]
+        [DataMember(Name = "contexts", EmitDefaultValue = false)]
         public Contexts Contexts { get; set; }
 
         /// <summary>
@@ -98,7 +92,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -128,27 +122,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.RelatedIdentifiers == input.RelatedIdentifiers ||
                     (this.RelatedIdentifiers != null &&
                     this.RelatedIdentifiers.Equals(input.RelatedIdentifiers))
-                ) && 
+                ) &&
                 (
                     this.TotalAmount == input.TotalAmount ||
                     (this.TotalAmount != null &&
                     this.TotalAmount.Equals(input.TotalAmount))
-                ) && 
+                ) &&
                 (
                     this.Breakdowns == input.Breakdowns ||
-                    (this.Breakdowns != null &&
-                    this.Breakdowns.Equals(input.Breakdowns))
-                ) && 
+                    this.Breakdowns != null &&
+                    this.Breakdowns.SequenceEqual(input.Breakdowns)
+                ) &&
                 (
                     this.Contexts == input.Contexts ||
                     (this.Contexts != null &&

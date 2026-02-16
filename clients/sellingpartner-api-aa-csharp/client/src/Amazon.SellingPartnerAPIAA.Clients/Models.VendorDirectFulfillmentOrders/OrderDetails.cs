@@ -82,8 +82,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         /// <param name="shipFromParty">PartyID of vendor&#39;s warehouse. (required).</param>
         /// <param name="shipToParty">Name/Address and tax details of the ship to party. (required).</param>
         /// <param name="billToParty">Name/Address and tax details of the bill to party. (required).</param>
+        /// <param name="hasCustomizableItems">When &#x60;true&#x60;, the order contains customizable items..</param>
         /// <param name="items">A list of items in this purchase order. (required).</param>
-        public OrderDetails(string customerOrderNumber = default, DateTime? orderDate = default, OrderStatusEnum? orderStatus = default, ShipmentDetails shipmentDetails = default, TaxItemDetails taxTotal = default, PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, Address shipToParty = default, PartyIdentification billToParty = default, List<OrderItem> items = default)
+        public OrderDetails(string customerOrderNumber = default, DateTime? orderDate = default, OrderStatusEnum? orderStatus = default, ShipmentDetails shipmentDetails = default, TaxItemDetails taxTotal = default, PartyIdentification sellingParty = default, PartyIdentification shipFromParty = default, Address shipToParty = default, PartyIdentification billToParty = default, bool? hasCustomizableItems = default, List<OrderItem> items = default)
         {
             // to ensure "customerOrderNumber" is required (not null)
             if (customerOrderNumber == null)
@@ -159,6 +160,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             }
             this.OrderStatus = orderStatus;
             this.TaxTotal = taxTotal;
+            this.HasCustomizableItems = hasCustomizableItems;
         }
 
         /// <summary>
@@ -217,6 +219,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
         public PartyIdentification BillToParty { get; set; }
 
         /// <summary>
+        /// When &#x60;true&#x60;, the order contains customizable items.
+        /// </summary>
+        /// <value>When &#x60;true&#x60;, the order contains customizable items.</value>
+        [DataMember(Name = "hasCustomizableItems", EmitDefaultValue = false)]
+        public bool? HasCustomizableItems { get; set; }
+
+        /// <summary>
         /// A list of items in this purchase order.
         /// </summary>
         /// <value>A list of items in this purchase order.</value>
@@ -240,6 +249,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
             sb.Append("  ShipFromParty: ").Append(ShipFromParty).Append("\n");
             sb.Append("  ShipToParty: ").Append(ShipToParty).Append("\n");
             sb.Append("  BillToParty: ").Append(BillToParty).Append("\n");
+            sb.Append("  HasCustomizableItems: ").Append(HasCustomizableItems).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -321,6 +331,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
                     this.BillToParty.Equals(input.BillToParty))
                 ) &&
                 (
+                    this.HasCustomizableItems == input.HasCustomizableItems ||
+                    (this.HasCustomizableItems != null &&
+                    this.HasCustomizableItems.Equals(input.HasCustomizableItems))
+                ) &&
+                (
                     this.Items == input.Items ||
                     this.Items != null &&
                     this.Items.SequenceEqual(input.Items)
@@ -354,6 +369,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorDirectFulfillmentOrder
                     hashCode = hashCode * 59 + this.ShipToParty.GetHashCode();
                 if (this.BillToParty != null)
                     hashCode = hashCode * 59 + this.BillToParty.GetHashCode();
+                if (this.HasCustomizableItems != null)
+                    hashCode = hashCode * 59 + this.HasCustomizableItems.GetHashCode();
                 if (this.Items != null)
                     hashCode = hashCode * 59 + this.Items.GetHashCode();
                 return hashCode;

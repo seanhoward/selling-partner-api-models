@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
     /// <summary>
-    /// The response schema for the getDeliveryOffers operation.
+    /// The response schema for the &#x60;getDeliveryOffers&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class GetDeliveryOffersResponse : IEquatable<GetDeliveryOffersResponse>, IValidatableObject
@@ -26,8 +26,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDeliveryOffersResponse" /> class.
         /// </summary>
-        /// <param name="payload">The response payload for the getDeliveryOffers operation..</param>
-        /// <param name="errors">One or more unexpected errors occurred during the getDeliveryOffers operation..</param>
+        /// <param name="payload">The response payload for the &#x60;getDeliveryOffers&#x60; operation..</param>
+        /// <param name="errors">One or more unexpected errors occurred during the &#x60;getDeliveryOffers&#x60; operation..</param>
         public GetDeliveryOffersResponse(GetDeliveryOffersResult payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
@@ -35,16 +35,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         }
 
         /// <summary>
-        /// The response payload for the getDeliveryOffers operation.
+        /// The response payload for the &#x60;getDeliveryOffers&#x60; operation.
         /// </summary>
-        /// <value>The response payload for the getDeliveryOffers operation.</value>
+        /// <value>The response payload for the &#x60;getDeliveryOffers&#x60; operation.</value>
         [DataMember(Name = "payload", EmitDefaultValue = false)]
         public GetDeliveryOffersResult Payload { get; set; }
 
         /// <summary>
-        /// One or more unexpected errors occurred during the getDeliveryOffers operation.
+        /// One or more unexpected errors occurred during the &#x60;getDeliveryOffers&#x60; operation.
         /// </summary>
-        /// <value>One or more unexpected errors occurred during the getDeliveryOffers operation.</value>
+        /// <value>One or more unexpected errors occurred during the &#x60;getDeliveryOffers&#x60; operation.</value>
         [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 

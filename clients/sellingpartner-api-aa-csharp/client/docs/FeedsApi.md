@@ -4,21 +4,21 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelFeed**](FeedsApi.md#cancelfeed) | **DELETE** /feeds/2021-06-30/feeds/{feedId} | cancelFeed
-[**CreateFeed**](FeedsApi.md#createfeed) | **POST** /feeds/2021-06-30/feeds | createFeed
-[**CreateFeedDocument**](FeedsApi.md#createfeeddocument) | **POST** /feeds/2021-06-30/documents | createFeedDocument
-[**GetFeed**](FeedsApi.md#getfeed) | **GET** /feeds/2021-06-30/feeds/{feedId} | getFeed
-[**GetFeedDocument**](FeedsApi.md#getfeeddocument) | **GET** /feeds/2021-06-30/documents/{feedDocumentId} | getFeedDocument
-[**GetFeeds**](FeedsApi.md#getfeeds) | **GET** /feeds/2021-06-30/feeds | getFeeds
+[**CancelFeed**](FeedsApi.md#cancelfeed) | **DELETE** /feeds/2021-06-30/feeds/{feedId} | 
+[**CreateFeed**](FeedsApi.md#createfeed) | **POST** /feeds/2021-06-30/feeds | 
+[**CreateFeedDocument**](FeedsApi.md#createfeeddocument) | **POST** /feeds/2021-06-30/documents | 
+[**GetFeed**](FeedsApi.md#getfeed) | **GET** /feeds/2021-06-30/feeds/{feedId} | 
+[**GetFeedDocument**](FeedsApi.md#getfeeddocument) | **GET** /feeds/2021-06-30/documents/{feedDocumentId} | 
+[**GetFeeds**](FeedsApi.md#getfeeds) | **GET** /feeds/2021-06-30/feeds | 
 
 
 <a name="cancelfeed"></a>
 # **CancelFeed**
 > void CancelFeed (string feedId)
 
-cancelFeed
 
-Cancels the feed that you specify. Only feeds with `processingStatus=IN_QUEUE` can be cancelled. Cancelled feeds are returned in subsequent calls to the [`getFeed`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#getfeed) and [`getFeeds`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#getfeeds) operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+Cancels the feed that you specify. Only feeds with `processingStatus=IN_QUEUE` can be cancelled. Cancelled feeds are returned in subsequent calls to the [`getFeed`](https://developer-docs.amazon.com/sp-api/reference/getfeed) and [`getFeeds`](https://developer-docs.amazon.com/sp-api/reference/getfeeds) operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
@@ -39,7 +39,6 @@ namespace Example
 
             try
             {
-                // cancelFeed
                 apiInstance.CancelFeed(feedId);
             }
             catch (Exception e)
@@ -76,9 +75,9 @@ No authorization required
 # **CreateFeed**
 > CreateFeedResponse CreateFeed (CreateFeedSpecification body)
 
-createFeed
 
-Creates a feed. Upload the contents of the feed document before calling this operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0083 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).  The rate limit for the [`JSON_LISTINGS_FEED`](https://developer-docs.amazon.com/sp-api/docs/listings-feed-type-values#listings-feed) feed type differs from the rate limit for the [`createFeed`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#post-feeds2021-06-30feeds) operation. For more information, refer to the [Building Listings Management Workflows Guide](https://developer-docs.amazon.com/sp-api/docs/building-listings-management-workflows-guide#should-i-submit-in-bulk-using-the-json_listings_feed-or-individually-with-the-listings-items-api).
+
+Creates a feed. Upload the contents of the feed document before calling this operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0083 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).  The rate limit for the [`JSON_LISTINGS_FEED`](https://developer-docs.amazon.com/sp-api/docs/listings-feed-type-values#listings-feed) feed type differs from the rate limit for the [`createFeed`](https://developer-docs.amazon.com/sp-api/reference/createfeed) operation. For more information, refer to the [Building Listings Management Workflows Guide](https://developer-docs.amazon.com/sp-api/docs/building-listings-management-workflows-guide#should-i-submit-in-bulk-using-the-json_listings_feed-or-individually-with-the-listings-items-api).
 
 ### Example
 ```csharp
@@ -99,7 +98,6 @@ namespace Example
 
             try
             {
-                // createFeed
                 CreateFeedResponse result = apiInstance.CreateFeed(body);
                 Debug.WriteLine(result);
             }
@@ -137,9 +135,9 @@ No authorization required
 # **CreateFeedDocument**
 > CreateFeedDocumentResponse CreateFeedDocument (CreateFeedDocumentSpecification body)
 
-createFeedDocument
 
-Creates a feed document for the feed type that you specify. This operation returns a presigned URL for uploading the feed document contents. It also returns a `feedDocumentId` value that you can pass in with a subsequent call to the [`createFeed`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#createfeed) operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+Creates a feed document for the feed type that you specify. This operation returns a presigned URL for uploading the feed document contents. It also returns a `feedDocumentId` value that you can pass in with a subsequent call to the [`createFeed`](https://developer-docs.amazon.com/sp-api/reference/createfeed) operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 ```csharp
@@ -160,7 +158,6 @@ namespace Example
 
             try
             {
-                // createFeedDocument
                 CreateFeedDocumentResponse result = apiInstance.CreateFeedDocument(body);
                 Debug.WriteLine(result);
             }
@@ -198,7 +195,7 @@ No authorization required
 # **GetFeed**
 > Feed GetFeed (string feedId)
 
-getFeed
+
 
 Returns feed details (including the `resultDocumentId`, if available) for the feed that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -221,7 +218,6 @@ namespace Example
 
             try
             {
-                // getFeed
                 Feed result = apiInstance.GetFeed(feedId);
                 Debug.WriteLine(result);
             }
@@ -259,7 +255,7 @@ No authorization required
 # **GetFeedDocument**
 > FeedDocument GetFeedDocument (string feedDocumentId)
 
-getFeedDocument
+
 
 Returns the information required for retrieving a feed document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -282,7 +278,6 @@ namespace Example
 
             try
             {
-                // getFeedDocument
                 FeedDocument result = apiInstance.GetFeedDocument(feedDocumentId);
                 Debug.WriteLine(result);
             }
@@ -320,7 +315,7 @@ No authorization required
 # **GetFeeds**
 > GetFeedsResponse GetFeeds (List<string> feedTypes = null, List<string> marketplaceIds = null, int? pageSize = null, List<string> processingStatuses = null, DateTime? createdSince = null, DateTime? createdUntil = null, string nextToken = null)
 
-getFeeds
+
 
 Returns feed details for the feeds that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -349,7 +344,6 @@ namespace Example
 
             try
             {
-                // getFeeds
                 GetFeedsResponse result = apiInstance.GetFeeds(feedTypes, marketplaceIds, pageSize, processingStatuses, createdSince, createdUntil, nextToken);
                 Debug.WriteLine(result);
             }

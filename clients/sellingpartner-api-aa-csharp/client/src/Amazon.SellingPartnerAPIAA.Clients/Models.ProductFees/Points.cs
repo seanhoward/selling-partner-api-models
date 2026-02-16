@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
     /// <summary>
-    /// Points
+    /// The number of Amazon Points offered with the purchase of an item.The Amazon Points program is only available in Japan.
     /// </summary>
     [DataContract]
     public partial class Points : IEquatable<Points>, IValidatableObject
@@ -26,7 +26,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <summary>
         /// Initializes a new instance of the <see cref="Points" /> class.
         /// </summary>
-        /// <param name="pointsNumber">pointsNumber.</param>
+        /// <param name="pointsNumber">The number of Amazon Points.</param>
         /// <param name="pointsMonetaryValue">pointsMonetaryValue.</param>
         public Points(int? pointsNumber = default, MoneyType pointsMonetaryValue = default)
         {
@@ -35,8 +35,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         }
 
         /// <summary>
-        /// Gets or Sets PointsNumber
+        /// The number of Amazon Points
         /// </summary>
+        /// <value>The number of Amazon Points</value>
         [DataMember(Name = "PointsNumber", EmitDefaultValue = false)]
         public int? PointsNumber { get; set; }
 

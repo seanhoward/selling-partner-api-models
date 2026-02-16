@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
     /// <summary>
-    /// MoneyType
+    /// An object representing a monetary value with its currency information.
     /// </summary>
     [DataContract]
     public partial class MoneyType : IEquatable<MoneyType>, IValidatableObject

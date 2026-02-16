@@ -186,9 +186,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
 
             // Msku (string) maxLength
-            if (this.Msku != null && this.Msku.Length > 40)
+            if (this.Msku != null && this.Msku.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new[] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 255.", new[] { "Msku" });
             }
 
             // Msku (string) minLength

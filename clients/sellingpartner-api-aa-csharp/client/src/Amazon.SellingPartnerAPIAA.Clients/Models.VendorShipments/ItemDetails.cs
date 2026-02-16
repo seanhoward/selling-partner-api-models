@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -24,6 +25,45 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
     [DataContract]
     public partial class ItemDetails : IEquatable<ItemDetails>, IValidatableObject
     {
+        /// <summary>
+        /// The identifier type used for the lot number source. Provide this field when you specify &#x60;lotNumberSourceReference&#x60;.
+        /// </summary>
+        /// <value>The identifier type used for the lot number source. Provide this field when you specify &#x60;lotNumberSourceReference&#x60;.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LotNumberSourceTypeEnum
+        {
+
+            /// <summary>
+            /// Enum GLN for value: GLN
+            /// </summary>
+            [EnumMember(Value = "GLN")]
+            GLN = 1,
+
+            /// <summary>
+            /// Enum FFRN for value: FFRN
+            /// </summary>
+            [EnumMember(Value = "FFRN")]
+            FFRN = 2,
+
+            /// <summary>
+            /// Enum USDAE for value: USDA_E
+            /// </summary>
+            [EnumMember(Value = "USDA_E")]
+            USDAE = 3,
+
+            /// <summary>
+            /// Enum URL for value: URL
+            /// </summary>
+            [EnumMember(Value = "URL")]
+            URL = 4
+        }
+
+        /// <summary>
+        /// The identifier type used for the lot number source. Provide this field when you specify &#x60;lotNumberSourceReference&#x60;.
+        /// </summary>
+        /// <value>The identifier type used for the lot number source. Provide this field when you specify &#x60;lotNumberSourceReference&#x60;.</value>
+        [DataMember(Name = "lotNumberSourceType", EmitDefaultValue = false)]
+        public LotNumberSourceTypeEnum? LotNumberSourceType { get; set; }
         /// <summary>
         /// Identification of the instructions on how specified item/carton/pallet should be handled.
         /// </summary>
@@ -68,13 +108,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// </summary>
         /// <param name="purchaseOrderNumber">The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code..</param>
         /// <param name="lotNumber">The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items..</param>
+        /// <param name="lotNumberSourceReference">The location identifier where the product receives a traceability lot number. Provide this field for products subject to the FDA Food Safety Modernization Act (FSMA) Section 204. When you provide &#x60;lotNumberSourceReference&#x60;, you must also specify the corresponding &#x60;lotNumberSourceType&#x60; field..</param>
+        /// <param name="lotNumberSourceType">The identifier type used for the lot number source. Provide this field when you specify &#x60;lotNumberSourceReference&#x60;..</param>
+        /// <param name="countryOfOrigin">The two-character country code for the country where the product was manufactured or originates. Use ISO 3166-1 alpha-2 format..</param>
+        /// <param name="regulationReferences">Regulatory requirements and compliance information for the item..</param>
         /// <param name="expiry">Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items..</param>
         /// <param name="maximumRetailPrice">Maximum retail price of the item being shipped..</param>
         /// <param name="handlingCode">Identification of the instructions on how specified item/carton/pallet should be handled..</param>
-        public ItemDetails(string purchaseOrderNumber = default, string lotNumber = default, Expiry expiry = default, Money maximumRetailPrice = default, HandlingCodeEnum? handlingCode = default)
+        public ItemDetails(string purchaseOrderNumber = default, string lotNumber = default, string lotNumberSourceReference = default, LotNumberSourceTypeEnum? lotNumberSourceType = default, string countryOfOrigin = default, RegulationReferences regulationReferences = default, Expiry expiry = default, Money maximumRetailPrice = default, HandlingCodeEnum? handlingCode = default)
         {
             this.PurchaseOrderNumber = purchaseOrderNumber;
             this.LotNumber = lotNumber;
+            this.LotNumberSourceReference = lotNumberSourceReference;
+            this.LotNumberSourceType = lotNumberSourceType;
+            this.CountryOfOrigin = countryOfOrigin;
+            this.RegulationReferences = regulationReferences;
             this.Expiry = expiry;
             this.MaximumRetailPrice = maximumRetailPrice;
             this.HandlingCode = handlingCode;
@@ -93,6 +141,28 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <value>The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.</value>
         [DataMember(Name = "lotNumber", EmitDefaultValue = false)]
         public string LotNumber { get; set; }
+
+        /// <summary>
+        /// The location identifier where the product receives a traceability lot number. Provide this field for products subject to the FDA Food Safety Modernization Act (FSMA) Section 204. When you provide &#x60;lotNumberSourceReference&#x60;, you must also specify the corresponding &#x60;lotNumberSourceType&#x60; field.
+        /// </summary>
+        /// <value>The location identifier where the product receives a traceability lot number. Provide this field for products subject to the FDA Food Safety Modernization Act (FSMA) Section 204. When you provide &#x60;lotNumberSourceReference&#x60;, you must also specify the corresponding &#x60;lotNumberSourceType&#x60; field.</value>
+        [DataMember(Name = "lotNumberSourceReference", EmitDefaultValue = false)]
+        public string LotNumberSourceReference { get; set; }
+
+
+        /// <summary>
+        /// The two-character country code for the country where the product was manufactured or originates. Use ISO 3166-1 alpha-2 format.
+        /// </summary>
+        /// <value>The two-character country code for the country where the product was manufactured or originates. Use ISO 3166-1 alpha-2 format.</value>
+        [DataMember(Name = "countryOfOrigin", EmitDefaultValue = false)]
+        public string CountryOfOrigin { get; set; }
+
+        /// <summary>
+        /// Regulatory requirements and compliance information for the item.
+        /// </summary>
+        /// <value>Regulatory requirements and compliance information for the item.</value>
+        [DataMember(Name = "regulationReferences", EmitDefaultValue = false)]
+        public RegulationReferences RegulationReferences { get; set; }
 
         /// <summary>
         /// Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items.
@@ -119,6 +189,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
             sb.Append("class ItemDetails {\n");
             sb.Append("  PurchaseOrderNumber: ").Append(PurchaseOrderNumber).Append("\n");
             sb.Append("  LotNumber: ").Append(LotNumber).Append("\n");
+            sb.Append("  LotNumberSourceReference: ").Append(LotNumberSourceReference).Append("\n");
+            sb.Append("  LotNumberSourceType: ").Append(LotNumberSourceType).Append("\n");
+            sb.Append("  CountryOfOrigin: ").Append(CountryOfOrigin).Append("\n");
+            sb.Append("  RegulationReferences: ").Append(RegulationReferences).Append("\n");
             sb.Append("  Expiry: ").Append(Expiry).Append("\n");
             sb.Append("  MaximumRetailPrice: ").Append(MaximumRetailPrice).Append("\n");
             sb.Append("  HandlingCode: ").Append(HandlingCode).Append("\n");
@@ -167,6 +241,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
                     this.LotNumber.Equals(input.LotNumber))
                 ) &&
                 (
+                    this.LotNumberSourceReference == input.LotNumberSourceReference ||
+                    (this.LotNumberSourceReference != null &&
+                    this.LotNumberSourceReference.Equals(input.LotNumberSourceReference))
+                ) &&
+                (
+                    this.LotNumberSourceType == input.LotNumberSourceType ||
+                    (this.LotNumberSourceType != null &&
+                    this.LotNumberSourceType.Equals(input.LotNumberSourceType))
+                ) &&
+                (
+                    this.CountryOfOrigin == input.CountryOfOrigin ||
+                    (this.CountryOfOrigin != null &&
+                    this.CountryOfOrigin.Equals(input.CountryOfOrigin))
+                ) &&
+                (
+                    this.RegulationReferences == input.RegulationReferences ||
+                    (this.RegulationReferences != null &&
+                    this.RegulationReferences.Equals(input.RegulationReferences))
+                ) &&
+                (
                     this.Expiry == input.Expiry ||
                     (this.Expiry != null &&
                     this.Expiry.Equals(input.Expiry))
@@ -196,6 +290,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
                     hashCode = hashCode * 59 + this.PurchaseOrderNumber.GetHashCode();
                 if (this.LotNumber != null)
                     hashCode = hashCode * 59 + this.LotNumber.GetHashCode();
+                if (this.LotNumberSourceReference != null)
+                    hashCode = hashCode * 59 + this.LotNumberSourceReference.GetHashCode();
+                if (this.LotNumberSourceType != null)
+                    hashCode = hashCode * 59 + this.LotNumberSourceType.GetHashCode();
+                if (this.CountryOfOrigin != null)
+                    hashCode = hashCode * 59 + this.CountryOfOrigin.GetHashCode();
+                if (this.RegulationReferences != null)
+                    hashCode = hashCode * 59 + this.RegulationReferences.GetHashCode();
                 if (this.Expiry != null)
                     hashCode = hashCode * 59 + this.Expiry.GetHashCode();
                 if (this.MaximumRetailPrice != null)
@@ -213,6 +315,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // CountryOfOrigin (string) pattern
+            Regex regexCountryOfOrigin = new Regex(@"^[A-Z]{2}$", RegexOptions.CultureInvariant);
+            if (false == regexCountryOfOrigin.Match(this.CountryOfOrigin).Success)
+            {
+                yield return new ValidationResult("Invalid value for CountryOfOrigin, must match a pattern of " + regexCountryOfOrigin, new[] { "CountryOfOrigin" });
+            }
+
             yield break;
         }
     }

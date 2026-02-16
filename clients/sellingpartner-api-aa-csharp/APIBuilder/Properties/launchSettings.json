@@ -15,6 +15,14 @@
     "Listings Items": {
       "commandName": "Project",
       "commandLineArgs": "-f $(SolutionDir)..\\..\\models\\listings-items-api-model\\listingsItems_2021-08-01.json\r\n-j C:\\swagger-codegen\\swagger-codegen-cli.jar \r\n-r $(SolutionDir)src\\Amazon.SellingPartnerAPIAA\\resources \r\n-o Output"
+    },
+    "Orders": {
+      "commandName": "Project",
+      "commandLineArgs": "-f $(SolutionDir)..\\..\\models\\orders-api-model\\orders_2026-01-01.json\r\n-j C:\\swagger-codegen\\swagger-codegen-cli.jar \r\n-r $(SolutionDir)src\\Amazon.SellingPartnerAPIAA\\resources \r\n-o Output"
+    },
+    "Orders V0": {
+      "commandName": "Project",
+      "commandLineArgs": "-f $(SolutionDir)..\\..\\models\\orders-api-model\\ordersV0.json\r\n-j C:\\swagger-codegen\\swagger-codegen-cli.jar \r\n-r $(SolutionDir)src\\Amazon.SellingPartnerAPIAA\\resources \r\n-o Output"
     }
   }
 }

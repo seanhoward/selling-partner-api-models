@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -15,9 +15,9 @@ using Newtonsoft.Json.Converters;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// The destination bank account&#39;s ownership type.
+    /// Represents destination bank account&#39;s ownership type.
     /// </summary>
-    /// <value>The destination bank account&#39;s ownership type.</value>
+    /// <value>Represents destination bank account&#39;s ownership type.</value>
 
     [JsonConverter(typeof(StringEnumConverter))]
 
@@ -34,13 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// Enum SELF for value: SELF
         /// </summary>
         [EnumMember(Value = "SELF")]
-        SELF = 2,
-
-        /// <summary>
-        /// Enum GOVERNMENT for value: GOVERNMENT
-        /// </summary>
-        [EnumMember(Value = "GOVERNMENT")]
-        GOVERNMENT = 3
+        SELF = 2
     }
 
 }

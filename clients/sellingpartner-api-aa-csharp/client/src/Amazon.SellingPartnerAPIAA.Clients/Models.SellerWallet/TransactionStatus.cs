@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -15,9 +15,9 @@ using Newtonsoft.Json.Converters;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// The current status of the transaction.
+    /// Represents current status of the transaction.
     /// </summary>
-    /// <value>The current status of the transaction.</value>
+    /// <value>Represents current status of the transaction.</value>
 
     [JsonConverter(typeof(StringEnumConverter))]
 
@@ -25,22 +25,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
     {
 
         /// <summary>
+        /// Enum EXPIRED for value: EXPIRED
+        /// </summary>
+        [EnumMember(Value = "EXPIRED")]
+        EXPIRED = 1,
+
+        /// <summary>
         /// Enum FAILED for value: FAILED
         /// </summary>
         [EnumMember(Value = "FAILED")]
-        FAILED = 1,
+        FAILED = 2,
 
         /// <summary>
         /// Enum FAILEDCREDITSAPPLIED for value: FAILED_CREDITS_APPLIED
         /// </summary>
         [EnumMember(Value = "FAILED_CREDITS_APPLIED")]
-        FAILEDCREDITSAPPLIED = 2,
-
-        /// <summary>
-        /// Enum INITIATED for value: INITIATED
-        /// </summary>
-        [EnumMember(Value = "INITIATED")]
-        INITIATED = 3,
+        FAILEDCREDITSAPPLIED = 3,
 
         /// <summary>
         /// Enum INPROGRESS for value: IN_PROGRESS
@@ -49,10 +49,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         INPROGRESS = 4,
 
         /// <summary>
-        /// Enum PAYEEUNDERREVIEW for value: PAYEE_UNDER_REVIEW
+        /// Enum PENDINGUSERAPPROVAL for value: PENDING_USER_APPROVAL
         /// </summary>
-        [EnumMember(Value = "PAYEE_UNDER_REVIEW")]
-        PAYEEUNDERREVIEW = 5,
+        [EnumMember(Value = "PENDING_USER_APPROVAL")]
+        PENDINGUSERAPPROVAL = 5,
 
         /// <summary>
         /// Enum SUCCESSFUL for value: SUCCESSFUL

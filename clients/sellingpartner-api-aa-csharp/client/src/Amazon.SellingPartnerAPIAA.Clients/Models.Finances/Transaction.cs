@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// All the information related to a transaction.
     /// </summary>
     [DataContract]
-    public partial class Transaction :  IEquatable<Transaction>, IValidatableObject
+    public partial class Transaction : IEquatable<Transaction>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Transaction" /> class.
@@ -37,15 +31,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="relatedIdentifiers">Identifiers related to the transaction, such as order and shipment IDs..</param>
         /// <param name="transactionType">The type of transaction.  **Possible value:** &#x60;Shipment&#x60;.</param>
         /// <param name="transactionId">The unique identifier of the transaction..</param>
-        /// <param name="transactionStatus">The status of the transaction.   **Possible values:**  * &#x60;Deferred&#x60; * &#x60;Released&#x60;.</param>
+        /// <param name="transactionStatus">The status of the transaction.  **Possible values:**  * &#x60;DEFERRED&#x60;: the transaction is currently deferred. * &#x60;RELEASED&#x60;: the transaction is currently released. * &#x60;DEFERRED_RELEASED&#x60;: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to &#x60;DEFERRED_RELEASED&#x60; when the transaction is released..</param>
         /// <param name="description">Describes the reasons for the transaction.  **Example:** &#39;Order Payment&#39;, &#39;Refund Order&#39;.</param>
         /// <param name="postedDate">The date and time when the transaction was posted..</param>
         /// <param name="totalAmount">The total amount of money in the transaction..</param>
         /// <param name="marketplaceDetails">Information about the marketplace where the transaction occurred..</param>
         /// <param name="items">Additional information about the items in the transaction..</param>
         /// <param name="contexts">Additional Information about the transaction..</param>
-        /// <param name="breakdowns">A list of breakdowns that provide details on how the total amount is calculated for the transaction..</param>
-        public Transaction(SellingPartnerMetadata sellingPartnerMetadata = default, RelatedIdentifiers relatedIdentifiers = default, string transactionType = default, string transactionId = default, string transactionStatus = default, string description = default, DateTime? postedDate = default, Currency totalAmount = default, MarketplaceDetails marketplaceDetails = default, Items items = default, Contexts contexts = default, Breakdowns breakdowns = default)
+        /// <param name="breakdowns">A list of breakdowns that detail how the total amount is calculated for the transaction..</param>
+        public Transaction(SellingPartnerMetadata sellingPartnerMetadata = default, RelatedIdentifiers relatedIdentifiers = default, string transactionType = default, string transactionId = default, string transactionStatus = default, string description = default, DateTime? postedDate = default, Currency totalAmount = default, MarketplaceDetails marketplaceDetails = default, Items items = default, Contexts contexts = default, List<Breakdown> breakdowns = default)
         {
             this.SellingPartnerMetadata = sellingPartnerMetadata;
             this.RelatedIdentifiers = relatedIdentifiers;
@@ -60,90 +54,90 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             this.Contexts = contexts;
             this.Breakdowns = breakdowns;
         }
-        
+
         /// <summary>
         /// Metadata that describes the seller.
         /// </summary>
         /// <value>Metadata that describes the seller.</value>
-        [DataMember(Name="sellingPartnerMetadata", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingPartnerMetadata", EmitDefaultValue = false)]
         public SellingPartnerMetadata SellingPartnerMetadata { get; set; }
 
         /// <summary>
         /// Identifiers related to the transaction, such as order and shipment IDs.
         /// </summary>
         /// <value>Identifiers related to the transaction, such as order and shipment IDs.</value>
-        [DataMember(Name="relatedIdentifiers", EmitDefaultValue=false)]
+        [DataMember(Name = "relatedIdentifiers", EmitDefaultValue = false)]
         public RelatedIdentifiers RelatedIdentifiers { get; set; }
 
         /// <summary>
         /// The type of transaction.  **Possible value:** &#x60;Shipment&#x60;
         /// </summary>
         /// <value>The type of transaction.  **Possible value:** &#x60;Shipment&#x60;</value>
-        [DataMember(Name="transactionType", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionType", EmitDefaultValue = false)]
         public string TransactionType { get; set; }
 
         /// <summary>
         /// The unique identifier of the transaction.
         /// </summary>
         /// <value>The unique identifier of the transaction.</value>
-        [DataMember(Name="transactionId", EmitDefaultValue=false)]
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string TransactionId { get; set; }
 
         /// <summary>
-        /// The status of the transaction.   **Possible values:**  * &#x60;Deferred&#x60; * &#x60;Released&#x60;
+        /// The status of the transaction.  **Possible values:**  * &#x60;DEFERRED&#x60;: the transaction is currently deferred. * &#x60;RELEASED&#x60;: the transaction is currently released. * &#x60;DEFERRED_RELEASED&#x60;: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to &#x60;DEFERRED_RELEASED&#x60; when the transaction is released.
         /// </summary>
-        /// <value>The status of the transaction.   **Possible values:**  * &#x60;Deferred&#x60; * &#x60;Released&#x60;</value>
-        [DataMember(Name="transactionStatus", EmitDefaultValue=false)]
+        /// <value>The status of the transaction.  **Possible values:**  * &#x60;DEFERRED&#x60;: the transaction is currently deferred. * &#x60;RELEASED&#x60;: the transaction is currently released. * &#x60;DEFERRED_RELEASED&#x60;: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to &#x60;DEFERRED_RELEASED&#x60; when the transaction is released.</value>
+        [DataMember(Name = "transactionStatus", EmitDefaultValue = false)]
         public string TransactionStatus { get; set; }
 
         /// <summary>
         /// Describes the reasons for the transaction.  **Example:** &#39;Order Payment&#39;, &#39;Refund Order&#39;
         /// </summary>
         /// <value>Describes the reasons for the transaction.  **Example:** &#39;Order Payment&#39;, &#39;Refund Order&#39;</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// The date and time when the transaction was posted.
         /// </summary>
         /// <value>The date and time when the transaction was posted.</value>
-        [DataMember(Name="postedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "postedDate", EmitDefaultValue = false)]
         public DateTime? PostedDate { get; set; }
 
         /// <summary>
         /// The total amount of money in the transaction.
         /// </summary>
         /// <value>The total amount of money in the transaction.</value>
-        [DataMember(Name="totalAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "totalAmount", EmitDefaultValue = false)]
         public Currency TotalAmount { get; set; }
 
         /// <summary>
         /// Information about the marketplace where the transaction occurred.
         /// </summary>
         /// <value>Information about the marketplace where the transaction occurred.</value>
-        [DataMember(Name="marketplaceDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceDetails", EmitDefaultValue = false)]
         public MarketplaceDetails MarketplaceDetails { get; set; }
 
         /// <summary>
         /// Additional information about the items in the transaction.
         /// </summary>
         /// <value>Additional information about the items in the transaction.</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public Items Items { get; set; }
 
         /// <summary>
         /// Additional Information about the transaction.
         /// </summary>
         /// <value>Additional Information about the transaction.</value>
-        [DataMember(Name="contexts", EmitDefaultValue=false)]
+        [DataMember(Name = "contexts", EmitDefaultValue = false)]
         public Contexts Contexts { get; set; }
 
         /// <summary>
-        /// A list of breakdowns that provide details on how the total amount is calculated for the transaction.
+        /// A list of breakdowns that detail how the total amount is calculated for the transaction.
         /// </summary>
-        /// <value>A list of breakdowns that provide details on how the total amount is calculated for the transaction.</value>
-        [DataMember(Name="breakdowns", EmitDefaultValue=false)]
-        public Breakdowns Breakdowns { get; set; }
+        /// <value>A list of breakdowns that detail how the total amount is calculated for the transaction.</value>
+        [DataMember(Name = "breakdowns", EmitDefaultValue = false)]
+        public List<Breakdown> Breakdowns { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -168,7 +162,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -198,66 +192,66 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellingPartnerMetadata == input.SellingPartnerMetadata ||
                     (this.SellingPartnerMetadata != null &&
                     this.SellingPartnerMetadata.Equals(input.SellingPartnerMetadata))
-                ) && 
+                ) &&
                 (
                     this.RelatedIdentifiers == input.RelatedIdentifiers ||
                     (this.RelatedIdentifiers != null &&
                     this.RelatedIdentifiers.Equals(input.RelatedIdentifiers))
-                ) && 
+                ) &&
                 (
                     this.TransactionType == input.TransactionType ||
                     (this.TransactionType != null &&
                     this.TransactionType.Equals(input.TransactionType))
-                ) && 
+                ) &&
                 (
                     this.TransactionId == input.TransactionId ||
                     (this.TransactionId != null &&
                     this.TransactionId.Equals(input.TransactionId))
-                ) && 
+                ) &&
                 (
                     this.TransactionStatus == input.TransactionStatus ||
                     (this.TransactionStatus != null &&
                     this.TransactionStatus.Equals(input.TransactionStatus))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.PostedDate == input.PostedDate ||
                     (this.PostedDate != null &&
                     this.PostedDate.Equals(input.PostedDate))
-                ) && 
+                ) &&
                 (
                     this.TotalAmount == input.TotalAmount ||
                     (this.TotalAmount != null &&
                     this.TotalAmount.Equals(input.TotalAmount))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceDetails == input.MarketplaceDetails ||
                     (this.MarketplaceDetails != null &&
                     this.MarketplaceDetails.Equals(input.MarketplaceDetails))
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     (this.Items != null &&
                     this.Items.Equals(input.Items))
-                ) && 
+                ) &&
                 (
                     this.Contexts == input.Contexts ||
                     (this.Contexts != null &&
                     this.Contexts.Equals(input.Contexts))
-                ) && 
+                ) &&
                 (
                     this.Breakdowns == input.Breakdowns ||
-                    (this.Breakdowns != null &&
-                    this.Breakdowns.Equals(input.Breakdowns))
+                    this.Breakdowns != null &&
+                    this.Breakdowns.SequenceEqual(input.Breakdowns)
                 );
         }
 

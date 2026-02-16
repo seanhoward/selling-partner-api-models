@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Amazon.SellingPartnerAPIAA.Clients.Client;
-using Amazon.SellingPartnerAPIAA.Clients.Models.Orders;
+using Amazon.SellingPartnerAPIAA.Clients.Models.OrdersV0;
 using RestSharp;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.API

@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Additional information related to Amazon Pay.
     /// </summary>
     [DataContract]
-    public partial class AmazonPayContext :  IEquatable<AmazonPayContext>, IValidatableObject
+    public partial class AmazonPayContext : IEquatable<AmazonPayContext>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AmazonPayContext" /> class.
@@ -42,26 +35,26 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             this.OrderType = orderType;
             this.Channel = channel;
         }
-        
+
         /// <summary>
         /// The name of the store that is related to the transaction.
         /// </summary>
         /// <value>The name of the store that is related to the transaction.</value>
-        [DataMember(Name="storeName", EmitDefaultValue=false)]
+        [DataMember(Name = "storeName", EmitDefaultValue = false)]
         public string StoreName { get; set; }
 
         /// <summary>
         /// The transaction&#39;s order type.
         /// </summary>
         /// <value>The transaction&#39;s order type.</value>
-        [DataMember(Name="orderType", EmitDefaultValue=false)]
+        [DataMember(Name = "orderType", EmitDefaultValue = false)]
         public string OrderType { get; set; }
 
         /// <summary>
         /// Channel details of related transaction.
         /// </summary>
         /// <value>Channel details of related transaction.</value>
-        [DataMember(Name="channel", EmitDefaultValue=false)]
+        [DataMember(Name = "channel", EmitDefaultValue = false)]
         public string Channel { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StoreName == input.StoreName ||
                     (this.StoreName != null &&
                     this.StoreName.Equals(input.StoreName))
-                ) && 
+                ) &&
                 (
                     this.OrderType == input.OrderType ||
                     (this.OrderType != null &&
                     this.OrderType.Equals(input.OrderType))
-                ) && 
+                ) &&
                 (
                     this.Channel == input.Channel ||
                     (this.Channel != null &&

@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.MoneyType
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.MoneyType
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -19,15 +19,15 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// Details of the bank account involved in transaction.
+    /// Details of the bank account involved in the transaction.
     /// </summary>
     [DataContract]
     public partial class TransactionAccount : IEquatable<TransactionAccount>, IValidatableObject
     {
         /// <summary>
-        /// The format for the bank account number.
+        /// Bank account format 
         /// </summary>
-        /// <value>The format for the bank account number.</value>
+        /// <value>Bank account format </value>
         [DataMember(Name = "bankAccountNumberFormat", EmitDefaultValue = false)]
         public BankAccountNumberFormat BankAccountNumberFormat { get; set; }
         /// <summary>
@@ -38,24 +38,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionAccount" /> class.
         /// </summary>
-        /// <param name="accountId">The unique identifier provided by Amazon to identify the account..</param>
-        /// <param name="bankAccountHolderName">The account holder&#39;s name. (required).</param>
-        /// <param name="bankName">The name of the bank. (required).</param>
-        /// <param name="bankAccountNumberFormat">The format for the bank account number. (required).</param>
-        /// <param name="bankAccountNumberTail">The last three digits of the bank account number..</param>
-        /// <param name="bankAccountCountryCode">The two-digit country code, in ISO 3166 format. This field is optional for &#x60;transactionSourceAccount&#x60;, but is mandatory for &#x60;transactionDestinationAccount&#x60;..</param>
-        /// <param name="bankAccountCurrency">The currency code in ISO 4217 format. (required).</param>
+        /// <param name="accountId">The unique identifier provided by Amazon to identify the account .</param>
+        /// <param name="bankAccountHolderName">BankAccount holder&#39;s name .</param>
+        /// <param name="bankName">The name of the bank  (required).</param>
+        /// <param name="bankAccountNumberFormat">Bank account format  (required).</param>
+        /// <param name="bankAccountNumberTail">Last 3 digit of the bank account number .</param>
+        /// <param name="bankAccountCountryCode">The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount .</param>
+        /// <param name="bankAccountCurrency">The currency code in ISO 4217 format  (required).</param>
         public TransactionAccount(string accountId = default, string bankAccountHolderName = default, string bankName = default, BankAccountNumberFormat bankAccountNumberFormat = default, string bankAccountNumberTail = default, string bankAccountCountryCode = default, string bankAccountCurrency = default)
         {
-            // to ensure "bankAccountHolderName" is required (not null)
-            if (bankAccountHolderName == null)
-            {
-                throw new InvalidDataException("bankAccountHolderName is a required property for TransactionAccount and cannot be null");
-            }
-            else
-            {
-                this.BankAccountHolderName = bankAccountHolderName;
-            }
             // to ensure "bankName" is required (not null)
             if (bankName == null)
             {
@@ -84,50 +75,51 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
                 this.BankAccountCurrency = bankAccountCurrency;
             }
             this.AccountId = accountId;
+            this.BankAccountHolderName = bankAccountHolderName;
             this.BankAccountNumberTail = bankAccountNumberTail;
             this.BankAccountCountryCode = bankAccountCountryCode;
         }
 
         /// <summary>
-        /// The unique identifier provided by Amazon to identify the account.
+        /// The unique identifier provided by Amazon to identify the account 
         /// </summary>
-        /// <value>The unique identifier provided by Amazon to identify the account.</value>
+        /// <value>The unique identifier provided by Amazon to identify the account </value>
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
 
         /// <summary>
-        /// The account holder&#39;s name.
+        /// BankAccount holder&#39;s name 
         /// </summary>
-        /// <value>The account holder&#39;s name.</value>
+        /// <value>BankAccount holder&#39;s name </value>
         [DataMember(Name = "bankAccountHolderName", EmitDefaultValue = false)]
         public string BankAccountHolderName { get; set; }
 
         /// <summary>
-        /// The name of the bank.
+        /// The name of the bank 
         /// </summary>
-        /// <value>The name of the bank.</value>
+        /// <value>The name of the bank </value>
         [DataMember(Name = "bankName", EmitDefaultValue = false)]
         public string BankName { get; set; }
 
 
         /// <summary>
-        /// The last three digits of the bank account number.
+        /// Last 3 digit of the bank account number 
         /// </summary>
-        /// <value>The last three digits of the bank account number.</value>
+        /// <value>Last 3 digit of the bank account number </value>
         [DataMember(Name = "bankAccountNumberTail", EmitDefaultValue = false)]
         public string BankAccountNumberTail { get; set; }
 
         /// <summary>
-        /// The two-digit country code, in ISO 3166 format. This field is optional for &#x60;transactionSourceAccount&#x60;, but is mandatory for &#x60;transactionDestinationAccount&#x60;.
+        /// The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount 
         /// </summary>
-        /// <value>The two-digit country code, in ISO 3166 format. This field is optional for &#x60;transactionSourceAccount&#x60;, but is mandatory for &#x60;transactionDestinationAccount&#x60;.</value>
+        /// <value>The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount </value>
         [DataMember(Name = "bankAccountCountryCode", EmitDefaultValue = false)]
         public string BankAccountCountryCode { get; set; }
 
         /// <summary>
-        /// The currency code in ISO 4217 format.
+        /// The currency code in ISO 4217 format 
         /// </summary>
-        /// <value>The currency code in ISO 4217 format.</value>
+        /// <value>The currency code in ISO 4217 format </value>
         [DataMember(Name = "bankAccountCurrency", EmitDefaultValue = false)]
         public string BankAccountCurrency { get; set; }
 

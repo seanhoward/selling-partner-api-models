@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes.Error
+# Amazon.SellingPartnerAPIAA.Clients.Models.VendorTransactionStatus.Error
 ## Properties
 
 Name | Type | Description | Notes

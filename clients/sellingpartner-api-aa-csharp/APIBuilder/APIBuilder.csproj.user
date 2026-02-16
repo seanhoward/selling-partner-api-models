@@ -4,6 +4,6 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>Listings Items</ActiveDebugProfile>
+    <ActiveDebugProfile>APIBuilder</ActiveDebugProfile>
   </PropertyGroup>
 </Project>

@@ -1,0 +1,10 @@
+# Amazon.SellingPartnerAPIAA.Clients.Models.Shipping.LabelSpecification
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**LabelFormat** | **string** | The format of the label. Enum of PNG only for now. | 
+**LabelStockSize** | **string** | The label stock size specification in length and height. Enum of 4x6 only for now. | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

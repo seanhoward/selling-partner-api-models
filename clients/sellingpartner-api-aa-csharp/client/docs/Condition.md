@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.Condition
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.Condition
 ## Properties
 
 Name | Type | Description | Notes

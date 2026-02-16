@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
     /// <summary>
-    /// Error
+    /// An object representing an error that occurred during the API operation.
     /// </summary>
     [DataContract]
     public partial class Error : IEquatable<Error>, IValidatableObject

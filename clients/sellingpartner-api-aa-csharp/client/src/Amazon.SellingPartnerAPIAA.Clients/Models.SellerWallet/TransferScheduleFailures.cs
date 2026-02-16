@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// The time of and reason for the transfer schedule failure.
+    /// Specifies the balance amount in the Amazon SW bank account
     /// </summary>
     [DataContract]
     public partial class TransferScheduleFailures : IEquatable<TransferScheduleFailures>, IValidatableObject
@@ -32,8 +32,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferScheduleFailures" /> class.
         /// </summary>
-        /// <param name="transferScheduleFailureDate">The transfer schedule failure date. (required).</param>
-        /// <param name="transferScheduleFailureReason">The reason listed for the failure of the transfer schedule. (required).</param>
+        /// <param name="transferScheduleFailureDate">The transfer schedule cancellation date  (required).</param>
+        /// <param name="transferScheduleFailureReason">The statement/reasoning listed for the cancellation of the transfer schedule  (required).</param>
         public TransferScheduleFailures(DateTime? transferScheduleFailureDate = default, string transferScheduleFailureReason = default)
         {
             // to ensure "transferScheduleFailureDate" is required (not null)
@@ -57,16 +57,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         }
 
         /// <summary>
-        /// The transfer schedule failure date.
+        /// The transfer schedule cancellation date 
         /// </summary>
-        /// <value>The transfer schedule failure date.</value>
+        /// <value>The transfer schedule cancellation date </value>
         [DataMember(Name = "transferScheduleFailureDate", EmitDefaultValue = false)]
         public DateTime? TransferScheduleFailureDate { get; set; }
 
         /// <summary>
-        /// The reason listed for the failure of the transfer schedule.
+        /// The statement/reasoning listed for the cancellation of the transfer schedule 
         /// </summary>
-        /// <value>The reason listed for the failure of the transfer schedule.</value>
+        /// <value>The statement/reasoning listed for the cancellation of the transfer schedule </value>
         [DataMember(Name = "transferScheduleFailureReason", EmitDefaultValue = false)]
         public string TransferScheduleFailureReason { get; set; }
 

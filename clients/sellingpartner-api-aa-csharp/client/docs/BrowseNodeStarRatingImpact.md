@@ -1,0 +1,9 @@
+# Amazon.SellingPartnerAPIAA.Clients.Models.CustomerFeedback.BrowseNodeStarRatingImpact
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**AllProducts** | **float?** | The effect of the topic on the star rating for all products in this browse node. This value can be positive or negative. | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

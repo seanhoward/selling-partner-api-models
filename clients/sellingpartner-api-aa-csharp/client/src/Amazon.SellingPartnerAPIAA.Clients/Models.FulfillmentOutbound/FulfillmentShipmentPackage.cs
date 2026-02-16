@@ -35,10 +35,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <param name="packageNumber">Identifies a package in a shipment. (required).</param>
         /// <param name="carrierCode">Identifies the carrier who will deliver the shipment to the recipient. (required).</param>
         /// <param name="trackingNumber">The tracking number, if provided, can be used to obtain tracking and delivery information..</param>
+        /// <param name="amazonFulfillmentTrackingNumber">The Amazon fulfillment tracking number, if provided, can be used to obtain tracking and delivery information..</param>
         /// <param name="estimatedArrivalDate">The estimated arrival date and time of the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format..</param>
         /// <param name="lockerDetails">The locker details, if provided can be used to access locker delivery box..</param>
         /// <param name="deliveryInformation">The delivery information for the package. This information is available after the package is delivered..</param>
-        public FulfillmentShipmentPackage(int? packageNumber = default, string carrierCode = default, string trackingNumber = default, DateTime? estimatedArrivalDate = default, LockerDetails lockerDetails = default, DeliveryInformation deliveryInformation = default)
+        public FulfillmentShipmentPackage(int? packageNumber = default, string carrierCode = default, string trackingNumber = default, string amazonFulfillmentTrackingNumber = default, DateTime? estimatedArrivalDate = default, LockerDetails lockerDetails = default, DeliveryInformation deliveryInformation = default)
         {
             // to ensure "packageNumber" is required (not null)
             if (packageNumber == null)
@@ -59,6 +60,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                 this.CarrierCode = carrierCode;
             }
             this.TrackingNumber = trackingNumber;
+            this.AmazonFulfillmentTrackingNumber = amazonFulfillmentTrackingNumber;
             this.EstimatedArrivalDate = estimatedArrivalDate;
             this.LockerDetails = lockerDetails;
             this.DeliveryInformation = deliveryInformation;
@@ -84,6 +86,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <value>The tracking number, if provided, can be used to obtain tracking and delivery information.</value>
         [DataMember(Name = "trackingNumber", EmitDefaultValue = false)]
         public string TrackingNumber { get; set; }
+
+        /// <summary>
+        /// The Amazon fulfillment tracking number, if provided, can be used to obtain tracking and delivery information.
+        /// </summary>
+        /// <value>The Amazon fulfillment tracking number, if provided, can be used to obtain tracking and delivery information.</value>
+        [DataMember(Name = "amazonFulfillmentTrackingNumber", EmitDefaultValue = false)]
+        public string AmazonFulfillmentTrackingNumber { get; set; }
 
         /// <summary>
         /// The estimated arrival date and time of the package. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
@@ -117,6 +126,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
             sb.Append("  PackageNumber: ").Append(PackageNumber).Append("\n");
             sb.Append("  CarrierCode: ").Append(CarrierCode).Append("\n");
             sb.Append("  TrackingNumber: ").Append(TrackingNumber).Append("\n");
+            sb.Append("  AmazonFulfillmentTrackingNumber: ").Append(AmazonFulfillmentTrackingNumber).Append("\n");
             sb.Append("  EstimatedArrivalDate: ").Append(EstimatedArrivalDate).Append("\n");
             sb.Append("  LockerDetails: ").Append(LockerDetails).Append("\n");
             sb.Append("  DeliveryInformation: ").Append(DeliveryInformation).Append("\n");
@@ -170,6 +180,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                     this.TrackingNumber.Equals(input.TrackingNumber))
                 ) &&
                 (
+                    this.AmazonFulfillmentTrackingNumber == input.AmazonFulfillmentTrackingNumber ||
+                    (this.AmazonFulfillmentTrackingNumber != null &&
+                    this.AmazonFulfillmentTrackingNumber.Equals(input.AmazonFulfillmentTrackingNumber))
+                ) &&
+                (
                     this.EstimatedArrivalDate == input.EstimatedArrivalDate ||
                     (this.EstimatedArrivalDate != null &&
                     this.EstimatedArrivalDate.Equals(input.EstimatedArrivalDate))
@@ -201,6 +216,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
                     hashCode = hashCode * 59 + this.CarrierCode.GetHashCode();
                 if (this.TrackingNumber != null)
                     hashCode = hashCode * 59 + this.TrackingNumber.GetHashCode();
+                if (this.AmazonFulfillmentTrackingNumber != null)
+                    hashCode = hashCode * 59 + this.AmazonFulfillmentTrackingNumber.GetHashCode();
                 if (this.EstimatedArrivalDate != null)
                     hashCode = hashCode * 59 + this.EstimatedArrivalDate.GetHashCode();
                 if (this.LockerDetails != null)

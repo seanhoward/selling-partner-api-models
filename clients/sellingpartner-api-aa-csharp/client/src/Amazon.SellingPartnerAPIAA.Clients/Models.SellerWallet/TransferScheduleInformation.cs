@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -18,24 +18,24 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// Mandatory information for initiating a schedule transfer.
+    /// Parameters containing information required for initiating a schedule transfer 
     /// </summary>
     [DataContract]
     public partial class TransferScheduleInformation : IEquatable<TransferScheduleInformation>, IValidatableObject
     {
         /// <summary>
-        /// The type of schedule.
+        /// Field to specify type of the transfer being scheduled
         /// </summary>
-        /// <value>The type of schedule.</value>
+        /// <value>Field to specify type of the transfer being scheduled</value>
         [DataMember(Name = "scheduleType", EmitDefaultValue = false)]
         public ScheduleTransferType? ScheduleType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferScheduleInformation" /> class.
         /// </summary>
-        /// <param name="scheduleStartDate">The start date of the scheduled transfer..</param>
-        /// <param name="scheduleEndDate">The end date of the scheduled transfer..</param>
-        /// <param name="scheduleExpression">How often the scheduled transfer repeats..</param>
-        /// <param name="scheduleType">The type of schedule..</param>
+        /// <param name="scheduleStartDate">Field to specify start date of the scheduled transfer .</param>
+        /// <param name="scheduleEndDate">Field to specify end date of the scheduled transfer .</param>
+        /// <param name="scheduleExpression">Field to specify expression for how often the schedule transfer repeats. Refer to this documentation: https://docs.aws.amazon.com/scheduler/latest/APIReference/API_CreateSchedule.html .</param>
+        /// <param name="scheduleType">Field to specify type of the transfer being scheduled.</param>
         public TransferScheduleInformation(DateTime? scheduleStartDate = default, DateTime? scheduleEndDate = default, ScheduleExpression scheduleExpression = default, ScheduleTransferType? scheduleType = default)
         {
             this.ScheduleStartDate = scheduleStartDate;
@@ -45,23 +45,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         }
 
         /// <summary>
-        /// The start date of the scheduled transfer.
+        /// Field to specify start date of the scheduled transfer 
         /// </summary>
-        /// <value>The start date of the scheduled transfer.</value>
+        /// <value>Field to specify start date of the scheduled transfer </value>
         [DataMember(Name = "scheduleStartDate", EmitDefaultValue = false)]
         public DateTime? ScheduleStartDate { get; set; }
 
         /// <summary>
-        /// The end date of the scheduled transfer.
+        /// Field to specify end date of the scheduled transfer 
         /// </summary>
-        /// <value>The end date of the scheduled transfer.</value>
+        /// <value>Field to specify end date of the scheduled transfer </value>
         [DataMember(Name = "scheduleEndDate", EmitDefaultValue = false)]
         public DateTime? ScheduleEndDate { get; set; }
 
         /// <summary>
-        /// How often the scheduled transfer repeats.
+        /// Field to specify expression for how often the schedule transfer repeats. Refer to this documentation: https://docs.aws.amazon.com/scheduler/latest/APIReference/API_CreateSchedule.html 
         /// </summary>
-        /// <value>How often the scheduled transfer repeats.</value>
+        /// <value>Field to specify expression for how often the schedule transfer repeats. Refer to this documentation: https://docs.aws.amazon.com/scheduler/latest/APIReference/API_CreateSchedule.html </value>
         [DataMember(Name = "scheduleExpression", EmitDefaultValue = false)]
         public ScheduleExpression ScheduleExpression { get; set; }
 

@@ -165,7 +165,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            //foreach(var x in BaseValidate(validationContext)) yield return x;
+            //foreach (var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

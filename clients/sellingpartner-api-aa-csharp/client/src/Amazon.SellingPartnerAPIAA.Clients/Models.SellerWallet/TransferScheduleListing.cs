@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -20,7 +20,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// A list of transfer schedules.
+    /// Struct that holds collection of transfer schedules.
     /// </summary>
     [DataContract]
     public partial class TransferScheduleListing : IEquatable<TransferScheduleListing>, IValidatableObject
@@ -33,8 +33,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferScheduleListing" /> class.
         /// </summary>
-        /// <param name="nextPageToken">A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages..</param>
-        /// <param name="transferSchedules">A list of transfer schedules. (required).</param>
+        /// <param name="nextPageToken">If present, use this pagination token to retrieve the next page of supply sources, if not provided the API will return same response. The field will only be provided when the list is greater than 100..</param>
+        /// <param name="transferSchedules">Collection that holds list of Transfer Schedules  (required).</param>
         public TransferScheduleListing(string nextPageToken = default, List<TransferSchedule> transferSchedules = default)
         {
             // to ensure "transferSchedules" is required (not null)
@@ -50,16 +50,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         }
 
         /// <summary>
-        /// A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages.
+        /// If present, use this pagination token to retrieve the next page of supply sources, if not provided the API will return same response. The field will only be provided when the list is greater than 100.
         /// </summary>
-        /// <value>A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages.</value>
+        /// <value>If present, use this pagination token to retrieve the next page of supply sources, if not provided the API will return same response. The field will only be provided when the list is greater than 100.</value>
         [DataMember(Name = "nextPageToken", EmitDefaultValue = false)]
         public string NextPageToken { get; set; }
 
         /// <summary>
-        /// A list of transfer schedules.
+        /// Collection that holds list of Transfer Schedules 
         /// </summary>
-        /// <value>A list of transfer schedules.</value>
+        /// <value>Collection that holds list of Transfer Schedules </value>
         [DataMember(Name = "transferSchedules", EmitDefaultValue = false)]
         public List<TransferSchedule> TransferSchedules { get; set; }
 

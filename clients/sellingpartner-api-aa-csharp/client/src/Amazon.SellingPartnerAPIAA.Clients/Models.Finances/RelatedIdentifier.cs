@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,7 +22,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Related business identifier of the transaction.
     /// </summary>
     [DataContract]
-    public partial class RelatedIdentifier :  IEquatable<RelatedIdentifier>, IValidatableObject
+    public partial class RelatedIdentifier : IEquatable<RelatedIdentifier>, IValidatableObject
     {
         /// <summary>
         /// An enumerated set of related business identifier names.
@@ -37,61 +31,73 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelatedIdentifierNameEnum
         {
-            
+
             /// <summary>
             /// Enum ORDERID for value: ORDER_ID
             /// </summary>
             [EnumMember(Value = "ORDER_ID")]
             ORDERID = 1,
-            
+
             /// <summary>
             /// Enum SHIPMENTID for value: SHIPMENT_ID
             /// </summary>
             [EnumMember(Value = "SHIPMENT_ID")]
             SHIPMENTID = 2,
-            
+
             /// <summary>
-            /// Enum EVENTGROUPID for value: EVENT_GROUP_ID
+            /// Enum FINANCIALEVENTGROUPID for value: FINANCIAL_EVENT_GROUP_ID
             /// </summary>
-            [EnumMember(Value = "EVENT_GROUP_ID")]
-            EVENTGROUPID = 3,
-            
+            [EnumMember(Value = "FINANCIAL_EVENT_GROUP_ID")]
+            FINANCIALEVENTGROUPID = 3,
+
             /// <summary>
             /// Enum REFUNDID for value: REFUND_ID
             /// </summary>
             [EnumMember(Value = "REFUND_ID")]
             REFUNDID = 4,
-            
+
             /// <summary>
             /// Enum INVOICEID for value: INVOICE_ID
             /// </summary>
             [EnumMember(Value = "INVOICE_ID")]
             INVOICEID = 5,
-            
+
             /// <summary>
             /// Enum DISBURSEMENTID for value: DISBURSEMENT_ID
             /// </summary>
             [EnumMember(Value = "DISBURSEMENT_ID")]
             DISBURSEMENTID = 6,
-            
+
             /// <summary>
             /// Enum TRANSFERID for value: TRANSFER_ID
             /// </summary>
             [EnumMember(Value = "TRANSFER_ID")]
             TRANSFERID = 7,
-            
+
             /// <summary>
             /// Enum DEFERREDTRANSACTIONID for value: DEFERRED_TRANSACTION_ID
             /// </summary>
             [EnumMember(Value = "DEFERRED_TRANSACTION_ID")]
-            DEFERREDTRANSACTIONID = 8
+            DEFERREDTRANSACTIONID = 8,
+
+            /// <summary>
+            /// Enum RELEASETRANSACTIONID for value: RELEASE_TRANSACTION_ID
+            /// </summary>
+            [EnumMember(Value = "RELEASE_TRANSACTION_ID")]
+            RELEASETRANSACTIONID = 9,
+
+            /// <summary>
+            /// Enum SETTLEMENTID for value: SETTLEMENT_ID
+            /// </summary>
+            [EnumMember(Value = "SETTLEMENT_ID")]
+            SETTLEMENTID = 10
         }
 
         /// <summary>
         /// An enumerated set of related business identifier names.
         /// </summary>
         /// <value>An enumerated set of related business identifier names.</value>
-        [DataMember(Name="relatedIdentifierName", EmitDefaultValue=false)]
+        [DataMember(Name = "relatedIdentifierName", EmitDefaultValue = false)]
         public RelatedIdentifierNameEnum? RelatedIdentifierName { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="RelatedIdentifier" /> class.
@@ -103,13 +109,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             this.RelatedIdentifierName = relatedIdentifierName;
             this.RelatedIdentifierValue = relatedIdentifierValue;
         }
-        
+
 
         /// <summary>
         /// Corresponding value of &#x60;RelatedIdentifierName&#x60;.
         /// </summary>
         /// <value>Corresponding value of &#x60;RelatedIdentifierName&#x60;.</value>
-        [DataMember(Name="relatedIdentifierValue", EmitDefaultValue=false)]
+        [DataMember(Name = "relatedIdentifierValue", EmitDefaultValue = false)]
         public string RelatedIdentifierValue { get; set; }
 
         /// <summary>
@@ -125,7 +131,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -155,12 +161,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.RelatedIdentifierName == input.RelatedIdentifierName ||
                     (this.RelatedIdentifierName != null &&
                     this.RelatedIdentifierName.Equals(input.RelatedIdentifierName))
-                ) && 
+                ) &&
                 (
                     this.RelatedIdentifierValue == input.RelatedIdentifierValue ||
                     (this.RelatedIdentifierValue != null &&

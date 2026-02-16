@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.FeaturedOfferExpectedPriceResultList
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.FeaturedOfferExpectedPriceResultList
 ## Properties
 
 Name | Type | Description | Notes

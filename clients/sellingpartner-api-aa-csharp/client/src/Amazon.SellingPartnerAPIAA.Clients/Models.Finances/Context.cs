@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,12 +22,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Additional Information about the item.
     /// </summary>
     [DataContract]
-    public partial class Context :  IEquatable<Context>, IValidatableObject
+    public partial class Context : IEquatable<Context>, IValidatableObject
     {
+        /// <summary>
+        /// The store name associated with the transaction.
+        /// </summary>
+        /// <value>The store name associated with the transaction.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StoreNameEnum
+        {
+
+            /// <summary>
+            /// Enum AMAZONHAUL for value: AMAZON_HAUL
+            /// </summary>
+            [EnumMember(Value = "AMAZON_HAUL")]
+            AMAZONHAUL = 1
+        }
+
+        /// <summary>
+        /// The store name associated with the transaction.
+        /// </summary>
+        /// <value>The store name associated with the transaction.</value>
+        [DataMember(Name = "storeName", EmitDefaultValue = false)]
+        public StoreNameEnum? StoreName { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Context" /> class.
         /// </summary>
-        /// <param name="storeName">The name of the store that is related to the transaction..</param>
+        /// <param name="storeName">The store name associated with the transaction..</param>
         /// <param name="orderType">The transaction&#39;s order type..</param>
         /// <param name="channel">Channel details of related transaction..</param>
         /// <param name="asin">The Amazon Standard Identification Number (ASIN) of the item..</param>
@@ -44,12 +59,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         /// <param name="paymentMethod">The method of payment..</param>
         /// <param name="paymentReference">The reference number of the payment..</param>
         /// <param name="paymentDate">The date of the payment..</param>
-        /// <param name="deferralReason">Deferral policy applied on the transaction.  **Examples:** &#x60;B2B&#x60;,&#x60;DD7&#x60;.</param>
+        /// <param name="deferralReason">The deferral policy applied to the transaction.  **Examples:** &#x60;B2B&#x60; (invoiced orders), &#x60;DD7&#x60; (delivery date policy).</param>
         /// <param name="maturityDate">The release date of the transaction..</param>
-        /// <param name="deferralStatus">The status of the transaction. For example, &#x60;HOLD&#x60;,&#x60;RELEASE&#x60;..</param>
         /// <param name="startTime">The start time of the transaction..</param>
         /// <param name="endTime">The end time of the transaction..</param>
-        public Context(string storeName = default, string orderType = default, string channel = default, string asin = default, string sku = default, int? quantityShipped = default, string fulfillmentNetwork = default, string paymentType = default, string paymentMethod = default, string paymentReference = default, DateTime? paymentDate = default, string deferralReason = default, DateTime? maturityDate = default, string deferralStatus = default, DateTime? startTime = default, DateTime? endTime = default)
+        public Context(StoreNameEnum? storeName = default, string orderType = default, string channel = default, string asin = default, string sku = default, int? quantityShipped = default, string fulfillmentNetwork = default, string paymentType = default, string paymentMethod = default, string paymentReference = default, DateTime? paymentDate = default, string deferralReason = default, DateTime? maturityDate = default, DateTime? startTime = default, DateTime? endTime = default)
         {
             this.StoreName = storeName;
             this.OrderType = orderType;
@@ -64,121 +78,107 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             this.PaymentDate = paymentDate;
             this.DeferralReason = deferralReason;
             this.MaturityDate = maturityDate;
-            this.DeferralStatus = deferralStatus;
             this.StartTime = startTime;
             this.EndTime = endTime;
         }
-        
-        /// <summary>
-        /// The name of the store that is related to the transaction.
-        /// </summary>
-        /// <value>The name of the store that is related to the transaction.</value>
-        [DataMember(Name="storeName", EmitDefaultValue=false)]
-        public string StoreName { get; set; }
+
 
         /// <summary>
         /// The transaction&#39;s order type.
         /// </summary>
         /// <value>The transaction&#39;s order type.</value>
-        [DataMember(Name="orderType", EmitDefaultValue=false)]
+        [DataMember(Name = "orderType", EmitDefaultValue = false)]
         public string OrderType { get; set; }
 
         /// <summary>
         /// Channel details of related transaction.
         /// </summary>
         /// <value>Channel details of related transaction.</value>
-        [DataMember(Name="channel", EmitDefaultValue=false)]
+        [DataMember(Name = "channel", EmitDefaultValue = false)]
         public string Channel { get; set; }
 
         /// <summary>
         /// The Amazon Standard Identification Number (ASIN) of the item.
         /// </summary>
         /// <value>The Amazon Standard Identification Number (ASIN) of the item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// The Stock Keeping Unit (SKU) of the item.
         /// </summary>
         /// <value>The Stock Keeping Unit (SKU) of the item.</value>
-        [DataMember(Name="sku", EmitDefaultValue=false)]
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
         /// <summary>
         /// The quantity of the item shipped.
         /// </summary>
         /// <value>The quantity of the item shipped.</value>
-        [DataMember(Name="quantityShipped", EmitDefaultValue=false)]
+        [DataMember(Name = "quantityShipped", EmitDefaultValue = false)]
         public int? QuantityShipped { get; set; }
 
         /// <summary>
         /// The fulfillment network of the item.
         /// </summary>
         /// <value>The fulfillment network of the item.</value>
-        [DataMember(Name="fulfillmentNetwork", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentNetwork", EmitDefaultValue = false)]
         public string FulfillmentNetwork { get; set; }
 
         /// <summary>
         /// The type of payment.
         /// </summary>
         /// <value>The type of payment.</value>
-        [DataMember(Name="paymentType", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentType", EmitDefaultValue = false)]
         public string PaymentType { get; set; }
 
         /// <summary>
         /// The method of payment.
         /// </summary>
         /// <value>The method of payment.</value>
-        [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentMethod", EmitDefaultValue = false)]
         public string PaymentMethod { get; set; }
 
         /// <summary>
         /// The reference number of the payment.
         /// </summary>
         /// <value>The reference number of the payment.</value>
-        [DataMember(Name="paymentReference", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentReference", EmitDefaultValue = false)]
         public string PaymentReference { get; set; }
 
         /// <summary>
         /// The date of the payment.
         /// </summary>
         /// <value>The date of the payment.</value>
-        [DataMember(Name="paymentDate", EmitDefaultValue=false)]
+        [DataMember(Name = "paymentDate", EmitDefaultValue = false)]
         public DateTime? PaymentDate { get; set; }
 
         /// <summary>
-        /// Deferral policy applied on the transaction.  **Examples:** &#x60;B2B&#x60;,&#x60;DD7&#x60;
+        /// The deferral policy applied to the transaction.  **Examples:** &#x60;B2B&#x60; (invoiced orders), &#x60;DD7&#x60; (delivery date policy)
         /// </summary>
-        /// <value>Deferral policy applied on the transaction.  **Examples:** &#x60;B2B&#x60;,&#x60;DD7&#x60;</value>
-        [DataMember(Name="deferralReason", EmitDefaultValue=false)]
+        /// <value>The deferral policy applied to the transaction.  **Examples:** &#x60;B2B&#x60; (invoiced orders), &#x60;DD7&#x60; (delivery date policy)</value>
+        [DataMember(Name = "deferralReason", EmitDefaultValue = false)]
         public string DeferralReason { get; set; }
 
         /// <summary>
         /// The release date of the transaction.
         /// </summary>
         /// <value>The release date of the transaction.</value>
-        [DataMember(Name="maturityDate", EmitDefaultValue=false)]
+        [DataMember(Name = "maturityDate", EmitDefaultValue = false)]
         public DateTime? MaturityDate { get; set; }
-
-        /// <summary>
-        /// The status of the transaction. For example, &#x60;HOLD&#x60;,&#x60;RELEASE&#x60;.
-        /// </summary>
-        /// <value>The status of the transaction. For example, &#x60;HOLD&#x60;,&#x60;RELEASE&#x60;.</value>
-        [DataMember(Name="deferralStatus", EmitDefaultValue=false)]
-        public string DeferralStatus { get; set; }
 
         /// <summary>
         /// The start time of the transaction.
         /// </summary>
         /// <value>The start time of the transaction.</value>
-        [DataMember(Name="startTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startTime", EmitDefaultValue = false)]
         public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// The end time of the transaction.
         /// </summary>
         /// <value>The end time of the transaction.</value>
-        [DataMember(Name="endTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endTime", EmitDefaultValue = false)]
         public DateTime? EndTime { get; set; }
 
         /// <summary>
@@ -202,13 +202,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("  PaymentDate: ").Append(PaymentDate).Append("\n");
             sb.Append("  DeferralReason: ").Append(DeferralReason).Append("\n");
             sb.Append("  MaturityDate: ").Append(MaturityDate).Append("\n");
-            sb.Append("  DeferralStatus: ").Append(DeferralStatus).Append("\n");
             sb.Append("  StartTime: ").Append(StartTime).Append("\n");
             sb.Append("  EndTime: ").Append(EndTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -238,82 +237,77 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StoreName == input.StoreName ||
                     (this.StoreName != null &&
                     this.StoreName.Equals(input.StoreName))
-                ) && 
+                ) &&
                 (
                     this.OrderType == input.OrderType ||
                     (this.OrderType != null &&
                     this.OrderType.Equals(input.OrderType))
-                ) && 
+                ) &&
                 (
                     this.Channel == input.Channel ||
                     (this.Channel != null &&
                     this.Channel.Equals(input.Channel))
-                ) && 
+                ) &&
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.Sku == input.Sku ||
                     (this.Sku != null &&
                     this.Sku.Equals(input.Sku))
-                ) && 
+                ) &&
                 (
                     this.QuantityShipped == input.QuantityShipped ||
                     (this.QuantityShipped != null &&
                     this.QuantityShipped.Equals(input.QuantityShipped))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentNetwork == input.FulfillmentNetwork ||
                     (this.FulfillmentNetwork != null &&
                     this.FulfillmentNetwork.Equals(input.FulfillmentNetwork))
-                ) && 
+                ) &&
                 (
                     this.PaymentType == input.PaymentType ||
                     (this.PaymentType != null &&
                     this.PaymentType.Equals(input.PaymentType))
-                ) && 
+                ) &&
                 (
                     this.PaymentMethod == input.PaymentMethod ||
                     (this.PaymentMethod != null &&
                     this.PaymentMethod.Equals(input.PaymentMethod))
-                ) && 
+                ) &&
                 (
                     this.PaymentReference == input.PaymentReference ||
                     (this.PaymentReference != null &&
                     this.PaymentReference.Equals(input.PaymentReference))
-                ) && 
+                ) &&
                 (
                     this.PaymentDate == input.PaymentDate ||
                     (this.PaymentDate != null &&
                     this.PaymentDate.Equals(input.PaymentDate))
-                ) && 
+                ) &&
                 (
                     this.DeferralReason == input.DeferralReason ||
                     (this.DeferralReason != null &&
                     this.DeferralReason.Equals(input.DeferralReason))
-                ) && 
+                ) &&
                 (
                     this.MaturityDate == input.MaturityDate ||
                     (this.MaturityDate != null &&
                     this.MaturityDate.Equals(input.MaturityDate))
-                ) && 
-                (
-                    this.DeferralStatus == input.DeferralStatus ||
-                    (this.DeferralStatus != null &&
-                    this.DeferralStatus.Equals(input.DeferralStatus))
-                ) && 
+                ) &&
                 (
                     this.StartTime == input.StartTime ||
                     (this.StartTime != null &&
                     this.StartTime.Equals(input.StartTime))
-                ) && 
+                ) &&
                 (
                     this.EndTime == input.EndTime ||
                     (this.EndTime != null &&
@@ -356,8 +350,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
                     hashCode = hashCode * 59 + this.DeferralReason.GetHashCode();
                 if (this.MaturityDate != null)
                     hashCode = hashCode * 59 + this.MaturityDate.GetHashCode();
-                if (this.DeferralStatus != null)
-                    hashCode = hashCode * 59 + this.DeferralStatus.GetHashCode();
                 if (this.StartTime != null)
                     hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null)

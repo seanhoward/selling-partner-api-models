@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// A currency type and amount.
     /// </summary>
     [DataContract]
-    public partial class Currency :  IEquatable<Currency>, IValidatableObject
+    public partial class Currency : IEquatable<Currency>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Currency" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             this.CurrencyCode = currencyCode;
             this.CurrencyAmount = currencyAmount;
         }
-        
+
         /// <summary>
         /// The three-digit currency code in ISO 4217 format.
         /// </summary>
         /// <value>The three-digit currency code in ISO 4217 format.</value>
-        [DataMember(Name="currencyCode", EmitDefaultValue=false)]
+        [DataMember(Name = "currencyCode", EmitDefaultValue = false)]
         public string CurrencyCode { get; set; }
 
         /// <summary>
         /// The monetary value.
         /// </summary>
         /// <value>The monetary value.</value>
-        [DataMember(Name="currencyAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "currencyAmount", EmitDefaultValue = false)]
         public decimal? CurrencyAmount { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CurrencyCode == input.CurrencyCode ||
                     (this.CurrencyCode != null &&
                     this.CurrencyCode.Equals(input.CurrencyCode))
-                ) && 
+                ) &&
                 (
                     this.CurrencyAmount == input.CurrencyAmount ||
                     (this.CurrencyAmount != null &&

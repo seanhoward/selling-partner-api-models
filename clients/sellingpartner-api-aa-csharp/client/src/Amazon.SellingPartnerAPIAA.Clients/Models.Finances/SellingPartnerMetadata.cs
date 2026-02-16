@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,40 +21,40 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Metadata that describes the seller.
     /// </summary>
     [DataContract]
-    public partial class SellingPartnerMetadata :  IEquatable<SellingPartnerMetadata>, IValidatableObject
+    public partial class SellingPartnerMetadata : IEquatable<SellingPartnerMetadata>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SellingPartnerMetadata" /> class.
         /// </summary>
         /// <param name="sellingPartnerId">A unique seller identifier..</param>
         /// <param name="accountType">The type of account in the transaction..</param>
-        /// <param name="marketplaceId">The identifier of the marketplace where the transaction occurred..</param>
+        /// <param name="marketplaceId">The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)..</param>
         public SellingPartnerMetadata(string sellingPartnerId = default, string accountType = default, string marketplaceId = default)
         {
             this.SellingPartnerId = sellingPartnerId;
             this.AccountType = accountType;
             this.MarketplaceId = marketplaceId;
         }
-        
+
         /// <summary>
         /// A unique seller identifier.
         /// </summary>
         /// <value>A unique seller identifier.</value>
-        [DataMember(Name="sellingPartnerId", EmitDefaultValue=false)]
+        [DataMember(Name = "sellingPartnerId", EmitDefaultValue = false)]
         public string SellingPartnerId { get; set; }
 
         /// <summary>
         /// The type of account in the transaction.
         /// </summary>
         /// <value>The type of account in the transaction.</value>
-        [DataMember(Name="accountType", EmitDefaultValue=false)]
+        [DataMember(Name = "accountType", EmitDefaultValue = false)]
         public string AccountType { get; set; }
 
         /// <summary>
-        /// The identifier of the marketplace where the transaction occurred.
+        /// The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
-        /// <value>The identifier of the marketplace where the transaction occurred.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        /// <value>The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,17 +101,17 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.SellingPartnerId == input.SellingPartnerId ||
                     (this.SellingPartnerId != null &&
                     this.SellingPartnerId.Equals(input.SellingPartnerId))
-                ) && 
+                ) &&
                 (
                     this.AccountType == input.AccountType ||
                     (this.AccountType != null &&
                     this.AccountType.Equals(input.AccountType))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&

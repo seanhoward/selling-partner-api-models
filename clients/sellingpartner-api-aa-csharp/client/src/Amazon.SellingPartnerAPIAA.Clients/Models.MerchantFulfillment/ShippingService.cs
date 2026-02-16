@@ -40,13 +40,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         /// <param name="earliestEstimatedDeliveryDate">The earliest date by which the shipment will be delivered..</param>
         /// <param name="latestEstimatedDeliveryDate">The latest date by which the shipment will be delivered..</param>
         /// <param name="rate">The amount that the carrier will charge for the shipment. (required).</param>
+        /// <param name="rateWithAdjustments">The amount that the carrier will charge for the shipment with adjustments. (required).</param>
+        /// <param name="adjustmentItemList">A list of adjustments applied to a shipping service..</param>
         /// <param name="shippingServiceOptions">Extra services offered by the carrier. (required).</param>
         /// <param name="availableShippingServiceOptions">availableShippingServiceOptions.</param>
         /// <param name="availableLabelFormats">availableLabelFormats.</param>
         /// <param name="availableFormatOptionsForLabel">availableFormatOptionsForLabel.</param>
         /// <param name="requiresAdditionalSellerInputs">When true, additional seller inputs are required. (required).</param>
         /// <param name="benefits">benefits.</param>
-        public ShippingService(string shippingServiceName = default, string carrierName = default, string shippingServiceId = default, string shippingServiceOfferId = default, DateTime? shipDate = default, DateTime? earliestEstimatedDeliveryDate = default, DateTime? latestEstimatedDeliveryDate = default, CurrencyAmount rate = default, ShippingServiceOptions shippingServiceOptions = default, AvailableShippingServiceOptions availableShippingServiceOptions = default, LabelFormatList availableLabelFormats = default, AvailableFormatOptionsForLabelList availableFormatOptionsForLabel = default, bool? requiresAdditionalSellerInputs = default, Benefits benefits = default)
+        public ShippingService(string shippingServiceName = default, string carrierName = default, string shippingServiceId = default, string shippingServiceOfferId = default, DateTime? shipDate = default, DateTime? earliestEstimatedDeliveryDate = default, DateTime? latestEstimatedDeliveryDate = default, CurrencyAmount rate = default, CurrencyAmount rateWithAdjustments = default, AdjustmentItemList adjustmentItemList = default, ShippingServiceOptions shippingServiceOptions = default, AvailableShippingServiceOptions availableShippingServiceOptions = default, LabelFormatList availableLabelFormats = default, AvailableFormatOptionsForLabelList availableFormatOptionsForLabel = default, bool? requiresAdditionalSellerInputs = default, Benefits benefits = default)
         {
             // to ensure "shippingServiceName" is required (not null)
             if (shippingServiceName == null)
@@ -102,6 +104,15 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             {
                 this.Rate = rate;
             }
+            // to ensure "rateWithAdjustments" is required (not null)
+            if (rateWithAdjustments == null)
+            {
+                throw new InvalidDataException("rateWithAdjustments is a required property for ShippingService and cannot be null");
+            }
+            else
+            {
+                this.RateWithAdjustments = rateWithAdjustments;
+            }
             // to ensure "shippingServiceOptions" is required (not null)
             if (shippingServiceOptions == null)
             {
@@ -122,6 +133,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             }
             this.EarliestEstimatedDeliveryDate = earliestEstimatedDeliveryDate;
             this.LatestEstimatedDeliveryDate = latestEstimatedDeliveryDate;
+            this.AdjustmentItemList = adjustmentItemList;
             this.AvailableShippingServiceOptions = availableShippingServiceOptions;
             this.AvailableLabelFormats = availableLabelFormats;
             this.AvailableFormatOptionsForLabel = availableFormatOptionsForLabel;
@@ -184,6 +196,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
         public CurrencyAmount Rate { get; set; }
 
         /// <summary>
+        /// The amount that the carrier will charge for the shipment with adjustments.
+        /// </summary>
+        /// <value>The amount that the carrier will charge for the shipment with adjustments.</value>
+        [DataMember(Name = "RateWithAdjustments", EmitDefaultValue = false)]
+        public CurrencyAmount RateWithAdjustments { get; set; }
+
+        /// <summary>
+        /// A list of adjustments applied to a shipping service.
+        /// </summary>
+        /// <value>A list of adjustments applied to a shipping service.</value>
+        [DataMember(Name = "AdjustmentItemList", EmitDefaultValue = false)]
+        public AdjustmentItemList AdjustmentItemList { get; set; }
+
+        /// <summary>
         /// Extra services offered by the carrier.
         /// </summary>
         /// <value>Extra services offered by the carrier.</value>
@@ -237,6 +263,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
             sb.Append("  EarliestEstimatedDeliveryDate: ").Append(EarliestEstimatedDeliveryDate).Append("\n");
             sb.Append("  LatestEstimatedDeliveryDate: ").Append(LatestEstimatedDeliveryDate).Append("\n");
             sb.Append("  Rate: ").Append(Rate).Append("\n");
+            sb.Append("  RateWithAdjustments: ").Append(RateWithAdjustments).Append("\n");
+            sb.Append("  AdjustmentItemList: ").Append(AdjustmentItemList).Append("\n");
             sb.Append("  ShippingServiceOptions: ").Append(ShippingServiceOptions).Append("\n");
             sb.Append("  AvailableShippingServiceOptions: ").Append(AvailableShippingServiceOptions).Append("\n");
             sb.Append("  AvailableLabelFormats: ").Append(AvailableLabelFormats).Append("\n");
@@ -318,6 +346,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                     this.Rate.Equals(input.Rate))
                 ) &&
                 (
+                    this.RateWithAdjustments == input.RateWithAdjustments ||
+                    (this.RateWithAdjustments != null &&
+                    this.RateWithAdjustments.Equals(input.RateWithAdjustments))
+                ) &&
+                (
+                    this.AdjustmentItemList == input.AdjustmentItemList ||
+                    (this.AdjustmentItemList != null &&
+                    this.AdjustmentItemList.Equals(input.AdjustmentItemList))
+                ) &&
+                (
                     this.ShippingServiceOptions == input.ShippingServiceOptions ||
                     (this.ShippingServiceOptions != null &&
                     this.ShippingServiceOptions.Equals(input.ShippingServiceOptions))
@@ -374,6 +412,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.MerchantFulfillment
                     hashCode = hashCode * 59 + this.LatestEstimatedDeliveryDate.GetHashCode();
                 if (this.Rate != null)
                     hashCode = hashCode * 59 + this.Rate.GetHashCode();
+                if (this.RateWithAdjustments != null)
+                    hashCode = hashCode * 59 + this.RateWithAdjustments.GetHashCode();
+                if (this.AdjustmentItemList != null)
+                    hashCode = hashCode * 59 + this.AdjustmentItemList.GetHashCode();
                 if (this.ShippingServiceOptions != null)
                     hashCode = hashCode * 59 + this.ShippingServiceOptions.GetHashCode();
                 if (this.AvailableShippingServiceOptions != null)

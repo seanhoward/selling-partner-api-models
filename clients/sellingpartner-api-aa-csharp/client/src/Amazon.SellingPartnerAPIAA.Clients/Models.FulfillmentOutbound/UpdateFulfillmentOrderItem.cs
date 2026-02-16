@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// Initializes a new instance of the <see cref="UpdateFulfillmentOrderItem" /> class.
         /// </summary>
         /// <param name="sellerSku">The seller SKU of the item..</param>
-        /// <param name="sellerFulfillmentOrderItemId">Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation. (required).</param>
+        /// <param name="sellerFulfillmentOrderItemId">Identifies the fulfillment order item to update. Created with a previous call to the &#x60;createFulfillmentOrder&#x60; operation. (required).</param>
         /// <param name="quantity">quantity (required).</param>
         /// <param name="giftMessage">A message to the gift recipient, if applicable..</param>
         /// <param name="displayableComment">Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip..</param>
@@ -80,9 +80,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         public string SellerSku { get; set; }
 
         /// <summary>
-        /// Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.
+        /// Identifies the fulfillment order item to update. Created with a previous call to the &#x60;createFulfillmentOrder&#x60; operation.
         /// </summary>
-        /// <value>Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.</value>
+        /// <value>Identifies the fulfillment order item to update. Created with a previous call to the &#x60;createFulfillmentOrder&#x60; operation.</value>
         [DataMember(Name = "sellerFulfillmentOrderItemId", EmitDefaultValue = false)]
         public string SellerFulfillmentOrderItemId { get; set; }
 

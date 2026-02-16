@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -19,21 +19,21 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// Request body to initiate a scheduled transfer from a Seller Wallet bank account to another customer-defined bank account.
+    /// Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account 
     /// </summary>
     [DataContract]
     public partial class TransferScheduleRequest : IEquatable<TransferScheduleRequest>, IValidatableObject
     {
         /// <summary>
-        /// The type of the scheduled transaction.
+        /// Type of the scheduled transaction 
         /// </summary>
-        /// <value>The type of the scheduled transaction.</value>
+        /// <value>Type of the scheduled transaction </value>
         [DataMember(Name = "transactionType", EmitDefaultValue = false)]
         public TransactionType TransactionType { get; set; }
         /// <summary>
-        /// The type of transaction schedule. This field is required when you update a transfer schedule.
+        /// Type of the transaction schedule which is mandatory field in request body if a transfer schedule needs to be updated 
         /// </summary>
-        /// <value>The type of transaction schedule. This field is required when you update a transfer schedule.</value>
+        /// <value>Type of the transaction schedule which is mandatory field in request body if a transfer schedule needs to be updated </value>
         [DataMember(Name = "transferScheduleStatus", EmitDefaultValue = false)]
         public TransferScheduleStatus? TransferScheduleStatus { get; set; }
         /// <summary>
@@ -44,14 +44,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferScheduleRequest" /> class.
         /// </summary>
-        /// <param name="sourceAccountId">The unique identifier of the source Amazon Seller Wallet bank account from which money is debited. (required).</param>
-        /// <param name="sourceCurrencyCode">The three-letter currency code of the source payment method country, in ISO 4217 format. (required).</param>
-        /// <param name="destinationAccountId">The unique identifier of the destination bank account where the money is deposited. (required).</param>
-        /// <param name="destinationTransactionInstrument">Details of the destination bank account in the transaction request. (required).</param>
-        /// <param name="transactionType">The type of the scheduled transaction. (required).</param>
-        /// <param name="transferScheduleInformation">The configuration of the scheduled transfer. (required).</param>
-        /// <param name="paymentPreference">The payment preference of the scheduled transfer. (required).</param>
-        /// <param name="transferScheduleStatus">The type of transaction schedule. This field is required when you update a transfer schedule..</param>
+        /// <param name="sourceAccountId">The unique identifier of the source Amazon SW bank account from where the money needs to be debited  (required).</param>
+        /// <param name="sourceCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the source payment method country  (required).</param>
+        /// <param name="destinationAccountId">Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited  (required).</param>
+        /// <param name="destinationTransactionInstrument">Destination bank account details of the transaction request  (required).</param>
+        /// <param name="transactionType">Type of the scheduled transaction  (required).</param>
+        /// <param name="transferScheduleInformation">Fields required for the scheduled transfer  (required).</param>
+        /// <param name="paymentPreference">Payment preference of the scheduled transfer  (required).</param>
+        /// <param name="transferScheduleStatus">Type of the transaction schedule which is mandatory field in request body if a transfer schedule needs to be updated .</param>
         public TransferScheduleRequest(string sourceAccountId = default, string sourceCurrencyCode = default, string destinationAccountId = default, TransactionInstrumentDetails destinationTransactionInstrument = default, TransactionType transactionType = default, TransferScheduleInformation transferScheduleInformation = default, PaymentPreference paymentPreference = default, TransferScheduleStatus? transferScheduleStatus = default)
         {
             // to ensure "sourceAccountId" is required (not null)
@@ -121,45 +121,45 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         }
 
         /// <summary>
-        /// The unique identifier of the source Amazon Seller Wallet bank account from which money is debited.
+        /// The unique identifier of the source Amazon SW bank account from where the money needs to be debited 
         /// </summary>
-        /// <value>The unique identifier of the source Amazon Seller Wallet bank account from which money is debited.</value>
+        /// <value>The unique identifier of the source Amazon SW bank account from where the money needs to be debited </value>
         [DataMember(Name = "sourceAccountId", EmitDefaultValue = false)]
         public string SourceAccountId { get; set; }
 
         /// <summary>
-        /// The three-letter currency code of the source payment method country, in ISO 4217 format.
+        /// Represents 3 letter currency code in ISO 4217 standard format of the source payment method country 
         /// </summary>
-        /// <value>The three-letter currency code of the source payment method country, in ISO 4217 format.</value>
+        /// <value>Represents 3 letter currency code in ISO 4217 standard format of the source payment method country </value>
         [DataMember(Name = "sourceCurrencyCode", EmitDefaultValue = false)]
         public string SourceCurrencyCode { get; set; }
 
         /// <summary>
-        /// The unique identifier of the destination bank account where the money is deposited.
+        /// Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited 
         /// </summary>
-        /// <value>The unique identifier of the destination bank account where the money is deposited.</value>
+        /// <value>Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited </value>
         [DataMember(Name = "destinationAccountId", EmitDefaultValue = false)]
         public string DestinationAccountId { get; set; }
 
         /// <summary>
-        /// Details of the destination bank account in the transaction request.
+        /// Destination bank account details of the transaction request 
         /// </summary>
-        /// <value>Details of the destination bank account in the transaction request.</value>
+        /// <value>Destination bank account details of the transaction request </value>
         [DataMember(Name = "destinationTransactionInstrument", EmitDefaultValue = false)]
         public TransactionInstrumentDetails DestinationTransactionInstrument { get; set; }
 
 
         /// <summary>
-        /// The configuration of the scheduled transfer.
+        /// Fields required for the scheduled transfer 
         /// </summary>
-        /// <value>The configuration of the scheduled transfer.</value>
+        /// <value>Fields required for the scheduled transfer </value>
         [DataMember(Name = "transferScheduleInformation", EmitDefaultValue = false)]
         public TransferScheduleInformation TransferScheduleInformation { get; set; }
 
         /// <summary>
-        /// The payment preference of the scheduled transfer.
+        /// Payment preference of the scheduled transfer 
         /// </summary>
-        /// <value>The payment preference of the scheduled transfer.</value>
+        /// <value>Payment preference of the scheduled transfer </value>
         [DataMember(Name = "paymentPreference", EmitDefaultValue = false)]
         public PaymentPreference PaymentPreference { get; set; }
 

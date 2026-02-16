@@ -1,10 +1,9 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.Pagination
+# Amazon.SellingPartnerAPIAA.Clients.Models.VendorShipments.Pagination
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NextToken** | **string** | A token that can be used to fetch the next page. | [optional] 
-**PreviousToken** | **string** | A token that can be used to fetch the previous page. | [optional] 
+**NextToken** | **string** | A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more shipment items to return. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,10 +1,10 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Catalog.ItemIdentifiersByMarketplace
+# Amazon.SellingPartnerAPIAA.Clients.Models.ListingsItems.ItemIdentifiersByMarketplace
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MarketplaceId** | **string** | Amazon marketplace identifier. | 
-**Identifiers** | [**List&lt;ItemIdentifier&gt;**](ItemIdentifier.md) | Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace. | 
+**MarketplaceId** | **string** | A marketplace identifier. Identifies the Amazon marketplace for the listings item. | [optional] 
+**Asin** | **string** | Amazon Standard Identification Number (ASIN) of the listings item. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

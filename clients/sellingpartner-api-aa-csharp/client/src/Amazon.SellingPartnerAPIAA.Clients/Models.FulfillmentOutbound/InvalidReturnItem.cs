@@ -32,7 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidReturnItem" /> class.
         /// </summary>
-        /// <param name="sellerReturnItemId">An identifier assigned by the seller to the return item. (required).</param>
+        /// <param name="sellerReturnItemId">An identifier the seller assigns to the return item. (required).</param>
         /// <param name="sellerFulfillmentOrderItemId">The identifier assigned to the item by the seller when the fulfillment order was created. (required).</param>
         /// <param name="invalidItemReason">invalidItemReason (required).</param>
         public InvalidReturnItem(string sellerReturnItemId = default, string sellerFulfillmentOrderItemId = default, InvalidItemReason invalidItemReason = default)
@@ -67,9 +67,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         }
 
         /// <summary>
-        /// An identifier assigned by the seller to the return item.
+        /// An identifier the seller assigns to the return item.
         /// </summary>
-        /// <value>An identifier assigned by the seller to the return item.</value>
+        /// <value>An identifier the seller assigns to the return item.</value>
         [DataMember(Name = "sellerReturnItemId", EmitDefaultValue = false)]
         public string SellerReturnItemId { get; set; }
 

@@ -1,11 +1,15 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Orders.AssociatedItem
+# Amazon.SellingPartnerAPIAA.Clients.Models.Services.AssociatedItem
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OrderId** | **string** | The order item&#39;s order identifier, in 3-7-7 format. | [optional] 
-**OrderItemId** | **string** | An Amazon-defined item identifier for the associated item. | [optional] 
-**AssociationType** | **AssociationType** |  | [optional] 
+**Asin** | **string** | The Amazon Standard Identification Number (ASIN) of the item. | [optional] 
+**Title** | **string** | The title of the item. | [optional] 
+**Quantity** | **int?** | The total number of items included in the order. | [optional] 
+**OrderId** | **string** | The Amazon-defined identifier for an order placed by the buyer in 3-7-7 format. | [optional] 
+**ItemStatus** | **string** | The status of the item. | [optional] 
+**BrandName** | **string** | The brand name of the item. | [optional] 
+**ItemDelivery** | [**ItemDelivery**](ItemDelivery.md) | Delivery information for the item. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

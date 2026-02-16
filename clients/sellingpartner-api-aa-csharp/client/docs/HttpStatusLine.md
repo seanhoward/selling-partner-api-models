@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.HttpStatusLine
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.HttpStatusLine
 ## Properties
 
 Name | Type | Description | Notes

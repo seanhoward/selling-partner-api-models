@@ -32,6 +32,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// <param name="purchaseDate">The date and time when the order was created..</param>
         /// <param name="shippingAddress">shippingAddress.</param>
         /// <param name="paymentMethodDetails">paymentMethodDetails.</param>
+        /// <param name="payments">payments.</param>
         /// <param name="marketplaceId">The identifier for the marketplace where the order was placed..</param>
         /// <param name="sellerId">The seller identifier..</param>
         /// <param name="buyerName">The name of the buyer..</param>
@@ -40,7 +41,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// <param name="marketplaceTaxInfo">marketplaceTaxInfo.</param>
         /// <param name="sellerDisplayName">The seller’s friendly name registered in the marketplace..</param>
         /// <param name="shipmentItems">shipmentItems.</param>
-        public ShipmentDetail(string warehouseId = default, string amazonOrderId = default, string amazonShipmentId = default, DateTime? purchaseDate = default, Address shippingAddress = default, PaymentMethodDetailItemList paymentMethodDetails = default, string marketplaceId = default, string sellerId = default, string buyerName = default, string buyerCounty = default, BuyerTaxInfo buyerTaxInfo = default, MarketplaceTaxInfo marketplaceTaxInfo = default, string sellerDisplayName = default, ShipmentItems shipmentItems = default)
+        public ShipmentDetail(string warehouseId = default, string amazonOrderId = default, string amazonShipmentId = default, DateTime? purchaseDate = default, Address shippingAddress = default, PaymentMethodDetailItemList paymentMethodDetails = default, PaymentInformationList payments = default, string marketplaceId = default, string sellerId = default, string buyerName = default, string buyerCounty = default, BuyerTaxInfo buyerTaxInfo = default, MarketplaceTaxInfo marketplaceTaxInfo = default, string sellerDisplayName = default, ShipmentItems shipmentItems = default)
         {
             this.WarehouseId = warehouseId;
             this.AmazonOrderId = amazonOrderId;
@@ -48,6 +49,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             this.PurchaseDate = purchaseDate;
             this.ShippingAddress = shippingAddress;
             this.PaymentMethodDetails = paymentMethodDetails;
+            this.Payments = payments;
             this.MarketplaceId = marketplaceId;
             this.SellerId = sellerId;
             this.BuyerName = buyerName;
@@ -97,6 +99,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
         /// </summary>
         [DataMember(Name = "PaymentMethodDetails", EmitDefaultValue = false)]
         public PaymentMethodDetailItemList PaymentMethodDetails { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Payments
+        /// </summary>
+        [DataMember(Name = "Payments", EmitDefaultValue = false)]
+        public PaymentInformationList Payments { get; set; }
 
         /// <summary>
         /// The identifier for the marketplace where the order was placed.
@@ -165,6 +173,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
             sb.Append("  PurchaseDate: ").Append(PurchaseDate).Append("\n");
             sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
             sb.Append("  PaymentMethodDetails: ").Append(PaymentMethodDetails).Append("\n");
+            sb.Append("  Payments: ").Append(Payments).Append("\n");
             sb.Append("  MarketplaceId: ").Append(MarketplaceId).Append("\n");
             sb.Append("  SellerId: ").Append(SellerId).Append("\n");
             sb.Append("  BuyerName: ").Append(BuyerName).Append("\n");
@@ -238,6 +247,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
                     this.PaymentMethodDetails.Equals(input.PaymentMethodDetails))
                 ) &&
                 (
+                    this.Payments == input.Payments ||
+                    (this.Payments != null &&
+                    this.Payments.Equals(input.Payments))
+                ) &&
+                (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
@@ -300,6 +314,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ShipmentInvoicing
                     hashCode = hashCode * 59 + this.ShippingAddress.GetHashCode();
                 if (this.PaymentMethodDetails != null)
                     hashCode = hashCode * 59 + this.PaymentMethodDetails.GetHashCode();
+                if (this.Payments != null)
+                    hashCode = hashCode * 59 + this.Payments.GetHashCode();
                 if (this.MarketplaceId != null)
                     hashCode = hashCode * 59 + this.MarketplaceId.GetHashCode();
                 if (this.SellerId != null)

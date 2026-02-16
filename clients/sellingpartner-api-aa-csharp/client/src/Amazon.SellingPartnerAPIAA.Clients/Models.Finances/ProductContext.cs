@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Additional information related to the product.
     /// </summary>
     [DataContract]
-    public partial class ProductContext :  IEquatable<ProductContext>, IValidatableObject
+    public partial class ProductContext : IEquatable<ProductContext>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductContext" /> class.
@@ -44,33 +37,33 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             this.QuantityShipped = quantityShipped;
             this.FulfillmentNetwork = fulfillmentNetwork;
         }
-        
+
         /// <summary>
         /// The Amazon Standard Identification Number (ASIN) of the item.
         /// </summary>
         /// <value>The Amazon Standard Identification Number (ASIN) of the item.</value>
-        [DataMember(Name="asin", EmitDefaultValue=false)]
+        [DataMember(Name = "asin", EmitDefaultValue = false)]
         public string Asin { get; set; }
 
         /// <summary>
         /// The Stock Keeping Unit (SKU) of the item.
         /// </summary>
         /// <value>The Stock Keeping Unit (SKU) of the item.</value>
-        [DataMember(Name="sku", EmitDefaultValue=false)]
+        [DataMember(Name = "sku", EmitDefaultValue = false)]
         public string Sku { get; set; }
 
         /// <summary>
         /// The quantity of the item shipped.
         /// </summary>
         /// <value>The quantity of the item shipped.</value>
-        [DataMember(Name="quantityShipped", EmitDefaultValue=false)]
+        [DataMember(Name = "quantityShipped", EmitDefaultValue = false)]
         public int? QuantityShipped { get; set; }
 
         /// <summary>
         /// The fulfillment network of the item.
         /// </summary>
         /// <value>The fulfillment network of the item.</value>
-        [DataMember(Name="fulfillmentNetwork", EmitDefaultValue=false)]
+        [DataMember(Name = "fulfillmentNetwork", EmitDefaultValue = false)]
         public string FulfillmentNetwork { get; set; }
 
         /// <summary>
@@ -88,7 +81,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -118,22 +111,22 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Asin == input.Asin ||
                     (this.Asin != null &&
                     this.Asin.Equals(input.Asin))
-                ) && 
+                ) &&
                 (
                     this.Sku == input.Sku ||
                     (this.Sku != null &&
                     this.Sku.Equals(input.Sku))
-                ) && 
+                ) &&
                 (
                     this.QuantityShipped == input.QuantityShipped ||
                     (this.QuantityShipped != null &&
                     this.QuantityShipped.Equals(input.QuantityShipped))
-                ) && 
+                ) &&
                 (
                     this.FulfillmentNetwork == input.FulfillmentNetwork ||
                     (this.FulfillmentNetwork != null &&

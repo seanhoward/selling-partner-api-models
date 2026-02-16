@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.SegmentedFeaturedOffer
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.SegmentedFeaturedOffer
 ## Properties
 
 Name | Type | Description | Notes

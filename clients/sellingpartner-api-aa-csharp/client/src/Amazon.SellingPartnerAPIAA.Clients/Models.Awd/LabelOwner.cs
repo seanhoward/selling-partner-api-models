@@ -15,9 +15,9 @@ using Newtonsoft.Json.Converters;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Awd
 {
     /// <summary>
-    /// The entity that labels the products.
+    /// The entity that labels the products. &#x60;AMAZON&#x60; is not an accepted value in the US marketplace.
     /// </summary>
-    /// <value>The entity that labels the products.</value>
+    /// <value>The entity that labels the products. &#x60;AMAZON&#x60; is not an accepted value in the US marketplace.</value>
 
     [JsonConverter(typeof(StringEnumConverter))]
 

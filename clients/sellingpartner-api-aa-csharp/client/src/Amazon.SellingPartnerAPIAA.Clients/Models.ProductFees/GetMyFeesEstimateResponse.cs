@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
 {
     /// <summary>
-    /// GetMyFeesEstimateResponse
+    /// The response object for the GetMyFeesEstimate operation.
     /// </summary>
     [DataContract]
     public partial class GetMyFeesEstimateResponse : IEquatable<GetMyFeesEstimateResponse>, IValidatableObject
@@ -27,7 +27,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// Initializes a new instance of the <see cref="GetMyFeesEstimateResponse" /> class.
         /// </summary>
         /// <param name="payload">The payload for the operation..</param>
-        /// <param name="errors">errors.</param>
+        /// <param name="errors">A list of errors that may have occurred during the GetMyFeesEstimate operation..</param>
         public GetMyFeesEstimateResponse(GetMyFeesEstimateResult payload = default, ErrorList errors = default)
         {
             this.Payload = payload;
@@ -42,8 +42,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         public GetMyFeesEstimateResult Payload { get; set; }
 
         /// <summary>
-        /// Gets or Sets Errors
+        /// A list of errors that may have occurred during the GetMyFeesEstimate operation.
         /// </summary>
+        /// <value>A list of errors that may have occurred during the GetMyFeesEstimate operation.</value>
         [DataMember(Name = "errors", EmitDefaultValue = false)]
         public ErrorList Errors { get; set; }
 

@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -20,7 +20,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// The fees and foreign exchange rates applied to the transaction.  If the fees are in terms of the &#x60;baseAmount&#x60; (source account) currency, then the effective rate is equal to **1 - (fees * &#x60;baseRate&#x60; / &#x60;baseAmount&#x60;)**.  If the fees are in terms of the &#x60;transferAmount&#x60; (destination account) currency, then the effective rate is equal to **&#x60;baseRate&#x60; - (fees / &#x60;baseAmount&#x60;)**.  In the preceding expressions, **fees** is equal to the sum of all &#x60;feeAmount.currencyAmount&#x60; values in the &#x60;fees&#x60; array.
+    /// The fees and foreign exchange rates that apply to the transaction.  If the fees are in terms of the &#x60;baseAmount&#x60; (source account) currency, then the effective rate is equal to **1 - (fees * &#x60;baseRate&#x60; / &#x60;baseAmount&#x60;)**.  If the fees are in terms of the &#x60;transferAmount&#x60; (destination account) currency, then the effective rate is equal to **&#x60;baseRate&#x60; - (fees / &#x60;baseAmount&#x60;)**.  In the preceding expressions, **fees** is equal to the sum of all &#x60;feeAmount.currencyAmount&#x60; values in the &#x60;fees&#x60; array.
     /// </summary>
     [DataContract]
     public partial class TransferRatePreview : IEquatable<TransferRatePreview>, IValidatableObject
@@ -33,10 +33,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferRatePreview" /> class.
         /// </summary>
-        /// <param name="baseAmount">The base amount of the transaction. (required).</param>
-        /// <param name="fxRateDetails">The foreign exchange rate value of the transaction. (required).</param>
-        /// <param name="transferAmount">The final amount transferred, which includes both the fee deduction and currency conversion rate. (required).</param>
-        /// <param name="fees">A list of fees. (required).</param>
+        /// <param name="baseAmount">Base amount of the transaction.  (required).</param>
+        /// <param name="fxRateDetails">The foreign exchange rate value of the transaction.  (required).</param>
+        /// <param name="transferAmount">The final amount reflects both the fee deduction and currency conversion rate exchange  (required).</param>
+        /// <param name="fees">List of fees  (required).</param>
         public TransferRatePreview(Currency baseAmount = default, FxRateDetails fxRateDetails = default, Currency transferAmount = default, List<Fee> fees = default)
         {
             // to ensure "baseAmount" is required (not null)
@@ -78,30 +78,30 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         }
 
         /// <summary>
-        /// The base amount of the transaction.
+        /// Base amount of the transaction. 
         /// </summary>
-        /// <value>The base amount of the transaction.</value>
+        /// <value>Base amount of the transaction. </value>
         [DataMember(Name = "baseAmount", EmitDefaultValue = false)]
         public Currency BaseAmount { get; set; }
 
         /// <summary>
-        /// The foreign exchange rate value of the transaction.
+        /// The foreign exchange rate value of the transaction. 
         /// </summary>
-        /// <value>The foreign exchange rate value of the transaction.</value>
+        /// <value>The foreign exchange rate value of the transaction. </value>
         [DataMember(Name = "fxRateDetails", EmitDefaultValue = false)]
         public FxRateDetails FxRateDetails { get; set; }
 
         /// <summary>
-        /// The final amount transferred, which includes both the fee deduction and currency conversion rate.
+        /// The final amount reflects both the fee deduction and currency conversion rate exchange 
         /// </summary>
-        /// <value>The final amount transferred, which includes both the fee deduction and currency conversion rate.</value>
+        /// <value>The final amount reflects both the fee deduction and currency conversion rate exchange </value>
         [DataMember(Name = "transferAmount", EmitDefaultValue = false)]
         public Currency TransferAmount { get; set; }
 
         /// <summary>
-        /// A list of fees.
+        /// List of fees 
         /// </summary>
-        /// <value>A list of fees.</value>
+        /// <value>List of fees </value>
         [DataMember(Name = "fees", EmitDefaultValue = false)]
         public List<Fee> Fees { get; set; }
 

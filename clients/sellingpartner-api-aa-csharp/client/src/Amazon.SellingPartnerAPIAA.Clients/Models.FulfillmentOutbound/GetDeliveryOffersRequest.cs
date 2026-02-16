@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
     /// <summary>
-    /// The request body schema for the getDeliveryOffers operation.
+    /// The request body schema for the &#x60;getDeliveryOffers&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class GetDeliveryOffersRequest : IEquatable<GetDeliveryOffersRequest>, IValidatableObject

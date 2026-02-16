@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.FulfillmentType
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.FulfillmentType
 ## Properties
 
 Name | Type | Description | Notes

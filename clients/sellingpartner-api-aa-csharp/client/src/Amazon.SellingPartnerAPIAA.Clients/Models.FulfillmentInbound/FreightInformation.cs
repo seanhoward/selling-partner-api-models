@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
 {
     /// <summary>
-    /// Freight information describes the skus being transported. Freight carrier options and quotes will only be returned if the freight information is provided.
+    /// Freight information describes the SKUs that are in transit. Freight carrier options and quotes will only be returned if the freight information is provided.
     /// </summary>
     [DataContract]
     public partial class FreightInformation : IEquatable<FreightInformation>, IValidatableObject

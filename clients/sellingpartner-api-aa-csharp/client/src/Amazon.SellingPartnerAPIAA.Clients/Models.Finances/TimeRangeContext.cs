@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,7 +21,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Additional information that is related to the time range of the transaction.
     /// </summary>
     [DataContract]
-    public partial class TimeRangeContext :  IEquatable<TimeRangeContext>, IValidatableObject
+    public partial class TimeRangeContext : IEquatable<TimeRangeContext>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TimeRangeContext" /> class.
@@ -40,19 +33,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             this.StartTime = startTime;
             this.EndTime = endTime;
         }
-        
+
         /// <summary>
         /// The start time of the transaction.
         /// </summary>
         /// <value>The start time of the transaction.</value>
-        [DataMember(Name="startTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startTime", EmitDefaultValue = false)]
         public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// The end time of the transaction.
         /// </summary>
         /// <value>The end time of the transaction.</value>
-        [DataMember(Name="endTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endTime", EmitDefaultValue = false)]
         public DateTime? EndTime { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.StartTime == input.StartTime ||
                     (this.StartTime != null &&
                     this.StartTime.Equals(input.StartTime))
-                ) && 
+                ) &&
                 (
                     this.EndTime == input.EndTime ||
                     (this.EndTime != null &&

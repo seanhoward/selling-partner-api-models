@@ -34,7 +34,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// </summary>
         /// <param name="returnReasonCode">A code that indicates a valid return reason. (required).</param>
         /// <param name="description">A human readable description of the return reason code. (required).</param>
-        /// <param name="translatedDescription">A translation of the description. The translation is in the language specified in the Language request parameter..</param>
+        /// <param name="translatedDescription">A translation of the description. The translation is in the language specified in the &#x60;language&#x60; request parameter..</param>
         public ReasonCodeDetails(string returnReasonCode = default, string description = default, string translatedDescription = default)
         {
             // to ensure "returnReasonCode" is required (not null)
@@ -73,9 +73,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         public string Description { get; set; }
 
         /// <summary>
-        /// A translation of the description. The translation is in the language specified in the Language request parameter.
+        /// A translation of the description. The translation is in the language specified in the &#x60;language&#x60; request parameter.
         /// </summary>
-        /// <value>A translation of the description. The translation is in the language specified in the Language request parameter.</value>
+        /// <value>A translation of the description. The translation is in the language specified in the &#x60;language&#x60; request parameter.</value>
         [DataMember(Name = "translatedDescription", EmitDefaultValue = false)]
         public string TranslatedDescription { get; set; }
 

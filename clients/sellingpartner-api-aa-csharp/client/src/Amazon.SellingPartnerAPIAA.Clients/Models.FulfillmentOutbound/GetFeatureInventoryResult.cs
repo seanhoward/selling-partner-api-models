@@ -20,7 +20,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
     /// <summary>
-    /// The payload for the &#x60;getEligibileInventory&#x60; operation.
+    /// The payload for the &#x60;getEligibleInventory&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class GetFeatureInventoryResult : IEquatable<GetFeatureInventoryResult>, IValidatableObject

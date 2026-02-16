@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
     /// <summary>
-    /// ShippingSpeedCategory List
+    /// List of shipping speed categories.
     /// </summary>
     [DataContract]
     public partial class ShippingSpeedCategoryList : List<ShippingSpeedCategory>, IEquatable<ShippingSpeedCategoryList>, IValidatableObject

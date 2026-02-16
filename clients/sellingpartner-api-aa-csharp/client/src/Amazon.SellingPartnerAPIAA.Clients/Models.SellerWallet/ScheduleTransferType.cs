@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -15,9 +15,9 @@ using Newtonsoft.Json.Converters;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// The type of schedule the transfer is on. Schedules based on time patterns use EventBridge.
+    /// Defines the type of schedule trigger used for executing transfers. Schedule based on time patterns using EventBridge. 
     /// </summary>
-    /// <value>The type of schedule the transfer is on. Schedules based on time patterns use EventBridge.</value>
+    /// <value>Defines the type of schedule trigger used for executing transfers. Schedule based on time patterns using EventBridge. </value>
 
     [JsonConverter(typeof(StringEnumConverter))]
 

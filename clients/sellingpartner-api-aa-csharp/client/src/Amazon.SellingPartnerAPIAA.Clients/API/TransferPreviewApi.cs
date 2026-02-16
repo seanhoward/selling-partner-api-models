@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -28,62 +28,66 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code
         /// </summary>
         /// <remarks>
-        /// Retrieve a list of potential fees on a transaction.
+        /// Returns list of potential fees on a transaction based on the source and destination country currency code
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="sourceCountryCode">Country code of the source transaction account in ISO 3166 format.</param>
-        /// <param name="sourceCurrencyCode">Currency code of the source transaction country in ISO 4217 format.</param>
-        /// <param name="destinationCountryCode">Country code of the destination transaction account in ISO 3166 format.</param>
-        /// <param name="destinationCurrencyCode">Currency code of the destination transaction country in ISO 4217 format.</param>
-        /// <param name="baseAmount">The base transaction amount without any markup fees.</param>
+        /// <param name="sourceCountryCode">Represents 2 character country code of source transaction account in ISO 3166 standard format.</param>
+        /// <param name="sourceCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.</param>
+        /// <param name="destinationCountryCode">Represents 2 character country code of destination transaction account in ISO 3166 standard format.</param>
+        /// <param name="destinationCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.</param>
+        /// <param name="baseAmount">Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.</param>
+        /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>TransferRatePreview</returns>
-        TransferRatePreview GetTransferPreview(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount);
+        TransferRatePreview GetTransferPreview(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount, string marketplaceId);
 
         /// <summary>
         /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code
         /// </summary>
         /// <remarks>
-        /// Retrieve a list of potential fees on a transaction.
+        /// Returns list of potential fees on a transaction based on the source and destination country currency code
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="sourceCountryCode">Country code of the source transaction account in ISO 3166 format.</param>
-        /// <param name="sourceCurrencyCode">Currency code of the source transaction country in ISO 4217 format.</param>
-        /// <param name="destinationCountryCode">Country code of the destination transaction account in ISO 3166 format.</param>
-        /// <param name="destinationCurrencyCode">Currency code of the destination transaction country in ISO 4217 format.</param>
-        /// <param name="baseAmount">The base transaction amount without any markup fees.</param>
+        /// <param name="sourceCountryCode">Represents 2 character country code of source transaction account in ISO 3166 standard format.</param>
+        /// <param name="sourceCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.</param>
+        /// <param name="destinationCountryCode">Represents 2 character country code of destination transaction account in ISO 3166 standard format.</param>
+        /// <param name="destinationCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.</param>
+        /// <param name="baseAmount">Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.</param>
+        /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>ApiResponse of TransferRatePreview</returns>
-        ApiResponse<TransferRatePreview> GetTransferPreviewWithHttpInfo(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount);
+        ApiResponse<TransferRatePreview> GetTransferPreviewWithHttpInfo(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount, string marketplaceId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
         /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code
         /// </summary>
         /// <remarks>
-        /// Retrieve a list of potential fees on a transaction.
+        /// Returns list of potential fees on a transaction based on the source and destination country currency code
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="sourceCountryCode">Country code of the source transaction account in ISO 3166 format.</param>
-        /// <param name="sourceCurrencyCode">Currency code of the source transaction country in ISO 4217 format.</param>
-        /// <param name="destinationCountryCode">Country code of the destination transaction account in ISO 3166 format.</param>
-        /// <param name="destinationCurrencyCode">Currency code of the destination transaction country in ISO 4217 format.</param>
-        /// <param name="baseAmount">The base transaction amount without any markup fees.</param>
+        /// <param name="sourceCountryCode">Represents 2 character country code of source transaction account in ISO 3166 standard format.</param>
+        /// <param name="sourceCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.</param>
+        /// <param name="destinationCountryCode">Represents 2 character country code of destination transaction account in ISO 3166 standard format.</param>
+        /// <param name="destinationCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.</param>
+        /// <param name="baseAmount">Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.</param>
+        /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of TransferRatePreview</returns>
-        System.Threading.Tasks.Task<TransferRatePreview> GetTransferPreviewAsync(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount);
+        System.Threading.Tasks.Task<TransferRatePreview> GetTransferPreviewAsync(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount, string marketplaceId);
 
         /// <summary>
         /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code
         /// </summary>
         /// <remarks>
-        /// Retrieve a list of potential fees on a transaction.
+        /// Returns list of potential fees on a transaction based on the source and destination country currency code
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="sourceCountryCode">Country code of the source transaction account in ISO 3166 format.</param>
-        /// <param name="sourceCurrencyCode">Currency code of the source transaction country in ISO 4217 format.</param>
-        /// <param name="destinationCountryCode">Country code of the destination transaction account in ISO 3166 format.</param>
-        /// <param name="destinationCurrencyCode">Currency code of the destination transaction country in ISO 4217 format.</param>
-        /// <param name="baseAmount">The base transaction amount without any markup fees.</param>
+        /// <param name="sourceCountryCode">Represents 2 character country code of source transaction account in ISO 3166 standard format.</param>
+        /// <param name="sourceCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.</param>
+        /// <param name="destinationCountryCode">Represents 2 character country code of destination transaction account in ISO 3166 standard format.</param>
+        /// <param name="destinationCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.</param>
+        /// <param name="baseAmount">Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.</param>
+        /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of ApiResponse (TransferRatePreview)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransferRatePreview>> GetTransferPreviewAsyncWithHttpInfo(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount);
+        System.Threading.Tasks.Task<ApiResponse<TransferRatePreview>> GetTransferPreviewAsyncWithHttpInfo(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount, string marketplaceId);
         #endregion Asynchronous Operations
     }
 
@@ -170,32 +174,34 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code Retrieve a list of potential fees on a transaction.
+        /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code Returns list of potential fees on a transaction based on the source and destination country currency code
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="sourceCountryCode">Country code of the source transaction account in ISO 3166 format.</param>
-        /// <param name="sourceCurrencyCode">Currency code of the source transaction country in ISO 4217 format.</param>
-        /// <param name="destinationCountryCode">Country code of the destination transaction account in ISO 3166 format.</param>
-        /// <param name="destinationCurrencyCode">Currency code of the destination transaction country in ISO 4217 format.</param>
-        /// <param name="baseAmount">The base transaction amount without any markup fees.</param>
+        /// <param name="sourceCountryCode">Represents 2 character country code of source transaction account in ISO 3166 standard format.</param>
+        /// <param name="sourceCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.</param>
+        /// <param name="destinationCountryCode">Represents 2 character country code of destination transaction account in ISO 3166 standard format.</param>
+        /// <param name="destinationCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.</param>
+        /// <param name="baseAmount">Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.</param>
+        /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>TransferRatePreview</returns>
-        public TransferRatePreview GetTransferPreview(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount)
+        public TransferRatePreview GetTransferPreview(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount, string marketplaceId)
         {
-            ApiResponse<TransferRatePreview> localVarResponse = GetTransferPreviewWithHttpInfo(sourceCountryCode, sourceCurrencyCode, destinationCountryCode, destinationCurrencyCode, baseAmount);
+            ApiResponse<TransferRatePreview> localVarResponse = GetTransferPreviewWithHttpInfo(sourceCountryCode, sourceCurrencyCode, destinationCountryCode, destinationCurrencyCode, baseAmount, marketplaceId);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code Retrieve a list of potential fees on a transaction.
+        /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code Returns list of potential fees on a transaction based on the source and destination country currency code
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="sourceCountryCode">Country code of the source transaction account in ISO 3166 format.</param>
-        /// <param name="sourceCurrencyCode">Currency code of the source transaction country in ISO 4217 format.</param>
-        /// <param name="destinationCountryCode">Country code of the destination transaction account in ISO 3166 format.</param>
-        /// <param name="destinationCurrencyCode">Currency code of the destination transaction country in ISO 4217 format.</param>
-        /// <param name="baseAmount">The base transaction amount without any markup fees.</param>
+        /// <param name="sourceCountryCode">Represents 2 character country code of source transaction account in ISO 3166 standard format.</param>
+        /// <param name="sourceCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.</param>
+        /// <param name="destinationCountryCode">Represents 2 character country code of destination transaction account in ISO 3166 standard format.</param>
+        /// <param name="destinationCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.</param>
+        /// <param name="baseAmount">Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.</param>
+        /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>ApiResponse of TransferRatePreview</returns>
-        public ApiResponse<TransferRatePreview> GetTransferPreviewWithHttpInfo(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount)
+        public ApiResponse<TransferRatePreview> GetTransferPreviewWithHttpInfo(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount, string marketplaceId)
         {
             // verify the required parameter 'sourceCountryCode' is set
             if (sourceCountryCode == null)
@@ -212,6 +218,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
             // verify the required parameter 'baseAmount' is set
             if (baseAmount == null)
                 throw new ApiException(400, "Missing required parameter 'baseAmount' when calling TransferPreviewApi->GetTransferPreview");
+            // verify the required parameter 'marketplaceId' is set
+            if (marketplaceId == null)
+                throw new ApiException(400, "Missing required parameter 'marketplaceId' when calling TransferPreviewApi->GetTransferPreview");
 
             var localVarPath = "/finances/transfers/wallet/2024-03-01/transferPreview";
             var localVarPathParams = new Dictionary<String, String>();
@@ -240,6 +249,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
             if (destinationCountryCode != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "destinationCountryCode", destinationCountryCode)); // query parameter
             if (destinationCurrencyCode != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "destinationCurrencyCode", destinationCurrencyCode)); // query parameter
             if (baseAmount != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "baseAmount", baseAmount)); // query parameter
+            if (marketplaceId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "marketplaceId", marketplaceId)); // query parameter
 
 
             // make the HTTP request
@@ -261,33 +271,35 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code Retrieve a list of potential fees on a transaction.
+        /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code Returns list of potential fees on a transaction based on the source and destination country currency code
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="sourceCountryCode">Country code of the source transaction account in ISO 3166 format.</param>
-        /// <param name="sourceCurrencyCode">Currency code of the source transaction country in ISO 4217 format.</param>
-        /// <param name="destinationCountryCode">Country code of the destination transaction account in ISO 3166 format.</param>
-        /// <param name="destinationCurrencyCode">Currency code of the destination transaction country in ISO 4217 format.</param>
-        /// <param name="baseAmount">The base transaction amount without any markup fees.</param>
+        /// <param name="sourceCountryCode">Represents 2 character country code of source transaction account in ISO 3166 standard format.</param>
+        /// <param name="sourceCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.</param>
+        /// <param name="destinationCountryCode">Represents 2 character country code of destination transaction account in ISO 3166 standard format.</param>
+        /// <param name="destinationCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.</param>
+        /// <param name="baseAmount">Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.</param>
+        /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of TransferRatePreview</returns>
-        public async System.Threading.Tasks.Task<TransferRatePreview> GetTransferPreviewAsync(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount)
+        public async System.Threading.Tasks.Task<TransferRatePreview> GetTransferPreviewAsync(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount, string marketplaceId)
         {
-            ApiResponse<TransferRatePreview> localVarResponse = await GetTransferPreviewAsyncWithHttpInfo(sourceCountryCode, sourceCurrencyCode, destinationCountryCode, destinationCurrencyCode, baseAmount);
+            ApiResponse<TransferRatePreview> localVarResponse = await GetTransferPreviewAsyncWithHttpInfo(sourceCountryCode, sourceCurrencyCode, destinationCountryCode, destinationCurrencyCode, baseAmount, marketplaceId);
             return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code Retrieve a list of potential fees on a transaction.
+        /// Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code Returns list of potential fees on a transaction based on the source and destination country currency code
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="sourceCountryCode">Country code of the source transaction account in ISO 3166 format.</param>
-        /// <param name="sourceCurrencyCode">Currency code of the source transaction country in ISO 4217 format.</param>
-        /// <param name="destinationCountryCode">Country code of the destination transaction account in ISO 3166 format.</param>
-        /// <param name="destinationCurrencyCode">Currency code of the destination transaction country in ISO 4217 format.</param>
-        /// <param name="baseAmount">The base transaction amount without any markup fees.</param>
+        /// <param name="sourceCountryCode">Represents 2 character country code of source transaction account in ISO 3166 standard format.</param>
+        /// <param name="sourceCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.</param>
+        /// <param name="destinationCountryCode">Represents 2 character country code of destination transaction account in ISO 3166 standard format.</param>
+        /// <param name="destinationCurrencyCode">Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.</param>
+        /// <param name="baseAmount">Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.</param>
+        /// <param name="marketplaceId">The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</param>
         /// <returns>Task of ApiResponse (TransferRatePreview)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TransferRatePreview>> GetTransferPreviewAsyncWithHttpInfo(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount)
+        public async System.Threading.Tasks.Task<ApiResponse<TransferRatePreview>> GetTransferPreviewAsyncWithHttpInfo(string sourceCountryCode, string sourceCurrencyCode, string destinationCountryCode, string destinationCurrencyCode, decimal? baseAmount, string marketplaceId)
         {
             // verify the required parameter 'sourceCountryCode' is set
             if (sourceCountryCode == null)
@@ -304,6 +316,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
             // verify the required parameter 'baseAmount' is set
             if (baseAmount == null)
                 throw new ApiException(400, "Missing required parameter 'baseAmount' when calling TransferPreviewApi->GetTransferPreview");
+            // verify the required parameter 'marketplaceId' is set
+            if (marketplaceId == null)
+                throw new ApiException(400, "Missing required parameter 'marketplaceId' when calling TransferPreviewApi->GetTransferPreview");
 
             var localVarPath = "/finances/transfers/wallet/2024-03-01/transferPreview";
             var localVarPathParams = new Dictionary<String, String>();
@@ -332,6 +347,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
             if (destinationCountryCode != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "destinationCountryCode", destinationCountryCode)); // query parameter
             if (destinationCurrencyCode != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "destinationCurrencyCode", destinationCurrencyCode)); // query parameter
             if (baseAmount != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "baseAmount", baseAmount)); // query parameter
+            if (marketplaceId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "marketplaceId", marketplaceId)); // query parameter
 
 
             // make the HTTP request

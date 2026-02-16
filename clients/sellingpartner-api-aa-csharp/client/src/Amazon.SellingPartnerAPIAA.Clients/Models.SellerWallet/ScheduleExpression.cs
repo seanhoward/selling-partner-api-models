@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -19,21 +19,21 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// The configuration of the schedule.
+    /// Parameters containing information of the expression that defines when the schedule runs. The following formats are supported. 
     /// </summary>
     [DataContract]
     public partial class ScheduleExpression : IEquatable<ScheduleExpression>, IValidatableObject
     {
         /// <summary>
-        /// The type of the scheduled transfer.
+        /// Field to specify type of the scheduled transfer 
         /// </summary>
-        /// <value>The type of the scheduled transfer.</value>
+        /// <value>Field to specify type of the scheduled transfer </value>
         [DataMember(Name = "scheduleExpressionType", EmitDefaultValue = false)]
         public ScheduleExpressionType ScheduleExpressionType { get; set; }
         /// <summary>
-        /// How often the scheduled transfer happens. This field is required if &#x60;scheduleExpressionType&#x60; is &#x60;RECURRING&#x60;; otherwise it should be empty.
+        /// Field to specify recurrence of the scheduled transfer. Recurring frequency is mandatory if scheduleExpressionType is set as RECURRING otherwise it should be empty field. 
         /// </summary>
-        /// <value>How often the scheduled transfer happens. This field is required if &#x60;scheduleExpressionType&#x60; is &#x60;RECURRING&#x60;; otherwise it should be empty.</value>
+        /// <value>Field to specify recurrence of the scheduled transfer. Recurring frequency is mandatory if scheduleExpressionType is set as RECURRING otherwise it should be empty field. </value>
         [DataMember(Name = "recurringFrequency", EmitDefaultValue = false)]
         public RecurringFrequency? RecurringFrequency { get; set; }
         /// <summary>
@@ -44,8 +44,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduleExpression" /> class.
         /// </summary>
-        /// <param name="scheduleExpressionType">The type of the scheduled transfer. (required).</param>
-        /// <param name="recurringFrequency">How often the scheduled transfer happens. This field is required if &#x60;scheduleExpressionType&#x60; is &#x60;RECURRING&#x60;; otherwise it should be empty..</param>
+        /// <param name="scheduleExpressionType">Field to specify type of the scheduled transfer  (required).</param>
+        /// <param name="recurringFrequency">Field to specify recurrence of the scheduled transfer. Recurring frequency is mandatory if scheduleExpressionType is set as RECURRING otherwise it should be empty field. .</param>
         public ScheduleExpression(ScheduleExpressionType scheduleExpressionType = default, RecurringFrequency? recurringFrequency = default)
         {
             // to ensure "scheduleExpressionType" is required (not null)

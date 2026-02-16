@@ -74,11 +74,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         /// Initializes a new instance of the <see cref="FulfillmentShipment" /> class.
         /// </summary>
         /// <param name="amazonShipmentId">A shipment identifier assigned by Amazon. (required).</param>
-        /// <param name="fulfillmentCenterId">An identifier for the fulfillment center that the shipment will be sent from. (required).</param>
+        /// <param name="fulfillmentCenterId">An identifier for the fulfillment center from which the shipment is sent. (required).</param>
         /// <param name="fulfillmentShipmentStatus">The current status of the shipment. (required).</param>
-        /// <param name="shippingDate">The meaning of the &#x60;shippingDate&#x60; value depends on the current status of the shipment. If the current value of &#x60;FulfillmentShipmentStatus&#x60; is:  * Pending - &#x60;shippingDate&#x60; represents the estimated time that the shipment will leave the Amazon fulfillment center.  * Shipped - &#x60;shippingDate&#x60; represents the date that the shipment left the Amazon fulfillment center. If a shipment includes more than one package, &#x60;shippingDate&#x60; applies to all of the packages in the shipment. If the value of &#x60;FulfillmentShipmentStatus&#x60; is &#x60;CancelledByFulfiller&#x60; or &#x60;CancelledBySeller&#x60;, &#x60;shippingDate&#x60; is not returned. The value must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format..</param>
-        /// <param name="estimatedArrivalDate">The estimated arrival date and time of the shipment. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. Note that this value can change over time. If a shipment includes more than one package, &#x60;estimatedArrivalDate&#x60; applies to all of the packages in the shipment. If the shipment has been cancelled, &#x60;estimatedArrivalDate&#x60; is not returned..</param>
-        /// <param name="shippingNotes">Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren&#39;t available..</param>
+        /// <param name="shippingDate">The meaning of the &#x60;shippingDate&#x60; value depends on the current status of the shipment. If the current value of FulfillmentShipmentStatus is:  * Pending - shippingDate represents the estimated time that the shipment will leave the Amazon fulfillment center.  * Shipped - shippingDate represents the date that the shipment left the Amazon fulfillment center.  If a shipment includes more than one package, &#x60;shippingDate&#x60; applies to all of the packages in the shipment. If the value of &#x60;FulfillmentShipmentStatus&#x60; is &#x60;CancelledByFulfiller&#x60; or &#x60;CancelledBySeller&#x60;, &#x60;shippingDate&#x60; is not returned. The value must be in ISO 8601 date time format..</param>
+        /// <param name="estimatedArrivalDate">The estimated arrival date and time of the shipment, in ISO 8601 date time format. Note that this value can change over time. If a shipment includes more than one package, &#x60;estimatedArrivalDate&#x60; applies to all of the packages in the shipment. If the shipment is cancelled, &#x60;estimatedArrivalDate&#x60; is not returned..</param>
+        /// <param name="shippingNotes">Provides additional insight into shipment timeline. Primarily used to communicate that actual delivery dates aren&#39;t available..</param>
         /// <param name="fulfillmentShipmentItem">fulfillmentShipmentItem (required).</param>
         /// <param name="fulfillmentShipmentPackage">fulfillmentShipmentPackage.</param>
         public FulfillmentShipment(string amazonShipmentId = default, string fulfillmentCenterId = default, FulfillmentShipmentStatusEnum fulfillmentShipmentStatus = default, DateTime? shippingDate = default, DateTime? estimatedArrivalDate = default, List<string> shippingNotes = default, FulfillmentShipmentItemList fulfillmentShipmentItem = default, FulfillmentShipmentPackageList fulfillmentShipmentPackage = default)
@@ -133,31 +133,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
         public string AmazonShipmentId { get; set; }
 
         /// <summary>
-        /// An identifier for the fulfillment center that the shipment will be sent from.
+        /// An identifier for the fulfillment center from which the shipment is sent.
         /// </summary>
-        /// <value>An identifier for the fulfillment center that the shipment will be sent from.</value>
+        /// <value>An identifier for the fulfillment center from which the shipment is sent.</value>
         [DataMember(Name = "fulfillmentCenterId", EmitDefaultValue = false)]
         public string FulfillmentCenterId { get; set; }
 
 
         /// <summary>
-        /// The meaning of the &#x60;shippingDate&#x60; value depends on the current status of the shipment. If the current value of &#x60;FulfillmentShipmentStatus&#x60; is:  * Pending - &#x60;shippingDate&#x60; represents the estimated time that the shipment will leave the Amazon fulfillment center.  * Shipped - &#x60;shippingDate&#x60; represents the date that the shipment left the Amazon fulfillment center. If a shipment includes more than one package, &#x60;shippingDate&#x60; applies to all of the packages in the shipment. If the value of &#x60;FulfillmentShipmentStatus&#x60; is &#x60;CancelledByFulfiller&#x60; or &#x60;CancelledBySeller&#x60;, &#x60;shippingDate&#x60; is not returned. The value must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.
+        /// The meaning of the &#x60;shippingDate&#x60; value depends on the current status of the shipment. If the current value of FulfillmentShipmentStatus is:  * Pending - shippingDate represents the estimated time that the shipment will leave the Amazon fulfillment center.  * Shipped - shippingDate represents the date that the shipment left the Amazon fulfillment center.  If a shipment includes more than one package, &#x60;shippingDate&#x60; applies to all of the packages in the shipment. If the value of &#x60;FulfillmentShipmentStatus&#x60; is &#x60;CancelledByFulfiller&#x60; or &#x60;CancelledBySeller&#x60;, &#x60;shippingDate&#x60; is not returned. The value must be in ISO 8601 date time format.
         /// </summary>
-        /// <value>The meaning of the &#x60;shippingDate&#x60; value depends on the current status of the shipment. If the current value of &#x60;FulfillmentShipmentStatus&#x60; is:  * Pending - &#x60;shippingDate&#x60; represents the estimated time that the shipment will leave the Amazon fulfillment center.  * Shipped - &#x60;shippingDate&#x60; represents the date that the shipment left the Amazon fulfillment center. If a shipment includes more than one package, &#x60;shippingDate&#x60; applies to all of the packages in the shipment. If the value of &#x60;FulfillmentShipmentStatus&#x60; is &#x60;CancelledByFulfiller&#x60; or &#x60;CancelledBySeller&#x60;, &#x60;shippingDate&#x60; is not returned. The value must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format.</value>
+        /// <value>The meaning of the &#x60;shippingDate&#x60; value depends on the current status of the shipment. If the current value of FulfillmentShipmentStatus is:  * Pending - shippingDate represents the estimated time that the shipment will leave the Amazon fulfillment center.  * Shipped - shippingDate represents the date that the shipment left the Amazon fulfillment center.  If a shipment includes more than one package, &#x60;shippingDate&#x60; applies to all of the packages in the shipment. If the value of &#x60;FulfillmentShipmentStatus&#x60; is &#x60;CancelledByFulfiller&#x60; or &#x60;CancelledBySeller&#x60;, &#x60;shippingDate&#x60; is not returned. The value must be in ISO 8601 date time format.</value>
         [DataMember(Name = "shippingDate", EmitDefaultValue = false)]
         public DateTime? ShippingDate { get; set; }
 
         /// <summary>
-        /// The estimated arrival date and time of the shipment. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. Note that this value can change over time. If a shipment includes more than one package, &#x60;estimatedArrivalDate&#x60; applies to all of the packages in the shipment. If the shipment has been cancelled, &#x60;estimatedArrivalDate&#x60; is not returned.
+        /// The estimated arrival date and time of the shipment, in ISO 8601 date time format. Note that this value can change over time. If a shipment includes more than one package, &#x60;estimatedArrivalDate&#x60; applies to all of the packages in the shipment. If the shipment is cancelled, &#x60;estimatedArrivalDate&#x60; is not returned.
         /// </summary>
-        /// <value>The estimated arrival date and time of the shipment. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. Note that this value can change over time. If a shipment includes more than one package, &#x60;estimatedArrivalDate&#x60; applies to all of the packages in the shipment. If the shipment has been cancelled, &#x60;estimatedArrivalDate&#x60; is not returned.</value>
+        /// <value>The estimated arrival date and time of the shipment, in ISO 8601 date time format. Note that this value can change over time. If a shipment includes more than one package, &#x60;estimatedArrivalDate&#x60; applies to all of the packages in the shipment. If the shipment is cancelled, &#x60;estimatedArrivalDate&#x60; is not returned.</value>
         [DataMember(Name = "estimatedArrivalDate", EmitDefaultValue = false)]
         public DateTime? EstimatedArrivalDate { get; set; }
 
         /// <summary>
-        /// Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren&#39;t available.
+        /// Provides additional insight into shipment timeline. Primarily used to communicate that actual delivery dates aren&#39;t available.
         /// </summary>
-        /// <value>Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren&#39;t available.</value>
+        /// <value>Provides additional insight into shipment timeline. Primarily used to communicate that actual delivery dates aren&#39;t available.</value>
         [DataMember(Name = "shippingNotes", EmitDefaultValue = false)]
         public List<string> ShippingNotes { get; set; }
 

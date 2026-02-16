@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.HttpMethod
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.HttpMethod
 ## Properties
 
 Name | Type | Description | Notes

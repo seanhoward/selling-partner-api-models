@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
     /// <summary>
-    /// The request for the getFulfillmentOrder operation.
+    /// The request for the &#x60;getFulfillmentOrder&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class GetFulfillmentOrderResult : IEquatable<GetFulfillmentOrderResult>, IValidatableObject

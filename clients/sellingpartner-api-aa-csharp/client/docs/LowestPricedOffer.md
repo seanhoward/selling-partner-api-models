@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.LowestPricedOffer
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.LowestPricedOffer
 ## Properties
 
 Name | Type | Description | Notes

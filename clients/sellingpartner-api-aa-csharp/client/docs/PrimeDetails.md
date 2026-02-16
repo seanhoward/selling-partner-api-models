@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.PrimeDetails
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.PrimeDetails
 ## Properties
 
 Name | Type | Description | Notes

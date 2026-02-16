@@ -9,18 +9,12 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,41 +22,41 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Details about the movement of money in the financial transaction. Breakdowns are further categorized into breakdown types, breakdown amounts, and further breakdowns.
     /// </summary>
     [DataContract]
-    public partial class Breakdown :  IEquatable<Breakdown>, IValidatableObject
+    public partial class Breakdown : IEquatable<Breakdown>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Breakdown" /> class.
         /// </summary>
         /// <param name="breakdownType">The type of charge..</param>
         /// <param name="breakdownAmount">The monetary amount of the charge..</param>
-        /// <param name="breakdowns">Further breakdowns of &#x60;BreakdownType&#x60;..</param>
-        public Breakdown(string breakdownType = default, Currency breakdownAmount = default, Breakdown breakdowns = default)
+        /// <param name="breakdowns">A list of breakdowns that detail how the total amount is calculated for the transaction..</param>
+        public Breakdown(string breakdownType = default, Currency breakdownAmount = default, List<Breakdown> breakdowns = default)
         {
             this.BreakdownType = breakdownType;
             this.BreakdownAmount = breakdownAmount;
             this.Breakdowns = breakdowns;
         }
-        
+
         /// <summary>
         /// The type of charge.
         /// </summary>
         /// <value>The type of charge.</value>
-        [DataMember(Name="breakdownType", EmitDefaultValue=false)]
+        [DataMember(Name = "breakdownType", EmitDefaultValue = false)]
         public string BreakdownType { get; set; }
 
         /// <summary>
         /// The monetary amount of the charge.
         /// </summary>
         /// <value>The monetary amount of the charge.</value>
-        [DataMember(Name="breakdownAmount", EmitDefaultValue=false)]
+        [DataMember(Name = "breakdownAmount", EmitDefaultValue = false)]
         public Currency BreakdownAmount { get; set; }
 
         /// <summary>
-        /// Further breakdowns of &#x60;BreakdownType&#x60;.
+        /// A list of breakdowns that detail how the total amount is calculated for the transaction.
         /// </summary>
-        /// <value>Further breakdowns of &#x60;BreakdownType&#x60;.</value>
-        [DataMember(Name="breakdowns", EmitDefaultValue=false)]
-        public Breakdown Breakdowns { get; set; }
+        /// <value>A list of breakdowns that detail how the total amount is calculated for the transaction.</value>
+        [DataMember(Name = "breakdowns", EmitDefaultValue = false)]
+        public List<Breakdown> Breakdowns { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,7 +72,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,21 +102,21 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.BreakdownType == input.BreakdownType ||
                     (this.BreakdownType != null &&
                     this.BreakdownType.Equals(input.BreakdownType))
-                ) && 
+                ) &&
                 (
                     this.BreakdownAmount == input.BreakdownAmount ||
                     (this.BreakdownAmount != null &&
                     this.BreakdownAmount.Equals(input.BreakdownAmount))
-                ) && 
+                ) &&
                 (
                     this.Breakdowns == input.Breakdowns ||
-                    (this.Breakdowns != null &&
-                    this.Breakdowns.Equals(input.Breakdowns))
+                    this.Breakdowns != null &&
+                    this.Breakdowns.SequenceEqual(input.Breakdowns)
                 );
         }
 

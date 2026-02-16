@@ -39,7 +39,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="fnsku">A unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center. (required).</param>
         /// <param name="labelOwner">Specifies who will label the items. Options include &#x60;AMAZON&#x60;, &#x60;SELLER&#x60;, and &#x60;NONE&#x60;. (required).</param>
         /// <param name="manufacturingLotCode">The manufacturing lot code..</param>
-        /// <param name="msku">The merchant SKU, a merchant-supplied identifier of a specific SKU. (required).</param>
+        /// <param name="msku">The merchant-defined SKU ID. (required).</param>
         /// <param name="prepInstructions">Special preparations that are required for an item. (required).</param>
         /// <param name="quantity">The number of the specified MSKU. (required).</param>
         public Item(string asin = default, string expiration = default, string fnsku = default, string labelOwner = default, string manufacturingLotCode = default, string msku = default, List<PrepInstruction> prepInstructions = default, int? quantity = default)
@@ -138,9 +138,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         public string ManufacturingLotCode { get; set; }
 
         /// <summary>
-        /// The merchant SKU, a merchant-supplied identifier of a specific SKU.
+        /// The merchant-defined SKU ID.
         /// </summary>
-        /// <value>The merchant SKU, a merchant-supplied identifier of a specific SKU.</value>
+        /// <value>The merchant-defined SKU ID.</value>
         [DataMember(Name = "msku", EmitDefaultValue = false)]
         public string Msku { get; set; }
 
@@ -342,9 +342,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
 
             // Msku (string) maxLength
-            if (this.Msku != null && this.Msku.Length > 40)
+            if (this.Msku != null && this.Msku.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new[] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 255.", new[] { "Msku" });
             }
 
             // Msku (string) minLength
@@ -354,9 +354,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
 
             // Quantity (int?) maximum
-            if (this.Quantity > (int?)10000)
+            if (this.Quantity > (int?)500000)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new[] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 500000.", new[] { "Quantity" });
             }
 
             // Quantity (int?) minimum

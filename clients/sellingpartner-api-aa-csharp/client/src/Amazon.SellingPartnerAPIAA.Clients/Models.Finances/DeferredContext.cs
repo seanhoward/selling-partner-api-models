@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,41 +21,32 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Additional information related to deferred transactions.
     /// </summary>
     [DataContract]
-    public partial class DeferredContext :  IEquatable<DeferredContext>, IValidatableObject
+    public partial class DeferredContext : IEquatable<DeferredContext>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeferredContext" /> class.
         /// </summary>
-        /// <param name="deferralReason">Deferral policy applied on the transaction.  **Examples:** &#x60;B2B&#x60;,&#x60;DD7&#x60;.</param>
+        /// <param name="deferralReason">The deferral policy applied to the transaction.  **Examples:** &#x60;B2B&#x60; (invoiced orders), &#x60;DD7&#x60; (delivery date policy).</param>
         /// <param name="maturityDate">The release date of the transaction..</param>
-        /// <param name="deferralStatus">The status of the transaction. For example, &#x60;HOLD&#x60;,&#x60;RELEASE&#x60;..</param>
-        public DeferredContext(string deferralReason = default, DateTime? maturityDate = default, string deferralStatus = default)
+        public DeferredContext(string deferralReason = default, DateTime? maturityDate = default)
         {
             this.DeferralReason = deferralReason;
             this.MaturityDate = maturityDate;
-            this.DeferralStatus = deferralStatus;
         }
-        
+
         /// <summary>
-        /// Deferral policy applied on the transaction.  **Examples:** &#x60;B2B&#x60;,&#x60;DD7&#x60;
+        /// The deferral policy applied to the transaction.  **Examples:** &#x60;B2B&#x60; (invoiced orders), &#x60;DD7&#x60; (delivery date policy)
         /// </summary>
-        /// <value>Deferral policy applied on the transaction.  **Examples:** &#x60;B2B&#x60;,&#x60;DD7&#x60;</value>
-        [DataMember(Name="deferralReason", EmitDefaultValue=false)]
+        /// <value>The deferral policy applied to the transaction.  **Examples:** &#x60;B2B&#x60; (invoiced orders), &#x60;DD7&#x60; (delivery date policy)</value>
+        [DataMember(Name = "deferralReason", EmitDefaultValue = false)]
         public string DeferralReason { get; set; }
 
         /// <summary>
         /// The release date of the transaction.
         /// </summary>
         /// <value>The release date of the transaction.</value>
-        [DataMember(Name="maturityDate", EmitDefaultValue=false)]
+        [DataMember(Name = "maturityDate", EmitDefaultValue = false)]
         public DateTime? MaturityDate { get; set; }
-
-        /// <summary>
-        /// The status of the transaction. For example, &#x60;HOLD&#x60;,&#x60;RELEASE&#x60;.
-        /// </summary>
-        /// <value>The status of the transaction. For example, &#x60;HOLD&#x60;,&#x60;RELEASE&#x60;.</value>
-        [DataMember(Name="deferralStatus", EmitDefaultValue=false)]
-        public string DeferralStatus { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,11 +58,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("class DeferredContext {\n");
             sb.Append("  DeferralReason: ").Append(DeferralReason).Append("\n");
             sb.Append("  MaturityDate: ").Append(MaturityDate).Append("\n");
-            sb.Append("  DeferralStatus: ").Append(DeferralStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -108,21 +91,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DeferralReason == input.DeferralReason ||
                     (this.DeferralReason != null &&
                     this.DeferralReason.Equals(input.DeferralReason))
-                ) && 
+                ) &&
                 (
                     this.MaturityDate == input.MaturityDate ||
                     (this.MaturityDate != null &&
                     this.MaturityDate.Equals(input.MaturityDate))
-                ) && 
-                (
-                    this.DeferralStatus == input.DeferralStatus ||
-                    (this.DeferralStatus != null &&
-                    this.DeferralStatus.Equals(input.DeferralStatus))
                 );
         }
 
@@ -139,8 +117,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
                     hashCode = hashCode * 59 + this.DeferralReason.GetHashCode();
                 if (this.MaturityDate != null)
                     hashCode = hashCode * 59 + this.MaturityDate.GetHashCode();
-                if (this.DeferralStatus != null)
-                    hashCode = hashCode * 59 + this.DeferralStatus.GetHashCode();
                 return hashCode;
             }
         }

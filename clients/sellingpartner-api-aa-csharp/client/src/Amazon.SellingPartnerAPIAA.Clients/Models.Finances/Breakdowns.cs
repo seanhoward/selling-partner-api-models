@@ -9,26 +9,19 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
     /// <summary>
-    /// A list of breakdowns that provide details on how the total amount is calculated for the transaction.
+    /// A list of breakdowns that detail how the total amount is calculated for the transaction.
     /// </summary>
     [DataContract]
-    public partial class Breakdowns : List<Breakdown>,  IEquatable<Breakdowns>, IValidatableObject
+    public partial class Breakdowns : List<Breakdown>, IEquatable<Breakdowns>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Breakdowns" /> class.
@@ -37,7 +30,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
         public Breakdowns() : base()
         {
         }
-        
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -50,7 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

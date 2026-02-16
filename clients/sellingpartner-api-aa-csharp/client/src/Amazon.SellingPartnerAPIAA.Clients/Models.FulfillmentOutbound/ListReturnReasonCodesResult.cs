@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
     /// <summary>
-    /// The request for the listReturnReasonCodes operation.
+    /// The request for the &#x60;listReturnReasonCodes&#x60; operation.
     /// </summary>
     [DataContract]
     public partial class ListReturnReasonCodesResult : IEquatable<ListReturnReasonCodesResult>, IValidatableObject

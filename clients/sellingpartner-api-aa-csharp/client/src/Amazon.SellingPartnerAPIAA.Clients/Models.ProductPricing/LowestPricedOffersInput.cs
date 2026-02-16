@@ -43,13 +43,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing
             /// Enum Consumer for value: Consumer
             /// </summary>
             [EnumMember(Value = "Consumer")]
-            Consumer = 1,
-
-            /// <summary>
-            /// Enum Business for value: Business
-            /// </summary>
-            [EnumMember(Value = "Business")]
-            Business = 2
+            Consumer = 1
         }
 
         /// <summary>

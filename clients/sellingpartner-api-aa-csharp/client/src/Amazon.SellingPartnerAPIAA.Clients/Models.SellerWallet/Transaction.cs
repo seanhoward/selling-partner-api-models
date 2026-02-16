@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -19,21 +19,21 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// The current transaction status and historical details related to it.
+    /// The current transaction status and related historical details.
     /// </summary>
     [DataContract]
     public partial class Transaction : IEquatable<Transaction>, IValidatableObject
     {
         /// <summary>
-        /// The type of the transaction.
+        /// Type of the transaction 
         /// </summary>
-        /// <value>The type of the transaction.</value>
+        /// <value>Type of the transaction </value>
         [DataMember(Name = "transactionType", EmitDefaultValue = false)]
         public TransactionType TransactionType { get; set; }
         /// <summary>
-        /// The status of the transaction.
+        /// Execution Status of the transaction 
         /// </summary>
-        /// <value>The status of the transaction.</value>
+        /// <value>Execution Status of the transaction </value>
         [DataMember(Name = "transactionStatus", EmitDefaultValue = false)]
         public TransactionStatus TransactionStatus { get; set; }
         /// <summary>
@@ -44,24 +44,34 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="Transaction" /> class.
         /// </summary>
-        /// <param name="transactionId">The unique identifier provided by Amazon to the transaction. (required).</param>
-        /// <param name="transactionType">The type of the transaction. (required).</param>
-        /// <param name="transactionStatus">The status of the transaction. (required).</param>
-        /// <param name="transactionRequestDate">The date on which the transaction was initiated. (required).</param>
-        /// <param name="expectedCompletionDate">The expected completion date of the transaction..</param>
-        /// <param name="transactionActualCompletionDate">The transaction&#39;s completion date..</param>
-        /// <param name="lastUpdateDate">The date of the most recent account balance update. (required).</param>
-        /// <param name="requesterName">The Amazon Seller Wallet customer who requested the transaction..</param>
-        /// <param name="transactionRequesterSource">The transaction initiation source. This value could be the Amazon portal or PISP name that the customer used to start the transaction. (required).</param>
-        /// <param name="transactionDescription">The description provided by the requester in the transaction request at time of transaction initiation. (required).</param>
-        /// <param name="transactionSourceAccount">The source bank account details in the transaction. (required).</param>
-        /// <param name="transactionDestinationAccount">The destination bank account details in the transaction. (required).</param>
-        /// <param name="transactionRequestAmount">The amount for which the transfer was initiated. (required).</param>
-        /// <param name="transferRateDetails">The fees and rates applied on the transaction, as applicable. (required).</param>
-        /// <param name="transactionFinalAmount">The amount of completed transaction in the destination account currency. This value is only populated for international transactions.</param>
-        /// <param name="transactionFailureReason">The reason the transaction failed, if applicable..</param>
-        public Transaction(string transactionId = default, TransactionType transactionType = default, TransactionStatus transactionStatus = default, DateTime? transactionRequestDate = default, DateTime? expectedCompletionDate = default, DateTime? transactionActualCompletionDate = default, DateTime? lastUpdateDate = default, string requesterName = default, string transactionRequesterSource = default, string transactionDescription = default, TransactionAccount transactionSourceAccount = default, TransactionAccount transactionDestinationAccount = default, Currency transactionRequestAmount = default, TransferRatePreview transferRateDetails = default, Currency transactionFinalAmount = default, string transactionFailureReason = default)
+        /// <param name="accountId">The unique identifier of the Amazon Seller Wallet bank account from which the money is debited. (required).</param>
+        /// <param name="transactionId">The unique identifier provided by Amazon to the transaction  (required).</param>
+        /// <param name="transactionType">Type of the transaction  (required).</param>
+        /// <param name="transactionStatus">Execution Status of the transaction  (required).</param>
+        /// <param name="transactionRequestDate">The date when the transaction was initiated. (required).</param>
+        /// <param name="expectedCompletionDate">Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days .</param>
+        /// <param name="transactionActualCompletionDate">Transaction completion date .</param>
+        /// <param name="lastUpdateDate">The last update date on the transaction  (required).</param>
+        /// <param name="requesterName">Amazon SW customer who requested the transaction .</param>
+        /// <param name="transactionRequesterSource">The transaction initiation source. This value is either the Amazon portal or PISP name that the customer used to start the transaction. (required).</param>
+        /// <param name="transactionDescription">A description of the transaction that the requester provides when they initiate the transaction. (required).</param>
+        /// <param name="transactionSourceAccount">Source bank account details in the transaction .</param>
+        /// <param name="transactionDestinationAccount">Destination bank account details in the transaction  (required).</param>
+        /// <param name="transactionRequestAmount">Specifies the amount for which the transfer was initiated (required).</param>
+        /// <param name="transferRateDetails">The fees and rates that apply to the transaction, as applicable. (required).</param>
+        /// <param name="transactionFinalAmount">Specifies the amount of completed transaction in the destination account currency, this will be populated only for international transactions.</param>
+        /// <param name="transactionFailureReason">Description in case the transaction fails before completion .</param>
+        public Transaction(string accountId = default, string transactionId = default, TransactionType transactionType = default, TransactionStatus transactionStatus = default, DateTime? transactionRequestDate = default, DateTime? expectedCompletionDate = default, DateTime? transactionActualCompletionDate = default, DateTime? lastUpdateDate = default, string requesterName = default, string transactionRequesterSource = default, string transactionDescription = default, TransactionAccount transactionSourceAccount = default, TransactionAccount transactionDestinationAccount = default, Currency transactionRequestAmount = default, TransferRatePreview transferRateDetails = default, Currency transactionFinalAmount = default, string transactionFailureReason = default)
         {
+            // to ensure "accountId" is required (not null)
+            if (accountId == null)
+            {
+                throw new InvalidDataException("accountId is a required property for Transaction and cannot be null");
+            }
+            else
+            {
+                this.AccountId = accountId;
+            }
             // to ensure "transactionId" is required (not null)
             if (transactionId == null)
             {
@@ -125,15 +135,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
             {
                 this.TransactionDescription = transactionDescription;
             }
-            // to ensure "transactionSourceAccount" is required (not null)
-            if (transactionSourceAccount == null)
-            {
-                throw new InvalidDataException("transactionSourceAccount is a required property for Transaction and cannot be null");
-            }
-            else
-            {
-                this.TransactionSourceAccount = transactionSourceAccount;
-            }
             // to ensure "transactionDestinationAccount" is required (not null)
             if (transactionDestinationAccount == null)
             {
@@ -164,107 +165,115 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
             this.ExpectedCompletionDate = expectedCompletionDate;
             this.TransactionActualCompletionDate = transactionActualCompletionDate;
             this.RequesterName = requesterName;
+            this.TransactionSourceAccount = transactionSourceAccount;
             this.TransactionFinalAmount = transactionFinalAmount;
             this.TransactionFailureReason = transactionFailureReason;
         }
 
         /// <summary>
-        /// The unique identifier provided by Amazon to the transaction.
+        /// The unique identifier of the Amazon Seller Wallet bank account from which the money is debited.
         /// </summary>
-        /// <value>The unique identifier provided by Amazon to the transaction.</value>
+        /// <value>The unique identifier of the Amazon Seller Wallet bank account from which the money is debited.</value>
+        [DataMember(Name = "accountId", EmitDefaultValue = false)]
+        public string AccountId { get; set; }
+
+        /// <summary>
+        /// The unique identifier provided by Amazon to the transaction 
+        /// </summary>
+        /// <value>The unique identifier provided by Amazon to the transaction </value>
         [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string TransactionId { get; set; }
 
 
 
         /// <summary>
-        /// The date on which the transaction was initiated.
+        /// The date when the transaction was initiated.
         /// </summary>
-        /// <value>The date on which the transaction was initiated.</value>
+        /// <value>The date when the transaction was initiated.</value>
         [DataMember(Name = "transactionRequestDate", EmitDefaultValue = false)]
         public DateTime? TransactionRequestDate { get; set; }
 
         /// <summary>
-        /// The expected completion date of the transaction.
+        /// Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days 
         /// </summary>
-        /// <value>The expected completion date of the transaction.</value>
+        /// <value>Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days </value>
         [DataMember(Name = "expectedCompletionDate", EmitDefaultValue = false)]
         public DateTime? ExpectedCompletionDate { get; set; }
 
         /// <summary>
-        /// The transaction&#39;s completion date.
+        /// Transaction completion date 
         /// </summary>
-        /// <value>The transaction&#39;s completion date.</value>
+        /// <value>Transaction completion date </value>
         [DataMember(Name = "transactionActualCompletionDate", EmitDefaultValue = false)]
         public DateTime? TransactionActualCompletionDate { get; set; }
 
         /// <summary>
-        /// The date of the most recent account balance update.
+        /// The last update date on the transaction 
         /// </summary>
-        /// <value>The date of the most recent account balance update.</value>
+        /// <value>The last update date on the transaction </value>
         [DataMember(Name = "lastUpdateDate", EmitDefaultValue = false)]
         public DateTime? LastUpdateDate { get; set; }
 
         /// <summary>
-        /// The Amazon Seller Wallet customer who requested the transaction.
+        /// Amazon SW customer who requested the transaction 
         /// </summary>
-        /// <value>The Amazon Seller Wallet customer who requested the transaction.</value>
+        /// <value>Amazon SW customer who requested the transaction </value>
         [DataMember(Name = "requesterName", EmitDefaultValue = false)]
         public string RequesterName { get; set; }
 
         /// <summary>
-        /// The transaction initiation source. This value could be the Amazon portal or PISP name that the customer used to start the transaction.
+        /// The transaction initiation source. This value is either the Amazon portal or PISP name that the customer used to start the transaction.
         /// </summary>
-        /// <value>The transaction initiation source. This value could be the Amazon portal or PISP name that the customer used to start the transaction.</value>
+        /// <value>The transaction initiation source. This value is either the Amazon portal or PISP name that the customer used to start the transaction.</value>
         [DataMember(Name = "transactionRequesterSource", EmitDefaultValue = false)]
         public string TransactionRequesterSource { get; set; }
 
         /// <summary>
-        /// The description provided by the requester in the transaction request at time of transaction initiation.
+        /// A description of the transaction that the requester provides when they initiate the transaction.
         /// </summary>
-        /// <value>The description provided by the requester in the transaction request at time of transaction initiation.</value>
+        /// <value>A description of the transaction that the requester provides when they initiate the transaction.</value>
         [DataMember(Name = "transactionDescription", EmitDefaultValue = false)]
         public string TransactionDescription { get; set; }
 
         /// <summary>
-        /// The source bank account details in the transaction.
+        /// Source bank account details in the transaction 
         /// </summary>
-        /// <value>The source bank account details in the transaction.</value>
+        /// <value>Source bank account details in the transaction </value>
         [DataMember(Name = "transactionSourceAccount", EmitDefaultValue = false)]
         public TransactionAccount TransactionSourceAccount { get; set; }
 
         /// <summary>
-        /// The destination bank account details in the transaction.
+        /// Destination bank account details in the transaction 
         /// </summary>
-        /// <value>The destination bank account details in the transaction.</value>
+        /// <value>Destination bank account details in the transaction </value>
         [DataMember(Name = "transactionDestinationAccount", EmitDefaultValue = false)]
         public TransactionAccount TransactionDestinationAccount { get; set; }
 
         /// <summary>
-        /// The amount for which the transfer was initiated.
+        /// Specifies the amount for which the transfer was initiated
         /// </summary>
-        /// <value>The amount for which the transfer was initiated.</value>
+        /// <value>Specifies the amount for which the transfer was initiated</value>
         [DataMember(Name = "transactionRequestAmount", EmitDefaultValue = false)]
         public Currency TransactionRequestAmount { get; set; }
 
         /// <summary>
-        /// The fees and rates applied on the transaction, as applicable.
+        /// The fees and rates that apply to the transaction, as applicable.
         /// </summary>
-        /// <value>The fees and rates applied on the transaction, as applicable.</value>
+        /// <value>The fees and rates that apply to the transaction, as applicable.</value>
         [DataMember(Name = "transferRateDetails", EmitDefaultValue = false)]
         public TransferRatePreview TransferRateDetails { get; set; }
 
         /// <summary>
-        /// The amount of completed transaction in the destination account currency. This value is only populated for international transactions
+        /// Specifies the amount of completed transaction in the destination account currency, this will be populated only for international transactions
         /// </summary>
-        /// <value>The amount of completed transaction in the destination account currency. This value is only populated for international transactions</value>
+        /// <value>Specifies the amount of completed transaction in the destination account currency, this will be populated only for international transactions</value>
         [DataMember(Name = "transactionFinalAmount", EmitDefaultValue = false)]
         public Currency TransactionFinalAmount { get; set; }
 
         /// <summary>
-        /// The reason the transaction failed, if applicable.
+        /// Description in case the transaction fails before completion 
         /// </summary>
-        /// <value>The reason the transaction failed, if applicable.</value>
+        /// <value>Description in case the transaction fails before completion </value>
         [DataMember(Name = "transactionFailureReason", EmitDefaultValue = false)]
         public string TransactionFailureReason { get; set; }
 
@@ -276,6 +285,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         {
             var sb = new StringBuilder();
             sb.Append("class Transaction {\n");
+            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
             sb.Append("  TransactionType: ").Append(TransactionType).Append("\n");
             sb.Append("  TransactionStatus: ").Append(TransactionStatus).Append("\n");
@@ -326,6 +336,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
                 return false;
 
             return
+                (
+                    this.AccountId == input.AccountId ||
+                    (this.AccountId != null &&
+                    this.AccountId.Equals(input.AccountId))
+                ) &&
                 (
                     this.TransactionId == input.TransactionId ||
                     (this.TransactionId != null &&
@@ -417,6 +432,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.AccountId != null)
+                    hashCode = hashCode * 59 + this.AccountId.GetHashCode();
                 if (this.TransactionId != null)
                     hashCode = hashCode * 59 + this.TransactionId.GetHashCode();
                 if (this.TransactionType != null)

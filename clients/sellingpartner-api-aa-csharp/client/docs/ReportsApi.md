@@ -4,22 +4,22 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelReport**](ReportsApi.md#cancelreport) | **DELETE** /reports/2021-06-30/reports/{reportId} | cancelReport
-[**CancelReportSchedule**](ReportsApi.md#cancelreportschedule) | **DELETE** /reports/2021-06-30/schedules/{reportScheduleId} | cancelReportSchedule
-[**CreateReport**](ReportsApi.md#createreport) | **POST** /reports/2021-06-30/reports | createReport
-[**CreateReportSchedule**](ReportsApi.md#createreportschedule) | **POST** /reports/2021-06-30/schedules | createReportSchedule
-[**GetReport**](ReportsApi.md#getreport) | **GET** /reports/2021-06-30/reports/{reportId} | getReport
-[**GetReportDocument**](ReportsApi.md#getreportdocument) | **GET** /reports/2021-06-30/documents/{reportDocumentId} | getReportDocument
-[**GetReportSchedule**](ReportsApi.md#getreportschedule) | **GET** /reports/2021-06-30/schedules/{reportScheduleId} | getReportSchedule
-[**GetReportSchedules**](ReportsApi.md#getreportschedules) | **GET** /reports/2021-06-30/schedules | getReportSchedules
-[**GetReports**](ReportsApi.md#getreports) | **GET** /reports/2021-06-30/reports | getReports
+[**CancelReport**](ReportsApi.md#cancelreport) | **DELETE** /reports/2021-06-30/reports/{reportId} | 
+[**CancelReportSchedule**](ReportsApi.md#cancelreportschedule) | **DELETE** /reports/2021-06-30/schedules/{reportScheduleId} | 
+[**CreateReport**](ReportsApi.md#createreport) | **POST** /reports/2021-06-30/reports | 
+[**CreateReportSchedule**](ReportsApi.md#createreportschedule) | **POST** /reports/2021-06-30/schedules | 
+[**GetReport**](ReportsApi.md#getreport) | **GET** /reports/2021-06-30/reports/{reportId} | 
+[**GetReportDocument**](ReportsApi.md#getreportdocument) | **GET** /reports/2021-06-30/documents/{reportDocumentId} | 
+[**GetReportSchedule**](ReportsApi.md#getreportschedule) | **GET** /reports/2021-06-30/schedules/{reportScheduleId} | 
+[**GetReportSchedules**](ReportsApi.md#getreportschedules) | **GET** /reports/2021-06-30/schedules | 
+[**GetReports**](ReportsApi.md#getreports) | **GET** /reports/2021-06-30/reports | 
 
 
 <a name="cancelreport"></a>
 # **CancelReport**
 > void CancelReport (string reportId)
 
-cancelReport
+
 
 Cancels the report that you specify. Only reports with `processingStatus=IN_QUEUE` can be cancelled. Cancelled reports are returned in subsequent calls to the `getReport` and `getReports` operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -42,7 +42,6 @@ namespace Example
 
             try
             {
-                // cancelReport
                 apiInstance.CancelReport(reportId);
             }
             catch (Exception e)
@@ -79,7 +78,7 @@ No authorization required
 # **CancelReportSchedule**
 > void CancelReportSchedule (string reportScheduleId)
 
-cancelReportSchedule
+
 
 Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -102,7 +101,6 @@ namespace Example
 
             try
             {
-                // cancelReportSchedule
                 apiInstance.CancelReportSchedule(reportScheduleId);
             }
             catch (Exception e)
@@ -139,7 +137,7 @@ No authorization required
 # **CreateReport**
 > CreateReportResponse CreateReport (CreateReportSpecification body)
 
-createReport
+
 
 Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -162,7 +160,6 @@ namespace Example
 
             try
             {
-                // createReport
                 CreateReportResponse result = apiInstance.CreateReport(body);
                 Debug.WriteLine(result);
             }
@@ -200,7 +197,7 @@ No authorization required
 # **CreateReportSchedule**
 > CreateReportScheduleResponse CreateReportSchedule (CreateReportScheduleSpecification body)
 
-createReportSchedule
+
 
 Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -223,7 +220,6 @@ namespace Example
 
             try
             {
-                // createReportSchedule
                 CreateReportScheduleResponse result = apiInstance.CreateReportSchedule(body);
                 Debug.WriteLine(result);
             }
@@ -261,7 +257,7 @@ No authorization required
 # **GetReport**
 > Report GetReport (string reportId)
 
-getReport
+
 
 Returns report details (including the `reportDocumentId`, if available) for the report that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -284,7 +280,6 @@ namespace Example
 
             try
             {
-                // getReport
                 Report result = apiInstance.GetReport(reportId);
                 Debug.WriteLine(result);
             }
@@ -322,7 +317,7 @@ No authorization required
 # **GetReportDocument**
 > ReportDocument GetReportDocument (string reportDocumentId)
 
-getReportDocument
+
 
 Returns the information required for retrieving a report document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0167 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -345,7 +340,6 @@ namespace Example
 
             try
             {
-                // getReportDocument
                 ReportDocument result = apiInstance.GetReportDocument(reportDocumentId);
                 Debug.WriteLine(result);
             }
@@ -383,7 +377,7 @@ No authorization required
 # **GetReportSchedule**
 > ReportSchedule GetReportSchedule (string reportScheduleId)
 
-getReportSchedule
+
 
 Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -406,7 +400,6 @@ namespace Example
 
             try
             {
-                // getReportSchedule
                 ReportSchedule result = apiInstance.GetReportSchedule(reportScheduleId);
                 Debug.WriteLine(result);
             }
@@ -444,7 +437,7 @@ No authorization required
 # **GetReportSchedules**
 > ReportScheduleList GetReportSchedules (List<string> reportTypes)
 
-getReportSchedules
+
 
 Returns report schedule details that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -467,7 +460,6 @@ namespace Example
 
             try
             {
-                // getReportSchedules
                 ReportScheduleList result = apiInstance.GetReportSchedules(reportTypes);
                 Debug.WriteLine(result);
             }
@@ -505,7 +497,7 @@ No authorization required
 # **GetReports**
 > GetReportsResponse GetReports (List<string> reportTypes = null, List<string> processingStatuses = null, List<string> marketplaceIds = null, int? pageSize = null, DateTime? createdSince = null, DateTime? createdUntil = null, string nextToken = null)
 
-getReports
+
 
 Returns report details for the reports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -534,7 +526,6 @@ namespace Example
 
             try
             {
-                // getReports
                 GetReportsResponse result = apiInstance.GetReports(reportTypes, processingStatuses, marketplaceIds, pageSize, createdSince, createdUntil, nextToken);
                 Debug.WriteLine(result);
             }

@@ -73,8 +73,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Creates a fulfillment return.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
-        /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
+        /// <param name="body">The request body of the &#x60;createFulfillmentReturn&#x60; operation.</param>
+        /// <param name="sellerFulfillmentOrderId">An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;sellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>CreateFulfillmentReturnResponse</returns>
         CreateFulfillmentReturnResponse CreateFulfillmentReturn(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
 
@@ -85,8 +85,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Creates a fulfillment return.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
-        /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
+        /// <param name="body">The request body of the &#x60;createFulfillmentReturn&#x60; operation.</param>
+        /// <param name="sellerFulfillmentOrderId">An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;sellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>ApiResponse of CreateFulfillmentReturnResponse</returns>
         ApiResponse<CreateFulfillmentReturnResponse> CreateFulfillmentReturnWithHttpInfo(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
         /// <summary>
@@ -119,8 +119,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return a list of the inventory that is eligible for the specified feature.</param>
         /// <param name="featureName">The name of the feature for which to return a list of eligible inventory.</param>
-        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
-        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
+        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of &#x60;null&#x60; will return the first page. (optional)</param>
+        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60; (optional)</param>
         /// <returns>GetFeatureInventoryResponse</returns>
         GetFeatureInventoryResponse GetFeatureInventory(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
 
@@ -133,20 +133,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return a list of the inventory that is eligible for the specified feature.</param>
         /// <param name="featureName">The name of the feature for which to return a list of eligible inventory.</param>
-        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
-        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
+        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of &#x60;null&#x60; will return the first page. (optional)</param>
+        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60; (optional)</param>
         /// <returns>ApiResponse of GetFeatureInventoryResponse</returns>
         ApiResponse<GetFeatureInventoryResponse> GetFeatureInventoryWithHttpInfo(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn&#39;t eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the number of items with the &#x60;sellerSku&#x60; you specify that can have orders fulfilled using the specified feature. Note that if the &#x60;sellerSku&#x60; isn&#39;t eligible, the response will contain an empty &#x60;skuInfo&#x60; object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the count.</param>
         /// <param name="featureName">The name of the feature.</param>
-        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
+        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;sellerSku&#x60; is qualified by the seller&#39;s &#x60;sellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>GetFeatureSkuResponse</returns>
         GetFeatureSkuResponse GetFeatureSKU(string marketplaceId, string featureName, string sellerSku);
 
@@ -154,12 +154,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn&#39;t eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the number of items with the &#x60;sellerSku&#x60; you specify that can have orders fulfilled using the specified feature. Note that if the &#x60;sellerSku&#x60; isn&#39;t eligible, the response will contain an empty &#x60;skuInfo&#x60; object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the count.</param>
         /// <param name="featureName">The name of the feature.</param>
-        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
+        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;sellerSku&#x60; is qualified by the seller&#39;s &#x60;sellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>ApiResponse of GetFeatureSkuResponse</returns>
         ApiResponse<GetFeatureSkuResponse> GetFeatureSKUWithHttpInfo(string marketplaceId, string featureName, string sellerSku);
         /// <summary>
@@ -232,7 +232,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
+        /// <param name="packageNumber">The unencrypted package identifier. You can obtain this value from the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>GetPackageTrackingDetailsResponse</returns>
         GetPackageTrackingDetailsResponse GetPackageTrackingDetails(int? packageNumber);
 
@@ -243,14 +243,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
+        /// <param name="packageNumber">The unencrypted package identifier. You can obtain this value from the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>ApiResponse of GetPackageTrackingDetailsResponse</returns>
         ApiResponse<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsWithHttpInfo(int? packageNumber);
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
+        /// Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the &#x60;nextToken&#x60; parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
@@ -262,7 +262,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
+        /// Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the &#x60;nextToken&#x60; parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
@@ -326,7 +326,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
+        /// <param name="body">The request body of the &#x60;updateFulfillmentOrder&#x60; operation.</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>UpdateFulfillmentOrderResponse</returns>
         UpdateFulfillmentOrderResponse UpdateFulfillmentOrder(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
@@ -338,7 +338,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
+        /// <param name="body">The request body of the &#x60;updateFulfillmentOrder&#x60; operation.</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>ApiResponse of UpdateFulfillmentOrderResponse</returns>
         ApiResponse<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderWithHttpInfo(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
@@ -393,8 +393,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Creates a fulfillment return.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
-        /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
+        /// <param name="body">The request body of the &#x60;createFulfillmentReturn&#x60; operation.</param>
+        /// <param name="sellerFulfillmentOrderId">An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;sellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>Task of CreateFulfillmentReturnResponse</returns>
         System.Threading.Tasks.Task<CreateFulfillmentReturnResponse> CreateFulfillmentReturnAsync(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
 
@@ -405,8 +405,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Creates a fulfillment return.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
-        /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
+        /// <param name="body">The request body of the &#x60;createFulfillmentReturn&#x60; operation.</param>
+        /// <param name="sellerFulfillmentOrderId">An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;sellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>Task of ApiResponse (CreateFulfillmentReturnResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateFulfillmentReturnResponse>> CreateFulfillmentReturnAsyncWithHttpInfo(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId);
         /// <summary>
@@ -439,8 +439,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return a list of the inventory that is eligible for the specified feature.</param>
         /// <param name="featureName">The name of the feature for which to return a list of eligible inventory.</param>
-        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
-        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
+        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of &#x60;null&#x60; will return the first page. (optional)</param>
+        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60; (optional)</param>
         /// <returns>Task of GetFeatureInventoryResponse</returns>
         System.Threading.Tasks.Task<GetFeatureInventoryResponse> GetFeatureInventoryAsync(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
 
@@ -453,20 +453,20 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return a list of the inventory that is eligible for the specified feature.</param>
         /// <param name="featureName">The name of the feature for which to return a list of eligible inventory.</param>
-        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
-        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
+        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of &#x60;null&#x60; will return the first page. (optional)</param>
+        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (GetFeatureInventoryResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetFeatureInventoryResponse>> GetFeatureInventoryAsyncWithHttpInfo(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null);
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn&#39;t eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the number of items with the &#x60;sellerSku&#x60; you specify that can have orders fulfilled using the specified feature. Note that if the &#x60;sellerSku&#x60; isn&#39;t eligible, the response will contain an empty &#x60;skuInfo&#x60; object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the count.</param>
         /// <param name="featureName">The name of the feature.</param>
-        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
+        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;sellerSku&#x60; is qualified by the seller&#39;s &#x60;sellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>Task of GetFeatureSkuResponse</returns>
         System.Threading.Tasks.Task<GetFeatureSkuResponse> GetFeatureSKUAsync(string marketplaceId, string featureName, string sellerSku);
 
@@ -474,12 +474,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn&#39;t eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        /// Returns the number of items with the &#x60;sellerSku&#x60; you specify that can have orders fulfilled using the specified feature. Note that if the &#x60;sellerSku&#x60; isn&#39;t eligible, the response will contain an empty &#x60;skuInfo&#x60; object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the count.</param>
         /// <param name="featureName">The name of the feature.</param>
-        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
+        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;sellerSku&#x60; is qualified by the seller&#39;s &#x60;sellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>Task of ApiResponse (GetFeatureSkuResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetFeatureSkuResponse>> GetFeatureSKUAsyncWithHttpInfo(string marketplaceId, string featureName, string sellerSku);
         /// <summary>
@@ -552,7 +552,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
+        /// <param name="packageNumber">The unencrypted package identifier. You can obtain this value from the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>Task of GetPackageTrackingDetailsResponse</returns>
         System.Threading.Tasks.Task<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsAsync(int? packageNumber);
 
@@ -563,14 +563,14 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
+        /// <param name="packageNumber">The unencrypted package identifier. You can obtain this value from the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>Task of ApiResponse (GetPackageTrackingDetailsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetPackageTrackingDetailsResponse>> GetPackageTrackingDetailsAsyncWithHttpInfo(int? packageNumber);
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
+        /// Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the &#x60;nextToken&#x60; parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
@@ -582,7 +582,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
+        /// Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the &#x60;nextToken&#x60; parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
@@ -646,7 +646,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
+        /// <param name="body">The request body of the &#x60;updateFulfillmentOrder&#x60; operation.</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of UpdateFulfillmentOrderResponse</returns>
         System.Threading.Tasks.Task<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderAsync(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
@@ -658,7 +658,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
+        /// <param name="body">The request body of the &#x60;updateFulfillmentOrder&#x60; operation.</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of ApiResponse (UpdateFulfillmentOrderResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateFulfillmentOrderResponse>> UpdateFulfillmentOrderAsyncWithHttpInfo(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId);
@@ -1035,8 +1035,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Creates a fulfillment return.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
-        /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
+        /// <param name="body">The request body of the &#x60;createFulfillmentReturn&#x60; operation.</param>
+        /// <param name="sellerFulfillmentOrderId">An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;sellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>CreateFulfillmentReturnResponse</returns>
         public CreateFulfillmentReturnResponse CreateFulfillmentReturn(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
         {
@@ -1048,8 +1048,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Creates a fulfillment return.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
-        /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
+        /// <param name="body">The request body of the &#x60;createFulfillmentReturn&#x60; operation.</param>
+        /// <param name="sellerFulfillmentOrderId">An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;sellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>ApiResponse of CreateFulfillmentReturnResponse</returns>
         public ApiResponse<CreateFulfillmentReturnResponse> CreateFulfillmentReturnWithHttpInfo(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
         {
@@ -1115,8 +1115,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Creates a fulfillment return.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
-        /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
+        /// <param name="body">The request body of the &#x60;createFulfillmentReturn&#x60; operation.</param>
+        /// <param name="sellerFulfillmentOrderId">An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;sellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>Task of CreateFulfillmentReturnResponse</returns>
         public async System.Threading.Tasks.Task<CreateFulfillmentReturnResponse> CreateFulfillmentReturnAsync(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
         {
@@ -1129,8 +1129,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Creates a fulfillment return.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">CreateFulfillmentReturnRequest parameter</param>
-        /// <param name="sellerFulfillmentOrderId">An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
+        /// <param name="body">The request body of the &#x60;createFulfillmentReturn&#x60; operation.</param>
+        /// <param name="sellerFulfillmentOrderId">An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;sellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items.</param>
         /// <returns>Task of ApiResponse (CreateFulfillmentReturnResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<CreateFulfillmentReturnResponse>> CreateFulfillmentReturnAsyncWithHttpInfo(CreateFulfillmentReturnRequest body, string sellerFulfillmentOrderId)
         {
@@ -1347,8 +1347,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return a list of the inventory that is eligible for the specified feature.</param>
         /// <param name="featureName">The name of the feature for which to return a list of eligible inventory.</param>
-        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
-        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
+        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of &#x60;null&#x60; will return the first page. (optional)</param>
+        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60; (optional)</param>
         /// <returns>GetFeatureInventoryResponse</returns>
         public GetFeatureInventoryResponse GetFeatureInventory(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
         {
@@ -1362,8 +1362,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return a list of the inventory that is eligible for the specified feature.</param>
         /// <param name="featureName">The name of the feature for which to return a list of eligible inventory.</param>
-        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
-        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
+        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of &#x60;null&#x60; will return the first page. (optional)</param>
+        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60; (optional)</param>
         /// <returns>ApiResponse of GetFeatureInventoryResponse</returns>
         public ApiResponse<GetFeatureInventoryResponse> GetFeatureInventoryWithHttpInfo(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
         {
@@ -1426,8 +1426,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return a list of the inventory that is eligible for the specified feature.</param>
         /// <param name="featureName">The name of the feature for which to return a list of eligible inventory.</param>
-        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
-        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
+        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of &#x60;null&#x60; will return the first page. (optional)</param>
+        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60; (optional)</param>
         /// <returns>Task of GetFeatureInventoryResponse</returns>
         public async System.Threading.Tasks.Task<GetFeatureInventoryResponse> GetFeatureInventoryAsync(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
         {
@@ -1442,8 +1442,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return a list of the inventory that is eligible for the specified feature.</param>
         /// <param name="featureName">The name of the feature for which to return a list of eligible inventory.</param>
-        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)</param>
-        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)</param>
+        /// <param name="nextToken">A string token returned in the response to your previous request that is used to return the next response page. A value of &#x60;null&#x60; will return the first page. (optional)</param>
+        /// <param name="queryStartDate">A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format &#x60;yyyy-MM-ddTHH:mm:ss.sssZ&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (GetFeatureInventoryResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<GetFeatureInventoryResponse>> GetFeatureInventoryAsyncWithHttpInfo(string marketplaceId, string featureName, string nextToken = null, DateTime? queryStartDate = null)
         {
@@ -1501,12 +1501,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn&#39;t eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the number of items with the &#x60;sellerSku&#x60; you specify that can have orders fulfilled using the specified feature. Note that if the &#x60;sellerSku&#x60; isn&#39;t eligible, the response will contain an empty &#x60;skuInfo&#x60; object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the count.</param>
         /// <param name="featureName">The name of the feature.</param>
-        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
+        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;sellerSku&#x60; is qualified by the seller&#39;s &#x60;sellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>GetFeatureSkuResponse</returns>
         public GetFeatureSkuResponse GetFeatureSKU(string marketplaceId, string featureName, string sellerSku)
         {
@@ -1515,12 +1515,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn&#39;t eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the number of items with the &#x60;sellerSku&#x60; you specify that can have orders fulfilled using the specified feature. Note that if the &#x60;sellerSku&#x60; isn&#39;t eligible, the response will contain an empty &#x60;skuInfo&#x60; object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the count.</param>
         /// <param name="featureName">The name of the feature.</param>
-        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
+        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;sellerSku&#x60; is qualified by the seller&#39;s &#x60;sellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>ApiResponse of GetFeatureSkuResponse</returns>
         public ApiResponse<GetFeatureSkuResponse> GetFeatureSKUWithHttpInfo(string marketplaceId, string featureName, string sellerSku)
         {
@@ -1580,12 +1580,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn&#39;t eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the number of items with the &#x60;sellerSku&#x60; you specify that can have orders fulfilled using the specified feature. Note that if the &#x60;sellerSku&#x60; isn&#39;t eligible, the response will contain an empty &#x60;skuInfo&#x60; object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the count.</param>
         /// <param name="featureName">The name of the feature.</param>
-        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
+        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;sellerSku&#x60; is qualified by the seller&#39;s &#x60;sellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>Task of GetFeatureSkuResponse</returns>
         public async System.Threading.Tasks.Task<GetFeatureSkuResponse> GetFeatureSKUAsync(string marketplaceId, string featureName, string sellerSku)
         {
@@ -1595,12 +1595,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn&#39;t eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+        ///  Returns the number of items with the &#x60;sellerSku&#x60; you specify that can have orders fulfilled using the specified feature. Note that if the &#x60;sellerSku&#x60; isn&#39;t eligible, the response will contain an empty &#x60;skuInfo&#x60; object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="marketplaceId">The marketplace for which to return the count.</param>
         /// <param name="featureName">The name of the feature.</param>
-        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.</param>
+        /// <param name="sellerSku">Used to identify an item in the given marketplace. &#x60;sellerSku&#x60; is qualified by the seller&#39;s &#x60;sellerId&#x60;, which is included with every operation that you submit.</param>
         /// <returns>Task of ApiResponse (GetFeatureSkuResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<GetFeatureSkuResponse>> GetFeatureSKUAsyncWithHttpInfo(string marketplaceId, string featureName, string sellerSku)
         {
@@ -2082,7 +2082,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
+        /// <param name="packageNumber">The unencrypted package identifier. You can obtain this value from the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>GetPackageTrackingDetailsResponse</returns>
         public GetPackageTrackingDetailsResponse GetPackageTrackingDetails(int? packageNumber)
         {
@@ -2094,7 +2094,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
+        /// <param name="packageNumber">The unencrypted package identifier. You can obtain this value from the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>ApiResponse of GetPackageTrackingDetailsResponse</returns>
         public ApiResponse<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsWithHttpInfo(int? packageNumber)
         {
@@ -2149,7 +2149,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
+        /// <param name="packageNumber">The unencrypted package identifier. You can obtain this value from the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>Task of GetPackageTrackingDetailsResponse</returns>
         public async System.Threading.Tasks.Task<GetPackageTrackingDetailsResponse> GetPackageTrackingDetailsAsync(int? packageNumber)
         {
@@ -2162,7 +2162,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="packageNumber">The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.</param>
+        /// <param name="packageNumber">The unencrypted package identifier. You can obtain this value from the &#x60;getFulfillmentOrder&#x60; operation.</param>
         /// <returns>Task of ApiResponse (GetPackageTrackingDetailsResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<GetPackageTrackingDetailsResponse>> GetPackageTrackingDetailsAsyncWithHttpInfo(int? packageNumber)
         {
@@ -2214,7 +2214,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
+        ///  Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the &#x60;nextToken&#x60; parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
@@ -2227,7 +2227,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
+        ///  Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the &#x60;nextToken&#x60; parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
@@ -2281,7 +2281,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
+        ///  Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the &#x60;nextToken&#x60; parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
@@ -2295,7 +2295,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
-        ///  Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
+        ///  Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the &#x60;nextToken&#x60; parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="queryStartDate">A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)</param>
@@ -2666,7 +2666,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
+        /// <param name="body">The request body of the &#x60;updateFulfillmentOrder&#x60; operation.</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>UpdateFulfillmentOrderResponse</returns>
         public UpdateFulfillmentOrderResponse UpdateFulfillmentOrder(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
@@ -2679,7 +2679,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
+        /// <param name="body">The request body of the &#x60;updateFulfillmentOrder&#x60; operation.</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>ApiResponse of UpdateFulfillmentOrderResponse</returns>
         public ApiResponse<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderWithHttpInfo(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
@@ -2746,7 +2746,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
+        /// <param name="body">The request body of the &#x60;updateFulfillmentOrder&#x60; operation.</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of UpdateFulfillmentOrderResponse</returns>
         public async System.Threading.Tasks.Task<UpdateFulfillmentOrderResponse> UpdateFulfillmentOrderAsync(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)
@@ -2760,7 +2760,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         ///  Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 2 | 30 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">UpdateFulfillmentOrderRequest parameter</param>
+        /// <param name="body">The request body of the &#x60;updateFulfillmentOrder&#x60; operation.</param>
         /// <param name="sellerFulfillmentOrderId">The identifier assigned to the item by the seller when the fulfillment order was created.</param>
         /// <returns>Task of ApiResponse (UpdateFulfillmentOrderResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<UpdateFulfillmentOrderResponse>> UpdateFulfillmentOrderAsyncWithHttpInfo(UpdateFulfillmentOrderRequest body, string sellerFulfillmentOrderId)

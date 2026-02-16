@@ -38,12 +38,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <param name="city">The city. (required).</param>
         /// <param name="companyName">The name of the business..</param>
         /// <param name="countryCode">The country code in two-character ISO 3166-1 alpha-2 format. (required).</param>
+        /// <param name="districtOrCounty">The district or county..</param>
         /// <param name="email">The email address..</param>
         /// <param name="name">The name of the individual who is the primary contact. (required).</param>
         /// <param name="phoneNumber">The phone number. (required).</param>
         /// <param name="postalCode">The postal code. (required).</param>
         /// <param name="stateOrProvinceCode">The state or province code..</param>
-        public AddressInput(string addressLine1 = default, string addressLine2 = default, string city = default, string companyName = default, string countryCode = default, string email = default, string name = default, string phoneNumber = default, string postalCode = default, string stateOrProvinceCode = default)
+        public AddressInput(string addressLine1 = default, string addressLine2 = default, string city = default, string companyName = default, string countryCode = default, string districtOrCounty = default, string email = default, string name = default, string phoneNumber = default, string postalCode = default, string stateOrProvinceCode = default)
         {
             // to ensure "addressLine1" is required (not null)
             if (addressLine1 == null)
@@ -101,6 +102,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
             this.AddressLine2 = addressLine2;
             this.CompanyName = companyName;
+            this.DistrictOrCounty = districtOrCounty;
             this.Email = email;
             this.StateOrProvinceCode = stateOrProvinceCode;
         }
@@ -139,6 +141,13 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
         /// <value>The country code in two-character ISO 3166-1 alpha-2 format.</value>
         [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
+
+        /// <summary>
+        /// The district or county.
+        /// </summary>
+        /// <value>The district or county.</value>
+        [DataMember(Name = "districtOrCounty", EmitDefaultValue = false)]
+        public string DistrictOrCounty { get; set; }
 
         /// <summary>
         /// The email address.
@@ -188,6 +197,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             sb.Append("  City: ").Append(City).Append("\n");
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
+            sb.Append("  DistrictOrCounty: ").Append(DistrictOrCounty).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
@@ -253,6 +263,11 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                     this.CountryCode.Equals(input.CountryCode))
                 ) &&
                 (
+                    this.DistrictOrCounty == input.DistrictOrCounty ||
+                    (this.DistrictOrCounty != null &&
+                    this.DistrictOrCounty.Equals(input.DistrictOrCounty))
+                ) &&
+                (
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
@@ -298,6 +313,8 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
                     hashCode = hashCode * 59 + this.CompanyName.GetHashCode();
                 if (this.CountryCode != null)
                     hashCode = hashCode * 59 + this.CountryCode.GetHashCode();
+                if (this.DistrictOrCounty != null)
+                    hashCode = hashCode * 59 + this.DistrictOrCounty.GetHashCode();
                 if (this.Email != null)
                     hashCode = hashCode * 59 + this.Email.GetHashCode();
                 if (this.Name != null)
@@ -384,6 +401,18 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             if (false == regexCountryCode.Match(this.CountryCode).Success)
             {
                 yield return new ValidationResult("Invalid value for CountryCode, must match a pattern of " + regexCountryCode, new[] { "CountryCode" });
+            }
+
+            // DistrictOrCounty (string) maxLength
+            if (this.DistrictOrCounty != null && this.DistrictOrCounty.Length > 50)
+            {
+                yield return new ValidationResult("Invalid value for DistrictOrCounty, length must be less than 50.", new[] { "DistrictOrCounty" });
+            }
+
+            // DistrictOrCounty (string) minLength
+            if (this.DistrictOrCounty != null && this.DistrictOrCounty.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for DistrictOrCounty, length must be greater than 1.", new[] { "DistrictOrCounty" });
             }
 
             // Email (string) maxLength

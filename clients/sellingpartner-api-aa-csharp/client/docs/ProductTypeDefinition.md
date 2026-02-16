@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.ProductTypes.ProductTypeDefinition
+# Amazon.SellingPartnerAPIAA.Clients.Models.DefinitionsProductTypes.ProductTypeDefinition
 ## Properties
 
 Name | Type | Description | Notes

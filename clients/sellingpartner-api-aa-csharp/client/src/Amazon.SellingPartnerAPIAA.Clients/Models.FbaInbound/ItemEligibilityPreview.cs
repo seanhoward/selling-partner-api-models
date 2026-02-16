@@ -290,10 +290,16 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FbaInbound
             FBAINB0197 = 38,
 
             /// <summary>
+            /// Enum FBAINB0342 for value: FBA_INB_0342
+            /// </summary>
+            [EnumMember(Value = "FBA_INB_0342")]
+            FBAINB0342 = 39,
+
+            /// <summary>
             /// Enum UNKNOWNINBERRORCODE for value: UNKNOWN_INB_ERROR_CODE
             /// </summary>
             [EnumMember(Value = "UNKNOWN_INB_ERROR_CODE")]
-            UNKNOWNINBERRORCODE = 39
+            UNKNOWNINBERRORCODE = 40
         }
 
 

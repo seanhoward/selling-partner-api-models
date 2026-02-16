@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -20,7 +20,7 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// A list of bank accounts.
+    /// Struct that holds collection of accounts.
     /// </summary>
     [DataContract]
     public partial class BankAccountListing : IEquatable<BankAccountListing>, IValidatableObject
@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="BankAccountListing" /> class.
         /// </summary>
-        /// <param name="accounts">A list of bank accounts. (required).</param>
+        /// <param name="accounts">Collection that holds BankAccount  (required).</param>
         public BankAccountListing(List<BankAccount> accounts = default)
         {
             // to ensure "accounts" is required (not null)
@@ -48,9 +48,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         }
 
         /// <summary>
-        /// A list of bank accounts.
+        /// Collection that holds BankAccount 
         /// </summary>
-        /// <value>A list of bank accounts.</value>
+        /// <value>Collection that holds BankAccount </value>
         [DataMember(Name = "accounts", EmitDefaultValue = false)]
         public List<BankAccount> Accounts { get; set; }
 

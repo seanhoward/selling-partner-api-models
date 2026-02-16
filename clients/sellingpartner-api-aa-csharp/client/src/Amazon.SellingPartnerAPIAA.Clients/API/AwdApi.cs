@@ -91,6 +91,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// 
         /// </summary>
         /// <remarks>
+        /// Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be confirmed.</param>
+        /// <returns></returns>
+        void ConfirmReplenishmentOrder(string orderId);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be confirmed.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ConfirmReplenishmentOrderWithHttpInfo(string orderId);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Creates a draft AWD inbound order with a list of packages for inbound shipment. The operation creates one shipment per order.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
@@ -108,6 +129,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Payload for creating an inbound order.</param>
         /// <returns>ApiResponse of InboundOrderReference</returns>
         ApiResponse<InboundOrderReference> CreateInboundWithHttpInfo(InboundOrderCreationData body);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Payload for creating a replenishment order.</param>
+        /// <returns>ReplenishmentOrderReference</returns>
+        ReplenishmentOrderReference CreateReplenishmentOrder(ReplenishmentOrderCreationData body);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Payload for creating a replenishment order.</param>
+        /// <returns>ApiResponse of ReplenishmentOrderReference</returns>
+        ApiResponse<ReplenishmentOrderReference> CreateReplenishmentOrderWithHttpInfo(ReplenishmentOrderCreationData body);
         /// <summary>
         /// 
         /// </summary>
@@ -181,6 +223,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// 
         /// </summary>
         /// <remarks>
+        /// Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be retrieved.</param>
+        /// <returns>ReplenishmentOrder</returns>
+        ReplenishmentOrder GetReplenishmentOrder(string orderId);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be retrieved.</param>
+        /// <returns>ApiResponse of ReplenishmentOrder</returns>
+        ApiResponse<ReplenishmentOrder> GetReplenishmentOrderWithHttpInfo(string orderId);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Retrieves a summary of all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
@@ -239,6 +302,35 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of InventoryListing</returns>
         ApiResponse<InventoryListing> ListInventoryWithHttpInfo(string sku = null, string sortOrder = null, string details = null, string nextToken = null, int? maxResults = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updatedAfter">Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="updatedBefore">Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="sortOrder">Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING. (optional)</param>
+        /// <param name="maxResults">Maximum results to be returned in a single response. (optional, default to 25)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <returns>ReplenishmentOrderListing</returns>
+        ReplenishmentOrderListing ListReplenishmentOrders(DateTime? updatedAfter = null, DateTime? updatedBefore = null, string sortOrder = null, int? maxResults = null, string nextToken = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updatedAfter">Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="updatedBefore">Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="sortOrder">Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING. (optional)</param>
+        /// <param name="maxResults">Maximum results to be returned in a single response. (optional, default to 25)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <returns>ApiResponse of ReplenishmentOrderListing</returns>
+        ApiResponse<ReplenishmentOrderListing> ListReplenishmentOrdersWithHttpInfo(DateTime? updatedAfter = null, DateTime? updatedBefore = null, string sortOrder = null, int? maxResults = null, string nextToken = null);
         /// <summary>
         /// 
         /// </summary>
@@ -354,6 +446,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// 
         /// </summary>
         /// <remarks>
+        /// Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be confirmed.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ConfirmReplenishmentOrderAsync(string orderId);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be confirmed.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ConfirmReplenishmentOrderAsyncWithHttpInfo(string orderId);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Creates a draft AWD inbound order with a list of packages for inbound shipment. The operation creates one shipment per order.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
@@ -371,6 +484,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="body">Payload for creating an inbound order.</param>
         /// <returns>Task of ApiResponse (InboundOrderReference)</returns>
         System.Threading.Tasks.Task<ApiResponse<InboundOrderReference>> CreateInboundAsyncWithHttpInfo(InboundOrderCreationData body);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Payload for creating a replenishment order.</param>
+        /// <returns>Task of ReplenishmentOrderReference</returns>
+        System.Threading.Tasks.Task<ReplenishmentOrderReference> CreateReplenishmentOrderAsync(ReplenishmentOrderCreationData body);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Payload for creating a replenishment order.</param>
+        /// <returns>Task of ApiResponse (ReplenishmentOrderReference)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ReplenishmentOrderReference>> CreateReplenishmentOrderAsyncWithHttpInfo(ReplenishmentOrderCreationData body);
         /// <summary>
         /// 
         /// </summary>
@@ -444,6 +578,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// 
         /// </summary>
         /// <remarks>
+        /// Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be retrieved.</param>
+        /// <returns>Task of ReplenishmentOrder</returns>
+        System.Threading.Tasks.Task<ReplenishmentOrder> GetReplenishmentOrderAsync(string orderId);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be retrieved.</param>
+        /// <returns>Task of ApiResponse (ReplenishmentOrder)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ReplenishmentOrder>> GetReplenishmentOrderAsyncWithHttpInfo(string orderId);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Retrieves a summary of all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
@@ -502,6 +657,35 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         /// <param name="maxResults">Maximum number of results to return. (optional, default to 25)</param>
         /// <returns>Task of ApiResponse (InventoryListing)</returns>
         System.Threading.Tasks.Task<ApiResponse<InventoryListing>> ListInventoryAsyncWithHttpInfo(string sku = null, string sortOrder = null, string details = null, string nextToken = null, int? maxResults = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updatedAfter">Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="updatedBefore">Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="sortOrder">Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING. (optional)</param>
+        /// <param name="maxResults">Maximum results to be returned in a single response. (optional, default to 25)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <returns>Task of ReplenishmentOrderListing</returns>
+        System.Threading.Tasks.Task<ReplenishmentOrderListing> ListReplenishmentOrdersAsync(DateTime? updatedAfter = null, DateTime? updatedBefore = null, string sortOrder = null, int? maxResults = null, string nextToken = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updatedAfter">Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="updatedBefore">Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="sortOrder">Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING. (optional)</param>
+        /// <param name="maxResults">Maximum results to be returned in a single response. (optional, default to 25)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <returns>Task of ApiResponse (ReplenishmentOrderListing)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ReplenishmentOrderListing>> ListReplenishmentOrdersAsyncWithHttpInfo(DateTime? updatedAfter = null, DateTime? updatedBefore = null, string sortOrder = null, int? maxResults = null, string nextToken = null);
         /// <summary>
         /// 
         /// </summary>
@@ -1049,6 +1233,139 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
+        ///  Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be confirmed.</param>
+        /// <returns></returns>
+        public void ConfirmReplenishmentOrder(string orderId)
+        {
+            ConfirmReplenishmentOrderWithHttpInfo(orderId);
+        }
+
+        /// <summary>
+        ///  Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be confirmed.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> ConfirmReplenishmentOrderWithHttpInfo(string orderId)
+        {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling AwdApi->ConfirmReplenishmentOrder");
+
+            var localVarPath = "/awd/2024-05-09/replenishmentOrders/{orderId}/confirmation";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (orderId != null) localVarPathParams.Add("orderId", this.Configuration.ApiClient.ParameterToString(orderId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ConfirmReplenishmentOrder", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        ///  Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be confirmed.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ConfirmReplenishmentOrderAsync(string orderId)
+        {
+            await ConfirmReplenishmentOrderAsyncWithHttpInfo(orderId);
+
+        }
+
+        /// <summary>
+        ///  Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be confirmed.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ConfirmReplenishmentOrderAsyncWithHttpInfo(string orderId)
+        {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling AwdApi->ConfirmReplenishmentOrder");
+
+            var localVarPath = "/awd/2024-05-09/replenishmentOrders/{orderId}/confirmation";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (orderId != null) localVarPathParams.Add("orderId", this.Configuration.ApiClient.ParameterToString(orderId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ConfirmReplenishmentOrder", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
         ///  Creates a draft AWD inbound order with a list of packages for inbound shipment. The operation creates one shipment per order.   **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
@@ -1195,6 +1512,155 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
             return new ApiResponse<InboundOrderReference>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (InboundOrderReference)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InboundOrderReference)));
+        }
+
+        /// <summary>
+        ///  Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Payload for creating a replenishment order.</param>
+        /// <returns>ReplenishmentOrderReference</returns>
+        public ReplenishmentOrderReference CreateReplenishmentOrder(ReplenishmentOrderCreationData body)
+        {
+            ApiResponse<ReplenishmentOrderReference> localVarResponse = CreateReplenishmentOrderWithHttpInfo(body);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Payload for creating a replenishment order.</param>
+        /// <returns>ApiResponse of ReplenishmentOrderReference</returns>
+        public ApiResponse<ReplenishmentOrderReference> CreateReplenishmentOrderWithHttpInfo(ReplenishmentOrderCreationData body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling AwdApi->CreateReplenishmentOrder");
+
+            var localVarPath = "/awd/2024-05-09/replenishmentOrders";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateReplenishmentOrder", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ReplenishmentOrderReference>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ReplenishmentOrderReference)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReplenishmentOrderReference)));
+        }
+
+        /// <summary>
+        ///  Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Payload for creating a replenishment order.</param>
+        /// <returns>Task of ReplenishmentOrderReference</returns>
+        public async System.Threading.Tasks.Task<ReplenishmentOrderReference> CreateReplenishmentOrderAsync(ReplenishmentOrderCreationData body)
+        {
+            ApiResponse<ReplenishmentOrderReference> localVarResponse = await CreateReplenishmentOrderAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Payload for creating a replenishment order.</param>
+        /// <returns>Task of ApiResponse (ReplenishmentOrderReference)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ReplenishmentOrderReference>> CreateReplenishmentOrderAsyncWithHttpInfo(ReplenishmentOrderCreationData body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling AwdApi->CreateReplenishmentOrder");
+
+            var localVarPath = "/awd/2024-05-09/replenishmentOrders";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateReplenishmentOrder", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ReplenishmentOrderReference>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ReplenishmentOrderReference)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReplenishmentOrderReference)));
         }
 
         /// <summary>
@@ -1621,6 +2087,141 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
         }
 
         /// <summary>
+        ///  Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be retrieved.</param>
+        /// <returns>ReplenishmentOrder</returns>
+        public ReplenishmentOrder GetReplenishmentOrder(string orderId)
+        {
+            ApiResponse<ReplenishmentOrder> localVarResponse = GetReplenishmentOrderWithHttpInfo(orderId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be retrieved.</param>
+        /// <returns>ApiResponse of ReplenishmentOrder</returns>
+        public ApiResponse<ReplenishmentOrder> GetReplenishmentOrderWithHttpInfo(string orderId)
+        {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling AwdApi->GetReplenishmentOrder");
+
+            var localVarPath = "/awd/2024-05-09/replenishmentOrders/{orderId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (orderId != null) localVarPathParams.Add("orderId", this.Configuration.ApiClient.ParameterToString(orderId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetReplenishmentOrder", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ReplenishmentOrder>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ReplenishmentOrder)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReplenishmentOrder)));
+        }
+
+        /// <summary>
+        ///  Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be retrieved.</param>
+        /// <returns>Task of ReplenishmentOrder</returns>
+        public async System.Threading.Tasks.Task<ReplenishmentOrder> GetReplenishmentOrderAsync(string orderId)
+        {
+            ApiResponse<ReplenishmentOrder> localVarResponse = await GetReplenishmentOrderAsyncWithHttpInfo(orderId);
+            return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">ID of the replenishment order to be retrieved.</param>
+        /// <returns>Task of ApiResponse (ReplenishmentOrder)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ReplenishmentOrder>> GetReplenishmentOrderAsyncWithHttpInfo(string orderId)
+        {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling AwdApi->GetReplenishmentOrder");
+
+            var localVarPath = "/awd/2024-05-09/replenishmentOrders/{orderId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (orderId != null) localVarPathParams.Add("orderId", this.Configuration.ApiClient.ParameterToString(orderId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetReplenishmentOrder", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ReplenishmentOrder>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ReplenishmentOrder)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReplenishmentOrder)));
+        }
+
+        /// <summary>
         ///  Retrieves a summary of all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | - -- - | - -- - | | 1 | 1 |  The &#x60;x-amzn-RateLimit-Limit&#x60; response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
@@ -1936,6 +2537,159 @@ namespace Amazon.SellingPartnerAPIAA.Clients.API
             return new ApiResponse<InventoryListing>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (InventoryListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InventoryListing)));
+        }
+
+        /// <summary>
+        ///  Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updatedAfter">Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="updatedBefore">Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="sortOrder">Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING. (optional)</param>
+        /// <param name="maxResults">Maximum results to be returned in a single response. (optional, default to 25)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <returns>ReplenishmentOrderListing</returns>
+        public ReplenishmentOrderListing ListReplenishmentOrders(DateTime? updatedAfter = null, DateTime? updatedBefore = null, string sortOrder = null, int? maxResults = null, string nextToken = null)
+        {
+            ApiResponse<ReplenishmentOrderListing> localVarResponse = ListReplenishmentOrdersWithHttpInfo(updatedAfter, updatedBefore, sortOrder, maxResults, nextToken);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updatedAfter">Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="updatedBefore">Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="sortOrder">Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING. (optional)</param>
+        /// <param name="maxResults">Maximum results to be returned in a single response. (optional, default to 25)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <returns>ApiResponse of ReplenishmentOrderListing</returns>
+        public ApiResponse<ReplenishmentOrderListing> ListReplenishmentOrdersWithHttpInfo(DateTime? updatedAfter = null, DateTime? updatedBefore = null, string sortOrder = null, int? maxResults = null, string nextToken = null)
+        {
+
+            var localVarPath = "/awd/2024-05-09/replenishmentOrders";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (updatedAfter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "updatedAfter", updatedAfter)); // query parameter
+            if (updatedBefore != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "updatedBefore", updatedBefore)); // query parameter
+            if (sortOrder != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sortOrder", sortOrder)); // query parameter
+            if (maxResults != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "maxResults", maxResults)); // query parameter
+            if (nextToken != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nextToken", nextToken)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListReplenishmentOrders", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ReplenishmentOrderListing>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ReplenishmentOrderListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReplenishmentOrderListing)));
+        }
+
+        /// <summary>
+        ///  Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updatedAfter">Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="updatedBefore">Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="sortOrder">Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING. (optional)</param>
+        /// <param name="maxResults">Maximum results to be returned in a single response. (optional, default to 25)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <returns>Task of ReplenishmentOrderListing</returns>
+        public async System.Threading.Tasks.Task<ReplenishmentOrderListing> ListReplenishmentOrdersAsync(DateTime? updatedAfter = null, DateTime? updatedBefore = null, string sortOrder = null, int? maxResults = null, string nextToken = null)
+        {
+            ApiResponse<ReplenishmentOrderListing> localVarResponse = await ListReplenishmentOrdersAsyncWithHttpInfo(updatedAfter, updatedBefore, sortOrder, maxResults, nextToken);
+            return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updatedAfter">Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="updatedBefore">Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)</param>
+        /// <param name="sortOrder">Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING. (optional)</param>
+        /// <param name="maxResults">Maximum results to be returned in a single response. (optional, default to 25)</param>
+        /// <param name="nextToken">A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)</param>
+        /// <returns>Task of ApiResponse (ReplenishmentOrderListing)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ReplenishmentOrderListing>> ListReplenishmentOrdersAsyncWithHttpInfo(DateTime? updatedAfter = null, DateTime? updatedBefore = null, string sortOrder = null, int? maxResults = null, string nextToken = null)
+        {
+
+            var localVarPath = "/awd/2024-05-09/replenishmentOrders";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (updatedAfter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "updatedAfter", updatedAfter)); // query parameter
+            if (updatedBefore != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "updatedBefore", updatedBefore)); // query parameter
+            if (sortOrder != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sortOrder", sortOrder)); // query parameter
+            if (maxResults != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "maxResults", maxResults)); // query parameter
+            if (nextToken != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nextToken", nextToken)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListReplenishmentOrders", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ReplenishmentOrderListing>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ReplenishmentOrderListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReplenishmentOrderListing)));
         }
 
         /// <summary>

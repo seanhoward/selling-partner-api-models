@@ -9,18 +9,11 @@
  */
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Amazon.SellingPartnerAPIAA.Clients.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
 {
@@ -28,31 +21,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
     /// Information about the marketplace where the transaction occurred.
     /// </summary>
     [DataContract]
-    public partial class MarketplaceDetails :  IEquatable<MarketplaceDetails>, IValidatableObject
+    public partial class MarketplaceDetails : IEquatable<MarketplaceDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MarketplaceDetails" /> class.
         /// </summary>
-        /// <param name="marketplaceId">The identifier of the marketplace where the transaction occured..</param>
+        /// <param name="marketplaceId">The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)..</param>
         /// <param name="marketplaceName">The name of the marketplace where the transaction occurred. For example: &#x60;Amazon.com&#x60;,&#x60;Amazon.in&#x60;.</param>
         public MarketplaceDetails(string marketplaceId = default, string marketplaceName = default)
         {
             this.MarketplaceId = marketplaceId;
             this.MarketplaceName = marketplaceName;
         }
-        
+
         /// <summary>
-        /// The identifier of the marketplace where the transaction occured.
+        /// The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
         /// </summary>
-        /// <value>The identifier of the marketplace where the transaction occured.</value>
-        [DataMember(Name="marketplaceId", EmitDefaultValue=false)]
+        /// <value>The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).</value>
+        [DataMember(Name = "marketplaceId", EmitDefaultValue = false)]
         public string MarketplaceId { get; set; }
 
         /// <summary>
         /// The name of the marketplace where the transaction occurred. For example: &#x60;Amazon.com&#x60;,&#x60;Amazon.in&#x60;
         /// </summary>
         /// <value>The name of the marketplace where the transaction occurred. For example: &#x60;Amazon.com&#x60;,&#x60;Amazon.in&#x60;</value>
-        [DataMember(Name="marketplaceName", EmitDefaultValue=false)]
+        [DataMember(Name = "marketplaceName", EmitDefaultValue = false)]
         public string MarketplaceName { get; set; }
 
         /// <summary>
@@ -68,7 +61,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -98,12 +91,12 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.Finances
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.MarketplaceId == input.MarketplaceId ||
                     (this.MarketplaceId != null &&
                     this.MarketplaceId.Equals(input.MarketplaceId))
-                ) && 
+                ) &&
                 (
                     this.MarketplaceName == input.MarketplaceName ||
                     (this.MarketplaceName != null &&

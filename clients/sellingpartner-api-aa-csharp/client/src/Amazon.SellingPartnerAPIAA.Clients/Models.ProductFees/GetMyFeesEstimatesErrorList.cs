@@ -33,7 +33,7 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         /// <summary>
         /// Initializes a new instance of the <see cref="GetMyFeesEstimatesErrorList" /> class.
         /// </summary>
-        /// <param name="errors">errors (required).</param>
+        /// <param name="errors">A list of error responses returned when a request is unsuccessful. (required).</param>
         public GetMyFeesEstimatesErrorList(List<Error> errors = default)
         {
             // to ensure "errors" is required (not null)
@@ -48,8 +48,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.ProductFees
         }
 
         /// <summary>
-        /// Gets or Sets Errors
+        /// A list of error responses returned when a request is unsuccessful.
         /// </summary>
+        /// <value>A list of error responses returned when a request is unsuccessful.</value>
         [DataMember(Name = "errors", EmitDefaultValue = false)]
         public List<Error> Errors { get; set; }
 

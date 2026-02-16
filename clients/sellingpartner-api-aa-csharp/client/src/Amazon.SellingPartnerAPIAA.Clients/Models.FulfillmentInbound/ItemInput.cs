@@ -253,9 +253,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
 
             // Msku (string) maxLength
-            if (this.Msku != null && this.Msku.Length > 40)
+            if (this.Msku != null && this.Msku.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for Msku, length must be less than 40.", new[] { "Msku" });
+                yield return new ValidationResult("Invalid value for Msku, length must be less than 255.", new[] { "Msku" });
             }
 
             // Msku (string) minLength
@@ -265,9 +265,9 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentInbound
             }
 
             // Quantity (int?) maximum
-            if (this.Quantity > (int?)10000)
+            if (this.Quantity > (int?)500000)
             {
-                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 10000.", new[] { "Quantity" });
+                yield return new ValidationResult("Invalid value for Quantity, must be a value less than or equal to 500000.", new[] { "Quantity" });
             }
 
             // Quantity (int?) minimum

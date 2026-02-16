@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AmazonOrderId** | **string** | An Amazon-defined order identifier, in 3-7-7 format. | 
-**BuyerEmail** | **string** | The anonymized email address of the buyer. | [optional] 
 **BuyerName** | **string** | The buyer name or the recipient name. | [optional] 
 **BuyerCounty** | **string** | The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace. | [optional] 
 **BuyerTaxInfo** | [**BuyerTaxInfo**](BuyerTaxInfo.md) | Tax information about the buyer. Sellers can use this data to issue electronic invoices for business orders.  **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces. | [optional] 

@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -25,27 +25,27 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
     public partial class BankAccount : IEquatable<BankAccount>, IValidatableObject
     {
         /// <summary>
-        /// The format in which the bank account number is provided.
+        /// The format in which the bank account number is provided for &#x60;THIRD_PARTY&#x60; transaction requests.
         /// </summary>
-        /// <value>The format in which the bank account number is provided.</value>
+        /// <value>The format in which the bank account number is provided for &#x60;THIRD_PARTY&#x60; transaction requests.</value>
         [DataMember(Name = "bankAccountNumberFormat", EmitDefaultValue = false)]
-        public BankAccountNumberFormat BankAccountNumberFormat { get; set; }
+        public BankAccountNumberFormat? BankAccountNumberFormat { get; set; }
         /// <summary>
-        /// Type of ownership of the bank account. This value is SELF for Amazon Seller Wallet accounts.
+        /// Type of ownership of the bank account. This value is &#x60;SELF&#x60; for Amazon Seller Wallet accounts.
         /// </summary>
-        /// <value>Type of ownership of the bank account. This value is SELF for Amazon Seller Wallet accounts.</value>
+        /// <value>Type of ownership of the bank account. This value is &#x60;SELF&#x60; for Amazon Seller Wallet accounts.</value>
         [DataMember(Name = "bankAccountOwnershipType", EmitDefaultValue = false)]
         public BankAccountOwnershipType BankAccountOwnershipType { get; set; }
         /// <summary>
-        /// Bank number format or routing number type.
+        /// The bank number format or routing number type for &#x60;THIRD_PARTY&#x60; transaction requests.
         /// </summary>
-        /// <value>Bank number format or routing number type.</value>
+        /// <value>The bank number format or routing number type for &#x60;THIRD_PARTY&#x60; transaction requests.</value>
         [DataMember(Name = "bankNumberFormat", EmitDefaultValue = false)]
-        public BankNumberFormat BankNumberFormat { get; set; }
+        public BankNumberFormat? BankNumberFormat { get; set; }
         /// <summary>
-        /// The compliance status of the bank account holder.
+        /// Bank account holder compliance status 
         /// </summary>
-        /// <value>The compliance status of the bank account holder.</value>
+        /// <value>Bank account holder compliance status </value>
         [DataMember(Name = "bankAccountHolderStatus", EmitDefaultValue = false)]
         public BankAccountHolderStatus? BankAccountHolderStatus { get; set; }
         /// <summary>
@@ -56,37 +56,19 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="BankAccount" /> class.
         /// </summary>
-        /// <param name="accountId">The unique identifier provided by Amazon to identify the account..</param>
-        /// <param name="accountHolderName">The bank account holder&#39;s name (expected to be an Amazon customer). (required).</param>
-        /// <param name="bankAccountNumberFormat">The format in which the bank account number is provided. (required).</param>
+        /// <param name="accountId">The unique bank account identifier provided by Amazon. To initiate a &#x60;SELF&#x60; transaction with Seller Wallet, you must choose &#x60;BANK_ACCOUNT&#x60; as the payment method type in the [getPaymentMethod](https://developer-docs.amazon.com/sp-api/reference/getpaymentmethods) request. Your Amazon Seller Wallet bank account identifier should match the &#x60;paymentMethodId&#x60; in the response. This field is required..</param>
+        /// <param name="accountHolderName">The bank account holder&#39;s name (expected to be an Amazon customer). There is a 50 character limit..</param>
+        /// <param name="bankAccountNumberFormat">The format in which the bank account number is provided for &#x60;THIRD_PARTY&#x60; transaction requests..</param>
         /// <param name="bankName">The name of the bank. This value is Amazon Seller Wallet for Amazon Seller Wallet accounts..</param>
-        /// <param name="bankAccountOwnershipType">Type of ownership of the bank account. This value is SELF for Amazon Seller Wallet accounts. (required).</param>
-        /// <param name="routingNumber">Routing number for automated clearing house transfers. This value is nine consecutive zeros for Amazon Seller Wallet accounts. (required).</param>
-        /// <param name="bankNumberFormat">Bank number format or routing number type. (required).</param>
-        /// <param name="accountCountryCode">The two-digit country code in ISO 3166 format. (required).</param>
-        /// <param name="accountCurrency">Bank account currency code in ISO 4217 format. (required).</param>
-        /// <param name="bankAccountNumberTail">The last 3 digit of the bank account number. This value is three consecutive zeros for Amazon Seller Wallet accounts. (required).</param>
-        /// <param name="bankAccountHolderStatus">The compliance status of the bank account holder..</param>
-        public BankAccount(string accountId = default, string accountHolderName = default, BankAccountNumberFormat bankAccountNumberFormat = default, string bankName = default, BankAccountOwnershipType bankAccountOwnershipType = default, string routingNumber = default, BankNumberFormat bankNumberFormat = default, string accountCountryCode = default, string accountCurrency = default, string bankAccountNumberTail = default, BankAccountHolderStatus? bankAccountHolderStatus = default)
+        /// <param name="bankAccountOwnershipType">Type of ownership of the bank account. This value is &#x60;SELF&#x60; for Amazon Seller Wallet accounts. (required).</param>
+        /// <param name="routingNumber">Routing number for automated clearing house transfers for &#x60;THIRD_PARTY&#x60; transaction requests. This value is nine consecutive zeros for Amazon Seller Wallet accounts..</param>
+        /// <param name="bankNumberFormat">The bank number format or routing number type for &#x60;THIRD_PARTY&#x60; transaction requests..</param>
+        /// <param name="accountCountryCode">The two digit country code, in ISO 3166 format.  (required).</param>
+        /// <param name="accountCurrency">BankAccount currency code in ISO 4217 format  (required).</param>
+        /// <param name="bankAccountNumberTail">Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0&#39;s  (required).</param>
+        /// <param name="bankAccountHolderStatus">Bank account holder compliance status .</param>
+        public BankAccount(string accountId = default, string accountHolderName = default, BankAccountNumberFormat? bankAccountNumberFormat = default, string bankName = default, BankAccountOwnershipType bankAccountOwnershipType = default, string routingNumber = default, BankNumberFormat? bankNumberFormat = default, string accountCountryCode = default, string accountCurrency = default, string bankAccountNumberTail = default, BankAccountHolderStatus? bankAccountHolderStatus = default)
         {
-            // to ensure "accountHolderName" is required (not null)
-            if (accountHolderName == null)
-            {
-                throw new InvalidDataException("accountHolderName is a required property for BankAccount and cannot be null");
-            }
-            else
-            {
-                this.AccountHolderName = accountHolderName;
-            }
-            // to ensure "bankAccountNumberFormat" is required (not null)
-            if (bankAccountNumberFormat == null)
-            {
-                throw new InvalidDataException("bankAccountNumberFormat is a required property for BankAccount and cannot be null");
-            }
-            else
-            {
-                this.BankAccountNumberFormat = bankAccountNumberFormat;
-            }
             // to ensure "bankAccountOwnershipType" is required (not null)
             if (bankAccountOwnershipType == null)
             {
@@ -95,24 +77,6 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
             else
             {
                 this.BankAccountOwnershipType = bankAccountOwnershipType;
-            }
-            // to ensure "routingNumber" is required (not null)
-            if (routingNumber == null)
-            {
-                throw new InvalidDataException("routingNumber is a required property for BankAccount and cannot be null");
-            }
-            else
-            {
-                this.RoutingNumber = routingNumber;
-            }
-            // to ensure "bankNumberFormat" is required (not null)
-            if (bankNumberFormat == null)
-            {
-                throw new InvalidDataException("bankNumberFormat is a required property for BankAccount and cannot be null");
-            }
-            else
-            {
-                this.BankNumberFormat = bankNumberFormat;
             }
             // to ensure "accountCountryCode" is required (not null)
             if (accountCountryCode == null)
@@ -142,21 +106,25 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
                 this.BankAccountNumberTail = bankAccountNumberTail;
             }
             this.AccountId = accountId;
+            this.AccountHolderName = accountHolderName;
+            this.BankAccountNumberFormat = bankAccountNumberFormat;
             this.BankName = bankName;
+            this.RoutingNumber = routingNumber;
+            this.BankNumberFormat = bankNumberFormat;
             this.BankAccountHolderStatus = bankAccountHolderStatus;
         }
 
         /// <summary>
-        /// The unique identifier provided by Amazon to identify the account.
+        /// The unique bank account identifier provided by Amazon. To initiate a &#x60;SELF&#x60; transaction with Seller Wallet, you must choose &#x60;BANK_ACCOUNT&#x60; as the payment method type in the [getPaymentMethod](https://developer-docs.amazon.com/sp-api/reference/getpaymentmethods) request. Your Amazon Seller Wallet bank account identifier should match the &#x60;paymentMethodId&#x60; in the response. This field is required.
         /// </summary>
-        /// <value>The unique identifier provided by Amazon to identify the account.</value>
+        /// <value>The unique bank account identifier provided by Amazon. To initiate a &#x60;SELF&#x60; transaction with Seller Wallet, you must choose &#x60;BANK_ACCOUNT&#x60; as the payment method type in the [getPaymentMethod](https://developer-docs.amazon.com/sp-api/reference/getpaymentmethods) request. Your Amazon Seller Wallet bank account identifier should match the &#x60;paymentMethodId&#x60; in the response. This field is required.</value>
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
 
         /// <summary>
-        /// The bank account holder&#39;s name (expected to be an Amazon customer).
+        /// The bank account holder&#39;s name (expected to be an Amazon customer). There is a 50 character limit.
         /// </summary>
-        /// <value>The bank account holder&#39;s name (expected to be an Amazon customer).</value>
+        /// <value>The bank account holder&#39;s name (expected to be an Amazon customer). There is a 50 character limit.</value>
         [DataMember(Name = "accountHolderName", EmitDefaultValue = false)]
         public string AccountHolderName { get; set; }
 
@@ -170,31 +138,31 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 
 
         /// <summary>
-        /// Routing number for automated clearing house transfers. This value is nine consecutive zeros for Amazon Seller Wallet accounts.
+        /// Routing number for automated clearing house transfers for &#x60;THIRD_PARTY&#x60; transaction requests. This value is nine consecutive zeros for Amazon Seller Wallet accounts.
         /// </summary>
-        /// <value>Routing number for automated clearing house transfers. This value is nine consecutive zeros for Amazon Seller Wallet accounts.</value>
+        /// <value>Routing number for automated clearing house transfers for &#x60;THIRD_PARTY&#x60; transaction requests. This value is nine consecutive zeros for Amazon Seller Wallet accounts.</value>
         [DataMember(Name = "routingNumber", EmitDefaultValue = false)]
         public string RoutingNumber { get; set; }
 
 
         /// <summary>
-        /// The two-digit country code in ISO 3166 format.
+        /// The two digit country code, in ISO 3166 format. 
         /// </summary>
-        /// <value>The two-digit country code in ISO 3166 format.</value>
+        /// <value>The two digit country code, in ISO 3166 format. </value>
         [DataMember(Name = "accountCountryCode", EmitDefaultValue = false)]
         public string AccountCountryCode { get; set; }
 
         /// <summary>
-        /// Bank account currency code in ISO 4217 format.
+        /// BankAccount currency code in ISO 4217 format 
         /// </summary>
-        /// <value>Bank account currency code in ISO 4217 format.</value>
+        /// <value>BankAccount currency code in ISO 4217 format </value>
         [DataMember(Name = "accountCurrency", EmitDefaultValue = false)]
         public string AccountCurrency { get; set; }
 
         /// <summary>
-        /// The last 3 digit of the bank account number. This value is three consecutive zeros for Amazon Seller Wallet accounts.
+        /// Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0&#39;s 
         /// </summary>
-        /// <value>The last 3 digit of the bank account number. This value is three consecutive zeros for Amazon Seller Wallet accounts.</value>
+        /// <value>Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0&#39;s </value>
         [DataMember(Name = "bankAccountNumberTail", EmitDefaultValue = false)]
         public string BankAccountNumberTail { get; set; }
 

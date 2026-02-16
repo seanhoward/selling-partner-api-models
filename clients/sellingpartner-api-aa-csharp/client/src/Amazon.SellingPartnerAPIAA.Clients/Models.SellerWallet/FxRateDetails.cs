@@ -1,5 +1,5 @@
 /* 
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  *
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
@@ -19,15 +19,15 @@ using Newtonsoft.Json;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
 {
     /// <summary>
-    /// Foreign exchange rate details.
+    /// Foreign exchange rate details displayed when transfer preview is requested. 
     /// </summary>
     [DataContract]
     public partial class FxRateDetails : IEquatable<FxRateDetails>, IValidatableObject
     {
         /// <summary>
-        /// Whether the customer is buying or selling the source currency.
+        /// Rate Direction can refer to the way final amount is calculated. 
         /// </summary>
-        /// <value>Whether the customer is buying or selling the source currency.</value>
+        /// <value>Rate Direction can refer to the way final amount is calculated. </value>
         [DataMember(Name = "rateDirection", EmitDefaultValue = false)]
         public RateDirection RateDirection { get; set; }
         /// <summary>
@@ -38,10 +38,10 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         /// <summary>
         /// Initializes a new instance of the <see cref="FxRateDetails" /> class.
         /// </summary>
-        /// <param name="fxRateId">The unique identifier assigned to the fees / foreign exchange rate of a transaction. (required).</param>
-        /// <param name="baseRate">The market foreign exchange rate. (required).</param>
-        /// <param name="effectiveFxRate">The total rate applied to the money transfer. This includes all exchange rates, markups, and fees. (required).</param>
-        /// <param name="rateDirection">Whether the customer is buying or selling the source currency. (required).</param>
+        /// <param name="fxRateId">Unique identifier assigned to the fees/foreign exchange Rate of a transaction.  (required).</param>
+        /// <param name="baseRate">This is the rate that will be market foreign exchange rate. For example: 1USD -&gt; 86.0 INR.  (required).</param>
+        /// <param name="effectiveFxRate">Displays the foreign exchange rate which will be all rates and fees baked in (i.e; markup fees), example: market fx rate and international transaction fee.  (required).</param>
+        /// <param name="rateDirection">Rate Direction can refer to the way final amount is calculated.  (required).</param>
         public FxRateDetails(string fxRateId = default, decimal? baseRate = default, decimal? effectiveFxRate = default, RateDirection rateDirection = default)
         {
             // to ensure "fxRateId" is required (not null)
@@ -83,23 +83,23 @@ namespace Amazon.SellingPartnerAPIAA.Clients.Models.SellerWallet
         }
 
         /// <summary>
-        /// The unique identifier assigned to the fees / foreign exchange rate of a transaction.
+        /// Unique identifier assigned to the fees/foreign exchange Rate of a transaction. 
         /// </summary>
-        /// <value>The unique identifier assigned to the fees / foreign exchange rate of a transaction.</value>
+        /// <value>Unique identifier assigned to the fees/foreign exchange Rate of a transaction. </value>
         [DataMember(Name = "fxRateId", EmitDefaultValue = false)]
         public string FxRateId { get; set; }
 
         /// <summary>
-        /// The market foreign exchange rate.
+        /// This is the rate that will be market foreign exchange rate. For example: 1USD -&gt; 86.0 INR. 
         /// </summary>
-        /// <value>The market foreign exchange rate.</value>
+        /// <value>This is the rate that will be market foreign exchange rate. For example: 1USD -&gt; 86.0 INR. </value>
         [DataMember(Name = "baseRate", EmitDefaultValue = false)]
         public decimal? BaseRate { get; set; }
 
         /// <summary>
-        /// The total rate applied to the money transfer. This includes all exchange rates, markups, and fees.
+        /// Displays the foreign exchange rate which will be all rates and fees baked in (i.e; markup fees), example: market fx rate and international transaction fee. 
         /// </summary>
-        /// <value>The total rate applied to the money transfer. This includes all exchange rates, markups, and fees.</value>
+        /// <value>Displays the foreign exchange rate which will be all rates and fees baked in (i.e; markup fees), example: market fx rate and international transaction fee. </value>
         [DataMember(Name = "effectiveFxRate", EmitDefaultValue = false)]
         public decimal? EffectiveFxRate { get; set; }
 

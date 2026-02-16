@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.FeaturedOfferExpectedPriceRequest
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.FeaturedOfferExpectedPriceRequest
 ## Properties
 
 Name | Type | Description | Notes
@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Headers** | [**HttpHeaders**](HttpHeaders.md) |  | [optional] 
 **MarketplaceId** | **string** |  | 
 **Sku** | **string** |  | 
+**Segment** | [**Segment**](Segment.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

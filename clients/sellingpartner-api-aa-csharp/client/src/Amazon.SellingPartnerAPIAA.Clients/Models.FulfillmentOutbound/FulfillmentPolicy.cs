@@ -15,9 +15,9 @@ using Newtonsoft.Json.Converters;
 namespace Amazon.SellingPartnerAPIAA.Clients.Models.FulfillmentOutbound
 {
     /// <summary>
-    /// The &#x60;FulfillmentPolicy&#x60; value specified when you submitted the &#x60;createFulfillmentOrder&#x60; operation.
+    /// The &#x60;FulfillmentPolicy&#x60; value specified when you called the &#x60;createFulfillmentOrder&#x60; operation.
     /// </summary>
-    /// <value>The &#x60;FulfillmentPolicy&#x60; value specified when you submitted the &#x60;createFulfillmentOrder&#x60; operation.</value>
+    /// <value>The &#x60;FulfillmentPolicy&#x60; value specified when you called the &#x60;createFulfillmentOrder&#x60; operation.</value>
 
     [JsonConverter(typeof(StringEnumConverter))]
 

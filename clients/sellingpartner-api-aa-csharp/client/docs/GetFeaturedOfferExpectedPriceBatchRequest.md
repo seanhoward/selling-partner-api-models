@@ -1,4 +1,4 @@
-# Amazon.SellingPartnerAPIAA.Clients.Models.Pricing.GetFeaturedOfferExpectedPriceBatchRequest
+# Amazon.SellingPartnerAPIAA.Clients.Models.ProductPricing.GetFeaturedOfferExpectedPriceBatchRequest
 ## Properties
 
 Name | Type | Description | Notes
